@@ -23,6 +23,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"strings"
 )
 
 // contextKeys are used to identify the type of value in the context.
@@ -52,10 +53,12 @@ var (
 	ContextOperationServerVariables = contextKey("serverOperationVariables")
 
 	envCommandHostname = "KEYFACTOR_HOSTNAME"
-	
+
 	EnvCommandUsername = "KEYFACTOR_USERNAME"
 
 	EnvCommandPassword = "KEYFACTOR_PASSWORD"
+
+	EnvCommandDomain = "KEYFACTOR_DOMAIN"
 )
 
 // BasicAuth provides basic http authentication to a request passed via context using ContextBasicAuth
@@ -79,43 +82,64 @@ type ServerVariable struct {
 
 // Configuration stores the configuration of the API client
 type Configuration struct {
-	Host             string            `json:"host,omitempty"`
-	BasicAuth        BasicAuth		   `json:"basicAuth,omitempty"`
-	DefaultHeader    map[string]string `json:"defaultHeader,omitempty"`
-	UserAgent        string            `json:"userAgent,omitempty"`
-	Debug            bool              `json:"debug,omitempty"`
-	HTTPClient       *http.Client
+	Host          string            `json:"host,omitempty"`
+	BasicAuth     BasicAuth         `json:"basicAuth,omitempty"`
+	DefaultHeader map[string]string `json:"defaultHeader,omitempty"`
+	UserAgent     string            `json:"userAgent,omitempty"`
+	Debug         bool              `json:"debug,omitempty"`
+	HTTPClient    *http.Client
 }
 
 // NewConfiguration returns a new Configuration object
-func NewConfiguration() *Configuration {
+func NewConfiguration(config map[string]string) *Configuration {
 	cfg := &Configuration{
-		DefaultHeader:    make(map[string]string),
-		UserAgent:        "OpenAPI-Generator/1.0.0/go",
-		Debug:            false,
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "OpenAPI-Generator/1.0.0/go",
+		Debug:         false,
 	}
 
+	var (
+		hostname string
+	)
+	confHost := config["host"]
+	confUser := config["username"]
+	confPass := config["password"]
+	confDomain := config["domain"]
+
 	// Get hostname from environment variable
-	hostname := os.Getenv(envCommandHostname)
+	if confHost == "" {
+		hostname = os.Getenv(envCommandHostname)
+	} else {
+		hostname = confHost
+	}
+
 	if hostname != "" {
-		if hostname, err := cleanHostname(hostname); err == nil {
-			cfg.Host = hostname
+		if hostnameCleaned, err := cleanHostname(hostname); err == nil {
+			cfg.Host = hostnameCleaned
 		} else {
-			fmt.Errorf("%s is not a valid URL: %s", envCommandHostname, err)
+			fmt.Errorf("%s is not a valid URL: %s", hostname, err)
 		}
 	}
 
-    // Get username from environment variable
-    username := os.Getenv(EnvCommandUsername)
-    if username != "" {
-        cfg.BasicAuth.UserName = username
-    }
+	// Get username from environment variable
+	if confUser == "" {
+		cfg.BasicAuth.UserName = os.Getenv(EnvCommandUsername)
+	} else {
+		cfg.BasicAuth.UserName = confUser
+	}
 
-    // Get password from environment variable
-    password := os.Getenv(EnvCommandPassword)
-    if password != "" {
-        cfg.BasicAuth.Password = password
-    }
+	if confDomain != "" {
+		if cfg.BasicAuth.UserName != "" && !strings.Contains(cfg.BasicAuth.UserName, confDomain) {
+			cfg.BasicAuth.UserName = cfg.BasicAuth.UserName + "@" + confDomain
+		}
+	}
+
+	// Get password from environment variable
+	if confPass == "" {
+		cfg.BasicAuth.Password = os.Getenv(EnvCommandPassword)
+	} else {
+		cfg.BasicAuth.Password = confPass
+	}
 
 	return cfg
 }
