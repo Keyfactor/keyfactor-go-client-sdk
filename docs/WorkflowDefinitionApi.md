@@ -43,7 +43,7 @@ func main() {
     request := []openapiclient.KeyfactorApiModelsWorkflowsDefinitionStepRequest{*openapiclient.NewKeyfactorApiModelsWorkflowsDefinitionStepRequest()} // []KeyfactorApiModelsWorkflowsDefinitionStepRequest | A collection of {KeyfactorApi.Models.Workflows.DefinitionStepRequest} defining the steps to set on the definition.
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionConfigureDefinitionSteps(context.Background(), definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -116,7 +116,7 @@ func main() {
     request := *openapiclient.NewKeyfactorApiModelsWorkflowsDefinitionCreateRequest() // KeyfactorApiModelsWorkflowsDefinitionCreateRequest | A {KeyfactorApi.Models.Workflows.DefinitionCreateRequest} with the display name, description, key and type of the definition.
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionCreateNewDefinition(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -184,7 +184,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionDelete(context.Background(), definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -256,7 +256,7 @@ func main() {
     exportable := true // bool | Indicates if the response should be cleansed of role ids for export. (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionGet(context.Background(), definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).DefinitionVersion(definitionVersion).Exportable(exportable).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -295,7 +295,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -330,7 +330,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionGetStepSchema(context.Background(), extensionName).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -402,7 +402,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionPublishDefinition(context.Background(), definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -439,7 +439,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -478,7 +478,7 @@ func main() {
     querySortField := "querySortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
     querySortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionQuery(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).QueryQueryString(queryQueryString).QueryPageReturned(queryPageReturned).QueryReturnLimit(queryReturnLimit).QuerySortField(querySortField).QuerySortAscending(querySortAscending).Execute()
     if err != nil {
@@ -515,7 +515,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -554,7 +554,7 @@ func main() {
     querySortField := "querySortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
     querySortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionQueryAvailableSteps(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).QueryQueryString(queryQueryString).QueryPageReturned(queryPageReturned).QueryReturnLimit(queryReturnLimit).QuerySortField(querySortField).QuerySortAscending(querySortAscending).Execute()
     if err != nil {
@@ -591,7 +591,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -630,7 +630,7 @@ func main() {
     querySortField := "querySortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
     querySortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionQueryWorkflowTypes(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).QueryQueryString(queryQueryString).QueryPageReturned(queryPageReturned).QueryReturnLimit(queryReturnLimit).QuerySortField(querySortField).QuerySortAscending(querySortAscending).Execute()
     if err != nil {
@@ -667,7 +667,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -703,7 +703,7 @@ func main() {
     request := *openapiclient.NewKeyfactorApiModelsWorkflowsDefinitionUpdateRequest() // KeyfactorApiModelsWorkflowsDefinitionUpdateRequest | The {KeyfactorApi.Models.Workflows.DefinitionUpdateRequest} holding the updated DispalyName and Description.
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionUpdateExistingDefinition(context.Background(), definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -741,7 +741,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 

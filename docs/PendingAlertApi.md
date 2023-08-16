@@ -39,7 +39,7 @@ func main() {
     req := *openapiclient.NewKeyfactorApiModelsAlertsPendingPendingAlertCreationRequest("DisplayName_example", "Subject_example", "Message_example") // KeyfactorApiModelsAlertsPendingPendingAlertCreationRequest | Information for the new alert
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.PendingAlertApi.PendingAlertAddPendingAlert(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Req(req).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -107,7 +107,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.PendingAlertApi.PendingAlertDeletePendingAlert(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -177,7 +177,7 @@ func main() {
     req := *openapiclient.NewKeyfactorApiModelsAlertsPendingPendingAlertUpdateRequest("DisplayName_example", "Subject_example", "Message_example") // KeyfactorApiModelsAlertsPendingPendingAlertUpdateRequest | Information for the pending alert
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.PendingAlertApi.PendingAlertEditPendingAlert(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Req(req).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -245,7 +245,7 @@ func main() {
     newSchedule := *openapiclient.NewKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest() // KeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest | 
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.PendingAlertApi.PendingAlertEditSchedule(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).NewSchedule(newSchedule).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -313,7 +313,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.PendingAlertApi.PendingAlertGetPendingAlert(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -389,7 +389,7 @@ func main() {
     pagedQuerySortField := "pagedQuerySortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
     pagedQuerySortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.PendingAlertApi.PendingAlertGetPendingAlerts(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PagedQueryQueryString(pagedQueryQueryString).PagedQueryPageReturned(pagedQueryPageReturned).PagedQueryReturnLimit(pagedQueryReturnLimit).PagedQuerySortField(pagedQuerySortField).PagedQuerySortAscending(pagedQuerySortAscending).Execute()
     if err != nil {
@@ -426,7 +426,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -460,7 +460,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.PendingAlertApi.PendingAlertGetSchedule(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -527,7 +527,7 @@ func main() {
     req := *openapiclient.NewKeyfactorApiModelsAlertsPendingPendingAlertTestAllRequest() // KeyfactorApiModelsAlertsPendingPendingAlertTestAllRequest | Information for the pending alert
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.PendingAlertApi.PendingAlertTestAllPendingAlert(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Req(req).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -560,7 +560,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -595,7 +595,7 @@ func main() {
     req := *openapiclient.NewKeyfactorApiModelsAlertsPendingPendingAlertTestRequest() // KeyfactorApiModelsAlertsPendingPendingAlertTestRequest | Information for the pending alert
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.PendingAlertApi.PendingAlertTestPendingAlert(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Req(req).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -628,7 +628,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 

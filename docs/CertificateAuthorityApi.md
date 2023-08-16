@@ -37,7 +37,7 @@ func main() {
     ca := *openapiclient.NewModelsCertificateAuthoritiesCertificateAuthorityRequest() // ModelsCertificateAuthoritiesCertificateAuthorityRequest | 
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateAuthorityApi.CertificateAuthorityCreateCA(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Ca(ca).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -105,7 +105,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateAuthorityApi.CertificateAuthorityDeleteCA(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -175,7 +175,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateAuthorityApi.CertificateAuthorityGetCa(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -251,7 +251,7 @@ func main() {
     pqSortField := "pqSortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
     pqSortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateAuthorityApi.CertificateAuthorityGetCas(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PqQueryString(pqQueryString).PqPageReturned(pqPageReturned).PqReturnLimit(pqReturnLimit).PqSortField(pqSortField).PqSortAscending(pqSortAscending).Execute()
     if err != nil {
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -323,7 +323,7 @@ func main() {
     crlrequest := *openapiclient.NewModelsCRLRequestModel("CertificateAuthorityLogicalName_example") // ModelsCRLRequestModel | Host and logical name of the CA for which the CRL should be published
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateAuthorityApi.CertificateAuthorityPublishCRL(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Crlrequest(crlrequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -389,7 +389,7 @@ func main() {
     ca := *openapiclient.NewModelsCertificateAuthoritiesCertificateAuthorityRequest() // ModelsCertificateAuthoritiesCertificateAuthorityRequest | The CA being tested.
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateAuthorityApi.CertificateAuthorityTestCertificateAuthority(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Ca(ca).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -422,7 +422,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -457,7 +457,7 @@ func main() {
     ca := *openapiclient.NewModelsCertificateAuthoritiesCertificateAuthorityRequest() // ModelsCertificateAuthoritiesCertificateAuthorityRequest | 
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateAuthorityApi.CertificateAuthorityUpdateCA(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Ca(ca).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -490,7 +490,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 

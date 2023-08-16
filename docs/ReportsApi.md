@@ -45,7 +45,7 @@ func main() {
     request := *openapiclient.NewModelsCustomReportCreationRequest("CustomURL_example", "DisplayName_example", "Description_example") // ModelsCustomReportCreationRequest | Report Information
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.ReportsApi.ReportsCreateCustomReport(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -114,7 +114,7 @@ func main() {
     schedule := *openapiclient.NewModelsReportSchedule() // ModelsReportSchedule | Report Schedule
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.ReportsApi.ReportsCreateReportSchedule(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Schedule(schedule).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -187,7 +187,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.ReportsApi.ReportsDeleteReport(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -257,7 +257,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.ReportsApi.ReportsDeleteReportSchedule(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -327,7 +327,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.ReportsApi.ReportsGetCustomReport(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -399,7 +399,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.ReportsApi.ReportsGetReport(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -436,7 +436,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -471,7 +471,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.ReportsApi.ReportsGetReportParameters(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -508,7 +508,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -543,7 +543,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.ReportsApi.ReportsGetReportSchedule(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -580,7 +580,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -620,7 +620,7 @@ func main() {
     pqSortField := "pqSortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
     pqSortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.ReportsApi.ReportsGetReportSchedules(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PqQueryString(pqQueryString).PqPageReturned(pqPageReturned).PqReturnLimit(pqReturnLimit).PqSortField(pqSortField).PqSortAscending(pqSortAscending).Execute()
     if err != nil {
@@ -662,7 +662,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -701,7 +701,7 @@ func main() {
     querySortField := "querySortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
     querySortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.ReportsApi.ReportsQueryCustomReports(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).QueryQueryString(queryQueryString).QueryPageReturned(queryPageReturned).QueryReturnLimit(queryReturnLimit).QuerySortField(querySortField).QuerySortAscending(querySortAscending).Execute()
     if err != nil {
@@ -738,7 +738,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -777,7 +777,7 @@ func main() {
     querySortField := "querySortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
     querySortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.ReportsApi.ReportsQueryReports(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).QueryQueryString(queryQueryString).QueryPageReturned(queryPageReturned).QueryReturnLimit(queryReturnLimit).QuerySortField(querySortField).QuerySortAscending(querySortAscending).Execute()
     if err != nil {
@@ -814,7 +814,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -849,7 +849,7 @@ func main() {
     request := *openapiclient.NewModelsCustomReportUpdateRequest(int32(123)) // ModelsCustomReportUpdateRequest | Report Information
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.ReportsApi.ReportsUpdateCustomReport(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -882,7 +882,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -917,7 +917,7 @@ func main() {
     request := *openapiclient.NewModelsReportRequestModel() // ModelsReportRequestModel | This object is used to update the Favorite, In Navigator and the Remove Duplicates if the 'Uses Collections' is true.
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.ReportsApi.ReportsUpdateReport(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -950,7 +950,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -986,7 +986,7 @@ func main() {
     request := []openapiclient.ModelsReportParametersRequest{*openapiclient.NewModelsReportParametersRequest()} // []ModelsReportParametersRequest | A List of the parameters to be updated
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.ReportsApi.ReportsUpdateReportParameters(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -1024,7 +1024,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -1060,7 +1060,7 @@ func main() {
     schedule := *openapiclient.NewModelsReportSchedule() // ModelsReportSchedule | Report Schedule
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.ReportsApi.ReportsUpdateReportSchedule(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Schedule(schedule).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -1098,7 +1098,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 

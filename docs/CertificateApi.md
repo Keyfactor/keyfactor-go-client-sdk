@@ -51,7 +51,7 @@ func main() {
     request := *openapiclient.NewKeyfactorApiModelsCertificatesAnalyzeCertificateRequest() // KeyfactorApiModelsCertificatesAnalyzeCertificateRequest | The certificate to analyze
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateApi.CertificateAnalyzeCert(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -124,7 +124,7 @@ func main() {
     querySortField := "querySortField_example" // string | Field by which the results should be sorted (OperationStart, OperationEnd, UserName) (optional)
     querySortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateApi.CertificateCertificateHistory(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).QueryPageReturned(queryPageReturned).QueryReturnLimit(queryReturnLimit).QuerySortField(querySortField).QuerySortAscending(querySortAscending).Execute()
     if err != nil {
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -204,7 +204,7 @@ func main() {
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateApi.CertificateCompareMetadata(context.Background()).CertificateId(certificateId).MetadataFieldName(metadataFieldName).Value(value).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -278,7 +278,7 @@ func main() {
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateApi.CertificateDeleteByQuery(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Sq(sq).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -346,7 +346,7 @@ func main() {
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateApi.CertificateDeleteCertificate(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -420,7 +420,7 @@ func main() {
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateApi.CertificateDeleteCertificates(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Ids(ids).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -488,7 +488,7 @@ func main() {
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateApi.CertificateDeletePrivateKeys0(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Ids(ids).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -520,7 +520,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -556,7 +556,7 @@ func main() {
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateApi.CertificateDeletePrivateKeys1(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -592,7 +592,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -630,7 +630,7 @@ func main() {
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateApi.CertificateDownloadCertificateAsync(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Rq(rq).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -664,7 +664,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -703,7 +703,7 @@ func main() {
     verbose := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateApi.CertificateGetCertificate(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).CollectionId(collectionId).Verbose(verbose).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -744,7 +744,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -780,7 +780,7 @@ func main() {
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateApi.CertificateGetCertificateLocations(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -818,7 +818,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -854,7 +854,7 @@ func main() {
     collectionId := int32(56) // int32 | The Id of the collection the certificate belongs in. Defaults to no collection (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateApi.CertificateGetCertificateSecurity(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -892,7 +892,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -928,7 +928,7 @@ func main() {
     collectionId := int32(56) // int32 | An optional parameter for the collectin Id the certificate is in.  Defaults to no collection (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateApi.CertificateIdentityAudit(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -966,7 +966,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -1001,7 +1001,7 @@ func main() {
     req := *openapiclient.NewModelsCertificateImportRequestModel("Certificate_example") // ModelsCertificateImportRequestModel | Request containing the base 64 encoded string and related certificate information, such as certificate stores, metadata, and password
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateApi.CertificatePostImportCertificate(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Req(req).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -1034,7 +1034,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -1080,7 +1080,7 @@ func main() {
     pqIncludeRevoked := true // bool | Select 'true' to include revoked certificates in the results (optional)
     pqIncludeExpired := true // bool | Select 'true' to include expired certificates in the results (optional)
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateApi.CertificateQueryCertificates(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).IncludeHasPrivateKey(includeHasPrivateKey).Verbose(verbose).XKeyfactorApiVersion(xKeyfactorApiVersion).PqQueryString(pqQueryString).PqPageReturned(pqPageReturned).PqReturnLimit(pqReturnLimit).PqSortField(pqSortField).PqSortAscending(pqSortAscending).PqIncludeRevoked(pqIncludeRevoked).PqIncludeExpired(pqIncludeExpired).Execute()
     if err != nil {
@@ -1124,7 +1124,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -1163,7 +1163,7 @@ func main() {
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateApi.CertificateRecoverCertificateAsync(context.Background()).XCertificateformat(xCertificateformat).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Rq(rq).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -1198,7 +1198,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -1235,7 +1235,7 @@ func main() {
     request := *openapiclient.NewModelsRevokeCertificateRequest() // ModelsRevokeCertificateRequest | Contains the Keyfactor certificate identifiers and revocation data
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateApi.CertificateRevoke(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -1268,7 +1268,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -1306,7 +1306,7 @@ func main() {
     collectionId := int32(56) // int32 | A collection Id to be used for permissions and part of the query to revoke certificates (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateApi.CertificateRevokeAll(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -1340,7 +1340,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -1376,7 +1376,7 @@ func main() {
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateApi.CertificateUpdateAllMetadata(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).MetadataUpdate(metadataUpdate).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -1408,7 +1408,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -1444,7 +1444,7 @@ func main() {
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateApi.CertificateUpdateMetadata(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).MetadataUpdate(metadataUpdate).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -1476,7 +1476,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -1512,7 +1512,7 @@ func main() {
     collectionId := int32(56) // int32 | An optional parameter for the collectin Id the certificate is in.  Defaults to no collection (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateApi.CertificateValidateCertificate(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -1550,7 +1550,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 

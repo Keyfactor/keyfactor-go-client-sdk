@@ -25,5 +25,5 @@ _testmain.go
 
 .idea
 .openapi-generator
-Keyfactor-v10-patched.swagger.yaml
-Makefile
+.DS_Store
+*.yaml

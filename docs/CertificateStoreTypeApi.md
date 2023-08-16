@@ -37,7 +37,7 @@ func main() {
     certStoreType := *openapiclient.NewKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeCreationRequest("Name_example", "ShortName_example") // KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeCreationRequest | Certificate store type properties for the new type
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeCreateCertificateStoreType(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CertStoreType(certStoreType).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -107,7 +107,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeDeleteCertificateStoreType(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -179,7 +179,7 @@ func main() {
     ids := []int32{int32(123)} // []int32 | Array of Keyfactor identifiers of the certificate store types to be deleted
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeDeleteCertificateStoreTypes(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Ids(ids).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -245,7 +245,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeGetCertificateStoreType0(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -317,7 +317,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeGetCertificateStoreType1(context.Background(), name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -393,7 +393,7 @@ func main() {
     cstquerySortField := "cstquerySortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
     cstquerySortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeGetTypes(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CstqueryQueryString(cstqueryQueryString).CstqueryPageReturned(cstqueryPageReturned).CstqueryReturnLimit(cstqueryReturnLimit).CstquerySortField(cstquerySortField).CstquerySortAscending(cstquerySortAscending).Execute()
     if err != nil {
@@ -430,7 +430,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -465,7 +465,7 @@ func main() {
     certStoreType := *openapiclient.NewKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest(int32(123), "Name_example", "ShortName_example") // KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest | Certificate store type properties to be updated
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeUpdateCertificateStoreType(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CertStoreType(certStoreType).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -498,7 +498,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
