@@ -20,6 +20,7 @@ API version: v1
 package keyfactor
 
 import (
+    "crypto/x509"
 	"fmt"
 	"net/http"
 	"os"
@@ -53,12 +54,10 @@ var (
 	ContextOperationServerVariables = contextKey("serverOperationVariables")
 
 	envCommandHostname = "KEYFACTOR_HOSTNAME"
-
+	
 	EnvCommandUsername = "KEYFACTOR_USERNAME"
 
 	EnvCommandPassword = "KEYFACTOR_PASSWORD"
-
-	EnvCommandDomain = "KEYFACTOR_DOMAIN"
 )
 
 // BasicAuth provides basic http authentication to a request passed via context using ContextBasicAuth
@@ -82,12 +81,14 @@ type ServerVariable struct {
 
 // Configuration stores the configuration of the API client
 type Configuration struct {
-	Host          string            `json:"host,omitempty"`
-	BasicAuth     BasicAuth         `json:"basicAuth,omitempty"`
-	DefaultHeader map[string]string `json:"defaultHeader,omitempty"`
-	UserAgent     string            `json:"userAgent,omitempty"`
-	Debug         bool              `json:"debug,omitempty"`
-	HTTPClient    *http.Client
+	Host              string            `json:"host,omitempty"`
+	BasicAuth         BasicAuth		    `json:"basicAuth,omitempty"`
+	DefaultHeader     map[string]string `json:"defaultHeader,omitempty"`
+	UserAgent         string            `json:"userAgent,omitempty"`
+	Debug             bool              `json:"debug,omitempty"`
+	CaCertificatePath string            `json:"caCertificatePath,omitempty"`
+	HTTPClient        *http.Client
+	caCertificates    []*x509.Certificate
 }
 
 // NewConfiguration returns a new Configuration object
@@ -105,6 +106,7 @@ func NewConfiguration(config map[string]string) *Configuration {
 	confUser := config["username"]
 	confPass := config["password"]
 	confDomain := config["domain"]
+	confCaPath := config["caCertificatePath"]
 
 	// Get hostname from environment variable
 	if confHost == "" {
@@ -118,6 +120,7 @@ func NewConfiguration(config map[string]string) *Configuration {
 			cfg.Host = hostnameCleaned
 		} else {
 			fmt.Errorf("%s is not a valid URL: %s", hostname, err)
+			return nil
 		}
 	}
 
@@ -141,10 +144,23 @@ func NewConfiguration(config map[string]string) *Configuration {
 		cfg.BasicAuth.Password = confPass
 	}
 
+	// Get caCertificatePath from environment variable
+	if confCaPath == "" {
+        cfg.CaCertificatePath = os.Getenv("KEYFACTOR_CA_CERTIFICATE_PATH")
+    } else {
+        cfg.CaCertificatePath = confCaPath
+    }
+
 	return cfg
 }
 
 // AddDefaultHeader adds a new HTTP header to the default header in the request
 func (c *Configuration) AddDefaultHeader(key string, value string) {
 	c.DefaultHeader[key] = value
+}
+
+func (c *Configuration) SetCaCertificates(caCertificates []*x509.Certificate) {
+	if caCertificates != nil {
+		c.caCertificates = caCertificates
+	}
 }

@@ -22,7 +22,10 @@ package keyfactor
 import (
 	"bytes"
 	"context"
+	"crypto/tls"
+	"crypto/x509"
 	"encoding/json"
+	"encoding/pem"
 	"encoding/xml"
 	"errors"
 	"fmt"
@@ -149,9 +152,14 @@ type service struct {
 // NewAPIClient creates a new API client. Requires a userAgent string describing your application.
 // optionally a custom http.Client to allow for advanced features such as caching.
 func NewAPIClient(cfg *Configuration) *APIClient {
+    var err error
+
 	if cfg.HTTPClient == nil {
-		cfg.HTTPClient = http.DefaultClient
-	}
+        if cfg.HTTPClient, err = buildHttpClient(cfg); err != nil {
+            debugMessage(cfg.Debug, "Failed to build HTTP client: %s", err.Error())
+            return nil
+        }
+    }
 
 	c := &APIClient{}
 	c.cfg = cfg
@@ -203,6 +211,48 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	return c
 }
 
+func buildHttpClient(config *Configuration) (*http.Client, error) {
+	// Configure new TLS object
+	tlsConfig := &tls.Config{
+		Renegotiation: tls.RenegotiateOnceAsClient,
+	}
+
+	// Load the CA certificate
+	caChain, err := findCaCertificate(config)
+	if err != nil {
+		return nil, err
+	}
+
+	// Add the CA certificate to the TLS config, if any CA certificate were found
+	if len(caChain) > 0 {
+		tlsConfig.RootCAs = x509.NewCertPool()
+		for _, caCert := range caChain {
+			tlsConfig.RootCAs.AddCert(caCert)
+		}
+
+		// Add the pool to the TLS config
+		tlsConfig.ClientCAs = tlsConfig.RootCAs
+	}
+
+	// Configure HTTP transports with TLS config
+	customTransport := http.DefaultTransport.(*http.Transport).Clone()
+	customTransport.TLSClientConfig = tlsConfig
+	customTransport.TLSHandshakeTimeout = 10 * time.Second
+
+	// Build new HTTP object to communicate with EJBCA
+	customHttpClient := http.DefaultClient
+	customHttpClient.Transport = customTransport
+	customHttpClient.Timeout = 10 * time.Second
+
+	return customHttpClient, nil
+}
+
+func debugMessage(isDebug bool, message string, args ...interface{}) {
+	if isDebug {
+		log.Printf(message+"\n", args...)
+	}
+}
+
 func cleanHostname(hostname string) (string, error) {
 	if hostname == "" {
 		return "", errors.New("KEYFACTOR_HOSTNAME cannot be empty")
@@ -219,6 +269,64 @@ func cleanHostname(hostname string) (string, error) {
 		fmt.Errorf("%s is not a valid URL: %s", envCommandHostname, err)
 		return "", err
 	}
+}
+
+func findCaCertificate(config *Configuration) ([]*x509.Certificate, error) {
+	// Load CA certificate
+	if config.caCertificates != nil {
+		return config.caCertificates, nil
+	}
+
+	// If no CA certificate path is specified, return nil since the default CA certificates will be used
+	if config.CaCertificatePath == "" {
+		return nil, nil
+	}
+
+	// Read and parse the passed certificate file which should contain the CA certificate and chain
+	debugMessage(config.Debug, "Reading CA certificate from %s", config.CaCertificatePath)
+	buf, err := ioutil.ReadFile(config.CaCertificatePath)
+	if err != nil {
+		return nil, err
+	}
+	// Decode the PEM encoded certificates into a slice of PEM blocks
+	chainBlocks, _, err := decodePEMBytes(buf, config.Debug)
+	if err != nil {
+		return nil, err
+	}
+	if len(chainBlocks) <= 0 {
+		return nil, fmt.Errorf("didn't find certificate in file at path %s", config.CaCertificatePath)
+	}
+
+	caChain := []*x509.Certificate{}
+	for _, block := range chainBlocks {
+		// Parse the PEM block into an x509 certificate
+		cert, err := x509.ParseCertificate(block.Bytes)
+		if err != nil {
+			return nil, err
+		}
+
+		caChain = append(caChain, cert)
+	}
+
+	return caChain, nil
+}
+
+func decodePEMBytes(buf []byte, isDebug bool) ([]*pem.Block, []byte, error) {
+	var privKey []byte
+	var certificates []*pem.Block
+	var block *pem.Block
+	for {
+		block, buf = pem.Decode(buf)
+		if block == nil {
+			break
+		} else if strings.Contains(block.Type, "PRIVATE KEY") {
+			privKey = pem.EncodeToMemory(block)
+		} else {
+			certificates = append(certificates, block)
+		}
+		debugMessage(isDebug, "Found PEM block of type %s", block.Type)
+	}
+	return certificates, privKey, nil
 }
 
 func atoi(in string) (int, error) {

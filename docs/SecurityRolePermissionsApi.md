@@ -43,7 +43,7 @@ func main() {
     collectionPermissions := []openapiclient.KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest{*openapiclient.NewKeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest()} // []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest | Collections permissions
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.SecurityRolePermissionsApi.SecurityRolePermissionsAddCollectionPermissions(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionPermissions(collectionPermissions).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -119,7 +119,7 @@ func main() {
     containerPermissions := []openapiclient.KeyfactorApiModelsSecurityRolesContainerPermissionRequest{*openapiclient.NewKeyfactorApiModelsSecurityRolesContainerPermissionRequest()} // []KeyfactorApiModelsSecurityRolesContainerPermissionRequest | Container permissions
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.SecurityRolePermissionsApi.SecurityRolePermissionsAddContainerPermissions(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ContainerPermissions(containerPermissions).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -195,7 +195,7 @@ func main() {
     globalPermissions := []openapiclient.KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionRequest{*openapiclient.NewKeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionRequest()} // []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionRequest | Global permissions
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.SecurityRolePermissionsApi.SecurityRolePermissionsAddGlobalPermissions(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).GlobalPermissions(globalPermissions).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -268,7 +268,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.SecurityRolePermissionsApi.SecurityRolePermissionsGetCollectionPermissionsForRole(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -340,7 +340,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.SecurityRolePermissionsApi.SecurityRolePermissionsGetContainerPermissionsForRole(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -412,7 +412,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.SecurityRolePermissionsApi.SecurityRolePermissionsGetGlobalPermissionsForRole(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -449,7 +449,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -484,7 +484,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.SecurityRolePermissionsApi.SecurityRolePermissionsGetPermissionsForRole(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -521,7 +521,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -559,7 +559,7 @@ func main() {
     collectionPermissions := []openapiclient.KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest{*openapiclient.NewKeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest()} // []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest | Collections permissions
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.SecurityRolePermissionsApi.SecurityRolePermissionsSetCollectionPermissions(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionPermissions(collectionPermissions).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -597,7 +597,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -635,7 +635,7 @@ func main() {
     containerPermissions := []openapiclient.KeyfactorApiModelsSecurityRolesContainerPermissionRequest{*openapiclient.NewKeyfactorApiModelsSecurityRolesContainerPermissionRequest()} // []KeyfactorApiModelsSecurityRolesContainerPermissionRequest | Container permissions
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.SecurityRolePermissionsApi.SecurityRolePermissionsSetContainerPermissions(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ContainerPermissions(containerPermissions).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -673,7 +673,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -711,7 +711,7 @@ func main() {
     globalPermissions := []openapiclient.KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionRequest{*openapiclient.NewKeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionRequest()} // []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionRequest | Global permissions
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.SecurityRolePermissionsApi.SecurityRolePermissionsSetGlobalPermissions(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).GlobalPermissions(globalPermissions).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -749,7 +749,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 

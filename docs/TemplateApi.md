@@ -36,7 +36,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.TemplateApi.TemplateGetGlobalSettings(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -103,7 +103,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.TemplateApi.TemplateGetTemplate(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -179,7 +179,7 @@ func main() {
     sqSortField := "sqSortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
     sqSortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.TemplateApi.TemplateGetTemplates(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SqQueryString(sqQueryString).SqPageReturned(sqPageReturned).SqReturnLimit(sqReturnLimit).SqSortField(sqSortField).SqSortAscending(sqSortAscending).Execute()
     if err != nil {
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -250,7 +250,7 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.TemplateApi.TemplateGetValidSubjectParts(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -317,7 +317,7 @@ func main() {
     configurationTenantRequest := *openapiclient.NewKeyfactorApiModelsConfigurationTenantConfigurationTenantRequest() // KeyfactorApiModelsConfigurationTenantConfigurationTenantRequest | Configuration tenant to import from
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.TemplateApi.TemplateImport(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ConfigurationTenantRequest(configurationTenantRequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -383,7 +383,7 @@ func main() {
     settings := *openapiclient.NewKeyfactorApiModelsTemplatesGlobalTemplateSettingsRequest([]openapiclient.KeyfactorApiModelsTemplatesGlobalTemplateRegexRequest{*openapiclient.NewKeyfactorApiModelsTemplatesGlobalTemplateRegexRequest("SubjectPart_example")}, []openapiclient.KeyfactorApiModelsTemplatesGlobalTemplateDefaultRequest{*openapiclient.NewKeyfactorApiModelsTemplatesGlobalTemplateDefaultRequest("SubjectPart_example")}, *openapiclient.NewKeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest([]int32{int32(123)}, []string{"ECCValidCurves_example"}, false, false, false)) // KeyfactorApiModelsTemplatesGlobalTemplateSettingsRequest | The new global template settings.
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.TemplateApi.TemplateUpdateGlobalSettings(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Settings(settings).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -416,7 +416,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 
@@ -451,7 +451,7 @@ func main() {
     template := *openapiclient.NewModelsTemplateUpdateRequest() // ModelsTemplateUpdateRequest | Properties of the certificate template to be updated
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
-    configuration := openapiclient.NewConfiguration()
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
     resp, r, err := apiClient.TemplateApi.TemplateUpdateTemplate(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Template(template).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
@@ -484,7 +484,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#Configuration)
 
 ### HTTP request headers
 

@@ -22,6 +22,18 @@ func Test_keyfactor_PAMProviderApiService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
+	t.Run("Test PAMProviderApiService PAMProviderCreatePamProvider", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.PAMProviderApi.PAMProviderCreatePamProvider(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test PAMProviderApiService PAMProviderCreatePamProviderType", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -43,6 +55,56 @@ func Test_keyfactor_PAMProviderApiService(t *testing.T) {
 		httpRes, err := apiClient.PAMProviderApi.PAMProviderDeletePamProvider(context.Background(), id).Execute()
 
 		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test PAMProviderApiService PAMProviderGetPamProvider", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id int32
+
+		resp, httpRes, err := apiClient.PAMProviderApi.PAMProviderGetPamProvider(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test PAMProviderApiService PAMProviderGetPamProviderTypes", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.PAMProviderApi.PAMProviderGetPamProviderTypes(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test PAMProviderApiService PAMProviderGetPamProviders", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.PAMProviderApi.PAMProviderGetPamProviders(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test PAMProviderApiService PAMProviderUpdatePamProvider", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.PAMProviderApi.PAMProviderUpdatePamProvider(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
