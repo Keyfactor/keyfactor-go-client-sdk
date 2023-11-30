@@ -28,12 +28,12 @@ var _ MappedNullable = &ModelsCustomReport{}
 
 // ModelsCustomReport The CustomReport can be used to create and update a custom report.
 type ModelsCustomReport struct {
-	CustomURL *string `json:"CustomURL,omitempty"`
-	Id *int32 `json:"Id,omitempty"`
-	DisplayName *string `json:"DisplayName,omitempty"`
-	Description *string `json:"Description,omitempty"`
-	InNavigator *bool `json:"InNavigator,omitempty"`
-	Favorite *bool `json:"Favorite,omitempty"`
+	CustomURL            *string `json:"CustomURL,omitempty"`
+	Id                   *int32  `json:"Id,omitempty"`
+	DisplayName          *string `json:"DisplayName,omitempty"`
+	Description          *string `json:"Description,omitempty"`
+	InNavigator          *bool   `json:"InNavigator,omitempty"`
+	Favorite             *bool   `json:"Favorite,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -249,7 +249,7 @@ func (o *ModelsCustomReport) SetFavorite(v bool) {
 }
 
 func (o ModelsCustomReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -341,5 +341,3 @@ func (v *NullableModelsCustomReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

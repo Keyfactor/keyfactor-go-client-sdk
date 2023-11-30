@@ -28,14 +28,14 @@ var _ MappedNullable = &ModelsCertificateStoreEntry{}
 
 // ModelsCertificateStoreEntry struct for ModelsCertificateStoreEntry
 type ModelsCertificateStoreEntry struct {
-	CertificateStoreId string `json:"CertificateStoreId"`
-	Alias *string `json:"Alias,omitempty"`
-	JobFields map[string]map[string]interface{} `json:"JobFields,omitempty"`
-	Overwrite *bool `json:"Overwrite,omitempty"`
-	EntryPassword *ModelsKeyfactorAPISecret `json:"EntryPassword,omitempty"`
+	CertificateStoreId string                            `json:"CertificateStoreId"`
+	Alias              *string                           `json:"Alias,omitempty"`
+	JobFields          map[string]map[string]interface{} `json:"JobFields,omitempty"`
+	Overwrite          *bool                             `json:"Overwrite,omitempty"`
+	EntryPassword      *ModelsKeyfactorAPISecret         `json:"EntryPassword,omitempty"`
 	// The PFX password.
-	PfxPassword *string `json:"PfxPassword,omitempty"`
-	IncludePrivateKey *bool `json:"IncludePrivateKey,omitempty"`
+	PfxPassword          *string `json:"PfxPassword,omitempty"`
+	IncludePrivateKey    *bool   `json:"IncludePrivateKey,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -276,7 +276,7 @@ func (o *ModelsCertificateStoreEntry) SetIncludePrivateKey(v bool) {
 }
 
 func (o ModelsCertificateStoreEntry) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -370,5 +370,3 @@ func (v *NullableModelsCertificateStoreEntry) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

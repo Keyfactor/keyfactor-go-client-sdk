@@ -27,16 +27,15 @@ import (
 	"net/url"
 )
 
-
 // MacEnrollmentApiService MacEnrollmentApi service
 type MacEnrollmentApiService service
 
 type ApiMacEnrollmentEditMacEnrollmentRequest struct {
-	ctx context.Context
-	ApiService *MacEnrollmentApiService
+	ctx                     context.Context
+	ApiService              *MacEnrollmentApiService
 	xKeyfactorRequestedWith *string
-	macEnrollmentSettings *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel
-	xKeyfactorApiVersion *string
+	macEnrollmentSettings   *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -63,28 +62,29 @@ func (r ApiMacEnrollmentEditMacEnrollmentRequest) Execute() (*KeyfactorApiModels
 /*
 MacEnrollmentEditMacEnrollment Updates mac enrollment settings data
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMacEnrollmentEditMacEnrollmentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiMacEnrollmentEditMacEnrollmentRequest
 */
 func (a *MacEnrollmentApiService) MacEnrollmentEditMacEnrollment(ctx context.Context) ApiMacEnrollmentEditMacEnrollmentRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiMacEnrollmentEditMacEnrollmentRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel
+//
+//	@return KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel
 func (a *MacEnrollmentApiService) MacEnrollmentEditMacEnrollmentExecute(r ApiMacEnrollmentEditMacEnrollmentRequest) (*KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -94,12 +94,12 @@ func (a *MacEnrollmentApiService) MacEnrollmentEditMacEnrollmentExecute(r ApiMac
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.macEnrollmentSettings == nil {
-        return localVarReturnValue, nil, reportError("macEnrollmentSettings is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.macEnrollmentSettings == nil {
+		return localVarReturnValue, nil, reportError("macEnrollmentSettings is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -162,10 +162,10 @@ func (a *MacEnrollmentApiService) MacEnrollmentEditMacEnrollmentExecute(r ApiMac
 }
 
 type ApiMacEnrollmentMacEnrollmentRequest struct {
-	ctx context.Context
-	ApiService *MacEnrollmentApiService
+	ctx                     context.Context
+	ApiService              *MacEnrollmentApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -187,28 +187,29 @@ func (r ApiMacEnrollmentMacEnrollmentRequest) Execute() (*KeyfactorApiModelsMacE
 /*
 MacEnrollmentMacEnrollment Gets mac enrollment settings data
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMacEnrollmentMacEnrollmentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiMacEnrollmentMacEnrollmentRequest
 */
 func (a *MacEnrollmentApiService) MacEnrollmentMacEnrollment(ctx context.Context) ApiMacEnrollmentMacEnrollmentRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiMacEnrollmentMacEnrollmentRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel
+//
+//	@return KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel
 func (a *MacEnrollmentApiService) MacEnrollmentMacEnrollmentExecute(r ApiMacEnrollmentMacEnrollmentRequest) (*KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -218,9 +219,9 @@ func (a *MacEnrollmentApiService) MacEnrollmentMacEnrollmentExecute(r ApiMacEnro
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

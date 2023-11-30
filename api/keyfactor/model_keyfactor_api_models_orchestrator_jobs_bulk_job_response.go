@@ -29,13 +29,13 @@ var _ MappedNullable = &KeyfactorApiModelsOrchestratorJobsBulkJobResponse{}
 
 // KeyfactorApiModelsOrchestratorJobsBulkJobResponse struct for KeyfactorApiModelsOrchestratorJobsBulkJobResponse
 type KeyfactorApiModelsOrchestratorJobsBulkJobResponse struct {
-	OrchestratorJobPairs []ModelsOrchestratorJobsBulkOrchestratorJobPair `json:"OrchestratorJobPairs,omitempty"`
-	FailedOrchestratorIds []string `json:"FailedOrchestratorIds,omitempty"`
-	JobTypeName *string `json:"JobTypeName,omitempty"`
-	Schedule *KeyfactorCommonSchedulingKeyfactorSchedule `json:"Schedule,omitempty"`
-	JobFields []KeyfactorApiModelsOrchestratorJobsJobFieldResponse `json:"JobFields,omitempty"`
-	RequestTimestamp *time.Time `json:"RequestTimestamp,omitempty"`
-	AdditionalProperties map[string]interface{}
+	OrchestratorJobPairs  []ModelsOrchestratorJobsBulkOrchestratorJobPair      `json:"OrchestratorJobPairs,omitempty"`
+	FailedOrchestratorIds []string                                             `json:"FailedOrchestratorIds,omitempty"`
+	JobTypeName           *string                                              `json:"JobTypeName,omitempty"`
+	Schedule              *KeyfactorCommonSchedulingKeyfactorSchedule          `json:"Schedule,omitempty"`
+	JobFields             []KeyfactorApiModelsOrchestratorJobsJobFieldResponse `json:"JobFields,omitempty"`
+	RequestTimestamp      *time.Time                                           `json:"RequestTimestamp,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _KeyfactorApiModelsOrchestratorJobsBulkJobResponse KeyfactorApiModelsOrchestratorJobsBulkJobResponse
@@ -250,7 +250,7 @@ func (o *KeyfactorApiModelsOrchestratorJobsBulkJobResponse) SetRequestTimestamp(
 }
 
 func (o KeyfactorApiModelsOrchestratorJobsBulkJobResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -342,5 +342,3 @@ func (v *NullableKeyfactorApiModelsOrchestratorJobsBulkJobResponse) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

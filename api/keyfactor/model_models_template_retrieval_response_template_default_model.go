@@ -28,8 +28,8 @@ var _ MappedNullable = &ModelsTemplateRetrievalResponseTemplateDefaultModel{}
 
 // ModelsTemplateRetrievalResponseTemplateDefaultModel struct for ModelsTemplateRetrievalResponseTemplateDefaultModel
 type ModelsTemplateRetrievalResponseTemplateDefaultModel struct {
-	SubjectPart *string `json:"SubjectPart,omitempty"`
-	Value *string `json:"Value,omitempty"`
+	SubjectPart          *string `json:"SubjectPart,omitempty"`
+	Value                *string `json:"Value,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -117,7 +117,7 @@ func (o *ModelsTemplateRetrievalResponseTemplateDefaultModel) SetValue(v string)
 }
 
 func (o ModelsTemplateRetrievalResponseTemplateDefaultModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,5 +193,3 @@ func (v *NullableModelsTemplateRetrievalResponseTemplateDefaultModel) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -28,12 +28,12 @@ var _ MappedNullable = &ModelsReenrollmentStatus{}
 
 // ModelsReenrollmentStatus struct for ModelsReenrollmentStatus
 type ModelsReenrollmentStatus struct {
-	Data *bool `json:"Data,omitempty"`
-	AgentId *string `json:"AgentId,omitempty"`
-	Message *string `json:"Message,omitempty"`
-	JobProperties *string `json:"JobProperties,omitempty"`
-	CustomAliasAllowed *int32 `json:"CustomAliasAllowed,omitempty"`
-	EntryParameters []ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter `json:"EntryParameters,omitempty"`
+	Data                 *bool                                                           `json:"Data,omitempty"`
+	AgentId              *string                                                         `json:"AgentId,omitempty"`
+	Message              *string                                                         `json:"Message,omitempty"`
+	JobProperties        *string                                                         `json:"JobProperties,omitempty"`
+	CustomAliasAllowed   *int32                                                          `json:"CustomAliasAllowed,omitempty"`
+	EntryParameters      []ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter `json:"EntryParameters,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -249,7 +249,7 @@ func (o *ModelsReenrollmentStatus) SetEntryParameters(v []ModelsCertificateStore
 }
 
 func (o ModelsReenrollmentStatus) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -341,5 +341,3 @@ func (v *NullableModelsReenrollmentStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

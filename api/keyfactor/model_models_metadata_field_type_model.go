@@ -28,17 +28,17 @@ var _ MappedNullable = &ModelsMetadataFieldTypeModel{}
 
 // ModelsMetadataFieldTypeModel struct for ModelsMetadataFieldTypeModel
 type ModelsMetadataFieldTypeModel struct {
-	Id *int32 `json:"Id,omitempty"`
-	Name *string `json:"Name,omitempty"`
-	Description *string `json:"Description,omitempty"`
-	DataType *int32 `json:"DataType,omitempty"`
-	Hint *string `json:"Hint,omitempty"`
-	Validation *string `json:"Validation,omitempty"`
-	Enrollment *int32 `json:"Enrollment,omitempty"`
-	Message *string `json:"Message,omitempty"`
-	Options *string `json:"Options,omitempty"`
-	DefaultValue *string `json:"DefaultValue,omitempty"`
-	DisplayOrder *int32 `json:"DisplayOrder,omitempty"`
+	Id                   *int32  `json:"Id,omitempty"`
+	Name                 *string `json:"Name,omitempty"`
+	Description          *string `json:"Description,omitempty"`
+	DataType             *int32  `json:"DataType,omitempty"`
+	Hint                 *string `json:"Hint,omitempty"`
+	Validation           *string `json:"Validation,omitempty"`
+	Enrollment           *int32  `json:"Enrollment,omitempty"`
+	Message              *string `json:"Message,omitempty"`
+	Options              *string `json:"Options,omitempty"`
+	DefaultValue         *string `json:"DefaultValue,omitempty"`
+	DisplayOrder         *int32  `json:"DisplayOrder,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -414,7 +414,7 @@ func (o *ModelsMetadataFieldTypeModel) SetDisplayOrder(v int32) {
 }
 
 func (o ModelsMetadataFieldTypeModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -526,5 +526,3 @@ func (v *NullableModelsMetadataFieldTypeModel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

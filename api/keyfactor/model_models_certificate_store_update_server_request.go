@@ -28,12 +28,12 @@ var _ MappedNullable = &ModelsCertificateStoreUpdateServerRequest{}
 
 // ModelsCertificateStoreUpdateServerRequest struct for ModelsCertificateStoreUpdateServerRequest
 type ModelsCertificateStoreUpdateServerRequest struct {
-	Id int32 `json:"Id"`
-	Username ModelsKeyfactorAPISecret `json:"Username"`
-	Password ModelsKeyfactorAPISecret `json:"Password"`
-	UseSSL bool `json:"UseSSL"`
-	Name string `json:"Name"`
-	Container *int32 `json:"Container,omitempty"`
+	Id                   int32                    `json:"Id"`
+	Username             ModelsKeyfactorAPISecret `json:"Username"`
+	Password             ModelsKeyfactorAPISecret `json:"Password"`
+	UseSSL               bool                     `json:"UseSSL"`
+	Name                 string                   `json:"Name"`
+	Container            *int32                   `json:"Container,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -214,7 +214,7 @@ func (o *ModelsCertificateStoreUpdateServerRequest) SetContainer(v int32) {
 }
 
 func (o ModelsCertificateStoreUpdateServerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -296,5 +296,3 @@ func (v *NullableModelsCertificateStoreUpdateServerRequest) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

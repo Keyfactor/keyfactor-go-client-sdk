@@ -28,12 +28,12 @@ var _ MappedNullable = &ModelsCertificateRetrievalResponseCertificateStoreInvent
 
 // ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel struct for ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel
 type ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel struct {
-	StoreMachine *string `json:"StoreMachine,omitempty"`
-	StorePath *string `json:"StorePath,omitempty"`
-	StoreType *int32 `json:"StoreType,omitempty"`
-	Alias *string `json:"Alias,omitempty"`
-	ChainLevel *int32 `json:"ChainLevel,omitempty"`
-	CertStoreId *string `json:"CertStoreId,omitempty"`
+	StoreMachine         *string `json:"StoreMachine,omitempty"`
+	StorePath            *string `json:"StorePath,omitempty"`
+	StoreType            *int32  `json:"StoreType,omitempty"`
+	Alias                *string `json:"Alias,omitempty"`
+	ChainLevel           *int32  `json:"ChainLevel,omitempty"`
+	CertStoreId          *string `json:"CertStoreId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -249,7 +249,7 @@ func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) S
 }
 
 func (o ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -341,5 +341,3 @@ func (v *NullableModelsCertificateRetrievalResponseCertificateStoreInventoryItem
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

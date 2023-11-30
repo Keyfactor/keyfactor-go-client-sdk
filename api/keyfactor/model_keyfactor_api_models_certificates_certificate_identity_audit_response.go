@@ -37,7 +37,7 @@ type KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse struct {
 	// The SID of the account represented by the audit reponse
 	SID *string `json:"SID,omitempty"`
 	// Permissions granted to the account represented by the audit reponse on the specified certifcate
-	Permissions []KeyfactorApiModelsCertificatesCertificateIdentityAuditResponseCertificatePermission `json:"Permissions,omitempty"`
+	Permissions          []KeyfactorApiModelsCertificatesCertificateIdentityAuditResponseCertificatePermission `json:"Permissions,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -221,7 +221,7 @@ func (o *KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse) SetPerm
 }
 
 func (o KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -307,5 +307,3 @@ func (v *NullableKeyfactorApiModelsCertificatesCertificateIdentityAuditResponse)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

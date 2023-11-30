@@ -31,7 +31,7 @@ type KeyfactorApiModelsTemplatesGlobalTemplateDefaultResponse struct {
 	// The subject part to apply the default to.
 	SubjectPart *string `json:"SubjectPart,omitempty"`
 	// The value to apply by default.
-	Value *string `json:"Value,omitempty"`
+	Value                *string `json:"Value,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -119,7 +119,7 @@ func (o *KeyfactorApiModelsTemplatesGlobalTemplateDefaultResponse) SetValue(v st
 }
 
 func (o KeyfactorApiModelsTemplatesGlobalTemplateDefaultResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -195,5 +195,3 @@ func (v *NullableKeyfactorApiModelsTemplatesGlobalTemplateDefaultResponse) Unmar
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

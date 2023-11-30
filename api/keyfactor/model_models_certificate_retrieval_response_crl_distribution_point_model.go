@@ -28,9 +28,9 @@ var _ MappedNullable = &ModelsCertificateRetrievalResponseCRLDistributionPointMo
 
 // ModelsCertificateRetrievalResponseCRLDistributionPointModel struct for ModelsCertificateRetrievalResponseCRLDistributionPointModel
 type ModelsCertificateRetrievalResponseCRLDistributionPointModel struct {
-	Id *int32 `json:"Id,omitempty"`
-	Url *string `json:"Url,omitempty"`
-	UrlHash *string `json:"UrlHash,omitempty"`
+	Id                   *int32  `json:"Id,omitempty"`
+	Url                  *string `json:"Url,omitempty"`
+	UrlHash              *string `json:"UrlHash,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -150,7 +150,7 @@ func (o *ModelsCertificateRetrievalResponseCRLDistributionPointModel) SetUrlHash
 }
 
 func (o ModelsCertificateRetrievalResponseCRLDistributionPointModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,5 +230,3 @@ func (v *NullableModelsCertificateRetrievalResponseCRLDistributionPointModel) Un
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

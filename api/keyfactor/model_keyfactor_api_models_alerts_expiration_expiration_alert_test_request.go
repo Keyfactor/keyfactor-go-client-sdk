@@ -29,11 +29,11 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsExpirationExpirationAlertTestReq
 
 // KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest struct for KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest
 type KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest struct {
-	AlertId *int32 `json:"AlertId,omitempty"`
-	EvaluationDate *time.Time `json:"EvaluationDate,omitempty"`
+	AlertId                *int32     `json:"AlertId,omitempty"`
+	EvaluationDate         *time.Time `json:"EvaluationDate,omitempty"`
 	PreviousEvaluationDate *time.Time `json:"PreviousEvaluationDate,omitempty"`
-	SendAlerts *bool `json:"SendAlerts,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SendAlerts             *bool      `json:"SendAlerts,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest
@@ -184,7 +184,7 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest) SetSendAl
 }
 
 func (o KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -268,5 +268,3 @@ func (v *NullableKeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest) U
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

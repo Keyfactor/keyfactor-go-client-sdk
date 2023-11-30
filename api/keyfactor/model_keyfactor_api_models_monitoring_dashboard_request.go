@@ -28,8 +28,8 @@ var _ MappedNullable = &KeyfactorApiModelsMonitoringDashboardRequest{}
 
 // KeyfactorApiModelsMonitoringDashboardRequest struct for KeyfactorApiModelsMonitoringDashboardRequest
 type KeyfactorApiModelsMonitoringDashboardRequest struct {
-	Show bool `json:"Show"`
-	WarningHours *int32 `json:"WarningHours,omitempty"`
+	Show                 bool   `json:"Show"`
+	WarningHours         *int32 `json:"WarningHours,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -110,7 +110,7 @@ func (o *KeyfactorApiModelsMonitoringDashboardRequest) SetWarningHours(v int32) 
 }
 
 func (o KeyfactorApiModelsMonitoringDashboardRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -184,5 +184,3 @@ func (v *NullableKeyfactorApiModelsMonitoringDashboardRequest) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

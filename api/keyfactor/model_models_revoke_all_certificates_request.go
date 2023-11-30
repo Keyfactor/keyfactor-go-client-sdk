@@ -40,7 +40,7 @@ type ModelsRevokeAllCertificatesRequest struct {
 	// A flag telling the query to include revoked certificates
 	IncludeRevoked *bool `json:"IncludeRevoked,omitempty"`
 	// A flag telling the query to include expired certificates
-	IncludeExpired *bool `json:"IncludeExpired,omitempty"`
+	IncludeExpired       *bool `json:"IncludeExpired,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -242,7 +242,7 @@ func (o *ModelsRevokeAllCertificatesRequest) SetIncludeExpired(v bool) {
 }
 
 func (o ModelsRevokeAllCertificatesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -330,5 +330,3 @@ func (v *NullableModelsRevokeAllCertificatesRequest) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

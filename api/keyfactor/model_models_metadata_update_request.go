@@ -28,8 +28,8 @@ var _ MappedNullable = &ModelsMetadataUpdateRequest{}
 
 // ModelsMetadataUpdateRequest struct for ModelsMetadataUpdateRequest
 type ModelsMetadataUpdateRequest struct {
-	Id *int32 `json:"Id,omitempty"`
-	Metadata map[string]string `json:"Metadata"`
+	Id                   *int32            `json:"Id,omitempty"`
+	Metadata             map[string]string `json:"Metadata"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -110,7 +110,7 @@ func (o *ModelsMetadataUpdateRequest) SetMetadata(v map[string]string) {
 }
 
 func (o ModelsMetadataUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -184,5 +184,3 @@ func (v *NullableModelsMetadataUpdateRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

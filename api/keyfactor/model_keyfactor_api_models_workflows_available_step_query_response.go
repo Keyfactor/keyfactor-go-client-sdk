@@ -33,10 +33,10 @@ type KeyfactorApiModelsWorkflowsAvailableStepQueryResponse struct {
 	// The extension name of the step.
 	ExtensionName *string `json:"ExtensionName,omitempty"`
 	// The workflow types which this step can be a part of.
-	SupportedWorkflowTypes []string `json:"SupportedWorkflowTypes,omitempty"`
+	SupportedWorkflowTypes            []string                                                           `json:"SupportedWorkflowTypes,omitempty"`
 	ConfigurationParametersDefinition *map[string]KeyfactorApiModelsWorkflowsParameterDefinitionResponse `json:"ConfigurationParametersDefinition,omitempty"`
-	SignalsDefinition *map[string]KeyfactorApiModelsWorkflowsSignalDefinitionResponse `json:"SignalsDefinition,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SignalsDefinition                 *map[string]KeyfactorApiModelsWorkflowsSignalDefinitionResponse    `json:"SignalsDefinition,omitempty"`
+	AdditionalProperties              map[string]interface{}
 }
 
 type _KeyfactorApiModelsWorkflowsAvailableStepQueryResponse KeyfactorApiModelsWorkflowsAvailableStepQueryResponse
@@ -219,7 +219,7 @@ func (o *KeyfactorApiModelsWorkflowsAvailableStepQueryResponse) SetSignalsDefini
 }
 
 func (o KeyfactorApiModelsWorkflowsAvailableStepQueryResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -307,5 +307,3 @@ func (v *NullableKeyfactorApiModelsWorkflowsAvailableStepQueryResponse) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

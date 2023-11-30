@@ -28,10 +28,10 @@ var _ MappedNullable = &ModelsTemplateCollectionRetrievalResponseTemplateRegexMo
 
 // ModelsTemplateCollectionRetrievalResponseTemplateRegexModel struct for ModelsTemplateCollectionRetrievalResponseTemplateRegexModel
 type ModelsTemplateCollectionRetrievalResponseTemplateRegexModel struct {
-	TemplateId *int32 `json:"TemplateId,omitempty"`
-	SubjectPart *string `json:"SubjectPart,omitempty"`
-	Regex *string `json:"Regex,omitempty"`
-	Error *string `json:"Error,omitempty"`
+	TemplateId           *int32  `json:"TemplateId,omitempty"`
+	SubjectPart          *string `json:"SubjectPart,omitempty"`
+	Regex                *string `json:"Regex,omitempty"`
+	Error                *string `json:"Error,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -183,7 +183,7 @@ func (o *ModelsTemplateCollectionRetrievalResponseTemplateRegexModel) SetError(v
 }
 
 func (o ModelsTemplateCollectionRetrievalResponseTemplateRegexModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -267,5 +267,3 @@ func (v *NullableModelsTemplateCollectionRetrievalResponseTemplateRegexModel) Un
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

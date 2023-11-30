@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // CertificateStoreTypeApiService CertificateStoreTypeApi service
 type CertificateStoreTypeApiService service
 
 type ApiCertificateStoreTypeCreateCertificateStoreTypeRequest struct {
-	ctx context.Context
-	ApiService *CertificateStoreTypeApiService
+	ctx                     context.Context
+	ApiService              *CertificateStoreTypeApiService
 	xKeyfactorRequestedWith *string
-	certStoreType *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeCreationRequest
-	xKeyfactorApiVersion *string
+	certStoreType           *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeCreationRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -65,28 +64,29 @@ func (r ApiCertificateStoreTypeCreateCertificateStoreTypeRequest) Execute() (*Ke
 /*
 CertificateStoreTypeCreateCertificateStoreType Creates a new certificate store type with the provided properties
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateStoreTypeCreateCertificateStoreTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateStoreTypeCreateCertificateStoreTypeRequest
 */
 func (a *CertificateStoreTypeApiService) CertificateStoreTypeCreateCertificateStoreType(ctx context.Context) ApiCertificateStoreTypeCreateCertificateStoreTypeRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateStoreTypeCreateCertificateStoreTypeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
+//
+//	@return KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
 func (a *CertificateStoreTypeApiService) CertificateStoreTypeCreateCertificateStoreTypeExecute(r ApiCertificateStoreTypeCreateCertificateStoreTypeRequest) (*KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -96,12 +96,12 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeCreateCertificateSt
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.certStoreType == nil {
-        return localVarReturnValue, nil, reportError("certStoreType is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.certStoreType == nil {
+		return localVarReturnValue, nil, reportError("certStoreType is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -164,11 +164,11 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeCreateCertificateSt
 }
 
 type ApiCertificateStoreTypeDeleteCertificateStoreTypeRequest struct {
-	ctx context.Context
-	ApiService *CertificateStoreTypeApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *CertificateStoreTypeApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -192,28 +192,28 @@ CertificateStoreTypeDeleteCertificateStoreType Deletes a certificate store type 
 
 This will ignore individual delete failures, and continue processing certificate stores.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifier of the certificate store type to be deleted
- @return ApiCertificateStoreTypeDeleteCertificateStoreTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifier of the certificate store type to be deleted
+	@return ApiCertificateStoreTypeDeleteCertificateStoreTypeRequest
 */
 func (a *CertificateStoreTypeApiService) CertificateStoreTypeDeleteCertificateStoreType(ctx context.Context, id int32) ApiCertificateStoreTypeDeleteCertificateStoreTypeRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateStoreTypeDeleteCertificateStoreTypeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *CertificateStoreTypeApiService) CertificateStoreTypeDeleteCertificateStoreTypeExecute(r ApiCertificateStoreTypeDeleteCertificateStoreTypeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -224,9 +224,9 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeDeleteCertificateSt
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -278,11 +278,11 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeDeleteCertificateSt
 }
 
 type ApiCertificateStoreTypeDeleteCertificateStoreTypesRequest struct {
-	ctx context.Context
-	ApiService *CertificateStoreTypeApiService
+	ctx                     context.Context
+	ApiService              *CertificateStoreTypeApiService
 	xKeyfactorRequestedWith *string
-	ids *[]int32
-	xKeyfactorApiVersion *string
+	ids                     *[]int32
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -312,26 +312,26 @@ CertificateStoreTypeDeleteCertificateStoreTypes Deletes certificate store types 
 
 This will ignore individual delete failures, and continue processing the array.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateStoreTypeDeleteCertificateStoreTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateStoreTypeDeleteCertificateStoreTypesRequest
 */
 func (a *CertificateStoreTypeApiService) CertificateStoreTypeDeleteCertificateStoreTypes(ctx context.Context) ApiCertificateStoreTypeDeleteCertificateStoreTypesRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateStoreTypeDeleteCertificateStoreTypesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *CertificateStoreTypeApiService) CertificateStoreTypeDeleteCertificateStoreTypesExecute(r ApiCertificateStoreTypeDeleteCertificateStoreTypesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -341,12 +341,12 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeDeleteCertificateSt
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.ids == nil {
-        return nil, reportError("ids is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.ids == nil {
+		return nil, reportError("ids is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -400,11 +400,11 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeDeleteCertificateSt
 }
 
 type ApiCertificateStoreTypeGetCertificateStoreType0Request struct {
-	ctx context.Context
-	ApiService *CertificateStoreTypeApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *CertificateStoreTypeApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -426,30 +426,31 @@ func (r ApiCertificateStoreTypeGetCertificateStoreType0Request) Execute() (*Keyf
 /*
 CertificateStoreTypeGetCertificateStoreType0 Returns a single certificate store type that matches id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifier of the certificate store type
- @return ApiCertificateStoreTypeGetCertificateStoreType0Request
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifier of the certificate store type
+	@return ApiCertificateStoreTypeGetCertificateStoreType0Request
 */
 func (a *CertificateStoreTypeApiService) CertificateStoreTypeGetCertificateStoreType0(ctx context.Context, id int32) ApiCertificateStoreTypeGetCertificateStoreType0Request {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateStoreTypeGetCertificateStoreType0Request{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
+//
+//	@return KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
 func (a *CertificateStoreTypeApiService) CertificateStoreTypeGetCertificateStoreType0Execute(r ApiCertificateStoreTypeGetCertificateStoreType0Request) (*KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -460,9 +461,9 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeGetCertificateStore
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -523,11 +524,11 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeGetCertificateStore
 }
 
 type ApiCertificateStoreTypeGetCertificateStoreType1Request struct {
-	ctx context.Context
-	ApiService *CertificateStoreTypeApiService
-	name string
+	ctx                     context.Context
+	ApiService              *CertificateStoreTypeApiService
+	name                    string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -549,30 +550,31 @@ func (r ApiCertificateStoreTypeGetCertificateStoreType1Request) Execute() ([]Key
 /*
 CertificateStoreTypeGetCertificateStoreType1 Returns a single certificate store type that matches the provided short name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Short name of the certificate store type to return
- @return ApiCertificateStoreTypeGetCertificateStoreType1Request
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Short name of the certificate store type to return
+	@return ApiCertificateStoreTypeGetCertificateStoreType1Request
 */
 func (a *CertificateStoreTypeApiService) CertificateStoreTypeGetCertificateStoreType1(ctx context.Context, name string) ApiCertificateStoreTypeGetCertificateStoreType1Request {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateStoreTypeGetCertificateStoreType1Request{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		name: name,
+		xKeyfactorApiVersion:    &version,
+		name:                    name,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
+//
+//	@return []KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
 func (a *CertificateStoreTypeApiService) CertificateStoreTypeGetCertificateStoreType1Execute(r ApiCertificateStoreTypeGetCertificateStoreType1Request) ([]KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -583,9 +585,9 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeGetCertificateStore
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -646,15 +648,15 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeGetCertificateStore
 }
 
 type ApiCertificateStoreTypeGetTypesRequest struct {
-	ctx context.Context
-	ApiService *CertificateStoreTypeApiService
+	ctx                     context.Context
+	ApiService              *CertificateStoreTypeApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	cstqueryQueryString *string
-	cstqueryPageReturned *int32
-	cstqueryReturnLimit *int32
-	cstquerySortField *string
-	cstquerySortAscending *int32
+	xKeyfactorApiVersion    *string
+	cstqueryQueryString     *string
+	cstqueryPageReturned    *int32
+	cstqueryReturnLimit     *int32
+	cstquerySortField       *string
+	cstquerySortAscending   *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -706,28 +708,29 @@ func (r ApiCertificateStoreTypeGetTypesRequest) Execute() ([]KeyfactorApiModelsC
 /*
 CertificateStoreTypeGetTypes Returns all certificate store types according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateStoreTypeGetTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateStoreTypeGetTypesRequest
 */
 func (a *CertificateStoreTypeApiService) CertificateStoreTypeGetTypes(ctx context.Context) ApiCertificateStoreTypeGetTypesRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateStoreTypeGetTypesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
+//
+//	@return []KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
 func (a *CertificateStoreTypeApiService) CertificateStoreTypeGetTypesExecute(r ApiCertificateStoreTypeGetTypesRequest) ([]KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -737,9 +740,9 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeGetTypesExecute(r A
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.cstqueryQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "cstquery.queryString", r.cstqueryQueryString, "")
@@ -815,11 +818,11 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeGetTypesExecute(r A
 }
 
 type ApiCertificateStoreTypeUpdateCertificateStoreTypeRequest struct {
-	ctx context.Context
-	ApiService *CertificateStoreTypeApiService
+	ctx                     context.Context
+	ApiService              *CertificateStoreTypeApiService
 	xKeyfactorRequestedWith *string
-	certStoreType *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest
-	xKeyfactorApiVersion *string
+	certStoreType           *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -847,28 +850,29 @@ func (r ApiCertificateStoreTypeUpdateCertificateStoreTypeRequest) Execute() (*Ke
 /*
 CertificateStoreTypeUpdateCertificateStoreType Updates an existing certificate store type with the provided properties
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateStoreTypeUpdateCertificateStoreTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateStoreTypeUpdateCertificateStoreTypeRequest
 */
 func (a *CertificateStoreTypeApiService) CertificateStoreTypeUpdateCertificateStoreType(ctx context.Context) ApiCertificateStoreTypeUpdateCertificateStoreTypeRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateStoreTypeUpdateCertificateStoreTypeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
+//
+//	@return KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
 func (a *CertificateStoreTypeApiService) CertificateStoreTypeUpdateCertificateStoreTypeExecute(r ApiCertificateStoreTypeUpdateCertificateStoreTypeRequest) (*KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -878,12 +882,12 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeUpdateCertificateSt
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.certStoreType == nil {
-        return localVarReturnValue, nil, reportError("certStoreType is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.certStoreType == nil {
+		return localVarReturnValue, nil, reportError("certStoreType is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}

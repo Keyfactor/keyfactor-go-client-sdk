@@ -28,9 +28,9 @@ var _ MappedNullable = &ModelsWorkflowApproveDenyResult{}
 
 // ModelsWorkflowApproveDenyResult struct for ModelsWorkflowApproveDenyResult
 type ModelsWorkflowApproveDenyResult struct {
-	Failures []ModelsWorkflowProcessedCertificateRequest `json:"Failures,omitempty"`
-	Denials []ModelsWorkflowProcessedCertificateRequest `json:"Denials,omitempty"`
-	Successes []ModelsWorkflowProcessedCertificateRequest `json:"Successes,omitempty"`
+	Failures             []ModelsWorkflowProcessedCertificateRequest `json:"Failures,omitempty"`
+	Denials              []ModelsWorkflowProcessedCertificateRequest `json:"Denials,omitempty"`
+	Successes            []ModelsWorkflowProcessedCertificateRequest `json:"Successes,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -150,7 +150,7 @@ func (o *ModelsWorkflowApproveDenyResult) SetSuccesses(v []ModelsWorkflowProcess
 }
 
 func (o ModelsWorkflowApproveDenyResult) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,5 +230,3 @@ func (v *NullableModelsWorkflowApproveDenyResult) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,20 +29,20 @@ var _ MappedNullable = &ModelsDiscoveryJobRequest{}
 
 // ModelsDiscoveryJobRequest struct for ModelsDiscoveryJobRequest
 type ModelsDiscoveryJobRequest struct {
-	ClientMachine *string `json:"ClientMachine,omitempty"`
-	AgentId *string `json:"AgentId,omitempty"`
-	Type int32 `json:"Type"`
-	JobExecutionTimestamp *time.Time `json:"JobExecutionTimestamp,omitempty"`
-	Dirs *string `json:"Dirs,omitempty"`
-	IgnoredDirs *string `json:"IgnoredDirs,omitempty"`
-	Extensions *string `json:"Extensions,omitempty"`
-	NamePatterns *string `json:"NamePatterns,omitempty"`
-	SymLinks *bool `json:"SymLinks,omitempty"`
-	Compatibility *bool `json:"Compatibility,omitempty"`
-	ServerUsername *ModelsKeyfactorAPISecret `json:"ServerUsername,omitempty"`
-	ServerPassword *ModelsKeyfactorAPISecret `json:"ServerPassword,omitempty"`
-	ServerUseSsl *bool `json:"ServerUseSsl,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ClientMachine         *string                   `json:"ClientMachine,omitempty"`
+	AgentId               *string                   `json:"AgentId,omitempty"`
+	Type                  int32                     `json:"Type"`
+	JobExecutionTimestamp *time.Time                `json:"JobExecutionTimestamp,omitempty"`
+	Dirs                  *string                   `json:"Dirs,omitempty"`
+	IgnoredDirs           *string                   `json:"IgnoredDirs,omitempty"`
+	Extensions            *string                   `json:"Extensions,omitempty"`
+	NamePatterns          *string                   `json:"NamePatterns,omitempty"`
+	SymLinks              *bool                     `json:"SymLinks,omitempty"`
+	Compatibility         *bool                     `json:"Compatibility,omitempty"`
+	ServerUsername        *ModelsKeyfactorAPISecret `json:"ServerUsername,omitempty"`
+	ServerPassword        *ModelsKeyfactorAPISecret `json:"ServerPassword,omitempty"`
+	ServerUseSsl          *bool                     `json:"ServerUseSsl,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _ModelsDiscoveryJobRequest ModelsDiscoveryJobRequest
@@ -474,7 +474,7 @@ func (o *ModelsDiscoveryJobRequest) SetServerUseSsl(v bool) {
 }
 
 func (o ModelsDiscoveryJobRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -592,5 +592,3 @@ func (v *NullableModelsDiscoveryJobRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

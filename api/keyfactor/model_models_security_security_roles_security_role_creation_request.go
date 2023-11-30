@@ -39,7 +39,7 @@ type ModelsSecuritySecurityRolesSecurityRoleCreationRequest struct {
 	// The permissions to include in the role. These must be supplied in the format \"Area:Permission\"
 	Permissions []string `json:"Permissions,omitempty"`
 	// The Keyfactor identities to assign to the created role
-	Identities []ModelsSecurityIdentitiesSecurityIdentityIdentifier `json:"Identities,omitempty"`
+	Identities           []ModelsSecurityIdentitiesSecurityIdentityIdentifier `json:"Identities,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -241,7 +241,7 @@ func (o *ModelsSecuritySecurityRolesSecurityRoleCreationRequest) SetIdentities(v
 }
 
 func (o ModelsSecuritySecurityRolesSecurityRoleCreationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -329,5 +329,3 @@ func (v *NullableModelsSecuritySecurityRolesSecurityRoleCreationRequest) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

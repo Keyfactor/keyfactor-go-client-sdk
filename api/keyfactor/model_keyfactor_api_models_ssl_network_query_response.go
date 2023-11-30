@@ -29,30 +29,30 @@ var _ MappedNullable = &KeyfactorApiModelsSslNetworkQueryResponse{}
 
 // KeyfactorApiModelsSslNetworkQueryResponse struct for KeyfactorApiModelsSslNetworkQueryResponse
 type KeyfactorApiModelsSslNetworkQueryResponse struct {
-	NetworkId *string `json:"NetworkId,omitempty"`
-	Name *string `json:"Name,omitempty"`
-	AgentPoolName *string `json:"AgentPoolName,omitempty"`
-	AgentPoolId *string `json:"AgentPoolId,omitempty"`
-	Description *string `json:"Description,omitempty"`
-	Enabled *bool `json:"Enabled,omitempty"`
-	DiscoverSchedule *KeyfactorCommonSchedulingKeyfactorSchedule `json:"DiscoverSchedule,omitempty"`
-	MonitorSchedule *KeyfactorCommonSchedulingKeyfactorSchedule `json:"MonitorSchedule,omitempty"`
-	DiscoverPercentComplete *float64 `json:"DiscoverPercentComplete,omitempty"`
-	MonitorPercentComplete *float64 `json:"MonitorPercentComplete,omitempty"`
-	DiscoverStatus *int32 `json:"DiscoverStatus,omitempty"`
-	MonitorStatus *int32 `json:"MonitorStatus,omitempty"`
-	DiscoverLastScanned *time.Time `json:"DiscoverLastScanned,omitempty"`
-	MonitorLastScanned *time.Time `json:"MonitorLastScanned,omitempty"`
-	SslAlertRecipients []string `json:"SslAlertRecipients,omitempty"`
-	AutoMonitor *bool `json:"AutoMonitor,omitempty"`
-	GetRobots *bool `json:"GetRobots,omitempty"`
-	DiscoverTimeoutMs *float64 `json:"DiscoverTimeoutMs,omitempty"`
-	MonitorTimeoutMs *float64 `json:"MonitorTimeoutMs,omitempty"`
-	ExpirationAlertDays *float64 `json:"ExpirationAlertDays,omitempty"`
-	DiscoverJobParts *int32 `json:"DiscoverJobParts,omitempty"`
-	MonitorJobParts *int32 `json:"MonitorJobParts,omitempty"`
-	QuietHours []KeyfactorApiModelsSslQuietHourResponse `json:"QuietHours,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NetworkId               *string                                     `json:"NetworkId,omitempty"`
+	Name                    *string                                     `json:"Name,omitempty"`
+	AgentPoolName           *string                                     `json:"AgentPoolName,omitempty"`
+	AgentPoolId             *string                                     `json:"AgentPoolId,omitempty"`
+	Description             *string                                     `json:"Description,omitempty"`
+	Enabled                 *bool                                       `json:"Enabled,omitempty"`
+	DiscoverSchedule        *KeyfactorCommonSchedulingKeyfactorSchedule `json:"DiscoverSchedule,omitempty"`
+	MonitorSchedule         *KeyfactorCommonSchedulingKeyfactorSchedule `json:"MonitorSchedule,omitempty"`
+	DiscoverPercentComplete *float64                                    `json:"DiscoverPercentComplete,omitempty"`
+	MonitorPercentComplete  *float64                                    `json:"MonitorPercentComplete,omitempty"`
+	DiscoverStatus          *int32                                      `json:"DiscoverStatus,omitempty"`
+	MonitorStatus           *int32                                      `json:"MonitorStatus,omitempty"`
+	DiscoverLastScanned     *time.Time                                  `json:"DiscoverLastScanned,omitempty"`
+	MonitorLastScanned      *time.Time                                  `json:"MonitorLastScanned,omitempty"`
+	SslAlertRecipients      []string                                    `json:"SslAlertRecipients,omitempty"`
+	AutoMonitor             *bool                                       `json:"AutoMonitor,omitempty"`
+	GetRobots               *bool                                       `json:"GetRobots,omitempty"`
+	DiscoverTimeoutMs       *float64                                    `json:"DiscoverTimeoutMs,omitempty"`
+	MonitorTimeoutMs        *float64                                    `json:"MonitorTimeoutMs,omitempty"`
+	ExpirationAlertDays     *float64                                    `json:"ExpirationAlertDays,omitempty"`
+	DiscoverJobParts        *int32                                      `json:"DiscoverJobParts,omitempty"`
+	MonitorJobParts         *int32                                      `json:"MonitorJobParts,omitempty"`
+	QuietHours              []KeyfactorApiModelsSslQuietHourResponse    `json:"QuietHours,omitempty"`
+	AdditionalProperties    map[string]interface{}
 }
 
 type _KeyfactorApiModelsSslNetworkQueryResponse KeyfactorApiModelsSslNetworkQueryResponse
@@ -811,7 +811,7 @@ func (o *KeyfactorApiModelsSslNetworkQueryResponse) SetQuietHours(v []KeyfactorA
 }
 
 func (o KeyfactorApiModelsSslNetworkQueryResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -971,5 +971,3 @@ func (v *NullableKeyfactorApiModelsSslNetworkQueryResponse) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,24 +29,24 @@ var _ MappedNullable = &ModelsSSLScanJobPart{}
 
 // ModelsSSLScanJobPart struct for ModelsSSLScanJobPart
 type ModelsSSLScanJobPart struct {
-	ScanJobPartId *string `json:"ScanJobPartId,omitempty"`
-	LogicalScanJobId *string `json:"LogicalScanJobId,omitempty"`
-	AgentJobId *string `json:"AgentJobId,omitempty"`
-	EstimatedEndpointCount *int32 `json:"EstimatedEndpointCount,omitempty"`
-	Status *int32 `json:"Status,omitempty"`
-	StatTotalEndpointCount *int32 `json:"StatTotalEndpointCount,omitempty"`
-	StatTimedOutConnectingCount *int32 `json:"StatTimedOutConnectingCount,omitempty"`
-	StatConnectionRefusedCount *int32 `json:"StatConnectionRefusedCount,omitempty"`
-	StatTimedOutDownloadingCount *int32 `json:"StatTimedOutDownloadingCount,omitempty"`
-	StatExceptionDownloadingCount *int32 `json:"StatExceptionDownloadingCount,omitempty"`
-	StatNotSslCount *int32 `json:"StatNotSslCount,omitempty"`
-	StatBadSslHandshakeCount *int32 `json:"StatBadSslHandshakeCount,omitempty"`
-	StatCertificateFoundCount *int32 `json:"StatCertificateFoundCount,omitempty"`
-	StatNoCertificateCount *int32 `json:"StatNoCertificateCount,omitempty"`
-	ScanJobPartDefinitions []ModelsSSLScanJobPartDefinition `json:"ScanJobPartDefinitions,omitempty"`
-	StartTime *time.Time `json:"StartTime,omitempty"`
-	EndTime *time.Time `json:"EndTime,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ScanJobPartId                 *string                          `json:"ScanJobPartId,omitempty"`
+	LogicalScanJobId              *string                          `json:"LogicalScanJobId,omitempty"`
+	AgentJobId                    *string                          `json:"AgentJobId,omitempty"`
+	EstimatedEndpointCount        *int32                           `json:"EstimatedEndpointCount,omitempty"`
+	Status                        *int32                           `json:"Status,omitempty"`
+	StatTotalEndpointCount        *int32                           `json:"StatTotalEndpointCount,omitempty"`
+	StatTimedOutConnectingCount   *int32                           `json:"StatTimedOutConnectingCount,omitempty"`
+	StatConnectionRefusedCount    *int32                           `json:"StatConnectionRefusedCount,omitempty"`
+	StatTimedOutDownloadingCount  *int32                           `json:"StatTimedOutDownloadingCount,omitempty"`
+	StatExceptionDownloadingCount *int32                           `json:"StatExceptionDownloadingCount,omitempty"`
+	StatNotSslCount               *int32                           `json:"StatNotSslCount,omitempty"`
+	StatBadSslHandshakeCount      *int32                           `json:"StatBadSslHandshakeCount,omitempty"`
+	StatCertificateFoundCount     *int32                           `json:"StatCertificateFoundCount,omitempty"`
+	StatNoCertificateCount        *int32                           `json:"StatNoCertificateCount,omitempty"`
+	ScanJobPartDefinitions        []ModelsSSLScanJobPartDefinition `json:"ScanJobPartDefinitions,omitempty"`
+	StartTime                     *time.Time                       `json:"StartTime,omitempty"`
+	EndTime                       *time.Time                       `json:"EndTime,omitempty"`
+	AdditionalProperties          map[string]interface{}
 }
 
 type _ModelsSSLScanJobPart ModelsSSLScanJobPart
@@ -613,7 +613,7 @@ func (o *ModelsSSLScanJobPart) SetEndTime(v time.Time) {
 }
 
 func (o ModelsSSLScanJobPart) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -749,5 +749,3 @@ func (v *NullableModelsSSLScanJobPart) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

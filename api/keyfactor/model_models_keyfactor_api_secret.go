@@ -28,9 +28,9 @@ var _ MappedNullable = &ModelsKeyfactorAPISecret{}
 
 // ModelsKeyfactorAPISecret struct for ModelsKeyfactorAPISecret
 type ModelsKeyfactorAPISecret struct {
-	SecretValue *string `json:"SecretValue,omitempty"`
-	Parameters *map[string]string `json:"Parameters,omitempty"`
-	Provider *int32 `json:"Provider,omitempty"`
+	SecretValue          *string            `json:"SecretValue,omitempty"`
+	Parameters           *map[string]string `json:"Parameters,omitempty"`
+	Provider             *int32             `json:"Provider,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -150,7 +150,7 @@ func (o *ModelsKeyfactorAPISecret) SetProvider(v int32) {
 }
 
 func (o ModelsKeyfactorAPISecret) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,5 +230,3 @@ func (v *NullableModelsKeyfactorAPISecret) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

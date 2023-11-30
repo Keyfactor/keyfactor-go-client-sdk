@@ -28,8 +28,8 @@ var _ MappedNullable = &KeyfactorApiModelsSecurityRolesRoleIdentitiesResponse{}
 
 // KeyfactorApiModelsSecurityRolesRoleIdentitiesResponse struct for KeyfactorApiModelsSecurityRolesRoleIdentitiesResponse
 type KeyfactorApiModelsSecurityRolesRoleIdentitiesResponse struct {
-	Id *int32 `json:"Id,omitempty"`
-	Name *string `json:"Name,omitempty"`
+	Id                   *int32  `json:"Id,omitempty"`
+	Name                 *string `json:"Name,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -117,7 +117,7 @@ func (o *KeyfactorApiModelsSecurityRolesRoleIdentitiesResponse) SetName(v string
 }
 
 func (o KeyfactorApiModelsSecurityRolesRoleIdentitiesResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,5 +193,3 @@ func (v *NullableKeyfactorApiModelsSecurityRolesRoleIdentitiesResponse) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

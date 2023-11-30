@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // SecurityRolesApiService SecurityRolesApi service
 type SecurityRolesApiService service
 
 type ApiSecurityRolesDeleteSecurityRoleRequest struct {
-	ctx context.Context
-	ApiService *SecurityRolesApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *SecurityRolesApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -59,28 +58,28 @@ func (r ApiSecurityRolesDeleteSecurityRoleRequest) Execute() (*http.Response, er
 /*
 SecurityRolesDeleteSecurityRole Deletes the security role whose ID is provided.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Security role identifier
- @return ApiSecurityRolesDeleteSecurityRoleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Security role identifier
+	@return ApiSecurityRolesDeleteSecurityRoleRequest
 */
 func (a *SecurityRolesApiService) SecurityRolesDeleteSecurityRole(ctx context.Context, id int32) ApiSecurityRolesDeleteSecurityRoleRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSecurityRolesDeleteSecurityRoleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *SecurityRolesApiService) SecurityRolesDeleteSecurityRoleExecute(r ApiSecurityRolesDeleteSecurityRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -91,9 +90,9 @@ func (a *SecurityRolesApiService) SecurityRolesDeleteSecurityRoleExecute(r ApiSe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -145,11 +144,11 @@ func (a *SecurityRolesApiService) SecurityRolesDeleteSecurityRoleExecute(r ApiSe
 }
 
 type ApiSecurityRolesGetIdentitiesWithRoleRequest struct {
-	ctx context.Context
-	ApiService *SecurityRolesApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *SecurityRolesApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -171,30 +170,31 @@ func (r ApiSecurityRolesGetIdentitiesWithRoleRequest) Execute() ([]KeyfactorApiM
 /*
 SecurityRolesGetIdentitiesWithRole Returns all identities which have the security role that matches the id.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Security role identifier
- @return ApiSecurityRolesGetIdentitiesWithRoleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Security role identifier
+	@return ApiSecurityRolesGetIdentitiesWithRoleRequest
 */
 func (a *SecurityRolesApiService) SecurityRolesGetIdentitiesWithRole(ctx context.Context, id int32) ApiSecurityRolesGetIdentitiesWithRoleRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSecurityRolesGetIdentitiesWithRoleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsSecurityRolesRoleIdentitiesResponse
+//
+//	@return []KeyfactorApiModelsSecurityRolesRoleIdentitiesResponse
 func (a *SecurityRolesApiService) SecurityRolesGetIdentitiesWithRoleExecute(r ApiSecurityRolesGetIdentitiesWithRoleRequest) ([]KeyfactorApiModelsSecurityRolesRoleIdentitiesResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsSecurityRolesRoleIdentitiesResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsSecurityRolesRoleIdentitiesResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -205,9 +205,9 @@ func (a *SecurityRolesApiService) SecurityRolesGetIdentitiesWithRoleExecute(r Ap
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -268,12 +268,12 @@ func (a *SecurityRolesApiService) SecurityRolesGetIdentitiesWithRoleExecute(r Ap
 }
 
 type ApiSecurityRolesUpdateIdentitiesWithRoleRequest struct {
-	ctx context.Context
-	ApiService *SecurityRolesApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *SecurityRolesApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	identities *KeyfactorApiModelsSecurityRolesRoleIdentitiesRequest
-	xKeyfactorApiVersion *string
+	identities              *KeyfactorApiModelsSecurityRolesRoleIdentitiesRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -301,30 +301,31 @@ func (r ApiSecurityRolesUpdateIdentitiesWithRoleRequest) Execute() ([]KeyfactorA
 /*
 SecurityRolesUpdateIdentitiesWithRole Updates the identities which have the security role that matches the id.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Security role identifier
- @return ApiSecurityRolesUpdateIdentitiesWithRoleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Security role identifier
+	@return ApiSecurityRolesUpdateIdentitiesWithRoleRequest
 */
 func (a *SecurityRolesApiService) SecurityRolesUpdateIdentitiesWithRole(ctx context.Context, id int32) ApiSecurityRolesUpdateIdentitiesWithRoleRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSecurityRolesUpdateIdentitiesWithRoleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsSecurityRolesRoleIdentitiesResponse
+//
+//	@return []KeyfactorApiModelsSecurityRolesRoleIdentitiesResponse
 func (a *SecurityRolesApiService) SecurityRolesUpdateIdentitiesWithRoleExecute(r ApiSecurityRolesUpdateIdentitiesWithRoleRequest) ([]KeyfactorApiModelsSecurityRolesRoleIdentitiesResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsSecurityRolesRoleIdentitiesResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsSecurityRolesRoleIdentitiesResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -335,12 +336,12 @@ func (a *SecurityRolesApiService) SecurityRolesUpdateIdentitiesWithRoleExecute(r
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.identities == nil {
-        return localVarReturnValue, nil, reportError("identities is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.identities == nil {
+		return localVarReturnValue, nil, reportError("identities is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}

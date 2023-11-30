@@ -29,12 +29,12 @@ var _ MappedNullable = &ModelsSSLDisplayScanJobPart{}
 
 // ModelsSSLDisplayScanJobPart struct for ModelsSSLDisplayScanJobPart
 type ModelsSSLDisplayScanJobPart struct {
-	ScanJobPartId *string `json:"ScanJobPartId,omitempty"`
-	Agent *string `json:"Agent,omitempty"`
-	Status *int32 `json:"Status,omitempty"`
-	StartTime *time.Time `json:"StartTime,omitempty"`
-	EndTime *time.Time `json:"EndTime,omitempty"`
-	EndpointCount *int32 `json:"EndpointCount,omitempty"`
+	ScanJobPartId        *string    `json:"ScanJobPartId,omitempty"`
+	Agent                *string    `json:"Agent,omitempty"`
+	Status               *int32     `json:"Status,omitempty"`
+	StartTime            *time.Time `json:"StartTime,omitempty"`
+	EndTime              *time.Time `json:"EndTime,omitempty"`
+	EndpointCount        *int32     `json:"EndpointCount,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -250,7 +250,7 @@ func (o *ModelsSSLDisplayScanJobPart) SetEndpointCount(v int32) {
 }
 
 func (o ModelsSSLDisplayScanJobPart) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -342,5 +342,3 @@ func (v *NullableModelsSSLDisplayScanJobPart) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

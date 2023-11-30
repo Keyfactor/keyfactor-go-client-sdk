@@ -29,8 +29,8 @@ var _ MappedNullable = &KeyfactorCommonSchedulingModelsWeeklyModel{}
 
 // KeyfactorCommonSchedulingModelsWeeklyModel struct for KeyfactorCommonSchedulingModelsWeeklyModel
 type KeyfactorCommonSchedulingModelsWeeklyModel struct {
-	Days []int32 `json:"Days,omitempty"`
-	Time *time.Time `json:"Time,omitempty"`
+	Days                 []int32    `json:"Days,omitempty"`
+	Time                 *time.Time `json:"Time,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -118,7 +118,7 @@ func (o *KeyfactorCommonSchedulingModelsWeeklyModel) SetTime(v time.Time) {
 }
 
 func (o KeyfactorCommonSchedulingModelsWeeklyModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -194,5 +194,3 @@ func (v *NullableKeyfactorCommonSchedulingModelsWeeklyModel) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

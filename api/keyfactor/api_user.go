@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // UserApiService UserApi service
 type UserApiService service
 
 type ApiUserCreateUserRequest struct {
-	ctx context.Context
-	ApiService *UserApiService
+	ctx                     context.Context
+	ApiService              *UserApiService
 	xKeyfactorRequestedWith *string
-	sshUserCreationRequest *ModelsSSHUsersSshUserCreationRequest
-	xKeyfactorApiVersion *string
+	sshUserCreationRequest  *ModelsSSHUsersSshUserCreationRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -65,28 +64,29 @@ func (r ApiUserCreateUserRequest) Execute() (*ModelsSSHUsersSshUserResponse, *ht
 /*
 UserCreateUser Creates a new SSH User.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUserCreateUserRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUserCreateUserRequest
 */
 func (a *UserApiService) UserCreateUser(ctx context.Context) ApiUserCreateUserRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiUserCreateUserRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHUsersSshUserResponse
+//
+//	@return ModelsSSHUsersSshUserResponse
 func (a *UserApiService) UserCreateUserExecute(r ApiUserCreateUserRequest) (*ModelsSSHUsersSshUserResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHUsersSshUserResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHUsersSshUserResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -96,12 +96,12 @@ func (a *UserApiService) UserCreateUserExecute(r ApiUserCreateUserRequest) (*Mod
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.sshUserCreationRequest == nil {
-        return localVarReturnValue, nil, reportError("sshUserCreationRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.sshUserCreationRequest == nil {
+		return localVarReturnValue, nil, reportError("sshUserCreationRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -164,11 +164,11 @@ func (a *UserApiService) UserCreateUserExecute(r ApiUserCreateUserRequest) (*Mod
 }
 
 type ApiUserDeleteUserRequest struct {
-	ctx context.Context
-	ApiService *UserApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *UserApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -190,28 +190,28 @@ func (r ApiUserDeleteUserRequest) Execute() (*http.Response, error) {
 /*
 UserDeleteUser Deletes an SSH user.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The Id of the user to delete.
- @return ApiUserDeleteUserRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The Id of the user to delete.
+	@return ApiUserDeleteUserRequest
 */
 func (a *UserApiService) UserDeleteUser(ctx context.Context, id int32) ApiUserDeleteUserRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiUserDeleteUserRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *UserApiService) UserDeleteUserExecute(r ApiUserDeleteUserRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -222,9 +222,9 @@ func (a *UserApiService) UserDeleteUserExecute(r ApiUserDeleteUserRequest) (*htt
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -276,11 +276,11 @@ func (a *UserApiService) UserDeleteUserExecute(r ApiUserDeleteUserRequest) (*htt
 }
 
 type ApiUserGetUserRequest struct {
-	ctx context.Context
-	ApiService *UserApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *UserApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -302,30 +302,31 @@ func (r ApiUserGetUserRequest) Execute() (*ModelsSSHUsersSshUserResponse, *http.
 /*
 UserGetUser Looks up information about an existing SSH user.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The Id of the SSH user to retrieve.
- @return ApiUserGetUserRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The Id of the SSH user to retrieve.
+	@return ApiUserGetUserRequest
 */
 func (a *UserApiService) UserGetUser(ctx context.Context, id int32) ApiUserGetUserRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiUserGetUserRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHUsersSshUserResponse
+//
+//	@return ModelsSSHUsersSshUserResponse
 func (a *UserApiService) UserGetUserExecute(r ApiUserGetUserRequest) (*ModelsSSHUsersSshUserResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHUsersSshUserResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHUsersSshUserResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -336,9 +337,9 @@ func (a *UserApiService) UserGetUserExecute(r ApiUserGetUserRequest) (*ModelsSSH
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -399,16 +400,16 @@ func (a *UserApiService) UserGetUserExecute(r ApiUserGetUserRequest) (*ModelsSSH
 }
 
 type ApiUserQueryUsersRequest struct {
-	ctx context.Context
-	ApiService *UserApiService
+	ctx                     context.Context
+	ApiService              *UserApiService
 	xKeyfactorRequestedWith *string
-	showOwnedAccess *bool
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	showOwnedAccess         *bool
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -466,28 +467,29 @@ func (r ApiUserQueryUsersRequest) Execute() ([]ModelsSSHUsersSshUserResponse, *h
 /*
 UserQueryUsers Returns users matching the criteria from the provided query parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUserQueryUsersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUserQueryUsersRequest
 */
 func (a *UserApiService) UserQueryUsers(ctx context.Context) ApiUserQueryUsersRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiUserQueryUsersRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsSSHUsersSshUserResponse
+//
+//	@return []ModelsSSHUsersSshUserResponse
 func (a *UserApiService) UserQueryUsersExecute(r ApiUserQueryUsersRequest) ([]ModelsSSHUsersSshUserResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsSSHUsersSshUserResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsSSHUsersSshUserResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -497,9 +499,9 @@ func (a *UserApiService) UserQueryUsersExecute(r ApiUserQueryUsersRequest) ([]Mo
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.showOwnedAccess != nil {
 		parameterAddToQuery(localVarQueryParams, "showOwnedAccess", r.showOwnedAccess, "")
@@ -578,11 +580,11 @@ func (a *UserApiService) UserQueryUsersExecute(r ApiUserQueryUsersRequest) ([]Mo
 }
 
 type ApiUserUpdateUserRequest struct {
-	ctx context.Context
-	ApiService *UserApiService
+	ctx                     context.Context
+	ApiService              *UserApiService
 	xKeyfactorRequestedWith *string
-	sshUserUpdateRequest *ModelsSSHUsersSshUserUpdateRequest
-	xKeyfactorApiVersion *string
+	sshUserUpdateRequest    *ModelsSSHUsersSshUserUpdateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -610,28 +612,29 @@ func (r ApiUserUpdateUserRequest) Execute() (*ModelsSSHUsersSshUserResponse, *ht
 /*
 UserUpdateUser Updates information about a given user.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUserUpdateUserRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUserUpdateUserRequest
 */
 func (a *UserApiService) UserUpdateUser(ctx context.Context) ApiUserUpdateUserRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiUserUpdateUserRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHUsersSshUserResponse
+//
+//	@return ModelsSSHUsersSshUserResponse
 func (a *UserApiService) UserUpdateUserExecute(r ApiUserUpdateUserRequest) (*ModelsSSHUsersSshUserResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHUsersSshUserResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHUsersSshUserResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -641,12 +644,12 @@ func (a *UserApiService) UserUpdateUserExecute(r ApiUserUpdateUserRequest) (*Mod
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.sshUserUpdateRequest == nil {
-        return localVarReturnValue, nil, reportError("sshUserUpdateRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.sshUserUpdateRequest == nil {
+		return localVarReturnValue, nil, reportError("sshUserUpdateRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -709,11 +712,11 @@ func (a *UserApiService) UserUpdateUserExecute(r ApiUserUpdateUserRequest) (*Mod
 }
 
 type ApiUserUserAccessRequest struct {
-	ctx context.Context
-	ApiService *UserApiService
+	ctx                     context.Context
+	ApiService              *UserApiService
 	xKeyfactorRequestedWith *string
-	userRequest *ModelsSSHUsersSshUserUpdateRequest
-	xKeyfactorApiVersion *string
+	userRequest             *ModelsSSHUsersSshUserUpdateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -741,28 +744,29 @@ func (r ApiUserUserAccessRequest) Execute() (*ModelsSSHUsersSshUserAccessRespons
 /*
 UserUserAccess Updates logon access for a user
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUserUserAccessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUserUserAccessRequest
 */
 func (a *UserApiService) UserUserAccess(ctx context.Context) ApiUserUserAccessRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiUserUserAccessRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHUsersSshUserAccessResponse
+//
+//	@return ModelsSSHUsersSshUserAccessResponse
 func (a *UserApiService) UserUserAccessExecute(r ApiUserUserAccessRequest) (*ModelsSSHUsersSshUserAccessResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHUsersSshUserAccessResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHUsersSshUserAccessResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -772,12 +776,12 @@ func (a *UserApiService) UserUserAccessExecute(r ApiUserUserAccessRequest) (*Mod
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.userRequest == nil {
-        return localVarReturnValue, nil, reportError("userRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.userRequest == nil {
+		return localVarReturnValue, nil, reportError("userRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}

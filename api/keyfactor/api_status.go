@@ -27,15 +27,14 @@ import (
 	"net/url"
 )
 
-
 // StatusApiService StatusApi service
 type StatusApiService service
 
 type ApiStatusGetEndpointsRequest struct {
-	ctx context.Context
-	ApiService *StatusApiService
+	ctx                     context.Context
+	ApiService              *StatusApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -57,28 +56,29 @@ func (r ApiStatusGetEndpointsRequest) Execute() ([]string, *http.Response, error
 /*
 StatusGetEndpoints Returns all endpoints to which the requesting identity has access
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiStatusGetEndpointsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiStatusGetEndpointsRequest
 */
 func (a *StatusApiService) StatusGetEndpoints(ctx context.Context) ApiStatusGetEndpointsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiStatusGetEndpointsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []string
+//
+//	@return []string
 func (a *StatusApiService) StatusGetEndpointsExecute(r ApiStatusGetEndpointsRequest) ([]string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []string
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []string
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -88,9 +88,9 @@ func (a *StatusApiService) StatusGetEndpointsExecute(r ApiStatusGetEndpointsRequ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

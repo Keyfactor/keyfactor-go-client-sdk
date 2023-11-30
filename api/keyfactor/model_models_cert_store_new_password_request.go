@@ -28,8 +28,8 @@ var _ MappedNullable = &ModelsCertStoreNewPasswordRequest{}
 
 // ModelsCertStoreNewPasswordRequest NewPassword must be provided and be of type string or KeyfactorAPISecret.
 type ModelsCertStoreNewPasswordRequest struct {
-	CertStoreId string `json:"CertStoreId"`
-	NewPassword map[string]interface{} `json:"NewPassword"`
+	CertStoreId          string                 `json:"CertStoreId"`
+	NewPassword          map[string]interface{} `json:"NewPassword"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -103,7 +103,7 @@ func (o *ModelsCertStoreNewPasswordRequest) SetNewPassword(v map[string]interfac
 }
 
 func (o ModelsCertStoreNewPasswordRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -175,5 +175,3 @@ func (v *NullableModelsCertStoreNewPasswordRequest) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

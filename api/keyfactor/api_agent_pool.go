@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // AgentPoolApiService AgentPoolApi service
 type AgentPoolApiService service
 
 type ApiAgentPoolCreateAgentPoolRequest struct {
-	ctx context.Context
-	ApiService *AgentPoolApiService
+	ctx                     context.Context
+	ApiService              *AgentPoolApiService
 	xKeyfactorRequestedWith *string
-	agentPool *ModelsAgentsAgentPool
-	xKeyfactorApiVersion *string
+	agentPool               *ModelsAgentsAgentPool
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -68,28 +67,29 @@ AgentPoolCreateAgentPool Creates an agent pool with the provided properties
 - DiscoverAgentsCount = An integer specifying the number of agents that can perform discovery jobs
 - MonitorAgentsCount = An integer specifying the number of agents that can perform monitoring jobs
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAgentPoolCreateAgentPoolRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAgentPoolCreateAgentPoolRequest
 */
 func (a *AgentPoolApiService) AgentPoolCreateAgentPool(ctx context.Context) ApiAgentPoolCreateAgentPoolRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiAgentPoolCreateAgentPoolRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsAgentsAgentPool
+//
+//	@return ModelsAgentsAgentPool
 func (a *AgentPoolApiService) AgentPoolCreateAgentPoolExecute(r ApiAgentPoolCreateAgentPoolRequest) (*ModelsAgentsAgentPool, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsAgentsAgentPool
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsAgentsAgentPool
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -99,12 +99,12 @@ func (a *AgentPoolApiService) AgentPoolCreateAgentPoolExecute(r ApiAgentPoolCrea
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.agentPool == nil {
-        return localVarReturnValue, nil, reportError("agentPool is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.agentPool == nil {
+		return localVarReturnValue, nil, reportError("agentPool is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -167,11 +167,11 @@ func (a *AgentPoolApiService) AgentPoolCreateAgentPoolExecute(r ApiAgentPoolCrea
 }
 
 type ApiAgentPoolDeleteAgentPoolRequest struct {
-	ctx context.Context
-	ApiService *AgentPoolApiService
-	id string
+	ctx                     context.Context
+	ApiService              *AgentPoolApiService
+	id                      string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -193,28 +193,28 @@ func (r ApiAgentPoolDeleteAgentPoolRequest) Execute() (*http.Response, error) {
 /*
 AgentPoolDeleteAgentPool Deletes the agent pool associated with the provided id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifier (GUID) of the agent pool
- @return ApiAgentPoolDeleteAgentPoolRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifier (GUID) of the agent pool
+	@return ApiAgentPoolDeleteAgentPoolRequest
 */
 func (a *AgentPoolApiService) AgentPoolDeleteAgentPool(ctx context.Context, id string) ApiAgentPoolDeleteAgentPoolRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiAgentPoolDeleteAgentPoolRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *AgentPoolApiService) AgentPoolDeleteAgentPoolExecute(r ApiAgentPoolDeleteAgentPoolRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -225,9 +225,9 @@ func (a *AgentPoolApiService) AgentPoolDeleteAgentPoolExecute(r ApiAgentPoolDele
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -279,11 +279,11 @@ func (a *AgentPoolApiService) AgentPoolDeleteAgentPoolExecute(r ApiAgentPoolDele
 }
 
 type ApiAgentPoolGetAgentPoolByIdRequest struct {
-	ctx context.Context
-	ApiService *AgentPoolApiService
-	id string
+	ctx                     context.Context
+	ApiService              *AgentPoolApiService
+	id                      string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -305,30 +305,31 @@ func (r ApiAgentPoolGetAgentPoolByIdRequest) Execute() (*ModelsAgentsAgentPool, 
 /*
 AgentPoolGetAgentPoolById Returns a single agent pool associated with the provided id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor (GUID) identifier of the agent pool
- @return ApiAgentPoolGetAgentPoolByIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor (GUID) identifier of the agent pool
+	@return ApiAgentPoolGetAgentPoolByIdRequest
 */
 func (a *AgentPoolApiService) AgentPoolGetAgentPoolById(ctx context.Context, id string) ApiAgentPoolGetAgentPoolByIdRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiAgentPoolGetAgentPoolByIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsAgentsAgentPool
+//
+//	@return ModelsAgentsAgentPool
 func (a *AgentPoolApiService) AgentPoolGetAgentPoolByIdExecute(r ApiAgentPoolGetAgentPoolByIdRequest) (*ModelsAgentsAgentPool, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsAgentsAgentPool
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsAgentsAgentPool
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -339,9 +340,9 @@ func (a *AgentPoolApiService) AgentPoolGetAgentPoolByIdExecute(r ApiAgentPoolGet
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -402,15 +403,15 @@ func (a *AgentPoolApiService) AgentPoolGetAgentPoolByIdExecute(r ApiAgentPoolGet
 }
 
 type ApiAgentPoolGetAgentPoolsRequest struct {
-	ctx context.Context
-	ApiService *AgentPoolApiService
+	ctx                     context.Context
+	ApiService              *AgentPoolApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -462,28 +463,29 @@ func (r ApiAgentPoolGetAgentPoolsRequest) Execute() ([]ModelsAgentsAgentPool, *h
 /*
 AgentPoolGetAgentPools Returns all agent pools according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAgentPoolGetAgentPoolsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAgentPoolGetAgentPoolsRequest
 */
 func (a *AgentPoolApiService) AgentPoolGetAgentPools(ctx context.Context) ApiAgentPoolGetAgentPoolsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiAgentPoolGetAgentPoolsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsAgentsAgentPool
+//
+//	@return []ModelsAgentsAgentPool
 func (a *AgentPoolApiService) AgentPoolGetAgentPoolsExecute(r ApiAgentPoolGetAgentPoolsRequest) ([]ModelsAgentsAgentPool, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsAgentsAgentPool
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsAgentsAgentPool
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -493,9 +495,9 @@ func (a *AgentPoolApiService) AgentPoolGetAgentPoolsExecute(r ApiAgentPoolGetAge
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")
@@ -571,15 +573,15 @@ func (a *AgentPoolApiService) AgentPoolGetAgentPoolsExecute(r ApiAgentPoolGetAge
 }
 
 type ApiAgentPoolGetDefaultAgentPoolAgentsRequest struct {
-	ctx context.Context
-	ApiService *AgentPoolApiService
+	ctx                     context.Context
+	ApiService              *AgentPoolApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -631,28 +633,29 @@ func (r ApiAgentPoolGetDefaultAgentPoolAgentsRequest) Execute() ([]ModelsAgentsA
 /*
 AgentPoolGetDefaultAgentPoolAgents Returns all agents for the default agent pool
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAgentPoolGetDefaultAgentPoolAgentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAgentPoolGetDefaultAgentPoolAgentsRequest
 */
 func (a *AgentPoolApiService) AgentPoolGetDefaultAgentPoolAgents(ctx context.Context) ApiAgentPoolGetDefaultAgentPoolAgentsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiAgentPoolGetDefaultAgentPoolAgentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsAgentsAgentPoolAgent
+//
+//	@return []ModelsAgentsAgentPoolAgent
 func (a *AgentPoolApiService) AgentPoolGetDefaultAgentPoolAgentsExecute(r ApiAgentPoolGetDefaultAgentPoolAgentsRequest) ([]ModelsAgentsAgentPoolAgent, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsAgentsAgentPoolAgent
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsAgentsAgentPoolAgent
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -662,9 +665,9 @@ func (a *AgentPoolApiService) AgentPoolGetDefaultAgentPoolAgentsExecute(r ApiAge
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")
@@ -740,11 +743,11 @@ func (a *AgentPoolApiService) AgentPoolGetDefaultAgentPoolAgentsExecute(r ApiAge
 }
 
 type ApiAgentPoolUpdateAgentPoolRequest struct {
-	ctx context.Context
-	ApiService *AgentPoolApiService
+	ctx                     context.Context
+	ApiService              *AgentPoolApiService
 	xKeyfactorRequestedWith *string
-	agentPool *ModelsAgentsAgentPool
-	xKeyfactorApiVersion *string
+	agentPool               *ModelsAgentsAgentPool
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -775,28 +778,29 @@ AgentPoolUpdateAgentPool Updates an existing agent pool with the provided proper
 - DiscoverAgentsCount = An integer specifying the number of agents that can perform discovery jobs
 - MonitorAgentsCount = An integer specifying the number of agents that can perform monitoring jobs
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAgentPoolUpdateAgentPoolRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAgentPoolUpdateAgentPoolRequest
 */
 func (a *AgentPoolApiService) AgentPoolUpdateAgentPool(ctx context.Context) ApiAgentPoolUpdateAgentPoolRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiAgentPoolUpdateAgentPoolRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsAgentsAgentPool
+//
+//	@return ModelsAgentsAgentPool
 func (a *AgentPoolApiService) AgentPoolUpdateAgentPoolExecute(r ApiAgentPoolUpdateAgentPoolRequest) (*ModelsAgentsAgentPool, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsAgentsAgentPool
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsAgentsAgentPool
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -806,12 +810,12 @@ func (a *AgentPoolApiService) AgentPoolUpdateAgentPoolExecute(r ApiAgentPoolUpda
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.agentPool == nil {
-        return localVarReturnValue, nil, reportError("agentPool is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.agentPool == nil {
+		return localVarReturnValue, nil, reportError("agentPool is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}

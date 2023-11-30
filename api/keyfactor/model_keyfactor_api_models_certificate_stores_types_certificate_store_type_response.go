@@ -28,30 +28,30 @@ var _ MappedNullable = &KeyfactorApiModelsCertificateStoresTypesCertificateStore
 
 // KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse struct for KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
 type KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse struct {
-	Name *string `json:"Name,omitempty"`
-	ShortName *string `json:"ShortName,omitempty"`
-	Capability *string `json:"Capability,omitempty"`
-	StoreType *int32 `json:"StoreType,omitempty"`
-	ImportType *int32 `json:"ImportType,omitempty"`
-	LocalStore *bool `json:"LocalStore,omitempty"`
-	SupportedOperations *ModelsCertStoreTypeSupportedOperations `json:"SupportedOperations,omitempty"`
-	Properties []ModelsCertificateStoreTypeProperty `json:"Properties,omitempty"`
-	EntryParameters []ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter `json:"EntryParameters,omitempty"`
-	PasswordOptions *ModelsCertStoreTypePasswordOptions `json:"PasswordOptions,omitempty"`
-	StorePathType *string `json:"StorePathType,omitempty"`
-	StorePathValue *string `json:"StorePathValue,omitempty"`
-	PrivateKeyAllowed *string `json:"PrivateKeyAllowed,omitempty"`
-	JobProperties []string `json:"JobProperties,omitempty"`
-	ServerRequired *bool `json:"ServerRequired,omitempty"`
-	PowerShell *bool `json:"PowerShell,omitempty"`
-	BlueprintAllowed *bool `json:"BlueprintAllowed,omitempty"`
-	CustomAliasAllowed *string `json:"CustomAliasAllowed,omitempty"`
-	ServerRegistration *int32 `json:"ServerRegistration,omitempty"`
-	InventoryEndpoint *string `json:"InventoryEndpoint,omitempty"`
-	InventoryJobType *string `json:"InventoryJobType,omitempty"`
-	ManagementJobType *string `json:"ManagementJobType,omitempty"`
-	DiscoveryJobType *string `json:"DiscoveryJobType,omitempty"`
-	EnrollmentJobType *string `json:"EnrollmentJobType,omitempty"`
+	Name                 *string                                                         `json:"Name,omitempty"`
+	ShortName            *string                                                         `json:"ShortName,omitempty"`
+	Capability           *string                                                         `json:"Capability,omitempty"`
+	StoreType            *int32                                                          `json:"StoreType,omitempty"`
+	ImportType           *int32                                                          `json:"ImportType,omitempty"`
+	LocalStore           *bool                                                           `json:"LocalStore,omitempty"`
+	SupportedOperations  *ModelsCertStoreTypeSupportedOperations                         `json:"SupportedOperations,omitempty"`
+	Properties           []ModelsCertificateStoreTypeProperty                            `json:"Properties,omitempty"`
+	EntryParameters      []ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter `json:"EntryParameters,omitempty"`
+	PasswordOptions      *ModelsCertStoreTypePasswordOptions                             `json:"PasswordOptions,omitempty"`
+	StorePathType        *string                                                         `json:"StorePathType,omitempty"`
+	StorePathValue       *string                                                         `json:"StorePathValue,omitempty"`
+	PrivateKeyAllowed    *string                                                         `json:"PrivateKeyAllowed,omitempty"`
+	JobProperties        []string                                                        `json:"JobProperties,omitempty"`
+	ServerRequired       *bool                                                           `json:"ServerRequired,omitempty"`
+	PowerShell           *bool                                                           `json:"PowerShell,omitempty"`
+	BlueprintAllowed     *bool                                                           `json:"BlueprintAllowed,omitempty"`
+	CustomAliasAllowed   *string                                                         `json:"CustomAliasAllowed,omitempty"`
+	ServerRegistration   *int32                                                          `json:"ServerRegistration,omitempty"`
+	InventoryEndpoint    *string                                                         `json:"InventoryEndpoint,omitempty"`
+	InventoryJobType     *string                                                         `json:"InventoryJobType,omitempty"`
+	ManagementJobType    *string                                                         `json:"ManagementJobType,omitempty"`
+	DiscoveryJobType     *string                                                         `json:"DiscoveryJobType,omitempty"`
+	EnrollmentJobType    *string                                                         `json:"EnrollmentJobType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -843,7 +843,7 @@ func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) S
 }
 
 func (o KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1005,5 +1005,3 @@ func (v *NullableKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeRes
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

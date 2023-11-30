@@ -27,16 +27,15 @@ import (
 	"net/url"
 )
 
-
 // OrchestratorJobApiService OrchestratorJobApi service
 type OrchestratorJobApiService service
 
 type ApiOrchestratorJobAcknowledgeJobsRequest struct {
-	ctx context.Context
-	ApiService *OrchestratorJobApiService
+	ctx                     context.Context
+	ApiService              *OrchestratorJobApiService
 	xKeyfactorRequestedWith *string
-	req *KeyfactorApiModelsOrchestratorJobsAcknowledgeJobRequest
-	xKeyfactorApiVersion *string
+	req                     *KeyfactorApiModelsOrchestratorJobsAcknowledgeJobRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -64,26 +63,26 @@ func (r ApiOrchestratorJobAcknowledgeJobsRequest) Execute() (*http.Response, err
 /*
 OrchestratorJobAcknowledgeJobs Acknowledges orchestrator jobs based on the provided information
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOrchestratorJobAcknowledgeJobsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiOrchestratorJobAcknowledgeJobsRequest
 */
 func (a *OrchestratorJobApiService) OrchestratorJobAcknowledgeJobs(ctx context.Context) ApiOrchestratorJobAcknowledgeJobsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiOrchestratorJobAcknowledgeJobsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *OrchestratorJobApiService) OrchestratorJobAcknowledgeJobsExecute(r ApiOrchestratorJobAcknowledgeJobsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -93,12 +92,12 @@ func (a *OrchestratorJobApiService) OrchestratorJobAcknowledgeJobsExecute(r ApiO
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.req == nil {
-        return nil, reportError("req is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.req == nil {
+		return nil, reportError("req is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -152,11 +151,11 @@ func (a *OrchestratorJobApiService) OrchestratorJobAcknowledgeJobsExecute(r ApiO
 }
 
 type ApiOrchestratorJobGetCustomJobResultDataRequest struct {
-	ctx context.Context
-	ApiService *OrchestratorJobApiService
-	jobHistoryId *int64
+	ctx                     context.Context
+	ApiService              *OrchestratorJobApiService
+	jobHistoryId            *int64
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Identifier of the job history record to retrieve
@@ -184,28 +183,29 @@ func (r ApiOrchestratorJobGetCustomJobResultDataRequest) Execute() (*KeyfactorAp
 /*
 OrchestratorJobGetCustomJobResultData Retrieves the results of a custom job using the provided information
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOrchestratorJobGetCustomJobResultDataRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiOrchestratorJobGetCustomJobResultDataRequest
 */
 func (a *OrchestratorJobApiService) OrchestratorJobGetCustomJobResultData(ctx context.Context) ApiOrchestratorJobGetCustomJobResultDataRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiOrchestratorJobGetCustomJobResultDataRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsOrchestratorJobsCustomJobResultDataResponse
+//
+//	@return KeyfactorApiModelsOrchestratorJobsCustomJobResultDataResponse
 func (a *OrchestratorJobApiService) OrchestratorJobGetCustomJobResultDataExecute(r ApiOrchestratorJobGetCustomJobResultDataRequest) (*KeyfactorApiModelsOrchestratorJobsCustomJobResultDataResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsOrchestratorJobsCustomJobResultDataResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsOrchestratorJobsCustomJobResultDataResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -215,12 +215,12 @@ func (a *OrchestratorJobApiService) OrchestratorJobGetCustomJobResultDataExecute
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.jobHistoryId == nil {
-        return localVarReturnValue, nil, reportError("jobHistoryId is required and must be specified")
-    }
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.jobHistoryId == nil {
+		return localVarReturnValue, nil, reportError("jobHistoryId is required and must be specified")
+	}
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	parameterAddToQuery(localVarQueryParams, "jobHistoryId", r.jobHistoryId, "")
 	// to determine the Content-Type header
@@ -282,15 +282,15 @@ func (a *OrchestratorJobApiService) OrchestratorJobGetCustomJobResultDataExecute
 }
 
 type ApiOrchestratorJobGetJobHistoryRequest struct {
-	ctx context.Context
-	ApiService *OrchestratorJobApiService
+	ctx                     context.Context
+	ApiService              *OrchestratorJobApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -342,28 +342,29 @@ func (r ApiOrchestratorJobGetJobHistoryRequest) Execute() ([]KeyfactorApiModelsC
 /*
 OrchestratorJobGetJobHistory Returns all histories of an orchestrator job according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOrchestratorJobGetJobHistoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiOrchestratorJobGetJobHistoryRequest
 */
 func (a *OrchestratorJobApiService) OrchestratorJobGetJobHistory(ctx context.Context) ApiOrchestratorJobGetJobHistoryRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiOrchestratorJobGetJobHistoryRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsCertificateStoresJobHistoryResponse
+//
+//	@return []KeyfactorApiModelsCertificateStoresJobHistoryResponse
 func (a *OrchestratorJobApiService) OrchestratorJobGetJobHistoryExecute(r ApiOrchestratorJobGetJobHistoryRequest) ([]KeyfactorApiModelsCertificateStoresJobHistoryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsCertificateStoresJobHistoryResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsCertificateStoresJobHistoryResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -373,9 +374,9 @@ func (a *OrchestratorJobApiService) OrchestratorJobGetJobHistoryExecute(r ApiOrc
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")
@@ -451,15 +452,15 @@ func (a *OrchestratorJobApiService) OrchestratorJobGetJobHistoryExecute(r ApiOrc
 }
 
 type ApiOrchestratorJobGetScheduledJobsRequest struct {
-	ctx context.Context
-	ApiService *OrchestratorJobApiService
+	ctx                     context.Context
+	ApiService              *OrchestratorJobApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -511,28 +512,29 @@ func (r ApiOrchestratorJobGetScheduledJobsRequest) Execute() ([]ModelsOrchestrat
 /*
 OrchestratorJobGetScheduledJobs Returns all scheduled orchestrator jobs according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOrchestratorJobGetScheduledJobsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiOrchestratorJobGetScheduledJobsRequest
 */
 func (a *OrchestratorJobApiService) OrchestratorJobGetScheduledJobs(ctx context.Context) ApiOrchestratorJobGetScheduledJobsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiOrchestratorJobGetScheduledJobsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsOrchestratorJobsJob
+//
+//	@return []ModelsOrchestratorJobsJob
 func (a *OrchestratorJobApiService) OrchestratorJobGetScheduledJobsExecute(r ApiOrchestratorJobGetScheduledJobsRequest) ([]ModelsOrchestratorJobsJob, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsOrchestratorJobsJob
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsOrchestratorJobsJob
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -542,9 +544,9 @@ func (a *OrchestratorJobApiService) OrchestratorJobGetScheduledJobsExecute(r Api
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")
@@ -620,11 +622,11 @@ func (a *OrchestratorJobApiService) OrchestratorJobGetScheduledJobsExecute(r Api
 }
 
 type ApiOrchestratorJobRescheduleJobsRequest struct {
-	ctx context.Context
-	ApiService *OrchestratorJobApiService
+	ctx                     context.Context
+	ApiService              *OrchestratorJobApiService
 	xKeyfactorRequestedWith *string
-	req *KeyfactorApiModelsOrchestratorJobsRescheduleJobRequest
-	xKeyfactorApiVersion *string
+	req                     *KeyfactorApiModelsOrchestratorJobsRescheduleJobRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -652,26 +654,26 @@ func (r ApiOrchestratorJobRescheduleJobsRequest) Execute() (*http.Response, erro
 /*
 OrchestratorJobRescheduleJobs Reschedules orchestrator jobs based on the provided information
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOrchestratorJobRescheduleJobsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiOrchestratorJobRescheduleJobsRequest
 */
 func (a *OrchestratorJobApiService) OrchestratorJobRescheduleJobs(ctx context.Context) ApiOrchestratorJobRescheduleJobsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiOrchestratorJobRescheduleJobsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *OrchestratorJobApiService) OrchestratorJobRescheduleJobsExecute(r ApiOrchestratorJobRescheduleJobsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -681,12 +683,12 @@ func (a *OrchestratorJobApiService) OrchestratorJobRescheduleJobsExecute(r ApiOr
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.req == nil {
-        return nil, reportError("req is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.req == nil {
+		return nil, reportError("req is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -740,11 +742,11 @@ func (a *OrchestratorJobApiService) OrchestratorJobRescheduleJobsExecute(r ApiOr
 }
 
 type ApiOrchestratorJobScheduleBulkJobRequest struct {
-	ctx context.Context
-	ApiService *OrchestratorJobApiService
+	ctx                     context.Context
+	ApiService              *OrchestratorJobApiService
 	xKeyfactorRequestedWith *string
-	req *ModelsOrchestratorJobsScheduleBulkJobRequest
-	xKeyfactorApiVersion *string
+	req                     *ModelsOrchestratorJobsScheduleBulkJobRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -772,28 +774,29 @@ func (r ApiOrchestratorJobScheduleBulkJobRequest) Execute() (*KeyfactorApiModels
 /*
 OrchestratorJobScheduleBulkJob Schedules the same job for a custom JobType on the specified agents using the provided information
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOrchestratorJobScheduleBulkJobRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiOrchestratorJobScheduleBulkJobRequest
 */
 func (a *OrchestratorJobApiService) OrchestratorJobScheduleBulkJob(ctx context.Context) ApiOrchestratorJobScheduleBulkJobRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiOrchestratorJobScheduleBulkJobRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsOrchestratorJobsBulkJobResponse
+//
+//	@return KeyfactorApiModelsOrchestratorJobsBulkJobResponse
 func (a *OrchestratorJobApiService) OrchestratorJobScheduleBulkJobExecute(r ApiOrchestratorJobScheduleBulkJobRequest) (*KeyfactorApiModelsOrchestratorJobsBulkJobResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsOrchestratorJobsBulkJobResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsOrchestratorJobsBulkJobResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -803,12 +806,12 @@ func (a *OrchestratorJobApiService) OrchestratorJobScheduleBulkJobExecute(r ApiO
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.req == nil {
-        return localVarReturnValue, nil, reportError("req is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.req == nil {
+		return localVarReturnValue, nil, reportError("req is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -871,11 +874,11 @@ func (a *OrchestratorJobApiService) OrchestratorJobScheduleBulkJobExecute(r ApiO
 }
 
 type ApiOrchestratorJobScheduleJobRequest struct {
-	ctx context.Context
-	ApiService *OrchestratorJobApiService
+	ctx                     context.Context
+	ApiService              *OrchestratorJobApiService
 	xKeyfactorRequestedWith *string
-	req *ModelsOrchestratorJobsScheduleJobRequest
-	xKeyfactorApiVersion *string
+	req                     *ModelsOrchestratorJobsScheduleJobRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -903,28 +906,29 @@ func (r ApiOrchestratorJobScheduleJobRequest) Execute() (*KeyfactorApiModelsOrch
 /*
 OrchestratorJobScheduleJob Schedules a job for a custom JobType on the agent using the provided information
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOrchestratorJobScheduleJobRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiOrchestratorJobScheduleJobRequest
 */
 func (a *OrchestratorJobApiService) OrchestratorJobScheduleJob(ctx context.Context) ApiOrchestratorJobScheduleJobRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiOrchestratorJobScheduleJobRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsOrchestratorJobsJobResponse
+//
+//	@return KeyfactorApiModelsOrchestratorJobsJobResponse
 func (a *OrchestratorJobApiService) OrchestratorJobScheduleJobExecute(r ApiOrchestratorJobScheduleJobRequest) (*KeyfactorApiModelsOrchestratorJobsJobResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsOrchestratorJobsJobResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsOrchestratorJobsJobResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -934,12 +938,12 @@ func (a *OrchestratorJobApiService) OrchestratorJobScheduleJobExecute(r ApiOrche
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.req == nil {
-        return localVarReturnValue, nil, reportError("req is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.req == nil {
+		return localVarReturnValue, nil, reportError("req is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -1002,11 +1006,11 @@ func (a *OrchestratorJobApiService) OrchestratorJobScheduleJobExecute(r ApiOrche
 }
 
 type ApiOrchestratorJobUnscheduleJobsRequest struct {
-	ctx context.Context
-	ApiService *OrchestratorJobApiService
+	ctx                     context.Context
+	ApiService              *OrchestratorJobApiService
 	xKeyfactorRequestedWith *string
-	req *KeyfactorApiModelsOrchestratorJobsUnscheduleJobRequest
-	xKeyfactorApiVersion *string
+	req                     *KeyfactorApiModelsOrchestratorJobsUnscheduleJobRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1034,26 +1038,26 @@ func (r ApiOrchestratorJobUnscheduleJobsRequest) Execute() (*http.Response, erro
 /*
 OrchestratorJobUnscheduleJobs Unschedules orchestrator jobs based on the provided information
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOrchestratorJobUnscheduleJobsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiOrchestratorJobUnscheduleJobsRequest
 */
 func (a *OrchestratorJobApiService) OrchestratorJobUnscheduleJobs(ctx context.Context) ApiOrchestratorJobUnscheduleJobsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiOrchestratorJobUnscheduleJobsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *OrchestratorJobApiService) OrchestratorJobUnscheduleJobsExecute(r ApiOrchestratorJobUnscheduleJobsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1063,12 +1067,12 @@ func (a *OrchestratorJobApiService) OrchestratorJobUnscheduleJobsExecute(r ApiOr
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.req == nil {
-        return nil, reportError("req is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.req == nil {
+		return nil, reportError("req is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}

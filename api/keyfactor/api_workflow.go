@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // WorkflowApiService WorkflowApi service
 type WorkflowApiService service
 
 type ApiWorkflowApprovePendingRequestsRequest struct {
-	ctx context.Context
-	ApiService *WorkflowApiService
+	ctx                     context.Context
+	ApiService              *WorkflowApiService
 	xKeyfactorRequestedWith *string
-	requestIds *[]int32
-	xKeyfactorApiVersion *string
+	requestIds              *[]int32
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -65,28 +64,29 @@ func (r ApiWorkflowApprovePendingRequestsRequest) Execute() (*ModelsWorkflowAppr
 /*
 WorkflowApprovePendingRequests Approves pending certificate requests associated with the provided ids
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWorkflowApprovePendingRequestsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWorkflowApprovePendingRequestsRequest
 */
 func (a *WorkflowApiService) WorkflowApprovePendingRequests(ctx context.Context) ApiWorkflowApprovePendingRequestsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowApprovePendingRequestsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsWorkflowApproveDenyResult
+//
+//	@return ModelsWorkflowApproveDenyResult
 func (a *WorkflowApiService) WorkflowApprovePendingRequestsExecute(r ApiWorkflowApprovePendingRequestsRequest) (*ModelsWorkflowApproveDenyResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsWorkflowApproveDenyResult
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsWorkflowApproveDenyResult
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -96,12 +96,12 @@ func (a *WorkflowApiService) WorkflowApprovePendingRequestsExecute(r ApiWorkflow
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.requestIds == nil {
-        return localVarReturnValue, nil, reportError("requestIds is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.requestIds == nil {
+		return localVarReturnValue, nil, reportError("requestIds is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -164,11 +164,11 @@ func (a *WorkflowApiService) WorkflowApprovePendingRequestsExecute(r ApiWorkflow
 }
 
 type ApiWorkflowDenyPendingRequestsRequest struct {
-	ctx context.Context
-	ApiService *WorkflowApiService
+	ctx                     context.Context
+	ApiService              *WorkflowApiService
 	xKeyfactorRequestedWith *string
-	request *ModelsWorkflowDenialRequest
-	xKeyfactorApiVersion *string
+	request                 *ModelsWorkflowDenialRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -196,28 +196,29 @@ func (r ApiWorkflowDenyPendingRequestsRequest) Execute() (*ModelsWorkflowApprove
 /*
 WorkflowDenyPendingRequests Denies pending certificate requests associated with the provided ids
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWorkflowDenyPendingRequestsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWorkflowDenyPendingRequestsRequest
 */
 func (a *WorkflowApiService) WorkflowDenyPendingRequests(ctx context.Context) ApiWorkflowDenyPendingRequestsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowDenyPendingRequestsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsWorkflowApproveDenyResult
+//
+//	@return ModelsWorkflowApproveDenyResult
 func (a *WorkflowApiService) WorkflowDenyPendingRequestsExecute(r ApiWorkflowDenyPendingRequestsRequest) (*ModelsWorkflowApproveDenyResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsWorkflowApproveDenyResult
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsWorkflowApproveDenyResult
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -227,12 +228,12 @@ func (a *WorkflowApiService) WorkflowDenyPendingRequestsExecute(r ApiWorkflowDen
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.request == nil {
-        return localVarReturnValue, nil, reportError("request is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.request == nil {
+		return localVarReturnValue, nil, reportError("request is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -295,14 +296,14 @@ func (a *WorkflowApiService) WorkflowDenyPendingRequestsExecute(r ApiWorkflowDen
 }
 
 type ApiWorkflowGetRequest struct {
-	ctx context.Context
-	ApiService *WorkflowApiService
+	ctx                     context.Context
+	ApiService              *WorkflowApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pagedQueryQueryString *string
-	pagedQueryPageReturned *int32
-	pagedQueryReturnLimit *int32
-	pagedQuerySortField *string
+	xKeyfactorApiVersion    *string
+	pagedQueryQueryString   *string
+	pagedQueryPageReturned  *int32
+	pagedQueryReturnLimit   *int32
+	pagedQuerySortField     *string
 	pagedQuerySortAscending *int32
 }
 
@@ -355,28 +356,29 @@ func (r ApiWorkflowGetRequest) Execute() ([]ModelsWorkflowCertificateRequestMode
 /*
 WorkflowGet Gets a collection of certificate requests based on the provided query.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWorkflowGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWorkflowGetRequest
 */
 func (a *WorkflowApiService) WorkflowGet(ctx context.Context) ApiWorkflowGetRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowGetRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsWorkflowCertificateRequestModel
+//
+//	@return []ModelsWorkflowCertificateRequestModel
 func (a *WorkflowApiService) WorkflowGetExecute(r ApiWorkflowGetRequest) ([]ModelsWorkflowCertificateRequestModel, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsWorkflowCertificateRequestModel
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsWorkflowCertificateRequestModel
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -386,9 +388,9 @@ func (a *WorkflowApiService) WorkflowGetExecute(r ApiWorkflowGetRequest) ([]Mode
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pagedQueryQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pagedQuery.queryString", r.pagedQueryQueryString, "")
@@ -464,11 +466,11 @@ func (a *WorkflowApiService) WorkflowGetExecute(r ApiWorkflowGetRequest) ([]Mode
 }
 
 type ApiWorkflowGetCertificateRequestDetailsRequest struct {
-	ctx context.Context
-	ApiService *WorkflowApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *WorkflowApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -490,30 +492,31 @@ func (r ApiWorkflowGetCertificateRequestDetailsRequest) Execute() (*ModelsWorkfl
 /*
 WorkflowGetCertificateRequestDetails Returns certificate request details based on the provided ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The ID of the certificate request.
- @return ApiWorkflowGetCertificateRequestDetailsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The ID of the certificate request.
+	@return ApiWorkflowGetCertificateRequestDetailsRequest
 */
 func (a *WorkflowApiService) WorkflowGetCertificateRequestDetails(ctx context.Context, id int32) ApiWorkflowGetCertificateRequestDetailsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowGetCertificateRequestDetailsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsWorkflowCertificateRequestDetailsModel
+//
+//	@return ModelsWorkflowCertificateRequestDetailsModel
 func (a *WorkflowApiService) WorkflowGetCertificateRequestDetailsExecute(r ApiWorkflowGetCertificateRequestDetailsRequest) (*ModelsWorkflowCertificateRequestDetailsModel, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsWorkflowCertificateRequestDetailsModel
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsWorkflowCertificateRequestDetailsModel
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -524,9 +527,9 @@ func (a *WorkflowApiService) WorkflowGetCertificateRequestDetailsExecute(r ApiWo
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -587,14 +590,14 @@ func (a *WorkflowApiService) WorkflowGetCertificateRequestDetailsExecute(r ApiWo
 }
 
 type ApiWorkflowGetDeniedRequest struct {
-	ctx context.Context
-	ApiService *WorkflowApiService
+	ctx                     context.Context
+	ApiService              *WorkflowApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pagedQueryQueryString *string
-	pagedQueryPageReturned *int32
-	pagedQueryReturnLimit *int32
-	pagedQuerySortField *string
+	xKeyfactorApiVersion    *string
+	pagedQueryQueryString   *string
+	pagedQueryPageReturned  *int32
+	pagedQueryReturnLimit   *int32
+	pagedQuerySortField     *string
 	pagedQuerySortAscending *int32
 }
 
@@ -647,28 +650,29 @@ func (r ApiWorkflowGetDeniedRequest) Execute() ([]ModelsWorkflowCertificateReque
 /*
 WorkflowGetDenied Gets a collection of denied certificate requests based on the provided query.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWorkflowGetDeniedRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWorkflowGetDeniedRequest
 */
 func (a *WorkflowApiService) WorkflowGetDenied(ctx context.Context) ApiWorkflowGetDeniedRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowGetDeniedRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsWorkflowCertificateRequestModel
+//
+//	@return []ModelsWorkflowCertificateRequestModel
 func (a *WorkflowApiService) WorkflowGetDeniedExecute(r ApiWorkflowGetDeniedRequest) ([]ModelsWorkflowCertificateRequestModel, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsWorkflowCertificateRequestModel
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsWorkflowCertificateRequestModel
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -678,9 +682,9 @@ func (a *WorkflowApiService) WorkflowGetDeniedExecute(r ApiWorkflowGetDeniedRequ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pagedQueryQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pagedQuery.queryString", r.pagedQueryQueryString, "")

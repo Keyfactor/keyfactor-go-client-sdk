@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // EnrollmentApiService EnrollmentApi service
 type EnrollmentApiService service
 
 type ApiEnrollmentAddToExistingCertStoresRequest struct {
-	ctx context.Context
-	ApiService *EnrollmentApiService
+	ctx                     context.Context
+	ApiService              *EnrollmentApiService
 	xKeyfactorRequestedWith *string
-	request *ModelsEnrollmentExistingEnrollmentManagementRequest
-	xKeyfactorApiVersion *string
+	request                 *ModelsEnrollmentExistingEnrollmentManagementRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -65,28 +64,29 @@ func (r ApiEnrollmentAddToExistingCertStoresRequest) Execute() (*KeyfactorAPIMod
 /*
 EnrollmentAddToExistingCertStores Creates management jobs to install a newly enrolled pfx into the same certificate stores as the previous certificate
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiEnrollmentAddToExistingCertStoresRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiEnrollmentAddToExistingCertStoresRequest
 */
 func (a *EnrollmentApiService) EnrollmentAddToExistingCertStores(ctx context.Context) ApiEnrollmentAddToExistingCertStoresRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiEnrollmentAddToExistingCertStoresRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse
+//
+//	@return KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse
 func (a *EnrollmentApiService) EnrollmentAddToExistingCertStoresExecute(r ApiEnrollmentAddToExistingCertStoresRequest) (*KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -96,12 +96,12 @@ func (a *EnrollmentApiService) EnrollmentAddToExistingCertStoresExecute(r ApiEnr
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.request == nil {
-        return localVarReturnValue, nil, reportError("request is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.request == nil {
+		return localVarReturnValue, nil, reportError("request is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -164,12 +164,12 @@ func (a *EnrollmentApiService) EnrollmentAddToExistingCertStoresExecute(r ApiEnr
 }
 
 type ApiEnrollmentAvailableRenewalIdRequest struct {
-	ctx context.Context
-	ApiService *EnrollmentApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *EnrollmentApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	collectionId *int32
-	xKeyfactorApiVersion *string
+	collectionId            *int32
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -204,30 +204,31 @@ EnrollmentAvailableRenewalId Returns the type of renewal available for a given c
 | 1             | Seeded PFX                |
 | 2                | One-click                   |
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The Keyfactor certificate Id
- @return ApiEnrollmentAvailableRenewalIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The Keyfactor certificate Id
+	@return ApiEnrollmentAvailableRenewalIdRequest
 */
 func (a *EnrollmentApiService) EnrollmentAvailableRenewalId(ctx context.Context, id int32) ApiEnrollmentAvailableRenewalIdRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiEnrollmentAvailableRenewalIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsEnrollmentAvailableRenewal
+//
+//	@return ModelsEnrollmentAvailableRenewal
 func (a *EnrollmentApiService) EnrollmentAvailableRenewalIdExecute(r ApiEnrollmentAvailableRenewalIdRequest) (*ModelsEnrollmentAvailableRenewal, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsEnrollmentAvailableRenewal
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsEnrollmentAvailableRenewal
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -238,9 +239,9 @@ func (a *EnrollmentApiService) EnrollmentAvailableRenewalIdExecute(r ApiEnrollme
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.collectionId != nil {
 		parameterAddToQuery(localVarQueryParams, "collectionId", r.collectionId, "")
@@ -304,12 +305,12 @@ func (a *EnrollmentApiService) EnrollmentAvailableRenewalIdExecute(r ApiEnrollme
 }
 
 type ApiEnrollmentAvailableRenewalThumbprintRequest struct {
-	ctx context.Context
-	ApiService *EnrollmentApiService
-	thumbprint string
+	ctx                     context.Context
+	ApiService              *EnrollmentApiService
+	thumbprint              string
 	xKeyfactorRequestedWith *string
-	collectionId *int32
-	xKeyfactorApiVersion *string
+	collectionId            *int32
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -337,30 +338,31 @@ func (r ApiEnrollmentAvailableRenewalThumbprintRequest) Execute() (*ModelsEnroll
 /*
 EnrollmentAvailableRenewalThumbprint Returns the type of renewal available for a given certificate.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param thumbprint The certificate thumbprint
- @return ApiEnrollmentAvailableRenewalThumbprintRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param thumbprint The certificate thumbprint
+	@return ApiEnrollmentAvailableRenewalThumbprintRequest
 */
 func (a *EnrollmentApiService) EnrollmentAvailableRenewalThumbprint(ctx context.Context, thumbprint string) ApiEnrollmentAvailableRenewalThumbprintRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiEnrollmentAvailableRenewalThumbprintRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		thumbprint: thumbprint,
+		xKeyfactorApiVersion:    &version,
+		thumbprint:              thumbprint,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsEnrollmentAvailableRenewal
+//
+//	@return ModelsEnrollmentAvailableRenewal
 func (a *EnrollmentApiService) EnrollmentAvailableRenewalThumbprintExecute(r ApiEnrollmentAvailableRenewalThumbprintRequest) (*ModelsEnrollmentAvailableRenewal, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsEnrollmentAvailableRenewal
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsEnrollmentAvailableRenewal
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -371,9 +373,9 @@ func (a *EnrollmentApiService) EnrollmentAvailableRenewalThumbprintExecute(r Api
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.collectionId != nil {
 		parameterAddToQuery(localVarQueryParams, "collectionId", r.collectionId, "")
@@ -437,10 +439,10 @@ func (a *EnrollmentApiService) EnrollmentAvailableRenewalThumbprintExecute(r Api
 }
 
 type ApiEnrollmentGetMyCSRContextRequest struct {
-	ctx context.Context
-	ApiService *EnrollmentApiService
+	ctx                     context.Context
+	ApiService              *EnrollmentApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -462,28 +464,29 @@ func (r ApiEnrollmentGetMyCSRContextRequest) Execute() (*CoreModelsEnrollmentEnr
 /*
 EnrollmentGetMyCSRContext Returns the list of available CSR enrollment templates and their associated CA mappings that the calling user has permissions on
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiEnrollmentGetMyCSRContextRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiEnrollmentGetMyCSRContextRequest
 */
 func (a *EnrollmentApiService) EnrollmentGetMyCSRContext(ctx context.Context) ApiEnrollmentGetMyCSRContextRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiEnrollmentGetMyCSRContextRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return CoreModelsEnrollmentEnrollmentTemplateCAResponse
+//
+//	@return CoreModelsEnrollmentEnrollmentTemplateCAResponse
 func (a *EnrollmentApiService) EnrollmentGetMyCSRContextExecute(r ApiEnrollmentGetMyCSRContextRequest) (*CoreModelsEnrollmentEnrollmentTemplateCAResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CoreModelsEnrollmentEnrollmentTemplateCAResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CoreModelsEnrollmentEnrollmentTemplateCAResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -493,9 +496,9 @@ func (a *EnrollmentApiService) EnrollmentGetMyCSRContextExecute(r ApiEnrollmentG
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -556,10 +559,10 @@ func (a *EnrollmentApiService) EnrollmentGetMyCSRContextExecute(r ApiEnrollmentG
 }
 
 type ApiEnrollmentGetMyPFXContextRequest struct {
-	ctx context.Context
-	ApiService *EnrollmentApiService
+	ctx                     context.Context
+	ApiService              *EnrollmentApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -581,28 +584,29 @@ func (r ApiEnrollmentGetMyPFXContextRequest) Execute() (*CoreModelsEnrollmentEnr
 /*
 EnrollmentGetMyPFXContext Returns the list of available PFX enrollment templates and their associated CA mappings that the calling user has permissions on
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiEnrollmentGetMyPFXContextRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiEnrollmentGetMyPFXContextRequest
 */
 func (a *EnrollmentApiService) EnrollmentGetMyPFXContext(ctx context.Context) ApiEnrollmentGetMyPFXContextRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiEnrollmentGetMyPFXContextRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return CoreModelsEnrollmentEnrollmentTemplateCAResponse
+//
+//	@return CoreModelsEnrollmentEnrollmentTemplateCAResponse
 func (a *EnrollmentApiService) EnrollmentGetMyPFXContextExecute(r ApiEnrollmentGetMyPFXContextRequest) (*CoreModelsEnrollmentEnrollmentTemplateCAResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CoreModelsEnrollmentEnrollmentTemplateCAResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CoreModelsEnrollmentEnrollmentTemplateCAResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -612,9 +616,9 @@ func (a *EnrollmentApiService) EnrollmentGetMyPFXContextExecute(r ApiEnrollmentG
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -675,11 +679,11 @@ func (a *EnrollmentApiService) EnrollmentGetMyPFXContextExecute(r ApiEnrollmentG
 }
 
 type ApiEnrollmentGetTemplateEnrollmentSettingsRequest struct {
-	ctx context.Context
-	ApiService *EnrollmentApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *EnrollmentApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -701,30 +705,31 @@ func (r ApiEnrollmentGetTemplateEnrollmentSettingsRequest) Execute() (*Keyfactor
 /*
 EnrollmentGetTemplateEnrollmentSettings Gets the template settings to use during enrollment. The response will be the resolved values for the settings.  If there is a template specific setting, the template specific setting will be used in the response.  If there is not a template specific setting, the global setting will be used in the response.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id
- @return ApiEnrollmentGetTemplateEnrollmentSettingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id
+	@return ApiEnrollmentGetTemplateEnrollmentSettingsRequest
 */
 func (a *EnrollmentApiService) EnrollmentGetTemplateEnrollmentSettings(ctx context.Context, id int32) ApiEnrollmentGetTemplateEnrollmentSettingsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiEnrollmentGetTemplateEnrollmentSettingsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsTemplatesTemplateEnrollmentSettingsResponse
+//
+//	@return KeyfactorApiModelsTemplatesTemplateEnrollmentSettingsResponse
 func (a *EnrollmentApiService) EnrollmentGetTemplateEnrollmentSettingsExecute(r ApiEnrollmentGetTemplateEnrollmentSettingsRequest) (*KeyfactorApiModelsTemplatesTemplateEnrollmentSettingsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsTemplatesTemplateEnrollmentSettingsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsTemplatesTemplateEnrollmentSettingsResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -735,9 +740,9 @@ func (a *EnrollmentApiService) EnrollmentGetTemplateEnrollmentSettingsExecute(r 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -798,11 +803,11 @@ func (a *EnrollmentApiService) EnrollmentGetTemplateEnrollmentSettingsExecute(r 
 }
 
 type ApiEnrollmentInstallPFXToCertStoreRequest struct {
-	ctx context.Context
-	ApiService *EnrollmentApiService
+	ctx                     context.Context
+	ApiService              *EnrollmentApiService
 	xKeyfactorRequestedWith *string
-	request *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest
-	xKeyfactorApiVersion *string
+	request                 *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -830,28 +835,29 @@ func (r ApiEnrollmentInstallPFXToCertStoreRequest) Execute() (*KeyfactorAPIModel
 /*
 EnrollmentInstallPFXToCertStore Creates management jobs to install a newly enrolled pfx in to one or more certificate stores
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiEnrollmentInstallPFXToCertStoreRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiEnrollmentInstallPFXToCertStoreRequest
 */
 func (a *EnrollmentApiService) EnrollmentInstallPFXToCertStore(ctx context.Context) ApiEnrollmentInstallPFXToCertStoreRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiEnrollmentInstallPFXToCertStoreRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse
+//
+//	@return KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse
 func (a *EnrollmentApiService) EnrollmentInstallPFXToCertStoreExecute(r ApiEnrollmentInstallPFXToCertStoreRequest) (*KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -861,12 +867,12 @@ func (a *EnrollmentApiService) EnrollmentInstallPFXToCertStoreExecute(r ApiEnrol
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.request == nil {
-        return localVarReturnValue, nil, reportError("request is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.request == nil {
+		return localVarReturnValue, nil, reportError("request is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -929,12 +935,12 @@ func (a *EnrollmentApiService) EnrollmentInstallPFXToCertStoreExecute(r ApiEnrol
 }
 
 type ApiEnrollmentPostCSREnrollRequest struct {
-	ctx context.Context
-	ApiService *EnrollmentApiService
+	ctx                     context.Context
+	ApiService              *EnrollmentApiService
 	xKeyfactorRequestedWith *string
-	xCertificateformat *string
-	request *ModelsEnrollmentCSREnrollmentRequest
-	xKeyfactorApiVersion *string
+	xCertificateformat      *string
+	request                 *ModelsEnrollmentCSREnrollmentRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -985,28 +991,29 @@ EnrollmentPostCSREnroll Performs a CSR Enrollment based upon the provided reques
 | ms_ntprincipalname | MS_NTPrincipalName        |
 | ms_ntdsreplication | MS_NTDSReplication        |
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiEnrollmentPostCSREnrollRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiEnrollmentPostCSREnrollRequest
 */
 func (a *EnrollmentApiService) EnrollmentPostCSREnroll(ctx context.Context) ApiEnrollmentPostCSREnrollRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiEnrollmentPostCSREnrollRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsEnrollmentCSREnrollmentResponse
+//
+//	@return ModelsEnrollmentCSREnrollmentResponse
 func (a *EnrollmentApiService) EnrollmentPostCSREnrollExecute(r ApiEnrollmentPostCSREnrollRequest) (*ModelsEnrollmentCSREnrollmentResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsEnrollmentCSREnrollmentResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsEnrollmentCSREnrollmentResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1016,15 +1023,15 @@ func (a *EnrollmentApiService) EnrollmentPostCSREnrollExecute(r ApiEnrollmentPos
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.xCertificateformat == nil {
-        return localVarReturnValue, nil, reportError("xCertificateformat is required and must be specified")
-    }
-    if r.request == nil {
-        return localVarReturnValue, nil, reportError("request is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.xCertificateformat == nil {
+		return localVarReturnValue, nil, reportError("xCertificateformat is required and must be specified")
+	}
+	if r.request == nil {
+		return localVarReturnValue, nil, reportError("request is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -1088,12 +1095,12 @@ func (a *EnrollmentApiService) EnrollmentPostCSREnrollExecute(r ApiEnrollmentPos
 }
 
 type ApiEnrollmentPostPFXEnrollRequest struct {
-	ctx context.Context
-	ApiService *EnrollmentApiService
+	ctx                     context.Context
+	ApiService              *EnrollmentApiService
 	xKeyfactorRequestedWith *string
-	xCertificateformat *string
-	request *ModelsEnrollmentPFXEnrollmentRequest
-	xKeyfactorApiVersion *string
+	xCertificateformat      *string
+	request                 *ModelsEnrollmentPFXEnrollmentRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1127,7 +1134,7 @@ func (r ApiEnrollmentPostPFXEnrollRequest) Execute() (*ModelsEnrollmentPFXEnroll
 /*
 EnrollmentPostPFXEnroll Performs a PFX Enrollment based upon the provided request
 
-### IMPORTANT: 
+### IMPORTANT:
 - The <b>'RenewalCertificateId'</b> field in the request should be set to <b>null</b> if the certificate is not being renewed as part of the enrollment. A value of <b>0</b> will produce an error.
 
 ### Subject Alternative Name Flags ###
@@ -1147,28 +1154,29 @@ EnrollmentPostPFXEnroll Performs a PFX Enrollment based upon the provided reques
 | ms_ntprincipalname | MS_NTPrincipalName        |
 | ms_ntdsreplication | MS_NTDSReplication        |
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiEnrollmentPostPFXEnrollRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiEnrollmentPostPFXEnrollRequest
 */
 func (a *EnrollmentApiService) EnrollmentPostPFXEnroll(ctx context.Context) ApiEnrollmentPostPFXEnrollRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiEnrollmentPostPFXEnrollRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsEnrollmentPFXEnrollmentResponse
+//
+//	@return ModelsEnrollmentPFXEnrollmentResponse
 func (a *EnrollmentApiService) EnrollmentPostPFXEnrollExecute(r ApiEnrollmentPostPFXEnrollRequest) (*ModelsEnrollmentPFXEnrollmentResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsEnrollmentPFXEnrollmentResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsEnrollmentPFXEnrollmentResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1178,15 +1186,15 @@ func (a *EnrollmentApiService) EnrollmentPostPFXEnrollExecute(r ApiEnrollmentPos
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.xCertificateformat == nil {
-        return localVarReturnValue, nil, reportError("xCertificateformat is required and must be specified")
-    }
-    if r.request == nil {
-        return localVarReturnValue, nil, reportError("request is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.xCertificateformat == nil {
+		return localVarReturnValue, nil, reportError("xCertificateformat is required and must be specified")
+	}
+	if r.request == nil {
+		return localVarReturnValue, nil, reportError("request is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -1250,11 +1258,11 @@ func (a *EnrollmentApiService) EnrollmentPostPFXEnrollExecute(r ApiEnrollmentPos
 }
 
 type ApiEnrollmentPostParsedCSRRequest struct {
-	ctx context.Context
-	ApiService *EnrollmentApiService
+	ctx                     context.Context
+	ApiService              *EnrollmentApiService
 	xKeyfactorRequestedWith *string
-	csr *ModelsCSRContents
-	xKeyfactorApiVersion *string
+	csr                     *ModelsCSRContents
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1284,28 +1292,29 @@ EnrollmentPostParsedCSR Parses the provided CSR and returns the properties
 
 This functionality is equivalent to the result of pasting a CSR into the field within the Management Portal CSR Enrollment page.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiEnrollmentPostParsedCSRRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiEnrollmentPostParsedCSRRequest
 */
 func (a *EnrollmentApiService) EnrollmentPostParsedCSR(ctx context.Context) ApiEnrollmentPostParsedCSRRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiEnrollmentPostParsedCSRRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []string
+//
+//	@return []string
 func (a *EnrollmentApiService) EnrollmentPostParsedCSRExecute(r ApiEnrollmentPostParsedCSRRequest) ([]string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []string
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []string
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1315,12 +1324,12 @@ func (a *EnrollmentApiService) EnrollmentPostParsedCSRExecute(r ApiEnrollmentPos
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.csr == nil {
-        return localVarReturnValue, nil, reportError("csr is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.csr == nil {
+		return localVarReturnValue, nil, reportError("csr is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -1383,12 +1392,12 @@ func (a *EnrollmentApiService) EnrollmentPostParsedCSRExecute(r ApiEnrollmentPos
 }
 
 type ApiEnrollmentRenewRequest struct {
-	ctx context.Context
-	ApiService *EnrollmentApiService
+	ctx                     context.Context
+	ApiService              *EnrollmentApiService
 	xKeyfactorRequestedWith *string
-	request *ModelsEnrollmentRenewalRequest
-	collectionId *int32
-	xKeyfactorApiVersion *string
+	request                 *ModelsEnrollmentRenewalRequest
+	collectionId            *int32
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1422,28 +1431,29 @@ func (r ApiEnrollmentRenewRequest) Execute() (*ModelsEnrollmentRenewalResponse, 
 /*
 EnrollmentRenew Performs a renewal based upon the passed in request
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiEnrollmentRenewRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiEnrollmentRenewRequest
 */
 func (a *EnrollmentApiService) EnrollmentRenew(ctx context.Context) ApiEnrollmentRenewRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiEnrollmentRenewRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsEnrollmentRenewalResponse
+//
+//	@return ModelsEnrollmentRenewalResponse
 func (a *EnrollmentApiService) EnrollmentRenewExecute(r ApiEnrollmentRenewRequest) (*ModelsEnrollmentRenewalResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsEnrollmentRenewalResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsEnrollmentRenewalResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1453,12 +1463,12 @@ func (a *EnrollmentApiService) EnrollmentRenewExecute(r ApiEnrollmentRenewReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.request == nil {
-        return localVarReturnValue, nil, reportError("request is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.request == nil {
+		return localVarReturnValue, nil, reportError("request is required and must be specified")
+	}
 
 	if r.collectionId != nil {
 		parameterAddToQuery(localVarQueryParams, "collectionId", r.collectionId, "")

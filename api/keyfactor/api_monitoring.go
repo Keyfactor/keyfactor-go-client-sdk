@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // MonitoringApiService MonitoringApi service
 type MonitoringApiService service
 
 type ApiMonitoringAddRevocationMonitoringRequest struct {
-	ctx context.Context
-	ApiService *MonitoringApiService
+	ctx                     context.Context
+	ApiService              *MonitoringApiService
 	xKeyfactorRequestedWith *string
-	endpoint *KeyfactorApiModelsMonitoringRevocationMonitoringCreationRequest
-	xKeyfactorApiVersion *string
+	endpoint                *KeyfactorApiModelsMonitoringRevocationMonitoringCreationRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -65,28 +64,29 @@ func (r ApiMonitoringAddRevocationMonitoringRequest) Execute() (*KeyfactorApiMod
 /*
 MonitoringAddRevocationMonitoring Add a revocation monitoring endpoint
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMonitoringAddRevocationMonitoringRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiMonitoringAddRevocationMonitoringRequest
 */
 func (a *MonitoringApiService) MonitoringAddRevocationMonitoring(ctx context.Context) ApiMonitoringAddRevocationMonitoringRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiMonitoringAddRevocationMonitoringRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse
+//
+//	@return KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse
 func (a *MonitoringApiService) MonitoringAddRevocationMonitoringExecute(r ApiMonitoringAddRevocationMonitoringRequest) (*KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -96,12 +96,12 @@ func (a *MonitoringApiService) MonitoringAddRevocationMonitoringExecute(r ApiMon
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.endpoint == nil {
-        return localVarReturnValue, nil, reportError("endpoint is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.endpoint == nil {
+		return localVarReturnValue, nil, reportError("endpoint is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -164,11 +164,11 @@ func (a *MonitoringApiService) MonitoringAddRevocationMonitoringExecute(r ApiMon
 }
 
 type ApiMonitoringDeleteRevocationMonitoringRequest struct {
-	ctx context.Context
-	ApiService *MonitoringApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *MonitoringApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -190,28 +190,28 @@ func (r ApiMonitoringDeleteRevocationMonitoringRequest) Execute() (*http.Respons
 /*
 MonitoringDeleteRevocationMonitoring Delete a revocation monitoring endpoint
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Id for the revocation monitoring endpoint
- @return ApiMonitoringDeleteRevocationMonitoringRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Id for the revocation monitoring endpoint
+	@return ApiMonitoringDeleteRevocationMonitoringRequest
 */
 func (a *MonitoringApiService) MonitoringDeleteRevocationMonitoring(ctx context.Context, id int32) ApiMonitoringDeleteRevocationMonitoringRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiMonitoringDeleteRevocationMonitoringRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *MonitoringApiService) MonitoringDeleteRevocationMonitoringExecute(r ApiMonitoringDeleteRevocationMonitoringRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -222,9 +222,9 @@ func (a *MonitoringApiService) MonitoringDeleteRevocationMonitoringExecute(r Api
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -276,11 +276,11 @@ func (a *MonitoringApiService) MonitoringDeleteRevocationMonitoringExecute(r Api
 }
 
 type ApiMonitoringEditRevocationMonitoringRequest struct {
-	ctx context.Context
-	ApiService *MonitoringApiService
+	ctx                     context.Context
+	ApiService              *MonitoringApiService
 	xKeyfactorRequestedWith *string
-	endpoint *KeyfactorApiModelsMonitoringRevocationMonitoringUpdateRequest
-	xKeyfactorApiVersion *string
+	endpoint                *KeyfactorApiModelsMonitoringRevocationMonitoringUpdateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -308,28 +308,29 @@ func (r ApiMonitoringEditRevocationMonitoringRequest) Execute() (*KeyfactorApiMo
 /*
 MonitoringEditRevocationMonitoring Edit a revocation monitoring endpoint
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMonitoringEditRevocationMonitoringRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiMonitoringEditRevocationMonitoringRequest
 */
 func (a *MonitoringApiService) MonitoringEditRevocationMonitoring(ctx context.Context) ApiMonitoringEditRevocationMonitoringRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiMonitoringEditRevocationMonitoringRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse
+//
+//	@return KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse
 func (a *MonitoringApiService) MonitoringEditRevocationMonitoringExecute(r ApiMonitoringEditRevocationMonitoringRequest) (*KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -339,12 +340,12 @@ func (a *MonitoringApiService) MonitoringEditRevocationMonitoringExecute(r ApiMo
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.endpoint == nil {
-        return localVarReturnValue, nil, reportError("endpoint is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.endpoint == nil {
+		return localVarReturnValue, nil, reportError("endpoint is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -407,11 +408,11 @@ func (a *MonitoringApiService) MonitoringEditRevocationMonitoringExecute(r ApiMo
 }
 
 type ApiMonitoringGetRevocationMonitoringRequest struct {
-	ctx context.Context
-	ApiService *MonitoringApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *MonitoringApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -433,30 +434,31 @@ func (r ApiMonitoringGetRevocationMonitoringRequest) Execute() (*KeyfactorApiMod
 /*
 MonitoringGetRevocationMonitoring Get a revocation monitoring endpoint
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Id for the endpoint to get
- @return ApiMonitoringGetRevocationMonitoringRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Id for the endpoint to get
+	@return ApiMonitoringGetRevocationMonitoringRequest
 */
 func (a *MonitoringApiService) MonitoringGetRevocationMonitoring(ctx context.Context, id int32) ApiMonitoringGetRevocationMonitoringRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiMonitoringGetRevocationMonitoringRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse
+//
+//	@return KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse
 func (a *MonitoringApiService) MonitoringGetRevocationMonitoringExecute(r ApiMonitoringGetRevocationMonitoringRequest) (*KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -467,9 +469,9 @@ func (a *MonitoringApiService) MonitoringGetRevocationMonitoringExecute(r ApiMon
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -530,14 +532,14 @@ func (a *MonitoringApiService) MonitoringGetRevocationMonitoringExecute(r ApiMon
 }
 
 type ApiMonitoringGetRevocationMonitoringEndpointsRequest struct {
-	ctx context.Context
-	ApiService *MonitoringApiService
+	ctx                     context.Context
+	ApiService              *MonitoringApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pagedQueryQueryString *string
-	pagedQueryPageReturned *int32
-	pagedQueryReturnLimit *int32
-	pagedQuerySortField *string
+	xKeyfactorApiVersion    *string
+	pagedQueryQueryString   *string
+	pagedQueryPageReturned  *int32
+	pagedQueryReturnLimit   *int32
+	pagedQuerySortField     *string
 	pagedQuerySortAscending *int32
 }
 
@@ -590,28 +592,29 @@ func (r ApiMonitoringGetRevocationMonitoringEndpointsRequest) Execute() ([]Keyfa
 /*
 MonitoringGetRevocationMonitoringEndpoints Gets all revocation monitoring endpoints according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMonitoringGetRevocationMonitoringEndpointsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiMonitoringGetRevocationMonitoringEndpointsRequest
 */
 func (a *MonitoringApiService) MonitoringGetRevocationMonitoringEndpoints(ctx context.Context) ApiMonitoringGetRevocationMonitoringEndpointsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiMonitoringGetRevocationMonitoringEndpointsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse
+//
+//	@return []KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse
 func (a *MonitoringApiService) MonitoringGetRevocationMonitoringEndpointsExecute(r ApiMonitoringGetRevocationMonitoringEndpointsRequest) ([]KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -621,9 +624,9 @@ func (a *MonitoringApiService) MonitoringGetRevocationMonitoringEndpointsExecute
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pagedQueryQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pagedQuery.queryString", r.pagedQueryQueryString, "")
@@ -699,11 +702,11 @@ func (a *MonitoringApiService) MonitoringGetRevocationMonitoringEndpointsExecute
 }
 
 type ApiMonitoringResolveOCSPRequest struct {
-	ctx context.Context
-	ApiService *MonitoringApiService
+	ctx                     context.Context
+	ApiService              *MonitoringApiService
 	xKeyfactorRequestedWith *string
-	endpoint *KeyfactorApiModelsMonitoringOCSPParametersRequest
-	xKeyfactorApiVersion *string
+	endpoint                *KeyfactorApiModelsMonitoringOCSPParametersRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -731,28 +734,29 @@ func (r ApiMonitoringResolveOCSPRequest) Execute() (*KeyfactorApiModelsMonitorin
 /*
 MonitoringResolveOCSP Resolve the Certificate authority given
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMonitoringResolveOCSPRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiMonitoringResolveOCSPRequest
 */
 func (a *MonitoringApiService) MonitoringResolveOCSP(ctx context.Context) ApiMonitoringResolveOCSPRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiMonitoringResolveOCSPRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsMonitoringOCSPParametersResponse
+//
+//	@return KeyfactorApiModelsMonitoringOCSPParametersResponse
 func (a *MonitoringApiService) MonitoringResolveOCSPExecute(r ApiMonitoringResolveOCSPRequest) (*KeyfactorApiModelsMonitoringOCSPParametersResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsMonitoringOCSPParametersResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsMonitoringOCSPParametersResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -762,12 +766,12 @@ func (a *MonitoringApiService) MonitoringResolveOCSPExecute(r ApiMonitoringResol
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.endpoint == nil {
-        return localVarReturnValue, nil, reportError("endpoint is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.endpoint == nil {
+		return localVarReturnValue, nil, reportError("endpoint is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -830,11 +834,11 @@ func (a *MonitoringApiService) MonitoringResolveOCSPExecute(r ApiMonitoringResol
 }
 
 type ApiMonitoringTestAllRevocationMonitoringAlertRequest struct {
-	ctx context.Context
-	ApiService *MonitoringApiService
-	xKeyfactorRequestedWith *string
+	ctx                                  context.Context
+	ApiService                           *MonitoringApiService
+	xKeyfactorRequestedWith              *string
 	revocationMonitoringAlertTestRequest *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestAllRequest
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion                 *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -862,28 +866,29 @@ func (r ApiMonitoringTestAllRevocationMonitoringAlertRequest) Execute() (*Keyfac
 /*
 MonitoringTestAllRevocationMonitoringAlert Test All Alerts
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMonitoringTestAllRevocationMonitoringAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiMonitoringTestAllRevocationMonitoringAlertRequest
 */
 func (a *MonitoringApiService) MonitoringTestAllRevocationMonitoringAlert(ctx context.Context) ApiMonitoringTestAllRevocationMonitoringAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiMonitoringTestAllRevocationMonitoringAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse
+//
+//	@return KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse
 func (a *MonitoringApiService) MonitoringTestAllRevocationMonitoringAlertExecute(r ApiMonitoringTestAllRevocationMonitoringAlertRequest) (*KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -893,12 +898,12 @@ func (a *MonitoringApiService) MonitoringTestAllRevocationMonitoringAlertExecute
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.revocationMonitoringAlertTestRequest == nil {
-        return localVarReturnValue, nil, reportError("revocationMonitoringAlertTestRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.revocationMonitoringAlertTestRequest == nil {
+		return localVarReturnValue, nil, reportError("revocationMonitoringAlertTestRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -961,11 +966,11 @@ func (a *MonitoringApiService) MonitoringTestAllRevocationMonitoringAlertExecute
 }
 
 type ApiMonitoringTestRevocationMonitoringAlertRequest struct {
-	ctx context.Context
-	ApiService *MonitoringApiService
-	xKeyfactorRequestedWith *string
+	ctx                                  context.Context
+	ApiService                           *MonitoringApiService
+	xKeyfactorRequestedWith              *string
 	revocationMonitoringAlertTestRequest *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestRequest
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion                 *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -993,28 +998,29 @@ func (r ApiMonitoringTestRevocationMonitoringAlertRequest) Execute() (*Keyfactor
 /*
 MonitoringTestRevocationMonitoringAlert Test Alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMonitoringTestRevocationMonitoringAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiMonitoringTestRevocationMonitoringAlertRequest
 */
 func (a *MonitoringApiService) MonitoringTestRevocationMonitoringAlert(ctx context.Context) ApiMonitoringTestRevocationMonitoringAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiMonitoringTestRevocationMonitoringAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse
+//
+//	@return KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse
 func (a *MonitoringApiService) MonitoringTestRevocationMonitoringAlertExecute(r ApiMonitoringTestRevocationMonitoringAlertRequest) (*KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1024,12 +1030,12 @@ func (a *MonitoringApiService) MonitoringTestRevocationMonitoringAlertExecute(r 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.revocationMonitoringAlertTestRequest == nil {
-        return localVarReturnValue, nil, reportError("revocationMonitoringAlertTestRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.revocationMonitoringAlertTestRequest == nil {
+		return localVarReturnValue, nil, reportError("revocationMonitoringAlertTestRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}

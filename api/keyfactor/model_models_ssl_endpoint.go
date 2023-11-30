@@ -28,14 +28,14 @@ var _ MappedNullable = &ModelsSSLEndpoint{}
 
 // ModelsSSLEndpoint struct for ModelsSSLEndpoint
 type ModelsSSLEndpoint struct {
-	EndpointId *string `json:"EndpointId,omitempty"`
-	NetworkId *string `json:"NetworkId,omitempty"`
-	LastHistoryId *string `json:"LastHistoryId,omitempty"`
-	IpAddressBytes *string `json:"IpAddressBytes,omitempty"`
-	Port *int32 `json:"Port,omitempty"`
-	SNIName *string `json:"SNIName,omitempty"`
-	EnableMonitor *bool `json:"EnableMonitor,omitempty"`
-	Reviewed *bool `json:"Reviewed,omitempty"`
+	EndpointId           *string `json:"EndpointId,omitempty"`
+	NetworkId            *string `json:"NetworkId,omitempty"`
+	LastHistoryId        *string `json:"LastHistoryId,omitempty"`
+	IpAddressBytes       *string `json:"IpAddressBytes,omitempty"`
+	Port                 *int32  `json:"Port,omitempty"`
+	SNIName              *string `json:"SNIName,omitempty"`
+	EnableMonitor        *bool   `json:"EnableMonitor,omitempty"`
+	Reviewed             *bool   `json:"Reviewed,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -315,7 +315,7 @@ func (o *ModelsSSLEndpoint) SetReviewed(v bool) {
 }
 
 func (o ModelsSSLEndpoint) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -415,5 +415,3 @@ func (v *NullableModelsSSLEndpoint) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

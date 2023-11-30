@@ -28,8 +28,8 @@ var _ MappedNullable = &ModelsCertificateRetrievalResponseLocationCountModel{}
 
 // ModelsCertificateRetrievalResponseLocationCountModel struct for ModelsCertificateRetrievalResponseLocationCountModel
 type ModelsCertificateRetrievalResponseLocationCountModel struct {
-	Type *string `json:"Type,omitempty"`
-	Count *int32 `json:"Count,omitempty"`
+	Type                 *string `json:"Type,omitempty"`
+	Count                *int32  `json:"Count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -117,7 +117,7 @@ func (o *ModelsCertificateRetrievalResponseLocationCountModel) SetCount(v int32)
 }
 
 func (o ModelsCertificateRetrievalResponseLocationCountModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,5 +193,3 @@ func (v *NullableModelsCertificateRetrievalResponseLocationCountModel) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

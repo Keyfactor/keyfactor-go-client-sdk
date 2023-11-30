@@ -28,10 +28,10 @@ var _ MappedNullable = &KeyfactorApiModelsEnrollmentManagementStoreRequest{}
 
 // KeyfactorApiModelsEnrollmentManagementStoreRequest struct for KeyfactorApiModelsEnrollmentManagementStoreRequest
 type KeyfactorApiModelsEnrollmentManagementStoreRequest struct {
-	StoreId *string `json:"StoreId,omitempty"`
-	Alias *string `json:"Alias,omitempty"`
-	Overwrite *bool `json:"Overwrite,omitempty"`
-	Properties map[string]map[string]interface{} `json:"Properties,omitempty"`
+	StoreId              *string                           `json:"StoreId,omitempty"`
+	Alias                *string                           `json:"Alias,omitempty"`
+	Overwrite            *bool                             `json:"Overwrite,omitempty"`
+	Properties           map[string]map[string]interface{} `json:"Properties,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -183,7 +183,7 @@ func (o *KeyfactorApiModelsEnrollmentManagementStoreRequest) SetProperties(v map
 }
 
 func (o KeyfactorApiModelsEnrollmentManagementStoreRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -267,5 +267,3 @@ func (v *NullableKeyfactorApiModelsEnrollmentManagementStoreRequest) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

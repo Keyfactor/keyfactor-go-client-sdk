@@ -28,10 +28,10 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsAlertTemplateAlertTemplateRespon
 
 // KeyfactorApiModelsAlertsAlertTemplateAlertTemplateResponse struct for KeyfactorApiModelsAlertsAlertTemplateAlertTemplateResponse
 type KeyfactorApiModelsAlertsAlertTemplateAlertTemplateResponse struct {
-	Id *int32 `json:"Id,omitempty"`
-	DisplayName *string `json:"DisplayName,omitempty"`
-	ForestRoot *string `json:"ForestRoot,omitempty"`
-	ConfigurationTenant *string `json:"ConfigurationTenant,omitempty"`
+	Id                   *int32  `json:"Id,omitempty"`
+	DisplayName          *string `json:"DisplayName,omitempty"`
+	ForestRoot           *string `json:"ForestRoot,omitempty"`
+	ConfigurationTenant  *string `json:"ConfigurationTenant,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -183,7 +183,7 @@ func (o *KeyfactorApiModelsAlertsAlertTemplateAlertTemplateResponse) SetConfigur
 }
 
 func (o KeyfactorApiModelsAlertsAlertTemplateAlertTemplateResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -267,5 +267,3 @@ func (v *NullableKeyfactorApiModelsAlertsAlertTemplateAlertTemplateResponse) Unm
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

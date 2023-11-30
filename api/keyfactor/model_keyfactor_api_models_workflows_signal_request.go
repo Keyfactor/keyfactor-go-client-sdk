@@ -31,7 +31,7 @@ type KeyfactorApiModelsWorkflowsSignalRequest struct {
 	// The signal key. This is expected to be in a format like \"STEP_NAME.SIGNAL_NAME\"
 	SignalKey *string `json:"SignalKey,omitempty"`
 	// Arbitrary data to associate with the signal.
-	Data map[string]map[string]interface{} `json:"Data,omitempty"`
+	Data                 map[string]map[string]interface{} `json:"Data,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -119,7 +119,7 @@ func (o *KeyfactorApiModelsWorkflowsSignalRequest) SetData(v map[string]map[stri
 }
 
 func (o KeyfactorApiModelsWorkflowsSignalRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -195,5 +195,3 @@ func (v *NullableKeyfactorApiModelsWorkflowsSignalRequest) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

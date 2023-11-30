@@ -28,10 +28,10 @@ var _ MappedNullable = &ModelsEnrollmentManagementStoreType{}
 
 // ModelsEnrollmentManagementStoreType struct for ModelsEnrollmentManagementStoreType
 type ModelsEnrollmentManagementStoreType struct {
-	StoreTypeId *int32 `json:"StoreTypeId,omitempty"`
-	Alias *string `json:"Alias,omitempty"`
-	Overwrite *bool `json:"Overwrite,omitempty"`
-	Properties []map[string]interface{} `json:"Properties,omitempty"`
+	StoreTypeId          *int32                   `json:"StoreTypeId,omitempty"`
+	Alias                *string                  `json:"Alias,omitempty"`
+	Overwrite            *bool                    `json:"Overwrite,omitempty"`
+	Properties           []map[string]interface{} `json:"Properties,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -183,7 +183,7 @@ func (o *ModelsEnrollmentManagementStoreType) SetProperties(v []map[string]inter
 }
 
 func (o ModelsEnrollmentManagementStoreType) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -267,5 +267,3 @@ func (v *NullableModelsEnrollmentManagementStoreType) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -31,7 +31,7 @@ type KeyfactorApiModelsWorkflowsSignalConfigurationRequest struct {
 	// The name of the signal.
 	SignalName *string `json:"SignalName,omitempty"`
 	// The roles that are allowed to send the signal.
-	RoleIds []int32 `json:"RoleIds,omitempty"`
+	RoleIds              []int32 `json:"RoleIds,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -119,7 +119,7 @@ func (o *KeyfactorApiModelsWorkflowsSignalConfigurationRequest) SetRoleIds(v []i
 }
 
 func (o KeyfactorApiModelsWorkflowsSignalConfigurationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -195,5 +195,3 @@ func (v *NullableKeyfactorApiModelsWorkflowsSignalConfigurationRequest) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -28,9 +28,9 @@ var _ MappedNullable = &ModelsCertificateStoreInventory{}
 
 // ModelsCertificateStoreInventory struct for ModelsCertificateStoreInventory
 type ModelsCertificateStoreInventory struct {
-	Name *string `json:"Name,omitempty"`
-	Certificates []ModelsCertificateStoreInventoryCertificates `json:"Certificates,omitempty"`
-	Parameters map[string]map[string]interface{} `json:"Parameters,omitempty"`
+	Name                 *string                                       `json:"Name,omitempty"`
+	Certificates         []ModelsCertificateStoreInventoryCertificates `json:"Certificates,omitempty"`
+	Parameters           map[string]map[string]interface{}             `json:"Parameters,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -150,7 +150,7 @@ func (o *ModelsCertificateStoreInventory) SetParameters(v map[string]map[string]
 }
 
 func (o ModelsCertificateStoreInventory) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,5 +230,3 @@ func (v *NullableModelsCertificateStoreInventory) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

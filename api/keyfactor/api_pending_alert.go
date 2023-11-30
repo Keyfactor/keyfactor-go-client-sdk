@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // PendingAlertApiService PendingAlertApi service
 type PendingAlertApiService service
 
 type ApiPendingAlertAddPendingAlertRequest struct {
-	ctx context.Context
-	ApiService *PendingAlertApiService
+	ctx                     context.Context
+	ApiService              *PendingAlertApiService
 	xKeyfactorRequestedWith *string
-	req *KeyfactorApiModelsAlertsPendingPendingAlertCreationRequest
-	xKeyfactorApiVersion *string
+	req                     *KeyfactorApiModelsAlertsPendingPendingAlertCreationRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -65,28 +64,29 @@ func (r ApiPendingAlertAddPendingAlertRequest) Execute() (*KeyfactorApiModelsAle
 /*
 PendingAlertAddPendingAlert Add a pending alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPendingAlertAddPendingAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPendingAlertAddPendingAlertRequest
 */
 func (a *PendingAlertApiService) PendingAlertAddPendingAlert(ctx context.Context) ApiPendingAlertAddPendingAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiPendingAlertAddPendingAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
+//
+//	@return KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
 func (a *PendingAlertApiService) PendingAlertAddPendingAlertExecute(r ApiPendingAlertAddPendingAlertRequest) (*KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -96,12 +96,12 @@ func (a *PendingAlertApiService) PendingAlertAddPendingAlertExecute(r ApiPending
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.req == nil {
-        return localVarReturnValue, nil, reportError("req is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.req == nil {
+		return localVarReturnValue, nil, reportError("req is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -164,11 +164,11 @@ func (a *PendingAlertApiService) PendingAlertAddPendingAlertExecute(r ApiPending
 }
 
 type ApiPendingAlertDeletePendingAlertRequest struct {
-	ctx context.Context
-	ApiService *PendingAlertApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *PendingAlertApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -190,28 +190,28 @@ func (r ApiPendingAlertDeletePendingAlertRequest) Execute() (*http.Response, err
 /*
 PendingAlertDeletePendingAlert Delete a pending alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Id for the pending alert
- @return ApiPendingAlertDeletePendingAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Id for the pending alert
+	@return ApiPendingAlertDeletePendingAlertRequest
 */
 func (a *PendingAlertApiService) PendingAlertDeletePendingAlert(ctx context.Context, id int32) ApiPendingAlertDeletePendingAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiPendingAlertDeletePendingAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *PendingAlertApiService) PendingAlertDeletePendingAlertExecute(r ApiPendingAlertDeletePendingAlertRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -222,9 +222,9 @@ func (a *PendingAlertApiService) PendingAlertDeletePendingAlertExecute(r ApiPend
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -276,11 +276,11 @@ func (a *PendingAlertApiService) PendingAlertDeletePendingAlertExecute(r ApiPend
 }
 
 type ApiPendingAlertEditPendingAlertRequest struct {
-	ctx context.Context
-	ApiService *PendingAlertApiService
+	ctx                     context.Context
+	ApiService              *PendingAlertApiService
 	xKeyfactorRequestedWith *string
-	req *KeyfactorApiModelsAlertsPendingPendingAlertUpdateRequest
-	xKeyfactorApiVersion *string
+	req                     *KeyfactorApiModelsAlertsPendingPendingAlertUpdateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -308,28 +308,29 @@ func (r ApiPendingAlertEditPendingAlertRequest) Execute() (*KeyfactorApiModelsAl
 /*
 PendingAlertEditPendingAlert Edit a pending alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPendingAlertEditPendingAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPendingAlertEditPendingAlertRequest
 */
 func (a *PendingAlertApiService) PendingAlertEditPendingAlert(ctx context.Context) ApiPendingAlertEditPendingAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiPendingAlertEditPendingAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
+//
+//	@return KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
 func (a *PendingAlertApiService) PendingAlertEditPendingAlertExecute(r ApiPendingAlertEditPendingAlertRequest) (*KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -339,12 +340,12 @@ func (a *PendingAlertApiService) PendingAlertEditPendingAlertExecute(r ApiPendin
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.req == nil {
-        return localVarReturnValue, nil, reportError("req is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.req == nil {
+		return localVarReturnValue, nil, reportError("req is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -407,11 +408,11 @@ func (a *PendingAlertApiService) PendingAlertEditPendingAlertExecute(r ApiPendin
 }
 
 type ApiPendingAlertEditScheduleRequest struct {
-	ctx context.Context
-	ApiService *PendingAlertApiService
+	ctx                     context.Context
+	ApiService              *PendingAlertApiService
 	xKeyfactorRequestedWith *string
-	newSchedule *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest
-	xKeyfactorApiVersion *string
+	newSchedule             *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -438,28 +439,29 @@ func (r ApiPendingAlertEditScheduleRequest) Execute() (*KeyfactorApiModelsAlerts
 /*
 PendingAlertEditSchedule Edit schedule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPendingAlertEditScheduleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPendingAlertEditScheduleRequest
 */
 func (a *PendingAlertApiService) PendingAlertEditSchedule(ctx context.Context) ApiPendingAlertEditScheduleRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiPendingAlertEditScheduleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
+//
+//	@return KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 func (a *PendingAlertApiService) PendingAlertEditScheduleExecute(r ApiPendingAlertEditScheduleRequest) (*KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -469,12 +471,12 @@ func (a *PendingAlertApiService) PendingAlertEditScheduleExecute(r ApiPendingAle
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.newSchedule == nil {
-        return localVarReturnValue, nil, reportError("newSchedule is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.newSchedule == nil {
+		return localVarReturnValue, nil, reportError("newSchedule is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -537,11 +539,11 @@ func (a *PendingAlertApiService) PendingAlertEditScheduleExecute(r ApiPendingAle
 }
 
 type ApiPendingAlertGetPendingAlertRequest struct {
-	ctx context.Context
-	ApiService *PendingAlertApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *PendingAlertApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -563,30 +565,31 @@ func (r ApiPendingAlertGetPendingAlertRequest) Execute() (*KeyfactorApiModelsAle
 /*
 PendingAlertGetPendingAlert Get a pending alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Id for the pending alert to get
- @return ApiPendingAlertGetPendingAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Id for the pending alert to get
+	@return ApiPendingAlertGetPendingAlertRequest
 */
 func (a *PendingAlertApiService) PendingAlertGetPendingAlert(ctx context.Context, id int32) ApiPendingAlertGetPendingAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiPendingAlertGetPendingAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
+//
+//	@return KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
 func (a *PendingAlertApiService) PendingAlertGetPendingAlertExecute(r ApiPendingAlertGetPendingAlertRequest) (*KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -597,9 +600,9 @@ func (a *PendingAlertApiService) PendingAlertGetPendingAlertExecute(r ApiPending
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -660,14 +663,14 @@ func (a *PendingAlertApiService) PendingAlertGetPendingAlertExecute(r ApiPending
 }
 
 type ApiPendingAlertGetPendingAlertsRequest struct {
-	ctx context.Context
-	ApiService *PendingAlertApiService
+	ctx                     context.Context
+	ApiService              *PendingAlertApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pagedQueryQueryString *string
-	pagedQueryPageReturned *int32
-	pagedQueryReturnLimit *int32
-	pagedQuerySortField *string
+	xKeyfactorApiVersion    *string
+	pagedQueryQueryString   *string
+	pagedQueryPageReturned  *int32
+	pagedQueryReturnLimit   *int32
+	pagedQuerySortField     *string
 	pagedQuerySortAscending *int32
 }
 
@@ -720,28 +723,29 @@ func (r ApiPendingAlertGetPendingAlertsRequest) Execute() ([]KeyfactorApiModelsA
 /*
 PendingAlertGetPendingAlerts Gets all pending alerts according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPendingAlertGetPendingAlertsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPendingAlertGetPendingAlertsRequest
 */
 func (a *PendingAlertApiService) PendingAlertGetPendingAlerts(ctx context.Context) ApiPendingAlertGetPendingAlertsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiPendingAlertGetPendingAlertsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
+//
+//	@return []KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
 func (a *PendingAlertApiService) PendingAlertGetPendingAlertsExecute(r ApiPendingAlertGetPendingAlertsRequest) ([]KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -751,9 +755,9 @@ func (a *PendingAlertApiService) PendingAlertGetPendingAlertsExecute(r ApiPendin
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pagedQueryQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pagedQuery.queryString", r.pagedQueryQueryString, "")
@@ -829,10 +833,10 @@ func (a *PendingAlertApiService) PendingAlertGetPendingAlertsExecute(r ApiPendin
 }
 
 type ApiPendingAlertGetScheduleRequest struct {
-	ctx context.Context
-	ApiService *PendingAlertApiService
+	ctx                     context.Context
+	ApiService              *PendingAlertApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -854,28 +858,29 @@ func (r ApiPendingAlertGetScheduleRequest) Execute() (*KeyfactorApiModelsAlertsA
 /*
 PendingAlertGetSchedule Get the schedule for pending alerts
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPendingAlertGetScheduleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPendingAlertGetScheduleRequest
 */
 func (a *PendingAlertApiService) PendingAlertGetSchedule(ctx context.Context) ApiPendingAlertGetScheduleRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiPendingAlertGetScheduleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
+//
+//	@return KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 func (a *PendingAlertApiService) PendingAlertGetScheduleExecute(r ApiPendingAlertGetScheduleRequest) (*KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -885,9 +890,9 @@ func (a *PendingAlertApiService) PendingAlertGetScheduleExecute(r ApiPendingAler
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -948,11 +953,11 @@ func (a *PendingAlertApiService) PendingAlertGetScheduleExecute(r ApiPendingAler
 }
 
 type ApiPendingAlertTestAllPendingAlertRequest struct {
-	ctx context.Context
-	ApiService *PendingAlertApiService
+	ctx                     context.Context
+	ApiService              *PendingAlertApiService
 	xKeyfactorRequestedWith *string
-	req *KeyfactorApiModelsAlertsPendingPendingAlertTestAllRequest
-	xKeyfactorApiVersion *string
+	req                     *KeyfactorApiModelsAlertsPendingPendingAlertTestAllRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -980,28 +985,29 @@ func (r ApiPendingAlertTestAllPendingAlertRequest) Execute() (*KeyfactorApiModel
 /*
 PendingAlertTestAllPendingAlert Test all pending alerts. Will send alert emails if SendAlerts is true
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPendingAlertTestAllPendingAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPendingAlertTestAllPendingAlertRequest
 */
 func (a *PendingAlertApiService) PendingAlertTestAllPendingAlert(ctx context.Context) ApiPendingAlertTestAllPendingAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiPendingAlertTestAllPendingAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsPendingPendingAlertTestResponse
+//
+//	@return KeyfactorApiModelsAlertsPendingPendingAlertTestResponse
 func (a *PendingAlertApiService) PendingAlertTestAllPendingAlertExecute(r ApiPendingAlertTestAllPendingAlertRequest) (*KeyfactorApiModelsAlertsPendingPendingAlertTestResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsPendingPendingAlertTestResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsPendingPendingAlertTestResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1011,12 +1017,12 @@ func (a *PendingAlertApiService) PendingAlertTestAllPendingAlertExecute(r ApiPen
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.req == nil {
-        return localVarReturnValue, nil, reportError("req is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.req == nil {
+		return localVarReturnValue, nil, reportError("req is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -1079,11 +1085,11 @@ func (a *PendingAlertApiService) PendingAlertTestAllPendingAlertExecute(r ApiPen
 }
 
 type ApiPendingAlertTestPendingAlertRequest struct {
-	ctx context.Context
-	ApiService *PendingAlertApiService
+	ctx                     context.Context
+	ApiService              *PendingAlertApiService
 	xKeyfactorRequestedWith *string
-	req *KeyfactorApiModelsAlertsPendingPendingAlertTestRequest
-	xKeyfactorApiVersion *string
+	req                     *KeyfactorApiModelsAlertsPendingPendingAlertTestRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1111,28 +1117,29 @@ func (r ApiPendingAlertTestPendingAlertRequest) Execute() (*KeyfactorApiModelsAl
 /*
 PendingAlertTestPendingAlert Test pending alert. Will send alert emails if SendAlerts is true
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPendingAlertTestPendingAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPendingAlertTestPendingAlertRequest
 */
 func (a *PendingAlertApiService) PendingAlertTestPendingAlert(ctx context.Context) ApiPendingAlertTestPendingAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiPendingAlertTestPendingAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsPendingPendingAlertTestResponse
+//
+//	@return KeyfactorApiModelsAlertsPendingPendingAlertTestResponse
 func (a *PendingAlertApiService) PendingAlertTestPendingAlertExecute(r ApiPendingAlertTestPendingAlertRequest) (*KeyfactorApiModelsAlertsPendingPendingAlertTestResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsPendingPendingAlertTestResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsPendingPendingAlertTestResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1142,12 +1149,12 @@ func (a *PendingAlertApiService) PendingAlertTestPendingAlertExecute(r ApiPendin
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.req == nil {
-        return localVarReturnValue, nil, reportError("req is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.req == nil {
+		return localVarReturnValue, nil, reportError("req is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}

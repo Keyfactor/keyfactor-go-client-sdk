@@ -28,14 +28,14 @@ var _ MappedNullable = &ModelsReportParameters{}
 
 // ModelsReportParameters struct for ModelsReportParameters
 type ModelsReportParameters struct {
-	Id *int32 `json:"Id,omitempty"`
-	ParameterName *string `json:"ParameterName,omitempty"`
-	ParameterType *int32 `json:"ParameterType,omitempty"`
-	DisplayName *string `json:"DisplayName,omitempty"`
-	Description *string `json:"Description,omitempty"`
-	DefaultValue *string `json:"DefaultValue,omitempty"`
-	DisplayOrder *int32 `json:"DisplayOrder,omitempty"`
-	ParameterVisibility *int32 `json:"ParameterVisibility,omitempty"`
+	Id                   *int32  `json:"Id,omitempty"`
+	ParameterName        *string `json:"ParameterName,omitempty"`
+	ParameterType        *int32  `json:"ParameterType,omitempty"`
+	DisplayName          *string `json:"DisplayName,omitempty"`
+	Description          *string `json:"Description,omitempty"`
+	DefaultValue         *string `json:"DefaultValue,omitempty"`
+	DisplayOrder         *int32  `json:"DisplayOrder,omitempty"`
+	ParameterVisibility  *int32  `json:"ParameterVisibility,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -315,7 +315,7 @@ func (o *ModelsReportParameters) SetParameterVisibility(v int32) {
 }
 
 func (o ModelsReportParameters) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -415,5 +415,3 @@ func (v *NullableModelsReportParameters) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

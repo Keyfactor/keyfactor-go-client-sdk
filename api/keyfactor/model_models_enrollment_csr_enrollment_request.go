@@ -29,15 +29,15 @@ var _ MappedNullable = &ModelsEnrollmentCSREnrollmentRequest{}
 
 // ModelsEnrollmentCSREnrollmentRequest struct for ModelsEnrollmentCSREnrollmentRequest
 type ModelsEnrollmentCSREnrollmentRequest struct {
-	CSR string `json:"CSR"`
-	CertificateAuthority *string `json:"CertificateAuthority,omitempty"`
-	IncludeChain *bool `json:"IncludeChain,omitempty"`
-	Metadata map[string]interface{} `json:"Metadata,omitempty"`
+	CSR                        string                            `json:"CSR"`
+	CertificateAuthority       *string                           `json:"CertificateAuthority,omitempty"`
+	IncludeChain               *bool                             `json:"IncludeChain,omitempty"`
+	Metadata                   map[string]interface{}            `json:"Metadata,omitempty"`
 	AdditionalEnrollmentFields map[string]map[string]interface{} `json:"AdditionalEnrollmentFields,omitempty"`
-	Timestamp *time.Time `json:"Timestamp,omitempty"`
-	Template *string `json:"Template,omitempty"`
-	SANs *map[string][]string `json:"SANs,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Timestamp                  *time.Time                        `json:"Timestamp,omitempty"`
+	Template                   *string                           `json:"Template,omitempty"`
+	SANs                       *map[string][]string              `json:"SANs,omitempty"`
+	AdditionalProperties       map[string]interface{}
 }
 
 type _ModelsEnrollmentCSREnrollmentRequest ModelsEnrollmentCSREnrollmentRequest
@@ -309,7 +309,7 @@ func (o *ModelsEnrollmentCSREnrollmentRequest) SetSANs(v map[string][]string) {
 }
 
 func (o ModelsEnrollmentCSREnrollmentRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -407,5 +407,3 @@ func (v *NullableModelsEnrollmentCSREnrollmentRequest) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

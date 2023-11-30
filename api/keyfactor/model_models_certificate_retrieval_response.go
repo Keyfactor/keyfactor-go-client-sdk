@@ -21,7 +21,6 @@ package keyfactor
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the ModelsCertificateRetrievalResponse type satisfies the MappedNullable interface at compile time
@@ -29,54 +28,54 @@ var _ MappedNullable = &ModelsCertificateRetrievalResponse{}
 
 // ModelsCertificateRetrievalResponse struct for ModelsCertificateRetrievalResponse
 type ModelsCertificateRetrievalResponse struct {
-	Id *int32 `json:"Id,omitempty"`
-	Thumbprint *string `json:"Thumbprint,omitempty"`
-	SerialNumber *string `json:"SerialNumber,omitempty"`
-	IssuedDN NullableString `json:"IssuedDN,omitempty"`
-	IssuedCN NullableString `json:"IssuedCN,omitempty"`
-	ImportDate *time.Time `json:"ImportDate,omitempty"`
-	NotBefore *time.Time `json:"NotBefore,omitempty"`
-	NotAfter *time.Time `json:"NotAfter,omitempty"`
-	IssuerDN NullableString `json:"IssuerDN,omitempty"`
-	PrincipalId NullableInt32 `json:"PrincipalId,omitempty"`
-	TemplateId *int32 `json:"TemplateId,omitempty"`
-	CertState *int32 `json:"CertState,omitempty"`
-	KeySizeInBits *int32 `json:"KeySizeInBits,omitempty"`
-	KeyType *int32 `json:"KeyType,omitempty"`
-	RequesterId *int32 `json:"RequesterId,omitempty"`
-	IssuedOU NullableString `json:"IssuedOU,omitempty"`
-	IssuedEmail NullableString `json:"IssuedEmail,omitempty"`
-	KeyUsage *int32 `json:"KeyUsage,omitempty"`
-	SigningAlgorithm *string `json:"SigningAlgorithm,omitempty"`
-	CertStateString *string `json:"CertStateString,omitempty"`
-	KeyTypeString *string `json:"KeyTypeString,omitempty"`
-	RevocationEffDate NullableTime `json:"RevocationEffDate,omitempty"`
-	RevocationReason NullableInt32 `json:"RevocationReason,omitempty"`
-	RevocationComment NullableString `json:"RevocationComment,omitempty"`
-	CertificateAuthorityId *int32 `json:"CertificateAuthorityId,omitempty"`
-	CertificateAuthorityName *string `json:"CertificateAuthorityName,omitempty"`
+	Id                       *int32         `json:"Id,omitempty"`
+	Thumbprint               *string        `json:"Thumbprint,omitempty"`
+	SerialNumber             *string        `json:"SerialNumber,omitempty"`
+	IssuedDN                 NullableString `json:"IssuedDN,omitempty"`
+	IssuedCN                 NullableString `json:"IssuedCN,omitempty"`
+	ImportDate               *string        `json:"ImportDate,omitempty"`
+	NotBefore                *string        `json:"NotBefore,omitempty"`
+	NotAfter                 *string        `json:"NotAfter,omitempty"`
+	IssuerDN                 NullableString `json:"IssuerDN,omitempty"`
+	PrincipalId              NullableInt32  `json:"PrincipalId,omitempty"`
+	TemplateId               *int32         `json:"TemplateId,omitempty"`
+	CertState                *int32         `json:"CertState,omitempty"`
+	KeySizeInBits            *int32         `json:"KeySizeInBits,omitempty"`
+	KeyType                  *int32         `json:"KeyType,omitempty"`
+	RequesterId              *int32         `json:"RequesterId,omitempty"`
+	IssuedOU                 NullableString `json:"IssuedOU,omitempty"`
+	IssuedEmail              NullableString `json:"IssuedEmail,omitempty"`
+	KeyUsage                 *int32         `json:"KeyUsage,omitempty"`
+	SigningAlgorithm         *string        `json:"SigningAlgorithm,omitempty"`
+	CertStateString          *string        `json:"CertStateString,omitempty"`
+	KeyTypeString            *string        `json:"KeyTypeString,omitempty"`
+	RevocationEffDate        NullableString `json:"RevocationEffDate,omitempty"`
+	RevocationReason         NullableInt32  `json:"RevocationReason,omitempty"`
+	RevocationComment        NullableString `json:"RevocationComment,omitempty"`
+	CertificateAuthorityId   *int32         `json:"CertificateAuthorityId,omitempty"`
+	CertificateAuthorityName *string        `json:"CertificateAuthorityName,omitempty"`
 	// Full template display name.
-	TemplateName *string `json:"TemplateName,omitempty"`
-	ArchivedKey *bool `json:"ArchivedKey,omitempty"`
-	HasPrivateKey *bool `json:"HasPrivateKey,omitempty"`
-	PrincipalName NullableString `json:"PrincipalName,omitempty"`
-	CertRequestId *int32 `json:"CertRequestId,omitempty"`
-	RequesterName *string `json:"RequesterName,omitempty"`
-	ContentBytes *string `json:"ContentBytes,omitempty"`
-	ExtendedKeyUsages []ModelsCertificateRetrievalResponseExtendedKeyUsageModel `json:"ExtendedKeyUsages,omitempty"`
-	SubjectAltNameElements []ModelsCertificateRetrievalResponseSubjectAlternativeNameModel `json:"SubjectAltNameElements,omitempty"`
-	CRLDistributionPoints []ModelsCertificateRetrievalResponseCRLDistributionPointModel `json:"CRLDistributionPoints,omitempty"`
-	LocationsCount []ModelsCertificateRetrievalResponseLocationCountModel `json:"LocationsCount,omitempty"`
-	SSLLocations []ModelsCertificateRetrievalResponseCertificateStoreLocationDetailModel `json:"SSLLocations,omitempty"`
-	Locations []ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel `json:"Locations,omitempty"`
-	Metadata *map[string]string `json:"Metadata,omitempty"`
-	CertificateKeyId *int32 `json:"CertificateKeyId,omitempty"`
-	CARowIndex *int64 `json:"CARowIndex,omitempty"`
-	CARecordId *string `json:"CARecordId,omitempty"`
-	DetailedKeyUsage *ModelsCertificateRetrievalResponseDetailedKeyUsageModel `json:"DetailedKeyUsage,omitempty"`
-	KeyRecoverable *bool `json:"KeyRecoverable,omitempty"`
-	Curve NullableString `json:"Curve,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TemplateName           *string                                                                 `json:"TemplateName,omitempty"`
+	ArchivedKey            *bool                                                                   `json:"ArchivedKey,omitempty"`
+	HasPrivateKey          *bool                                                                   `json:"HasPrivateKey,omitempty"`
+	PrincipalName          NullableString                                                          `json:"PrincipalName,omitempty"`
+	CertRequestId          *int32                                                                  `json:"CertRequestId,omitempty"`
+	RequesterName          *string                                                                 `json:"RequesterName,omitempty"`
+	ContentBytes           *string                                                                 `json:"ContentBytes,omitempty"`
+	ExtendedKeyUsages      []ModelsCertificateRetrievalResponseExtendedKeyUsageModel               `json:"ExtendedKeyUsages,omitempty"`
+	SubjectAltNameElements []ModelsCertificateRetrievalResponseSubjectAlternativeNameModel         `json:"SubjectAltNameElements,omitempty"`
+	CRLDistributionPoints  []ModelsCertificateRetrievalResponseCRLDistributionPointModel           `json:"CRLDistributionPoints,omitempty"`
+	LocationsCount         []ModelsCertificateRetrievalResponseLocationCountModel                  `json:"LocationsCount,omitempty"`
+	SSLLocations           []ModelsCertificateRetrievalResponseCertificateStoreLocationDetailModel `json:"SSLLocations,omitempty"`
+	Locations              []ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel  `json:"Locations,omitempty"`
+	Metadata               *map[string]string                                                      `json:"Metadata,omitempty"`
+	CertificateKeyId       *int32                                                                  `json:"CertificateKeyId,omitempty"`
+	CARowIndex             *int64                                                                  `json:"CARowIndex,omitempty"`
+	CARecordId             *string                                                                 `json:"CARecordId,omitempty"`
+	DetailedKeyUsage       *ModelsCertificateRetrievalResponseDetailedKeyUsageModel                `json:"DetailedKeyUsage,omitempty"`
+	KeyRecoverable         *bool                                                                   `json:"KeyRecoverable,omitempty"`
+	Curve                  NullableString                                                          `json:"Curve,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _ModelsCertificateRetrievalResponse ModelsCertificateRetrievalResponse
@@ -226,6 +225,7 @@ func (o *ModelsCertificateRetrievalResponse) HasIssuedDN() bool {
 func (o *ModelsCertificateRetrievalResponse) SetIssuedDN(v string) {
 	o.IssuedDN.Set(&v)
 }
+
 // SetIssuedDNNil sets the value for IssuedDN to be an explicit nil
 func (o *ModelsCertificateRetrievalResponse) SetIssuedDNNil() {
 	o.IssuedDN.Set(nil)
@@ -268,6 +268,7 @@ func (o *ModelsCertificateRetrievalResponse) HasIssuedCN() bool {
 func (o *ModelsCertificateRetrievalResponse) SetIssuedCN(v string) {
 	o.IssuedCN.Set(&v)
 }
+
 // SetIssuedCNNil sets the value for IssuedCN to be an explicit nil
 func (o *ModelsCertificateRetrievalResponse) SetIssuedCNNil() {
 	o.IssuedCN.Set(nil)
@@ -279,9 +280,9 @@ func (o *ModelsCertificateRetrievalResponse) UnsetIssuedCN() {
 }
 
 // GetImportDate returns the ImportDate field value if set, zero value otherwise.
-func (o *ModelsCertificateRetrievalResponse) GetImportDate() time.Time {
+func (o *ModelsCertificateRetrievalResponse) GetImportDate() string {
 	if o == nil || isNil(o.ImportDate) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.ImportDate
@@ -289,7 +290,7 @@ func (o *ModelsCertificateRetrievalResponse) GetImportDate() time.Time {
 
 // GetImportDateOk returns a tuple with the ImportDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRetrievalResponse) GetImportDateOk() (*time.Time, bool) {
+func (o *ModelsCertificateRetrievalResponse) GetImportDateOk() (*string, bool) {
 	if o == nil || isNil(o.ImportDate) {
 		return nil, false
 	}
@@ -305,15 +306,15 @@ func (o *ModelsCertificateRetrievalResponse) HasImportDate() bool {
 	return false
 }
 
-// SetImportDate gets a reference to the given time.Time and assigns it to the ImportDate field.
-func (o *ModelsCertificateRetrievalResponse) SetImportDate(v time.Time) {
+// SetImportDate gets a reference to the given string and assigns it to the ImportDate field.
+func (o *ModelsCertificateRetrievalResponse) SetImportDate(v string) {
 	o.ImportDate = &v
 }
 
 // GetNotBefore returns the NotBefore field value if set, zero value otherwise.
-func (o *ModelsCertificateRetrievalResponse) GetNotBefore() time.Time {
+func (o *ModelsCertificateRetrievalResponse) GetNotBefore() string {
 	if o == nil || isNil(o.NotBefore) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.NotBefore
@@ -321,7 +322,7 @@ func (o *ModelsCertificateRetrievalResponse) GetNotBefore() time.Time {
 
 // GetNotBeforeOk returns a tuple with the NotBefore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRetrievalResponse) GetNotBeforeOk() (*time.Time, bool) {
+func (o *ModelsCertificateRetrievalResponse) GetNotBeforeOk() (*string, bool) {
 	if o == nil || isNil(o.NotBefore) {
 		return nil, false
 	}
@@ -337,15 +338,15 @@ func (o *ModelsCertificateRetrievalResponse) HasNotBefore() bool {
 	return false
 }
 
-// SetNotBefore gets a reference to the given time.Time and assigns it to the NotBefore field.
-func (o *ModelsCertificateRetrievalResponse) SetNotBefore(v time.Time) {
+// SetNotBefore gets a reference to the given string and assigns it to the NotBefore field.
+func (o *ModelsCertificateRetrievalResponse) SetNotBefore(v string) {
 	o.NotBefore = &v
 }
 
 // GetNotAfter returns the NotAfter field value if set, zero value otherwise.
-func (o *ModelsCertificateRetrievalResponse) GetNotAfter() time.Time {
+func (o *ModelsCertificateRetrievalResponse) GetNotAfter() string {
 	if o == nil || isNil(o.NotAfter) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.NotAfter
@@ -353,7 +354,7 @@ func (o *ModelsCertificateRetrievalResponse) GetNotAfter() time.Time {
 
 // GetNotAfterOk returns a tuple with the NotAfter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRetrievalResponse) GetNotAfterOk() (*time.Time, bool) {
+func (o *ModelsCertificateRetrievalResponse) GetNotAfterOk() (*string, bool) {
 	if o == nil || isNil(o.NotAfter) {
 		return nil, false
 	}
@@ -369,8 +370,8 @@ func (o *ModelsCertificateRetrievalResponse) HasNotAfter() bool {
 	return false
 }
 
-// SetNotAfter gets a reference to the given time.Time and assigns it to the NotAfter field.
-func (o *ModelsCertificateRetrievalResponse) SetNotAfter(v time.Time) {
+// SetNotAfter gets a reference to the given string and assigns it to the NotAfter field.
+func (o *ModelsCertificateRetrievalResponse) SetNotAfter(v string) {
 	o.NotAfter = &v
 }
 
@@ -406,6 +407,7 @@ func (o *ModelsCertificateRetrievalResponse) HasIssuerDN() bool {
 func (o *ModelsCertificateRetrievalResponse) SetIssuerDN(v string) {
 	o.IssuerDN.Set(&v)
 }
+
 // SetIssuerDNNil sets the value for IssuerDN to be an explicit nil
 func (o *ModelsCertificateRetrievalResponse) SetIssuerDNNil() {
 	o.IssuerDN.Set(nil)
@@ -448,6 +450,7 @@ func (o *ModelsCertificateRetrievalResponse) HasPrincipalId() bool {
 func (o *ModelsCertificateRetrievalResponse) SetPrincipalId(v int32) {
 	o.PrincipalId.Set(&v)
 }
+
 // SetPrincipalIdNil sets the value for PrincipalId to be an explicit nil
 func (o *ModelsCertificateRetrievalResponse) SetPrincipalIdNil() {
 	o.PrincipalId.Set(nil)
@@ -650,6 +653,7 @@ func (o *ModelsCertificateRetrievalResponse) HasIssuedOU() bool {
 func (o *ModelsCertificateRetrievalResponse) SetIssuedOU(v string) {
 	o.IssuedOU.Set(&v)
 }
+
 // SetIssuedOUNil sets the value for IssuedOU to be an explicit nil
 func (o *ModelsCertificateRetrievalResponse) SetIssuedOUNil() {
 	o.IssuedOU.Set(nil)
@@ -692,6 +696,7 @@ func (o *ModelsCertificateRetrievalResponse) HasIssuedEmail() bool {
 func (o *ModelsCertificateRetrievalResponse) SetIssuedEmail(v string) {
 	o.IssuedEmail.Set(&v)
 }
+
 // SetIssuedEmailNil sets the value for IssuedEmail to be an explicit nil
 func (o *ModelsCertificateRetrievalResponse) SetIssuedEmailNil() {
 	o.IssuedEmail.Set(nil)
@@ -831,9 +836,9 @@ func (o *ModelsCertificateRetrievalResponse) SetKeyTypeString(v string) {
 }
 
 // GetRevocationEffDate returns the RevocationEffDate field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ModelsCertificateRetrievalResponse) GetRevocationEffDate() time.Time {
+func (o *ModelsCertificateRetrievalResponse) GetRevocationEffDate() string {
 	if o == nil || isNil(o.RevocationEffDate.Get()) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.RevocationEffDate.Get()
@@ -842,7 +847,7 @@ func (o *ModelsCertificateRetrievalResponse) GetRevocationEffDate() time.Time {
 // GetRevocationEffDateOk returns a tuple with the RevocationEffDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ModelsCertificateRetrievalResponse) GetRevocationEffDateOk() (*time.Time, bool) {
+func (o *ModelsCertificateRetrievalResponse) GetRevocationEffDateOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -858,10 +863,11 @@ func (o *ModelsCertificateRetrievalResponse) HasRevocationEffDate() bool {
 	return false
 }
 
-// SetRevocationEffDate gets a reference to the given NullableTime and assigns it to the RevocationEffDate field.
-func (o *ModelsCertificateRetrievalResponse) SetRevocationEffDate(v time.Time) {
+// SetRevocationEffDate gets a reference to the given NullableString and assigns it to the RevocationEffDate field.
+func (o *ModelsCertificateRetrievalResponse) SetRevocationEffDate(v string) {
 	o.RevocationEffDate.Set(&v)
 }
+
 // SetRevocationEffDateNil sets the value for RevocationEffDate to be an explicit nil
 func (o *ModelsCertificateRetrievalResponse) SetRevocationEffDateNil() {
 	o.RevocationEffDate.Set(nil)
@@ -904,6 +910,7 @@ func (o *ModelsCertificateRetrievalResponse) HasRevocationReason() bool {
 func (o *ModelsCertificateRetrievalResponse) SetRevocationReason(v int32) {
 	o.RevocationReason.Set(&v)
 }
+
 // SetRevocationReasonNil sets the value for RevocationReason to be an explicit nil
 func (o *ModelsCertificateRetrievalResponse) SetRevocationReasonNil() {
 	o.RevocationReason.Set(nil)
@@ -946,6 +953,7 @@ func (o *ModelsCertificateRetrievalResponse) HasRevocationComment() bool {
 func (o *ModelsCertificateRetrievalResponse) SetRevocationComment(v string) {
 	o.RevocationComment.Set(&v)
 }
+
 // SetRevocationCommentNil sets the value for RevocationComment to be an explicit nil
 func (o *ModelsCertificateRetrievalResponse) SetRevocationCommentNil() {
 	o.RevocationComment.Set(nil)
@@ -1148,6 +1156,7 @@ func (o *ModelsCertificateRetrievalResponse) HasPrincipalName() bool {
 func (o *ModelsCertificateRetrievalResponse) SetPrincipalName(v string) {
 	o.PrincipalName.Set(&v)
 }
+
 // SetPrincipalNameNil sets the value for PrincipalName to be an explicit nil
 func (o *ModelsCertificateRetrievalResponse) SetPrincipalNameNil() {
 	o.PrincipalName.Set(nil)
@@ -1670,6 +1679,7 @@ func (o *ModelsCertificateRetrievalResponse) HasCurve() bool {
 func (o *ModelsCertificateRetrievalResponse) SetCurve(v string) {
 	o.Curve.Set(&v)
 }
+
 // SetCurveNil sets the value for Curve to be an explicit nil
 func (o *ModelsCertificateRetrievalResponse) SetCurveNil() {
 	o.Curve.Set(nil)
@@ -1681,7 +1691,7 @@ func (o *ModelsCertificateRetrievalResponse) UnsetCurve() {
 }
 
 func (o ModelsCertificateRetrievalResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1931,5 +1941,3 @@ func (v *NullableModelsCertificateRetrievalResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

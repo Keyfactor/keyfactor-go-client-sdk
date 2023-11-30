@@ -29,18 +29,18 @@ var _ MappedNullable = &KeyfactorApiModelsWorkflowsInstanceQueryResponse{}
 
 // KeyfactorApiModelsWorkflowsInstanceQueryResponse struct for KeyfactorApiModelsWorkflowsInstanceQueryResponse
 type KeyfactorApiModelsWorkflowsInstanceQueryResponse struct {
-	Id *string `json:"Id,omitempty"`
-	Status *int32 `json:"Status,omitempty"`
-	CurrentStepId *string `json:"CurrentStepId,omitempty"`
-	StatusMessage *string `json:"StatusMessage,omitempty"`
-	Definition *KeyfactorApiModelsWorkflowsInstanceDefinitionResponse `json:"Definition,omitempty"`
-	CurrentStepDisplayName *string `json:"CurrentStepDisplayName,omitempty"`
-	CurrentStepUniqueName *string `json:"CurrentStepUniqueName,omitempty"`
-	Title *string `json:"Title,omitempty"`
-	LastModified *time.Time `json:"LastModified,omitempty"`
-	StartDate *time.Time `json:"StartDate,omitempty"`
-	ReferenceId *int64 `json:"ReferenceId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                     *string                                                `json:"Id,omitempty"`
+	Status                 *int32                                                 `json:"Status,omitempty"`
+	CurrentStepId          *string                                                `json:"CurrentStepId,omitempty"`
+	StatusMessage          *string                                                `json:"StatusMessage,omitempty"`
+	Definition             *KeyfactorApiModelsWorkflowsInstanceDefinitionResponse `json:"Definition,omitempty"`
+	CurrentStepDisplayName *string                                                `json:"CurrentStepDisplayName,omitempty"`
+	CurrentStepUniqueName  *string                                                `json:"CurrentStepUniqueName,omitempty"`
+	Title                  *string                                                `json:"Title,omitempty"`
+	LastModified           *time.Time                                             `json:"LastModified,omitempty"`
+	StartDate              *time.Time                                             `json:"StartDate,omitempty"`
+	ReferenceId            *int64                                                 `json:"ReferenceId,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _KeyfactorApiModelsWorkflowsInstanceQueryResponse KeyfactorApiModelsWorkflowsInstanceQueryResponse
@@ -415,7 +415,7 @@ func (o *KeyfactorApiModelsWorkflowsInstanceQueryResponse) SetReferenceId(v int6
 }
 
 func (o KeyfactorApiModelsWorkflowsInstanceQueryResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -527,5 +527,3 @@ func (v *NullableKeyfactorApiModelsWorkflowsInstanceQueryResponse) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -33,7 +33,7 @@ type KeyfactorApiModelsTemplatesTemplateEnrollmentRegexResponse struct {
 	// The regular expression to apply to the subject part.
 	Regex *string `json:"Regex,omitempty"`
 	// The error message to show when the regex validation fails.
-	Error *string `json:"Error,omitempty"`
+	Error                *string `json:"Error,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -153,7 +153,7 @@ func (o *KeyfactorApiModelsTemplatesTemplateEnrollmentRegexResponse) SetError(v 
 }
 
 func (o KeyfactorApiModelsTemplatesTemplateEnrollmentRegexResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -233,5 +233,3 @@ func (v *NullableKeyfactorApiModelsTemplatesTemplateEnrollmentRegexResponse) Unm
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -38,7 +38,7 @@ type ModelsQueryModelsPagedScanJobPartsQuery struct {
 	// Field by which the results should be sorted (view results via Management Portal for sortable columns)
 	SortField *string `json:"SortField,omitempty"`
 	// Field sort direction [0=ascending, 1=descending]
-	SortAscending *int32 `json:"SortAscending,omitempty"`
+	SortAscending        *int32 `json:"SortAscending,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -254,7 +254,7 @@ func (o *ModelsQueryModelsPagedScanJobPartsQuery) SetSortAscending(v int32) {
 }
 
 func (o ModelsQueryModelsPagedScanJobPartsQuery) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -346,5 +346,3 @@ func (v *NullableModelsQueryModelsPagedScanJobPartsQuery) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

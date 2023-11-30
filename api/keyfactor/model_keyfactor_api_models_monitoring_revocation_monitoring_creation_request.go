@@ -28,13 +28,13 @@ var _ MappedNullable = &KeyfactorApiModelsMonitoringRevocationMonitoringCreation
 
 // KeyfactorApiModelsMonitoringRevocationMonitoringCreationRequest struct for KeyfactorApiModelsMonitoringRevocationMonitoringCreationRequest
 type KeyfactorApiModelsMonitoringRevocationMonitoringCreationRequest struct {
-	Name string `json:"Name"`
-	EndpointType string `json:"EndpointType"`
-	Location string `json:"Location"`
-	Email *KeyfactorApiModelsMonitoringEmailRequest `json:"Email,omitempty"`
-	Dashboard KeyfactorApiModelsMonitoringDashboardRequest `json:"Dashboard"`
-	Schedule *KeyfactorCommonSchedulingKeyfactorSchedule `json:"Schedule,omitempty"`
-	OCSPParameters *KeyfactorApiModelsMonitoringOCSPParametersRequest `json:"OCSPParameters,omitempty"`
+	Name                 string                                             `json:"Name"`
+	EndpointType         string                                             `json:"EndpointType"`
+	Location             string                                             `json:"Location"`
+	Email                *KeyfactorApiModelsMonitoringEmailRequest          `json:"Email,omitempty"`
+	Dashboard            KeyfactorApiModelsMonitoringDashboardRequest       `json:"Dashboard"`
+	Schedule             *KeyfactorCommonSchedulingKeyfactorSchedule        `json:"Schedule,omitempty"`
+	OCSPParameters       *KeyfactorApiModelsMonitoringOCSPParametersRequest `json:"OCSPParameters,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -254,7 +254,7 @@ func (o *KeyfactorApiModelsMonitoringRevocationMonitoringCreationRequest) SetOCS
 }
 
 func (o KeyfactorApiModelsMonitoringRevocationMonitoringCreationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -342,5 +342,3 @@ func (v *NullableKeyfactorApiModelsMonitoringRevocationMonitoringCreationRequest
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

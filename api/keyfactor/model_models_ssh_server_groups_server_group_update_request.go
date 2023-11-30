@@ -28,11 +28,11 @@ var _ MappedNullable = &ModelsSSHServerGroupsServerGroupUpdateRequest{}
 
 // ModelsSSHServerGroupsServerGroupUpdateRequest struct for ModelsSSHServerGroupsServerGroupUpdateRequest
 type ModelsSSHServerGroupsServerGroupUpdateRequest struct {
-	Id string `json:"Id"`
-	OwnerName string `json:"OwnerName"`
-	GroupName string `json:"GroupName"`
-	SyncSchedule *KeyfactorCommonSchedulingKeyfactorSchedule `json:"SyncSchedule,omitempty"`
-	UnderManagement bool `json:"UnderManagement"`
+	Id                   string                                      `json:"Id"`
+	OwnerName            string                                      `json:"OwnerName"`
+	GroupName            string                                      `json:"GroupName"`
+	SyncSchedule         *KeyfactorCommonSchedulingKeyfactorSchedule `json:"SyncSchedule,omitempty"`
+	UnderManagement      bool                                        `json:"UnderManagement"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -188,7 +188,7 @@ func (o *ModelsSSHServerGroupsServerGroupUpdateRequest) SetUnderManagement(v boo
 }
 
 func (o ModelsSSHServerGroupsServerGroupUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -268,5 +268,3 @@ func (v *NullableModelsSSHServerGroupsServerGroupUpdateRequest) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

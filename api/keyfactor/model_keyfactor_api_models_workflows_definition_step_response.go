@@ -28,16 +28,16 @@ var _ MappedNullable = &KeyfactorApiModelsWorkflowsDefinitionStepResponse{}
 
 // KeyfactorApiModelsWorkflowsDefinitionStepResponse struct for KeyfactorApiModelsWorkflowsDefinitionStepResponse
 type KeyfactorApiModelsWorkflowsDefinitionStepResponse struct {
-	Id *string `json:"Id,omitempty"`
-	DisplayName *string `json:"DisplayName,omitempty"`
-	UniqueName *string `json:"UniqueName,omitempty"`
-	ExtensionName *string `json:"ExtensionName,omitempty"`
-	Enabled *bool `json:"Enabled,omitempty"`
-	ConfigurationParameters map[string]map[string]interface{} `json:"ConfigurationParameters,omitempty"`
-	Signals []KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse `json:"Signals,omitempty"`
-	Conditions []KeyfactorApiModelsWorkflowsConditionConfigurationResponse `json:"Conditions,omitempty"`
-	Outputs *map[string]string `json:"Outputs,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                      *string                                                     `json:"Id,omitempty"`
+	DisplayName             *string                                                     `json:"DisplayName,omitempty"`
+	UniqueName              *string                                                     `json:"UniqueName,omitempty"`
+	ExtensionName           *string                                                     `json:"ExtensionName,omitempty"`
+	Enabled                 *bool                                                       `json:"Enabled,omitempty"`
+	ConfigurationParameters map[string]map[string]interface{}                           `json:"ConfigurationParameters,omitempty"`
+	Signals                 []KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse   `json:"Signals,omitempty"`
+	Conditions              []KeyfactorApiModelsWorkflowsConditionConfigurationResponse `json:"Conditions,omitempty"`
+	Outputs                 *map[string]string                                          `json:"Outputs,omitempty"`
+	AdditionalProperties    map[string]interface{}
 }
 
 type _KeyfactorApiModelsWorkflowsDefinitionStepResponse KeyfactorApiModelsWorkflowsDefinitionStepResponse
@@ -348,7 +348,7 @@ func (o *KeyfactorApiModelsWorkflowsDefinitionStepResponse) SetOutputs(v map[str
 }
 
 func (o KeyfactorApiModelsWorkflowsDefinitionStepResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -452,5 +452,3 @@ func (v *NullableKeyfactorApiModelsWorkflowsDefinitionStepResponse) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

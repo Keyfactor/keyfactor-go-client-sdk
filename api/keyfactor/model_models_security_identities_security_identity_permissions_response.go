@@ -28,11 +28,11 @@ var _ MappedNullable = &ModelsSecurityIdentitiesSecurityIdentityPermissionsRespo
 
 // ModelsSecurityIdentitiesSecurityIdentityPermissionsResponse struct for ModelsSecurityIdentitiesSecurityIdentityPermissionsResponse
 type ModelsSecurityIdentitiesSecurityIdentityPermissionsResponse struct {
-	Identity *string `json:"Identity,omitempty"`
+	Identity               *string                                               `json:"Identity,omitempty"`
 	SecuredAreaPermissions []ModelsSecurityIdentitiesPermissionRolesPairResponse `json:"SecuredAreaPermissions,omitempty"`
-	CollectionPermissions []ModelsSecurityIdentitiesPermissionRolesPairResponse `json:"CollectionPermissions,omitempty"`
-	ContainerPermissions []ModelsSecurityIdentitiesPermissionRolesPairResponse `json:"ContainerPermissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CollectionPermissions  []ModelsSecurityIdentitiesPermissionRolesPairResponse `json:"CollectionPermissions,omitempty"`
+	ContainerPermissions   []ModelsSecurityIdentitiesPermissionRolesPairResponse `json:"ContainerPermissions,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _ModelsSecurityIdentitiesSecurityIdentityPermissionsResponse ModelsSecurityIdentitiesSecurityIdentityPermissionsResponse
@@ -183,7 +183,7 @@ func (o *ModelsSecurityIdentitiesSecurityIdentityPermissionsResponse) SetContain
 }
 
 func (o ModelsSecurityIdentitiesSecurityIdentityPermissionsResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -267,5 +267,3 @@ func (v *NullableModelsSecurityIdentitiesSecurityIdentityPermissionsResponse) Un
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

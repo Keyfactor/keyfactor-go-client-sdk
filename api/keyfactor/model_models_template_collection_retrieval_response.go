@@ -28,28 +28,28 @@ var _ MappedNullable = &ModelsTemplateCollectionRetrievalResponse{}
 
 // ModelsTemplateCollectionRetrievalResponse struct for ModelsTemplateCollectionRetrievalResponse
 type ModelsTemplateCollectionRetrievalResponse struct {
-	Id *int32 `json:"Id,omitempty"`
-	CommonName *string `json:"CommonName,omitempty"`
-	TemplateName *string `json:"TemplateName,omitempty"`
-	Oid *string `json:"Oid,omitempty"`
-	KeySize *string `json:"KeySize,omitempty"`
-	KeyType *string `json:"KeyType,omitempty"`
-	ForestRoot *string `json:"ForestRoot,omitempty"`
-	ConfigurationTenant *string `json:"ConfigurationTenant,omitempty"`
-	FriendlyName *string `json:"FriendlyName,omitempty"`
-	KeyRetention *int32 `json:"KeyRetention,omitempty"`
-	KeyRetentionDays *int32 `json:"KeyRetentionDays,omitempty"`
-	KeyArchival *bool `json:"KeyArchival,omitempty"`
-	EnrollmentFields []ModelsTemplateCollectionRetrievalResponseTemplateEnrollmentFieldModel `json:"EnrollmentFields,omitempty"`
-	AllowedEnrollmentTypes *int32 `json:"AllowedEnrollmentTypes,omitempty"`
-	TemplateRegexes []ModelsTemplateCollectionRetrievalResponseTemplateRegexModel `json:"TemplateRegexes,omitempty"`
-	UseAllowedRequesters *bool `json:"UseAllowedRequesters,omitempty"`
-	AllowedRequesters []string `json:"AllowedRequesters,omitempty"`
-	DisplayName *string `json:"DisplayName,omitempty"`
-	RequiresApproval *bool `json:"RequiresApproval,omitempty"`
-	KeyUsage *int32 `json:"KeyUsage,omitempty"`
-	ExtendedKeyUsages []ModelsTemplateCollectionRetrievalResponseExtendedKeyUsageModel `json:"ExtendedKeyUsages,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                     *int32                                                                  `json:"Id,omitempty"`
+	CommonName             *string                                                                 `json:"CommonName,omitempty"`
+	TemplateName           *string                                                                 `json:"TemplateName,omitempty"`
+	Oid                    *string                                                                 `json:"Oid,omitempty"`
+	KeySize                *string                                                                 `json:"KeySize,omitempty"`
+	KeyType                *string                                                                 `json:"KeyType,omitempty"`
+	ForestRoot             *string                                                                 `json:"ForestRoot,omitempty"`
+	ConfigurationTenant    *string                                                                 `json:"ConfigurationTenant,omitempty"`
+	FriendlyName           *string                                                                 `json:"FriendlyName,omitempty"`
+	KeyRetention           *int32                                                                  `json:"KeyRetention,omitempty"`
+	KeyRetentionDays       *int32                                                                  `json:"KeyRetentionDays,omitempty"`
+	KeyArchival            *bool                                                                   `json:"KeyArchival,omitempty"`
+	EnrollmentFields       []ModelsTemplateCollectionRetrievalResponseTemplateEnrollmentFieldModel `json:"EnrollmentFields,omitempty"`
+	AllowedEnrollmentTypes *int32                                                                  `json:"AllowedEnrollmentTypes,omitempty"`
+	TemplateRegexes        []ModelsTemplateCollectionRetrievalResponseTemplateRegexModel           `json:"TemplateRegexes,omitempty"`
+	UseAllowedRequesters   *bool                                                                   `json:"UseAllowedRequesters,omitempty"`
+	AllowedRequesters      []string                                                                `json:"AllowedRequesters,omitempty"`
+	DisplayName            *string                                                                 `json:"DisplayName,omitempty"`
+	RequiresApproval       *bool                                                                   `json:"RequiresApproval,omitempty"`
+	KeyUsage               *int32                                                                  `json:"KeyUsage,omitempty"`
+	ExtendedKeyUsages      []ModelsTemplateCollectionRetrievalResponseExtendedKeyUsageModel        `json:"ExtendedKeyUsages,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _ModelsTemplateCollectionRetrievalResponse ModelsTemplateCollectionRetrievalResponse
@@ -744,7 +744,7 @@ func (o *ModelsTemplateCollectionRetrievalResponse) SetExtendedKeyUsages(v []Mod
 }
 
 func (o ModelsTemplateCollectionRetrievalResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -894,5 +894,3 @@ func (v *NullableModelsTemplateCollectionRetrievalResponse) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

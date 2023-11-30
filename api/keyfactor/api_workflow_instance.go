@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // WorkflowInstanceApiService WorkflowInstanceApi service
 type WorkflowInstanceApiService service
 
 type ApiWorkflowInstanceDeleteInstanceRequest struct {
-	ctx context.Context
-	ApiService *WorkflowInstanceApiService
-	instanceId string
+	ctx                     context.Context
+	ApiService              *WorkflowInstanceApiService
+	instanceId              string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -59,28 +58,28 @@ func (r ApiWorkflowInstanceDeleteInstanceRequest) Execute() (*http.Response, err
 /*
 WorkflowInstanceDeleteInstance Deletes the specified instance.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param instanceId The Id of the instance to be deleted.
- @return ApiWorkflowInstanceDeleteInstanceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param instanceId The Id of the instance to be deleted.
+	@return ApiWorkflowInstanceDeleteInstanceRequest
 */
 func (a *WorkflowInstanceApiService) WorkflowInstanceDeleteInstance(ctx context.Context, instanceId string) ApiWorkflowInstanceDeleteInstanceRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowInstanceDeleteInstanceRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		instanceId: instanceId,
+		xKeyfactorApiVersion:    &version,
+		instanceId:              instanceId,
 	}
 }
 
 // Execute executes the request
 func (a *WorkflowInstanceApiService) WorkflowInstanceDeleteInstanceExecute(r ApiWorkflowInstanceDeleteInstanceRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -91,9 +90,9 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceDeleteInstanceExecute(r Api
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -145,11 +144,11 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceDeleteInstanceExecute(r Api
 }
 
 type ApiWorkflowInstanceGetRequest struct {
-	ctx context.Context
-	ApiService *WorkflowInstanceApiService
-	instanceId string
+	ctx                     context.Context
+	ApiService              *WorkflowInstanceApiService
+	instanceId              string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -171,30 +170,31 @@ func (r ApiWorkflowInstanceGetRequest) Execute() (*KeyfactorApiModelsWorkflowsIn
 /*
 WorkflowInstanceGet Get information relevant for knowing where an instance is in its workflow.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param instanceId The {System.Guid} identifying the instance.
- @return ApiWorkflowInstanceGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param instanceId The {System.Guid} identifying the instance.
+	@return ApiWorkflowInstanceGetRequest
 */
 func (a *WorkflowInstanceApiService) WorkflowInstanceGet(ctx context.Context, instanceId string) ApiWorkflowInstanceGetRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowInstanceGetRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		instanceId: instanceId,
+		xKeyfactorApiVersion:    &version,
+		instanceId:              instanceId,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsWorkflowsInstanceResponse
+//
+//	@return KeyfactorApiModelsWorkflowsInstanceResponse
 func (a *WorkflowInstanceApiService) WorkflowInstanceGetExecute(r ApiWorkflowInstanceGetRequest) (*KeyfactorApiModelsWorkflowsInstanceResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsWorkflowsInstanceResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsWorkflowsInstanceResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -205,9 +205,9 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceGetExecute(r ApiWorkflowIns
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -268,15 +268,15 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceGetExecute(r ApiWorkflowIns
 }
 
 type ApiWorkflowInstanceQueryRequest struct {
-	ctx context.Context
-	ApiService *WorkflowInstanceApiService
+	ctx                     context.Context
+	ApiService              *WorkflowInstanceApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -328,28 +328,29 @@ func (r ApiWorkflowInstanceQueryRequest) Execute() ([]KeyfactorApiModelsWorkflow
 /*
 WorkflowInstanceQuery Gets the workflow instances matching the query specifications.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWorkflowInstanceQueryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWorkflowInstanceQueryRequest
 */
 func (a *WorkflowInstanceApiService) WorkflowInstanceQuery(ctx context.Context) ApiWorkflowInstanceQueryRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowInstanceQueryRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsWorkflowsInstanceQueryResponse
+//
+//	@return []KeyfactorApiModelsWorkflowsInstanceQueryResponse
 func (a *WorkflowInstanceApiService) WorkflowInstanceQueryExecute(r ApiWorkflowInstanceQueryRequest) ([]KeyfactorApiModelsWorkflowsInstanceQueryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsWorkflowsInstanceQueryResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsWorkflowsInstanceQueryResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -359,9 +360,9 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceQueryExecute(r ApiWorkflowI
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")
@@ -437,15 +438,15 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceQueryExecute(r ApiWorkflowI
 }
 
 type ApiWorkflowInstanceQueryInstancesAssignedToMeRequest struct {
-	ctx context.Context
-	ApiService *WorkflowInstanceApiService
+	ctx                     context.Context
+	ApiService              *WorkflowInstanceApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -497,28 +498,29 @@ func (r ApiWorkflowInstanceQueryInstancesAssignedToMeRequest) Execute() ([]Keyfa
 /*
 WorkflowInstanceQueryInstancesAssignedToMe Gets the workflow instances waiting on the user.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWorkflowInstanceQueryInstancesAssignedToMeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWorkflowInstanceQueryInstancesAssignedToMeRequest
 */
 func (a *WorkflowInstanceApiService) WorkflowInstanceQueryInstancesAssignedToMe(ctx context.Context) ApiWorkflowInstanceQueryInstancesAssignedToMeRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowInstanceQueryInstancesAssignedToMeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsWorkflowsInstanceQueryResponse
+//
+//	@return []KeyfactorApiModelsWorkflowsInstanceQueryResponse
 func (a *WorkflowInstanceApiService) WorkflowInstanceQueryInstancesAssignedToMeExecute(r ApiWorkflowInstanceQueryInstancesAssignedToMeRequest) ([]KeyfactorApiModelsWorkflowsInstanceQueryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsWorkflowsInstanceQueryResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsWorkflowsInstanceQueryResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -528,9 +530,9 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceQueryInstancesAssignedToMeE
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")
@@ -606,14 +608,14 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceQueryInstancesAssignedToMeE
 }
 
 type ApiWorkflowInstanceQueryInstancesStartedByMeRequest struct {
-	ctx context.Context
-	ApiService *WorkflowInstanceApiService
-	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	instanceQueryQueryString *string
-	instanceQueryPageReturned *int32
-	instanceQueryReturnLimit *int32
-	instanceQuerySortField *string
+	ctx                        context.Context
+	ApiService                 *WorkflowInstanceApiService
+	xKeyfactorRequestedWith    *string
+	xKeyfactorApiVersion       *string
+	instanceQueryQueryString   *string
+	instanceQueryPageReturned  *int32
+	instanceQueryReturnLimit   *int32
+	instanceQuerySortField     *string
 	instanceQuerySortAscending *int32
 }
 
@@ -666,28 +668,29 @@ func (r ApiWorkflowInstanceQueryInstancesStartedByMeRequest) Execute() ([]Keyfac
 /*
 WorkflowInstanceQueryInstancesStartedByMe Gets the workflow instances started by the user.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWorkflowInstanceQueryInstancesStartedByMeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWorkflowInstanceQueryInstancesStartedByMeRequest
 */
 func (a *WorkflowInstanceApiService) WorkflowInstanceQueryInstancesStartedByMe(ctx context.Context) ApiWorkflowInstanceQueryInstancesStartedByMeRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowInstanceQueryInstancesStartedByMeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsWorkflowsInstanceQueryResponse
+//
+//	@return []KeyfactorApiModelsWorkflowsInstanceQueryResponse
 func (a *WorkflowInstanceApiService) WorkflowInstanceQueryInstancesStartedByMeExecute(r ApiWorkflowInstanceQueryInstancesStartedByMeRequest) ([]KeyfactorApiModelsWorkflowsInstanceQueryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsWorkflowsInstanceQueryResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsWorkflowsInstanceQueryResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -697,9 +700,9 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceQueryInstancesStartedByMeEx
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.instanceQueryQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "instanceQuery.queryString", r.instanceQueryQueryString, "")
@@ -775,12 +778,12 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceQueryInstancesStartedByMeEx
 }
 
 type ApiWorkflowInstanceRestartRequest struct {
-	ctx context.Context
-	ApiService *WorkflowInstanceApiService
-	instanceId string
+	ctx                     context.Context
+	ApiService              *WorkflowInstanceApiService
+	instanceId              string
 	xKeyfactorRequestedWith *string
-	version *int32
-	xKeyfactorApiVersion *string
+	version                 *int32
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -808,28 +811,28 @@ func (r ApiWorkflowInstanceRestartRequest) Execute() (*http.Response, error) {
 /*
 WorkflowInstanceRestart Restarts a failed instance against the specified definition version or the published version if no version is specified.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param instanceId The instance Id to restart.
- @return ApiWorkflowInstanceRestartRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param instanceId The instance Id to restart.
+	@return ApiWorkflowInstanceRestartRequest
 */
 func (a *WorkflowInstanceApiService) WorkflowInstanceRestart(ctx context.Context, instanceId string) ApiWorkflowInstanceRestartRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowInstanceRestartRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		instanceId: instanceId,
+		xKeyfactorApiVersion:    &version,
+		instanceId:              instanceId,
 	}
 }
 
 // Execute executes the request
 func (a *WorkflowInstanceApiService) WorkflowInstanceRestartExecute(r ApiWorkflowInstanceRestartRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -840,9 +843,9 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceRestartExecute(r ApiWorkflo
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.version != nil {
 		parameterAddToQuery(localVarQueryParams, "version", r.version, "")
@@ -897,12 +900,12 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceRestartExecute(r ApiWorkflo
 }
 
 type ApiWorkflowInstanceSignalRequest struct {
-	ctx context.Context
-	ApiService *WorkflowInstanceApiService
-	instanceId string
+	ctx                     context.Context
+	ApiService              *WorkflowInstanceApiService
+	instanceId              string
 	xKeyfactorRequestedWith *string
-	signal *KeyfactorApiModelsWorkflowsSignalRequest
-	xKeyfactorApiVersion *string
+	signal                  *KeyfactorApiModelsWorkflowsSignalRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -930,28 +933,28 @@ func (r ApiWorkflowInstanceSignalRequest) Execute() (*http.Response, error) {
 /*
 WorkflowInstanceSignal Receives the given signal for the given instance.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param instanceId The instance that is receiving the signal.
- @return ApiWorkflowInstanceSignalRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param instanceId The instance that is receiving the signal.
+	@return ApiWorkflowInstanceSignalRequest
 */
 func (a *WorkflowInstanceApiService) WorkflowInstanceSignal(ctx context.Context, instanceId string) ApiWorkflowInstanceSignalRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowInstanceSignalRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		instanceId: instanceId,
+		xKeyfactorApiVersion:    &version,
+		instanceId:              instanceId,
 	}
 }
 
 // Execute executes the request
 func (a *WorkflowInstanceApiService) WorkflowInstanceSignalExecute(r ApiWorkflowInstanceSignalRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -962,12 +965,12 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceSignalExecute(r ApiWorkflow
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.signal == nil {
-        return nil, reportError("signal is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.signal == nil {
+		return nil, reportError("signal is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -1021,11 +1024,11 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceSignalExecute(r ApiWorkflow
 }
 
 type ApiWorkflowInstanceStopRequest struct {
-	ctx context.Context
-	ApiService *WorkflowInstanceApiService
-	instanceId string
+	ctx                     context.Context
+	ApiService              *WorkflowInstanceApiService
+	instanceId              string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1047,28 +1050,28 @@ func (r ApiWorkflowInstanceStopRequest) Execute() (*http.Response, error) {
 /*
 WorkflowInstanceStop Rejects an instance, preventing it from continuing.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param instanceId The Id of the instance to reject.
- @return ApiWorkflowInstanceStopRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param instanceId The Id of the instance to reject.
+	@return ApiWorkflowInstanceStopRequest
 */
 func (a *WorkflowInstanceApiService) WorkflowInstanceStop(ctx context.Context, instanceId string) ApiWorkflowInstanceStopRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowInstanceStopRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		instanceId: instanceId,
+		xKeyfactorApiVersion:    &version,
+		instanceId:              instanceId,
 	}
 }
 
 // Execute executes the request
 func (a *WorkflowInstanceApiService) WorkflowInstanceStopExecute(r ApiWorkflowInstanceStopRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1079,9 +1082,9 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceStopExecute(r ApiWorkflowIn
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

@@ -28,8 +28,8 @@ var _ MappedNullable = &ModelsCertStoresSchedule{}
 
 // ModelsCertStoresSchedule struct for ModelsCertStoresSchedule
 type ModelsCertStoresSchedule struct {
-	StoreIds []string `json:"StoreIds"`
-	Schedule *KeyfactorCommonSchedulingKeyfactorSchedule `json:"Schedule,omitempty"`
+	StoreIds             []string                                    `json:"StoreIds"`
+	Schedule             *KeyfactorCommonSchedulingKeyfactorSchedule `json:"Schedule,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -110,7 +110,7 @@ func (o *ModelsCertStoresSchedule) SetSchedule(v KeyfactorCommonSchedulingKeyfac
 }
 
 func (o ModelsCertStoresSchedule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -184,5 +184,3 @@ func (v *NullableModelsCertStoresSchedule) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

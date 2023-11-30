@@ -28,17 +28,17 @@ var _ MappedNullable = &ModelsPkcs12CertificateResponse{}
 
 // ModelsPkcs12CertificateResponse struct for ModelsPkcs12CertificateResponse
 type ModelsPkcs12CertificateResponse struct {
-	SerialNumber *string `json:"SerialNumber,omitempty"`
-	IssuerDN NullableString `json:"IssuerDN,omitempty"`
-	Thumbprint *string `json:"Thumbprint,omitempty"`
-	KeyfactorId *int32 `json:"KeyfactorId,omitempty"`
-	Pkcs12Blob *string `json:"Pkcs12Blob,omitempty"`
-	Password *string `json:"Password,omitempty"`
+	SerialNumber *string        `json:"SerialNumber,omitempty"`
+	IssuerDN     NullableString `json:"IssuerDN,omitempty"`
+	Thumbprint   *string        `json:"Thumbprint,omitempty"`
+	KeyfactorId  *int32         `json:"KeyfactorId,omitempty"`
+	Pkcs12Blob   *string        `json:"Pkcs12Blob,omitempty"`
+	Password     *string        `json:"Password,omitempty"`
 	// The integer id of the certificate request in the Keyfactor database, if one exists.
-	KeyfactorRequestId *int32 `json:"KeyfactorRequestId,omitempty"`
-	RequestDisposition *string `json:"RequestDisposition,omitempty"`
-	DispositionMessage *string `json:"DispositionMessage,omitempty"`
-	EnrollmentContext map[string]string `json:"EnrollmentContext,omitempty"`
+	KeyfactorRequestId   *int32            `json:"KeyfactorRequestId,omitempty"`
+	RequestDisposition   *string           `json:"RequestDisposition,omitempty"`
+	DispositionMessage   *string           `json:"DispositionMessage,omitempty"`
+	EnrollmentContext    map[string]string `json:"EnrollmentContext,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -125,6 +125,7 @@ func (o *ModelsPkcs12CertificateResponse) HasIssuerDN() bool {
 func (o *ModelsPkcs12CertificateResponse) SetIssuerDN(v string) {
 	o.IssuerDN.Set(&v)
 }
+
 // SetIssuerDNNil sets the value for IssuerDN to be an explicit nil
 func (o *ModelsPkcs12CertificateResponse) SetIssuerDNNil() {
 	o.IssuerDN.Set(nil)
@@ -393,7 +394,7 @@ func (o *ModelsPkcs12CertificateResponse) SetEnrollmentContext(v map[string]stri
 }
 
 func (o ModelsPkcs12CertificateResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -501,5 +502,3 @@ func (v *NullableModelsPkcs12CertificateResponse) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

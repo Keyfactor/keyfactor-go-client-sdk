@@ -28,16 +28,16 @@ var _ MappedNullable = &ModelsReportSchedule{}
 
 // ModelsReportSchedule struct for ModelsReportSchedule
 type ModelsReportSchedule struct {
-	Id *int32 `json:"Id,omitempty"`
-	SendReport *bool `json:"SendReport,omitempty"`
-	SaveReport *bool `json:"SaveReport,omitempty"`
-	SaveReportPath *string `json:"SaveReportPath,omitempty"`
-	ReportFormat *string `json:"ReportFormat,omitempty"`
-	KeyfactorSchedule *KeyfactorCommonSchedulingKeyfactorSchedule `json:"KeyfactorSchedule,omitempty"`
-	CertificateCollectionId *int32 `json:"CertificateCollectionId,omitempty"`
-	EmailRecipients []string `json:"EmailRecipients,omitempty"`
-	RuntimeParameters *map[string]string `json:"RuntimeParameters,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                      *int32                                      `json:"Id,omitempty"`
+	SendReport              *bool                                       `json:"SendReport,omitempty"`
+	SaveReport              *bool                                       `json:"SaveReport,omitempty"`
+	SaveReportPath          *string                                     `json:"SaveReportPath,omitempty"`
+	ReportFormat            *string                                     `json:"ReportFormat,omitempty"`
+	KeyfactorSchedule       *KeyfactorCommonSchedulingKeyfactorSchedule `json:"KeyfactorSchedule,omitempty"`
+	CertificateCollectionId *int32                                      `json:"CertificateCollectionId,omitempty"`
+	EmailRecipients         []string                                    `json:"EmailRecipients,omitempty"`
+	RuntimeParameters       *map[string]string                          `json:"RuntimeParameters,omitempty"`
+	AdditionalProperties    map[string]interface{}
 }
 
 type _ModelsReportSchedule ModelsReportSchedule
@@ -348,7 +348,7 @@ func (o *ModelsReportSchedule) SetRuntimeParameters(v map[string]string) {
 }
 
 func (o ModelsReportSchedule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -452,5 +452,3 @@ func (v *NullableModelsReportSchedule) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

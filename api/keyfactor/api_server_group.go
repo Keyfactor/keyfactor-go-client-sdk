@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // ServerGroupApiService ServerGroupApi service
 type ServerGroupApiService service
 
 type ApiServerGroupAddAccessRequest struct {
-	ctx context.Context
-	ApiService *ServerGroupApiService
+	ctx                     context.Context
+	ApiService              *ServerGroupApiService
 	xKeyfactorRequestedWith *string
-	accessRequest *ModelsSSHAccessServerGroupAccessRequest
-	xKeyfactorApiVersion *string
+	accessRequest           *ModelsSSHAccessServerGroupAccessRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -64,28 +63,29 @@ func (r ApiServerGroupAddAccessRequest) Execute() (*ModelsSSHAccessServerGroupAc
 /*
 ServerGroupAddAccess Add access rules to the server group
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiServerGroupAddAccessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiServerGroupAddAccessRequest
 */
 func (a *ServerGroupApiService) ServerGroupAddAccess(ctx context.Context) ApiServerGroupAddAccessRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServerGroupAddAccessRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHAccessServerGroupAccessResponse
+//
+//	@return ModelsSSHAccessServerGroupAccessResponse
 func (a *ServerGroupApiService) ServerGroupAddAccessExecute(r ApiServerGroupAddAccessRequest) (*ModelsSSHAccessServerGroupAccessResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHAccessServerGroupAccessResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHAccessServerGroupAccessResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -95,12 +95,12 @@ func (a *ServerGroupApiService) ServerGroupAddAccessExecute(r ApiServerGroupAddA
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.accessRequest == nil {
-        return localVarReturnValue, nil, reportError("accessRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.accessRequest == nil {
+		return localVarReturnValue, nil, reportError("accessRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -163,11 +163,11 @@ func (a *ServerGroupApiService) ServerGroupAddAccessExecute(r ApiServerGroupAddA
 }
 
 type ApiServerGroupCreateServerGroupRequest struct {
-	ctx context.Context
-	ApiService *ServerGroupApiService
-	xKeyfactorRequestedWith *string
+	ctx                        context.Context
+	ApiService                 *ServerGroupApiService
+	xKeyfactorRequestedWith    *string
 	serverGroupCreationRequest *ModelsSSHServerGroupsServerGroupCreationRequest
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion       *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -195,28 +195,29 @@ func (r ApiServerGroupCreateServerGroupRequest) Execute() (*ModelsSSHServerGroup
 /*
 ServerGroupCreateServerGroup Creates a server group with the provided properties
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiServerGroupCreateServerGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiServerGroupCreateServerGroupRequest
 */
 func (a *ServerGroupApiService) ServerGroupCreateServerGroup(ctx context.Context) ApiServerGroupCreateServerGroupRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServerGroupCreateServerGroupRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHServerGroupsServerGroupResponse
+//
+//	@return ModelsSSHServerGroupsServerGroupResponse
 func (a *ServerGroupApiService) ServerGroupCreateServerGroupExecute(r ApiServerGroupCreateServerGroupRequest) (*ModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHServerGroupsServerGroupResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHServerGroupsServerGroupResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -226,12 +227,12 @@ func (a *ServerGroupApiService) ServerGroupCreateServerGroupExecute(r ApiServerG
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.serverGroupCreationRequest == nil {
-        return localVarReturnValue, nil, reportError("serverGroupCreationRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.serverGroupCreationRequest == nil {
+		return localVarReturnValue, nil, reportError("serverGroupCreationRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -294,11 +295,11 @@ func (a *ServerGroupApiService) ServerGroupCreateServerGroupExecute(r ApiServerG
 }
 
 type ApiServerGroupDeleteRequest struct {
-	ctx context.Context
-	ApiService *ServerGroupApiService
-	id string
+	ctx                     context.Context
+	ApiService              *ServerGroupApiService
+	id                      string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -320,28 +321,28 @@ func (r ApiServerGroupDeleteRequest) Execute() (*http.Response, error) {
 /*
 ServerGroupDelete Deletes a ServerGroup associated with the provided identifier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifer of the ServerGroup to be deleted
- @return ApiServerGroupDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifer of the ServerGroup to be deleted
+	@return ApiServerGroupDeleteRequest
 */
 func (a *ServerGroupApiService) ServerGroupDelete(ctx context.Context, id string) ApiServerGroupDeleteRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServerGroupDeleteRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *ServerGroupApiService) ServerGroupDeleteExecute(r ApiServerGroupDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -352,9 +353,9 @@ func (a *ServerGroupApiService) ServerGroupDeleteExecute(r ApiServerGroupDeleteR
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -406,11 +407,11 @@ func (a *ServerGroupApiService) ServerGroupDeleteExecute(r ApiServerGroupDeleteR
 }
 
 type ApiServerGroupGetAccessRequest struct {
-	ctx context.Context
-	ApiService *ServerGroupApiService
-	id string
+	ctx                     context.Context
+	ApiService              *ServerGroupApiService
+	id                      string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -432,30 +433,31 @@ func (r ApiServerGroupGetAccessRequest) Execute() (*ModelsSSHAccessServerGroupAc
 /*
 ServerGroupGetAccess Retrieves logons and users with access to those logons for an existing server group
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Id of the existing server group
- @return ApiServerGroupGetAccessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Id of the existing server group
+	@return ApiServerGroupGetAccessRequest
 */
 func (a *ServerGroupApiService) ServerGroupGetAccess(ctx context.Context, id string) ApiServerGroupGetAccessRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServerGroupGetAccessRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHAccessServerGroupAccessResponse
+//
+//	@return ModelsSSHAccessServerGroupAccessResponse
 func (a *ServerGroupApiService) ServerGroupGetAccessExecute(r ApiServerGroupGetAccessRequest) (*ModelsSSHAccessServerGroupAccessResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHAccessServerGroupAccessResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHAccessServerGroupAccessResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -466,9 +468,9 @@ func (a *ServerGroupApiService) ServerGroupGetAccessExecute(r ApiServerGroupGetA
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -529,11 +531,11 @@ func (a *ServerGroupApiService) ServerGroupGetAccessExecute(r ApiServerGroupGetA
 }
 
 type ApiServerGroupGetGroupRequest struct {
-	ctx context.Context
-	ApiService *ServerGroupApiService
-	id string
+	ctx                     context.Context
+	ApiService              *ServerGroupApiService
+	id                      string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -555,30 +557,31 @@ func (r ApiServerGroupGetGroupRequest) Execute() (*ModelsSSHServerGroupsServerGr
 /*
 ServerGroupGetGroup Returns a ServerGroup associated with the provided identifier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifier of the ServerGroup
- @return ApiServerGroupGetGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifier of the ServerGroup
+	@return ApiServerGroupGetGroupRequest
 */
 func (a *ServerGroupApiService) ServerGroupGetGroup(ctx context.Context, id string) ApiServerGroupGetGroupRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServerGroupGetGroupRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHServerGroupsServerGroupResponse
+//
+//	@return ModelsSSHServerGroupsServerGroupResponse
 func (a *ServerGroupApiService) ServerGroupGetGroupExecute(r ApiServerGroupGetGroupRequest) (*ModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHServerGroupsServerGroupResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHServerGroupsServerGroupResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -589,9 +592,9 @@ func (a *ServerGroupApiService) ServerGroupGetGroupExecute(r ApiServerGroupGetGr
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -652,11 +655,11 @@ func (a *ServerGroupApiService) ServerGroupGetGroupExecute(r ApiServerGroupGetGr
 }
 
 type ApiServerGroupGetGroupByNameRequest struct {
-	ctx context.Context
-	ApiService *ServerGroupApiService
-	name string
+	ctx                     context.Context
+	ApiService              *ServerGroupApiService
+	name                    string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -678,30 +681,31 @@ func (r ApiServerGroupGetGroupByNameRequest) Execute() (*ModelsSSHServerGroupsSe
 /*
 ServerGroupGetGroupByName Returns a ServerGroup associated with the provided identifier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name name of the ServerGroup
- @return ApiServerGroupGetGroupByNameRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name name of the ServerGroup
+	@return ApiServerGroupGetGroupByNameRequest
 */
 func (a *ServerGroupApiService) ServerGroupGetGroupByName(ctx context.Context, name string) ApiServerGroupGetGroupByNameRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServerGroupGetGroupByNameRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		name: name,
+		xKeyfactorApiVersion:    &version,
+		name:                    name,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHServerGroupsServerGroupResponse
+//
+//	@return ModelsSSHServerGroupsServerGroupResponse
 func (a *ServerGroupApiService) ServerGroupGetGroupByNameExecute(r ApiServerGroupGetGroupByNameRequest) (*ModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHServerGroupsServerGroupResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHServerGroupsServerGroupResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -712,9 +716,9 @@ func (a *ServerGroupApiService) ServerGroupGetGroupByNameExecute(r ApiServerGrou
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -775,15 +779,15 @@ func (a *ServerGroupApiService) ServerGroupGetGroupByNameExecute(r ApiServerGrou
 }
 
 type ApiServerGroupQueryServerGroupsRequest struct {
-	ctx context.Context
-	ApiService *ServerGroupApiService
+	ctx                     context.Context
+	ApiService              *ServerGroupApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -835,28 +839,29 @@ func (r ApiServerGroupQueryServerGroupsRequest) Execute() ([]ModelsSSHServerGrou
 /*
 ServerGroupQueryServerGroups Returns all server groups according to the provided filter parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiServerGroupQueryServerGroupsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiServerGroupQueryServerGroupsRequest
 */
 func (a *ServerGroupApiService) ServerGroupQueryServerGroups(ctx context.Context) ApiServerGroupQueryServerGroupsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServerGroupQueryServerGroupsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsSSHServerGroupsServerGroupResponse
+//
+//	@return []ModelsSSHServerGroupsServerGroupResponse
 func (a *ServerGroupApiService) ServerGroupQueryServerGroupsExecute(r ApiServerGroupQueryServerGroupsRequest) ([]ModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsSSHServerGroupsServerGroupResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsSSHServerGroupsServerGroupResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -866,9 +871,9 @@ func (a *ServerGroupApiService) ServerGroupQueryServerGroupsExecute(r ApiServerG
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")
@@ -944,11 +949,11 @@ func (a *ServerGroupApiService) ServerGroupQueryServerGroupsExecute(r ApiServerG
 }
 
 type ApiServerGroupRemoveAccessRequest struct {
-	ctx context.Context
-	ApiService *ServerGroupApiService
+	ctx                     context.Context
+	ApiService              *ServerGroupApiService
 	xKeyfactorRequestedWith *string
-	accessRequest *ModelsSSHAccessServerGroupAccessRequest
-	xKeyfactorApiVersion *string
+	accessRequest           *ModelsSSHAccessServerGroupAccessRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -975,28 +980,29 @@ func (r ApiServerGroupRemoveAccessRequest) Execute() (*ModelsSSHAccessServerGrou
 /*
 ServerGroupRemoveAccess Removes access mappings for the specified server group
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiServerGroupRemoveAccessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiServerGroupRemoveAccessRequest
 */
 func (a *ServerGroupApiService) ServerGroupRemoveAccess(ctx context.Context) ApiServerGroupRemoveAccessRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServerGroupRemoveAccessRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHAccessServerGroupAccessResponse
+//
+//	@return ModelsSSHAccessServerGroupAccessResponse
 func (a *ServerGroupApiService) ServerGroupRemoveAccessExecute(r ApiServerGroupRemoveAccessRequest) (*ModelsSSHAccessServerGroupAccessResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHAccessServerGroupAccessResponse
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHAccessServerGroupAccessResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1006,12 +1012,12 @@ func (a *ServerGroupApiService) ServerGroupRemoveAccessExecute(r ApiServerGroupR
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.accessRequest == nil {
-        return localVarReturnValue, nil, reportError("accessRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.accessRequest == nil {
+		return localVarReturnValue, nil, reportError("accessRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -1074,11 +1080,11 @@ func (a *ServerGroupApiService) ServerGroupRemoveAccessExecute(r ApiServerGroupR
 }
 
 type ApiServerGroupUpdateServerGroupRequest struct {
-	ctx context.Context
-	ApiService *ServerGroupApiService
+	ctx                     context.Context
+	ApiService              *ServerGroupApiService
 	xKeyfactorRequestedWith *string
-	updateRequest *ModelsSSHServerGroupsServerGroupUpdateRequest
-	xKeyfactorApiVersion *string
+	updateRequest           *ModelsSSHServerGroupsServerGroupUpdateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1106,28 +1112,29 @@ func (r ApiServerGroupUpdateServerGroupRequest) Execute() (*ModelsSSHServerGroup
 /*
 ServerGroupUpdateServerGroup Updates an existing server group with the provided properties
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiServerGroupUpdateServerGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiServerGroupUpdateServerGroupRequest
 */
 func (a *ServerGroupApiService) ServerGroupUpdateServerGroup(ctx context.Context) ApiServerGroupUpdateServerGroupRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServerGroupUpdateServerGroupRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHServerGroupsServerGroupResponse
+//
+//	@return ModelsSSHServerGroupsServerGroupResponse
 func (a *ServerGroupApiService) ServerGroupUpdateServerGroupExecute(r ApiServerGroupUpdateServerGroupRequest) (*ModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHServerGroupsServerGroupResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHServerGroupsServerGroupResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1137,12 +1144,12 @@ func (a *ServerGroupApiService) ServerGroupUpdateServerGroupExecute(r ApiServerG
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.updateRequest == nil {
-        return localVarReturnValue, nil, reportError("updateRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.updateRequest == nil {
+		return localVarReturnValue, nil, reportError("updateRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}

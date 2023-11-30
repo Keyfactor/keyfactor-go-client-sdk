@@ -28,10 +28,10 @@ var _ MappedNullable = &ModelsCertificateImportResponseModel{}
 
 // ModelsCertificateImportResponseModel struct for ModelsCertificateImportResponseModel
 type ModelsCertificateImportResponseModel struct {
-	ImportStatus *int32 `json:"ImportStatus,omitempty"`
-	JobStatus *int32 `json:"JobStatus,omitempty"`
-	InvalidKeystores []ModelsInvalidKeystore `json:"InvalidKeystores,omitempty"`
-	Thumbprint *string `json:"Thumbprint,omitempty"`
+	ImportStatus         *int32                  `json:"ImportStatus,omitempty"`
+	JobStatus            *int32                  `json:"JobStatus,omitempty"`
+	InvalidKeystores     []ModelsInvalidKeystore `json:"InvalidKeystores,omitempty"`
+	Thumbprint           *string                 `json:"Thumbprint,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -183,7 +183,7 @@ func (o *ModelsCertificateImportResponseModel) SetThumbprint(v string) {
 }
 
 func (o ModelsCertificateImportResponseModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -267,5 +267,3 @@ func (v *NullableModelsCertificateImportResponseModel) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

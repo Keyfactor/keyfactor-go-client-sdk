@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // PAMProviderApiService PAMProviderApi service
 type PAMProviderApiService service
 
 type ApiPAMProviderCreatePamProviderRequest struct {
-	ctx context.Context
-	ApiService *PAMProviderApiService
+	ctx                     context.Context
+	ApiService              *PAMProviderApiService
 	xKeyfactorRequestedWith *string
-	provider *CSSCMSDataModelModelsProvider
-	xKeyfactorApiVersion *string
+	provider                *CSSCMSDataModelModelsProvider
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -71,28 +70,29 @@ PAMProviderCreatePamProvider Creates a new PAM provider with the associated prop
 | 1                  | string                    |
 | 2                  | secret                    |
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPAMProviderCreatePamProviderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPAMProviderCreatePamProviderRequest
 */
 func (a *PAMProviderApiService) PAMProviderCreatePamProvider(ctx context.Context) ApiPAMProviderCreatePamProviderRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiPAMProviderCreatePamProviderRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return CSSCMSDataModelModelsProvider
+//
+//	@return CSSCMSDataModelModelsProvider
 func (a *PAMProviderApiService) PAMProviderCreatePamProviderExecute(r ApiPAMProviderCreatePamProviderRequest) (*CSSCMSDataModelModelsProvider, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CSSCMSDataModelModelsProvider
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CSSCMSDataModelModelsProvider
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -102,12 +102,12 @@ func (a *PAMProviderApiService) PAMProviderCreatePamProviderExecute(r ApiPAMProv
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.provider == nil {
-        return localVarReturnValue, nil, reportError("provider is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.provider == nil {
+		return localVarReturnValue, nil, reportError("provider is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -170,11 +170,11 @@ func (a *PAMProviderApiService) PAMProviderCreatePamProviderExecute(r ApiPAMProv
 }
 
 type ApiPAMProviderCreatePamProviderTypeRequest struct {
-	ctx context.Context
-	ApiService *PAMProviderApiService
+	ctx                     context.Context
+	ApiService              *PAMProviderApiService
 	xKeyfactorRequestedWith *string
-	type_ *KeyfactorApiPAMProviderTypeCreateRequest
-	xKeyfactorApiVersion *string
+	type_                   *KeyfactorApiPAMProviderTypeCreateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -208,28 +208,29 @@ PAMProviderCreatePamProviderType Creates a new PAM provider type with the associ
 | 1                  | string                    |
 | 2                  | secret                    |
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPAMProviderCreatePamProviderTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPAMProviderCreatePamProviderTypeRequest
 */
 func (a *PAMProviderApiService) PAMProviderCreatePamProviderType(ctx context.Context) ApiPAMProviderCreatePamProviderTypeRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiPAMProviderCreatePamProviderTypeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiPAMProviderTypeResponse
+//
+//	@return KeyfactorApiPAMProviderTypeResponse
 func (a *PAMProviderApiService) PAMProviderCreatePamProviderTypeExecute(r ApiPAMProviderCreatePamProviderTypeRequest) (*KeyfactorApiPAMProviderTypeResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiPAMProviderTypeResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiPAMProviderTypeResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -239,12 +240,12 @@ func (a *PAMProviderApiService) PAMProviderCreatePamProviderTypeExecute(r ApiPAM
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.type_ == nil {
-        return localVarReturnValue, nil, reportError("type_ is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.type_ == nil {
+		return localVarReturnValue, nil, reportError("type_ is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -307,11 +308,11 @@ func (a *PAMProviderApiService) PAMProviderCreatePamProviderTypeExecute(r ApiPAM
 }
 
 type ApiPAMProviderDeletePamProviderRequest struct {
-	ctx context.Context
-	ApiService *PAMProviderApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *PAMProviderApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -333,28 +334,28 @@ func (r ApiPAMProviderDeletePamProviderRequest) Execute() (*http.Response, error
 /*
 PAMProviderDeletePamProvider Deletes a PAM Provider
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifier of the PAM provider to be deleted
- @return ApiPAMProviderDeletePamProviderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifier of the PAM provider to be deleted
+	@return ApiPAMProviderDeletePamProviderRequest
 */
 func (a *PAMProviderApiService) PAMProviderDeletePamProvider(ctx context.Context, id int32) ApiPAMProviderDeletePamProviderRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiPAMProviderDeletePamProviderRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *PAMProviderApiService) PAMProviderDeletePamProviderExecute(r ApiPAMProviderDeletePamProviderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -365,9 +366,9 @@ func (a *PAMProviderApiService) PAMProviderDeletePamProviderExecute(r ApiPAMProv
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -419,11 +420,11 @@ func (a *PAMProviderApiService) PAMProviderDeletePamProviderExecute(r ApiPAMProv
 }
 
 type ApiPAMProviderGetPamProviderRequest struct {
-	ctx context.Context
-	ApiService *PAMProviderApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *PAMProviderApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -451,30 +452,31 @@ PAMProviderGetPamProvider Returns a single PAM Provider that matches the associa
 | 1                  | string                    |
 | 2                  | secret                    |
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifier of the PAM provider
- @return ApiPAMProviderGetPamProviderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifier of the PAM provider
+	@return ApiPAMProviderGetPamProviderRequest
 */
 func (a *PAMProviderApiService) PAMProviderGetPamProvider(ctx context.Context, id int32) ApiPAMProviderGetPamProviderRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiPAMProviderGetPamProviderRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return CSSCMSDataModelModelsProvider
+//
+//	@return CSSCMSDataModelModelsProvider
 func (a *PAMProviderApiService) PAMProviderGetPamProviderExecute(r ApiPAMProviderGetPamProviderRequest) (*CSSCMSDataModelModelsProvider, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CSSCMSDataModelModelsProvider
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CSSCMSDataModelModelsProvider
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -485,9 +487,9 @@ func (a *PAMProviderApiService) PAMProviderGetPamProviderExecute(r ApiPAMProvide
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -548,10 +550,10 @@ func (a *PAMProviderApiService) PAMProviderGetPamProviderExecute(r ApiPAMProvide
 }
 
 type ApiPAMProviderGetPamProviderTypesRequest struct {
-	ctx context.Context
-	ApiService *PAMProviderApiService
+	ctx                     context.Context
+	ApiService              *PAMProviderApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -579,28 +581,29 @@ PAMProviderGetPamProviderTypes Returns all PAM providers in the Keyfactor instan
 | 1                  | string                    |
 | 2                  | secret                    |
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPAMProviderGetPamProviderTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPAMProviderGetPamProviderTypesRequest
 */
 func (a *PAMProviderApiService) PAMProviderGetPamProviderTypes(ctx context.Context) ApiPAMProviderGetPamProviderTypesRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiPAMProviderGetPamProviderTypesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []CSSCMSDataModelModelsProviderType
+//
+//	@return []CSSCMSDataModelModelsProviderType
 func (a *PAMProviderApiService) PAMProviderGetPamProviderTypesExecute(r ApiPAMProviderGetPamProviderTypesRequest) ([]CSSCMSDataModelModelsProviderType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []CSSCMSDataModelModelsProviderType
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CSSCMSDataModelModelsProviderType
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -610,9 +613,9 @@ func (a *PAMProviderApiService) PAMProviderGetPamProviderTypesExecute(r ApiPAMPr
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -673,15 +676,15 @@ func (a *PAMProviderApiService) PAMProviderGetPamProviderTypesExecute(r ApiPAMPr
 }
 
 type ApiPAMProviderGetPamProvidersRequest struct {
-	ctx context.Context
-	ApiService *PAMProviderApiService
+	ctx                     context.Context
+	ApiService              *PAMProviderApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -739,28 +742,29 @@ PAMProviderGetPamProviders Returns all PAM providers according to the provided f
 | 1                  | string                    |
 | 2                  | secret                    |
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPAMProviderGetPamProvidersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPAMProviderGetPamProvidersRequest
 */
 func (a *PAMProviderApiService) PAMProviderGetPamProviders(ctx context.Context) ApiPAMProviderGetPamProvidersRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiPAMProviderGetPamProvidersRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []CSSCMSDataModelModelsProvider
+//
+//	@return []CSSCMSDataModelModelsProvider
 func (a *PAMProviderApiService) PAMProviderGetPamProvidersExecute(r ApiPAMProviderGetPamProvidersRequest) ([]CSSCMSDataModelModelsProvider, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []CSSCMSDataModelModelsProvider
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CSSCMSDataModelModelsProvider
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -770,9 +774,9 @@ func (a *PAMProviderApiService) PAMProviderGetPamProvidersExecute(r ApiPAMProvid
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")
@@ -848,11 +852,11 @@ func (a *PAMProviderApiService) PAMProviderGetPamProvidersExecute(r ApiPAMProvid
 }
 
 type ApiPAMProviderUpdatePamProviderRequest struct {
-	ctx context.Context
-	ApiService *PAMProviderApiService
+	ctx                     context.Context
+	ApiService              *PAMProviderApiService
 	xKeyfactorRequestedWith *string
-	provider *CSSCMSDataModelModelsProvider
-	xKeyfactorApiVersion *string
+	provider                *CSSCMSDataModelModelsProvider
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -886,28 +890,29 @@ PAMProviderUpdatePamProvider Updates an existing PAM provider according to the p
 | 1                  | string                    |
 | 2                  | secret                    |
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPAMProviderUpdatePamProviderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPAMProviderUpdatePamProviderRequest
 */
 func (a *PAMProviderApiService) PAMProviderUpdatePamProvider(ctx context.Context) ApiPAMProviderUpdatePamProviderRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiPAMProviderUpdatePamProviderRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return CSSCMSDataModelModelsProvider
+//
+//	@return CSSCMSDataModelModelsProvider
 func (a *PAMProviderApiService) PAMProviderUpdatePamProviderExecute(r ApiPAMProviderUpdatePamProviderRequest) (*CSSCMSDataModelModelsProvider, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CSSCMSDataModelModelsProvider
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CSSCMSDataModelModelsProvider
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -917,12 +922,12 @@ func (a *PAMProviderApiService) PAMProviderUpdatePamProviderExecute(r ApiPAMProv
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.provider == nil {
-        return localVarReturnValue, nil, reportError("provider is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.provider == nil {
+		return localVarReturnValue, nil, reportError("provider is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}

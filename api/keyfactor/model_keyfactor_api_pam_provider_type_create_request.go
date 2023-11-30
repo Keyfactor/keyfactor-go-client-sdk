@@ -28,8 +28,8 @@ var _ MappedNullable = &KeyfactorApiPAMProviderTypeCreateRequest{}
 
 // KeyfactorApiPAMProviderTypeCreateRequest struct for KeyfactorApiPAMProviderTypeCreateRequest
 type KeyfactorApiPAMProviderTypeCreateRequest struct {
-	Name string `json:"Name"`
-	Parameters []KeyfactorApiPAMProviderTypeParameterCreateRequest `json:"Parameters,omitempty"`
+	Name                 string                                              `json:"Name"`
+	Parameters           []KeyfactorApiPAMProviderTypeParameterCreateRequest `json:"Parameters,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -110,7 +110,7 @@ func (o *KeyfactorApiPAMProviderTypeCreateRequest) SetParameters(v []KeyfactorAp
 }
 
 func (o KeyfactorApiPAMProviderTypeCreateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -184,5 +184,3 @@ func (v *NullableKeyfactorApiPAMProviderTypeCreateRequest) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

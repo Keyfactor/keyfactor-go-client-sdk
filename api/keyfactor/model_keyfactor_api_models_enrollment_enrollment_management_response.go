@@ -28,8 +28,8 @@ var _ MappedNullable = &KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse
 
 // KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse struct for KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse
 type KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse struct {
-	SuccessfulStores []string `json:"SuccessfulStores,omitempty"`
-	FailedStores []string `json:"FailedStores,omitempty"`
+	SuccessfulStores     []string `json:"SuccessfulStores,omitempty"`
+	FailedStores         []string `json:"FailedStores,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -117,7 +117,7 @@ func (o *KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse) SetFailedStor
 }
 
 func (o KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,5 +193,3 @@ func (v *NullableKeyfactorAPIModelsEnrollmentEnrollmentManagementResponse) Unmar
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

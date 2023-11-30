@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // ServiceAccountApiService ServiceAccountApi service
 type ServiceAccountApiService service
 
 type ApiServiceAccountCreateServiceAccountRequest struct {
-	ctx context.Context
-	ApiService *ServiceAccountApiService
+	ctx                     context.Context
+	ApiService              *ServiceAccountApiService
 	xKeyfactorRequestedWith *string
-	serviceAccount *ModelsSSHServiceAccountsServiceAccountCreationRequest
-	xKeyfactorApiVersion *string
+	serviceAccount          *ModelsSSHServiceAccountsServiceAccountCreationRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -65,28 +64,29 @@ func (r ApiServiceAccountCreateServiceAccountRequest) Execute() (*ModelsSSHServi
 /*
 ServiceAccountCreateServiceAccount Creates a ServiceAccount with the provided properties
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiServiceAccountCreateServiceAccountRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiServiceAccountCreateServiceAccountRequest
 */
 func (a *ServiceAccountApiService) ServiceAccountCreateServiceAccount(ctx context.Context) ApiServiceAccountCreateServiceAccountRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServiceAccountCreateServiceAccountRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHServiceAccountsServiceAccountResponse
+//
+//	@return ModelsSSHServiceAccountsServiceAccountResponse
 func (a *ServiceAccountApiService) ServiceAccountCreateServiceAccountExecute(r ApiServiceAccountCreateServiceAccountRequest) (*ModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHServiceAccountsServiceAccountResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHServiceAccountsServiceAccountResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -96,12 +96,12 @@ func (a *ServiceAccountApiService) ServiceAccountCreateServiceAccountExecute(r A
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.serviceAccount == nil {
-        return localVarReturnValue, nil, reportError("serviceAccount is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.serviceAccount == nil {
+		return localVarReturnValue, nil, reportError("serviceAccount is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -164,11 +164,11 @@ func (a *ServiceAccountApiService) ServiceAccountCreateServiceAccountExecute(r A
 }
 
 type ApiServiceAccountDeleteServiceAccountRequest struct {
-	ctx context.Context
-	ApiService *ServiceAccountApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *ServiceAccountApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -190,28 +190,28 @@ func (r ApiServiceAccountDeleteServiceAccountRequest) Execute() (*http.Response,
 /*
 ServiceAccountDeleteServiceAccount Deletes a ServiceAccount associated with the provided identifier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifer of the ServiceAccount to be deleted
- @return ApiServiceAccountDeleteServiceAccountRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifer of the ServiceAccount to be deleted
+	@return ApiServiceAccountDeleteServiceAccountRequest
 */
 func (a *ServiceAccountApiService) ServiceAccountDeleteServiceAccount(ctx context.Context, id int32) ApiServiceAccountDeleteServiceAccountRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServiceAccountDeleteServiceAccountRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *ServiceAccountApiService) ServiceAccountDeleteServiceAccountExecute(r ApiServiceAccountDeleteServiceAccountRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -222,9 +222,9 @@ func (a *ServiceAccountApiService) ServiceAccountDeleteServiceAccountExecute(r A
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -276,11 +276,11 @@ func (a *ServiceAccountApiService) ServiceAccountDeleteServiceAccountExecute(r A
 }
 
 type ApiServiceAccountDeleteServiceAccountsRequest struct {
-	ctx context.Context
-	ApiService *ServiceAccountApiService
+	ctx                     context.Context
+	ApiService              *ServiceAccountApiService
 	xKeyfactorRequestedWith *string
-	ids *[]int32
-	xKeyfactorApiVersion *string
+	ids                     *[]int32
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -308,26 +308,26 @@ func (r ApiServiceAccountDeleteServiceAccountsRequest) Execute() (*http.Response
 /*
 ServiceAccountDeleteServiceAccounts Deletes Service Accounts associated with the provided identifiers
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiServiceAccountDeleteServiceAccountsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiServiceAccountDeleteServiceAccountsRequest
 */
 func (a *ServiceAccountApiService) ServiceAccountDeleteServiceAccounts(ctx context.Context) ApiServiceAccountDeleteServiceAccountsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServiceAccountDeleteServiceAccountsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *ServiceAccountApiService) ServiceAccountDeleteServiceAccountsExecute(r ApiServiceAccountDeleteServiceAccountsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -337,12 +337,12 @@ func (a *ServiceAccountApiService) ServiceAccountDeleteServiceAccountsExecute(r 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.ids == nil {
-        return nil, reportError("ids is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.ids == nil {
+		return nil, reportError("ids is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -396,11 +396,11 @@ func (a *ServiceAccountApiService) ServiceAccountDeleteServiceAccountsExecute(r 
 }
 
 type ApiServiceAccountGetRequest struct {
-	ctx context.Context
-	ApiService *ServiceAccountApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *ServiceAccountApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -422,30 +422,31 @@ func (r ApiServiceAccountGetRequest) Execute() (*ModelsSSHServiceAccountsService
 /*
 ServiceAccountGet Returns a ServiceAccount associated with the provided identifier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifier of the ServiceAccount
- @return ApiServiceAccountGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifier of the ServiceAccount
+	@return ApiServiceAccountGetRequest
 */
 func (a *ServiceAccountApiService) ServiceAccountGet(ctx context.Context, id int32) ApiServiceAccountGetRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServiceAccountGetRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHServiceAccountsServiceAccountResponse
+//
+//	@return ModelsSSHServiceAccountsServiceAccountResponse
 func (a *ServiceAccountApiService) ServiceAccountGetExecute(r ApiServiceAccountGetRequest) (*ModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHServiceAccountsServiceAccountResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHServiceAccountsServiceAccountResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -456,9 +457,9 @@ func (a *ServiceAccountApiService) ServiceAccountGetExecute(r ApiServiceAccountG
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -519,12 +520,12 @@ func (a *ServiceAccountApiService) ServiceAccountGetExecute(r ApiServiceAccountG
 }
 
 type ApiServiceAccountGetServiceAccountKeyRequest struct {
-	ctx context.Context
-	ApiService *ServiceAccountApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *ServiceAccountApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	includePrivateKey *bool
-	xKeyfactorApiVersion *string
+	includePrivateKey       *bool
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -552,30 +553,31 @@ func (r ApiServiceAccountGetServiceAccountKeyRequest) Execute() (*ModelsSSHKeysK
 /*
 ServiceAccountGetServiceAccountKey Returns an SSH key with or without private key based on the provided parameters.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The id of the service account to obtain information on
- @return ApiServiceAccountGetServiceAccountKeyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The id of the service account to obtain information on
+	@return ApiServiceAccountGetServiceAccountKeyRequest
 */
 func (a *ServiceAccountApiService) ServiceAccountGetServiceAccountKey(ctx context.Context, id int32) ApiServiceAccountGetServiceAccountKeyRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServiceAccountGetServiceAccountKeyRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHKeysKeyResponse
+//
+//	@return ModelsSSHKeysKeyResponse
 func (a *ServiceAccountApiService) ServiceAccountGetServiceAccountKeyExecute(r ApiServiceAccountGetServiceAccountKeyRequest) (*ModelsSSHKeysKeyResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHKeysKeyResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHKeysKeyResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -586,9 +588,9 @@ func (a *ServiceAccountApiService) ServiceAccountGetServiceAccountKeyExecute(r A
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.includePrivateKey != nil {
 		parameterAddToQuery(localVarQueryParams, "includePrivateKey", r.includePrivateKey, "")
@@ -652,15 +654,15 @@ func (a *ServiceAccountApiService) ServiceAccountGetServiceAccountKeyExecute(r A
 }
 
 type ApiServiceAccountQueryServiceAccountsRequest struct {
-	ctx context.Context
-	ApiService *ServiceAccountApiService
+	ctx                     context.Context
+	ApiService              *ServiceAccountApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -712,28 +714,29 @@ func (r ApiServiceAccountQueryServiceAccountsRequest) Execute() ([]ModelsSSHServ
 /*
 ServiceAccountQueryServiceAccounts Returns all ServiceAccounts according to the provided filter parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiServiceAccountQueryServiceAccountsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiServiceAccountQueryServiceAccountsRequest
 */
 func (a *ServiceAccountApiService) ServiceAccountQueryServiceAccounts(ctx context.Context) ApiServiceAccountQueryServiceAccountsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServiceAccountQueryServiceAccountsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsSSHServiceAccountsServiceAccountResponse
+//
+//	@return []ModelsSSHServiceAccountsServiceAccountResponse
 func (a *ServiceAccountApiService) ServiceAccountQueryServiceAccountsExecute(r ApiServiceAccountQueryServiceAccountsRequest) ([]ModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsSSHServiceAccountsServiceAccountResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsSSHServiceAccountsServiceAccountResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -743,9 +746,9 @@ func (a *ServiceAccountApiService) ServiceAccountQueryServiceAccountsExecute(r A
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")
@@ -821,12 +824,12 @@ func (a *ServiceAccountApiService) ServiceAccountQueryServiceAccountsExecute(r A
 }
 
 type ApiServiceAccountRotateServiceAccountKeyRequest struct {
-	ctx context.Context
-	ApiService *ServiceAccountApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *ServiceAccountApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	rotationRequest *ModelsSSHKeysKeyGenerationRequest
-	xKeyfactorApiVersion *string
+	rotationRequest         *ModelsSSHKeysKeyGenerationRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -853,30 +856,31 @@ func (r ApiServiceAccountRotateServiceAccountKeyRequest) Execute() (*ModelsSSHKe
 /*
 ServiceAccountRotateServiceAccountKey Rotate an SSH key for a specified service account.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The id of the service account and the updated state of the SSH key.
- @return ApiServiceAccountRotateServiceAccountKeyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The id of the service account and the updated state of the SSH key.
+	@return ApiServiceAccountRotateServiceAccountKeyRequest
 */
 func (a *ServiceAccountApiService) ServiceAccountRotateServiceAccountKey(ctx context.Context, id int32) ApiServiceAccountRotateServiceAccountKeyRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServiceAccountRotateServiceAccountKeyRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHKeysKeyResponse
+//
+//	@return ModelsSSHKeysKeyResponse
 func (a *ServiceAccountApiService) ServiceAccountRotateServiceAccountKeyExecute(r ApiServiceAccountRotateServiceAccountKeyRequest) (*ModelsSSHKeysKeyResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHKeysKeyResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHKeysKeyResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -887,12 +891,12 @@ func (a *ServiceAccountApiService) ServiceAccountRotateServiceAccountKeyExecute(
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.rotationRequest == nil {
-        return localVarReturnValue, nil, reportError("rotationRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.rotationRequest == nil {
+		return localVarReturnValue, nil, reportError("rotationRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -955,11 +959,11 @@ func (a *ServiceAccountApiService) ServiceAccountRotateServiceAccountKeyExecute(
 }
 
 type ApiServiceAccountUpdateServiceAccountRequest struct {
-	ctx context.Context
-	ApiService *ServiceAccountApiService
+	ctx                     context.Context
+	ApiService              *ServiceAccountApiService
 	xKeyfactorRequestedWith *string
-	updateRequest *ModelsSSHServiceAccountsServiceAccountUpdateRequest
-	xKeyfactorApiVersion *string
+	updateRequest           *ModelsSSHServiceAccountsServiceAccountUpdateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -987,28 +991,29 @@ func (r ApiServiceAccountUpdateServiceAccountRequest) Execute() (*ModelsSSHServi
 /*
 ServiceAccountUpdateServiceAccount Updates an SSH key for a specified service account.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiServiceAccountUpdateServiceAccountRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiServiceAccountUpdateServiceAccountRequest
 */
 func (a *ServiceAccountApiService) ServiceAccountUpdateServiceAccount(ctx context.Context) ApiServiceAccountUpdateServiceAccountRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServiceAccountUpdateServiceAccountRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHServiceAccountsServiceAccountResponse
+//
+//	@return ModelsSSHServiceAccountsServiceAccountResponse
 func (a *ServiceAccountApiService) ServiceAccountUpdateServiceAccountExecute(r ApiServiceAccountUpdateServiceAccountRequest) (*ModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHServiceAccountsServiceAccountResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHServiceAccountsServiceAccountResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1018,12 +1023,12 @@ func (a *ServiceAccountApiService) ServiceAccountUpdateServiceAccountExecute(r A
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.updateRequest == nil {
-        return localVarReturnValue, nil, reportError("updateRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.updateRequest == nil {
+		return localVarReturnValue, nil, reportError("updateRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}

@@ -35,7 +35,7 @@ type KeyfactorApiModelsWorkflowsDefinitionCreateRequest struct {
 	// Key to be used to look up definition when starting a new workflow.  For enrollment workflowTypes, this should be a template
 	Key *string `json:"Key,omitempty"`
 	// The Type of Workflow
-	WorkflowType *string `json:"WorkflowType,omitempty"`
+	WorkflowType         *string `json:"WorkflowType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -187,7 +187,7 @@ func (o *KeyfactorApiModelsWorkflowsDefinitionCreateRequest) SetWorkflowType(v s
 }
 
 func (o KeyfactorApiModelsWorkflowsDefinitionCreateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -271,5 +271,3 @@ func (v *NullableKeyfactorApiModelsWorkflowsDefinitionCreateRequest) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

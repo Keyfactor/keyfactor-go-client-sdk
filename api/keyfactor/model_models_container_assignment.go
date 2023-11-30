@@ -28,10 +28,10 @@ var _ MappedNullable = &ModelsContainerAssignment{}
 
 // ModelsContainerAssignment struct for ModelsContainerAssignment
 type ModelsContainerAssignment struct {
-	CertStoreContainerId *int32 `json:"CertStoreContainerId,omitempty"`
-	NewContainerName *string `json:"NewContainerName,omitempty"`
-	NewContainerType *int32 `json:"NewContainerType,omitempty"`
-	KeystoreIds []string `json:"KeystoreIds"`
+	CertStoreContainerId *int32   `json:"CertStoreContainerId,omitempty"`
+	NewContainerName     *string  `json:"NewContainerName,omitempty"`
+	NewContainerType     *int32   `json:"NewContainerType,omitempty"`
+	KeystoreIds          []string `json:"KeystoreIds"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -176,7 +176,7 @@ func (o *ModelsContainerAssignment) SetKeystoreIds(v []string) {
 }
 
 func (o ModelsContainerAssignment) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -258,5 +258,3 @@ func (v *NullableModelsContainerAssignment) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

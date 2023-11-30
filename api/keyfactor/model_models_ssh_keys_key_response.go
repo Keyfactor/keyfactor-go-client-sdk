@@ -29,17 +29,17 @@ var _ MappedNullable = &ModelsSSHKeysKeyResponse{}
 
 // ModelsSSHKeysKeyResponse struct for ModelsSSHKeysKeyResponse
 type ModelsSSHKeysKeyResponse struct {
-	Id *int32 `json:"Id,omitempty"`
-	Fingerprint *string `json:"Fingerprint,omitempty"`
-	PublicKey *string `json:"PublicKey,omitempty"`
-	PrivateKey *string `json:"PrivateKey,omitempty"`
-	KeyType *string `json:"KeyType,omitempty"`
-	KeyLength *int32 `json:"KeyLength,omitempty"`
-	CreationDate *time.Time `json:"CreationDate,omitempty"`
-	StaleDate *time.Time `json:"StaleDate,omitempty"`
-	Email *string `json:"Email,omitempty"`
-	Comments []string `json:"Comments,omitempty"`
-	LogonCount *int32 `json:"LogonCount,omitempty"`
+	Id                   *int32     `json:"Id,omitempty"`
+	Fingerprint          *string    `json:"Fingerprint,omitempty"`
+	PublicKey            *string    `json:"PublicKey,omitempty"`
+	PrivateKey           *string    `json:"PrivateKey,omitempty"`
+	KeyType              *string    `json:"KeyType,omitempty"`
+	KeyLength            *int32     `json:"KeyLength,omitempty"`
+	CreationDate         *time.Time `json:"CreationDate,omitempty"`
+	StaleDate            *time.Time `json:"StaleDate,omitempty"`
+	Email                *string    `json:"Email,omitempty"`
+	Comments             []string   `json:"Comments,omitempty"`
+	LogonCount           *int32     `json:"LogonCount,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -415,7 +415,7 @@ func (o *ModelsSSHKeysKeyResponse) SetLogonCount(v int32) {
 }
 
 func (o ModelsSSHKeysKeyResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -527,5 +527,3 @@ func (v *NullableModelsSSHKeysKeyResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

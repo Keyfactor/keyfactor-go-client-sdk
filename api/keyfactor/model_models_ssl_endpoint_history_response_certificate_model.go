@@ -29,17 +29,17 @@ var _ MappedNullable = &ModelsSSLEndpointHistoryResponseCertificateModel{}
 
 // ModelsSSLEndpointHistoryResponseCertificateModel struct for ModelsSSLEndpointHistoryResponseCertificateModel
 type ModelsSSLEndpointHistoryResponseCertificateModel struct {
-	Id *int32 `json:"Id,omitempty"`
-	IssuedDN NullableString `json:"IssuedDN,omitempty"`
-	SerialNumber *string `json:"SerialNumber,omitempty"`
-	NotBefore *time.Time `json:"NotBefore,omitempty"`
-	NotAfter *time.Time `json:"NotAfter,omitempty"`
-	SigningAlgorithm *string `json:"SigningAlgorithm,omitempty"`
-	Thumbprint *string `json:"Thumbprint,omitempty"`
-	IssuerDN NullableString `json:"IssuerDN,omitempty"`
-	IssuedCN NullableString `json:"IssuedCN,omitempty"`
+	Id                     *int32                         `json:"Id,omitempty"`
+	IssuedDN               NullableString                 `json:"IssuedDN,omitempty"`
+	SerialNumber           *string                        `json:"SerialNumber,omitempty"`
+	NotBefore              *time.Time                     `json:"NotBefore,omitempty"`
+	NotAfter               *time.Time                     `json:"NotAfter,omitempty"`
+	SigningAlgorithm       *string                        `json:"SigningAlgorithm,omitempty"`
+	Thumbprint             *string                        `json:"Thumbprint,omitempty"`
+	IssuerDN               NullableString                 `json:"IssuerDN,omitempty"`
+	IssuedCN               NullableString                 `json:"IssuedCN,omitempty"`
 	SubjectAltNameElements []ModelsSubjectAlternativeName `json:"SubjectAltNameElements,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties   map[string]interface{}
 }
 
 type _ModelsSSLEndpointHistoryResponseCertificateModel ModelsSSLEndpointHistoryResponseCertificateModel
@@ -125,6 +125,7 @@ func (o *ModelsSSLEndpointHistoryResponseCertificateModel) HasIssuedDN() bool {
 func (o *ModelsSSLEndpointHistoryResponseCertificateModel) SetIssuedDN(v string) {
 	o.IssuedDN.Set(&v)
 }
+
 // SetIssuedDNNil sets the value for IssuedDN to be an explicit nil
 func (o *ModelsSSLEndpointHistoryResponseCertificateModel) SetIssuedDNNil() {
 	o.IssuedDN.Set(nil)
@@ -327,6 +328,7 @@ func (o *ModelsSSLEndpointHistoryResponseCertificateModel) HasIssuerDN() bool {
 func (o *ModelsSSLEndpointHistoryResponseCertificateModel) SetIssuerDN(v string) {
 	o.IssuerDN.Set(&v)
 }
+
 // SetIssuerDNNil sets the value for IssuerDN to be an explicit nil
 func (o *ModelsSSLEndpointHistoryResponseCertificateModel) SetIssuerDNNil() {
 	o.IssuerDN.Set(nil)
@@ -369,6 +371,7 @@ func (o *ModelsSSLEndpointHistoryResponseCertificateModel) HasIssuedCN() bool {
 func (o *ModelsSSLEndpointHistoryResponseCertificateModel) SetIssuedCN(v string) {
 	o.IssuedCN.Set(&v)
 }
+
 // SetIssuedCNNil sets the value for IssuedCN to be an explicit nil
 func (o *ModelsSSLEndpointHistoryResponseCertificateModel) SetIssuedCNNil() {
 	o.IssuedCN.Set(nil)
@@ -412,7 +415,7 @@ func (o *ModelsSSLEndpointHistoryResponseCertificateModel) SetSubjectAltNameElem
 }
 
 func (o ModelsSSLEndpointHistoryResponseCertificateModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -520,5 +523,3 @@ func (v *NullableModelsSSLEndpointHistoryResponseCertificateModel) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

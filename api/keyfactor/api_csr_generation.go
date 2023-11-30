@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // CSRGenerationApiService CSRGenerationApi service
 type CSRGenerationApiService service
 
 type ApiCSRGenerationDeleteCSRRequest struct {
-	ctx context.Context
-	ApiService *CSRGenerationApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *CSRGenerationApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -59,28 +58,28 @@ func (r ApiCSRGenerationDeleteCSRRequest) Execute() (*http.Response, error) {
 /*
 CSRGenerationDeleteCSR Deletes a CSR associated with the provided identifier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifer of the CSR to be deleted
- @return ApiCSRGenerationDeleteCSRRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifer of the CSR to be deleted
+	@return ApiCSRGenerationDeleteCSRRequest
 */
 func (a *CSRGenerationApiService) CSRGenerationDeleteCSR(ctx context.Context, id int32) ApiCSRGenerationDeleteCSRRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCSRGenerationDeleteCSRRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *CSRGenerationApiService) CSRGenerationDeleteCSRExecute(r ApiCSRGenerationDeleteCSRRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -91,9 +90,9 @@ func (a *CSRGenerationApiService) CSRGenerationDeleteCSRExecute(r ApiCSRGenerati
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -145,11 +144,11 @@ func (a *CSRGenerationApiService) CSRGenerationDeleteCSRExecute(r ApiCSRGenerati
 }
 
 type ApiCSRGenerationDeleteCSRsRequest struct {
-	ctx context.Context
-	ApiService *CSRGenerationApiService
+	ctx                     context.Context
+	ApiService              *CSRGenerationApiService
 	xKeyfactorRequestedWith *string
-	ids *[]int32
-	xKeyfactorApiVersion *string
+	ids                     *[]int32
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -177,26 +176,26 @@ func (r ApiCSRGenerationDeleteCSRsRequest) Execute() (*http.Response, error) {
 /*
 CSRGenerationDeleteCSRs Deletes the CSRs associated with the provided identifiers
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCSRGenerationDeleteCSRsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCSRGenerationDeleteCSRsRequest
 */
 func (a *CSRGenerationApiService) CSRGenerationDeleteCSRs(ctx context.Context) ApiCSRGenerationDeleteCSRsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCSRGenerationDeleteCSRsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *CSRGenerationApiService) CSRGenerationDeleteCSRsExecute(r ApiCSRGenerationDeleteCSRsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -206,12 +205,12 @@ func (a *CSRGenerationApiService) CSRGenerationDeleteCSRsExecute(r ApiCSRGenerat
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.ids == nil {
-        return nil, reportError("ids is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.ids == nil {
+		return nil, reportError("ids is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -265,11 +264,11 @@ func (a *CSRGenerationApiService) CSRGenerationDeleteCSRsExecute(r ApiCSRGenerat
 }
 
 type ApiCSRGenerationDownloadRequest struct {
-	ctx context.Context
-	ApiService *CSRGenerationApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *CSRGenerationApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -291,30 +290,31 @@ func (r ApiCSRGenerationDownloadRequest) Execute() (*ModelsCSRGenerationResponse
 /*
 CSRGenerationDownload Returns a previously generated CSR associated with the provided identifier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifier of the CSR
- @return ApiCSRGenerationDownloadRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifier of the CSR
+	@return ApiCSRGenerationDownloadRequest
 */
 func (a *CSRGenerationApiService) CSRGenerationDownload(ctx context.Context, id int32) ApiCSRGenerationDownloadRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCSRGenerationDownloadRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsCSRGenerationResponseModel
+//
+//	@return ModelsCSRGenerationResponseModel
 func (a *CSRGenerationApiService) CSRGenerationDownloadExecute(r ApiCSRGenerationDownloadRequest) (*ModelsCSRGenerationResponseModel, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsCSRGenerationResponseModel
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsCSRGenerationResponseModel
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -325,9 +325,9 @@ func (a *CSRGenerationApiService) CSRGenerationDownloadExecute(r ApiCSRGeneratio
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -388,15 +388,15 @@ func (a *CSRGenerationApiService) CSRGenerationDownloadExecute(r ApiCSRGeneratio
 }
 
 type ApiCSRGenerationGetPendingCSRsRequest struct {
-	ctx context.Context
-	ApiService *CSRGenerationApiService
+	ctx                     context.Context
+	ApiService              *CSRGenerationApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	sqQueryString *string
-	sqPageReturned *int32
-	sqReturnLimit *int32
-	sqSortField *string
-	sqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	sqQueryString           *string
+	sqPageReturned          *int32
+	sqReturnLimit           *int32
+	sqSortField             *string
+	sqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -448,28 +448,29 @@ func (r ApiCSRGenerationGetPendingCSRsRequest) Execute() ([]ModelsPendingCSRResp
 /*
 CSRGenerationGetPendingCSRs Returns a list of the currently pending CSRs according to the provided query
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCSRGenerationGetPendingCSRsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCSRGenerationGetPendingCSRsRequest
 */
 func (a *CSRGenerationApiService) CSRGenerationGetPendingCSRs(ctx context.Context) ApiCSRGenerationGetPendingCSRsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCSRGenerationGetPendingCSRsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsPendingCSRResponse
+//
+//	@return []ModelsPendingCSRResponse
 func (a *CSRGenerationApiService) CSRGenerationGetPendingCSRsExecute(r ApiCSRGenerationGetPendingCSRsRequest) ([]ModelsPendingCSRResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsPendingCSRResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsPendingCSRResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -479,9 +480,9 @@ func (a *CSRGenerationApiService) CSRGenerationGetPendingCSRsExecute(r ApiCSRGen
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.sqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "sq.queryString", r.sqQueryString, "")
@@ -557,11 +558,11 @@ func (a *CSRGenerationApiService) CSRGenerationGetPendingCSRsExecute(r ApiCSRGen
 }
 
 type ApiCSRGenerationPostGenerateRequest struct {
-	ctx context.Context
-	ApiService *CSRGenerationApiService
+	ctx                     context.Context
+	ApiService              *CSRGenerationApiService
 	xKeyfactorRequestedWith *string
-	context *ModelsEnrollmentCSRGenerationRequest
-	xKeyfactorApiVersion *string
+	context                 *ModelsEnrollmentCSRGenerationRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -589,28 +590,29 @@ func (r ApiCSRGenerationPostGenerateRequest) Execute() (*ModelsCSRContents, *htt
 /*
 CSRGenerationPostGenerate Generates a CSR according the properties provided
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCSRGenerationPostGenerateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCSRGenerationPostGenerateRequest
 */
 func (a *CSRGenerationApiService) CSRGenerationPostGenerate(ctx context.Context) ApiCSRGenerationPostGenerateRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCSRGenerationPostGenerateRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsCSRContents
+//
+//	@return ModelsCSRContents
 func (a *CSRGenerationApiService) CSRGenerationPostGenerateExecute(r ApiCSRGenerationPostGenerateRequest) (*ModelsCSRContents, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsCSRContents
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsCSRContents
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -620,12 +622,12 @@ func (a *CSRGenerationApiService) CSRGenerationPostGenerateExecute(r ApiCSRGener
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.context == nil {
-        return localVarReturnValue, nil, reportError("context is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.context == nil {
+		return localVarReturnValue, nil, reportError("context is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}

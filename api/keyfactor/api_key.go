@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // KeyApiService KeyApi service
 type KeyApiService service
 
 type ApiKeyDeleteUnmanagedKeyRequest struct {
-	ctx context.Context
-	ApiService *KeyApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *KeyApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -59,28 +58,28 @@ func (r ApiKeyDeleteUnmanagedKeyRequest) Execute() (*http.Response, error) {
 /*
 KeyDeleteUnmanagedKey Deletes Unmanaged Key associated with the provided identifier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifer of the Key to be deleted
- @return ApiKeyDeleteUnmanagedKeyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifer of the Key to be deleted
+	@return ApiKeyDeleteUnmanagedKeyRequest
 */
 func (a *KeyApiService) KeyDeleteUnmanagedKey(ctx context.Context, id int32) ApiKeyDeleteUnmanagedKeyRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiKeyDeleteUnmanagedKeyRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *KeyApiService) KeyDeleteUnmanagedKeyExecute(r ApiKeyDeleteUnmanagedKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -91,9 +90,9 @@ func (a *KeyApiService) KeyDeleteUnmanagedKeyExecute(r ApiKeyDeleteUnmanagedKeyR
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -145,11 +144,11 @@ func (a *KeyApiService) KeyDeleteUnmanagedKeyExecute(r ApiKeyDeleteUnmanagedKeyR
 }
 
 type ApiKeyDeleteUnmanagedKeysRequest struct {
-	ctx context.Context
-	ApiService *KeyApiService
+	ctx                     context.Context
+	ApiService              *KeyApiService
 	xKeyfactorRequestedWith *string
-	ids *[]int32
-	xKeyfactorApiVersion *string
+	ids                     *[]int32
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -177,26 +176,26 @@ func (r ApiKeyDeleteUnmanagedKeysRequest) Execute() (*http.Response, error) {
 /*
 KeyDeleteUnmanagedKeys Deletes Unmanaged Keys associated with the provided identifiers
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiKeyDeleteUnmanagedKeysRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiKeyDeleteUnmanagedKeysRequest
 */
 func (a *KeyApiService) KeyDeleteUnmanagedKeys(ctx context.Context) ApiKeyDeleteUnmanagedKeysRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiKeyDeleteUnmanagedKeysRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *KeyApiService) KeyDeleteUnmanagedKeysExecute(r ApiKeyDeleteUnmanagedKeysRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -206,12 +205,12 @@ func (a *KeyApiService) KeyDeleteUnmanagedKeysExecute(r ApiKeyDeleteUnmanagedKey
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.ids == nil {
-        return nil, reportError("ids is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.ids == nil {
+		return nil, reportError("ids is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -265,11 +264,11 @@ func (a *KeyApiService) KeyDeleteUnmanagedKeysExecute(r ApiKeyDeleteUnmanagedKey
 }
 
 type ApiKeyGenerateKeyRequest struct {
-	ctx context.Context
-	ApiService *KeyApiService
+	ctx                     context.Context
+	ApiService              *KeyApiService
 	xKeyfactorRequestedWith *string
-	generationRequest *ModelsSSHKeysKeyGenerationRequest
-	xKeyfactorApiVersion *string
+	generationRequest       *ModelsSSHKeysKeyGenerationRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -312,28 +311,29 @@ KeyGenerateKey Generates an SSH Key Pair for the requesting user.
 | 1             | OpenSSH                |
 | 2                | PKCS8                   |
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiKeyGenerateKeyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiKeyGenerateKeyRequest
 */
 func (a *KeyApiService) KeyGenerateKey(ctx context.Context) ApiKeyGenerateKeyRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiKeyGenerateKeyRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHKeysKeyResponse
+//
+//	@return ModelsSSHKeysKeyResponse
 func (a *KeyApiService) KeyGenerateKeyExecute(r ApiKeyGenerateKeyRequest) (*ModelsSSHKeysKeyResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHKeysKeyResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHKeysKeyResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -343,12 +343,12 @@ func (a *KeyApiService) KeyGenerateKeyExecute(r ApiKeyGenerateKeyRequest) (*Mode
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.generationRequest == nil {
-        return localVarReturnValue, nil, reportError("generationRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.generationRequest == nil {
+		return localVarReturnValue, nil, reportError("generationRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -411,12 +411,12 @@ func (a *KeyApiService) KeyGenerateKeyExecute(r ApiKeyGenerateKeyRequest) (*Mode
 }
 
 type ApiKeyGetMyKeyRequest struct {
-	ctx context.Context
-	ApiService *KeyApiService
+	ctx                     context.Context
+	ApiService              *KeyApiService
 	xKeyfactorRequestedWith *string
 	xKeyfactorKeyPassphrase *string
-	includePrivateKey *bool
-	xKeyfactorApiVersion *string
+	includePrivateKey       *bool
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -450,28 +450,29 @@ func (r ApiKeyGetMyKeyRequest) Execute() (*ModelsSSHKeysKeyResponse, *http.Respo
 /*
 KeyGetMyKey Returns the current key of the requesting user
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiKeyGetMyKeyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiKeyGetMyKeyRequest
 */
 func (a *KeyApiService) KeyGetMyKey(ctx context.Context) ApiKeyGetMyKeyRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiKeyGetMyKeyRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHKeysKeyResponse
+//
+//	@return ModelsSSHKeysKeyResponse
 func (a *KeyApiService) KeyGetMyKeyExecute(r ApiKeyGetMyKeyRequest) (*ModelsSSHKeysKeyResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHKeysKeyResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHKeysKeyResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -481,12 +482,12 @@ func (a *KeyApiService) KeyGetMyKeyExecute(r ApiKeyGetMyKeyRequest) (*ModelsSSHK
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.xKeyfactorKeyPassphrase == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorKeyPassphrase is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.xKeyfactorKeyPassphrase == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorKeyPassphrase is required and must be specified")
+	}
 
 	if r.includePrivateKey != nil {
 		parameterAddToQuery(localVarQueryParams, "includePrivateKey", r.includePrivateKey, "")
@@ -551,11 +552,11 @@ func (a *KeyApiService) KeyGetMyKeyExecute(r ApiKeyGetMyKeyRequest) (*ModelsSSHK
 }
 
 type ApiKeyGetUnmanagedKeyRequest struct {
-	ctx context.Context
-	ApiService *KeyApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *KeyApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -577,30 +578,31 @@ func (r ApiKeyGetUnmanagedKeyRequest) Execute() (*ModelsSSHKeysUnmanagedKeyRespo
 /*
 KeyGetUnmanagedKey Returns an unmanaged SSH key with provided id.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The id of the key to get
- @return ApiKeyGetUnmanagedKeyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The id of the key to get
+	@return ApiKeyGetUnmanagedKeyRequest
 */
 func (a *KeyApiService) KeyGetUnmanagedKey(ctx context.Context, id int32) ApiKeyGetUnmanagedKeyRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiKeyGetUnmanagedKeyRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHKeysUnmanagedKeyResponse
+//
+//	@return ModelsSSHKeysUnmanagedKeyResponse
 func (a *KeyApiService) KeyGetUnmanagedKeyExecute(r ApiKeyGetUnmanagedKeyRequest) (*ModelsSSHKeysUnmanagedKeyResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHKeysUnmanagedKeyResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHKeysUnmanagedKeyResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -611,9 +613,9 @@ func (a *KeyApiService) KeyGetUnmanagedKeyExecute(r ApiKeyGetUnmanagedKeyRequest
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -674,15 +676,15 @@ func (a *KeyApiService) KeyGetUnmanagedKeyExecute(r ApiKeyGetUnmanagedKeyRequest
 }
 
 type ApiKeyGetUnmanagedKeysRequest struct {
-	ctx context.Context
-	ApiService *KeyApiService
+	ctx                     context.Context
+	ApiService              *KeyApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -734,28 +736,29 @@ func (r ApiKeyGetUnmanagedKeysRequest) Execute() ([]ModelsSSHKeysUnmanagedKeyRes
 /*
 KeyGetUnmanagedKeys Returns Unmanaged SSH keys
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiKeyGetUnmanagedKeysRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiKeyGetUnmanagedKeysRequest
 */
 func (a *KeyApiService) KeyGetUnmanagedKeys(ctx context.Context) ApiKeyGetUnmanagedKeysRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiKeyGetUnmanagedKeysRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsSSHKeysUnmanagedKeyResponse
+//
+//	@return []ModelsSSHKeysUnmanagedKeyResponse
 func (a *KeyApiService) KeyGetUnmanagedKeysExecute(r ApiKeyGetUnmanagedKeysRequest) ([]ModelsSSHKeysUnmanagedKeyResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsSSHKeysUnmanagedKeyResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsSSHKeysUnmanagedKeyResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -765,9 +768,9 @@ func (a *KeyApiService) KeyGetUnmanagedKeysExecute(r ApiKeyGetUnmanagedKeysReque
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")
@@ -843,11 +846,11 @@ func (a *KeyApiService) KeyGetUnmanagedKeysExecute(r ApiKeyGetUnmanagedKeysReque
 }
 
 type ApiKeyUpdateRequest struct {
-	ctx context.Context
-	ApiService *KeyApiService
+	ctx                     context.Context
+	ApiService              *KeyApiService
 	xKeyfactorRequestedWith *string
-	keyUpdateRequest *ModelsSSHKeysKeyUpdateRequest
-	xKeyfactorApiVersion *string
+	keyUpdateRequest        *ModelsSSHKeysKeyUpdateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -875,28 +878,29 @@ func (r ApiKeyUpdateRequest) Execute() (*ModelsSSHKeysKeyResponse, *http.Respons
 /*
 KeyUpdate Updates the requesting user's SSH key
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiKeyUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiKeyUpdateRequest
 */
 func (a *KeyApiService) KeyUpdate(ctx context.Context) ApiKeyUpdateRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiKeyUpdateRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHKeysKeyResponse
+//
+//	@return ModelsSSHKeysKeyResponse
 func (a *KeyApiService) KeyUpdateExecute(r ApiKeyUpdateRequest) (*ModelsSSHKeysKeyResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHKeysKeyResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHKeysKeyResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -906,12 +910,12 @@ func (a *KeyApiService) KeyUpdateExecute(r ApiKeyUpdateRequest) (*ModelsSSHKeysK
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.keyUpdateRequest == nil {
-        return localVarReturnValue, nil, reportError("keyUpdateRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.keyUpdateRequest == nil {
+		return localVarReturnValue, nil, reportError("keyUpdateRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}

@@ -29,11 +29,11 @@ var _ MappedNullable = &ModelsRevokeCertificateRequest{}
 
 // ModelsRevokeCertificateRequest struct for ModelsRevokeCertificateRequest
 type ModelsRevokeCertificateRequest struct {
-	CertificateIds []int32 `json:"CertificateIds,omitempty"`
-	Reason *int32 `json:"Reason,omitempty"`
-	Comment *string `json:"Comment,omitempty"`
-	EffectiveDate *time.Time `json:"EffectiveDate,omitempty"`
-	CollectionId *int32 `json:"CollectionId,omitempty"`
+	CertificateIds       []int32    `json:"CertificateIds,omitempty"`
+	Reason               *int32     `json:"Reason,omitempty"`
+	Comment              *string    `json:"Comment,omitempty"`
+	EffectiveDate        *time.Time `json:"EffectiveDate,omitempty"`
+	CollectionId         *int32     `json:"CollectionId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -217,7 +217,7 @@ func (o *ModelsRevokeCertificateRequest) SetCollectionId(v int32) {
 }
 
 func (o ModelsRevokeCertificateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -305,5 +305,3 @@ func (v *NullableModelsRevokeCertificateRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

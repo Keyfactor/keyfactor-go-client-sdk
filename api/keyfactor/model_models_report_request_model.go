@@ -28,10 +28,10 @@ var _ MappedNullable = &ModelsReportRequestModel{}
 
 // ModelsReportRequestModel The ReportRequestModel can be used to update a report.
 type ModelsReportRequestModel struct {
-	Id *int32 `json:"Id,omitempty"`
-	InNavigator *bool `json:"InNavigator,omitempty"`
-	Favorite *bool `json:"Favorite,omitempty"`
-	RemoveDuplicates *bool `json:"RemoveDuplicates,omitempty"`
+	Id                   *int32 `json:"Id,omitempty"`
+	InNavigator          *bool  `json:"InNavigator,omitempty"`
+	Favorite             *bool  `json:"Favorite,omitempty"`
+	RemoveDuplicates     *bool  `json:"RemoveDuplicates,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -183,7 +183,7 @@ func (o *ModelsReportRequestModel) SetRemoveDuplicates(v bool) {
 }
 
 func (o ModelsReportRequestModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -267,5 +267,3 @@ func (v *NullableModelsReportRequestModel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

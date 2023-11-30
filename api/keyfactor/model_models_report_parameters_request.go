@@ -28,10 +28,10 @@ var _ MappedNullable = &ModelsReportParametersRequest{}
 
 // ModelsReportParametersRequest struct for ModelsReportParametersRequest
 type ModelsReportParametersRequest struct {
-	Id *int32 `json:"Id,omitempty"`
-	DisplayName *string `json:"DisplayName,omitempty"`
-	Description *string `json:"Description,omitempty"`
-	DefaultValue *string `json:"DefaultValue,omitempty"`
+	Id                   *int32  `json:"Id,omitempty"`
+	DisplayName          *string `json:"DisplayName,omitempty"`
+	Description          *string `json:"Description,omitempty"`
+	DefaultValue         *string `json:"DefaultValue,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -183,7 +183,7 @@ func (o *ModelsReportParametersRequest) SetDefaultValue(v string) {
 }
 
 func (o ModelsReportParametersRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -267,5 +267,3 @@ func (v *NullableModelsReportParametersRequest) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

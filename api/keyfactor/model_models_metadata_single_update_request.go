@@ -28,9 +28,9 @@ var _ MappedNullable = &ModelsMetadataSingleUpdateRequest{}
 
 // ModelsMetadataSingleUpdateRequest struct for ModelsMetadataSingleUpdateRequest
 type ModelsMetadataSingleUpdateRequest struct {
-	MetadataName *string `json:"MetadataName,omitempty"`
-	Value *string `json:"Value,omitempty"`
-	OverwriteExisting *bool `json:"OverwriteExisting,omitempty"`
+	MetadataName         *string `json:"MetadataName,omitempty"`
+	Value                *string `json:"Value,omitempty"`
+	OverwriteExisting    *bool   `json:"OverwriteExisting,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -150,7 +150,7 @@ func (o *ModelsMetadataSingleUpdateRequest) SetOverwriteExisting(v bool) {
 }
 
 func (o ModelsMetadataSingleUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,5 +230,3 @@ func (v *NullableModelsMetadataSingleUpdateRequest) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

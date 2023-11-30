@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // IssuedAlertApiService IssuedAlertApi service
 type IssuedAlertApiService service
 
 type ApiIssuedAlertAddIssuedAlertRequest struct {
-	ctx context.Context
-	ApiService *IssuedAlertApiService
+	ctx                     context.Context
+	ApiService              *IssuedAlertApiService
 	xKeyfactorRequestedWith *string
-	req *KeyfactorApiModelsAlertsIssuedIssuedAlertCreationRequest
-	xKeyfactorApiVersion *string
+	req                     *KeyfactorApiModelsAlertsIssuedIssuedAlertCreationRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -65,28 +64,29 @@ func (r ApiIssuedAlertAddIssuedAlertRequest) Execute() (*KeyfactorApiModelsAlert
 /*
 IssuedAlertAddIssuedAlert Add a issued alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiIssuedAlertAddIssuedAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiIssuedAlertAddIssuedAlertRequest
 */
 func (a *IssuedAlertApiService) IssuedAlertAddIssuedAlert(ctx context.Context) ApiIssuedAlertAddIssuedAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiIssuedAlertAddIssuedAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse
+//
+//	@return KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse
 func (a *IssuedAlertApiService) IssuedAlertAddIssuedAlertExecute(r ApiIssuedAlertAddIssuedAlertRequest) (*KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -96,12 +96,12 @@ func (a *IssuedAlertApiService) IssuedAlertAddIssuedAlertExecute(r ApiIssuedAler
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.req == nil {
-        return localVarReturnValue, nil, reportError("req is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.req == nil {
+		return localVarReturnValue, nil, reportError("req is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -164,11 +164,11 @@ func (a *IssuedAlertApiService) IssuedAlertAddIssuedAlertExecute(r ApiIssuedAler
 }
 
 type ApiIssuedAlertDeleteIssuedAlertRequest struct {
-	ctx context.Context
-	ApiService *IssuedAlertApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *IssuedAlertApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -190,28 +190,28 @@ func (r ApiIssuedAlertDeleteIssuedAlertRequest) Execute() (*http.Response, error
 /*
 IssuedAlertDeleteIssuedAlert Delete a issued alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Id for the issued alert
- @return ApiIssuedAlertDeleteIssuedAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Id for the issued alert
+	@return ApiIssuedAlertDeleteIssuedAlertRequest
 */
 func (a *IssuedAlertApiService) IssuedAlertDeleteIssuedAlert(ctx context.Context, id int32) ApiIssuedAlertDeleteIssuedAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiIssuedAlertDeleteIssuedAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *IssuedAlertApiService) IssuedAlertDeleteIssuedAlertExecute(r ApiIssuedAlertDeleteIssuedAlertRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -222,9 +222,9 @@ func (a *IssuedAlertApiService) IssuedAlertDeleteIssuedAlertExecute(r ApiIssuedA
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -276,11 +276,11 @@ func (a *IssuedAlertApiService) IssuedAlertDeleteIssuedAlertExecute(r ApiIssuedA
 }
 
 type ApiIssuedAlertEditIssuedAlertRequest struct {
-	ctx context.Context
-	ApiService *IssuedAlertApiService
+	ctx                     context.Context
+	ApiService              *IssuedAlertApiService
 	xKeyfactorRequestedWith *string
-	req *KeyfactorApiModelsAlertsIssuedIssuedAlertUpdateRequest
-	xKeyfactorApiVersion *string
+	req                     *KeyfactorApiModelsAlertsIssuedIssuedAlertUpdateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -308,28 +308,29 @@ func (r ApiIssuedAlertEditIssuedAlertRequest) Execute() (*KeyfactorApiModelsAler
 /*
 IssuedAlertEditIssuedAlert Edit a issued alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiIssuedAlertEditIssuedAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiIssuedAlertEditIssuedAlertRequest
 */
 func (a *IssuedAlertApiService) IssuedAlertEditIssuedAlert(ctx context.Context) ApiIssuedAlertEditIssuedAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiIssuedAlertEditIssuedAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse
+//
+//	@return KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse
 func (a *IssuedAlertApiService) IssuedAlertEditIssuedAlertExecute(r ApiIssuedAlertEditIssuedAlertRequest) (*KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -339,12 +340,12 @@ func (a *IssuedAlertApiService) IssuedAlertEditIssuedAlertExecute(r ApiIssuedAle
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.req == nil {
-        return localVarReturnValue, nil, reportError("req is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.req == nil {
+		return localVarReturnValue, nil, reportError("req is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -407,11 +408,11 @@ func (a *IssuedAlertApiService) IssuedAlertEditIssuedAlertExecute(r ApiIssuedAle
 }
 
 type ApiIssuedAlertEditScheduleRequest struct {
-	ctx context.Context
-	ApiService *IssuedAlertApiService
+	ctx                     context.Context
+	ApiService              *IssuedAlertApiService
 	xKeyfactorRequestedWith *string
-	newSchedule *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest
-	xKeyfactorApiVersion *string
+	newSchedule             *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -438,28 +439,29 @@ func (r ApiIssuedAlertEditScheduleRequest) Execute() (*KeyfactorApiModelsAlertsA
 /*
 IssuedAlertEditSchedule Edit schedule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiIssuedAlertEditScheduleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiIssuedAlertEditScheduleRequest
 */
 func (a *IssuedAlertApiService) IssuedAlertEditSchedule(ctx context.Context) ApiIssuedAlertEditScheduleRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiIssuedAlertEditScheduleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
+//
+//	@return KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 func (a *IssuedAlertApiService) IssuedAlertEditScheduleExecute(r ApiIssuedAlertEditScheduleRequest) (*KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -469,12 +471,12 @@ func (a *IssuedAlertApiService) IssuedAlertEditScheduleExecute(r ApiIssuedAlertE
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.newSchedule == nil {
-        return localVarReturnValue, nil, reportError("newSchedule is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.newSchedule == nil {
+		return localVarReturnValue, nil, reportError("newSchedule is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -537,11 +539,11 @@ func (a *IssuedAlertApiService) IssuedAlertEditScheduleExecute(r ApiIssuedAlertE
 }
 
 type ApiIssuedAlertGetIssuedAlertRequest struct {
-	ctx context.Context
-	ApiService *IssuedAlertApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *IssuedAlertApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -563,30 +565,31 @@ func (r ApiIssuedAlertGetIssuedAlertRequest) Execute() (*KeyfactorApiModelsAlert
 /*
 IssuedAlertGetIssuedAlert Get a issued alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Id for the issued alert to get
- @return ApiIssuedAlertGetIssuedAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Id for the issued alert to get
+	@return ApiIssuedAlertGetIssuedAlertRequest
 */
 func (a *IssuedAlertApiService) IssuedAlertGetIssuedAlert(ctx context.Context, id int32) ApiIssuedAlertGetIssuedAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiIssuedAlertGetIssuedAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse
+//
+//	@return KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse
 func (a *IssuedAlertApiService) IssuedAlertGetIssuedAlertExecute(r ApiIssuedAlertGetIssuedAlertRequest) (*KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -597,9 +600,9 @@ func (a *IssuedAlertApiService) IssuedAlertGetIssuedAlertExecute(r ApiIssuedAler
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -660,14 +663,14 @@ func (a *IssuedAlertApiService) IssuedAlertGetIssuedAlertExecute(r ApiIssuedAler
 }
 
 type ApiIssuedAlertGetIssuedAlertsRequest struct {
-	ctx context.Context
-	ApiService *IssuedAlertApiService
+	ctx                     context.Context
+	ApiService              *IssuedAlertApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pagedQueryQueryString *string
-	pagedQueryPageReturned *int32
-	pagedQueryReturnLimit *int32
-	pagedQuerySortField *string
+	xKeyfactorApiVersion    *string
+	pagedQueryQueryString   *string
+	pagedQueryPageReturned  *int32
+	pagedQueryReturnLimit   *int32
+	pagedQuerySortField     *string
 	pagedQuerySortAscending *int32
 }
 
@@ -720,28 +723,29 @@ func (r ApiIssuedAlertGetIssuedAlertsRequest) Execute() ([]KeyfactorApiModelsAle
 /*
 IssuedAlertGetIssuedAlerts Gets all issued alerts according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiIssuedAlertGetIssuedAlertsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiIssuedAlertGetIssuedAlertsRequest
 */
 func (a *IssuedAlertApiService) IssuedAlertGetIssuedAlerts(ctx context.Context) ApiIssuedAlertGetIssuedAlertsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiIssuedAlertGetIssuedAlertsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse
+//
+//	@return []KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse
 func (a *IssuedAlertApiService) IssuedAlertGetIssuedAlertsExecute(r ApiIssuedAlertGetIssuedAlertsRequest) ([]KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -751,9 +755,9 @@ func (a *IssuedAlertApiService) IssuedAlertGetIssuedAlertsExecute(r ApiIssuedAle
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pagedQueryQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pagedQuery.queryString", r.pagedQueryQueryString, "")
@@ -829,10 +833,10 @@ func (a *IssuedAlertApiService) IssuedAlertGetIssuedAlertsExecute(r ApiIssuedAle
 }
 
 type ApiIssuedAlertGetScheduleRequest struct {
-	ctx context.Context
-	ApiService *IssuedAlertApiService
+	ctx                     context.Context
+	ApiService              *IssuedAlertApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -854,28 +858,29 @@ func (r ApiIssuedAlertGetScheduleRequest) Execute() (*KeyfactorApiModelsAlertsAl
 /*
 IssuedAlertGetSchedule Get the schedule for issued alerts
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiIssuedAlertGetScheduleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiIssuedAlertGetScheduleRequest
 */
 func (a *IssuedAlertApiService) IssuedAlertGetSchedule(ctx context.Context) ApiIssuedAlertGetScheduleRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiIssuedAlertGetScheduleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
+//
+//	@return KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 func (a *IssuedAlertApiService) IssuedAlertGetScheduleExecute(r ApiIssuedAlertGetScheduleRequest) (*KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -885,9 +890,9 @@ func (a *IssuedAlertApiService) IssuedAlertGetScheduleExecute(r ApiIssuedAlertGe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

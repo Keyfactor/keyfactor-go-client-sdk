@@ -28,8 +28,8 @@ var _ MappedNullable = &KeyfactorApiModelsLicenseLicenseResponse{}
 
 // KeyfactorApiModelsLicenseLicenseResponse struct for KeyfactorApiModelsLicenseLicenseResponse
 type KeyfactorApiModelsLicenseLicenseResponse struct {
-	KeyfactorVersion *string `json:"KeyfactorVersion,omitempty"`
-	LicenseData *KeyfactorApiModelsLicenseLicenseResponseLicense `json:"LicenseData,omitempty"`
+	KeyfactorVersion     *string                                          `json:"KeyfactorVersion,omitempty"`
+	LicenseData          *KeyfactorApiModelsLicenseLicenseResponseLicense `json:"LicenseData,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -117,7 +117,7 @@ func (o *KeyfactorApiModelsLicenseLicenseResponse) SetLicenseData(v KeyfactorApi
 }
 
 func (o KeyfactorApiModelsLicenseLicenseResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -191,5 +191,3 @@ func (v *NullableKeyfactorApiModelsLicenseLicenseResponse) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

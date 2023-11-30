@@ -28,17 +28,16 @@ import (
 	"strings"
 )
 
-
 // SecurityRolePermissionsApiService SecurityRolePermissionsApi service
 type SecurityRolePermissionsApiService service
 
 type ApiSecurityRolePermissionsAddCollectionPermissionsRequest struct {
-	ctx context.Context
-	ApiService *SecurityRolePermissionsApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *SecurityRolePermissionsApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	collectionPermissions *[]KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest
-	xKeyfactorApiVersion *string
+	collectionPermissions   *[]KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -75,30 +74,31 @@ SecurityRolePermissionsAddCollectionPermissions Adds collection permissions to t
 | Revoke        | Revoke                    |
 | Delete        | Delete                    |
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Security role identifier
- @return ApiSecurityRolePermissionsAddCollectionPermissionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Security role identifier
+	@return ApiSecurityRolePermissionsAddCollectionPermissionsRequest
 */
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddCollectionPermissions(ctx context.Context, id int32) ApiSecurityRolePermissionsAddCollectionPermissionsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSecurityRolePermissionsAddCollectionPermissionsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionResponse
+//
+//	@return []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionResponse
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddCollectionPermissionsExecute(r ApiSecurityRolePermissionsAddCollectionPermissionsRequest) ([]KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -109,12 +109,12 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddCollection
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.collectionPermissions == nil {
-        return localVarReturnValue, nil, reportError("collectionPermissions is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.collectionPermissions == nil {
+		return localVarReturnValue, nil, reportError("collectionPermissions is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -177,12 +177,12 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddCollection
 }
 
 type ApiSecurityRolePermissionsAddContainerPermissionsRequest struct {
-	ctx context.Context
-	ApiService *SecurityRolePermissionsApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *SecurityRolePermissionsApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	containerPermissions *[]KeyfactorApiModelsSecurityRolesContainerPermissionRequest
-	xKeyfactorApiVersion *string
+	containerPermissions    *[]KeyfactorApiModelsSecurityRolesContainerPermissionRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -217,30 +217,31 @@ SecurityRolePermissionsAddContainerPermissions Adds container permissions to the
 | Schedule      | Read                  |
 | Modify        | Read, Schedule        |
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Security role identifier
- @return ApiSecurityRolePermissionsAddContainerPermissionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Security role identifier
+	@return ApiSecurityRolePermissionsAddContainerPermissionsRequest
 */
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddContainerPermissions(ctx context.Context, id int32) ApiSecurityRolePermissionsAddContainerPermissionsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSecurityRolePermissionsAddContainerPermissionsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsSecurityRolesContainerPermissionResponse
+//
+//	@return []KeyfactorApiModelsSecurityRolesContainerPermissionResponse
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddContainerPermissionsExecute(r ApiSecurityRolePermissionsAddContainerPermissionsRequest) ([]KeyfactorApiModelsSecurityRolesContainerPermissionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsSecurityRolesContainerPermissionResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsSecurityRolesContainerPermissionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -251,12 +252,12 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddContainerP
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.containerPermissions == nil {
-        return localVarReturnValue, nil, reportError("containerPermissions is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.containerPermissions == nil {
+		return localVarReturnValue, nil, reportError("containerPermissions is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -319,12 +320,12 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddContainerP
 }
 
 type ApiSecurityRolePermissionsAddGlobalPermissionsRequest struct {
-	ctx context.Context
-	ApiService *SecurityRolePermissionsApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *SecurityRolePermissionsApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	globalPermissions *[]KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionRequest
-	xKeyfactorApiVersion *string
+	globalPermissions       *[]KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -417,30 +418,31 @@ SecurityRolePermissionsAddGlobalPermissions Adds global permissions to the secur
 | WorkflowManagement            | Participate       |
 | WorkflowManagement            | Manage            |
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Security role identifier
- @return ApiSecurityRolePermissionsAddGlobalPermissionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Security role identifier
+	@return ApiSecurityRolePermissionsAddGlobalPermissionsRequest
 */
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddGlobalPermissions(ctx context.Context, id int32) ApiSecurityRolePermissionsAddGlobalPermissionsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSecurityRolePermissionsAddGlobalPermissionsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionResponse
+//
+//	@return []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionResponse
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddGlobalPermissionsExecute(r ApiSecurityRolePermissionsAddGlobalPermissionsRequest) ([]KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -451,12 +453,12 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddGlobalPerm
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.globalPermissions == nil {
-        return localVarReturnValue, nil, reportError("globalPermissions is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.globalPermissions == nil {
+		return localVarReturnValue, nil, reportError("globalPermissions is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -519,11 +521,11 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddGlobalPerm
 }
 
 type ApiSecurityRolePermissionsGetCollectionPermissionsForRoleRequest struct {
-	ctx context.Context
-	ApiService *SecurityRolePermissionsApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *SecurityRolePermissionsApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -545,30 +547,31 @@ func (r ApiSecurityRolePermissionsGetCollectionPermissionsForRoleRequest) Execut
 /*
 SecurityRolePermissionsGetCollectionPermissionsForRole Returns all collection permissions associated with the security role that matches the id.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Security role identifier
- @return ApiSecurityRolePermissionsGetCollectionPermissionsForRoleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Security role identifier
+	@return ApiSecurityRolePermissionsGetCollectionPermissionsForRoleRequest
 */
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetCollectionPermissionsForRole(ctx context.Context, id int32) ApiSecurityRolePermissionsGetCollectionPermissionsForRoleRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSecurityRolePermissionsGetCollectionPermissionsForRoleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionResponse
+//
+//	@return []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionResponse
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetCollectionPermissionsForRoleExecute(r ApiSecurityRolePermissionsGetCollectionPermissionsForRoleRequest) ([]KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -579,9 +582,9 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetCollection
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -642,11 +645,11 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetCollection
 }
 
 type ApiSecurityRolePermissionsGetContainerPermissionsForRoleRequest struct {
-	ctx context.Context
-	ApiService *SecurityRolePermissionsApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *SecurityRolePermissionsApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -668,30 +671,31 @@ func (r ApiSecurityRolePermissionsGetContainerPermissionsForRoleRequest) Execute
 /*
 SecurityRolePermissionsGetContainerPermissionsForRole Returns all container permissions associated with the security role that matches the id.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Security role identifier
- @return ApiSecurityRolePermissionsGetContainerPermissionsForRoleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Security role identifier
+	@return ApiSecurityRolePermissionsGetContainerPermissionsForRoleRequest
 */
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetContainerPermissionsForRole(ctx context.Context, id int32) ApiSecurityRolePermissionsGetContainerPermissionsForRoleRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSecurityRolePermissionsGetContainerPermissionsForRoleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsSecurityRolesContainerPermissionResponse
+//
+//	@return []KeyfactorApiModelsSecurityRolesContainerPermissionResponse
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetContainerPermissionsForRoleExecute(r ApiSecurityRolePermissionsGetContainerPermissionsForRoleRequest) ([]KeyfactorApiModelsSecurityRolesContainerPermissionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsSecurityRolesContainerPermissionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsSecurityRolesContainerPermissionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -702,9 +706,9 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetContainerP
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -765,11 +769,11 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetContainerP
 }
 
 type ApiSecurityRolePermissionsGetGlobalPermissionsForRoleRequest struct {
-	ctx context.Context
-	ApiService *SecurityRolePermissionsApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *SecurityRolePermissionsApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -791,30 +795,31 @@ func (r ApiSecurityRolePermissionsGetGlobalPermissionsForRoleRequest) Execute() 
 /*
 SecurityRolePermissionsGetGlobalPermissionsForRole Returns all global permissions associated with the security role that matches the id.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Security role identifier
- @return ApiSecurityRolePermissionsGetGlobalPermissionsForRoleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Security role identifier
+	@return ApiSecurityRolePermissionsGetGlobalPermissionsForRoleRequest
 */
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetGlobalPermissionsForRole(ctx context.Context, id int32) ApiSecurityRolePermissionsGetGlobalPermissionsForRoleRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSecurityRolePermissionsGetGlobalPermissionsForRoleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionResponse
+//
+//	@return []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionResponse
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetGlobalPermissionsForRoleExecute(r ApiSecurityRolePermissionsGetGlobalPermissionsForRoleRequest) ([]KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -825,9 +830,9 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetGlobalPerm
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -888,11 +893,11 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetGlobalPerm
 }
 
 type ApiSecurityRolePermissionsGetPermissionsForRoleRequest struct {
-	ctx context.Context
-	ApiService *SecurityRolePermissionsApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *SecurityRolePermissionsApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -914,30 +919,31 @@ func (r ApiSecurityRolePermissionsGetPermissionsForRoleRequest) Execute() ([]Key
 /*
 SecurityRolePermissionsGetPermissionsForRole Returns all permissions associated with the security role that matches the id.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Security role identifier
- @return ApiSecurityRolePermissionsGetPermissionsForRoleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Security role identifier
+	@return ApiSecurityRolePermissionsGetPermissionsForRoleRequest
 */
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetPermissionsForRole(ctx context.Context, id int32) ApiSecurityRolePermissionsGetPermissionsForRoleRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSecurityRolePermissionsGetPermissionsForRoleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsSecurityRolesAreaPermissionResponse
+//
+//	@return []KeyfactorApiModelsSecurityRolesAreaPermissionResponse
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetPermissionsForRoleExecute(r ApiSecurityRolePermissionsGetPermissionsForRoleRequest) ([]KeyfactorApiModelsSecurityRolesAreaPermissionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsSecurityRolesAreaPermissionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsSecurityRolesAreaPermissionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -948,9 +954,9 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetPermission
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1011,12 +1017,12 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetPermission
 }
 
 type ApiSecurityRolePermissionsSetCollectionPermissionsRequest struct {
-	ctx context.Context
-	ApiService *SecurityRolePermissionsApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *SecurityRolePermissionsApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	collectionPermissions *[]KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest
-	xKeyfactorApiVersion *string
+	collectionPermissions   *[]KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1053,30 +1059,31 @@ SecurityRolePermissionsSetCollectionPermissions Sets collection permissions to t
 | Revoke        | Revoke                    |
 | Delete        | Delete                    |
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Security role identifier
- @return ApiSecurityRolePermissionsSetCollectionPermissionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Security role identifier
+	@return ApiSecurityRolePermissionsSetCollectionPermissionsRequest
 */
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetCollectionPermissions(ctx context.Context, id int32) ApiSecurityRolePermissionsSetCollectionPermissionsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSecurityRolePermissionsSetCollectionPermissionsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionResponse
+//
+//	@return []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionResponse
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetCollectionPermissionsExecute(r ApiSecurityRolePermissionsSetCollectionPermissionsRequest) ([]KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1087,12 +1094,12 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetCollection
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.collectionPermissions == nil {
-        return localVarReturnValue, nil, reportError("collectionPermissions is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.collectionPermissions == nil {
+		return localVarReturnValue, nil, reportError("collectionPermissions is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -1155,12 +1162,12 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetCollection
 }
 
 type ApiSecurityRolePermissionsSetContainerPermissionsRequest struct {
-	ctx context.Context
-	ApiService *SecurityRolePermissionsApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *SecurityRolePermissionsApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	containerPermissions *[]KeyfactorApiModelsSecurityRolesContainerPermissionRequest
-	xKeyfactorApiVersion *string
+	containerPermissions    *[]KeyfactorApiModelsSecurityRolesContainerPermissionRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1195,30 +1202,31 @@ SecurityRolePermissionsSetContainerPermissions Sets container permissions to the
 | Schedule      | Read                  |
 | Modify        | Read, Schedule        |
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Security role identifier
- @return ApiSecurityRolePermissionsSetContainerPermissionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Security role identifier
+	@return ApiSecurityRolePermissionsSetContainerPermissionsRequest
 */
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetContainerPermissions(ctx context.Context, id int32) ApiSecurityRolePermissionsSetContainerPermissionsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSecurityRolePermissionsSetContainerPermissionsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsSecurityRolesContainerPermissionResponse
+//
+//	@return []KeyfactorApiModelsSecurityRolesContainerPermissionResponse
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetContainerPermissionsExecute(r ApiSecurityRolePermissionsSetContainerPermissionsRequest) ([]KeyfactorApiModelsSecurityRolesContainerPermissionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsSecurityRolesContainerPermissionResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsSecurityRolesContainerPermissionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1229,12 +1237,12 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetContainerP
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.containerPermissions == nil {
-        return localVarReturnValue, nil, reportError("containerPermissions is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.containerPermissions == nil {
+		return localVarReturnValue, nil, reportError("containerPermissions is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -1297,12 +1305,12 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetContainerP
 }
 
 type ApiSecurityRolePermissionsSetGlobalPermissionsRequest struct {
-	ctx context.Context
-	ApiService *SecurityRolePermissionsApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *SecurityRolePermissionsApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	globalPermissions *[]KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionRequest
-	xKeyfactorApiVersion *string
+	globalPermissions       *[]KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1395,30 +1403,31 @@ SecurityRolePermissionsSetGlobalPermissions Adds global permissions to the secur
 | WorkflowManagement            | Participate       |
 | WorkflowManagement            | Manage            |
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Security role identifier
- @return ApiSecurityRolePermissionsSetGlobalPermissionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Security role identifier
+	@return ApiSecurityRolePermissionsSetGlobalPermissionsRequest
 */
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetGlobalPermissions(ctx context.Context, id int32) ApiSecurityRolePermissionsSetGlobalPermissionsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSecurityRolePermissionsSetGlobalPermissionsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionResponse
+//
+//	@return []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionResponse
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetGlobalPermissionsExecute(r ApiSecurityRolePermissionsSetGlobalPermissionsRequest) ([]KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1429,12 +1438,12 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetGlobalPerm
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.globalPermissions == nil {
-        return localVarReturnValue, nil, reportError("globalPermissions is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.globalPermissions == nil {
+		return localVarReturnValue, nil, reportError("globalPermissions is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}

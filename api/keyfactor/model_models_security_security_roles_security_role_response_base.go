@@ -31,7 +31,7 @@ type ModelsSecuritySecurityRolesSecurityRoleResponseBase struct {
 	// The name of the created role
 	Name *string `json:"Name,omitempty"`
 	// The permissions included in the created security role
-	Permissions []string `json:"Permissions,omitempty"`
+	Permissions          []string `json:"Permissions,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -119,7 +119,7 @@ func (o *ModelsSecuritySecurityRolesSecurityRoleResponseBase) SetPermissions(v [
 }
 
 func (o ModelsSecuritySecurityRolesSecurityRoleResponseBase) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -195,5 +195,3 @@ func (v *NullableModelsSecuritySecurityRolesSecurityRoleResponseBase) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

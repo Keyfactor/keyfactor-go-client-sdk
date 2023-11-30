@@ -28,10 +28,10 @@ var _ MappedNullable = &ModelsSSHUsersSshUserResponse{}
 
 // ModelsSSHUsersSshUserResponse struct for ModelsSSHUsersSshUserResponse
 type ModelsSSHUsersSshUserResponse struct {
-	Id *int32 `json:"Id,omitempty"`
-	Key *ModelsSSHKeysKeyResponse `json:"Key,omitempty"`
-	Username *string `json:"Username,omitempty"`
-	LogonIds []int32 `json:"LogonIds,omitempty"`
+	Id                   *int32                    `json:"Id,omitempty"`
+	Key                  *ModelsSSHKeysKeyResponse `json:"Key,omitempty"`
+	Username             *string                   `json:"Username,omitempty"`
+	LogonIds             []int32                   `json:"LogonIds,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -183,7 +183,7 @@ func (o *ModelsSSHUsersSshUserResponse) SetLogonIds(v []int32) {
 }
 
 func (o ModelsSSHUsersSshUserResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -267,5 +267,3 @@ func (v *NullableModelsSSHUsersSshUserResponse) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

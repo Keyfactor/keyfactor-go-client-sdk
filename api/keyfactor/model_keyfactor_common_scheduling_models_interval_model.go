@@ -28,7 +28,7 @@ var _ MappedNullable = &KeyfactorCommonSchedulingModelsIntervalModel{}
 
 // KeyfactorCommonSchedulingModelsIntervalModel struct for KeyfactorCommonSchedulingModelsIntervalModel
 type KeyfactorCommonSchedulingModelsIntervalModel struct {
-	Minutes *int32 `json:"Minutes,omitempty"`
+	Minutes              *int32 `json:"Minutes,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *KeyfactorCommonSchedulingModelsIntervalModel) SetMinutes(v int32) {
 }
 
 func (o KeyfactorCommonSchedulingModelsIntervalModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -156,5 +156,3 @@ func (v *NullableKeyfactorCommonSchedulingModelsIntervalModel) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

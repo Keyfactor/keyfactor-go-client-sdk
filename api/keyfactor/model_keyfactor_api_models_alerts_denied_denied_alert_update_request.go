@@ -28,15 +28,15 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest{}
 
 // KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest struct for KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest
 type KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest struct {
-	Id *int32 `json:"Id,omitempty"`
-	DisplayName string `json:"DisplayName"`
-	Subject string `json:"Subject"`
-	Message string `json:"Message"`
-	TemplateId *int32 `json:"TemplateId,omitempty"`
+	Id                     *int32                                                       `json:"Id,omitempty"`
+	DisplayName            string                                                       `json:"DisplayName"`
+	Subject                string                                                       `json:"Subject"`
+	Message                string                                                       `json:"Message"`
+	TemplateId             *int32                                                       `json:"TemplateId,omitempty"`
 	RegisteredEventHandler *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest `json:"RegisteredEventHandler,omitempty"`
-	Recipients []string `json:"Recipients,omitempty"`
+	Recipients             []string                                                     `json:"Recipients,omitempty"`
 	EventHandlerParameters []KeyfactorApiModelsEventHandlerEventHandlerParameterRequest `json:"EventHandlerParameters,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties   map[string]interface{}
 }
 
 type _KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest
@@ -294,7 +294,7 @@ func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) SetEventHandler
 }
 
 func (o KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -388,5 +388,3 @@ func (v *NullableKeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

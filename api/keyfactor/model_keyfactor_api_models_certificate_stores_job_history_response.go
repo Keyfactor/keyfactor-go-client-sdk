@@ -29,18 +29,18 @@ var _ MappedNullable = &KeyfactorApiModelsCertificateStoresJobHistoryResponse{}
 
 // KeyfactorApiModelsCertificateStoresJobHistoryResponse struct for KeyfactorApiModelsCertificateStoresJobHistoryResponse
 type KeyfactorApiModelsCertificateStoresJobHistoryResponse struct {
-	JobHistoryId *int64 `json:"JobHistoryId,omitempty"`
-	AgentMachine *string `json:"AgentMachine,omitempty"`
-	JobId *string `json:"JobId,omitempty"`
-	Schedule *KeyfactorCommonSchedulingKeyfactorSchedule `json:"Schedule,omitempty"`
-	JobType *string `json:"JobType,omitempty"`
-	OperationStart *time.Time `json:"OperationStart,omitempty"`
-	OperationEnd *time.Time `json:"OperationEnd,omitempty"`
-	Message *string `json:"Message,omitempty"`
-	Result *int32 `json:"Result,omitempty"`
-	Status *int32 `json:"Status,omitempty"`
-	StorePath *string `json:"StorePath,omitempty"`
-	ClientMachine *string `json:"ClientMachine,omitempty"`
+	JobHistoryId         *int64                                      `json:"JobHistoryId,omitempty"`
+	AgentMachine         *string                                     `json:"AgentMachine,omitempty"`
+	JobId                *string                                     `json:"JobId,omitempty"`
+	Schedule             *KeyfactorCommonSchedulingKeyfactorSchedule `json:"Schedule,omitempty"`
+	JobType              *string                                     `json:"JobType,omitempty"`
+	OperationStart       *time.Time                                  `json:"OperationStart,omitempty"`
+	OperationEnd         *time.Time                                  `json:"OperationEnd,omitempty"`
+	Message              *string                                     `json:"Message,omitempty"`
+	Result               *int32                                      `json:"Result,omitempty"`
+	Status               *int32                                      `json:"Status,omitempty"`
+	StorePath            *string                                     `json:"StorePath,omitempty"`
+	ClientMachine        *string                                     `json:"ClientMachine,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -448,7 +448,7 @@ func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) SetClientMachine
 }
 
 func (o KeyfactorApiModelsCertificateStoresJobHistoryResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -564,5 +564,3 @@ func (v *NullableKeyfactorApiModelsCertificateStoresJobHistoryResponse) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -31,8 +31,8 @@ type KeyfactorApiModelsTemplatesGlobalTemplateSettingsResponse struct {
 	// The regular expressions to use for validation during enrollment.
 	TemplateRegexes []KeyfactorApiModelsTemplatesGlobalTemplateRegexResponse `json:"TemplateRegexes,omitempty"`
 	// The default values to use during enrollment.
-	TemplateDefaults []KeyfactorApiModelsTemplatesGlobalTemplateDefaultResponse `json:"TemplateDefaults,omitempty"`
-	TemplatePolicy *KeyfactorApiModelsTemplatesGlobalTemplatePolicyResponse `json:"TemplatePolicy,omitempty"`
+	TemplateDefaults     []KeyfactorApiModelsTemplatesGlobalTemplateDefaultResponse `json:"TemplateDefaults,omitempty"`
+	TemplatePolicy       *KeyfactorApiModelsTemplatesGlobalTemplatePolicyResponse   `json:"TemplatePolicy,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -152,7 +152,7 @@ func (o *KeyfactorApiModelsTemplatesGlobalTemplateSettingsResponse) SetTemplateP
 }
 
 func (o KeyfactorApiModelsTemplatesGlobalTemplateSettingsResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -232,5 +232,3 @@ func (v *NullableKeyfactorApiModelsTemplatesGlobalTemplateSettingsResponse) Unma
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

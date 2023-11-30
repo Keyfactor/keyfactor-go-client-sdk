@@ -29,10 +29,10 @@ var _ MappedNullable = &ModelsCertificateAuthoritiesCertificateAuthorityAuthCert
 
 // ModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate struct for ModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate
 type ModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate struct {
-	IssuedDN NullableString `json:"IssuedDN,omitempty"`
-	IssuerDN NullableString `json:"IssuerDN,omitempty"`
-	Thumbprint *string `json:"Thumbprint,omitempty"`
-	ExpirationDate *time.Time `json:"ExpirationDate,omitempty"`
+	IssuedDN             NullableString `json:"IssuedDN,omitempty"`
+	IssuerDN             NullableString `json:"IssuerDN,omitempty"`
+	Thumbprint           *string        `json:"Thumbprint,omitempty"`
+	ExpirationDate       *time.Time     `json:"ExpirationDate,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -87,6 +87,7 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate) HasIss
 func (o *ModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate) SetIssuedDN(v string) {
 	o.IssuedDN.Set(&v)
 }
+
 // SetIssuedDNNil sets the value for IssuedDN to be an explicit nil
 func (o *ModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate) SetIssuedDNNil() {
 	o.IssuedDN.Set(nil)
@@ -129,6 +130,7 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate) HasIss
 func (o *ModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate) SetIssuerDN(v string) {
 	o.IssuerDN.Set(&v)
 }
+
 // SetIssuerDNNil sets the value for IssuerDN to be an explicit nil
 func (o *ModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate) SetIssuerDNNil() {
 	o.IssuerDN.Set(nil)
@@ -204,7 +206,7 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate) SetExp
 }
 
 func (o ModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -288,5 +290,3 @@ func (v *NullableModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,12 +29,12 @@ var _ MappedNullable = &KeyfactorApiModelsOrchestratorJobsJobResponse{}
 
 // KeyfactorApiModelsOrchestratorJobsJobResponse struct for KeyfactorApiModelsOrchestratorJobsJobResponse
 type KeyfactorApiModelsOrchestratorJobsJobResponse struct {
-	JobId *string `json:"JobId,omitempty"`
-	OrchestratorId *string `json:"OrchestratorId,omitempty"`
-	JobTypeName *string `json:"JobTypeName,omitempty"`
-	Schedule *KeyfactorCommonSchedulingKeyfactorSchedule `json:"Schedule,omitempty"`
-	JobFields []KeyfactorApiModelsOrchestratorJobsJobFieldResponse `json:"JobFields,omitempty"`
-	RequestTimestamp *time.Time `json:"RequestTimestamp,omitempty"`
+	JobId                *string                                              `json:"JobId,omitempty"`
+	OrchestratorId       *string                                              `json:"OrchestratorId,omitempty"`
+	JobTypeName          *string                                              `json:"JobTypeName,omitempty"`
+	Schedule             *KeyfactorCommonSchedulingKeyfactorSchedule          `json:"Schedule,omitempty"`
+	JobFields            []KeyfactorApiModelsOrchestratorJobsJobFieldResponse `json:"JobFields,omitempty"`
+	RequestTimestamp     *time.Time                                           `json:"RequestTimestamp,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -250,7 +250,7 @@ func (o *KeyfactorApiModelsOrchestratorJobsJobResponse) SetRequestTimestamp(v ti
 }
 
 func (o KeyfactorApiModelsOrchestratorJobsJobResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -342,5 +342,3 @@ func (v *NullableKeyfactorApiModelsOrchestratorJobsJobResponse) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -28,15 +28,15 @@ var _ MappedNullable = &KeyfactorApiModelsWorkflowsParameterDefinitionResponse{}
 
 // KeyfactorApiModelsWorkflowsParameterDefinitionResponse struct for KeyfactorApiModelsWorkflowsParameterDefinitionResponse
 type KeyfactorApiModelsWorkflowsParameterDefinitionResponse struct {
-	DisplayName *string `json:"DisplayName,omitempty"`
-	ParameterType *int32 `json:"ParameterType,omitempty"`
-	Required *bool `json:"Required,omitempty"`
-	DefaultValue *string `json:"DefaultValue,omitempty"`
-	ControlType *int32 `json:"ControlType,omitempty"`
-	PotentialValues *map[string]string `json:"PotentialValues,omitempty"`
-	SupportTokenReplacement *bool `json:"SupportTokenReplacement,omitempty"`
-	DependsOn *map[string]string `json:"DependsOn,omitempty"`
-	AdditionalProperties map[string]interface{}
+	DisplayName             *string            `json:"DisplayName,omitempty"`
+	ParameterType           *int32             `json:"ParameterType,omitempty"`
+	Required                *bool              `json:"Required,omitempty"`
+	DefaultValue            *string            `json:"DefaultValue,omitempty"`
+	ControlType             *int32             `json:"ControlType,omitempty"`
+	PotentialValues         *map[string]string `json:"PotentialValues,omitempty"`
+	SupportTokenReplacement *bool              `json:"SupportTokenReplacement,omitempty"`
+	DependsOn               *map[string]string `json:"DependsOn,omitempty"`
+	AdditionalProperties    map[string]interface{}
 }
 
 type _KeyfactorApiModelsWorkflowsParameterDefinitionResponse KeyfactorApiModelsWorkflowsParameterDefinitionResponse
@@ -315,7 +315,7 @@ func (o *KeyfactorApiModelsWorkflowsParameterDefinitionResponse) SetDependsOn(v 
 }
 
 func (o KeyfactorApiModelsWorkflowsParameterDefinitionResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -415,5 +415,3 @@ func (v *NullableKeyfactorApiModelsWorkflowsParameterDefinitionResponse) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

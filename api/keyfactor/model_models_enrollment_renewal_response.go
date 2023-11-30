@@ -28,14 +28,14 @@ var _ MappedNullable = &ModelsEnrollmentRenewalResponse{}
 
 // ModelsEnrollmentRenewalResponse struct for ModelsEnrollmentRenewalResponse
 type ModelsEnrollmentRenewalResponse struct {
-	KeyfactorId *int32 `json:"KeyfactorId,omitempty"`
-	KeyfactorRequestId *int32 `json:"KeyfactorRequestId,omitempty"`
-	Thumbprint *string `json:"Thumbprint,omitempty"`
-	SerialNumber *string `json:"SerialNumber,omitempty"`
-	IssuerDN NullableString `json:"IssuerDN,omitempty"`
-	RequestDisposition *string `json:"RequestDisposition,omitempty"`
-	DispositionMessage *string `json:"DispositionMessage,omitempty"`
-	Password *string `json:"Password,omitempty"`
+	KeyfactorId          *int32         `json:"KeyfactorId,omitempty"`
+	KeyfactorRequestId   *int32         `json:"KeyfactorRequestId,omitempty"`
+	Thumbprint           *string        `json:"Thumbprint,omitempty"`
+	SerialNumber         *string        `json:"SerialNumber,omitempty"`
+	IssuerDN             NullableString `json:"IssuerDN,omitempty"`
+	RequestDisposition   *string        `json:"RequestDisposition,omitempty"`
+	DispositionMessage   *string        `json:"DispositionMessage,omitempty"`
+	Password             *string        `json:"Password,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -218,6 +218,7 @@ func (o *ModelsEnrollmentRenewalResponse) HasIssuerDN() bool {
 func (o *ModelsEnrollmentRenewalResponse) SetIssuerDN(v string) {
 	o.IssuerDN.Set(&v)
 }
+
 // SetIssuerDNNil sets the value for IssuerDN to be an explicit nil
 func (o *ModelsEnrollmentRenewalResponse) SetIssuerDNNil() {
 	o.IssuerDN.Set(nil)
@@ -325,7 +326,7 @@ func (o *ModelsEnrollmentRenewalResponse) SetPassword(v string) {
 }
 
 func (o ModelsEnrollmentRenewalResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -425,5 +426,3 @@ func (v *NullableModelsEnrollmentRenewalResponse) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

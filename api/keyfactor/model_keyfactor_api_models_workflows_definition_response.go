@@ -28,16 +28,16 @@ var _ MappedNullable = &KeyfactorApiModelsWorkflowsDefinitionResponse{}
 
 // KeyfactorApiModelsWorkflowsDefinitionResponse struct for KeyfactorApiModelsWorkflowsDefinitionResponse
 type KeyfactorApiModelsWorkflowsDefinitionResponse struct {
-	Id *string `json:"Id,omitempty"`
-	DisplayName *string `json:"DisplayName,omitempty"`
-	Description *string `json:"Description,omitempty"`
-	Key *string `json:"Key,omitempty"`
-	KeyDisplayName *string `json:"KeyDisplayName,omitempty"`
-	IsPublished *bool `json:"IsPublished,omitempty"`
-	WorkflowType *string `json:"WorkflowType,omitempty"`
-	Steps []KeyfactorApiModelsWorkflowsDefinitionStepResponse `json:"Steps,omitempty"`
-	DraftVersion *int32 `json:"DraftVersion,omitempty"`
-	PublishedVersion *int32 `json:"PublishedVersion,omitempty"`
+	Id                   *string                                             `json:"Id,omitempty"`
+	DisplayName          *string                                             `json:"DisplayName,omitempty"`
+	Description          *string                                             `json:"Description,omitempty"`
+	Key                  *string                                             `json:"Key,omitempty"`
+	KeyDisplayName       *string                                             `json:"KeyDisplayName,omitempty"`
+	IsPublished          *bool                                               `json:"IsPublished,omitempty"`
+	WorkflowType         *string                                             `json:"WorkflowType,omitempty"`
+	Steps                []KeyfactorApiModelsWorkflowsDefinitionStepResponse `json:"Steps,omitempty"`
+	DraftVersion         *int32                                              `json:"DraftVersion,omitempty"`
+	PublishedVersion     *int32                                              `json:"PublishedVersion,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -381,7 +381,7 @@ func (o *KeyfactorApiModelsWorkflowsDefinitionResponse) SetPublishedVersion(v in
 }
 
 func (o KeyfactorApiModelsWorkflowsDefinitionResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -489,5 +489,3 @@ func (v *NullableKeyfactorApiModelsWorkflowsDefinitionResponse) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

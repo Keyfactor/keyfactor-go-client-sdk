@@ -28,9 +28,9 @@ var _ MappedNullable = &ModelsWorkflowCertificateRequestCertStoreModel{}
 
 // ModelsWorkflowCertificateRequestCertStoreModel struct for ModelsWorkflowCertificateRequestCertStoreModel
 type ModelsWorkflowCertificateRequestCertStoreModel struct {
-	EntryName *string `json:"EntryName,omitempty"`
-	ClientMachine *string `json:"ClientMachine,omitempty"`
-	StorePath *string `json:"StorePath,omitempty"`
+	EntryName            *string `json:"EntryName,omitempty"`
+	ClientMachine        *string `json:"ClientMachine,omitempty"`
+	StorePath            *string `json:"StorePath,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -150,7 +150,7 @@ func (o *ModelsWorkflowCertificateRequestCertStoreModel) SetStorePath(v string) 
 }
 
 func (o ModelsWorkflowCertificateRequestCertStoreModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,5 +230,3 @@ func (v *NullableModelsWorkflowCertificateRequestCertStoreModel) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -28,13 +28,13 @@ var _ MappedNullable = &KeyfactorApiModelsCertificateStoresReenrollmentRequest{}
 
 // KeyfactorApiModelsCertificateStoresReenrollmentRequest struct for KeyfactorApiModelsCertificateStoresReenrollmentRequest
 type KeyfactorApiModelsCertificateStoresReenrollmentRequest struct {
-	KeystoreId *string `json:"KeystoreId,omitempty"`
-	SubjectName *string `json:"SubjectName,omitempty"`
-	AgentGuid *string `json:"AgentGuid,omitempty"`
-	Alias *string `json:"Alias,omitempty"`
-	JobProperties map[string]map[string]interface{} `json:"JobProperties,omitempty"`
-	CertificateAuthority *string `json:"CertificateAuthority,omitempty"`
-	CertificateTemplate *string `json:"CertificateTemplate,omitempty"`
+	KeystoreId           *string                           `json:"KeystoreId,omitempty"`
+	SubjectName          *string                           `json:"SubjectName,omitempty"`
+	AgentGuid            *string                           `json:"AgentGuid,omitempty"`
+	Alias                *string                           `json:"Alias,omitempty"`
+	JobProperties        map[string]map[string]interface{} `json:"JobProperties,omitempty"`
+	CertificateAuthority *string                           `json:"CertificateAuthority,omitempty"`
+	CertificateTemplate  *string                           `json:"CertificateTemplate,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -282,7 +282,7 @@ func (o *KeyfactorApiModelsCertificateStoresReenrollmentRequest) SetCertificateT
 }
 
 func (o KeyfactorApiModelsCertificateStoresReenrollmentRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -378,5 +378,3 @@ func (v *NullableKeyfactorApiModelsCertificateStoresReenrollmentRequest) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

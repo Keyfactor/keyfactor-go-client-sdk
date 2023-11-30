@@ -29,12 +29,12 @@ var _ MappedNullable = &ModelsEnrollmentExistingEnrollmentManagementRequest{}
 
 // ModelsEnrollmentExistingEnrollmentManagementRequest struct for ModelsEnrollmentExistingEnrollmentManagementRequest
 type ModelsEnrollmentExistingEnrollmentManagementRequest struct {
-	ExistingCertificateId *int32 `json:"ExistingCertificateId,omitempty"`
-	CertificateId *int32 `json:"CertificateId,omitempty"`
-	RequestId *int32 `json:"RequestId,omitempty"`
-	Password *string `json:"Password,omitempty"`
-	JobTime *time.Time `json:"JobTime,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ExistingCertificateId *int32     `json:"ExistingCertificateId,omitempty"`
+	CertificateId         *int32     `json:"CertificateId,omitempty"`
+	RequestId             *int32     `json:"RequestId,omitempty"`
+	Password              *string    `json:"Password,omitempty"`
+	JobTime               *time.Time `json:"JobTime,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _ModelsEnrollmentExistingEnrollmentManagementRequest ModelsEnrollmentExistingEnrollmentManagementRequest
@@ -217,7 +217,7 @@ func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) SetJobTime(v time.
 }
 
 func (o ModelsEnrollmentExistingEnrollmentManagementRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -305,5 +305,3 @@ func (v *NullableModelsEnrollmentExistingEnrollmentManagementRequest) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

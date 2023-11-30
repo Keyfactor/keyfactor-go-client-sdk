@@ -28,9 +28,9 @@ var _ MappedNullable = &ModelsWorkflowDenialRequest{}
 
 // ModelsWorkflowDenialRequest struct for ModelsWorkflowDenialRequest
 type ModelsWorkflowDenialRequest struct {
-	Comment *string `json:"Comment,omitempty"`
+	Comment               *string `json:"Comment,omitempty"`
 	CertificateRequestIds []int32 `json:"CertificateRequestIds,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties  map[string]interface{}
 }
 
 type _ModelsWorkflowDenialRequest ModelsWorkflowDenialRequest
@@ -117,7 +117,7 @@ func (o *ModelsWorkflowDenialRequest) SetCertificateRequestIds(v []int32) {
 }
 
 func (o ModelsWorkflowDenialRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,5 +193,3 @@ func (v *NullableModelsWorkflowDenialRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

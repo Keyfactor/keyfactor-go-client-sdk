@@ -28,10 +28,10 @@ var _ MappedNullable = &ModelsSSHServiceAccountsServiceAccountCreationRequest{}
 
 // ModelsSSHServiceAccountsServiceAccountCreationRequest struct for ModelsSSHServiceAccountsServiceAccountCreationRequest
 type ModelsSSHServiceAccountsServiceAccountCreationRequest struct {
-	KeyGenerationRequest ModelsSSHKeysKeyGenerationRequest `json:"KeyGenerationRequest"`
-	User ModelsSSHServiceAccountsServiceAccountUserCreationRequest `json:"User"`
-	ClientHostname string `json:"ClientHostname"`
-	ServerGroupId string `json:"ServerGroupId"`
+	KeyGenerationRequest ModelsSSHKeysKeyGenerationRequest                         `json:"KeyGenerationRequest"`
+	User                 ModelsSSHServiceAccountsServiceAccountUserCreationRequest `json:"User"`
+	ClientHostname       string                                                    `json:"ClientHostname"`
+	ServerGroupId        string                                                    `json:"ServerGroupId"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -155,7 +155,7 @@ func (o *ModelsSSHServiceAccountsServiceAccountCreationRequest) SetServerGroupId
 }
 
 func (o ModelsSSHServiceAccountsServiceAccountCreationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -231,5 +231,3 @@ func (v *NullableModelsSSHServiceAccountsServiceAccountCreationRequest) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

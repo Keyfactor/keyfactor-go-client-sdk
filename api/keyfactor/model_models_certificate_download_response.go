@@ -28,7 +28,7 @@ var _ MappedNullable = &ModelsCertificateDownloadResponse{}
 
 // ModelsCertificateDownloadResponse struct for ModelsCertificateDownloadResponse
 type ModelsCertificateDownloadResponse struct {
-	Content *string `json:"Content,omitempty"`
+	Content              *string `json:"Content,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *ModelsCertificateDownloadResponse) SetContent(v string) {
 }
 
 func (o ModelsCertificateDownloadResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -156,5 +156,3 @@ func (v *NullableModelsCertificateDownloadResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -28,7 +28,7 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsAlertScheduleAlertScheduleRespon
 
 // KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse struct for KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 type KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse struct {
-	Schedule *KeyfactorCommonSchedulingKeyfactorSchedule `json:"Schedule,omitempty"`
+	Schedule             *KeyfactorCommonSchedulingKeyfactorSchedule `json:"Schedule,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse) SetSchedule
 }
 
 func (o KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -156,5 +156,3 @@ func (v *NullableKeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse) Unm
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

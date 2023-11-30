@@ -20,7 +20,7 @@ API version: v1
 package keyfactor
 
 import (
-    "crypto/x509"
+	"crypto/x509"
 	"fmt"
 	"net/http"
 	"os"
@@ -53,11 +53,13 @@ var (
 	// ContextOperationServerVariables overrides a server configuration variables using operation specific values.
 	ContextOperationServerVariables = contextKey("serverOperationVariables")
 
-	envCommandHostname = "KEYFACTOR_HOSTNAME"
-	
-	EnvCommandUsername = "KEYFACTOR_USERNAME"
-
-	EnvCommandPassword = "KEYFACTOR_PASSWORD"
+	envCommandHostname          = "KEYFACTOR_HOSTNAME"
+	envCommandUsername          = "KEYFACTOR_USERNAME"
+	envCommandPassword          = "KEYFACTOR_PASSWORD"
+	envCommandDomain            = "KEYFACTOR_DOMAIN"
+	envCommandApiPath           = "KEYFACTOR_API_PATH"
+	envCommandLogLevel          = "KEYFACTOR_LOG_LEVEL"
+	envCommandCaCertificatePath = "KEYFACTOR_CA_CERTIFICATE_PATH"
 )
 
 // BasicAuth provides basic http authentication to a request passed via context using ContextBasicAuth
@@ -82,11 +84,13 @@ type ServerVariable struct {
 // Configuration stores the configuration of the API client
 type Configuration struct {
 	Host              string            `json:"host,omitempty"`
-	BasicAuth         BasicAuth		    `json:"basicAuth,omitempty"`
+	BasicAuth         BasicAuth         `json:"basicAuth,omitempty"`
 	DefaultHeader     map[string]string `json:"defaultHeader,omitempty"`
 	UserAgent         string            `json:"userAgent,omitempty"`
 	Debug             bool              `json:"debug,omitempty"`
 	CaCertificatePath string            `json:"caCertificatePath,omitempty"`
+	APIPath           string            `json:"apiPath,omitempty"`
+	Domain            string            `json:"domain,omitempty"`
 	HTTPClient        *http.Client
 	caCertificates    []*x509.Certificate
 }
@@ -126,7 +130,7 @@ func NewConfiguration(config map[string]string) *Configuration {
 
 	// Get username from environment variable
 	if confUser == "" {
-		cfg.BasicAuth.UserName = os.Getenv(EnvCommandUsername)
+		cfg.BasicAuth.UserName = os.Getenv(envCommandUsername)
 	} else {
 		cfg.BasicAuth.UserName = confUser
 	}
@@ -135,21 +139,26 @@ func NewConfiguration(config map[string]string) *Configuration {
 		if cfg.BasicAuth.UserName != "" && !strings.Contains(cfg.BasicAuth.UserName, confDomain) {
 			cfg.BasicAuth.UserName = cfg.BasicAuth.UserName + "@" + confDomain
 		}
+	} else {
+		cfg.Domain = os.Getenv(envCommandDomain)
+		if cfg.BasicAuth.UserName != "" && !strings.Contains(cfg.BasicAuth.UserName, cfg.Domain) && cfg.Domain != "" && !strings.Contains(cfg.BasicAuth.UserName, "@") {
+			cfg.BasicAuth.UserName = cfg.BasicAuth.UserName + "@" + cfg.Domain
+		}
 	}
 
 	// Get password from environment variable
 	if confPass == "" {
-		cfg.BasicAuth.Password = os.Getenv(EnvCommandPassword)
+		cfg.BasicAuth.Password = os.Getenv(envCommandPassword)
 	} else {
 		cfg.BasicAuth.Password = confPass
 	}
 
 	// Get caCertificatePath from environment variable
 	if confCaPath == "" {
-        cfg.CaCertificatePath = os.Getenv("KEYFACTOR_CA_CERTIFICATE_PATH")
-    } else {
-        cfg.CaCertificatePath = confCaPath
-    }
+		cfg.CaCertificatePath = os.Getenv("KEYFACTOR_CA_CERTIFICATE_PATH")
+	} else {
+		cfg.CaCertificatePath = confCaPath
+	}
 
 	return cfg
 }

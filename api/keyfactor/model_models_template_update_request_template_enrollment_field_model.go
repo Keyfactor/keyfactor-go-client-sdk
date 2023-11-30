@@ -28,10 +28,10 @@ var _ MappedNullable = &ModelsTemplateUpdateRequestTemplateEnrollmentFieldModel{
 
 // ModelsTemplateUpdateRequestTemplateEnrollmentFieldModel struct for ModelsTemplateUpdateRequestTemplateEnrollmentFieldModel
 type ModelsTemplateUpdateRequestTemplateEnrollmentFieldModel struct {
-	Id *int32 `json:"Id,omitempty"`
-	Name *string `json:"Name,omitempty"`
-	Options []string `json:"Options,omitempty"`
-	DataType *int32 `json:"DataType,omitempty"`
+	Id                   *int32   `json:"Id,omitempty"`
+	Name                 *string  `json:"Name,omitempty"`
+	Options              []string `json:"Options,omitempty"`
+	DataType             *int32   `json:"DataType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -183,7 +183,7 @@ func (o *ModelsTemplateUpdateRequestTemplateEnrollmentFieldModel) SetDataType(v 
 }
 
 func (o ModelsTemplateUpdateRequestTemplateEnrollmentFieldModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -267,5 +267,3 @@ func (v *NullableModelsTemplateUpdateRequestTemplateEnrollmentFieldModel) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -28,9 +28,9 @@ var _ MappedNullable = &ModelsCertStoreTypePasswordOptions{}
 
 // ModelsCertStoreTypePasswordOptions struct for ModelsCertStoreTypePasswordOptions
 type ModelsCertStoreTypePasswordOptions struct {
-	EntrySupported *bool `json:"EntrySupported,omitempty"`
-	StoreRequired *bool `json:"StoreRequired,omitempty"`
-	Style *string `json:"Style,omitempty"`
+	EntrySupported       *bool   `json:"EntrySupported,omitempty"`
+	StoreRequired        *bool   `json:"StoreRequired,omitempty"`
+	Style                *string `json:"Style,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -150,7 +150,7 @@ func (o *ModelsCertStoreTypePasswordOptions) SetStyle(v string) {
 }
 
 func (o ModelsCertStoreTypePasswordOptions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,5 +230,3 @@ func (v *NullableModelsCertStoreTypePasswordOptions) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

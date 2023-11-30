@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // CertificateAuthorityApiService CertificateAuthorityApi service
 type CertificateAuthorityApiService service
 
 type ApiCertificateAuthorityCreateCARequest struct {
-	ctx context.Context
-	ApiService *CertificateAuthorityApiService
+	ctx                     context.Context
+	ApiService              *CertificateAuthorityApiService
 	xKeyfactorRequestedWith *string
-	ca *ModelsCertificateAuthoritiesCertificateAuthorityRequest
-	xKeyfactorApiVersion *string
+	ca                      *ModelsCertificateAuthoritiesCertificateAuthorityRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -64,28 +63,29 @@ func (r ApiCertificateAuthorityCreateCARequest) Execute() (*ModelsCertificateAut
 /*
 CertificateAuthorityCreateCA Creates a new CertificateAuthority object
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateAuthorityCreateCARequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateAuthorityCreateCARequest
 */
 func (a *CertificateAuthorityApiService) CertificateAuthorityCreateCA(ctx context.Context) ApiCertificateAuthorityCreateCARequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateAuthorityCreateCARequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsCertificateAuthoritiesCertificateAuthorityResponse
+//
+//	@return ModelsCertificateAuthoritiesCertificateAuthorityResponse
 func (a *CertificateAuthorityApiService) CertificateAuthorityCreateCAExecute(r ApiCertificateAuthorityCreateCARequest) (*ModelsCertificateAuthoritiesCertificateAuthorityResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsCertificateAuthoritiesCertificateAuthorityResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsCertificateAuthoritiesCertificateAuthorityResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -95,12 +95,12 @@ func (a *CertificateAuthorityApiService) CertificateAuthorityCreateCAExecute(r A
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.ca == nil {
-        return localVarReturnValue, nil, reportError("ca is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.ca == nil {
+		return localVarReturnValue, nil, reportError("ca is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -163,11 +163,11 @@ func (a *CertificateAuthorityApiService) CertificateAuthorityCreateCAExecute(r A
 }
 
 type ApiCertificateAuthorityDeleteCARequest struct {
-	ctx context.Context
-	ApiService *CertificateAuthorityApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *CertificateAuthorityApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -189,28 +189,28 @@ func (r ApiCertificateAuthorityDeleteCARequest) Execute() (*http.Response, error
 /*
 CertificateAuthorityDeleteCA Deletes a CertificateAuthority from the system, specified by ID
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id
- @return ApiCertificateAuthorityDeleteCARequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id
+	@return ApiCertificateAuthorityDeleteCARequest
 */
 func (a *CertificateAuthorityApiService) CertificateAuthorityDeleteCA(ctx context.Context, id int32) ApiCertificateAuthorityDeleteCARequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateAuthorityDeleteCARequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *CertificateAuthorityApiService) CertificateAuthorityDeleteCAExecute(r ApiCertificateAuthorityDeleteCARequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -221,9 +221,9 @@ func (a *CertificateAuthorityApiService) CertificateAuthorityDeleteCAExecute(r A
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -275,11 +275,11 @@ func (a *CertificateAuthorityApiService) CertificateAuthorityDeleteCAExecute(r A
 }
 
 type ApiCertificateAuthorityGetCaRequest struct {
-	ctx context.Context
-	ApiService *CertificateAuthorityApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *CertificateAuthorityApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -301,30 +301,31 @@ func (r ApiCertificateAuthorityGetCaRequest) Execute() (*ModelsCertificateAuthor
 /*
 CertificateAuthorityGetCa Returns details for a single CA, specified by ID
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id
- @return ApiCertificateAuthorityGetCaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id
+	@return ApiCertificateAuthorityGetCaRequest
 */
 func (a *CertificateAuthorityApiService) CertificateAuthorityGetCa(ctx context.Context, id int32) ApiCertificateAuthorityGetCaRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateAuthorityGetCaRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsCertificateAuthoritiesCertificateAuthorityResponse
+//
+//	@return ModelsCertificateAuthoritiesCertificateAuthorityResponse
 func (a *CertificateAuthorityApiService) CertificateAuthorityGetCaExecute(r ApiCertificateAuthorityGetCaRequest) (*ModelsCertificateAuthoritiesCertificateAuthorityResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsCertificateAuthoritiesCertificateAuthorityResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsCertificateAuthoritiesCertificateAuthorityResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -335,9 +336,9 @@ func (a *CertificateAuthorityApiService) CertificateAuthorityGetCaExecute(r ApiC
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -398,15 +399,15 @@ func (a *CertificateAuthorityApiService) CertificateAuthorityGetCaExecute(r ApiC
 }
 
 type ApiCertificateAuthorityGetCasRequest struct {
-	ctx context.Context
-	ApiService *CertificateAuthorityApiService
+	ctx                     context.Context
+	ApiService              *CertificateAuthorityApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -458,28 +459,29 @@ func (r ApiCertificateAuthorityGetCasRequest) Execute() ([]ModelsCertificateAuth
 /*
 CertificateAuthorityGetCas Returns all certificate authorities
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateAuthorityGetCasRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateAuthorityGetCasRequest
 */
 func (a *CertificateAuthorityApiService) CertificateAuthorityGetCas(ctx context.Context) ApiCertificateAuthorityGetCasRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateAuthorityGetCasRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsCertificateAuthoritiesCertificateAuthorityResponse
+//
+//	@return []ModelsCertificateAuthoritiesCertificateAuthorityResponse
 func (a *CertificateAuthorityApiService) CertificateAuthorityGetCasExecute(r ApiCertificateAuthorityGetCasRequest) ([]ModelsCertificateAuthoritiesCertificateAuthorityResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsCertificateAuthoritiesCertificateAuthorityResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsCertificateAuthoritiesCertificateAuthorityResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -489,9 +491,9 @@ func (a *CertificateAuthorityApiService) CertificateAuthorityGetCasExecute(r Api
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")
@@ -567,11 +569,11 @@ func (a *CertificateAuthorityApiService) CertificateAuthorityGetCasExecute(r Api
 }
 
 type ApiCertificateAuthorityPublishCRLRequest struct {
-	ctx context.Context
-	ApiService *CertificateAuthorityApiService
+	ctx                     context.Context
+	ApiService              *CertificateAuthorityApiService
 	xKeyfactorRequestedWith *string
-	crlrequest *ModelsCRLRequestModel
-	xKeyfactorApiVersion *string
+	crlrequest              *ModelsCRLRequestModel
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -599,26 +601,26 @@ func (r ApiCertificateAuthorityPublishCRLRequest) Execute() (*http.Response, err
 /*
 CertificateAuthorityPublishCRL Publishes a CRL according to the provided request
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateAuthorityPublishCRLRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateAuthorityPublishCRLRequest
 */
 func (a *CertificateAuthorityApiService) CertificateAuthorityPublishCRL(ctx context.Context) ApiCertificateAuthorityPublishCRLRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateAuthorityPublishCRLRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *CertificateAuthorityApiService) CertificateAuthorityPublishCRLExecute(r ApiCertificateAuthorityPublishCRLRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -628,12 +630,12 @@ func (a *CertificateAuthorityApiService) CertificateAuthorityPublishCRLExecute(r
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.crlrequest == nil {
-        return nil, reportError("crlrequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.crlrequest == nil {
+		return nil, reportError("crlrequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -687,11 +689,11 @@ func (a *CertificateAuthorityApiService) CertificateAuthorityPublishCRLExecute(r
 }
 
 type ApiCertificateAuthorityTestCertificateAuthorityRequest struct {
-	ctx context.Context
-	ApiService *CertificateAuthorityApiService
+	ctx                     context.Context
+	ApiService              *CertificateAuthorityApiService
 	xKeyfactorRequestedWith *string
-	ca *ModelsCertificateAuthoritiesCertificateAuthorityRequest
-	xKeyfactorApiVersion *string
+	ca                      *ModelsCertificateAuthoritiesCertificateAuthorityRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -719,28 +721,29 @@ func (r ApiCertificateAuthorityTestCertificateAuthorityRequest) Execute() (*Keyf
 /*
 CertificateAuthorityTestCertificateAuthority Validates the connection info for the CA provided by the model.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateAuthorityTestCertificateAuthorityRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateAuthorityTestCertificateAuthorityRequest
 */
 func (a *CertificateAuthorityApiService) CertificateAuthorityTestCertificateAuthority(ctx context.Context) ApiCertificateAuthorityTestCertificateAuthorityRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateAuthorityTestCertificateAuthorityRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityTestResponse
+//
+//	@return KeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityTestResponse
 func (a *CertificateAuthorityApiService) CertificateAuthorityTestCertificateAuthorityExecute(r ApiCertificateAuthorityTestCertificateAuthorityRequest) (*KeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityTestResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityTestResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityTestResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -750,12 +753,12 @@ func (a *CertificateAuthorityApiService) CertificateAuthorityTestCertificateAuth
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.ca == nil {
-        return localVarReturnValue, nil, reportError("ca is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.ca == nil {
+		return localVarReturnValue, nil, reportError("ca is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -818,11 +821,11 @@ func (a *CertificateAuthorityApiService) CertificateAuthorityTestCertificateAuth
 }
 
 type ApiCertificateAuthorityUpdateCARequest struct {
-	ctx context.Context
-	ApiService *CertificateAuthorityApiService
+	ctx                     context.Context
+	ApiService              *CertificateAuthorityApiService
 	xKeyfactorRequestedWith *string
-	ca *ModelsCertificateAuthoritiesCertificateAuthorityRequest
-	xKeyfactorApiVersion *string
+	ca                      *ModelsCertificateAuthoritiesCertificateAuthorityRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -849,28 +852,29 @@ func (r ApiCertificateAuthorityUpdateCARequest) Execute() (*ModelsCertificateAut
 /*
 CertificateAuthorityUpdateCA Updates a CertificateAuthority object
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateAuthorityUpdateCARequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateAuthorityUpdateCARequest
 */
 func (a *CertificateAuthorityApiService) CertificateAuthorityUpdateCA(ctx context.Context) ApiCertificateAuthorityUpdateCARequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateAuthorityUpdateCARequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsCertificateAuthoritiesCertificateAuthorityResponse
+//
+//	@return ModelsCertificateAuthoritiesCertificateAuthorityResponse
 func (a *CertificateAuthorityApiService) CertificateAuthorityUpdateCAExecute(r ApiCertificateAuthorityUpdateCARequest) (*ModelsCertificateAuthoritiesCertificateAuthorityResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsCertificateAuthoritiesCertificateAuthorityResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsCertificateAuthoritiesCertificateAuthorityResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -880,12 +884,12 @@ func (a *CertificateAuthorityApiService) CertificateAuthorityUpdateCAExecute(r A
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.ca == nil {
-        return localVarReturnValue, nil, reportError("ca is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.ca == nil {
+		return localVarReturnValue, nil, reportError("ca is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}

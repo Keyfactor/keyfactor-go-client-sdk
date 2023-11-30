@@ -28,13 +28,13 @@ var _ MappedNullable = &KeyfactorApiModelsWorkflowsDefinitionQueryResponse{}
 
 // KeyfactorApiModelsWorkflowsDefinitionQueryResponse struct for KeyfactorApiModelsWorkflowsDefinitionQueryResponse
 type KeyfactorApiModelsWorkflowsDefinitionQueryResponse struct {
-	Id *string `json:"Id,omitempty"`
-	DisplayName *string `json:"DisplayName,omitempty"`
-	Key *string `json:"Key,omitempty"`
-	KeyDisplayName *string `json:"KeyDisplayName,omitempty"`
-	WorkflowType *string `json:"WorkflowType,omitempty"`
-	DraftVersion *int32 `json:"DraftVersion,omitempty"`
-	PublishedVersion *int32 `json:"PublishedVersion,omitempty"`
+	Id                   *string `json:"Id,omitempty"`
+	DisplayName          *string `json:"DisplayName,omitempty"`
+	Key                  *string `json:"Key,omitempty"`
+	KeyDisplayName       *string `json:"KeyDisplayName,omitempty"`
+	WorkflowType         *string `json:"WorkflowType,omitempty"`
+	DraftVersion         *int32  `json:"DraftVersion,omitempty"`
+	PublishedVersion     *int32  `json:"PublishedVersion,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -282,7 +282,7 @@ func (o *KeyfactorApiModelsWorkflowsDefinitionQueryResponse) SetPublishedVersion
 }
 
 func (o KeyfactorApiModelsWorkflowsDefinitionQueryResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -378,5 +378,3 @@ func (v *NullableKeyfactorApiModelsWorkflowsDefinitionQueryResponse) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

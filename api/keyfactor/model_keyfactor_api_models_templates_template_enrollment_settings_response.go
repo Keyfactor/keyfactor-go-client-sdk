@@ -31,8 +31,8 @@ type KeyfactorApiModelsTemplatesTemplateEnrollmentSettingsResponse struct {
 	// The regular expressions to use for validation during enrollment.
 	TemplateRegexes []KeyfactorApiModelsTemplatesTemplateEnrollmentRegexResponse `json:"TemplateRegexes,omitempty"`
 	// The default values to use during enrollment.
-	TemplateDefaults []KeyfactorApiModelsTemplatesTemplateEnrollmentDefaultResponse `json:"TemplateDefaults,omitempty"`
-	TemplatePolicy *KeyfactorApiModelsTemplatesTemplateEnrollmentPolicyResponse `json:"TemplatePolicy,omitempty"`
+	TemplateDefaults     []KeyfactorApiModelsTemplatesTemplateEnrollmentDefaultResponse `json:"TemplateDefaults,omitempty"`
+	TemplatePolicy       *KeyfactorApiModelsTemplatesTemplateEnrollmentPolicyResponse   `json:"TemplatePolicy,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -152,7 +152,7 @@ func (o *KeyfactorApiModelsTemplatesTemplateEnrollmentSettingsResponse) SetTempl
 }
 
 func (o KeyfactorApiModelsTemplatesTemplateEnrollmentSettingsResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -232,5 +232,3 @@ func (v *NullableKeyfactorApiModelsTemplatesTemplateEnrollmentSettingsResponse) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

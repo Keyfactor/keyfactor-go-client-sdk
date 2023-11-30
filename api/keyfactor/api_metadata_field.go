@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // MetadataFieldApiService MetadataFieldApi service
 type MetadataFieldApiService service
 
 type ApiMetadataFieldCreateMetadataFieldRequest struct {
-	ctx context.Context
-	ApiService *MetadataFieldApiService
+	ctx                     context.Context
+	ApiService              *MetadataFieldApiService
 	xKeyfactorRequestedWith *string
-	metadataFieldType *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest
-	xKeyfactorApiVersion *string
+	metadataFieldType       *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -67,28 +66,29 @@ MetadataFieldCreateMetadataField Creates a new metadata field type with the give
 
 *NOTE: Metadata Field in this context refers to MetadataFieldType, as opposed to the value of a metadata field associated with a certificate.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMetadataFieldCreateMetadataFieldRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiMetadataFieldCreateMetadataFieldRequest
 */
 func (a *MetadataFieldApiService) MetadataFieldCreateMetadataField(ctx context.Context) ApiMetadataFieldCreateMetadataFieldRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiMetadataFieldCreateMetadataFieldRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsMetadataFieldMetadataFieldResponse
+//
+//	@return KeyfactorApiModelsMetadataFieldMetadataFieldResponse
 func (a *MetadataFieldApiService) MetadataFieldCreateMetadataFieldExecute(r ApiMetadataFieldCreateMetadataFieldRequest) (*KeyfactorApiModelsMetadataFieldMetadataFieldResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsMetadataFieldMetadataFieldResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsMetadataFieldMetadataFieldResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -98,12 +98,12 @@ func (a *MetadataFieldApiService) MetadataFieldCreateMetadataFieldExecute(r ApiM
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.metadataFieldType == nil {
-        return localVarReturnValue, nil, reportError("metadataFieldType is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.metadataFieldType == nil {
+		return localVarReturnValue, nil, reportError("metadataFieldType is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -166,12 +166,12 @@ func (a *MetadataFieldApiService) MetadataFieldCreateMetadataFieldExecute(r ApiM
 }
 
 type ApiMetadataFieldDeleteMetadataFieldRequest struct {
-	ctx context.Context
-	ApiService *MetadataFieldApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *MetadataFieldApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	force *bool
-	xKeyfactorApiVersion *string
+	force                   *bool
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -199,28 +199,28 @@ func (r ApiMetadataFieldDeleteMetadataFieldRequest) Execute() (*http.Response, e
 /*
 MetadataFieldDeleteMetadataField Deletes a persisted metadata field type by its unique id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifier of the metadata field type
- @return ApiMetadataFieldDeleteMetadataFieldRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifier of the metadata field type
+	@return ApiMetadataFieldDeleteMetadataFieldRequest
 */
 func (a *MetadataFieldApiService) MetadataFieldDeleteMetadataField(ctx context.Context, id int32) ApiMetadataFieldDeleteMetadataFieldRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiMetadataFieldDeleteMetadataFieldRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *MetadataFieldApiService) MetadataFieldDeleteMetadataFieldExecute(r ApiMetadataFieldDeleteMetadataFieldRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -231,9 +231,9 @@ func (a *MetadataFieldApiService) MetadataFieldDeleteMetadataFieldExecute(r ApiM
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.force != nil {
 		parameterAddToQuery(localVarQueryParams, "force", r.force, "")
@@ -288,12 +288,12 @@ func (a *MetadataFieldApiService) MetadataFieldDeleteMetadataFieldExecute(r ApiM
 }
 
 type ApiMetadataFieldDeleteMetadataFieldsRequest struct {
-	ctx context.Context
-	ApiService *MetadataFieldApiService
+	ctx                     context.Context
+	ApiService              *MetadataFieldApiService
 	xKeyfactorRequestedWith *string
-	ids *[]int32
-	force *bool
-	xKeyfactorApiVersion *string
+	ids                     *[]int32
+	force                   *bool
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -329,26 +329,26 @@ MetadataFieldDeleteMetadataFields Deletes multiple persisted metadata field type
 
 This will ignore individual delete failures, and continue processing the array.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMetadataFieldDeleteMetadataFieldsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiMetadataFieldDeleteMetadataFieldsRequest
 */
 func (a *MetadataFieldApiService) MetadataFieldDeleteMetadataFields(ctx context.Context) ApiMetadataFieldDeleteMetadataFieldsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiMetadataFieldDeleteMetadataFieldsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *MetadataFieldApiService) MetadataFieldDeleteMetadataFieldsExecute(r ApiMetadataFieldDeleteMetadataFieldsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -358,12 +358,12 @@ func (a *MetadataFieldApiService) MetadataFieldDeleteMetadataFieldsExecute(r Api
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.ids == nil {
-        return nil, reportError("ids is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.ids == nil {
+		return nil, reportError("ids is required and must be specified")
+	}
 
 	if r.force != nil {
 		parameterAddToQuery(localVarQueryParams, "force", r.force, "")
@@ -420,15 +420,15 @@ func (a *MetadataFieldApiService) MetadataFieldDeleteMetadataFieldsExecute(r Api
 }
 
 type ApiMetadataFieldGetAllMetadataFieldsRequest struct {
-	ctx context.Context
-	ApiService *MetadataFieldApiService
+	ctx                     context.Context
+	ApiService              *MetadataFieldApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -480,28 +480,29 @@ func (r ApiMetadataFieldGetAllMetadataFieldsRequest) Execute() ([]ModelsMetadata
 /*
 MetadataFieldGetAllMetadataFields Returns all metadata field types according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMetadataFieldGetAllMetadataFieldsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiMetadataFieldGetAllMetadataFieldsRequest
 */
 func (a *MetadataFieldApiService) MetadataFieldGetAllMetadataFields(ctx context.Context) ApiMetadataFieldGetAllMetadataFieldsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiMetadataFieldGetAllMetadataFieldsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsMetadataFieldTypeModel
+//
+//	@return []ModelsMetadataFieldTypeModel
 func (a *MetadataFieldApiService) MetadataFieldGetAllMetadataFieldsExecute(r ApiMetadataFieldGetAllMetadataFieldsRequest) ([]ModelsMetadataFieldTypeModel, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsMetadataFieldTypeModel
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsMetadataFieldTypeModel
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -511,9 +512,9 @@ func (a *MetadataFieldApiService) MetadataFieldGetAllMetadataFieldsExecute(r Api
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")
@@ -589,11 +590,11 @@ func (a *MetadataFieldApiService) MetadataFieldGetAllMetadataFieldsExecute(r Api
 }
 
 type ApiMetadataFieldGetMetadataField0Request struct {
-	ctx context.Context
-	ApiService *MetadataFieldApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *MetadataFieldApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -615,30 +616,31 @@ func (r ApiMetadataFieldGetMetadataField0Request) Execute() (*ModelsMetadataFiel
 /*
 MetadataFieldGetMetadataField0 Gets a persisted metadata field type by its unique id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The unique id of the metadata field type
- @return ApiMetadataFieldGetMetadataField0Request
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The unique id of the metadata field type
+	@return ApiMetadataFieldGetMetadataField0Request
 */
 func (a *MetadataFieldApiService) MetadataFieldGetMetadataField0(ctx context.Context, id int32) ApiMetadataFieldGetMetadataField0Request {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiMetadataFieldGetMetadataField0Request{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsMetadataFieldTypeModel
+//
+//	@return ModelsMetadataFieldTypeModel
 func (a *MetadataFieldApiService) MetadataFieldGetMetadataField0Execute(r ApiMetadataFieldGetMetadataField0Request) (*ModelsMetadataFieldTypeModel, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsMetadataFieldTypeModel
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsMetadataFieldTypeModel
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -649,9 +651,9 @@ func (a *MetadataFieldApiService) MetadataFieldGetMetadataField0Execute(r ApiMet
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -712,11 +714,11 @@ func (a *MetadataFieldApiService) MetadataFieldGetMetadataField0Execute(r ApiMet
 }
 
 type ApiMetadataFieldGetMetadataField1Request struct {
-	ctx context.Context
-	ApiService *MetadataFieldApiService
-	name string
+	ctx                     context.Context
+	ApiService              *MetadataFieldApiService
+	name                    string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -738,30 +740,31 @@ func (r ApiMetadataFieldGetMetadataField1Request) Execute() (*ModelsMetadataFiel
 /*
 MetadataFieldGetMetadataField1 Gets a persisted metadata field type by its unique name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The unique name of the metadata field.
- @return ApiMetadataFieldGetMetadataField1Request
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name The unique name of the metadata field.
+	@return ApiMetadataFieldGetMetadataField1Request
 */
 func (a *MetadataFieldApiService) MetadataFieldGetMetadataField1(ctx context.Context, name string) ApiMetadataFieldGetMetadataField1Request {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiMetadataFieldGetMetadataField1Request{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		name: name,
+		xKeyfactorApiVersion:    &version,
+		name:                    name,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsMetadataFieldTypeModel
+//
+//	@return ModelsMetadataFieldTypeModel
 func (a *MetadataFieldApiService) MetadataFieldGetMetadataField1Execute(r ApiMetadataFieldGetMetadataField1Request) (*ModelsMetadataFieldTypeModel, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsMetadataFieldTypeModel
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsMetadataFieldTypeModel
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -772,9 +775,9 @@ func (a *MetadataFieldApiService) MetadataFieldGetMetadataField1Execute(r ApiMet
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -835,11 +838,11 @@ func (a *MetadataFieldApiService) MetadataFieldGetMetadataField1Execute(r ApiMet
 }
 
 type ApiMetadataFieldGetMetadataFieldInUseRequest struct {
-	ctx context.Context
-	ApiService *MetadataFieldApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *MetadataFieldApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -861,30 +864,31 @@ func (r ApiMetadataFieldGetMetadataFieldInUseRequest) Execute() (bool, *http.Res
 /*
 MetadataFieldGetMetadataFieldInUse Determines if a metadata field type associated with the provided identifier is currently in use
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identitifer of the metadata field
- @return ApiMetadataFieldGetMetadataFieldInUseRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identitifer of the metadata field
+	@return ApiMetadataFieldGetMetadataFieldInUseRequest
 */
 func (a *MetadataFieldApiService) MetadataFieldGetMetadataFieldInUse(ctx context.Context, id int32) ApiMetadataFieldGetMetadataFieldInUseRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiMetadataFieldGetMetadataFieldInUseRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return bool
+//
+//	@return bool
 func (a *MetadataFieldApiService) MetadataFieldGetMetadataFieldInUseExecute(r ApiMetadataFieldGetMetadataFieldInUseRequest) (bool, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  bool
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue bool
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -895,9 +899,9 @@ func (a *MetadataFieldApiService) MetadataFieldGetMetadataFieldInUseExecute(r Ap
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -958,11 +962,11 @@ func (a *MetadataFieldApiService) MetadataFieldGetMetadataFieldInUseExecute(r Ap
 }
 
 type ApiMetadataFieldUpdateMetadataFieldRequest struct {
-	ctx context.Context
-	ApiService *MetadataFieldApiService
+	ctx                     context.Context
+	ApiService              *MetadataFieldApiService
 	xKeyfactorRequestedWith *string
-	metadataFieldType *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest
-	xKeyfactorApiVersion *string
+	metadataFieldType       *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -992,28 +996,29 @@ MetadataFieldUpdateMetadataField Updates a persisted metadata field with the giv
 
 *NOTE: Metadata Field in this context refers to MetadataFieldType, as opposed to the value of a metadata field associated with a certificate.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMetadataFieldUpdateMetadataFieldRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiMetadataFieldUpdateMetadataFieldRequest
 */
 func (a *MetadataFieldApiService) MetadataFieldUpdateMetadataField(ctx context.Context) ApiMetadataFieldUpdateMetadataFieldRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiMetadataFieldUpdateMetadataFieldRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsMetadataFieldMetadataFieldResponse
+//
+//	@return KeyfactorApiModelsMetadataFieldMetadataFieldResponse
 func (a *MetadataFieldApiService) MetadataFieldUpdateMetadataFieldExecute(r ApiMetadataFieldUpdateMetadataFieldRequest) (*KeyfactorApiModelsMetadataFieldMetadataFieldResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsMetadataFieldMetadataFieldResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsMetadataFieldMetadataFieldResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1023,12 +1028,12 @@ func (a *MetadataFieldApiService) MetadataFieldUpdateMetadataFieldExecute(r ApiM
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.metadataFieldType == nil {
-        return localVarReturnValue, nil, reportError("metadataFieldType is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.metadataFieldType == nil {
+		return localVarReturnValue, nil, reportError("metadataFieldType is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}

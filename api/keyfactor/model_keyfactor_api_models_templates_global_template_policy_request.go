@@ -37,7 +37,7 @@ type KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest struct {
 	// Whether or not wildcards can be used.
 	AllowWildcards bool `json:"AllowWildcards"`
 	// Whether or not RFC 2818 compliance should be enforced.
-	RFCEnforcement bool `json:"RFCEnforcement"`
+	RFCEnforcement       bool `json:"RFCEnforcement"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -186,7 +186,7 @@ func (o *KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest) SetRFCEnforceme
 }
 
 func (o KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -264,5 +264,3 @@ func (v *NullableKeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

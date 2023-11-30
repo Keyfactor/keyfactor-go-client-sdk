@@ -29,17 +29,17 @@ var _ MappedNullable = &ModelsWorkflowCertificateRequestModel{}
 
 // ModelsWorkflowCertificateRequestModel struct for ModelsWorkflowCertificateRequestModel
 type ModelsWorkflowCertificateRequestModel struct {
-	Id *int32 `json:"Id,omitempty"`
-	CARequestId *string `json:"CARequestId,omitempty"`
-	CommonName *string `json:"CommonName,omitempty"`
-	DistinguishedName *string `json:"DistinguishedName,omitempty"`
-	SubmissionDate *time.Time `json:"SubmissionDate,omitempty"`
-	CertificateAuthority *string `json:"CertificateAuthority,omitempty"`
-	Template *string `json:"Template,omitempty"`
-	Requester *string `json:"Requester,omitempty"`
-	State *int32 `json:"State,omitempty"`
-	StateString *string `json:"StateString,omitempty"`
-	Metadata *map[string]string `json:"Metadata,omitempty"`
+	Id                   *int32             `json:"Id,omitempty"`
+	CARequestId          *string            `json:"CARequestId,omitempty"`
+	CommonName           *string            `json:"CommonName,omitempty"`
+	DistinguishedName    *string            `json:"DistinguishedName,omitempty"`
+	SubmissionDate       *time.Time         `json:"SubmissionDate,omitempty"`
+	CertificateAuthority *string            `json:"CertificateAuthority,omitempty"`
+	Template             *string            `json:"Template,omitempty"`
+	Requester            *string            `json:"Requester,omitempty"`
+	State                *int32             `json:"State,omitempty"`
+	StateString          *string            `json:"StateString,omitempty"`
+	Metadata             *map[string]string `json:"Metadata,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -415,7 +415,7 @@ func (o *ModelsWorkflowCertificateRequestModel) SetMetadata(v map[string]string)
 }
 
 func (o ModelsWorkflowCertificateRequestModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -525,5 +525,3 @@ func (v *NullableModelsWorkflowCertificateRequestModel) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

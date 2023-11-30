@@ -27,15 +27,14 @@ import (
 	"net/url"
 )
 
-
 // SMTPApiService SMTPApi service
 type SMTPApiService service
 
 type ApiSMTPSMTPRequest struct {
-	ctx context.Context
-	ApiService *SMTPApiService
+	ctx                     context.Context
+	ApiService              *SMTPApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -57,28 +56,29 @@ func (r ApiSMTPSMTPRequest) Execute() (*KeyfactorAPIModelsSMTPSMTPResponse, *htt
 /*
 SMTPSMTP Gets SMTP profile data
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSMTPSMTPRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSMTPSMTPRequest
 */
 func (a *SMTPApiService) SMTPSMTP(ctx context.Context) ApiSMTPSMTPRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSMTPSMTPRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorAPIModelsSMTPSMTPResponse
+//
+//	@return KeyfactorAPIModelsSMTPSMTPResponse
 func (a *SMTPApiService) SMTPSMTPExecute(r ApiSMTPSMTPRequest) (*KeyfactorAPIModelsSMTPSMTPResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorAPIModelsSMTPSMTPResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorAPIModelsSMTPSMTPResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -88,9 +88,9 @@ func (a *SMTPApiService) SMTPSMTPExecute(r ApiSMTPSMTPRequest) (*KeyfactorAPIMod
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -151,11 +151,11 @@ func (a *SMTPApiService) SMTPSMTPExecute(r ApiSMTPSMTPRequest) (*KeyfactorAPIMod
 }
 
 type ApiSMTPTestSMTPRequest struct {
-	ctx context.Context
-	ApiService *SMTPApiService
+	ctx                     context.Context
+	ApiService              *SMTPApiService
 	xKeyfactorRequestedWith *string
-	smtpProfile *KeyfactorAPIModelsSMTPSMTPTestRequest
-	xKeyfactorApiVersion *string
+	smtpProfile             *KeyfactorAPIModelsSMTPSMTPTestRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -182,28 +182,29 @@ func (r ApiSMTPTestSMTPRequest) Execute() (*KeyfactorAPIModelsSMTPSMTPTestRespon
 /*
 SMTPTestSMTP Tests SMTP profile data
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSMTPTestSMTPRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSMTPTestSMTPRequest
 */
 func (a *SMTPApiService) SMTPTestSMTP(ctx context.Context) ApiSMTPTestSMTPRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSMTPTestSMTPRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorAPIModelsSMTPSMTPTestResponse
+//
+//	@return KeyfactorAPIModelsSMTPSMTPTestResponse
 func (a *SMTPApiService) SMTPTestSMTPExecute(r ApiSMTPTestSMTPRequest) (*KeyfactorAPIModelsSMTPSMTPTestResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorAPIModelsSMTPSMTPTestResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorAPIModelsSMTPSMTPTestResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -213,12 +214,12 @@ func (a *SMTPApiService) SMTPTestSMTPExecute(r ApiSMTPTestSMTPRequest) (*Keyfact
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.smtpProfile == nil {
-        return localVarReturnValue, nil, reportError("smtpProfile is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.smtpProfile == nil {
+		return localVarReturnValue, nil, reportError("smtpProfile is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -281,11 +282,11 @@ func (a *SMTPApiService) SMTPTestSMTPExecute(r ApiSMTPTestSMTPRequest) (*Keyfact
 }
 
 type ApiSMTPUpdateSMTPRequest struct {
-	ctx context.Context
-	ApiService *SMTPApiService
+	ctx                     context.Context
+	ApiService              *SMTPApiService
 	xKeyfactorRequestedWith *string
-	smtpProfile *KeyfactorAPIModelsSMTPSMTPRequest
-	xKeyfactorApiVersion *string
+	smtpProfile             *KeyfactorAPIModelsSMTPSMTPRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -312,28 +313,29 @@ func (r ApiSMTPUpdateSMTPRequest) Execute() (*KeyfactorAPIModelsSMTPSMTPResponse
 /*
 SMTPUpdateSMTP Updates SMTP profile data
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSMTPUpdateSMTPRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSMTPUpdateSMTPRequest
 */
 func (a *SMTPApiService) SMTPUpdateSMTP(ctx context.Context) ApiSMTPUpdateSMTPRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSMTPUpdateSMTPRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorAPIModelsSMTPSMTPResponse
+//
+//	@return KeyfactorAPIModelsSMTPSMTPResponse
 func (a *SMTPApiService) SMTPUpdateSMTPExecute(r ApiSMTPUpdateSMTPRequest) (*KeyfactorAPIModelsSMTPSMTPResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorAPIModelsSMTPSMTPResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorAPIModelsSMTPSMTPResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -343,12 +345,12 @@ func (a *SMTPApiService) SMTPUpdateSMTPExecute(r ApiSMTPUpdateSMTPRequest) (*Key
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.smtpProfile == nil {
-        return localVarReturnValue, nil, reportError("smtpProfile is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.smtpProfile == nil {
+		return localVarReturnValue, nil, reportError("smtpProfile is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}

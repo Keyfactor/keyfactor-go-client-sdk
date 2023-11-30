@@ -28,12 +28,12 @@ var _ MappedNullable = &KeyfactorCommonSchedulingKeyfactorSchedule{}
 
 // KeyfactorCommonSchedulingKeyfactorSchedule struct for KeyfactorCommonSchedulingKeyfactorSchedule
 type KeyfactorCommonSchedulingKeyfactorSchedule struct {
-	Immediate *bool `json:"Immediate,omitempty"`
-	Interval *KeyfactorCommonSchedulingModelsIntervalModel `json:"Interval,omitempty"`
-	Daily *KeyfactorCommonSchedulingModelsTimeModel `json:"Daily,omitempty"`
-	Weekly *KeyfactorCommonSchedulingModelsWeeklyModel `json:"Weekly,omitempty"`
-	Monthly *KeyfactorCommonSchedulingModelsMonthlyModel `json:"Monthly,omitempty"`
-	ExactlyOnce *KeyfactorCommonSchedulingModelsTimeModel `json:"ExactlyOnce,omitempty"`
+	Immediate            *bool                                         `json:"Immediate,omitempty"`
+	Interval             *KeyfactorCommonSchedulingModelsIntervalModel `json:"Interval,omitempty"`
+	Daily                *KeyfactorCommonSchedulingModelsTimeModel     `json:"Daily,omitempty"`
+	Weekly               *KeyfactorCommonSchedulingModelsWeeklyModel   `json:"Weekly,omitempty"`
+	Monthly              *KeyfactorCommonSchedulingModelsMonthlyModel  `json:"Monthly,omitempty"`
+	ExactlyOnce          *KeyfactorCommonSchedulingModelsTimeModel     `json:"ExactlyOnce,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -249,7 +249,7 @@ func (o *KeyfactorCommonSchedulingKeyfactorSchedule) SetExactlyOnce(v KeyfactorC
 }
 
 func (o KeyfactorCommonSchedulingKeyfactorSchedule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -341,5 +341,3 @@ func (v *NullableKeyfactorCommonSchedulingKeyfactorSchedule) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

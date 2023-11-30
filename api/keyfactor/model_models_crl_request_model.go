@@ -28,9 +28,9 @@ var _ MappedNullable = &ModelsCRLRequestModel{}
 
 // ModelsCRLRequestModel struct for ModelsCRLRequestModel
 type ModelsCRLRequestModel struct {
-	CertificateAuthorityLogicalName string `json:"CertificateAuthorityLogicalName"`
-	CertificateAuthorityHostName *string `json:"CertificateAuthorityHostName,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CertificateAuthorityLogicalName string  `json:"CertificateAuthorityLogicalName"`
+	CertificateAuthorityHostName    *string `json:"CertificateAuthorityHostName,omitempty"`
+	AdditionalProperties            map[string]interface{}
 }
 
 type _ModelsCRLRequestModel ModelsCRLRequestModel
@@ -110,7 +110,7 @@ func (o *ModelsCRLRequestModel) SetCertificateAuthorityHostName(v string) {
 }
 
 func (o ModelsCRLRequestModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -184,5 +184,3 @@ func (v *NullableModelsCRLRequestModel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

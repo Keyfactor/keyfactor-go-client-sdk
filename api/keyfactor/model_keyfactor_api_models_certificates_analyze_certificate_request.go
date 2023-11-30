@@ -28,8 +28,8 @@ var _ MappedNullable = &KeyfactorApiModelsCertificatesAnalyzeCertificateRequest{
 
 // KeyfactorApiModelsCertificatesAnalyzeCertificateRequest struct for KeyfactorApiModelsCertificatesAnalyzeCertificateRequest
 type KeyfactorApiModelsCertificatesAnalyzeCertificateRequest struct {
-	Certificate *string `json:"Certificate,omitempty"`
-	Password *string `json:"Password,omitempty"`
+	Certificate          *string `json:"Certificate,omitempty"`
+	Password             *string `json:"Password,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -117,7 +117,7 @@ func (o *KeyfactorApiModelsCertificatesAnalyzeCertificateRequest) SetPassword(v 
 }
 
 func (o KeyfactorApiModelsCertificatesAnalyzeCertificateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,5 +193,3 @@ func (v *NullableKeyfactorApiModelsCertificatesAnalyzeCertificateRequest) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

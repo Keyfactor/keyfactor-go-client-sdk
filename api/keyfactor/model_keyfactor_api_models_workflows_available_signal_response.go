@@ -33,7 +33,7 @@ type KeyfactorApiModelsWorkflowsAvailableSignalResponse struct {
 	// The signal Id.
 	StepSignalId *string `json:"StepSignalId,omitempty"`
 	// Whether or not the signal has been received.
-	SignalReceived *bool `json:"SignalReceived,omitempty"`
+	SignalReceived       *bool `json:"SignalReceived,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -153,7 +153,7 @@ func (o *KeyfactorApiModelsWorkflowsAvailableSignalResponse) SetSignalReceived(v
 }
 
 func (o KeyfactorApiModelsWorkflowsAvailableSignalResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -233,5 +233,3 @@ func (v *NullableKeyfactorApiModelsWorkflowsAvailableSignalResponse) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

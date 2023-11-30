@@ -31,8 +31,8 @@ type KeyfactorApiModelsTemplatesGlobalTemplateSettingsRequest struct {
 	// The regular expressions to use for validation during enrollment.
 	TemplateRegexes []KeyfactorApiModelsTemplatesGlobalTemplateRegexRequest `json:"TemplateRegexes"`
 	// The default values to use during enrollment.
-	TemplateDefaults []KeyfactorApiModelsTemplatesGlobalTemplateDefaultRequest `json:"TemplateDefaults"`
-	TemplatePolicy KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest `json:"TemplatePolicy"`
+	TemplateDefaults     []KeyfactorApiModelsTemplatesGlobalTemplateDefaultRequest `json:"TemplateDefaults"`
+	TemplatePolicy       KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest    `json:"TemplatePolicy"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -131,7 +131,7 @@ func (o *KeyfactorApiModelsTemplatesGlobalTemplateSettingsRequest) SetTemplatePo
 }
 
 func (o KeyfactorApiModelsTemplatesGlobalTemplateSettingsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -205,5 +205,3 @@ func (v *NullableKeyfactorApiModelsTemplatesGlobalTemplateSettingsRequest) Unmar
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

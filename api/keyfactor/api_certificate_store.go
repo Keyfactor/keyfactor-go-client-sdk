@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // CertificateStoreApiService CertificateStoreApi service
 type CertificateStoreApiService service
 
 type ApiCertificateStoreAddCertificateRequest struct {
-	ctx context.Context
-	ApiService *CertificateStoreApiService
+	ctx                     context.Context
+	ApiService              *CertificateStoreApiService
 	xKeyfactorRequestedWith *string
-	addRequest *KeyfactorApiModelsCertificateStoresAddCertificateRequest
-	xKeyfactorApiVersion *string
+	addRequest              *KeyfactorApiModelsCertificateStoresAddCertificateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -65,28 +64,29 @@ func (r ApiCertificateStoreAddCertificateRequest) Execute() ([]string, *http.Res
 /*
 CertificateStoreAddCertificate Configures a management job to add a certificate to one or more stores with the provided schedule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateStoreAddCertificateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateStoreAddCertificateRequest
 */
 func (a *CertificateStoreApiService) CertificateStoreAddCertificate(ctx context.Context) ApiCertificateStoreAddCertificateRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateStoreAddCertificateRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []string
+//
+//	@return []string
 func (a *CertificateStoreApiService) CertificateStoreAddCertificateExecute(r ApiCertificateStoreAddCertificateRequest) ([]string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []string
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []string
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -96,12 +96,12 @@ func (a *CertificateStoreApiService) CertificateStoreAddCertificateExecute(r Api
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.addRequest == nil {
-        return localVarReturnValue, nil, reportError("addRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.addRequest == nil {
+		return localVarReturnValue, nil, reportError("addRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -164,11 +164,11 @@ func (a *CertificateStoreApiService) CertificateStoreAddCertificateExecute(r Api
 }
 
 type ApiCertificateStoreApprovePendingRequest struct {
-	ctx context.Context
-	ApiService *CertificateStoreApiService
+	ctx                     context.Context
+	ApiService              *CertificateStoreApiService
 	xKeyfactorRequestedWith *string
-	keystores *[]KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest
-	xKeyfactorApiVersion *string
+	keystores               *[]KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -196,26 +196,26 @@ func (r ApiCertificateStoreApprovePendingRequest) Execute() (*http.Response, err
 /*
 CertificateStoreApprovePending Approves the provided certificate stores to make them available for management
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateStoreApprovePendingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateStoreApprovePendingRequest
 */
 func (a *CertificateStoreApiService) CertificateStoreApprovePending(ctx context.Context) ApiCertificateStoreApprovePendingRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateStoreApprovePendingRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *CertificateStoreApiService) CertificateStoreApprovePendingExecute(r ApiCertificateStoreApprovePendingRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -225,12 +225,12 @@ func (a *CertificateStoreApiService) CertificateStoreApprovePendingExecute(r Api
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.keystores == nil {
-        return nil, reportError("keystores is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.keystores == nil {
+		return nil, reportError("keystores is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -284,11 +284,11 @@ func (a *CertificateStoreApiService) CertificateStoreApprovePendingExecute(r Api
 }
 
 type ApiCertificateStoreConfigureDiscoveryJobRequest struct {
-	ctx context.Context
-	ApiService *CertificateStoreApiService
+	ctx                     context.Context
+	ApiService              *CertificateStoreApiService
 	xKeyfactorRequestedWith *string
-	discoveryJobRequest *ModelsDiscoveryJobRequest
-	xKeyfactorApiVersion *string
+	discoveryJobRequest     *ModelsDiscoveryJobRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -316,26 +316,26 @@ func (r ApiCertificateStoreConfigureDiscoveryJobRequest) Execute() (*http.Respon
 /*
 CertificateStoreConfigureDiscoveryJob Configures a discovery job to locate currently unmanaged certificate stores
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateStoreConfigureDiscoveryJobRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateStoreConfigureDiscoveryJobRequest
 */
 func (a *CertificateStoreApiService) CertificateStoreConfigureDiscoveryJob(ctx context.Context) ApiCertificateStoreConfigureDiscoveryJobRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateStoreConfigureDiscoveryJobRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *CertificateStoreApiService) CertificateStoreConfigureDiscoveryJobExecute(r ApiCertificateStoreConfigureDiscoveryJobRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -345,12 +345,12 @@ func (a *CertificateStoreApiService) CertificateStoreConfigureDiscoveryJobExecut
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.discoveryJobRequest == nil {
-        return nil, reportError("discoveryJobRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.discoveryJobRequest == nil {
+		return nil, reportError("discoveryJobRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -404,11 +404,11 @@ func (a *CertificateStoreApiService) CertificateStoreConfigureDiscoveryJobExecut
 }
 
 type ApiCertificateStoreCreateCertificateStoreServerRequest struct {
-	ctx context.Context
-	ApiService *CertificateStoreApiService
+	ctx                     context.Context
+	ApiService              *CertificateStoreApiService
 	xKeyfactorRequestedWith *string
-	request *ModelsCertificateStoreCreateServerRequest
-	xKeyfactorApiVersion *string
+	request                 *ModelsCertificateStoreCreateServerRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -436,31 +436,33 @@ func (r ApiCertificateStoreCreateCertificateStoreServerRequest) Execute() (*Mode
 /*
 CertificateStoreCreateCertificateStoreServer Creates a new certificate store server with the provided properties
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateStoreCreateCertificateStoreServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateStoreCreateCertificateStoreServerRequest
 
 Deprecated
 */
 func (a *CertificateStoreApiService) CertificateStoreCreateCertificateStoreServer(ctx context.Context) ApiCertificateStoreCreateCertificateStoreServerRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateStoreCreateCertificateStoreServerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsCertificateStoreServerResponse
+//
+//	@return ModelsCertificateStoreServerResponse
+//
 // Deprecated
 func (a *CertificateStoreApiService) CertificateStoreCreateCertificateStoreServerExecute(r ApiCertificateStoreCreateCertificateStoreServerRequest) (*ModelsCertificateStoreServerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsCertificateStoreServerResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsCertificateStoreServerResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -470,12 +472,12 @@ func (a *CertificateStoreApiService) CertificateStoreCreateCertificateStoreServe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.request == nil {
-        return localVarReturnValue, nil, reportError("request is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.request == nil {
+		return localVarReturnValue, nil, reportError("request is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -538,11 +540,11 @@ func (a *CertificateStoreApiService) CertificateStoreCreateCertificateStoreServe
 }
 
 type ApiCertificateStoreDeleteCertificateStoreRequest struct {
-	ctx context.Context
-	ApiService *CertificateStoreApiService
-	id string
+	ctx                     context.Context
+	ApiService              *CertificateStoreApiService
+	id                      string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -564,28 +566,28 @@ func (r ApiCertificateStoreDeleteCertificateStoreRequest) Execute() (*http.Respo
 /*
 CertificateStoreDeleteCertificateStore Deletes a persisted certificate store by its Keyfactor identifier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor certificate store identifier (GUID)
- @return ApiCertificateStoreDeleteCertificateStoreRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor certificate store identifier (GUID)
+	@return ApiCertificateStoreDeleteCertificateStoreRequest
 */
 func (a *CertificateStoreApiService) CertificateStoreDeleteCertificateStore(ctx context.Context, id string) ApiCertificateStoreDeleteCertificateStoreRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateStoreDeleteCertificateStoreRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *CertificateStoreApiService) CertificateStoreDeleteCertificateStoreExecute(r ApiCertificateStoreDeleteCertificateStoreRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -596,9 +598,9 @@ func (a *CertificateStoreApiService) CertificateStoreDeleteCertificateStoreExecu
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -650,11 +652,11 @@ func (a *CertificateStoreApiService) CertificateStoreDeleteCertificateStoreExecu
 }
 
 type ApiCertificateStoreDeleteCertificateStoresRequest struct {
-	ctx context.Context
-	ApiService *CertificateStoreApiService
+	ctx                     context.Context
+	ApiService              *CertificateStoreApiService
 	xKeyfactorRequestedWith *string
-	ids *[]string
-	xKeyfactorApiVersion *string
+	ids                     *[]string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -684,26 +686,26 @@ CertificateStoreDeleteCertificateStores Deletes multiple persisted certificate s
 
 This will ignore individual delete failures, and continue processing the array.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateStoreDeleteCertificateStoresRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateStoreDeleteCertificateStoresRequest
 */
 func (a *CertificateStoreApiService) CertificateStoreDeleteCertificateStores(ctx context.Context) ApiCertificateStoreDeleteCertificateStoresRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateStoreDeleteCertificateStoresRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *CertificateStoreApiService) CertificateStoreDeleteCertificateStoresExecute(r ApiCertificateStoreDeleteCertificateStoresRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -713,12 +715,12 @@ func (a *CertificateStoreApiService) CertificateStoreDeleteCertificateStoresExec
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.ids == nil {
-        return nil, reportError("ids is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.ids == nil {
+		return nil, reportError("ids is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -772,15 +774,15 @@ func (a *CertificateStoreApiService) CertificateStoreDeleteCertificateStoresExec
 }
 
 type ApiCertificateStoreGetCertificateStoreInventoryRequest struct {
-	ctx context.Context
-	ApiService *CertificateStoreApiService
-	id string
+	ctx                     context.Context
+	ApiService              *CertificateStoreApiService
+	id                      string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	queryPageReturned *int32
-	queryReturnLimit *int32
-	querySortField *string
-	querySortAscending *int32
+	xKeyfactorApiVersion    *string
+	queryPageReturned       *int32
+	queryReturnLimit        *int32
+	querySortField          *string
+	querySortAscending      *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -826,30 +828,31 @@ func (r ApiCertificateStoreGetCertificateStoreInventoryRequest) Execute() ([]Mod
 /*
 CertificateStoreGetCertificateStoreInventory Returns a single certificate store's inventory associated with the provided id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifier (GUID) of the certificate store
- @return ApiCertificateStoreGetCertificateStoreInventoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifier (GUID) of the certificate store
+	@return ApiCertificateStoreGetCertificateStoreInventoryRequest
 */
 func (a *CertificateStoreApiService) CertificateStoreGetCertificateStoreInventory(ctx context.Context, id string) ApiCertificateStoreGetCertificateStoreInventoryRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateStoreGetCertificateStoreInventoryRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsCertificateStoreInventory
+//
+//	@return []ModelsCertificateStoreInventory
 func (a *CertificateStoreApiService) CertificateStoreGetCertificateStoreInventoryExecute(r ApiCertificateStoreGetCertificateStoreInventoryRequest) ([]ModelsCertificateStoreInventory, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsCertificateStoreInventory
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsCertificateStoreInventory
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -860,9 +863,9 @@ func (a *CertificateStoreApiService) CertificateStoreGetCertificateStoreInventor
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.queryPageReturned != nil {
 		parameterAddToQuery(localVarQueryParams, "query.pageReturned", r.queryPageReturned, "")
@@ -935,11 +938,11 @@ func (a *CertificateStoreApiService) CertificateStoreGetCertificateStoreInventor
 }
 
 type ApiCertificateStoreRemoveCertificateRequest struct {
-	ctx context.Context
-	ApiService *CertificateStoreApiService
+	ctx                     context.Context
+	ApiService              *CertificateStoreApiService
 	xKeyfactorRequestedWith *string
-	removalRequest *KeyfactorApiModelsCertificateStoresRemoveCertificateRequest
-	xKeyfactorApiVersion *string
+	removalRequest          *KeyfactorApiModelsCertificateStoresRemoveCertificateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -967,28 +970,29 @@ func (r ApiCertificateStoreRemoveCertificateRequest) Execute() ([]string, *http.
 /*
 CertificateStoreRemoveCertificate Configures a management job to remove a certificate from one or more stores with the provided schedule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateStoreRemoveCertificateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateStoreRemoveCertificateRequest
 */
 func (a *CertificateStoreApiService) CertificateStoreRemoveCertificate(ctx context.Context) ApiCertificateStoreRemoveCertificateRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateStoreRemoveCertificateRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []string
+//
+//	@return []string
 func (a *CertificateStoreApiService) CertificateStoreRemoveCertificateExecute(r ApiCertificateStoreRemoveCertificateRequest) ([]string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []string
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []string
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -998,12 +1002,12 @@ func (a *CertificateStoreApiService) CertificateStoreRemoveCertificateExecute(r 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.removalRequest == nil {
-        return localVarReturnValue, nil, reportError("removalRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.removalRequest == nil {
+		return localVarReturnValue, nil, reportError("removalRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -1066,11 +1070,11 @@ func (a *CertificateStoreApiService) CertificateStoreRemoveCertificateExecute(r 
 }
 
 type ApiCertificateStoreScheduleRequest struct {
-	ctx context.Context
-	ApiService *CertificateStoreApiService
+	ctx                     context.Context
+	ApiService              *CertificateStoreApiService
 	xKeyfactorRequestedWith *string
-	futureSchedule *ModelsCertStoresSchedule
-	xKeyfactorApiVersion *string
+	futureSchedule          *ModelsCertStoresSchedule
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1098,26 +1102,26 @@ func (r ApiCertificateStoreScheduleRequest) Execute() (*http.Response, error) {
 /*
 CertificateStoreSchedule Creates an inventory schedule for the provided certificate stores
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateStoreScheduleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateStoreScheduleRequest
 */
 func (a *CertificateStoreApiService) CertificateStoreSchedule(ctx context.Context) ApiCertificateStoreScheduleRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateStoreScheduleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *CertificateStoreApiService) CertificateStoreScheduleExecute(r ApiCertificateStoreScheduleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1127,12 +1131,12 @@ func (a *CertificateStoreApiService) CertificateStoreScheduleExecute(r ApiCertif
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.futureSchedule == nil {
-        return nil, reportError("futureSchedule is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.futureSchedule == nil {
+		return nil, reportError("futureSchedule is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -1186,11 +1190,11 @@ func (a *CertificateStoreApiService) CertificateStoreScheduleExecute(r ApiCertif
 }
 
 type ApiCertificateStoreScheduleForReenrollmentRequest struct {
-	ctx context.Context
-	ApiService *CertificateStoreApiService
+	ctx                     context.Context
+	ApiService              *CertificateStoreApiService
 	xKeyfactorRequestedWith *string
-	reenroll *KeyfactorApiModelsCertificateStoresReenrollmentRequest
-	xKeyfactorApiVersion *string
+	reenroll                *KeyfactorApiModelsCertificateStoresReenrollmentRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1218,26 +1222,26 @@ func (r ApiCertificateStoreScheduleForReenrollmentRequest) Execute() (*http.Resp
 /*
 CertificateStoreScheduleForReenrollment Schedules a certificate store for reenrollment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateStoreScheduleForReenrollmentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateStoreScheduleForReenrollmentRequest
 */
 func (a *CertificateStoreApiService) CertificateStoreScheduleForReenrollment(ctx context.Context) ApiCertificateStoreScheduleForReenrollmentRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateStoreScheduleForReenrollmentRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *CertificateStoreApiService) CertificateStoreScheduleForReenrollmentExecute(r ApiCertificateStoreScheduleForReenrollmentRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1247,12 +1251,12 @@ func (a *CertificateStoreApiService) CertificateStoreScheduleForReenrollmentExec
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.reenroll == nil {
-        return nil, reportError("reenroll is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.reenroll == nil {
+		return nil, reportError("reenroll is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -1306,11 +1310,11 @@ func (a *CertificateStoreApiService) CertificateStoreScheduleForReenrollmentExec
 }
 
 type ApiCertificateStoreSetPasswordRequest struct {
-	ctx context.Context
-	ApiService *CertificateStoreApiService
+	ctx                     context.Context
+	ApiService              *CertificateStoreApiService
 	xKeyfactorRequestedWith *string
-	passwordRequest *ModelsCertStoreNewPasswordRequest
-	xKeyfactorApiVersion *string
+	passwordRequest         *ModelsCertStoreNewPasswordRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1338,26 +1342,26 @@ func (r ApiCertificateStoreSetPasswordRequest) Execute() (*http.Response, error)
 /*
 CertificateStoreSetPassword Sets a password for the requested certificate store
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateStoreSetPasswordRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateStoreSetPasswordRequest
 */
 func (a *CertificateStoreApiService) CertificateStoreSetPassword(ctx context.Context) ApiCertificateStoreSetPasswordRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateStoreSetPasswordRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *CertificateStoreApiService) CertificateStoreSetPasswordExecute(r ApiCertificateStoreSetPasswordRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1367,12 +1371,12 @@ func (a *CertificateStoreApiService) CertificateStoreSetPasswordExecute(r ApiCer
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.passwordRequest == nil {
-        return nil, reportError("passwordRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.passwordRequest == nil {
+		return nil, reportError("passwordRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -1426,11 +1430,11 @@ func (a *CertificateStoreApiService) CertificateStoreSetPasswordExecute(r ApiCer
 }
 
 type ApiCertificateStoreUpdateCertificateStoreServerRequest struct {
-	ctx context.Context
-	ApiService *CertificateStoreApiService
+	ctx                     context.Context
+	ApiService              *CertificateStoreApiService
 	xKeyfactorRequestedWith *string
-	request *ModelsCertificateStoreUpdateServerRequest
-	xKeyfactorApiVersion *string
+	request                 *ModelsCertificateStoreUpdateServerRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1458,31 +1462,33 @@ func (r ApiCertificateStoreUpdateCertificateStoreServerRequest) Execute() (*Mode
 /*
 CertificateStoreUpdateCertificateStoreServer Updates a given certificate store server with the properties of the provided instance
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateStoreUpdateCertificateStoreServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateStoreUpdateCertificateStoreServerRequest
 
 Deprecated
 */
 func (a *CertificateStoreApiService) CertificateStoreUpdateCertificateStoreServer(ctx context.Context) ApiCertificateStoreUpdateCertificateStoreServerRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateStoreUpdateCertificateStoreServerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsCertificateStoreServerResponse
+//
+//	@return ModelsCertificateStoreServerResponse
+//
 // Deprecated
 func (a *CertificateStoreApiService) CertificateStoreUpdateCertificateStoreServerExecute(r ApiCertificateStoreUpdateCertificateStoreServerRequest) (*ModelsCertificateStoreServerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsCertificateStoreServerResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsCertificateStoreServerResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1492,12 +1498,12 @@ func (a *CertificateStoreApiService) CertificateStoreUpdateCertificateStoreServe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.request == nil {
-        return localVarReturnValue, nil, reportError("request is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.request == nil {
+		return localVarReturnValue, nil, reportError("request is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}

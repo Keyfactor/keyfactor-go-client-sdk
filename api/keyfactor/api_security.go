@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // SecurityApiService SecurityApi service
 type SecurityApiService service
 
 type ApiSecurityDeleteSecurityIdentityRequest struct {
-	ctx context.Context
-	ApiService *SecurityApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *SecurityApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -59,28 +58,28 @@ func (r ApiSecurityDeleteSecurityIdentityRequest) Execute() (*http.Response, err
 /*
 SecurityDeleteSecurityIdentity Deletes the security identity whose ID is provided.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The ID of the security identity to be deleted.
- @return ApiSecurityDeleteSecurityIdentityRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The ID of the security identity to be deleted.
+	@return ApiSecurityDeleteSecurityIdentityRequest
 */
 func (a *SecurityApiService) SecurityDeleteSecurityIdentity(ctx context.Context, id int32) ApiSecurityDeleteSecurityIdentityRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSecurityDeleteSecurityIdentityRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *SecurityApiService) SecurityDeleteSecurityIdentityExecute(r ApiSecurityDeleteSecurityIdentityRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -91,9 +90,9 @@ func (a *SecurityApiService) SecurityDeleteSecurityIdentityExecute(r ApiSecurity
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -145,11 +144,11 @@ func (a *SecurityApiService) SecurityDeleteSecurityIdentityExecute(r ApiSecurity
 }
 
 type ApiSecurityIdentityPermissionsRequest struct {
-	ctx context.Context
-	ApiService *SecurityApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *SecurityApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -171,30 +170,31 @@ func (r ApiSecurityIdentityPermissionsRequest) Execute() (*ModelsSecurityIdentit
 /*
 SecurityIdentityPermissions Gets an object representing the permissions of the identity associated with the provided identifier.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The identifier of the security identity
- @return ApiSecurityIdentityPermissionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The identifier of the security identity
+	@return ApiSecurityIdentityPermissionsRequest
 */
 func (a *SecurityApiService) SecurityIdentityPermissions(ctx context.Context, id int32) ApiSecurityIdentityPermissionsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSecurityIdentityPermissionsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSecurityIdentitiesSecurityIdentityPermissionsResponse
+//
+//	@return ModelsSecurityIdentitiesSecurityIdentityPermissionsResponse
 func (a *SecurityApiService) SecurityIdentityPermissionsExecute(r ApiSecurityIdentityPermissionsRequest) (*ModelsSecurityIdentitiesSecurityIdentityPermissionsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSecurityIdentitiesSecurityIdentityPermissionsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSecurityIdentitiesSecurityIdentityPermissionsResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -205,9 +205,9 @@ func (a *SecurityApiService) SecurityIdentityPermissionsExecute(r ApiSecurityIde
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -268,11 +268,11 @@ func (a *SecurityApiService) SecurityIdentityPermissionsExecute(r ApiSecurityIde
 }
 
 type ApiSecurityLookupIdentityRequest struct {
-	ctx context.Context
-	ApiService *SecurityApiService
-	accountName *string
+	ctx                     context.Context
+	ApiService              *SecurityApiService
+	accountName             *string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // The name of an identity we wish to check.
@@ -300,28 +300,29 @@ func (r ApiSecurityLookupIdentityRequest) Execute() (*ModelsSecurityIdentitiesSe
 /*
 SecurityLookupIdentity Validates that the identity with the name given exists.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSecurityLookupIdentityRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSecurityLookupIdentityRequest
 */
 func (a *SecurityApiService) SecurityLookupIdentity(ctx context.Context) ApiSecurityLookupIdentityRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSecurityLookupIdentityRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSecurityIdentitiesSecurityIdentityLookupResponse
+//
+//	@return ModelsSecurityIdentitiesSecurityIdentityLookupResponse
 func (a *SecurityApiService) SecurityLookupIdentityExecute(r ApiSecurityLookupIdentityRequest) (*ModelsSecurityIdentitiesSecurityIdentityLookupResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSecurityIdentitiesSecurityIdentityLookupResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSecurityIdentitiesSecurityIdentityLookupResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -331,12 +332,12 @@ func (a *SecurityApiService) SecurityLookupIdentityExecute(r ApiSecurityLookupId
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.accountName == nil {
-        return localVarReturnValue, nil, reportError("accountName is required and must be specified")
-    }
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.accountName == nil {
+		return localVarReturnValue, nil, reportError("accountName is required and must be specified")
+	}
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	parameterAddToQuery(localVarQueryParams, "accountName", r.accountName, "")
 	// to determine the Content-Type header

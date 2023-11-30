@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // KeyRotationAlertApiService KeyRotationAlertApi service
 type KeyRotationAlertApiService service
 
 type ApiKeyRotationAlertAddKeyRotationAlertRequest struct {
-	ctx context.Context
-	ApiService *KeyRotationAlertApiService
+	ctx                     context.Context
+	ApiService              *KeyRotationAlertApiService
 	xKeyfactorRequestedWith *string
-	req *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest
-	xKeyfactorApiVersion *string
+	req                     *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -65,28 +64,29 @@ func (r ApiKeyRotationAlertAddKeyRotationAlertRequest) Execute() (*KeyfactorApiM
 /*
 KeyRotationAlertAddKeyRotationAlert Add a key rotation alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiKeyRotationAlertAddKeyRotationAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiKeyRotationAlertAddKeyRotationAlertRequest
 */
 func (a *KeyRotationAlertApiService) KeyRotationAlertAddKeyRotationAlert(ctx context.Context) ApiKeyRotationAlertAddKeyRotationAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiKeyRotationAlertAddKeyRotationAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
+//
+//	@return KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
 func (a *KeyRotationAlertApiService) KeyRotationAlertAddKeyRotationAlertExecute(r ApiKeyRotationAlertAddKeyRotationAlertRequest) (*KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -96,12 +96,12 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertAddKeyRotationAlertExecute(
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.req == nil {
-        return localVarReturnValue, nil, reportError("req is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.req == nil {
+		return localVarReturnValue, nil, reportError("req is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -164,11 +164,11 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertAddKeyRotationAlertExecute(
 }
 
 type ApiKeyRotationAlertDeleteKeyRotationAlertRequest struct {
-	ctx context.Context
-	ApiService *KeyRotationAlertApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *KeyRotationAlertApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -190,28 +190,28 @@ func (r ApiKeyRotationAlertDeleteKeyRotationAlertRequest) Execute() (*http.Respo
 /*
 KeyRotationAlertDeleteKeyRotationAlert Delete a key rotation alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Id for the key rotation alert
- @return ApiKeyRotationAlertDeleteKeyRotationAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Id for the key rotation alert
+	@return ApiKeyRotationAlertDeleteKeyRotationAlertRequest
 */
 func (a *KeyRotationAlertApiService) KeyRotationAlertDeleteKeyRotationAlert(ctx context.Context, id int32) ApiKeyRotationAlertDeleteKeyRotationAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiKeyRotationAlertDeleteKeyRotationAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *KeyRotationAlertApiService) KeyRotationAlertDeleteKeyRotationAlertExecute(r ApiKeyRotationAlertDeleteKeyRotationAlertRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -222,9 +222,9 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertDeleteKeyRotationAlertExecu
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -276,11 +276,11 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertDeleteKeyRotationAlertExecu
 }
 
 type ApiKeyRotationAlertEditKeyRotationAlertRequest struct {
-	ctx context.Context
-	ApiService *KeyRotationAlertApiService
+	ctx                     context.Context
+	ApiService              *KeyRotationAlertApiService
 	xKeyfactorRequestedWith *string
-	req *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest
-	xKeyfactorApiVersion *string
+	req                     *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -308,28 +308,29 @@ func (r ApiKeyRotationAlertEditKeyRotationAlertRequest) Execute() (*KeyfactorApi
 /*
 KeyRotationAlertEditKeyRotationAlert Edit a key rotation alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiKeyRotationAlertEditKeyRotationAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiKeyRotationAlertEditKeyRotationAlertRequest
 */
 func (a *KeyRotationAlertApiService) KeyRotationAlertEditKeyRotationAlert(ctx context.Context) ApiKeyRotationAlertEditKeyRotationAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiKeyRotationAlertEditKeyRotationAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
+//
+//	@return KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
 func (a *KeyRotationAlertApiService) KeyRotationAlertEditKeyRotationAlertExecute(r ApiKeyRotationAlertEditKeyRotationAlertRequest) (*KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -339,12 +340,12 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertEditKeyRotationAlertExecute
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.req == nil {
-        return localVarReturnValue, nil, reportError("req is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.req == nil {
+		return localVarReturnValue, nil, reportError("req is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -407,11 +408,11 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertEditKeyRotationAlertExecute
 }
 
 type ApiKeyRotationAlertEditScheduleRequest struct {
-	ctx context.Context
-	ApiService *KeyRotationAlertApiService
+	ctx                     context.Context
+	ApiService              *KeyRotationAlertApiService
 	xKeyfactorRequestedWith *string
-	newSchedule *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest
-	xKeyfactorApiVersion *string
+	newSchedule             *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -438,28 +439,29 @@ func (r ApiKeyRotationAlertEditScheduleRequest) Execute() (*KeyfactorApiModelsAl
 /*
 KeyRotationAlertEditSchedule Edit schedule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiKeyRotationAlertEditScheduleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiKeyRotationAlertEditScheduleRequest
 */
 func (a *KeyRotationAlertApiService) KeyRotationAlertEditSchedule(ctx context.Context) ApiKeyRotationAlertEditScheduleRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiKeyRotationAlertEditScheduleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
+//
+//	@return KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 func (a *KeyRotationAlertApiService) KeyRotationAlertEditScheduleExecute(r ApiKeyRotationAlertEditScheduleRequest) (*KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -469,12 +471,12 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertEditScheduleExecute(r ApiKe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.newSchedule == nil {
-        return localVarReturnValue, nil, reportError("newSchedule is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.newSchedule == nil {
+		return localVarReturnValue, nil, reportError("newSchedule is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -537,11 +539,11 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertEditScheduleExecute(r ApiKe
 }
 
 type ApiKeyRotationAlertGetKeyRotationAlertRequest struct {
-	ctx context.Context
-	ApiService *KeyRotationAlertApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *KeyRotationAlertApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -563,30 +565,31 @@ func (r ApiKeyRotationAlertGetKeyRotationAlertRequest) Execute() (*KeyfactorApiM
 /*
 KeyRotationAlertGetKeyRotationAlert Get a key rotation alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Id for the key rotation alert to get
- @return ApiKeyRotationAlertGetKeyRotationAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Id for the key rotation alert to get
+	@return ApiKeyRotationAlertGetKeyRotationAlertRequest
 */
 func (a *KeyRotationAlertApiService) KeyRotationAlertGetKeyRotationAlert(ctx context.Context, id int32) ApiKeyRotationAlertGetKeyRotationAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiKeyRotationAlertGetKeyRotationAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
+//
+//	@return KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
 func (a *KeyRotationAlertApiService) KeyRotationAlertGetKeyRotationAlertExecute(r ApiKeyRotationAlertGetKeyRotationAlertRequest) (*KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -597,9 +600,9 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertGetKeyRotationAlertExecute(
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -660,14 +663,14 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertGetKeyRotationAlertExecute(
 }
 
 type ApiKeyRotationAlertGetKeyRotationAlertsRequest struct {
-	ctx context.Context
-	ApiService *KeyRotationAlertApiService
+	ctx                     context.Context
+	ApiService              *KeyRotationAlertApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pagedQueryQueryString *string
-	pagedQueryPageReturned *int32
-	pagedQueryReturnLimit *int32
-	pagedQuerySortField *string
+	xKeyfactorApiVersion    *string
+	pagedQueryQueryString   *string
+	pagedQueryPageReturned  *int32
+	pagedQueryReturnLimit   *int32
+	pagedQuerySortField     *string
 	pagedQuerySortAscending *int32
 }
 
@@ -720,28 +723,29 @@ func (r ApiKeyRotationAlertGetKeyRotationAlertsRequest) Execute() ([]KeyfactorAp
 /*
 KeyRotationAlertGetKeyRotationAlerts Gets all key rotation alerts according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiKeyRotationAlertGetKeyRotationAlertsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiKeyRotationAlertGetKeyRotationAlertsRequest
 */
 func (a *KeyRotationAlertApiService) KeyRotationAlertGetKeyRotationAlerts(ctx context.Context) ApiKeyRotationAlertGetKeyRotationAlertsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiKeyRotationAlertGetKeyRotationAlertsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
+//
+//	@return []KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
 func (a *KeyRotationAlertApiService) KeyRotationAlertGetKeyRotationAlertsExecute(r ApiKeyRotationAlertGetKeyRotationAlertsRequest) ([]KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -751,9 +755,9 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertGetKeyRotationAlertsExecute
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pagedQueryQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pagedQuery.queryString", r.pagedQueryQueryString, "")
@@ -829,10 +833,10 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertGetKeyRotationAlertsExecute
 }
 
 type ApiKeyRotationAlertGetScheduleRequest struct {
-	ctx context.Context
-	ApiService *KeyRotationAlertApiService
+	ctx                     context.Context
+	ApiService              *KeyRotationAlertApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -854,28 +858,29 @@ func (r ApiKeyRotationAlertGetScheduleRequest) Execute() (*KeyfactorApiModelsAle
 /*
 KeyRotationAlertGetSchedule Get the schedule for key rotation alerts
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiKeyRotationAlertGetScheduleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiKeyRotationAlertGetScheduleRequest
 */
 func (a *KeyRotationAlertApiService) KeyRotationAlertGetSchedule(ctx context.Context) ApiKeyRotationAlertGetScheduleRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiKeyRotationAlertGetScheduleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
+//
+//	@return KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 func (a *KeyRotationAlertApiService) KeyRotationAlertGetScheduleExecute(r ApiKeyRotationAlertGetScheduleRequest) (*KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -885,9 +890,9 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertGetScheduleExecute(r ApiKey
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -948,11 +953,11 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertGetScheduleExecute(r ApiKey
 }
 
 type ApiKeyRotationAlertTestAllKeyRotationAlertRequest struct {
-	ctx context.Context
-	ApiService *KeyRotationAlertApiService
-	xKeyfactorRequestedWith *string
+	ctx                         context.Context
+	ApiService                  *KeyRotationAlertApiService
+	xKeyfactorRequestedWith     *string
 	keyRotationAlertTestRequest *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestAllRequest
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion        *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -980,28 +985,29 @@ func (r ApiKeyRotationAlertTestAllKeyRotationAlertRequest) Execute() (*Keyfactor
 /*
 KeyRotationAlertTestAllKeyRotationAlert Test All Alerts
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiKeyRotationAlertTestAllKeyRotationAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiKeyRotationAlertTestAllKeyRotationAlertRequest
 */
 func (a *KeyRotationAlertApiService) KeyRotationAlertTestAllKeyRotationAlert(ctx context.Context) ApiKeyRotationAlertTestAllKeyRotationAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiKeyRotationAlertTestAllKeyRotationAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse
+//
+//	@return KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse
 func (a *KeyRotationAlertApiService) KeyRotationAlertTestAllKeyRotationAlertExecute(r ApiKeyRotationAlertTestAllKeyRotationAlertRequest) (*KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1011,12 +1017,12 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertTestAllKeyRotationAlertExec
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.keyRotationAlertTestRequest == nil {
-        return localVarReturnValue, nil, reportError("keyRotationAlertTestRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.keyRotationAlertTestRequest == nil {
+		return localVarReturnValue, nil, reportError("keyRotationAlertTestRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -1079,11 +1085,11 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertTestAllKeyRotationAlertExec
 }
 
 type ApiKeyRotationAlertTestKeyRotationAlertRequest struct {
-	ctx context.Context
-	ApiService *KeyRotationAlertApiService
-	xKeyfactorRequestedWith *string
+	ctx                         context.Context
+	ApiService                  *KeyRotationAlertApiService
+	xKeyfactorRequestedWith     *string
 	keyRotationAlertTestRequest *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestRequest
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion        *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1111,28 +1117,29 @@ func (r ApiKeyRotationAlertTestKeyRotationAlertRequest) Execute() (*KeyfactorApi
 /*
 KeyRotationAlertTestKeyRotationAlert Test An Alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiKeyRotationAlertTestKeyRotationAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiKeyRotationAlertTestKeyRotationAlertRequest
 */
 func (a *KeyRotationAlertApiService) KeyRotationAlertTestKeyRotationAlert(ctx context.Context) ApiKeyRotationAlertTestKeyRotationAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiKeyRotationAlertTestKeyRotationAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse
+//
+//	@return KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse
 func (a *KeyRotationAlertApiService) KeyRotationAlertTestKeyRotationAlertExecute(r ApiKeyRotationAlertTestKeyRotationAlertRequest) (*KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1142,12 +1149,12 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertTestKeyRotationAlertExecute
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.keyRotationAlertTestRequest == nil {
-        return localVarReturnValue, nil, reportError("keyRotationAlertTestRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.keyRotationAlertTestRequest == nil {
+		return localVarReturnValue, nil, reportError("keyRotationAlertTestRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}

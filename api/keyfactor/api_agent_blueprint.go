@@ -28,17 +28,16 @@ import (
 	"strings"
 )
 
-
 // AgentBlueprintApiService AgentBlueprintApi service
 type AgentBlueprintApiService service
 
 type ApiAgentBlueprintApplyBlueprintRequest struct {
-	ctx context.Context
-	ApiService *AgentBlueprintApiService
-	templateId *string
+	ctx                     context.Context
+	ApiService              *AgentBlueprintApiService
+	templateId              *string
 	xKeyfactorRequestedWith *string
-	agentIds *[]string
-	xKeyfactorApiVersion *string
+	agentIds                *[]string
+	xKeyfactorApiVersion    *string
 }
 
 // Agent blueprint to apply to the agents
@@ -72,26 +71,26 @@ func (r ApiAgentBlueprintApplyBlueprintRequest) Execute() (*http.Response, error
 /*
 AgentBlueprintApplyBlueprint Applies the selected agent blueprint to the provided agents
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAgentBlueprintApplyBlueprintRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAgentBlueprintApplyBlueprintRequest
 */
 func (a *AgentBlueprintApiService) AgentBlueprintApplyBlueprint(ctx context.Context) ApiAgentBlueprintApplyBlueprintRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiAgentBlueprintApplyBlueprintRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *AgentBlueprintApiService) AgentBlueprintApplyBlueprintExecute(r ApiAgentBlueprintApplyBlueprintRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -101,15 +100,15 @@ func (a *AgentBlueprintApiService) AgentBlueprintApplyBlueprintExecute(r ApiAgen
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.templateId == nil {
-        return nil, reportError("templateId is required and must be specified")
-    }
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.agentIds == nil {
-        return nil, reportError("agentIds is required and must be specified")
-    }
+	if r.templateId == nil {
+		return nil, reportError("templateId is required and must be specified")
+	}
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.agentIds == nil {
+		return nil, reportError("agentIds is required and must be specified")
+	}
 
 	parameterAddToQuery(localVarQueryParams, "templateId", r.templateId, "")
 	// to determine the Content-Type header
@@ -164,11 +163,11 @@ func (a *AgentBlueprintApiService) AgentBlueprintApplyBlueprintExecute(r ApiAgen
 }
 
 type ApiAgentBlueprintDeleteBlueprintRequest struct {
-	ctx context.Context
-	ApiService *AgentBlueprintApiService
-	id string
+	ctx                     context.Context
+	ApiService              *AgentBlueprintApiService
+	id                      string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -190,28 +189,28 @@ func (r ApiAgentBlueprintDeleteBlueprintRequest) Execute() (*http.Response, erro
 /*
 AgentBlueprintDeleteBlueprint Deletes an agent blueprint by its Keyfactor identifier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor agent blueprint identifier (GUID)
- @return ApiAgentBlueprintDeleteBlueprintRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor agent blueprint identifier (GUID)
+	@return ApiAgentBlueprintDeleteBlueprintRequest
 */
 func (a *AgentBlueprintApiService) AgentBlueprintDeleteBlueprint(ctx context.Context, id string) ApiAgentBlueprintDeleteBlueprintRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiAgentBlueprintDeleteBlueprintRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *AgentBlueprintApiService) AgentBlueprintDeleteBlueprintExecute(r ApiAgentBlueprintDeleteBlueprintRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -222,9 +221,9 @@ func (a *AgentBlueprintApiService) AgentBlueprintDeleteBlueprintExecute(r ApiAge
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -276,12 +275,12 @@ func (a *AgentBlueprintApiService) AgentBlueprintDeleteBlueprintExecute(r ApiAge
 }
 
 type ApiAgentBlueprintGenerateBlueprintRequest struct {
-	ctx context.Context
-	ApiService *AgentBlueprintApiService
-	agentId *string
-	name *string
+	ctx                     context.Context
+	ApiService              *AgentBlueprintApiService
+	agentId                 *string
+	name                    *string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Agent to generate a blueprint from
@@ -315,28 +314,29 @@ func (r ApiAgentBlueprintGenerateBlueprintRequest) Execute() (*KeyfactorApiModel
 /*
 AgentBlueprintGenerateBlueprint Generates an agent blueprint from the provided agents
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAgentBlueprintGenerateBlueprintRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAgentBlueprintGenerateBlueprintRequest
 */
 func (a *AgentBlueprintApiService) AgentBlueprintGenerateBlueprint(ctx context.Context) ApiAgentBlueprintGenerateBlueprintRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiAgentBlueprintGenerateBlueprintRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsOrchestratorsAgentBlueprintResponse
+//
+//	@return KeyfactorApiModelsOrchestratorsAgentBlueprintResponse
 func (a *AgentBlueprintApiService) AgentBlueprintGenerateBlueprintExecute(r ApiAgentBlueprintGenerateBlueprintRequest) (*KeyfactorApiModelsOrchestratorsAgentBlueprintResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsOrchestratorsAgentBlueprintResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsOrchestratorsAgentBlueprintResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -346,15 +346,15 @@ func (a *AgentBlueprintApiService) AgentBlueprintGenerateBlueprintExecute(r ApiA
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.agentId == nil {
-        return localVarReturnValue, nil, reportError("agentId is required and must be specified")
-    }
-    if r.name == nil {
-        return localVarReturnValue, nil, reportError("name is required and must be specified")
-    }
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.agentId == nil {
+		return localVarReturnValue, nil, reportError("agentId is required and must be specified")
+	}
+	if r.name == nil {
+		return localVarReturnValue, nil, reportError("name is required and must be specified")
+	}
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	parameterAddToQuery(localVarQueryParams, "agentId", r.agentId, "")
 	parameterAddToQuery(localVarQueryParams, "name", r.name, "")
@@ -417,11 +417,11 @@ func (a *AgentBlueprintApiService) AgentBlueprintGenerateBlueprintExecute(r ApiA
 }
 
 type ApiAgentBlueprintGetAgentBlueprintRequest struct {
-	ctx context.Context
-	ApiService *AgentBlueprintApiService
-	id string
+	ctx                     context.Context
+	ApiService              *AgentBlueprintApiService
+	id                      string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -443,30 +443,31 @@ func (r ApiAgentBlueprintGetAgentBlueprintRequest) Execute() (*KeyfactorApiModel
 /*
 AgentBlueprintGetAgentBlueprint Returns an agent blueprint according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Returns a single agent blueprint associated with the provided id
- @return ApiAgentBlueprintGetAgentBlueprintRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Returns a single agent blueprint associated with the provided id
+	@return ApiAgentBlueprintGetAgentBlueprintRequest
 */
 func (a *AgentBlueprintApiService) AgentBlueprintGetAgentBlueprint(ctx context.Context, id string) ApiAgentBlueprintGetAgentBlueprintRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiAgentBlueprintGetAgentBlueprintRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsOrchestratorsAgentBlueprintResponse
+//
+//	@return KeyfactorApiModelsOrchestratorsAgentBlueprintResponse
 func (a *AgentBlueprintApiService) AgentBlueprintGetAgentBlueprintExecute(r ApiAgentBlueprintGetAgentBlueprintRequest) (*KeyfactorApiModelsOrchestratorsAgentBlueprintResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsOrchestratorsAgentBlueprintResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsOrchestratorsAgentBlueprintResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -477,9 +478,9 @@ func (a *AgentBlueprintApiService) AgentBlueprintGetAgentBlueprintExecute(r ApiA
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -540,14 +541,14 @@ func (a *AgentBlueprintApiService) AgentBlueprintGetAgentBlueprintExecute(r ApiA
 }
 
 type ApiAgentBlueprintGetAgentBlueprintsRequest struct {
-	ctx context.Context
-	ApiService *AgentBlueprintApiService
+	ctx                     context.Context
+	ApiService              *AgentBlueprintApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -593,28 +594,29 @@ func (r ApiAgentBlueprintGetAgentBlueprintsRequest) Execute() ([]KeyfactorApiMod
 /*
 AgentBlueprintGetAgentBlueprints Returns all agent blueprints according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAgentBlueprintGetAgentBlueprintsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAgentBlueprintGetAgentBlueprintsRequest
 */
 func (a *AgentBlueprintApiService) AgentBlueprintGetAgentBlueprints(ctx context.Context) ApiAgentBlueprintGetAgentBlueprintsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiAgentBlueprintGetAgentBlueprintsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsOrchestratorsAgentBlueprintResponse
+//
+//	@return []KeyfactorApiModelsOrchestratorsAgentBlueprintResponse
 func (a *AgentBlueprintApiService) AgentBlueprintGetAgentBlueprintsExecute(r ApiAgentBlueprintGetAgentBlueprintsRequest) ([]KeyfactorApiModelsOrchestratorsAgentBlueprintResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsOrchestratorsAgentBlueprintResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsOrchestratorsAgentBlueprintResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -624,9 +626,9 @@ func (a *AgentBlueprintApiService) AgentBlueprintGetAgentBlueprintsExecute(r Api
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqPageReturned != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.pageReturned", r.pqPageReturned, "")
@@ -699,15 +701,15 @@ func (a *AgentBlueprintApiService) AgentBlueprintGetAgentBlueprintsExecute(r Api
 }
 
 type ApiAgentBlueprintGetBlueprintJobsRequest struct {
-	ctx context.Context
-	ApiService *AgentBlueprintApiService
-	id string
+	ctx                     context.Context
+	ApiService              *AgentBlueprintApiService
+	id                      string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -753,30 +755,31 @@ func (r ApiAgentBlueprintGetBlueprintJobsRequest) Execute() ([]KeyfactorApiModel
 /*
 AgentBlueprintGetBlueprintJobs Gets the agent blueprint scheduled jobs
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id
- @return ApiAgentBlueprintGetBlueprintJobsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id
+	@return ApiAgentBlueprintGetBlueprintJobsRequest
 */
 func (a *AgentBlueprintApiService) AgentBlueprintGetBlueprintJobs(ctx context.Context, id string) ApiAgentBlueprintGetBlueprintJobsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiAgentBlueprintGetBlueprintJobsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse
+//
+//	@return []KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse
 func (a *AgentBlueprintApiService) AgentBlueprintGetBlueprintJobsExecute(r ApiAgentBlueprintGetBlueprintJobsRequest) ([]KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -787,9 +790,9 @@ func (a *AgentBlueprintApiService) AgentBlueprintGetBlueprintJobsExecute(r ApiAg
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqPageReturned != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.pageReturned", r.pqPageReturned, "")
@@ -862,15 +865,15 @@ func (a *AgentBlueprintApiService) AgentBlueprintGetBlueprintJobsExecute(r ApiAg
 }
 
 type ApiAgentBlueprintGetBlueprintStoresRequest struct {
-	ctx context.Context
-	ApiService *AgentBlueprintApiService
-	id string
+	ctx                     context.Context
+	ApiService              *AgentBlueprintApiService
+	id                      string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -916,30 +919,31 @@ func (r ApiAgentBlueprintGetBlueprintStoresRequest) Execute() ([]KeyfactorApiMod
 /*
 AgentBlueprintGetBlueprintStores Gets the agent blueprint certificate stores
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id
- @return ApiAgentBlueprintGetBlueprintStoresRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id
+	@return ApiAgentBlueprintGetBlueprintStoresRequest
 */
 func (a *AgentBlueprintApiService) AgentBlueprintGetBlueprintStores(ctx context.Context, id string) ApiAgentBlueprintGetBlueprintStoresRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiAgentBlueprintGetBlueprintStoresRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse
+//
+//	@return []KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse
 func (a *AgentBlueprintApiService) AgentBlueprintGetBlueprintStoresExecute(r ApiAgentBlueprintGetBlueprintStoresRequest) ([]KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -950,9 +954,9 @@ func (a *AgentBlueprintApiService) AgentBlueprintGetBlueprintStoresExecute(r Api
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqPageReturned != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.pageReturned", r.pqPageReturned, "")

@@ -29,10 +29,10 @@ var _ MappedNullable = &ModelsPendingCSRResponse{}
 
 // ModelsPendingCSRResponse struct for ModelsPendingCSRResponse
 type ModelsPendingCSRResponse struct {
-	Id *int32 `json:"Id,omitempty"`
-	CSR *string `json:"CSR,omitempty"`
-	RequestTime *time.Time `json:"RequestTime,omitempty"`
-	Subject []string `json:"Subject,omitempty"`
+	Id                   *int32     `json:"Id,omitempty"`
+	CSR                  *string    `json:"CSR,omitempty"`
+	RequestTime          *time.Time `json:"RequestTime,omitempty"`
+	Subject              []string   `json:"Subject,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -184,7 +184,7 @@ func (o *ModelsPendingCSRResponse) SetSubject(v []string) {
 }
 
 func (o ModelsPendingCSRResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -268,5 +268,3 @@ func (v *NullableModelsPendingCSRResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

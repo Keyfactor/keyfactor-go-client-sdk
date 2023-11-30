@@ -28,12 +28,12 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsPendingPendingAlertResponse{}
 
 // KeyfactorApiModelsAlertsPendingPendingAlertResponse struct for KeyfactorApiModelsAlertsPendingPendingAlertResponse
 type KeyfactorApiModelsAlertsPendingPendingAlertResponse struct {
-	Subject *string `json:"Subject,omitempty"`
-	Message *string `json:"Message,omitempty"`
-	Recipients []string `json:"Recipients,omitempty"`
-	CARequestId *int32 `json:"CARequestId,omitempty"`
-	CommonName *string `json:"CommonName,omitempty"`
-	LogicalName *string `json:"LogicalName,omitempty"`
+	Subject              *string  `json:"Subject,omitempty"`
+	Message              *string  `json:"Message,omitempty"`
+	Recipients           []string `json:"Recipients,omitempty"`
+	CARequestId          *int32   `json:"CARequestId,omitempty"`
+	CommonName           *string  `json:"CommonName,omitempty"`
+	LogicalName          *string  `json:"LogicalName,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -249,7 +249,7 @@ func (o *KeyfactorApiModelsAlertsPendingPendingAlertResponse) SetLogicalName(v s
 }
 
 func (o KeyfactorApiModelsAlertsPendingPendingAlertResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -341,5 +341,3 @@ func (v *NullableKeyfactorApiModelsAlertsPendingPendingAlertResponse) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

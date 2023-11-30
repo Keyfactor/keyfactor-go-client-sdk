@@ -28,15 +28,14 @@ import (
 	"strings"
 )
 
-
 // TemplateApiService TemplateApi service
 type TemplateApiService service
 
 type ApiTemplateGetGlobalSettingsRequest struct {
-	ctx context.Context
-	ApiService *TemplateApiService
+	ctx                     context.Context
+	ApiService              *TemplateApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -58,28 +57,29 @@ func (r ApiTemplateGetGlobalSettingsRequest) Execute() (*KeyfactorApiModelsTempl
 /*
 TemplateGetGlobalSettings Gets the global template settings.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTemplateGetGlobalSettingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTemplateGetGlobalSettingsRequest
 */
 func (a *TemplateApiService) TemplateGetGlobalSettings(ctx context.Context) ApiTemplateGetGlobalSettingsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiTemplateGetGlobalSettingsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsTemplatesGlobalTemplateSettingsResponse
+//
+//	@return KeyfactorApiModelsTemplatesGlobalTemplateSettingsResponse
 func (a *TemplateApiService) TemplateGetGlobalSettingsExecute(r ApiTemplateGetGlobalSettingsRequest) (*KeyfactorApiModelsTemplatesGlobalTemplateSettingsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsTemplatesGlobalTemplateSettingsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsTemplatesGlobalTemplateSettingsResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -89,9 +89,9 @@ func (a *TemplateApiService) TemplateGetGlobalSettingsExecute(r ApiTemplateGetGl
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -152,11 +152,11 @@ func (a *TemplateApiService) TemplateGetGlobalSettingsExecute(r ApiTemplateGetGl
 }
 
 type ApiTemplateGetTemplateRequest struct {
-	ctx context.Context
-	ApiService *TemplateApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *TemplateApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -178,30 +178,31 @@ func (r ApiTemplateGetTemplateRequest) Execute() (*ModelsTemplateRetrievalRespon
 /*
 TemplateGetTemplate Returns the certificate template associated with the provided id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifier of the certificate template
- @return ApiTemplateGetTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifier of the certificate template
+	@return ApiTemplateGetTemplateRequest
 */
 func (a *TemplateApiService) TemplateGetTemplate(ctx context.Context, id int32) ApiTemplateGetTemplateRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiTemplateGetTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsTemplateRetrievalResponse
+//
+//	@return ModelsTemplateRetrievalResponse
 func (a *TemplateApiService) TemplateGetTemplateExecute(r ApiTemplateGetTemplateRequest) (*ModelsTemplateRetrievalResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsTemplateRetrievalResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsTemplateRetrievalResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -212,9 +213,9 @@ func (a *TemplateApiService) TemplateGetTemplateExecute(r ApiTemplateGetTemplate
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -275,15 +276,15 @@ func (a *TemplateApiService) TemplateGetTemplateExecute(r ApiTemplateGetTemplate
 }
 
 type ApiTemplateGetTemplatesRequest struct {
-	ctx context.Context
-	ApiService *TemplateApiService
+	ctx                     context.Context
+	ApiService              *TemplateApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	sqQueryString *string
-	sqPageReturned *int32
-	sqReturnLimit *int32
-	sqSortField *string
-	sqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	sqQueryString           *string
+	sqPageReturned          *int32
+	sqReturnLimit           *int32
+	sqSortField             *string
+	sqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -335,28 +336,29 @@ func (r ApiTemplateGetTemplatesRequest) Execute() ([]ModelsTemplateCollectionRet
 /*
 TemplateGetTemplates Returns all certificate templates according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTemplateGetTemplatesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTemplateGetTemplatesRequest
 */
 func (a *TemplateApiService) TemplateGetTemplates(ctx context.Context) ApiTemplateGetTemplatesRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiTemplateGetTemplatesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsTemplateCollectionRetrievalResponse
+//
+//	@return []ModelsTemplateCollectionRetrievalResponse
 func (a *TemplateApiService) TemplateGetTemplatesExecute(r ApiTemplateGetTemplatesRequest) ([]ModelsTemplateCollectionRetrievalResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsTemplateCollectionRetrievalResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsTemplateCollectionRetrievalResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -366,9 +368,9 @@ func (a *TemplateApiService) TemplateGetTemplatesExecute(r ApiTemplateGetTemplat
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.sqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "sq.queryString", r.sqQueryString, "")
@@ -444,10 +446,10 @@ func (a *TemplateApiService) TemplateGetTemplatesExecute(r ApiTemplateGetTemplat
 }
 
 type ApiTemplateGetValidSubjectPartsRequest struct {
-	ctx context.Context
-	ApiService *TemplateApiService
+	ctx                     context.Context
+	ApiService              *TemplateApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -469,28 +471,29 @@ func (r ApiTemplateGetValidSubjectPartsRequest) Execute() ([]KeyfactorApiModelsT
 /*
 TemplateGetValidSubjectParts Method for TemplateGetValidSubjectParts
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTemplateGetValidSubjectPartsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTemplateGetValidSubjectPartsRequest
 */
 func (a *TemplateApiService) TemplateGetValidSubjectParts(ctx context.Context) ApiTemplateGetValidSubjectPartsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiTemplateGetValidSubjectPartsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsTemplatesValidSubjectPartResponse
+//
+//	@return []KeyfactorApiModelsTemplatesValidSubjectPartResponse
 func (a *TemplateApiService) TemplateGetValidSubjectPartsExecute(r ApiTemplateGetValidSubjectPartsRequest) ([]KeyfactorApiModelsTemplatesValidSubjectPartResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsTemplatesValidSubjectPartResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsTemplatesValidSubjectPartResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -500,9 +503,9 @@ func (a *TemplateApiService) TemplateGetValidSubjectPartsExecute(r ApiTemplateGe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -563,11 +566,11 @@ func (a *TemplateApiService) TemplateGetValidSubjectPartsExecute(r ApiTemplateGe
 }
 
 type ApiTemplateImportRequest struct {
-	ctx context.Context
-	ApiService *TemplateApiService
-	xKeyfactorRequestedWith *string
+	ctx                        context.Context
+	ApiService                 *TemplateApiService
+	xKeyfactorRequestedWith    *string
 	configurationTenantRequest *KeyfactorApiModelsConfigurationTenantConfigurationTenantRequest
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion       *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -595,26 +598,26 @@ func (r ApiTemplateImportRequest) Execute() (*http.Response, error) {
 /*
 TemplateImport Imports templates from the provided configuration tenant
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTemplateImportRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTemplateImportRequest
 */
 func (a *TemplateApiService) TemplateImport(ctx context.Context) ApiTemplateImportRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiTemplateImportRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *TemplateApiService) TemplateImportExecute(r ApiTemplateImportRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -624,12 +627,12 @@ func (a *TemplateApiService) TemplateImportExecute(r ApiTemplateImportRequest) (
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.configurationTenantRequest == nil {
-        return nil, reportError("configurationTenantRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.configurationTenantRequest == nil {
+		return nil, reportError("configurationTenantRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -683,11 +686,11 @@ func (a *TemplateApiService) TemplateImportExecute(r ApiTemplateImportRequest) (
 }
 
 type ApiTemplateUpdateGlobalSettingsRequest struct {
-	ctx context.Context
-	ApiService *TemplateApiService
+	ctx                     context.Context
+	ApiService              *TemplateApiService
 	xKeyfactorRequestedWith *string
-	settings *KeyfactorApiModelsTemplatesGlobalTemplateSettingsRequest
-	xKeyfactorApiVersion *string
+	settings                *KeyfactorApiModelsTemplatesGlobalTemplateSettingsRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -715,28 +718,29 @@ func (r ApiTemplateUpdateGlobalSettingsRequest) Execute() (*KeyfactorApiModelsTe
 /*
 TemplateUpdateGlobalSettings Replaces the existing global template settings.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTemplateUpdateGlobalSettingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTemplateUpdateGlobalSettingsRequest
 */
 func (a *TemplateApiService) TemplateUpdateGlobalSettings(ctx context.Context) ApiTemplateUpdateGlobalSettingsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiTemplateUpdateGlobalSettingsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsTemplatesGlobalTemplateSettingsResponse
+//
+//	@return KeyfactorApiModelsTemplatesGlobalTemplateSettingsResponse
 func (a *TemplateApiService) TemplateUpdateGlobalSettingsExecute(r ApiTemplateUpdateGlobalSettingsRequest) (*KeyfactorApiModelsTemplatesGlobalTemplateSettingsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsTemplatesGlobalTemplateSettingsResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsTemplatesGlobalTemplateSettingsResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -746,12 +750,12 @@ func (a *TemplateApiService) TemplateUpdateGlobalSettingsExecute(r ApiTemplateUp
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.settings == nil {
-        return localVarReturnValue, nil, reportError("settings is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.settings == nil {
+		return localVarReturnValue, nil, reportError("settings is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -814,11 +818,11 @@ func (a *TemplateApiService) TemplateUpdateGlobalSettingsExecute(r ApiTemplateUp
 }
 
 type ApiTemplateUpdateTemplateRequest struct {
-	ctx context.Context
-	ApiService *TemplateApiService
+	ctx                     context.Context
+	ApiService              *TemplateApiService
 	xKeyfactorRequestedWith *string
-	template *ModelsTemplateUpdateRequest
-	xKeyfactorApiVersion *string
+	template                *ModelsTemplateUpdateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -846,28 +850,29 @@ func (r ApiTemplateUpdateTemplateRequest) Execute() (*ModelsTemplateRetrievalRes
 /*
 TemplateUpdateTemplate Updates a certificate template according to the provided properties
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTemplateUpdateTemplateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTemplateUpdateTemplateRequest
 */
 func (a *TemplateApiService) TemplateUpdateTemplate(ctx context.Context) ApiTemplateUpdateTemplateRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiTemplateUpdateTemplateRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsTemplateRetrievalResponse
+//
+//	@return ModelsTemplateRetrievalResponse
 func (a *TemplateApiService) TemplateUpdateTemplateExecute(r ApiTemplateUpdateTemplateRequest) (*ModelsTemplateRetrievalResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsTemplateRetrievalResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsTemplateRetrievalResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -877,12 +882,12 @@ func (a *TemplateApiService) TemplateUpdateTemplateExecute(r ApiTemplateUpdateTe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.template == nil {
-        return localVarReturnValue, nil, reportError("template is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.template == nil {
+		return localVarReturnValue, nil, reportError("template is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}

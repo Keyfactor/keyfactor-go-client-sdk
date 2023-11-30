@@ -33,10 +33,10 @@ type KeyfactorApiModelsWorkflowsAvailableStepResponse struct {
 	// The name of the extension.
 	ExtensionName *string `json:"ExtensionName,omitempty"`
 	// The possible outputs of the step.
-	Outputs []string `json:"Outputs,omitempty"`
+	Outputs                           []string                                                           `json:"Outputs,omitempty"`
 	ConfigurationParametersDefinition *map[string]KeyfactorApiModelsWorkflowsParameterDefinitionResponse `json:"ConfigurationParametersDefinition,omitempty"`
-	SignalsDefinition *map[string]KeyfactorApiModelsWorkflowsSignalDefinitionResponse `json:"SignalsDefinition,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SignalsDefinition                 *map[string]KeyfactorApiModelsWorkflowsSignalDefinitionResponse    `json:"SignalsDefinition,omitempty"`
+	AdditionalProperties              map[string]interface{}
 }
 
 type _KeyfactorApiModelsWorkflowsAvailableStepResponse KeyfactorApiModelsWorkflowsAvailableStepResponse
@@ -219,7 +219,7 @@ func (o *KeyfactorApiModelsWorkflowsAvailableStepResponse) SetSignalsDefinition(
 }
 
 func (o KeyfactorApiModelsWorkflowsAvailableStepResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -307,5 +307,3 @@ func (v *NullableKeyfactorApiModelsWorkflowsAvailableStepResponse) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

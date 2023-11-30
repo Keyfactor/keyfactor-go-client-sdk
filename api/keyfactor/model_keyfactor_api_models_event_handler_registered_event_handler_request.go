@@ -28,8 +28,8 @@ var _ MappedNullable = &KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequ
 
 // KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest struct for KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest
 type KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest struct {
-	Id int32 `json:"Id"`
-	UseHandler bool `json:"UseHandler"`
+	Id                   int32 `json:"Id"`
+	UseHandler           bool  `json:"UseHandler"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -103,7 +103,7 @@ func (o *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest) SetUseHand
 }
 
 func (o KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -175,5 +175,3 @@ func (v *NullableKeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest) Un
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -28,8 +28,8 @@ var _ MappedNullable = &ModelsEnrollmentAvailableRenewal{}
 
 // ModelsEnrollmentAvailableRenewal struct for ModelsEnrollmentAvailableRenewal
 type ModelsEnrollmentAvailableRenewal struct {
-	AvailableRenewalType *int32 `json:"AvailableRenewalType,omitempty"`
-	Message *string `json:"Message,omitempty"`
+	AvailableRenewalType *int32  `json:"AvailableRenewalType,omitempty"`
+	Message              *string `json:"Message,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -117,7 +117,7 @@ func (o *ModelsEnrollmentAvailableRenewal) SetMessage(v string) {
 }
 
 func (o ModelsEnrollmentAvailableRenewal) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,5 +193,3 @@ func (v *NullableModelsEnrollmentAvailableRenewal) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

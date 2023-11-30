@@ -28,9 +28,9 @@ var _ MappedNullable = &ModelsTemplateCollectionRetrievalResponseExtendedKeyUsag
 
 // ModelsTemplateCollectionRetrievalResponseExtendedKeyUsageModel struct for ModelsTemplateCollectionRetrievalResponseExtendedKeyUsageModel
 type ModelsTemplateCollectionRetrievalResponseExtendedKeyUsageModel struct {
-	Id *int32 `json:"Id,omitempty"`
-	Oid *string `json:"Oid,omitempty"`
-	DisplayName *string `json:"DisplayName,omitempty"`
+	Id                   *int32  `json:"Id,omitempty"`
+	Oid                  *string `json:"Oid,omitempty"`
+	DisplayName          *string `json:"DisplayName,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -150,7 +150,7 @@ func (o *ModelsTemplateCollectionRetrievalResponseExtendedKeyUsageModel) SetDisp
 }
 
 func (o ModelsTemplateCollectionRetrievalResponseExtendedKeyUsageModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,5 +230,3 @@ func (v *NullableModelsTemplateCollectionRetrievalResponseExtendedKeyUsageModel)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

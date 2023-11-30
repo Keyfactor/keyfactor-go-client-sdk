@@ -28,12 +28,12 @@ var _ MappedNullable = &ModelsTemplateRetrievalResponseTemplateMetadataFieldMode
 
 // ModelsTemplateRetrievalResponseTemplateMetadataFieldModel struct for ModelsTemplateRetrievalResponseTemplateMetadataFieldModel
 type ModelsTemplateRetrievalResponseTemplateMetadataFieldModel struct {
-	Id *int32 `json:"Id,omitempty"`
-	DefaultValue *string `json:"DefaultValue,omitempty"`
-	MetadataId *int32 `json:"MetadataId,omitempty"`
-	Validation *string `json:"Validation,omitempty"`
-	Enrollment *int32 `json:"Enrollment,omitempty"`
-	Message *string `json:"Message,omitempty"`
+	Id                   *int32  `json:"Id,omitempty"`
+	DefaultValue         *string `json:"DefaultValue,omitempty"`
+	MetadataId           *int32  `json:"MetadataId,omitempty"`
+	Validation           *string `json:"Validation,omitempty"`
+	Enrollment           *int32  `json:"Enrollment,omitempty"`
+	Message              *string `json:"Message,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -249,7 +249,7 @@ func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) SetMessage(v
 }
 
 func (o ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -341,5 +341,3 @@ func (v *NullableModelsTemplateRetrievalResponseTemplateMetadataFieldModel) Unma
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -37,7 +37,7 @@ type ModelsAgentsAgentPool struct {
 	// Number of agents that can perform monitoring jobs
 	MonitorAgentsCount *int32 `json:"MonitorAgentsCount,omitempty"`
 	// List of the agents assigned to the pool
-	Agents []ModelsAgentsAgentPoolAgent `json:"Agents,omitempty"`
+	Agents               []ModelsAgentsAgentPoolAgent `json:"Agents,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -214,7 +214,7 @@ func (o *ModelsAgentsAgentPool) SetAgents(v []ModelsAgentsAgentPoolAgent) {
 }
 
 func (o ModelsAgentsAgentPool) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -300,5 +300,3 @@ func (v *NullableModelsAgentsAgentPool) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

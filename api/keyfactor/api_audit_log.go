@@ -28,20 +28,19 @@ import (
 	"strings"
 )
 
-
 // AuditLogApiService AuditLogApi service
 type AuditLogApiService service
 
 type ApiAuditLogDownloadCSVRequest struct {
-	ctx context.Context
-	ApiService *AuditLogApiService
+	ctx                     context.Context
+	ApiService              *AuditLogApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -93,28 +92,29 @@ func (r ApiAuditLogDownloadCSVRequest) Execute() (string, *http.Response, error)
 /*
 AuditLogDownloadCSV Returns a Comma Separated file containing the audit log entries according to the provided filter
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAuditLogDownloadCSVRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAuditLogDownloadCSVRequest
 */
 func (a *AuditLogApiService) AuditLogDownloadCSV(ctx context.Context) ApiAuditLogDownloadCSVRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiAuditLogDownloadCSVRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *AuditLogApiService) AuditLogDownloadCSVExecute(r ApiAuditLogDownloadCSVRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -124,9 +124,9 @@ func (a *AuditLogApiService) AuditLogDownloadCSVExecute(r ApiAuditLogDownloadCSV
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")
@@ -202,11 +202,11 @@ func (a *AuditLogApiService) AuditLogDownloadCSVExecute(r ApiAuditLogDownloadCSV
 }
 
 type ApiAuditLogGetAuditLogRequest struct {
-	ctx context.Context
-	ApiService *AuditLogApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *AuditLogApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -228,30 +228,31 @@ func (r ApiAuditLogGetAuditLogRequest) Execute() (map[string]interface{}, *http.
 /*
 AuditLogGetAuditLog Returns the audit log entry associated with the provided identifier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifer of the audit entry to be returned
- @return ApiAuditLogGetAuditLogRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifer of the audit entry to be returned
+	@return ApiAuditLogGetAuditLogRequest
 */
 func (a *AuditLogApiService) AuditLogGetAuditLog(ctx context.Context, id int32) ApiAuditLogGetAuditLogRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiAuditLogGetAuditLogRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *AuditLogApiService) AuditLogGetAuditLogExecute(r ApiAuditLogGetAuditLogRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -262,9 +263,9 @@ func (a *AuditLogApiService) AuditLogGetAuditLogExecute(r ApiAuditLogGetAuditLog
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -325,15 +326,15 @@ func (a *AuditLogApiService) AuditLogGetAuditLogExecute(r ApiAuditLogGetAuditLog
 }
 
 type ApiAuditLogGetAuditLogsRequest struct {
-	ctx context.Context
-	ApiService *AuditLogApiService
+	ctx                     context.Context
+	ApiService              *AuditLogApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -385,28 +386,29 @@ func (r ApiAuditLogGetAuditLogsRequest) Execute() ([]KeyfactorAuditingQueryingAu
 /*
 AuditLogGetAuditLogs Returns all audit log entries according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAuditLogGetAuditLogsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAuditLogGetAuditLogsRequest
 */
 func (a *AuditLogApiService) AuditLogGetAuditLogs(ctx context.Context) ApiAuditLogGetAuditLogsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiAuditLogGetAuditLogsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorAuditingQueryingAuditLogEntry
+//
+//	@return []KeyfactorAuditingQueryingAuditLogEntry
 func (a *AuditLogApiService) AuditLogGetAuditLogsExecute(r ApiAuditLogGetAuditLogsRequest) ([]KeyfactorAuditingQueryingAuditLogEntry, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorAuditingQueryingAuditLogEntry
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorAuditingQueryingAuditLogEntry
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -416,9 +418,9 @@ func (a *AuditLogApiService) AuditLogGetAuditLogsExecute(r ApiAuditLogGetAuditLo
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")
@@ -494,15 +496,15 @@ func (a *AuditLogApiService) AuditLogGetAuditLogsExecute(r ApiAuditLogGetAuditLo
 }
 
 type ApiAuditLogGetRelatedEntitiesRequest struct {
-	ctx context.Context
-	ApiService *AuditLogApiService
+	ctx                     context.Context
+	ApiService              *AuditLogApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -554,28 +556,29 @@ func (r ApiAuditLogGetRelatedEntitiesRequest) Execute() ([]KeyfactorAuditingQuer
 /*
 AuditLogGetRelatedEntities Returns the audit log entry associated with the provided keyfactor id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAuditLogGetRelatedEntitiesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAuditLogGetRelatedEntitiesRequest
 */
 func (a *AuditLogApiService) AuditLogGetRelatedEntities(ctx context.Context) ApiAuditLogGetRelatedEntitiesRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiAuditLogGetRelatedEntitiesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorAuditingQueryingAuditLogEntry
+//
+//	@return []KeyfactorAuditingQueryingAuditLogEntry
 func (a *AuditLogApiService) AuditLogGetRelatedEntitiesExecute(r ApiAuditLogGetRelatedEntitiesRequest) ([]KeyfactorAuditingQueryingAuditLogEntry, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorAuditingQueryingAuditLogEntry
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorAuditingQueryingAuditLogEntry
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -585,9 +588,9 @@ func (a *AuditLogApiService) AuditLogGetRelatedEntitiesExecute(r ApiAuditLogGetR
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")
@@ -663,11 +666,11 @@ func (a *AuditLogApiService) AuditLogGetRelatedEntitiesExecute(r ApiAuditLogGetR
 }
 
 type ApiAuditLogValidateAuditLogRequest struct {
-	ctx context.Context
-	ApiService *AuditLogApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *AuditLogApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -691,30 +694,31 @@ AuditLogValidateAuditLog Validates the audit log entry associated with the provi
 
 The validation performs a signing operation and checks the signature against the stored signature.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifier of the audit log entry
- @return ApiAuditLogValidateAuditLogRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifier of the audit log entry
+	@return ApiAuditLogValidateAuditLogRequest
 */
 func (a *AuditLogApiService) AuditLogValidateAuditLog(ctx context.Context, id int32) ApiAuditLogValidateAuditLogRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiAuditLogValidateAuditLogRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return bool
+//
+//	@return bool
 func (a *AuditLogApiService) AuditLogValidateAuditLogExecute(r ApiAuditLogValidateAuditLogRequest) (bool, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  bool
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue bool
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -725,9 +729,9 @@ func (a *AuditLogApiService) AuditLogValidateAuditLogExecute(r ApiAuditLogValida
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

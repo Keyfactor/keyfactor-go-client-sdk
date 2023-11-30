@@ -28,13 +28,13 @@ var _ MappedNullable = &ModelsCertificateStoresCertificateStoreUpdateRequest{}
 
 // ModelsCertificateStoresCertificateStoreUpdateRequest struct for ModelsCertificateStoresCertificateStoreUpdateRequest
 type ModelsCertificateStoresCertificateStoreUpdateRequest struct {
-	Id *string `json:"Id,omitempty"`
-	ContainerId *int32 `json:"ContainerId,omitempty"`
-	CreateIfMissing *bool `json:"CreateIfMissing,omitempty"`
-	Properties *string `json:"Properties,omitempty"`
-	AgentId *string `json:"AgentId,omitempty"`
-	InventorySchedule *KeyfactorCommonSchedulingKeyfactorSchedule `json:"InventorySchedule,omitempty"`
-	Password *ModelsKeyfactorAPISecret `json:"Password,omitempty"`
+	Id                   *string                                     `json:"Id,omitempty"`
+	ContainerId          *int32                                      `json:"ContainerId,omitempty"`
+	CreateIfMissing      *bool                                       `json:"CreateIfMissing,omitempty"`
+	Properties           *string                                     `json:"Properties,omitempty"`
+	AgentId              *string                                     `json:"AgentId,omitempty"`
+	InventorySchedule    *KeyfactorCommonSchedulingKeyfactorSchedule `json:"InventorySchedule,omitempty"`
+	Password             *ModelsKeyfactorAPISecret                   `json:"Password,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -282,7 +282,7 @@ func (o *ModelsCertificateStoresCertificateStoreUpdateRequest) SetPassword(v Mod
 }
 
 func (o ModelsCertificateStoresCertificateStoreUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -378,5 +378,3 @@ func (v *NullableModelsCertificateStoresCertificateStoreUpdateRequest) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

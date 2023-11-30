@@ -28,13 +28,13 @@ var _ MappedNullable = &ModelsCertificateStoreTypeProperty{}
 
 // ModelsCertificateStoreTypeProperty struct for ModelsCertificateStoreTypeProperty
 type ModelsCertificateStoreTypeProperty struct {
-	StoreTypeId *int32 `json:"StoreTypeId,omitempty"`
-	Name *string `json:"Name,omitempty"`
-	DisplayName *string `json:"DisplayName,omitempty"`
-	Type *string `json:"Type,omitempty"`
-	DependsOn *string `json:"DependsOn,omitempty"`
-	DefaultValue *string `json:"DefaultValue,omitempty"`
-	Required *bool `json:"Required,omitempty"`
+	StoreTypeId          *int32  `json:"StoreTypeId,omitempty"`
+	Name                 *string `json:"Name,omitempty"`
+	DisplayName          *string `json:"DisplayName,omitempty"`
+	Type                 *string `json:"Type,omitempty"`
+	DependsOn            *string `json:"DependsOn,omitempty"`
+	DefaultValue         *string `json:"DefaultValue,omitempty"`
+	Required             *bool   `json:"Required,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -282,7 +282,7 @@ func (o *ModelsCertificateStoreTypeProperty) SetRequired(v bool) {
 }
 
 func (o ModelsCertificateStoreTypeProperty) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -378,5 +378,3 @@ func (v *NullableModelsCertificateStoreTypeProperty) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

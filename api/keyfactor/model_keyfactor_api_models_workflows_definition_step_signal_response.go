@@ -29,8 +29,8 @@ var _ MappedNullable = &KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse{
 // KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse struct for KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse
 type KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse struct {
 	// The roles that are allowed to send this signal.
-	RoleIds []int32 `json:"RoleIds,omitempty"`
-	SignalName *string `json:"SignalName,omitempty"`
+	RoleIds              []int32 `json:"RoleIds,omitempty"`
+	SignalName           *string `json:"SignalName,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -118,7 +118,7 @@ func (o *KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse) SetSignalName(
 }
 
 func (o KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -194,5 +194,3 @@ func (v *NullableKeyfactorApiModelsWorkflowsDefinitionStepSignalResponse) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

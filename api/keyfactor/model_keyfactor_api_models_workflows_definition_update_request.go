@@ -28,8 +28,8 @@ var _ MappedNullable = &KeyfactorApiModelsWorkflowsDefinitionUpdateRequest{}
 
 // KeyfactorApiModelsWorkflowsDefinitionUpdateRequest struct for KeyfactorApiModelsWorkflowsDefinitionUpdateRequest
 type KeyfactorApiModelsWorkflowsDefinitionUpdateRequest struct {
-	DisplayName *string `json:"DisplayName,omitempty"`
-	Description *string `json:"Description,omitempty"`
+	DisplayName          *string `json:"DisplayName,omitempty"`
+	Description          *string `json:"Description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -117,7 +117,7 @@ func (o *KeyfactorApiModelsWorkflowsDefinitionUpdateRequest) SetDescription(v st
 }
 
 func (o KeyfactorApiModelsWorkflowsDefinitionUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,5 +193,3 @@ func (v *NullableKeyfactorApiModelsWorkflowsDefinitionUpdateRequest) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

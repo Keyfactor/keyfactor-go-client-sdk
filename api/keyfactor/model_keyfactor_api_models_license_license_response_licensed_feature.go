@@ -29,11 +29,11 @@ var _ MappedNullable = &KeyfactorApiModelsLicenseLicenseResponseLicensedFeature{
 
 // KeyfactorApiModelsLicenseLicenseResponseLicensedFeature struct for KeyfactorApiModelsLicenseLicenseResponseLicensedFeature
 type KeyfactorApiModelsLicenseLicenseResponseLicensedFeature struct {
-	FeatureID *string `json:"FeatureID,omitempty"`
-	DisplayName *string `json:"DisplayName,omitempty"`
-	Enabled *bool `json:"Enabled,omitempty"`
-	Quantity *int32 `json:"Quantity,omitempty"`
-	ExpirationDate *time.Time `json:"ExpirationDate,omitempty"`
+	FeatureID            *string    `json:"FeatureID,omitempty"`
+	DisplayName          *string    `json:"DisplayName,omitempty"`
+	Enabled              *bool      `json:"Enabled,omitempty"`
+	Quantity             *int32     `json:"Quantity,omitempty"`
+	ExpirationDate       *time.Time `json:"ExpirationDate,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -217,7 +217,7 @@ func (o *KeyfactorApiModelsLicenseLicenseResponseLicensedFeature) SetExpirationD
 }
 
 func (o KeyfactorApiModelsLicenseLicenseResponseLicensedFeature) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -305,5 +305,3 @@ func (v *NullableKeyfactorApiModelsLicenseLicenseResponseLicensedFeature) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

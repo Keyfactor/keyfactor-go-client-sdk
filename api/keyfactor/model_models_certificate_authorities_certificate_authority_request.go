@@ -28,39 +28,39 @@ var _ MappedNullable = &ModelsCertificateAuthoritiesCertificateAuthorityRequest{
 
 // ModelsCertificateAuthoritiesCertificateAuthorityRequest struct for ModelsCertificateAuthoritiesCertificateAuthorityRequest
 type ModelsCertificateAuthoritiesCertificateAuthorityRequest struct {
-	Id *int32 `json:"Id,omitempty"`
-	LogicalName *string `json:"LogicalName,omitempty"`
-	HostName *string `json:"HostName,omitempty"`
-	Delegate *bool `json:"Delegate,omitempty"`
-	DelegateEnrollment *bool `json:"DelegateEnrollment,omitempty"`
-	ForestRoot *string `json:"ForestRoot,omitempty"`
-	ConfigurationTenant *string `json:"ConfigurationTenant,omitempty"`
-	Remote *bool `json:"Remote,omitempty"`
-	Agent *string `json:"Agent,omitempty"`
-	Standalone *bool `json:"Standalone,omitempty"`
-	MonitorThresholds *bool `json:"MonitorThresholds,omitempty"`
-	IssuanceMax *int32 `json:"IssuanceMax,omitempty"`
-	IssuanceMin *int32 `json:"IssuanceMin,omitempty"`
-	FailureMax *int32 `json:"FailureMax,omitempty"`
-	RFCEnforcement *bool `json:"RFCEnforcement,omitempty"`
-	Properties *string `json:"Properties,omitempty"`
-	AllowedEnrollmentTypes *int32 `json:"AllowedEnrollmentTypes,omitempty"`
-	KeyRetention *int32 `json:"KeyRetention,omitempty"`
-	KeyRetentionDays *int32 `json:"KeyRetentionDays,omitempty"`
-	ExplicitCredentials *bool `json:"ExplicitCredentials,omitempty"`
-	SubscriberTerms *bool `json:"SubscriberTerms,omitempty"`
-	ExplicitUser *string `json:"ExplicitUser,omitempty"`
-	ExplicitPassword *ModelsKeyfactorAPISecret `json:"ExplicitPassword,omitempty"`
-	UseAllowedRequesters *bool `json:"UseAllowedRequesters,omitempty"`
-	AllowedRequesters []string `json:"AllowedRequesters,omitempty"`
-	FullScan *KeyfactorCommonSchedulingKeyfactorSchedule `json:"FullScan,omitempty"`
-	IncrementalScan *KeyfactorCommonSchedulingKeyfactorSchedule `json:"IncrementalScan,omitempty"`
-	ThresholdCheck *KeyfactorCommonSchedulingKeyfactorSchedule `json:"ThresholdCheck,omitempty"`
-	AuthCertificatePassword *ModelsKeyfactorAPISecret `json:"AuthCertificatePassword,omitempty"`
-	AuthCertificate *ModelsKeyfactorAPISecret `json:"AuthCertificate,omitempty"`
-	CAType *int32 `json:"CAType,omitempty"`
-	EnforceUniqueDN *bool `json:"EnforceUniqueDN,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                      *int32                                      `json:"Id,omitempty"`
+	LogicalName             *string                                     `json:"LogicalName,omitempty"`
+	HostName                *string                                     `json:"HostName,omitempty"`
+	Delegate                *bool                                       `json:"Delegate,omitempty"`
+	DelegateEnrollment      *bool                                       `json:"DelegateEnrollment,omitempty"`
+	ForestRoot              *string                                     `json:"ForestRoot,omitempty"`
+	ConfigurationTenant     *string                                     `json:"ConfigurationTenant,omitempty"`
+	Remote                  *bool                                       `json:"Remote,omitempty"`
+	Agent                   *string                                     `json:"Agent,omitempty"`
+	Standalone              *bool                                       `json:"Standalone,omitempty"`
+	MonitorThresholds       *bool                                       `json:"MonitorThresholds,omitempty"`
+	IssuanceMax             *int32                                      `json:"IssuanceMax,omitempty"`
+	IssuanceMin             *int32                                      `json:"IssuanceMin,omitempty"`
+	FailureMax              *int32                                      `json:"FailureMax,omitempty"`
+	RFCEnforcement          *bool                                       `json:"RFCEnforcement,omitempty"`
+	Properties              *string                                     `json:"Properties,omitempty"`
+	AllowedEnrollmentTypes  *int32                                      `json:"AllowedEnrollmentTypes,omitempty"`
+	KeyRetention            *int32                                      `json:"KeyRetention,omitempty"`
+	KeyRetentionDays        *int32                                      `json:"KeyRetentionDays,omitempty"`
+	ExplicitCredentials     *bool                                       `json:"ExplicitCredentials,omitempty"`
+	SubscriberTerms         *bool                                       `json:"SubscriberTerms,omitempty"`
+	ExplicitUser            *string                                     `json:"ExplicitUser,omitempty"`
+	ExplicitPassword        *ModelsKeyfactorAPISecret                   `json:"ExplicitPassword,omitempty"`
+	UseAllowedRequesters    *bool                                       `json:"UseAllowedRequesters,omitempty"`
+	AllowedRequesters       []string                                    `json:"AllowedRequesters,omitempty"`
+	FullScan                *KeyfactorCommonSchedulingKeyfactorSchedule `json:"FullScan,omitempty"`
+	IncrementalScan         *KeyfactorCommonSchedulingKeyfactorSchedule `json:"IncrementalScan,omitempty"`
+	ThresholdCheck          *KeyfactorCommonSchedulingKeyfactorSchedule `json:"ThresholdCheck,omitempty"`
+	AuthCertificatePassword *ModelsKeyfactorAPISecret                   `json:"AuthCertificatePassword,omitempty"`
+	AuthCertificate         *ModelsKeyfactorAPISecret                   `json:"AuthCertificate,omitempty"`
+	CAType                  *int32                                      `json:"CAType,omitempty"`
+	EnforceUniqueDN         *bool                                       `json:"EnforceUniqueDN,omitempty"`
+	AdditionalProperties    map[string]interface{}
 }
 
 type _ModelsCertificateAuthoritiesCertificateAuthorityRequest ModelsCertificateAuthoritiesCertificateAuthorityRequest
@@ -1107,7 +1107,7 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) SetEnforceUniq
 }
 
 func (o ModelsCertificateAuthoritiesCertificateAuthorityRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1303,5 +1303,3 @@ func (v *NullableModelsCertificateAuthoritiesCertificateAuthorityRequest) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

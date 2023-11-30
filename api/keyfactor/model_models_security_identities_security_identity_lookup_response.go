@@ -29,7 +29,7 @@ var _ MappedNullable = &ModelsSecurityIdentitiesSecurityIdentityLookupResponse{}
 // ModelsSecurityIdentitiesSecurityIdentityLookupResponse A public DTO representing the result of a security identity lookup.
 type ModelsSecurityIdentitiesSecurityIdentityLookupResponse struct {
 	// Whether or not the identity is valid.
-	Valid *bool `json:"Valid,omitempty"`
+	Valid                *bool `json:"Valid,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -85,7 +85,7 @@ func (o *ModelsSecurityIdentitiesSecurityIdentityLookupResponse) SetValid(v bool
 }
 
 func (o ModelsSecurityIdentitiesSecurityIdentityLookupResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -157,5 +157,3 @@ func (v *NullableModelsSecurityIdentitiesSecurityIdentityLookupResponse) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

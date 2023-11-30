@@ -28,10 +28,10 @@ var _ MappedNullable = &KeyfactorApiModelsWorkflowsWorkflowTypeQueryResponse{}
 
 // KeyfactorApiModelsWorkflowsWorkflowTypeQueryResponse struct for KeyfactorApiModelsWorkflowsWorkflowTypeQueryResponse
 type KeyfactorApiModelsWorkflowsWorkflowTypeQueryResponse struct {
-	WorkflowType *string `json:"WorkflowType,omitempty"`
-	KeyType *string `json:"KeyType,omitempty"`
-	ContextParameters []string `json:"ContextParameters,omitempty"`
-	BuiltInSteps []KeyfactorApiModelsWorkflowsAvailableStepResponse `json:"BuiltInSteps,omitempty"`
+	WorkflowType         *string                                            `json:"WorkflowType,omitempty"`
+	KeyType              *string                                            `json:"KeyType,omitempty"`
+	ContextParameters    []string                                           `json:"ContextParameters,omitempty"`
+	BuiltInSteps         []KeyfactorApiModelsWorkflowsAvailableStepResponse `json:"BuiltInSteps,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -183,7 +183,7 @@ func (o *KeyfactorApiModelsWorkflowsWorkflowTypeQueryResponse) SetBuiltInSteps(v
 }
 
 func (o KeyfactorApiModelsWorkflowsWorkflowTypeQueryResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -267,5 +267,3 @@ func (v *NullableKeyfactorApiModelsWorkflowsWorkflowTypeQueryResponse) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

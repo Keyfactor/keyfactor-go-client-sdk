@@ -29,8 +29,8 @@ var _ MappedNullable = &KeyfactorApiModelsMonitoringRevocationMonitoringAlertTes
 // KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse struct for KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse
 type KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse struct {
 	RevocationMonitoringAlerts []ModelsMonitoringRevocationMonitoringAlertResponse `json:"RevocationMonitoringAlerts,omitempty"`
-	AlertBuildResult *int32 `json:"AlertBuildResult,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AlertBuildResult           *int32                                              `json:"AlertBuildResult,omitempty"`
+	AdditionalProperties       map[string]interface{}
 }
 
 type _KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse
@@ -117,7 +117,7 @@ func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) SetA
 }
 
 func (o KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,5 +193,3 @@ func (v *NullableKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestRespon
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

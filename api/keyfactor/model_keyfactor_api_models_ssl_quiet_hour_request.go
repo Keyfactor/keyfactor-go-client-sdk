@@ -29,10 +29,10 @@ var _ MappedNullable = &KeyfactorApiModelsSslQuietHourRequest{}
 
 // KeyfactorApiModelsSslQuietHourRequest struct for KeyfactorApiModelsSslQuietHourRequest
 type KeyfactorApiModelsSslQuietHourRequest struct {
-	StartDay *int32 `json:"StartDay,omitempty"`
-	StartTime *time.Time `json:"StartTime,omitempty"`
-	EndDay *int32 `json:"EndDay,omitempty"`
-	EndTime *time.Time `json:"EndTime,omitempty"`
+	StartDay             *int32     `json:"StartDay,omitempty"`
+	StartTime            *time.Time `json:"StartTime,omitempty"`
+	EndDay               *int32     `json:"EndDay,omitempty"`
+	EndTime              *time.Time `json:"EndTime,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -184,7 +184,7 @@ func (o *KeyfactorApiModelsSslQuietHourRequest) SetEndTime(v time.Time) {
 }
 
 func (o KeyfactorApiModelsSslQuietHourRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -268,5 +268,3 @@ func (v *NullableKeyfactorApiModelsSslQuietHourRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // DeniedAlertApiService DeniedAlertApi service
 type DeniedAlertApiService service
 
 type ApiDeniedAlertAddDeniedAlertRequest struct {
-	ctx context.Context
-	ApiService *DeniedAlertApiService
+	ctx                     context.Context
+	ApiService              *DeniedAlertApiService
 	xKeyfactorRequestedWith *string
-	req *KeyfactorApiModelsAlertsDeniedDeniedAlertCreationRequest
-	xKeyfactorApiVersion *string
+	req                     *KeyfactorApiModelsAlertsDeniedDeniedAlertCreationRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -65,28 +64,29 @@ func (r ApiDeniedAlertAddDeniedAlertRequest) Execute() (*KeyfactorApiModelsAlert
 /*
 DeniedAlertAddDeniedAlert Add a denied alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeniedAlertAddDeniedAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDeniedAlertAddDeniedAlertRequest
 */
 func (a *DeniedAlertApiService) DeniedAlertAddDeniedAlert(ctx context.Context) ApiDeniedAlertAddDeniedAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiDeniedAlertAddDeniedAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
+//
+//	@return KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
 func (a *DeniedAlertApiService) DeniedAlertAddDeniedAlertExecute(r ApiDeniedAlertAddDeniedAlertRequest) (*KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -96,12 +96,12 @@ func (a *DeniedAlertApiService) DeniedAlertAddDeniedAlertExecute(r ApiDeniedAler
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.req == nil {
-        return localVarReturnValue, nil, reportError("req is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.req == nil {
+		return localVarReturnValue, nil, reportError("req is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -164,11 +164,11 @@ func (a *DeniedAlertApiService) DeniedAlertAddDeniedAlertExecute(r ApiDeniedAler
 }
 
 type ApiDeniedAlertDeleteDeniedAlertRequest struct {
-	ctx context.Context
-	ApiService *DeniedAlertApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *DeniedAlertApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -190,28 +190,28 @@ func (r ApiDeniedAlertDeleteDeniedAlertRequest) Execute() (*http.Response, error
 /*
 DeniedAlertDeleteDeniedAlert Delete a denied alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Id for the denied alert
- @return ApiDeniedAlertDeleteDeniedAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Id for the denied alert
+	@return ApiDeniedAlertDeleteDeniedAlertRequest
 */
 func (a *DeniedAlertApiService) DeniedAlertDeleteDeniedAlert(ctx context.Context, id int32) ApiDeniedAlertDeleteDeniedAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiDeniedAlertDeleteDeniedAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *DeniedAlertApiService) DeniedAlertDeleteDeniedAlertExecute(r ApiDeniedAlertDeleteDeniedAlertRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -222,9 +222,9 @@ func (a *DeniedAlertApiService) DeniedAlertDeleteDeniedAlertExecute(r ApiDeniedA
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -276,11 +276,11 @@ func (a *DeniedAlertApiService) DeniedAlertDeleteDeniedAlertExecute(r ApiDeniedA
 }
 
 type ApiDeniedAlertEditDeniedAlertRequest struct {
-	ctx context.Context
-	ApiService *DeniedAlertApiService
+	ctx                     context.Context
+	ApiService              *DeniedAlertApiService
 	xKeyfactorRequestedWith *string
-	req *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest
-	xKeyfactorApiVersion *string
+	req                     *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -308,28 +308,29 @@ func (r ApiDeniedAlertEditDeniedAlertRequest) Execute() (*KeyfactorApiModelsAler
 /*
 DeniedAlertEditDeniedAlert Edit a denied alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeniedAlertEditDeniedAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDeniedAlertEditDeniedAlertRequest
 */
 func (a *DeniedAlertApiService) DeniedAlertEditDeniedAlert(ctx context.Context) ApiDeniedAlertEditDeniedAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiDeniedAlertEditDeniedAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
+//
+//	@return KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
 func (a *DeniedAlertApiService) DeniedAlertEditDeniedAlertExecute(r ApiDeniedAlertEditDeniedAlertRequest) (*KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -339,12 +340,12 @@ func (a *DeniedAlertApiService) DeniedAlertEditDeniedAlertExecute(r ApiDeniedAle
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.req == nil {
-        return localVarReturnValue, nil, reportError("req is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.req == nil {
+		return localVarReturnValue, nil, reportError("req is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -407,11 +408,11 @@ func (a *DeniedAlertApiService) DeniedAlertEditDeniedAlertExecute(r ApiDeniedAle
 }
 
 type ApiDeniedAlertGetDeniedAlertRequest struct {
-	ctx context.Context
-	ApiService *DeniedAlertApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *DeniedAlertApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -433,30 +434,31 @@ func (r ApiDeniedAlertGetDeniedAlertRequest) Execute() (*KeyfactorApiModelsAlert
 /*
 DeniedAlertGetDeniedAlert Get a denied alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Id for the denied alert to get
- @return ApiDeniedAlertGetDeniedAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Id for the denied alert to get
+	@return ApiDeniedAlertGetDeniedAlertRequest
 */
 func (a *DeniedAlertApiService) DeniedAlertGetDeniedAlert(ctx context.Context, id int32) ApiDeniedAlertGetDeniedAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiDeniedAlertGetDeniedAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
+//
+//	@return KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
 func (a *DeniedAlertApiService) DeniedAlertGetDeniedAlertExecute(r ApiDeniedAlertGetDeniedAlertRequest) (*KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -467,9 +469,9 @@ func (a *DeniedAlertApiService) DeniedAlertGetDeniedAlertExecute(r ApiDeniedAler
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -530,14 +532,14 @@ func (a *DeniedAlertApiService) DeniedAlertGetDeniedAlertExecute(r ApiDeniedAler
 }
 
 type ApiDeniedAlertGetDeniedAlertsRequest struct {
-	ctx context.Context
-	ApiService *DeniedAlertApiService
+	ctx                     context.Context
+	ApiService              *DeniedAlertApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pagedQueryQueryString *string
-	pagedQueryPageReturned *int32
-	pagedQueryReturnLimit *int32
-	pagedQuerySortField *string
+	xKeyfactorApiVersion    *string
+	pagedQueryQueryString   *string
+	pagedQueryPageReturned  *int32
+	pagedQueryReturnLimit   *int32
+	pagedQuerySortField     *string
 	pagedQuerySortAscending *int32
 }
 
@@ -590,28 +592,29 @@ func (r ApiDeniedAlertGetDeniedAlertsRequest) Execute() ([]KeyfactorApiModelsAle
 /*
 DeniedAlertGetDeniedAlerts Gets all denied alerts according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeniedAlertGetDeniedAlertsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDeniedAlertGetDeniedAlertsRequest
 */
 func (a *DeniedAlertApiService) DeniedAlertGetDeniedAlerts(ctx context.Context) ApiDeniedAlertGetDeniedAlertsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiDeniedAlertGetDeniedAlertsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
+//
+//	@return []KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
 func (a *DeniedAlertApiService) DeniedAlertGetDeniedAlertsExecute(r ApiDeniedAlertGetDeniedAlertsRequest) ([]KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -621,9 +624,9 @@ func (a *DeniedAlertApiService) DeniedAlertGetDeniedAlertsExecute(r ApiDeniedAle
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pagedQueryQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pagedQuery.queryString", r.pagedQueryQueryString, "")

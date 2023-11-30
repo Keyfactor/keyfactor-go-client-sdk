@@ -33,9 +33,9 @@ type ModelsEnrollmentCSRGenerationRequest struct {
 	// Certificate key type [RSA, ECC]
 	KeyType string `json:"KeyType"`
 	// Size of the certificate key (ex: RSA 1024, 2048, 4096/ECC 256, 384, 521)
-	KeyLength int32 `json:"KeyLength"`
-	Template *string `json:"Template,omitempty"`
-	SANs *map[string][]string `json:"SANs,omitempty"`
+	KeyLength            int32                `json:"KeyLength"`
+	Template             *string              `json:"Template,omitempty"`
+	SANs                 *map[string][]string `json:"SANs,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -198,7 +198,7 @@ func (o *ModelsEnrollmentCSRGenerationRequest) SetSANs(v map[string][]string) {
 }
 
 func (o ModelsEnrollmentCSRGenerationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -280,5 +280,3 @@ func (v *NullableModelsEnrollmentCSRGenerationRequest) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

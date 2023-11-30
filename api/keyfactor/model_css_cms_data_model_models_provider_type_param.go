@@ -28,12 +28,12 @@ var _ MappedNullable = &CSSCMSDataModelModelsProviderTypeParam{}
 
 // CSSCMSDataModelModelsProviderTypeParam struct for CSSCMSDataModelModelsProviderTypeParam
 type CSSCMSDataModelModelsProviderTypeParam struct {
-	Id *int32 `json:"Id,omitempty"`
-	Name *string `json:"Name,omitempty"`
-	DisplayName *string `json:"DisplayName,omitempty"`
-	DataType *int32 `json:"DataType,omitempty"`
-	InstanceLevel *bool `json:"InstanceLevel,omitempty"`
-	ProviderType *CSSCMSDataModelModelsProviderType `json:"ProviderType,omitempty"`
+	Id                   *int32                             `json:"Id,omitempty"`
+	Name                 *string                            `json:"Name,omitempty"`
+	DisplayName          *string                            `json:"DisplayName,omitempty"`
+	DataType             *int32                             `json:"DataType,omitempty"`
+	InstanceLevel        *bool                              `json:"InstanceLevel,omitempty"`
+	ProviderType         *CSSCMSDataModelModelsProviderType `json:"ProviderType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -249,7 +249,7 @@ func (o *CSSCMSDataModelModelsProviderTypeParam) SetProviderType(v CSSCMSDataMod
 }
 
 func (o CSSCMSDataModelModelsProviderTypeParam) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -341,5 +341,3 @@ func (v *NullableCSSCMSDataModelModelsProviderTypeParam) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -31,7 +31,7 @@ type KeyfactorApiModelsOrchestratorJobsUnscheduleJobRequest struct {
 	// List of orchestrator job ids to be unscheduled
 	JobIds []string `json:"JobIds,omitempty"`
 	// Query identifying orchestrator jobs to be unscheduled
-	Query *string `json:"Query,omitempty"`
+	Query                *string `json:"Query,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -119,7 +119,7 @@ func (o *KeyfactorApiModelsOrchestratorJobsUnscheduleJobRequest) SetQuery(v stri
 }
 
 func (o KeyfactorApiModelsOrchestratorJobsUnscheduleJobRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -195,5 +195,3 @@ func (v *NullableKeyfactorApiModelsOrchestratorJobsUnscheduleJobRequest) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

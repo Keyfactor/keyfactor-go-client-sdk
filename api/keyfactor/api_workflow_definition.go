@@ -28,17 +28,16 @@ import (
 	"strings"
 )
 
-
 // WorkflowDefinitionApiService WorkflowDefinitionApi service
 type WorkflowDefinitionApiService service
 
 type ApiWorkflowDefinitionConfigureDefinitionStepsRequest struct {
-	ctx context.Context
-	ApiService *WorkflowDefinitionApiService
-	definitionId string
+	ctx                     context.Context
+	ApiService              *WorkflowDefinitionApiService
+	definitionId            string
 	xKeyfactorRequestedWith *string
-	request *[]KeyfactorApiModelsWorkflowsDefinitionStepRequest
-	xKeyfactorApiVersion *string
+	request                 *[]KeyfactorApiModelsWorkflowsDefinitionStepRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -68,30 +67,31 @@ WorkflowDefinitionConfigureDefinitionSteps Sets the provided steps on the latest
 
 If the latest version is also the published version, a new version will be created and the steps will be set on that new version.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param definitionId The Id of the definition.
- @return ApiWorkflowDefinitionConfigureDefinitionStepsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param definitionId The Id of the definition.
+	@return ApiWorkflowDefinitionConfigureDefinitionStepsRequest
 */
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionConfigureDefinitionSteps(ctx context.Context, definitionId string) ApiWorkflowDefinitionConfigureDefinitionStepsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowDefinitionConfigureDefinitionStepsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		definitionId: definitionId,
+		xKeyfactorApiVersion:    &version,
+		definitionId:            definitionId,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsWorkflowsDefinitionResponse
+//
+//	@return KeyfactorApiModelsWorkflowsDefinitionResponse
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionConfigureDefinitionStepsExecute(r ApiWorkflowDefinitionConfigureDefinitionStepsRequest) (*KeyfactorApiModelsWorkflowsDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsWorkflowsDefinitionResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsWorkflowsDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -102,12 +102,12 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionConfigureDefinitionStep
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.request == nil {
-        return localVarReturnValue, nil, reportError("request is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.request == nil {
+		return localVarReturnValue, nil, reportError("request is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -170,11 +170,11 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionConfigureDefinitionStep
 }
 
 type ApiWorkflowDefinitionCreateNewDefinitionRequest struct {
-	ctx context.Context
-	ApiService *WorkflowDefinitionApiService
+	ctx                     context.Context
+	ApiService              *WorkflowDefinitionApiService
 	xKeyfactorRequestedWith *string
-	request *KeyfactorApiModelsWorkflowsDefinitionCreateRequest
-	xKeyfactorApiVersion *string
+	request                 *KeyfactorApiModelsWorkflowsDefinitionCreateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -202,28 +202,29 @@ func (r ApiWorkflowDefinitionCreateNewDefinitionRequest) Execute() (*KeyfactorAp
 /*
 WorkflowDefinitionCreateNewDefinition Creates a new base definition without any steps.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWorkflowDefinitionCreateNewDefinitionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWorkflowDefinitionCreateNewDefinitionRequest
 */
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionCreateNewDefinition(ctx context.Context) ApiWorkflowDefinitionCreateNewDefinitionRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowDefinitionCreateNewDefinitionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsWorkflowsDefinitionResponse
+//
+//	@return KeyfactorApiModelsWorkflowsDefinitionResponse
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionCreateNewDefinitionExecute(r ApiWorkflowDefinitionCreateNewDefinitionRequest) (*KeyfactorApiModelsWorkflowsDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsWorkflowsDefinitionResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsWorkflowsDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -233,12 +234,12 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionCreateNewDefinitionExec
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.request == nil {
-        return localVarReturnValue, nil, reportError("request is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.request == nil {
+		return localVarReturnValue, nil, reportError("request is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -301,11 +302,11 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionCreateNewDefinitionExec
 }
 
 type ApiWorkflowDefinitionDeleteRequest struct {
-	ctx context.Context
-	ApiService *WorkflowDefinitionApiService
-	definitionId string
+	ctx                     context.Context
+	ApiService              *WorkflowDefinitionApiService
+	definitionId            string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -327,28 +328,28 @@ func (r ApiWorkflowDefinitionDeleteRequest) Execute() (*http.Response, error) {
 /*
 WorkflowDefinitionDelete Deletes the definition matching the given Id.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param definitionId The Workflow Definition Id.
- @return ApiWorkflowDefinitionDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param definitionId The Workflow Definition Id.
+	@return ApiWorkflowDefinitionDeleteRequest
 */
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionDelete(ctx context.Context, definitionId string) ApiWorkflowDefinitionDeleteRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowDefinitionDeleteRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		definitionId: definitionId,
+		xKeyfactorApiVersion:    &version,
+		definitionId:            definitionId,
 	}
 }
 
 // Execute executes the request
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionDeleteExecute(r ApiWorkflowDefinitionDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -359,9 +360,9 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionDeleteExecute(r ApiWork
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -413,13 +414,13 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionDeleteExecute(r ApiWork
 }
 
 type ApiWorkflowDefinitionGetRequest struct {
-	ctx context.Context
-	ApiService *WorkflowDefinitionApiService
-	definitionId string
+	ctx                     context.Context
+	ApiService              *WorkflowDefinitionApiService
+	definitionId            string
 	xKeyfactorRequestedWith *string
-	definitionVersion *int32
-	exportable *bool
-	xKeyfactorApiVersion *string
+	definitionVersion       *int32
+	exportable              *bool
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -453,30 +454,31 @@ func (r ApiWorkflowDefinitionGetRequest) Execute() (*KeyfactorApiModelsWorkflows
 /*
 WorkflowDefinitionGet Gets a workflow definition.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param definitionId The Id of the definition to retrieve.
- @return ApiWorkflowDefinitionGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param definitionId The Id of the definition to retrieve.
+	@return ApiWorkflowDefinitionGetRequest
 */
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionGet(ctx context.Context, definitionId string) ApiWorkflowDefinitionGetRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowDefinitionGetRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		definitionId: definitionId,
+		xKeyfactorApiVersion:    &version,
+		definitionId:            definitionId,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsWorkflowsDefinitionResponse
+//
+//	@return KeyfactorApiModelsWorkflowsDefinitionResponse
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionGetExecute(r ApiWorkflowDefinitionGetRequest) (*KeyfactorApiModelsWorkflowsDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsWorkflowsDefinitionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsWorkflowsDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -487,9 +489,9 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionGetExecute(r ApiWorkflo
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.definitionVersion != nil {
 		parameterAddToQuery(localVarQueryParams, "definitionVersion", r.definitionVersion, "")
@@ -556,11 +558,11 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionGetExecute(r ApiWorkflo
 }
 
 type ApiWorkflowDefinitionGetStepSchemaRequest struct {
-	ctx context.Context
-	ApiService *WorkflowDefinitionApiService
-	extensionName string
+	ctx                     context.Context
+	ApiService              *WorkflowDefinitionApiService
+	extensionName           string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -582,30 +584,31 @@ func (r ApiWorkflowDefinitionGetStepSchemaRequest) Execute() (*KeyfactorApiModel
 /*
 WorkflowDefinitionGetStepSchema Gets the schema of a given step with the specified extension name.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param extensionName The extension name of a specific step in the step schema.
- @return ApiWorkflowDefinitionGetStepSchemaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param extensionName The extension name of a specific step in the step schema.
+	@return ApiWorkflowDefinitionGetStepSchemaRequest
 */
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionGetStepSchema(ctx context.Context, extensionName string) ApiWorkflowDefinitionGetStepSchemaRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowDefinitionGetStepSchemaRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		extensionName: extensionName,
+		xKeyfactorApiVersion:    &version,
+		extensionName:           extensionName,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsWorkflowsAvailableStepResponse
+//
+//	@return KeyfactorApiModelsWorkflowsAvailableStepResponse
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionGetStepSchemaExecute(r ApiWorkflowDefinitionGetStepSchemaRequest) (*KeyfactorApiModelsWorkflowsAvailableStepResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsWorkflowsAvailableStepResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsWorkflowsAvailableStepResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -616,9 +619,9 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionGetStepSchemaExecute(r 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -679,11 +682,11 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionGetStepSchemaExecute(r 
 }
 
 type ApiWorkflowDefinitionPublishDefinitionRequest struct {
-	ctx context.Context
-	ApiService *WorkflowDefinitionApiService
-	definitionId string
+	ctx                     context.Context
+	ApiService              *WorkflowDefinitionApiService
+	definitionId            string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -705,30 +708,31 @@ func (r ApiWorkflowDefinitionPublishDefinitionRequest) Execute() (*KeyfactorApiM
 /*
 WorkflowDefinitionPublishDefinition Makes the most recent version of a Workflow Definition the published version.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param definitionId The Workflow Definition Id.
- @return ApiWorkflowDefinitionPublishDefinitionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param definitionId The Workflow Definition Id.
+	@return ApiWorkflowDefinitionPublishDefinitionRequest
 */
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionPublishDefinition(ctx context.Context, definitionId string) ApiWorkflowDefinitionPublishDefinitionRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowDefinitionPublishDefinitionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		definitionId: definitionId,
+		xKeyfactorApiVersion:    &version,
+		definitionId:            definitionId,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsWorkflowsDefinitionResponse
+//
+//	@return KeyfactorApiModelsWorkflowsDefinitionResponse
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionPublishDefinitionExecute(r ApiWorkflowDefinitionPublishDefinitionRequest) (*KeyfactorApiModelsWorkflowsDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsWorkflowsDefinitionResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsWorkflowsDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -739,9 +743,9 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionPublishDefinitionExecut
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -802,15 +806,15 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionPublishDefinitionExecut
 }
 
 type ApiWorkflowDefinitionQueryRequest struct {
-	ctx context.Context
-	ApiService *WorkflowDefinitionApiService
+	ctx                     context.Context
+	ApiService              *WorkflowDefinitionApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	queryQueryString *string
-	queryPageReturned *int32
-	queryReturnLimit *int32
-	querySortField *string
-	querySortAscending *int32
+	xKeyfactorApiVersion    *string
+	queryQueryString        *string
+	queryPageReturned       *int32
+	queryReturnLimit        *int32
+	querySortField          *string
+	querySortAscending      *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -862,28 +866,29 @@ func (r ApiWorkflowDefinitionQueryRequest) Execute() ([]KeyfactorApiModelsWorkfl
 /*
 WorkflowDefinitionQuery Gets the Definitions matching the query specifications.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWorkflowDefinitionQueryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWorkflowDefinitionQueryRequest
 */
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionQuery(ctx context.Context) ApiWorkflowDefinitionQueryRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowDefinitionQueryRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsWorkflowsDefinitionQueryResponse
+//
+//	@return []KeyfactorApiModelsWorkflowsDefinitionQueryResponse
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionQueryExecute(r ApiWorkflowDefinitionQueryRequest) ([]KeyfactorApiModelsWorkflowsDefinitionQueryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsWorkflowsDefinitionQueryResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsWorkflowsDefinitionQueryResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -893,9 +898,9 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionQueryExecute(r ApiWorkf
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.queryQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "query.queryString", r.queryQueryString, "")
@@ -971,15 +976,15 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionQueryExecute(r ApiWorkf
 }
 
 type ApiWorkflowDefinitionQueryAvailableStepsRequest struct {
-	ctx context.Context
-	ApiService *WorkflowDefinitionApiService
+	ctx                     context.Context
+	ApiService              *WorkflowDefinitionApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	queryQueryString *string
-	queryPageReturned *int32
-	queryReturnLimit *int32
-	querySortField *string
-	querySortAscending *int32
+	xKeyfactorApiVersion    *string
+	queryQueryString        *string
+	queryPageReturned       *int32
+	queryReturnLimit        *int32
+	querySortField          *string
+	querySortAscending      *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1031,28 +1036,29 @@ func (r ApiWorkflowDefinitionQueryAvailableStepsRequest) Execute() ([]KeyfactorA
 /*
 WorkflowDefinitionQueryAvailableSteps Gets the result set of available steps for a given query.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWorkflowDefinitionQueryAvailableStepsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWorkflowDefinitionQueryAvailableStepsRequest
 */
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionQueryAvailableSteps(ctx context.Context) ApiWorkflowDefinitionQueryAvailableStepsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowDefinitionQueryAvailableStepsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsWorkflowsAvailableStepQueryResponse
+//
+//	@return []KeyfactorApiModelsWorkflowsAvailableStepQueryResponse
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionQueryAvailableStepsExecute(r ApiWorkflowDefinitionQueryAvailableStepsRequest) ([]KeyfactorApiModelsWorkflowsAvailableStepQueryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsWorkflowsAvailableStepQueryResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsWorkflowsAvailableStepQueryResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1062,9 +1068,9 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionQueryAvailableStepsExec
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.queryQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "query.queryString", r.queryQueryString, "")
@@ -1140,15 +1146,15 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionQueryAvailableStepsExec
 }
 
 type ApiWorkflowDefinitionQueryWorkflowTypesRequest struct {
-	ctx context.Context
-	ApiService *WorkflowDefinitionApiService
+	ctx                     context.Context
+	ApiService              *WorkflowDefinitionApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	queryQueryString *string
-	queryPageReturned *int32
-	queryReturnLimit *int32
-	querySortField *string
-	querySortAscending *int32
+	xKeyfactorApiVersion    *string
+	queryQueryString        *string
+	queryPageReturned       *int32
+	queryReturnLimit        *int32
+	querySortField          *string
+	querySortAscending      *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1200,28 +1206,29 @@ func (r ApiWorkflowDefinitionQueryWorkflowTypesRequest) Execute() ([]KeyfactorAp
 /*
 WorkflowDefinitionQueryWorkflowTypes Performs a query against the workflow types in the system.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWorkflowDefinitionQueryWorkflowTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWorkflowDefinitionQueryWorkflowTypesRequest
 */
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionQueryWorkflowTypes(ctx context.Context) ApiWorkflowDefinitionQueryWorkflowTypesRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowDefinitionQueryWorkflowTypesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsWorkflowsWorkflowTypeQueryResponse
+//
+//	@return []KeyfactorApiModelsWorkflowsWorkflowTypeQueryResponse
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionQueryWorkflowTypesExecute(r ApiWorkflowDefinitionQueryWorkflowTypesRequest) ([]KeyfactorApiModelsWorkflowsWorkflowTypeQueryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsWorkflowsWorkflowTypeQueryResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsWorkflowsWorkflowTypeQueryResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1231,9 +1238,9 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionQueryWorkflowTypesExecu
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.queryQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "query.queryString", r.queryQueryString, "")
@@ -1309,12 +1316,12 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionQueryWorkflowTypesExecu
 }
 
 type ApiWorkflowDefinitionUpdateExistingDefinitionRequest struct {
-	ctx context.Context
-	ApiService *WorkflowDefinitionApiService
-	definitionId string
+	ctx                     context.Context
+	ApiService              *WorkflowDefinitionApiService
+	definitionId            string
 	xKeyfactorRequestedWith *string
-	request *KeyfactorApiModelsWorkflowsDefinitionUpdateRequest
-	xKeyfactorApiVersion *string
+	request                 *KeyfactorApiModelsWorkflowsDefinitionUpdateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1342,30 +1349,31 @@ func (r ApiWorkflowDefinitionUpdateExistingDefinitionRequest) Execute() (*Keyfac
 /*
 WorkflowDefinitionUpdateExistingDefinition Updates the existing definition's DisplayName and Description.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param definitionId The Id of the definition to update.
- @return ApiWorkflowDefinitionUpdateExistingDefinitionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param definitionId The Id of the definition to update.
+	@return ApiWorkflowDefinitionUpdateExistingDefinitionRequest
 */
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionUpdateExistingDefinition(ctx context.Context, definitionId string) ApiWorkflowDefinitionUpdateExistingDefinitionRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiWorkflowDefinitionUpdateExistingDefinitionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		definitionId: definitionId,
+		xKeyfactorApiVersion:    &version,
+		definitionId:            definitionId,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsWorkflowsDefinitionResponse
+//
+//	@return KeyfactorApiModelsWorkflowsDefinitionResponse
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionUpdateExistingDefinitionExecute(r ApiWorkflowDefinitionUpdateExistingDefinitionRequest) (*KeyfactorApiModelsWorkflowsDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsWorkflowsDefinitionResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsWorkflowsDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1376,12 +1384,12 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionUpdateExistingDefinitio
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.request == nil {
-        return localVarReturnValue, nil, reportError("request is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.request == nil {
+		return localVarReturnValue, nil, reportError("request is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}

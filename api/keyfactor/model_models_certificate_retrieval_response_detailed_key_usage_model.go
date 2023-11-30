@@ -28,16 +28,16 @@ var _ MappedNullable = &ModelsCertificateRetrievalResponseDetailedKeyUsageModel{
 
 // ModelsCertificateRetrievalResponseDetailedKeyUsageModel struct for ModelsCertificateRetrievalResponseDetailedKeyUsageModel
 type ModelsCertificateRetrievalResponseDetailedKeyUsageModel struct {
-	CrlSign *bool `json:"CrlSign,omitempty"`
-	DataEncipherment *bool `json:"DataEncipherment,omitempty"`
-	DecipherOnly *bool `json:"DecipherOnly,omitempty"`
-	DigitalSignature *bool `json:"DigitalSignature,omitempty"`
-	EncipherOnly *bool `json:"EncipherOnly,omitempty"`
-	KeyAgreement *bool `json:"KeyAgreement,omitempty"`
-	KeyCertSign *bool `json:"KeyCertSign,omitempty"`
-	KeyEncipherment *bool `json:"KeyEncipherment,omitempty"`
-	NonRepudiation *bool `json:"NonRepudiation,omitempty"`
-	HexCode *string `json:"HexCode,omitempty"`
+	CrlSign              *bool   `json:"CrlSign,omitempty"`
+	DataEncipherment     *bool   `json:"DataEncipherment,omitempty"`
+	DecipherOnly         *bool   `json:"DecipherOnly,omitempty"`
+	DigitalSignature     *bool   `json:"DigitalSignature,omitempty"`
+	EncipherOnly         *bool   `json:"EncipherOnly,omitempty"`
+	KeyAgreement         *bool   `json:"KeyAgreement,omitempty"`
+	KeyCertSign          *bool   `json:"KeyCertSign,omitempty"`
+	KeyEncipherment      *bool   `json:"KeyEncipherment,omitempty"`
+	NonRepudiation       *bool   `json:"NonRepudiation,omitempty"`
+	HexCode              *string `json:"HexCode,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -381,7 +381,7 @@ func (o *ModelsCertificateRetrievalResponseDetailedKeyUsageModel) SetHexCode(v s
 }
 
 func (o ModelsCertificateRetrievalResponseDetailedKeyUsageModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -489,5 +489,3 @@ func (v *NullableModelsCertificateRetrievalResponseDetailedKeyUsageModel) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

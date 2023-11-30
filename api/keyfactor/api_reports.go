@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // ReportsApiService ReportsApi service
 type ReportsApiService service
 
 type ApiReportsCreateCustomReportRequest struct {
-	ctx context.Context
-	ApiService *ReportsApiService
+	ctx                     context.Context
+	ApiService              *ReportsApiService
 	xKeyfactorRequestedWith *string
-	request *ModelsCustomReportCreationRequest
-	xKeyfactorApiVersion *string
+	request                 *ModelsCustomReportCreationRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -65,28 +64,29 @@ func (r ApiReportsCreateCustomReportRequest) Execute() (*ModelsCustomReport, *ht
 /*
 ReportsCreateCustomReport Creates a custom report
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiReportsCreateCustomReportRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiReportsCreateCustomReportRequest
 */
 func (a *ReportsApiService) ReportsCreateCustomReport(ctx context.Context) ApiReportsCreateCustomReportRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiReportsCreateCustomReportRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsCustomReport
+//
+//	@return ModelsCustomReport
 func (a *ReportsApiService) ReportsCreateCustomReportExecute(r ApiReportsCreateCustomReportRequest) (*ModelsCustomReport, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsCustomReport
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsCustomReport
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -96,12 +96,12 @@ func (a *ReportsApiService) ReportsCreateCustomReportExecute(r ApiReportsCreateC
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.request == nil {
-        return localVarReturnValue, nil, reportError("request is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.request == nil {
+		return localVarReturnValue, nil, reportError("request is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -164,12 +164,12 @@ func (a *ReportsApiService) ReportsCreateCustomReportExecute(r ApiReportsCreateC
 }
 
 type ApiReportsCreateReportScheduleRequest struct {
-	ctx context.Context
-	ApiService *ReportsApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *ReportsApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	schedule *ModelsReportSchedule
-	xKeyfactorApiVersion *string
+	schedule                *ModelsReportSchedule
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -197,30 +197,31 @@ func (r ApiReportsCreateReportScheduleRequest) Execute() (*ModelsReportSchedule,
 /*
 ReportsCreateReportSchedule Create a built-in report's schedule that matches the id of the report.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Report identifier
- @return ApiReportsCreateReportScheduleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Report identifier
+	@return ApiReportsCreateReportScheduleRequest
 */
 func (a *ReportsApiService) ReportsCreateReportSchedule(ctx context.Context, id int32) ApiReportsCreateReportScheduleRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiReportsCreateReportScheduleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsReportSchedule
+//
+//	@return ModelsReportSchedule
 func (a *ReportsApiService) ReportsCreateReportScheduleExecute(r ApiReportsCreateReportScheduleRequest) (*ModelsReportSchedule, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsReportSchedule
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsReportSchedule
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -231,12 +232,12 @@ func (a *ReportsApiService) ReportsCreateReportScheduleExecute(r ApiReportsCreat
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.schedule == nil {
-        return localVarReturnValue, nil, reportError("schedule is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.schedule == nil {
+		return localVarReturnValue, nil, reportError("schedule is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -299,11 +300,11 @@ func (a *ReportsApiService) ReportsCreateReportScheduleExecute(r ApiReportsCreat
 }
 
 type ApiReportsDeleteReportRequest struct {
-	ctx context.Context
-	ApiService *ReportsApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *ReportsApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -325,28 +326,28 @@ func (r ApiReportsDeleteReportRequest) Execute() (*http.Response, error) {
 /*
 ReportsDeleteReport Delete custom report that matches the id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Report identifier
- @return ApiReportsDeleteReportRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Report identifier
+	@return ApiReportsDeleteReportRequest
 */
 func (a *ReportsApiService) ReportsDeleteReport(ctx context.Context, id int32) ApiReportsDeleteReportRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiReportsDeleteReportRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *ReportsApiService) ReportsDeleteReportExecute(r ApiReportsDeleteReportRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -357,9 +358,9 @@ func (a *ReportsApiService) ReportsDeleteReportExecute(r ApiReportsDeleteReportR
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -411,11 +412,11 @@ func (a *ReportsApiService) ReportsDeleteReportExecute(r ApiReportsDeleteReportR
 }
 
 type ApiReportsDeleteReportScheduleRequest struct {
-	ctx context.Context
-	ApiService *ReportsApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *ReportsApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -437,28 +438,28 @@ func (r ApiReportsDeleteReportScheduleRequest) Execute() (*http.Response, error)
 /*
 ReportsDeleteReportSchedule Delete a built-in report's schedule that matches the id of the schedule.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Report Schedule identifier
- @return ApiReportsDeleteReportScheduleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Report Schedule identifier
+	@return ApiReportsDeleteReportScheduleRequest
 */
 func (a *ReportsApiService) ReportsDeleteReportSchedule(ctx context.Context, id int32) ApiReportsDeleteReportScheduleRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiReportsDeleteReportScheduleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *ReportsApiService) ReportsDeleteReportScheduleExecute(r ApiReportsDeleteReportScheduleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -469,9 +470,9 @@ func (a *ReportsApiService) ReportsDeleteReportScheduleExecute(r ApiReportsDelet
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -523,11 +524,11 @@ func (a *ReportsApiService) ReportsDeleteReportScheduleExecute(r ApiReportsDelet
 }
 
 type ApiReportsGetCustomReportRequest struct {
-	ctx context.Context
-	ApiService *ReportsApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *ReportsApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -549,30 +550,31 @@ func (r ApiReportsGetCustomReportRequest) Execute() (*ModelsCustomReport, *http.
 /*
 ReportsGetCustomReport Returns a single custom report that matches the id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Report identifier
- @return ApiReportsGetCustomReportRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Report identifier
+	@return ApiReportsGetCustomReportRequest
 */
 func (a *ReportsApiService) ReportsGetCustomReport(ctx context.Context, id int32) ApiReportsGetCustomReportRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiReportsGetCustomReportRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsCustomReport
+//
+//	@return ModelsCustomReport
 func (a *ReportsApiService) ReportsGetCustomReportExecute(r ApiReportsGetCustomReportRequest) (*ModelsCustomReport, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsCustomReport
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsCustomReport
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -583,9 +585,9 @@ func (a *ReportsApiService) ReportsGetCustomReportExecute(r ApiReportsGetCustomR
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -646,11 +648,11 @@ func (a *ReportsApiService) ReportsGetCustomReportExecute(r ApiReportsGetCustomR
 }
 
 type ApiReportsGetReportRequest struct {
-	ctx context.Context
-	ApiService *ReportsApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *ReportsApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -672,30 +674,31 @@ func (r ApiReportsGetReportRequest) Execute() (*ModelsReport, *http.Response, er
 /*
 ReportsGetReport Returns a single built-in report that matches the id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Report identifier
- @return ApiReportsGetReportRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Report identifier
+	@return ApiReportsGetReportRequest
 */
 func (a *ReportsApiService) ReportsGetReport(ctx context.Context, id int32) ApiReportsGetReportRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiReportsGetReportRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsReport
+//
+//	@return ModelsReport
 func (a *ReportsApiService) ReportsGetReportExecute(r ApiReportsGetReportRequest) (*ModelsReport, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsReport
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsReport
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -706,9 +709,9 @@ func (a *ReportsApiService) ReportsGetReportExecute(r ApiReportsGetReportRequest
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -769,11 +772,11 @@ func (a *ReportsApiService) ReportsGetReportExecute(r ApiReportsGetReportRequest
 }
 
 type ApiReportsGetReportParametersRequest struct {
-	ctx context.Context
-	ApiService *ReportsApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *ReportsApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -795,30 +798,31 @@ func (r ApiReportsGetReportParametersRequest) Execute() ([]ModelsReportParameter
 /*
 ReportsGetReportParameters Get a built-in report's parameters that matches the id of the report.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Report identifier
- @return ApiReportsGetReportParametersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Report identifier
+	@return ApiReportsGetReportParametersRequest
 */
 func (a *ReportsApiService) ReportsGetReportParameters(ctx context.Context, id int32) ApiReportsGetReportParametersRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiReportsGetReportParametersRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsReportParameters
+//
+//	@return []ModelsReportParameters
 func (a *ReportsApiService) ReportsGetReportParametersExecute(r ApiReportsGetReportParametersRequest) ([]ModelsReportParameters, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsReportParameters
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsReportParameters
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -829,9 +833,9 @@ func (a *ReportsApiService) ReportsGetReportParametersExecute(r ApiReportsGetRep
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -892,11 +896,11 @@ func (a *ReportsApiService) ReportsGetReportParametersExecute(r ApiReportsGetRep
 }
 
 type ApiReportsGetReportScheduleRequest struct {
-	ctx context.Context
-	ApiService *ReportsApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *ReportsApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -918,30 +922,31 @@ func (r ApiReportsGetReportScheduleRequest) Execute() (*ModelsReportSchedule, *h
 /*
 ReportsGetReportSchedule Get a built-in report's schedule that matches the id of the schedule.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Report Schedule identifier
- @return ApiReportsGetReportScheduleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Report Schedule identifier
+	@return ApiReportsGetReportScheduleRequest
 */
 func (a *ReportsApiService) ReportsGetReportSchedule(ctx context.Context, id int32) ApiReportsGetReportScheduleRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiReportsGetReportScheduleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsReportSchedule
+//
+//	@return ModelsReportSchedule
 func (a *ReportsApiService) ReportsGetReportScheduleExecute(r ApiReportsGetReportScheduleRequest) (*ModelsReportSchedule, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsReportSchedule
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsReportSchedule
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -952,9 +957,9 @@ func (a *ReportsApiService) ReportsGetReportScheduleExecute(r ApiReportsGetRepor
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1015,16 +1020,16 @@ func (a *ReportsApiService) ReportsGetReportScheduleExecute(r ApiReportsGetRepor
 }
 
 type ApiReportsGetReportSchedulesRequest struct {
-	ctx context.Context
-	ApiService *ReportsApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *ReportsApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1076,30 +1081,31 @@ func (r ApiReportsGetReportSchedulesRequest) Execute() ([]ModelsReportSchedule, 
 /*
 ReportsGetReportSchedules Get a built-in report's schedules that matches the id of the report.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Report identifier
- @return ApiReportsGetReportSchedulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Report identifier
+	@return ApiReportsGetReportSchedulesRequest
 */
 func (a *ReportsApiService) ReportsGetReportSchedules(ctx context.Context, id int32) ApiReportsGetReportSchedulesRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiReportsGetReportSchedulesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsReportSchedule
+//
+//	@return []ModelsReportSchedule
 func (a *ReportsApiService) ReportsGetReportSchedulesExecute(r ApiReportsGetReportSchedulesRequest) ([]ModelsReportSchedule, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsReportSchedule
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsReportSchedule
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1110,9 +1116,9 @@ func (a *ReportsApiService) ReportsGetReportSchedulesExecute(r ApiReportsGetRepo
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")
@@ -1188,15 +1194,15 @@ func (a *ReportsApiService) ReportsGetReportSchedulesExecute(r ApiReportsGetRepo
 }
 
 type ApiReportsQueryCustomReportsRequest struct {
-	ctx context.Context
-	ApiService *ReportsApiService
+	ctx                     context.Context
+	ApiService              *ReportsApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	queryQueryString *string
-	queryPageReturned *int32
-	queryReturnLimit *int32
-	querySortField *string
-	querySortAscending *int32
+	xKeyfactorApiVersion    *string
+	queryQueryString        *string
+	queryPageReturned       *int32
+	queryReturnLimit        *int32
+	querySortField          *string
+	querySortAscending      *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1248,28 +1254,29 @@ func (r ApiReportsQueryCustomReportsRequest) Execute() ([]ModelsCustomReport, *h
 /*
 ReportsQueryCustomReports Returns all custom reports according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiReportsQueryCustomReportsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiReportsQueryCustomReportsRequest
 */
 func (a *ReportsApiService) ReportsQueryCustomReports(ctx context.Context) ApiReportsQueryCustomReportsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiReportsQueryCustomReportsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsCustomReport
+//
+//	@return []ModelsCustomReport
 func (a *ReportsApiService) ReportsQueryCustomReportsExecute(r ApiReportsQueryCustomReportsRequest) ([]ModelsCustomReport, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsCustomReport
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsCustomReport
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1279,9 +1286,9 @@ func (a *ReportsApiService) ReportsQueryCustomReportsExecute(r ApiReportsQueryCu
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.queryQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "query.queryString", r.queryQueryString, "")
@@ -1357,15 +1364,15 @@ func (a *ReportsApiService) ReportsQueryCustomReportsExecute(r ApiReportsQueryCu
 }
 
 type ApiReportsQueryReportsRequest struct {
-	ctx context.Context
-	ApiService *ReportsApiService
+	ctx                     context.Context
+	ApiService              *ReportsApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	queryQueryString *string
-	queryPageReturned *int32
-	queryReturnLimit *int32
-	querySortField *string
-	querySortAscending *int32
+	xKeyfactorApiVersion    *string
+	queryQueryString        *string
+	queryPageReturned       *int32
+	queryReturnLimit        *int32
+	querySortField          *string
+	querySortAscending      *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1417,28 +1424,29 @@ func (r ApiReportsQueryReportsRequest) Execute() ([]ModelsReport, *http.Response
 /*
 ReportsQueryReports Returns all built-in reports according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiReportsQueryReportsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiReportsQueryReportsRequest
 */
 func (a *ReportsApiService) ReportsQueryReports(ctx context.Context) ApiReportsQueryReportsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiReportsQueryReportsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsReport
+//
+//	@return []ModelsReport
 func (a *ReportsApiService) ReportsQueryReportsExecute(r ApiReportsQueryReportsRequest) ([]ModelsReport, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsReport
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsReport
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1448,9 +1456,9 @@ func (a *ReportsApiService) ReportsQueryReportsExecute(r ApiReportsQueryReportsR
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.queryQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "query.queryString", r.queryQueryString, "")
@@ -1526,11 +1534,11 @@ func (a *ReportsApiService) ReportsQueryReportsExecute(r ApiReportsQueryReportsR
 }
 
 type ApiReportsUpdateCustomReportRequest struct {
-	ctx context.Context
-	ApiService *ReportsApiService
+	ctx                     context.Context
+	ApiService              *ReportsApiService
 	xKeyfactorRequestedWith *string
-	request *ModelsCustomReportUpdateRequest
-	xKeyfactorApiVersion *string
+	request                 *ModelsCustomReportUpdateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1558,28 +1566,29 @@ func (r ApiReportsUpdateCustomReportRequest) Execute() (*ModelsCustomReport, *ht
 /*
 ReportsUpdateCustomReport Updates a custom report that matches the id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiReportsUpdateCustomReportRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiReportsUpdateCustomReportRequest
 */
 func (a *ReportsApiService) ReportsUpdateCustomReport(ctx context.Context) ApiReportsUpdateCustomReportRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiReportsUpdateCustomReportRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsCustomReport
+//
+//	@return ModelsCustomReport
 func (a *ReportsApiService) ReportsUpdateCustomReportExecute(r ApiReportsUpdateCustomReportRequest) (*ModelsCustomReport, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsCustomReport
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsCustomReport
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1589,12 +1598,12 @@ func (a *ReportsApiService) ReportsUpdateCustomReportExecute(r ApiReportsUpdateC
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.request == nil {
-        return localVarReturnValue, nil, reportError("request is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.request == nil {
+		return localVarReturnValue, nil, reportError("request is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -1657,11 +1666,11 @@ func (a *ReportsApiService) ReportsUpdateCustomReportExecute(r ApiReportsUpdateC
 }
 
 type ApiReportsUpdateReportRequest struct {
-	ctx context.Context
-	ApiService *ReportsApiService
+	ctx                     context.Context
+	ApiService              *ReportsApiService
 	xKeyfactorRequestedWith *string
-	request *ModelsReportRequestModel
-	xKeyfactorApiVersion *string
+	request                 *ModelsReportRequestModel
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1689,28 +1698,29 @@ func (r ApiReportsUpdateReportRequest) Execute() (*ModelsReport, *http.Response,
 /*
 ReportsUpdateReport Updates a single built-in report that matches the id. Only some fields can be updated.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiReportsUpdateReportRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiReportsUpdateReportRequest
 */
 func (a *ReportsApiService) ReportsUpdateReport(ctx context.Context) ApiReportsUpdateReportRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiReportsUpdateReportRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsReport
+//
+//	@return ModelsReport
 func (a *ReportsApiService) ReportsUpdateReportExecute(r ApiReportsUpdateReportRequest) (*ModelsReport, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsReport
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsReport
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1720,12 +1730,12 @@ func (a *ReportsApiService) ReportsUpdateReportExecute(r ApiReportsUpdateReportR
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.request == nil {
-        return localVarReturnValue, nil, reportError("request is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.request == nil {
+		return localVarReturnValue, nil, reportError("request is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -1788,12 +1798,12 @@ func (a *ReportsApiService) ReportsUpdateReportExecute(r ApiReportsUpdateReportR
 }
 
 type ApiReportsUpdateReportParametersRequest struct {
-	ctx context.Context
-	ApiService *ReportsApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *ReportsApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	request *[]ModelsReportParametersRequest
-	xKeyfactorApiVersion *string
+	request                 *[]ModelsReportParametersRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1821,30 +1831,31 @@ func (r ApiReportsUpdateReportParametersRequest) Execute() ([]ModelsReportParame
 /*
 ReportsUpdateReportParameters Update a built-in report's parameters that matches the id of the report.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Report identifier
- @return ApiReportsUpdateReportParametersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Report identifier
+	@return ApiReportsUpdateReportParametersRequest
 */
 func (a *ReportsApiService) ReportsUpdateReportParameters(ctx context.Context, id int32) ApiReportsUpdateReportParametersRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiReportsUpdateReportParametersRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsReportParameters
+//
+//	@return []ModelsReportParameters
 func (a *ReportsApiService) ReportsUpdateReportParametersExecute(r ApiReportsUpdateReportParametersRequest) ([]ModelsReportParameters, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsReportParameters
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsReportParameters
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1855,12 +1866,12 @@ func (a *ReportsApiService) ReportsUpdateReportParametersExecute(r ApiReportsUpd
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.request == nil {
-        return localVarReturnValue, nil, reportError("request is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.request == nil {
+		return localVarReturnValue, nil, reportError("request is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -1923,12 +1934,12 @@ func (a *ReportsApiService) ReportsUpdateReportParametersExecute(r ApiReportsUpd
 }
 
 type ApiReportsUpdateReportScheduleRequest struct {
-	ctx context.Context
-	ApiService *ReportsApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *ReportsApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	schedule *ModelsReportSchedule
-	xKeyfactorApiVersion *string
+	schedule                *ModelsReportSchedule
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1956,30 +1967,31 @@ func (r ApiReportsUpdateReportScheduleRequest) Execute() (*ModelsReportSchedule,
 /*
 ReportsUpdateReportSchedule Update a built-in report's schedule that matches the id of the report.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Report identifier
- @return ApiReportsUpdateReportScheduleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Report identifier
+	@return ApiReportsUpdateReportScheduleRequest
 */
 func (a *ReportsApiService) ReportsUpdateReportSchedule(ctx context.Context, id int32) ApiReportsUpdateReportScheduleRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiReportsUpdateReportScheduleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsReportSchedule
+//
+//	@return ModelsReportSchedule
 func (a *ReportsApiService) ReportsUpdateReportScheduleExecute(r ApiReportsUpdateReportScheduleRequest) (*ModelsReportSchedule, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsReportSchedule
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsReportSchedule
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1990,12 +2002,12 @@ func (a *ReportsApiService) ReportsUpdateReportScheduleExecute(r ApiReportsUpdat
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.schedule == nil {
-        return localVarReturnValue, nil, reportError("schedule is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.schedule == nil {
+		return localVarReturnValue, nil, reportError("schedule is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}

@@ -28,20 +28,20 @@ var _ MappedNullable = &CoreModelsEnrollmentEnrollmentTemplate{}
 
 // CoreModelsEnrollmentEnrollmentTemplate struct for CoreModelsEnrollmentEnrollmentTemplate
 type CoreModelsEnrollmentEnrollmentTemplate struct {
-	Id *int32 `json:"Id,omitempty"`
-	Name *string `json:"Name,omitempty"`
-	DisplayName *string `json:"DisplayName,omitempty"`
-	Forest *string `json:"Forest,omitempty"`
-	KeySize *string `json:"KeySize,omitempty"`
-	KeyType *string `json:"KeyType,omitempty"`
-	RequiresApproval *bool `json:"RequiresApproval,omitempty"`
-	RFCEnforcement *bool `json:"RFCEnforcement,omitempty"`
-	CAs []CoreModelsEnrollmentEnrollmentCA `json:"CAs,omitempty"`
-	EnrollmentFields []ModelsTemplateEnrollmentField `json:"EnrollmentFields,omitempty"`
-	MetadataFields []ModelsTemplateMetadataField `json:"MetadataFields,omitempty"`
-	Regexes []ModelsTemplateRegex `json:"Regexes,omitempty"`
-	ExtendedKeyUsages []ModelsExtendedKeyUsage `json:"ExtendedKeyUsages,omitempty"`
-	Curve NullableString `json:"Curve,omitempty"`
+	Id                   *int32                             `json:"Id,omitempty"`
+	Name                 *string                            `json:"Name,omitempty"`
+	DisplayName          *string                            `json:"DisplayName,omitempty"`
+	Forest               *string                            `json:"Forest,omitempty"`
+	KeySize              *string                            `json:"KeySize,omitempty"`
+	KeyType              *string                            `json:"KeyType,omitempty"`
+	RequiresApproval     *bool                              `json:"RequiresApproval,omitempty"`
+	RFCEnforcement       *bool                              `json:"RFCEnforcement,omitempty"`
+	CAs                  []CoreModelsEnrollmentEnrollmentCA `json:"CAs,omitempty"`
+	EnrollmentFields     []ModelsTemplateEnrollmentField    `json:"EnrollmentFields,omitempty"`
+	MetadataFields       []ModelsTemplateMetadataField      `json:"MetadataFields,omitempty"`
+	Regexes              []ModelsTemplateRegex              `json:"Regexes,omitempty"`
+	ExtendedKeyUsages    []ModelsExtendedKeyUsage           `json:"ExtendedKeyUsages,omitempty"`
+	Curve                NullableString                     `json:"Curve,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -512,6 +512,7 @@ func (o *CoreModelsEnrollmentEnrollmentTemplate) HasCurve() bool {
 func (o *CoreModelsEnrollmentEnrollmentTemplate) SetCurve(v string) {
 	o.Curve.Set(&v)
 }
+
 // SetCurveNil sets the value for Curve to be an explicit nil
 func (o *CoreModelsEnrollmentEnrollmentTemplate) SetCurveNil() {
 	o.Curve.Set(nil)
@@ -523,7 +524,7 @@ func (o *CoreModelsEnrollmentEnrollmentTemplate) UnsetCurve() {
 }
 
 func (o CoreModelsEnrollmentEnrollmentTemplate) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -647,5 +648,3 @@ func (v *NullableCoreModelsEnrollmentEnrollmentTemplate) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

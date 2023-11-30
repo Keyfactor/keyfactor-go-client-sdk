@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // CertificateStoreContainerApiService CertificateStoreContainerApi service
 type CertificateStoreContainerApiService service
 
 type ApiCertificateStoreContainerDeleteCertificateStoreContainersRequest struct {
-	ctx context.Context
-	ApiService *CertificateStoreContainerApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *CertificateStoreContainerApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -59,28 +58,28 @@ func (r ApiCertificateStoreContainerDeleteCertificateStoreContainersRequest) Exe
 /*
 CertificateStoreContainerDeleteCertificateStoreContainers Delete a certificate store container
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Id for the certificate store container
- @return ApiCertificateStoreContainerDeleteCertificateStoreContainersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Id for the certificate store container
+	@return ApiCertificateStoreContainerDeleteCertificateStoreContainersRequest
 */
 func (a *CertificateStoreContainerApiService) CertificateStoreContainerDeleteCertificateStoreContainers(ctx context.Context, id int32) ApiCertificateStoreContainerDeleteCertificateStoreContainersRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateStoreContainerDeleteCertificateStoreContainersRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *CertificateStoreContainerApiService) CertificateStoreContainerDeleteCertificateStoreContainersExecute(r ApiCertificateStoreContainerDeleteCertificateStoreContainersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -91,9 +90,9 @@ func (a *CertificateStoreContainerApiService) CertificateStoreContainerDeleteCer
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -145,15 +144,15 @@ func (a *CertificateStoreContainerApiService) CertificateStoreContainerDeleteCer
 }
 
 type ApiCertificateStoreContainerGetAllCertificateStoreContainersRequest struct {
-	ctx context.Context
-	ApiService *CertificateStoreContainerApiService
+	ctx                     context.Context
+	ApiService              *CertificateStoreContainerApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -205,28 +204,29 @@ func (r ApiCertificateStoreContainerGetAllCertificateStoreContainersRequest) Exe
 /*
 CertificateStoreContainerGetAllCertificateStoreContainers Returns all certificate store container according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateStoreContainerGetAllCertificateStoreContainersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateStoreContainerGetAllCertificateStoreContainersRequest
 */
 func (a *CertificateStoreContainerApiService) CertificateStoreContainerGetAllCertificateStoreContainers(ctx context.Context) ApiCertificateStoreContainerGetAllCertificateStoreContainersRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateStoreContainerGetAllCertificateStoreContainersRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsCertificateStoreContainerListResponse
+//
+//	@return []ModelsCertificateStoreContainerListResponse
 func (a *CertificateStoreContainerApiService) CertificateStoreContainerGetAllCertificateStoreContainersExecute(r ApiCertificateStoreContainerGetAllCertificateStoreContainersRequest) ([]ModelsCertificateStoreContainerListResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsCertificateStoreContainerListResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsCertificateStoreContainerListResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -236,9 +236,9 @@ func (a *CertificateStoreContainerApiService) CertificateStoreContainerGetAllCer
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")

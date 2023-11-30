@@ -28,9 +28,9 @@ var _ MappedNullable = &ModelsSSHServersServerUpdateRequest{}
 
 // ModelsSSHServersServerUpdateRequest struct for ModelsSSHServersServerUpdateRequest
 type ModelsSSHServersServerUpdateRequest struct {
-	Id int32 `json:"Id"`
-	UnderManagement *bool `json:"UnderManagement,omitempty"`
-	Port *int32 `json:"Port,omitempty"`
+	Id                   int32  `json:"Id"`
+	UnderManagement      *bool  `json:"UnderManagement,omitempty"`
+	Port                 *int32 `json:"Port,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -143,7 +143,7 @@ func (o *ModelsSSHServersServerUpdateRequest) SetPort(v int32) {
 }
 
 func (o ModelsSSHServersServerUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -221,5 +221,3 @@ func (v *NullableModelsSSHServersServerUpdateRequest) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

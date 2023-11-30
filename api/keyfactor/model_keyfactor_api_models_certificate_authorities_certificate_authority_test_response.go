@@ -31,7 +31,7 @@ type KeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityTestResponse st
 	// Whether the test succeeded or failed.
 	Success *bool `json:"Success,omitempty"`
 	// The message returned by the test.
-	Message *string `json:"Message,omitempty"`
+	Message              *string `json:"Message,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -119,7 +119,7 @@ func (o *KeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityTestRespons
 }
 
 func (o KeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityTestResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -195,5 +195,3 @@ func (v *NullableKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityTes
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

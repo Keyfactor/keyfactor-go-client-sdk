@@ -29,15 +29,15 @@ var _ MappedNullable = &KeyfactorApiModelsOrchestratorsAgentBlueprintStoresRespo
 // KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse struct for KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse
 type KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse struct {
 	AgentBlueprintStoreId *string `json:"AgentBlueprintStoreId,omitempty"`
-	AgentBlueprintId *string `json:"AgentBlueprintId,omitempty"`
-	StorePath *string `json:"StorePath,omitempty"`
-	ContainerId *int32 `json:"ContainerId,omitempty"`
-	CertStoreType *int32 `json:"CertStoreType,omitempty"`
-	CertStoreTypeName *string `json:"CertStoreTypeName,omitempty"`
-	Approved *bool `json:"Approved,omitempty"`
-	CreateIfMissing *bool `json:"CreateIfMissing,omitempty"`
-	Properties *string `json:"Properties,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AgentBlueprintId      *string `json:"AgentBlueprintId,omitempty"`
+	StorePath             *string `json:"StorePath,omitempty"`
+	ContainerId           *int32  `json:"ContainerId,omitempty"`
+	CertStoreType         *int32  `json:"CertStoreType,omitempty"`
+	CertStoreTypeName     *string `json:"CertStoreTypeName,omitempty"`
+	Approved              *bool   `json:"Approved,omitempty"`
+	CreateIfMissing       *bool   `json:"CreateIfMissing,omitempty"`
+	Properties            *string `json:"Properties,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse
@@ -348,7 +348,7 @@ func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) SetPropert
 }
 
 func (o KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -452,5 +452,3 @@ func (v *NullableKeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) Un
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

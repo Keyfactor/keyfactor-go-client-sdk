@@ -28,15 +28,15 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefin
 
 // KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse struct for KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
 type KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse struct {
-	Id *int32 `json:"Id,omitempty"`
-	DisplayName *string `json:"DisplayName,omitempty"`
-	Subject *string `json:"Subject,omitempty"`
-	Message *string `json:"Message,omitempty"`
-	Recipient *string `json:"Recipient,omitempty"`
-	RotationWarningDays *int32 `json:"RotationWarningDays,omitempty"`
+	Id                     *int32                                                        `json:"Id,omitempty"`
+	DisplayName            *string                                                       `json:"DisplayName,omitempty"`
+	Subject                *string                                                       `json:"Subject,omitempty"`
+	Message                *string                                                       `json:"Message,omitempty"`
+	Recipient              *string                                                       `json:"Recipient,omitempty"`
+	RotationWarningDays    *int32                                                        `json:"RotationWarningDays,omitempty"`
 	RegisteredEventHandler *KeyfactorApiModelsEventHandlerRegisteredEventHandlerResponse `json:"RegisteredEventHandler,omitempty"`
 	EventHandlerParameters []KeyfactorApiModelsEventHandlerEventHandlerParameterResponse `json:"EventHandlerParameters,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties   map[string]interface{}
 }
 
 type _KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
@@ -315,7 +315,7 @@ func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) 
 }
 
 func (o KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -415,5 +415,3 @@ func (v *NullableKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionRe
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -28,33 +28,33 @@ var _ MappedNullable = &ModelsTemplateRetrievalResponse{}
 
 // ModelsTemplateRetrievalResponse struct for ModelsTemplateRetrievalResponse
 type ModelsTemplateRetrievalResponse struct {
-	Id *int32 `json:"Id,omitempty"`
-	CommonName *string `json:"CommonName,omitempty"`
-	TemplateName *string `json:"TemplateName,omitempty"`
-	Oid *string `json:"Oid,omitempty"`
-	KeySize *string `json:"KeySize,omitempty"`
-	KeyType *string `json:"KeyType,omitempty"`
-	ForestRoot *string `json:"ForestRoot,omitempty"`
-	ConfigurationTenant *string `json:"ConfigurationTenant,omitempty"`
-	FriendlyName *string `json:"FriendlyName,omitempty"`
-	KeyRetention *int32 `json:"KeyRetention,omitempty"`
-	KeyRetentionDays *int32 `json:"KeyRetentionDays,omitempty"`
-	KeyArchival *bool `json:"KeyArchival,omitempty"`
-	EnrollmentFields []ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel `json:"EnrollmentFields,omitempty"`
-	MetadataFields []ModelsTemplateRetrievalResponseTemplateMetadataFieldModel `json:"MetadataFields,omitempty"`
-	AllowedEnrollmentTypes *int32 `json:"AllowedEnrollmentTypes,omitempty"`
-	TemplateRegexes []ModelsTemplateRetrievalResponseTemplateRegexModel `json:"TemplateRegexes,omitempty"`
-	TemplateDefaults []ModelsTemplateRetrievalResponseTemplateDefaultModel `json:"TemplateDefaults,omitempty"`
-	TemplatePolicy *ModelsTemplateRetrievalResponseTemplatePolicyModel `json:"TemplatePolicy,omitempty"`
-	UseAllowedRequesters *bool `json:"UseAllowedRequesters,omitempty"`
-	AllowedRequesters []string `json:"AllowedRequesters,omitempty"`
-	DisplayName *string `json:"DisplayName,omitempty"`
-	RFCEnforcement *bool `json:"RFCEnforcement,omitempty"`
-	RequiresApproval *bool `json:"RequiresApproval,omitempty"`
-	KeyUsage *int32 `json:"KeyUsage,omitempty"`
-	ExtendedKeyUsages []ModelsTemplateRetrievalResponseExtendedKeyUsageModel `json:"ExtendedKeyUsages,omitempty"`
-	Curve NullableString `json:"Curve,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                     *int32                                                        `json:"Id,omitempty"`
+	CommonName             *string                                                       `json:"CommonName,omitempty"`
+	TemplateName           *string                                                       `json:"TemplateName,omitempty"`
+	Oid                    *string                                                       `json:"Oid,omitempty"`
+	KeySize                *string                                                       `json:"KeySize,omitempty"`
+	KeyType                *string                                                       `json:"KeyType,omitempty"`
+	ForestRoot             *string                                                       `json:"ForestRoot,omitempty"`
+	ConfigurationTenant    *string                                                       `json:"ConfigurationTenant,omitempty"`
+	FriendlyName           *string                                                       `json:"FriendlyName,omitempty"`
+	KeyRetention           *int32                                                        `json:"KeyRetention,omitempty"`
+	KeyRetentionDays       *int32                                                        `json:"KeyRetentionDays,omitempty"`
+	KeyArchival            *bool                                                         `json:"KeyArchival,omitempty"`
+	EnrollmentFields       []ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel `json:"EnrollmentFields,omitempty"`
+	MetadataFields         []ModelsTemplateRetrievalResponseTemplateMetadataFieldModel   `json:"MetadataFields,omitempty"`
+	AllowedEnrollmentTypes *int32                                                        `json:"AllowedEnrollmentTypes,omitempty"`
+	TemplateRegexes        []ModelsTemplateRetrievalResponseTemplateRegexModel           `json:"TemplateRegexes,omitempty"`
+	TemplateDefaults       []ModelsTemplateRetrievalResponseTemplateDefaultModel         `json:"TemplateDefaults,omitempty"`
+	TemplatePolicy         *ModelsTemplateRetrievalResponseTemplatePolicyModel           `json:"TemplatePolicy,omitempty"`
+	UseAllowedRequesters   *bool                                                         `json:"UseAllowedRequesters,omitempty"`
+	AllowedRequesters      []string                                                      `json:"AllowedRequesters,omitempty"`
+	DisplayName            *string                                                       `json:"DisplayName,omitempty"`
+	RFCEnforcement         *bool                                                         `json:"RFCEnforcement,omitempty"`
+	RequiresApproval       *bool                                                         `json:"RequiresApproval,omitempty"`
+	KeyUsage               *int32                                                        `json:"KeyUsage,omitempty"`
+	ExtendedKeyUsages      []ModelsTemplateRetrievalResponseExtendedKeyUsageModel        `json:"ExtendedKeyUsages,omitempty"`
+	Curve                  NullableString                                                `json:"Curve,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _ModelsTemplateRetrievalResponse ModelsTemplateRetrievalResponse
@@ -908,6 +908,7 @@ func (o *ModelsTemplateRetrievalResponse) HasCurve() bool {
 func (o *ModelsTemplateRetrievalResponse) SetCurve(v string) {
 	o.Curve.Set(&v)
 }
+
 // SetCurveNil sets the value for Curve to be an explicit nil
 func (o *ModelsTemplateRetrievalResponse) SetCurveNil() {
 	o.Curve.Set(nil)
@@ -919,7 +920,7 @@ func (o *ModelsTemplateRetrievalResponse) UnsetCurve() {
 }
 
 func (o ModelsTemplateRetrievalResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1089,5 +1090,3 @@ func (v *NullableModelsTemplateRetrievalResponse) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

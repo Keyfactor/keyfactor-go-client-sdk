@@ -28,13 +28,13 @@ var _ MappedNullable = &ModelsAgentsAgentPoolAgent{}
 
 // ModelsAgentsAgentPoolAgent struct for ModelsAgentsAgentPoolAgent
 type ModelsAgentsAgentPoolAgent struct {
-	AgentId *string `json:"AgentId,omitempty"`
-	EnableDiscover *bool `json:"EnableDiscover,omitempty"`
-	EnableMonitor *bool `json:"EnableMonitor,omitempty"`
-	Version *string `json:"Version,omitempty"`
-	AllowsDiscover *bool `json:"AllowsDiscover,omitempty"`
-	AllowsMonitor *bool `json:"AllowsMonitor,omitempty"`
-	ClientMachine *string `json:"ClientMachine,omitempty"`
+	AgentId              *string `json:"AgentId,omitempty"`
+	EnableDiscover       *bool   `json:"EnableDiscover,omitempty"`
+	EnableMonitor        *bool   `json:"EnableMonitor,omitempty"`
+	Version              *string `json:"Version,omitempty"`
+	AllowsDiscover       *bool   `json:"AllowsDiscover,omitempty"`
+	AllowsMonitor        *bool   `json:"AllowsMonitor,omitempty"`
+	ClientMachine        *string `json:"ClientMachine,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -282,7 +282,7 @@ func (o *ModelsAgentsAgentPoolAgent) SetClientMachine(v string) {
 }
 
 func (o ModelsAgentsAgentPoolAgent) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -378,5 +378,3 @@ func (v *NullableModelsAgentsAgentPoolAgent) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

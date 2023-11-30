@@ -30,13 +30,13 @@ var _ MappedNullable = &KeyfactorApiModelsEnrollmentEnrollmentManagementRequest{
 // KeyfactorApiModelsEnrollmentEnrollmentManagementRequest struct for KeyfactorApiModelsEnrollmentEnrollmentManagementRequest
 type KeyfactorApiModelsEnrollmentEnrollmentManagementRequest struct {
 	// The stores to add the certificate to. Values in this collection will take precedence over values in {Models.Enrollment.SpecificEnrollmentManagementRequest.StoreTypes}.
-	Stores []KeyfactorApiModelsEnrollmentManagementStoreRequest `json:"Stores,omitempty"`
-	StoreIds []string `json:"StoreIds,omitempty"`
-	StoreTypes []KeyfactorApiModelsEnrollmentManagementStoreTypeRequest `json:"StoreTypes,omitempty"`
-	CertificateId *int32 `json:"CertificateId,omitempty"`
-	RequestId *int32 `json:"RequestId,omitempty"`
-	Password string `json:"Password"`
-	JobTime *time.Time `json:"JobTime,omitempty"`
+	Stores               []KeyfactorApiModelsEnrollmentManagementStoreRequest     `json:"Stores,omitempty"`
+	StoreIds             []string                                                 `json:"StoreIds,omitempty"`
+	StoreTypes           []KeyfactorApiModelsEnrollmentManagementStoreTypeRequest `json:"StoreTypes,omitempty"`
+	CertificateId        *int32                                                   `json:"CertificateId,omitempty"`
+	RequestId            *int32                                                   `json:"RequestId,omitempty"`
+	Password             string                                                   `json:"Password"`
+	JobTime              *time.Time                                               `json:"JobTime,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -277,7 +277,7 @@ func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) SetJobTime(v t
 }
 
 func (o KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -371,5 +371,3 @@ func (v *NullableKeyfactorApiModelsEnrollmentEnrollmentManagementRequest) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

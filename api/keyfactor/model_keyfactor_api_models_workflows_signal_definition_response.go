@@ -28,7 +28,7 @@ var _ MappedNullable = &KeyfactorApiModelsWorkflowsSignalDefinitionResponse{}
 
 // KeyfactorApiModelsWorkflowsSignalDefinitionResponse struct for KeyfactorApiModelsWorkflowsSignalDefinitionResponse
 type KeyfactorApiModelsWorkflowsSignalDefinitionResponse struct {
-	InputParameters *map[string]KeyfactorApiModelsWorkflowsParameterDefinitionResponse `json:"InputParameters,omitempty"`
+	InputParameters      *map[string]KeyfactorApiModelsWorkflowsParameterDefinitionResponse `json:"InputParameters,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *KeyfactorApiModelsWorkflowsSignalDefinitionResponse) SetInputParameters
 }
 
 func (o KeyfactorApiModelsWorkflowsSignalDefinitionResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -156,5 +156,3 @@ func (v *NullableKeyfactorApiModelsWorkflowsSignalDefinitionResponse) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

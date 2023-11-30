@@ -28,14 +28,14 @@ var _ MappedNullable = &ModelsCertificateStoreTypesCertificateStoreTypeEntryPara
 
 // ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter struct for ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter
 type ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter struct {
-	StoreTypeId *int32 `json:"StoreTypeId,omitempty"`
-	Name *string `json:"Name,omitempty"`
-	DisplayName *string `json:"DisplayName,omitempty"`
-	Type *string `json:"Type,omitempty"`
-	RequiredWhen *map[string]bool `json:"RequiredWhen,omitempty"`
-	DependsOn *string `json:"DependsOn,omitempty"`
-	DefaultValue *string `json:"DefaultValue,omitempty"`
-	Options *string `json:"Options,omitempty"`
+	StoreTypeId          *int32           `json:"StoreTypeId,omitempty"`
+	Name                 *string          `json:"Name,omitempty"`
+	DisplayName          *string          `json:"DisplayName,omitempty"`
+	Type                 *string          `json:"Type,omitempty"`
+	RequiredWhen         *map[string]bool `json:"RequiredWhen,omitempty"`
+	DependsOn            *string          `json:"DependsOn,omitempty"`
+	DefaultValue         *string          `json:"DefaultValue,omitempty"`
+	Options              *string          `json:"Options,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -315,7 +315,7 @@ func (o *ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) SetOptio
 }
 
 func (o ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -415,5 +415,3 @@ func (v *NullableModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

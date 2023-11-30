@@ -29,17 +29,17 @@ var _ MappedNullable = &KeyfactorAuditingQueryingAuditLogEntry{}
 
 // KeyfactorAuditingQueryingAuditLogEntry struct for KeyfactorAuditingQueryingAuditLogEntry
 type KeyfactorAuditingQueryingAuditLogEntry struct {
-	Id *int32 `json:"Id,omitempty"`
-	Timestamp *time.Time `json:"Timestamp,omitempty"`
-	Message *string `json:"Message,omitempty"`
-	Signature *string `json:"Signature,omitempty"`
-	Category *int32 `json:"Category,omitempty"`
-	Operation *int32 `json:"Operation,omitempty"`
-	Level *int32 `json:"Level,omitempty"`
-	User *string `json:"User,omitempty"`
-	EntityType *string `json:"EntityType,omitempty"`
-	AuditIdentifier *string `json:"AuditIdentifier,omitempty"`
-	ImmutableIdentifier *string `json:"ImmutableIdentifier,omitempty"`
+	Id                   *int32     `json:"Id,omitempty"`
+	Timestamp            *time.Time `json:"Timestamp,omitempty"`
+	Message              *string    `json:"Message,omitempty"`
+	Signature            *string    `json:"Signature,omitempty"`
+	Category             *int32     `json:"Category,omitempty"`
+	Operation            *int32     `json:"Operation,omitempty"`
+	Level                *int32     `json:"Level,omitempty"`
+	User                 *string    `json:"User,omitempty"`
+	EntityType           *string    `json:"EntityType,omitempty"`
+	AuditIdentifier      *string    `json:"AuditIdentifier,omitempty"`
+	ImmutableIdentifier  *string    `json:"ImmutableIdentifier,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -415,7 +415,7 @@ func (o *KeyfactorAuditingQueryingAuditLogEntry) SetImmutableIdentifier(v string
 }
 
 func (o KeyfactorAuditingQueryingAuditLogEntry) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -527,5 +527,3 @@ func (v *NullableKeyfactorAuditingQueryingAuditLogEntry) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

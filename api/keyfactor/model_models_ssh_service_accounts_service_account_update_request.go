@@ -28,8 +28,8 @@ var _ MappedNullable = &ModelsSSHServiceAccountsServiceAccountUpdateRequest{}
 
 // ModelsSSHServiceAccountsServiceAccountUpdateRequest struct for ModelsSSHServiceAccountsServiceAccountUpdateRequest
 type ModelsSSHServiceAccountsServiceAccountUpdateRequest struct {
-	KeyUpdateRequest ModelsSSHKeysKeyUpdateRequest `json:"KeyUpdateRequest"`
-	Id int32 `json:"Id"`
+	KeyUpdateRequest     ModelsSSHKeysKeyUpdateRequest `json:"KeyUpdateRequest"`
+	Id                   int32                         `json:"Id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -103,7 +103,7 @@ func (o *ModelsSSHServiceAccountsServiceAccountUpdateRequest) SetId(v int32) {
 }
 
 func (o ModelsSSHServiceAccountsServiceAccountUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -175,5 +175,3 @@ func (v *NullableModelsSSHServiceAccountsServiceAccountUpdateRequest) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

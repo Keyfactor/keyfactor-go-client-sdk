@@ -28,16 +28,16 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsExpirationExpirationAlertDefinit
 
 // KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse struct for KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
 type KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse struct {
-	Id *int32 `json:"Id,omitempty"`
-	DisplayName *string `json:"DisplayName,omitempty"`
-	Subject *string `json:"Subject,omitempty"`
-	Message *string `json:"Message,omitempty"`
-	ExpirationWarningDays *int32 `json:"ExpirationWarningDays,omitempty"`
-	Recipients []string `json:"Recipients,omitempty"`
-	CertificateQuery *KeyfactorApiModelsAlertsAlertCertificateQueryAlertCertificateQueryResponse `json:"CertificateQuery,omitempty"`
-	RegisteredEventHandler *KeyfactorApiModelsEventHandlerRegisteredEventHandlerResponse `json:"RegisteredEventHandler,omitempty"`
-	EventHandlerParameters []KeyfactorApiModelsEventHandlerEventHandlerParameterResponse `json:"EventHandlerParameters,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                     *int32                                                                      `json:"Id,omitempty"`
+	DisplayName            *string                                                                     `json:"DisplayName,omitempty"`
+	Subject                *string                                                                     `json:"Subject,omitempty"`
+	Message                *string                                                                     `json:"Message,omitempty"`
+	ExpirationWarningDays  *int32                                                                      `json:"ExpirationWarningDays,omitempty"`
+	Recipients             []string                                                                    `json:"Recipients,omitempty"`
+	CertificateQuery       *KeyfactorApiModelsAlertsAlertCertificateQueryAlertCertificateQueryResponse `json:"CertificateQuery,omitempty"`
+	RegisteredEventHandler *KeyfactorApiModelsEventHandlerRegisteredEventHandlerResponse               `json:"RegisteredEventHandler,omitempty"`
+	EventHandlerParameters []KeyfactorApiModelsEventHandlerEventHandlerParameterResponse               `json:"EventHandlerParameters,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
@@ -348,7 +348,7 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) Se
 }
 
 func (o KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -452,5 +452,3 @@ func (v *NullableKeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResp
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

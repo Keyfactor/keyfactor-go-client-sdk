@@ -28,8 +28,8 @@ var _ MappedNullable = &ModelsCollectionRolePermissions{}
 
 // ModelsCollectionRolePermissions struct for ModelsCollectionRolePermissions
 type ModelsCollectionRolePermissions struct {
-	RoleId *int32 `json:"RoleId,omitempty"`
-	Permissions []string `json:"Permissions,omitempty"`
+	RoleId               *int32   `json:"RoleId,omitempty"`
+	Permissions          []string `json:"Permissions,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -117,7 +117,7 @@ func (o *ModelsCollectionRolePermissions) SetPermissions(v []string) {
 }
 
 func (o ModelsCollectionRolePermissions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,5 +193,3 @@ func (v *NullableModelsCollectionRolePermissions) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

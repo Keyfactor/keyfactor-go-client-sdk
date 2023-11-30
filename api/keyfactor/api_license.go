@@ -27,15 +27,14 @@ import (
 	"net/url"
 )
 
-
 // LicenseApiService LicenseApi service
 type LicenseApiService service
 
 type ApiLicenseGetCurrentLicenseRequest struct {
-	ctx context.Context
-	ApiService *LicenseApiService
+	ctx                     context.Context
+	ApiService              *LicenseApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -57,28 +56,29 @@ func (r ApiLicenseGetCurrentLicenseRequest) Execute() (*KeyfactorApiModelsLicens
 /*
 LicenseGetCurrentLicense Gets the current license
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiLicenseGetCurrentLicenseRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiLicenseGetCurrentLicenseRequest
 */
 func (a *LicenseApiService) LicenseGetCurrentLicense(ctx context.Context) ApiLicenseGetCurrentLicenseRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiLicenseGetCurrentLicenseRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsLicenseLicenseResponse
+//
+//	@return KeyfactorApiModelsLicenseLicenseResponse
 func (a *LicenseApiService) LicenseGetCurrentLicenseExecute(r ApiLicenseGetCurrentLicenseRequest) (*KeyfactorApiModelsLicenseLicenseResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsLicenseLicenseResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsLicenseLicenseResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -88,9 +88,9 @@ func (a *LicenseApiService) LicenseGetCurrentLicenseExecute(r ApiLicenseGetCurre
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

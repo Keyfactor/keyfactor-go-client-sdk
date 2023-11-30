@@ -29,11 +29,11 @@ var _ MappedNullable = &KeyfactorApiModelsLicenseLicenseResponseLicense{}
 
 // KeyfactorApiModelsLicenseLicenseResponseLicense struct for KeyfactorApiModelsLicenseLicenseResponseLicense
 type KeyfactorApiModelsLicenseLicenseResponseLicense struct {
-	LicenseId *string `json:"LicenseId,omitempty"`
-	Customer *KeyfactorApiModelsLicenseLicenseResponseLicensedCustomer `json:"Customer,omitempty"`
-	IssuedDate *time.Time `json:"IssuedDate,omitempty"`
-	ExpirationDate *time.Time `json:"ExpirationDate,omitempty"`
-	LicensedProducts []KeyfactorApiModelsLicenseLicenseResponseLicensedProduct `json:"LicensedProducts,omitempty"`
+	LicenseId            *string                                                   `json:"LicenseId,omitempty"`
+	Customer             *KeyfactorApiModelsLicenseLicenseResponseLicensedCustomer `json:"Customer,omitempty"`
+	IssuedDate           *time.Time                                                `json:"IssuedDate,omitempty"`
+	ExpirationDate       *time.Time                                                `json:"ExpirationDate,omitempty"`
+	LicensedProducts     []KeyfactorApiModelsLicenseLicenseResponseLicensedProduct `json:"LicensedProducts,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -217,7 +217,7 @@ func (o *KeyfactorApiModelsLicenseLicenseResponseLicense) SetLicensedProducts(v 
 }
 
 func (o KeyfactorApiModelsLicenseLicenseResponseLicense) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -305,5 +305,3 @@ func (v *NullableKeyfactorApiModelsLicenseLicenseResponseLicense) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

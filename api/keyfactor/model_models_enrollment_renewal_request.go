@@ -29,11 +29,11 @@ var _ MappedNullable = &ModelsEnrollmentRenewalRequest{}
 
 // ModelsEnrollmentRenewalRequest struct for ModelsEnrollmentRenewalRequest
 type ModelsEnrollmentRenewalRequest struct {
-	CertificateId *int32 `json:"CertificateId,omitempty"`
-	Thumbprint *string `json:"Thumbprint,omitempty"`
-	CertificateAuthority *string `json:"CertificateAuthority,omitempty"`
-	Template *string `json:"Template,omitempty"`
-	Timestamp *time.Time `json:"Timestamp,omitempty"`
+	CertificateId        *int32     `json:"CertificateId,omitempty"`
+	Thumbprint           *string    `json:"Thumbprint,omitempty"`
+	CertificateAuthority *string    `json:"CertificateAuthority,omitempty"`
+	Template             *string    `json:"Template,omitempty"`
+	Timestamp            *time.Time `json:"Timestamp,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -217,7 +217,7 @@ func (o *ModelsEnrollmentRenewalRequest) SetTimestamp(v time.Time) {
 }
 
 func (o ModelsEnrollmentRenewalRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -305,5 +305,3 @@ func (v *NullableModelsEnrollmentRenewalRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

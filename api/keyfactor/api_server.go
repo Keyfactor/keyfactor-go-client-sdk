@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // ServerApiService ServerApi service
 type ServerApiService service
 
 type ApiServerAddAccessRequest struct {
-	ctx context.Context
-	ApiService *ServerApiService
+	ctx                     context.Context
+	ApiService              *ServerApiService
 	xKeyfactorRequestedWith *string
-	serverAccess *ModelsSSHAccessServerAccessRequest
-	xKeyfactorApiVersion *string
+	serverAccess            *ModelsSSHAccessServerAccessRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -65,28 +64,29 @@ func (r ApiServerAddAccessRequest) Execute() (*ModelsSSHAccessServerAccessRespon
 /*
 ServerAddAccess Updates logons and users with access to those logons for an existing server
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiServerAddAccessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiServerAddAccessRequest
 */
 func (a *ServerApiService) ServerAddAccess(ctx context.Context) ApiServerAddAccessRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServerAddAccessRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHAccessServerAccessResponse
+//
+//	@return ModelsSSHAccessServerAccessResponse
 func (a *ServerApiService) ServerAddAccessExecute(r ApiServerAddAccessRequest) (*ModelsSSHAccessServerAccessResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHAccessServerAccessResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHAccessServerAccessResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -96,12 +96,12 @@ func (a *ServerApiService) ServerAddAccessExecute(r ApiServerAddAccessRequest) (
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.serverAccess == nil {
-        return localVarReturnValue, nil, reportError("serverAccess is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.serverAccess == nil {
+		return localVarReturnValue, nil, reportError("serverAccess is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -164,11 +164,11 @@ func (a *ServerApiService) ServerAddAccessExecute(r ApiServerAddAccessRequest) (
 }
 
 type ApiServerCreateServerRequest struct {
-	ctx context.Context
-	ApiService *ServerApiService
+	ctx                     context.Context
+	ApiService              *ServerApiService
 	xKeyfactorRequestedWith *string
-	creationRequest *ModelsSSHServersServerCreationRequest
-	xKeyfactorApiVersion *string
+	creationRequest         *ModelsSSHServersServerCreationRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -196,28 +196,29 @@ func (r ApiServerCreateServerRequest) Execute() (*ModelsSSHServersServerResponse
 /*
 ServerCreateServer Creates a server with the provided properties
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiServerCreateServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiServerCreateServerRequest
 */
 func (a *ServerApiService) ServerCreateServer(ctx context.Context) ApiServerCreateServerRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServerCreateServerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHServersServerResponse
+//
+//	@return ModelsSSHServersServerResponse
 func (a *ServerApiService) ServerCreateServerExecute(r ApiServerCreateServerRequest) (*ModelsSSHServersServerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHServersServerResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHServersServerResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -227,12 +228,12 @@ func (a *ServerApiService) ServerCreateServerExecute(r ApiServerCreateServerRequ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.creationRequest == nil {
-        return localVarReturnValue, nil, reportError("creationRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.creationRequest == nil {
+		return localVarReturnValue, nil, reportError("creationRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -295,11 +296,11 @@ func (a *ServerApiService) ServerCreateServerExecute(r ApiServerCreateServerRequ
 }
 
 type ApiServerDeleteRequest struct {
-	ctx context.Context
-	ApiService *ServerApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *ServerApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -321,28 +322,28 @@ func (r ApiServerDeleteRequest) Execute() (*http.Response, error) {
 /*
 ServerDelete Deletes a Server associated with the provided identifier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifer of the Server to be deleted
- @return ApiServerDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifer of the Server to be deleted
+	@return ApiServerDeleteRequest
 */
 func (a *ServerApiService) ServerDelete(ctx context.Context, id int32) ApiServerDeleteRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServerDeleteRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *ServerApiService) ServerDeleteExecute(r ApiServerDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -353,9 +354,9 @@ func (a *ServerApiService) ServerDeleteExecute(r ApiServerDeleteRequest) (*http.
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -407,11 +408,11 @@ func (a *ServerApiService) ServerDeleteExecute(r ApiServerDeleteRequest) (*http.
 }
 
 type ApiServerGetRequest struct {
-	ctx context.Context
-	ApiService *ServerApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *ServerApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -433,30 +434,31 @@ func (r ApiServerGetRequest) Execute() (*ModelsSSHServersServerResponse, *http.R
 /*
 ServerGet Returns a Server associated with the provided identifier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifier of the Server
- @return ApiServerGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifier of the Server
+	@return ApiServerGetRequest
 */
 func (a *ServerApiService) ServerGet(ctx context.Context, id int32) ApiServerGetRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServerGetRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHServersServerResponse
+//
+//	@return ModelsSSHServersServerResponse
 func (a *ServerApiService) ServerGetExecute(r ApiServerGetRequest) (*ModelsSSHServersServerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHServersServerResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHServersServerResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -467,9 +469,9 @@ func (a *ServerApiService) ServerGetExecute(r ApiServerGetRequest) (*ModelsSSHSe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -530,11 +532,11 @@ func (a *ServerApiService) ServerGetExecute(r ApiServerGetRequest) (*ModelsSSHSe
 }
 
 type ApiServerGetAccessRequest struct {
-	ctx context.Context
-	ApiService *ServerApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *ServerApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -556,30 +558,31 @@ func (r ApiServerGetAccessRequest) Execute() (*ModelsSSHAccessServerAccessRespon
 /*
 ServerGetAccess Retrieves logons and users with access to those logons for an existing server
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Id of the existing server
- @return ApiServerGetAccessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Id of the existing server
+	@return ApiServerGetAccessRequest
 */
 func (a *ServerApiService) ServerGetAccess(ctx context.Context, id int32) ApiServerGetAccessRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServerGetAccessRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHAccessServerAccessResponse
+//
+//	@return ModelsSSHAccessServerAccessResponse
 func (a *ServerApiService) ServerGetAccessExecute(r ApiServerGetAccessRequest) (*ModelsSSHAccessServerAccessResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHAccessServerAccessResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHAccessServerAccessResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -590,9 +593,9 @@ func (a *ServerApiService) ServerGetAccessExecute(r ApiServerGetAccessRequest) (
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -653,15 +656,15 @@ func (a *ServerApiService) ServerGetAccessExecute(r ApiServerGetAccessRequest) (
 }
 
 type ApiServerQueryServersRequest struct {
-	ctx context.Context
-	ApiService *ServerApiService
+	ctx                     context.Context
+	ApiService              *ServerApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -713,28 +716,29 @@ func (r ApiServerQueryServersRequest) Execute() ([]ModelsSSHServersServerRespons
 /*
 ServerQueryServers Returns all servers according to the provided filter parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiServerQueryServersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiServerQueryServersRequest
 */
 func (a *ServerApiService) ServerQueryServers(ctx context.Context) ApiServerQueryServersRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServerQueryServersRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsSSHServersServerResponse
+//
+//	@return []ModelsSSHServersServerResponse
 func (a *ServerApiService) ServerQueryServersExecute(r ApiServerQueryServersRequest) ([]ModelsSSHServersServerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsSSHServersServerResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsSSHServersServerResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -744,9 +748,9 @@ func (a *ServerApiService) ServerQueryServersExecute(r ApiServerQueryServersRequ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")
@@ -822,11 +826,11 @@ func (a *ServerApiService) ServerQueryServersExecute(r ApiServerQueryServersRequ
 }
 
 type ApiServerRemoveAccessRequest struct {
-	ctx context.Context
-	ApiService *ServerApiService
+	ctx                     context.Context
+	ApiService              *ServerApiService
 	xKeyfactorRequestedWith *string
-	serverAccess *ModelsSSHAccessServerAccessRequest
-	xKeyfactorApiVersion *string
+	serverAccess            *ModelsSSHAccessServerAccessRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -854,28 +858,29 @@ func (r ApiServerRemoveAccessRequest) Execute() (*ModelsSSHAccessServerAccessRes
 /*
 ServerRemoveAccess Updates logons and users with access to those logons for an existing server
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiServerRemoveAccessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiServerRemoveAccessRequest
 */
 func (a *ServerApiService) ServerRemoveAccess(ctx context.Context) ApiServerRemoveAccessRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServerRemoveAccessRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHAccessServerAccessResponse
+//
+//	@return ModelsSSHAccessServerAccessResponse
 func (a *ServerApiService) ServerRemoveAccessExecute(r ApiServerRemoveAccessRequest) (*ModelsSSHAccessServerAccessResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHAccessServerAccessResponse
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHAccessServerAccessResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -885,12 +890,12 @@ func (a *ServerApiService) ServerRemoveAccessExecute(r ApiServerRemoveAccessRequ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.serverAccess == nil {
-        return localVarReturnValue, nil, reportError("serverAccess is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.serverAccess == nil {
+		return localVarReturnValue, nil, reportError("serverAccess is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -953,11 +958,11 @@ func (a *ServerApiService) ServerRemoveAccessExecute(r ApiServerRemoveAccessRequ
 }
 
 type ApiServerUpdateServerRequest struct {
-	ctx context.Context
-	ApiService *ServerApiService
+	ctx                     context.Context
+	ApiService              *ServerApiService
 	xKeyfactorRequestedWith *string
-	updateRequest *ModelsSSHServersServerUpdateRequest
-	xKeyfactorApiVersion *string
+	updateRequest           *ModelsSSHServersServerUpdateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -985,28 +990,29 @@ func (r ApiServerUpdateServerRequest) Execute() (*ModelsSSHServersServerResponse
 /*
 ServerUpdateServer Updates an existing server with the provided properties
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiServerUpdateServerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiServerUpdateServerRequest
 */
 func (a *ServerApiService) ServerUpdateServer(ctx context.Context) ApiServerUpdateServerRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiServerUpdateServerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHServersServerResponse
+//
+//	@return ModelsSSHServersServerResponse
 func (a *ServerApiService) ServerUpdateServerExecute(r ApiServerUpdateServerRequest) (*ModelsSSHServersServerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHServersServerResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHServersServerResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1016,12 +1022,12 @@ func (a *ServerApiService) ServerUpdateServerExecute(r ApiServerUpdateServerRequ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.updateRequest == nil {
-        return localVarReturnValue, nil, reportError("updateRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.updateRequest == nil {
+		return localVarReturnValue, nil, reportError("updateRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}

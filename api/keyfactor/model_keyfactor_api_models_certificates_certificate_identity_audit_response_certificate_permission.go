@@ -31,7 +31,7 @@ type KeyfactorApiModelsCertificatesCertificateIdentityAuditResponseCertificatePe
 	// The name of the permission
 	Name *string `json:"Name,omitempty"`
 	// A list of roles or collections that grant the given permission
-	GrantedBy []string `json:"GrantedBy,omitempty"`
+	GrantedBy            []string `json:"GrantedBy,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -119,7 +119,7 @@ func (o *KeyfactorApiModelsCertificatesCertificateIdentityAuditResponseCertifica
 }
 
 func (o KeyfactorApiModelsCertificatesCertificateIdentityAuditResponseCertificatePermission) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -195,5 +195,3 @@ func (v *NullableKeyfactorApiModelsCertificatesCertificateIdentityAuditResponseC
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

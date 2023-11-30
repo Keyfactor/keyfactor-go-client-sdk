@@ -29,22 +29,22 @@ var _ MappedNullable = &KeyfactorApiModelsOrchestratorsAgentResponse{}
 
 // KeyfactorApiModelsOrchestratorsAgentResponse struct for KeyfactorApiModelsOrchestratorsAgentResponse
 type KeyfactorApiModelsOrchestratorsAgentResponse struct {
-	AgentId *string `json:"AgentId,omitempty"`
-	ClientMachine *string `json:"ClientMachine,omitempty"`
-	Username *string `json:"Username,omitempty"`
-	AgentPlatform *int32 `json:"AgentPlatform,omitempty"`
-	Version *string `json:"Version,omitempty"`
-	Status *int32 `json:"Status,omitempty"`
-	LastSeen *time.Time `json:"LastSeen,omitempty"`
-	Capabilities []string `json:"Capabilities,omitempty"`
-	Blueprint *string `json:"Blueprint,omitempty"`
-	Thumbprint *string `json:"Thumbprint,omitempty"`
-	LegacyThumbprint *string `json:"LegacyThumbprint,omitempty"`
-	AuthCertificateReenrollment *string `json:"AuthCertificateReenrollment,omitempty"`
-	LastThumbprintUsed *string `json:"LastThumbprintUsed,omitempty"`
-	LastErrorCode *int64 `json:"LastErrorCode,omitempty"`
-	LastErrorMessage *string `json:"LastErrorMessage,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AgentId                     *string    `json:"AgentId,omitempty"`
+	ClientMachine               *string    `json:"ClientMachine,omitempty"`
+	Username                    *string    `json:"Username,omitempty"`
+	AgentPlatform               *int32     `json:"AgentPlatform,omitempty"`
+	Version                     *string    `json:"Version,omitempty"`
+	Status                      *int32     `json:"Status,omitempty"`
+	LastSeen                    *time.Time `json:"LastSeen,omitempty"`
+	Capabilities                []string   `json:"Capabilities,omitempty"`
+	Blueprint                   *string    `json:"Blueprint,omitempty"`
+	Thumbprint                  *string    `json:"Thumbprint,omitempty"`
+	LegacyThumbprint            *string    `json:"LegacyThumbprint,omitempty"`
+	AuthCertificateReenrollment *string    `json:"AuthCertificateReenrollment,omitempty"`
+	LastThumbprintUsed          *string    `json:"LastThumbprintUsed,omitempty"`
+	LastErrorCode               *int64     `json:"LastErrorCode,omitempty"`
+	LastErrorMessage            *string    `json:"LastErrorMessage,omitempty"`
+	AdditionalProperties        map[string]interface{}
 }
 
 type _KeyfactorApiModelsOrchestratorsAgentResponse KeyfactorApiModelsOrchestratorsAgentResponse
@@ -547,7 +547,7 @@ func (o *KeyfactorApiModelsOrchestratorsAgentResponse) SetLastErrorMessage(v str
 }
 
 func (o KeyfactorApiModelsOrchestratorsAgentResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -675,5 +675,3 @@ func (v *NullableKeyfactorApiModelsOrchestratorsAgentResponse) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

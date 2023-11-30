@@ -28,14 +28,14 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdat
 
 // KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest struct for KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest
 type KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest struct {
-	Id *int32 `json:"Id,omitempty"`
-	DisplayName string `json:"DisplayName"`
-	Subject string `json:"Subject"`
-	Message string `json:"Message"`
-	RotationWarningDays int32 `json:"RotationWarningDays"`
+	Id                     *int32                                                       `json:"Id,omitempty"`
+	DisplayName            string                                                       `json:"DisplayName"`
+	Subject                string                                                       `json:"Subject"`
+	Message                string                                                       `json:"Message"`
+	RotationWarningDays    int32                                                        `json:"RotationWarningDays"`
 	RegisteredEventHandler *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest `json:"RegisteredEventHandler,omitempty"`
 	EventHandlerParameters []KeyfactorApiModelsEventHandlerEventHandlerParameterRequest `json:"EventHandlerParameters,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties   map[string]interface{}
 }
 
 type _KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest
@@ -254,7 +254,7 @@ func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest) SetEv
 }
 
 func (o KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -342,5 +342,3 @@ func (v *NullableKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateReques
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

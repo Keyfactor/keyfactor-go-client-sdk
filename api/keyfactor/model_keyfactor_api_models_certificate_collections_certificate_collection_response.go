@@ -28,14 +28,14 @@ var _ MappedNullable = &KeyfactorApiModelsCertificateCollectionsCertificateColle
 
 // KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse struct for KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse
 type KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse struct {
-	Id *int32 `json:"Id,omitempty"`
-	Name *string `json:"Name,omitempty"`
-	Description *string `json:"Description,omitempty"`
-	Content *string `json:"Content,omitempty"`
-	Query *string `json:"Query,omitempty"`
-	DuplicationField *int32 `json:"DuplicationField,omitempty"`
-	ShowOnDashboard *bool `json:"ShowOnDashboard,omitempty"`
-	Favorite *bool `json:"Favorite,omitempty"`
+	Id                   *int32  `json:"Id,omitempty"`
+	Name                 *string `json:"Name,omitempty"`
+	Description          *string `json:"Description,omitempty"`
+	Content              *string `json:"Content,omitempty"`
+	Query                *string `json:"Query,omitempty"`
+	DuplicationField     *int32  `json:"DuplicationField,omitempty"`
+	ShowOnDashboard      *bool   `json:"ShowOnDashboard,omitempty"`
+	Favorite             *bool   `json:"Favorite,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -315,7 +315,7 @@ func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) 
 }
 
 func (o KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -413,5 +413,3 @@ func (v *NullableKeyfactorApiModelsCertificateCollectionsCertificateCollectionRe
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

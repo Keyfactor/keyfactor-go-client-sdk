@@ -28,7 +28,7 @@ var _ MappedNullable = &ModelsSecurityCertificatePermissions{}
 
 // ModelsSecurityCertificatePermissions A list of permissions for a given certificate and which security role(s) granted them.
 type ModelsSecurityCertificatePermissions struct {
-	Roles []ModelsSecuritySecurityRolesSecurityRoleResponseBase `json:"Roles,omitempty"`
+	Roles                []ModelsSecuritySecurityRolesSecurityRoleResponseBase `json:"Roles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *ModelsSecurityCertificatePermissions) SetRoles(v []ModelsSecuritySecuri
 }
 
 func (o ModelsSecurityCertificatePermissions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -156,5 +156,3 @@ func (v *NullableModelsSecurityCertificatePermissions) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

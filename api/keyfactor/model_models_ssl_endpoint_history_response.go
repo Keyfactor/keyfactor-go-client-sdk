@@ -29,15 +29,15 @@ var _ MappedNullable = &ModelsSSLEndpointHistoryResponse{}
 
 // ModelsSSLEndpointHistoryResponse struct for ModelsSSLEndpointHistoryResponse
 type ModelsSSLEndpointHistoryResponse struct {
-	HistoryId *string `json:"HistoryId,omitempty"`
-	EndpointId *string `json:"EndpointId,omitempty"`
-	AuditId *int64 `json:"AuditId,omitempty"`
-	Timestamp *time.Time `json:"Timestamp,omitempty"`
-	Status *int32 `json:"Status,omitempty"`
-	JobType *int32 `json:"JobType,omitempty"`
-	ProbeType *int32 `json:"ProbeType,omitempty"`
-	ReverseDNS *string `json:"ReverseDNS,omitempty"`
-	HistoryCertificates []ModelsSSLEndpointHistoryResponseCertificateModel `json:"HistoryCertificates,omitempty"`
+	HistoryId            *string                                            `json:"HistoryId,omitempty"`
+	EndpointId           *string                                            `json:"EndpointId,omitempty"`
+	AuditId              *int64                                             `json:"AuditId,omitempty"`
+	Timestamp            *time.Time                                         `json:"Timestamp,omitempty"`
+	Status               *int32                                             `json:"Status,omitempty"`
+	JobType              *int32                                             `json:"JobType,omitempty"`
+	ProbeType            *int32                                             `json:"ProbeType,omitempty"`
+	ReverseDNS           *string                                            `json:"ReverseDNS,omitempty"`
+	HistoryCertificates  []ModelsSSLEndpointHistoryResponseCertificateModel `json:"HistoryCertificates,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -349,7 +349,7 @@ func (o *ModelsSSLEndpointHistoryResponse) SetHistoryCertificates(v []ModelsSSLE
 }
 
 func (o ModelsSSLEndpointHistoryResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -453,5 +453,3 @@ func (v *NullableModelsSSLEndpointHistoryResponse) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,19 +29,19 @@ var _ MappedNullable = &ModelsEnrollmentPFXEnrollmentRequest{}
 
 // ModelsEnrollmentPFXEnrollmentRequest struct for ModelsEnrollmentPFXEnrollmentRequest
 type ModelsEnrollmentPFXEnrollmentRequest struct {
-	CustomFriendlyName *string `json:"CustomFriendlyName,omitempty"`
-	Password *string `json:"Password,omitempty"`
-	PopulateMissingValuesFromAD *bool `json:"PopulateMissingValuesFromAD,omitempty"`
-	Subject *string `json:"Subject,omitempty"`
-	IncludeChain *bool `json:"IncludeChain,omitempty"`
-	RenewalCertificateId *int32 `json:"RenewalCertificateId,omitempty"`
-	CertificateAuthority *string `json:"CertificateAuthority,omitempty"`
-	Metadata map[string]interface{} `json:"Metadata,omitempty"`
-	AdditionalEnrollmentFields map[string]map[string]interface{} `json:"AdditionalEnrollmentFields,omitempty"`
-	Timestamp *time.Time `json:"Timestamp,omitempty"`
-	Template *string `json:"Template,omitempty"`
-	SANs *map[string][]string `json:"SANs,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CustomFriendlyName          *string                           `json:"CustomFriendlyName,omitempty"`
+	Password                    *string                           `json:"Password,omitempty"`
+	PopulateMissingValuesFromAD *bool                             `json:"PopulateMissingValuesFromAD,omitempty"`
+	Subject                     *string                           `json:"Subject,omitempty"`
+	IncludeChain                *bool                             `json:"IncludeChain,omitempty"`
+	RenewalCertificateId        *int32                            `json:"RenewalCertificateId,omitempty"`
+	CertificateAuthority        *string                           `json:"CertificateAuthority,omitempty"`
+	Metadata                    map[string]interface{}            `json:"Metadata,omitempty"`
+	AdditionalEnrollmentFields  map[string]map[string]interface{} `json:"AdditionalEnrollmentFields,omitempty"`
+	Timestamp                   *time.Time                        `json:"Timestamp,omitempty"`
+	Template                    *string                           `json:"Template,omitempty"`
+	SANs                        *map[string][]string              `json:"SANs,omitempty"`
+	AdditionalProperties        map[string]interface{}
 }
 
 type _ModelsEnrollmentPFXEnrollmentRequest ModelsEnrollmentPFXEnrollmentRequest
@@ -448,7 +448,7 @@ func (o *ModelsEnrollmentPFXEnrollmentRequest) SetSANs(v map[string][]string) {
 }
 
 func (o ModelsEnrollmentPFXEnrollmentRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -564,5 +564,3 @@ func (v *NullableModelsEnrollmentPFXEnrollmentRequest) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

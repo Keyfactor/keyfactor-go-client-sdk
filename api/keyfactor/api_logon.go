@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // LogonApiService LogonApi service
 type LogonApiService service
 
 type ApiLogonCreateLogonRequest struct {
-	ctx context.Context
-	ApiService *LogonApiService
+	ctx                     context.Context
+	ApiService              *LogonApiService
 	xKeyfactorRequestedWith *string
-	logon *ModelsSSHLogonsLogonCreationRequest
-	xKeyfactorApiVersion *string
+	logon                   *ModelsSSHLogonsLogonCreationRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -65,28 +64,29 @@ func (r ApiLogonCreateLogonRequest) Execute() (*ModelsSSHLogonsLogonResponse, *h
 /*
 LogonCreateLogon Creates a logon with the provided properties
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiLogonCreateLogonRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiLogonCreateLogonRequest
 */
 func (a *LogonApiService) LogonCreateLogon(ctx context.Context) ApiLogonCreateLogonRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiLogonCreateLogonRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHLogonsLogonResponse
+//
+//	@return ModelsSSHLogonsLogonResponse
 func (a *LogonApiService) LogonCreateLogonExecute(r ApiLogonCreateLogonRequest) (*ModelsSSHLogonsLogonResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHLogonsLogonResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHLogonsLogonResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -96,12 +96,12 @@ func (a *LogonApiService) LogonCreateLogonExecute(r ApiLogonCreateLogonRequest) 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.logon == nil {
-        return localVarReturnValue, nil, reportError("logon is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.logon == nil {
+		return localVarReturnValue, nil, reportError("logon is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -164,11 +164,11 @@ func (a *LogonApiService) LogonCreateLogonExecute(r ApiLogonCreateLogonRequest) 
 }
 
 type ApiLogonDeleteRequest struct {
-	ctx context.Context
-	ApiService *LogonApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *LogonApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -190,28 +190,28 @@ func (r ApiLogonDeleteRequest) Execute() (*http.Response, error) {
 /*
 LogonDelete Deletes a Logon associated with the provided identifier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifer of the Logon to be deleted
- @return ApiLogonDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifer of the Logon to be deleted
+	@return ApiLogonDeleteRequest
 */
 func (a *LogonApiService) LogonDelete(ctx context.Context, id int32) ApiLogonDeleteRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiLogonDeleteRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *LogonApiService) LogonDeleteExecute(r ApiLogonDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -222,9 +222,9 @@ func (a *LogonApiService) LogonDeleteExecute(r ApiLogonDeleteRequest) (*http.Res
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -276,11 +276,11 @@ func (a *LogonApiService) LogonDeleteExecute(r ApiLogonDeleteRequest) (*http.Res
 }
 
 type ApiLogonGetLogonRequest struct {
-	ctx context.Context
-	ApiService *LogonApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *LogonApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -302,30 +302,31 @@ func (r ApiLogonGetLogonRequest) Execute() (*ModelsSSHLogonsLogonResponse, *http
 /*
 LogonGetLogon Fetches a Logon associated with the provided identifier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifer of the Logon to be Fetched
- @return ApiLogonGetLogonRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifer of the Logon to be Fetched
+	@return ApiLogonGetLogonRequest
 */
 func (a *LogonApiService) LogonGetLogon(ctx context.Context, id int32) ApiLogonGetLogonRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiLogonGetLogonRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHLogonsLogonResponse
+//
+//	@return ModelsSSHLogonsLogonResponse
 func (a *LogonApiService) LogonGetLogonExecute(r ApiLogonGetLogonRequest) (*ModelsSSHLogonsLogonResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHLogonsLogonResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHLogonsLogonResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -336,9 +337,9 @@ func (a *LogonApiService) LogonGetLogonExecute(r ApiLogonGetLogonRequest) (*Mode
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -399,11 +400,11 @@ func (a *LogonApiService) LogonGetLogonExecute(r ApiLogonGetLogonRequest) (*Mode
 }
 
 type ApiLogonLogonAccessRequest struct {
-	ctx context.Context
-	ApiService *LogonApiService
+	ctx                     context.Context
+	ApiService              *LogonApiService
 	xKeyfactorRequestedWith *string
-	logon *ModelsSSHLogonsLogonAccessRequest
-	xKeyfactorApiVersion *string
+	logon                   *ModelsSSHLogonsLogonAccessRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -431,28 +432,29 @@ func (r ApiLogonLogonAccessRequest) Execute() (*ModelsSSHAccessLogonUserAccessRe
 /*
 LogonLogonAccess Updates the users with access to an existing logon
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiLogonLogonAccessRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiLogonLogonAccessRequest
 */
 func (a *LogonApiService) LogonLogonAccess(ctx context.Context) ApiLogonLogonAccessRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiLogonLogonAccessRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSHAccessLogonUserAccessResponse
+//
+//	@return ModelsSSHAccessLogonUserAccessResponse
 func (a *LogonApiService) LogonLogonAccessExecute(r ApiLogonLogonAccessRequest) (*ModelsSSHAccessLogonUserAccessResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSHAccessLogonUserAccessResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSHAccessLogonUserAccessResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -462,12 +464,12 @@ func (a *LogonApiService) LogonLogonAccessExecute(r ApiLogonLogonAccessRequest) 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.logon == nil {
-        return localVarReturnValue, nil, reportError("logon is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.logon == nil {
+		return localVarReturnValue, nil, reportError("logon is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -530,15 +532,15 @@ func (a *LogonApiService) LogonLogonAccessExecute(r ApiLogonLogonAccessRequest) 
 }
 
 type ApiLogonQueryLogonsRequest struct {
-	ctx context.Context
-	ApiService *LogonApiService
+	ctx                     context.Context
+	ApiService              *LogonApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -590,28 +592,29 @@ func (r ApiLogonQueryLogonsRequest) Execute() ([]ModelsSSHLogonsLogonQueryRespon
 /*
 LogonQueryLogons Returns all Logons according to the provided filter parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiLogonQueryLogonsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiLogonQueryLogonsRequest
 */
 func (a *LogonApiService) LogonQueryLogons(ctx context.Context) ApiLogonQueryLogonsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiLogonQueryLogonsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsSSHLogonsLogonQueryResponse
+//
+//	@return []ModelsSSHLogonsLogonQueryResponse
 func (a *LogonApiService) LogonQueryLogonsExecute(r ApiLogonQueryLogonsRequest) ([]ModelsSSHLogonsLogonQueryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsSSHLogonsLogonQueryResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsSSHLogonsLogonQueryResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -621,9 +624,9 @@ func (a *LogonApiService) LogonQueryLogonsExecute(r ApiLogonQueryLogonsRequest) 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")

@@ -28,10 +28,10 @@ var _ MappedNullable = &ModelsCertStoreLocationsCertificateLocationsGroup{}
 
 // ModelsCertStoreLocationsCertificateLocationsGroup struct for ModelsCertStoreLocationsCertificateLocationsGroup
 type ModelsCertStoreLocationsCertificateLocationsGroup struct {
-	StoreType *string `json:"StoreType,omitempty"`
-	StoreTypeId *int32 `json:"StoreTypeId,omitempty"`
-	StoreCount *int32 `json:"StoreCount,omitempty"`
-	Locations []ModelsCertStoreLocationsCertificateStoreLocationsDetail `json:"Locations,omitempty"`
+	StoreType            *string                                                   `json:"StoreType,omitempty"`
+	StoreTypeId          *int32                                                    `json:"StoreTypeId,omitempty"`
+	StoreCount           *int32                                                    `json:"StoreCount,omitempty"`
+	Locations            []ModelsCertStoreLocationsCertificateStoreLocationsDetail `json:"Locations,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -183,7 +183,7 @@ func (o *ModelsCertStoreLocationsCertificateLocationsGroup) SetLocations(v []Mod
 }
 
 func (o ModelsCertStoreLocationsCertificateLocationsGroup) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -261,5 +261,3 @@ func (v *NullableModelsCertStoreLocationsCertificateLocationsGroup) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

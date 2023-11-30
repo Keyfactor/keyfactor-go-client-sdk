@@ -41,7 +41,7 @@ type KeyfactorApiModelsCertificatesCertificateQueryRequest struct {
 	// Select 'true' to include revoked certificates in the results
 	IncludeRevoked *bool `json:"IncludeRevoked,omitempty"`
 	// Select 'true' to include expired certificates in the results
-	IncludeExpired *bool `json:"IncludeExpired,omitempty"`
+	IncludeExpired       *bool `json:"IncludeExpired,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -289,7 +289,7 @@ func (o *KeyfactorApiModelsCertificatesCertificateQueryRequest) SetIncludeExpire
 }
 
 func (o KeyfactorApiModelsCertificatesCertificateQueryRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -385,5 +385,3 @@ func (v *NullableKeyfactorApiModelsCertificatesCertificateQueryRequest) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

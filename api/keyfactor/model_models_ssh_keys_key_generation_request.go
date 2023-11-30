@@ -28,12 +28,12 @@ var _ MappedNullable = &ModelsSSHKeysKeyGenerationRequest{}
 
 // ModelsSSHKeysKeyGenerationRequest struct for ModelsSSHKeysKeyGenerationRequest
 type ModelsSSHKeysKeyGenerationRequest struct {
-	KeyType string `json:"KeyType"`
-	PrivateKeyFormat string `json:"PrivateKeyFormat"`
-	KeyLength int32 `json:"KeyLength"`
-	Email string `json:"Email"`
-	Password string `json:"Password"`
-	Comment *string `json:"Comment,omitempty"`
+	KeyType              string  `json:"KeyType"`
+	PrivateKeyFormat     string  `json:"PrivateKeyFormat"`
+	KeyLength            int32   `json:"KeyLength"`
+	Email                string  `json:"Email"`
+	Password             string  `json:"Password"`
+	Comment              *string `json:"Comment,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -214,7 +214,7 @@ func (o *ModelsSSHKeysKeyGenerationRequest) SetComment(v string) {
 }
 
 func (o ModelsSSHKeysKeyGenerationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -296,5 +296,3 @@ func (v *NullableModelsSSHKeysKeyGenerationRequest) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

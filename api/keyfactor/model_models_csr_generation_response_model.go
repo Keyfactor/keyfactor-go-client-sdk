@@ -28,8 +28,8 @@ var _ MappedNullable = &ModelsCSRGenerationResponseModel{}
 
 // ModelsCSRGenerationResponseModel struct for ModelsCSRGenerationResponseModel
 type ModelsCSRGenerationResponseModel struct {
-	CSRFilePath *string `json:"CSRFilePath,omitempty"`
-	CSRText *string `json:"CSRText,omitempty"`
+	CSRFilePath          *string `json:"CSRFilePath,omitempty"`
+	CSRText              *string `json:"CSRText,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -117,7 +117,7 @@ func (o *ModelsCSRGenerationResponseModel) SetCSRText(v string) {
 }
 
 func (o ModelsCSRGenerationResponseModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,5 +193,3 @@ func (v *NullableModelsCSRGenerationResponseModel) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

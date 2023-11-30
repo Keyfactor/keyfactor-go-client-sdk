@@ -29,13 +29,13 @@ var _ MappedNullable = &ModelsCertificateDetails{}
 
 // ModelsCertificateDetails struct for ModelsCertificateDetails
 type ModelsCertificateDetails struct {
-	IssuedDN NullableString `json:"IssuedDN,omitempty"`
-	IssuerDN NullableString `json:"IssuerDN,omitempty"`
-	Thumbprint *string `json:"Thumbprint,omitempty"`
-	NotAfter *time.Time `json:"NotAfter,omitempty"`
-	NotBefore *time.Time `json:"NotBefore,omitempty"`
-	Metadata *map[string]string `json:"Metadata,omitempty"`
-	IsEndEntity *bool `json:"IsEndEntity,omitempty"`
+	IssuedDN             NullableString     `json:"IssuedDN,omitempty"`
+	IssuerDN             NullableString     `json:"IssuerDN,omitempty"`
+	Thumbprint           *string            `json:"Thumbprint,omitempty"`
+	NotAfter             *time.Time         `json:"NotAfter,omitempty"`
+	NotBefore            *time.Time         `json:"NotBefore,omitempty"`
+	Metadata             *map[string]string `json:"Metadata,omitempty"`
+	IsEndEntity          *bool              `json:"IsEndEntity,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -90,6 +90,7 @@ func (o *ModelsCertificateDetails) HasIssuedDN() bool {
 func (o *ModelsCertificateDetails) SetIssuedDN(v string) {
 	o.IssuedDN.Set(&v)
 }
+
 // SetIssuedDNNil sets the value for IssuedDN to be an explicit nil
 func (o *ModelsCertificateDetails) SetIssuedDNNil() {
 	o.IssuedDN.Set(nil)
@@ -132,6 +133,7 @@ func (o *ModelsCertificateDetails) HasIssuerDN() bool {
 func (o *ModelsCertificateDetails) SetIssuerDN(v string) {
 	o.IssuerDN.Set(&v)
 }
+
 // SetIssuerDNNil sets the value for IssuerDN to be an explicit nil
 func (o *ModelsCertificateDetails) SetIssuerDNNil() {
 	o.IssuerDN.Set(nil)
@@ -303,7 +305,7 @@ func (o *ModelsCertificateDetails) SetIsEndEntity(v bool) {
 }
 
 func (o ModelsCertificateDetails) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -399,5 +401,3 @@ func (v *NullableModelsCertificateDetails) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -28,11 +28,11 @@ var _ MappedNullable = &ModelsCertificateDownloadRequest{}
 
 // ModelsCertificateDownloadRequest struct for ModelsCertificateDownloadRequest
 type ModelsCertificateDownloadRequest struct {
-	CertID *int32 `json:"CertID,omitempty"`
-	SerialNumber *string `json:"SerialNumber,omitempty"`
-	IssuerDN NullableString `json:"IssuerDN,omitempty"`
-	Thumbprint *string `json:"Thumbprint,omitempty"`
-	IncludeChain *bool `json:"IncludeChain,omitempty"`
+	CertID               *int32         `json:"CertID,omitempty"`
+	SerialNumber         *string        `json:"SerialNumber,omitempty"`
+	IssuerDN             NullableString `json:"IssuerDN,omitempty"`
+	Thumbprint           *string        `json:"Thumbprint,omitempty"`
+	IncludeChain         *bool          `json:"IncludeChain,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -151,6 +151,7 @@ func (o *ModelsCertificateDownloadRequest) HasIssuerDN() bool {
 func (o *ModelsCertificateDownloadRequest) SetIssuerDN(v string) {
 	o.IssuerDN.Set(&v)
 }
+
 // SetIssuerDNNil sets the value for IssuerDN to be an explicit nil
 func (o *ModelsCertificateDownloadRequest) SetIssuerDNNil() {
 	o.IssuerDN.Set(nil)
@@ -226,7 +227,7 @@ func (o *ModelsCertificateDownloadRequest) SetIncludeChain(v bool) {
 }
 
 func (o ModelsCertificateDownloadRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -314,5 +315,3 @@ func (v *NullableModelsCertificateDownloadRequest) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

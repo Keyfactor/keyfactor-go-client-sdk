@@ -29,7 +29,7 @@ var _ MappedNullable = &ModelsSecurityIdentitiesSecurityIdentityRequest{}
 // ModelsSecurityIdentitiesSecurityIdentityRequest Model for requesting a security identity.
 type ModelsSecurityIdentitiesSecurityIdentityRequest struct {
 	// The username of the security identity.
-	AccountName string `json:"AccountName"`
+	AccountName          string `json:"AccountName"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *ModelsSecurityIdentitiesSecurityIdentityRequest) SetAccountName(v strin
 }
 
 func (o ModelsSecurityIdentitiesSecurityIdentityRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -148,5 +148,3 @@ func (v *NullableModelsSecurityIdentitiesSecurityIdentityRequest) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

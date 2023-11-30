@@ -28,12 +28,12 @@ var _ MappedNullable = &ModelsInvalidKeystore{}
 
 // ModelsInvalidKeystore struct for ModelsInvalidKeystore
 type ModelsInvalidKeystore struct {
-	KeystoreId *string `json:"KeystoreId,omitempty"`
-	ClientMachine *string `json:"ClientMachine,omitempty"`
-	StorePath *string `json:"StorePath,omitempty"`
-	Alias *string `json:"Alias,omitempty"`
-	Reason *int32 `json:"Reason,omitempty"`
-	Explanation *string `json:"Explanation,omitempty"`
+	KeystoreId           *string `json:"KeystoreId,omitempty"`
+	ClientMachine        *string `json:"ClientMachine,omitempty"`
+	StorePath            *string `json:"StorePath,omitempty"`
+	Alias                *string `json:"Alias,omitempty"`
+	Reason               *int32  `json:"Reason,omitempty"`
+	Explanation          *string `json:"Explanation,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -249,7 +249,7 @@ func (o *ModelsInvalidKeystore) SetExplanation(v string) {
 }
 
 func (o ModelsInvalidKeystore) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -341,5 +341,3 @@ func (v *NullableModelsInvalidKeystore) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

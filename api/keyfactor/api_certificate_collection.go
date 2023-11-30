@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // CertificateCollectionApiService CertificateCollectionApi service
 type CertificateCollectionApiService service
 
 type ApiCertificateCollectionCopyFromExistingCollectionRequest struct {
-	ctx context.Context
-	ApiService *CertificateCollectionApiService
+	ctx                     context.Context
+	ApiService              *CertificateCollectionApiService
 	xKeyfactorRequestedWith *string
-	request *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCopyRequest
-	xKeyfactorApiVersion *string
+	request                 *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCopyRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -73,28 +72,29 @@ The field used to determine if a certificate is a duplicate of another.
 | 2                  | Distinguished name        |
 | 3                  | Principal name            |
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateCollectionCopyFromExistingCollectionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateCollectionCopyFromExistingCollectionRequest
 */
 func (a *CertificateCollectionApiService) CertificateCollectionCopyFromExistingCollection(ctx context.Context) ApiCertificateCollectionCopyFromExistingCollectionRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateCollectionCopyFromExistingCollectionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse
+//
+//	@return KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse
 func (a *CertificateCollectionApiService) CertificateCollectionCopyFromExistingCollectionExecute(r ApiCertificateCollectionCopyFromExistingCollectionRequest) (*KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -104,12 +104,12 @@ func (a *CertificateCollectionApiService) CertificateCollectionCopyFromExistingC
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.request == nil {
-        return localVarReturnValue, nil, reportError("request is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.request == nil {
+		return localVarReturnValue, nil, reportError("request is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -172,11 +172,11 @@ func (a *CertificateCollectionApiService) CertificateCollectionCopyFromExistingC
 }
 
 type ApiCertificateCollectionCreateCollectionRequest struct {
-	ctx context.Context
-	ApiService *CertificateCollectionApiService
+	ctx                     context.Context
+	ApiService              *CertificateCollectionApiService
 	xKeyfactorRequestedWith *string
-	request *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest
-	xKeyfactorApiVersion *string
+	request                 *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -212,28 +212,29 @@ The field used to determine if a certificate is a duplicate of another.
 | 2                  | Distinguished name        |
 | 3                  | Principal name            |
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateCollectionCreateCollectionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateCollectionCreateCollectionRequest
 */
 func (a *CertificateCollectionApiService) CertificateCollectionCreateCollection(ctx context.Context) ApiCertificateCollectionCreateCollectionRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateCollectionCreateCollectionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse
+//
+//	@return KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse
 func (a *CertificateCollectionApiService) CertificateCollectionCreateCollectionExecute(r ApiCertificateCollectionCreateCollectionRequest) (*KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -243,12 +244,12 @@ func (a *CertificateCollectionApiService) CertificateCollectionCreateCollectionE
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.request == nil {
-        return localVarReturnValue, nil, reportError("request is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.request == nil {
+		return localVarReturnValue, nil, reportError("request is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -311,11 +312,11 @@ func (a *CertificateCollectionApiService) CertificateCollectionCreateCollectionE
 }
 
 type ApiCertificateCollectionGetCollection0Request struct {
-	ctx context.Context
-	ApiService *CertificateCollectionApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *CertificateCollectionApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -337,30 +338,31 @@ func (r ApiCertificateCollectionGetCollection0Request) Execute() (*ModelsCertifi
 /*
 CertificateCollectionGetCollection0 Returns the certificate collection definition associated with the provided Keyfactor identifier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Identifier of the certificate collection
- @return ApiCertificateCollectionGetCollection0Request
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Identifier of the certificate collection
+	@return ApiCertificateCollectionGetCollection0Request
 */
 func (a *CertificateCollectionApiService) CertificateCollectionGetCollection0(ctx context.Context, id int32) ApiCertificateCollectionGetCollection0Request {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateCollectionGetCollection0Request{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsCertificateQuery
+//
+//	@return ModelsCertificateQuery
 func (a *CertificateCollectionApiService) CertificateCollectionGetCollection0Execute(r ApiCertificateCollectionGetCollection0Request) (*ModelsCertificateQuery, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsCertificateQuery
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsCertificateQuery
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -371,9 +373,9 @@ func (a *CertificateCollectionApiService) CertificateCollectionGetCollection0Exe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -434,11 +436,11 @@ func (a *CertificateCollectionApiService) CertificateCollectionGetCollection0Exe
 }
 
 type ApiCertificateCollectionGetCollection1Request struct {
-	ctx context.Context
-	ApiService *CertificateCollectionApiService
-	name string
+	ctx                     context.Context
+	ApiService              *CertificateCollectionApiService
+	name                    string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -460,30 +462,31 @@ func (r ApiCertificateCollectionGetCollection1Request) Execute() (*ModelsCertifi
 /*
 CertificateCollectionGetCollection1 Returns the certificate collection associated with the provided collection name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the Collection
- @return ApiCertificateCollectionGetCollection1Request
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name Name of the Collection
+	@return ApiCertificateCollectionGetCollection1Request
 */
 func (a *CertificateCollectionApiService) CertificateCollectionGetCollection1(ctx context.Context, name string) ApiCertificateCollectionGetCollection1Request {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateCollectionGetCollection1Request{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		name: name,
+		xKeyfactorApiVersion:    &version,
+		name:                    name,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsCertificateQuery
+//
+//	@return ModelsCertificateQuery
 func (a *CertificateCollectionApiService) CertificateCollectionGetCollection1Execute(r ApiCertificateCollectionGetCollection1Request) (*ModelsCertificateQuery, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsCertificateQuery
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsCertificateQuery
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -494,9 +497,9 @@ func (a *CertificateCollectionApiService) CertificateCollectionGetCollection1Exe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -557,15 +560,15 @@ func (a *CertificateCollectionApiService) CertificateCollectionGetCollection1Exe
 }
 
 type ApiCertificateCollectionGetCollectionsRequest struct {
-	ctx context.Context
-	ApiService *CertificateCollectionApiService
+	ctx                     context.Context
+	ApiService              *CertificateCollectionApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -617,28 +620,29 @@ func (r ApiCertificateCollectionGetCollectionsRequest) Execute() ([]ModelsCertif
 /*
 CertificateCollectionGetCollections Returns all certificate collections
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateCollectionGetCollectionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateCollectionGetCollectionsRequest
 */
 func (a *CertificateCollectionApiService) CertificateCollectionGetCollections(ctx context.Context) ApiCertificateCollectionGetCollectionsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateCollectionGetCollectionsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsCertificateQuery
+//
+//	@return []ModelsCertificateQuery
 func (a *CertificateCollectionApiService) CertificateCollectionGetCollectionsExecute(r ApiCertificateCollectionGetCollectionsRequest) ([]ModelsCertificateQuery, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsCertificateQuery
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsCertificateQuery
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -648,9 +652,9 @@ func (a *CertificateCollectionApiService) CertificateCollectionGetCollectionsExe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")
@@ -726,12 +730,12 @@ func (a *CertificateCollectionApiService) CertificateCollectionGetCollectionsExe
 }
 
 type ApiCertificateCollectionSetCollectionPermissionsRequest struct {
-	ctx context.Context
-	ApiService *CertificateCollectionApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *CertificateCollectionApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	collectionPermissions *[]ModelsCollectionRolePermissions
-	xKeyfactorApiVersion *string
+	collectionPermissions   *[]ModelsCollectionRolePermissions
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -761,21 +765,21 @@ CertificateCollectionSetCollectionPermissions Set the permissions for a collecti
 
 This endpoint should not be used as its use will potentially cause users to lose access to collections they previously had access to. This endpoint will be removed in version 11.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The collection to set permissions on
- @return ApiCertificateCollectionSetCollectionPermissionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The collection to set permissions on
+	@return ApiCertificateCollectionSetCollectionPermissionsRequest
 
 Deprecated
 */
 func (a *CertificateCollectionApiService) CertificateCollectionSetCollectionPermissions(ctx context.Context, id int32) ApiCertificateCollectionSetCollectionPermissionsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateCollectionSetCollectionPermissionsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
@@ -783,9 +787,9 @@ func (a *CertificateCollectionApiService) CertificateCollectionSetCollectionPerm
 // Deprecated
 func (a *CertificateCollectionApiService) CertificateCollectionSetCollectionPermissionsExecute(r ApiCertificateCollectionSetCollectionPermissionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -796,12 +800,12 @@ func (a *CertificateCollectionApiService) CertificateCollectionSetCollectionPerm
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.collectionPermissions == nil {
-        return nil, reportError("collectionPermissions is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.collectionPermissions == nil {
+		return nil, reportError("collectionPermissions is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -855,11 +859,11 @@ func (a *CertificateCollectionApiService) CertificateCollectionSetCollectionPerm
 }
 
 type ApiCertificateCollectionUpdateCollectionRequest struct {
-	ctx context.Context
-	ApiService *CertificateCollectionApiService
+	ctx                     context.Context
+	ApiService              *CertificateCollectionApiService
 	xKeyfactorRequestedWith *string
-	request *KeyfactorApiModelsCertificateCollectionsCertificateCollectionUpdateRequest
-	xKeyfactorApiVersion *string
+	request                 *KeyfactorApiModelsCertificateCollectionsCertificateCollectionUpdateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -895,28 +899,29 @@ The field used to determine if a certificate is a duplicate of another.
 | 2                  | Distinguished name        |
 | 3                  | Principal name            |
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificateCollectionUpdateCollectionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificateCollectionUpdateCollectionRequest
 */
 func (a *CertificateCollectionApiService) CertificateCollectionUpdateCollection(ctx context.Context) ApiCertificateCollectionUpdateCollectionRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCertificateCollectionUpdateCollectionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse
+//
+//	@return KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse
 func (a *CertificateCollectionApiService) CertificateCollectionUpdateCollectionExecute(r ApiCertificateCollectionUpdateCollectionRequest) (*KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -926,12 +931,12 @@ func (a *CertificateCollectionApiService) CertificateCollectionUpdateCollectionE
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.request == nil {
-        return localVarReturnValue, nil, reportError("request is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.request == nil {
+		return localVarReturnValue, nil, reportError("request is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}

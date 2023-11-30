@@ -28,9 +28,9 @@ var _ MappedNullable = &CoreModelsEnrollmentEnrollmentCA{}
 
 // CoreModelsEnrollmentEnrollmentCA struct for CoreModelsEnrollmentEnrollmentCA
 type CoreModelsEnrollmentEnrollmentCA struct {
-	Name *string `json:"Name,omitempty"`
-	RFCEnforcement *bool `json:"RFCEnforcement,omitempty"`
-	SubscriberTerms *bool `json:"SubscriberTerms,omitempty"`
+	Name                 *string `json:"Name,omitempty"`
+	RFCEnforcement       *bool   `json:"RFCEnforcement,omitempty"`
+	SubscriberTerms      *bool   `json:"SubscriberTerms,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -150,7 +150,7 @@ func (o *CoreModelsEnrollmentEnrollmentCA) SetSubscriberTerms(v bool) {
 }
 
 func (o CoreModelsEnrollmentEnrollmentCA) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,5 +230,3 @@ func (v *NullableCoreModelsEnrollmentEnrollmentCA) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -28,16 +28,16 @@ var _ MappedNullable = &KeyfactorAPIModelsSMTPSMTPTestResponse{}
 
 // KeyfactorAPIModelsSMTPSMTPTestResponse struct for KeyfactorAPIModelsSMTPSMTPTestResponse
 type KeyfactorAPIModelsSMTPSMTPTestResponse struct {
-	Host *string `json:"Host,omitempty"`
-	Id *int32 `json:"Id,omitempty"`
-	Port *int32 `json:"Port,omitempty"`
-	RelayAuthenticationType *int32 `json:"RelayAuthenticationType,omitempty"`
-	RelayUsername *string `json:"RelayUsername,omitempty"`
-	SenderAccount *string `json:"SenderAccount,omitempty"`
-	SenderName *string `json:"SenderName,omitempty"`
-	TestRecipient *string `json:"TestRecipient,omitempty"`
-	UseSSL *bool `json:"UseSSL,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Host                    *string `json:"Host,omitempty"`
+	Id                      *int32  `json:"Id,omitempty"`
+	Port                    *int32  `json:"Port,omitempty"`
+	RelayAuthenticationType *int32  `json:"RelayAuthenticationType,omitempty"`
+	RelayUsername           *string `json:"RelayUsername,omitempty"`
+	SenderAccount           *string `json:"SenderAccount,omitempty"`
+	SenderName              *string `json:"SenderName,omitempty"`
+	TestRecipient           *string `json:"TestRecipient,omitempty"`
+	UseSSL                  *bool   `json:"UseSSL,omitempty"`
+	AdditionalProperties    map[string]interface{}
 }
 
 type _KeyfactorAPIModelsSMTPSMTPTestResponse KeyfactorAPIModelsSMTPSMTPTestResponse
@@ -348,7 +348,7 @@ func (o *KeyfactorAPIModelsSMTPSMTPTestResponse) SetUseSSL(v bool) {
 }
 
 func (o KeyfactorAPIModelsSMTPSMTPTestResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -452,5 +452,3 @@ func (v *NullableKeyfactorAPIModelsSMTPSMTPTestResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

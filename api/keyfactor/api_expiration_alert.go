@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // ExpirationAlertApiService ExpirationAlertApi service
 type ExpirationAlertApiService service
 
 type ApiExpirationAlertAddExpirationAlertRequest struct {
-	ctx context.Context
-	ApiService *ExpirationAlertApiService
+	ctx                     context.Context
+	ApiService              *ExpirationAlertApiService
 	xKeyfactorRequestedWith *string
-	req *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest
-	xKeyfactorApiVersion *string
+	req                     *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -65,28 +64,29 @@ func (r ApiExpirationAlertAddExpirationAlertRequest) Execute() (*KeyfactorApiMod
 /*
 ExpirationAlertAddExpirationAlert Add an expiration alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExpirationAlertAddExpirationAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExpirationAlertAddExpirationAlertRequest
 */
 func (a *ExpirationAlertApiService) ExpirationAlertAddExpirationAlert(ctx context.Context) ApiExpirationAlertAddExpirationAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiExpirationAlertAddExpirationAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
+//
+//	@return KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
 func (a *ExpirationAlertApiService) ExpirationAlertAddExpirationAlertExecute(r ApiExpirationAlertAddExpirationAlertRequest) (*KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -96,12 +96,12 @@ func (a *ExpirationAlertApiService) ExpirationAlertAddExpirationAlertExecute(r A
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.req == nil {
-        return localVarReturnValue, nil, reportError("req is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.req == nil {
+		return localVarReturnValue, nil, reportError("req is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -164,11 +164,11 @@ func (a *ExpirationAlertApiService) ExpirationAlertAddExpirationAlertExecute(r A
 }
 
 type ApiExpirationAlertDeleteExpirationAlertRequest struct {
-	ctx context.Context
-	ApiService *ExpirationAlertApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *ExpirationAlertApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -190,28 +190,28 @@ func (r ApiExpirationAlertDeleteExpirationAlertRequest) Execute() (*http.Respons
 /*
 ExpirationAlertDeleteExpirationAlert Delete an expiration alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Id for the expiration alert
- @return ApiExpirationAlertDeleteExpirationAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Id for the expiration alert
+	@return ApiExpirationAlertDeleteExpirationAlertRequest
 */
 func (a *ExpirationAlertApiService) ExpirationAlertDeleteExpirationAlert(ctx context.Context, id int32) ApiExpirationAlertDeleteExpirationAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiExpirationAlertDeleteExpirationAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *ExpirationAlertApiService) ExpirationAlertDeleteExpirationAlertExecute(r ApiExpirationAlertDeleteExpirationAlertRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -222,9 +222,9 @@ func (a *ExpirationAlertApiService) ExpirationAlertDeleteExpirationAlertExecute(
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -276,11 +276,11 @@ func (a *ExpirationAlertApiService) ExpirationAlertDeleteExpirationAlertExecute(
 }
 
 type ApiExpirationAlertEditExpirationAlertRequest struct {
-	ctx context.Context
-	ApiService *ExpirationAlertApiService
+	ctx                     context.Context
+	ApiService              *ExpirationAlertApiService
 	xKeyfactorRequestedWith *string
-	req *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest
-	xKeyfactorApiVersion *string
+	req                     *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -308,28 +308,29 @@ func (r ApiExpirationAlertEditExpirationAlertRequest) Execute() (*KeyfactorApiMo
 /*
 ExpirationAlertEditExpirationAlert Edit an expiration alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExpirationAlertEditExpirationAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExpirationAlertEditExpirationAlertRequest
 */
 func (a *ExpirationAlertApiService) ExpirationAlertEditExpirationAlert(ctx context.Context) ApiExpirationAlertEditExpirationAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiExpirationAlertEditExpirationAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
+//
+//	@return KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
 func (a *ExpirationAlertApiService) ExpirationAlertEditExpirationAlertExecute(r ApiExpirationAlertEditExpirationAlertRequest) (*KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -339,12 +340,12 @@ func (a *ExpirationAlertApiService) ExpirationAlertEditExpirationAlertExecute(r 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.req == nil {
-        return localVarReturnValue, nil, reportError("req is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.req == nil {
+		return localVarReturnValue, nil, reportError("req is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -407,11 +408,11 @@ func (a *ExpirationAlertApiService) ExpirationAlertEditExpirationAlertExecute(r 
 }
 
 type ApiExpirationAlertEditScheduleRequest struct {
-	ctx context.Context
-	ApiService *ExpirationAlertApiService
+	ctx                     context.Context
+	ApiService              *ExpirationAlertApiService
 	xKeyfactorRequestedWith *string
-	newSchedule *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest
-	xKeyfactorApiVersion *string
+	newSchedule             *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -438,28 +439,29 @@ func (r ApiExpirationAlertEditScheduleRequest) Execute() (*KeyfactorApiModelsAle
 /*
 ExpirationAlertEditSchedule Edit schedule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExpirationAlertEditScheduleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExpirationAlertEditScheduleRequest
 */
 func (a *ExpirationAlertApiService) ExpirationAlertEditSchedule(ctx context.Context) ApiExpirationAlertEditScheduleRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiExpirationAlertEditScheduleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
+//
+//	@return KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 func (a *ExpirationAlertApiService) ExpirationAlertEditScheduleExecute(r ApiExpirationAlertEditScheduleRequest) (*KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -469,12 +471,12 @@ func (a *ExpirationAlertApiService) ExpirationAlertEditScheduleExecute(r ApiExpi
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.newSchedule == nil {
-        return localVarReturnValue, nil, reportError("newSchedule is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.newSchedule == nil {
+		return localVarReturnValue, nil, reportError("newSchedule is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -537,11 +539,11 @@ func (a *ExpirationAlertApiService) ExpirationAlertEditScheduleExecute(r ApiExpi
 }
 
 type ApiExpirationAlertGetExpirationAlertRequest struct {
-	ctx context.Context
-	ApiService *ExpirationAlertApiService
-	id int32
+	ctx                     context.Context
+	ApiService              *ExpirationAlertApiService
+	id                      int32
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -563,30 +565,31 @@ func (r ApiExpirationAlertGetExpirationAlertRequest) Execute() (*KeyfactorApiMod
 /*
 ExpirationAlertGetExpirationAlert Get an expiration alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Id for the expiration alert to get
- @return ApiExpirationAlertGetExpirationAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Id for the expiration alert to get
+	@return ApiExpirationAlertGetExpirationAlertRequest
 */
 func (a *ExpirationAlertApiService) ExpirationAlertGetExpirationAlert(ctx context.Context, id int32) ApiExpirationAlertGetExpirationAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiExpirationAlertGetExpirationAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
+//
+//	@return KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
 func (a *ExpirationAlertApiService) ExpirationAlertGetExpirationAlertExecute(r ApiExpirationAlertGetExpirationAlertRequest) (*KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -597,9 +600,9 @@ func (a *ExpirationAlertApiService) ExpirationAlertGetExpirationAlertExecute(r A
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -660,14 +663,14 @@ func (a *ExpirationAlertApiService) ExpirationAlertGetExpirationAlertExecute(r A
 }
 
 type ApiExpirationAlertGetExpirationAlertsRequest struct {
-	ctx context.Context
-	ApiService *ExpirationAlertApiService
+	ctx                     context.Context
+	ApiService              *ExpirationAlertApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pagedQueryQueryString *string
-	pagedQueryPageReturned *int32
-	pagedQueryReturnLimit *int32
-	pagedQuerySortField *string
+	xKeyfactorApiVersion    *string
+	pagedQueryQueryString   *string
+	pagedQueryPageReturned  *int32
+	pagedQueryReturnLimit   *int32
+	pagedQuerySortField     *string
 	pagedQuerySortAscending *int32
 }
 
@@ -720,28 +723,29 @@ func (r ApiExpirationAlertGetExpirationAlertsRequest) Execute() ([]KeyfactorApiM
 /*
 ExpirationAlertGetExpirationAlerts Gets all expiration alerts according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExpirationAlertGetExpirationAlertsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExpirationAlertGetExpirationAlertsRequest
 */
 func (a *ExpirationAlertApiService) ExpirationAlertGetExpirationAlerts(ctx context.Context) ApiExpirationAlertGetExpirationAlertsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiExpirationAlertGetExpirationAlertsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
+//
+//	@return []KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
 func (a *ExpirationAlertApiService) ExpirationAlertGetExpirationAlertsExecute(r ApiExpirationAlertGetExpirationAlertsRequest) ([]KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -751,9 +755,9 @@ func (a *ExpirationAlertApiService) ExpirationAlertGetExpirationAlertsExecute(r 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pagedQueryQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pagedQuery.queryString", r.pagedQueryQueryString, "")
@@ -829,10 +833,10 @@ func (a *ExpirationAlertApiService) ExpirationAlertGetExpirationAlertsExecute(r 
 }
 
 type ApiExpirationAlertGetScheduleRequest struct {
-	ctx context.Context
-	ApiService *ExpirationAlertApiService
+	ctx                     context.Context
+	ApiService              *ExpirationAlertApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -854,28 +858,29 @@ func (r ApiExpirationAlertGetScheduleRequest) Execute() (*KeyfactorApiModelsAler
 /*
 ExpirationAlertGetSchedule Get the schedule for expiration alerts
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExpirationAlertGetScheduleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExpirationAlertGetScheduleRequest
 */
 func (a *ExpirationAlertApiService) ExpirationAlertGetSchedule(ctx context.Context) ApiExpirationAlertGetScheduleRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiExpirationAlertGetScheduleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
+//
+//	@return KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 func (a *ExpirationAlertApiService) ExpirationAlertGetScheduleExecute(r ApiExpirationAlertGetScheduleRequest) (*KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -885,9 +890,9 @@ func (a *ExpirationAlertApiService) ExpirationAlertGetScheduleExecute(r ApiExpir
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -948,11 +953,11 @@ func (a *ExpirationAlertApiService) ExpirationAlertGetScheduleExecute(r ApiExpir
 }
 
 type ApiExpirationAlertTestAllExpirationAlertRequest struct {
-	ctx context.Context
-	ApiService *ExpirationAlertApiService
-	xKeyfactorRequestedWith *string
+	ctx                        context.Context
+	ApiService                 *ExpirationAlertApiService
+	xKeyfactorRequestedWith    *string
 	expirationAlertTestRequest *KeyfactorApiModelsAlertsExpirationExpirationAlertTestAllRequest
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion       *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -980,28 +985,29 @@ func (r ApiExpirationAlertTestAllExpirationAlertRequest) Execute() (*KeyfactorAp
 /*
 ExpirationAlertTestAllExpirationAlert Test All Expiration Alerts
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExpirationAlertTestAllExpirationAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExpirationAlertTestAllExpirationAlertRequest
 */
 func (a *ExpirationAlertApiService) ExpirationAlertTestAllExpirationAlert(ctx context.Context) ApiExpirationAlertTestAllExpirationAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiExpirationAlertTestAllExpirationAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse
+//
+//	@return KeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse
 func (a *ExpirationAlertApiService) ExpirationAlertTestAllExpirationAlertExecute(r ApiExpirationAlertTestAllExpirationAlertRequest) (*KeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1011,12 +1017,12 @@ func (a *ExpirationAlertApiService) ExpirationAlertTestAllExpirationAlertExecute
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.expirationAlertTestRequest == nil {
-        return localVarReturnValue, nil, reportError("expirationAlertTestRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.expirationAlertTestRequest == nil {
+		return localVarReturnValue, nil, reportError("expirationAlertTestRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -1079,11 +1085,11 @@ func (a *ExpirationAlertApiService) ExpirationAlertTestAllExpirationAlertExecute
 }
 
 type ApiExpirationAlertTestExpirationAlertRequest struct {
-	ctx context.Context
-	ApiService *ExpirationAlertApiService
-	xKeyfactorRequestedWith *string
+	ctx                        context.Context
+	ApiService                 *ExpirationAlertApiService
+	xKeyfactorRequestedWith    *string
 	expirationAlertTestRequest *KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion       *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1111,28 +1117,29 @@ func (r ApiExpirationAlertTestExpirationAlertRequest) Execute() (*KeyfactorApiMo
 /*
 ExpirationAlertTestExpirationAlert Test an Expiration Alert
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExpirationAlertTestExpirationAlertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExpirationAlertTestExpirationAlertRequest
 */
 func (a *ExpirationAlertApiService) ExpirationAlertTestExpirationAlert(ctx context.Context) ApiExpirationAlertTestExpirationAlertRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiExpirationAlertTestExpirationAlertRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse
+//
+//	@return KeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse
 func (a *ExpirationAlertApiService) ExpirationAlertTestExpirationAlertExecute(r ApiExpirationAlertTestExpirationAlertRequest) (*KeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1142,12 +1149,12 @@ func (a *ExpirationAlertApiService) ExpirationAlertTestExpirationAlertExecute(r 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.expirationAlertTestRequest == nil {
-        return localVarReturnValue, nil, reportError("expirationAlertTestRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.expirationAlertTestRequest == nil {
+		return localVarReturnValue, nil, reportError("expirationAlertTestRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}

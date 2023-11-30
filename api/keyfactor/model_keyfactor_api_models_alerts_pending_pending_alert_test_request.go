@@ -28,8 +28,8 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsPendingPendingAlertTestRequest{}
 
 // KeyfactorApiModelsAlertsPendingPendingAlertTestRequest struct for KeyfactorApiModelsAlertsPendingPendingAlertTestRequest
 type KeyfactorApiModelsAlertsPendingPendingAlertTestRequest struct {
-	AlertId *int32 `json:"AlertId,omitempty"`
-	SendAlerts *bool `json:"SendAlerts,omitempty"`
+	AlertId              *int32 `json:"AlertId,omitempty"`
+	SendAlerts           *bool  `json:"SendAlerts,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -117,7 +117,7 @@ func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestRequest) SetSendAlerts(v
 }
 
 func (o KeyfactorApiModelsAlertsPendingPendingAlertTestRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,5 +193,3 @@ func (v *NullableKeyfactorApiModelsAlertsPendingPendingAlertTestRequest) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

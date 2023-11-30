@@ -28,13 +28,13 @@ var _ MappedNullable = &KeyfactorApiModelsMonitoringOCSPParametersRequest{}
 
 // KeyfactorApiModelsMonitoringOCSPParametersRequest struct for KeyfactorApiModelsMonitoringOCSPParametersRequest
 type KeyfactorApiModelsMonitoringOCSPParametersRequest struct {
-	CertificateContents *string `json:"CertificateContents,omitempty"`
-	CertificateAuthorityId *int32 `json:"CertificateAuthorityId,omitempty"`
-	AuthorityName *string `json:"AuthorityName,omitempty"`
-	AuthorityNameId *string `json:"AuthorityNameId,omitempty"`
-	AuthorityKeyId *string `json:"AuthorityKeyId,omitempty"`
-	SampleSerialNumber *string `json:"SampleSerialNumber,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CertificateContents    *string `json:"CertificateContents,omitempty"`
+	CertificateAuthorityId *int32  `json:"CertificateAuthorityId,omitempty"`
+	AuthorityName          *string `json:"AuthorityName,omitempty"`
+	AuthorityNameId        *string `json:"AuthorityNameId,omitempty"`
+	AuthorityKeyId         *string `json:"AuthorityKeyId,omitempty"`
+	SampleSerialNumber     *string `json:"SampleSerialNumber,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _KeyfactorApiModelsMonitoringOCSPParametersRequest KeyfactorApiModelsMonitoringOCSPParametersRequest
@@ -249,7 +249,7 @@ func (o *KeyfactorApiModelsMonitoringOCSPParametersRequest) SetSampleSerialNumbe
 }
 
 func (o KeyfactorApiModelsMonitoringOCSPParametersRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -341,5 +341,3 @@ func (v *NullableKeyfactorApiModelsMonitoringOCSPParametersRequest) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

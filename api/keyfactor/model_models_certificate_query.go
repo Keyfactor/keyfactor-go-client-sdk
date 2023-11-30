@@ -28,14 +28,14 @@ var _ MappedNullable = &ModelsCertificateQuery{}
 
 // ModelsCertificateQuery struct for ModelsCertificateQuery
 type ModelsCertificateQuery struct {
-	Id *int32 `json:"Id,omitempty"`
-	Name *string `json:"Name,omitempty"`
-	Description *string `json:"Description,omitempty"`
-	Automated *bool `json:"Automated,omitempty"`
-	Content *string `json:"Content,omitempty"`
-	DuplicationField *int32 `json:"DuplicationField,omitempty"`
-	ShowOnDashboard *bool `json:"ShowOnDashboard,omitempty"`
-	Favorite *bool `json:"Favorite,omitempty"`
+	Id                   *int32  `json:"Id,omitempty"`
+	Name                 *string `json:"Name,omitempty"`
+	Description          *string `json:"Description,omitempty"`
+	Automated            *bool   `json:"Automated,omitempty"`
+	Content              *string `json:"Content,omitempty"`
+	DuplicationField     *int32  `json:"DuplicationField,omitempty"`
+	ShowOnDashboard      *bool   `json:"ShowOnDashboard,omitempty"`
+	Favorite             *bool   `json:"Favorite,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -315,7 +315,7 @@ func (o *ModelsCertificateQuery) SetFavorite(v bool) {
 }
 
 func (o ModelsCertificateQuery) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -415,5 +415,3 @@ func (v *NullableModelsCertificateQuery) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

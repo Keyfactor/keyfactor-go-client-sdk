@@ -28,24 +28,24 @@ var _ MappedNullable = &ModelsTemplateUpdateRequest{}
 
 // ModelsTemplateUpdateRequest struct for ModelsTemplateUpdateRequest
 type ModelsTemplateUpdateRequest struct {
-	Id *int32 `json:"Id,omitempty"`
-	KeySize *string `json:"KeySize,omitempty"`
-	KeyType *string `json:"KeyType,omitempty"`
-	FriendlyName *string `json:"FriendlyName,omitempty"`
-	KeyRetention *int32 `json:"KeyRetention,omitempty"`
-	KeyRetentionDays *int32 `json:"KeyRetentionDays,omitempty"`
-	KeyArchival *bool `json:"KeyArchival,omitempty"`
-	EnrollmentFields []ModelsTemplateUpdateRequestTemplateEnrollmentFieldModel `json:"EnrollmentFields,omitempty"`
-	MetadataFields []ModelsTemplateUpdateRequestTemplateMetadataFieldModel `json:"MetadataFields,omitempty"`
-	AllowedEnrollmentTypes *int32 `json:"AllowedEnrollmentTypes,omitempty"`
-	TemplateRegexes []ModelsTemplateUpdateRequestTemplateRegexModel `json:"TemplateRegexes,omitempty"`
-	TemplateDefaults []ModelsTemplateUpdateRequestTemplateDefaultModel `json:"TemplateDefaults,omitempty"`
-	TemplatePolicy *ModelsTemplateUpdateRequestTemplatePolicyModel `json:"TemplatePolicy,omitempty"`
-	UseAllowedRequesters *bool `json:"UseAllowedRequesters,omitempty"`
-	AllowedRequesters []string `json:"AllowedRequesters,omitempty"`
-	RequiresApproval *bool `json:"RequiresApproval,omitempty"`
-	KeyUsage *int32 `json:"KeyUsage,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                     *int32                                                    `json:"Id,omitempty"`
+	KeySize                *string                                                   `json:"KeySize,omitempty"`
+	KeyType                *string                                                   `json:"KeyType,omitempty"`
+	FriendlyName           *string                                                   `json:"FriendlyName,omitempty"`
+	KeyRetention           *int32                                                    `json:"KeyRetention,omitempty"`
+	KeyRetentionDays       *int32                                                    `json:"KeyRetentionDays,omitempty"`
+	KeyArchival            *bool                                                     `json:"KeyArchival,omitempty"`
+	EnrollmentFields       []ModelsTemplateUpdateRequestTemplateEnrollmentFieldModel `json:"EnrollmentFields,omitempty"`
+	MetadataFields         []ModelsTemplateUpdateRequestTemplateMetadataFieldModel   `json:"MetadataFields,omitempty"`
+	AllowedEnrollmentTypes *int32                                                    `json:"AllowedEnrollmentTypes,omitempty"`
+	TemplateRegexes        []ModelsTemplateUpdateRequestTemplateRegexModel           `json:"TemplateRegexes,omitempty"`
+	TemplateDefaults       []ModelsTemplateUpdateRequestTemplateDefaultModel         `json:"TemplateDefaults,omitempty"`
+	TemplatePolicy         *ModelsTemplateUpdateRequestTemplatePolicyModel           `json:"TemplatePolicy,omitempty"`
+	UseAllowedRequesters   *bool                                                     `json:"UseAllowedRequesters,omitempty"`
+	AllowedRequesters      []string                                                  `json:"AllowedRequesters,omitempty"`
+	RequiresApproval       *bool                                                     `json:"RequiresApproval,omitempty"`
+	KeyUsage               *int32                                                    `json:"KeyUsage,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _ModelsTemplateUpdateRequest ModelsTemplateUpdateRequest
@@ -612,7 +612,7 @@ func (o *ModelsTemplateUpdateRequest) SetKeyUsage(v int32) {
 }
 
 func (o ModelsTemplateUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -748,5 +748,3 @@ func (v *NullableModelsTemplateUpdateRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,15 +29,15 @@ var _ MappedNullable = &ModelsSSHLogonsLogonQueryResponse{}
 
 // ModelsSSHLogonsLogonQueryResponse struct for ModelsSSHLogonsLogonQueryResponse
 type ModelsSSHLogonsLogonQueryResponse struct {
-	Id *int32 `json:"Id,omitempty"`
-	Username *string `json:"Username,omitempty"`
-	LastLogon *time.Time `json:"LastLogon,omitempty"`
-	ServerId *int32 `json:"ServerId,omitempty"`
-	ServerName *string `json:"ServerName,omitempty"`
-	GroupName *string `json:"GroupName,omitempty"`
-	KeyCount *int32 `json:"KeyCount,omitempty"`
-	ServerUnderManagement *bool `json:"ServerUnderManagement,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                    *int32     `json:"Id,omitempty"`
+	Username              *string    `json:"Username,omitempty"`
+	LastLogon             *time.Time `json:"LastLogon,omitempty"`
+	ServerId              *int32     `json:"ServerId,omitempty"`
+	ServerName            *string    `json:"ServerName,omitempty"`
+	GroupName             *string    `json:"GroupName,omitempty"`
+	KeyCount              *int32     `json:"KeyCount,omitempty"`
+	ServerUnderManagement *bool      `json:"ServerUnderManagement,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _ModelsSSHLogonsLogonQueryResponse ModelsSSHLogonsLogonQueryResponse
@@ -316,7 +316,7 @@ func (o *ModelsSSHLogonsLogonQueryResponse) SetServerUnderManagement(v bool) {
 }
 
 func (o ModelsSSHLogonsLogonQueryResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -416,5 +416,3 @@ func (v *NullableModelsSSHLogonsLogonQueryResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

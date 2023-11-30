@@ -28,11 +28,11 @@ var _ MappedNullable = &KeyfactorApiModelsCertificateStoresCertificateStoreAppro
 
 // KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest struct for KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest
 type KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest struct {
-	Id *string `json:"Id,omitempty"`
-	ContainerId *int32 `json:"ContainerId,omitempty"`
-	CertStoreType *int32 `json:"CertStoreType,omitempty"`
-	Properties *string `json:"Properties,omitempty"`
-	Password *ModelsKeyfactorAPISecret `json:"Password,omitempty"`
+	Id                   *string                   `json:"Id,omitempty"`
+	ContainerId          *int32                    `json:"ContainerId,omitempty"`
+	CertStoreType        *int32                    `json:"CertStoreType,omitempty"`
+	Properties           *string                   `json:"Properties,omitempty"`
+	Password             *ModelsKeyfactorAPISecret `json:"Password,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -216,7 +216,7 @@ func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) SetP
 }
 
 func (o KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -304,5 +304,3 @@ func (v *NullableKeyfactorApiModelsCertificateStoresCertificateStoreApproveReque
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

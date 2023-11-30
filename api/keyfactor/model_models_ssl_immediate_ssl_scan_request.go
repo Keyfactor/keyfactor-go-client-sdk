@@ -28,8 +28,8 @@ var _ MappedNullable = &ModelsSSLImmediateSslScanRequest{}
 
 // ModelsSSLImmediateSslScanRequest struct for ModelsSSLImmediateSslScanRequest
 type ModelsSSLImmediateSslScanRequest struct {
-	Discovery bool `json:"Discovery"`
-	Monitoring bool `json:"Monitoring"`
+	Discovery            bool `json:"Discovery"`
+	Monitoring           bool `json:"Monitoring"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -103,7 +103,7 @@ func (o *ModelsSSLImmediateSslScanRequest) SetMonitoring(v bool) {
 }
 
 func (o ModelsSSLImmediateSslScanRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -175,5 +175,3 @@ func (v *NullableModelsSSLImmediateSslScanRequest) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

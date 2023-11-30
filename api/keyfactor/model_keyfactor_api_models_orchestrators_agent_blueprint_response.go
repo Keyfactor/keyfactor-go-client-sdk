@@ -29,10 +29,10 @@ var _ MappedNullable = &KeyfactorApiModelsOrchestratorsAgentBlueprintResponse{}
 
 // KeyfactorApiModelsOrchestratorsAgentBlueprintResponse struct for KeyfactorApiModelsOrchestratorsAgentBlueprintResponse
 type KeyfactorApiModelsOrchestratorsAgentBlueprintResponse struct {
-	AgentBlueprintId *string `json:"AgentBlueprintId,omitempty"`
-	Name *string `json:"Name,omitempty"`
-	RequiredCapabilities []string `json:"RequiredCapabilities,omitempty"`
-	LastModified *time.Time `json:"LastModified,omitempty"`
+	AgentBlueprintId     *string    `json:"AgentBlueprintId,omitempty"`
+	Name                 *string    `json:"Name,omitempty"`
+	RequiredCapabilities []string   `json:"RequiredCapabilities,omitempty"`
+	LastModified         *time.Time `json:"LastModified,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -184,7 +184,7 @@ func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintResponse) SetLastModified(
 }
 
 func (o KeyfactorApiModelsOrchestratorsAgentBlueprintResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -268,5 +268,3 @@ func (v *NullableKeyfactorApiModelsOrchestratorsAgentBlueprintResponse) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

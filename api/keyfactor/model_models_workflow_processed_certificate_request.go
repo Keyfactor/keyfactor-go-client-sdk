@@ -28,12 +28,12 @@ var _ MappedNullable = &ModelsWorkflowProcessedCertificateRequest{}
 
 // ModelsWorkflowProcessedCertificateRequest struct for ModelsWorkflowProcessedCertificateRequest
 type ModelsWorkflowProcessedCertificateRequest struct {
-	CARowId *int32 `json:"CARowId,omitempty"`
-	CARequestId *string `json:"CARequestId,omitempty"`
-	CAHost *string `json:"CAHost,omitempty"`
-	CALogicalName *string `json:"CALogicalName,omitempty"`
-	KeyfactorRequestId *int32 `json:"KeyfactorRequestId,omitempty"`
-	Comment *string `json:"Comment,omitempty"`
+	CARowId              *int32  `json:"CARowId,omitempty"`
+	CARequestId          *string `json:"CARequestId,omitempty"`
+	CAHost               *string `json:"CAHost,omitempty"`
+	CALogicalName        *string `json:"CALogicalName,omitempty"`
+	KeyfactorRequestId   *int32  `json:"KeyfactorRequestId,omitempty"`
+	Comment              *string `json:"Comment,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -249,7 +249,7 @@ func (o *ModelsWorkflowProcessedCertificateRequest) SetComment(v string) {
 }
 
 func (o ModelsWorkflowProcessedCertificateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -339,5 +339,3 @@ func (v *NullableModelsWorkflowProcessedCertificateRequest) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

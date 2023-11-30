@@ -28,7 +28,7 @@ var _ MappedNullable = &ModelsCSRContents{}
 
 // ModelsCSRContents struct for ModelsCSRContents
 type ModelsCSRContents struct {
-	CSR string `json:"CSR"`
+	CSR                  string `json:"CSR"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *ModelsCSRContents) SetCSR(v string) {
 }
 
 func (o ModelsCSRContents) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -147,5 +147,3 @@ func (v *NullableModelsCSRContents) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

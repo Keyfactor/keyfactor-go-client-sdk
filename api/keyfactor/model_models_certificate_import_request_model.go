@@ -42,7 +42,7 @@ type ModelsCertificateImportRequestModel struct {
 	// Schedule on which the certificate should be imported
 	Schedule *time.Time `json:"Schedule,omitempty"`
 	// Whether or not we should validate and import the certificate's metadata.
-	ImportMetadata *bool `json:"ImportMetadata,omitempty"`
+	ImportMetadata       *bool `json:"ImportMetadata,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -283,7 +283,7 @@ func (o *ModelsCertificateImportRequestModel) SetImportMetadata(v bool) {
 }
 
 func (o ModelsCertificateImportRequestModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -377,5 +377,3 @@ func (v *NullableModelsCertificateImportRequestModel) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

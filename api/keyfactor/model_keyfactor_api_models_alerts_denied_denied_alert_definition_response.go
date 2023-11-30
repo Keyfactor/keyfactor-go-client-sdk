@@ -28,15 +28,15 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionRespo
 
 // KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse struct for KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
 type KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse struct {
-	Id *int32 `json:"Id,omitempty"`
-	DisplayName *string `json:"DisplayName,omitempty"`
-	Subject *string `json:"Subject,omitempty"`
-	Message *string `json:"Message,omitempty"`
-	Recipients []string `json:"Recipients,omitempty"`
-	Template *KeyfactorApiModelsAlertsAlertTemplateAlertTemplateResponse `json:"Template,omitempty"`
+	Id                     *int32                                                        `json:"Id,omitempty"`
+	DisplayName            *string                                                       `json:"DisplayName,omitempty"`
+	Subject                *string                                                       `json:"Subject,omitempty"`
+	Message                *string                                                       `json:"Message,omitempty"`
+	Recipients             []string                                                      `json:"Recipients,omitempty"`
+	Template               *KeyfactorApiModelsAlertsAlertTemplateAlertTemplateResponse   `json:"Template,omitempty"`
 	RegisteredEventHandler *KeyfactorApiModelsEventHandlerRegisteredEventHandlerResponse `json:"RegisteredEventHandler,omitempty"`
 	EventHandlerParameters []KeyfactorApiModelsEventHandlerEventHandlerParameterResponse `json:"EventHandlerParameters,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties   map[string]interface{}
 }
 
 type _KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
@@ -315,7 +315,7 @@ func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse) SetEventHa
 }
 
 func (o KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -415,5 +415,3 @@ func (v *NullableKeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse) Un
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

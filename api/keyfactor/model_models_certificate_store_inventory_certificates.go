@@ -29,17 +29,17 @@ var _ MappedNullable = &ModelsCertificateStoreInventoryCertificates{}
 
 // ModelsCertificateStoreInventoryCertificates struct for ModelsCertificateStoreInventoryCertificates
 type ModelsCertificateStoreInventoryCertificates struct {
-	Id *int32 `json:"Id,omitempty"`
-	IssuedDN NullableString `json:"IssuedDN,omitempty"`
-	SerialNumber *string `json:"SerialNumber,omitempty"`
-	NotBefore *time.Time `json:"NotBefore,omitempty"`
-	NotAfter *time.Time `json:"NotAfter,omitempty"`
-	SigningAlgorithm *string `json:"SigningAlgorithm,omitempty"`
-	IssuerDN NullableString `json:"IssuerDN,omitempty"`
-	Thumbprint *string `json:"Thumbprint,omitempty"`
-	CertStoreInventoryItemId *int32 `json:"CertStoreInventoryItemId,omitempty"`
-	Metadata map[string]map[string]interface{} `json:"Metadata,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                       *int32                            `json:"Id,omitempty"`
+	IssuedDN                 NullableString                    `json:"IssuedDN,omitempty"`
+	SerialNumber             *string                           `json:"SerialNumber,omitempty"`
+	NotBefore                *time.Time                        `json:"NotBefore,omitempty"`
+	NotAfter                 *time.Time                        `json:"NotAfter,omitempty"`
+	SigningAlgorithm         *string                           `json:"SigningAlgorithm,omitempty"`
+	IssuerDN                 NullableString                    `json:"IssuerDN,omitempty"`
+	Thumbprint               *string                           `json:"Thumbprint,omitempty"`
+	CertStoreInventoryItemId *int32                            `json:"CertStoreInventoryItemId,omitempty"`
+	Metadata                 map[string]map[string]interface{} `json:"Metadata,omitempty"`
+	AdditionalProperties     map[string]interface{}
 }
 
 type _ModelsCertificateStoreInventoryCertificates ModelsCertificateStoreInventoryCertificates
@@ -125,6 +125,7 @@ func (o *ModelsCertificateStoreInventoryCertificates) HasIssuedDN() bool {
 func (o *ModelsCertificateStoreInventoryCertificates) SetIssuedDN(v string) {
 	o.IssuedDN.Set(&v)
 }
+
 // SetIssuedDNNil sets the value for IssuedDN to be an explicit nil
 func (o *ModelsCertificateStoreInventoryCertificates) SetIssuedDNNil() {
 	o.IssuedDN.Set(nil)
@@ -295,6 +296,7 @@ func (o *ModelsCertificateStoreInventoryCertificates) HasIssuerDN() bool {
 func (o *ModelsCertificateStoreInventoryCertificates) SetIssuerDN(v string) {
 	o.IssuerDN.Set(&v)
 }
+
 // SetIssuerDNNil sets the value for IssuerDN to be an explicit nil
 func (o *ModelsCertificateStoreInventoryCertificates) SetIssuerDNNil() {
 	o.IssuerDN.Set(nil)
@@ -402,7 +404,7 @@ func (o *ModelsCertificateStoreInventoryCertificates) SetMetadata(v map[string]m
 }
 
 func (o ModelsCertificateStoreInventoryCertificates) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -510,5 +512,3 @@ func (v *NullableModelsCertificateStoreInventoryCertificates) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

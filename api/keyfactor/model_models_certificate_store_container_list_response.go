@@ -28,12 +28,12 @@ var _ MappedNullable = &ModelsCertificateStoreContainerListResponse{}
 
 // ModelsCertificateStoreContainerListResponse struct for ModelsCertificateStoreContainerListResponse
 type ModelsCertificateStoreContainerListResponse struct {
-	Id *int32 `json:"Id,omitempty"`
-	Name *string `json:"Name,omitempty"`
-	OverwriteSchedules *bool `json:"OverwriteSchedules,omitempty"`
-	Schedule *string `json:"Schedule,omitempty"`
-	CertStoreType *int32 `json:"CertStoreType,omitempty"`
-	StoreCount *int32 `json:"StoreCount,omitempty"`
+	Id                   *int32  `json:"Id,omitempty"`
+	Name                 *string `json:"Name,omitempty"`
+	OverwriteSchedules   *bool   `json:"OverwriteSchedules,omitempty"`
+	Schedule             *string `json:"Schedule,omitempty"`
+	CertStoreType        *int32  `json:"CertStoreType,omitempty"`
+	StoreCount           *int32  `json:"StoreCount,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -249,7 +249,7 @@ func (o *ModelsCertificateStoreContainerListResponse) SetStoreCount(v int32) {
 }
 
 func (o ModelsCertificateStoreContainerListResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -341,5 +341,3 @@ func (v *NullableModelsCertificateStoreContainerListResponse) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

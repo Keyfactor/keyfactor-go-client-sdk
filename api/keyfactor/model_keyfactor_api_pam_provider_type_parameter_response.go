@@ -28,11 +28,11 @@ var _ MappedNullable = &KeyfactorApiPAMProviderTypeParameterResponse{}
 
 // KeyfactorApiPAMProviderTypeParameterResponse struct for KeyfactorApiPAMProviderTypeParameterResponse
 type KeyfactorApiPAMProviderTypeParameterResponse struct {
-	Id *int32 `json:"Id,omitempty"`
-	Name *string `json:"Name,omitempty"`
-	DisplayName *string `json:"DisplayName,omitempty"`
-	DataType *int32 `json:"DataType,omitempty"`
-	InstanceLevel *bool `json:"InstanceLevel,omitempty"`
+	Id                   *int32  `json:"Id,omitempty"`
+	Name                 *string `json:"Name,omitempty"`
+	DisplayName          *string `json:"DisplayName,omitempty"`
+	DataType             *int32  `json:"DataType,omitempty"`
+	InstanceLevel        *bool   `json:"InstanceLevel,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -216,7 +216,7 @@ func (o *KeyfactorApiPAMProviderTypeParameterResponse) SetInstanceLevel(v bool) 
 }
 
 func (o KeyfactorApiPAMProviderTypeParameterResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -304,5 +304,3 @@ func (v *NullableKeyfactorApiPAMProviderTypeParameterResponse) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

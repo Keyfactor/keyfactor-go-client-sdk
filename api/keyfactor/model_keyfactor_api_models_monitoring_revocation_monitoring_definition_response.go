@@ -28,14 +28,14 @@ var _ MappedNullable = &KeyfactorApiModelsMonitoringRevocationMonitoringDefiniti
 
 // KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse struct for KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse
 type KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse struct {
-	Id *int32 `json:"Id,omitempty"`
-	Name *string `json:"Name,omitempty"`
-	EndpointType *string `json:"EndpointType,omitempty"`
-	Location *string `json:"Location,omitempty"`
-	Email *KeyfactorApiModelsMonitoringEmailResponse `json:"Email,omitempty"`
-	Dashboard *KeyfactorApiModelsMonitoringDashboardResponse `json:"Dashboard,omitempty"`
-	Schedule *KeyfactorCommonSchedulingKeyfactorSchedule `json:"Schedule,omitempty"`
-	OCSPParameters *KeyfactorApiModelsMonitoringOCSPParametersResponse `json:"OCSPParameters,omitempty"`
+	Id                   *int32                                              `json:"Id,omitempty"`
+	Name                 *string                                             `json:"Name,omitempty"`
+	EndpointType         *string                                             `json:"EndpointType,omitempty"`
+	Location             *string                                             `json:"Location,omitempty"`
+	Email                *KeyfactorApiModelsMonitoringEmailResponse          `json:"Email,omitempty"`
+	Dashboard            *KeyfactorApiModelsMonitoringDashboardResponse      `json:"Dashboard,omitempty"`
+	Schedule             *KeyfactorCommonSchedulingKeyfactorSchedule         `json:"Schedule,omitempty"`
+	OCSPParameters       *KeyfactorApiModelsMonitoringOCSPParametersResponse `json:"OCSPParameters,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -315,7 +315,7 @@ func (o *KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse) Set
 }
 
 func (o KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -415,5 +415,3 @@ func (v *NullableKeyfactorApiModelsMonitoringRevocationMonitoringDefinitionRespo
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

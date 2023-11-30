@@ -28,8 +28,8 @@ var _ MappedNullable = &ModelsSecurityIdentitiesPermissionRolesPairResponse{}
 
 // ModelsSecurityIdentitiesPermissionRolesPairResponse struct for ModelsSecurityIdentitiesPermissionRolesPairResponse
 type ModelsSecurityIdentitiesPermissionRolesPairResponse struct {
-	Permission *string `json:"Permission,omitempty"`
-	GrantedByRoles []string `json:"GrantedByRoles,omitempty"`
+	Permission           *string  `json:"Permission,omitempty"`
+	GrantedByRoles       []string `json:"GrantedByRoles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -117,7 +117,7 @@ func (o *ModelsSecurityIdentitiesPermissionRolesPairResponse) SetGrantedByRoles(
 }
 
 func (o ModelsSecurityIdentitiesPermissionRolesPairResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,5 +193,3 @@ func (v *NullableModelsSecurityIdentitiesPermissionRolesPairResponse) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

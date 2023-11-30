@@ -31,7 +31,7 @@ type ModelsCertificateValidationResponse struct {
 	// States whether the certificate is valid or not
 	Valid *bool `json:"Valid,omitempty"`
 	// Lists any reasons why the certificate is not valid
-	Results *map[string]string `json:"Results,omitempty"`
+	Results              *map[string]string `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -119,7 +119,7 @@ func (o *ModelsCertificateValidationResponse) SetResults(v map[string]string) {
 }
 
 func (o ModelsCertificateValidationResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -195,5 +195,3 @@ func (v *NullableModelsCertificateValidationResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

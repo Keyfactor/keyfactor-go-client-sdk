@@ -28,9 +28,9 @@ var _ MappedNullable = &KeyfactorApiModelsMonitoringEmailResponse{}
 
 // KeyfactorApiModelsMonitoringEmailResponse struct for KeyfactorApiModelsMonitoringEmailResponse
 type KeyfactorApiModelsMonitoringEmailResponse struct {
-	EnableReminder *bool `json:"EnableReminder,omitempty"`
-	WarningDays *int32 `json:"WarningDays,omitempty"`
-	Recipients []string `json:"Recipients,omitempty"`
+	EnableReminder       *bool    `json:"EnableReminder,omitempty"`
+	WarningDays          *int32   `json:"WarningDays,omitempty"`
+	Recipients           []string `json:"Recipients,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -150,7 +150,7 @@ func (o *KeyfactorApiModelsMonitoringEmailResponse) SetRecipients(v []string) {
 }
 
 func (o KeyfactorApiModelsMonitoringEmailResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,5 +230,3 @@ func (v *NullableKeyfactorApiModelsMonitoringEmailResponse) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

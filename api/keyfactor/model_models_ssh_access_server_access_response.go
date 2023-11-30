@@ -28,8 +28,8 @@ var _ MappedNullable = &ModelsSSHAccessServerAccessResponse{}
 
 // ModelsSSHAccessServerAccessResponse struct for ModelsSSHAccessServerAccessResponse
 type ModelsSSHAccessServerAccessResponse struct {
-	ServerId *int32 `json:"ServerId,omitempty"`
-	LogonUsers []ModelsSSHAccessLogonUserAccessResponse `json:"LogonUsers,omitempty"`
+	ServerId             *int32                                   `json:"ServerId,omitempty"`
+	LogonUsers           []ModelsSSHAccessLogonUserAccessResponse `json:"LogonUsers,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -117,7 +117,7 @@ func (o *ModelsSSHAccessServerAccessResponse) SetLogonUsers(v []ModelsSSHAccessL
 }
 
 func (o ModelsSSHAccessServerAccessResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,5 +193,3 @@ func (v *NullableModelsSSHAccessServerAccessResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

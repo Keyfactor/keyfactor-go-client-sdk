@@ -29,8 +29,8 @@ var _ MappedNullable = &ModelsEnrollmentPFXEnrollmentResponse{}
 // ModelsEnrollmentPFXEnrollmentResponse struct for ModelsEnrollmentPFXEnrollmentResponse
 type ModelsEnrollmentPFXEnrollmentResponse struct {
 	CertificateInformation *ModelsPkcs12CertificateResponse `json:"CertificateInformation,omitempty"`
-	Metadata *map[string]string `json:"Metadata,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Metadata               *map[string]string               `json:"Metadata,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _ModelsEnrollmentPFXEnrollmentResponse ModelsEnrollmentPFXEnrollmentResponse
@@ -117,7 +117,7 @@ func (o *ModelsEnrollmentPFXEnrollmentResponse) SetMetadata(v map[string]string)
 }
 
 func (o ModelsEnrollmentPFXEnrollmentResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,5 +193,3 @@ func (v *NullableModelsEnrollmentPFXEnrollmentResponse) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

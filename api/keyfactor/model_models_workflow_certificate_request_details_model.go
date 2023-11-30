@@ -29,22 +29,22 @@ var _ MappedNullable = &ModelsWorkflowCertificateRequestDetailsModel{}
 
 // ModelsWorkflowCertificateRequestDetailsModel struct for ModelsWorkflowCertificateRequestDetailsModel
 type ModelsWorkflowCertificateRequestDetailsModel struct {
-	DenialComment *string `json:"DenialComment,omitempty"`
-	KeyLength *string `json:"KeyLength,omitempty"`
-	SANs []string `json:"SANs,omitempty"`
-	CertStores []ModelsWorkflowCertificateRequestCertStoreModel `json:"CertStores,omitempty"`
-	Curve NullableString `json:"Curve,omitempty"`
-	Id *int32 `json:"Id,omitempty"`
-	CARequestId *string `json:"CARequestId,omitempty"`
-	CommonName *string `json:"CommonName,omitempty"`
-	DistinguishedName *string `json:"DistinguishedName,omitempty"`
-	SubmissionDate *time.Time `json:"SubmissionDate,omitempty"`
-	CertificateAuthority *string `json:"CertificateAuthority,omitempty"`
-	Template *string `json:"Template,omitempty"`
-	Requester *string `json:"Requester,omitempty"`
-	State *int32 `json:"State,omitempty"`
-	StateString *string `json:"StateString,omitempty"`
-	Metadata *map[string]string `json:"Metadata,omitempty"`
+	DenialComment        *string                                          `json:"DenialComment,omitempty"`
+	KeyLength            *string                                          `json:"KeyLength,omitempty"`
+	SANs                 []string                                         `json:"SANs,omitempty"`
+	CertStores           []ModelsWorkflowCertificateRequestCertStoreModel `json:"CertStores,omitempty"`
+	Curve                NullableString                                   `json:"Curve,omitempty"`
+	Id                   *int32                                           `json:"Id,omitempty"`
+	CARequestId          *string                                          `json:"CARequestId,omitempty"`
+	CommonName           *string                                          `json:"CommonName,omitempty"`
+	DistinguishedName    *string                                          `json:"DistinguishedName,omitempty"`
+	SubmissionDate       *time.Time                                       `json:"SubmissionDate,omitempty"`
+	CertificateAuthority *string                                          `json:"CertificateAuthority,omitempty"`
+	Template             *string                                          `json:"Template,omitempty"`
+	Requester            *string                                          `json:"Requester,omitempty"`
+	State                *int32                                           `json:"State,omitempty"`
+	StateString          *string                                          `json:"StateString,omitempty"`
+	Metadata             *map[string]string                               `json:"Metadata,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -227,6 +227,7 @@ func (o *ModelsWorkflowCertificateRequestDetailsModel) HasCurve() bool {
 func (o *ModelsWorkflowCertificateRequestDetailsModel) SetCurve(v string) {
 	o.Curve.Set(&v)
 }
+
 // SetCurveNil sets the value for Curve to be an explicit nil
 func (o *ModelsWorkflowCertificateRequestDetailsModel) SetCurveNil() {
 	o.Curve.Set(nil)
@@ -590,7 +591,7 @@ func (o *ModelsWorkflowCertificateRequestDetailsModel) SetMetadata(v map[string]
 }
 
 func (o ModelsWorkflowCertificateRequestDetailsModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -720,5 +721,3 @@ func (v *NullableModelsWorkflowCertificateRequestDetailsModel) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

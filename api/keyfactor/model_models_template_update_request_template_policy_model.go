@@ -28,12 +28,12 @@ var _ MappedNullable = &ModelsTemplateUpdateRequestTemplatePolicyModel{}
 
 // ModelsTemplateUpdateRequestTemplatePolicyModel struct for ModelsTemplateUpdateRequestTemplatePolicyModel
 type ModelsTemplateUpdateRequestTemplatePolicyModel struct {
-	TemplateId *int32 `json:"TemplateId,omitempty"`
-	RSAValidKeySizes []int32 `json:"RSAValidKeySizes,omitempty"`
-	ECCValidCurves []string `json:"ECCValidCurves,omitempty"`
-	AllowKeyReuse *bool `json:"AllowKeyReuse,omitempty"`
-	AllowWildcards *bool `json:"AllowWildcards,omitempty"`
-	RFCEnforcement *bool `json:"RFCEnforcement,omitempty"`
+	TemplateId           *int32   `json:"TemplateId,omitempty"`
+	RSAValidKeySizes     []int32  `json:"RSAValidKeySizes,omitempty"`
+	ECCValidCurves       []string `json:"ECCValidCurves,omitempty"`
+	AllowKeyReuse        *bool    `json:"AllowKeyReuse,omitempty"`
+	AllowWildcards       *bool    `json:"AllowWildcards,omitempty"`
+	RFCEnforcement       *bool    `json:"RFCEnforcement,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -249,7 +249,7 @@ func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) SetRFCEnforcement(v boo
 }
 
 func (o ModelsTemplateUpdateRequestTemplatePolicyModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -341,5 +341,3 @@ func (v *NullableModelsTemplateUpdateRequestTemplatePolicyModel) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

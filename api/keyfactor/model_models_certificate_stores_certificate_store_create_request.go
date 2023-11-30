@@ -28,16 +28,16 @@ var _ MappedNullable = &ModelsCertificateStoresCertificateStoreCreateRequest{}
 
 // ModelsCertificateStoresCertificateStoreCreateRequest struct for ModelsCertificateStoresCertificateStoreCreateRequest
 type ModelsCertificateStoresCertificateStoreCreateRequest struct {
-	ContainerId *int32 `json:"ContainerId,omitempty"`
-	ClientMachine *string `json:"ClientMachine,omitempty"`
-	Storepath *string `json:"Storepath,omitempty"`
-	CertStoreType *int32 `json:"CertStoreType,omitempty"`
-	CreateIfMissing *bool `json:"CreateIfMissing,omitempty"`
-	Properties *string `json:"Properties,omitempty"`
-	AgentId *string `json:"AgentId,omitempty"`
-	AgentAssigned *bool `json:"AgentAssigned,omitempty"`
-	InventorySchedule *KeyfactorCommonSchedulingKeyfactorSchedule `json:"InventorySchedule,omitempty"`
-	Password *ModelsKeyfactorAPISecret `json:"Password,omitempty"`
+	ContainerId          *int32                                      `json:"ContainerId,omitempty"`
+	ClientMachine        *string                                     `json:"ClientMachine,omitempty"`
+	Storepath            *string                                     `json:"Storepath,omitempty"`
+	CertStoreType        *int32                                      `json:"CertStoreType,omitempty"`
+	CreateIfMissing      *bool                                       `json:"CreateIfMissing,omitempty"`
+	Properties           *string                                     `json:"Properties,omitempty"`
+	AgentId              *string                                     `json:"AgentId,omitempty"`
+	AgentAssigned        *bool                                       `json:"AgentAssigned,omitempty"`
+	InventorySchedule    *KeyfactorCommonSchedulingKeyfactorSchedule `json:"InventorySchedule,omitempty"`
+	Password             *ModelsKeyfactorAPISecret                   `json:"Password,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -381,7 +381,7 @@ func (o *ModelsCertificateStoresCertificateStoreCreateRequest) SetPassword(v Mod
 }
 
 func (o ModelsCertificateStoresCertificateStoreCreateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -489,5 +489,3 @@ func (v *NullableModelsCertificateStoresCertificateStoreCreateRequest) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

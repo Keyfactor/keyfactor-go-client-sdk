@@ -28,10 +28,10 @@ var _ MappedNullable = &KeyfactorApiModelsOrchestratorJobsJobTypeResponse{}
 
 // KeyfactorApiModelsOrchestratorJobsJobTypeResponse struct for KeyfactorApiModelsOrchestratorJobsJobTypeResponse
 type KeyfactorApiModelsOrchestratorJobsJobTypeResponse struct {
-	Id *string `json:"Id,omitempty"`
-	JobTypeName *string `json:"JobTypeName,omitempty"`
-	Description *string `json:"Description,omitempty"`
-	JobTypeFields []KeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse `json:"JobTypeFields,omitempty"`
+	Id                   *string                                                  `json:"Id,omitempty"`
+	JobTypeName          *string                                                  `json:"JobTypeName,omitempty"`
+	Description          *string                                                  `json:"Description,omitempty"`
+	JobTypeFields        []KeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse `json:"JobTypeFields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -183,7 +183,7 @@ func (o *KeyfactorApiModelsOrchestratorJobsJobTypeResponse) SetJobTypeFields(v [
 }
 
 func (o KeyfactorApiModelsOrchestratorJobsJobTypeResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -267,5 +267,3 @@ func (v *NullableKeyfactorApiModelsOrchestratorJobsJobTypeResponse) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

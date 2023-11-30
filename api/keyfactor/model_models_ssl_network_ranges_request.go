@@ -28,8 +28,8 @@ var _ MappedNullable = &ModelsSSLNetworkRangesRequest{}
 
 // ModelsSSLNetworkRangesRequest struct for ModelsSSLNetworkRangesRequest
 type ModelsSSLNetworkRangesRequest struct {
-	NetworkId string `json:"NetworkId"`
-	Ranges []string `json:"Ranges"`
+	NetworkId            string   `json:"NetworkId"`
+	Ranges               []string `json:"Ranges"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -103,7 +103,7 @@ func (o *ModelsSSLNetworkRangesRequest) SetRanges(v []string) {
 }
 
 func (o ModelsSSLNetworkRangesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -175,5 +175,3 @@ func (v *NullableModelsSSLNetworkRangesRequest) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

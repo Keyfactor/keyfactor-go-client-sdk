@@ -28,8 +28,8 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsAlertCertificateQueryAlertCertif
 
 // KeyfactorApiModelsAlertsAlertCertificateQueryAlertCertificateQueryResponse struct for KeyfactorApiModelsAlertsAlertCertificateQueryAlertCertificateQueryResponse
 type KeyfactorApiModelsAlertsAlertCertificateQueryAlertCertificateQueryResponse struct {
-	Id *int32 `json:"Id,omitempty"`
-	Name *string `json:"Name,omitempty"`
+	Id                   *int32  `json:"Id,omitempty"`
+	Name                 *string `json:"Name,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -117,7 +117,7 @@ func (o *KeyfactorApiModelsAlertsAlertCertificateQueryAlertCertificateQueryRespo
 }
 
 func (o KeyfactorApiModelsAlertsAlertCertificateQueryAlertCertificateQueryResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,5 +193,3 @@ func (v *NullableKeyfactorApiModelsAlertsAlertCertificateQueryAlertCertificateQu
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

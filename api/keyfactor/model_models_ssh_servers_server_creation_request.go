@@ -28,11 +28,11 @@ var _ MappedNullable = &ModelsSSHServersServerCreationRequest{}
 
 // ModelsSSHServersServerCreationRequest struct for ModelsSSHServersServerCreationRequest
 type ModelsSSHServersServerCreationRequest struct {
-	AgentId string `json:"AgentId"`
-	Hostname string `json:"Hostname"`
-	ServerGroupId string `json:"ServerGroupId"`
-	UnderManagement *bool `json:"UnderManagement,omitempty"`
-	Port *int32 `json:"Port,omitempty"`
+	AgentId              string `json:"AgentId"`
+	Hostname             string `json:"Hostname"`
+	ServerGroupId        string `json:"ServerGroupId"`
+	UnderManagement      *bool  `json:"UnderManagement,omitempty"`
+	Port                 *int32 `json:"Port,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -195,7 +195,7 @@ func (o *ModelsSSHServersServerCreationRequest) SetPort(v int32) {
 }
 
 func (o ModelsSSHServersServerCreationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -277,5 +277,3 @@ func (v *NullableModelsSSHServersServerCreationRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

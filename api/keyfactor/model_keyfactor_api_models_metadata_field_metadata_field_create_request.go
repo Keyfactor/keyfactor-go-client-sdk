@@ -28,16 +28,16 @@ var _ MappedNullable = &KeyfactorApiModelsMetadataFieldMetadataFieldCreateReques
 
 // KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest struct for KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest
 type KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest struct {
-	Name string `json:"Name"`
-	Description string `json:"Description"`
-	DataType int32 `json:"DataType"`
-	Hint *string `json:"Hint,omitempty"`
-	Validation *string `json:"Validation,omitempty"`
-	Enrollment *int32 `json:"Enrollment,omitempty"`
-	Message *string `json:"Message,omitempty"`
-	Options *string `json:"Options,omitempty"`
-	DefaultValue *string `json:"DefaultValue,omitempty"`
-	DisplayOrder *int32 `json:"DisplayOrder,omitempty"`
+	Name                 string  `json:"Name"`
+	Description          string  `json:"Description"`
+	DataType             int32   `json:"DataType"`
+	Hint                 *string `json:"Hint,omitempty"`
+	Validation           *string `json:"Validation,omitempty"`
+	Enrollment           *int32  `json:"Enrollment,omitempty"`
+	Message              *string `json:"Message,omitempty"`
+	Options              *string `json:"Options,omitempty"`
+	DefaultValue         *string `json:"DefaultValue,omitempty"`
+	DisplayOrder         *int32  `json:"DisplayOrder,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -360,7 +360,7 @@ func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) SetDisplayOr
 }
 
 func (o KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -462,5 +462,3 @@ func (v *NullableKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) Unma
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -31,7 +31,7 @@ type KeyfactorApiModelsWorkflowsConditionConfigurationResponse struct {
 	// The Id of the condition.
 	Id *string `json:"Id,omitempty"`
 	// The value to compare to. This value will be compared to a true value.
-	Value *string `json:"Value,omitempty"`
+	Value                *string `json:"Value,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -119,7 +119,7 @@ func (o *KeyfactorApiModelsWorkflowsConditionConfigurationResponse) SetValue(v s
 }
 
 func (o KeyfactorApiModelsWorkflowsConditionConfigurationResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -195,5 +195,3 @@ func (v *NullableKeyfactorApiModelsWorkflowsConditionConfigurationResponse) Unma
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

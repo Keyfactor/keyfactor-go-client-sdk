@@ -28,8 +28,8 @@ var _ MappedNullable = &ModelsRevocationRevocationResponse{}
 
 // ModelsRevocationRevocationResponse struct for ModelsRevocationRevocationResponse
 type ModelsRevocationRevocationResponse struct {
-	RevokedIds []int32 `json:"RevokedIds,omitempty"`
-	SuspendedCerts []ModelsRevocationSuspendedRevocationResponse `json:"SuspendedCerts,omitempty"`
+	RevokedIds           []int32                                       `json:"RevokedIds,omitempty"`
+	SuspendedCerts       []ModelsRevocationSuspendedRevocationResponse `json:"SuspendedCerts,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -117,7 +117,7 @@ func (o *ModelsRevocationRevocationResponse) SetSuspendedCerts(v []ModelsRevocat
 }
 
 func (o ModelsRevocationRevocationResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,5 +193,3 @@ func (v *NullableModelsRevocationRevocationResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

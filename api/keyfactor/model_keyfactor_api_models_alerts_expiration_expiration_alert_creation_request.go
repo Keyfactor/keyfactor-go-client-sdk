@@ -28,15 +28,15 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsExpirationExpirationAlertCreatio
 
 // KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest struct for KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest
 type KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest struct {
-	DisplayName string `json:"DisplayName"`
-	Subject string `json:"Subject"`
-	Message string `json:"Message"`
-	ExpirationWarningDays int32 `json:"ExpirationWarningDays"`
-	CertificateQueryId *int32 `json:"CertificateQueryId,omitempty"`
+	DisplayName            string                                                       `json:"DisplayName"`
+	Subject                string                                                       `json:"Subject"`
+	Message                string                                                       `json:"Message"`
+	ExpirationWarningDays  int32                                                        `json:"ExpirationWarningDays"`
+	CertificateQueryId     *int32                                                       `json:"CertificateQueryId,omitempty"`
 	RegisteredEventHandler *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest `json:"RegisteredEventHandler,omitempty"`
-	Recipients []string `json:"Recipients,omitempty"`
+	Recipients             []string                                                     `json:"Recipients,omitempty"`
 	EventHandlerParameters []KeyfactorApiModelsEventHandlerEventHandlerParameterRequest `json:"EventHandlerParameters,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties   map[string]interface{}
 }
 
 type _KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest
@@ -287,7 +287,7 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) SetEv
 }
 
 func (o KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -379,5 +379,3 @@ func (v *NullableKeyfactorApiModelsAlertsExpirationExpirationAlertCreationReques
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

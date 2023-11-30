@@ -28,17 +28,17 @@ var _ MappedNullable = &ModelsSSLSslScanResult{}
 
 // ModelsSSLSslScanResult struct for ModelsSSLSslScanResult
 type ModelsSSLSslScanResult struct {
-	EndpointId *string `json:"EndpointId,omitempty"`
-	ReverseDNS *string `json:"ReverseDNS,omitempty"`
-	SNIName *string `json:"SNIName,omitempty"`
-	IpAddress *string `json:"IpAddress,omitempty"`
-	Port *int32 `json:"Port,omitempty"`
-	CertificateFound *bool `json:"CertificateFound,omitempty"`
-	AgentPoolName *string `json:"AgentPoolName,omitempty"`
-	NetworkName *string `json:"NetworkName,omitempty"`
-	MonitorStatus *bool `json:"MonitorStatus,omitempty"`
-	CertificateCN *string `json:"CertificateCN,omitempty"`
-	Reviewed *bool `json:"Reviewed,omitempty"`
+	EndpointId           *string `json:"EndpointId,omitempty"`
+	ReverseDNS           *string `json:"ReverseDNS,omitempty"`
+	SNIName              *string `json:"SNIName,omitempty"`
+	IpAddress            *string `json:"IpAddress,omitempty"`
+	Port                 *int32  `json:"Port,omitempty"`
+	CertificateFound     *bool   `json:"CertificateFound,omitempty"`
+	AgentPoolName        *string `json:"AgentPoolName,omitempty"`
+	NetworkName          *string `json:"NetworkName,omitempty"`
+	MonitorStatus        *bool   `json:"MonitorStatus,omitempty"`
+	CertificateCN        *string `json:"CertificateCN,omitempty"`
+	Reviewed             *bool   `json:"Reviewed,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -414,7 +414,7 @@ func (o *ModelsSSLSslScanResult) SetReviewed(v bool) {
 }
 
 func (o ModelsSSLSslScanResult) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -526,5 +526,3 @@ func (v *NullableModelsSSLSslScanResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

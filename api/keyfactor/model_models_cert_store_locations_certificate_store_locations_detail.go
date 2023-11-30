@@ -28,15 +28,15 @@ var _ MappedNullable = &ModelsCertStoreLocationsCertificateStoreLocationsDetail{
 
 // ModelsCertStoreLocationsCertificateStoreLocationsDetail struct for ModelsCertStoreLocationsCertificateStoreLocationsDetail
 type ModelsCertStoreLocationsCertificateStoreLocationsDetail struct {
-	StoreId *string `json:"StoreId,omitempty"`
-	StoreTypeId *int32 `json:"StoreTypeId,omitempty"`
-	ClientMachine *string `json:"ClientMachine,omitempty"`
-	StorePath *string `json:"StorePath,omitempty"`
-	AgentPool *string `json:"AgentPool,omitempty"`
-	Alias *string `json:"Alias,omitempty"`
-	IPAddress *string `json:"IPAddress,omitempty"`
-	Port *int32 `json:"Port,omitempty"`
-	NetworkName *string `json:"NetworkName,omitempty"`
+	StoreId              *string `json:"StoreId,omitempty"`
+	StoreTypeId          *int32  `json:"StoreTypeId,omitempty"`
+	ClientMachine        *string `json:"ClientMachine,omitempty"`
+	StorePath            *string `json:"StorePath,omitempty"`
+	AgentPool            *string `json:"AgentPool,omitempty"`
+	Alias                *string `json:"Alias,omitempty"`
+	IPAddress            *string `json:"IPAddress,omitempty"`
+	Port                 *int32  `json:"Port,omitempty"`
+	NetworkName          *string `json:"NetworkName,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -348,7 +348,7 @@ func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) SetNetworkName
 }
 
 func (o ModelsCertStoreLocationsCertificateStoreLocationsDetail) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -452,5 +452,3 @@ func (v *NullableModelsCertStoreLocationsCertificateStoreLocationsDetail) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

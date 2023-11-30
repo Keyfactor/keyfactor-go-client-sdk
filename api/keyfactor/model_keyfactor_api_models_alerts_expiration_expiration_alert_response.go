@@ -28,14 +28,14 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsExpirationExpirationAlertRespons
 
 // KeyfactorApiModelsAlertsExpirationExpirationAlertResponse struct for KeyfactorApiModelsAlertsExpirationExpirationAlertResponse
 type KeyfactorApiModelsAlertsExpirationExpirationAlertResponse struct {
-	CAName *string `json:"CAName,omitempty"`
-	CARow *int64 `json:"CARow,omitempty"`
-	IssuedCN NullableString `json:"IssuedCN,omitempty"`
-	Expiry *string `json:"Expiry,omitempty"`
-	Subject *string `json:"Subject,omitempty"`
-	Message *string `json:"Message,omitempty"`
-	Recipients []string `json:"Recipients,omitempty"`
-	SendDate *string `json:"SendDate,omitempty"`
+	CAName               *string        `json:"CAName,omitempty"`
+	CARow                *int64         `json:"CARow,omitempty"`
+	IssuedCN             NullableString `json:"IssuedCN,omitempty"`
+	Expiry               *string        `json:"Expiry,omitempty"`
+	Subject              *string        `json:"Subject,omitempty"`
+	Message              *string        `json:"Message,omitempty"`
+	Recipients           []string       `json:"Recipients,omitempty"`
+	SendDate             *string        `json:"SendDate,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -154,6 +154,7 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertResponse) HasIssuedCN(
 func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertResponse) SetIssuedCN(v string) {
 	o.IssuedCN.Set(&v)
 }
+
 // SetIssuedCNNil sets the value for IssuedCN to be an explicit nil
 func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertResponse) SetIssuedCNNil() {
 	o.IssuedCN.Set(nil)
@@ -325,7 +326,7 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertResponse) SetSendDate(
 }
 
 func (o KeyfactorApiModelsAlertsExpirationExpirationAlertResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -425,5 +426,3 @@ func (v *NullableKeyfactorApiModelsAlertsExpirationExpirationAlertResponse) Unma
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

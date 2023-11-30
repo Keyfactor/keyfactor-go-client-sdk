@@ -28,22 +28,22 @@ var _ MappedNullable = &ModelsReport{}
 
 // ModelsReport struct for ModelsReport
 type ModelsReport struct {
-	Id *int32 `json:"Id,omitempty"`
-	Scheduled *int32 `json:"Scheduled,omitempty"`
-	DisplayName *string `json:"DisplayName,omitempty"`
-	Description *string `json:"Description,omitempty"`
-	ReportPath *string `json:"ReportPath,omitempty"`
-	VersionNumber *string `json:"VersionNumber,omitempty"`
-	Categories *string `json:"Categories,omitempty"`
-	ShortName *string `json:"ShortName,omitempty"`
-	InNavigator *bool `json:"InNavigator,omitempty"`
-	Favorite *bool `json:"Favorite,omitempty"`
-	RemoveDuplicates *bool `json:"RemoveDuplicates,omitempty"`
-	UsesCollection *bool `json:"UsesCollection,omitempty"`
-	ReportParameter []ModelsReportParameters `json:"ReportParameter,omitempty"`
-	Schedules []ModelsReportSchedule `json:"Schedules,omitempty"`
-	AcceptedScheduleFormats []string `json:"AcceptedScheduleFormats,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                      *int32                   `json:"Id,omitempty"`
+	Scheduled               *int32                   `json:"Scheduled,omitempty"`
+	DisplayName             *string                  `json:"DisplayName,omitempty"`
+	Description             *string                  `json:"Description,omitempty"`
+	ReportPath              *string                  `json:"ReportPath,omitempty"`
+	VersionNumber           *string                  `json:"VersionNumber,omitempty"`
+	Categories              *string                  `json:"Categories,omitempty"`
+	ShortName               *string                  `json:"ShortName,omitempty"`
+	InNavigator             *bool                    `json:"InNavigator,omitempty"`
+	Favorite                *bool                    `json:"Favorite,omitempty"`
+	RemoveDuplicates        *bool                    `json:"RemoveDuplicates,omitempty"`
+	UsesCollection          *bool                    `json:"UsesCollection,omitempty"`
+	ReportParameter         []ModelsReportParameters `json:"ReportParameter,omitempty"`
+	Schedules               []ModelsReportSchedule   `json:"Schedules,omitempty"`
+	AcceptedScheduleFormats []string                 `json:"AcceptedScheduleFormats,omitempty"`
+	AdditionalProperties    map[string]interface{}
 }
 
 type _ModelsReport ModelsReport
@@ -546,7 +546,7 @@ func (o *ModelsReport) SetAcceptedScheduleFormats(v []string) {
 }
 
 func (o ModelsReport) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -674,5 +674,3 @@ func (v *NullableModelsReport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

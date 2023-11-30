@@ -28,8 +28,8 @@ var _ MappedNullable = &ModelsRecoveryResponse{}
 
 // ModelsRecoveryResponse struct for ModelsRecoveryResponse
 type ModelsRecoveryResponse struct {
-	PFX *string `json:"PFX,omitempty"`
-	FileName *string `json:"FileName,omitempty"`
+	PFX                  *string `json:"PFX,omitempty"`
+	FileName             *string `json:"FileName,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -117,7 +117,7 @@ func (o *ModelsRecoveryResponse) SetFileName(v string) {
 }
 
 func (o ModelsRecoveryResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,5 +193,3 @@ func (v *NullableModelsRecoveryResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

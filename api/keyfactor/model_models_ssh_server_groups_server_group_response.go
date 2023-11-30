@@ -28,12 +28,12 @@ var _ MappedNullable = &ModelsSSHServerGroupsServerGroupResponse{}
 
 // ModelsSSHServerGroupsServerGroupResponse struct for ModelsSSHServerGroupsServerGroupResponse
 type ModelsSSHServerGroupsServerGroupResponse struct {
-	Id *string `json:"Id,omitempty"`
-	Owner *ModelsSSHUsersSshUserResponse `json:"Owner,omitempty"`
-	GroupName *string `json:"GroupName,omitempty"`
-	SyncSchedule *KeyfactorCommonSchedulingKeyfactorSchedule `json:"SyncSchedule,omitempty"`
-	UnderManagement *bool `json:"UnderManagement,omitempty"`
-	ServerCount *int32 `json:"ServerCount,omitempty"`
+	Id                   *string                                     `json:"Id,omitempty"`
+	Owner                *ModelsSSHUsersSshUserResponse              `json:"Owner,omitempty"`
+	GroupName            *string                                     `json:"GroupName,omitempty"`
+	SyncSchedule         *KeyfactorCommonSchedulingKeyfactorSchedule `json:"SyncSchedule,omitempty"`
+	UnderManagement      *bool                                       `json:"UnderManagement,omitempty"`
+	ServerCount          *int32                                      `json:"ServerCount,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -249,7 +249,7 @@ func (o *ModelsSSHServerGroupsServerGroupResponse) SetServerCount(v int32) {
 }
 
 func (o ModelsSSHServerGroupsServerGroupResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -341,5 +341,3 @@ func (v *NullableModelsSSHServerGroupsServerGroupResponse) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

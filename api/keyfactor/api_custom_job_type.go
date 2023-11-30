@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // CustomJobTypeApiService CustomJobTypeApi service
 type CustomJobTypeApiService service
 
 type ApiCustomJobTypeCreateJobTypeRequest struct {
-	ctx context.Context
-	ApiService *CustomJobTypeApiService
+	ctx                     context.Context
+	ApiService              *CustomJobTypeApiService
 	xKeyfactorRequestedWith *string
-	jobType *ModelsOrchestratorJobsJobTypeCreateRequest
-	xKeyfactorApiVersion *string
+	jobType                 *ModelsOrchestratorJobsJobTypeCreateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -65,28 +64,29 @@ func (r ApiCustomJobTypeCreateJobTypeRequest) Execute() (*KeyfactorApiModelsOrch
 /*
 CustomJobTypeCreateJobType Creates a custom job type with the provided properties
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCustomJobTypeCreateJobTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCustomJobTypeCreateJobTypeRequest
 */
 func (a *CustomJobTypeApiService) CustomJobTypeCreateJobType(ctx context.Context) ApiCustomJobTypeCreateJobTypeRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCustomJobTypeCreateJobTypeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsOrchestratorJobsJobTypeResponse
+//
+//	@return KeyfactorApiModelsOrchestratorJobsJobTypeResponse
 func (a *CustomJobTypeApiService) CustomJobTypeCreateJobTypeExecute(r ApiCustomJobTypeCreateJobTypeRequest) (*KeyfactorApiModelsOrchestratorJobsJobTypeResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsOrchestratorJobsJobTypeResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsOrchestratorJobsJobTypeResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -96,12 +96,12 @@ func (a *CustomJobTypeApiService) CustomJobTypeCreateJobTypeExecute(r ApiCustomJ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.jobType == nil {
-        return localVarReturnValue, nil, reportError("jobType is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.jobType == nil {
+		return localVarReturnValue, nil, reportError("jobType is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -164,11 +164,11 @@ func (a *CustomJobTypeApiService) CustomJobTypeCreateJobTypeExecute(r ApiCustomJ
 }
 
 type ApiCustomJobTypeDeleteJobTypeRequest struct {
-	ctx context.Context
-	ApiService *CustomJobTypeApiService
-	id string
+	ctx                     context.Context
+	ApiService              *CustomJobTypeApiService
+	id                      string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -190,28 +190,28 @@ func (r ApiCustomJobTypeDeleteJobTypeRequest) Execute() (*http.Response, error) 
 /*
 CustomJobTypeDeleteJobType Deletes the custom job type associated with the provided id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifier (GUID) of the job type
- @return ApiCustomJobTypeDeleteJobTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifier (GUID) of the job type
+	@return ApiCustomJobTypeDeleteJobTypeRequest
 */
 func (a *CustomJobTypeApiService) CustomJobTypeDeleteJobType(ctx context.Context, id string) ApiCustomJobTypeDeleteJobTypeRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCustomJobTypeDeleteJobTypeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *CustomJobTypeApiService) CustomJobTypeDeleteJobTypeExecute(r ApiCustomJobTypeDeleteJobTypeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -222,9 +222,9 @@ func (a *CustomJobTypeApiService) CustomJobTypeDeleteJobTypeExecute(r ApiCustomJ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -276,11 +276,11 @@ func (a *CustomJobTypeApiService) CustomJobTypeDeleteJobTypeExecute(r ApiCustomJ
 }
 
 type ApiCustomJobTypeGetJobTypeByIdRequest struct {
-	ctx context.Context
-	ApiService *CustomJobTypeApiService
-	id string
+	ctx                     context.Context
+	ApiService              *CustomJobTypeApiService
+	id                      string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -302,30 +302,31 @@ func (r ApiCustomJobTypeGetJobTypeByIdRequest) Execute() (*KeyfactorApiModelsOrc
 /*
 CustomJobTypeGetJobTypeById Returns a single custom job type associated with the provided id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor (GUID) identifier of the job type
- @return ApiCustomJobTypeGetJobTypeByIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor (GUID) identifier of the job type
+	@return ApiCustomJobTypeGetJobTypeByIdRequest
 */
 func (a *CustomJobTypeApiService) CustomJobTypeGetJobTypeById(ctx context.Context, id string) ApiCustomJobTypeGetJobTypeByIdRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCustomJobTypeGetJobTypeByIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsOrchestratorJobsJobTypeResponse
+//
+//	@return KeyfactorApiModelsOrchestratorJobsJobTypeResponse
 func (a *CustomJobTypeApiService) CustomJobTypeGetJobTypeByIdExecute(r ApiCustomJobTypeGetJobTypeByIdRequest) (*KeyfactorApiModelsOrchestratorJobsJobTypeResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsOrchestratorJobsJobTypeResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsOrchestratorJobsJobTypeResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -336,9 +337,9 @@ func (a *CustomJobTypeApiService) CustomJobTypeGetJobTypeByIdExecute(r ApiCustom
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -399,15 +400,15 @@ func (a *CustomJobTypeApiService) CustomJobTypeGetJobTypeByIdExecute(r ApiCustom
 }
 
 type ApiCustomJobTypeGetJobTypesRequest struct {
-	ctx context.Context
-	ApiService *CustomJobTypeApiService
+	ctx                     context.Context
+	ApiService              *CustomJobTypeApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -459,28 +460,29 @@ func (r ApiCustomJobTypeGetJobTypesRequest) Execute() ([]KeyfactorApiModelsOrche
 /*
 CustomJobTypeGetJobTypes Returns all custom job types according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCustomJobTypeGetJobTypesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCustomJobTypeGetJobTypesRequest
 */
 func (a *CustomJobTypeApiService) CustomJobTypeGetJobTypes(ctx context.Context) ApiCustomJobTypeGetJobTypesRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCustomJobTypeGetJobTypesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsOrchestratorJobsJobTypeResponse
+//
+//	@return []KeyfactorApiModelsOrchestratorJobsJobTypeResponse
 func (a *CustomJobTypeApiService) CustomJobTypeGetJobTypesExecute(r ApiCustomJobTypeGetJobTypesRequest) ([]KeyfactorApiModelsOrchestratorJobsJobTypeResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsOrchestratorJobsJobTypeResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsOrchestratorJobsJobTypeResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -490,9 +492,9 @@ func (a *CustomJobTypeApiService) CustomJobTypeGetJobTypesExecute(r ApiCustomJob
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")
@@ -568,11 +570,11 @@ func (a *CustomJobTypeApiService) CustomJobTypeGetJobTypesExecute(r ApiCustomJob
 }
 
 type ApiCustomJobTypeUpdateJobTypeRequest struct {
-	ctx context.Context
-	ApiService *CustomJobTypeApiService
+	ctx                     context.Context
+	ApiService              *CustomJobTypeApiService
 	xKeyfactorRequestedWith *string
-	jobType *ModelsOrchestratorJobsJobTypeUpdateRequest
-	xKeyfactorApiVersion *string
+	jobType                 *ModelsOrchestratorJobsJobTypeUpdateRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -600,28 +602,29 @@ func (r ApiCustomJobTypeUpdateJobTypeRequest) Execute() (*KeyfactorApiModelsOrch
 /*
 CustomJobTypeUpdateJobType Updates an existing custom job type with the provided properties
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCustomJobTypeUpdateJobTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCustomJobTypeUpdateJobTypeRequest
 */
 func (a *CustomJobTypeApiService) CustomJobTypeUpdateJobType(ctx context.Context) ApiCustomJobTypeUpdateJobTypeRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiCustomJobTypeUpdateJobTypeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsOrchestratorJobsJobTypeResponse
+//
+//	@return KeyfactorApiModelsOrchestratorJobsJobTypeResponse
 func (a *CustomJobTypeApiService) CustomJobTypeUpdateJobTypeExecute(r ApiCustomJobTypeUpdateJobTypeRequest) (*KeyfactorApiModelsOrchestratorJobsJobTypeResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsOrchestratorJobsJobTypeResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsOrchestratorJobsJobTypeResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -631,12 +634,12 @@ func (a *CustomJobTypeApiService) CustomJobTypeUpdateJobTypeExecute(r ApiCustomJ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.jobType == nil {
-        return localVarReturnValue, nil, reportError("jobType is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.jobType == nil {
+		return localVarReturnValue, nil, reportError("jobType is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}

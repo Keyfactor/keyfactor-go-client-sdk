@@ -29,30 +29,30 @@ var _ MappedNullable = &KeyfactorApiModelsOrchestratorsAgentBlueprintJobsRespons
 
 // KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse struct for KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse
 type KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse struct {
-	AgentBlueprintJobId *string `json:"AgentBlueprintJobId,omitempty"`
-	AgentBlueprintStoreId *string `json:"AgentBlueprintStoreId,omitempty"`
-	AgentBlueprintId *string `json:"AgentBlueprintId,omitempty"`
-	JobType *string `json:"JobType,omitempty"`
-	JobTypeName *string `json:"JobTypeName,omitempty"`
-	OperationType *int32 `json:"OperationType,omitempty"`
-	Thumbprint *string `json:"Thumbprint,omitempty"`
-	Contents *string `json:"Contents,omitempty"`
-	Alias *string `json:"Alias,omitempty"`
-	PrivateKeyEntry *bool `json:"PrivateKeyEntry,omitempty"`
-	Overwrite *bool `json:"Overwrite,omitempty"`
-	HasEntryPassword *bool `json:"HasEntryPassword,omitempty"`
-	HasPfxPassword *bool `json:"HasPfxPassword,omitempty"`
-	RequestTimestamp *time.Time `json:"RequestTimestamp,omitempty"`
-	KeyfactorSchedule *KeyfactorCommonSchedulingKeyfactorSchedule `json:"KeyfactorSchedule,omitempty"`
-	Subject *string `json:"Subject,omitempty"`
-	Directories *string `json:"Directories,omitempty"`
-	IgnoredDirectories *string `json:"IgnoredDirectories,omitempty"`
-	SymLinks *bool `json:"SymLinks,omitempty"`
-	Compatibility *bool `json:"Compatibility,omitempty"`
-	FileExtensions *string `json:"FileExtensions,omitempty"`
-	FileNamePatterns *string `json:"FileNamePatterns,omitempty"`
-	AgentBlueprintStores *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse `json:"AgentBlueprintStores,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AgentBlueprintJobId   *string                                                      `json:"AgentBlueprintJobId,omitempty"`
+	AgentBlueprintStoreId *string                                                      `json:"AgentBlueprintStoreId,omitempty"`
+	AgentBlueprintId      *string                                                      `json:"AgentBlueprintId,omitempty"`
+	JobType               *string                                                      `json:"JobType,omitempty"`
+	JobTypeName           *string                                                      `json:"JobTypeName,omitempty"`
+	OperationType         *int32                                                       `json:"OperationType,omitempty"`
+	Thumbprint            *string                                                      `json:"Thumbprint,omitempty"`
+	Contents              *string                                                      `json:"Contents,omitempty"`
+	Alias                 *string                                                      `json:"Alias,omitempty"`
+	PrivateKeyEntry       *bool                                                        `json:"PrivateKeyEntry,omitempty"`
+	Overwrite             *bool                                                        `json:"Overwrite,omitempty"`
+	HasEntryPassword      *bool                                                        `json:"HasEntryPassword,omitempty"`
+	HasPfxPassword        *bool                                                        `json:"HasPfxPassword,omitempty"`
+	RequestTimestamp      *time.Time                                                   `json:"RequestTimestamp,omitempty"`
+	KeyfactorSchedule     *KeyfactorCommonSchedulingKeyfactorSchedule                  `json:"KeyfactorSchedule,omitempty"`
+	Subject               *string                                                      `json:"Subject,omitempty"`
+	Directories           *string                                                      `json:"Directories,omitempty"`
+	IgnoredDirectories    *string                                                      `json:"IgnoredDirectories,omitempty"`
+	SymLinks              *bool                                                        `json:"SymLinks,omitempty"`
+	Compatibility         *bool                                                        `json:"Compatibility,omitempty"`
+	FileExtensions        *string                                                      `json:"FileExtensions,omitempty"`
+	FileNamePatterns      *string                                                      `json:"FileNamePatterns,omitempty"`
+	AgentBlueprintStores  *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse `json:"AgentBlueprintStores,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse
@@ -811,7 +811,7 @@ func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse) SetAgentBlue
 }
 
 func (o KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -971,5 +971,3 @@ func (v *NullableKeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse) Unma
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -31,7 +31,7 @@ type ModelsSecurityIdentitiesSecurityIdentityIdentifier struct {
 	// The username of the security identity.
 	AccountName *string `json:"AccountName,omitempty"`
 	// The SID of the security identity.
-	SID *string `json:"SID,omitempty"`
+	SID                  *string `json:"SID,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -119,7 +119,7 @@ func (o *ModelsSecurityIdentitiesSecurityIdentityIdentifier) SetSID(v string) {
 }
 
 func (o ModelsSecurityIdentitiesSecurityIdentityIdentifier) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -195,5 +195,3 @@ func (v *NullableModelsSecurityIdentitiesSecurityIdentityIdentifier) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

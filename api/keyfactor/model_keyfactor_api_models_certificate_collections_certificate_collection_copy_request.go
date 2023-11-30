@@ -28,13 +28,13 @@ var _ MappedNullable = &KeyfactorApiModelsCertificateCollectionsCertificateColle
 
 // KeyfactorApiModelsCertificateCollectionsCertificateCollectionCopyRequest struct for KeyfactorApiModelsCertificateCollectionsCertificateCollectionCopyRequest
 type KeyfactorApiModelsCertificateCollectionsCertificateCollectionCopyRequest struct {
-	CopyFromId int32 `json:"CopyFromId"`
-	Name string `json:"Name"`
-	Description *string `json:"Description,omitempty"`
-	Query *string `json:"Query,omitempty"`
-	DuplicationField *int32 `json:"DuplicationField,omitempty"`
-	ShowOnDashboard *bool `json:"ShowOnDashboard,omitempty"`
-	Favorite *bool `json:"Favorite,omitempty"`
+	CopyFromId           int32   `json:"CopyFromId"`
+	Name                 string  `json:"Name"`
+	Description          *string `json:"Description,omitempty"`
+	Query                *string `json:"Query,omitempty"`
+	DuplicationField     *int32  `json:"DuplicationField,omitempty"`
+	ShowOnDashboard      *bool   `json:"ShowOnDashboard,omitempty"`
+	Favorite             *bool   `json:"Favorite,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -268,7 +268,7 @@ func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCopyReques
 }
 
 func (o KeyfactorApiModelsCertificateCollectionsCertificateCollectionCopyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -360,5 +360,3 @@ func (v *NullableKeyfactorApiModelsCertificateCollectionsCertificateCollectionCo
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

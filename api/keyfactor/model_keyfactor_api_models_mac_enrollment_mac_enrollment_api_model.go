@@ -28,12 +28,12 @@ var _ MappedNullable = &KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel{}
 
 // KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel struct for KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel
 type KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel struct {
-	Id *int32 `json:"Id,omitempty"`
-	Enabled *bool `json:"Enabled,omitempty"`
-	Interval *int32 `json:"Interval,omitempty"`
-	UseMetadata *bool `json:"UseMetadata,omitempty"`
-	MetadataField *string `json:"MetadataField,omitempty"`
-	MetadataValue *string `json:"MetadataValue,omitempty"`
+	Id                   *int32  `json:"Id,omitempty"`
+	Enabled              *bool   `json:"Enabled,omitempty"`
+	Interval             *int32  `json:"Interval,omitempty"`
+	UseMetadata          *bool   `json:"UseMetadata,omitempty"`
+	MetadataField        *string `json:"MetadataField,omitempty"`
+	MetadataValue        *string `json:"MetadataValue,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -249,7 +249,7 @@ func (o *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel) SetMetadataValue(
 }
 
 func (o KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -341,5 +341,3 @@ func (v *NullableKeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

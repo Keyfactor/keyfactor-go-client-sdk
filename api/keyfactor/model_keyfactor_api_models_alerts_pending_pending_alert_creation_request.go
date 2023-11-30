@@ -28,14 +28,14 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsPendingPendingAlertCreationReque
 
 // KeyfactorApiModelsAlertsPendingPendingAlertCreationRequest struct for KeyfactorApiModelsAlertsPendingPendingAlertCreationRequest
 type KeyfactorApiModelsAlertsPendingPendingAlertCreationRequest struct {
-	DisplayName string `json:"DisplayName"`
-	Subject string `json:"Subject"`
-	Message string `json:"Message"`
-	TemplateId *int32 `json:"TemplateId,omitempty"`
+	DisplayName            string                                                       `json:"DisplayName"`
+	Subject                string                                                       `json:"Subject"`
+	Message                string                                                       `json:"Message"`
+	TemplateId             *int32                                                       `json:"TemplateId,omitempty"`
 	RegisteredEventHandler *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest `json:"RegisteredEventHandler,omitempty"`
-	Recipients []string `json:"Recipients,omitempty"`
+	Recipients             []string                                                     `json:"Recipients,omitempty"`
 	EventHandlerParameters []KeyfactorApiModelsEventHandlerEventHandlerParameterRequest `json:"EventHandlerParameters,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties   map[string]interface{}
 }
 
 type _KeyfactorApiModelsAlertsPendingPendingAlertCreationRequest KeyfactorApiModelsAlertsPendingPendingAlertCreationRequest
@@ -261,7 +261,7 @@ func (o *KeyfactorApiModelsAlertsPendingPendingAlertCreationRequest) SetEventHan
 }
 
 func (o KeyfactorApiModelsAlertsPendingPendingAlertCreationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -351,5 +351,3 @@ func (v *NullableKeyfactorApiModelsAlertsPendingPendingAlertCreationRequest) Unm
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

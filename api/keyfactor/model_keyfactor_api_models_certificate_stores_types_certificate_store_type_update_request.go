@@ -28,22 +28,22 @@ var _ MappedNullable = &KeyfactorApiModelsCertificateStoresTypesCertificateStore
 
 // KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest struct for KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest
 type KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest struct {
-	StoreType int32 `json:"StoreType"`
-	Name string `json:"Name"`
-	ShortName string `json:"ShortName"`
-	Capability *string `json:"Capability,omitempty"`
-	LocalStore *bool `json:"LocalStore,omitempty"`
-	SupportedOperations *ModelsCertStoreTypeSupportedOperations `json:"SupportedOperations,omitempty"`
-	Properties []ModelsCertificateStoreTypeProperty `json:"Properties,omitempty"`
-	PasswordOptions *ModelsCertStoreTypePasswordOptions `json:"PasswordOptions,omitempty"`
-	StorePathType *string `json:"StorePathType,omitempty"`
-	StorePathValue *string `json:"StorePathValue,omitempty"`
-	PrivateKeyAllowed *string `json:"PrivateKeyAllowed,omitempty"`
-	ServerRequired *bool `json:"ServerRequired,omitempty"`
-	PowerShell *bool `json:"PowerShell,omitempty"`
-	BlueprintAllowed *bool `json:"BlueprintAllowed,omitempty"`
-	CustomAliasAllowed *string `json:"CustomAliasAllowed,omitempty"`
-	EntryParameters []ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter `json:"EntryParameters,omitempty"`
+	StoreType            int32                                                           `json:"StoreType"`
+	Name                 string                                                          `json:"Name"`
+	ShortName            string                                                          `json:"ShortName"`
+	Capability           *string                                                         `json:"Capability,omitempty"`
+	LocalStore           *bool                                                           `json:"LocalStore,omitempty"`
+	SupportedOperations  *ModelsCertStoreTypeSupportedOperations                         `json:"SupportedOperations,omitempty"`
+	Properties           []ModelsCertificateStoreTypeProperty                            `json:"Properties,omitempty"`
+	PasswordOptions      *ModelsCertStoreTypePasswordOptions                             `json:"PasswordOptions,omitempty"`
+	StorePathType        *string                                                         `json:"StorePathType,omitempty"`
+	StorePathValue       *string                                                         `json:"StorePathValue,omitempty"`
+	PrivateKeyAllowed    *string                                                         `json:"PrivateKeyAllowed,omitempty"`
+	ServerRequired       *bool                                                           `json:"ServerRequired,omitempty"`
+	PowerShell           *bool                                                           `json:"PowerShell,omitempty"`
+	BlueprintAllowed     *bool                                                           `json:"BlueprintAllowed,omitempty"`
+	CustomAliasAllowed   *string                                                         `json:"CustomAliasAllowed,omitempty"`
+	EntryParameters      []ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter `json:"EntryParameters,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -558,7 +558,7 @@ func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateReque
 }
 
 func (o KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -684,5 +684,3 @@ func (v *NullableKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpd
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -28,9 +28,9 @@ var _ MappedNullable = &ModelsMonitoringRevocationMonitoringAlertResponse{}
 
 // ModelsMonitoringRevocationMonitoringAlertResponse struct for ModelsMonitoringRevocationMonitoringAlertResponse
 type ModelsMonitoringRevocationMonitoringAlertResponse struct {
-	Subject *string `json:"Subject,omitempty"`
-	Message *string `json:"Message,omitempty"`
-	Recipients []string `json:"Recipients,omitempty"`
+	Subject              *string  `json:"Subject,omitempty"`
+	Message              *string  `json:"Message,omitempty"`
+	Recipients           []string `json:"Recipients,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -150,7 +150,7 @@ func (o *ModelsMonitoringRevocationMonitoringAlertResponse) SetRecipients(v []st
 }
 
 func (o ModelsMonitoringRevocationMonitoringAlertResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -230,5 +230,3 @@ func (v *NullableModelsMonitoringRevocationMonitoringAlertResponse) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -28,24 +28,24 @@ var _ MappedNullable = &ModelsCertificateStore{}
 
 // ModelsCertificateStore struct for ModelsCertificateStore
 type ModelsCertificateStore struct {
-	Id *string `json:"Id,omitempty"`
-	DisplayName *string `json:"DisplayName,omitempty"`
-	ContainerId *int32 `json:"ContainerId,omitempty"`
-	ClientMachine *string `json:"ClientMachine,omitempty"`
-	Storepath *string `json:"Storepath,omitempty"`
-	CertStoreInventoryJobId *string `json:"CertStoreInventoryJobId,omitempty"`
-	CertStoreType *int32 `json:"CertStoreType,omitempty"`
-	Approved *bool `json:"Approved,omitempty"`
-	CreateIfMissing *bool `json:"CreateIfMissing,omitempty"`
-	Properties *string `json:"Properties,omitempty"`
-	AgentId *string `json:"AgentId,omitempty"`
-	AgentAssigned *bool `json:"AgentAssigned,omitempty"`
-	ContainerName *string `json:"ContainerName,omitempty"`
-	InventorySchedule *KeyfactorCommonSchedulingKeyfactorSchedule `json:"InventorySchedule,omitempty"`
-	ReenrollmentStatus *ModelsReenrollmentStatus `json:"ReenrollmentStatus,omitempty"`
-	SetNewPasswordAllowed *bool `json:"SetNewPasswordAllowed,omitempty"`
-	Password *string `json:"Password,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                      *string                                     `json:"Id,omitempty"`
+	DisplayName             *string                                     `json:"DisplayName,omitempty"`
+	ContainerId             *int32                                      `json:"ContainerId,omitempty"`
+	ClientMachine           *string                                     `json:"ClientMachine,omitempty"`
+	Storepath               *string                                     `json:"Storepath,omitempty"`
+	CertStoreInventoryJobId *string                                     `json:"CertStoreInventoryJobId,omitempty"`
+	CertStoreType           *int32                                      `json:"CertStoreType,omitempty"`
+	Approved                *bool                                       `json:"Approved,omitempty"`
+	CreateIfMissing         *bool                                       `json:"CreateIfMissing,omitempty"`
+	Properties              *string                                     `json:"Properties,omitempty"`
+	AgentId                 *string                                     `json:"AgentId,omitempty"`
+	AgentAssigned           *bool                                       `json:"AgentAssigned,omitempty"`
+	ContainerName           *string                                     `json:"ContainerName,omitempty"`
+	InventorySchedule       *KeyfactorCommonSchedulingKeyfactorSchedule `json:"InventorySchedule,omitempty"`
+	ReenrollmentStatus      *ModelsReenrollmentStatus                   `json:"ReenrollmentStatus,omitempty"`
+	SetNewPasswordAllowed   *bool                                       `json:"SetNewPasswordAllowed,omitempty"`
+	Password                *string                                     `json:"Password,omitempty"`
+	AdditionalProperties    map[string]interface{}
 }
 
 type _ModelsCertificateStore ModelsCertificateStore
@@ -612,7 +612,7 @@ func (o *ModelsCertificateStore) SetPassword(v string) {
 }
 
 func (o ModelsCertificateStore) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -746,5 +746,3 @@ func (v *NullableModelsCertificateStore) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

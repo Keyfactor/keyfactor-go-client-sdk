@@ -28,8 +28,8 @@ var _ MappedNullable = &ModelsSSLNetworkDefinition{}
 
 // ModelsSSLNetworkDefinition struct for ModelsSSLNetworkDefinition
 type ModelsSSLNetworkDefinition struct {
-	ItemType *int32 `json:"ItemType,omitempty"`
-	Value *string `json:"Value,omitempty"`
+	ItemType             *int32  `json:"ItemType,omitempty"`
+	Value                *string `json:"Value,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -117,7 +117,7 @@ func (o *ModelsSSLNetworkDefinition) SetValue(v string) {
 }
 
 func (o ModelsSSLNetworkDefinition) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,5 +193,3 @@ func (v *NullableModelsSSLNetworkDefinition) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

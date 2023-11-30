@@ -28,16 +28,16 @@ var _ MappedNullable = &ModelsSSHServersServerResponse{}
 
 // ModelsSSHServersServerResponse struct for ModelsSSHServersServerResponse
 type ModelsSSHServersServerResponse struct {
-	Id *int32 `json:"Id,omitempty"`
-	AgentId *string `json:"AgentId,omitempty"`
-	Hostname *string `json:"Hostname,omitempty"`
-	ServerGroupId *string `json:"ServerGroupId,omitempty"`
-	SyncSchedule *KeyfactorCommonSchedulingKeyfactorSchedule `json:"SyncSchedule,omitempty"`
-	UnderManagement *bool `json:"UnderManagement,omitempty"`
-	Owner *ModelsSSHUsersSshUserResponse `json:"Owner,omitempty"`
-	GroupName *string `json:"GroupName,omitempty"`
-	Orchestrator *string `json:"Orchestrator,omitempty"`
-	Port *int32 `json:"Port,omitempty"`
+	Id                   *int32                                      `json:"Id,omitempty"`
+	AgentId              *string                                     `json:"AgentId,omitempty"`
+	Hostname             *string                                     `json:"Hostname,omitempty"`
+	ServerGroupId        *string                                     `json:"ServerGroupId,omitempty"`
+	SyncSchedule         *KeyfactorCommonSchedulingKeyfactorSchedule `json:"SyncSchedule,omitempty"`
+	UnderManagement      *bool                                       `json:"UnderManagement,omitempty"`
+	Owner                *ModelsSSHUsersSshUserResponse              `json:"Owner,omitempty"`
+	GroupName            *string                                     `json:"GroupName,omitempty"`
+	Orchestrator         *string                                     `json:"Orchestrator,omitempty"`
+	Port                 *int32                                      `json:"Port,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -381,7 +381,7 @@ func (o *ModelsSSHServersServerResponse) SetPort(v int32) {
 }
 
 func (o ModelsSSHServersServerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -489,5 +489,3 @@ func (v *NullableModelsSSHServersServerResponse) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

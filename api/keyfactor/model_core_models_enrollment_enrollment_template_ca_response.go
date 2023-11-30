@@ -28,8 +28,8 @@ var _ MappedNullable = &CoreModelsEnrollmentEnrollmentTemplateCAResponse{}
 
 // CoreModelsEnrollmentEnrollmentTemplateCAResponse struct for CoreModelsEnrollmentEnrollmentTemplateCAResponse
 type CoreModelsEnrollmentEnrollmentTemplateCAResponse struct {
-	Templates []CoreModelsEnrollmentEnrollmentTemplate `json:"Templates,omitempty"`
-	StandaloneCAs []CoreModelsEnrollmentEnrollmentCA `json:"StandaloneCAs,omitempty"`
+	Templates            []CoreModelsEnrollmentEnrollmentTemplate `json:"Templates,omitempty"`
+	StandaloneCAs        []CoreModelsEnrollmentEnrollmentCA       `json:"StandaloneCAs,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -117,7 +117,7 @@ func (o *CoreModelsEnrollmentEnrollmentTemplateCAResponse) SetStandaloneCAs(v []
 }
 
 func (o CoreModelsEnrollmentEnrollmentTemplateCAResponse) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -193,5 +193,3 @@ func (v *NullableCoreModelsEnrollmentEnrollmentTemplateCAResponse) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

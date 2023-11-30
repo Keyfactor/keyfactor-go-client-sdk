@@ -28,16 +28,15 @@ import (
 	"strings"
 )
 
-
 // SslApiService SslApi service
 type SslApiService service
 
 type ApiSslAddNetworkRangesRequest struct {
-	ctx context.Context
-	ApiService *SslApiService
+	ctx                     context.Context
+	ApiService              *SslApiService
 	xKeyfactorRequestedWith *string
-	networkRanges *ModelsSSLNetworkRangesRequest
-	xKeyfactorApiVersion *string
+	networkRanges           *ModelsSSLNetworkRangesRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -65,26 +64,26 @@ func (r ApiSslAddNetworkRangesRequest) Execute() (*http.Response, error) {
 /*
 SslAddNetworkRanges Adds the provided network range definitions to the associated network definition
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSslAddNetworkRangesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSslAddNetworkRangesRequest
 */
 func (a *SslApiService) SslAddNetworkRanges(ctx context.Context) ApiSslAddNetworkRangesRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSslAddNetworkRangesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *SslApiService) SslAddNetworkRangesExecute(r ApiSslAddNetworkRangesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -94,12 +93,12 @@ func (a *SslApiService) SslAddNetworkRangesExecute(r ApiSslAddNetworkRangesReque
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.networkRanges == nil {
-        return nil, reportError("networkRanges is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.networkRanges == nil {
+		return nil, reportError("networkRanges is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -153,11 +152,11 @@ func (a *SslApiService) SslAddNetworkRangesExecute(r ApiSslAddNetworkRangesReque
 }
 
 type ApiSslCreateNetworkRequest struct {
-	ctx context.Context
-	ApiService *SslApiService
+	ctx                     context.Context
+	ApiService              *SslApiService
 	xKeyfactorRequestedWith *string
-	network *KeyfactorApiModelsSslCreateNetworkRequest
-	xKeyfactorApiVersion *string
+	network                 *KeyfactorApiModelsSslCreateNetworkRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -185,28 +184,29 @@ func (r ApiSslCreateNetworkRequest) Execute() (*KeyfactorApiModelsSslNetworkResp
 /*
 SslCreateNetwork Creates a network definition according to the provided properties
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSslCreateNetworkRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSslCreateNetworkRequest
 */
 func (a *SslApiService) SslCreateNetwork(ctx context.Context) ApiSslCreateNetworkRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSslCreateNetworkRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsSslNetworkResponse
+//
+//	@return KeyfactorApiModelsSslNetworkResponse
 func (a *SslApiService) SslCreateNetworkExecute(r ApiSslCreateNetworkRequest) (*KeyfactorApiModelsSslNetworkResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsSslNetworkResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsSslNetworkResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -216,12 +216,12 @@ func (a *SslApiService) SslCreateNetworkExecute(r ApiSslCreateNetworkRequest) (*
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.network == nil {
-        return localVarReturnValue, nil, reportError("network is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.network == nil {
+		return localVarReturnValue, nil, reportError("network is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -284,11 +284,11 @@ func (a *SslApiService) SslCreateNetworkExecute(r ApiSslCreateNetworkRequest) (*
 }
 
 type ApiSslEndpointRequest struct {
-	ctx context.Context
-	ApiService *SslApiService
-	id string
+	ctx                     context.Context
+	ApiService              *SslApiService
+	id                      string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -310,30 +310,31 @@ func (r ApiSslEndpointRequest) Execute() (*ModelsSSLEndpoint, *http.Response, er
 /*
 SslEndpoint Returns the details of the associated scanning endpoint
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifier of the endpoint
- @return ApiSslEndpointRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifier of the endpoint
+	@return ApiSslEndpointRequest
 */
 func (a *SslApiService) SslEndpoint(ctx context.Context, id string) ApiSslEndpointRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSslEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSLEndpoint
+//
+//	@return ModelsSSLEndpoint
 func (a *SslApiService) SslEndpointExecute(r ApiSslEndpointRequest) (*ModelsSSLEndpoint, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSLEndpoint
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSLEndpoint
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -344,9 +345,9 @@ func (a *SslApiService) SslEndpointExecute(r ApiSslEndpointRequest) (*ModelsSSLE
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -407,16 +408,16 @@ func (a *SslApiService) SslEndpointExecute(r ApiSslEndpointRequest) (*ModelsSSLE
 }
 
 type ApiSslEndpointHistoryRequest struct {
-	ctx context.Context
-	ApiService *SslApiService
-	id string
+	ctx                     context.Context
+	ApiService              *SslApiService
+	id                      string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -468,30 +469,31 @@ func (r ApiSslEndpointHistoryRequest) Execute() ([]ModelsSSLEndpointHistoryRespo
 /*
 SslEndpointHistory Returns a list of the scan results for the provided endpoint according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifier of the endpoint
- @return ApiSslEndpointHistoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifier of the endpoint
+	@return ApiSslEndpointHistoryRequest
 */
 func (a *SslApiService) SslEndpointHistory(ctx context.Context, id string) ApiSslEndpointHistoryRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSslEndpointHistoryRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsSSLEndpointHistoryResponse
+//
+//	@return []ModelsSSLEndpointHistoryResponse
 func (a *SslApiService) SslEndpointHistoryExecute(r ApiSslEndpointHistoryRequest) ([]ModelsSSLEndpointHistoryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsSSLEndpointHistoryResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsSSLEndpointHistoryResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -502,9 +504,9 @@ func (a *SslApiService) SslEndpointHistoryExecute(r ApiSslEndpointHistoryRequest
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")
@@ -580,11 +582,11 @@ func (a *SslApiService) SslEndpointHistoryExecute(r ApiSslEndpointHistoryRequest
 }
 
 type ApiSslGetNetworkRequest struct {
-	ctx context.Context
-	ApiService *SslApiService
-	identifier string
+	ctx                     context.Context
+	ApiService              *SslApiService
+	identifier              string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -606,30 +608,31 @@ func (r ApiSslGetNetworkRequest) Execute() (*KeyfactorApiModelsSslNetworkRespons
 /*
 SslGetNetwork Returns a defined SSL network according to the provided name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param identifier Identifier (Guid or Name) of the defined network
- @return ApiSslGetNetworkRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param identifier Identifier (Guid or Name) of the defined network
+	@return ApiSslGetNetworkRequest
 */
 func (a *SslApiService) SslGetNetwork(ctx context.Context, identifier string) ApiSslGetNetworkRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSslGetNetworkRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		identifier: identifier,
+		xKeyfactorApiVersion:    &version,
+		identifier:              identifier,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsSslNetworkResponse
+//
+//	@return KeyfactorApiModelsSslNetworkResponse
 func (a *SslApiService) SslGetNetworkExecute(r ApiSslGetNetworkRequest) (*KeyfactorApiModelsSslNetworkResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsSslNetworkResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsSslNetworkResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -640,9 +643,9 @@ func (a *SslApiService) SslGetNetworkExecute(r ApiSslGetNetworkRequest) (*Keyfac
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -703,11 +706,11 @@ func (a *SslApiService) SslGetNetworkExecute(r ApiSslGetNetworkRequest) (*Keyfac
 }
 
 type ApiSslGetNetworkRangesForNetworkRequest struct {
-	ctx context.Context
-	ApiService *SslApiService
-	id string
+	ctx                     context.Context
+	ApiService              *SslApiService
+	id                      string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -729,30 +732,31 @@ func (r ApiSslGetNetworkRangesForNetworkRequest) Execute() ([]ModelsSSLNetworkDe
 /*
 SslGetNetworkRangesForNetwork Returns the network range definitions for the provided network definition
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor network identifier
- @return ApiSslGetNetworkRangesForNetworkRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor network identifier
+	@return ApiSslGetNetworkRangesForNetworkRequest
 */
 func (a *SslApiService) SslGetNetworkRangesForNetwork(ctx context.Context, id string) ApiSslGetNetworkRangesForNetworkRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSslGetNetworkRangesForNetworkRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsSSLNetworkDefinition
+//
+//	@return []ModelsSSLNetworkDefinition
 func (a *SslApiService) SslGetNetworkRangesForNetworkExecute(r ApiSslGetNetworkRangesForNetworkRequest) ([]ModelsSSLNetworkDefinition, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsSSLNetworkDefinition
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsSSLNetworkDefinition
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -763,9 +767,9 @@ func (a *SslApiService) SslGetNetworkRangesForNetworkExecute(r ApiSslGetNetworkR
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -826,15 +830,15 @@ func (a *SslApiService) SslGetNetworkRangesForNetworkExecute(r ApiSslGetNetworkR
 }
 
 type ApiSslGetNetworksRequest struct {
-	ctx context.Context
-	ApiService *SslApiService
+	ctx                     context.Context
+	ApiService              *SslApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	sqQueryString *string
-	sqPageReturned *int32
-	sqReturnLimit *int32
-	sqSortField *string
-	sqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	sqQueryString           *string
+	sqPageReturned          *int32
+	sqReturnLimit           *int32
+	sqSortField             *string
+	sqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -886,28 +890,29 @@ func (r ApiSslGetNetworksRequest) Execute() ([]KeyfactorApiModelsSslNetworkQuery
 /*
 SslGetNetworks Returns all defined SSL networks according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSslGetNetworksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSslGetNetworksRequest
 */
 func (a *SslApiService) SslGetNetworks(ctx context.Context) ApiSslGetNetworksRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSslGetNetworksRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []KeyfactorApiModelsSslNetworkQueryResponse
+//
+//	@return []KeyfactorApiModelsSslNetworkQueryResponse
 func (a *SslApiService) SslGetNetworksExecute(r ApiSslGetNetworksRequest) ([]KeyfactorApiModelsSslNetworkQueryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []KeyfactorApiModelsSslNetworkQueryResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []KeyfactorApiModelsSslNetworkQueryResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -917,9 +922,9 @@ func (a *SslApiService) SslGetNetworksExecute(r ApiSslGetNetworksRequest) ([]Key
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.sqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "sq.queryString", r.sqQueryString, "")
@@ -995,12 +1000,12 @@ func (a *SslApiService) SslGetNetworksExecute(r ApiSslGetNetworksRequest) ([]Key
 }
 
 type ApiSslImmediateSslScanRequest struct {
-	ctx context.Context
-	ApiService *SslApiService
-	id string
+	ctx                     context.Context
+	ApiService              *SslApiService
+	id                      string
 	xKeyfactorRequestedWith *string
-	sslScanRequest *ModelsSSLImmediateSslScanRequest
-	xKeyfactorApiVersion *string
+	sslScanRequest          *ModelsSSLImmediateSslScanRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1028,28 +1033,28 @@ func (r ApiSslImmediateSslScanRequest) Execute() (*http.Response, error) {
 /*
 SslImmediateSslScan Starts an SSL Scan for the network according to the associated network definition
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor network identifier
- @return ApiSslImmediateSslScanRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor network identifier
+	@return ApiSslImmediateSslScanRequest
 */
 func (a *SslApiService) SslImmediateSslScan(ctx context.Context, id string) ApiSslImmediateSslScanRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSslImmediateSslScanRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *SslApiService) SslImmediateSslScanExecute(r ApiSslImmediateSslScanRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1060,12 +1065,12 @@ func (a *SslApiService) SslImmediateSslScanExecute(r ApiSslImmediateSslScanReque
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.sslScanRequest == nil {
-        return nil, reportError("sslScanRequest is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.sslScanRequest == nil {
+		return nil, reportError("sslScanRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -1119,11 +1124,11 @@ func (a *SslApiService) SslImmediateSslScanExecute(r ApiSslImmediateSslScanReque
 }
 
 type ApiSslMonitorAllRequest struct {
-	ctx context.Context
-	ApiService *SslApiService
+	ctx                     context.Context
+	ApiService              *SslApiService
 	xKeyfactorRequestedWith *string
-	query *string
-	xKeyfactorApiVersion *string
+	query                   *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1151,26 +1156,26 @@ func (r ApiSslMonitorAllRequest) Execute() (*http.Response, error) {
 /*
 SslMonitorAll Sets all endpoints matching the provided query as 'monitored'
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSslMonitorAllRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSslMonitorAllRequest
 */
 func (a *SslApiService) SslMonitorAll(ctx context.Context) ApiSslMonitorAllRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSslMonitorAllRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *SslApiService) SslMonitorAllExecute(r ApiSslMonitorAllRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1180,9 +1185,9 @@ func (a *SslApiService) SslMonitorAllExecute(r ApiSslMonitorAllRequest) (*http.R
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.query != nil {
 		parameterAddToQuery(localVarQueryParams, "query", r.query, "")
@@ -1237,11 +1242,11 @@ func (a *SslApiService) SslMonitorAllExecute(r ApiSslMonitorAllRequest) (*http.R
 }
 
 type ApiSslMonitoringStatusRequest struct {
-	ctx context.Context
-	ApiService *SslApiService
+	ctx                     context.Context
+	ApiService              *SslApiService
 	xKeyfactorRequestedWith *string
-	requests *[]ModelsSSLEndpointStatusRequest
-	xKeyfactorApiVersion *string
+	requests                *[]ModelsSSLEndpointStatusRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1269,26 +1274,26 @@ func (r ApiSslMonitoringStatusRequest) Execute() (*http.Response, error) {
 /*
 SslMonitoringStatus Sets the monitored status according to the provided endpoint and boolean status
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSslMonitoringStatusRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSslMonitoringStatusRequest
 */
 func (a *SslApiService) SslMonitoringStatus(ctx context.Context) ApiSslMonitoringStatusRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSslMonitoringStatusRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *SslApiService) SslMonitoringStatusExecute(r ApiSslMonitoringStatusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1298,12 +1303,12 @@ func (a *SslApiService) SslMonitoringStatusExecute(r ApiSslMonitoringStatusReque
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.requests == nil {
-        return nil, reportError("requests is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.requests == nil {
+		return nil, reportError("requests is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -1357,16 +1362,16 @@ func (a *SslApiService) SslMonitoringStatusExecute(r ApiSslMonitoringStatusReque
 }
 
 type ApiSslNetworkScanPartsRequest struct {
-	ctx context.Context
-	ApiService *SslApiService
-	id string
+	ctx                     context.Context
+	ApiService              *SslApiService
+	id                      string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pagedQueryJobType *int32
-	pagedQueryQueryString *string
-	pagedQueryPageReturned *int32
-	pagedQueryReturnLimit *int32
-	pagedQuerySortField *string
+	xKeyfactorApiVersion    *string
+	pagedQueryJobType       *int32
+	pagedQueryQueryString   *string
+	pagedQueryPageReturned  *int32
+	pagedQueryReturnLimit   *int32
+	pagedQuerySortField     *string
 	pagedQuerySortAscending *int32
 }
 
@@ -1424,30 +1429,31 @@ func (r ApiSslNetworkScanPartsRequest) Execute() ([]ModelsSSLDisplayScanJobPart,
 /*
 SslNetworkScanParts Returns the scan job components comprising the entire scan job to be executed
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor network definition identifier
- @return ApiSslNetworkScanPartsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor network definition identifier
+	@return ApiSslNetworkScanPartsRequest
 */
 func (a *SslApiService) SslNetworkScanParts(ctx context.Context, id string) ApiSslNetworkScanPartsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSslNetworkScanPartsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsSSLDisplayScanJobPart
+//
+//	@return []ModelsSSLDisplayScanJobPart
 func (a *SslApiService) SslNetworkScanPartsExecute(r ApiSslNetworkScanPartsRequest) ([]ModelsSSLDisplayScanJobPart, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsSSLDisplayScanJobPart
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsSSLDisplayScanJobPart
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1458,9 +1464,9 @@ func (a *SslApiService) SslNetworkScanPartsExecute(r ApiSslNetworkScanPartsReque
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pagedQueryJobType != nil {
 		parameterAddToQuery(localVarQueryParams, "pagedQuery.jobType", r.pagedQueryJobType, "")
@@ -1539,11 +1545,11 @@ func (a *SslApiService) SslNetworkScanPartsExecute(r ApiSslNetworkScanPartsReque
 }
 
 type ApiSslRemoveAllNetworkRangesRequest struct {
-	ctx context.Context
-	ApiService *SslApiService
-	id string
+	ctx                     context.Context
+	ApiService              *SslApiService
+	id                      string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1565,28 +1571,28 @@ func (r ApiSslRemoveAllNetworkRangesRequest) Execute() (*http.Response, error) {
 /*
 SslRemoveAllNetworkRanges Removes all network range definitions from the associated network definition
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor network definition identifier
- @return ApiSslRemoveAllNetworkRangesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor network definition identifier
+	@return ApiSslRemoveAllNetworkRangesRequest
 */
 func (a *SslApiService) SslRemoveAllNetworkRanges(ctx context.Context, id string) ApiSslRemoveAllNetworkRangesRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSslRemoveAllNetworkRangesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *SslApiService) SslRemoveAllNetworkRangesExecute(r ApiSslRemoveAllNetworkRangesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1597,9 +1603,9 @@ func (a *SslApiService) SslRemoveAllNetworkRangesExecute(r ApiSslRemoveAllNetwor
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1651,11 +1657,11 @@ func (a *SslApiService) SslRemoveAllNetworkRangesExecute(r ApiSslRemoveAllNetwor
 }
 
 type ApiSslRemoveNetworkRequest struct {
-	ctx context.Context
-	ApiService *SslApiService
-	id string
+	ctx                     context.Context
+	ApiService              *SslApiService
+	id                      string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1677,28 +1683,28 @@ func (r ApiSslRemoveNetworkRequest) Execute() (*http.Response, error) {
 /*
 SslRemoveNetwork Removes a network definition according to the provided identifier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor network identifier
- @return ApiSslRemoveNetworkRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor network identifier
+	@return ApiSslRemoveNetworkRequest
 */
 func (a *SslApiService) SslRemoveNetwork(ctx context.Context, id string) ApiSslRemoveNetworkRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSslRemoveNetworkRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
 func (a *SslApiService) SslRemoveNetworkExecute(r ApiSslRemoveNetworkRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1709,9 +1715,9 @@ func (a *SslApiService) SslRemoveNetworkExecute(r ApiSslRemoveNetworkRequest) (*
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1763,15 +1769,15 @@ func (a *SslApiService) SslRemoveNetworkExecute(r ApiSslRemoveNetworkRequest) (*
 }
 
 type ApiSslResultsRequest struct {
-	ctx context.Context
-	ApiService *SslApiService
+	ctx                     context.Context
+	ApiService              *SslApiService
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
-	pqQueryString *string
-	pqPageReturned *int32
-	pqReturnLimit *int32
-	pqSortField *string
-	pqSortAscending *int32
+	xKeyfactorApiVersion    *string
+	pqQueryString           *string
+	pqPageReturned          *int32
+	pqReturnLimit           *int32
+	pqSortField             *string
+	pqSortAscending         *int32
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1823,28 +1829,29 @@ func (r ApiSslResultsRequest) Execute() ([]ModelsSSLSslScanResult, *http.Respons
 /*
 SslResults Returns a list of the endpoint scan results according to the provided filter and output parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSslResultsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSslResultsRequest
 */
 func (a *SslApiService) SslResults(ctx context.Context) ApiSslResultsRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSslResultsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return []ModelsSSLSslScanResult
+//
+//	@return []ModelsSSLSslScanResult
 func (a *SslApiService) SslResultsExecute(r ApiSslResultsRequest) ([]ModelsSSLSslScanResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModelsSSLSslScanResult
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModelsSSLSslScanResult
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1854,9 +1861,9 @@ func (a *SslApiService) SslResultsExecute(r ApiSslResultsRequest) ([]ModelsSSLSs
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.pqQueryString != nil {
 		parameterAddToQuery(localVarQueryParams, "pq.queryString", r.pqQueryString, "")
@@ -1932,11 +1939,11 @@ func (a *SslApiService) SslResultsExecute(r ApiSslResultsRequest) ([]ModelsSSLSs
 }
 
 type ApiSslReviewAllRequest struct {
-	ctx context.Context
-	ApiService *SslApiService
+	ctx                     context.Context
+	ApiService              *SslApiService
 	xKeyfactorRequestedWith *string
-	query *string
-	xKeyfactorApiVersion *string
+	query                   *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1964,26 +1971,26 @@ func (r ApiSslReviewAllRequest) Execute() (*http.Response, error) {
 /*
 SslReviewAll Sets all endpoints matching the provided query as 'reviewed'
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSslReviewAllRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSslReviewAllRequest
 */
 func (a *SslApiService) SslReviewAll(ctx context.Context) ApiSslReviewAllRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSslReviewAllRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *SslApiService) SslReviewAllExecute(r ApiSslReviewAllRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -1993,9 +2000,9 @@ func (a *SslApiService) SslReviewAllExecute(r ApiSslReviewAllRequest) (*http.Res
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	if r.query != nil {
 		parameterAddToQuery(localVarQueryParams, "query", r.query, "")
@@ -2050,11 +2057,11 @@ func (a *SslApiService) SslReviewAllExecute(r ApiSslReviewAllRequest) (*http.Res
 }
 
 type ApiSslReviewedStatusRequest struct {
-	ctx context.Context
-	ApiService *SslApiService
+	ctx                     context.Context
+	ApiService              *SslApiService
 	xKeyfactorRequestedWith *string
-	endpointReviewedStatus *[]ModelsSSLEndpointStatusRequest
-	xKeyfactorApiVersion *string
+	endpointReviewedStatus  *[]ModelsSSLEndpointStatusRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -2082,26 +2089,26 @@ func (r ApiSslReviewedStatusRequest) Execute() (*http.Response, error) {
 /*
 SslReviewedStatus Sets the reviewed status according to the provided endpoint and boolean status
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSslReviewedStatusRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSslReviewedStatusRequest
 */
 func (a *SslApiService) SslReviewedStatus(ctx context.Context) ApiSslReviewedStatusRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSslReviewedStatusRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *SslApiService) SslReviewedStatusExecute(r ApiSslReviewedStatusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -2111,12 +2118,12 @@ func (a *SslApiService) SslReviewedStatusExecute(r ApiSslReviewedStatusRequest) 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.endpointReviewedStatus == nil {
-        return nil, reportError("endpointReviewedStatus is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.endpointReviewedStatus == nil {
+		return nil, reportError("endpointReviewedStatus is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -2170,11 +2177,11 @@ func (a *SslApiService) SslReviewedStatusExecute(r ApiSslReviewedStatusRequest) 
 }
 
 type ApiSslScanPartRequest struct {
-	ctx context.Context
-	ApiService *SslApiService
-	id string
+	ctx                     context.Context
+	ApiService              *SslApiService
+	id                      string
 	xKeyfactorRequestedWith *string
-	xKeyfactorApiVersion *string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -2196,30 +2203,31 @@ func (r ApiSslScanPartRequest) Execute() (*ModelsSSLScanJobPart, *http.Response,
 /*
 SslScanPart Returns the execution details of the associated network scan job part
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id Keyfactor identifier of the scan job part
- @return ApiSslScanPartRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifier of the scan job part
+	@return ApiSslScanPartRequest
 */
 func (a *SslApiService) SslScanPart(ctx context.Context, id string) ApiSslScanPartRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSslScanPartRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
-		id: id,
+		xKeyfactorApiVersion:    &version,
+		id:                      id,
 	}
 }
 
 // Execute executes the request
-//  @return ModelsSSLScanJobPart
+//
+//	@return ModelsSSLScanJobPart
 func (a *SslApiService) SslScanPartExecute(r ApiSslScanPartRequest) (*ModelsSSLScanJobPart, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModelsSSLScanJobPart
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSSLScanJobPart
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -2230,9 +2238,9 @@ func (a *SslApiService) SslScanPartExecute(r ApiSslScanPartRequest) (*ModelsSSLS
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -2293,11 +2301,11 @@ func (a *SslApiService) SslScanPartExecute(r ApiSslScanPartRequest) (*ModelsSSLS
 }
 
 type ApiSslSetNetworkRangesRequest struct {
-	ctx context.Context
-	ApiService *SslApiService
+	ctx                     context.Context
+	ApiService              *SslApiService
 	xKeyfactorRequestedWith *string
-	networkRanges *ModelsSSLNetworkRangesRequest
-	xKeyfactorApiVersion *string
+	networkRanges           *ModelsSSLNetworkRangesRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -2325,26 +2333,26 @@ func (r ApiSslSetNetworkRangesRequest) Execute() (*http.Response, error) {
 /*
 SslSetNetworkRanges Configures network range definitions for the provided network
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSslSetNetworkRangesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSslSetNetworkRangesRequest
 */
 func (a *SslApiService) SslSetNetworkRanges(ctx context.Context) ApiSslSetNetworkRangesRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSslSetNetworkRangesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *SslApiService) SslSetNetworkRangesExecute(r ApiSslSetNetworkRangesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -2354,12 +2362,12 @@ func (a *SslApiService) SslSetNetworkRangesExecute(r ApiSslSetNetworkRangesReque
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.networkRanges == nil {
-        return nil, reportError("networkRanges is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.networkRanges == nil {
+		return nil, reportError("networkRanges is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -2413,11 +2421,11 @@ func (a *SslApiService) SslSetNetworkRangesExecute(r ApiSslSetNetworkRangesReque
 }
 
 type ApiSslUpdateNetworkRequest struct {
-	ctx context.Context
-	ApiService *SslApiService
+	ctx                     context.Context
+	ApiService              *SslApiService
 	xKeyfactorRequestedWith *string
-	network *KeyfactorApiModelsSslUpdateNetworkRequest
-	xKeyfactorApiVersion *string
+	network                 *KeyfactorApiModelsSslUpdateNetworkRequest
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -2445,28 +2453,29 @@ func (r ApiSslUpdateNetworkRequest) Execute() (*KeyfactorApiModelsSslNetworkResp
 /*
 SslUpdateNetwork Updates an existing network definition according to the provided properties
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSslUpdateNetworkRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSslUpdateNetworkRequest
 */
 func (a *SslApiService) SslUpdateNetwork(ctx context.Context) ApiSslUpdateNetworkRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSslUpdateNetworkRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
-//  @return KeyfactorApiModelsSslNetworkResponse
+//
+//	@return KeyfactorApiModelsSslNetworkResponse
 func (a *SslApiService) SslUpdateNetworkExecute(r ApiSslUpdateNetworkRequest) (*KeyfactorApiModelsSslNetworkResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyfactorApiModelsSslNetworkResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyfactorApiModelsSslNetworkResponse
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -2476,12 +2485,12 @@ func (a *SslApiService) SslUpdateNetworkExecute(r ApiSslUpdateNetworkRequest) (*
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.network == nil {
-        return localVarReturnValue, nil, reportError("network is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.network == nil {
+		return localVarReturnValue, nil, reportError("network is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
@@ -2544,11 +2553,11 @@ func (a *SslApiService) SslUpdateNetworkExecute(r ApiSslUpdateNetworkRequest) (*
 }
 
 type ApiSslValidateNetworkRangesRequest struct {
-	ctx context.Context
-	ApiService *SslApiService
+	ctx                     context.Context
+	ApiService              *SslApiService
 	xKeyfactorRequestedWith *string
-	networkRangesToVerify *[]string
-	xKeyfactorApiVersion *string
+	networkRangesToVerify   *[]string
+	xKeyfactorApiVersion    *string
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -2576,26 +2585,26 @@ func (r ApiSslValidateNetworkRangesRequest) Execute() (*http.Response, error) {
 /*
 SslValidateNetworkRanges Validates the format (using regular expressions) of the provided network range definitions
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSslValidateNetworkRangesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSslValidateNetworkRangesRequest
 */
 func (a *SslApiService) SslValidateNetworkRanges(ctx context.Context) ApiSslValidateNetworkRangesRequest {
-    requestedWith := "APIClient"
-    version := "1"
+	requestedWith := "APIClient"
+	version := "1"
 	return ApiSslValidateNetworkRangesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion: &version,
+		xKeyfactorApiVersion:    &version,
 	}
 }
 
 // Execute executes the request
 func (a *SslApiService) SslValidateNetworkRangesExecute(r ApiSslValidateNetworkRangesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath := "/KeyfactorAPI"
@@ -2605,12 +2614,12 @@ func (a *SslApiService) SslValidateNetworkRangesExecute(r ApiSslValidateNetworkR
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-    if r.xKeyfactorRequestedWith == nil {
-        return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-    }
-    if r.networkRangesToVerify == nil {
-        return nil, reportError("networkRangesToVerify is required and must be specified")
-    }
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+	if r.networkRangesToVerify == nil {
+		return nil, reportError("networkRangesToVerify is required and must be specified")
+	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}

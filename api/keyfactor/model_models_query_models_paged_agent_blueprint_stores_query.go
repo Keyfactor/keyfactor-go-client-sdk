@@ -37,7 +37,7 @@ type ModelsQueryModelsPagedAgentBlueprintStoresQuery struct {
 	// Field by which the results should be sorted (OperationStart, OperationEnd, UserName)
 	SortField *string `json:"SortField,omitempty"`
 	// Field sort direction [0=ascending, 1=descending]
-	SortAscending *int32 `json:"SortAscending,omitempty"`
+	SortAscending        *int32 `json:"SortAscending,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -221,7 +221,7 @@ func (o *ModelsQueryModelsPagedAgentBlueprintStoresQuery) SetSortAscending(v int
 }
 
 func (o ModelsQueryModelsPagedAgentBlueprintStoresQuery) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -307,5 +307,3 @@ func (v *NullableModelsQueryModelsPagedAgentBlueprintStoresQuery) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

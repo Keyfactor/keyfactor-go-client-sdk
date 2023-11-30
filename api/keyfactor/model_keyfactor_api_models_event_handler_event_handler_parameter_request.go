@@ -28,9 +28,9 @@ var _ MappedNullable = &KeyfactorApiModelsEventHandlerEventHandlerParameterReque
 
 // KeyfactorApiModelsEventHandlerEventHandlerParameterRequest struct for KeyfactorApiModelsEventHandlerEventHandlerParameterRequest
 type KeyfactorApiModelsEventHandlerEventHandlerParameterRequest struct {
-	Key string `json:"Key"`
-	DefaultValue string `json:"DefaultValue"`
-	ParameterType string `json:"ParameterType"`
+	Key                  string `json:"Key"`
+	DefaultValue         string `json:"DefaultValue"`
+	ParameterType        string `json:"ParameterType"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -129,7 +129,7 @@ func (o *KeyfactorApiModelsEventHandlerEventHandlerParameterRequest) SetParamete
 }
 
 func (o KeyfactorApiModelsEventHandlerEventHandlerParameterRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -203,5 +203,3 @@ func (v *NullableKeyfactorApiModelsEventHandlerEventHandlerParameterRequest) Unm
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

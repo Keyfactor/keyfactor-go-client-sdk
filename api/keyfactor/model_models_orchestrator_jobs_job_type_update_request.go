@@ -28,10 +28,10 @@ var _ MappedNullable = &ModelsOrchestratorJobsJobTypeUpdateRequest{}
 
 // ModelsOrchestratorJobsJobTypeUpdateRequest struct for ModelsOrchestratorJobsJobTypeUpdateRequest
 type ModelsOrchestratorJobsJobTypeUpdateRequest struct {
-	Id string `json:"Id"`
-	JobTypeName string `json:"JobTypeName"`
-	Description *string `json:"Description,omitempty"`
-	JobTypeFields []ModelsOrchestratorJobsJobTypeFieldRequest `json:"JobTypeFields,omitempty"`
+	Id                   string                                      `json:"Id"`
+	JobTypeName          string                                      `json:"JobTypeName"`
+	Description          *string                                     `json:"Description,omitempty"`
+	JobTypeFields        []ModelsOrchestratorJobsJobTypeFieldRequest `json:"JobTypeFields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -169,7 +169,7 @@ func (o *ModelsOrchestratorJobsJobTypeUpdateRequest) SetJobTypeFields(v []Models
 }
 
 func (o ModelsOrchestratorJobsJobTypeUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -249,5 +249,3 @@ func (v *NullableModelsOrchestratorJobsJobTypeUpdateRequest) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -28,8 +28,8 @@ var _ MappedNullable = &KeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCer
 
 // KeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest struct for KeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest
 type KeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest struct {
-	OrchestratorIds []string `json:"OrchestratorIds,omitempty"`
-	Status string `json:"Status"`
+	OrchestratorIds      []string `json:"OrchestratorIds,omitempty"`
+	Status               string   `json:"Status"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -110,7 +110,7 @@ func (o *KeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrol
 }
 
 func (o KeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -184,5 +184,3 @@ func (v *NullableKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificat
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,12 +29,12 @@ var _ MappedNullable = &ModelsPKICertificateOperation{}
 
 // ModelsPKICertificateOperation Details of an operation done on a certificate.
 type ModelsPKICertificateOperation struct {
-	Id *int64 `json:"Id,omitempty"`
-	OperationStart *time.Time `json:"OperationStart,omitempty"`
-	OperationEnd *time.Time `json:"OperationEnd,omitempty"`
-	Username *string `json:"Username,omitempty"`
-	Comment *string `json:"Comment,omitempty"`
-	Action *string `json:"Action,omitempty"`
+	Id                   *int64     `json:"Id,omitempty"`
+	OperationStart       *time.Time `json:"OperationStart,omitempty"`
+	OperationEnd         *time.Time `json:"OperationEnd,omitempty"`
+	Username             *string    `json:"Username,omitempty"`
+	Comment              *string    `json:"Comment,omitempty"`
+	Action               *string    `json:"Action,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -250,7 +250,7 @@ func (o *ModelsPKICertificateOperation) SetAction(v string) {
 }
 
 func (o ModelsPKICertificateOperation) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -342,5 +342,3 @@ func (v *NullableModelsPKICertificateOperation) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
