@@ -1,6 +1,6 @@
 # \AgentApi
 
-All URIs are relative to *http://keyfactor.example.com*
+All URIs are relative to *https://keyfactor.example.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,9 +9,9 @@ Method | HTTP request | Description
 [**AgentFetchLogs**](AgentApi.md#AgentFetchLogs) | **Post** /Agents/{id}/FetchLogs | Schedules a job on the agent to retrieve log files
 [**AgentGetAgentDetail**](AgentApi.md#AgentGetAgentDetail) | **Get** /Agents/{id} | Returns details for a single agent, specified by ID
 [**AgentGetAgents**](AgentApi.md#AgentGetAgents) | **Get** /Agents | Returns all agents according to the provided filter and output parameters
-[**AgentReset0**](AgentApi.md#AgentReset0) | **Post** /Agents/Reset | Reset a list of agents
-[**AgentReset1**](AgentApi.md#AgentReset1) | **Post** /Agents/{id}/Reset | Reset an agent to a new state
+[**AgentReset**](AgentApi.md#AgentReset) | **Post** /Agents/{id}/Reset | Reset an agent to a new state
 [**AgentSetAuthCertificateReenrollment**](AgentApi.md#AgentSetAuthCertificateReenrollment) | **Post** /Agents/SetAuthCertificateReenrollment | Update the AuthCertificateReenrollment value for an agent to request or require (or unset the request) the agent   to enroll for a new client authentication certificate on its next registration.
+[**AgentsReset**](AgentApi.md#AgentsReset) | **Post** /Agents/Reset | Reset a list of agents
 
 
 
@@ -365,75 +365,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## AgentReset0
+## AgentReset
 
-> AgentReset0(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).AgentIds(agentIds).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Reset a list of agents
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    agentIds := []string{"Property_example"} // []string | List of Agent Ids to Reset
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentApi.AgentReset0(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).AgentIds(agentIds).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AgentApi.AgentReset0``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiAgentReset0Request struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **agentIds** | **[]string** | List of Agent Ids to Reset | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## AgentReset1
-
-> AgentReset1(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> AgentReset(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Reset an agent to a new state
 
@@ -456,9 +390,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentApi.AgentReset1(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.AgentApi.AgentReset(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AgentApi.AgentReset1``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AgentApi.AgentReset``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -474,7 +408,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAgentReset1Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiAgentResetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -563,6 +497,72 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AgentsReset
+
+> AgentsReset(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).AgentIds(agentIds).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Reset a list of agents
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    agentIds := []string{"Property_example"} // []string | List of Agent Ids to Reset
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AgentApi.AgentsReset(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).AgentIds(agentIds).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AgentApi.AgentsReset``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAgentsResetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **agentIds** | **[]string** | List of Agent Ids to Reset | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

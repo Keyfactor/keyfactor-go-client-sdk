@@ -1,4 +1,4 @@
-# Go API client for keyfactor
+# Go API client for command
 
 This reference serves to document REST-based methods to manage and integrate with Keyfactor. In addition, an embedded interface allows for the execution of calls against the current Keyfactor API instance.
 
@@ -20,12 +20,12 @@ go get "github.com/Keyfactor/keyfactor-go-client-sdk"
 Put the package under your project folder and add the following in import:
 
 ```golang
-import "github.com/Keyfactor/keyfactor-go-client-sdk/api/keyfactor"
+import "github.com/Keyfactor/keyfactor-go-client-sdk/api/command"
 ```
 
 ## Configuration
 
-The `keyfactor.NewConfiguration()` method is used to configure the Keyfactor Go Client SDK. The client can be configured
+The `command.NewConfiguration()` method is used to configure the Keyfactor Go Client SDK. The client can be configured
 by passing a map of configuration options to the `NewConfiguration()` method, or by passing a blank map and setting
 the configuration options individually on the returned `Configuration` object.
 
@@ -40,8 +40,8 @@ config["domain"] = "example.com" // optional
 config["caCertificatePath"] = "/path/to/local/certificate" // optional
 
 // Create a configuration object
-ejbcaConfiguration := keyfactor.NewConfiguration(config)
-if ejbcaConfiguration == nil {
+kfcmdConfiguration := command.NewConfiguration(config)
+if kfcmdConfiguration == nil {
     // handle error
 }
 
@@ -56,36 +56,36 @@ or
 
 ```go
 // Create a configuration object
-ejbcaConfiguration := keyfactor.NewConfiguration(make(map[string]string))
+kfcmdConfiguration := command.NewConfiguration(make(map[string]string))
 
 // Set configuration options individually
-ejbcaConfiguration.Host = "keyfactor.example.com"
-ejbcaConfiguration.BasicAuth.UserName = "admin"
-ejbcaConfiguration.BasicAuth.Password = "password"
-ejbcaConfiguration.CaCertificatePath = "/path/to/local/certificate" // optional
+kfcmdConfiguration.Host = "keyfactor.example.com"
+kfcmdConfiguration.BasicAuth.Username = "admin"
+kfcmdConfiguration.BasicAuth.Password = "password"
+kfcmdConfiguration.CaCertificatePath = "/path/to/local/certificate" // optional
 
 // Create a client
-client := keyfactor.NewAPIClient(ejbcaConfiguration)
+client := keyfactor.NewAPIClient(kfcmdConfiguration)
 if client == nil {
     // handle error
 }
 ```
 
-The root CA certificate can also be configured by passing a slice of `*x509.Certificate` objects to the `ejbca.Configuration.SetCaCertificates()` method.
+The root CA certificate can also be configured by passing a slice of `*x509.Certificate` objects to the `kfcmd.Configuration.SetCaCertificates()` method.
 ```go
 // Create a configuration object
-ejbcaConfiguration := keyfactor.NewConfiguration(make(map[string]string))
+kfcmdConfiguration := command.NewConfiguration(make(map[string]string))
 
 // Set the root CA certificate
-ejbcaConfiguration.SetCaCertificates([]*x509.Certificate{caCertificate})
+kfcmdConfiguration.SetCaCertificates([]*x509.Certificate{caCertificate})
 
 // Create a client
-client := keyfactor.NewAPIClient(ejbcaConfiguration)
+client := keyfactor.NewAPIClient(kfcmdConfiguration)
 ```
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://keyfactor.example.com*
+All URIs are relative to *https://keyfactor.example.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -94,9 +94,9 @@ Class | Method | HTTP request | Description
 *AgentApi* | [**AgentFetchLogs**](docs/AgentApi.md#agentfetchlogs) | **Post** /Agents/{id}/FetchLogs | Schedules a job on the agent to retrieve log files
 *AgentApi* | [**AgentGetAgentDetail**](docs/AgentApi.md#agentgetagentdetail) | **Get** /Agents/{id} | Returns details for a single agent, specified by ID
 *AgentApi* | [**AgentGetAgents**](docs/AgentApi.md#agentgetagents) | **Get** /Agents | Returns all agents according to the provided filter and output parameters
-*AgentApi* | [**AgentReset0**](docs/AgentApi.md#agentreset0) | **Post** /Agents/Reset | Reset a list of agents
-*AgentApi* | [**AgentReset1**](docs/AgentApi.md#agentreset1) | **Post** /Agents/{id}/Reset | Reset an agent to a new state
+*AgentApi* | [**AgentReset**](docs/AgentApi.md#agentreset) | **Post** /Agents/{id}/Reset | Reset an agent to a new state
 *AgentApi* | [**AgentSetAuthCertificateReenrollment**](docs/AgentApi.md#agentsetauthcertificatereenrollment) | **Post** /Agents/SetAuthCertificateReenrollment | Update the AuthCertificateReenrollment value for an agent to request or require (or unset the request) the agent   to enroll for a new client authentication certificate on its next registration.
+*AgentApi* | [**AgentsReset**](docs/AgentApi.md#agentsreset) | **Post** /Agents/Reset | Reset a list of agents
 *AgentBlueprintApi* | [**AgentBlueprintApplyBlueprint**](docs/AgentBlueprintApi.md#agentblueprintapplyblueprint) | **Post** /AgentBluePrint/ApplyBlueprint | Applies the selected agent blueprint to the provided agents
 *AgentBlueprintApi* | [**AgentBlueprintDeleteBlueprint**](docs/AgentBlueprintApi.md#agentblueprintdeleteblueprint) | **Delete** /AgentBluePrint/{id} | Deletes an agent blueprint by its Keyfactor identifier
 *AgentBlueprintApi* | [**AgentBlueprintGenerateBlueprint**](docs/AgentBlueprintApi.md#agentblueprintgenerateblueprint) | **Post** /AgentBluePrint/GenerateBluePrint | Generates an agent blueprint from the provided agents
