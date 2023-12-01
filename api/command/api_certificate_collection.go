@@ -99,9 +99,12 @@ func (a *CertificateCollectionApiService) CertificateCollectionCopyFromExistingC
 		localVarReturnValue *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/CertificateCollections/Copy"
+	localVarPath := apiBasePath + "/CertificateCollections/Copy"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -239,9 +242,12 @@ func (a *CertificateCollectionApiService) CertificateCollectionCreateCollectionE
 		localVarReturnValue *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/CertificateCollections"
+	localVarPath := apiBasePath + "/CertificateCollections"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -367,9 +373,12 @@ func (a *CertificateCollectionApiService) CertificateCollectionGetCollection0Exe
 		localVarReturnValue *ModelsCertificateQuery
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/CertificateCollections/{id}"
+	localVarPath := apiBasePath + "/CertificateCollections/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -491,9 +500,12 @@ func (a *CertificateCollectionApiService) CertificateCollectionGetCollection1Exe
 		localVarReturnValue *ModelsCertificateQuery
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/CertificateCollections/{name}"
+	localVarPath := apiBasePath + "/CertificateCollections/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterValueToString(r.name, "name")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -647,9 +659,12 @@ func (a *CertificateCollectionApiService) CertificateCollectionGetCollectionsExe
 		localVarReturnValue []ModelsCertificateQuery
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/CertificateCollections"
+	localVarPath := apiBasePath + "/CertificateCollections"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -794,9 +809,12 @@ func (a *CertificateCollectionApiService) CertificateCollectionSetCollectionPerm
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/CertificateCollections/{id}/Permissions"
+	localVarPath := apiBasePath + "/CertificateCollections/{id}/Permissions"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -926,9 +944,12 @@ func (a *CertificateCollectionApiService) CertificateCollectionUpdateCollectionE
 		localVarReturnValue *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/CertificateCollections"
+	localVarPath := apiBasePath + "/CertificateCollections"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

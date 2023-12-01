@@ -91,9 +91,12 @@ func (a *PendingAlertApiService) PendingAlertAddPendingAlertExecute(r ApiPending
 		localVarReturnValue *KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Pending"
+	localVarPath := apiBasePath + "/Alerts/Pending"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -216,9 +219,12 @@ func (a *PendingAlertApiService) PendingAlertDeletePendingAlertExecute(r ApiPend
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Pending/{id}"
+	localVarPath := apiBasePath + "/Alerts/Pending/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -335,9 +341,12 @@ func (a *PendingAlertApiService) PendingAlertEditPendingAlertExecute(r ApiPendin
 		localVarReturnValue *KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Pending"
+	localVarPath := apiBasePath + "/Alerts/Pending"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -466,9 +475,12 @@ func (a *PendingAlertApiService) PendingAlertEditScheduleExecute(r ApiPendingAle
 		localVarReturnValue *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Pending/Schedule"
+	localVarPath := apiBasePath + "/Alerts/Pending/Schedule"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -594,9 +606,12 @@ func (a *PendingAlertApiService) PendingAlertGetPendingAlertExecute(r ApiPending
 		localVarReturnValue *KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Pending/{id}"
+	localVarPath := apiBasePath + "/Alerts/Pending/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -750,9 +765,12 @@ func (a *PendingAlertApiService) PendingAlertGetPendingAlertsExecute(r ApiPendin
 		localVarReturnValue []KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Pending"
+	localVarPath := apiBasePath + "/Alerts/Pending"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -885,9 +903,12 @@ func (a *PendingAlertApiService) PendingAlertGetScheduleExecute(r ApiPendingAler
 		localVarReturnValue *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Pending/Schedule"
+	localVarPath := apiBasePath + "/Alerts/Pending/Schedule"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1012,9 +1033,12 @@ func (a *PendingAlertApiService) PendingAlertTestAllPendingAlertExecute(r ApiPen
 		localVarReturnValue *KeyfactorApiModelsAlertsPendingPendingAlertTestResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Pending/TestAll"
+	localVarPath := apiBasePath + "/Alerts/Pending/TestAll"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1144,9 +1168,12 @@ func (a *PendingAlertApiService) PendingAlertTestPendingAlertExecute(r ApiPendin
 		localVarReturnValue *KeyfactorApiModelsAlertsPendingPendingAlertTestResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Pending/Test"
+	localVarPath := apiBasePath + "/Alerts/Pending/Test"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

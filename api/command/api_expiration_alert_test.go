@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_ExpirationAlertApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -46,9 +49,13 @@ func Test_command_ExpirationAlertApiService(t *testing.T) {
 
 	t.Run("Test ExpirationAlertApiService ExpirationAlertDeleteExpirationAlert", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		httpRes, err := apiClient.ExpirationAlertApi.ExpirationAlertDeleteExpirationAlert(context.Background(), id).Execute()
+		id = os.Getenv("ExpirationAlertApi_ExpirationAlertDeleteExpirationAlert_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("ExpirationAlertApi_ExpirationAlertDeleteExpirationAlert_id: %v", id)
+
+		httpRes, err := apiClient.ExpirationAlertApi.ExpirationAlertDeleteExpirationAlert(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -77,9 +84,13 @@ func Test_command_ExpirationAlertApiService(t *testing.T) {
 
 	t.Run("Test ExpirationAlertApiService ExpirationAlertGetExpirationAlert", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.ExpirationAlertApi.ExpirationAlertGetExpirationAlert(context.Background(), id).Execute()
+		id = os.Getenv("ExpirationAlertApi_ExpirationAlertGetExpirationAlert_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("ExpirationAlertApi_ExpirationAlertGetExpirationAlert_id: %v", id)
+
+		resp, httpRes, err := apiClient.ExpirationAlertApi.ExpirationAlertGetExpirationAlert(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

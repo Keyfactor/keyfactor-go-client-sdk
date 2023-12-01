@@ -84,9 +84,12 @@ func (a *CSRGenerationApiService) CSRGenerationDeleteCSRExecute(r ApiCSRGenerati
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/CSRGeneration/Pending/{id}"
+	localVarPath := apiBasePath + "/CSRGeneration/Pending/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -200,9 +203,12 @@ func (a *CSRGenerationApiService) CSRGenerationDeleteCSRsExecute(r ApiCSRGenerat
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/CSRGeneration/Pending"
+	localVarPath := apiBasePath + "/CSRGeneration/Pending"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -319,9 +325,12 @@ func (a *CSRGenerationApiService) CSRGenerationDownloadExecute(r ApiCSRGeneratio
 		localVarReturnValue *ModelsCSRGenerationResponseModel
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/CSRGeneration/Pending/{id}"
+	localVarPath := apiBasePath + "/CSRGeneration/Pending/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -475,9 +484,12 @@ func (a *CSRGenerationApiService) CSRGenerationGetPendingCSRsExecute(r ApiCSRGen
 		localVarReturnValue []ModelsPendingCSRResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/CSRGeneration/Pending"
+	localVarPath := apiBasePath + "/CSRGeneration/Pending"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -617,9 +629,12 @@ func (a *CSRGenerationApiService) CSRGenerationPostGenerateExecute(r ApiCSRGener
 		localVarReturnValue *ModelsCSRContents
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/CSRGeneration/Generate"
+	localVarPath := apiBasePath + "/CSRGeneration/Generate"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

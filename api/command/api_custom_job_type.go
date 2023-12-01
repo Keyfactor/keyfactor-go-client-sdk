@@ -91,9 +91,12 @@ func (a *CustomJobTypeApiService) CustomJobTypeCreateJobTypeExecute(r ApiCustomJ
 		localVarReturnValue *KeyfactorApiModelsOrchestratorJobsJobTypeResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/JobTypes/Custom"
+	localVarPath := apiBasePath + "/JobTypes/Custom"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -216,9 +219,12 @@ func (a *CustomJobTypeApiService) CustomJobTypeDeleteJobTypeExecute(r ApiCustomJ
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/JobTypes/Custom/{id}"
+	localVarPath := apiBasePath + "/JobTypes/Custom/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -331,9 +337,12 @@ func (a *CustomJobTypeApiService) CustomJobTypeGetJobTypeByIdExecute(r ApiCustom
 		localVarReturnValue *KeyfactorApiModelsOrchestratorJobsJobTypeResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/JobTypes/Custom/{id}"
+	localVarPath := apiBasePath + "/JobTypes/Custom/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -487,9 +496,12 @@ func (a *CustomJobTypeApiService) CustomJobTypeGetJobTypesExecute(r ApiCustomJob
 		localVarReturnValue []KeyfactorApiModelsOrchestratorJobsJobTypeResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/JobTypes/Custom"
+	localVarPath := apiBasePath + "/JobTypes/Custom"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -629,9 +641,12 @@ func (a *CustomJobTypeApiService) CustomJobTypeUpdateJobTypeExecute(r ApiCustomJ
 		localVarReturnValue *KeyfactorApiModelsOrchestratorJobsJobTypeResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/JobTypes/Custom"
+	localVarPath := apiBasePath + "/JobTypes/Custom"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

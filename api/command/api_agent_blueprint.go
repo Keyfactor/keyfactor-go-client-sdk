@@ -95,9 +95,12 @@ func (a *AgentBlueprintApiService) AgentBlueprintApplyBlueprintExecute(r ApiAgen
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/AgentBluePrint/ApplyBlueprint"
+	localVarPath := apiBasePath + "/AgentBluePrint/ApplyBlueprint"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -215,9 +218,12 @@ func (a *AgentBlueprintApiService) AgentBlueprintDeleteBlueprintExecute(r ApiAge
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/AgentBluePrint/{id}"
+	localVarPath := apiBasePath + "/AgentBluePrint/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -341,9 +347,12 @@ func (a *AgentBlueprintApiService) AgentBlueprintGenerateBlueprintExecute(r ApiA
 		localVarReturnValue *KeyfactorApiModelsOrchestratorsAgentBlueprintResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/AgentBluePrint/GenerateBluePrint"
+	localVarPath := apiBasePath + "/AgentBluePrint/GenerateBluePrint"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -472,9 +481,12 @@ func (a *AgentBlueprintApiService) AgentBlueprintGetAgentBlueprintExecute(r ApiA
 		localVarReturnValue *KeyfactorApiModelsOrchestratorsAgentBlueprintResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/AgentBluePrint/{id}"
+	localVarPath := apiBasePath + "/AgentBluePrint/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -621,9 +633,12 @@ func (a *AgentBlueprintApiService) AgentBlueprintGetAgentBlueprintsExecute(r Api
 		localVarReturnValue []KeyfactorApiModelsOrchestratorsAgentBlueprintResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/AgentBluePrint"
+	localVarPath := apiBasePath + "/AgentBluePrint"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -784,9 +799,12 @@ func (a *AgentBlueprintApiService) AgentBlueprintGetBlueprintJobsExecute(r ApiAg
 		localVarReturnValue []KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/AgentBluePrint/{id}/Jobs"
+	localVarPath := apiBasePath + "/AgentBluePrint/{id}/Jobs"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -948,9 +966,12 @@ func (a *AgentBlueprintApiService) AgentBlueprintGetBlueprintStoresExecute(r Api
 		localVarReturnValue []KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/AgentBluePrint/{id}/Stores"
+	localVarPath := apiBasePath + "/AgentBluePrint/{id}/Stores"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)

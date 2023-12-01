@@ -84,9 +84,12 @@ func (a *SecurityApiService) SecurityDeleteSecurityIdentityExecute(r ApiSecurity
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Security/Identities/{id}"
+	localVarPath := apiBasePath + "/Security/Identities/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -199,9 +202,12 @@ func (a *SecurityApiService) SecurityIdentityPermissionsExecute(r ApiSecurityIde
 		localVarReturnValue *ModelsSecurityIdentitiesSecurityIdentityPermissionsResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Security/Identities/{id}"
+	localVarPath := apiBasePath + "/Security/Identities/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -327,9 +333,12 @@ func (a *SecurityApiService) SecurityLookupIdentityExecute(r ApiSecurityLookupId
 		localVarReturnValue *ModelsSecurityIdentitiesSecurityIdentityLookupResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Security/Identities/Lookup"
+	localVarPath := apiBasePath + "/Security/Identities/Lookup"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

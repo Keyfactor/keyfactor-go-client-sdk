@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_SecurityApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -36,9 +39,13 @@ func Test_command_SecurityApiService(t *testing.T) {
 
 	t.Run("Test SecurityApiService SecurityDeleteSecurityIdentity", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		httpRes, err := apiClient.SecurityApi.SecurityDeleteSecurityIdentity(context.Background(), id).Execute()
+		id = os.Getenv("SecurityApi_SecurityDeleteSecurityIdentity_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("SecurityApi_SecurityDeleteSecurityIdentity_id: %v", id)
+
+		httpRes, err := apiClient.SecurityApi.SecurityDeleteSecurityIdentity(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -47,9 +54,13 @@ func Test_command_SecurityApiService(t *testing.T) {
 
 	t.Run("Test SecurityApiService SecurityIdentityPermissions", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.SecurityApi.SecurityIdentityPermissions(context.Background(), id).Execute()
+		id = os.Getenv("SecurityApi_SecurityIdentityPermissions_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("SecurityApi_SecurityIdentityPermissions_id: %v", id)
+
+		resp, httpRes, err := apiClient.SecurityApi.SecurityIdentityPermissions(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

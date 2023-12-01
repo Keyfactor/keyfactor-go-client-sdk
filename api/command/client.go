@@ -903,3 +903,32 @@ func formatErrorMessage(status string, v interface{}) string {
 	// status title (detail)
 	return strings.TrimSpace(fmt.Sprintf("%s %s", status, str))
 }
+
+func convertParamInterface(param interface{}, format string) (interface{}, error) {
+	if param == nil {
+		return nil, nil
+	}
+
+	switch format {
+	case "int32":
+		val, err := strconv.ParseInt(fmt.Sprintf("%v", param), 10, 32)
+		return int32(val), err
+	case "int64":
+		return strconv.ParseInt(fmt.Sprintf("%v", param), 10, 64)
+	case "float32":
+		val, err := strconv.ParseFloat(fmt.Sprintf("%v", param), 32)
+		return float32(val), err
+	case "float64":
+		return strconv.ParseFloat(fmt.Sprintf("%v", param), 64)
+	case "byte":
+		return []byte(fmt.Sprintf("%v", param)), nil
+	case "date":
+		return time.Parse("2006-01-02", fmt.Sprintf("%v", param))
+	case "date-time":
+		return time.Parse(time.RFC3339, fmt.Sprintf("%v", param))
+	case "password":
+		return fmt.Sprintf("%v", param), nil
+	default:
+		return param, nil
+	}
+}

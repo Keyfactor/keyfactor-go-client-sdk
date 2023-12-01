@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_ServiceAccountApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -46,9 +49,13 @@ func Test_command_ServiceAccountApiService(t *testing.T) {
 
 	t.Run("Test ServiceAccountApiService ServiceAccountDeleteServiceAccount", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		httpRes, err := apiClient.ServiceAccountApi.ServiceAccountDeleteServiceAccount(context.Background(), id).Execute()
+		id = os.Getenv("ServiceAccountApi_ServiceAccountDeleteServiceAccount_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("ServiceAccountApi_ServiceAccountDeleteServiceAccount_id: %v", id)
+
+		httpRes, err := apiClient.ServiceAccountApi.ServiceAccountDeleteServiceAccount(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -66,9 +73,13 @@ func Test_command_ServiceAccountApiService(t *testing.T) {
 
 	t.Run("Test ServiceAccountApiService ServiceAccountGet", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.ServiceAccountApi.ServiceAccountGet(context.Background(), id).Execute()
+		id = os.Getenv("ServiceAccountApi_ServiceAccountGet_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("ServiceAccountApi_ServiceAccountGet_id: %v", id)
+
+		resp, httpRes, err := apiClient.ServiceAccountApi.ServiceAccountGet(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -78,9 +89,13 @@ func Test_command_ServiceAccountApiService(t *testing.T) {
 
 	t.Run("Test ServiceAccountApiService ServiceAccountGetServiceAccountKey", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.ServiceAccountApi.ServiceAccountGetServiceAccountKey(context.Background(), id).Execute()
+		id = os.Getenv("ServiceAccountApi_ServiceAccountGetServiceAccountKey_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("ServiceAccountApi_ServiceAccountGetServiceAccountKey_id: %v", id)
+
+		resp, httpRes, err := apiClient.ServiceAccountApi.ServiceAccountGetServiceAccountKey(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -100,9 +115,13 @@ func Test_command_ServiceAccountApiService(t *testing.T) {
 
 	t.Run("Test ServiceAccountApiService ServiceAccountRotateServiceAccountKey", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.ServiceAccountApi.ServiceAccountRotateServiceAccountKey(context.Background(), id).Execute()
+		id = os.Getenv("ServiceAccountApi_ServiceAccountRotateServiceAccountKey_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("ServiceAccountApi_ServiceAccountRotateServiceAccountKey_id: %v", id)
+
+		resp, httpRes, err := apiClient.ServiceAccountApi.ServiceAccountRotateServiceAccountKey(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

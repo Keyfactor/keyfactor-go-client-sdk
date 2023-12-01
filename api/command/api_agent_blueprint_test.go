@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_AgentBlueprintApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -45,9 +48,13 @@ func Test_command_AgentBlueprintApiService(t *testing.T) {
 
 	t.Run("Test AgentBlueprintApiService AgentBlueprintDeleteBlueprint", func(t *testing.T) {
 
-		var id string
+		var id interface{}
 
-		httpRes, err := apiClient.AgentBlueprintApi.AgentBlueprintDeleteBlueprint(context.Background(), id).Execute()
+		id = os.Getenv("AgentBlueprintApi_AgentBlueprintDeleteBlueprint_id")
+		id, _ = convertParamInterface(id, "string")
+		t.Logf("AgentBlueprintApi_AgentBlueprintDeleteBlueprint_id: %v", id)
+
+		httpRes, err := apiClient.AgentBlueprintApi.AgentBlueprintDeleteBlueprint(context.Background(), id.(string)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -66,9 +73,13 @@ func Test_command_AgentBlueprintApiService(t *testing.T) {
 
 	t.Run("Test AgentBlueprintApiService AgentBlueprintGetAgentBlueprint", func(t *testing.T) {
 
-		var id string
+		var id interface{}
 
-		resp, httpRes, err := apiClient.AgentBlueprintApi.AgentBlueprintGetAgentBlueprint(context.Background(), id).Execute()
+		id = os.Getenv("AgentBlueprintApi_AgentBlueprintGetAgentBlueprint_id")
+		id, _ = convertParamInterface(id, "string")
+		t.Logf("AgentBlueprintApi_AgentBlueprintGetAgentBlueprint_id: %v", id)
+
+		resp, httpRes, err := apiClient.AgentBlueprintApi.AgentBlueprintGetAgentBlueprint(context.Background(), id.(string)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -88,9 +99,13 @@ func Test_command_AgentBlueprintApiService(t *testing.T) {
 
 	t.Run("Test AgentBlueprintApiService AgentBlueprintGetBlueprintJobs", func(t *testing.T) {
 
-		var id string
+		var id interface{}
 
-		resp, httpRes, err := apiClient.AgentBlueprintApi.AgentBlueprintGetBlueprintJobs(context.Background(), id).Execute()
+		id = os.Getenv("AgentBlueprintApi_AgentBlueprintGetBlueprintJobs_id")
+		id, _ = convertParamInterface(id, "string")
+		t.Logf("AgentBlueprintApi_AgentBlueprintGetBlueprintJobs_id: %v", id)
+
+		resp, httpRes, err := apiClient.AgentBlueprintApi.AgentBlueprintGetBlueprintJobs(context.Background(), id.(string)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -100,9 +115,13 @@ func Test_command_AgentBlueprintApiService(t *testing.T) {
 
 	t.Run("Test AgentBlueprintApiService AgentBlueprintGetBlueprintStores", func(t *testing.T) {
 
-		var id string
+		var id interface{}
 
-		resp, httpRes, err := apiClient.AgentBlueprintApi.AgentBlueprintGetBlueprintStores(context.Background(), id).Execute()
+		id = os.Getenv("AgentBlueprintApi_AgentBlueprintGetBlueprintStores_id")
+		id, _ = convertParamInterface(id, "string")
+		t.Logf("AgentBlueprintApi_AgentBlueprintGetBlueprintStores_id: %v", id)
+
+		resp, httpRes, err := apiClient.AgentBlueprintApi.AgentBlueprintGetBlueprintStores(context.Background(), id.(string)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

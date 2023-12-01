@@ -89,9 +89,12 @@ func (a *MacEnrollmentApiService) MacEnrollmentEditMacEnrollmentExecute(r ApiMac
 		localVarReturnValue *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/MacEnrollment"
+	localVarPath := apiBasePath + "/MacEnrollment"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -214,9 +217,12 @@ func (a *MacEnrollmentApiService) MacEnrollmentMacEnrollmentExecute(r ApiMacEnro
 		localVarReturnValue *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/MacEnrollment"
+	localVarPath := apiBasePath + "/MacEnrollment"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

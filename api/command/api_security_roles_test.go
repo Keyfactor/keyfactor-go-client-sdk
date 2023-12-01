@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_SecurityRolesApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -36,9 +39,13 @@ func Test_command_SecurityRolesApiService(t *testing.T) {
 
 	t.Run("Test SecurityRolesApiService SecurityRolesDeleteSecurityRole", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		httpRes, err := apiClient.SecurityRolesApi.SecurityRolesDeleteSecurityRole(context.Background(), id).Execute()
+		id = os.Getenv("SecurityRolesApi_SecurityRolesDeleteSecurityRole_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("SecurityRolesApi_SecurityRolesDeleteSecurityRole_id: %v", id)
+
+		httpRes, err := apiClient.SecurityRolesApi.SecurityRolesDeleteSecurityRole(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -47,9 +54,13 @@ func Test_command_SecurityRolesApiService(t *testing.T) {
 
 	t.Run("Test SecurityRolesApiService SecurityRolesGetIdentitiesWithRole", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.SecurityRolesApi.SecurityRolesGetIdentitiesWithRole(context.Background(), id).Execute()
+		id = os.Getenv("SecurityRolesApi_SecurityRolesGetIdentitiesWithRole_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("SecurityRolesApi_SecurityRolesGetIdentitiesWithRole_id: %v", id)
+
+		resp, httpRes, err := apiClient.SecurityRolesApi.SecurityRolesGetIdentitiesWithRole(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -59,9 +70,13 @@ func Test_command_SecurityRolesApiService(t *testing.T) {
 
 	t.Run("Test SecurityRolesApiService SecurityRolesUpdateIdentitiesWithRole", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.SecurityRolesApi.SecurityRolesUpdateIdentitiesWithRole(context.Background(), id).Execute()
+		id = os.Getenv("SecurityRolesApi_SecurityRolesUpdateIdentitiesWithRole_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("SecurityRolesApi_SecurityRolesUpdateIdentitiesWithRole_id: %v", id)
+
+		resp, httpRes, err := apiClient.SecurityRolesApi.SecurityRolesUpdateIdentitiesWithRole(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

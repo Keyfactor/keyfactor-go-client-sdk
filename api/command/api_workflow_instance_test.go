@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_WorkflowInstanceApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -36,9 +39,13 @@ func Test_command_WorkflowInstanceApiService(t *testing.T) {
 
 	t.Run("Test WorkflowInstanceApiService WorkflowInstanceDeleteInstance", func(t *testing.T) {
 
-		var instanceId string
+		var instanceId interface{}
 
-		httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceDeleteInstance(context.Background(), instanceId).Execute()
+		instanceId = os.Getenv("WorkflowInstanceApi_WorkflowInstanceDeleteInstance_instanceId")
+		instanceId, _ = convertParamInterface(instanceId, "string")
+		t.Logf("WorkflowInstanceApi_WorkflowInstanceDeleteInstance_instanceId: %v", instanceId)
+
+		httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceDeleteInstance(context.Background(), instanceId.(string)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -47,9 +54,13 @@ func Test_command_WorkflowInstanceApiService(t *testing.T) {
 
 	t.Run("Test WorkflowInstanceApiService WorkflowInstanceGet", func(t *testing.T) {
 
-		var instanceId string
+		var instanceId interface{}
 
-		resp, httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceGet(context.Background(), instanceId).Execute()
+		instanceId = os.Getenv("WorkflowInstanceApi_WorkflowInstanceGet_instanceId")
+		instanceId, _ = convertParamInterface(instanceId, "string")
+		t.Logf("WorkflowInstanceApi_WorkflowInstanceGet_instanceId: %v", instanceId)
+
+		resp, httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceGet(context.Background(), instanceId.(string)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -89,9 +100,13 @@ func Test_command_WorkflowInstanceApiService(t *testing.T) {
 
 	t.Run("Test WorkflowInstanceApiService WorkflowInstanceRestart", func(t *testing.T) {
 
-		var instanceId string
+		var instanceId interface{}
 
-		httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceRestart(context.Background(), instanceId).Execute()
+		instanceId = os.Getenv("WorkflowInstanceApi_WorkflowInstanceRestart_instanceId")
+		instanceId, _ = convertParamInterface(instanceId, "string")
+		t.Logf("WorkflowInstanceApi_WorkflowInstanceRestart_instanceId: %v", instanceId)
+
+		httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceRestart(context.Background(), instanceId.(string)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -100,9 +115,13 @@ func Test_command_WorkflowInstanceApiService(t *testing.T) {
 
 	t.Run("Test WorkflowInstanceApiService WorkflowInstanceSignal", func(t *testing.T) {
 
-		var instanceId string
+		var instanceId interface{}
 
-		httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceSignal(context.Background(), instanceId).Execute()
+		instanceId = os.Getenv("WorkflowInstanceApi_WorkflowInstanceSignal_instanceId")
+		instanceId, _ = convertParamInterface(instanceId, "string")
+		t.Logf("WorkflowInstanceApi_WorkflowInstanceSignal_instanceId: %v", instanceId)
+
+		httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceSignal(context.Background(), instanceId.(string)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -111,9 +130,13 @@ func Test_command_WorkflowInstanceApiService(t *testing.T) {
 
 	t.Run("Test WorkflowInstanceApiService WorkflowInstanceStop", func(t *testing.T) {
 
-		var instanceId string
+		var instanceId interface{}
 
-		httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceStop(context.Background(), instanceId).Execute()
+		instanceId = os.Getenv("WorkflowInstanceApi_WorkflowInstanceStop_instanceId")
+		instanceId, _ = convertParamInterface(instanceId, "string")
+		t.Logf("WorkflowInstanceApi_WorkflowInstanceStop_instanceId: %v", instanceId)
+
+		httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceStop(context.Background(), instanceId.(string)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

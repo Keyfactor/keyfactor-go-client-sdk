@@ -91,9 +91,12 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeCreateCertificateSt
 		localVarReturnValue *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/CertificateStoreTypes"
+	localVarPath := apiBasePath + "/CertificateStoreTypes"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -218,9 +221,12 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeDeleteCertificateSt
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/CertificateStoreTypes/{id}"
+	localVarPath := apiBasePath + "/CertificateStoreTypes/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -336,9 +342,12 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeDeleteCertificateSt
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/CertificateStoreTypes"
+	localVarPath := apiBasePath + "/CertificateStoreTypes"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -455,9 +464,12 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeGetCertificateStore
 		localVarReturnValue *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/CertificateStoreTypes/{id}"
+	localVarPath := apiBasePath + "/CertificateStoreTypes/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -579,9 +591,12 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeGetCertificateStore
 		localVarReturnValue []KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/CertificateStoreTypes/Name/{name}"
+	localVarPath := apiBasePath + "/CertificateStoreTypes/Name/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterValueToString(r.name, "name")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -735,9 +750,12 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeGetTypesExecute(r A
 		localVarReturnValue []KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/CertificateStoreTypes"
+	localVarPath := apiBasePath + "/CertificateStoreTypes"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -877,9 +895,12 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeUpdateCertificateSt
 		localVarReturnValue *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/CertificateStoreTypes"
+	localVarPath := apiBasePath + "/CertificateStoreTypes"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

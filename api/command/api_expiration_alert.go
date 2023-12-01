@@ -91,9 +91,12 @@ func (a *ExpirationAlertApiService) ExpirationAlertAddExpirationAlertExecute(r A
 		localVarReturnValue *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Expiration"
+	localVarPath := apiBasePath + "/Alerts/Expiration"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -216,9 +219,12 @@ func (a *ExpirationAlertApiService) ExpirationAlertDeleteExpirationAlertExecute(
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Expiration/{id}"
+	localVarPath := apiBasePath + "/Alerts/Expiration/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -335,9 +341,12 @@ func (a *ExpirationAlertApiService) ExpirationAlertEditExpirationAlertExecute(r 
 		localVarReturnValue *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Expiration"
+	localVarPath := apiBasePath + "/Alerts/Expiration"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -466,9 +475,12 @@ func (a *ExpirationAlertApiService) ExpirationAlertEditScheduleExecute(r ApiExpi
 		localVarReturnValue *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Expiration/Schedule"
+	localVarPath := apiBasePath + "/Alerts/Expiration/Schedule"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -594,9 +606,12 @@ func (a *ExpirationAlertApiService) ExpirationAlertGetExpirationAlertExecute(r A
 		localVarReturnValue *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Expiration/{id}"
+	localVarPath := apiBasePath + "/Alerts/Expiration/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -750,9 +765,12 @@ func (a *ExpirationAlertApiService) ExpirationAlertGetExpirationAlertsExecute(r 
 		localVarReturnValue []KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Expiration"
+	localVarPath := apiBasePath + "/Alerts/Expiration"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -885,9 +903,12 @@ func (a *ExpirationAlertApiService) ExpirationAlertGetScheduleExecute(r ApiExpir
 		localVarReturnValue *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Expiration/Schedule"
+	localVarPath := apiBasePath + "/Alerts/Expiration/Schedule"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1012,9 +1033,12 @@ func (a *ExpirationAlertApiService) ExpirationAlertTestAllExpirationAlertExecute
 		localVarReturnValue *KeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Expiration/TestAll"
+	localVarPath := apiBasePath + "/Alerts/Expiration/TestAll"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1144,9 +1168,12 @@ func (a *ExpirationAlertApiService) ExpirationAlertTestExpirationAlertExecute(r 
 		localVarReturnValue *KeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Expiration/Test"
+	localVarPath := apiBasePath + "/Alerts/Expiration/Test"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

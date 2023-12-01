@@ -91,9 +91,12 @@ func (a *MonitoringApiService) MonitoringAddRevocationMonitoringExecute(r ApiMon
 		localVarReturnValue *KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Monitoring/Revocation"
+	localVarPath := apiBasePath + "/Monitoring/Revocation"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -216,9 +219,12 @@ func (a *MonitoringApiService) MonitoringDeleteRevocationMonitoringExecute(r Api
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Monitoring/Revocation/{id}"
+	localVarPath := apiBasePath + "/Monitoring/Revocation/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -335,9 +341,12 @@ func (a *MonitoringApiService) MonitoringEditRevocationMonitoringExecute(r ApiMo
 		localVarReturnValue *KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Monitoring/Revocation"
+	localVarPath := apiBasePath + "/Monitoring/Revocation"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -463,9 +472,12 @@ func (a *MonitoringApiService) MonitoringGetRevocationMonitoringExecute(r ApiMon
 		localVarReturnValue *KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Monitoring/Revocation/{id}"
+	localVarPath := apiBasePath + "/Monitoring/Revocation/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -619,9 +631,12 @@ func (a *MonitoringApiService) MonitoringGetRevocationMonitoringEndpointsExecute
 		localVarReturnValue []KeyfactorApiModelsMonitoringRevocationMonitoringDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Monitoring/Revocation"
+	localVarPath := apiBasePath + "/Monitoring/Revocation"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -761,9 +776,12 @@ func (a *MonitoringApiService) MonitoringResolveOCSPExecute(r ApiMonitoringResol
 		localVarReturnValue *KeyfactorApiModelsMonitoringOCSPParametersResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Monitoring/ResolveOCSP"
+	localVarPath := apiBasePath + "/Monitoring/ResolveOCSP"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -893,9 +911,12 @@ func (a *MonitoringApiService) MonitoringTestAllRevocationMonitoringAlertExecute
 		localVarReturnValue *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Monitoring/Revocation/TestAll"
+	localVarPath := apiBasePath + "/Monitoring/Revocation/TestAll"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1025,9 +1046,12 @@ func (a *MonitoringApiService) MonitoringTestRevocationMonitoringAlertExecute(r 
 		localVarReturnValue *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Monitoring/Revocation/Test"
+	localVarPath := apiBasePath + "/Monitoring/Revocation/Test"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

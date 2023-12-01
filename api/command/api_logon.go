@@ -91,9 +91,12 @@ func (a *LogonApiService) LogonCreateLogonExecute(r ApiLogonCreateLogonRequest) 
 		localVarReturnValue *ModelsSSHLogonsLogonResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Logons"
+	localVarPath := apiBasePath + "/SSH/Logons"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -216,9 +219,12 @@ func (a *LogonApiService) LogonDeleteExecute(r ApiLogonDeleteRequest) (*http.Res
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Logons/{id}"
+	localVarPath := apiBasePath + "/SSH/Logons/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -331,9 +337,12 @@ func (a *LogonApiService) LogonGetLogonExecute(r ApiLogonGetLogonRequest) (*Mode
 		localVarReturnValue *ModelsSSHLogonsLogonResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Logons/{id}"
+	localVarPath := apiBasePath + "/SSH/Logons/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -459,9 +468,12 @@ func (a *LogonApiService) LogonLogonAccessExecute(r ApiLogonLogonAccessRequest) 
 		localVarReturnValue *ModelsSSHAccessLogonUserAccessResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Logons/Access"
+	localVarPath := apiBasePath + "/SSH/Logons/Access"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -619,9 +631,12 @@ func (a *LogonApiService) LogonQueryLogonsExecute(r ApiLogonQueryLogonsRequest) 
 		localVarReturnValue []ModelsSSHLogonsLogonQueryResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Logons"
+	localVarPath := apiBasePath + "/SSH/Logons"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

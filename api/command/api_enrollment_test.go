@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_EnrollmentApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -46,9 +49,13 @@ func Test_command_EnrollmentApiService(t *testing.T) {
 
 	t.Run("Test EnrollmentApiService EnrollmentAvailableRenewalId", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentAvailableRenewalId(context.Background(), id).Execute()
+		id = os.Getenv("EnrollmentApi_EnrollmentAvailableRenewalId_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("EnrollmentApi_EnrollmentAvailableRenewalId_id: %v", id)
+
+		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentAvailableRenewalId(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -58,9 +65,13 @@ func Test_command_EnrollmentApiService(t *testing.T) {
 
 	t.Run("Test EnrollmentApiService EnrollmentAvailableRenewalThumbprint", func(t *testing.T) {
 
-		var thumbprint string
+		var thumbprint interface{}
 
-		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentAvailableRenewalThumbprint(context.Background(), thumbprint).Execute()
+		thumbprint = os.Getenv("EnrollmentApi_EnrollmentAvailableRenewalThumbprint_thumbprint")
+		thumbprint, _ = convertParamInterface(thumbprint, "string")
+		t.Logf("EnrollmentApi_EnrollmentAvailableRenewalThumbprint_thumbprint: %v", thumbprint)
+
+		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentAvailableRenewalThumbprint(context.Background(), thumbprint.(string)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -90,9 +101,13 @@ func Test_command_EnrollmentApiService(t *testing.T) {
 
 	t.Run("Test EnrollmentApiService EnrollmentGetTemplateEnrollmentSettings", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentGetTemplateEnrollmentSettings(context.Background(), id).Execute()
+		id = os.Getenv("EnrollmentApi_EnrollmentGetTemplateEnrollmentSettings_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("EnrollmentApi_EnrollmentGetTemplateEnrollmentSettings_id: %v", id)
+
+		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentGetTemplateEnrollmentSettings(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

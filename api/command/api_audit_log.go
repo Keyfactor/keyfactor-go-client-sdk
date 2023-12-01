@@ -119,9 +119,12 @@ func (a *AuditLogApiService) AuditLogDownloadCSVExecute(r ApiAuditLogDownloadCSV
 		localVarReturnValue string
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Audit/Download"
+	localVarPath := apiBasePath + "/Audit/Download"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -257,9 +260,12 @@ func (a *AuditLogApiService) AuditLogGetAuditLogExecute(r ApiAuditLogGetAuditLog
 		localVarReturnValue map[string]interface{}
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Audit/{id}"
+	localVarPath := apiBasePath + "/Audit/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -413,9 +419,12 @@ func (a *AuditLogApiService) AuditLogGetAuditLogsExecute(r ApiAuditLogGetAuditLo
 		localVarReturnValue []KeyfactorAuditingQueryingAuditLogEntry
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Audit"
+	localVarPath := apiBasePath + "/Audit"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -583,9 +592,12 @@ func (a *AuditLogApiService) AuditLogGetRelatedEntitiesExecute(r ApiAuditLogGetR
 		localVarReturnValue []KeyfactorAuditingQueryingAuditLogEntry
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Audit/RelatedEntities"
+	localVarPath := apiBasePath + "/Audit/RelatedEntities"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -723,9 +735,12 @@ func (a *AuditLogApiService) AuditLogValidateAuditLogExecute(r ApiAuditLogValida
 		localVarReturnValue bool
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Audit/{id}/Validate"
+	localVarPath := apiBasePath + "/Audit/{id}/Validate"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)

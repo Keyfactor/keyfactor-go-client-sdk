@@ -84,9 +84,12 @@ func (a *CertificateStoreContainerApiService) CertificateStoreContainerDeleteCer
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/CertificateStoreContainers/{id}"
+	localVarPath := apiBasePath + "/CertificateStoreContainers/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -231,9 +234,12 @@ func (a *CertificateStoreContainerApiService) CertificateStoreContainerGetAllCer
 		localVarReturnValue []ModelsCertificateStoreContainerListResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/CertificateStoreContainers"
+	localVarPath := apiBasePath + "/CertificateStoreContainers"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

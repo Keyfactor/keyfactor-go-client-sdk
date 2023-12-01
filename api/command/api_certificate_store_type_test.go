@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_CertificateStoreTypeApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -46,9 +49,13 @@ func Test_command_CertificateStoreTypeApiService(t *testing.T) {
 
 	t.Run("Test CertificateStoreTypeApiService CertificateStoreTypeDeleteCertificateStoreType", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		httpRes, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeDeleteCertificateStoreType(context.Background(), id).Execute()
+		id = os.Getenv("CertificateStoreTypeApi_CertificateStoreTypeDeleteCertificateStoreType_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("CertificateStoreTypeApi_CertificateStoreTypeDeleteCertificateStoreType_id: %v", id)
+
+		httpRes, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeDeleteCertificateStoreType(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -66,9 +73,13 @@ func Test_command_CertificateStoreTypeApiService(t *testing.T) {
 
 	t.Run("Test CertificateStoreTypeApiService CertificateStoreTypeGetCertificateStoreType0", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeGetCertificateStoreType0(context.Background(), id).Execute()
+		id = os.Getenv("CertificateStoreTypeApi_CertificateStoreTypeGetCertificateStoreType0_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("CertificateStoreTypeApi_CertificateStoreTypeGetCertificateStoreType0_id: %v", id)
+
+		resp, httpRes, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeGetCertificateStoreType0(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -78,9 +89,13 @@ func Test_command_CertificateStoreTypeApiService(t *testing.T) {
 
 	t.Run("Test CertificateStoreTypeApiService CertificateStoreTypeGetCertificateStoreType1", func(t *testing.T) {
 
-		var name string
+		var name interface{}
 
-		resp, httpRes, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeGetCertificateStoreType1(context.Background(), name).Execute()
+		name = os.Getenv("CertificateStoreTypeApi_CertificateStoreTypeGetCertificateStoreType1_name")
+		name, _ = convertParamInterface(name, "string")
+		t.Logf("CertificateStoreTypeApi_CertificateStoreTypeGetCertificateStoreType1_name: %v", name)
+
+		resp, httpRes, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeGetCertificateStoreType1(context.Background(), name.(string)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

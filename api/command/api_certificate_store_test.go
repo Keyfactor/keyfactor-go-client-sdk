@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_CertificateStoreApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -74,9 +77,13 @@ func Test_command_CertificateStoreApiService(t *testing.T) {
 
 	t.Run("Test CertificateStoreApiService CertificateStoreDeleteCertificateStore", func(t *testing.T) {
 
-		var id string
+		var id interface{}
 
-		httpRes, err := apiClient.CertificateStoreApi.CertificateStoreDeleteCertificateStore(context.Background(), id).Execute()
+		id = os.Getenv("CertificateStoreApi_CertificateStoreDeleteCertificateStore_id")
+		id, _ = convertParamInterface(id, "string")
+		t.Logf("CertificateStoreApi_CertificateStoreDeleteCertificateStore_id: %v", id)
+
+		httpRes, err := apiClient.CertificateStoreApi.CertificateStoreDeleteCertificateStore(context.Background(), id.(string)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -94,9 +101,13 @@ func Test_command_CertificateStoreApiService(t *testing.T) {
 
 	t.Run("Test CertificateStoreApiService CertificateStoreGetCertificateStoreInventory", func(t *testing.T) {
 
-		var id string
+		var id interface{}
 
-		resp, httpRes, err := apiClient.CertificateStoreApi.CertificateStoreGetCertificateStoreInventory(context.Background(), id).Execute()
+		id = os.Getenv("CertificateStoreApi_CertificateStoreGetCertificateStoreInventory_id")
+		id, _ = convertParamInterface(id, "string")
+		t.Logf("CertificateStoreApi_CertificateStoreGetCertificateStoreInventory_id: %v", id)
+
+		resp, httpRes, err := apiClient.CertificateStoreApi.CertificateStoreGetCertificateStoreInventory(context.Background(), id.(string)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

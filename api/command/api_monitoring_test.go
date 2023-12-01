@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_MonitoringApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -46,9 +49,13 @@ func Test_command_MonitoringApiService(t *testing.T) {
 
 	t.Run("Test MonitoringApiService MonitoringDeleteRevocationMonitoring", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		httpRes, err := apiClient.MonitoringApi.MonitoringDeleteRevocationMonitoring(context.Background(), id).Execute()
+		id = os.Getenv("MonitoringApi_MonitoringDeleteRevocationMonitoring_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("MonitoringApi_MonitoringDeleteRevocationMonitoring_id: %v", id)
+
+		httpRes, err := apiClient.MonitoringApi.MonitoringDeleteRevocationMonitoring(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -67,9 +74,13 @@ func Test_command_MonitoringApiService(t *testing.T) {
 
 	t.Run("Test MonitoringApiService MonitoringGetRevocationMonitoring", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.MonitoringApi.MonitoringGetRevocationMonitoring(context.Background(), id).Execute()
+		id = os.Getenv("MonitoringApi_MonitoringGetRevocationMonitoring_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("MonitoringApi_MonitoringGetRevocationMonitoring_id: %v", id)
+
+		resp, httpRes, err := apiClient.MonitoringApi.MonitoringGetRevocationMonitoring(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

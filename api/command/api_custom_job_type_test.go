@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_CustomJobTypeApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -46,9 +49,13 @@ func Test_command_CustomJobTypeApiService(t *testing.T) {
 
 	t.Run("Test CustomJobTypeApiService CustomJobTypeDeleteJobType", func(t *testing.T) {
 
-		var id string
+		var id interface{}
 
-		httpRes, err := apiClient.CustomJobTypeApi.CustomJobTypeDeleteJobType(context.Background(), id).Execute()
+		id = os.Getenv("CustomJobTypeApi_CustomJobTypeDeleteJobType_id")
+		id, _ = convertParamInterface(id, "string")
+		t.Logf("CustomJobTypeApi_CustomJobTypeDeleteJobType_id: %v", id)
+
+		httpRes, err := apiClient.CustomJobTypeApi.CustomJobTypeDeleteJobType(context.Background(), id.(string)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -57,9 +64,13 @@ func Test_command_CustomJobTypeApiService(t *testing.T) {
 
 	t.Run("Test CustomJobTypeApiService CustomJobTypeGetJobTypeById", func(t *testing.T) {
 
-		var id string
+		var id interface{}
 
-		resp, httpRes, err := apiClient.CustomJobTypeApi.CustomJobTypeGetJobTypeById(context.Background(), id).Execute()
+		id = os.Getenv("CustomJobTypeApi_CustomJobTypeGetJobTypeById_id")
+		id, _ = convertParamInterface(id, "string")
+		t.Logf("CustomJobTypeApi_CustomJobTypeGetJobTypeById_id: %v", id)
+
+		resp, httpRes, err := apiClient.CustomJobTypeApi.CustomJobTypeGetJobTypeById(context.Background(), id.(string)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_CertificateAuthorityApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -46,9 +49,13 @@ func Test_command_CertificateAuthorityApiService(t *testing.T) {
 
 	t.Run("Test CertificateAuthorityApiService CertificateAuthorityDeleteCA", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityDeleteCA(context.Background(), id).Execute()
+		id = os.Getenv("CertificateAuthorityApi_CertificateAuthorityDeleteCA_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("CertificateAuthorityApi_CertificateAuthorityDeleteCA_id: %v", id)
+
+		httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityDeleteCA(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -57,9 +64,13 @@ func Test_command_CertificateAuthorityApiService(t *testing.T) {
 
 	t.Run("Test CertificateAuthorityApiService CertificateAuthorityGetCa", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityGetCa(context.Background(), id).Execute()
+		id = os.Getenv("CertificateAuthorityApi_CertificateAuthorityGetCa_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("CertificateAuthorityApi_CertificateAuthorityGetCa_id: %v", id)
+
+		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityGetCa(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

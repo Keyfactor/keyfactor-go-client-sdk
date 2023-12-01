@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_PendingAlertApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -46,9 +49,13 @@ func Test_command_PendingAlertApiService(t *testing.T) {
 
 	t.Run("Test PendingAlertApiService PendingAlertDeletePendingAlert", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		httpRes, err := apiClient.PendingAlertApi.PendingAlertDeletePendingAlert(context.Background(), id).Execute()
+		id = os.Getenv("PendingAlertApi_PendingAlertDeletePendingAlert_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("PendingAlertApi_PendingAlertDeletePendingAlert_id: %v", id)
+
+		httpRes, err := apiClient.PendingAlertApi.PendingAlertDeletePendingAlert(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -77,9 +84,13 @@ func Test_command_PendingAlertApiService(t *testing.T) {
 
 	t.Run("Test PendingAlertApiService PendingAlertGetPendingAlert", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.PendingAlertApi.PendingAlertGetPendingAlert(context.Background(), id).Execute()
+		id = os.Getenv("PendingAlertApi_PendingAlertGetPendingAlert_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("PendingAlertApi_PendingAlertGetPendingAlert_id: %v", id)
+
+		resp, httpRes, err := apiClient.PendingAlertApi.PendingAlertGetPendingAlert(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

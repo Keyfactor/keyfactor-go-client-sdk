@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_AgentPoolApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -46,9 +49,13 @@ func Test_command_AgentPoolApiService(t *testing.T) {
 
 	t.Run("Test AgentPoolApiService AgentPoolDeleteAgentPool", func(t *testing.T) {
 
-		var id string
+		var id interface{}
 
-		httpRes, err := apiClient.AgentPoolApi.AgentPoolDeleteAgentPool(context.Background(), id).Execute()
+		id = os.Getenv("AgentPoolApi_AgentPoolDeleteAgentPool_id")
+		id, _ = convertParamInterface(id, "string")
+		t.Logf("AgentPoolApi_AgentPoolDeleteAgentPool_id: %v", id)
+
+		httpRes, err := apiClient.AgentPoolApi.AgentPoolDeleteAgentPool(context.Background(), id.(string)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -57,9 +64,13 @@ func Test_command_AgentPoolApiService(t *testing.T) {
 
 	t.Run("Test AgentPoolApiService AgentPoolGetAgentPoolById", func(t *testing.T) {
 
-		var id string
+		var id interface{}
 
-		resp, httpRes, err := apiClient.AgentPoolApi.AgentPoolGetAgentPoolById(context.Background(), id).Execute()
+		id = os.Getenv("AgentPoolApi_AgentPoolGetAgentPoolById_id")
+		id, _ = convertParamInterface(id, "string")
+		t.Logf("AgentPoolApi_AgentPoolGetAgentPoolById_id: %v", id)
+
+		resp, httpRes, err := apiClient.AgentPoolApi.AgentPoolGetAgentPoolById(context.Background(), id.(string)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

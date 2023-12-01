@@ -84,9 +84,12 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceDeleteInstanceExecute(r Api
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Instances/{instanceId}"
+	localVarPath := apiBasePath + "/Workflow/Instances/{instanceId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(parameterValueToString(r.instanceId, "instanceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -199,9 +202,12 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceGetExecute(r ApiWorkflowIns
 		localVarReturnValue *KeyfactorApiModelsWorkflowsInstanceResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Instances/{instanceId}"
+	localVarPath := apiBasePath + "/Workflow/Instances/{instanceId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(parameterValueToString(r.instanceId, "instanceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -355,9 +361,12 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceQueryExecute(r ApiWorkflowI
 		localVarReturnValue []KeyfactorApiModelsWorkflowsInstanceQueryResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Instances"
+	localVarPath := apiBasePath + "/Workflow/Instances"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -525,9 +534,12 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceQueryInstancesAssignedToMeE
 		localVarReturnValue []KeyfactorApiModelsWorkflowsInstanceQueryResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Instances/AssignedToMe"
+	localVarPath := apiBasePath + "/Workflow/Instances/AssignedToMe"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -695,9 +707,12 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceQueryInstancesStartedByMeEx
 		localVarReturnValue []KeyfactorApiModelsWorkflowsInstanceQueryResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Instances/My"
+	localVarPath := apiBasePath + "/Workflow/Instances/My"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -837,9 +852,12 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceRestartExecute(r ApiWorkflo
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Instances/{instanceId}/Restart"
+	localVarPath := apiBasePath + "/Workflow/Instances/{instanceId}/Restart"
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(parameterValueToString(r.instanceId, "instanceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -959,9 +977,12 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceSignalExecute(r ApiWorkflow
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Instances/{instanceId}/Signals"
+	localVarPath := apiBasePath + "/Workflow/Instances/{instanceId}/Signals"
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(parameterValueToString(r.instanceId, "instanceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1076,9 +1097,12 @@ func (a *WorkflowInstanceApiService) WorkflowInstanceStopExecute(r ApiWorkflowIn
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Instances/{instanceId}/Stop"
+	localVarPath := apiBasePath + "/Workflow/Instances/{instanceId}/Stop"
 	localVarPath = strings.Replace(localVarPath, "{"+"instanceId"+"}", url.PathEscape(parameterValueToString(r.instanceId, "instanceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)

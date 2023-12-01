@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_ReportsApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -46,9 +49,13 @@ func Test_command_ReportsApiService(t *testing.T) {
 
 	t.Run("Test ReportsApiService ReportsCreateReportSchedule", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.ReportsApi.ReportsCreateReportSchedule(context.Background(), id).Execute()
+		id = os.Getenv("ReportsApi_ReportsCreateReportSchedule_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("ReportsApi_ReportsCreateReportSchedule_id: %v", id)
+
+		resp, httpRes, err := apiClient.ReportsApi.ReportsCreateReportSchedule(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -58,9 +65,13 @@ func Test_command_ReportsApiService(t *testing.T) {
 
 	t.Run("Test ReportsApiService ReportsDeleteReport", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		httpRes, err := apiClient.ReportsApi.ReportsDeleteReport(context.Background(), id).Execute()
+		id = os.Getenv("ReportsApi_ReportsDeleteReport_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("ReportsApi_ReportsDeleteReport_id: %v", id)
+
+		httpRes, err := apiClient.ReportsApi.ReportsDeleteReport(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -69,9 +80,13 @@ func Test_command_ReportsApiService(t *testing.T) {
 
 	t.Run("Test ReportsApiService ReportsDeleteReportSchedule", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		httpRes, err := apiClient.ReportsApi.ReportsDeleteReportSchedule(context.Background(), id).Execute()
+		id = os.Getenv("ReportsApi_ReportsDeleteReportSchedule_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("ReportsApi_ReportsDeleteReportSchedule_id: %v", id)
+
+		httpRes, err := apiClient.ReportsApi.ReportsDeleteReportSchedule(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -80,9 +95,13 @@ func Test_command_ReportsApiService(t *testing.T) {
 
 	t.Run("Test ReportsApiService ReportsGetCustomReport", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.ReportsApi.ReportsGetCustomReport(context.Background(), id).Execute()
+		id = os.Getenv("ReportsApi_ReportsGetCustomReport_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("ReportsApi_ReportsGetCustomReport_id: %v", id)
+
+		resp, httpRes, err := apiClient.ReportsApi.ReportsGetCustomReport(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -92,9 +111,13 @@ func Test_command_ReportsApiService(t *testing.T) {
 
 	t.Run("Test ReportsApiService ReportsGetReport", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.ReportsApi.ReportsGetReport(context.Background(), id).Execute()
+		id = os.Getenv("ReportsApi_ReportsGetReport_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("ReportsApi_ReportsGetReport_id: %v", id)
+
+		resp, httpRes, err := apiClient.ReportsApi.ReportsGetReport(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -104,9 +127,13 @@ func Test_command_ReportsApiService(t *testing.T) {
 
 	t.Run("Test ReportsApiService ReportsGetReportParameters", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.ReportsApi.ReportsGetReportParameters(context.Background(), id).Execute()
+		id = os.Getenv("ReportsApi_ReportsGetReportParameters_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("ReportsApi_ReportsGetReportParameters_id: %v", id)
+
+		resp, httpRes, err := apiClient.ReportsApi.ReportsGetReportParameters(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -116,9 +143,13 @@ func Test_command_ReportsApiService(t *testing.T) {
 
 	t.Run("Test ReportsApiService ReportsGetReportSchedule", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.ReportsApi.ReportsGetReportSchedule(context.Background(), id).Execute()
+		id = os.Getenv("ReportsApi_ReportsGetReportSchedule_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("ReportsApi_ReportsGetReportSchedule_id: %v", id)
+
+		resp, httpRes, err := apiClient.ReportsApi.ReportsGetReportSchedule(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -128,9 +159,13 @@ func Test_command_ReportsApiService(t *testing.T) {
 
 	t.Run("Test ReportsApiService ReportsGetReportSchedules", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.ReportsApi.ReportsGetReportSchedules(context.Background(), id).Execute()
+		id = os.Getenv("ReportsApi_ReportsGetReportSchedules_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("ReportsApi_ReportsGetReportSchedules_id: %v", id)
+
+		resp, httpRes, err := apiClient.ReportsApi.ReportsGetReportSchedules(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -180,9 +215,13 @@ func Test_command_ReportsApiService(t *testing.T) {
 
 	t.Run("Test ReportsApiService ReportsUpdateReportParameters", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.ReportsApi.ReportsUpdateReportParameters(context.Background(), id).Execute()
+		id = os.Getenv("ReportsApi_ReportsUpdateReportParameters_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("ReportsApi_ReportsUpdateReportParameters_id: %v", id)
+
+		resp, httpRes, err := apiClient.ReportsApi.ReportsUpdateReportParameters(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -192,9 +231,13 @@ func Test_command_ReportsApiService(t *testing.T) {
 
 	t.Run("Test ReportsApiService ReportsUpdateReportSchedule", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.ReportsApi.ReportsUpdateReportSchedule(context.Background(), id).Execute()
+		id = os.Getenv("ReportsApi_ReportsUpdateReportSchedule_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("ReportsApi_ReportsUpdateReportSchedule_id: %v", id)
+
+		resp, httpRes, err := apiClient.ReportsApi.ReportsUpdateReportSchedule(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

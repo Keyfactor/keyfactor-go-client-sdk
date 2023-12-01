@@ -84,9 +84,12 @@ func (a *TemplateApiService) TemplateGetGlobalSettingsExecute(r ApiTemplateGetGl
 		localVarReturnValue *KeyfactorApiModelsTemplatesGlobalTemplateSettingsResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Templates/Settings"
+	localVarPath := apiBasePath + "/Templates/Settings"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -207,9 +210,12 @@ func (a *TemplateApiService) TemplateGetTemplateExecute(r ApiTemplateGetTemplate
 		localVarReturnValue *ModelsTemplateRetrievalResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Templates/{id}"
+	localVarPath := apiBasePath + "/Templates/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -363,9 +369,12 @@ func (a *TemplateApiService) TemplateGetTemplatesExecute(r ApiTemplateGetTemplat
 		localVarReturnValue []ModelsTemplateCollectionRetrievalResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Templates"
+	localVarPath := apiBasePath + "/Templates"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -498,9 +507,12 @@ func (a *TemplateApiService) TemplateGetValidSubjectPartsExecute(r ApiTemplateGe
 		localVarReturnValue []KeyfactorApiModelsTemplatesValidSubjectPartResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Templates/SubjectParts"
+	localVarPath := apiBasePath + "/Templates/SubjectParts"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -622,9 +634,12 @@ func (a *TemplateApiService) TemplateImportExecute(r ApiTemplateImportRequest) (
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Templates/Import"
+	localVarPath := apiBasePath + "/Templates/Import"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -745,9 +760,12 @@ func (a *TemplateApiService) TemplateUpdateGlobalSettingsExecute(r ApiTemplateUp
 		localVarReturnValue *KeyfactorApiModelsTemplatesGlobalTemplateSettingsResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Templates/Settings"
+	localVarPath := apiBasePath + "/Templates/Settings"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -877,9 +895,12 @@ func (a *TemplateApiService) TemplateUpdateTemplateExecute(r ApiTemplateUpdateTe
 		localVarReturnValue *ModelsTemplateRetrievalResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Templates"
+	localVarPath := apiBasePath + "/Templates"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

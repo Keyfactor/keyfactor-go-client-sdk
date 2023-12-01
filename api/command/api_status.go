@@ -83,9 +83,12 @@ func (a *StatusApiService) StatusGetEndpointsExecute(r ApiStatusGetEndpointsRequ
 		localVarReturnValue []string
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Status/Endpoints"
+	localVarPath := apiBasePath + "/Status/Endpoints"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

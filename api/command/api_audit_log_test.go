@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_AuditLogApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -46,9 +49,13 @@ func Test_command_AuditLogApiService(t *testing.T) {
 
 	t.Run("Test AuditLogApiService AuditLogGetAuditLog", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.AuditLogApi.AuditLogGetAuditLog(context.Background(), id).Execute()
+		id = os.Getenv("AuditLogApi_AuditLogGetAuditLog_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("AuditLogApi_AuditLogGetAuditLog_id: %v", id)
+
+		resp, httpRes, err := apiClient.AuditLogApi.AuditLogGetAuditLog(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -78,9 +85,13 @@ func Test_command_AuditLogApiService(t *testing.T) {
 
 	t.Run("Test AuditLogApiService AuditLogValidateAuditLog", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.AuditLogApi.AuditLogValidateAuditLog(context.Background(), id).Execute()
+		id = os.Getenv("AuditLogApi_AuditLogValidateAuditLog_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("AuditLogApi_AuditLogValidateAuditLog_id: %v", id)
+
+		resp, httpRes, err := apiClient.AuditLogApi.AuditLogValidateAuditLog(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -91,9 +91,12 @@ func (a *ServiceAccountApiService) ServiceAccountCreateServiceAccountExecute(r A
 		localVarReturnValue *ModelsSSHServiceAccountsServiceAccountResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/ServiceAccounts"
+	localVarPath := apiBasePath + "/SSH/ServiceAccounts"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -216,9 +219,12 @@ func (a *ServiceAccountApiService) ServiceAccountDeleteServiceAccountExecute(r A
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/ServiceAccounts/{id}"
+	localVarPath := apiBasePath + "/SSH/ServiceAccounts/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -332,9 +338,12 @@ func (a *ServiceAccountApiService) ServiceAccountDeleteServiceAccountsExecute(r 
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/ServiceAccounts"
+	localVarPath := apiBasePath + "/SSH/ServiceAccounts"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -451,9 +460,12 @@ func (a *ServiceAccountApiService) ServiceAccountGetExecute(r ApiServiceAccountG
 		localVarReturnValue *ModelsSSHServiceAccountsServiceAccountResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/ServiceAccounts/{id}"
+	localVarPath := apiBasePath + "/SSH/ServiceAccounts/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -582,9 +594,12 @@ func (a *ServiceAccountApiService) ServiceAccountGetServiceAccountKeyExecute(r A
 		localVarReturnValue *ModelsSSHKeysKeyResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/ServiceAccounts/Key/{id}"
+	localVarPath := apiBasePath + "/SSH/ServiceAccounts/Key/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -741,9 +756,12 @@ func (a *ServiceAccountApiService) ServiceAccountQueryServiceAccountsExecute(r A
 		localVarReturnValue []ModelsSSHServiceAccountsServiceAccountResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/ServiceAccounts"
+	localVarPath := apiBasePath + "/SSH/ServiceAccounts"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -885,9 +903,12 @@ func (a *ServiceAccountApiService) ServiceAccountRotateServiceAccountKeyExecute(
 		localVarReturnValue *ModelsSSHKeysKeyResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/ServiceAccounts/Rotate/{id}"
+	localVarPath := apiBasePath + "/SSH/ServiceAccounts/Rotate/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1018,9 +1039,12 @@ func (a *ServiceAccountApiService) ServiceAccountUpdateServiceAccountExecute(r A
 		localVarReturnValue *ModelsSSHServiceAccountsServiceAccountResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/ServiceAccounts"
+	localVarPath := apiBasePath + "/SSH/ServiceAccounts"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -91,9 +91,12 @@ func (a *ServerApiService) ServerAddAccessExecute(r ApiServerAddAccessRequest) (
 		localVarReturnValue *ModelsSSHAccessServerAccessResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Servers/Access"
+	localVarPath := apiBasePath + "/SSH/Servers/Access"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -223,9 +226,12 @@ func (a *ServerApiService) ServerCreateServerExecute(r ApiServerCreateServerRequ
 		localVarReturnValue *ModelsSSHServersServerResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Servers"
+	localVarPath := apiBasePath + "/SSH/Servers"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -348,9 +354,12 @@ func (a *ServerApiService) ServerDeleteExecute(r ApiServerDeleteRequest) (*http.
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Servers/{id}"
+	localVarPath := apiBasePath + "/SSH/Servers/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -463,9 +472,12 @@ func (a *ServerApiService) ServerGetExecute(r ApiServerGetRequest) (*ModelsSSHSe
 		localVarReturnValue *ModelsSSHServersServerResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Servers/{id}"
+	localVarPath := apiBasePath + "/SSH/Servers/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -587,9 +599,12 @@ func (a *ServerApiService) ServerGetAccessExecute(r ApiServerGetAccessRequest) (
 		localVarReturnValue *ModelsSSHAccessServerAccessResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Servers/Access/{id}"
+	localVarPath := apiBasePath + "/SSH/Servers/Access/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -743,9 +758,12 @@ func (a *ServerApiService) ServerQueryServersExecute(r ApiServerQueryServersRequ
 		localVarReturnValue []ModelsSSHServersServerResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Servers"
+	localVarPath := apiBasePath + "/SSH/Servers"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -885,9 +903,12 @@ func (a *ServerApiService) ServerRemoveAccessExecute(r ApiServerRemoveAccessRequ
 		localVarReturnValue *ModelsSSHAccessServerAccessResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Servers/Access"
+	localVarPath := apiBasePath + "/SSH/Servers/Access"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1017,9 +1038,12 @@ func (a *ServerApiService) ServerUpdateServerExecute(r ApiServerUpdateServerRequ
 		localVarReturnValue *ModelsSSHServersServerResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Servers"
+	localVarPath := apiBasePath + "/SSH/Servers"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

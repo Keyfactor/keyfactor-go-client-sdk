@@ -94,9 +94,12 @@ func (a *AgentPoolApiService) AgentPoolCreateAgentPoolExecute(r ApiAgentPoolCrea
 		localVarReturnValue *ModelsAgentsAgentPool
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/AgentPools"
+	localVarPath := apiBasePath + "/AgentPools"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -219,9 +222,12 @@ func (a *AgentPoolApiService) AgentPoolDeleteAgentPoolExecute(r ApiAgentPoolDele
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/AgentPools/{id}"
+	localVarPath := apiBasePath + "/AgentPools/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -334,9 +340,12 @@ func (a *AgentPoolApiService) AgentPoolGetAgentPoolByIdExecute(r ApiAgentPoolGet
 		localVarReturnValue *ModelsAgentsAgentPool
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/AgentPools/{id}"
+	localVarPath := apiBasePath + "/AgentPools/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -490,9 +499,12 @@ func (a *AgentPoolApiService) AgentPoolGetAgentPoolsExecute(r ApiAgentPoolGetAge
 		localVarReturnValue []ModelsAgentsAgentPool
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/AgentPools"
+	localVarPath := apiBasePath + "/AgentPools"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -660,9 +672,12 @@ func (a *AgentPoolApiService) AgentPoolGetDefaultAgentPoolAgentsExecute(r ApiAge
 		localVarReturnValue []ModelsAgentsAgentPoolAgent
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/AgentPools/Agents"
+	localVarPath := apiBasePath + "/AgentPools/Agents"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -805,9 +820,12 @@ func (a *AgentPoolApiService) AgentPoolUpdateAgentPoolExecute(r ApiAgentPoolUpda
 		localVarReturnValue *ModelsAgentsAgentPool
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/AgentPools"
+	localVarPath := apiBasePath + "/AgentPools"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

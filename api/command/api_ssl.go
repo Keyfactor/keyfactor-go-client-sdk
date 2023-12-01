@@ -88,9 +88,12 @@ func (a *SslApiService) SslAddNetworkRangesExecute(r ApiSslAddNetworkRangesReque
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSL/NetworkRanges"
+	localVarPath := apiBasePath + "/SSL/NetworkRanges"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -211,9 +214,12 @@ func (a *SslApiService) SslCreateNetworkExecute(r ApiSslCreateNetworkRequest) (*
 		localVarReturnValue *KeyfactorApiModelsSslNetworkResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSL/Networks"
+	localVarPath := apiBasePath + "/SSL/Networks"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -339,9 +345,12 @@ func (a *SslApiService) SslEndpointExecute(r ApiSslEndpointRequest) (*ModelsSSLE
 		localVarReturnValue *ModelsSSLEndpoint
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSL/Endpoints/{id}"
+	localVarPath := apiBasePath + "/SSL/Endpoints/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -498,9 +507,12 @@ func (a *SslApiService) SslEndpointHistoryExecute(r ApiSslEndpointHistoryRequest
 		localVarReturnValue []ModelsSSLEndpointHistoryResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSL/Endpoints/{id}/History"
+	localVarPath := apiBasePath + "/SSL/Endpoints/{id}/History"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -637,9 +649,12 @@ func (a *SslApiService) SslGetNetworkExecute(r ApiSslGetNetworkRequest) (*Keyfac
 		localVarReturnValue *KeyfactorApiModelsSslNetworkResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSL/Networks/{identifier}"
+	localVarPath := apiBasePath + "/SSL/Networks/{identifier}"
 	localVarPath = strings.Replace(localVarPath, "{"+"identifier"+"}", url.PathEscape(parameterValueToString(r.identifier, "identifier")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -761,9 +776,12 @@ func (a *SslApiService) SslGetNetworkRangesForNetworkExecute(r ApiSslGetNetworkR
 		localVarReturnValue []ModelsSSLNetworkDefinition
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSL/NetworkRanges/{id}"
+	localVarPath := apiBasePath + "/SSL/NetworkRanges/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -917,9 +935,12 @@ func (a *SslApiService) SslGetNetworksExecute(r ApiSslGetNetworksRequest) ([]Key
 		localVarReturnValue []KeyfactorApiModelsSslNetworkQueryResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSL/Networks"
+	localVarPath := apiBasePath + "/SSL/Networks"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1059,9 +1080,12 @@ func (a *SslApiService) SslImmediateSslScanExecute(r ApiSslImmediateSslScanReque
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSL/Networks/{id}/Scan"
+	localVarPath := apiBasePath + "/SSL/Networks/{id}/Scan"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1180,9 +1204,12 @@ func (a *SslApiService) SslMonitorAllExecute(r ApiSslMonitorAllRequest) (*http.R
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSL/Endpoints/MonitorAll"
+	localVarPath := apiBasePath + "/SSL/Endpoints/MonitorAll"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1298,9 +1325,12 @@ func (a *SslApiService) SslMonitoringStatusExecute(r ApiSslMonitoringStatusReque
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSL/Endpoints/MonitorStatus"
+	localVarPath := apiBasePath + "/SSL/Endpoints/MonitorStatus"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1458,9 +1488,12 @@ func (a *SslApiService) SslNetworkScanPartsExecute(r ApiSslNetworkScanPartsReque
 		localVarReturnValue []ModelsSSLDisplayScanJobPart
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSL/Networks/{id}/Parts"
+	localVarPath := apiBasePath + "/SSL/Networks/{id}/Parts"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1597,9 +1630,12 @@ func (a *SslApiService) SslRemoveAllNetworkRangesExecute(r ApiSslRemoveAllNetwor
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSL/NetworkRanges/{id}"
+	localVarPath := apiBasePath + "/SSL/NetworkRanges/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1709,9 +1745,12 @@ func (a *SslApiService) SslRemoveNetworkExecute(r ApiSslRemoveNetworkRequest) (*
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSL/Networks/{id}"
+	localVarPath := apiBasePath + "/SSL/Networks/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1856,9 +1895,12 @@ func (a *SslApiService) SslResultsExecute(r ApiSslResultsRequest) ([]ModelsSSLSs
 		localVarReturnValue []ModelsSSLSslScanResult
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSL"
+	localVarPath := apiBasePath + "/SSL"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1995,9 +2037,12 @@ func (a *SslApiService) SslReviewAllExecute(r ApiSslReviewAllRequest) (*http.Res
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSL/Endpoints/ReviewAll"
+	localVarPath := apiBasePath + "/SSL/Endpoints/ReviewAll"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2113,9 +2158,12 @@ func (a *SslApiService) SslReviewedStatusExecute(r ApiSslReviewedStatusRequest) 
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSL/Endpoints/ReviewStatus"
+	localVarPath := apiBasePath + "/SSL/Endpoints/ReviewStatus"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2232,9 +2280,12 @@ func (a *SslApiService) SslScanPartExecute(r ApiSslScanPartRequest) (*ModelsSSLS
 		localVarReturnValue *ModelsSSLScanJobPart
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSL/Parts/{id}"
+	localVarPath := apiBasePath + "/SSL/Parts/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2357,9 +2408,12 @@ func (a *SslApiService) SslSetNetworkRangesExecute(r ApiSslSetNetworkRangesReque
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSL/NetworkRanges"
+	localVarPath := apiBasePath + "/SSL/NetworkRanges"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2480,9 +2534,12 @@ func (a *SslApiService) SslUpdateNetworkExecute(r ApiSslUpdateNetworkRequest) (*
 		localVarReturnValue *KeyfactorApiModelsSslNetworkResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSL/Networks"
+	localVarPath := apiBasePath + "/SSL/Networks"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2609,9 +2666,12 @@ func (a *SslApiService) SslValidateNetworkRangesExecute(r ApiSslValidateNetworkR
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSL/NetworkRanges/Validate"
+	localVarPath := apiBasePath + "/SSL/NetworkRanges/Validate"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

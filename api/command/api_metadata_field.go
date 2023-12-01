@@ -93,9 +93,12 @@ func (a *MetadataFieldApiService) MetadataFieldCreateMetadataFieldExecute(r ApiM
 		localVarReturnValue *KeyfactorApiModelsMetadataFieldMetadataFieldResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/MetadataFields"
+	localVarPath := apiBasePath + "/MetadataFields"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -225,9 +228,12 @@ func (a *MetadataFieldApiService) MetadataFieldDeleteMetadataFieldExecute(r ApiM
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/MetadataFields/{id}"
+	localVarPath := apiBasePath + "/MetadataFields/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -353,9 +359,12 @@ func (a *MetadataFieldApiService) MetadataFieldDeleteMetadataFieldsExecute(r Api
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/MetadataFields"
+	localVarPath := apiBasePath + "/MetadataFields"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -507,9 +516,12 @@ func (a *MetadataFieldApiService) MetadataFieldGetAllMetadataFieldsExecute(r Api
 		localVarReturnValue []ModelsMetadataFieldTypeModel
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/MetadataFields"
+	localVarPath := apiBasePath + "/MetadataFields"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -645,9 +657,12 @@ func (a *MetadataFieldApiService) MetadataFieldGetMetadataField0Execute(r ApiMet
 		localVarReturnValue *ModelsMetadataFieldTypeModel
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/MetadataFields/{id}"
+	localVarPath := apiBasePath + "/MetadataFields/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -769,9 +784,12 @@ func (a *MetadataFieldApiService) MetadataFieldGetMetadataField1Execute(r ApiMet
 		localVarReturnValue *ModelsMetadataFieldTypeModel
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/MetadataFields/{name}"
+	localVarPath := apiBasePath + "/MetadataFields/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterValueToString(r.name, "name")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -893,9 +911,12 @@ func (a *MetadataFieldApiService) MetadataFieldGetMetadataFieldInUseExecute(r Ap
 		localVarReturnValue bool
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/MetadataFields/{id}/InUse"
+	localVarPath := apiBasePath + "/MetadataFields/{id}/InUse"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1023,9 +1044,12 @@ func (a *MetadataFieldApiService) MetadataFieldUpdateMetadataFieldExecute(r ApiM
 		localVarReturnValue *KeyfactorApiModelsMetadataFieldMetadataFieldResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/MetadataFields"
+	localVarPath := apiBasePath + "/MetadataFields"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

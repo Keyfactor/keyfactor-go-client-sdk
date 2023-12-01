@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_ServerGroupApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -56,9 +59,13 @@ func Test_command_ServerGroupApiService(t *testing.T) {
 
 	t.Run("Test ServerGroupApiService ServerGroupDelete", func(t *testing.T) {
 
-		var id string
+		var id interface{}
 
-		httpRes, err := apiClient.ServerGroupApi.ServerGroupDelete(context.Background(), id).Execute()
+		id = os.Getenv("ServerGroupApi_ServerGroupDelete_id")
+		id, _ = convertParamInterface(id, "string")
+		t.Logf("ServerGroupApi_ServerGroupDelete_id: %v", id)
+
+		httpRes, err := apiClient.ServerGroupApi.ServerGroupDelete(context.Background(), id.(string)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -67,9 +74,13 @@ func Test_command_ServerGroupApiService(t *testing.T) {
 
 	t.Run("Test ServerGroupApiService ServerGroupGetAccess", func(t *testing.T) {
 
-		var id string
+		var id interface{}
 
-		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupGetAccess(context.Background(), id).Execute()
+		id = os.Getenv("ServerGroupApi_ServerGroupGetAccess_id")
+		id, _ = convertParamInterface(id, "string")
+		t.Logf("ServerGroupApi_ServerGroupGetAccess_id: %v", id)
+
+		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupGetAccess(context.Background(), id.(string)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -79,9 +90,13 @@ func Test_command_ServerGroupApiService(t *testing.T) {
 
 	t.Run("Test ServerGroupApiService ServerGroupGetGroup", func(t *testing.T) {
 
-		var id string
+		var id interface{}
 
-		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupGetGroup(context.Background(), id).Execute()
+		id = os.Getenv("ServerGroupApi_ServerGroupGetGroup_id")
+		id, _ = convertParamInterface(id, "string")
+		t.Logf("ServerGroupApi_ServerGroupGetGroup_id: %v", id)
+
+		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupGetGroup(context.Background(), id.(string)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -91,9 +106,13 @@ func Test_command_ServerGroupApiService(t *testing.T) {
 
 	t.Run("Test ServerGroupApiService ServerGroupGetGroupByName", func(t *testing.T) {
 
-		var name string
+		var name interface{}
 
-		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupGetGroupByName(context.Background(), name).Execute()
+		name = os.Getenv("ServerGroupApi_ServerGroupGetGroupByName_name")
+		name, _ = convertParamInterface(name, "string")
+		t.Logf("ServerGroupApi_ServerGroupGetGroupByName_name: %v", name)
+
+		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupGetGroupByName(context.Background(), name.(string)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -91,9 +91,12 @@ func (a *ReportsApiService) ReportsCreateCustomReportExecute(r ApiReportsCreateC
 		localVarReturnValue *ModelsCustomReport
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Reports/Custom"
+	localVarPath := apiBasePath + "/Reports/Custom"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -226,9 +229,12 @@ func (a *ReportsApiService) ReportsCreateReportScheduleExecute(r ApiReportsCreat
 		localVarReturnValue *ModelsReportSchedule
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Reports/{id}/Schedules"
+	localVarPath := apiBasePath + "/Reports/{id}/Schedules"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -352,9 +358,12 @@ func (a *ReportsApiService) ReportsDeleteReportExecute(r ApiReportsDeleteReportR
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Reports/Custom/{id}"
+	localVarPath := apiBasePath + "/Reports/Custom/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -464,9 +473,12 @@ func (a *ReportsApiService) ReportsDeleteReportScheduleExecute(r ApiReportsDelet
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Reports/Schedules/{id}"
+	localVarPath := apiBasePath + "/Reports/Schedules/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -579,9 +591,12 @@ func (a *ReportsApiService) ReportsGetCustomReportExecute(r ApiReportsGetCustomR
 		localVarReturnValue *ModelsCustomReport
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Reports/Custom/{id}"
+	localVarPath := apiBasePath + "/Reports/Custom/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -703,9 +718,12 @@ func (a *ReportsApiService) ReportsGetReportExecute(r ApiReportsGetReportRequest
 		localVarReturnValue *ModelsReport
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Reports/{id}"
+	localVarPath := apiBasePath + "/Reports/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -827,9 +845,12 @@ func (a *ReportsApiService) ReportsGetReportParametersExecute(r ApiReportsGetRep
 		localVarReturnValue []ModelsReportParameters
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Reports/{id}/Parameters"
+	localVarPath := apiBasePath + "/Reports/{id}/Parameters"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -951,9 +972,12 @@ func (a *ReportsApiService) ReportsGetReportScheduleExecute(r ApiReportsGetRepor
 		localVarReturnValue *ModelsReportSchedule
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Reports/Schedules/{id}"
+	localVarPath := apiBasePath + "/Reports/Schedules/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1110,9 +1134,12 @@ func (a *ReportsApiService) ReportsGetReportSchedulesExecute(r ApiReportsGetRepo
 		localVarReturnValue []ModelsReportSchedule
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Reports/{id}/Schedules"
+	localVarPath := apiBasePath + "/Reports/{id}/Schedules"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1281,9 +1308,12 @@ func (a *ReportsApiService) ReportsQueryCustomReportsExecute(r ApiReportsQueryCu
 		localVarReturnValue []ModelsCustomReport
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Reports/Custom"
+	localVarPath := apiBasePath + "/Reports/Custom"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1451,9 +1481,12 @@ func (a *ReportsApiService) ReportsQueryReportsExecute(r ApiReportsQueryReportsR
 		localVarReturnValue []ModelsReport
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Reports"
+	localVarPath := apiBasePath + "/Reports"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1593,9 +1626,12 @@ func (a *ReportsApiService) ReportsUpdateCustomReportExecute(r ApiReportsUpdateC
 		localVarReturnValue *ModelsCustomReport
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Reports/Custom"
+	localVarPath := apiBasePath + "/Reports/Custom"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1725,9 +1761,12 @@ func (a *ReportsApiService) ReportsUpdateReportExecute(r ApiReportsUpdateReportR
 		localVarReturnValue *ModelsReport
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Reports"
+	localVarPath := apiBasePath + "/Reports"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1860,9 +1899,12 @@ func (a *ReportsApiService) ReportsUpdateReportParametersExecute(r ApiReportsUpd
 		localVarReturnValue []ModelsReportParameters
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Reports/{id}/Parameters"
+	localVarPath := apiBasePath + "/Reports/{id}/Parameters"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1996,9 +2038,12 @@ func (a *ReportsApiService) ReportsUpdateReportScheduleExecute(r ApiReportsUpdat
 		localVarReturnValue *ModelsReportSchedule
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Reports/{id}/Schedules"
+	localVarPath := apiBasePath + "/Reports/{id}/Schedules"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)

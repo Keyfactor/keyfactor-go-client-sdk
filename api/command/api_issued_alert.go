@@ -91,9 +91,12 @@ func (a *IssuedAlertApiService) IssuedAlertAddIssuedAlertExecute(r ApiIssuedAler
 		localVarReturnValue *KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Issued"
+	localVarPath := apiBasePath + "/Alerts/Issued"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -216,9 +219,12 @@ func (a *IssuedAlertApiService) IssuedAlertDeleteIssuedAlertExecute(r ApiIssuedA
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Issued/{id}"
+	localVarPath := apiBasePath + "/Alerts/Issued/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -335,9 +341,12 @@ func (a *IssuedAlertApiService) IssuedAlertEditIssuedAlertExecute(r ApiIssuedAle
 		localVarReturnValue *KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Issued"
+	localVarPath := apiBasePath + "/Alerts/Issued"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -466,9 +475,12 @@ func (a *IssuedAlertApiService) IssuedAlertEditScheduleExecute(r ApiIssuedAlertE
 		localVarReturnValue *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Issued/Schedule"
+	localVarPath := apiBasePath + "/Alerts/Issued/Schedule"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -594,9 +606,12 @@ func (a *IssuedAlertApiService) IssuedAlertGetIssuedAlertExecute(r ApiIssuedAler
 		localVarReturnValue *KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Issued/{id}"
+	localVarPath := apiBasePath + "/Alerts/Issued/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -750,9 +765,12 @@ func (a *IssuedAlertApiService) IssuedAlertGetIssuedAlertsExecute(r ApiIssuedAle
 		localVarReturnValue []KeyfactorApiModelsAlertsIssuedIssuedAlertDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Issued"
+	localVarPath := apiBasePath + "/Alerts/Issued"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -885,9 +903,12 @@ func (a *IssuedAlertApiService) IssuedAlertGetScheduleExecute(r ApiIssuedAlertGe
 		localVarReturnValue *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Issued/Schedule"
+	localVarPath := apiBasePath + "/Alerts/Issued/Schedule"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

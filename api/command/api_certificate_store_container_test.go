@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_CertificateStoreContainerApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -36,9 +39,13 @@ func Test_command_CertificateStoreContainerApiService(t *testing.T) {
 
 	t.Run("Test CertificateStoreContainerApiService CertificateStoreContainerDeleteCertificateStoreContainers", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		httpRes, err := apiClient.CertificateStoreContainerApi.CertificateStoreContainerDeleteCertificateStoreContainers(context.Background(), id).Execute()
+		id = os.Getenv("CertificateStoreContainerApi_CertificateStoreContainerDeleteCertificateStoreContainers_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("CertificateStoreContainerApi_CertificateStoreContainerDeleteCertificateStoreContainers_id: %v", id)
+
+		httpRes, err := apiClient.CertificateStoreContainerApi.CertificateStoreContainerDeleteCertificateStoreContainers(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

@@ -84,9 +84,12 @@ func (a *SecurityRolesApiService) SecurityRolesDeleteSecurityRoleExecute(r ApiSe
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Security/Roles/{id}"
+	localVarPath := apiBasePath + "/Security/Roles/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -199,9 +202,12 @@ func (a *SecurityRolesApiService) SecurityRolesGetIdentitiesWithRoleExecute(r Ap
 		localVarReturnValue []KeyfactorApiModelsSecurityRolesRoleIdentitiesResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Security/Roles/{id}/Identities"
+	localVarPath := apiBasePath + "/Security/Roles/{id}/Identities"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -330,9 +336,12 @@ func (a *SecurityRolesApiService) SecurityRolesUpdateIdentitiesWithRoleExecute(r
 		localVarReturnValue []KeyfactorApiModelsSecurityRolesRoleIdentitiesResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Security/Roles/{id}/Identities"
+	localVarPath := apiBasePath + "/Security/Roles/{id}/Identities"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)

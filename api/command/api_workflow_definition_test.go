@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_WorkflowDefinitionApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -36,9 +39,13 @@ func Test_command_WorkflowDefinitionApiService(t *testing.T) {
 
 	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionConfigureDefinitionSteps", func(t *testing.T) {
 
-		var definitionId string
+		var definitionId interface{}
 
-		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionConfigureDefinitionSteps(context.Background(), definitionId).Execute()
+		definitionId = os.Getenv("WorkflowDefinitionApi_WorkflowDefinitionConfigureDefinitionSteps_definitionId")
+		definitionId, _ = convertParamInterface(definitionId, "string")
+		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionConfigureDefinitionSteps_definitionId: %v", definitionId)
+
+		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionConfigureDefinitionSteps(context.Background(), definitionId.(string)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -58,9 +65,13 @@ func Test_command_WorkflowDefinitionApiService(t *testing.T) {
 
 	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionDelete", func(t *testing.T) {
 
-		var definitionId string
+		var definitionId interface{}
 
-		httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionDelete(context.Background(), definitionId).Execute()
+		definitionId = os.Getenv("WorkflowDefinitionApi_WorkflowDefinitionDelete_definitionId")
+		definitionId, _ = convertParamInterface(definitionId, "string")
+		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionDelete_definitionId: %v", definitionId)
+
+		httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionDelete(context.Background(), definitionId.(string)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -69,9 +80,13 @@ func Test_command_WorkflowDefinitionApiService(t *testing.T) {
 
 	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionGet", func(t *testing.T) {
 
-		var definitionId string
+		var definitionId interface{}
 
-		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionGet(context.Background(), definitionId).Execute()
+		definitionId = os.Getenv("WorkflowDefinitionApi_WorkflowDefinitionGet_definitionId")
+		definitionId, _ = convertParamInterface(definitionId, "string")
+		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionGet_definitionId: %v", definitionId)
+
+		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionGet(context.Background(), definitionId.(string)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -81,9 +96,13 @@ func Test_command_WorkflowDefinitionApiService(t *testing.T) {
 
 	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionGetStepSchema", func(t *testing.T) {
 
-		var extensionName string
+		var extensionName interface{}
 
-		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionGetStepSchema(context.Background(), extensionName).Execute()
+		extensionName = os.Getenv("WorkflowDefinitionApi_WorkflowDefinitionGetStepSchema_extensionName")
+		extensionName, _ = convertParamInterface(extensionName, "string")
+		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionGetStepSchema_extensionName: %v", extensionName)
+
+		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionGetStepSchema(context.Background(), extensionName.(string)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -93,9 +112,13 @@ func Test_command_WorkflowDefinitionApiService(t *testing.T) {
 
 	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionPublishDefinition", func(t *testing.T) {
 
-		var definitionId string
+		var definitionId interface{}
 
-		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionPublishDefinition(context.Background(), definitionId).Execute()
+		definitionId = os.Getenv("WorkflowDefinitionApi_WorkflowDefinitionPublishDefinition_definitionId")
+		definitionId, _ = convertParamInterface(definitionId, "string")
+		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionPublishDefinition_definitionId: %v", definitionId)
+
+		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionPublishDefinition(context.Background(), definitionId.(string)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -135,9 +158,13 @@ func Test_command_WorkflowDefinitionApiService(t *testing.T) {
 
 	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionUpdateExistingDefinition", func(t *testing.T) {
 
-		var definitionId string
+		var definitionId interface{}
 
-		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionUpdateExistingDefinition(context.Background(), definitionId).Execute()
+		definitionId = os.Getenv("WorkflowDefinitionApi_WorkflowDefinitionUpdateExistingDefinition_definitionId")
+		definitionId, _ = convertParamInterface(definitionId, "string")
+		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionUpdateExistingDefinition_definitionId: %v", definitionId)
+
+		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionUpdateExistingDefinition(context.Background(), definitionId.(string)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

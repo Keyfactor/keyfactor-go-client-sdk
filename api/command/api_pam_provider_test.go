@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_PAMProviderApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -56,9 +59,13 @@ func Test_command_PAMProviderApiService(t *testing.T) {
 
 	t.Run("Test PAMProviderApiService PAMProviderDeletePamProvider", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		httpRes, err := apiClient.PAMProviderApi.PAMProviderDeletePamProvider(context.Background(), id).Execute()
+		id = os.Getenv("PAMProviderApi_PAMProviderDeletePamProvider_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("PAMProviderApi_PAMProviderDeletePamProvider_id: %v", id)
+
+		httpRes, err := apiClient.PAMProviderApi.PAMProviderDeletePamProvider(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -67,9 +74,13 @@ func Test_command_PAMProviderApiService(t *testing.T) {
 
 	t.Run("Test PAMProviderApiService PAMProviderGetPamProvider", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.PAMProviderApi.PAMProviderGetPamProvider(context.Background(), id).Execute()
+		id = os.Getenv("PAMProviderApi_PAMProviderGetPamProvider_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("PAMProviderApi_PAMProviderGetPamProvider_id: %v", id)
+
+		resp, httpRes, err := apiClient.PAMProviderApi.PAMProviderGetPamProvider(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_KeyApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -36,9 +39,13 @@ func Test_command_KeyApiService(t *testing.T) {
 
 	t.Run("Test KeyApiService KeyDeleteUnmanagedKey", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		httpRes, err := apiClient.KeyApi.KeyDeleteUnmanagedKey(context.Background(), id).Execute()
+		id = os.Getenv("KeyApi_KeyDeleteUnmanagedKey_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("KeyApi_KeyDeleteUnmanagedKey_id: %v", id)
+
+		httpRes, err := apiClient.KeyApi.KeyDeleteUnmanagedKey(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -76,9 +83,13 @@ func Test_command_KeyApiService(t *testing.T) {
 
 	t.Run("Test KeyApiService KeyGetUnmanagedKey", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.KeyApi.KeyGetUnmanagedKey(context.Background(), id).Execute()
+		id = os.Getenv("KeyApi_KeyGetUnmanagedKey_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("KeyApi_KeyGetUnmanagedKey_id: %v", id)
+
+		resp, httpRes, err := apiClient.KeyApi.KeyGetUnmanagedKey(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

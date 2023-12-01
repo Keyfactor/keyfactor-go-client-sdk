@@ -91,9 +91,12 @@ func (a *WorkflowApiService) WorkflowApprovePendingRequestsExecute(r ApiWorkflow
 		localVarReturnValue *ModelsWorkflowApproveDenyResult
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Certificates/Approve"
+	localVarPath := apiBasePath + "/Workflow/Certificates/Approve"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -223,9 +226,12 @@ func (a *WorkflowApiService) WorkflowDenyPendingRequestsExecute(r ApiWorkflowDen
 		localVarReturnValue *ModelsWorkflowApproveDenyResult
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Certificates/Deny"
+	localVarPath := apiBasePath + "/Workflow/Certificates/Deny"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -383,9 +389,12 @@ func (a *WorkflowApiService) WorkflowGetExecute(r ApiWorkflowGetRequest) ([]Mode
 		localVarReturnValue []ModelsWorkflowCertificateRequestModel
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Certificates/Pending"
+	localVarPath := apiBasePath + "/Workflow/Certificates/Pending"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -521,9 +530,12 @@ func (a *WorkflowApiService) WorkflowGetCertificateRequestDetailsExecute(r ApiWo
 		localVarReturnValue *ModelsWorkflowCertificateRequestDetailsModel
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Certificates/{id}"
+	localVarPath := apiBasePath + "/Workflow/Certificates/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -677,9 +689,12 @@ func (a *WorkflowApiService) WorkflowGetDeniedExecute(r ApiWorkflowGetDeniedRequ
 		localVarReturnValue []ModelsWorkflowCertificateRequestModel
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Certificates/Denied"
+	localVarPath := apiBasePath + "/Workflow/Certificates/Denied"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

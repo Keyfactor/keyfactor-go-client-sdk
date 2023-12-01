@@ -97,9 +97,12 @@ func (a *PAMProviderApiService) PAMProviderCreatePamProviderExecute(r ApiPAMProv
 		localVarReturnValue *CSSCMSDataModelModelsProvider
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/PamProviders"
+	localVarPath := apiBasePath + "/PamProviders"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -235,9 +238,12 @@ func (a *PAMProviderApiService) PAMProviderCreatePamProviderTypeExecute(r ApiPAM
 		localVarReturnValue *KeyfactorApiPAMProviderTypeResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/PamProviders/Types"
+	localVarPath := apiBasePath + "/PamProviders/Types"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -360,9 +366,12 @@ func (a *PAMProviderApiService) PAMProviderDeletePamProviderExecute(r ApiPAMProv
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/PamProviders/{id}"
+	localVarPath := apiBasePath + "/PamProviders/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -481,9 +490,12 @@ func (a *PAMProviderApiService) PAMProviderGetPamProviderExecute(r ApiPAMProvide
 		localVarReturnValue *CSSCMSDataModelModelsProvider
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/PamProviders/{id}"
+	localVarPath := apiBasePath + "/PamProviders/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -608,9 +620,12 @@ func (a *PAMProviderApiService) PAMProviderGetPamProviderTypesExecute(r ApiPAMPr
 		localVarReturnValue []CSSCMSDataModelModelsProviderType
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/PamProviders/Types"
+	localVarPath := apiBasePath + "/PamProviders/Types"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -769,9 +784,12 @@ func (a *PAMProviderApiService) PAMProviderGetPamProvidersExecute(r ApiPAMProvid
 		localVarReturnValue []CSSCMSDataModelModelsProvider
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/PamProviders"
+	localVarPath := apiBasePath + "/PamProviders"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -917,9 +935,12 @@ func (a *PAMProviderApiService) PAMProviderUpdatePamProviderExecute(r ApiPAMProv
 		localVarReturnValue *CSSCMSDataModelModelsProvider
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/PamProviders"
+	localVarPath := apiBasePath + "/PamProviders"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

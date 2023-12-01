@@ -90,9 +90,12 @@ func (a *ServerGroupApiService) ServerGroupAddAccessExecute(r ApiServerGroupAddA
 		localVarReturnValue *ModelsSSHAccessServerGroupAccessResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/ServerGroups/Access"
+	localVarPath := apiBasePath + "/SSH/ServerGroups/Access"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -222,9 +225,12 @@ func (a *ServerGroupApiService) ServerGroupCreateServerGroupExecute(r ApiServerG
 		localVarReturnValue *ModelsSSHServerGroupsServerGroupResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/ServerGroups"
+	localVarPath := apiBasePath + "/SSH/ServerGroups"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -347,9 +353,12 @@ func (a *ServerGroupApiService) ServerGroupDeleteExecute(r ApiServerGroupDeleteR
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/ServerGroups/{id}"
+	localVarPath := apiBasePath + "/SSH/ServerGroups/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -462,9 +471,12 @@ func (a *ServerGroupApiService) ServerGroupGetAccessExecute(r ApiServerGroupGetA
 		localVarReturnValue *ModelsSSHAccessServerGroupAccessResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/ServerGroups/Access/{id}"
+	localVarPath := apiBasePath + "/SSH/ServerGroups/Access/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -586,9 +598,12 @@ func (a *ServerGroupApiService) ServerGroupGetGroupExecute(r ApiServerGroupGetGr
 		localVarReturnValue *ModelsSSHServerGroupsServerGroupResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/ServerGroups/{id}"
+	localVarPath := apiBasePath + "/SSH/ServerGroups/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -710,9 +725,12 @@ func (a *ServerGroupApiService) ServerGroupGetGroupByNameExecute(r ApiServerGrou
 		localVarReturnValue *ModelsSSHServerGroupsServerGroupResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/ServerGroups/{name}"
+	localVarPath := apiBasePath + "/SSH/ServerGroups/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterValueToString(r.name, "name")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -866,9 +884,12 @@ func (a *ServerGroupApiService) ServerGroupQueryServerGroupsExecute(r ApiServerG
 		localVarReturnValue []ModelsSSHServerGroupsServerGroupResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/ServerGroups"
+	localVarPath := apiBasePath + "/SSH/ServerGroups"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1007,9 +1028,12 @@ func (a *ServerGroupApiService) ServerGroupRemoveAccessExecute(r ApiServerGroupR
 		localVarReturnValue *ModelsSSHAccessServerGroupAccessResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/ServerGroups/Access"
+	localVarPath := apiBasePath + "/SSH/ServerGroups/Access"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1139,9 +1163,12 @@ func (a *ServerGroupApiService) ServerGroupUpdateServerGroupExecute(r ApiServerG
 		localVarReturnValue *ModelsSSHServerGroupsServerGroupResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/ServerGroups"
+	localVarPath := apiBasePath + "/SSH/ServerGroups"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

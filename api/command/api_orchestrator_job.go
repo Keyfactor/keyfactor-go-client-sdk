@@ -87,9 +87,12 @@ func (a *OrchestratorJobApiService) OrchestratorJobAcknowledgeJobsExecute(r ApiO
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/OrchestratorJobs/Acknowledge"
+	localVarPath := apiBasePath + "/OrchestratorJobs/Acknowledge"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -210,9 +213,12 @@ func (a *OrchestratorJobApiService) OrchestratorJobGetCustomJobResultDataExecute
 		localVarReturnValue *KeyfactorApiModelsOrchestratorJobsCustomJobResultDataResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/OrchestratorJobs/JobStatus/Data"
+	localVarPath := apiBasePath + "/OrchestratorJobs/JobStatus/Data"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -369,9 +375,12 @@ func (a *OrchestratorJobApiService) OrchestratorJobGetJobHistoryExecute(r ApiOrc
 		localVarReturnValue []KeyfactorApiModelsCertificateStoresJobHistoryResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/OrchestratorJobs/JobHistory"
+	localVarPath := apiBasePath + "/OrchestratorJobs/JobHistory"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -539,9 +548,12 @@ func (a *OrchestratorJobApiService) OrchestratorJobGetScheduledJobsExecute(r Api
 		localVarReturnValue []ModelsOrchestratorJobsJob
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/OrchestratorJobs/ScheduledJobs"
+	localVarPath := apiBasePath + "/OrchestratorJobs/ScheduledJobs"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -678,9 +690,12 @@ func (a *OrchestratorJobApiService) OrchestratorJobRescheduleJobsExecute(r ApiOr
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/OrchestratorJobs/Reschedule"
+	localVarPath := apiBasePath + "/OrchestratorJobs/Reschedule"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -801,9 +816,12 @@ func (a *OrchestratorJobApiService) OrchestratorJobScheduleBulkJobExecute(r ApiO
 		localVarReturnValue *KeyfactorApiModelsOrchestratorJobsBulkJobResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/OrchestratorJobs/Custom/Bulk"
+	localVarPath := apiBasePath + "/OrchestratorJobs/Custom/Bulk"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -933,9 +951,12 @@ func (a *OrchestratorJobApiService) OrchestratorJobScheduleJobExecute(r ApiOrche
 		localVarReturnValue *KeyfactorApiModelsOrchestratorJobsJobResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/OrchestratorJobs/Custom"
+	localVarPath := apiBasePath + "/OrchestratorJobs/Custom"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1062,9 +1083,12 @@ func (a *OrchestratorJobApiService) OrchestratorJobUnscheduleJobsExecute(r ApiOr
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/OrchestratorJobs/Unschedule"
+	localVarPath := apiBasePath + "/OrchestratorJobs/Unschedule"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

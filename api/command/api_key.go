@@ -84,9 +84,12 @@ func (a *KeyApiService) KeyDeleteUnmanagedKeyExecute(r ApiKeyDeleteUnmanagedKeyR
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Keys/Unmanaged/{id}"
+	localVarPath := apiBasePath + "/SSH/Keys/Unmanaged/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -200,9 +203,12 @@ func (a *KeyApiService) KeyDeleteUnmanagedKeysExecute(r ApiKeyDeleteUnmanagedKey
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Keys/Unmanaged"
+	localVarPath := apiBasePath + "/SSH/Keys/Unmanaged"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -338,9 +344,12 @@ func (a *KeyApiService) KeyGenerateKeyExecute(r ApiKeyGenerateKeyRequest) (*Mode
 		localVarReturnValue *ModelsSSHKeysKeyResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Keys/MyKey"
+	localVarPath := apiBasePath + "/SSH/Keys/MyKey"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -477,9 +486,12 @@ func (a *KeyApiService) KeyGetMyKeyExecute(r ApiKeyGetMyKeyRequest) (*ModelsSSHK
 		localVarReturnValue *ModelsSSHKeysKeyResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Keys/MyKey"
+	localVarPath := apiBasePath + "/SSH/Keys/MyKey"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -607,9 +619,12 @@ func (a *KeyApiService) KeyGetUnmanagedKeyExecute(r ApiKeyGetUnmanagedKeyRequest
 		localVarReturnValue *ModelsSSHKeysUnmanagedKeyResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Keys/Unmanaged/{id}"
+	localVarPath := apiBasePath + "/SSH/Keys/Unmanaged/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -763,9 +778,12 @@ func (a *KeyApiService) KeyGetUnmanagedKeysExecute(r ApiKeyGetUnmanagedKeysReque
 		localVarReturnValue []ModelsSSHKeysUnmanagedKeyResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Keys/Unmanaged"
+	localVarPath := apiBasePath + "/SSH/Keys/Unmanaged"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -905,9 +923,12 @@ func (a *KeyApiService) KeyUpdateExecute(r ApiKeyUpdateRequest) (*ModelsSSHKeysK
 		localVarReturnValue *ModelsSSHKeysKeyResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Keys/MyKey"
+	localVarPath := apiBasePath + "/SSH/Keys/MyKey"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

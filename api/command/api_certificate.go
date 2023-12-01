@@ -91,9 +91,12 @@ func (a *CertificateApiService) CertificateAnalyzeCertExecute(r ApiCertificateAn
 		localVarReturnValue []ModelsCertificateDetails
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Certificates/Analyze"
+	localVarPath := apiBasePath + "/Certificates/Analyze"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -254,9 +257,12 @@ func (a *CertificateApiService) CertificateCertificateHistoryExecute(r ApiCertif
 		localVarReturnValue []ModelsPKICertificateOperation
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Certificates/{id}/History"
+	localVarPath := apiBasePath + "/Certificates/{id}/History"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -418,9 +424,12 @@ func (a *CertificateApiService) CertificateCompareMetadataExecute(r ApiCertifica
 		localVarReturnValue bool
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Certificates/Metadata/Compare"
+	localVarPath := apiBasePath + "/Certificates/Metadata/Compare"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -566,9 +575,12 @@ func (a *CertificateApiService) CertificateDeleteByQueryExecute(r ApiCertificate
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Certificates/Query"
+	localVarPath := apiBasePath + "/Certificates/Query"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -692,9 +704,12 @@ func (a *CertificateApiService) CertificateDeleteCertificateExecute(r ApiCertifi
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Certificates/{id}"
+	localVarPath := apiBasePath + "/Certificates/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -820,9 +835,12 @@ func (a *CertificateApiService) CertificateDeleteCertificatesExecute(r ApiCertif
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Certificates"
+	localVarPath := apiBasePath + "/Certificates"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -950,9 +968,12 @@ func (a *CertificateApiService) CertificateDeletePrivateKeys0Execute(r ApiCertif
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Certificates/PrivateKey"
+	localVarPath := apiBasePath + "/Certificates/PrivateKey"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1076,9 +1097,12 @@ func (a *CertificateApiService) CertificateDeletePrivateKeys1Execute(r ApiCertif
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Certificates/PrivateKey/{id}"
+	localVarPath := apiBasePath + "/Certificates/PrivateKey/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1210,9 +1234,12 @@ func (a *CertificateApiService) CertificateDownloadCertificateAsyncExecute(r Api
 		localVarReturnValue *ModelsCertificateDownloadResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Certificates/Download"
+	localVarPath := apiBasePath + "/Certificates/Download"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1368,9 +1395,12 @@ func (a *CertificateApiService) CertificateGetCertificateExecute(r ApiCertificat
 		localVarReturnValue *ModelsCertificateRetrievalResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Certificates/{id}"
+	localVarPath := apiBasePath + "/Certificates/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1511,9 +1541,12 @@ func (a *CertificateApiService) CertificateGetCertificateLocationsExecute(r ApiC
 		localVarReturnValue *KeyfactorApiModelsCertificatesCertificateLocationsResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Certificates/Locations/{id}"
+	localVarPath := apiBasePath + "/Certificates/Locations/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1645,9 +1678,12 @@ func (a *CertificateApiService) CertificateGetCertificateSecurityExecute(r ApiCe
 		localVarReturnValue *ModelsSecurityCertificatePermissions
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Certificates/{id}/Security"
+	localVarPath := apiBasePath + "/Certificates/{id}/Security"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1779,9 +1815,12 @@ func (a *CertificateApiService) CertificateIdentityAuditExecute(r ApiCertificate
 		localVarReturnValue []KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Certificates/IdentityAudit/{id}"
+	localVarPath := apiBasePath + "/Certificates/IdentityAudit/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1910,9 +1949,12 @@ func (a *CertificateApiService) CertificatePostImportCertificateExecute(r ApiCer
 		localVarReturnValue *ModelsCertificateImportResponseModel
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Certificates/Import"
+	localVarPath := apiBasePath + "/Certificates/Import"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2118,9 +2160,12 @@ func (a *CertificateApiService) CertificateQueryCertificatesExecute(r ApiCertifi
 		localVarReturnValue []ModelsCertificateRetrievalResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Certificates"
+	localVarPath := apiBasePath + "/Certificates"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2300,9 +2345,12 @@ func (a *CertificateApiService) CertificateRecoverCertificateAsyncExecute(r ApiC
 		localVarReturnValue *ModelsRecoveryResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Certificates/Recover"
+	localVarPath := apiBasePath + "/Certificates/Recover"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2453,9 +2501,12 @@ func (a *CertificateApiService) CertificateRevokeExecute(r ApiCertificateRevokeR
 		localVarReturnValue *ModelsRevocationRevocationResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Certificates/Revoke"
+	localVarPath := apiBasePath + "/Certificates/Revoke"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2606,9 +2657,12 @@ func (a *CertificateApiService) CertificateRevokeAllExecute(r ApiCertificateRevo
 		localVarReturnValue *ModelsRevocationRevocationResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Certificates/RevokeAll"
+	localVarPath := apiBasePath + "/Certificates/RevokeAll"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2745,9 +2799,12 @@ func (a *CertificateApiService) CertificateUpdateAllMetadataExecute(r ApiCertifi
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Certificates/Metadata/All"
+	localVarPath := apiBasePath + "/Certificates/Metadata/All"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2875,9 +2932,12 @@ func (a *CertificateApiService) CertificateUpdateMetadataExecute(r ApiCertificat
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Certificates/Metadata"
+	localVarPath := apiBasePath + "/Certificates/Metadata"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3004,9 +3064,12 @@ func (a *CertificateApiService) CertificateValidateCertificateExecute(r ApiCerti
 		localVarReturnValue *ModelsCertificateValidationResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Certificates/{id}/Validate"
+	localVarPath := apiBasePath + "/Certificates/{id}/Validate"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)

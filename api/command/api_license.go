@@ -83,9 +83,12 @@ func (a *LicenseApiService) LicenseGetCurrentLicenseExecute(r ApiLicenseGetCurre
 		localVarReturnValue *KeyfactorApiModelsLicenseLicenseResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/License"
+	localVarPath := apiBasePath + "/License"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

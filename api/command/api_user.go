@@ -91,9 +91,12 @@ func (a *UserApiService) UserCreateUserExecute(r ApiUserCreateUserRequest) (*Mod
 		localVarReturnValue *ModelsSSHUsersSshUserResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Users"
+	localVarPath := apiBasePath + "/SSH/Users"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -216,9 +219,12 @@ func (a *UserApiService) UserDeleteUserExecute(r ApiUserDeleteUserRequest) (*htt
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Users/{id}"
+	localVarPath := apiBasePath + "/SSH/Users/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -331,9 +337,12 @@ func (a *UserApiService) UserGetUserExecute(r ApiUserGetUserRequest) (*ModelsSSH
 		localVarReturnValue *ModelsSSHUsersSshUserResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Users/{id}"
+	localVarPath := apiBasePath + "/SSH/Users/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -494,9 +503,12 @@ func (a *UserApiService) UserQueryUsersExecute(r ApiUserQueryUsersRequest) ([]Mo
 		localVarReturnValue []ModelsSSHUsersSshUserResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Users"
+	localVarPath := apiBasePath + "/SSH/Users"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -639,9 +651,12 @@ func (a *UserApiService) UserUpdateUserExecute(r ApiUserUpdateUserRequest) (*Mod
 		localVarReturnValue *ModelsSSHUsersSshUserResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Users"
+	localVarPath := apiBasePath + "/SSH/Users"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -771,9 +786,12 @@ func (a *UserApiService) UserUserAccessExecute(r ApiUserUserAccessRequest) (*Mod
 		localVarReturnValue *ModelsSSHUsersSshUserAccessResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SSH/Users/Access"
+	localVarPath := apiBasePath + "/SSH/Users/Access"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

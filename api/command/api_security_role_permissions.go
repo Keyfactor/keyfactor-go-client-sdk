@@ -103,9 +103,12 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddCollection
 		localVarReturnValue []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Security/Roles/{id}/Permissions/Collections"
+	localVarPath := apiBasePath + "/Security/Roles/{id}/Permissions/Collections"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -246,9 +249,12 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddContainerP
 		localVarReturnValue []KeyfactorApiModelsSecurityRolesContainerPermissionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Security/Roles/{id}/Permissions/Containers"
+	localVarPath := apiBasePath + "/Security/Roles/{id}/Permissions/Containers"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -447,9 +453,12 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddGlobalPerm
 		localVarReturnValue []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Security/Roles/{id}/Permissions/Global"
+	localVarPath := apiBasePath + "/Security/Roles/{id}/Permissions/Global"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -576,9 +585,12 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetCollection
 		localVarReturnValue []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Security/Roles/{id}/Permissions/Collections"
+	localVarPath := apiBasePath + "/Security/Roles/{id}/Permissions/Collections"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -700,9 +712,12 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetContainerP
 		localVarReturnValue []KeyfactorApiModelsSecurityRolesContainerPermissionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Security/Roles/{id}/Permissions/Containers"
+	localVarPath := apiBasePath + "/Security/Roles/{id}/Permissions/Containers"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -824,9 +839,12 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetGlobalPerm
 		localVarReturnValue []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Security/Roles/{id}/Permissions/Global"
+	localVarPath := apiBasePath + "/Security/Roles/{id}/Permissions/Global"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -948,9 +966,12 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetPermission
 		localVarReturnValue []KeyfactorApiModelsSecurityRolesAreaPermissionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Security/Roles/{id}/Permissions"
+	localVarPath := apiBasePath + "/Security/Roles/{id}/Permissions"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1088,9 +1109,12 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetCollection
 		localVarReturnValue []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Security/Roles/{id}/Permissions/Collections"
+	localVarPath := apiBasePath + "/Security/Roles/{id}/Permissions/Collections"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1231,9 +1255,12 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetContainerP
 		localVarReturnValue []KeyfactorApiModelsSecurityRolesContainerPermissionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Security/Roles/{id}/Permissions/Containers"
+	localVarPath := apiBasePath + "/Security/Roles/{id}/Permissions/Containers"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1432,9 +1459,12 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetGlobalPerm
 		localVarReturnValue []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Security/Roles/{id}/Permissions/Global"
+	localVarPath := apiBasePath + "/Security/Roles/{id}/Permissions/Global"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)

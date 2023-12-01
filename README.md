@@ -94,9 +94,9 @@ Class | Method | HTTP request | Description
 *AgentApi* | [**AgentFetchLogs**](docs/AgentApi.md#agentfetchlogs) | **Post** /Agents/{id}/FetchLogs | Schedules a job on the agent to retrieve log files
 *AgentApi* | [**AgentGetAgentDetail**](docs/AgentApi.md#agentgetagentdetail) | **Get** /Agents/{id} | Returns details for a single agent, specified by ID
 *AgentApi* | [**AgentGetAgents**](docs/AgentApi.md#agentgetagents) | **Get** /Agents | Returns all agents according to the provided filter and output parameters
-*AgentApi* | [**AgentReset0**](docs/AgentApi.md#agentreset0) | **Post** /Agents/Reset | Reset a list of agents
-*AgentApi* | [**AgentReset1**](docs/AgentApi.md#agentreset1) | **Post** /Agents/{id}/Reset | Reset an agent to a new state
+*AgentApi* | [**AgentReset**](docs/AgentApi.md#agentreset) | **Post** /Agents/{id}/Reset | Reset an agent to a new state
 *AgentApi* | [**AgentSetAuthCertificateReenrollment**](docs/AgentApi.md#agentsetauthcertificatereenrollment) | **Post** /Agents/SetAuthCertificateReenrollment | Update the AuthCertificateReenrollment value for an agent to request or require (or unset the request) the agent   to enroll for a new client authentication certificate on its next registration.
+*AgentApi* | [**AgentsReset**](docs/AgentApi.md#agentsreset) | **Post** /Agents/Reset | Reset a list of agents
 *AgentBlueprintApi* | [**AgentBlueprintApplyBlueprint**](docs/AgentBlueprintApi.md#agentblueprintapplyblueprint) | **Post** /AgentBluePrint/ApplyBlueprint | Applies the selected agent blueprint to the provided agents
 *AgentBlueprintApi* | [**AgentBlueprintDeleteBlueprint**](docs/AgentBlueprintApi.md#agentblueprintdeleteblueprint) | **Delete** /AgentBluePrint/{id} | Deletes an agent blueprint by its Keyfactor identifier
 *AgentBlueprintApi* | [**AgentBlueprintGenerateBlueprint**](docs/AgentBlueprintApi.md#agentblueprintgenerateblueprint) | **Post** /AgentBluePrint/GenerateBluePrint | Generates an agent blueprint from the provided agents

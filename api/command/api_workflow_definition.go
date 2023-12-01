@@ -96,9 +96,12 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionConfigureDefinitionStep
 		localVarReturnValue *KeyfactorApiModelsWorkflowsDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Definitions/{definitionId}/Steps"
+	localVarPath := apiBasePath + "/Workflow/Definitions/{definitionId}/Steps"
 	localVarPath = strings.Replace(localVarPath, "{"+"definitionId"+"}", url.PathEscape(parameterValueToString(r.definitionId, "definitionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -229,9 +232,12 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionCreateNewDefinitionExec
 		localVarReturnValue *KeyfactorApiModelsWorkflowsDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Definitions"
+	localVarPath := apiBasePath + "/Workflow/Definitions"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -354,9 +360,12 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionDeleteExecute(r ApiWork
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Definitions/{definitionId}"
+	localVarPath := apiBasePath + "/Workflow/Definitions/{definitionId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"definitionId"+"}", url.PathEscape(parameterValueToString(r.definitionId, "definitionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -483,9 +492,12 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionGetExecute(r ApiWorkflo
 		localVarReturnValue *KeyfactorApiModelsWorkflowsDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Definitions/{definitionId}"
+	localVarPath := apiBasePath + "/Workflow/Definitions/{definitionId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"definitionId"+"}", url.PathEscape(parameterValueToString(r.definitionId, "definitionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -613,9 +625,12 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionGetStepSchemaExecute(r 
 		localVarReturnValue *KeyfactorApiModelsWorkflowsAvailableStepResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Definitions/Steps/{extensionName}"
+	localVarPath := apiBasePath + "/Workflow/Definitions/Steps/{extensionName}"
 	localVarPath = strings.Replace(localVarPath, "{"+"extensionName"+"}", url.PathEscape(parameterValueToString(r.extensionName, "extensionName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -737,9 +752,12 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionPublishDefinitionExecut
 		localVarReturnValue *KeyfactorApiModelsWorkflowsDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Definitions/{definitionId}/Publish"
+	localVarPath := apiBasePath + "/Workflow/Definitions/{definitionId}/Publish"
 	localVarPath = strings.Replace(localVarPath, "{"+"definitionId"+"}", url.PathEscape(parameterValueToString(r.definitionId, "definitionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -893,9 +911,12 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionQueryExecute(r ApiWorkf
 		localVarReturnValue []KeyfactorApiModelsWorkflowsDefinitionQueryResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Definitions"
+	localVarPath := apiBasePath + "/Workflow/Definitions"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1063,9 +1084,12 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionQueryAvailableStepsExec
 		localVarReturnValue []KeyfactorApiModelsWorkflowsAvailableStepQueryResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Definitions/Steps"
+	localVarPath := apiBasePath + "/Workflow/Definitions/Steps"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1233,9 +1257,12 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionQueryWorkflowTypesExecu
 		localVarReturnValue []KeyfactorApiModelsWorkflowsWorkflowTypeQueryResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Definitions/Types"
+	localVarPath := apiBasePath + "/Workflow/Definitions/Types"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1378,9 +1405,12 @@ func (a *WorkflowDefinitionApiService) WorkflowDefinitionUpdateExistingDefinitio
 		localVarReturnValue *KeyfactorApiModelsWorkflowsDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Workflow/Definitions/{definitionId}"
+	localVarPath := apiBasePath + "/Workflow/Definitions/{definitionId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"definitionId"+"}", url.PathEscape(parameterValueToString(r.definitionId, "definitionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)

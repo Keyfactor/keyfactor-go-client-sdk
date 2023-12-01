@@ -91,9 +91,12 @@ func (a *EnrollmentApiService) EnrollmentAddToExistingCertStoresExecute(r ApiEnr
 		localVarReturnValue *KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Enrollment/PFX/Replace"
+	localVarPath := apiBasePath + "/Enrollment/PFX/Replace"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -233,9 +236,12 @@ func (a *EnrollmentApiService) EnrollmentAvailableRenewalIdExecute(r ApiEnrollme
 		localVarReturnValue *ModelsEnrollmentAvailableRenewal
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Enrollment/AvailableRenewal/Id/{id}"
+	localVarPath := apiBasePath + "/Enrollment/AvailableRenewal/Id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -367,9 +373,12 @@ func (a *EnrollmentApiService) EnrollmentAvailableRenewalThumbprintExecute(r Api
 		localVarReturnValue *ModelsEnrollmentAvailableRenewal
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Enrollment/AvailableRenewal/Thumbprint/{thumbprint}"
+	localVarPath := apiBasePath + "/Enrollment/AvailableRenewal/Thumbprint/{thumbprint}"
 	localVarPath = strings.Replace(localVarPath, "{"+"thumbprint"+"}", url.PathEscape(parameterValueToString(r.thumbprint, "thumbprint")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -491,9 +500,12 @@ func (a *EnrollmentApiService) EnrollmentGetMyCSRContextExecute(r ApiEnrollmentG
 		localVarReturnValue *CoreModelsEnrollmentEnrollmentTemplateCAResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Enrollment/CSR/Context/My"
+	localVarPath := apiBasePath + "/Enrollment/CSR/Context/My"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -611,9 +623,12 @@ func (a *EnrollmentApiService) EnrollmentGetMyPFXContextExecute(r ApiEnrollmentG
 		localVarReturnValue *CoreModelsEnrollmentEnrollmentTemplateCAResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Enrollment/PFX/Context/My"
+	localVarPath := apiBasePath + "/Enrollment/PFX/Context/My"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -734,9 +749,12 @@ func (a *EnrollmentApiService) EnrollmentGetTemplateEnrollmentSettingsExecute(r 
 		localVarReturnValue *KeyfactorApiModelsTemplatesTemplateEnrollmentSettingsResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Enrollment/Settings/{id}"
+	localVarPath := apiBasePath + "/Enrollment/Settings/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -862,9 +880,12 @@ func (a *EnrollmentApiService) EnrollmentInstallPFXToCertStoreExecute(r ApiEnrol
 		localVarReturnValue *KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Enrollment/PFX/Deploy"
+	localVarPath := apiBasePath + "/Enrollment/PFX/Deploy"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1018,9 +1039,12 @@ func (a *EnrollmentApiService) EnrollmentPostCSREnrollExecute(r ApiEnrollmentPos
 		localVarReturnValue *ModelsEnrollmentCSREnrollmentResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Enrollment/CSR"
+	localVarPath := apiBasePath + "/Enrollment/CSR"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1181,9 +1205,12 @@ func (a *EnrollmentApiService) EnrollmentPostPFXEnrollExecute(r ApiEnrollmentPos
 		localVarReturnValue *ModelsEnrollmentPFXEnrollmentResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Enrollment/PFX"
+	localVarPath := apiBasePath + "/Enrollment/PFX"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1319,9 +1346,12 @@ func (a *EnrollmentApiService) EnrollmentPostParsedCSRExecute(r ApiEnrollmentPos
 		localVarReturnValue []string
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Enrollment/CSR/Parse"
+	localVarPath := apiBasePath + "/Enrollment/CSR/Parse"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1458,9 +1488,12 @@ func (a *EnrollmentApiService) EnrollmentRenewExecute(r ApiEnrollmentRenewReques
 		localVarReturnValue *ModelsEnrollmentRenewalResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Enrollment/Renew"
+	localVarPath := apiBasePath + "/Enrollment/Renew"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -91,9 +91,12 @@ func (a *DeniedAlertApiService) DeniedAlertAddDeniedAlertExecute(r ApiDeniedAler
 		localVarReturnValue *KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Denied"
+	localVarPath := apiBasePath + "/Alerts/Denied"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -216,9 +219,12 @@ func (a *DeniedAlertApiService) DeniedAlertDeleteDeniedAlertExecute(r ApiDeniedA
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Denied/{id}"
+	localVarPath := apiBasePath + "/Alerts/Denied/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -335,9 +341,12 @@ func (a *DeniedAlertApiService) DeniedAlertEditDeniedAlertExecute(r ApiDeniedAle
 		localVarReturnValue *KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Denied"
+	localVarPath := apiBasePath + "/Alerts/Denied"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -463,9 +472,12 @@ func (a *DeniedAlertApiService) DeniedAlertGetDeniedAlertExecute(r ApiDeniedAler
 		localVarReturnValue *KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Denied/{id}"
+	localVarPath := apiBasePath + "/Alerts/Denied/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -619,9 +631,12 @@ func (a *DeniedAlertApiService) DeniedAlertGetDeniedAlertsExecute(r ApiDeniedAle
 		localVarReturnValue []KeyfactorApiModelsAlertsDeniedDeniedAlertDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/Denied"
+	localVarPath := apiBasePath + "/Alerts/Denied"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

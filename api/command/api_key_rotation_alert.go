@@ -91,9 +91,12 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertAddKeyRotationAlertExecute(
 		localVarReturnValue *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/KeyRotation"
+	localVarPath := apiBasePath + "/Alerts/KeyRotation"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -216,9 +219,12 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertDeleteKeyRotationAlertExecu
 		formFiles          []formFile
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/KeyRotation/{id}"
+	localVarPath := apiBasePath + "/Alerts/KeyRotation/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -335,9 +341,12 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertEditKeyRotationAlertExecute
 		localVarReturnValue *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/KeyRotation"
+	localVarPath := apiBasePath + "/Alerts/KeyRotation"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -466,9 +475,12 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertEditScheduleExecute(r ApiKe
 		localVarReturnValue *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/KeyRotation/Schedule"
+	localVarPath := apiBasePath + "/Alerts/KeyRotation/Schedule"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -594,9 +606,12 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertGetKeyRotationAlertExecute(
 		localVarReturnValue *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/KeyRotation/{id}"
+	localVarPath := apiBasePath + "/Alerts/KeyRotation/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -750,9 +765,12 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertGetKeyRotationAlertsExecute
 		localVarReturnValue []KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/KeyRotation"
+	localVarPath := apiBasePath + "/Alerts/KeyRotation"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -885,9 +903,12 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertGetScheduleExecute(r ApiKey
 		localVarReturnValue *KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/KeyRotation/Schedule"
+	localVarPath := apiBasePath + "/Alerts/KeyRotation/Schedule"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1012,9 +1033,12 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertTestAllKeyRotationAlertExec
 		localVarReturnValue *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/KeyRotation/TestAll"
+	localVarPath := apiBasePath + "/Alerts/KeyRotation/TestAll"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1144,9 +1168,12 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertTestKeyRotationAlertExecute
 		localVarReturnValue *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/Alerts/KeyRotation/Test"
+	localVarPath := apiBasePath + "/Alerts/KeyRotation/Test"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

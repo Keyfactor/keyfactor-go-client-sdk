@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_CSRGenerationApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -36,9 +39,13 @@ func Test_command_CSRGenerationApiService(t *testing.T) {
 
 	t.Run("Test CSRGenerationApiService CSRGenerationDeleteCSR", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		httpRes, err := apiClient.CSRGenerationApi.CSRGenerationDeleteCSR(context.Background(), id).Execute()
+		id = os.Getenv("CSRGenerationApi_CSRGenerationDeleteCSR_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("CSRGenerationApi_CSRGenerationDeleteCSR_id: %v", id)
+
+		httpRes, err := apiClient.CSRGenerationApi.CSRGenerationDeleteCSR(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -56,9 +63,13 @@ func Test_command_CSRGenerationApiService(t *testing.T) {
 
 	t.Run("Test CSRGenerationApiService CSRGenerationDownload", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.CSRGenerationApi.CSRGenerationDownload(context.Background(), id).Execute()
+		id = os.Getenv("CSRGenerationApi_CSRGenerationDownload_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("CSRGenerationApi_CSRGenerationDownload_id: %v", id)
+
+		resp, httpRes, err := apiClient.CSRGenerationApi.CSRGenerationDownload(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

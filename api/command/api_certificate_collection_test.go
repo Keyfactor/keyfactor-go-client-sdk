@@ -23,10 +23,13 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
 
 func Test_command_CertificateCollectionApiService(t *testing.T) {
+	cwd, _ := os.Getwd()
+	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
 
 	configuration, configErr := NewConfiguration(config)
@@ -56,9 +59,13 @@ func Test_command_CertificateCollectionApiService(t *testing.T) {
 
 	t.Run("Test CertificateCollectionApiService CertificateCollectionGetCollection0", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionGetCollection0(context.Background(), id).Execute()
+		id = os.Getenv("CertificateCollectionApi_CertificateCollectionGetCollection0_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("CertificateCollectionApi_CertificateCollectionGetCollection0_id: %v", id)
+
+		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionGetCollection0(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -68,9 +75,13 @@ func Test_command_CertificateCollectionApiService(t *testing.T) {
 
 	t.Run("Test CertificateCollectionApiService CertificateCollectionGetCollection1", func(t *testing.T) {
 
-		var name string
+		var name interface{}
 
-		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionGetCollection1(context.Background(), name).Execute()
+		name = os.Getenv("CertificateCollectionApi_CertificateCollectionGetCollection1_name")
+		name, _ = convertParamInterface(name, "string")
+		t.Logf("CertificateCollectionApi_CertificateCollectionGetCollection1_name: %v", name)
+
+		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionGetCollection1(context.Background(), name.(string)).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -90,9 +101,13 @@ func Test_command_CertificateCollectionApiService(t *testing.T) {
 
 	t.Run("Test CertificateCollectionApiService CertificateCollectionSetCollectionPermissions", func(t *testing.T) {
 
-		var id int32
+		var id interface{}
 
-		httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionSetCollectionPermissions(context.Background(), id).Execute()
+		id = os.Getenv("CertificateCollectionApi_CertificateCollectionSetCollectionPermissions_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("CertificateCollectionApi_CertificateCollectionSetCollectionPermissions_id: %v", id)
+
+		httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionSetCollectionPermissions(context.Background(), id.(int32)).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

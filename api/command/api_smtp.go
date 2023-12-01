@@ -83,9 +83,12 @@ func (a *SMTPApiService) SMTPSMTPExecute(r ApiSMTPSMTPRequest) (*KeyfactorAPIMod
 		localVarReturnValue *KeyfactorAPIModelsSMTPSMTPResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SMTP"
+	localVarPath := apiBasePath + "/SMTP"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -209,9 +212,12 @@ func (a *SMTPApiService) SMTPTestSMTPExecute(r ApiSMTPTestSMTPRequest) (*Keyfact
 		localVarReturnValue *KeyfactorAPIModelsSMTPSMTPTestResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SMTP/Test"
+	localVarPath := apiBasePath + "/SMTP/Test"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -340,9 +346,12 @@ func (a *SMTPApiService) SMTPUpdateSMTPExecute(r ApiSMTPUpdateSMTPRequest) (*Key
 		localVarReturnValue *KeyfactorAPIModelsSMTPSMTPResponse
 	)
 
-	localBasePath := "/KeyfactorAPI"
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
 
-	localVarPath := localBasePath + "/SMTP"
+	localVarPath := apiBasePath + "/SMTP"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
