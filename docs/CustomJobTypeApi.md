@@ -1,6 +1,6 @@
 # \CustomJobTypeApi
 
-All URIs are relative to *http://keyfactor.example.com*
+All URIs are relative to *https://keyfactor.example.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

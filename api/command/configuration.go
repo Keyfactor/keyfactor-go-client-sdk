@@ -1,13 +1,15 @@
 /*
-Copyright 2022 Keyfactor
-Licensed under the Apache License, Version 2.0 (the "License"); you may
+
+Copyright 2023 Keyfactor
+Licensed under the Apache License, Version 2.0 (the License); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
 required by applicable law or agreed to in writing, software distributed
-under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
+under the License is distributed on an AS IS BASIS, WITHOUT WARRANTIES
 OR CONDITIONS OF ANY KIND, either express or implied. See the License for
-thespecific language governing permissions and limitations under the
+the specific language governing permissions and limitations under the
 License.
+
 Keyfactor-v1
 
 This reference serves to document REST-based methods to manage and integrate with Keyfactor. In addition, an embedded interface allows for the execution of calls against the current Keyfactor API instance.
@@ -64,7 +66,7 @@ var (
 
 // BasicAuth provides basic http authentication to a request passed via context using ContextBasicAuth
 type BasicAuth struct {
-	UserName string `json:"userName,omitempty"`
+	Username string `json:"username,omitempty"`
 	Password string `json:"password,omitempty"`
 }
 
@@ -95,8 +97,71 @@ type Configuration struct {
 	caCertificates    []*x509.Certificate
 }
 
+func ValidateConfiguration(configuration *Configuration) []error {
+	var errs []error
+	if configuration.Host == "" {
+		errs = append(errs, fmt.Errorf("hostname cannot be empty"))
+	}
+	if configuration.BasicAuth.Username == "" {
+		errs = append(errs, fmt.Errorf("username cannot be empty"))
+	}
+	if configuration.BasicAuth.Password == "" {
+		errs = append(errs, fmt.Errorf("password cannot be empty"))
+	}
+
+	if configuration.CaCertificatePath != "" {
+		if _, err := os.Stat(configuration.CaCertificatePath); os.IsNotExist(err) {
+			errs = append(errs, fmt.Errorf("caCertificatePath does not exist: %s", configuration.CaCertificatePath))
+		}
+	}
+
+	if configuration.APIPath == "" {
+		configuration.APIPath = "/KeyfactorAPI"
+	}
+
+	if configuration.Domain == "" && configuration.BasicAuth.Username != "" && (!strings.Contains(configuration.BasicAuth.Username, "@") && !strings.Contains(configuration.BasicAuth.Username, "\\")) {
+		errs = append(errs, fmt.Errorf("domain cannot be empty when username does not contain a domain or a slash (\\) or an at (@) symbol"))
+	}
+
+	return errs
+}
+
+// GetEnvConfig returns a map of environment variables
+func GetEnvConfiguration() map[string]string {
+	config := make(map[string]string)
+	hostname, hostnameOk := os.LookupEnv("KEYFACTOR_HOSTNAME")
+	if hostnameOk {
+		config["hostname"] = hostname
+	}
+	username, usernameOk := os.LookupEnv("KEYFACTOR_USERNAME")
+	if usernameOk {
+		config["username"] = username
+	}
+	password, passwordOk := os.LookupEnv("KEYFACTOR_PASSWORD")
+	if passwordOk {
+		config["password"] = password
+	}
+	domain, domainOk := os.LookupEnv("KEYFACTOR_DOMAIN")
+	if domainOk {
+		config["domain"] = domain
+	}
+	apiPath, apiPathOk := os.LookupEnv("KEYFACTOR_API_PATH")
+	if apiPathOk {
+		config["apiPath"] = apiPath
+	}
+	logLevel, logLevelOk := os.LookupEnv("KEYFACTOR_LOG_LEVEL")
+	if logLevelOk {
+		config["logLevel"] = logLevel
+	}
+	caCertificatePath, caCertificatePathOk := os.LookupEnv("KEYFACTOR_CA_CERTIFICATE_PATH")
+	if caCertificatePathOk {
+		config["caCertificatePath"] = caCertificatePath
+	}
+	return config
+}
+
 // NewConfiguration returns a new Configuration object
-func NewConfiguration(config map[string]string) *Configuration {
+func NewConfiguration(config map[string]string) (*Configuration, error) {
 	cfg := &Configuration{
 		DefaultHeader: make(map[string]string),
 		UserAgent:     "OpenAPI-Generator/1.0.0/go",
@@ -122,27 +187,24 @@ func NewConfiguration(config map[string]string) *Configuration {
 	if hostname != "" {
 		if hostnameCleaned, err := cleanHostname(hostname); err == nil {
 			cfg.Host = hostnameCleaned
-		} else {
-			fmt.Errorf("%s is not a valid URL: %s", hostname, err)
-			return nil
 		}
 	}
 
 	// Get username from environment variable
 	if confUser == "" {
-		cfg.BasicAuth.UserName = os.Getenv(envCommandUsername)
+		cfg.BasicAuth.Username = os.Getenv(envCommandUsername)
 	} else {
-		cfg.BasicAuth.UserName = confUser
+		cfg.BasicAuth.Username = confUser
 	}
 
 	if confDomain != "" {
-		if cfg.BasicAuth.UserName != "" && !strings.Contains(cfg.BasicAuth.UserName, confDomain) {
-			cfg.BasicAuth.UserName = cfg.BasicAuth.UserName + "@" + confDomain
+		if cfg.BasicAuth.Username != "" && !strings.Contains(cfg.BasicAuth.Username, confDomain) {
+			cfg.BasicAuth.Username = cfg.BasicAuth.Username + "@" + confDomain
 		}
 	} else {
 		cfg.Domain = os.Getenv(envCommandDomain)
-		if cfg.BasicAuth.UserName != "" && !strings.Contains(cfg.BasicAuth.UserName, cfg.Domain) && cfg.Domain != "" && !strings.Contains(cfg.BasicAuth.UserName, "@") {
-			cfg.BasicAuth.UserName = cfg.BasicAuth.UserName + "@" + cfg.Domain
+		if cfg.BasicAuth.Username != "" && !strings.Contains(cfg.BasicAuth.Username, cfg.Domain) && cfg.Domain != "" && !strings.Contains(cfg.BasicAuth.Username, "@") {
+			cfg.BasicAuth.Username = cfg.BasicAuth.Username + "@" + cfg.Domain
 		}
 	}
 
@@ -160,7 +222,16 @@ func NewConfiguration(config map[string]string) *Configuration {
 		cfg.CaCertificatePath = confCaPath
 	}
 
-	return cfg
+	errs := ValidateConfiguration(cfg)
+	if len(errs) > 0 {
+		outputString := "Configuration errors:\n"
+		for _, err := range errs {
+			outputString += fmt.Sprintf("  - %s\n", err)
+		}
+		return nil, fmt.Errorf(outputString)
+	}
+
+	return cfg, nil
 }
 
 // AddDefaultHeader adds a new HTTP header to the default header in the request
