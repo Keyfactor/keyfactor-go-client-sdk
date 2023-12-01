@@ -1,4 +1,4 @@
-# Go API client for keyfactor
+# Go API client for command
 
 This reference serves to document REST-based methods to manage and integrate with Keyfactor. In addition, an embedded interface allows for the execution of calls against the current Keyfactor API instance.
 
@@ -20,12 +20,12 @@ go get "github.com/Keyfactor/keyfactor-go-client-sdk"
 Put the package under your project folder and add the following in import:
 
 ```golang
-import "github.com/Keyfactor/keyfactor-go-client-sdk/api/keyfactor"
+import "github.com/Keyfactor/keyfactor-go-client-sdk/api/command"
 ```
 
 ## Configuration
 
-The `keyfactor.NewConfiguration()` method is used to configure the Keyfactor Go Client SDK. The client can be configured
+The `command.NewConfiguration()` method is used to configure the Keyfactor Go Client SDK. The client can be configured
 by passing a map of configuration options to the `NewConfiguration()` method, or by passing a blank map and setting
 the configuration options individually on the returned `Configuration` object.
 
@@ -40,8 +40,8 @@ config["domain"] = "example.com" // optional
 config["caCertificatePath"] = "/path/to/local/certificate" // optional
 
 // Create a configuration object
-ejbcaConfiguration := keyfactor.NewConfiguration(config)
-if ejbcaConfiguration == nil {
+kfcmdConfiguration := command.NewConfiguration(config)
+if kfcmdConfiguration == nil {
     // handle error
 }
 
@@ -56,36 +56,36 @@ or
 
 ```go
 // Create a configuration object
-ejbcaConfiguration := keyfactor.NewConfiguration(make(map[string]string))
+kfcmdConfiguration := command.NewConfiguration(make(map[string]string))
 
 // Set configuration options individually
-ejbcaConfiguration.Host = "keyfactor.example.com"
-ejbcaConfiguration.BasicAuth.UserName = "admin"
-ejbcaConfiguration.BasicAuth.Password = "password"
-ejbcaConfiguration.CaCertificatePath = "/path/to/local/certificate" // optional
+kfcmdConfiguration.Host = "keyfactor.example.com"
+kfcmdConfiguration.BasicAuth.Username = "admin"
+kfcmdConfiguration.BasicAuth.Password = "password"
+kfcmdConfiguration.CaCertificatePath = "/path/to/local/certificate" // optional
 
 // Create a client
-client := keyfactor.NewAPIClient(ejbcaConfiguration)
+client := keyfactor.NewAPIClient(kfcmdConfiguration)
 if client == nil {
     // handle error
 }
 ```
 
-The root CA certificate can also be configured by passing a slice of `*x509.Certificate` objects to the `ejbca.Configuration.SetCaCertificates()` method.
+The root CA certificate can also be configured by passing a slice of `*x509.Certificate` objects to the `kfcmd.Configuration.SetCaCertificates()` method.
 ```go
 // Create a configuration object
-ejbcaConfiguration := keyfactor.NewConfiguration(make(map[string]string))
+kfcmdConfiguration := command.NewConfiguration(make(map[string]string))
 
 // Set the root CA certificate
-ejbcaConfiguration.SetCaCertificates([]*x509.Certificate{caCertificate})
+kfcmdConfiguration.SetCaCertificates([]*x509.Certificate{caCertificate})
 
 // Create a client
-client := keyfactor.NewAPIClient(ejbcaConfiguration)
+client := keyfactor.NewAPIClient(kfcmdConfiguration)
 ```
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://keyfactor.example.com*
+All URIs are relative to *https://keyfactor.example.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **SerialNumber** | Pointer to **string** |  | [optional] 
 **IssuedDN** | Pointer to **NullableString** |  | [optional] 
 **IssuedCN** | Pointer to **NullableString** |  | [optional] 
-**ImportDate** | Pointer to **time.Time** |  | [optional] 
-**NotBefore** | Pointer to **time.Time** |  | [optional] 
-**NotAfter** | Pointer to **time.Time** |  | [optional] 
+**ImportDate** | Pointer to **string** |  | [optional] 
+**NotBefore** | Pointer to **string** |  | [optional] 
+**NotAfter** | Pointer to **string** |  | [optional] 
 **IssuerDN** | Pointer to **NullableString** |  | [optional] 
 **PrincipalId** | Pointer to **NullableInt32** |  | [optional] 
 **TemplateId** | Pointer to **int32** |  | [optional] 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **SigningAlgorithm** | Pointer to **string** |  | [optional] 
 **CertStateString** | Pointer to **string** |  | [optional] 
 **KeyTypeString** | Pointer to **string** |  | [optional] 
-**RevocationEffDate** | Pointer to **NullableTime** |  | [optional] 
+**RevocationEffDate** | Pointer to **NullableString** |  | [optional] 
 **RevocationReason** | Pointer to **NullableInt32** |  | [optional] 
 **RevocationComment** | Pointer to **NullableString** |  | [optional] 
 **CertificateAuthorityId** | Pointer to **int32** |  | [optional] 
@@ -217,20 +217,20 @@ HasIssuedCN returns a boolean if a field has been set.
 UnsetIssuedCN ensures that no value is present for IssuedCN, not even an explicit nil
 ### GetImportDate
 
-`func (o *ModelsCertificateRetrievalResponse) GetImportDate() time.Time`
+`func (o *ModelsCertificateRetrievalResponse) GetImportDate() string`
 
 GetImportDate returns the ImportDate field if non-nil, zero value otherwise.
 
 ### GetImportDateOk
 
-`func (o *ModelsCertificateRetrievalResponse) GetImportDateOk() (*time.Time, bool)`
+`func (o *ModelsCertificateRetrievalResponse) GetImportDateOk() (*string, bool)`
 
 GetImportDateOk returns a tuple with the ImportDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetImportDate
 
-`func (o *ModelsCertificateRetrievalResponse) SetImportDate(v time.Time)`
+`func (o *ModelsCertificateRetrievalResponse) SetImportDate(v string)`
 
 SetImportDate sets ImportDate field to given value.
 
@@ -242,20 +242,20 @@ HasImportDate returns a boolean if a field has been set.
 
 ### GetNotBefore
 
-`func (o *ModelsCertificateRetrievalResponse) GetNotBefore() time.Time`
+`func (o *ModelsCertificateRetrievalResponse) GetNotBefore() string`
 
 GetNotBefore returns the NotBefore field if non-nil, zero value otherwise.
 
 ### GetNotBeforeOk
 
-`func (o *ModelsCertificateRetrievalResponse) GetNotBeforeOk() (*time.Time, bool)`
+`func (o *ModelsCertificateRetrievalResponse) GetNotBeforeOk() (*string, bool)`
 
 GetNotBeforeOk returns a tuple with the NotBefore field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNotBefore
 
-`func (o *ModelsCertificateRetrievalResponse) SetNotBefore(v time.Time)`
+`func (o *ModelsCertificateRetrievalResponse) SetNotBefore(v string)`
 
 SetNotBefore sets NotBefore field to given value.
 
@@ -267,20 +267,20 @@ HasNotBefore returns a boolean if a field has been set.
 
 ### GetNotAfter
 
-`func (o *ModelsCertificateRetrievalResponse) GetNotAfter() time.Time`
+`func (o *ModelsCertificateRetrievalResponse) GetNotAfter() string`
 
 GetNotAfter returns the NotAfter field if non-nil, zero value otherwise.
 
 ### GetNotAfterOk
 
-`func (o *ModelsCertificateRetrievalResponse) GetNotAfterOk() (*time.Time, bool)`
+`func (o *ModelsCertificateRetrievalResponse) GetNotAfterOk() (*string, bool)`
 
 GetNotAfterOk returns a tuple with the NotAfter field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNotAfter
 
-`func (o *ModelsCertificateRetrievalResponse) SetNotAfter(v time.Time)`
+`func (o *ModelsCertificateRetrievalResponse) SetNotAfter(v string)`
 
 SetNotAfter sets NotAfter field to given value.
 
@@ -657,20 +657,20 @@ HasKeyTypeString returns a boolean if a field has been set.
 
 ### GetRevocationEffDate
 
-`func (o *ModelsCertificateRetrievalResponse) GetRevocationEffDate() time.Time`
+`func (o *ModelsCertificateRetrievalResponse) GetRevocationEffDate() string`
 
 GetRevocationEffDate returns the RevocationEffDate field if non-nil, zero value otherwise.
 
 ### GetRevocationEffDateOk
 
-`func (o *ModelsCertificateRetrievalResponse) GetRevocationEffDateOk() (*time.Time, bool)`
+`func (o *ModelsCertificateRetrievalResponse) GetRevocationEffDateOk() (*string, bool)`
 
 GetRevocationEffDateOk returns a tuple with the RevocationEffDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRevocationEffDate
 
-`func (o *ModelsCertificateRetrievalResponse) SetRevocationEffDate(v time.Time)`
+`func (o *ModelsCertificateRetrievalResponse) SetRevocationEffDate(v string)`
 
 SetRevocationEffDate sets RevocationEffDate field to given value.
 
