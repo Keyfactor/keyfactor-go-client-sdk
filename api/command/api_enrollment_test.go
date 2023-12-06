@@ -22,10 +22,11 @@ package command
 import (
 	"context"
 	"encoding/json"
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
 	"os"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func Test_command_EnrollmentApiService(t *testing.T) {
@@ -122,11 +123,52 @@ func Test_command_EnrollmentApiService(t *testing.T) {
 
 	t.Run("Test EnrollmentApiService EnrollmentPostCSREnroll", func(t *testing.T) {
 
-		t.Log("EnrollmentApi_EnrollmentPostCSREnroll_payload: <none>")
-		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentPostCSREnroll(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
+		t.Run("Test Basic CSR Enrollment", func(t *testing.T) {
+			payload := `
+            {
+  "CSR": "-----BEGIN CERTIFICATE REQUEST-----\nMIIDQTCCAikCAQAwgZYxCzAJBgNVBAYTAlVTMQ0wCwYDVQQIDARPaGlvMRIwEAYD\nVQQHDAlDbGV2ZWxhbmQxIDAeBgNVBAsMF0ludGVncmF0aW9uIEVuZ2luZWVyaW5n\nMRwwGgYDVQQKDBNLZXlmYWN0b3IgSW5jLiBUZXN0MSQwIgYDVQQDDBtPcGVuIEFQ\nSSBHZW5lcmF0b3IgQ1NSIFRlc3QwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK\nAoIBAQDpX5z4C9WzPN4r88iKYemH5o/vdxpUvMtuC9trnrBF+qis0+IXWLXhZKMU\nf3A7ygE/C6euslWM1eRAcudEXRLGFlt1PKj2NDEX/qi8zJ4VVF0jbPqZ48prBytg\nj/fHeIU4iNLWUvVBHkD0/HX4pWxvzWin14Mq7X3Ung1o4Z8Ar6dpa6y1QK/CL5lC\n+uiIfNqX1nqbJUdS09PlXm2vKZx7atE+CYWbghUp0niVElGmtUHZxNQP8N9nuB4t\n9IPCnsOPJjr7MS2Az3vJnxjV5ze6Q8tajlZlh5rj39dazxcpNGqcof+j2ZdTshRe\n86BLcdgEiBsrX8mYIUWjYbh3oJ77AgMBAAGgZTBjBgkqhkiG9w0BCQ4xVjBUMCYG\nA1UdEQQfMB2CG09wZW4gQVBJIEdlbmVyYXRvciBDU1IgVGVzdDALBgNVHQ8EBAMC\nBDAwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMA0GCSqGSIb3DQEBCwUA\nA4IBAQAcyw8WKWG4oPLm8/5VZtf1Ch3+utl16Z9FmnV7MHboVv5UMGmfPyGHyG5m\nEzmMYTED2JJZM/9PI0ff6ImeBXKPv+E92/5lb3SoIcII1QK1bLZI2fh91G1ZT6vl\nCFLTV0mCNFVRSIXhUxkYnKEM986DzDmd3xtbT/PZnadePM118X9szNtCkN3AebU+\nbeXMx32usNuV3SAepZOk9c+4CxbdLxn8raONZ5Z7lDwhmURlmLCyNOe8PnHKueBH\nEvg9kyinT9HkOF9MqPCbnpBfKbOFTOKu/ai7LiiHddwuoWFa8i0TwN77R4844l4d\nflJcNIIi5nGeCCqPrASTr736aHpv\n-----END CERTIFICATE REQUEST-----\n",
+  "IncludeChain": true,
+  "ChainOrder": "EndEntityFirst",
+  "CertificateAuthority": "DC-CA.Command.local\\CommandCA1",
+  "Template": "2YearTestWebServer",
+  "SANs": {
+      "dns": [
+        "Open API Generator CSR Test"
+      ],
+      "ip4": [
+        "192.168.2.2"
+      ]
+    }
+}
+
+            `
+			t.Logf("Basic CSR Enrollment_payload: %v", payload)
+
+			// deserialize payload into corresponding model
+			var payloadModel ModelsEnrollmentCSREnrollmentRequest
+			err := json.Unmarshal([]byte(payload), &payloadModel)
+			require.Nil(t, err)
+
+			payloadModel.Timestamp = generateTimestamp()
+
+			resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentPostCSREnroll(context.Background()).Request(payloadModel).Execute()
+			if err != nil {
+				t.Errorf("Error while calling EnrollmentApiService_EnrollmentPostPFXEnroll: %v\n", err)
+				t.Log(err.Error())
+				if httpRes != nil {
+					t.Logf("HTTP Response from URL: %v\n", httpRes.Request.URL)
+					t.Logf("HTTP Response Status Code: %v\n", httpRes.StatusCode)
+					t.Logf("HTTP Response Status: %v\n", httpRes.Status)
+					t.Logf("HTTP Response Body: %v\n", httpRes.Body)
+				}
+			}
+
+			t.Log("Test 'Basic CSR Enrollment' must PASS")
+			require.Nil(t, err)
+			require.NotNil(t, resp)
+			assert.Equal(t, 200, httpRes.StatusCode)
+			t.Log("Test 'Basic CSR Enrollment' PASSED successfully")
+		})
 	})
 
 	t.Run("Test EnrollmentApiService EnrollmentPostPFXEnroll", func(t *testing.T) {
