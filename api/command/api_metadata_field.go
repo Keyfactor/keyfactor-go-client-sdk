@@ -72,13 +72,14 @@ MetadataFieldCreateMetadataField Creates a new metadata field type with the give
 	@return ApiMetadataFieldCreateMetadataFieldRequest
 */
 func (a *MetadataFieldApiService) MetadataFieldCreateMetadataField(ctx context.Context) ApiMetadataFieldCreateMetadataFieldRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiMetadataFieldCreateMetadataFieldRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -209,13 +210,14 @@ MetadataFieldDeleteMetadataField Deletes a persisted metadata field type by its 
 	@return ApiMetadataFieldDeleteMetadataFieldRequest
 */
 func (a *MetadataFieldApiService) MetadataFieldDeleteMetadataField(ctx context.Context, id int32) ApiMetadataFieldDeleteMetadataFieldRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiMetadataFieldDeleteMetadataFieldRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -341,13 +343,14 @@ This will ignore individual delete failures, and continue processing the array.
 	@return ApiMetadataFieldDeleteMetadataFieldsRequest
 */
 func (a *MetadataFieldApiService) MetadataFieldDeleteMetadataFields(ctx context.Context) ApiMetadataFieldDeleteMetadataFieldsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiMetadataFieldDeleteMetadataFieldsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -495,13 +498,14 @@ MetadataFieldGetAllMetadataFields Returns all metadata field types according to 
 	@return ApiMetadataFieldGetAllMetadataFieldsRequest
 */
 func (a *MetadataFieldApiService) MetadataFieldGetAllMetadataFields(ctx context.Context) ApiMetadataFieldGetAllMetadataFieldsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiMetadataFieldGetAllMetadataFieldsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -635,13 +639,14 @@ MetadataFieldGetMetadataField0 Gets a persisted metadata field type by its uniqu
 	@return ApiMetadataFieldGetMetadataField0Request
 */
 func (a *MetadataFieldApiService) MetadataFieldGetMetadataField0(ctx context.Context, id int32) ApiMetadataFieldGetMetadataField0Request {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiMetadataFieldGetMetadataField0Request{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -762,13 +767,14 @@ MetadataFieldGetMetadataField1 Gets a persisted metadata field type by its uniqu
 	@return ApiMetadataFieldGetMetadataField1Request
 */
 func (a *MetadataFieldApiService) MetadataFieldGetMetadataField1(ctx context.Context, name string) ApiMetadataFieldGetMetadataField1Request {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiMetadataFieldGetMetadataField1Request{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		name:                    name,
 	}
 }
@@ -889,13 +895,14 @@ MetadataFieldGetMetadataFieldInUse Determines if a metadata field type associate
 	@return ApiMetadataFieldGetMetadataFieldInUseRequest
 */
 func (a *MetadataFieldApiService) MetadataFieldGetMetadataFieldInUse(ctx context.Context, id int32) ApiMetadataFieldGetMetadataFieldInUseRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiMetadataFieldGetMetadataFieldInUseRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -1023,13 +1030,14 @@ MetadataFieldUpdateMetadataField Updates a persisted metadata field with the giv
 	@return ApiMetadataFieldUpdateMetadataFieldRequest
 */
 func (a *MetadataFieldApiService) MetadataFieldUpdateMetadataField(ctx context.Context) ApiMetadataFieldUpdateMetadataFieldRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiMetadataFieldUpdateMetadataFieldRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

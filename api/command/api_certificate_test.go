@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_CertificateApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -39,12 +40,11 @@ func Test_command_CertificateApiService(t *testing.T) {
 
 	t.Run("Test CertificateApiService CertificateAnalyzeCert", func(t *testing.T) {
 
+		t.Log("CertificateApi_CertificateAnalyzeCert_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateApi.CertificateAnalyzeCert(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateApiService CertificateCertificateHistory", func(t *testing.T) {
@@ -55,31 +55,28 @@ func Test_command_CertificateApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("CertificateApi_CertificateCertificateHistory_id: %v", id)
 
+		t.Log("CertificateApi_CertificateCertificateHistory_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateApi.CertificateCertificateHistory(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateApiService CertificateCompareMetadata", func(t *testing.T) {
 
+		t.Log("CertificateApi_CertificateCompareMetadata_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateApi.CertificateCompareMetadata(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateApiService CertificateDeleteByQuery", func(t *testing.T) {
 
+		t.Log("CertificateApi_CertificateDeleteByQuery_payload: <none>")
 		httpRes, err := apiClient.CertificateApi.CertificateDeleteByQuery(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateApiService CertificateDeleteCertificate", func(t *testing.T) {
@@ -90,29 +87,26 @@ func Test_command_CertificateApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("CertificateApi_CertificateDeleteCertificate_id: %v", id)
 
+		t.Log("CertificateApi_CertificateDeleteCertificate_payload: <none>")
 		httpRes, err := apiClient.CertificateApi.CertificateDeleteCertificate(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateApiService CertificateDeleteCertificates", func(t *testing.T) {
 
+		t.Log("CertificateApi_CertificateDeleteCertificates_payload: <none>")
 		httpRes, err := apiClient.CertificateApi.CertificateDeleteCertificates(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateApiService CertificateDeletePrivateKeys0", func(t *testing.T) {
 
+		t.Log("CertificateApi_CertificateDeletePrivateKeys0_payload: <none>")
 		httpRes, err := apiClient.CertificateApi.CertificateDeletePrivateKeys0(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateApiService CertificateDeletePrivateKeys1", func(t *testing.T) {
@@ -123,21 +117,19 @@ func Test_command_CertificateApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("CertificateApi_CertificateDeletePrivateKeys1_id: %v", id)
 
+		t.Log("CertificateApi_CertificateDeletePrivateKeys1_payload: <none>")
 		httpRes, err := apiClient.CertificateApi.CertificateDeletePrivateKeys1(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateApiService CertificateDownloadCertificateAsync", func(t *testing.T) {
 
+		t.Log("CertificateApi_CertificateDownloadCertificateAsync_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateApi.CertificateDownloadCertificateAsync(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateApiService CertificateGetCertificate", func(t *testing.T) {
@@ -148,12 +140,11 @@ func Test_command_CertificateApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("CertificateApi_CertificateGetCertificate_id: %v", id)
 
+		t.Log("CertificateApi_CertificateGetCertificate_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateApi.CertificateGetCertificate(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateApiService CertificateGetCertificateLocations", func(t *testing.T) {
@@ -164,12 +155,11 @@ func Test_command_CertificateApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("CertificateApi_CertificateGetCertificateLocations_id: %v", id)
 
+		t.Log("CertificateApi_CertificateGetCertificateLocations_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateApi.CertificateGetCertificateLocations(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateApiService CertificateGetCertificateSecurity", func(t *testing.T) {
@@ -180,12 +170,11 @@ func Test_command_CertificateApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("CertificateApi_CertificateGetCertificateSecurity_id: %v", id)
 
+		t.Log("CertificateApi_CertificateGetCertificateSecurity_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateApi.CertificateGetCertificateSecurity(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateApiService CertificateIdentityAudit", func(t *testing.T) {
@@ -196,80 +185,72 @@ func Test_command_CertificateApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("CertificateApi_CertificateIdentityAudit_id: %v", id)
 
+		t.Log("CertificateApi_CertificateIdentityAudit_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateApi.CertificateIdentityAudit(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateApiService CertificatePostImportCertificate", func(t *testing.T) {
 
+		t.Log("CertificateApi_CertificatePostImportCertificate_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateApi.CertificatePostImportCertificate(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateApiService CertificateQueryCertificates", func(t *testing.T) {
 
+		t.Log("CertificateApi_CertificateQueryCertificates_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateApi.CertificateQueryCertificates(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateApiService CertificateRecoverCertificateAsync", func(t *testing.T) {
 
+		t.Log("CertificateApi_CertificateRecoverCertificateAsync_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateApi.CertificateRecoverCertificateAsync(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateApiService CertificateRevoke", func(t *testing.T) {
 
+		t.Log("CertificateApi_CertificateRevoke_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateApi.CertificateRevoke(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateApiService CertificateRevokeAll", func(t *testing.T) {
 
+		t.Log("CertificateApi_CertificateRevokeAll_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateApi.CertificateRevokeAll(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateApiService CertificateUpdateAllMetadata", func(t *testing.T) {
 
+		t.Log("CertificateApi_CertificateUpdateAllMetadata_payload: <none>")
 		httpRes, err := apiClient.CertificateApi.CertificateUpdateAllMetadata(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateApiService CertificateUpdateMetadata", func(t *testing.T) {
 
+		t.Log("CertificateApi_CertificateUpdateMetadata_payload: <none>")
 		httpRes, err := apiClient.CertificateApi.CertificateUpdateMetadata(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateApiService CertificateValidateCertificate", func(t *testing.T) {
@@ -280,12 +261,11 @@ func Test_command_CertificateApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("CertificateApi_CertificateValidateCertificate_id: %v", id)
 
+		t.Log("CertificateApi_CertificateValidateCertificate_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateApi.CertificateValidateCertificate(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

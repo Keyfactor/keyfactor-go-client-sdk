@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_SslApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -39,21 +40,19 @@ func Test_command_SslApiService(t *testing.T) {
 
 	t.Run("Test SslApiService SslAddNetworkRanges", func(t *testing.T) {
 
+		t.Log("SslApi_SslAddNetworkRanges_payload: <none>")
 		httpRes, err := apiClient.SslApi.SslAddNetworkRanges(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SslApiService SslCreateNetwork", func(t *testing.T) {
 
+		t.Log("SslApi_SslCreateNetwork_payload: <none>")
 		resp, httpRes, err := apiClient.SslApi.SslCreateNetwork(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SslApiService SslEndpoint", func(t *testing.T) {
@@ -64,12 +63,11 @@ func Test_command_SslApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "string")
 		t.Logf("SslApi_SslEndpoint_id: %v", id)
 
+		t.Log("SslApi_SslEndpoint_payload: <none>")
 		resp, httpRes, err := apiClient.SslApi.SslEndpoint(context.Background(), id.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SslApiService SslEndpointHistory", func(t *testing.T) {
@@ -80,12 +78,11 @@ func Test_command_SslApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "string")
 		t.Logf("SslApi_SslEndpointHistory_id: %v", id)
 
+		t.Log("SslApi_SslEndpointHistory_payload: <none>")
 		resp, httpRes, err := apiClient.SslApi.SslEndpointHistory(context.Background(), id.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SslApiService SslGetNetwork", func(t *testing.T) {
@@ -96,12 +93,11 @@ func Test_command_SslApiService(t *testing.T) {
 		identifier, _ = convertParamInterface(identifier, "string")
 		t.Logf("SslApi_SslGetNetwork_identifier: %v", identifier)
 
+		t.Log("SslApi_SslGetNetwork_payload: <none>")
 		resp, httpRes, err := apiClient.SslApi.SslGetNetwork(context.Background(), identifier.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SslApiService SslGetNetworkRangesForNetwork", func(t *testing.T) {
@@ -112,22 +108,20 @@ func Test_command_SslApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "string")
 		t.Logf("SslApi_SslGetNetworkRangesForNetwork_id: %v", id)
 
+		t.Log("SslApi_SslGetNetworkRangesForNetwork_payload: <none>")
 		resp, httpRes, err := apiClient.SslApi.SslGetNetworkRangesForNetwork(context.Background(), id.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SslApiService SslGetNetworks", func(t *testing.T) {
 
+		t.Log("SslApi_SslGetNetworks_payload: <none>")
 		resp, httpRes, err := apiClient.SslApi.SslGetNetworks(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SslApiService SslImmediateSslScan", func(t *testing.T) {
@@ -138,29 +132,26 @@ func Test_command_SslApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "string")
 		t.Logf("SslApi_SslImmediateSslScan_id: %v", id)
 
+		t.Log("SslApi_SslImmediateSslScan_payload: <none>")
 		httpRes, err := apiClient.SslApi.SslImmediateSslScan(context.Background(), id.(string)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SslApiService SslMonitorAll", func(t *testing.T) {
 
+		t.Log("SslApi_SslMonitorAll_payload: <none>")
 		httpRes, err := apiClient.SslApi.SslMonitorAll(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SslApiService SslMonitoringStatus", func(t *testing.T) {
 
+		t.Log("SslApi_SslMonitoringStatus_payload: <none>")
 		httpRes, err := apiClient.SslApi.SslMonitoringStatus(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SslApiService SslNetworkScanParts", func(t *testing.T) {
@@ -171,12 +162,11 @@ func Test_command_SslApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "string")
 		t.Logf("SslApi_SslNetworkScanParts_id: %v", id)
 
+		t.Log("SslApi_SslNetworkScanParts_payload: <none>")
 		resp, httpRes, err := apiClient.SslApi.SslNetworkScanParts(context.Background(), id.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SslApiService SslRemoveAllNetworkRanges", func(t *testing.T) {
@@ -187,11 +177,10 @@ func Test_command_SslApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "string")
 		t.Logf("SslApi_SslRemoveAllNetworkRanges_id: %v", id)
 
+		t.Log("SslApi_SslRemoveAllNetworkRanges_payload: <none>")
 		httpRes, err := apiClient.SslApi.SslRemoveAllNetworkRanges(context.Background(), id.(string)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SslApiService SslRemoveNetwork", func(t *testing.T) {
@@ -202,39 +191,35 @@ func Test_command_SslApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "string")
 		t.Logf("SslApi_SslRemoveNetwork_id: %v", id)
 
+		t.Log("SslApi_SslRemoveNetwork_payload: <none>")
 		httpRes, err := apiClient.SslApi.SslRemoveNetwork(context.Background(), id.(string)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SslApiService SslResults", func(t *testing.T) {
 
+		t.Log("SslApi_SslResults_payload: <none>")
 		resp, httpRes, err := apiClient.SslApi.SslResults(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SslApiService SslReviewAll", func(t *testing.T) {
 
+		t.Log("SslApi_SslReviewAll_payload: <none>")
 		httpRes, err := apiClient.SslApi.SslReviewAll(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SslApiService SslReviewedStatus", func(t *testing.T) {
 
+		t.Log("SslApi_SslReviewedStatus_payload: <none>")
 		httpRes, err := apiClient.SslApi.SslReviewedStatus(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SslApiService SslScanPart", func(t *testing.T) {
@@ -245,40 +230,36 @@ func Test_command_SslApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "string")
 		t.Logf("SslApi_SslScanPart_id: %v", id)
 
+		t.Log("SslApi_SslScanPart_payload: <none>")
 		resp, httpRes, err := apiClient.SslApi.SslScanPart(context.Background(), id.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SslApiService SslSetNetworkRanges", func(t *testing.T) {
 
+		t.Log("SslApi_SslSetNetworkRanges_payload: <none>")
 		httpRes, err := apiClient.SslApi.SslSetNetworkRanges(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SslApiService SslUpdateNetwork", func(t *testing.T) {
 
+		t.Log("SslApi_SslUpdateNetwork_payload: <none>")
 		resp, httpRes, err := apiClient.SslApi.SslUpdateNetwork(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SslApiService SslValidateNetworkRanges", func(t *testing.T) {
 
+		t.Log("SslApi_SslValidateNetworkRanges_payload: <none>")
 		httpRes, err := apiClient.SslApi.SslValidateNetworkRanges(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

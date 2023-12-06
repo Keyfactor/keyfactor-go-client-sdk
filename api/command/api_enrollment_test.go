@@ -21,6 +21,7 @@ package command
 
 import (
 	"context"
+	"encoding/json"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"os"
@@ -28,6 +29,7 @@ import (
 )
 
 func Test_command_EnrollmentApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -39,12 +41,11 @@ func Test_command_EnrollmentApiService(t *testing.T) {
 
 	t.Run("Test EnrollmentApiService EnrollmentAddToExistingCertStores", func(t *testing.T) {
 
+		t.Log("EnrollmentApi_EnrollmentAddToExistingCertStores_payload: <none>")
 		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentAddToExistingCertStores(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test EnrollmentApiService EnrollmentAvailableRenewalId", func(t *testing.T) {
@@ -55,12 +56,11 @@ func Test_command_EnrollmentApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("EnrollmentApi_EnrollmentAvailableRenewalId_id: %v", id)
 
+		t.Log("EnrollmentApi_EnrollmentAvailableRenewalId_payload: <none>")
 		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentAvailableRenewalId(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test EnrollmentApiService EnrollmentAvailableRenewalThumbprint", func(t *testing.T) {
@@ -71,32 +71,29 @@ func Test_command_EnrollmentApiService(t *testing.T) {
 		thumbprint, _ = convertParamInterface(thumbprint, "string")
 		t.Logf("EnrollmentApi_EnrollmentAvailableRenewalThumbprint_thumbprint: %v", thumbprint)
 
+		t.Log("EnrollmentApi_EnrollmentAvailableRenewalThumbprint_payload: <none>")
 		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentAvailableRenewalThumbprint(context.Background(), thumbprint.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test EnrollmentApiService EnrollmentGetMyCSRContext", func(t *testing.T) {
 
+		t.Log("EnrollmentApi_EnrollmentGetMyCSRContext_payload: <none>")
 		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentGetMyCSRContext(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test EnrollmentApiService EnrollmentGetMyPFXContext", func(t *testing.T) {
 
+		t.Log("EnrollmentApi_EnrollmentGetMyPFXContext_payload: <none>")
 		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentGetMyPFXContext(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test EnrollmentApiService EnrollmentGetTemplateEnrollmentSettings", func(t *testing.T) {
@@ -107,62 +104,100 @@ func Test_command_EnrollmentApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("EnrollmentApi_EnrollmentGetTemplateEnrollmentSettings_id: %v", id)
 
+		t.Log("EnrollmentApi_EnrollmentGetTemplateEnrollmentSettings_payload: <none>")
 		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentGetTemplateEnrollmentSettings(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test EnrollmentApiService EnrollmentInstallPFXToCertStore", func(t *testing.T) {
 
+		t.Log("EnrollmentApi_EnrollmentInstallPFXToCertStore_payload: <none>")
 		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentInstallPFXToCertStore(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test EnrollmentApiService EnrollmentPostCSREnroll", func(t *testing.T) {
 
+		t.Log("EnrollmentApi_EnrollmentPostCSREnroll_payload: <none>")
 		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentPostCSREnroll(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test EnrollmentApiService EnrollmentPostPFXEnroll", func(t *testing.T) {
 
-		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentPostPFXEnroll(context.Background()).Execute()
+		t.Run("Test Basic PFX Enrollment", func(t *testing.T) {
+			payload := `
+            {
+  "CustomFriendlyName": "Open API Generator Test",
+  "Password": "changeme!@#$%!@#$%",
+  "PopulateMissingValuesFromAD": true,
+  "Subject": "CN=Open API Generator Test,OU=Integrations,O=Keyfactor,L=Ohio,ST=Cleveland,C=US",
+  "IncludeChain": true,
+  "ChainOrder": "EndEntityFirst",
+  "CertificateAuthority": "DC-CA.Command.local\\CommandCA1",
+  "Template": "2YearTestWebServer",
+  "SANs": {
+    "dns": [
+      "Open API Generator Test"
+    ],
+    "ip4": [
+      "192.168.2.2"
+    ]
+  }
+}
 
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
+            `
+			t.Logf("Basic PFX Enrollment_payload: %v", payload)
 
+			// deserialize payload into corresponding model
+			var payloadModel ModelsEnrollmentPFXEnrollmentRequest
+			err := json.Unmarshal([]byte(payload), &payloadModel)
+			require.Nil(t, err)
+
+			payloadModel.Timestamp = generateTimestamp()
+
+			resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentPostPFXEnroll(context.Background()).Request(payloadModel).Execute()
+			if err != nil {
+				t.Errorf("Error while calling EnrollmentApiService_EnrollmentPostPFXEnroll: %v\n", err)
+				t.Log(err.Error())
+				if httpRes != nil {
+					t.Logf("HTTP Response from URL: %v\n", httpRes.Request.URL)
+					t.Logf("HTTP Response Status Code: %v\n", httpRes.StatusCode)
+					t.Logf("HTTP Response Status: %v\n", httpRes.Status)
+					t.Logf("HTTP Response Body: %v\n", httpRes.Body)
+				}
+			}
+
+			t.Log("Test 'Basic PFX Enrollment' must PASS")
+			require.Nil(t, err)
+			require.NotNil(t, resp)
+			assert.Equal(t, 200, httpRes.StatusCode)
+			t.Log("Test 'Basic PFX Enrollment' PASSED successfully")
+		})
 	})
 
 	t.Run("Test EnrollmentApiService EnrollmentPostParsedCSR", func(t *testing.T) {
 
+		t.Log("EnrollmentApi_EnrollmentPostParsedCSR_payload: <none>")
 		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentPostParsedCSR(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test EnrollmentApiService EnrollmentRenew", func(t *testing.T) {
 
+		t.Log("EnrollmentApi_EnrollmentRenew_payload: <none>")
 		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentRenew(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_LicenseApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -39,12 +40,11 @@ func Test_command_LicenseApiService(t *testing.T) {
 
 	t.Run("Test LicenseApiService LicenseGetCurrentLicense", func(t *testing.T) {
 
+		t.Log("LicenseApi_LicenseGetCurrentLicense_payload: <none>")
 		resp, httpRes, err := apiClient.LicenseApi.LicenseGetCurrentLicense(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

@@ -65,13 +65,14 @@ KeyDeleteUnmanagedKey Deletes Unmanaged Key associated with the provided identif
 	@return ApiKeyDeleteUnmanagedKeyRequest
 */
 func (a *KeyApiService) KeyDeleteUnmanagedKey(ctx context.Context, id int32) ApiKeyDeleteUnmanagedKeyRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiKeyDeleteUnmanagedKeyRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -185,13 +186,14 @@ KeyDeleteUnmanagedKeys Deletes Unmanaged Keys associated with the provided ident
 	@return ApiKeyDeleteUnmanagedKeysRequest
 */
 func (a *KeyApiService) KeyDeleteUnmanagedKeys(ctx context.Context) ApiKeyDeleteUnmanagedKeysRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiKeyDeleteUnmanagedKeysRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -323,13 +325,14 @@ KeyGenerateKey Generates an SSH Key Pair for the requesting user.
 	@return ApiKeyGenerateKeyRequest
 */
 func (a *KeyApiService) KeyGenerateKey(ctx context.Context) ApiKeyGenerateKeyRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiKeyGenerateKeyRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -465,13 +468,14 @@ KeyGetMyKey Returns the current key of the requesting user
 	@return ApiKeyGetMyKeyRequest
 */
 func (a *KeyApiService) KeyGetMyKey(ctx context.Context) ApiKeyGetMyKeyRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiKeyGetMyKeyRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -597,13 +601,14 @@ KeyGetUnmanagedKey Returns an unmanaged SSH key with provided id.
 	@return ApiKeyGetUnmanagedKeyRequest
 */
 func (a *KeyApiService) KeyGetUnmanagedKey(ctx context.Context, id int32) ApiKeyGetUnmanagedKeyRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiKeyGetUnmanagedKeyRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -757,13 +762,14 @@ KeyGetUnmanagedKeys Returns Unmanaged SSH keys
 	@return ApiKeyGetUnmanagedKeysRequest
 */
 func (a *KeyApiService) KeyGetUnmanagedKeys(ctx context.Context) ApiKeyGetUnmanagedKeysRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiKeyGetUnmanagedKeysRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -902,13 +908,14 @@ KeyUpdate Updates the requesting user's SSH key
 	@return ApiKeyUpdateRequest
 */
 func (a *KeyApiService) KeyUpdate(ctx context.Context) ApiKeyUpdateRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiKeyUpdateRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_CSRGenerationApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -45,20 +46,18 @@ func Test_command_CSRGenerationApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("CSRGenerationApi_CSRGenerationDeleteCSR_id: %v", id)
 
+		t.Log("CSRGenerationApi_CSRGenerationDeleteCSR_payload: <none>")
 		httpRes, err := apiClient.CSRGenerationApi.CSRGenerationDeleteCSR(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CSRGenerationApiService CSRGenerationDeleteCSRs", func(t *testing.T) {
 
+		t.Log("CSRGenerationApi_CSRGenerationDeleteCSRs_payload: <none>")
 		httpRes, err := apiClient.CSRGenerationApi.CSRGenerationDeleteCSRs(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CSRGenerationApiService CSRGenerationDownload", func(t *testing.T) {
@@ -69,32 +68,29 @@ func Test_command_CSRGenerationApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("CSRGenerationApi_CSRGenerationDownload_id: %v", id)
 
+		t.Log("CSRGenerationApi_CSRGenerationDownload_payload: <none>")
 		resp, httpRes, err := apiClient.CSRGenerationApi.CSRGenerationDownload(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CSRGenerationApiService CSRGenerationGetPendingCSRs", func(t *testing.T) {
 
+		t.Log("CSRGenerationApi_CSRGenerationGetPendingCSRs_payload: <none>")
 		resp, httpRes, err := apiClient.CSRGenerationApi.CSRGenerationGetPendingCSRs(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CSRGenerationApiService CSRGenerationPostGenerate", func(t *testing.T) {
 
+		t.Log("CSRGenerationApi_CSRGenerationPostGenerate_payload: <none>")
 		resp, httpRes, err := apiClient.CSRGenerationApi.CSRGenerationPostGenerate(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

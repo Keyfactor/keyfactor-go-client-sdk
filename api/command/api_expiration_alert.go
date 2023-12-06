@@ -70,13 +70,14 @@ ExpirationAlertAddExpirationAlert Add an expiration alert
 	@return ApiExpirationAlertAddExpirationAlertRequest
 */
 func (a *ExpirationAlertApiService) ExpirationAlertAddExpirationAlert(ctx context.Context) ApiExpirationAlertAddExpirationAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiExpirationAlertAddExpirationAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -200,13 +201,14 @@ ExpirationAlertDeleteExpirationAlert Delete an expiration alert
 	@return ApiExpirationAlertDeleteExpirationAlertRequest
 */
 func (a *ExpirationAlertApiService) ExpirationAlertDeleteExpirationAlert(ctx context.Context, id int32) ApiExpirationAlertDeleteExpirationAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiExpirationAlertDeleteExpirationAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -320,13 +322,14 @@ ExpirationAlertEditExpirationAlert Edit an expiration alert
 	@return ApiExpirationAlertEditExpirationAlertRequest
 */
 func (a *ExpirationAlertApiService) ExpirationAlertEditExpirationAlert(ctx context.Context) ApiExpirationAlertEditExpirationAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiExpirationAlertEditExpirationAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -454,13 +457,14 @@ ExpirationAlertEditSchedule Edit schedule
 	@return ApiExpirationAlertEditScheduleRequest
 */
 func (a *ExpirationAlertApiService) ExpirationAlertEditSchedule(ctx context.Context) ApiExpirationAlertEditScheduleRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiExpirationAlertEditScheduleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -584,13 +588,14 @@ ExpirationAlertGetExpirationAlert Get an expiration alert
 	@return ApiExpirationAlertGetExpirationAlertRequest
 */
 func (a *ExpirationAlertApiService) ExpirationAlertGetExpirationAlert(ctx context.Context, id int32) ApiExpirationAlertGetExpirationAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiExpirationAlertGetExpirationAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -744,13 +749,14 @@ ExpirationAlertGetExpirationAlerts Gets all expiration alerts according to the p
 	@return ApiExpirationAlertGetExpirationAlertsRequest
 */
 func (a *ExpirationAlertApiService) ExpirationAlertGetExpirationAlerts(ctx context.Context) ApiExpirationAlertGetExpirationAlertsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiExpirationAlertGetExpirationAlertsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -882,13 +888,14 @@ ExpirationAlertGetSchedule Get the schedule for expiration alerts
 	@return ApiExpirationAlertGetScheduleRequest
 */
 func (a *ExpirationAlertApiService) ExpirationAlertGetSchedule(ctx context.Context) ApiExpirationAlertGetScheduleRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiExpirationAlertGetScheduleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1012,13 +1019,14 @@ ExpirationAlertTestAllExpirationAlert Test All Expiration Alerts
 	@return ApiExpirationAlertTestAllExpirationAlertRequest
 */
 func (a *ExpirationAlertApiService) ExpirationAlertTestAllExpirationAlert(ctx context.Context) ApiExpirationAlertTestAllExpirationAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiExpirationAlertTestAllExpirationAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1147,13 +1155,14 @@ ExpirationAlertTestExpirationAlert Test an Expiration Alert
 	@return ApiExpirationAlertTestExpirationAlertRequest
 */
 func (a *ExpirationAlertApiService) ExpirationAlertTestExpirationAlert(ctx context.Context) ApiExpirationAlertTestExpirationAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiExpirationAlertTestExpirationAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

@@ -81,13 +81,14 @@ SecurityRolePermissionsAddCollectionPermissions Adds collection permissions to t
 	@return ApiSecurityRolePermissionsAddCollectionPermissionsRequest
 */
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddCollectionPermissions(ctx context.Context, id int32) ApiSecurityRolePermissionsAddCollectionPermissionsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSecurityRolePermissionsAddCollectionPermissionsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -227,13 +228,14 @@ SecurityRolePermissionsAddContainerPermissions Adds container permissions to the
 	@return ApiSecurityRolePermissionsAddContainerPermissionsRequest
 */
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddContainerPermissions(ctx context.Context, id int32) ApiSecurityRolePermissionsAddContainerPermissionsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSecurityRolePermissionsAddContainerPermissionsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -431,13 +433,14 @@ SecurityRolePermissionsAddGlobalPermissions Adds global permissions to the secur
 	@return ApiSecurityRolePermissionsAddGlobalPermissionsRequest
 */
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddGlobalPermissions(ctx context.Context, id int32) ApiSecurityRolePermissionsAddGlobalPermissionsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSecurityRolePermissionsAddGlobalPermissionsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -563,13 +566,14 @@ SecurityRolePermissionsGetCollectionPermissionsForRole Returns all collection pe
 	@return ApiSecurityRolePermissionsGetCollectionPermissionsForRoleRequest
 */
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetCollectionPermissionsForRole(ctx context.Context, id int32) ApiSecurityRolePermissionsGetCollectionPermissionsForRoleRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSecurityRolePermissionsGetCollectionPermissionsForRoleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -690,13 +694,14 @@ SecurityRolePermissionsGetContainerPermissionsForRole Returns all container perm
 	@return ApiSecurityRolePermissionsGetContainerPermissionsForRoleRequest
 */
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetContainerPermissionsForRole(ctx context.Context, id int32) ApiSecurityRolePermissionsGetContainerPermissionsForRoleRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSecurityRolePermissionsGetContainerPermissionsForRoleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -817,13 +822,14 @@ SecurityRolePermissionsGetGlobalPermissionsForRole Returns all global permission
 	@return ApiSecurityRolePermissionsGetGlobalPermissionsForRoleRequest
 */
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetGlobalPermissionsForRole(ctx context.Context, id int32) ApiSecurityRolePermissionsGetGlobalPermissionsForRoleRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSecurityRolePermissionsGetGlobalPermissionsForRoleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -944,13 +950,14 @@ SecurityRolePermissionsGetPermissionsForRole Returns all permissions associated 
 	@return ApiSecurityRolePermissionsGetPermissionsForRoleRequest
 */
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetPermissionsForRole(ctx context.Context, id int32) ApiSecurityRolePermissionsGetPermissionsForRoleRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSecurityRolePermissionsGetPermissionsForRoleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -1087,13 +1094,14 @@ SecurityRolePermissionsSetCollectionPermissions Sets collection permissions to t
 	@return ApiSecurityRolePermissionsSetCollectionPermissionsRequest
 */
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetCollectionPermissions(ctx context.Context, id int32) ApiSecurityRolePermissionsSetCollectionPermissionsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSecurityRolePermissionsSetCollectionPermissionsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -1233,13 +1241,14 @@ SecurityRolePermissionsSetContainerPermissions Sets container permissions to the
 	@return ApiSecurityRolePermissionsSetContainerPermissionsRequest
 */
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetContainerPermissions(ctx context.Context, id int32) ApiSecurityRolePermissionsSetContainerPermissionsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSecurityRolePermissionsSetContainerPermissionsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -1437,13 +1446,14 @@ SecurityRolePermissionsSetGlobalPermissions Adds global permissions to the secur
 	@return ApiSecurityRolePermissionsSetGlobalPermissionsRequest
 */
 func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetGlobalPermissions(ctx context.Context, id int32) ApiSecurityRolePermissionsSetGlobalPermissionsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSecurityRolePermissionsSetGlobalPermissionsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }

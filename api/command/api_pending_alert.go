@@ -70,13 +70,14 @@ PendingAlertAddPendingAlert Add a pending alert
 	@return ApiPendingAlertAddPendingAlertRequest
 */
 func (a *PendingAlertApiService) PendingAlertAddPendingAlert(ctx context.Context) ApiPendingAlertAddPendingAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiPendingAlertAddPendingAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -200,13 +201,14 @@ PendingAlertDeletePendingAlert Delete a pending alert
 	@return ApiPendingAlertDeletePendingAlertRequest
 */
 func (a *PendingAlertApiService) PendingAlertDeletePendingAlert(ctx context.Context, id int32) ApiPendingAlertDeletePendingAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiPendingAlertDeletePendingAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -320,13 +322,14 @@ PendingAlertEditPendingAlert Edit a pending alert
 	@return ApiPendingAlertEditPendingAlertRequest
 */
 func (a *PendingAlertApiService) PendingAlertEditPendingAlert(ctx context.Context) ApiPendingAlertEditPendingAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiPendingAlertEditPendingAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -454,13 +457,14 @@ PendingAlertEditSchedule Edit schedule
 	@return ApiPendingAlertEditScheduleRequest
 */
 func (a *PendingAlertApiService) PendingAlertEditSchedule(ctx context.Context) ApiPendingAlertEditScheduleRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiPendingAlertEditScheduleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -584,13 +588,14 @@ PendingAlertGetPendingAlert Get a pending alert
 	@return ApiPendingAlertGetPendingAlertRequest
 */
 func (a *PendingAlertApiService) PendingAlertGetPendingAlert(ctx context.Context, id int32) ApiPendingAlertGetPendingAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiPendingAlertGetPendingAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -744,13 +749,14 @@ PendingAlertGetPendingAlerts Gets all pending alerts according to the provided f
 	@return ApiPendingAlertGetPendingAlertsRequest
 */
 func (a *PendingAlertApiService) PendingAlertGetPendingAlerts(ctx context.Context) ApiPendingAlertGetPendingAlertsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiPendingAlertGetPendingAlertsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -882,13 +888,14 @@ PendingAlertGetSchedule Get the schedule for pending alerts
 	@return ApiPendingAlertGetScheduleRequest
 */
 func (a *PendingAlertApiService) PendingAlertGetSchedule(ctx context.Context) ApiPendingAlertGetScheduleRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiPendingAlertGetScheduleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1012,13 +1019,14 @@ PendingAlertTestAllPendingAlert Test all pending alerts. Will send alert emails 
 	@return ApiPendingAlertTestAllPendingAlertRequest
 */
 func (a *PendingAlertApiService) PendingAlertTestAllPendingAlert(ctx context.Context) ApiPendingAlertTestAllPendingAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiPendingAlertTestAllPendingAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1147,13 +1155,14 @@ PendingAlertTestPendingAlert Test pending alert. Will send alert emails if SendA
 	@return ApiPendingAlertTestPendingAlertRequest
 */
 func (a *PendingAlertApiService) PendingAlertTestPendingAlert(ctx context.Context) ApiPendingAlertTestPendingAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiPendingAlertTestPendingAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

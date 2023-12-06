@@ -65,13 +65,14 @@ SecurityRolesDeleteSecurityRole Deletes the security role whose ID is provided.
 	@return ApiSecurityRolesDeleteSecurityRoleRequest
 */
 func (a *SecurityRolesApiService) SecurityRolesDeleteSecurityRole(ctx context.Context, id int32) ApiSecurityRolesDeleteSecurityRoleRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSecurityRolesDeleteSecurityRoleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -180,13 +181,14 @@ SecurityRolesGetIdentitiesWithRole Returns all identities which have the securit
 	@return ApiSecurityRolesGetIdentitiesWithRoleRequest
 */
 func (a *SecurityRolesApiService) SecurityRolesGetIdentitiesWithRole(ctx context.Context, id int32) ApiSecurityRolesGetIdentitiesWithRoleRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSecurityRolesGetIdentitiesWithRoleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -314,13 +316,14 @@ SecurityRolesUpdateIdentitiesWithRole Updates the identities which have the secu
 	@return ApiSecurityRolesUpdateIdentitiesWithRoleRequest
 */
 func (a *SecurityRolesApiService) SecurityRolesUpdateIdentitiesWithRole(ctx context.Context, id int32) ApiSecurityRolesUpdateIdentitiesWithRoleRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSecurityRolesUpdateIdentitiesWithRoleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }

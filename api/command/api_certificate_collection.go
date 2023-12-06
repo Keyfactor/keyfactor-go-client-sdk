@@ -78,13 +78,14 @@ The field used to determine if a certificate is a duplicate of another.
 	@return ApiCertificateCollectionCopyFromExistingCollectionRequest
 */
 func (a *CertificateCollectionApiService) CertificateCollectionCopyFromExistingCollection(ctx context.Context) ApiCertificateCollectionCopyFromExistingCollectionRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateCollectionCopyFromExistingCollectionRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -221,13 +222,14 @@ The field used to determine if a certificate is a duplicate of another.
 	@return ApiCertificateCollectionCreateCollectionRequest
 */
 func (a *CertificateCollectionApiService) CertificateCollectionCreateCollection(ctx context.Context) ApiCertificateCollectionCreateCollectionRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateCollectionCreateCollectionRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -351,13 +353,14 @@ CertificateCollectionGetCollection0 Returns the certificate collection definitio
 	@return ApiCertificateCollectionGetCollection0Request
 */
 func (a *CertificateCollectionApiService) CertificateCollectionGetCollection0(ctx context.Context, id int32) ApiCertificateCollectionGetCollection0Request {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateCollectionGetCollection0Request{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -478,13 +481,14 @@ CertificateCollectionGetCollection1 Returns the certificate collection associate
 	@return ApiCertificateCollectionGetCollection1Request
 */
 func (a *CertificateCollectionApiService) CertificateCollectionGetCollection1(ctx context.Context, name string) ApiCertificateCollectionGetCollection1Request {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateCollectionGetCollection1Request{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		name:                    name,
 	}
 }
@@ -638,13 +642,14 @@ CertificateCollectionGetCollections Returns all certificate collections
 	@return ApiCertificateCollectionGetCollectionsRequest
 */
 func (a *CertificateCollectionApiService) CertificateCollectionGetCollections(ctx context.Context) ApiCertificateCollectionGetCollectionsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateCollectionGetCollectionsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -789,13 +794,14 @@ This endpoint should not be used as its use will potentially cause users to lose
 Deprecated
 */
 func (a *CertificateCollectionApiService) CertificateCollectionSetCollectionPermissions(ctx context.Context, id int32) ApiCertificateCollectionSetCollectionPermissionsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateCollectionSetCollectionPermissionsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -923,13 +929,14 @@ The field used to determine if a certificate is a duplicate of another.
 	@return ApiCertificateCollectionUpdateCollectionRequest
 */
 func (a *CertificateCollectionApiService) CertificateCollectionUpdateCollection(ctx context.Context) ApiCertificateCollectionUpdateCollectionRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateCollectionUpdateCollectionRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

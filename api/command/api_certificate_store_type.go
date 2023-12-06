@@ -70,13 +70,14 @@ CertificateStoreTypeCreateCertificateStoreType Creates a new certificate store t
 	@return ApiCertificateStoreTypeCreateCertificateStoreTypeRequest
 */
 func (a *CertificateStoreTypeApiService) CertificateStoreTypeCreateCertificateStoreType(ctx context.Context) ApiCertificateStoreTypeCreateCertificateStoreTypeRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateStoreTypeCreateCertificateStoreTypeRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -202,13 +203,14 @@ This will ignore individual delete failures, and continue processing certificate
 	@return ApiCertificateStoreTypeDeleteCertificateStoreTypeRequest
 */
 func (a *CertificateStoreTypeApiService) CertificateStoreTypeDeleteCertificateStoreType(ctx context.Context, id int32) ApiCertificateStoreTypeDeleteCertificateStoreTypeRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateStoreTypeDeleteCertificateStoreTypeRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -324,13 +326,14 @@ This will ignore individual delete failures, and continue processing the array.
 	@return ApiCertificateStoreTypeDeleteCertificateStoreTypesRequest
 */
 func (a *CertificateStoreTypeApiService) CertificateStoreTypeDeleteCertificateStoreTypes(ctx context.Context) ApiCertificateStoreTypeDeleteCertificateStoreTypesRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateStoreTypeDeleteCertificateStoreTypesRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -442,13 +445,14 @@ CertificateStoreTypeGetCertificateStoreType0 Returns a single certificate store 
 	@return ApiCertificateStoreTypeGetCertificateStoreType0Request
 */
 func (a *CertificateStoreTypeApiService) CertificateStoreTypeGetCertificateStoreType0(ctx context.Context, id int32) ApiCertificateStoreTypeGetCertificateStoreType0Request {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateStoreTypeGetCertificateStoreType0Request{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -569,13 +573,14 @@ CertificateStoreTypeGetCertificateStoreType1 Returns a single certificate store 
 	@return ApiCertificateStoreTypeGetCertificateStoreType1Request
 */
 func (a *CertificateStoreTypeApiService) CertificateStoreTypeGetCertificateStoreType1(ctx context.Context, name string) ApiCertificateStoreTypeGetCertificateStoreType1Request {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateStoreTypeGetCertificateStoreType1Request{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		name:                    name,
 	}
 }
@@ -729,13 +734,14 @@ CertificateStoreTypeGetTypes Returns all certificate store types according to th
 	@return ApiCertificateStoreTypeGetTypesRequest
 */
 func (a *CertificateStoreTypeApiService) CertificateStoreTypeGetTypes(ctx context.Context) ApiCertificateStoreTypeGetTypesRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateStoreTypeGetTypesRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -874,13 +880,14 @@ CertificateStoreTypeUpdateCertificateStoreType Updates an existing certificate s
 	@return ApiCertificateStoreTypeUpdateCertificateStoreTypeRequest
 */
 func (a *CertificateStoreTypeApiService) CertificateStoreTypeUpdateCertificateStoreType(ctx context.Context) ApiCertificateStoreTypeUpdateCertificateStoreTypeRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateStoreTypeUpdateCertificateStoreTypeRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

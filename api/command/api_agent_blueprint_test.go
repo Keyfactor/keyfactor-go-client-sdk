@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_AgentBlueprintApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -39,11 +40,10 @@ func Test_command_AgentBlueprintApiService(t *testing.T) {
 
 	t.Run("Test AgentBlueprintApiService AgentBlueprintApplyBlueprint", func(t *testing.T) {
 
+		t.Log("AgentBlueprintApi_AgentBlueprintApplyBlueprint_payload: <none>")
 		httpRes, err := apiClient.AgentBlueprintApi.AgentBlueprintApplyBlueprint(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test AgentBlueprintApiService AgentBlueprintDeleteBlueprint", func(t *testing.T) {
@@ -54,21 +54,19 @@ func Test_command_AgentBlueprintApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "string")
 		t.Logf("AgentBlueprintApi_AgentBlueprintDeleteBlueprint_id: %v", id)
 
+		t.Log("AgentBlueprintApi_AgentBlueprintDeleteBlueprint_payload: <none>")
 		httpRes, err := apiClient.AgentBlueprintApi.AgentBlueprintDeleteBlueprint(context.Background(), id.(string)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test AgentBlueprintApiService AgentBlueprintGenerateBlueprint", func(t *testing.T) {
 
+		t.Log("AgentBlueprintApi_AgentBlueprintGenerateBlueprint_payload: <none>")
 		resp, httpRes, err := apiClient.AgentBlueprintApi.AgentBlueprintGenerateBlueprint(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test AgentBlueprintApiService AgentBlueprintGetAgentBlueprint", func(t *testing.T) {
@@ -79,22 +77,20 @@ func Test_command_AgentBlueprintApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "string")
 		t.Logf("AgentBlueprintApi_AgentBlueprintGetAgentBlueprint_id: %v", id)
 
+		t.Log("AgentBlueprintApi_AgentBlueprintGetAgentBlueprint_payload: <none>")
 		resp, httpRes, err := apiClient.AgentBlueprintApi.AgentBlueprintGetAgentBlueprint(context.Background(), id.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test AgentBlueprintApiService AgentBlueprintGetAgentBlueprints", func(t *testing.T) {
 
+		t.Log("AgentBlueprintApi_AgentBlueprintGetAgentBlueprints_payload: <none>")
 		resp, httpRes, err := apiClient.AgentBlueprintApi.AgentBlueprintGetAgentBlueprints(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test AgentBlueprintApiService AgentBlueprintGetBlueprintJobs", func(t *testing.T) {
@@ -105,12 +101,11 @@ func Test_command_AgentBlueprintApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "string")
 		t.Logf("AgentBlueprintApi_AgentBlueprintGetBlueprintJobs_id: %v", id)
 
+		t.Log("AgentBlueprintApi_AgentBlueprintGetBlueprintJobs_payload: <none>")
 		resp, httpRes, err := apiClient.AgentBlueprintApi.AgentBlueprintGetBlueprintJobs(context.Background(), id.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test AgentBlueprintApiService AgentBlueprintGetBlueprintStores", func(t *testing.T) {
@@ -121,12 +116,11 @@ func Test_command_AgentBlueprintApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "string")
 		t.Logf("AgentBlueprintApi_AgentBlueprintGetBlueprintStores_id: %v", id)
 
+		t.Log("AgentBlueprintApi_AgentBlueprintGetBlueprintStores_payload: <none>")
 		resp, httpRes, err := apiClient.AgentBlueprintApi.AgentBlueprintGetBlueprintStores(context.Background(), id.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_WorkflowDefinitionApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -45,22 +46,20 @@ func Test_command_WorkflowDefinitionApiService(t *testing.T) {
 		definitionId, _ = convertParamInterface(definitionId, "string")
 		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionConfigureDefinitionSteps_definitionId: %v", definitionId)
 
+		t.Log("WorkflowDefinitionApi_WorkflowDefinitionConfigureDefinitionSteps_payload: <none>")
 		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionConfigureDefinitionSteps(context.Background(), definitionId.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionCreateNewDefinition", func(t *testing.T) {
 
+		t.Log("WorkflowDefinitionApi_WorkflowDefinitionCreateNewDefinition_payload: <none>")
 		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionCreateNewDefinition(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionDelete", func(t *testing.T) {
@@ -71,11 +70,10 @@ func Test_command_WorkflowDefinitionApiService(t *testing.T) {
 		definitionId, _ = convertParamInterface(definitionId, "string")
 		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionDelete_definitionId: %v", definitionId)
 
+		t.Log("WorkflowDefinitionApi_WorkflowDefinitionDelete_payload: <none>")
 		httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionDelete(context.Background(), definitionId.(string)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionGet", func(t *testing.T) {
@@ -86,12 +84,11 @@ func Test_command_WorkflowDefinitionApiService(t *testing.T) {
 		definitionId, _ = convertParamInterface(definitionId, "string")
 		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionGet_definitionId: %v", definitionId)
 
+		t.Log("WorkflowDefinitionApi_WorkflowDefinitionGet_payload: <none>")
 		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionGet(context.Background(), definitionId.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionGetStepSchema", func(t *testing.T) {
@@ -102,12 +99,11 @@ func Test_command_WorkflowDefinitionApiService(t *testing.T) {
 		extensionName, _ = convertParamInterface(extensionName, "string")
 		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionGetStepSchema_extensionName: %v", extensionName)
 
+		t.Log("WorkflowDefinitionApi_WorkflowDefinitionGetStepSchema_payload: <none>")
 		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionGetStepSchema(context.Background(), extensionName.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionPublishDefinition", func(t *testing.T) {
@@ -118,42 +114,38 @@ func Test_command_WorkflowDefinitionApiService(t *testing.T) {
 		definitionId, _ = convertParamInterface(definitionId, "string")
 		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionPublishDefinition_definitionId: %v", definitionId)
 
+		t.Log("WorkflowDefinitionApi_WorkflowDefinitionPublishDefinition_payload: <none>")
 		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionPublishDefinition(context.Background(), definitionId.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionQuery", func(t *testing.T) {
 
+		t.Log("WorkflowDefinitionApi_WorkflowDefinitionQuery_payload: <none>")
 		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionQuery(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionQueryAvailableSteps", func(t *testing.T) {
 
+		t.Log("WorkflowDefinitionApi_WorkflowDefinitionQueryAvailableSteps_payload: <none>")
 		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionQueryAvailableSteps(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionQueryWorkflowTypes", func(t *testing.T) {
 
+		t.Log("WorkflowDefinitionApi_WorkflowDefinitionQueryWorkflowTypes_payload: <none>")
 		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionQueryWorkflowTypes(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionUpdateExistingDefinition", func(t *testing.T) {
@@ -164,12 +156,11 @@ func Test_command_WorkflowDefinitionApiService(t *testing.T) {
 		definitionId, _ = convertParamInterface(definitionId, "string")
 		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionUpdateExistingDefinition_definitionId: %v", definitionId)
 
+		t.Log("WorkflowDefinitionApi_WorkflowDefinitionUpdateExistingDefinition_payload: <none>")
 		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionUpdateExistingDefinition(context.Background(), definitionId.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

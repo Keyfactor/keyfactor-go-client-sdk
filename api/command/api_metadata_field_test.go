@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_MetadataFieldApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -39,12 +40,11 @@ func Test_command_MetadataFieldApiService(t *testing.T) {
 
 	t.Run("Test MetadataFieldApiService MetadataFieldCreateMetadataField", func(t *testing.T) {
 
+		t.Log("MetadataFieldApi_MetadataFieldCreateMetadataField_payload: <none>")
 		resp, httpRes, err := apiClient.MetadataFieldApi.MetadataFieldCreateMetadataField(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test MetadataFieldApiService MetadataFieldDeleteMetadataField", func(t *testing.T) {
@@ -55,30 +55,27 @@ func Test_command_MetadataFieldApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("MetadataFieldApi_MetadataFieldDeleteMetadataField_id: %v", id)
 
+		t.Log("MetadataFieldApi_MetadataFieldDeleteMetadataField_payload: <none>")
 		httpRes, err := apiClient.MetadataFieldApi.MetadataFieldDeleteMetadataField(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test MetadataFieldApiService MetadataFieldDeleteMetadataFields", func(t *testing.T) {
 
+		t.Log("MetadataFieldApi_MetadataFieldDeleteMetadataFields_payload: <none>")
 		httpRes, err := apiClient.MetadataFieldApi.MetadataFieldDeleteMetadataFields(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test MetadataFieldApiService MetadataFieldGetAllMetadataFields", func(t *testing.T) {
 
+		t.Log("MetadataFieldApi_MetadataFieldGetAllMetadataFields_payload: <none>")
 		resp, httpRes, err := apiClient.MetadataFieldApi.MetadataFieldGetAllMetadataFields(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test MetadataFieldApiService MetadataFieldGetMetadataField0", func(t *testing.T) {
@@ -89,12 +86,11 @@ func Test_command_MetadataFieldApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("MetadataFieldApi_MetadataFieldGetMetadataField0_id: %v", id)
 
+		t.Log("MetadataFieldApi_MetadataFieldGetMetadataField0_payload: <none>")
 		resp, httpRes, err := apiClient.MetadataFieldApi.MetadataFieldGetMetadataField0(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test MetadataFieldApiService MetadataFieldGetMetadataField1", func(t *testing.T) {
@@ -105,12 +101,11 @@ func Test_command_MetadataFieldApiService(t *testing.T) {
 		name, _ = convertParamInterface(name, "string")
 		t.Logf("MetadataFieldApi_MetadataFieldGetMetadataField1_name: %v", name)
 
+		t.Log("MetadataFieldApi_MetadataFieldGetMetadataField1_payload: <none>")
 		resp, httpRes, err := apiClient.MetadataFieldApi.MetadataFieldGetMetadataField1(context.Background(), name.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test MetadataFieldApiService MetadataFieldGetMetadataFieldInUse", func(t *testing.T) {
@@ -121,22 +116,20 @@ func Test_command_MetadataFieldApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("MetadataFieldApi_MetadataFieldGetMetadataFieldInUse_id: %v", id)
 
+		t.Log("MetadataFieldApi_MetadataFieldGetMetadataFieldInUse_payload: <none>")
 		resp, httpRes, err := apiClient.MetadataFieldApi.MetadataFieldGetMetadataFieldInUse(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test MetadataFieldApiService MetadataFieldUpdateMetadataField", func(t *testing.T) {
 
+		t.Log("MetadataFieldApi_MetadataFieldUpdateMetadataField_payload: <none>")
 		resp, httpRes, err := apiClient.MetadataFieldApi.MetadataFieldUpdateMetadataField(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

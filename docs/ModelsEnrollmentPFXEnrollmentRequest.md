@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **CertificateAuthority** | Pointer to **string** |  | [optional] 
 **Metadata** | Pointer to **map[string]interface{}** |  | [optional] 
 **AdditionalEnrollmentFields** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**Timestamp** | Pointer to **time.Time** |  | [optional] 
+**Timestamp** | Pointer to **string** |  | [optional] 
 **Template** | Pointer to **string** |  | [optional] 
 **SANs** | Pointer to **map[string][]string** |  | [optional] 
 
@@ -263,20 +263,20 @@ HasAdditionalEnrollmentFields returns a boolean if a field has been set.
 
 ### GetTimestamp
 
-`func (o *ModelsEnrollmentPFXEnrollmentRequest) GetTimestamp() time.Time`
+`func (o *ModelsEnrollmentPFXEnrollmentRequest) GetTimestamp() string`
 
 GetTimestamp returns the Timestamp field if non-nil, zero value otherwise.
 
 ### GetTimestampOk
 
-`func (o *ModelsEnrollmentPFXEnrollmentRequest) GetTimestampOk() (*time.Time, bool)`
+`func (o *ModelsEnrollmentPFXEnrollmentRequest) GetTimestampOk() (*string, bool)`
 
 GetTimestampOk returns a tuple with the Timestamp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTimestamp
 
-`func (o *ModelsEnrollmentPFXEnrollmentRequest) SetTimestamp(v time.Time)`
+`func (o *ModelsEnrollmentPFXEnrollmentRequest) SetTimestamp(v string)`
 
 SetTimestamp sets Timestamp field to given value.
 

@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_SecurityRolesApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -45,11 +46,10 @@ func Test_command_SecurityRolesApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("SecurityRolesApi_SecurityRolesDeleteSecurityRole_id: %v", id)
 
+		t.Log("SecurityRolesApi_SecurityRolesDeleteSecurityRole_payload: <none>")
 		httpRes, err := apiClient.SecurityRolesApi.SecurityRolesDeleteSecurityRole(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SecurityRolesApiService SecurityRolesGetIdentitiesWithRole", func(t *testing.T) {
@@ -60,12 +60,11 @@ func Test_command_SecurityRolesApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("SecurityRolesApi_SecurityRolesGetIdentitiesWithRole_id: %v", id)
 
+		t.Log("SecurityRolesApi_SecurityRolesGetIdentitiesWithRole_payload: <none>")
 		resp, httpRes, err := apiClient.SecurityRolesApi.SecurityRolesGetIdentitiesWithRole(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SecurityRolesApiService SecurityRolesUpdateIdentitiesWithRole", func(t *testing.T) {
@@ -76,12 +75,11 @@ func Test_command_SecurityRolesApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("SecurityRolesApi_SecurityRolesUpdateIdentitiesWithRole_id: %v", id)
 
+		t.Log("SecurityRolesApi_SecurityRolesUpdateIdentitiesWithRole_payload: <none>")
 		resp, httpRes, err := apiClient.SecurityRolesApi.SecurityRolesUpdateIdentitiesWithRole(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

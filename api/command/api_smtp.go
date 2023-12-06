@@ -62,13 +62,14 @@ SMTPSMTP Gets SMTP profile data
 	@return ApiSMTPSMTPRequest
 */
 func (a *SMTPApiService) SMTPSMTP(ctx context.Context) ApiSMTPSMTPRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSMTPSMTPRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -191,13 +192,14 @@ SMTPTestSMTP Tests SMTP profile data
 	@return ApiSMTPTestSMTPRequest
 */
 func (a *SMTPApiService) SMTPTestSMTP(ctx context.Context) ApiSMTPTestSMTPRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSMTPTestSMTPRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -325,13 +327,14 @@ SMTPUpdateSMTP Updates SMTP profile data
 	@return ApiSMTPUpdateSMTPRequest
 */
 func (a *SMTPApiService) SMTPUpdateSMTP(ctx context.Context) ApiSMTPUpdateSMTPRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSMTPUpdateSMTPRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

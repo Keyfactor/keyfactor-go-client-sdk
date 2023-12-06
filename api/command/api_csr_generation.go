@@ -65,13 +65,14 @@ CSRGenerationDeleteCSR Deletes a CSR associated with the provided identifier
 	@return ApiCSRGenerationDeleteCSRRequest
 */
 func (a *CSRGenerationApiService) CSRGenerationDeleteCSR(ctx context.Context, id int32) ApiCSRGenerationDeleteCSRRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCSRGenerationDeleteCSRRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -185,13 +186,14 @@ CSRGenerationDeleteCSRs Deletes the CSRs associated with the provided identifier
 	@return ApiCSRGenerationDeleteCSRsRequest
 */
 func (a *CSRGenerationApiService) CSRGenerationDeleteCSRs(ctx context.Context) ApiCSRGenerationDeleteCSRsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCSRGenerationDeleteCSRsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -303,13 +305,14 @@ CSRGenerationDownload Returns a previously generated CSR associated with the pro
 	@return ApiCSRGenerationDownloadRequest
 */
 func (a *CSRGenerationApiService) CSRGenerationDownload(ctx context.Context, id int32) ApiCSRGenerationDownloadRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCSRGenerationDownloadRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -463,13 +466,14 @@ CSRGenerationGetPendingCSRs Returns a list of the currently pending CSRs accordi
 	@return ApiCSRGenerationGetPendingCSRsRequest
 */
 func (a *CSRGenerationApiService) CSRGenerationGetPendingCSRs(ctx context.Context) ApiCSRGenerationGetPendingCSRsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCSRGenerationGetPendingCSRsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -608,13 +612,14 @@ CSRGenerationPostGenerate Generates a CSR according the properties provided
 	@return ApiCSRGenerationPostGenerateRequest
 */
 func (a *CSRGenerationApiService) CSRGenerationPostGenerate(ctx context.Context) ApiCSRGenerationPostGenerateRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCSRGenerationPostGenerateRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

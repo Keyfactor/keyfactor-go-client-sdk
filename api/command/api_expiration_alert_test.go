@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_ExpirationAlertApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -39,12 +40,11 @@ func Test_command_ExpirationAlertApiService(t *testing.T) {
 
 	t.Run("Test ExpirationAlertApiService ExpirationAlertAddExpirationAlert", func(t *testing.T) {
 
+		t.Log("ExpirationAlertApi_ExpirationAlertAddExpirationAlert_payload: <none>")
 		resp, httpRes, err := apiClient.ExpirationAlertApi.ExpirationAlertAddExpirationAlert(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test ExpirationAlertApiService ExpirationAlertDeleteExpirationAlert", func(t *testing.T) {
@@ -55,31 +55,28 @@ func Test_command_ExpirationAlertApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("ExpirationAlertApi_ExpirationAlertDeleteExpirationAlert_id: %v", id)
 
+		t.Log("ExpirationAlertApi_ExpirationAlertDeleteExpirationAlert_payload: <none>")
 		httpRes, err := apiClient.ExpirationAlertApi.ExpirationAlertDeleteExpirationAlert(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test ExpirationAlertApiService ExpirationAlertEditExpirationAlert", func(t *testing.T) {
 
+		t.Log("ExpirationAlertApi_ExpirationAlertEditExpirationAlert_payload: <none>")
 		resp, httpRes, err := apiClient.ExpirationAlertApi.ExpirationAlertEditExpirationAlert(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test ExpirationAlertApiService ExpirationAlertEditSchedule", func(t *testing.T) {
 
+		t.Log("ExpirationAlertApi_ExpirationAlertEditSchedule_payload: <none>")
 		resp, httpRes, err := apiClient.ExpirationAlertApi.ExpirationAlertEditSchedule(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test ExpirationAlertApiService ExpirationAlertGetExpirationAlert", func(t *testing.T) {
@@ -90,52 +87,47 @@ func Test_command_ExpirationAlertApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("ExpirationAlertApi_ExpirationAlertGetExpirationAlert_id: %v", id)
 
+		t.Log("ExpirationAlertApi_ExpirationAlertGetExpirationAlert_payload: <none>")
 		resp, httpRes, err := apiClient.ExpirationAlertApi.ExpirationAlertGetExpirationAlert(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test ExpirationAlertApiService ExpirationAlertGetExpirationAlerts", func(t *testing.T) {
 
+		t.Log("ExpirationAlertApi_ExpirationAlertGetExpirationAlerts_payload: <none>")
 		resp, httpRes, err := apiClient.ExpirationAlertApi.ExpirationAlertGetExpirationAlerts(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test ExpirationAlertApiService ExpirationAlertGetSchedule", func(t *testing.T) {
 
+		t.Log("ExpirationAlertApi_ExpirationAlertGetSchedule_payload: <none>")
 		resp, httpRes, err := apiClient.ExpirationAlertApi.ExpirationAlertGetSchedule(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test ExpirationAlertApiService ExpirationAlertTestAllExpirationAlert", func(t *testing.T) {
 
+		t.Log("ExpirationAlertApi_ExpirationAlertTestAllExpirationAlert_payload: <none>")
 		resp, httpRes, err := apiClient.ExpirationAlertApi.ExpirationAlertTestAllExpirationAlert(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test ExpirationAlertApiService ExpirationAlertTestExpirationAlert", func(t *testing.T) {
 
+		t.Log("ExpirationAlertApi_ExpirationAlertTestExpirationAlert_payload: <none>")
 		resp, httpRes, err := apiClient.ExpirationAlertApi.ExpirationAlertTestExpirationAlert(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

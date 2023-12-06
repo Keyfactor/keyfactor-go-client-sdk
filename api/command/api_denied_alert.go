@@ -70,13 +70,14 @@ DeniedAlertAddDeniedAlert Add a denied alert
 	@return ApiDeniedAlertAddDeniedAlertRequest
 */
 func (a *DeniedAlertApiService) DeniedAlertAddDeniedAlert(ctx context.Context) ApiDeniedAlertAddDeniedAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiDeniedAlertAddDeniedAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -200,13 +201,14 @@ DeniedAlertDeleteDeniedAlert Delete a denied alert
 	@return ApiDeniedAlertDeleteDeniedAlertRequest
 */
 func (a *DeniedAlertApiService) DeniedAlertDeleteDeniedAlert(ctx context.Context, id int32) ApiDeniedAlertDeleteDeniedAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiDeniedAlertDeleteDeniedAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -320,13 +322,14 @@ DeniedAlertEditDeniedAlert Edit a denied alert
 	@return ApiDeniedAlertEditDeniedAlertRequest
 */
 func (a *DeniedAlertApiService) DeniedAlertEditDeniedAlert(ctx context.Context) ApiDeniedAlertEditDeniedAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiDeniedAlertEditDeniedAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -450,13 +453,14 @@ DeniedAlertGetDeniedAlert Get a denied alert
 	@return ApiDeniedAlertGetDeniedAlertRequest
 */
 func (a *DeniedAlertApiService) DeniedAlertGetDeniedAlert(ctx context.Context, id int32) ApiDeniedAlertGetDeniedAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiDeniedAlertGetDeniedAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -610,13 +614,14 @@ DeniedAlertGetDeniedAlerts Gets all denied alerts according to the provided filt
 	@return ApiDeniedAlertGetDeniedAlertsRequest
 */
 func (a *DeniedAlertApiService) DeniedAlertGetDeniedAlerts(ctx context.Context) ApiDeniedAlertGetDeniedAlertsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiDeniedAlertGetDeniedAlertsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

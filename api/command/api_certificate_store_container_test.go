@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_CertificateStoreContainerApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -45,21 +46,19 @@ func Test_command_CertificateStoreContainerApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("CertificateStoreContainerApi_CertificateStoreContainerDeleteCertificateStoreContainers_id: %v", id)
 
+		t.Log("CertificateStoreContainerApi_CertificateStoreContainerDeleteCertificateStoreContainers_payload: <none>")
 		httpRes, err := apiClient.CertificateStoreContainerApi.CertificateStoreContainerDeleteCertificateStoreContainers(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateStoreContainerApiService CertificateStoreContainerGetAllCertificateStoreContainers", func(t *testing.T) {
 
+		t.Log("CertificateStoreContainerApi_CertificateStoreContainerGetAllCertificateStoreContainers_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateStoreContainerApi.CertificateStoreContainerGetAllCertificateStoreContainers(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

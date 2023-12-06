@@ -70,13 +70,14 @@ IssuedAlertAddIssuedAlert Add a issued alert
 	@return ApiIssuedAlertAddIssuedAlertRequest
 */
 func (a *IssuedAlertApiService) IssuedAlertAddIssuedAlert(ctx context.Context) ApiIssuedAlertAddIssuedAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiIssuedAlertAddIssuedAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -200,13 +201,14 @@ IssuedAlertDeleteIssuedAlert Delete a issued alert
 	@return ApiIssuedAlertDeleteIssuedAlertRequest
 */
 func (a *IssuedAlertApiService) IssuedAlertDeleteIssuedAlert(ctx context.Context, id int32) ApiIssuedAlertDeleteIssuedAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiIssuedAlertDeleteIssuedAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -320,13 +322,14 @@ IssuedAlertEditIssuedAlert Edit a issued alert
 	@return ApiIssuedAlertEditIssuedAlertRequest
 */
 func (a *IssuedAlertApiService) IssuedAlertEditIssuedAlert(ctx context.Context) ApiIssuedAlertEditIssuedAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiIssuedAlertEditIssuedAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -454,13 +457,14 @@ IssuedAlertEditSchedule Edit schedule
 	@return ApiIssuedAlertEditScheduleRequest
 */
 func (a *IssuedAlertApiService) IssuedAlertEditSchedule(ctx context.Context) ApiIssuedAlertEditScheduleRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiIssuedAlertEditScheduleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -584,13 +588,14 @@ IssuedAlertGetIssuedAlert Get a issued alert
 	@return ApiIssuedAlertGetIssuedAlertRequest
 */
 func (a *IssuedAlertApiService) IssuedAlertGetIssuedAlert(ctx context.Context, id int32) ApiIssuedAlertGetIssuedAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiIssuedAlertGetIssuedAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -744,13 +749,14 @@ IssuedAlertGetIssuedAlerts Gets all issued alerts according to the provided filt
 	@return ApiIssuedAlertGetIssuedAlertsRequest
 */
 func (a *IssuedAlertApiService) IssuedAlertGetIssuedAlerts(ctx context.Context) ApiIssuedAlertGetIssuedAlertsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiIssuedAlertGetIssuedAlertsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -882,13 +888,14 @@ IssuedAlertGetSchedule Get the schedule for issued alerts
 	@return ApiIssuedAlertGetScheduleRequest
 */
 func (a *IssuedAlertApiService) IssuedAlertGetSchedule(ctx context.Context) ApiIssuedAlertGetScheduleRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiIssuedAlertGetScheduleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

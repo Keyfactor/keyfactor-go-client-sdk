@@ -932,3 +932,8 @@ func convertParamInterface(param interface{}, format string) (interface{}, error
 		return param, nil
 	}
 }
+
+func generateTimestamp() *string {
+	output := time.Now().UTC().Format(time.RFC3339)
+	return &output
+}

@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_WorkflowInstanceApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -45,11 +46,10 @@ func Test_command_WorkflowInstanceApiService(t *testing.T) {
 		instanceId, _ = convertParamInterface(instanceId, "string")
 		t.Logf("WorkflowInstanceApi_WorkflowInstanceDeleteInstance_instanceId: %v", instanceId)
 
+		t.Log("WorkflowInstanceApi_WorkflowInstanceDeleteInstance_payload: <none>")
 		httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceDeleteInstance(context.Background(), instanceId.(string)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test WorkflowInstanceApiService WorkflowInstanceGet", func(t *testing.T) {
@@ -60,42 +60,38 @@ func Test_command_WorkflowInstanceApiService(t *testing.T) {
 		instanceId, _ = convertParamInterface(instanceId, "string")
 		t.Logf("WorkflowInstanceApi_WorkflowInstanceGet_instanceId: %v", instanceId)
 
+		t.Log("WorkflowInstanceApi_WorkflowInstanceGet_payload: <none>")
 		resp, httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceGet(context.Background(), instanceId.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test WorkflowInstanceApiService WorkflowInstanceQuery", func(t *testing.T) {
 
+		t.Log("WorkflowInstanceApi_WorkflowInstanceQuery_payload: <none>")
 		resp, httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceQuery(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test WorkflowInstanceApiService WorkflowInstanceQueryInstancesAssignedToMe", func(t *testing.T) {
 
+		t.Log("WorkflowInstanceApi_WorkflowInstanceQueryInstancesAssignedToMe_payload: <none>")
 		resp, httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceQueryInstancesAssignedToMe(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test WorkflowInstanceApiService WorkflowInstanceQueryInstancesStartedByMe", func(t *testing.T) {
 
+		t.Log("WorkflowInstanceApi_WorkflowInstanceQueryInstancesStartedByMe_payload: <none>")
 		resp, httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceQueryInstancesStartedByMe(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test WorkflowInstanceApiService WorkflowInstanceRestart", func(t *testing.T) {
@@ -106,11 +102,10 @@ func Test_command_WorkflowInstanceApiService(t *testing.T) {
 		instanceId, _ = convertParamInterface(instanceId, "string")
 		t.Logf("WorkflowInstanceApi_WorkflowInstanceRestart_instanceId: %v", instanceId)
 
+		t.Log("WorkflowInstanceApi_WorkflowInstanceRestart_payload: <none>")
 		httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceRestart(context.Background(), instanceId.(string)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test WorkflowInstanceApiService WorkflowInstanceSignal", func(t *testing.T) {
@@ -121,11 +116,10 @@ func Test_command_WorkflowInstanceApiService(t *testing.T) {
 		instanceId, _ = convertParamInterface(instanceId, "string")
 		t.Logf("WorkflowInstanceApi_WorkflowInstanceSignal_instanceId: %v", instanceId)
 
+		t.Log("WorkflowInstanceApi_WorkflowInstanceSignal_payload: <none>")
 		httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceSignal(context.Background(), instanceId.(string)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test WorkflowInstanceApiService WorkflowInstanceStop", func(t *testing.T) {
@@ -136,11 +130,10 @@ func Test_command_WorkflowInstanceApiService(t *testing.T) {
 		instanceId, _ = convertParamInterface(instanceId, "string")
 		t.Logf("WorkflowInstanceApi_WorkflowInstanceStop_instanceId: %v", instanceId)
 
+		t.Log("WorkflowInstanceApi_WorkflowInstanceStop_payload: <none>")
 		httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceStop(context.Background(), instanceId.(string)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

@@ -74,13 +74,14 @@ If the latest version is also the published version, a new version will be creat
 	@return ApiWorkflowDefinitionConfigureDefinitionStepsRequest
 */
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionConfigureDefinitionSteps(ctx context.Context, definitionId string) ApiWorkflowDefinitionConfigureDefinitionStepsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowDefinitionConfigureDefinitionStepsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		definitionId:            definitionId,
 	}
 }
@@ -211,13 +212,14 @@ WorkflowDefinitionCreateNewDefinition Creates a new base definition without any 
 	@return ApiWorkflowDefinitionCreateNewDefinitionRequest
 */
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionCreateNewDefinition(ctx context.Context) ApiWorkflowDefinitionCreateNewDefinitionRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowDefinitionCreateNewDefinitionRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -341,13 +343,14 @@ WorkflowDefinitionDelete Deletes the definition matching the given Id.
 	@return ApiWorkflowDefinitionDeleteRequest
 */
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionDelete(ctx context.Context, definitionId string) ApiWorkflowDefinitionDeleteRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowDefinitionDeleteRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		definitionId:            definitionId,
 	}
 }
@@ -470,13 +473,14 @@ WorkflowDefinitionGet Gets a workflow definition.
 	@return ApiWorkflowDefinitionGetRequest
 */
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionGet(ctx context.Context, definitionId string) ApiWorkflowDefinitionGetRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowDefinitionGetRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		definitionId:            definitionId,
 	}
 }
@@ -603,13 +607,14 @@ WorkflowDefinitionGetStepSchema Gets the schema of a given step with the specifi
 	@return ApiWorkflowDefinitionGetStepSchemaRequest
 */
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionGetStepSchema(ctx context.Context, extensionName string) ApiWorkflowDefinitionGetStepSchemaRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowDefinitionGetStepSchemaRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		extensionName:           extensionName,
 	}
 }
@@ -730,13 +735,14 @@ WorkflowDefinitionPublishDefinition Makes the most recent version of a Workflow 
 	@return ApiWorkflowDefinitionPublishDefinitionRequest
 */
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionPublishDefinition(ctx context.Context, definitionId string) ApiWorkflowDefinitionPublishDefinitionRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowDefinitionPublishDefinitionRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		definitionId:            definitionId,
 	}
 }
@@ -890,13 +896,14 @@ WorkflowDefinitionQuery Gets the Definitions matching the query specifications.
 	@return ApiWorkflowDefinitionQueryRequest
 */
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionQuery(ctx context.Context) ApiWorkflowDefinitionQueryRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowDefinitionQueryRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1063,13 +1070,14 @@ WorkflowDefinitionQueryAvailableSteps Gets the result set of available steps for
 	@return ApiWorkflowDefinitionQueryAvailableStepsRequest
 */
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionQueryAvailableSteps(ctx context.Context) ApiWorkflowDefinitionQueryAvailableStepsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowDefinitionQueryAvailableStepsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1236,13 +1244,14 @@ WorkflowDefinitionQueryWorkflowTypes Performs a query against the workflow types
 	@return ApiWorkflowDefinitionQueryWorkflowTypesRequest
 */
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionQueryWorkflowTypes(ctx context.Context) ApiWorkflowDefinitionQueryWorkflowTypesRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowDefinitionQueryWorkflowTypesRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1383,13 +1392,14 @@ WorkflowDefinitionUpdateExistingDefinition Updates the existing definition's Dis
 	@return ApiWorkflowDefinitionUpdateExistingDefinitionRequest
 */
 func (a *WorkflowDefinitionApiService) WorkflowDefinitionUpdateExistingDefinition(ctx context.Context, definitionId string) ApiWorkflowDefinitionUpdateExistingDefinitionRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowDefinitionUpdateExistingDefinitionRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		definitionId:            definitionId,
 	}
 }

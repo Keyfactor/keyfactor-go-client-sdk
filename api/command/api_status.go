@@ -62,13 +62,14 @@ StatusGetEndpoints Returns all endpoints to which the requesting identity has ac
 	@return ApiStatusGetEndpointsRequest
 */
 func (a *StatusApiService) StatusGetEndpoints(ctx context.Context) ApiStatusGetEndpointsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiStatusGetEndpointsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

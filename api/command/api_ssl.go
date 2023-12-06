@@ -70,13 +70,14 @@ SslAddNetworkRanges Adds the provided network range definitions to the associate
 	@return ApiSslAddNetworkRangesRequest
 */
 func (a *SslApiService) SslAddNetworkRanges(ctx context.Context) ApiSslAddNetworkRangesRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSslAddNetworkRangesRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -193,13 +194,14 @@ SslCreateNetwork Creates a network definition according to the provided properti
 	@return ApiSslCreateNetworkRequest
 */
 func (a *SslApiService) SslCreateNetwork(ctx context.Context) ApiSslCreateNetworkRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSslCreateNetworkRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -323,13 +325,14 @@ SslEndpoint Returns the details of the associated scanning endpoint
 	@return ApiSslEndpointRequest
 */
 func (a *SslApiService) SslEndpoint(ctx context.Context, id string) ApiSslEndpointRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSslEndpointRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -485,13 +488,14 @@ SslEndpointHistory Returns a list of the scan results for the provided endpoint 
 	@return ApiSslEndpointHistoryRequest
 */
 func (a *SslApiService) SslEndpointHistory(ctx context.Context, id string) ApiSslEndpointHistoryRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSslEndpointHistoryRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -627,13 +631,14 @@ SslGetNetwork Returns a defined SSL network according to the provided name
 	@return ApiSslGetNetworkRequest
 */
 func (a *SslApiService) SslGetNetwork(ctx context.Context, identifier string) ApiSslGetNetworkRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSslGetNetworkRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		identifier:              identifier,
 	}
 }
@@ -754,13 +759,14 @@ SslGetNetworkRangesForNetwork Returns the network range definitions for the prov
 	@return ApiSslGetNetworkRangesForNetworkRequest
 */
 func (a *SslApiService) SslGetNetworkRangesForNetwork(ctx context.Context, id string) ApiSslGetNetworkRangesForNetworkRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSslGetNetworkRangesForNetworkRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -914,13 +920,14 @@ SslGetNetworks Returns all defined SSL networks according to the provided filter
 	@return ApiSslGetNetworksRequest
 */
 func (a *SslApiService) SslGetNetworks(ctx context.Context) ApiSslGetNetworksRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSslGetNetworksRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1061,13 +1068,14 @@ SslImmediateSslScan Starts an SSL Scan for the network according to the associat
 	@return ApiSslImmediateSslScanRequest
 */
 func (a *SslApiService) SslImmediateSslScan(ctx context.Context, id string) ApiSslImmediateSslScanRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSslImmediateSslScanRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -1186,13 +1194,14 @@ SslMonitorAll Sets all endpoints matching the provided query as 'monitored'
 	@return ApiSslMonitorAllRequest
 */
 func (a *SslApiService) SslMonitorAll(ctx context.Context) ApiSslMonitorAllRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSslMonitorAllRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1307,13 +1316,14 @@ SslMonitoringStatus Sets the monitored status according to the provided endpoint
 	@return ApiSslMonitoringStatusRequest
 */
 func (a *SslApiService) SslMonitoringStatus(ctx context.Context) ApiSslMonitoringStatusRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSslMonitoringStatusRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1466,13 +1476,14 @@ SslNetworkScanParts Returns the scan job components comprising the entire scan j
 	@return ApiSslNetworkScanPartsRequest
 */
 func (a *SslApiService) SslNetworkScanParts(ctx context.Context, id string) ApiSslNetworkScanPartsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSslNetworkScanPartsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -1611,13 +1622,14 @@ SslRemoveAllNetworkRanges Removes all network range definitions from the associa
 	@return ApiSslRemoveAllNetworkRangesRequest
 */
 func (a *SslApiService) SslRemoveAllNetworkRanges(ctx context.Context, id string) ApiSslRemoveAllNetworkRangesRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSslRemoveAllNetworkRangesRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -1726,13 +1738,14 @@ SslRemoveNetwork Removes a network definition according to the provided identifi
 	@return ApiSslRemoveNetworkRequest
 */
 func (a *SslApiService) SslRemoveNetwork(ctx context.Context, id string) ApiSslRemoveNetworkRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSslRemoveNetworkRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -1874,13 +1887,14 @@ SslResults Returns a list of the endpoint scan results according to the provided
 	@return ApiSslResultsRequest
 */
 func (a *SslApiService) SslResults(ctx context.Context) ApiSslResultsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSslResultsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -2019,13 +2033,14 @@ SslReviewAll Sets all endpoints matching the provided query as 'reviewed'
 	@return ApiSslReviewAllRequest
 */
 func (a *SslApiService) SslReviewAll(ctx context.Context) ApiSslReviewAllRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSslReviewAllRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -2140,13 +2155,14 @@ SslReviewedStatus Sets the reviewed status according to the provided endpoint an
 	@return ApiSslReviewedStatusRequest
 */
 func (a *SslApiService) SslReviewedStatus(ctx context.Context) ApiSslReviewedStatusRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSslReviewedStatusRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -2258,13 +2274,14 @@ SslScanPart Returns the execution details of the associated network scan job par
 	@return ApiSslScanPartRequest
 */
 func (a *SslApiService) SslScanPart(ctx context.Context, id string) ApiSslScanPartRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSslScanPartRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -2390,13 +2407,14 @@ SslSetNetworkRanges Configures network range definitions for the provided networ
 	@return ApiSslSetNetworkRangesRequest
 */
 func (a *SslApiService) SslSetNetworkRanges(ctx context.Context) ApiSslSetNetworkRangesRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSslSetNetworkRangesRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -2513,13 +2531,14 @@ SslUpdateNetwork Updates an existing network definition according to the provide
 	@return ApiSslUpdateNetworkRequest
 */
 func (a *SslApiService) SslUpdateNetwork(ctx context.Context) ApiSslUpdateNetworkRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSslUpdateNetworkRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -2648,13 +2667,14 @@ SslValidateNetworkRanges Validates the format (using regular expressions) of the
 	@return ApiSslValidateNetworkRangesRequest
 */
 func (a *SslApiService) SslValidateNetworkRanges(ctx context.Context) ApiSslValidateNetworkRangesRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSslValidateNetworkRangesRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

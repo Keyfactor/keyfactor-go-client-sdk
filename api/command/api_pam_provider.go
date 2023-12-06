@@ -76,13 +76,14 @@ PAMProviderCreatePamProvider Creates a new PAM provider with the associated prop
 	@return ApiPAMProviderCreatePamProviderRequest
 */
 func (a *PAMProviderApiService) PAMProviderCreatePamProvider(ctx context.Context) ApiPAMProviderCreatePamProviderRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiPAMProviderCreatePamProviderRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -217,13 +218,14 @@ PAMProviderCreatePamProviderType Creates a new PAM provider type with the associ
 	@return ApiPAMProviderCreatePamProviderTypeRequest
 */
 func (a *PAMProviderApiService) PAMProviderCreatePamProviderType(ctx context.Context) ApiPAMProviderCreatePamProviderTypeRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiPAMProviderCreatePamProviderTypeRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -347,13 +349,14 @@ PAMProviderDeletePamProvider Deletes a PAM Provider
 	@return ApiPAMProviderDeletePamProviderRequest
 */
 func (a *PAMProviderApiService) PAMProviderDeletePamProvider(ctx context.Context, id int32) ApiPAMProviderDeletePamProviderRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiPAMProviderDeletePamProviderRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -468,13 +471,14 @@ PAMProviderGetPamProvider Returns a single PAM Provider that matches the associa
 	@return ApiPAMProviderGetPamProviderRequest
 */
 func (a *PAMProviderApiService) PAMProviderGetPamProvider(ctx context.Context, id int32) ApiPAMProviderGetPamProviderRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiPAMProviderGetPamProviderRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -599,13 +603,14 @@ PAMProviderGetPamProviderTypes Returns all PAM providers in the Keyfactor instan
 	@return ApiPAMProviderGetPamProviderTypesRequest
 */
 func (a *PAMProviderApiService) PAMProviderGetPamProviderTypes(ctx context.Context) ApiPAMProviderGetPamProviderTypesRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiPAMProviderGetPamProviderTypesRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -763,13 +768,14 @@ PAMProviderGetPamProviders Returns all PAM providers according to the provided f
 	@return ApiPAMProviderGetPamProvidersRequest
 */
 func (a *PAMProviderApiService) PAMProviderGetPamProviders(ctx context.Context) ApiPAMProviderGetPamProvidersRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiPAMProviderGetPamProvidersRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -914,13 +920,14 @@ PAMProviderUpdatePamProvider Updates an existing PAM provider according to the p
 	@return ApiPAMProviderUpdatePamProviderRequest
 */
 func (a *PAMProviderApiService) PAMProviderUpdatePamProvider(ctx context.Context) ApiPAMProviderUpdatePamProviderRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiPAMProviderUpdatePamProviderRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

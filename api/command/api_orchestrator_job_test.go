@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_OrchestratorJobApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -39,79 +40,71 @@ func Test_command_OrchestratorJobApiService(t *testing.T) {
 
 	t.Run("Test OrchestratorJobApiService OrchestratorJobAcknowledgeJobs", func(t *testing.T) {
 
+		t.Log("OrchestratorJobApi_OrchestratorJobAcknowledgeJobs_payload: <none>")
 		httpRes, err := apiClient.OrchestratorJobApi.OrchestratorJobAcknowledgeJobs(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test OrchestratorJobApiService OrchestratorJobGetCustomJobResultData", func(t *testing.T) {
 
+		t.Log("OrchestratorJobApi_OrchestratorJobGetCustomJobResultData_payload: <none>")
 		resp, httpRes, err := apiClient.OrchestratorJobApi.OrchestratorJobGetCustomJobResultData(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test OrchestratorJobApiService OrchestratorJobGetJobHistory", func(t *testing.T) {
 
+		t.Log("OrchestratorJobApi_OrchestratorJobGetJobHistory_payload: <none>")
 		resp, httpRes, err := apiClient.OrchestratorJobApi.OrchestratorJobGetJobHistory(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test OrchestratorJobApiService OrchestratorJobGetScheduledJobs", func(t *testing.T) {
 
+		t.Log("OrchestratorJobApi_OrchestratorJobGetScheduledJobs_payload: <none>")
 		resp, httpRes, err := apiClient.OrchestratorJobApi.OrchestratorJobGetScheduledJobs(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test OrchestratorJobApiService OrchestratorJobRescheduleJobs", func(t *testing.T) {
 
+		t.Log("OrchestratorJobApi_OrchestratorJobRescheduleJobs_payload: <none>")
 		httpRes, err := apiClient.OrchestratorJobApi.OrchestratorJobRescheduleJobs(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test OrchestratorJobApiService OrchestratorJobScheduleBulkJob", func(t *testing.T) {
 
+		t.Log("OrchestratorJobApi_OrchestratorJobScheduleBulkJob_payload: <none>")
 		resp, httpRes, err := apiClient.OrchestratorJobApi.OrchestratorJobScheduleBulkJob(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test OrchestratorJobApiService OrchestratorJobScheduleJob", func(t *testing.T) {
 
+		t.Log("OrchestratorJobApi_OrchestratorJobScheduleJob_payload: <none>")
 		resp, httpRes, err := apiClient.OrchestratorJobApi.OrchestratorJobScheduleJob(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test OrchestratorJobApiService OrchestratorJobUnscheduleJobs", func(t *testing.T) {
 
+		t.Log("OrchestratorJobApi_OrchestratorJobUnscheduleJobs_payload: <none>")
 		httpRes, err := apiClient.OrchestratorJobApi.OrchestratorJobUnscheduleJobs(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

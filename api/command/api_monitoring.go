@@ -70,13 +70,14 @@ MonitoringAddRevocationMonitoring Add a revocation monitoring endpoint
 	@return ApiMonitoringAddRevocationMonitoringRequest
 */
 func (a *MonitoringApiService) MonitoringAddRevocationMonitoring(ctx context.Context) ApiMonitoringAddRevocationMonitoringRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiMonitoringAddRevocationMonitoringRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -200,13 +201,14 @@ MonitoringDeleteRevocationMonitoring Delete a revocation monitoring endpoint
 	@return ApiMonitoringDeleteRevocationMonitoringRequest
 */
 func (a *MonitoringApiService) MonitoringDeleteRevocationMonitoring(ctx context.Context, id int32) ApiMonitoringDeleteRevocationMonitoringRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiMonitoringDeleteRevocationMonitoringRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -320,13 +322,14 @@ MonitoringEditRevocationMonitoring Edit a revocation monitoring endpoint
 	@return ApiMonitoringEditRevocationMonitoringRequest
 */
 func (a *MonitoringApiService) MonitoringEditRevocationMonitoring(ctx context.Context) ApiMonitoringEditRevocationMonitoringRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiMonitoringEditRevocationMonitoringRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -450,13 +453,14 @@ MonitoringGetRevocationMonitoring Get a revocation monitoring endpoint
 	@return ApiMonitoringGetRevocationMonitoringRequest
 */
 func (a *MonitoringApiService) MonitoringGetRevocationMonitoring(ctx context.Context, id int32) ApiMonitoringGetRevocationMonitoringRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiMonitoringGetRevocationMonitoringRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -610,13 +614,14 @@ MonitoringGetRevocationMonitoringEndpoints Gets all revocation monitoring endpoi
 	@return ApiMonitoringGetRevocationMonitoringEndpointsRequest
 */
 func (a *MonitoringApiService) MonitoringGetRevocationMonitoringEndpoints(ctx context.Context) ApiMonitoringGetRevocationMonitoringEndpointsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiMonitoringGetRevocationMonitoringEndpointsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -755,13 +760,14 @@ MonitoringResolveOCSP Resolve the Certificate authority given
 	@return ApiMonitoringResolveOCSPRequest
 */
 func (a *MonitoringApiService) MonitoringResolveOCSP(ctx context.Context) ApiMonitoringResolveOCSPRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiMonitoringResolveOCSPRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -890,13 +896,14 @@ MonitoringTestAllRevocationMonitoringAlert Test All Alerts
 	@return ApiMonitoringTestAllRevocationMonitoringAlertRequest
 */
 func (a *MonitoringApiService) MonitoringTestAllRevocationMonitoringAlert(ctx context.Context) ApiMonitoringTestAllRevocationMonitoringAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiMonitoringTestAllRevocationMonitoringAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1025,13 +1032,14 @@ MonitoringTestRevocationMonitoringAlert Test Alert
 	@return ApiMonitoringTestRevocationMonitoringAlertRequest
 */
 func (a *MonitoringApiService) MonitoringTestRevocationMonitoringAlert(ctx context.Context) ApiMonitoringTestRevocationMonitoringAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiMonitoringTestRevocationMonitoringAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

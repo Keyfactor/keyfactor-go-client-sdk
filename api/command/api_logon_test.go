@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_LogonApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -39,12 +40,11 @@ func Test_command_LogonApiService(t *testing.T) {
 
 	t.Run("Test LogonApiService LogonCreateLogon", func(t *testing.T) {
 
+		t.Log("LogonApi_LogonCreateLogon_payload: <none>")
 		resp, httpRes, err := apiClient.LogonApi.LogonCreateLogon(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test LogonApiService LogonDelete", func(t *testing.T) {
@@ -55,11 +55,10 @@ func Test_command_LogonApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("LogonApi_LogonDelete_id: %v", id)
 
+		t.Log("LogonApi_LogonDelete_payload: <none>")
 		httpRes, err := apiClient.LogonApi.LogonDelete(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test LogonApiService LogonGetLogon", func(t *testing.T) {
@@ -70,32 +69,29 @@ func Test_command_LogonApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("LogonApi_LogonGetLogon_id: %v", id)
 
+		t.Log("LogonApi_LogonGetLogon_payload: <none>")
 		resp, httpRes, err := apiClient.LogonApi.LogonGetLogon(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test LogonApiService LogonLogonAccess", func(t *testing.T) {
 
+		t.Log("LogonApi_LogonLogonAccess_payload: <none>")
 		resp, httpRes, err := apiClient.LogonApi.LogonLogonAccess(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test LogonApiService LogonQueryLogons", func(t *testing.T) {
 
+		t.Log("LogonApi_LogonQueryLogons_payload: <none>")
 		resp, httpRes, err := apiClient.LogonApi.LogonQueryLogons(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

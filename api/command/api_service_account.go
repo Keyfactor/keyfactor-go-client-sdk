@@ -70,13 +70,14 @@ ServiceAccountCreateServiceAccount Creates a ServiceAccount with the provided pr
 	@return ApiServiceAccountCreateServiceAccountRequest
 */
 func (a *ServiceAccountApiService) ServiceAccountCreateServiceAccount(ctx context.Context) ApiServiceAccountCreateServiceAccountRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServiceAccountCreateServiceAccountRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -200,13 +201,14 @@ ServiceAccountDeleteServiceAccount Deletes a ServiceAccount associated with the 
 	@return ApiServiceAccountDeleteServiceAccountRequest
 */
 func (a *ServiceAccountApiService) ServiceAccountDeleteServiceAccount(ctx context.Context, id int32) ApiServiceAccountDeleteServiceAccountRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServiceAccountDeleteServiceAccountRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -320,13 +322,14 @@ ServiceAccountDeleteServiceAccounts Deletes Service Accounts associated with the
 	@return ApiServiceAccountDeleteServiceAccountsRequest
 */
 func (a *ServiceAccountApiService) ServiceAccountDeleteServiceAccounts(ctx context.Context) ApiServiceAccountDeleteServiceAccountsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServiceAccountDeleteServiceAccountsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -438,13 +441,14 @@ ServiceAccountGet Returns a ServiceAccount associated with the provided identifi
 	@return ApiServiceAccountGetRequest
 */
 func (a *ServiceAccountApiService) ServiceAccountGet(ctx context.Context, id int32) ApiServiceAccountGetRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServiceAccountGetRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -572,13 +576,14 @@ ServiceAccountGetServiceAccountKey Returns an SSH key with or without private ke
 	@return ApiServiceAccountGetServiceAccountKeyRequest
 */
 func (a *ServiceAccountApiService) ServiceAccountGetServiceAccountKey(ctx context.Context, id int32) ApiServiceAccountGetServiceAccountKeyRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServiceAccountGetServiceAccountKeyRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -735,13 +740,14 @@ ServiceAccountQueryServiceAccounts Returns all ServiceAccounts according to the 
 	@return ApiServiceAccountQueryServiceAccountsRequest
 */
 func (a *ServiceAccountApiService) ServiceAccountQueryServiceAccounts(ctx context.Context) ApiServiceAccountQueryServiceAccountsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServiceAccountQueryServiceAccountsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -881,13 +887,14 @@ ServiceAccountRotateServiceAccountKey Rotate an SSH key for a specified service 
 	@return ApiServiceAccountRotateServiceAccountKeyRequest
 */
 func (a *ServiceAccountApiService) ServiceAccountRotateServiceAccountKey(ctx context.Context, id int32) ApiServiceAccountRotateServiceAccountKeyRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServiceAccountRotateServiceAccountKeyRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -1018,13 +1025,14 @@ ServiceAccountUpdateServiceAccount Updates an SSH key for a specified service ac
 	@return ApiServiceAccountUpdateServiceAccountRequest
 */
 func (a *ServiceAccountApiService) ServiceAccountUpdateServiceAccount(ctx context.Context) ApiServiceAccountUpdateServiceAccountRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServiceAccountUpdateServiceAccountRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

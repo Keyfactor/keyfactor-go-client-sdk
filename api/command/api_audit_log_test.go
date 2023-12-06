@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_AuditLogApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -39,12 +40,11 @@ func Test_command_AuditLogApiService(t *testing.T) {
 
 	t.Run("Test AuditLogApiService AuditLogDownloadCSV", func(t *testing.T) {
 
+		t.Log("AuditLogApi_AuditLogDownloadCSV_payload: <none>")
 		resp, httpRes, err := apiClient.AuditLogApi.AuditLogDownloadCSV(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test AuditLogApiService AuditLogGetAuditLog", func(t *testing.T) {
@@ -55,32 +55,29 @@ func Test_command_AuditLogApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("AuditLogApi_AuditLogGetAuditLog_id: %v", id)
 
+		t.Log("AuditLogApi_AuditLogGetAuditLog_payload: <none>")
 		resp, httpRes, err := apiClient.AuditLogApi.AuditLogGetAuditLog(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test AuditLogApiService AuditLogGetAuditLogs", func(t *testing.T) {
 
+		t.Log("AuditLogApi_AuditLogGetAuditLogs_payload: <none>")
 		resp, httpRes, err := apiClient.AuditLogApi.AuditLogGetAuditLogs(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test AuditLogApiService AuditLogGetRelatedEntities", func(t *testing.T) {
 
+		t.Log("AuditLogApi_AuditLogGetRelatedEntities_payload: <none>")
 		resp, httpRes, err := apiClient.AuditLogApi.AuditLogGetRelatedEntities(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test AuditLogApiService AuditLogValidateAuditLog", func(t *testing.T) {
@@ -91,12 +88,11 @@ func Test_command_AuditLogApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("AuditLogApi_AuditLogValidateAuditLog_id: %v", id)
 
+		t.Log("AuditLogApi_AuditLogValidateAuditLog_payload: <none>")
 		resp, httpRes, err := apiClient.AuditLogApi.AuditLogValidateAuditLog(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

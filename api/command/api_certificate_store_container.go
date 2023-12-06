@@ -65,13 +65,14 @@ CertificateStoreContainerDeleteCertificateStoreContainers Delete a certificate s
 	@return ApiCertificateStoreContainerDeleteCertificateStoreContainersRequest
 */
 func (a *CertificateStoreContainerApiService) CertificateStoreContainerDeleteCertificateStoreContainers(ctx context.Context, id int32) ApiCertificateStoreContainerDeleteCertificateStoreContainersRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateStoreContainerDeleteCertificateStoreContainersRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -213,13 +214,14 @@ CertificateStoreContainerGetAllCertificateStoreContainers Returns all certificat
 	@return ApiCertificateStoreContainerGetAllCertificateStoreContainersRequest
 */
 func (a *CertificateStoreContainerApiService) CertificateStoreContainerGetAllCertificateStoreContainers(ctx context.Context) ApiCertificateStoreContainerGetAllCertificateStoreContainersRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateStoreContainerGetAllCertificateStoreContainersRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

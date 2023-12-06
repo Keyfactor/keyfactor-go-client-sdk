@@ -63,13 +63,14 @@ TemplateGetGlobalSettings Gets the global template settings.
 	@return ApiTemplateGetGlobalSettingsRequest
 */
 func (a *TemplateApiService) TemplateGetGlobalSettings(ctx context.Context) ApiTemplateGetGlobalSettingsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiTemplateGetGlobalSettingsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -188,13 +189,14 @@ TemplateGetTemplate Returns the certificate template associated with the provide
 	@return ApiTemplateGetTemplateRequest
 */
 func (a *TemplateApiService) TemplateGetTemplate(ctx context.Context, id int32) ApiTemplateGetTemplateRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiTemplateGetTemplateRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -348,13 +350,14 @@ TemplateGetTemplates Returns all certificate templates according to the provided
 	@return ApiTemplateGetTemplatesRequest
 */
 func (a *TemplateApiService) TemplateGetTemplates(ctx context.Context) ApiTemplateGetTemplatesRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiTemplateGetTemplatesRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -486,13 +489,14 @@ TemplateGetValidSubjectParts Method for TemplateGetValidSubjectParts
 	@return ApiTemplateGetValidSubjectPartsRequest
 */
 func (a *TemplateApiService) TemplateGetValidSubjectParts(ctx context.Context) ApiTemplateGetValidSubjectPartsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiTemplateGetValidSubjectPartsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -616,13 +620,14 @@ TemplateImport Imports templates from the provided configuration tenant
 	@return ApiTemplateImportRequest
 */
 func (a *TemplateApiService) TemplateImport(ctx context.Context) ApiTemplateImportRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiTemplateImportRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -739,13 +744,14 @@ TemplateUpdateGlobalSettings Replaces the existing global template settings.
 	@return ApiTemplateUpdateGlobalSettingsRequest
 */
 func (a *TemplateApiService) TemplateUpdateGlobalSettings(ctx context.Context) ApiTemplateUpdateGlobalSettingsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiTemplateUpdateGlobalSettingsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -874,13 +880,14 @@ TemplateUpdateTemplate Updates a certificate template according to the provided 
 	@return ApiTemplateUpdateTemplateRequest
 */
 func (a *TemplateApiService) TemplateUpdateTemplate(ctx context.Context) ApiTemplateUpdateTemplateRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiTemplateUpdateTemplateRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

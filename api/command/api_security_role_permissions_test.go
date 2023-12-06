@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_SecurityRolePermissionsApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -45,12 +46,11 @@ func Test_command_SecurityRolePermissionsApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("SecurityRolePermissionsApi_SecurityRolePermissionsAddCollectionPermissions_id: %v", id)
 
+		t.Log("SecurityRolePermissionsApi_SecurityRolePermissionsAddCollectionPermissions_payload: <none>")
 		resp, httpRes, err := apiClient.SecurityRolePermissionsApi.SecurityRolePermissionsAddCollectionPermissions(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SecurityRolePermissionsApiService SecurityRolePermissionsAddContainerPermissions", func(t *testing.T) {
@@ -61,12 +61,11 @@ func Test_command_SecurityRolePermissionsApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("SecurityRolePermissionsApi_SecurityRolePermissionsAddContainerPermissions_id: %v", id)
 
+		t.Log("SecurityRolePermissionsApi_SecurityRolePermissionsAddContainerPermissions_payload: <none>")
 		resp, httpRes, err := apiClient.SecurityRolePermissionsApi.SecurityRolePermissionsAddContainerPermissions(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SecurityRolePermissionsApiService SecurityRolePermissionsAddGlobalPermissions", func(t *testing.T) {
@@ -77,12 +76,11 @@ func Test_command_SecurityRolePermissionsApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("SecurityRolePermissionsApi_SecurityRolePermissionsAddGlobalPermissions_id: %v", id)
 
+		t.Log("SecurityRolePermissionsApi_SecurityRolePermissionsAddGlobalPermissions_payload: <none>")
 		resp, httpRes, err := apiClient.SecurityRolePermissionsApi.SecurityRolePermissionsAddGlobalPermissions(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SecurityRolePermissionsApiService SecurityRolePermissionsGetCollectionPermissionsForRole", func(t *testing.T) {
@@ -93,12 +91,11 @@ func Test_command_SecurityRolePermissionsApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("SecurityRolePermissionsApi_SecurityRolePermissionsGetCollectionPermissionsForRole_id: %v", id)
 
+		t.Log("SecurityRolePermissionsApi_SecurityRolePermissionsGetCollectionPermissionsForRole_payload: <none>")
 		resp, httpRes, err := apiClient.SecurityRolePermissionsApi.SecurityRolePermissionsGetCollectionPermissionsForRole(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SecurityRolePermissionsApiService SecurityRolePermissionsGetContainerPermissionsForRole", func(t *testing.T) {
@@ -109,12 +106,11 @@ func Test_command_SecurityRolePermissionsApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("SecurityRolePermissionsApi_SecurityRolePermissionsGetContainerPermissionsForRole_id: %v", id)
 
+		t.Log("SecurityRolePermissionsApi_SecurityRolePermissionsGetContainerPermissionsForRole_payload: <none>")
 		resp, httpRes, err := apiClient.SecurityRolePermissionsApi.SecurityRolePermissionsGetContainerPermissionsForRole(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SecurityRolePermissionsApiService SecurityRolePermissionsGetGlobalPermissionsForRole", func(t *testing.T) {
@@ -125,12 +121,11 @@ func Test_command_SecurityRolePermissionsApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("SecurityRolePermissionsApi_SecurityRolePermissionsGetGlobalPermissionsForRole_id: %v", id)
 
+		t.Log("SecurityRolePermissionsApi_SecurityRolePermissionsGetGlobalPermissionsForRole_payload: <none>")
 		resp, httpRes, err := apiClient.SecurityRolePermissionsApi.SecurityRolePermissionsGetGlobalPermissionsForRole(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SecurityRolePermissionsApiService SecurityRolePermissionsGetPermissionsForRole", func(t *testing.T) {
@@ -141,12 +136,11 @@ func Test_command_SecurityRolePermissionsApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("SecurityRolePermissionsApi_SecurityRolePermissionsGetPermissionsForRole_id: %v", id)
 
+		t.Log("SecurityRolePermissionsApi_SecurityRolePermissionsGetPermissionsForRole_payload: <none>")
 		resp, httpRes, err := apiClient.SecurityRolePermissionsApi.SecurityRolePermissionsGetPermissionsForRole(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SecurityRolePermissionsApiService SecurityRolePermissionsSetCollectionPermissions", func(t *testing.T) {
@@ -157,12 +151,11 @@ func Test_command_SecurityRolePermissionsApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("SecurityRolePermissionsApi_SecurityRolePermissionsSetCollectionPermissions_id: %v", id)
 
+		t.Log("SecurityRolePermissionsApi_SecurityRolePermissionsSetCollectionPermissions_payload: <none>")
 		resp, httpRes, err := apiClient.SecurityRolePermissionsApi.SecurityRolePermissionsSetCollectionPermissions(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SecurityRolePermissionsApiService SecurityRolePermissionsSetContainerPermissions", func(t *testing.T) {
@@ -173,12 +166,11 @@ func Test_command_SecurityRolePermissionsApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("SecurityRolePermissionsApi_SecurityRolePermissionsSetContainerPermissions_id: %v", id)
 
+		t.Log("SecurityRolePermissionsApi_SecurityRolePermissionsSetContainerPermissions_payload: <none>")
 		resp, httpRes, err := apiClient.SecurityRolePermissionsApi.SecurityRolePermissionsSetContainerPermissions(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SecurityRolePermissionsApiService SecurityRolePermissionsSetGlobalPermissions", func(t *testing.T) {
@@ -189,12 +181,11 @@ func Test_command_SecurityRolePermissionsApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("SecurityRolePermissionsApi_SecurityRolePermissionsSetGlobalPermissions_id: %v", id)
 
+		t.Log("SecurityRolePermissionsApi_SecurityRolePermissionsSetGlobalPermissions_payload: <none>")
 		resp, httpRes, err := apiClient.SecurityRolePermissionsApi.SecurityRolePermissionsSetGlobalPermissions(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

@@ -69,13 +69,14 @@ ServerGroupAddAccess Add access rules to the server group
 	@return ApiServerGroupAddAccessRequest
 */
 func (a *ServerGroupApiService) ServerGroupAddAccess(ctx context.Context) ApiServerGroupAddAccessRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServerGroupAddAccessRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -204,13 +205,14 @@ ServerGroupCreateServerGroup Creates a server group with the provided properties
 	@return ApiServerGroupCreateServerGroupRequest
 */
 func (a *ServerGroupApiService) ServerGroupCreateServerGroup(ctx context.Context) ApiServerGroupCreateServerGroupRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServerGroupCreateServerGroupRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -334,13 +336,14 @@ ServerGroupDelete Deletes a ServerGroup associated with the provided identifier
 	@return ApiServerGroupDeleteRequest
 */
 func (a *ServerGroupApiService) ServerGroupDelete(ctx context.Context, id string) ApiServerGroupDeleteRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServerGroupDeleteRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -449,13 +452,14 @@ ServerGroupGetAccess Retrieves logons and users with access to those logons for 
 	@return ApiServerGroupGetAccessRequest
 */
 func (a *ServerGroupApiService) ServerGroupGetAccess(ctx context.Context, id string) ApiServerGroupGetAccessRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServerGroupGetAccessRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -576,13 +580,14 @@ ServerGroupGetGroup Returns a ServerGroup associated with the provided identifie
 	@return ApiServerGroupGetGroupRequest
 */
 func (a *ServerGroupApiService) ServerGroupGetGroup(ctx context.Context, id string) ApiServerGroupGetGroupRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServerGroupGetGroupRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -703,13 +708,14 @@ ServerGroupGetGroupByName Returns a ServerGroup associated with the provided ide
 	@return ApiServerGroupGetGroupByNameRequest
 */
 func (a *ServerGroupApiService) ServerGroupGetGroupByName(ctx context.Context, name string) ApiServerGroupGetGroupByNameRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServerGroupGetGroupByNameRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		name:                    name,
 	}
 }
@@ -863,13 +869,14 @@ ServerGroupQueryServerGroups Returns all server groups according to the provided
 	@return ApiServerGroupQueryServerGroupsRequest
 */
 func (a *ServerGroupApiService) ServerGroupQueryServerGroups(ctx context.Context) ApiServerGroupQueryServerGroupsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServerGroupQueryServerGroupsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1007,13 +1014,14 @@ ServerGroupRemoveAccess Removes access mappings for the specified server group
 	@return ApiServerGroupRemoveAccessRequest
 */
 func (a *ServerGroupApiService) ServerGroupRemoveAccess(ctx context.Context) ApiServerGroupRemoveAccessRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServerGroupRemoveAccessRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1142,13 +1150,14 @@ ServerGroupUpdateServerGroup Updates an existing server group with the provided 
 	@return ApiServerGroupUpdateServerGroupRequest
 */
 func (a *ServerGroupApiService) ServerGroupUpdateServerGroup(ctx context.Context) ApiServerGroupUpdateServerGroupRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServerGroupUpdateServerGroupRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

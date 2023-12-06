@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_WorkflowApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -39,32 +40,29 @@ func Test_command_WorkflowApiService(t *testing.T) {
 
 	t.Run("Test WorkflowApiService WorkflowApprovePendingRequests", func(t *testing.T) {
 
+		t.Log("WorkflowApi_WorkflowApprovePendingRequests_payload: <none>")
 		resp, httpRes, err := apiClient.WorkflowApi.WorkflowApprovePendingRequests(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test WorkflowApiService WorkflowDenyPendingRequests", func(t *testing.T) {
 
+		t.Log("WorkflowApi_WorkflowDenyPendingRequests_payload: <none>")
 		resp, httpRes, err := apiClient.WorkflowApi.WorkflowDenyPendingRequests(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test WorkflowApiService WorkflowGet", func(t *testing.T) {
 
+		t.Log("WorkflowApi_WorkflowGet_payload: <none>")
 		resp, httpRes, err := apiClient.WorkflowApi.WorkflowGet(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test WorkflowApiService WorkflowGetCertificateRequestDetails", func(t *testing.T) {
@@ -75,22 +73,20 @@ func Test_command_WorkflowApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("WorkflowApi_WorkflowGetCertificateRequestDetails_id: %v", id)
 
+		t.Log("WorkflowApi_WorkflowGetCertificateRequestDetails_payload: <none>")
 		resp, httpRes, err := apiClient.WorkflowApi.WorkflowGetCertificateRequestDetails(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test WorkflowApiService WorkflowGetDenied", func(t *testing.T) {
 
+		t.Log("WorkflowApi_WorkflowGetDenied_payload: <none>")
 		resp, httpRes, err := apiClient.WorkflowApi.WorkflowGetDenied(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

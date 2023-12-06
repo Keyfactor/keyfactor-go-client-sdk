@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_KeyApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -45,40 +46,36 @@ func Test_command_KeyApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("KeyApi_KeyDeleteUnmanagedKey_id: %v", id)
 
+		t.Log("KeyApi_KeyDeleteUnmanagedKey_payload: <none>")
 		httpRes, err := apiClient.KeyApi.KeyDeleteUnmanagedKey(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test KeyApiService KeyDeleteUnmanagedKeys", func(t *testing.T) {
 
+		t.Log("KeyApi_KeyDeleteUnmanagedKeys_payload: <none>")
 		httpRes, err := apiClient.KeyApi.KeyDeleteUnmanagedKeys(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test KeyApiService KeyGenerateKey", func(t *testing.T) {
 
+		t.Log("KeyApi_KeyGenerateKey_payload: <none>")
 		resp, httpRes, err := apiClient.KeyApi.KeyGenerateKey(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test KeyApiService KeyGetMyKey", func(t *testing.T) {
 
+		t.Log("KeyApi_KeyGetMyKey_payload: <none>")
 		resp, httpRes, err := apiClient.KeyApi.KeyGetMyKey(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test KeyApiService KeyGetUnmanagedKey", func(t *testing.T) {
@@ -89,32 +86,29 @@ func Test_command_KeyApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("KeyApi_KeyGetUnmanagedKey_id: %v", id)
 
+		t.Log("KeyApi_KeyGetUnmanagedKey_payload: <none>")
 		resp, httpRes, err := apiClient.KeyApi.KeyGetUnmanagedKey(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test KeyApiService KeyGetUnmanagedKeys", func(t *testing.T) {
 
+		t.Log("KeyApi_KeyGetUnmanagedKeys_payload: <none>")
 		resp, httpRes, err := apiClient.KeyApi.KeyGetUnmanagedKeys(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test KeyApiService KeyUpdate", func(t *testing.T) {
 
+		t.Log("KeyApi_KeyUpdate_payload: <none>")
 		resp, httpRes, err := apiClient.KeyApi.KeyUpdate(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

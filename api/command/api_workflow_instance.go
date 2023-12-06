@@ -65,13 +65,14 @@ WorkflowInstanceDeleteInstance Deletes the specified instance.
 	@return ApiWorkflowInstanceDeleteInstanceRequest
 */
 func (a *WorkflowInstanceApiService) WorkflowInstanceDeleteInstance(ctx context.Context, instanceId string) ApiWorkflowInstanceDeleteInstanceRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowInstanceDeleteInstanceRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		instanceId:              instanceId,
 	}
 }
@@ -180,13 +181,14 @@ WorkflowInstanceGet Get information relevant for knowing where an instance is in
 	@return ApiWorkflowInstanceGetRequest
 */
 func (a *WorkflowInstanceApiService) WorkflowInstanceGet(ctx context.Context, instanceId string) ApiWorkflowInstanceGetRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowInstanceGetRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		instanceId:              instanceId,
 	}
 }
@@ -340,13 +342,14 @@ WorkflowInstanceQuery Gets the workflow instances matching the query specificati
 	@return ApiWorkflowInstanceQueryRequest
 */
 func (a *WorkflowInstanceApiService) WorkflowInstanceQuery(ctx context.Context) ApiWorkflowInstanceQueryRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowInstanceQueryRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -513,13 +516,14 @@ WorkflowInstanceQueryInstancesAssignedToMe Gets the workflow instances waiting o
 	@return ApiWorkflowInstanceQueryInstancesAssignedToMeRequest
 */
 func (a *WorkflowInstanceApiService) WorkflowInstanceQueryInstancesAssignedToMe(ctx context.Context) ApiWorkflowInstanceQueryInstancesAssignedToMeRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowInstanceQueryInstancesAssignedToMeRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -686,13 +690,14 @@ WorkflowInstanceQueryInstancesStartedByMe Gets the workflow instances started by
 	@return ApiWorkflowInstanceQueryInstancesStartedByMeRequest
 */
 func (a *WorkflowInstanceApiService) WorkflowInstanceQueryInstancesStartedByMe(ctx context.Context) ApiWorkflowInstanceQueryInstancesStartedByMeRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowInstanceQueryInstancesStartedByMeRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -833,13 +838,14 @@ WorkflowInstanceRestart Restarts a failed instance against the specified definit
 	@return ApiWorkflowInstanceRestartRequest
 */
 func (a *WorkflowInstanceApiService) WorkflowInstanceRestart(ctx context.Context, instanceId string) ApiWorkflowInstanceRestartRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowInstanceRestartRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		instanceId:              instanceId,
 	}
 }
@@ -958,13 +964,14 @@ WorkflowInstanceSignal Receives the given signal for the given instance.
 	@return ApiWorkflowInstanceSignalRequest
 */
 func (a *WorkflowInstanceApiService) WorkflowInstanceSignal(ctx context.Context, instanceId string) ApiWorkflowInstanceSignalRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowInstanceSignalRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		instanceId:              instanceId,
 	}
 }
@@ -1078,13 +1085,14 @@ WorkflowInstanceStop Rejects an instance, preventing it from continuing.
 	@return ApiWorkflowInstanceStopRequest
 */
 func (a *WorkflowInstanceApiService) WorkflowInstanceStop(ctx context.Context, instanceId string) ApiWorkflowInstanceStopRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowInstanceStopRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		instanceId:              instanceId,
 	}
 }

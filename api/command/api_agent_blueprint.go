@@ -77,13 +77,14 @@ AgentBlueprintApplyBlueprint Applies the selected agent blueprint to the provide
 	@return ApiAgentBlueprintApplyBlueprintRequest
 */
 func (a *AgentBlueprintApiService) AgentBlueprintApplyBlueprint(ctx context.Context) ApiAgentBlueprintApplyBlueprintRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAgentBlueprintApplyBlueprintRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -199,13 +200,14 @@ AgentBlueprintDeleteBlueprint Deletes an agent blueprint by its Keyfactor identi
 	@return ApiAgentBlueprintDeleteBlueprintRequest
 */
 func (a *AgentBlueprintApiService) AgentBlueprintDeleteBlueprint(ctx context.Context, id string) ApiAgentBlueprintDeleteBlueprintRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAgentBlueprintDeleteBlueprintRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -326,13 +328,14 @@ AgentBlueprintGenerateBlueprint Generates an agent blueprint from the provided a
 	@return ApiAgentBlueprintGenerateBlueprintRequest
 */
 func (a *AgentBlueprintApiService) AgentBlueprintGenerateBlueprint(ctx context.Context) ApiAgentBlueprintGenerateBlueprintRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAgentBlueprintGenerateBlueprintRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -459,13 +462,14 @@ AgentBlueprintGetAgentBlueprint Returns an agent blueprint according to the prov
 	@return ApiAgentBlueprintGetAgentBlueprintRequest
 */
 func (a *AgentBlueprintApiService) AgentBlueprintGetAgentBlueprint(ctx context.Context, id string) ApiAgentBlueprintGetAgentBlueprintRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAgentBlueprintGetAgentBlueprintRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -612,13 +616,14 @@ AgentBlueprintGetAgentBlueprints Returns all agent blueprints according to the p
 	@return ApiAgentBlueprintGetAgentBlueprintsRequest
 */
 func (a *AgentBlueprintApiService) AgentBlueprintGetAgentBlueprints(ctx context.Context) ApiAgentBlueprintGetAgentBlueprintsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAgentBlueprintGetAgentBlueprintsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -777,13 +782,14 @@ AgentBlueprintGetBlueprintJobs Gets the agent blueprint scheduled jobs
 	@return ApiAgentBlueprintGetBlueprintJobsRequest
 */
 func (a *AgentBlueprintApiService) AgentBlueprintGetBlueprintJobs(ctx context.Context, id string) ApiAgentBlueprintGetBlueprintJobsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAgentBlueprintGetBlueprintJobsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -944,13 +950,14 @@ AgentBlueprintGetBlueprintStores Gets the agent blueprint certificate stores
 	@return ApiAgentBlueprintGetBlueprintStoresRequest
 */
 func (a *AgentBlueprintApiService) AgentBlueprintGetBlueprintStores(ctx context.Context, id string) ApiAgentBlueprintGetBlueprintStoresRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAgentBlueprintGetBlueprintStoresRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }

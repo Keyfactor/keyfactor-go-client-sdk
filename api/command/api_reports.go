@@ -70,13 +70,14 @@ ReportsCreateCustomReport Creates a custom report
 	@return ApiReportsCreateCustomReportRequest
 */
 func (a *ReportsApiService) ReportsCreateCustomReport(ctx context.Context) ApiReportsCreateCustomReportRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiReportsCreateCustomReportRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -207,13 +208,14 @@ ReportsCreateReportSchedule Create a built-in report's schedule that matches the
 	@return ApiReportsCreateReportScheduleRequest
 */
 func (a *ReportsApiService) ReportsCreateReportSchedule(ctx context.Context, id int32) ApiReportsCreateReportScheduleRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiReportsCreateReportScheduleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -339,13 +341,14 @@ ReportsDeleteReport Delete custom report that matches the id
 	@return ApiReportsDeleteReportRequest
 */
 func (a *ReportsApiService) ReportsDeleteReport(ctx context.Context, id int32) ApiReportsDeleteReportRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiReportsDeleteReportRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -454,13 +457,14 @@ ReportsDeleteReportSchedule Delete a built-in report's schedule that matches the
 	@return ApiReportsDeleteReportScheduleRequest
 */
 func (a *ReportsApiService) ReportsDeleteReportSchedule(ctx context.Context, id int32) ApiReportsDeleteReportScheduleRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiReportsDeleteReportScheduleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -569,13 +573,14 @@ ReportsGetCustomReport Returns a single custom report that matches the id
 	@return ApiReportsGetCustomReportRequest
 */
 func (a *ReportsApiService) ReportsGetCustomReport(ctx context.Context, id int32) ApiReportsGetCustomReportRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiReportsGetCustomReportRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -696,13 +701,14 @@ ReportsGetReport Returns a single built-in report that matches the id
 	@return ApiReportsGetReportRequest
 */
 func (a *ReportsApiService) ReportsGetReport(ctx context.Context, id int32) ApiReportsGetReportRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiReportsGetReportRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -823,13 +829,14 @@ ReportsGetReportParameters Get a built-in report's parameters that matches the i
 	@return ApiReportsGetReportParametersRequest
 */
 func (a *ReportsApiService) ReportsGetReportParameters(ctx context.Context, id int32) ApiReportsGetReportParametersRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiReportsGetReportParametersRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -950,13 +957,14 @@ ReportsGetReportSchedule Get a built-in report's schedule that matches the id of
 	@return ApiReportsGetReportScheduleRequest
 */
 func (a *ReportsApiService) ReportsGetReportSchedule(ctx context.Context, id int32) ApiReportsGetReportScheduleRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiReportsGetReportScheduleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -1112,13 +1120,14 @@ ReportsGetReportSchedules Get a built-in report's schedules that matches the id 
 	@return ApiReportsGetReportSchedulesRequest
 */
 func (a *ReportsApiService) ReportsGetReportSchedules(ctx context.Context, id int32) ApiReportsGetReportSchedulesRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiReportsGetReportSchedulesRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -1287,13 +1296,14 @@ ReportsQueryCustomReports Returns all custom reports according to the provided f
 	@return ApiReportsQueryCustomReportsRequest
 */
 func (a *ReportsApiService) ReportsQueryCustomReports(ctx context.Context) ApiReportsQueryCustomReportsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiReportsQueryCustomReportsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1460,13 +1470,14 @@ ReportsQueryReports Returns all built-in reports according to the provided filte
 	@return ApiReportsQueryReportsRequest
 */
 func (a *ReportsApiService) ReportsQueryReports(ctx context.Context) ApiReportsQueryReportsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiReportsQueryReportsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1605,13 +1616,14 @@ ReportsUpdateCustomReport Updates a custom report that matches the id
 	@return ApiReportsUpdateCustomReportRequest
 */
 func (a *ReportsApiService) ReportsUpdateCustomReport(ctx context.Context) ApiReportsUpdateCustomReportRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiReportsUpdateCustomReportRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1740,13 +1752,14 @@ ReportsUpdateReport Updates a single built-in report that matches the id. Only s
 	@return ApiReportsUpdateReportRequest
 */
 func (a *ReportsApiService) ReportsUpdateReport(ctx context.Context) ApiReportsUpdateReportRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiReportsUpdateReportRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1877,13 +1890,14 @@ ReportsUpdateReportParameters Update a built-in report's parameters that matches
 	@return ApiReportsUpdateReportParametersRequest
 */
 func (a *ReportsApiService) ReportsUpdateReportParameters(ctx context.Context, id int32) ApiReportsUpdateReportParametersRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiReportsUpdateReportParametersRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -2016,13 +2030,14 @@ ReportsUpdateReportSchedule Update a built-in report's schedule that matches the
 	@return ApiReportsUpdateReportScheduleRequest
 */
 func (a *ReportsApiService) ReportsUpdateReportSchedule(ctx context.Context, id int32) ApiReportsUpdateReportScheduleRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiReportsUpdateReportScheduleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }

@@ -70,13 +70,14 @@ CertificateStoreAddCertificate Configures a management job to add a certificate 
 	@return ApiCertificateStoreAddCertificateRequest
 */
 func (a *CertificateStoreApiService) CertificateStoreAddCertificate(ctx context.Context) ApiCertificateStoreAddCertificateRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateStoreAddCertificateRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -205,13 +206,14 @@ CertificateStoreApprovePending Approves the provided certificate stores to make 
 	@return ApiCertificateStoreApprovePendingRequest
 */
 func (a *CertificateStoreApiService) CertificateStoreApprovePending(ctx context.Context) ApiCertificateStoreApprovePendingRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateStoreApprovePendingRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -328,13 +330,14 @@ CertificateStoreConfigureDiscoveryJob Configures a discovery job to locate curre
 	@return ApiCertificateStoreConfigureDiscoveryJobRequest
 */
 func (a *CertificateStoreApiService) CertificateStoreConfigureDiscoveryJob(ctx context.Context) ApiCertificateStoreConfigureDiscoveryJobRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateStoreConfigureDiscoveryJobRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -453,13 +456,14 @@ CertificateStoreCreateCertificateStoreServer Creates a new certificate store ser
 Deprecated
 */
 func (a *CertificateStoreApiService) CertificateStoreCreateCertificateStoreServer(ctx context.Context) ApiCertificateStoreCreateCertificateStoreServerRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateStoreCreateCertificateStoreServerRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -585,13 +589,14 @@ CertificateStoreDeleteCertificateStore Deletes a persisted certificate store by 
 	@return ApiCertificateStoreDeleteCertificateStoreRequest
 */
 func (a *CertificateStoreApiService) CertificateStoreDeleteCertificateStore(ctx context.Context, id string) ApiCertificateStoreDeleteCertificateStoreRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateStoreDeleteCertificateStoreRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -707,13 +712,14 @@ This will ignore individual delete failures, and continue processing the array.
 	@return ApiCertificateStoreDeleteCertificateStoresRequest
 */
 func (a *CertificateStoreApiService) CertificateStoreDeleteCertificateStores(ctx context.Context) ApiCertificateStoreDeleteCertificateStoresRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateStoreDeleteCertificateStoresRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -853,13 +859,14 @@ CertificateStoreGetCertificateStoreInventory Returns a single certificate store'
 	@return ApiCertificateStoreGetCertificateStoreInventoryRequest
 */
 func (a *CertificateStoreApiService) CertificateStoreGetCertificateStoreInventory(ctx context.Context, id string) ApiCertificateStoreGetCertificateStoreInventoryRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateStoreGetCertificateStoreInventoryRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -997,13 +1004,14 @@ CertificateStoreRemoveCertificate Configures a management job to remove a certif
 	@return ApiCertificateStoreRemoveCertificateRequest
 */
 func (a *CertificateStoreApiService) CertificateStoreRemoveCertificate(ctx context.Context) ApiCertificateStoreRemoveCertificateRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateStoreRemoveCertificateRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1132,13 +1140,14 @@ CertificateStoreSchedule Creates an inventory schedule for the provided certific
 	@return ApiCertificateStoreScheduleRequest
 */
 func (a *CertificateStoreApiService) CertificateStoreSchedule(ctx context.Context) ApiCertificateStoreScheduleRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateStoreScheduleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1255,13 +1264,14 @@ CertificateStoreScheduleForReenrollment Schedules a certificate store for reenro
 	@return ApiCertificateStoreScheduleForReenrollmentRequest
 */
 func (a *CertificateStoreApiService) CertificateStoreScheduleForReenrollment(ctx context.Context) ApiCertificateStoreScheduleForReenrollmentRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateStoreScheduleForReenrollmentRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1378,13 +1388,14 @@ CertificateStoreSetPassword Sets a password for the requested certificate store
 	@return ApiCertificateStoreSetPasswordRequest
 */
 func (a *CertificateStoreApiService) CertificateStoreSetPassword(ctx context.Context) ApiCertificateStoreSetPasswordRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateStoreSetPasswordRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1503,13 +1514,14 @@ CertificateStoreUpdateCertificateStoreServer Updates a given certificate store s
 Deprecated
 */
 func (a *CertificateStoreApiService) CertificateStoreUpdateCertificateStoreServer(ctx context.Context) ApiCertificateStoreUpdateCertificateStoreServerRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateStoreUpdateCertificateStoreServerRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_ServerGroupApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -39,22 +40,20 @@ func Test_command_ServerGroupApiService(t *testing.T) {
 
 	t.Run("Test ServerGroupApiService ServerGroupAddAccess", func(t *testing.T) {
 
+		t.Log("ServerGroupApi_ServerGroupAddAccess_payload: <none>")
 		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupAddAccess(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test ServerGroupApiService ServerGroupCreateServerGroup", func(t *testing.T) {
 
+		t.Log("ServerGroupApi_ServerGroupCreateServerGroup_payload: <none>")
 		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupCreateServerGroup(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test ServerGroupApiService ServerGroupDelete", func(t *testing.T) {
@@ -65,11 +64,10 @@ func Test_command_ServerGroupApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "string")
 		t.Logf("ServerGroupApi_ServerGroupDelete_id: %v", id)
 
+		t.Log("ServerGroupApi_ServerGroupDelete_payload: <none>")
 		httpRes, err := apiClient.ServerGroupApi.ServerGroupDelete(context.Background(), id.(string)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test ServerGroupApiService ServerGroupGetAccess", func(t *testing.T) {
@@ -80,12 +78,11 @@ func Test_command_ServerGroupApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "string")
 		t.Logf("ServerGroupApi_ServerGroupGetAccess_id: %v", id)
 
+		t.Log("ServerGroupApi_ServerGroupGetAccess_payload: <none>")
 		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupGetAccess(context.Background(), id.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test ServerGroupApiService ServerGroupGetGroup", func(t *testing.T) {
@@ -96,12 +93,11 @@ func Test_command_ServerGroupApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "string")
 		t.Logf("ServerGroupApi_ServerGroupGetGroup_id: %v", id)
 
+		t.Log("ServerGroupApi_ServerGroupGetGroup_payload: <none>")
 		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupGetGroup(context.Background(), id.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test ServerGroupApiService ServerGroupGetGroupByName", func(t *testing.T) {
@@ -112,42 +108,38 @@ func Test_command_ServerGroupApiService(t *testing.T) {
 		name, _ = convertParamInterface(name, "string")
 		t.Logf("ServerGroupApi_ServerGroupGetGroupByName_name: %v", name)
 
+		t.Log("ServerGroupApi_ServerGroupGetGroupByName_payload: <none>")
 		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupGetGroupByName(context.Background(), name.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test ServerGroupApiService ServerGroupQueryServerGroups", func(t *testing.T) {
 
+		t.Log("ServerGroupApi_ServerGroupQueryServerGroups_payload: <none>")
 		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupQueryServerGroups(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test ServerGroupApiService ServerGroupRemoveAccess", func(t *testing.T) {
 
+		t.Log("ServerGroupApi_ServerGroupRemoveAccess_payload: <none>")
 		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupRemoveAccess(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test ServerGroupApiService ServerGroupUpdateServerGroup", func(t *testing.T) {
 
+		t.Log("ServerGroupApi_ServerGroupUpdateServerGroup_payload: <none>")
 		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupUpdateServerGroup(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

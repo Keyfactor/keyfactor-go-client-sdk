@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_TemplateApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -39,12 +40,11 @@ func Test_command_TemplateApiService(t *testing.T) {
 
 	t.Run("Test TemplateApiService TemplateGetGlobalSettings", func(t *testing.T) {
 
+		t.Log("TemplateApi_TemplateGetGlobalSettings_payload: <none>")
 		resp, httpRes, err := apiClient.TemplateApi.TemplateGetGlobalSettings(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test TemplateApiService TemplateGetTemplate", func(t *testing.T) {
@@ -55,61 +55,55 @@ func Test_command_TemplateApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("TemplateApi_TemplateGetTemplate_id: %v", id)
 
+		t.Log("TemplateApi_TemplateGetTemplate_payload: <none>")
 		resp, httpRes, err := apiClient.TemplateApi.TemplateGetTemplate(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test TemplateApiService TemplateGetTemplates", func(t *testing.T) {
 
+		t.Log("TemplateApi_TemplateGetTemplates_payload: <none>")
 		resp, httpRes, err := apiClient.TemplateApi.TemplateGetTemplates(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test TemplateApiService TemplateGetValidSubjectParts", func(t *testing.T) {
 
+		t.Log("TemplateApi_TemplateGetValidSubjectParts_payload: <none>")
 		resp, httpRes, err := apiClient.TemplateApi.TemplateGetValidSubjectParts(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test TemplateApiService TemplateImport", func(t *testing.T) {
 
+		t.Log("TemplateApi_TemplateImport_payload: <none>")
 		httpRes, err := apiClient.TemplateApi.TemplateImport(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test TemplateApiService TemplateUpdateGlobalSettings", func(t *testing.T) {
 
+		t.Log("TemplateApi_TemplateUpdateGlobalSettings_payload: <none>")
 		resp, httpRes, err := apiClient.TemplateApi.TemplateUpdateGlobalSettings(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test TemplateApiService TemplateUpdateTemplate", func(t *testing.T) {
 
+		t.Log("TemplateApi_TemplateUpdateTemplate_payload: <none>")
 		resp, httpRes, err := apiClient.TemplateApi.TemplateUpdateTemplate(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

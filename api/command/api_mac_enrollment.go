@@ -68,13 +68,14 @@ MacEnrollmentEditMacEnrollment Updates mac enrollment settings data
 	@return ApiMacEnrollmentEditMacEnrollmentRequest
 */
 func (a *MacEnrollmentApiService) MacEnrollmentEditMacEnrollment(ctx context.Context) ApiMacEnrollmentEditMacEnrollmentRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiMacEnrollmentEditMacEnrollmentRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -196,13 +197,14 @@ MacEnrollmentMacEnrollment Gets mac enrollment settings data
 	@return ApiMacEnrollmentMacEnrollmentRequest
 */
 func (a *MacEnrollmentApiService) MacEnrollmentMacEnrollment(ctx context.Context) ApiMacEnrollmentMacEnrollmentRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiMacEnrollmentMacEnrollmentRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

@@ -70,13 +70,14 @@ ServerAddAccess Updates logons and users with access to those logons for an exis
 	@return ApiServerAddAccessRequest
 */
 func (a *ServerApiService) ServerAddAccess(ctx context.Context) ApiServerAddAccessRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServerAddAccessRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -205,13 +206,14 @@ ServerCreateServer Creates a server with the provided properties
 	@return ApiServerCreateServerRequest
 */
 func (a *ServerApiService) ServerCreateServer(ctx context.Context) ApiServerCreateServerRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServerCreateServerRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -335,13 +337,14 @@ ServerDelete Deletes a Server associated with the provided identifier
 	@return ApiServerDeleteRequest
 */
 func (a *ServerApiService) ServerDelete(ctx context.Context, id int32) ApiServerDeleteRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServerDeleteRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -450,13 +453,14 @@ ServerGet Returns a Server associated with the provided identifier
 	@return ApiServerGetRequest
 */
 func (a *ServerApiService) ServerGet(ctx context.Context, id int32) ApiServerGetRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServerGetRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -577,13 +581,14 @@ ServerGetAccess Retrieves logons and users with access to those logons for an ex
 	@return ApiServerGetAccessRequest
 */
 func (a *ServerApiService) ServerGetAccess(ctx context.Context, id int32) ApiServerGetAccessRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServerGetAccessRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -737,13 +742,14 @@ ServerQueryServers Returns all servers according to the provided filter paramete
 	@return ApiServerQueryServersRequest
 */
 func (a *ServerApiService) ServerQueryServers(ctx context.Context) ApiServerQueryServersRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServerQueryServersRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -882,13 +888,14 @@ ServerRemoveAccess Updates logons and users with access to those logons for an e
 	@return ApiServerRemoveAccessRequest
 */
 func (a *ServerApiService) ServerRemoveAccess(ctx context.Context) ApiServerRemoveAccessRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServerRemoveAccessRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1017,13 +1024,14 @@ ServerUpdateServer Updates an existing server with the provided properties
 	@return ApiServerUpdateServerRequest
 */
 func (a *ServerApiService) ServerUpdateServer(ctx context.Context) ApiServerUpdateServerRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiServerUpdateServerRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

@@ -62,13 +62,14 @@ LicenseGetCurrentLicense Gets the current license
 	@return ApiLicenseGetCurrentLicenseRequest
 */
 func (a *LicenseApiService) LicenseGetCurrentLicense(ctx context.Context) ApiLicenseGetCurrentLicenseRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiLicenseGetCurrentLicenseRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

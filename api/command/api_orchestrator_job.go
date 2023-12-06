@@ -69,13 +69,14 @@ OrchestratorJobAcknowledgeJobs Acknowledges orchestrator jobs based on the provi
 	@return ApiOrchestratorJobAcknowledgeJobsRequest
 */
 func (a *OrchestratorJobApiService) OrchestratorJobAcknowledgeJobs(ctx context.Context) ApiOrchestratorJobAcknowledgeJobsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiOrchestratorJobAcknowledgeJobsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -192,13 +193,14 @@ OrchestratorJobGetCustomJobResultData Retrieves the results of a custom job usin
 	@return ApiOrchestratorJobGetCustomJobResultDataRequest
 */
 func (a *OrchestratorJobApiService) OrchestratorJobGetCustomJobResultData(ctx context.Context) ApiOrchestratorJobGetCustomJobResultDataRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiOrchestratorJobGetCustomJobResultDataRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -354,13 +356,14 @@ OrchestratorJobGetJobHistory Returns all histories of an orchestrator job accord
 	@return ApiOrchestratorJobGetJobHistoryRequest
 */
 func (a *OrchestratorJobApiService) OrchestratorJobGetJobHistory(ctx context.Context) ApiOrchestratorJobGetJobHistoryRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiOrchestratorJobGetJobHistoryRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -527,13 +530,14 @@ OrchestratorJobGetScheduledJobs Returns all scheduled orchestrator jobs accordin
 	@return ApiOrchestratorJobGetScheduledJobsRequest
 */
 func (a *OrchestratorJobApiService) OrchestratorJobGetScheduledJobs(ctx context.Context) ApiOrchestratorJobGetScheduledJobsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiOrchestratorJobGetScheduledJobsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -672,13 +676,14 @@ OrchestratorJobRescheduleJobs Reschedules orchestrator jobs based on the provide
 	@return ApiOrchestratorJobRescheduleJobsRequest
 */
 func (a *OrchestratorJobApiService) OrchestratorJobRescheduleJobs(ctx context.Context) ApiOrchestratorJobRescheduleJobsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiOrchestratorJobRescheduleJobsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -795,13 +800,14 @@ OrchestratorJobScheduleBulkJob Schedules the same job for a custom JobType on th
 	@return ApiOrchestratorJobScheduleBulkJobRequest
 */
 func (a *OrchestratorJobApiService) OrchestratorJobScheduleBulkJob(ctx context.Context) ApiOrchestratorJobScheduleBulkJobRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiOrchestratorJobScheduleBulkJobRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -930,13 +936,14 @@ OrchestratorJobScheduleJob Schedules a job for a custom JobType on the agent usi
 	@return ApiOrchestratorJobScheduleJobRequest
 */
 func (a *OrchestratorJobApiService) OrchestratorJobScheduleJob(ctx context.Context) ApiOrchestratorJobScheduleJobRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiOrchestratorJobScheduleJobRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1065,13 +1072,14 @@ OrchestratorJobUnscheduleJobs Unschedules orchestrator jobs based on the provide
 	@return ApiOrchestratorJobUnscheduleJobsRequest
 */
 func (a *OrchestratorJobApiService) OrchestratorJobUnscheduleJobs(ctx context.Context) ApiOrchestratorJobUnscheduleJobsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiOrchestratorJobUnscheduleJobsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

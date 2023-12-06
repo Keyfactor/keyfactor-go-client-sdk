@@ -65,13 +65,14 @@ SecurityDeleteSecurityIdentity Deletes the security identity whose ID is provide
 	@return ApiSecurityDeleteSecurityIdentityRequest
 */
 func (a *SecurityApiService) SecurityDeleteSecurityIdentity(ctx context.Context, id int32) ApiSecurityDeleteSecurityIdentityRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSecurityDeleteSecurityIdentityRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -180,13 +181,14 @@ SecurityIdentityPermissions Gets an object representing the permissions of the i
 	@return ApiSecurityIdentityPermissionsRequest
 */
 func (a *SecurityApiService) SecurityIdentityPermissions(ctx context.Context, id int32) ApiSecurityIdentityPermissionsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSecurityIdentityPermissionsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -312,13 +314,14 @@ SecurityLookupIdentity Validates that the identity with the name given exists.
 	@return ApiSecurityLookupIdentityRequest
 */
 func (a *SecurityApiService) SecurityLookupIdentity(ctx context.Context) ApiSecurityLookupIdentityRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiSecurityLookupIdentityRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

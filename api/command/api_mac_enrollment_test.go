@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_MacEnrollmentApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -39,22 +40,20 @@ func Test_command_MacEnrollmentApiService(t *testing.T) {
 
 	t.Run("Test MacEnrollmentApiService MacEnrollmentEditMacEnrollment", func(t *testing.T) {
 
+		t.Log("MacEnrollmentApi_MacEnrollmentEditMacEnrollment_payload: <none>")
 		resp, httpRes, err := apiClient.MacEnrollmentApi.MacEnrollmentEditMacEnrollment(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test MacEnrollmentApiService MacEnrollmentMacEnrollment", func(t *testing.T) {
 
+		t.Log("MacEnrollmentApi_MacEnrollmentMacEnrollment_payload: <none>")
 		resp, httpRes, err := apiClient.MacEnrollmentApi.MacEnrollmentMacEnrollment(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

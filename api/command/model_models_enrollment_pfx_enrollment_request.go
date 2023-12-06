@@ -23,7 +23,6 @@ package command
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the ModelsEnrollmentPFXEnrollmentRequest type satisfies the MappedNullable interface at compile time
@@ -40,7 +39,7 @@ type ModelsEnrollmentPFXEnrollmentRequest struct {
 	CertificateAuthority        *string                           `json:"CertificateAuthority,omitempty"`
 	Metadata                    map[string]interface{}            `json:"Metadata,omitempty"`
 	AdditionalEnrollmentFields  map[string]map[string]interface{} `json:"AdditionalEnrollmentFields,omitempty"`
-	Timestamp                   *time.Time                        `json:"Timestamp,omitempty"`
+	Timestamp                   *string                           `json:"Timestamp,omitempty"`
 	Template                    *string                           `json:"Template,omitempty"`
 	SANs                        *map[string][]string              `json:"SANs,omitempty"`
 	AdditionalProperties        map[string]interface{}
@@ -354,9 +353,9 @@ func (o *ModelsEnrollmentPFXEnrollmentRequest) SetAdditionalEnrollmentFields(v m
 }
 
 // GetTimestamp returns the Timestamp field value if set, zero value otherwise.
-func (o *ModelsEnrollmentPFXEnrollmentRequest) GetTimestamp() time.Time {
+func (o *ModelsEnrollmentPFXEnrollmentRequest) GetTimestamp() string {
 	if o == nil || isNil(o.Timestamp) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.Timestamp
@@ -364,7 +363,7 @@ func (o *ModelsEnrollmentPFXEnrollmentRequest) GetTimestamp() time.Time {
 
 // GetTimestampOk returns a tuple with the Timestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsEnrollmentPFXEnrollmentRequest) GetTimestampOk() (*time.Time, bool) {
+func (o *ModelsEnrollmentPFXEnrollmentRequest) GetTimestampOk() (*string, bool) {
 	if o == nil || isNil(o.Timestamp) {
 		return nil, false
 	}
@@ -380,8 +379,8 @@ func (o *ModelsEnrollmentPFXEnrollmentRequest) HasTimestamp() bool {
 	return false
 }
 
-// SetTimestamp gets a reference to the given time.Time and assigns it to the Timestamp field.
-func (o *ModelsEnrollmentPFXEnrollmentRequest) SetTimestamp(v time.Time) {
+// SetTimestamp gets a reference to the given string and assigns it to the Timestamp field.
+func (o *ModelsEnrollmentPFXEnrollmentRequest) SetTimestamp(v string) {
 	o.Timestamp = &v
 }
 

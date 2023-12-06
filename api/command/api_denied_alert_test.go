@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_DeniedAlertApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -39,12 +40,11 @@ func Test_command_DeniedAlertApiService(t *testing.T) {
 
 	t.Run("Test DeniedAlertApiService DeniedAlertAddDeniedAlert", func(t *testing.T) {
 
+		t.Log("DeniedAlertApi_DeniedAlertAddDeniedAlert_payload: <none>")
 		resp, httpRes, err := apiClient.DeniedAlertApi.DeniedAlertAddDeniedAlert(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test DeniedAlertApiService DeniedAlertDeleteDeniedAlert", func(t *testing.T) {
@@ -55,21 +55,19 @@ func Test_command_DeniedAlertApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("DeniedAlertApi_DeniedAlertDeleteDeniedAlert_id: %v", id)
 
+		t.Log("DeniedAlertApi_DeniedAlertDeleteDeniedAlert_payload: <none>")
 		httpRes, err := apiClient.DeniedAlertApi.DeniedAlertDeleteDeniedAlert(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test DeniedAlertApiService DeniedAlertEditDeniedAlert", func(t *testing.T) {
 
+		t.Log("DeniedAlertApi_DeniedAlertEditDeniedAlert_payload: <none>")
 		resp, httpRes, err := apiClient.DeniedAlertApi.DeniedAlertEditDeniedAlert(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test DeniedAlertApiService DeniedAlertGetDeniedAlert", func(t *testing.T) {
@@ -80,22 +78,20 @@ func Test_command_DeniedAlertApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("DeniedAlertApi_DeniedAlertGetDeniedAlert_id: %v", id)
 
+		t.Log("DeniedAlertApi_DeniedAlertGetDeniedAlert_payload: <none>")
 		resp, httpRes, err := apiClient.DeniedAlertApi.DeniedAlertGetDeniedAlert(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test DeniedAlertApiService DeniedAlertGetDeniedAlerts", func(t *testing.T) {
 
+		t.Log("DeniedAlertApi_DeniedAlertGetDeniedAlerts_payload: <none>")
 		resp, httpRes, err := apiClient.DeniedAlertApi.DeniedAlertGetDeniedAlerts(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

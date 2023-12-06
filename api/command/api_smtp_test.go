@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_SMTPApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -39,32 +40,29 @@ func Test_command_SMTPApiService(t *testing.T) {
 
 	t.Run("Test SMTPApiService SMTPSMTP", func(t *testing.T) {
 
+		t.Log("SMTPApi_SMTPSMTP_payload: <none>")
 		resp, httpRes, err := apiClient.SMTPApi.SMTPSMTP(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SMTPApiService SMTPTestSMTP", func(t *testing.T) {
 
+		t.Log("SMTPApi_SMTPTestSMTP_payload: <none>")
 		resp, httpRes, err := apiClient.SMTPApi.SMTPTestSMTP(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SMTPApiService SMTPUpdateSMTP", func(t *testing.T) {
 
+		t.Log("SMTPApi_SMTPUpdateSMTP_payload: <none>")
 		resp, httpRes, err := apiClient.SMTPApi.SMTPUpdateSMTP(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

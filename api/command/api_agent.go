@@ -70,13 +70,14 @@ AgentApprove Approve a list of agents
 	@return ApiAgentApproveRequest
 */
 func (a *AgentApiService) AgentApprove(ctx context.Context) ApiAgentApproveRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAgentApproveRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -193,13 +194,14 @@ AgentDisapprove Disapprove a list of agents
 	@return ApiAgentDisapproveRequest
 */
 func (a *AgentApiService) AgentDisapprove(ctx context.Context) ApiAgentDisapproveRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAgentDisapproveRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -311,13 +313,14 @@ AgentFetchLogs Schedules a job on the agent to retrieve log files
 	@return ApiAgentFetchLogsRequest
 */
 func (a *AgentApiService) AgentFetchLogs(ctx context.Context, id string) ApiAgentFetchLogsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAgentFetchLogsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -426,13 +429,14 @@ AgentGetAgentDetail Returns details for a single agent, specified by ID
 	@return ApiAgentGetAgentDetailRequest
 */
 func (a *AgentApiService) AgentGetAgentDetail(ctx context.Context, id string) ApiAgentGetAgentDetailRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAgentGetAgentDetailRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -586,13 +590,14 @@ AgentGetAgents Returns all agents according to the provided filter and output pa
 	@return ApiAgentGetAgentsRequest
 */
 func (a *AgentApiService) AgentGetAgents(ctx context.Context) ApiAgentGetAgentsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAgentGetAgentsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -726,13 +731,14 @@ AgentReset Reset an agent to a new state
 	@return ApiAgentResetRequest
 */
 func (a *AgentApiService) AgentReset(ctx context.Context, id string) ApiAgentResetRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAgentResetRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -846,13 +852,14 @@ AgentSetAuthCertificateReenrollment Update the AuthCertificateReenrollment value
 	@return ApiAgentSetAuthCertificateReenrollmentRequest
 */
 func (a *AgentApiService) AgentSetAuthCertificateReenrollment(ctx context.Context) ApiAgentSetAuthCertificateReenrollmentRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAgentSetAuthCertificateReenrollmentRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -981,13 +988,14 @@ AgentsReset Reset a list of agents
 	@return ApiAgentsResetRequest
 */
 func (a *AgentApiService) AgentsReset(ctx context.Context) ApiAgentsResetRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAgentsResetRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

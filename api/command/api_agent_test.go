@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_AgentApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -39,20 +40,18 @@ func Test_command_AgentApiService(t *testing.T) {
 
 	t.Run("Test AgentApiService AgentApprove", func(t *testing.T) {
 
+		t.Log("AgentApi_AgentApprove_payload: <none>")
 		httpRes, err := apiClient.AgentApi.AgentApprove(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test AgentApiService AgentDisapprove", func(t *testing.T) {
 
+		t.Log("AgentApi_AgentDisapprove_payload: <none>")
 		httpRes, err := apiClient.AgentApi.AgentDisapprove(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test AgentApiService AgentFetchLogs", func(t *testing.T) {
@@ -63,11 +62,10 @@ func Test_command_AgentApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "string")
 		t.Logf("AgentApi_AgentFetchLogs_id: %v", id)
 
+		t.Log("AgentApi_AgentFetchLogs_payload: <none>")
 		httpRes, err := apiClient.AgentApi.AgentFetchLogs(context.Background(), id.(string)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test AgentApiService AgentGetAgentDetail", func(t *testing.T) {
@@ -78,22 +76,20 @@ func Test_command_AgentApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "string")
 		t.Logf("AgentApi_AgentGetAgentDetail_id: %v", id)
 
+		t.Log("AgentApi_AgentGetAgentDetail_payload: <none>")
 		resp, httpRes, err := apiClient.AgentApi.AgentGetAgentDetail(context.Background(), id.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test AgentApiService AgentGetAgents", func(t *testing.T) {
 
+		t.Log("AgentApi_AgentGetAgents_payload: <none>")
 		resp, httpRes, err := apiClient.AgentApi.AgentGetAgents(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test AgentApiService AgentReset", func(t *testing.T) {
@@ -104,30 +100,27 @@ func Test_command_AgentApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "string")
 		t.Logf("AgentApi_AgentReset_id: %v", id)
 
+		t.Log("AgentApi_AgentReset_payload: <none>")
 		httpRes, err := apiClient.AgentApi.AgentReset(context.Background(), id.(string)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test AgentApiService AgentSetAuthCertificateReenrollment", func(t *testing.T) {
 
+		t.Log("AgentApi_AgentSetAuthCertificateReenrollment_payload: <none>")
 		resp, httpRes, err := apiClient.AgentApi.AgentSetAuthCertificateReenrollment(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test AgentApiService AgentsReset", func(t *testing.T) {
 
+		t.Log("AgentApi_AgentsReset_payload: <none>")
 		httpRes, err := apiClient.AgentApi.AgentsReset(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

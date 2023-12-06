@@ -98,13 +98,14 @@ AuditLogDownloadCSV Returns a Comma Separated file containing the audit log entr
 	@return ApiAuditLogDownloadCSVRequest
 */
 func (a *AuditLogApiService) AuditLogDownloadCSV(ctx context.Context) ApiAuditLogDownloadCSVRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAuditLogDownloadCSVRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -238,13 +239,14 @@ AuditLogGetAuditLog Returns the audit log entry associated with the provided ide
 	@return ApiAuditLogGetAuditLogRequest
 */
 func (a *AuditLogApiService) AuditLogGetAuditLog(ctx context.Context, id int32) ApiAuditLogGetAuditLogRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAuditLogGetAuditLogRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -398,13 +400,14 @@ AuditLogGetAuditLogs Returns all audit log entries according to the provided fil
 	@return ApiAuditLogGetAuditLogsRequest
 */
 func (a *AuditLogApiService) AuditLogGetAuditLogs(ctx context.Context) ApiAuditLogGetAuditLogsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAuditLogGetAuditLogsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -571,13 +574,14 @@ AuditLogGetRelatedEntities Returns the audit log entry associated with the provi
 	@return ApiAuditLogGetRelatedEntitiesRequest
 */
 func (a *AuditLogApiService) AuditLogGetRelatedEntities(ctx context.Context) ApiAuditLogGetRelatedEntitiesRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAuditLogGetRelatedEntitiesRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -713,13 +717,14 @@ The validation performs a signing operation and checks the signature against the
 	@return ApiAuditLogValidateAuditLogRequest
 */
 func (a *AuditLogApiService) AuditLogValidateAuditLog(ctx context.Context, id int32) ApiAuditLogValidateAuditLogRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAuditLogValidateAuditLogRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }

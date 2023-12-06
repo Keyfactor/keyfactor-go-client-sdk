@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_SecurityApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -45,11 +46,10 @@ func Test_command_SecurityApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("SecurityApi_SecurityDeleteSecurityIdentity_id: %v", id)
 
+		t.Log("SecurityApi_SecurityDeleteSecurityIdentity_payload: <none>")
 		httpRes, err := apiClient.SecurityApi.SecurityDeleteSecurityIdentity(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SecurityApiService SecurityIdentityPermissions", func(t *testing.T) {
@@ -60,22 +60,20 @@ func Test_command_SecurityApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("SecurityApi_SecurityIdentityPermissions_id: %v", id)
 
+		t.Log("SecurityApi_SecurityIdentityPermissions_payload: <none>")
 		resp, httpRes, err := apiClient.SecurityApi.SecurityIdentityPermissions(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test SecurityApiService SecurityLookupIdentity", func(t *testing.T) {
 
+		t.Log("SecurityApi_SecurityLookupIdentity_payload: <none>")
 		resp, httpRes, err := apiClient.SecurityApi.SecurityLookupIdentity(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

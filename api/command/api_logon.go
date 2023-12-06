@@ -70,13 +70,14 @@ LogonCreateLogon Creates a logon with the provided properties
 	@return ApiLogonCreateLogonRequest
 */
 func (a *LogonApiService) LogonCreateLogon(ctx context.Context) ApiLogonCreateLogonRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiLogonCreateLogonRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -200,13 +201,14 @@ LogonDelete Deletes a Logon associated with the provided identifier
 	@return ApiLogonDeleteRequest
 */
 func (a *LogonApiService) LogonDelete(ctx context.Context, id int32) ApiLogonDeleteRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiLogonDeleteRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -315,13 +317,14 @@ LogonGetLogon Fetches a Logon associated with the provided identifier
 	@return ApiLogonGetLogonRequest
 */
 func (a *LogonApiService) LogonGetLogon(ctx context.Context, id int32) ApiLogonGetLogonRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiLogonGetLogonRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -447,13 +450,14 @@ LogonLogonAccess Updates the users with access to an existing logon
 	@return ApiLogonLogonAccessRequest
 */
 func (a *LogonApiService) LogonLogonAccess(ctx context.Context) ApiLogonLogonAccessRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiLogonLogonAccessRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -610,13 +614,14 @@ LogonQueryLogons Returns all Logons according to the provided filter parameters
 	@return ApiLogonQueryLogonsRequest
 */
 func (a *LogonApiService) LogonQueryLogons(ctx context.Context) ApiLogonQueryLogonsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiLogonQueryLogonsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

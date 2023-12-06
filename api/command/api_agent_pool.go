@@ -73,13 +73,14 @@ AgentPoolCreateAgentPool Creates an agent pool with the provided properties
 	@return ApiAgentPoolCreateAgentPoolRequest
 */
 func (a *AgentPoolApiService) AgentPoolCreateAgentPool(ctx context.Context) ApiAgentPoolCreateAgentPoolRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAgentPoolCreateAgentPoolRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -203,13 +204,14 @@ AgentPoolDeleteAgentPool Deletes the agent pool associated with the provided id
 	@return ApiAgentPoolDeleteAgentPoolRequest
 */
 func (a *AgentPoolApiService) AgentPoolDeleteAgentPool(ctx context.Context, id string) ApiAgentPoolDeleteAgentPoolRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAgentPoolDeleteAgentPoolRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -318,13 +320,14 @@ AgentPoolGetAgentPoolById Returns a single agent pool associated with the provid
 	@return ApiAgentPoolGetAgentPoolByIdRequest
 */
 func (a *AgentPoolApiService) AgentPoolGetAgentPoolById(ctx context.Context, id string) ApiAgentPoolGetAgentPoolByIdRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAgentPoolGetAgentPoolByIdRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -478,13 +481,14 @@ AgentPoolGetAgentPools Returns all agent pools according to the provided filter 
 	@return ApiAgentPoolGetAgentPoolsRequest
 */
 func (a *AgentPoolApiService) AgentPoolGetAgentPools(ctx context.Context) ApiAgentPoolGetAgentPoolsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAgentPoolGetAgentPoolsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -651,13 +655,14 @@ AgentPoolGetDefaultAgentPoolAgents Returns all agents for the default agent pool
 	@return ApiAgentPoolGetDefaultAgentPoolAgentsRequest
 */
 func (a *AgentPoolApiService) AgentPoolGetDefaultAgentPoolAgents(ctx context.Context) ApiAgentPoolGetDefaultAgentPoolAgentsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAgentPoolGetDefaultAgentPoolAgentsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -799,13 +804,14 @@ AgentPoolUpdateAgentPool Updates an existing agent pool with the provided proper
 	@return ApiAgentPoolUpdateAgentPoolRequest
 */
 func (a *AgentPoolApiService) AgentPoolUpdateAgentPool(ctx context.Context) ApiAgentPoolUpdateAgentPoolRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiAgentPoolUpdateAgentPoolRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

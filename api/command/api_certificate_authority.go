@@ -69,13 +69,14 @@ CertificateAuthorityCreateCA Creates a new CertificateAuthority object
 	@return ApiCertificateAuthorityCreateCARequest
 */
 func (a *CertificateAuthorityApiService) CertificateAuthorityCreateCA(ctx context.Context) ApiCertificateAuthorityCreateCARequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateAuthorityCreateCARequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -199,13 +200,14 @@ CertificateAuthorityDeleteCA Deletes a CertificateAuthority from the system, spe
 	@return ApiCertificateAuthorityDeleteCARequest
 */
 func (a *CertificateAuthorityApiService) CertificateAuthorityDeleteCA(ctx context.Context, id int32) ApiCertificateAuthorityDeleteCARequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateAuthorityDeleteCARequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -314,13 +316,14 @@ CertificateAuthorityGetCa Returns details for a single CA, specified by ID
 	@return ApiCertificateAuthorityGetCaRequest
 */
 func (a *CertificateAuthorityApiService) CertificateAuthorityGetCa(ctx context.Context, id int32) ApiCertificateAuthorityGetCaRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateAuthorityGetCaRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -474,13 +477,14 @@ CertificateAuthorityGetCas Returns all certificate authorities
 	@return ApiCertificateAuthorityGetCasRequest
 */
 func (a *CertificateAuthorityApiService) CertificateAuthorityGetCas(ctx context.Context) ApiCertificateAuthorityGetCasRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateAuthorityGetCasRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -619,13 +623,14 @@ CertificateAuthorityPublishCRL Publishes a CRL according to the provided request
 	@return ApiCertificateAuthorityPublishCRLRequest
 */
 func (a *CertificateAuthorityApiService) CertificateAuthorityPublishCRL(ctx context.Context) ApiCertificateAuthorityPublishCRLRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateAuthorityPublishCRLRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -742,13 +747,14 @@ CertificateAuthorityTestCertificateAuthority Validates the connection info for t
 	@return ApiCertificateAuthorityTestCertificateAuthorityRequest
 */
 func (a *CertificateAuthorityApiService) CertificateAuthorityTestCertificateAuthority(ctx context.Context) ApiCertificateAuthorityTestCertificateAuthorityRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateAuthorityTestCertificateAuthorityRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -876,13 +882,14 @@ CertificateAuthorityUpdateCA Updates a CertificateAuthority object
 	@return ApiCertificateAuthorityUpdateCARequest
 */
 func (a *CertificateAuthorityApiService) CertificateAuthorityUpdateCA(ctx context.Context) ApiCertificateAuthorityUpdateCARequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateAuthorityUpdateCARequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

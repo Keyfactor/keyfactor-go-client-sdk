@@ -70,13 +70,14 @@ CertificateAnalyzeCert Returns the public information of the certificate
 	@return ApiCertificateAnalyzeCertRequest
 */
 func (a *CertificateApiService) CertificateAnalyzeCert(ctx context.Context) ApiCertificateAnalyzeCertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateAnalyzeCertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -235,13 +236,14 @@ CertificateCertificateHistory Gets the history of operations on a certificate
 	@return ApiCertificateCertificateHistoryRequest
 */
 func (a *CertificateApiService) CertificateCertificateHistory(ctx context.Context, id int32) ApiCertificateCertificateHistoryRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateCertificateHistoryRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -403,13 +405,14 @@ CertificateCompareMetadata Compares the metadata value provided with the metadat
 	@return ApiCertificateCompareMetadataRequest
 */
 func (a *CertificateApiService) CertificateCompareMetadata(ctx context.Context) ApiCertificateCompareMetadataRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateCompareMetadataRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -557,13 +560,14 @@ This will ignore individual delete failures, and continue processing the array.
 	@return ApiCertificateDeleteByQueryRequest
 */
 func (a *CertificateApiService) CertificateDeleteByQuery(ctx context.Context) ApiCertificateDeleteByQueryRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateDeleteByQueryRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -685,13 +689,14 @@ CertificateDeleteCertificate Deletes a persisted certificate by its unique id as
 	@return ApiCertificateDeleteCertificateRequest
 */
 func (a *CertificateApiService) CertificateDeleteCertificate(ctx context.Context, id int32) ApiCertificateDeleteCertificateRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateDeleteCertificateRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -817,13 +822,14 @@ This will ignore individual delete failures, and continue processing the array
 	@return ApiCertificateDeleteCertificatesRequest
 */
 func (a *CertificateApiService) CertificateDeleteCertificates(ctx context.Context) ApiCertificateDeleteCertificatesRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateDeleteCertificatesRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -950,13 +956,14 @@ CertificateDeletePrivateKeys0 Deletes the persisted private keys of multiple cer
 	@return ApiCertificateDeletePrivateKeys0Request
 */
 func (a *CertificateApiService) CertificateDeletePrivateKeys0(ctx context.Context) ApiCertificateDeletePrivateKeys0Request {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateDeletePrivateKeys0Request{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1078,13 +1085,14 @@ CertificateDeletePrivateKeys1 Deletes the persisted private key of the certifica
 	@return ApiCertificateDeletePrivateKeys1Request
 */
 func (a *CertificateApiService) CertificateDeletePrivateKeys1(ctx context.Context, id int32) ApiCertificateDeletePrivateKeys1Request {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateDeletePrivateKeys1Request{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -1213,13 +1221,14 @@ CertificateDownloadCertificateAsync Downloads the persisted certificate associat
 	@return ApiCertificateDownloadCertificateAsyncRequest
 */
 func (a *CertificateApiService) CertificateDownloadCertificateAsync(ctx context.Context) ApiCertificateDownloadCertificateAsyncRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateDownloadCertificateAsyncRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1373,13 +1382,14 @@ CertificateGetCertificate Returns a single certificate that matches the id
 	@return ApiCertificateGetCertificateRequest
 */
 func (a *CertificateApiService) CertificateGetCertificate(ctx context.Context, id int32) ApiCertificateGetCertificateRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateGetCertificateRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -1519,13 +1529,14 @@ CertificateGetCertificateLocations Returns a list of locations the certificate i
 	@return ApiCertificateGetCertificateLocationsRequest
 */
 func (a *CertificateApiService) CertificateGetCertificateLocations(ctx context.Context, id int32) ApiCertificateGetCertificateLocationsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateGetCertificateLocationsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -1656,13 +1667,14 @@ CertificateGetCertificateSecurity Gets the list of Security Identities and which
 	@return ApiCertificateGetCertificateSecurityRequest
 */
 func (a *CertificateApiService) CertificateGetCertificateSecurity(ctx context.Context, id int32) ApiCertificateGetCertificateSecurityRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateGetCertificateSecurityRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -1793,13 +1805,14 @@ CertificateIdentityAudit Audit identity permissions for certificate
 	@return ApiCertificateIdentityAuditRequest
 */
 func (a *CertificateApiService) CertificateIdentityAudit(ctx context.Context, id int32) ApiCertificateIdentityAuditRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateIdentityAuditRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -1928,13 +1941,14 @@ CertificatePostImportCertificate Imports the provided certificate into the Keyfa
 	@return ApiCertificatePostImportCertificateRequest
 */
 func (a *CertificateApiService) CertificatePostImportCertificate(ctx context.Context) ApiCertificatePostImportCertificateRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificatePostImportCertificateRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -2139,13 +2153,14 @@ CertificateQueryCertificates Returns all certificates according to the provided 
 	@return ApiCertificateQueryCertificatesRequest
 */
 func (a *CertificateApiService) CertificateQueryCertificates(ctx context.Context) ApiCertificateQueryCertificatesRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateQueryCertificatesRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -2324,13 +2339,16 @@ CertificateRecoverCertificateAsync Recovers the persisted certificate associated
 	@return ApiCertificateRecoverCertificateAsyncRequest
 */
 func (a *CertificateApiService) CertificateRecoverCertificateAsync(ctx context.Context) ApiCertificateRecoverCertificateAsyncRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xCertificateformat := "PEM"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateRecoverCertificateAsyncRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xCertificateformat:      &xCertificateformat,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -2480,13 +2498,14 @@ CertificateRevoke Revokes the certificates associated with the provided identifi
 	@return ApiCertificateRevokeRequest
 */
 func (a *CertificateApiService) CertificateRevoke(ctx context.Context) ApiCertificateRevokeRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateRevokeRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -2636,13 +2655,14 @@ CertificateRevokeAll Revokes the certificates associated with the provided query
 	@return ApiCertificateRevokeAllRequest
 */
 func (a *CertificateApiService) CertificateRevokeAll(ctx context.Context) ApiCertificateRevokeAllRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateRevokeAllRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -2781,13 +2801,14 @@ CertificateUpdateAllMetadata Updates the metadata for certificates associated wi
 	@return ApiCertificateUpdateAllMetadataRequest
 */
 func (a *CertificateApiService) CertificateUpdateAllMetadata(ctx context.Context) ApiCertificateUpdateAllMetadataRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateUpdateAllMetadataRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -2914,13 +2935,14 @@ CertificateUpdateMetadata Updates the metadata for the certificate associated wi
 	@return ApiCertificateUpdateMetadataRequest
 */
 func (a *CertificateApiService) CertificateUpdateMetadata(ctx context.Context) ApiCertificateUpdateMetadataRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateUpdateMetadataRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -3042,13 +3064,14 @@ CertificateValidateCertificate Validates the certificate chain can be built.
 	@return ApiCertificateValidateCertificateRequest
 */
 func (a *CertificateApiService) CertificateValidateCertificate(ctx context.Context, id int32) ApiCertificateValidateCertificateRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCertificateValidateCertificateRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }

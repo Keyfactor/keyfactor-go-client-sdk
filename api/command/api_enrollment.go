@@ -70,13 +70,14 @@ EnrollmentAddToExistingCertStores Creates management jobs to install a newly enr
 	@return ApiEnrollmentAddToExistingCertStoresRequest
 */
 func (a *EnrollmentApiService) EnrollmentAddToExistingCertStores(ctx context.Context) ApiEnrollmentAddToExistingCertStoresRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiEnrollmentAddToExistingCertStoresRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -214,13 +215,14 @@ EnrollmentAvailableRenewalId Returns the type of renewal available for a given c
 	@return ApiEnrollmentAvailableRenewalIdRequest
 */
 func (a *EnrollmentApiService) EnrollmentAvailableRenewalId(ctx context.Context, id int32) ApiEnrollmentAvailableRenewalIdRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiEnrollmentAvailableRenewalIdRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -351,13 +353,14 @@ EnrollmentAvailableRenewalThumbprint Returns the type of renewal available for a
 	@return ApiEnrollmentAvailableRenewalThumbprintRequest
 */
 func (a *EnrollmentApiService) EnrollmentAvailableRenewalThumbprint(ctx context.Context, thumbprint string) ApiEnrollmentAvailableRenewalThumbprintRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiEnrollmentAvailableRenewalThumbprintRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		thumbprint:              thumbprint,
 	}
 }
@@ -479,13 +482,14 @@ EnrollmentGetMyCSRContext Returns the list of available CSR enrollment templates
 	@return ApiEnrollmentGetMyCSRContextRequest
 */
 func (a *EnrollmentApiService) EnrollmentGetMyCSRContext(ctx context.Context) ApiEnrollmentGetMyCSRContextRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiEnrollmentGetMyCSRContextRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -602,13 +606,14 @@ EnrollmentGetMyPFXContext Returns the list of available PFX enrollment templates
 	@return ApiEnrollmentGetMyPFXContextRequest
 */
 func (a *EnrollmentApiService) EnrollmentGetMyPFXContext(ctx context.Context) ApiEnrollmentGetMyPFXContextRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiEnrollmentGetMyPFXContextRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -727,13 +732,14 @@ EnrollmentGetTemplateEnrollmentSettings Gets the template settings to use during
 	@return ApiEnrollmentGetTemplateEnrollmentSettingsRequest
 */
 func (a *EnrollmentApiService) EnrollmentGetTemplateEnrollmentSettings(ctx context.Context, id int32) ApiEnrollmentGetTemplateEnrollmentSettingsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiEnrollmentGetTemplateEnrollmentSettingsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -859,13 +865,14 @@ EnrollmentInstallPFXToCertStore Creates management jobs to install a newly enrol
 	@return ApiEnrollmentInstallPFXToCertStoreRequest
 */
 func (a *EnrollmentApiService) EnrollmentInstallPFXToCertStore(ctx context.Context) ApiEnrollmentInstallPFXToCertStoreRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiEnrollmentInstallPFXToCertStoreRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1018,13 +1025,16 @@ EnrollmentPostCSREnroll Performs a CSR Enrollment based upon the provided reques
 	@return ApiEnrollmentPostCSREnrollRequest
 */
 func (a *EnrollmentApiService) EnrollmentPostCSREnroll(ctx context.Context) ApiEnrollmentPostCSREnrollRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+	xCertificateformat := "PEM"
+
 	return ApiEnrollmentPostCSREnrollRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
+		xCertificateformat:      &xCertificateformat,
 	}
 }
 
@@ -1184,13 +1194,16 @@ EnrollmentPostPFXEnroll Performs a PFX Enrollment based upon the provided reques
 	@return ApiEnrollmentPostPFXEnrollRequest
 */
 func (a *EnrollmentApiService) EnrollmentPostPFXEnroll(ctx context.Context) ApiEnrollmentPostPFXEnrollRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+	xCertificateformat := "PFX"
+
 	return ApiEnrollmentPostPFXEnrollRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
+		xCertificateformat:      &xCertificateformat,
 	}
 }
 
@@ -1325,13 +1338,14 @@ This functionality is equivalent to the result of pasting a CSR into the field w
 	@return ApiEnrollmentPostParsedCSRRequest
 */
 func (a *EnrollmentApiService) EnrollmentPostParsedCSR(ctx context.Context) ApiEnrollmentPostParsedCSRRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiEnrollmentPostParsedCSRRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1467,13 +1481,14 @@ EnrollmentRenew Performs a renewal based upon the passed in request
 	@return ApiEnrollmentRenewRequest
 */
 func (a *EnrollmentApiService) EnrollmentRenew(ctx context.Context) ApiEnrollmentRenewRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiEnrollmentRenewRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

@@ -70,13 +70,14 @@ WorkflowApprovePendingRequests Approves pending certificate requests associated 
 	@return ApiWorkflowApprovePendingRequestsRequest
 */
 func (a *WorkflowApiService) WorkflowApprovePendingRequests(ctx context.Context) ApiWorkflowApprovePendingRequestsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowApprovePendingRequestsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -205,13 +206,14 @@ WorkflowDenyPendingRequests Denies pending certificate requests associated with 
 	@return ApiWorkflowDenyPendingRequestsRequest
 */
 func (a *WorkflowApiService) WorkflowDenyPendingRequests(ctx context.Context) ApiWorkflowDenyPendingRequestsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowDenyPendingRequestsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -368,13 +370,14 @@ WorkflowGet Gets a collection of certificate requests based on the provided quer
 	@return ApiWorkflowGetRequest
 */
 func (a *WorkflowApiService) WorkflowGet(ctx context.Context) ApiWorkflowGetRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowGetRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -508,13 +511,14 @@ WorkflowGetCertificateRequestDetails Returns certificate request details based o
 	@return ApiWorkflowGetCertificateRequestDetailsRequest
 */
 func (a *WorkflowApiService) WorkflowGetCertificateRequestDetails(ctx context.Context, id int32) ApiWorkflowGetCertificateRequestDetailsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowGetCertificateRequestDetailsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -668,13 +672,14 @@ WorkflowGetDenied Gets a collection of denied certificate requests based on the 
 	@return ApiWorkflowGetDeniedRequest
 */
 func (a *WorkflowApiService) WorkflowGetDenied(ctx context.Context) ApiWorkflowGetDeniedRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiWorkflowGetDeniedRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

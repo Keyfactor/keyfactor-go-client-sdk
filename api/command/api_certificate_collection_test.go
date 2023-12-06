@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_CertificateCollectionApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -39,22 +40,20 @@ func Test_command_CertificateCollectionApiService(t *testing.T) {
 
 	t.Run("Test CertificateCollectionApiService CertificateCollectionCopyFromExistingCollection", func(t *testing.T) {
 
+		t.Log("CertificateCollectionApi_CertificateCollectionCopyFromExistingCollection_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionCopyFromExistingCollection(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateCollectionApiService CertificateCollectionCreateCollection", func(t *testing.T) {
 
+		t.Log("CertificateCollectionApi_CertificateCollectionCreateCollection_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionCreateCollection(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateCollectionApiService CertificateCollectionGetCollection0", func(t *testing.T) {
@@ -65,12 +64,11 @@ func Test_command_CertificateCollectionApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("CertificateCollectionApi_CertificateCollectionGetCollection0_id: %v", id)
 
+		t.Log("CertificateCollectionApi_CertificateCollectionGetCollection0_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionGetCollection0(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateCollectionApiService CertificateCollectionGetCollection1", func(t *testing.T) {
@@ -81,22 +79,20 @@ func Test_command_CertificateCollectionApiService(t *testing.T) {
 		name, _ = convertParamInterface(name, "string")
 		t.Logf("CertificateCollectionApi_CertificateCollectionGetCollection1_name: %v", name)
 
+		t.Log("CertificateCollectionApi_CertificateCollectionGetCollection1_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionGetCollection1(context.Background(), name.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateCollectionApiService CertificateCollectionGetCollections", func(t *testing.T) {
 
+		t.Log("CertificateCollectionApi_CertificateCollectionGetCollections_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionGetCollections(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateCollectionApiService CertificateCollectionSetCollectionPermissions", func(t *testing.T) {
@@ -107,21 +103,19 @@ func Test_command_CertificateCollectionApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("CertificateCollectionApi_CertificateCollectionSetCollectionPermissions_id: %v", id)
 
+		t.Log("CertificateCollectionApi_CertificateCollectionSetCollectionPermissions_payload: <none>")
 		httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionSetCollectionPermissions(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateCollectionApiService CertificateCollectionUpdateCollection", func(t *testing.T) {
 
+		t.Log("CertificateCollectionApi_CertificateCollectionUpdateCollection_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionUpdateCollection(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

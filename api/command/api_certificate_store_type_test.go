@@ -28,6 +28,7 @@ import (
 )
 
 func Test_command_CertificateStoreTypeApiService(t *testing.T) {
+
 	cwd, _ := os.Getwd()
 	t.Logf("Working directory: %s", cwd)
 	config := GetEnvConfiguration()
@@ -39,12 +40,11 @@ func Test_command_CertificateStoreTypeApiService(t *testing.T) {
 
 	t.Run("Test CertificateStoreTypeApiService CertificateStoreTypeCreateCertificateStoreType", func(t *testing.T) {
 
+		t.Log("CertificateStoreTypeApi_CertificateStoreTypeCreateCertificateStoreType_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeCreateCertificateStoreType(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateStoreTypeApiService CertificateStoreTypeDeleteCertificateStoreType", func(t *testing.T) {
@@ -55,20 +55,18 @@ func Test_command_CertificateStoreTypeApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("CertificateStoreTypeApi_CertificateStoreTypeDeleteCertificateStoreType_id: %v", id)
 
+		t.Log("CertificateStoreTypeApi_CertificateStoreTypeDeleteCertificateStoreType_payload: <none>")
 		httpRes, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeDeleteCertificateStoreType(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateStoreTypeApiService CertificateStoreTypeDeleteCertificateStoreTypes", func(t *testing.T) {
 
+		t.Log("CertificateStoreTypeApi_CertificateStoreTypeDeleteCertificateStoreTypes_payload: <none>")
 		httpRes, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeDeleteCertificateStoreTypes(context.Background()).Execute()
-
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateStoreTypeApiService CertificateStoreTypeGetCertificateStoreType0", func(t *testing.T) {
@@ -79,12 +77,11 @@ func Test_command_CertificateStoreTypeApiService(t *testing.T) {
 		id, _ = convertParamInterface(id, "int32")
 		t.Logf("CertificateStoreTypeApi_CertificateStoreTypeGetCertificateStoreType0_id: %v", id)
 
+		t.Log("CertificateStoreTypeApi_CertificateStoreTypeGetCertificateStoreType0_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeGetCertificateStoreType0(context.Background(), id.(int32)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateStoreTypeApiService CertificateStoreTypeGetCertificateStoreType1", func(t *testing.T) {
@@ -95,32 +92,29 @@ func Test_command_CertificateStoreTypeApiService(t *testing.T) {
 		name, _ = convertParamInterface(name, "string")
 		t.Logf("CertificateStoreTypeApi_CertificateStoreTypeGetCertificateStoreType1_name: %v", name)
 
+		t.Log("CertificateStoreTypeApi_CertificateStoreTypeGetCertificateStoreType1_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeGetCertificateStoreType1(context.Background(), name.(string)).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateStoreTypeApiService CertificateStoreTypeGetTypes", func(t *testing.T) {
 
+		t.Log("CertificateStoreTypeApi_CertificateStoreTypeGetTypes_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeGetTypes(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 	t.Run("Test CertificateStoreTypeApiService CertificateStoreTypeUpdateCertificateStoreType", func(t *testing.T) {
 
+		t.Log("CertificateStoreTypeApi_CertificateStoreTypeUpdateCertificateStoreType_payload: <none>")
 		resp, httpRes, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeUpdateCertificateStoreType(context.Background()).Execute()
-
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
-
 	})
 
 }

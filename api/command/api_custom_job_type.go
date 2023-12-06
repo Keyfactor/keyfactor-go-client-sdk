@@ -70,13 +70,14 @@ CustomJobTypeCreateJobType Creates a custom job type with the provided propertie
 	@return ApiCustomJobTypeCreateJobTypeRequest
 */
 func (a *CustomJobTypeApiService) CustomJobTypeCreateJobType(ctx context.Context) ApiCustomJobTypeCreateJobTypeRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCustomJobTypeCreateJobTypeRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -200,13 +201,14 @@ CustomJobTypeDeleteJobType Deletes the custom job type associated with the provi
 	@return ApiCustomJobTypeDeleteJobTypeRequest
 */
 func (a *CustomJobTypeApiService) CustomJobTypeDeleteJobType(ctx context.Context, id string) ApiCustomJobTypeDeleteJobTypeRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCustomJobTypeDeleteJobTypeRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -315,13 +317,14 @@ CustomJobTypeGetJobTypeById Returns a single custom job type associated with the
 	@return ApiCustomJobTypeGetJobTypeByIdRequest
 */
 func (a *CustomJobTypeApiService) CustomJobTypeGetJobTypeById(ctx context.Context, id string) ApiCustomJobTypeGetJobTypeByIdRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCustomJobTypeGetJobTypeByIdRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -475,13 +478,14 @@ CustomJobTypeGetJobTypes Returns all custom job types according to the provided 
 	@return ApiCustomJobTypeGetJobTypesRequest
 */
 func (a *CustomJobTypeApiService) CustomJobTypeGetJobTypes(ctx context.Context) ApiCustomJobTypeGetJobTypesRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCustomJobTypeGetJobTypesRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -620,13 +624,14 @@ CustomJobTypeUpdateJobType Updates an existing custom job type with the provided
 	@return ApiCustomJobTypeUpdateJobTypeRequest
 */
 func (a *CustomJobTypeApiService) CustomJobTypeUpdateJobType(ctx context.Context) ApiCustomJobTypeUpdateJobTypeRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiCustomJobTypeUpdateJobTypeRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 

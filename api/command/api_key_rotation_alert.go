@@ -70,13 +70,14 @@ KeyRotationAlertAddKeyRotationAlert Add a key rotation alert
 	@return ApiKeyRotationAlertAddKeyRotationAlertRequest
 */
 func (a *KeyRotationAlertApiService) KeyRotationAlertAddKeyRotationAlert(ctx context.Context) ApiKeyRotationAlertAddKeyRotationAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiKeyRotationAlertAddKeyRotationAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -200,13 +201,14 @@ KeyRotationAlertDeleteKeyRotationAlert Delete a key rotation alert
 	@return ApiKeyRotationAlertDeleteKeyRotationAlertRequest
 */
 func (a *KeyRotationAlertApiService) KeyRotationAlertDeleteKeyRotationAlert(ctx context.Context, id int32) ApiKeyRotationAlertDeleteKeyRotationAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiKeyRotationAlertDeleteKeyRotationAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -320,13 +322,14 @@ KeyRotationAlertEditKeyRotationAlert Edit a key rotation alert
 	@return ApiKeyRotationAlertEditKeyRotationAlertRequest
 */
 func (a *KeyRotationAlertApiService) KeyRotationAlertEditKeyRotationAlert(ctx context.Context) ApiKeyRotationAlertEditKeyRotationAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiKeyRotationAlertEditKeyRotationAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -454,13 +457,14 @@ KeyRotationAlertEditSchedule Edit schedule
 	@return ApiKeyRotationAlertEditScheduleRequest
 */
 func (a *KeyRotationAlertApiService) KeyRotationAlertEditSchedule(ctx context.Context) ApiKeyRotationAlertEditScheduleRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiKeyRotationAlertEditScheduleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -584,13 +588,14 @@ KeyRotationAlertGetKeyRotationAlert Get a key rotation alert
 	@return ApiKeyRotationAlertGetKeyRotationAlertRequest
 */
 func (a *KeyRotationAlertApiService) KeyRotationAlertGetKeyRotationAlert(ctx context.Context, id int32) ApiKeyRotationAlertGetKeyRotationAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiKeyRotationAlertGetKeyRotationAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 		id:                      id,
 	}
 }
@@ -744,13 +749,14 @@ KeyRotationAlertGetKeyRotationAlerts Gets all key rotation alerts according to t
 	@return ApiKeyRotationAlertGetKeyRotationAlertsRequest
 */
 func (a *KeyRotationAlertApiService) KeyRotationAlertGetKeyRotationAlerts(ctx context.Context) ApiKeyRotationAlertGetKeyRotationAlertsRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiKeyRotationAlertGetKeyRotationAlertsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -882,13 +888,14 @@ KeyRotationAlertGetSchedule Get the schedule for key rotation alerts
 	@return ApiKeyRotationAlertGetScheduleRequest
 */
 func (a *KeyRotationAlertApiService) KeyRotationAlertGetSchedule(ctx context.Context) ApiKeyRotationAlertGetScheduleRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiKeyRotationAlertGetScheduleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1012,13 +1019,14 @@ KeyRotationAlertTestAllKeyRotationAlert Test All Alerts
 	@return ApiKeyRotationAlertTestAllKeyRotationAlertRequest
 */
 func (a *KeyRotationAlertApiService) KeyRotationAlertTestAllKeyRotationAlert(ctx context.Context) ApiKeyRotationAlertTestAllKeyRotationAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiKeyRotationAlertTestAllKeyRotationAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
@@ -1147,13 +1155,14 @@ KeyRotationAlertTestKeyRotationAlert Test An Alert
 	@return ApiKeyRotationAlertTestKeyRotationAlertRequest
 */
 func (a *KeyRotationAlertApiService) KeyRotationAlertTestKeyRotationAlert(ctx context.Context) ApiKeyRotationAlertTestKeyRotationAlertRequest {
-	requestedWith := "APIClient"
-	version := "1"
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
 	return ApiKeyRotationAlertTestKeyRotationAlertRequest{
 		ApiService:              a,
 		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &version,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
 	}
 }
 
