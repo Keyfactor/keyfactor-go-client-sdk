@@ -1,10 +1,11 @@
 {
   "$schema": "https://keyfactor.github.io/integration-manifest-schema.json",
   "integration_type": "api-client",
-  "name": "keyfactor-go-client-sdk",
-  "status": "pilot",
+  "name": "Go API client for Keyfactor Command",
+  "status": "production",
   "support_level": "community",
   "link_github": false,
   "update_catalog": false,
-  "description": "Keyfactor Command API client library SDK for Go applications"
+  "release_dir": "",
+  "description": "This reference serves to document REST-based methods to manage and integrate with Keyfactor. In addition, an embedded interface allows for the execution of calls against the current Keyfactor API instance."
 }
