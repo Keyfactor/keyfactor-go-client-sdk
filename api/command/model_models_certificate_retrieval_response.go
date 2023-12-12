@@ -23,6 +23,7 @@ package command
 
 import (
 	"encoding/json"
+	"time"
 )
 
 // checks if the ModelsCertificateRetrievalResponse type satisfies the MappedNullable interface at compile time
@@ -35,12 +36,12 @@ type ModelsCertificateRetrievalResponse struct {
 	SerialNumber             *string        `json:"SerialNumber,omitempty"`
 	IssuedDN                 NullableString `json:"IssuedDN,omitempty"`
 	IssuedCN                 NullableString `json:"IssuedCN,omitempty"`
-	ImportDate               *string        `json:"ImportDate,omitempty"`
-	NotBefore                *string        `json:"NotBefore,omitempty"`
-	NotAfter                 *string        `json:"NotAfter,omitempty"`
+	ImportDate               *time.Time     `json:"ImportDate,omitempty"`
+	NotBefore                *time.Time     `json:"NotBefore,omitempty"`
+	NotAfter                 *time.Time     `json:"NotAfter,omitempty"`
 	IssuerDN                 NullableString `json:"IssuerDN,omitempty"`
 	PrincipalId              NullableInt32  `json:"PrincipalId,omitempty"`
-	TemplateId               *int32         `json:"TemplateId,omitempty"`
+	TemplateId               NullableInt32  `json:"TemplateId,omitempty"`
 	CertState                *int32         `json:"CertState,omitempty"`
 	KeySizeInBits            *int32         `json:"KeySizeInBits,omitempty"`
 	KeyType                  *int32         `json:"KeyType,omitempty"`
@@ -51,7 +52,7 @@ type ModelsCertificateRetrievalResponse struct {
 	SigningAlgorithm         *string        `json:"SigningAlgorithm,omitempty"`
 	CertStateString          *string        `json:"CertStateString,omitempty"`
 	KeyTypeString            *string        `json:"KeyTypeString,omitempty"`
-	RevocationEffDate        NullableString `json:"RevocationEffDate,omitempty"`
+	RevocationEffDate        NullableTime   `json:"RevocationEffDate,omitempty"`
 	RevocationReason         NullableInt32  `json:"RevocationReason,omitempty"`
 	RevocationComment        NullableString `json:"RevocationComment,omitempty"`
 	CertificateAuthorityId   *int32         `json:"CertificateAuthorityId,omitempty"`
@@ -282,9 +283,9 @@ func (o *ModelsCertificateRetrievalResponse) UnsetIssuedCN() {
 }
 
 // GetImportDate returns the ImportDate field value if set, zero value otherwise.
-func (o *ModelsCertificateRetrievalResponse) GetImportDate() string {
+func (o *ModelsCertificateRetrievalResponse) GetImportDate() time.Time {
 	if o == nil || isNil(o.ImportDate) {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.ImportDate
@@ -292,7 +293,7 @@ func (o *ModelsCertificateRetrievalResponse) GetImportDate() string {
 
 // GetImportDateOk returns a tuple with the ImportDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRetrievalResponse) GetImportDateOk() (*string, bool) {
+func (o *ModelsCertificateRetrievalResponse) GetImportDateOk() (*time.Time, bool) {
 	if o == nil || isNil(o.ImportDate) {
 		return nil, false
 	}
@@ -308,15 +309,15 @@ func (o *ModelsCertificateRetrievalResponse) HasImportDate() bool {
 	return false
 }
 
-// SetImportDate gets a reference to the given string and assigns it to the ImportDate field.
-func (o *ModelsCertificateRetrievalResponse) SetImportDate(v string) {
+// SetImportDate gets a reference to the given time.Time and assigns it to the ImportDate field.
+func (o *ModelsCertificateRetrievalResponse) SetImportDate(v time.Time) {
 	o.ImportDate = &v
 }
 
 // GetNotBefore returns the NotBefore field value if set, zero value otherwise.
-func (o *ModelsCertificateRetrievalResponse) GetNotBefore() string {
+func (o *ModelsCertificateRetrievalResponse) GetNotBefore() time.Time {
 	if o == nil || isNil(o.NotBefore) {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.NotBefore
@@ -324,7 +325,7 @@ func (o *ModelsCertificateRetrievalResponse) GetNotBefore() string {
 
 // GetNotBeforeOk returns a tuple with the NotBefore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRetrievalResponse) GetNotBeforeOk() (*string, bool) {
+func (o *ModelsCertificateRetrievalResponse) GetNotBeforeOk() (*time.Time, bool) {
 	if o == nil || isNil(o.NotBefore) {
 		return nil, false
 	}
@@ -340,15 +341,15 @@ func (o *ModelsCertificateRetrievalResponse) HasNotBefore() bool {
 	return false
 }
 
-// SetNotBefore gets a reference to the given string and assigns it to the NotBefore field.
-func (o *ModelsCertificateRetrievalResponse) SetNotBefore(v string) {
+// SetNotBefore gets a reference to the given time.Time and assigns it to the NotBefore field.
+func (o *ModelsCertificateRetrievalResponse) SetNotBefore(v time.Time) {
 	o.NotBefore = &v
 }
 
 // GetNotAfter returns the NotAfter field value if set, zero value otherwise.
-func (o *ModelsCertificateRetrievalResponse) GetNotAfter() string {
+func (o *ModelsCertificateRetrievalResponse) GetNotAfter() time.Time {
 	if o == nil || isNil(o.NotAfter) {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.NotAfter
@@ -356,7 +357,7 @@ func (o *ModelsCertificateRetrievalResponse) GetNotAfter() string {
 
 // GetNotAfterOk returns a tuple with the NotAfter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRetrievalResponse) GetNotAfterOk() (*string, bool) {
+func (o *ModelsCertificateRetrievalResponse) GetNotAfterOk() (*time.Time, bool) {
 	if o == nil || isNil(o.NotAfter) {
 		return nil, false
 	}
@@ -372,8 +373,8 @@ func (o *ModelsCertificateRetrievalResponse) HasNotAfter() bool {
 	return false
 }
 
-// SetNotAfter gets a reference to the given string and assigns it to the NotAfter field.
-func (o *ModelsCertificateRetrievalResponse) SetNotAfter(v string) {
+// SetNotAfter gets a reference to the given time.Time and assigns it to the NotAfter field.
+func (o *ModelsCertificateRetrievalResponse) SetNotAfter(v time.Time) {
 	o.NotAfter = &v
 }
 
@@ -463,36 +464,47 @@ func (o *ModelsCertificateRetrievalResponse) UnsetPrincipalId() {
 	o.PrincipalId.Unset()
 }
 
-// GetTemplateId returns the TemplateId field value if set, zero value otherwise.
+// GetTemplateId returns the TemplateId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ModelsCertificateRetrievalResponse) GetTemplateId() int32 {
-	if o == nil || isNil(o.TemplateId) {
+	if o == nil || isNil(o.TemplateId.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.TemplateId
+	return *o.TemplateId.Get()
 }
 
 // GetTemplateIdOk returns a tuple with the TemplateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ModelsCertificateRetrievalResponse) GetTemplateIdOk() (*int32, bool) {
-	if o == nil || isNil(o.TemplateId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TemplateId, true
+	return o.TemplateId.Get(), o.TemplateId.IsSet()
 }
 
 // HasTemplateId returns a boolean if a field has been set.
 func (o *ModelsCertificateRetrievalResponse) HasTemplateId() bool {
-	if o != nil && !isNil(o.TemplateId) {
+	if o != nil && o.TemplateId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTemplateId gets a reference to the given int32 and assigns it to the TemplateId field.
+// SetTemplateId gets a reference to the given NullableInt32 and assigns it to the TemplateId field.
 func (o *ModelsCertificateRetrievalResponse) SetTemplateId(v int32) {
-	o.TemplateId = &v
+	o.TemplateId.Set(&v)
+}
+
+// SetTemplateIdNil sets the value for TemplateId to be an explicit nil
+func (o *ModelsCertificateRetrievalResponse) SetTemplateIdNil() {
+	o.TemplateId.Set(nil)
+}
+
+// UnsetTemplateId ensures that no value is present for TemplateId, not even an explicit nil
+func (o *ModelsCertificateRetrievalResponse) UnsetTemplateId() {
+	o.TemplateId.Unset()
 }
 
 // GetCertState returns the CertState field value if set, zero value otherwise.
@@ -838,9 +850,9 @@ func (o *ModelsCertificateRetrievalResponse) SetKeyTypeString(v string) {
 }
 
 // GetRevocationEffDate returns the RevocationEffDate field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ModelsCertificateRetrievalResponse) GetRevocationEffDate() string {
+func (o *ModelsCertificateRetrievalResponse) GetRevocationEffDate() time.Time {
 	if o == nil || isNil(o.RevocationEffDate.Get()) {
-		var ret string
+		var ret time.Time
 		return ret
 	}
 	return *o.RevocationEffDate.Get()
@@ -849,7 +861,7 @@ func (o *ModelsCertificateRetrievalResponse) GetRevocationEffDate() string {
 // GetRevocationEffDateOk returns a tuple with the RevocationEffDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ModelsCertificateRetrievalResponse) GetRevocationEffDateOk() (*string, bool) {
+func (o *ModelsCertificateRetrievalResponse) GetRevocationEffDateOk() (*time.Time, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -865,8 +877,8 @@ func (o *ModelsCertificateRetrievalResponse) HasRevocationEffDate() bool {
 	return false
 }
 
-// SetRevocationEffDate gets a reference to the given NullableString and assigns it to the RevocationEffDate field.
-func (o *ModelsCertificateRetrievalResponse) SetRevocationEffDate(v string) {
+// SetRevocationEffDate gets a reference to the given NullableTime and assigns it to the RevocationEffDate field.
+func (o *ModelsCertificateRetrievalResponse) SetRevocationEffDate(v time.Time) {
 	o.RevocationEffDate.Set(&v)
 }
 
@@ -1732,8 +1744,8 @@ func (o ModelsCertificateRetrievalResponse) ToMap() (map[string]interface{}, err
 	if o.PrincipalId.IsSet() {
 		toSerialize["PrincipalId"] = o.PrincipalId.Get()
 	}
-	if !isNil(o.TemplateId) {
-		toSerialize["TemplateId"] = o.TemplateId
+	if o.TemplateId.IsSet() {
+		toSerialize["TemplateId"] = o.TemplateId.Get()
 	}
 	if !isNil(o.CertState) {
 		toSerialize["CertState"] = o.CertState

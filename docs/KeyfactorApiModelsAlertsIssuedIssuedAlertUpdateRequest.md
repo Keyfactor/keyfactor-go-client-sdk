@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **DisplayName** | **string** |  | 
 **Subject** | **string** |  | 
 **Message** | **string** |  | 
-**TemplateId** | Pointer to **int32** |  | [optional] 
+**TemplateId** | Pointer to **NullableInt32** |  | [optional] 
 **RegisteredEventHandler** | Pointer to [**KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest**](KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest.md) |  | [optional] 
 **Recipients** | Pointer to **[]string** |  | [optional] 
 **EventHandlerParameters** | Pointer to [**[]KeyfactorApiModelsEventHandlerEventHandlerParameterRequest**](KeyfactorApiModelsEventHandlerEventHandlerParameterRequest.md) |  | [optional] 
@@ -142,6 +142,16 @@ SetTemplateId sets TemplateId field to given value.
 
 HasTemplateId returns a boolean if a field has been set.
 
+### SetTemplateIdNil
+
+`func (o *KeyfactorApiModelsAlertsIssuedIssuedAlertUpdateRequest) SetTemplateIdNil(b bool)`
+
+ SetTemplateIdNil sets the value for TemplateId to be an explicit nil
+
+### UnsetTemplateId
+`func (o *KeyfactorApiModelsAlertsIssuedIssuedAlertUpdateRequest) UnsetTemplateId()`
+
+UnsetTemplateId ensures that no value is present for TemplateId, not even an explicit nil
 ### GetRegisteredEventHandler
 
 `func (o *KeyfactorApiModelsAlertsIssuedIssuedAlertUpdateRequest) GetRegisteredEventHandler() KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest`

@@ -30,10 +30,10 @@ var _ MappedNullable = &ModelsTemplateRegex{}
 
 // ModelsTemplateRegex struct for ModelsTemplateRegex
 type ModelsTemplateRegex struct {
-	TemplateId           *int32  `json:"TemplateId,omitempty"`
-	SubjectPart          *string `json:"SubjectPart,omitempty"`
-	Regex                *string `json:"Regex,omitempty"`
-	Error                *string `json:"Error,omitempty"`
+	TemplateId           NullableInt32 `json:"TemplateId,omitempty"`
+	SubjectPart          *string       `json:"SubjectPart,omitempty"`
+	Regex                *string       `json:"Regex,omitempty"`
+	Error                *string       `json:"Error,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -56,36 +56,47 @@ func NewModelsTemplateRegexWithDefaults() *ModelsTemplateRegex {
 	return &this
 }
 
-// GetTemplateId returns the TemplateId field value if set, zero value otherwise.
+// GetTemplateId returns the TemplateId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ModelsTemplateRegex) GetTemplateId() int32 {
-	if o == nil || isNil(o.TemplateId) {
+	if o == nil || isNil(o.TemplateId.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.TemplateId
+	return *o.TemplateId.Get()
 }
 
 // GetTemplateIdOk returns a tuple with the TemplateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ModelsTemplateRegex) GetTemplateIdOk() (*int32, bool) {
-	if o == nil || isNil(o.TemplateId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TemplateId, true
+	return o.TemplateId.Get(), o.TemplateId.IsSet()
 }
 
 // HasTemplateId returns a boolean if a field has been set.
 func (o *ModelsTemplateRegex) HasTemplateId() bool {
-	if o != nil && !isNil(o.TemplateId) {
+	if o != nil && o.TemplateId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTemplateId gets a reference to the given int32 and assigns it to the TemplateId field.
+// SetTemplateId gets a reference to the given NullableInt32 and assigns it to the TemplateId field.
 func (o *ModelsTemplateRegex) SetTemplateId(v int32) {
-	o.TemplateId = &v
+	o.TemplateId.Set(&v)
+}
+
+// SetTemplateIdNil sets the value for TemplateId to be an explicit nil
+func (o *ModelsTemplateRegex) SetTemplateIdNil() {
+	o.TemplateId.Set(nil)
+}
+
+// UnsetTemplateId ensures that no value is present for TemplateId, not even an explicit nil
+func (o *ModelsTemplateRegex) UnsetTemplateId() {
+	o.TemplateId.Unset()
 }
 
 // GetSubjectPart returns the SubjectPart field value if set, zero value otherwise.
@@ -194,8 +205,8 @@ func (o ModelsTemplateRegex) MarshalJSON() ([]byte, error) {
 
 func (o ModelsTemplateRegex) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TemplateId) {
-		toSerialize["TemplateId"] = o.TemplateId
+	if o.TemplateId.IsSet() {
+		toSerialize["TemplateId"] = o.TemplateId.Get()
 	}
 	if !isNil(o.SubjectPart) {
 		toSerialize["SubjectPart"] = o.SubjectPart

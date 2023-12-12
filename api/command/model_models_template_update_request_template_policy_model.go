@@ -30,12 +30,12 @@ var _ MappedNullable = &ModelsTemplateUpdateRequestTemplatePolicyModel{}
 
 // ModelsTemplateUpdateRequestTemplatePolicyModel struct for ModelsTemplateUpdateRequestTemplatePolicyModel
 type ModelsTemplateUpdateRequestTemplatePolicyModel struct {
-	TemplateId           *int32   `json:"TemplateId,omitempty"`
-	RSAValidKeySizes     []int32  `json:"RSAValidKeySizes,omitempty"`
-	ECCValidCurves       []string `json:"ECCValidCurves,omitempty"`
-	AllowKeyReuse        *bool    `json:"AllowKeyReuse,omitempty"`
-	AllowWildcards       *bool    `json:"AllowWildcards,omitempty"`
-	RFCEnforcement       *bool    `json:"RFCEnforcement,omitempty"`
+	TemplateId           NullableInt32 `json:"TemplateId,omitempty"`
+	RSAValidKeySizes     []int32       `json:"RSAValidKeySizes,omitempty"`
+	ECCValidCurves       []string      `json:"ECCValidCurves,omitempty"`
+	AllowKeyReuse        *bool         `json:"AllowKeyReuse,omitempty"`
+	AllowWildcards       *bool         `json:"AllowWildcards,omitempty"`
+	RFCEnforcement       *bool         `json:"RFCEnforcement,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -58,36 +58,47 @@ func NewModelsTemplateUpdateRequestTemplatePolicyModelWithDefaults() *ModelsTemp
 	return &this
 }
 
-// GetTemplateId returns the TemplateId field value if set, zero value otherwise.
+// GetTemplateId returns the TemplateId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) GetTemplateId() int32 {
-	if o == nil || isNil(o.TemplateId) {
+	if o == nil || isNil(o.TemplateId.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.TemplateId
+	return *o.TemplateId.Get()
 }
 
 // GetTemplateIdOk returns a tuple with the TemplateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) GetTemplateIdOk() (*int32, bool) {
-	if o == nil || isNil(o.TemplateId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TemplateId, true
+	return o.TemplateId.Get(), o.TemplateId.IsSet()
 }
 
 // HasTemplateId returns a boolean if a field has been set.
 func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) HasTemplateId() bool {
-	if o != nil && !isNil(o.TemplateId) {
+	if o != nil && o.TemplateId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTemplateId gets a reference to the given int32 and assigns it to the TemplateId field.
+// SetTemplateId gets a reference to the given NullableInt32 and assigns it to the TemplateId field.
 func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) SetTemplateId(v int32) {
-	o.TemplateId = &v
+	o.TemplateId.Set(&v)
+}
+
+// SetTemplateIdNil sets the value for TemplateId to be an explicit nil
+func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) SetTemplateIdNil() {
+	o.TemplateId.Set(nil)
+}
+
+// UnsetTemplateId ensures that no value is present for TemplateId, not even an explicit nil
+func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) UnsetTemplateId() {
+	o.TemplateId.Unset()
 }
 
 // GetRSAValidKeySizes returns the RSAValidKeySizes field value if set, zero value otherwise.
@@ -260,8 +271,8 @@ func (o ModelsTemplateUpdateRequestTemplatePolicyModel) MarshalJSON() ([]byte, e
 
 func (o ModelsTemplateUpdateRequestTemplatePolicyModel) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.TemplateId) {
-		toSerialize["TemplateId"] = o.TemplateId
+	if o.TemplateId.IsSet() {
+		toSerialize["TemplateId"] = o.TemplateId.Get()
 	}
 	if !isNil(o.RSAValidKeySizes) {
 		toSerialize["RSAValidKeySizes"] = o.RSAValidKeySizes
