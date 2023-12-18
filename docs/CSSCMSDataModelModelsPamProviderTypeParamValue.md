@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** |  | [optional] 
-**Value** | Pointer to **string** |  | [optional] 
-**InstanceId** | Pointer to **int32** |  | [optional] 
-**InstanceGuid** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to **NullableString** |  | [optional] 
+**InstanceId** | Pointer to **NullableInt32** |  | [optional] 
+**InstanceGuid** | Pointer to **NullableString** |  | [optional] 
 **Provider** | Pointer to [**CSSCMSDataModelModelsProvider**](CSSCMSDataModelModelsProvider.md) |  | [optional] 
 **ProviderTypeParam** | Pointer to [**CSSCMSDataModelModelsProviderTypeParam**](CSSCMSDataModelModelsProviderTypeParam.md) |  | [optional] 
 
@@ -80,6 +80,16 @@ SetValue sets Value field to given value.
 
 HasValue returns a boolean if a field has been set.
 
+### SetValueNil
+
+`func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) SetValueNil(b bool)`
+
+ SetValueNil sets the value for Value to be an explicit nil
+
+### UnsetValue
+`func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) UnsetValue()`
+
+UnsetValue ensures that no value is present for Value, not even an explicit nil
 ### GetInstanceId
 
 `func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) GetInstanceId() int32`
@@ -105,6 +115,16 @@ SetInstanceId sets InstanceId field to given value.
 
 HasInstanceId returns a boolean if a field has been set.
 
+### SetInstanceIdNil
+
+`func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) SetInstanceIdNil(b bool)`
+
+ SetInstanceIdNil sets the value for InstanceId to be an explicit nil
+
+### UnsetInstanceId
+`func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) UnsetInstanceId()`
+
+UnsetInstanceId ensures that no value is present for InstanceId, not even an explicit nil
 ### GetInstanceGuid
 
 `func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) GetInstanceGuid() string`
@@ -130,6 +150,16 @@ SetInstanceGuid sets InstanceGuid field to given value.
 
 HasInstanceGuid returns a boolean if a field has been set.
 
+### SetInstanceGuidNil
+
+`func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) SetInstanceGuidNil(b bool)`
+
+ SetInstanceGuidNil sets the value for InstanceGuid to be an explicit nil
+
+### UnsetInstanceGuid
+`func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) UnsetInstanceGuid()`
+
+UnsetInstanceGuid ensures that no value is present for InstanceGuid, not even an explicit nil
 ### GetProvider
 
 `func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) GetProvider() CSSCMSDataModelModelsProvider`

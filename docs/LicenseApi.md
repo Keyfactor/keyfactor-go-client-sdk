@@ -1,16 +1,16 @@
 # \LicenseApi
 
-All URIs are relative to *http://keyfactor.example.com*
+All URIs are relative to */Keyfactor/API*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**LicenseGetCurrentLicense**](LicenseApi.md#LicenseGetCurrentLicense) | **Get** /License | Gets the current license
+[**LicenseGet**](LicenseApi.md#LicenseGet) | **Get** /License | Gets the current license
 
 
 
-## LicenseGetCurrentLicense
+## LicenseGet
 
-> KeyfactorApiModelsLicenseLicenseResponse LicenseGetCurrentLicense(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> KeyfactorWebKeyfactorApiModelsLicenseLicenseResponse LicenseGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets the current license
 
@@ -28,17 +28,17 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LicenseApi.LicenseGetCurrentLicense(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.LicenseApi.LicenseGet(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LicenseApi.LicenseGetCurrentLicense``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LicenseApi.LicenseGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `LicenseGetCurrentLicense`: KeyfactorApiModelsLicenseLicenseResponse
-    fmt.Fprintf(os.Stdout, "Response from `LicenseApi.LicenseGetCurrentLicense`: %v\n", resp)
+    // response from `LicenseGet`: KeyfactorWebKeyfactorApiModelsLicenseLicenseResponse
+    fmt.Fprintf(os.Stdout, "Response from `LicenseApi.LicenseGet`: %v\n", resp)
 }
 ```
 
@@ -48,17 +48,17 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiLicenseGetCurrentLicenseRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiLicenseGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**KeyfactorApiModelsLicenseLicenseResponse**](KeyfactorApiModelsLicenseLicenseResponse.md)
+[**KeyfactorWebKeyfactorApiModelsLicenseLicenseResponse**](KeyfactorWebKeyfactorApiModelsLicenseLicenseResponse.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

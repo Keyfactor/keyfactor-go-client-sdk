@@ -6,15 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** |  | [optional] 
 **Timestamp** | Pointer to **time.Time** |  | [optional] 
-**Message** | Pointer to **string** |  | [optional] 
-**Signature** | Pointer to **string** |  | [optional] 
+**Message** | Pointer to **NullableString** |  | [optional] 
+**Signature** | Pointer to **NullableString** |  | [optional] 
 **Category** | Pointer to **int32** |  | [optional] 
 **Operation** | Pointer to **int32** |  | [optional] 
-**Level** | Pointer to **int32** |  | [optional] 
-**User** | Pointer to **string** |  | [optional] 
-**EntityType** | Pointer to **string** |  | [optional] 
-**AuditIdentifier** | Pointer to **string** |  | [optional] 
-**ImmutableIdentifier** | Pointer to **string** |  | [optional] 
+**Level** | Pointer to [**KeyfactorAuditingEnumsAuditLogLevel**](KeyfactorAuditingEnumsAuditLogLevel.md) |  | [optional] 
+**User** | Pointer to **NullableString** |  | [optional] 
+**EntityType** | Pointer to **NullableString** |  | [optional] 
+**AuditIdentifier** | Pointer to **NullableString** |  | [optional] 
+**ImmutableIdentifier** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -110,6 +110,16 @@ SetMessage sets Message field to given value.
 
 HasMessage returns a boolean if a field has been set.
 
+### SetMessageNil
+
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) SetMessageNil(b bool)`
+
+ SetMessageNil sets the value for Message to be an explicit nil
+
+### UnsetMessage
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) UnsetMessage()`
+
+UnsetMessage ensures that no value is present for Message, not even an explicit nil
 ### GetSignature
 
 `func (o *KeyfactorAuditingQueryingAuditLogEntry) GetSignature() string`
@@ -135,6 +145,16 @@ SetSignature sets Signature field to given value.
 
 HasSignature returns a boolean if a field has been set.
 
+### SetSignatureNil
+
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) SetSignatureNil(b bool)`
+
+ SetSignatureNil sets the value for Signature to be an explicit nil
+
+### UnsetSignature
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) UnsetSignature()`
+
+UnsetSignature ensures that no value is present for Signature, not even an explicit nil
 ### GetCategory
 
 `func (o *KeyfactorAuditingQueryingAuditLogEntry) GetCategory() int32`
@@ -187,20 +207,20 @@ HasOperation returns a boolean if a field has been set.
 
 ### GetLevel
 
-`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevel() int32`
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevel() KeyfactorAuditingEnumsAuditLogLevel`
 
 GetLevel returns the Level field if non-nil, zero value otherwise.
 
 ### GetLevelOk
 
-`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevelOk() (*int32, bool)`
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevelOk() (*KeyfactorAuditingEnumsAuditLogLevel, bool)`
 
 GetLevelOk returns a tuple with the Level field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLevel
 
-`func (o *KeyfactorAuditingQueryingAuditLogEntry) SetLevel(v int32)`
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) SetLevel(v KeyfactorAuditingEnumsAuditLogLevel)`
 
 SetLevel sets Level field to given value.
 
@@ -235,6 +255,16 @@ SetUser sets User field to given value.
 
 HasUser returns a boolean if a field has been set.
 
+### SetUserNil
+
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) SetUserNil(b bool)`
+
+ SetUserNil sets the value for User to be an explicit nil
+
+### UnsetUser
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) UnsetUser()`
+
+UnsetUser ensures that no value is present for User, not even an explicit nil
 ### GetEntityType
 
 `func (o *KeyfactorAuditingQueryingAuditLogEntry) GetEntityType() string`
@@ -260,6 +290,16 @@ SetEntityType sets EntityType field to given value.
 
 HasEntityType returns a boolean if a field has been set.
 
+### SetEntityTypeNil
+
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) SetEntityTypeNil(b bool)`
+
+ SetEntityTypeNil sets the value for EntityType to be an explicit nil
+
+### UnsetEntityType
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) UnsetEntityType()`
+
+UnsetEntityType ensures that no value is present for EntityType, not even an explicit nil
 ### GetAuditIdentifier
 
 `func (o *KeyfactorAuditingQueryingAuditLogEntry) GetAuditIdentifier() string`
@@ -285,6 +325,16 @@ SetAuditIdentifier sets AuditIdentifier field to given value.
 
 HasAuditIdentifier returns a boolean if a field has been set.
 
+### SetAuditIdentifierNil
+
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) SetAuditIdentifierNil(b bool)`
+
+ SetAuditIdentifierNil sets the value for AuditIdentifier to be an explicit nil
+
+### UnsetAuditIdentifier
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) UnsetAuditIdentifier()`
+
+UnsetAuditIdentifier ensures that no value is present for AuditIdentifier, not even an explicit nil
 ### GetImmutableIdentifier
 
 `func (o *KeyfactorAuditingQueryingAuditLogEntry) GetImmutableIdentifier() string`
@@ -310,6 +360,16 @@ SetImmutableIdentifier sets ImmutableIdentifier field to given value.
 
 HasImmutableIdentifier returns a boolean if a field has been set.
 
+### SetImmutableIdentifierNil
+
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) SetImmutableIdentifierNil(b bool)`
+
+ SetImmutableIdentifierNil sets the value for ImmutableIdentifier to be an explicit nil
+
+### UnsetImmutableIdentifier
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) UnsetImmutableIdentifier()`
+
+UnsetImmutableIdentifier ensures that no value is present for ImmutableIdentifier, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

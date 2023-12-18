@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**DisplayName** | Pointer to **string** |  | [optional] 
-**DataType** | Pointer to **int32** |  | [optional] 
+**Name** | Pointer to **NullableString** |  | [optional] 
+**DisplayName** | Pointer to **NullableString** |  | [optional] 
+**DataType** | Pointer to [**CSSCMSDataModelEnumsPamParameterDataType**](CSSCMSDataModelEnumsPamParameterDataType.md) |  | [optional] 
 **InstanceLevel** | Pointer to **bool** |  | [optional] 
 **ProviderType** | Pointer to [**CSSCMSDataModelModelsProviderType**](CSSCMSDataModelModelsProviderType.md) |  | [optional] 
 
@@ -80,6 +80,16 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
+### SetNameNil
+
+`func (o *CSSCMSDataModelModelsProviderTypeParam) SetNameNil(b bool)`
+
+ SetNameNil sets the value for Name to be an explicit nil
+
+### UnsetName
+`func (o *CSSCMSDataModelModelsProviderTypeParam) UnsetName()`
+
+UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetDisplayName
 
 `func (o *CSSCMSDataModelModelsProviderTypeParam) GetDisplayName() string`
@@ -105,22 +115,32 @@ SetDisplayName sets DisplayName field to given value.
 
 HasDisplayName returns a boolean if a field has been set.
 
+### SetDisplayNameNil
+
+`func (o *CSSCMSDataModelModelsProviderTypeParam) SetDisplayNameNil(b bool)`
+
+ SetDisplayNameNil sets the value for DisplayName to be an explicit nil
+
+### UnsetDisplayName
+`func (o *CSSCMSDataModelModelsProviderTypeParam) UnsetDisplayName()`
+
+UnsetDisplayName ensures that no value is present for DisplayName, not even an explicit nil
 ### GetDataType
 
-`func (o *CSSCMSDataModelModelsProviderTypeParam) GetDataType() int32`
+`func (o *CSSCMSDataModelModelsProviderTypeParam) GetDataType() CSSCMSDataModelEnumsPamParameterDataType`
 
 GetDataType returns the DataType field if non-nil, zero value otherwise.
 
 ### GetDataTypeOk
 
-`func (o *CSSCMSDataModelModelsProviderTypeParam) GetDataTypeOk() (*int32, bool)`
+`func (o *CSSCMSDataModelModelsProviderTypeParam) GetDataTypeOk() (*CSSCMSDataModelEnumsPamParameterDataType, bool)`
 
 GetDataTypeOk returns a tuple with the DataType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataType
 
-`func (o *CSSCMSDataModelModelsProviderTypeParam) SetDataType(v int32)`
+`func (o *CSSCMSDataModelModelsProviderTypeParam) SetDataType(v CSSCMSDataModelEnumsPamParameterDataType)`
 
 SetDataType sets DataType field to given value.
 
