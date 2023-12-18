@@ -1,22 +1,22 @@
 # \AgentBlueprintApi
 
-All URIs are relative to *http://keyfactor.example.com*
+All URIs are relative to */Keyfactor/API*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AgentBlueprintApplyBlueprint**](AgentBlueprintApi.md#AgentBlueprintApplyBlueprint) | **Post** /AgentBluePrint/ApplyBlueprint | Applies the selected agent blueprint to the provided agents
-[**AgentBlueprintDeleteBlueprint**](AgentBlueprintApi.md#AgentBlueprintDeleteBlueprint) | **Delete** /AgentBluePrint/{id} | Deletes an agent blueprint by its Keyfactor identifier
-[**AgentBlueprintGenerateBlueprint**](AgentBlueprintApi.md#AgentBlueprintGenerateBlueprint) | **Post** /AgentBluePrint/GenerateBluePrint | Generates an agent blueprint from the provided agents
-[**AgentBlueprintGetAgentBlueprint**](AgentBlueprintApi.md#AgentBlueprintGetAgentBlueprint) | **Get** /AgentBluePrint/{id} | Returns an agent blueprint according to the provided filter and output parameters
-[**AgentBlueprintGetAgentBlueprints**](AgentBlueprintApi.md#AgentBlueprintGetAgentBlueprints) | **Get** /AgentBluePrint | Returns all agent blueprints according to the provided filter and output parameters
-[**AgentBlueprintGetBlueprintJobs**](AgentBlueprintApi.md#AgentBlueprintGetBlueprintJobs) | **Get** /AgentBluePrint/{id}/Jobs | Gets the agent blueprint scheduled jobs
-[**AgentBlueprintGetBlueprintStores**](AgentBlueprintApi.md#AgentBlueprintGetBlueprintStores) | **Get** /AgentBluePrint/{id}/Stores | Gets the agent blueprint certificate stores
+[**AgentBluePrintApplyBlueprintPost**](AgentBlueprintApi.md#AgentBluePrintApplyBlueprintPost) | **Post** /AgentBluePrint/ApplyBlueprint | Applies the selected agent blueprint to the provided agents
+[**AgentBluePrintGenerateBluePrintPost**](AgentBlueprintApi.md#AgentBluePrintGenerateBluePrintPost) | **Post** /AgentBluePrint/GenerateBluePrint | Generates an agent blueprint from the provided agents
+[**AgentBluePrintGet**](AgentBlueprintApi.md#AgentBluePrintGet) | **Get** /AgentBluePrint | Returns all agent blueprints according to the provided filter and output parameters
+[**AgentBluePrintIdDelete**](AgentBlueprintApi.md#AgentBluePrintIdDelete) | **Delete** /AgentBluePrint/{id} | Deletes an agent blueprint by its Keyfactor identifier
+[**AgentBluePrintIdGet**](AgentBlueprintApi.md#AgentBluePrintIdGet) | **Get** /AgentBluePrint/{id} | Returns an agent blueprint according to the provided filter and output parameters
+[**AgentBluePrintIdJobsGet**](AgentBlueprintApi.md#AgentBluePrintIdJobsGet) | **Get** /AgentBluePrint/{id}/Jobs | Gets the agent blueprint scheduled jobs
+[**AgentBluePrintIdStoresGet**](AgentBlueprintApi.md#AgentBluePrintIdStoresGet) | **Get** /AgentBluePrint/{id}/Stores | Gets the agent blueprint certificate stores
 
 
 
-## AgentBlueprintApplyBlueprint
+## AgentBluePrintApplyBlueprintPost
 
-> AgentBlueprintApplyBlueprint(ctx).TemplateId(templateId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).AgentIds(agentIds).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> AgentBluePrintApplyBlueprintPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).TemplateId(templateId).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
 
 Applies the selected agent blueprint to the provided agents
 
@@ -33,16 +33,16 @@ import (
 )
 
 func main() {
-    templateId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Agent blueprint to apply to the agents
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    agentIds := []string{"00000000-0000-0000-0000-000000000000"} // []string | Agents to apply the blueprints to
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    templateId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Agent blueprint to apply to the agents (optional)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    requestBody := []string{"Property_example"} // []string | Agents to apply the blueprints to (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentBlueprintApi.AgentBlueprintApplyBlueprint(context.Background()).TemplateId(templateId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).AgentIds(agentIds).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.AgentBlueprintApi.AgentBluePrintApplyBlueprintPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).TemplateId(templateId).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AgentBlueprintApi.AgentBlueprintApplyBlueprint``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AgentBlueprintApi.AgentBluePrintApplyBlueprintPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -54,15 +54,15 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAgentBlueprintApplyBlueprintRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAgentBluePrintApplyBlueprintPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **templateId** | **string** | Agent blueprint to apply to the agents | 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **agentIds** | **[]string** | Agents to apply the blueprints to | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **templateId** | **string** | Agent blueprint to apply to the agents | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **requestBody** | **[]string** | Agents to apply the blueprints to | 
 
 ### Return type
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -82,9 +82,153 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## AgentBlueprintDeleteBlueprint
+## AgentBluePrintGenerateBluePrintPost
 
-> AgentBlueprintDeleteBlueprint(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> KeyfactorWebKeyfactorApiModelsOrchestratorsAgentBlueprintResponse AgentBluePrintGenerateBluePrintPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).AgentId(agentId).Name(name).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Generates an agent blueprint from the provided agents
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    agentId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Agent to generate a blueprint from (optional)
+    name := "name_example" // string | Name of the new agent blueprint (optional)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AgentBlueprintApi.AgentBluePrintGenerateBluePrintPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).AgentId(agentId).Name(name).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AgentBlueprintApi.AgentBluePrintGenerateBluePrintPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `AgentBluePrintGenerateBluePrintPost`: KeyfactorWebKeyfactorApiModelsOrchestratorsAgentBlueprintResponse
+    fmt.Fprintf(os.Stdout, "Response from `AgentBlueprintApi.AgentBluePrintGenerateBluePrintPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAgentBluePrintGenerateBluePrintPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **agentId** | **string** | Agent to generate a blueprint from | 
+ **name** | **string** | Name of the new agent blueprint | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+
+### Return type
+
+[**KeyfactorWebKeyfactorApiModelsOrchestratorsAgentBlueprintResponse**](KeyfactorWebKeyfactorApiModelsOrchestratorsAgentBlueprintResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AgentBluePrintGet
+
+> []KeyfactorWebKeyfactorApiModelsOrchestratorsAgentBlueprintResponse AgentBluePrintGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Returns all agent blueprints according to the provided filter and output parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    pageReturned := int32(56) // int32 |  (optional)
+    returnLimit := int32(56) // int32 |  (optional)
+    sortField := "sortField_example" // string |  (optional)
+    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AgentBlueprintApi.AgentBluePrintGet(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AgentBlueprintApi.AgentBluePrintGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `AgentBluePrintGet`: []KeyfactorWebKeyfactorApiModelsOrchestratorsAgentBlueprintResponse
+    fmt.Fprintf(os.Stdout, "Response from `AgentBlueprintApi.AgentBluePrintGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAgentBluePrintGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **pageReturned** | **int32** |  | 
+ **returnLimit** | **int32** |  | 
+ **sortField** | **string** |  | 
+ **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+
+### Return type
+
+[**[]KeyfactorWebKeyfactorApiModelsOrchestratorsAgentBlueprintResponse**](KeyfactorWebKeyfactorApiModelsOrchestratorsAgentBlueprintResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AgentBluePrintIdDelete
+
+> AgentBluePrintIdDelete(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes an agent blueprint by its Keyfactor identifier
 
@@ -102,14 +246,14 @@ import (
 
 func main() {
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Keyfactor agent blueprint identifier (GUID)
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentBlueprintApi.AgentBlueprintDeleteBlueprint(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.AgentBlueprintApi.AgentBluePrintIdDelete(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AgentBlueprintApi.AgentBlueprintDeleteBlueprint``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AgentBlueprintApi.AgentBluePrintIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -125,14 +269,14 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAgentBlueprintDeleteBlueprintRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAgentBluePrintIdDeleteRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
@@ -152,79 +296,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## AgentBlueprintGenerateBlueprint
+## AgentBluePrintIdGet
 
-> KeyfactorApiModelsOrchestratorsAgentBlueprintResponse AgentBlueprintGenerateBlueprint(ctx).AgentId(agentId).Name(name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Generates an agent blueprint from the provided agents
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    agentId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Agent to generate a blueprint from
-    name := "name_example" // string | Name of the new agent blueprint
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentBlueprintApi.AgentBlueprintGenerateBlueprint(context.Background()).AgentId(agentId).Name(name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AgentBlueprintApi.AgentBlueprintGenerateBlueprint``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AgentBlueprintGenerateBlueprint`: KeyfactorApiModelsOrchestratorsAgentBlueprintResponse
-    fmt.Fprintf(os.Stdout, "Response from `AgentBlueprintApi.AgentBlueprintGenerateBlueprint`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiAgentBlueprintGenerateBlueprintRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **agentId** | **string** | Agent to generate a blueprint from | 
- **name** | **string** | Name of the new agent blueprint | 
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
-[**KeyfactorApiModelsOrchestratorsAgentBlueprintResponse**](KeyfactorApiModelsOrchestratorsAgentBlueprintResponse.md)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## AgentBlueprintGetAgentBlueprint
-
-> KeyfactorApiModelsOrchestratorsAgentBlueprintResponse AgentBlueprintGetAgentBlueprint(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> KeyfactorWebKeyfactorApiModelsOrchestratorsAgentBlueprintResponse AgentBluePrintIdGet(ctx, id2).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Id(id).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns an agent blueprint according to the provided filter and output parameters
 
@@ -241,19 +315,20 @@ import (
 )
 
 func main() {
-    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Returns a single agent blueprint associated with the provided id
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    id2 := "id_example" // string | 
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Returns a single agent blueprint associated with the provided id (optional)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentBlueprintApi.AgentBlueprintGetAgentBlueprint(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.AgentBlueprintApi.AgentBluePrintIdGet(context.Background(), id2).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Id(id).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AgentBlueprintApi.AgentBlueprintGetAgentBlueprint``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AgentBlueprintApi.AgentBluePrintIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `AgentBlueprintGetAgentBlueprint`: KeyfactorApiModelsOrchestratorsAgentBlueprintResponse
-    fmt.Fprintf(os.Stdout, "Response from `AgentBlueprintApi.AgentBlueprintGetAgentBlueprint`: %v\n", resp)
+    // response from `AgentBluePrintIdGet`: KeyfactorWebKeyfactorApiModelsOrchestratorsAgentBlueprintResponse
+    fmt.Fprintf(os.Stdout, "Response from `AgentBlueprintApi.AgentBluePrintIdGet`: %v\n", resp)
 }
 ```
 
@@ -263,22 +338,23 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** | Returns a single agent blueprint associated with the provided id | 
+**id2** | **string** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAgentBlueprintGetAgentBlueprintRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAgentBluePrintIdGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **id** | **string** | Returns a single agent blueprint associated with the provided id | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**KeyfactorApiModelsOrchestratorsAgentBlueprintResponse**](KeyfactorApiModelsOrchestratorsAgentBlueprintResponse.md)
+[**KeyfactorWebKeyfactorApiModelsOrchestratorsAgentBlueprintResponse**](KeyfactorWebKeyfactorApiModelsOrchestratorsAgentBlueprintResponse.md)
 
 ### Authorization
 
@@ -287,90 +363,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## AgentBlueprintGetAgentBlueprints
+## AgentBluePrintIdJobsGet
 
-> []KeyfactorApiModelsOrchestratorsAgentBlueprintResponse AgentBlueprintGetAgentBlueprints(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PqPageReturned(pqPageReturned).PqReturnLimit(pqReturnLimit).PqSortField(pqSortField).PqSortAscending(pqSortAscending).Execute()
-
-Returns all agent blueprints according to the provided filter and output parameters
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-    pqPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    pqReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
-    pqSortField := "pqSortField_example" // string | Field by which the results should be sorted (OperationStart, OperationEnd, UserName) (optional)
-    pqSortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentBlueprintApi.AgentBlueprintGetAgentBlueprints(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PqPageReturned(pqPageReturned).PqReturnLimit(pqReturnLimit).PqSortField(pqSortField).PqSortAscending(pqSortAscending).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AgentBlueprintApi.AgentBlueprintGetAgentBlueprints``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AgentBlueprintGetAgentBlueprints`: []KeyfactorApiModelsOrchestratorsAgentBlueprintResponse
-    fmt.Fprintf(os.Stdout, "Response from `AgentBlueprintApi.AgentBlueprintGetAgentBlueprints`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiAgentBlueprintGetAgentBlueprintsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
- **pqPageReturned** | **int32** | The current page within the result set to be returned | 
- **pqReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
- **pqSortField** | **string** | Field by which the results should be sorted (OperationStart, OperationEnd, UserName) | 
- **pqSortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
-
-### Return type
-
-[**[]KeyfactorApiModelsOrchestratorsAgentBlueprintResponse**](KeyfactorApiModelsOrchestratorsAgentBlueprintResponse.md)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## AgentBlueprintGetBlueprintJobs
-
-> []KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse AgentBlueprintGetBlueprintJobs(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PqPageReturned(pqPageReturned).PqReturnLimit(pqReturnLimit).PqSortField(pqSortField).PqSortAscending(pqSortAscending).Execute()
+> []KeyfactorWebKeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse AgentBluePrintIdJobsGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets the agent blueprint scheduled jobs
 
@@ -388,22 +390,22 @@ import (
 
 func main() {
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-    pqPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    pqReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
-    pqSortField := "pqSortField_example" // string | Field by which the results should be sorted (OperationStart, OperationEnd, UserName) (optional)
-    pqSortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    pageReturned := int32(56) // int32 |  (optional)
+    returnLimit := int32(56) // int32 |  (optional)
+    sortField := "sortField_example" // string |  (optional)
+    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentBlueprintApi.AgentBlueprintGetBlueprintJobs(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PqPageReturned(pqPageReturned).PqReturnLimit(pqReturnLimit).PqSortField(pqSortField).PqSortAscending(pqSortAscending).Execute()
+    resp, r, err := apiClient.AgentBlueprintApi.AgentBluePrintIdJobsGet(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AgentBlueprintApi.AgentBlueprintGetBlueprintJobs``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AgentBlueprintApi.AgentBluePrintIdJobsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `AgentBlueprintGetBlueprintJobs`: []KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse
-    fmt.Fprintf(os.Stdout, "Response from `AgentBlueprintApi.AgentBlueprintGetBlueprintJobs`: %v\n", resp)
+    // response from `AgentBluePrintIdJobsGet`: []KeyfactorWebKeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse
+    fmt.Fprintf(os.Stdout, "Response from `AgentBlueprintApi.AgentBluePrintIdJobsGet`: %v\n", resp)
 }
 ```
 
@@ -417,22 +419,22 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAgentBlueprintGetBlueprintJobsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAgentBluePrintIdJobsGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
- **pqPageReturned** | **int32** | The current page within the result set to be returned | 
- **pqReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
- **pqSortField** | **string** | Field by which the results should be sorted (OperationStart, OperationEnd, UserName) | 
- **pqSortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **pageReturned** | **int32** |  | 
+ **returnLimit** | **int32** |  | 
+ **sortField** | **string** |  | 
+ **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse**](KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse.md)
+[**[]KeyfactorWebKeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse**](KeyfactorWebKeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse.md)
 
 ### Authorization
 
@@ -441,16 +443,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## AgentBlueprintGetBlueprintStores
+## AgentBluePrintIdStoresGet
 
-> []KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse AgentBlueprintGetBlueprintStores(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PqPageReturned(pqPageReturned).PqReturnLimit(pqReturnLimit).PqSortField(pqSortField).PqSortAscending(pqSortAscending).Execute()
+> []KeyfactorWebKeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse AgentBluePrintIdStoresGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets the agent blueprint certificate stores
 
@@ -468,22 +470,22 @@ import (
 
 func main() {
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | 
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-    pqPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    pqReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
-    pqSortField := "pqSortField_example" // string | Field by which the results should be sorted (OperationStart, OperationEnd, UserName) (optional)
-    pqSortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    pageReturned := int32(56) // int32 |  (optional)
+    returnLimit := int32(56) // int32 |  (optional)
+    sortField := "sortField_example" // string |  (optional)
+    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentBlueprintApi.AgentBlueprintGetBlueprintStores(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PqPageReturned(pqPageReturned).PqReturnLimit(pqReturnLimit).PqSortField(pqSortField).PqSortAscending(pqSortAscending).Execute()
+    resp, r, err := apiClient.AgentBlueprintApi.AgentBluePrintIdStoresGet(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AgentBlueprintApi.AgentBlueprintGetBlueprintStores``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AgentBlueprintApi.AgentBluePrintIdStoresGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `AgentBlueprintGetBlueprintStores`: []KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse
-    fmt.Fprintf(os.Stdout, "Response from `AgentBlueprintApi.AgentBlueprintGetBlueprintStores`: %v\n", resp)
+    // response from `AgentBluePrintIdStoresGet`: []KeyfactorWebKeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse
+    fmt.Fprintf(os.Stdout, "Response from `AgentBlueprintApi.AgentBluePrintIdStoresGet`: %v\n", resp)
 }
 ```
 
@@ -497,22 +499,22 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAgentBlueprintGetBlueprintStoresRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAgentBluePrintIdStoresGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
- **pqPageReturned** | **int32** | The current page within the result set to be returned | 
- **pqReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
- **pqSortField** | **string** | Field by which the results should be sorted (OperationStart, OperationEnd, UserName) | 
- **pqSortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **pageReturned** | **int32** |  | 
+ **returnLimit** | **int32** |  | 
+ **sortField** | **string** |  | 
+ **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse**](KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse.md)
+[**[]KeyfactorWebKeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse**](KeyfactorWebKeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse.md)
 
 ### Authorization
 
@@ -521,7 +523,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -1,22 +1,22 @@
 # \CustomJobTypeApi
 
-All URIs are relative to *http://keyfactor.example.com*
+All URIs are relative to */Keyfactor/API*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CustomJobTypeCreateJobType**](CustomJobTypeApi.md#CustomJobTypeCreateJobType) | **Post** /JobTypes/Custom | Creates a custom job type with the provided properties
-[**CustomJobTypeDeleteJobType**](CustomJobTypeApi.md#CustomJobTypeDeleteJobType) | **Delete** /JobTypes/Custom/{id} | Deletes the custom job type associated with the provided id
-[**CustomJobTypeGetJobTypeById**](CustomJobTypeApi.md#CustomJobTypeGetJobTypeById) | **Get** /JobTypes/Custom/{id} | Returns a single custom job type associated with the provided id
-[**CustomJobTypeGetJobTypes**](CustomJobTypeApi.md#CustomJobTypeGetJobTypes) | **Get** /JobTypes/Custom | Returns all custom job types according to the provided filter and output parameters
-[**CustomJobTypeUpdateJobType**](CustomJobTypeApi.md#CustomJobTypeUpdateJobType) | **Put** /JobTypes/Custom | Updates an existing custom job type with the provided properties
+[**JobTypesCustomGet**](CustomJobTypeApi.md#JobTypesCustomGet) | **Get** /JobTypes/Custom | Returns all custom job types according to the provided filter and output parameters
+[**JobTypesCustomIdDelete**](CustomJobTypeApi.md#JobTypesCustomIdDelete) | **Delete** /JobTypes/Custom/{id} | Deletes the custom job type associated with the provided id
+[**JobTypesCustomIdGet**](CustomJobTypeApi.md#JobTypesCustomIdGet) | **Get** /JobTypes/Custom/{id} | Returns a single custom job type associated with the provided id
+[**JobTypesCustomPost**](CustomJobTypeApi.md#JobTypesCustomPost) | **Post** /JobTypes/Custom | Creates a custom job type with the provided properties
+[**JobTypesCustomPut**](CustomJobTypeApi.md#JobTypesCustomPut) | **Put** /JobTypes/Custom | Updates an existing custom job type with the provided properties
 
 
 
-## CustomJobTypeCreateJobType
+## JobTypesCustomGet
 
-> KeyfactorApiModelsOrchestratorJobsJobTypeResponse CustomJobTypeCreateJobType(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).JobType(jobType).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeResponse JobTypesCustomGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
-Creates a custom job type with the provided properties
+Returns all custom job types according to the provided filter and output parameters
 
 ### Example
 
@@ -31,19 +31,23 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    jobType := *openapiclient.NewModelsOrchestratorJobsJobTypeCreateRequest("JobTypeName_example") // ModelsOrchestratorJobsJobTypeCreateRequest | job type properties to be applied to the new job type
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    queryString := "queryString_example" // string |  (optional)
+    pageReturned := int32(56) // int32 |  (optional)
+    returnLimit := int32(56) // int32 |  (optional)
+    sortField := "sortField_example" // string |  (optional)
+    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomJobTypeApi.CustomJobTypeCreateJobType(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).JobType(jobType).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CustomJobTypeApi.JobTypesCustomGet(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomJobTypeApi.CustomJobTypeCreateJobType``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomJobTypeApi.JobTypesCustomGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CustomJobTypeCreateJobType`: KeyfactorApiModelsOrchestratorJobsJobTypeResponse
-    fmt.Fprintf(os.Stdout, "Response from `CustomJobTypeApi.CustomJobTypeCreateJobType`: %v\n", resp)
+    // response from `JobTypesCustomGet`: []KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeResponse
+    fmt.Fprintf(os.Stdout, "Response from `CustomJobTypeApi.JobTypesCustomGet`: %v\n", resp)
 }
 ```
 
@@ -53,18 +57,22 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCustomJobTypeCreateJobTypeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiJobTypesCustomGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **jobType** | [**ModelsOrchestratorJobsJobTypeCreateRequest**](ModelsOrchestratorJobsJobTypeCreateRequest.md) | job type properties to be applied to the new job type | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **queryString** | **string** |  | 
+ **pageReturned** | **int32** |  | 
+ **returnLimit** | **int32** |  | 
+ **sortField** | **string** |  | 
+ **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**KeyfactorApiModelsOrchestratorJobsJobTypeResponse**](KeyfactorApiModelsOrchestratorJobsJobTypeResponse.md)
+[**[]KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeResponse**](KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeResponse.md)
 
 ### Authorization
 
@@ -72,17 +80,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## CustomJobTypeDeleteJobType
+## JobTypesCustomIdDelete
 
-> CustomJobTypeDeleteJobType(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> JobTypesCustomIdDelete(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes the custom job type associated with the provided id
 
@@ -100,14 +108,14 @@ import (
 
 func main() {
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Keyfactor identifier (GUID) of the job type
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomJobTypeApi.CustomJobTypeDeleteJobType(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CustomJobTypeApi.JobTypesCustomIdDelete(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomJobTypeApi.CustomJobTypeDeleteJobType``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomJobTypeApi.JobTypesCustomIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -123,14 +131,14 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCustomJobTypeDeleteJobTypeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiJobTypesCustomIdDeleteRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
@@ -150,9 +158,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CustomJobTypeGetJobTypeById
+## JobTypesCustomIdGet
 
-> KeyfactorApiModelsOrchestratorJobsJobTypeResponse CustomJobTypeGetJobTypeById(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeResponse JobTypesCustomIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a single custom job type associated with the provided id
 
@@ -170,18 +178,18 @@ import (
 
 func main() {
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Keyfactor (GUID) identifier of the job type
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomJobTypeApi.CustomJobTypeGetJobTypeById(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CustomJobTypeApi.JobTypesCustomIdGet(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomJobTypeApi.CustomJobTypeGetJobTypeById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomJobTypeApi.JobTypesCustomIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CustomJobTypeGetJobTypeById`: KeyfactorApiModelsOrchestratorJobsJobTypeResponse
-    fmt.Fprintf(os.Stdout, "Response from `CustomJobTypeApi.CustomJobTypeGetJobTypeById`: %v\n", resp)
+    // response from `JobTypesCustomIdGet`: KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeResponse
+    fmt.Fprintf(os.Stdout, "Response from `CustomJobTypeApi.JobTypesCustomIdGet`: %v\n", resp)
 }
 ```
 
@@ -195,18 +203,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCustomJobTypeGetJobTypeByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiJobTypesCustomIdGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**KeyfactorApiModelsOrchestratorJobsJobTypeResponse**](KeyfactorApiModelsOrchestratorJobsJobTypeResponse.md)
+[**KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeResponse**](KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeResponse.md)
 
 ### Authorization
 
@@ -215,18 +223,18 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## CustomJobTypeGetJobTypes
+## JobTypesCustomPost
 
-> []KeyfactorApiModelsOrchestratorJobsJobTypeResponse CustomJobTypeGetJobTypes(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PqQueryString(pqQueryString).PqPageReturned(pqPageReturned).PqReturnLimit(pqReturnLimit).PqSortField(pqSortField).PqSortAscending(pqSortAscending).Execute()
+> KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeResponse JobTypesCustomPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest(cSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest).Execute()
 
-Returns all custom job types according to the provided filter and output parameters
+Creates a custom job type with the provided properties
 
 ### Example
 
@@ -241,23 +249,19 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-    pqQueryString := "pqQueryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
-    pqPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    pqReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
-    pqSortField := "pqSortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    pqSortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    cSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest := *openapiclient.NewCSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest("JobTypeName_example") // CSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest | job type properties to be applied to the new job type (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomJobTypeApi.CustomJobTypeGetJobTypes(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PqQueryString(pqQueryString).PqPageReturned(pqPageReturned).PqReturnLimit(pqReturnLimit).PqSortField(pqSortField).PqSortAscending(pqSortAscending).Execute()
+    resp, r, err := apiClient.CustomJobTypeApi.JobTypesCustomPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest(cSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomJobTypeApi.CustomJobTypeGetJobTypes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomJobTypeApi.JobTypesCustomPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CustomJobTypeGetJobTypes`: []KeyfactorApiModelsOrchestratorJobsJobTypeResponse
-    fmt.Fprintf(os.Stdout, "Response from `CustomJobTypeApi.CustomJobTypeGetJobTypes`: %v\n", resp)
+    // response from `JobTypesCustomPost`: KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeResponse
+    fmt.Fprintf(os.Stdout, "Response from `CustomJobTypeApi.JobTypesCustomPost`: %v\n", resp)
 }
 ```
 
@@ -267,22 +271,18 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCustomJobTypeGetJobTypesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiJobTypesCustomPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
- **pqQueryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
- **pqPageReturned** | **int32** | The current page within the result set to be returned | 
- **pqReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
- **pqSortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **pqSortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **cSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest** | [**CSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest**](CSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest.md) | job type properties to be applied to the new job type | 
 
 ### Return type
 
-[**[]KeyfactorApiModelsOrchestratorJobsJobTypeResponse**](KeyfactorApiModelsOrchestratorJobsJobTypeResponse.md)
+[**KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeResponse**](KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeResponse.md)
 
 ### Authorization
 
@@ -290,17 +290,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## CustomJobTypeUpdateJobType
+## JobTypesCustomPut
 
-> KeyfactorApiModelsOrchestratorJobsJobTypeResponse CustomJobTypeUpdateJobType(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).JobType(jobType).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeResponse JobTypesCustomPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest(cSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest).Execute()
 
 Updates an existing custom job type with the provided properties
 
@@ -317,19 +317,19 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    jobType := *openapiclient.NewModelsOrchestratorJobsJobTypeUpdateRequest("00000000-0000-0000-0000-000000000000", "JobTypeName_example") // ModelsOrchestratorJobsJobTypeUpdateRequest | job type properties to be applied to the existing job type
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    cSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest := *openapiclient.NewCSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest("Id_example", "JobTypeName_example") // CSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest | job type properties to be applied to the existing job type (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomJobTypeApi.CustomJobTypeUpdateJobType(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).JobType(jobType).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CustomJobTypeApi.JobTypesCustomPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest(cSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomJobTypeApi.CustomJobTypeUpdateJobType``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomJobTypeApi.JobTypesCustomPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CustomJobTypeUpdateJobType`: KeyfactorApiModelsOrchestratorJobsJobTypeResponse
-    fmt.Fprintf(os.Stdout, "Response from `CustomJobTypeApi.CustomJobTypeUpdateJobType`: %v\n", resp)
+    // response from `JobTypesCustomPut`: KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeResponse
+    fmt.Fprintf(os.Stdout, "Response from `CustomJobTypeApi.JobTypesCustomPut`: %v\n", resp)
 }
 ```
 
@@ -339,18 +339,18 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCustomJobTypeUpdateJobTypeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiJobTypesCustomPutRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **jobType** | [**ModelsOrchestratorJobsJobTypeUpdateRequest**](ModelsOrchestratorJobsJobTypeUpdateRequest.md) | job type properties to be applied to the existing job type | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **cSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest** | [**CSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest**](CSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest.md) | job type properties to be applied to the existing job type | 
 
 ### Return type
 
-[**KeyfactorApiModelsOrchestratorJobsJobTypeResponse**](KeyfactorApiModelsOrchestratorJobsJobTypeResponse.md)
+[**KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeResponse**](KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeResponse.md)
 
 ### Authorization
 
@@ -358,8 +358,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

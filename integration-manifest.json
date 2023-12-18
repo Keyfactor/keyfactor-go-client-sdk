@@ -3,6 +3,8 @@
   "integration_type": "api-client",
   "name": "keyfactor-go-client-sdk",
   "status": "pilot",
+  "support_level": "community",
   "link_github": false,
+  "update_catalog": false,
   "description": "Keyfactor Command API client library SDK for Go applications"
 }
