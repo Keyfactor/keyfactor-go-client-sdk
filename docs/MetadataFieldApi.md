@@ -1,165 +1,23 @@
 # \MetadataFieldApi
 
-All URIs are relative to *https://keyfactor.example.com*
+All URIs are relative to */Keyfactor/API*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**MetadataFieldCreateMetadataField**](MetadataFieldApi.md#MetadataFieldCreateMetadataField) | **Post** /MetadataFields | Creates a new metadata field type with the given metadata field type properties
-[**MetadataFieldDeleteMetadataField**](MetadataFieldApi.md#MetadataFieldDeleteMetadataField) | **Delete** /MetadataFields/{id} | Deletes a persisted metadata field type by its unique id
-[**MetadataFieldDeleteMetadataFields**](MetadataFieldApi.md#MetadataFieldDeleteMetadataFields) | **Delete** /MetadataFields | Deletes multiple persisted metadata field types by their unique ids
-[**MetadataFieldGetAllMetadataFields**](MetadataFieldApi.md#MetadataFieldGetAllMetadataFields) | **Get** /MetadataFields | Returns all metadata field types according to the provided filter and output parameters
-[**MetadataFieldGetMetadataField0**](MetadataFieldApi.md#MetadataFieldGetMetadataField0) | **Get** /MetadataFields/{id} | Gets a persisted metadata field type by its unique id
-[**MetadataFieldGetMetadataField1**](MetadataFieldApi.md#MetadataFieldGetMetadataField1) | **Get** /MetadataFields/{name} | Gets a persisted metadata field type by its unique name
-[**MetadataFieldGetMetadataFieldInUse**](MetadataFieldApi.md#MetadataFieldGetMetadataFieldInUse) | **Get** /MetadataFields/{id}/InUse | Determines if a metadata field type associated with the provided identifier is currently in use
-[**MetadataFieldUpdateMetadataField**](MetadataFieldApi.md#MetadataFieldUpdateMetadataField) | **Put** /MetadataFields | Updates a persisted metadata field with the given metadata field type
+[**MetadataFieldsDelete**](MetadataFieldApi.md#MetadataFieldsDelete) | **Delete** /MetadataFields | Deletes multiple persisted metadata field types by their unique ids
+[**MetadataFieldsGet**](MetadataFieldApi.md#MetadataFieldsGet) | **Get** /MetadataFields | Returns all metadata field types according to the provided filter and output parameters
+[**MetadataFieldsIdDelete**](MetadataFieldApi.md#MetadataFieldsIdDelete) | **Delete** /MetadataFields/{id} | Deletes a persisted metadata field type by its unique id
+[**MetadataFieldsIdGet**](MetadataFieldApi.md#MetadataFieldsIdGet) | **Get** /MetadataFields/{id} | Gets a persisted metadata field type by its unique id
+[**MetadataFieldsIdInUseGet**](MetadataFieldApi.md#MetadataFieldsIdInUseGet) | **Get** /MetadataFields/{id}/InUse | Determines if a metadata field type associated with the provided identifier is currently in use
+[**MetadataFieldsNameGet**](MetadataFieldApi.md#MetadataFieldsNameGet) | **Get** /MetadataFields/{name} | Gets a persisted metadata field type by its unique name
+[**MetadataFieldsPost**](MetadataFieldApi.md#MetadataFieldsPost) | **Post** /MetadataFields | Creates a new metadata field type with the given metadata field type properties
+[**MetadataFieldsPut**](MetadataFieldApi.md#MetadataFieldsPut) | **Put** /MetadataFields | Updates a persisted metadata field with the given metadata field type
 
 
 
-## MetadataFieldCreateMetadataField
+## MetadataFieldsDelete
 
-> KeyfactorApiModelsMetadataFieldMetadataFieldResponse MetadataFieldCreateMetadataField(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).MetadataFieldType(metadataFieldType).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Creates a new metadata field type with the given metadata field type properties
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    metadataFieldType := *openapiclient.NewKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest("Name_example", "Description_example", int32(123)) // KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest | Properties of the metadata field type to be created
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataFieldApi.MetadataFieldCreateMetadataField(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).MetadataFieldType(metadataFieldType).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.MetadataFieldCreateMetadataField``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MetadataFieldCreateMetadataField`: KeyfactorApiModelsMetadataFieldMetadataFieldResponse
-    fmt.Fprintf(os.Stdout, "Response from `MetadataFieldApi.MetadataFieldCreateMetadataField`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiMetadataFieldCreateMetadataFieldRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **metadataFieldType** | [**KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest**](KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest.md) | Properties of the metadata field type to be created | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
-[**KeyfactorApiModelsMetadataFieldMetadataFieldResponse**](KeyfactorApiModelsMetadataFieldMetadataFieldResponse.md)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## MetadataFieldDeleteMetadataField
-
-> MetadataFieldDeleteMetadataField(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Deletes a persisted metadata field type by its unique id
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := int32(56) // int32 | Keyfactor identifier of the metadata field type
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    force := true // bool | Forces deletion of the metadata field type even if in-use (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataFieldApi.MetadataFieldDeleteMetadataField(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.MetadataFieldDeleteMetadataField``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Keyfactor identifier of the metadata field type | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiMetadataFieldDeleteMetadataFieldRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **force** | **bool** | Forces deletion of the metadata field type even if in-use | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## MetadataFieldDeleteMetadataFields
-
-> MetadataFieldDeleteMetadataFields(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Ids(ids).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> MetadataFieldsDelete(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
 
 Deletes multiple persisted metadata field types by their unique ids
 
@@ -179,15 +37,15 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    ids := []int32{int32(123)} // []int32 | Array of Keyfactor identifiers for metadata field types to be deleted
-    force := true // bool | Forces deletion of the metadata field type even if in-use (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    force := true // bool | Forces deletion of the metadata field type even if in-use (optional) (default to false)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    requestBody := []int32{int32(123)} // []int32 | Array of Keyfactor identifiers for metadata field types to be deleted (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataFieldApi.MetadataFieldDeleteMetadataFields(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Ids(ids).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.MetadataFieldApi.MetadataFieldsDelete(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.MetadataFieldDeleteMetadataFields``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.MetadataFieldsDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -199,15 +57,15 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiMetadataFieldDeleteMetadataFieldsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiMetadataFieldsDeleteRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **ids** | **[]int32** | Array of Keyfactor identifiers for metadata field types to be deleted | 
- **force** | **bool** | Forces deletion of the metadata field type even if in-use | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **force** | **bool** | Forces deletion of the metadata field type even if in-use | [default to false]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **requestBody** | **[]int32** | Array of Keyfactor identifiers for metadata field types to be deleted | 
 
 ### Return type
 
@@ -219,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -227,11 +85,13 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## MetadataFieldGetAllMetadataFields
+## MetadataFieldsGet
 
-> []ModelsMetadataFieldTypeModel MetadataFieldGetAllMetadataFields(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PqQueryString(pqQueryString).PqPageReturned(pqPageReturned).PqReturnLimit(pqReturnLimit).PqSortField(pqSortField).PqSortAscending(pqSortAscending).Execute()
+> []CSSCMSDataModelModelsMetadataFieldTypeModel MetadataFieldsGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all metadata field types according to the provided filter and output parameters
+
+
 
 ### Example
 
@@ -247,22 +107,22 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-    pqQueryString := "pqQueryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
-    pqPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    pqReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
-    pqSortField := "pqSortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    pqSortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    queryString := "queryString_example" // string |  (optional)
+    pageReturned := int32(56) // int32 |  (optional)
+    returnLimit := int32(56) // int32 |  (optional)
+    sortField := "sortField_example" // string |  (optional)
+    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataFieldApi.MetadataFieldGetAllMetadataFields(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PqQueryString(pqQueryString).PqPageReturned(pqPageReturned).PqReturnLimit(pqReturnLimit).PqSortField(pqSortField).PqSortAscending(pqSortAscending).Execute()
+    resp, r, err := apiClient.MetadataFieldApi.MetadataFieldsGet(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.MetadataFieldGetAllMetadataFields``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.MetadataFieldsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `MetadataFieldGetAllMetadataFields`: []ModelsMetadataFieldTypeModel
-    fmt.Fprintf(os.Stdout, "Response from `MetadataFieldApi.MetadataFieldGetAllMetadataFields`: %v\n", resp)
+    // response from `MetadataFieldsGet`: []CSSCMSDataModelModelsMetadataFieldTypeModel
+    fmt.Fprintf(os.Stdout, "Response from `MetadataFieldApi.MetadataFieldsGet`: %v\n", resp)
 }
 ```
 
@@ -272,22 +132,22 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiMetadataFieldGetAllMetadataFieldsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiMetadataFieldsGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
- **pqQueryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
- **pqPageReturned** | **int32** | The current page within the result set to be returned | 
- **pqReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
- **pqSortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **pqSortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **queryString** | **string** |  | 
+ **pageReturned** | **int32** |  | 
+ **returnLimit** | **int32** |  | 
+ **sortField** | **string** |  | 
+ **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]ModelsMetadataFieldTypeModel**](ModelsMetadataFieldTypeModel.md)
+[**[]CSSCMSDataModelModelsMetadataFieldTypeModel**](CSSCMSDataModelModelsMetadataFieldTypeModel.md)
 
 ### Authorization
 
@@ -296,18 +156,92 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## MetadataFieldGetMetadataField0
+## MetadataFieldsIdDelete
 
-> ModelsMetadataFieldTypeModel MetadataFieldGetMetadataField0(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> MetadataFieldsIdDelete(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Deletes a persisted metadata field type by its unique id
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := int32(56) // int32 | Keyfactor identifier of the metadata field type
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    force := true // bool | Forces deletion of the metadata field type even if in-use (optional) (default to false)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MetadataFieldApi.MetadataFieldsIdDelete(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.MetadataFieldsIdDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | Keyfactor identifier of the metadata field type | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiMetadataFieldsIdDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **force** | **bool** | Forces deletion of the metadata field type even if in-use | [default to false]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## MetadataFieldsIdGet
+
+> CSSCMSDataModelModelsMetadataFieldTypeModel MetadataFieldsIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets a persisted metadata field type by its unique id
+
+
 
 ### Example
 
@@ -324,17 +258,17 @@ import (
 func main() {
     id := int32(56) // int32 | The unique id of the metadata field type
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataFieldApi.MetadataFieldGetMetadataField0(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.MetadataFieldApi.MetadataFieldsIdGet(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.MetadataFieldGetMetadataField0``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.MetadataFieldsIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `MetadataFieldGetMetadataField0`: ModelsMetadataFieldTypeModel
-    fmt.Fprintf(os.Stdout, "Response from `MetadataFieldApi.MetadataFieldGetMetadataField0`: %v\n", resp)
+    // response from `MetadataFieldsIdGet`: CSSCMSDataModelModelsMetadataFieldTypeModel
+    fmt.Fprintf(os.Stdout, "Response from `MetadataFieldApi.MetadataFieldsIdGet`: %v\n", resp)
 }
 ```
 
@@ -348,18 +282,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiMetadataFieldGetMetadataField0Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiMetadataFieldsIdGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**ModelsMetadataFieldTypeModel**](ModelsMetadataFieldTypeModel.md)
+[**CSSCMSDataModelModelsMetadataFieldTypeModel**](CSSCMSDataModelModelsMetadataFieldTypeModel.md)
 
 ### Authorization
 
@@ -368,88 +302,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## MetadataFieldGetMetadataField1
+## MetadataFieldsIdInUseGet
 
-> ModelsMetadataFieldTypeModel MetadataFieldGetMetadataField1(ctx, name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Gets a persisted metadata field type by its unique name
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    name := "name_example" // string | The unique name of the metadata field.
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataFieldApi.MetadataFieldGetMetadataField1(context.Background(), name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.MetadataFieldGetMetadataField1``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MetadataFieldGetMetadataField1`: ModelsMetadataFieldTypeModel
-    fmt.Fprintf(os.Stdout, "Response from `MetadataFieldApi.MetadataFieldGetMetadataField1`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**name** | **string** | The unique name of the metadata field. | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiMetadataFieldGetMetadataField1Request struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
-[**ModelsMetadataFieldTypeModel**](ModelsMetadataFieldTypeModel.md)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## MetadataFieldGetMetadataFieldInUse
-
-> bool MetadataFieldGetMetadataFieldInUse(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> bool MetadataFieldsIdInUseGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Determines if a metadata field type associated with the provided identifier is currently in use
 
@@ -468,17 +330,17 @@ import (
 func main() {
     id := int32(56) // int32 | Keyfactor identitifer of the metadata field
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataFieldApi.MetadataFieldGetMetadataFieldInUse(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.MetadataFieldApi.MetadataFieldsIdInUseGet(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.MetadataFieldGetMetadataFieldInUse``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.MetadataFieldsIdInUseGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `MetadataFieldGetMetadataFieldInUse`: bool
-    fmt.Fprintf(os.Stdout, "Response from `MetadataFieldApi.MetadataFieldGetMetadataFieldInUse`: %v\n", resp)
+    // response from `MetadataFieldsIdInUseGet`: bool
+    fmt.Fprintf(os.Stdout, "Response from `MetadataFieldApi.MetadataFieldsIdInUseGet`: %v\n", resp)
 }
 ```
 
@@ -492,14 +354,14 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiMetadataFieldGetMetadataFieldInUseRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiMetadataFieldsIdInUseGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
@@ -512,16 +374,160 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## MetadataFieldUpdateMetadataField
+## MetadataFieldsNameGet
 
-> KeyfactorApiModelsMetadataFieldMetadataFieldResponse MetadataFieldUpdateMetadataField(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).MetadataFieldType(metadataFieldType).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsMetadataFieldTypeModel MetadataFieldsNameGet(ctx, name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Gets a persisted metadata field type by its unique name
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    name := "name_example" // string | The unique name of the metadata field.
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MetadataFieldApi.MetadataFieldsNameGet(context.Background(), name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.MetadataFieldsNameGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `MetadataFieldsNameGet`: CSSCMSDataModelModelsMetadataFieldTypeModel
+    fmt.Fprintf(os.Stdout, "Response from `MetadataFieldApi.MetadataFieldsNameGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**name** | **string** | The unique name of the metadata field. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiMetadataFieldsNameGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+
+### Return type
+
+[**CSSCMSDataModelModelsMetadataFieldTypeModel**](CSSCMSDataModelModelsMetadataFieldTypeModel.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## MetadataFieldsPost
+
+> KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse MetadataFieldsPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest(keyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest).Execute()
+
+Creates a new metadata field type with the given metadata field type properties
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    keyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest("Name_example", "Description_example", openapiclient.CSS.CMS.Core.Enums.MetadataDataType(1)) // KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest | Properties of the metadata field type to be created (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MetadataFieldApi.MetadataFieldsPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest(keyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.MetadataFieldsPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `MetadataFieldsPost`: KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse
+    fmt.Fprintf(os.Stdout, "Response from `MetadataFieldApi.MetadataFieldsPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiMetadataFieldsPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **keyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest** | [**KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest**](KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest.md) | Properties of the metadata field type to be created | 
+
+### Return type
+
+[**KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse**](KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## MetadataFieldsPut
+
+> KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse MetadataFieldsPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest(keyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest).Execute()
 
 Updates a persisted metadata field with the given metadata field type
 
@@ -541,18 +547,18 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    metadataFieldType := *openapiclient.NewKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest(int32(123), "Name_example", "Description_example", int32(123)) // KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest | Properties of the metadata field type to be updated
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    keyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest(int32(123), "Name_example", "Description_example", openapiclient.CSS.CMS.Core.Enums.MetadataDataType(1), int32(123)) // KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest | Properties of the metadata field type to be updated (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataFieldApi.MetadataFieldUpdateMetadataField(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).MetadataFieldType(metadataFieldType).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.MetadataFieldApi.MetadataFieldsPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest(keyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.MetadataFieldUpdateMetadataField``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.MetadataFieldsPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `MetadataFieldUpdateMetadataField`: KeyfactorApiModelsMetadataFieldMetadataFieldResponse
-    fmt.Fprintf(os.Stdout, "Response from `MetadataFieldApi.MetadataFieldUpdateMetadataField`: %v\n", resp)
+    // response from `MetadataFieldsPut`: KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse
+    fmt.Fprintf(os.Stdout, "Response from `MetadataFieldApi.MetadataFieldsPut`: %v\n", resp)
 }
 ```
 
@@ -562,18 +568,18 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiMetadataFieldUpdateMetadataFieldRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiMetadataFieldsPutRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **metadataFieldType** | [**KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest**](KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest.md) | Properties of the metadata field type to be updated | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **keyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest** | [**KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest**](KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest.md) | Properties of the metadata field type to be updated | 
 
 ### Return type
 
-[**KeyfactorApiModelsMetadataFieldMetadataFieldResponse**](KeyfactorApiModelsMetadataFieldMetadataFieldResponse.md)
+[**KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse**](KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse.md)
 
 ### Authorization
 
@@ -581,8 +587,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

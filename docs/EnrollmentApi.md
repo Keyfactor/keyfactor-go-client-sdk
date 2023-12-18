@@ -1,94 +1,26 @@
 # \EnrollmentApi
 
-All URIs are relative to *https://keyfactor.example.com*
+All URIs are relative to */Keyfactor/API*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**EnrollmentAddToExistingCertStores**](EnrollmentApi.md#EnrollmentAddToExistingCertStores) | **Post** /Enrollment/PFX/Replace | Creates management jobs to install a newly enrolled pfx into the same certificate stores as the previous certificate
-[**EnrollmentAvailableRenewalId**](EnrollmentApi.md#EnrollmentAvailableRenewalId) | **Get** /Enrollment/AvailableRenewal/Id/{id} | Returns the type of renewal available for a given certificate.
-[**EnrollmentAvailableRenewalThumbprint**](EnrollmentApi.md#EnrollmentAvailableRenewalThumbprint) | **Get** /Enrollment/AvailableRenewal/Thumbprint/{thumbprint} | Returns the type of renewal available for a given certificate.
-[**EnrollmentGetMyCSRContext**](EnrollmentApi.md#EnrollmentGetMyCSRContext) | **Get** /Enrollment/CSR/Context/My | Returns the list of available CSR enrollment templates and their associated CA mappings that the calling user has permissions on
-[**EnrollmentGetMyPFXContext**](EnrollmentApi.md#EnrollmentGetMyPFXContext) | **Get** /Enrollment/PFX/Context/My | Returns the list of available PFX enrollment templates and their associated CA mappings that the calling user has permissions on
-[**EnrollmentGetTemplateEnrollmentSettings**](EnrollmentApi.md#EnrollmentGetTemplateEnrollmentSettings) | **Get** /Enrollment/Settings/{id} | Gets the template settings to use during enrollment. The response will be the resolved values for the settings.  If there is a template specific setting, the template specific setting will be used in the response.  If there is not a template specific setting, the global setting will be used in the response.
-[**EnrollmentInstallPFXToCertStore**](EnrollmentApi.md#EnrollmentInstallPFXToCertStore) | **Post** /Enrollment/PFX/Deploy | Creates management jobs to install a newly enrolled pfx in to one or more certificate stores
-[**EnrollmentPostCSREnroll**](EnrollmentApi.md#EnrollmentPostCSREnroll) | **Post** /Enrollment/CSR | Performs a CSR Enrollment based upon the provided request
-[**EnrollmentPostPFXEnroll**](EnrollmentApi.md#EnrollmentPostPFXEnroll) | **Post** /Enrollment/PFX | Performs a PFX Enrollment based upon the provided request
-[**EnrollmentPostParsedCSR**](EnrollmentApi.md#EnrollmentPostParsedCSR) | **Post** /Enrollment/CSR/Parse | Parses the provided CSR and returns the properties
-[**EnrollmentRenew**](EnrollmentApi.md#EnrollmentRenew) | **Post** /Enrollment/Renew | Performs a renewal based upon the passed in request
+[**EnrollmentAvailableRenewalIdIdGet**](EnrollmentApi.md#EnrollmentAvailableRenewalIdIdGet) | **Get** /Enrollment/AvailableRenewal/Id/{id} | Returns the type of renewal available for a given certificate.
+[**EnrollmentAvailableRenewalThumbprintThumbprintGet**](EnrollmentApi.md#EnrollmentAvailableRenewalThumbprintThumbprintGet) | **Get** /Enrollment/AvailableRenewal/Thumbprint/{thumbprint} | Returns the type of renewal available for a given certificate.
+[**EnrollmentCSRContextMyGet**](EnrollmentApi.md#EnrollmentCSRContextMyGet) | **Get** /Enrollment/CSR/Context/My | Returns the list of available CSR enrollment templates and their associated CA mappings that the calling user has permissions on
+[**EnrollmentCSRParsePost**](EnrollmentApi.md#EnrollmentCSRParsePost) | **Post** /Enrollment/CSR/Parse | Parses the provided CSR and returns the properties
+[**EnrollmentCSRPost**](EnrollmentApi.md#EnrollmentCSRPost) | **Post** /Enrollment/CSR | Performs a CSR Enrollment based upon the provided request
+[**EnrollmentPFXContextMyGet**](EnrollmentApi.md#EnrollmentPFXContextMyGet) | **Get** /Enrollment/PFX/Context/My | Returns the list of available PFX enrollment templates and their associated CA mappings that the calling user has permissions on
+[**EnrollmentPFXDeployPost**](EnrollmentApi.md#EnrollmentPFXDeployPost) | **Post** /Enrollment/PFX/Deploy | Creates management jobs to install a newly enrolled pfx in to one or more certificate stores
+[**EnrollmentPFXPost**](EnrollmentApi.md#EnrollmentPFXPost) | **Post** /Enrollment/PFX | Performs a PFX Enrollment based upon the provided request
+[**EnrollmentPFXReplacePost**](EnrollmentApi.md#EnrollmentPFXReplacePost) | **Post** /Enrollment/PFX/Replace | Creates management jobs to install a newly enrolled pfx into the same certificate stores as the previous certificate
+[**EnrollmentRenewPost**](EnrollmentApi.md#EnrollmentRenewPost) | **Post** /Enrollment/Renew | Performs a renewal based upon the passed in request
+[**EnrollmentSettingsIdGet**](EnrollmentApi.md#EnrollmentSettingsIdGet) | **Get** /Enrollment/Settings/{id} | Gets the template settings to use during enrollment. The response will be the resolved values for the settings.  If there is a template specific setting, the template specific setting will be used in the response.  If there is not a template specific setting, the global setting will be used in the response.
 
 
 
-## EnrollmentAddToExistingCertStores
+## EnrollmentAvailableRenewalIdIdGet
 
-> KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse EnrollmentAddToExistingCertStores(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Creates management jobs to install a newly enrolled pfx into the same certificate stores as the previous certificate
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    request := *openapiclient.NewModelsEnrollmentExistingEnrollmentManagementRequest() // ModelsEnrollmentExistingEnrollmentManagementRequest | The request to create the management jobs, which includes the request Id of the new pfx and the Id of the existing certificate
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.EnrollmentAddToExistingCertStores(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentAddToExistingCertStores``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `EnrollmentAddToExistingCertStores`: KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse
-    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentAddToExistingCertStores`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiEnrollmentAddToExistingCertStoresRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **request** | [**ModelsEnrollmentExistingEnrollmentManagementRequest**](ModelsEnrollmentExistingEnrollmentManagementRequest.md) | The request to create the management jobs, which includes the request Id of the new pfx and the Id of the existing certificate | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
-[**KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse**](KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse.md)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## EnrollmentAvailableRenewalId
-
-> ModelsEnrollmentAvailableRenewal EnrollmentAvailableRenewalId(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsEnrollmentAvailableRenewal EnrollmentAvailableRenewalIdIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns the type of renewal available for a given certificate.
 
@@ -109,18 +41,18 @@ import (
 func main() {
     id := int32(56) // int32 | The Keyfactor certificate Id
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | The collection id for the given certificate (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    collectionId := int32(56) // int32 | The collection id for the given certificate (optional) (default to 0)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.EnrollmentAvailableRenewalId(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.EnrollmentApi.EnrollmentAvailableRenewalIdIdGet(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentAvailableRenewalId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentAvailableRenewalIdIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `EnrollmentAvailableRenewalId`: ModelsEnrollmentAvailableRenewal
-    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentAvailableRenewalId`: %v\n", resp)
+    // response from `EnrollmentAvailableRenewalIdIdGet`: CSSCMSDataModelModelsEnrollmentAvailableRenewal
+    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentAvailableRenewalIdIdGet`: %v\n", resp)
 }
 ```
 
@@ -134,19 +66,19 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiEnrollmentAvailableRenewalIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiEnrollmentAvailableRenewalIdIdGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | The collection id for the given certificate | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **collectionId** | **int32** | The collection id for the given certificate | [default to 0]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**ModelsEnrollmentAvailableRenewal**](ModelsEnrollmentAvailableRenewal.md)
+[**CSSCMSDataModelModelsEnrollmentAvailableRenewal**](CSSCMSDataModelModelsEnrollmentAvailableRenewal.md)
 
 ### Authorization
 
@@ -155,16 +87,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## EnrollmentAvailableRenewalThumbprint
+## EnrollmentAvailableRenewalThumbprintThumbprintGet
 
-> ModelsEnrollmentAvailableRenewal EnrollmentAvailableRenewalThumbprint(ctx, thumbprint).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsEnrollmentAvailableRenewal EnrollmentAvailableRenewalThumbprintThumbprintGet(ctx, thumbprint).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns the type of renewal available for a given certificate.
 
@@ -183,18 +115,18 @@ import (
 func main() {
     thumbprint := "thumbprint_example" // string | The certificate thumbprint
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | The collection id for the given certificate (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    collectionId := int32(56) // int32 | The collection id for the given certificate (optional) (default to 0)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.EnrollmentAvailableRenewalThumbprint(context.Background(), thumbprint).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.EnrollmentApi.EnrollmentAvailableRenewalThumbprintThumbprintGet(context.Background(), thumbprint).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentAvailableRenewalThumbprint``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentAvailableRenewalThumbprintThumbprintGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `EnrollmentAvailableRenewalThumbprint`: ModelsEnrollmentAvailableRenewal
-    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentAvailableRenewalThumbprint`: %v\n", resp)
+    // response from `EnrollmentAvailableRenewalThumbprintThumbprintGet`: CSSCMSDataModelModelsEnrollmentAvailableRenewal
+    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentAvailableRenewalThumbprintThumbprintGet`: %v\n", resp)
 }
 ```
 
@@ -208,19 +140,19 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiEnrollmentAvailableRenewalThumbprintRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiEnrollmentAvailableRenewalThumbprintThumbprintGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | The collection id for the given certificate | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **collectionId** | **int32** | The collection id for the given certificate | [default to 0]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**ModelsEnrollmentAvailableRenewal**](ModelsEnrollmentAvailableRenewal.md)
+[**CSSCMSDataModelModelsEnrollmentAvailableRenewal**](CSSCMSDataModelModelsEnrollmentAvailableRenewal.md)
 
 ### Authorization
 
@@ -229,16 +161,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## EnrollmentGetMyCSRContext
+## EnrollmentCSRContextMyGet
 
-> CoreModelsEnrollmentEnrollmentTemplateCAResponse EnrollmentGetMyCSRContext(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> KeyfactorWebCoreModelsEnrollmentEnrollmentTemplateCAResponse EnrollmentCSRContextMyGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns the list of available CSR enrollment templates and their associated CA mappings that the calling user has permissions on
 
@@ -256,17 +188,17 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.EnrollmentGetMyCSRContext(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.EnrollmentApi.EnrollmentCSRContextMyGet(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentGetMyCSRContext``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentCSRContextMyGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `EnrollmentGetMyCSRContext`: CoreModelsEnrollmentEnrollmentTemplateCAResponse
-    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentGetMyCSRContext`: %v\n", resp)
+    // response from `EnrollmentCSRContextMyGet`: KeyfactorWebCoreModelsEnrollmentEnrollmentTemplateCAResponse
+    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentCSRContextMyGet`: %v\n", resp)
 }
 ```
 
@@ -276,17 +208,17 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiEnrollmentGetMyCSRContextRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiEnrollmentCSRContextMyGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**CoreModelsEnrollmentEnrollmentTemplateCAResponse**](CoreModelsEnrollmentEnrollmentTemplateCAResponse.md)
+[**KeyfactorWebCoreModelsEnrollmentEnrollmentTemplateCAResponse**](KeyfactorWebCoreModelsEnrollmentEnrollmentTemplateCAResponse.md)
 
 ### Authorization
 
@@ -295,366 +227,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## EnrollmentGetMyPFXContext
+## EnrollmentCSRParsePost
 
-> CoreModelsEnrollmentEnrollmentTemplateCAResponse EnrollmentGetMyPFXContext(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Returns the list of available PFX enrollment templates and their associated CA mappings that the calling user has permissions on
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.EnrollmentGetMyPFXContext(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentGetMyPFXContext``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `EnrollmentGetMyPFXContext`: CoreModelsEnrollmentEnrollmentTemplateCAResponse
-    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentGetMyPFXContext`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiEnrollmentGetMyPFXContextRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
-[**CoreModelsEnrollmentEnrollmentTemplateCAResponse**](CoreModelsEnrollmentEnrollmentTemplateCAResponse.md)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## EnrollmentGetTemplateEnrollmentSettings
-
-> KeyfactorApiModelsTemplatesTemplateEnrollmentSettingsResponse EnrollmentGetTemplateEnrollmentSettings(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Gets the template settings to use during enrollment. The response will be the resolved values for the settings.  If there is a template specific setting, the template specific setting will be used in the response.  If there is not a template specific setting, the global setting will be used in the response.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := int32(56) // int32 | 
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.EnrollmentGetTemplateEnrollmentSettings(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentGetTemplateEnrollmentSettings``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `EnrollmentGetTemplateEnrollmentSettings`: KeyfactorApiModelsTemplatesTemplateEnrollmentSettingsResponse
-    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentGetTemplateEnrollmentSettings`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiEnrollmentGetTemplateEnrollmentSettingsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
-[**KeyfactorApiModelsTemplatesTemplateEnrollmentSettingsResponse**](KeyfactorApiModelsTemplatesTemplateEnrollmentSettingsResponse.md)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## EnrollmentInstallPFXToCertStore
-
-> KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse EnrollmentInstallPFXToCertStore(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Creates management jobs to install a newly enrolled pfx in to one or more certificate stores
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    request := *openapiclient.NewKeyfactorApiModelsEnrollmentEnrollmentManagementRequest("Password_example") // KeyfactorApiModelsEnrollmentEnrollmentManagementRequest | The request to create the management jobs, which includes the request Id of the new pfx and the Ids and management job properties of the cert stores to add the pfx to
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.EnrollmentInstallPFXToCertStore(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentInstallPFXToCertStore``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `EnrollmentInstallPFXToCertStore`: KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse
-    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentInstallPFXToCertStore`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiEnrollmentInstallPFXToCertStoreRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **request** | [**KeyfactorApiModelsEnrollmentEnrollmentManagementRequest**](KeyfactorApiModelsEnrollmentEnrollmentManagementRequest.md) | The request to create the management jobs, which includes the request Id of the new pfx and the Ids and management job properties of the cert stores to add the pfx to | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
-[**KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse**](KeyfactorAPIModelsEnrollmentEnrollmentManagementResponse.md)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## EnrollmentPostCSREnroll
-
-> ModelsEnrollmentCSREnrollmentResponse EnrollmentPostCSREnroll(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).Request(request).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Performs a CSR Enrollment based upon the provided request
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xCertificateformat := "xCertificateformat_example" // string | Desired format [PEM, DER] (default to "PEM")
-    request := *openapiclient.NewModelsEnrollmentCSREnrollmentRequest("CSR_example") // ModelsEnrollmentCSREnrollmentRequest | Information needed to perform the CSR Enrollment
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.EnrollmentPostCSREnroll(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).Request(request).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentPostCSREnroll``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `EnrollmentPostCSREnroll`: ModelsEnrollmentCSREnrollmentResponse
-    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentPostCSREnroll`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiEnrollmentPostCSREnrollRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xCertificateformat** | **string** | Desired format [PEM, DER] | [default to &quot;PEM&quot;]
- **request** | [**ModelsEnrollmentCSREnrollmentRequest**](ModelsEnrollmentCSREnrollmentRequest.md) | Information needed to perform the CSR Enrollment | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
-[**ModelsEnrollmentCSREnrollmentResponse**](ModelsEnrollmentCSREnrollmentResponse.md)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## EnrollmentPostPFXEnroll
-
-> ModelsEnrollmentPFXEnrollmentResponse EnrollmentPostPFXEnroll(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).Request(request).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Performs a PFX Enrollment based upon the provided request
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xCertificateformat := "xCertificateformat_example" // string | Desired format [PFX, Zip, STORE] (default to "PFX")
-    request := *openapiclient.NewModelsEnrollmentPFXEnrollmentRequest() // ModelsEnrollmentPFXEnrollmentRequest | The information needed to perform the PFX Enrollment
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.EnrollmentPostPFXEnroll(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).Request(request).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentPostPFXEnroll``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `EnrollmentPostPFXEnroll`: ModelsEnrollmentPFXEnrollmentResponse
-    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentPostPFXEnroll`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiEnrollmentPostPFXEnrollRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xCertificateformat** | **string** | Desired format [PFX, Zip, STORE] | [default to &quot;PFX&quot;]
- **request** | [**ModelsEnrollmentPFXEnrollmentRequest**](ModelsEnrollmentPFXEnrollmentRequest.md) | The information needed to perform the PFX Enrollment | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
-[**ModelsEnrollmentPFXEnrollmentResponse**](ModelsEnrollmentPFXEnrollmentResponse.md)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## EnrollmentPostParsedCSR
-
-> []string EnrollmentPostParsedCSR(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Csr(csr).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []string EnrollmentCSRParsePost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCSRContents(cSSCMSDataModelModelsCSRContents).Execute()
 
 Parses the provided CSR and returns the properties
 
@@ -674,18 +256,18 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    csr := *openapiclient.NewModelsCSRContents("CSR_example") // ModelsCSRContents | CSR to be parsed
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    cSSCMSDataModelModelsCSRContents := *openapiclient.NewCSSCMSDataModelModelsCSRContents("Csr_example") // CSSCMSDataModelModelsCSRContents | CSR to be parsed (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.EnrollmentPostParsedCSR(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Csr(csr).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.EnrollmentApi.EnrollmentCSRParsePost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCSRContents(cSSCMSDataModelModelsCSRContents).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentPostParsedCSR``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentCSRParsePost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `EnrollmentPostParsedCSR`: []string
-    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentPostParsedCSR`: %v\n", resp)
+    // response from `EnrollmentCSRParsePost`: []string
+    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentCSRParsePost`: %v\n", resp)
 }
 ```
 
@@ -695,14 +277,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiEnrollmentPostParsedCSRRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiEnrollmentCSRParsePostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **csr** | [**ModelsCSRContents**](ModelsCSRContents.md) | CSR to be parsed | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **cSSCMSDataModelModelsCSRContents** | [**CSSCMSDataModelModelsCSRContents**](CSSCMSDataModelModelsCSRContents.md) | CSR to be parsed | 
 
 ### Return type
 
@@ -714,17 +296,359 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## EnrollmentRenew
+## EnrollmentCSRPost
 
-> ModelsEnrollmentRenewalResponse EnrollmentRenew(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsEnrollmentCSREnrollmentResponse EnrollmentCSRPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsEnrollmentCSREnrollmentRequest(cSSCMSDataModelModelsEnrollmentCSREnrollmentRequest).Execute()
+
+Performs a CSR Enrollment based upon the provided request
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    cSSCMSDataModelModelsEnrollmentCSREnrollmentRequest := *openapiclient.NewCSSCMSDataModelModelsEnrollmentCSREnrollmentRequest("Csr_example") // CSSCMSDataModelModelsEnrollmentCSREnrollmentRequest | Information needed to perform the CSR Enrollment (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.EnrollmentApi.EnrollmentCSRPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsEnrollmentCSREnrollmentRequest(cSSCMSDataModelModelsEnrollmentCSREnrollmentRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentCSRPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `EnrollmentCSRPost`: CSSCMSDataModelModelsEnrollmentCSREnrollmentResponse
+    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentCSRPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiEnrollmentCSRPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **cSSCMSDataModelModelsEnrollmentCSREnrollmentRequest** | [**CSSCMSDataModelModelsEnrollmentCSREnrollmentRequest**](CSSCMSDataModelModelsEnrollmentCSREnrollmentRequest.md) | Information needed to perform the CSR Enrollment | 
+
+### Return type
+
+[**CSSCMSDataModelModelsEnrollmentCSREnrollmentResponse**](CSSCMSDataModelModelsEnrollmentCSREnrollmentResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## EnrollmentPFXContextMyGet
+
+> KeyfactorWebCoreModelsEnrollmentEnrollmentTemplateCAResponse EnrollmentPFXContextMyGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Returns the list of available PFX enrollment templates and their associated CA mappings that the calling user has permissions on
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.EnrollmentApi.EnrollmentPFXContextMyGet(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentPFXContextMyGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `EnrollmentPFXContextMyGet`: KeyfactorWebCoreModelsEnrollmentEnrollmentTemplateCAResponse
+    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentPFXContextMyGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiEnrollmentPFXContextMyGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+
+### Return type
+
+[**KeyfactorWebCoreModelsEnrollmentEnrollmentTemplateCAResponse**](KeyfactorWebCoreModelsEnrollmentEnrollmentTemplateCAResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## EnrollmentPFXDeployPost
+
+> KeyfactorWebKeyfactorApiModelsEnrollmentEnrollmentManagementResponse EnrollmentPFXDeployPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsEnrollmentEnrollmentManagementRequest(keyfactorWebKeyfactorApiModelsEnrollmentEnrollmentManagementRequest).Execute()
+
+Creates management jobs to install a newly enrolled pfx in to one or more certificate stores
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    keyfactorWebKeyfactorApiModelsEnrollmentEnrollmentManagementRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsEnrollmentEnrollmentManagementRequest("Password_example") // KeyfactorWebKeyfactorApiModelsEnrollmentEnrollmentManagementRequest | The request to create the management jobs, which includes the request Id of the new pfx and the Ids and management job properties of the cert stores to add the pfx to (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.EnrollmentApi.EnrollmentPFXDeployPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsEnrollmentEnrollmentManagementRequest(keyfactorWebKeyfactorApiModelsEnrollmentEnrollmentManagementRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentPFXDeployPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `EnrollmentPFXDeployPost`: KeyfactorWebKeyfactorApiModelsEnrollmentEnrollmentManagementResponse
+    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentPFXDeployPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiEnrollmentPFXDeployPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **keyfactorWebKeyfactorApiModelsEnrollmentEnrollmentManagementRequest** | [**KeyfactorWebKeyfactorApiModelsEnrollmentEnrollmentManagementRequest**](KeyfactorWebKeyfactorApiModelsEnrollmentEnrollmentManagementRequest.md) | The request to create the management jobs, which includes the request Id of the new pfx and the Ids and management job properties of the cert stores to add the pfx to | 
+
+### Return type
+
+[**KeyfactorWebKeyfactorApiModelsEnrollmentEnrollmentManagementResponse**](KeyfactorWebKeyfactorApiModelsEnrollmentEnrollmentManagementResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## EnrollmentPFXPost
+
+> CSSCMSDataModelModelsEnrollmentPFXEnrollmentResponse EnrollmentPFXPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsEnrollmentPFXEnrollmentRequest(cSSCMSDataModelModelsEnrollmentPFXEnrollmentRequest).Execute()
+
+Performs a PFX Enrollment based upon the provided request
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    cSSCMSDataModelModelsEnrollmentPFXEnrollmentRequest := *openapiclient.NewCSSCMSDataModelModelsEnrollmentPFXEnrollmentRequest() // CSSCMSDataModelModelsEnrollmentPFXEnrollmentRequest | The information needed to perform the PFX Enrollment (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.EnrollmentApi.EnrollmentPFXPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsEnrollmentPFXEnrollmentRequest(cSSCMSDataModelModelsEnrollmentPFXEnrollmentRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentPFXPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `EnrollmentPFXPost`: CSSCMSDataModelModelsEnrollmentPFXEnrollmentResponse
+    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentPFXPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiEnrollmentPFXPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **cSSCMSDataModelModelsEnrollmentPFXEnrollmentRequest** | [**CSSCMSDataModelModelsEnrollmentPFXEnrollmentRequest**](CSSCMSDataModelModelsEnrollmentPFXEnrollmentRequest.md) | The information needed to perform the PFX Enrollment | 
+
+### Return type
+
+[**CSSCMSDataModelModelsEnrollmentPFXEnrollmentResponse**](CSSCMSDataModelModelsEnrollmentPFXEnrollmentResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## EnrollmentPFXReplacePost
+
+> KeyfactorWebKeyfactorApiModelsEnrollmentEnrollmentManagementResponse EnrollmentPFXReplacePost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest(cSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest).Execute()
+
+Creates management jobs to install a newly enrolled pfx into the same certificate stores as the previous certificate
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    cSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest := *openapiclient.NewCSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest() // CSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest | The request to create the management jobs, which includes the request Id of the new pfx and the Id of the existing certificate (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.EnrollmentApi.EnrollmentPFXReplacePost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest(cSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentPFXReplacePost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `EnrollmentPFXReplacePost`: KeyfactorWebKeyfactorApiModelsEnrollmentEnrollmentManagementResponse
+    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentPFXReplacePost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiEnrollmentPFXReplacePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **cSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest** | [**CSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest**](CSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest.md) | The request to create the management jobs, which includes the request Id of the new pfx and the Id of the existing certificate | 
+
+### Return type
+
+[**KeyfactorWebKeyfactorApiModelsEnrollmentEnrollmentManagementResponse**](KeyfactorWebKeyfactorApiModelsEnrollmentEnrollmentManagementResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## EnrollmentRenewPost
+
+> CSSCMSDataModelModelsEnrollmentRenewalResponse EnrollmentRenewPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsEnrollmentRenewalRequest(cSSCMSDataModelModelsEnrollmentRenewalRequest).Execute()
 
 Performs a renewal based upon the passed in request
 
@@ -742,19 +666,19 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    request := *openapiclient.NewModelsEnrollmentRenewalRequest() // ModelsEnrollmentRenewalRequest | The information needed to perform the renewal
-    collectionId := int32(56) // int32 | The collection id for the given certificate (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    collectionId := int32(56) // int32 | The collection id for the given certificate (optional) (default to 0)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    cSSCMSDataModelModelsEnrollmentRenewalRequest := *openapiclient.NewCSSCMSDataModelModelsEnrollmentRenewalRequest() // CSSCMSDataModelModelsEnrollmentRenewalRequest | The information needed to perform the renewal (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.EnrollmentRenew(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.EnrollmentApi.EnrollmentRenewPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsEnrollmentRenewalRequest(cSSCMSDataModelModelsEnrollmentRenewalRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentRenew``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentRenewPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `EnrollmentRenew`: ModelsEnrollmentRenewalResponse
-    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentRenew`: %v\n", resp)
+    // response from `EnrollmentRenewPost`: CSSCMSDataModelModelsEnrollmentRenewalResponse
+    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentRenewPost`: %v\n", resp)
 }
 ```
 
@@ -764,19 +688,19 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiEnrollmentRenewRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiEnrollmentRenewPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **request** | [**ModelsEnrollmentRenewalRequest**](ModelsEnrollmentRenewalRequest.md) | The information needed to perform the renewal | 
- **collectionId** | **int32** | The collection id for the given certificate | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **collectionId** | **int32** | The collection id for the given certificate | [default to 0]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **cSSCMSDataModelModelsEnrollmentRenewalRequest** | [**CSSCMSDataModelModelsEnrollmentRenewalRequest**](CSSCMSDataModelModelsEnrollmentRenewalRequest.md) | The information needed to perform the renewal | 
 
 ### Return type
 
-[**ModelsEnrollmentRenewalResponse**](ModelsEnrollmentRenewalResponse.md)
+[**CSSCMSDataModelModelsEnrollmentRenewalResponse**](CSSCMSDataModelModelsEnrollmentRenewalResponse.md)
 
 ### Authorization
 
@@ -784,8 +708,80 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## EnrollmentSettingsIdGet
+
+> KeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentSettingsResponse EnrollmentSettingsIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Gets the template settings to use during enrollment. The response will be the resolved values for the settings.  If there is a template specific setting, the template specific setting will be used in the response.  If there is not a template specific setting, the global setting will be used in the response.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := int32(56) // int32 | 
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.EnrollmentApi.EnrollmentSettingsIdGet(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.EnrollmentSettingsIdGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `EnrollmentSettingsIdGet`: KeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentSettingsResponse
+    fmt.Fprintf(os.Stdout, "Response from `EnrollmentApi.EnrollmentSettingsIdGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiEnrollmentSettingsIdGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+
+### Return type
+
+[**KeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentSettingsResponse**](KeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentSettingsResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -1,26 +1,26 @@
 # \ExpirationAlertApi
 
-All URIs are relative to *https://keyfactor.example.com*
+All URIs are relative to */Keyfactor/API*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ExpirationAlertAddExpirationAlert**](ExpirationAlertApi.md#ExpirationAlertAddExpirationAlert) | **Post** /Alerts/Expiration | Add an expiration alert
-[**ExpirationAlertDeleteExpirationAlert**](ExpirationAlertApi.md#ExpirationAlertDeleteExpirationAlert) | **Delete** /Alerts/Expiration/{id} | Delete an expiration alert
-[**ExpirationAlertEditExpirationAlert**](ExpirationAlertApi.md#ExpirationAlertEditExpirationAlert) | **Put** /Alerts/Expiration | Edit an expiration alert
-[**ExpirationAlertEditSchedule**](ExpirationAlertApi.md#ExpirationAlertEditSchedule) | **Put** /Alerts/Expiration/Schedule | Edit schedule
-[**ExpirationAlertGetExpirationAlert**](ExpirationAlertApi.md#ExpirationAlertGetExpirationAlert) | **Get** /Alerts/Expiration/{id} | Get an expiration alert
-[**ExpirationAlertGetExpirationAlerts**](ExpirationAlertApi.md#ExpirationAlertGetExpirationAlerts) | **Get** /Alerts/Expiration | Gets all expiration alerts according to the provided filter and output parameters
-[**ExpirationAlertGetSchedule**](ExpirationAlertApi.md#ExpirationAlertGetSchedule) | **Get** /Alerts/Expiration/Schedule | Get the schedule for expiration alerts
-[**ExpirationAlertTestAllExpirationAlert**](ExpirationAlertApi.md#ExpirationAlertTestAllExpirationAlert) | **Post** /Alerts/Expiration/TestAll | Test All Expiration Alerts
-[**ExpirationAlertTestExpirationAlert**](ExpirationAlertApi.md#ExpirationAlertTestExpirationAlert) | **Post** /Alerts/Expiration/Test | Test an Expiration Alert
+[**AlertsExpirationGet**](ExpirationAlertApi.md#AlertsExpirationGet) | **Get** /Alerts/Expiration | Gets all expiration alerts according to the provided filter and output parameters
+[**AlertsExpirationIdDelete**](ExpirationAlertApi.md#AlertsExpirationIdDelete) | **Delete** /Alerts/Expiration/{id} | Delete an expiration alert
+[**AlertsExpirationIdGet**](ExpirationAlertApi.md#AlertsExpirationIdGet) | **Get** /Alerts/Expiration/{id} | Get an expiration alert
+[**AlertsExpirationPost**](ExpirationAlertApi.md#AlertsExpirationPost) | **Post** /Alerts/Expiration | Add an expiration alert
+[**AlertsExpirationPut**](ExpirationAlertApi.md#AlertsExpirationPut) | **Put** /Alerts/Expiration | Edit an expiration alert
+[**AlertsExpirationScheduleGet**](ExpirationAlertApi.md#AlertsExpirationScheduleGet) | **Get** /Alerts/Expiration/Schedule | Get the schedule for expiration alerts
+[**AlertsExpirationSchedulePut**](ExpirationAlertApi.md#AlertsExpirationSchedulePut) | **Put** /Alerts/Expiration/Schedule | Edit schedule
+[**AlertsExpirationTestAllPost**](ExpirationAlertApi.md#AlertsExpirationTestAllPost) | **Post** /Alerts/Expiration/TestAll | Test All Expiration Alerts
+[**AlertsExpirationTestPost**](ExpirationAlertApi.md#AlertsExpirationTestPost) | **Post** /Alerts/Expiration/Test | Test an Expiration Alert
 
 
 
-## ExpirationAlertAddExpirationAlert
+## AlertsExpirationGet
 
-> KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse ExpirationAlertAddExpirationAlert(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Req(req).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse AlertsExpirationGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
-Add an expiration alert
+Gets all expiration alerts according to the provided filter and output parameters
 
 ### Example
 
@@ -36,18 +36,22 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    req := *openapiclient.NewKeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest("DisplayName_example", "Subject_example", "Message_example", int32(123)) // KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest | Information for the new alert
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    queryString := "queryString_example" // string |  (optional)
+    pageReturned := int32(56) // int32 |  (optional)
+    returnLimit := int32(56) // int32 |  (optional)
+    sortField := "sortField_example" // string |  (optional)
+    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExpirationAlertApi.ExpirationAlertAddExpirationAlert(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Req(req).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ExpirationAlertApi.AlertsExpirationGet(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.ExpirationAlertAddExpirationAlert``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.AlertsExpirationGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ExpirationAlertAddExpirationAlert`: KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
-    fmt.Fprintf(os.Stdout, "Response from `ExpirationAlertApi.ExpirationAlertAddExpirationAlert`: %v\n", resp)
+    // response from `AlertsExpirationGet`: []KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
+    fmt.Fprintf(os.Stdout, "Response from `ExpirationAlertApi.AlertsExpirationGet`: %v\n", resp)
 }
 ```
 
@@ -57,18 +61,22 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiExpirationAlertAddExpirationAlertRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAlertsExpirationGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **req** | [**KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest**](KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest.md) | Information for the new alert | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **queryString** | **string** |  | 
+ **pageReturned** | **int32** |  | 
+ **returnLimit** | **int32** |  | 
+ **sortField** | **string** |  | 
+ **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse**](KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse.md)
+[**[]KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse**](KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse.md)
 
 ### Authorization
 
@@ -76,17 +84,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## ExpirationAlertDeleteExpirationAlert
+## AlertsExpirationIdDelete
 
-> ExpirationAlertDeleteExpirationAlert(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> AlertsExpirationIdDelete(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Delete an expiration alert
 
@@ -105,13 +113,13 @@ import (
 func main() {
     id := int32(56) // int32 | Id for the expiration alert
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExpirationAlertApi.ExpirationAlertDeleteExpirationAlert(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ExpirationAlertApi.AlertsExpirationIdDelete(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.ExpirationAlertDeleteExpirationAlert``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.AlertsExpirationIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -127,14 +135,14 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiExpirationAlertDeleteExpirationAlertRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAlertsExpirationIdDeleteRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
@@ -154,145 +162,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ExpirationAlertEditExpirationAlert
+## AlertsExpirationIdGet
 
-> KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse ExpirationAlertEditExpirationAlert(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Req(req).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Edit an expiration alert
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    req := *openapiclient.NewKeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest("DisplayName_example", "Subject_example", "Message_example", int32(123)) // KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest | Information for the expiration alert
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExpirationAlertApi.ExpirationAlertEditExpirationAlert(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Req(req).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.ExpirationAlertEditExpirationAlert``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ExpirationAlertEditExpirationAlert`: KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
-    fmt.Fprintf(os.Stdout, "Response from `ExpirationAlertApi.ExpirationAlertEditExpirationAlert`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiExpirationAlertEditExpirationAlertRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **req** | [**KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest**](KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest.md) | Information for the expiration alert | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
-[**KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse**](KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse.md)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ExpirationAlertEditSchedule
-
-> KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse ExpirationAlertEditSchedule(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).NewSchedule(newSchedule).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Edit schedule
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    newSchedule := *openapiclient.NewKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest() // KeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest | 
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExpirationAlertApi.ExpirationAlertEditSchedule(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).NewSchedule(newSchedule).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.ExpirationAlertEditSchedule``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ExpirationAlertEditSchedule`: KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
-    fmt.Fprintf(os.Stdout, "Response from `ExpirationAlertApi.ExpirationAlertEditSchedule`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiExpirationAlertEditScheduleRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **newSchedule** | [**KeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest**](KeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest.md) |  | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
-[**KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse**](KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse.md)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: application/json, text/json, application/xml, text/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ExpirationAlertGetExpirationAlert
-
-> KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse ExpirationAlertGetExpirationAlert(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse AlertsExpirationIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get an expiration alert
 
@@ -311,17 +183,17 @@ import (
 func main() {
     id := int32(56) // int32 | Id for the expiration alert to get
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExpirationAlertApi.ExpirationAlertGetExpirationAlert(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ExpirationAlertApi.AlertsExpirationIdGet(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.ExpirationAlertGetExpirationAlert``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.AlertsExpirationIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ExpirationAlertGetExpirationAlert`: KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
-    fmt.Fprintf(os.Stdout, "Response from `ExpirationAlertApi.ExpirationAlertGetExpirationAlert`: %v\n", resp)
+    // response from `AlertsExpirationIdGet`: KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
+    fmt.Fprintf(os.Stdout, "Response from `ExpirationAlertApi.AlertsExpirationIdGet`: %v\n", resp)
 }
 ```
 
@@ -335,18 +207,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiExpirationAlertGetExpirationAlertRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAlertsExpirationIdGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse**](KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse.md)
+[**KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse**](KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse.md)
 
 ### Authorization
 
@@ -355,18 +227,18 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## ExpirationAlertGetExpirationAlerts
+## AlertsExpirationPost
 
-> []KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse ExpirationAlertGetExpirationAlerts(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PagedQueryQueryString(pagedQueryQueryString).PagedQueryPageReturned(pagedQueryPageReturned).PagedQueryReturnLimit(pagedQueryReturnLimit).PagedQuerySortField(pagedQuerySortField).PagedQuerySortAscending(pagedQuerySortAscending).Execute()
+> KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse AlertsExpirationPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest(keyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest).Execute()
 
-Gets all expiration alerts according to the provided filter and output parameters
+Add an expiration alert
 
 ### Example
 
@@ -382,22 +254,18 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-    pagedQueryQueryString := "pagedQueryQueryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
-    pagedQueryPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    pagedQueryReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
-    pagedQuerySortField := "pagedQuerySortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    pagedQuerySortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    keyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest("DisplayName_example", "Subject_example", "Message_example", int32(123)) // KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest | Information for the new alert (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExpirationAlertApi.ExpirationAlertGetExpirationAlerts(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PagedQueryQueryString(pagedQueryQueryString).PagedQueryPageReturned(pagedQueryPageReturned).PagedQueryReturnLimit(pagedQueryReturnLimit).PagedQuerySortField(pagedQuerySortField).PagedQuerySortAscending(pagedQuerySortAscending).Execute()
+    resp, r, err := apiClient.ExpirationAlertApi.AlertsExpirationPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest(keyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.ExpirationAlertGetExpirationAlerts``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.AlertsExpirationPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ExpirationAlertGetExpirationAlerts`: []KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
-    fmt.Fprintf(os.Stdout, "Response from `ExpirationAlertApi.ExpirationAlertGetExpirationAlerts`: %v\n", resp)
+    // response from `AlertsExpirationPost`: KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
+    fmt.Fprintf(os.Stdout, "Response from `ExpirationAlertApi.AlertsExpirationPost`: %v\n", resp)
 }
 ```
 
@@ -407,22 +275,18 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiExpirationAlertGetExpirationAlertsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAlertsExpirationPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
- **pagedQueryQueryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
- **pagedQueryPageReturned** | **int32** | The current page within the result set to be returned | 
- **pagedQueryReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
- **pagedQuerySortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **pagedQuerySortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **keyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest** | [**KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest**](KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest.md) | Information for the new alert | 
 
 ### Return type
 
-[**[]KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse**](KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse.md)
+[**KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse**](KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse.md)
 
 ### Authorization
 
@@ -430,17 +294,85 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## ExpirationAlertGetSchedule
+## AlertsExpirationPut
 
-> KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse ExpirationAlertGetSchedule(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse AlertsExpirationPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest(keyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest).Execute()
+
+Edit an expiration alert
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    keyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest("DisplayName_example", "Subject_example", "Message_example", int32(123)) // KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest | Information for the expiration alert (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ExpirationAlertApi.AlertsExpirationPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest(keyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.AlertsExpirationPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `AlertsExpirationPut`: KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
+    fmt.Fprintf(os.Stdout, "Response from `ExpirationAlertApi.AlertsExpirationPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAlertsExpirationPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **keyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest** | [**KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest**](KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest.md) | Information for the expiration alert | 
+
+### Return type
+
+[**KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse**](KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AlertsExpirationScheduleGet
+
+> KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse AlertsExpirationScheduleGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get the schedule for expiration alerts
 
@@ -458,17 +390,17 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExpirationAlertApi.ExpirationAlertGetSchedule(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ExpirationAlertApi.AlertsExpirationScheduleGet(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.ExpirationAlertGetSchedule``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.AlertsExpirationScheduleGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ExpirationAlertGetSchedule`: KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
-    fmt.Fprintf(os.Stdout, "Response from `ExpirationAlertApi.ExpirationAlertGetSchedule`: %v\n", resp)
+    // response from `AlertsExpirationScheduleGet`: KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
+    fmt.Fprintf(os.Stdout, "Response from `ExpirationAlertApi.AlertsExpirationScheduleGet`: %v\n", resp)
 }
 ```
 
@@ -478,17 +410,17 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiExpirationAlertGetScheduleRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAlertsExpirationScheduleGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse**](KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse.md)
+[**KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse**](KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse.md)
 
 ### Authorization
 
@@ -497,16 +429,84 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## ExpirationAlertTestAllExpirationAlert
+## AlertsExpirationSchedulePut
 
-> KeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse ExpirationAlertTestAllExpirationAlert(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ExpirationAlertTestRequest(expirationAlertTestRequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse AlertsExpirationSchedulePut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest(keyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest).Execute()
+
+Edit schedule
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    keyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest() // KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ExpirationAlertApi.AlertsExpirationSchedulePut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest(keyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.AlertsExpirationSchedulePut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `AlertsExpirationSchedulePut`: KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
+    fmt.Fprintf(os.Stdout, "Response from `ExpirationAlertApi.AlertsExpirationSchedulePut`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAlertsExpirationSchedulePutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **keyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest** | [**KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest**](KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest.md) |  | 
+
+### Return type
+
+[**KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse**](KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AlertsExpirationTestAllPost
+
+> KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse AlertsExpirationTestAllPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestAllRequest(keyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestAllRequest).Execute()
 
 Test All Expiration Alerts
 
@@ -524,18 +524,18 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    expirationAlertTestRequest := *openapiclient.NewKeyfactorApiModelsAlertsExpirationExpirationAlertTestAllRequest() // KeyfactorApiModelsAlertsExpirationExpirationAlertTestAllRequest | Information about the expiration alert test
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    keyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestAllRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestAllRequest() // KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestAllRequest | Information about the expiration alert test (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExpirationAlertApi.ExpirationAlertTestAllExpirationAlert(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ExpirationAlertTestRequest(expirationAlertTestRequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ExpirationAlertApi.AlertsExpirationTestAllPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestAllRequest(keyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestAllRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.ExpirationAlertTestAllExpirationAlert``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.AlertsExpirationTestAllPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ExpirationAlertTestAllExpirationAlert`: KeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse
-    fmt.Fprintf(os.Stdout, "Response from `ExpirationAlertApi.ExpirationAlertTestAllExpirationAlert`: %v\n", resp)
+    // response from `AlertsExpirationTestAllPost`: KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse
+    fmt.Fprintf(os.Stdout, "Response from `ExpirationAlertApi.AlertsExpirationTestAllPost`: %v\n", resp)
 }
 ```
 
@@ -545,18 +545,18 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiExpirationAlertTestAllExpirationAlertRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAlertsExpirationTestAllPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **expirationAlertTestRequest** | [**KeyfactorApiModelsAlertsExpirationExpirationAlertTestAllRequest**](KeyfactorApiModelsAlertsExpirationExpirationAlertTestAllRequest.md) | Information about the expiration alert test | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **keyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestAllRequest** | [**KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestAllRequest**](KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestAllRequest.md) | Information about the expiration alert test | 
 
 ### Return type
 
-[**KeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse**](KeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse.md)
+[**KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse**](KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse.md)
 
 ### Authorization
 
@@ -564,17 +564,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## ExpirationAlertTestExpirationAlert
+## AlertsExpirationTestPost
 
-> KeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse ExpirationAlertTestExpirationAlert(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ExpirationAlertTestRequest(expirationAlertTestRequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse AlertsExpirationTestPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest(keyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest).Execute()
 
 Test an Expiration Alert
 
@@ -592,18 +592,18 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    expirationAlertTestRequest := *openapiclient.NewKeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest() // KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest | Information about the expiration alert test
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    keyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest() // KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest | Information about the expiration alert test (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExpirationAlertApi.ExpirationAlertTestExpirationAlert(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ExpirationAlertTestRequest(expirationAlertTestRequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ExpirationAlertApi.AlertsExpirationTestPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest(keyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.ExpirationAlertTestExpirationAlert``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.AlertsExpirationTestPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ExpirationAlertTestExpirationAlert`: KeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse
-    fmt.Fprintf(os.Stdout, "Response from `ExpirationAlertApi.ExpirationAlertTestExpirationAlert`: %v\n", resp)
+    // response from `AlertsExpirationTestPost`: KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse
+    fmt.Fprintf(os.Stdout, "Response from `ExpirationAlertApi.AlertsExpirationTestPost`: %v\n", resp)
 }
 ```
 
@@ -613,18 +613,18 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiExpirationAlertTestExpirationAlertRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAlertsExpirationTestPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **expirationAlertTestRequest** | [**KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest**](KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest.md) | Information about the expiration alert test | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **keyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest** | [**KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest**](KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest.md) | Information about the expiration alert test | 
 
 ### Return type
 
-[**KeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse**](KeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse.md)
+[**KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse**](KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse.md)
 
 ### Authorization
 
@@ -632,8 +632,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

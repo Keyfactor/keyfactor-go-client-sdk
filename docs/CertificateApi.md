@@ -1,36 +1,36 @@
 # \CertificateApi
 
-All URIs are relative to *https://keyfactor.example.com*
+All URIs are relative to */Keyfactor/API*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CertificateAnalyzeCert**](CertificateApi.md#CertificateAnalyzeCert) | **Post** /Certificates/Analyze | Returns the public information of the certificate
-[**CertificateCertificateHistory**](CertificateApi.md#CertificateCertificateHistory) | **Get** /Certificates/{id}/History | Gets the history of operations on a certificate
-[**CertificateCompareMetadata**](CertificateApi.md#CertificateCompareMetadata) | **Get** /Certificates/Metadata/Compare | Compares the metadata value provided with the metadata value associated with the specified certificate
-[**CertificateDeleteByQuery**](CertificateApi.md#CertificateDeleteByQuery) | **Delete** /Certificates/Query | Deletes multiple persisted certificate entities selected by a given query
-[**CertificateDeleteCertificate**](CertificateApi.md#CertificateDeleteCertificate) | **Delete** /Certificates/{id} | Deletes a persisted certificate by its unique id as well as the stored private key (if present) associated with it
-[**CertificateDeleteCertificates**](CertificateApi.md#CertificateDeleteCertificates) | **Delete** /Certificates | Deletes multiple persisted certificates by their unique ids
-[**CertificateDeletePrivateKeys0**](CertificateApi.md#CertificateDeletePrivateKeys0) | **Delete** /Certificates/PrivateKey | Deletes the persisted private keys of multiple certificates by the unique ids of the Certificates
-[**CertificateDeletePrivateKeys1**](CertificateApi.md#CertificateDeletePrivateKeys1) | **Delete** /Certificates/PrivateKey/{id} | Deletes the persisted private key of the certificate associated with the provided identifier
-[**CertificateDownloadCertificateAsync**](CertificateApi.md#CertificateDownloadCertificateAsync) | **Post** /Certificates/Download | Downloads the persisted certificate associated with the provided query
-[**CertificateGetCertificate**](CertificateApi.md#CertificateGetCertificate) | **Get** /Certificates/{id} | Returns a single certificate that matches the id
-[**CertificateGetCertificateLocations**](CertificateApi.md#CertificateGetCertificateLocations) | **Get** /Certificates/Locations/{id} | Returns a list of locations the certificate is in
-[**CertificateGetCertificateSecurity**](CertificateApi.md#CertificateGetCertificateSecurity) | **Get** /Certificates/{id}/Security | Gets the list of Security Identities and which permissions they have on the given certificate.
-[**CertificateIdentityAudit**](CertificateApi.md#CertificateIdentityAudit) | **Get** /Certificates/IdentityAudit/{id} | Audit identity permissions for certificate
-[**CertificatePostImportCertificate**](CertificateApi.md#CertificatePostImportCertificate) | **Post** /Certificates/Import | Imports the provided certificate into the Keyfactor instance, including any provided associated data
-[**CertificateQueryCertificates**](CertificateApi.md#CertificateQueryCertificates) | **Get** /Certificates | Returns all certificates according to the provided filter and output parameters
-[**CertificateRecoverCertificateAsync**](CertificateApi.md#CertificateRecoverCertificateAsync) | **Post** /Certificates/Recover | Recovers the persisted certificate associated with the provided query
-[**CertificateRevoke**](CertificateApi.md#CertificateRevoke) | **Post** /Certificates/Revoke | Revokes the certificates associated with the provided identifiers and associates the provided data with the revocation
-[**CertificateRevokeAll**](CertificateApi.md#CertificateRevokeAll) | **Post** /Certificates/RevokeAll | Revokes the certificates associated with the provided query and Collection Id and associates the provided data with the revocation
-[**CertificateUpdateAllMetadata**](CertificateApi.md#CertificateUpdateAllMetadata) | **Put** /Certificates/Metadata/All | Updates the metadata for certificates associated with the certificate identifiers or query provided
-[**CertificateUpdateMetadata**](CertificateApi.md#CertificateUpdateMetadata) | **Put** /Certificates/Metadata | Updates the metadata for the certificate associated with the identifier provided
-[**CertificateValidateCertificate**](CertificateApi.md#CertificateValidateCertificate) | **Get** /Certificates/{id}/Validate | Validates the certificate chain can be built.
+[**CertificatesAnalyzePost**](CertificateApi.md#CertificatesAnalyzePost) | **Post** /Certificates/Analyze | Returns the public information of the certificate
+[**CertificatesCSVGet**](CertificateApi.md#CertificatesCSVGet) | **Get** /Certificates/CSV | Returns a comma-delimited CSV file containing all certificates in the database
+[**CertificatesDelete**](CertificateApi.md#CertificatesDelete) | **Delete** /Certificates | Deletes multiple persisted certificates by their unique ids
+[**CertificatesDownloadPost**](CertificateApi.md#CertificatesDownloadPost) | **Post** /Certificates/Download | Downloads the persisted certificate associated with the provided query
+[**CertificatesGet**](CertificateApi.md#CertificatesGet) | **Get** /Certificates | Returns all certificates according to the provided filter and output parameters
+[**CertificatesIdDelete**](CertificateApi.md#CertificatesIdDelete) | **Delete** /Certificates/{id} | Deletes a persisted certificate by its unique id as well as the stored private key (if present) associated with it
+[**CertificatesIdGet**](CertificateApi.md#CertificatesIdGet) | **Get** /Certificates/{id} | Returns a single certificate that matches the id
+[**CertificatesIdHistoryGet**](CertificateApi.md#CertificatesIdHistoryGet) | **Get** /Certificates/{id}/History | Gets the history of operations on a certificate
+[**CertificatesIdSecurityGet**](CertificateApi.md#CertificatesIdSecurityGet) | **Get** /Certificates/{id}/Security | Gets the list of Security Identities and which permissions they have on the given certificate.
+[**CertificatesIdValidateGet**](CertificateApi.md#CertificatesIdValidateGet) | **Get** /Certificates/{id}/Validate | Validates the certificate chain can be built.
+[**CertificatesIdentityAuditIdGet**](CertificateApi.md#CertificatesIdentityAuditIdGet) | **Get** /Certificates/IdentityAudit/{id} | Audit identity permissions for certificate
+[**CertificatesImportPost**](CertificateApi.md#CertificatesImportPost) | **Post** /Certificates/Import | Imports the provided certificate into the Keyfactor instance, including any provided associated data
+[**CertificatesLocationsIdGet**](CertificateApi.md#CertificatesLocationsIdGet) | **Get** /Certificates/Locations/{id} | Returns a list of locations the certificate is in
+[**CertificatesMetadataAllPut**](CertificateApi.md#CertificatesMetadataAllPut) | **Put** /Certificates/Metadata/All | Updates the metadata for certificates associated with the certificate identifiers or query provided
+[**CertificatesMetadataCompareGet**](CertificateApi.md#CertificatesMetadataCompareGet) | **Get** /Certificates/Metadata/Compare | Compares the metadata value provided with the metadata value associated with the specified certificate
+[**CertificatesMetadataPut**](CertificateApi.md#CertificatesMetadataPut) | **Put** /Certificates/Metadata | Updates the metadata for the certificate associated with the identifier provided
+[**CertificatesPrivateKeyDelete**](CertificateApi.md#CertificatesPrivateKeyDelete) | **Delete** /Certificates/PrivateKey | Deletes the persisted private keys of multiple certificates by the unique ids of the Certificates
+[**CertificatesPrivateKeyIdDelete**](CertificateApi.md#CertificatesPrivateKeyIdDelete) | **Delete** /Certificates/PrivateKey/{id} | Deletes the persisted private key of the certificate associated with the provided identifier
+[**CertificatesQueryDelete**](CertificateApi.md#CertificatesQueryDelete) | **Delete** /Certificates/Query | Deletes multiple persisted certificate entities selected by a given query
+[**CertificatesRecoverPost**](CertificateApi.md#CertificatesRecoverPost) | **Post** /Certificates/Recover | Recovers the persisted certificate associated with the provided query
+[**CertificatesRevokePost**](CertificateApi.md#CertificatesRevokePost) | **Post** /Certificates/Revoke | Revokes the certificates associated with the provided identifiers and associates the provided data with the revocation
 
 
 
-## CertificateAnalyzeCert
+## CertificatesAnalyzePost
 
-> []ModelsCertificateDetails CertificateAnalyzeCert(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CSSCMSDataModelModelsCertificateDetails CertificatesAnalyzePost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsCertificatesAnalyzeCertificateRequest(keyfactorWebKeyfactorApiModelsCertificatesAnalyzeCertificateRequest).Execute()
 
 Returns the public information of the certificate
 
@@ -48,18 +48,18 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    request := *openapiclient.NewKeyfactorApiModelsCertificatesAnalyzeCertificateRequest() // KeyfactorApiModelsCertificatesAnalyzeCertificateRequest | The certificate to analyze
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    keyfactorWebKeyfactorApiModelsCertificatesAnalyzeCertificateRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsCertificatesAnalyzeCertificateRequest() // KeyfactorWebKeyfactorApiModelsCertificatesAnalyzeCertificateRequest | The certificate to analyze (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificateAnalyzeCert(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.CertificatesAnalyzePost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsCertificatesAnalyzeCertificateRequest(keyfactorWebKeyfactorApiModelsCertificatesAnalyzeCertificateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificateAnalyzeCert``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesAnalyzePost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificateAnalyzeCert`: []ModelsCertificateDetails
-    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificateAnalyzeCert`: %v\n", resp)
+    // response from `CertificatesAnalyzePost`: []CSSCMSDataModelModelsCertificateDetails
+    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesAnalyzePost`: %v\n", resp)
 }
 ```
 
@@ -69,18 +69,18 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCertificateAnalyzeCertRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCertificatesAnalyzePostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **request** | [**KeyfactorApiModelsCertificatesAnalyzeCertificateRequest**](KeyfactorApiModelsCertificatesAnalyzeCertificateRequest.md) | The certificate to analyze | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **keyfactorWebKeyfactorApiModelsCertificatesAnalyzeCertificateRequest** | [**KeyfactorWebKeyfactorApiModelsCertificatesAnalyzeCertificateRequest**](KeyfactorWebKeyfactorApiModelsCertificatesAnalyzeCertificateRequest.md) | The certificate to analyze | 
 
 ### Return type
 
-[**[]ModelsCertificateDetails**](ModelsCertificateDetails.md)
+[**[]CSSCMSDataModelModelsCertificateDetails**](CSSCMSDataModelModelsCertificateDetails.md)
 
 ### Authorization
 
@@ -88,19 +88,19 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## CertificateCertificateHistory
+## CertificatesCSVGet
 
-> []ModelsPKICertificateOperation CertificateCertificateHistory(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).QueryPageReturned(queryPageReturned).QueryReturnLimit(queryReturnLimit).QuerySortField(querySortField).QuerySortAscending(querySortAscending).Execute()
+> string CertificatesCSVGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).SortName(sortName).SortOrder(sortOrder).Query(query).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
-Gets the history of operations on a certificate
+Returns a comma-delimited CSV file containing all certificates in the database
 
 ### Example
 
@@ -115,54 +115,46 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | The Id of the certificate
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | The collection the certificate could be in.  Defaults to no collection. (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-    queryPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    queryReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
-    querySortField := "querySortField_example" // string | Field by which the results should be sorted (OperationStart, OperationEnd, UserName) (optional)
-    querySortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    sortName := "sortName_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
+    sortOrder := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder | Field sort direction [0=ascending, 1=descending] (optional)
+    query := "query_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
+    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificat (optional)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificateCertificateHistory(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).QueryPageReturned(queryPageReturned).QueryReturnLimit(queryReturnLimit).QuerySortField(querySortField).QuerySortAscending(querySortAscending).Execute()
+    resp, r, err := apiClient.CertificateApi.CertificatesCSVGet(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).SortName(sortName).SortOrder(sortOrder).Query(query).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificateCertificateHistory``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesCSVGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificateCertificateHistory`: []ModelsPKICertificateOperation
-    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificateCertificateHistory`: %v\n", resp)
+    // response from `CertificatesCSVGet`: string
+    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesCSVGet`: %v\n", resp)
 }
 ```
 
 ### Path Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | The Id of the certificate | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCertificateCertificateHistoryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCertificatesCSVGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | The collection the certificate could be in.  Defaults to no collection. | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
- **queryPageReturned** | **int32** | The current page within the result set to be returned | 
- **queryReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
- **querySortField** | **string** | Field by which the results should be sorted (OperationStart, OperationEnd, UserName) | 
- **querySortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **sortName** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
+ **sortOrder** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **query** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
+ **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificat | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]ModelsPKICertificateOperation**](ModelsPKICertificateOperation.md)
+**string**
 
 ### Authorization
 
@@ -171,232 +163,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## CertificateCompareMetadata
+## CertificatesDelete
 
-> bool CertificateCompareMetadata(ctx).CertificateId(certificateId).MetadataFieldName(metadataFieldName).Value(value).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Compares the metadata value provided with the metadata value associated with the specified certificate
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    certificateId := int32(56) // int32 | Certificate identifier
-    metadataFieldName := "metadataFieldName_example" // string | Metadata field being compared
-    value := "value_example" // string | Value to compare against
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificateCompareMetadata(context.Background()).CertificateId(certificateId).MetadataFieldName(metadataFieldName).Value(value).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificateCompareMetadata``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CertificateCompareMetadata`: bool
-    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificateCompareMetadata`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCertificateCompareMetadataRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **certificateId** | **int32** | Certificate identifier | 
- **metadataFieldName** | **string** | Metadata field being compared | 
- **value** | **string** | Value to compare against | 
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
-**bool**
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## CertificateDeleteByQuery
-
-> CertificateDeleteByQuery(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Sq(sq).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Deletes multiple persisted certificate entities selected by a given query
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    sq := "sq_example" // string | Query by which certificates should be filtered for deletion
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificateDeleteByQuery(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Sq(sq).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificateDeleteByQuery``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCertificateDeleteByQueryRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **sq** | **string** | Query by which certificates should be filtered for deletion | 
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## CertificateDeleteCertificate
-
-> CertificateDeleteCertificate(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Deletes a persisted certificate by its unique id as well as the stored private key (if present) associated with it
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := int32(56) // int32 | Keyfactor identifier of the certificate record
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificateDeleteCertificate(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificateDeleteCertificate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Keyfactor identifier of the certificate record | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCertificateDeleteCertificateRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## CertificateDeleteCertificates
-
-> CertificateDeleteCertificates(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Ids(ids).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CertificatesDelete(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
 
 Deletes multiple persisted certificates by their unique ids
 
@@ -416,15 +192,15 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    ids := []int32{int32(123)} // []int32 | The array of ids for certificate that are to be deleted
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    requestBody := []int32{int32(123)} // []int32 | The array of ids for certificate that are to be deleted (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificateDeleteCertificates(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Ids(ids).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.CertificatesDelete(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificateDeleteCertificates``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -436,15 +212,15 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCertificateDeleteCertificatesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCertificatesDeleteRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **ids** | **[]int32** | The array of ids for certificate that are to be deleted | 
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | [default to 0]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **requestBody** | **[]int32** | The array of ids for certificate that are to be deleted | 
 
 ### Return type
 
@@ -456,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -464,149 +240,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CertificateDeletePrivateKeys0
+## CertificatesDownloadPost
 
-> CertificateDeletePrivateKeys0(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Ids(ids).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Deletes the persisted private keys of multiple certificates by the unique ids of the Certificates
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    ids := []int32{int32(123)} // []int32 | Keyfactor identifiers of the cetficiates for which the associated private keys should be deleted
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificateDeletePrivateKeys0(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Ids(ids).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificateDeletePrivateKeys0``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCertificateDeletePrivateKeys0Request struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **ids** | **[]int32** | Keyfactor identifiers of the cetficiates for which the associated private keys should be deleted | 
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## CertificateDeletePrivateKeys1
-
-> CertificateDeletePrivateKeys1(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Deletes the persisted private key of the certificate associated with the provided identifier
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := int32(56) // int32 | Keyfactor identifier of the certificate for which the associated private key should be deleted
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificateDeletePrivateKeys1(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificateDeletePrivateKeys1``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Keyfactor identifier of the certificate for which the associated private key should be deleted | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCertificateDeletePrivateKeys1Request struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## CertificateDownloadCertificateAsync
-
-> ModelsCertificateDownloadResponse CertificateDownloadCertificateAsync(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Rq(rq).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsCertificateDownloadResponse CertificatesDownloadPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsCertificatesCertificateDownloadRequest(keyfactorWebKeyfactorApiModelsCertificatesCertificateDownloadRequest).Execute()
 
 Downloads the persisted certificate associated with the provided query
 
@@ -626,19 +262,19 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    rq := *openapiclient.NewModelsCertificateDownloadRequest() // ModelsCertificateDownloadRequest | Query to filter the certificate to be recovered
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    keyfactorWebKeyfactorApiModelsCertificatesCertificateDownloadRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsCertificatesCertificateDownloadRequest() // KeyfactorWebKeyfactorApiModelsCertificatesCertificateDownloadRequest | Query to filter the certificate to be recovered (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificateDownloadCertificateAsync(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Rq(rq).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.CertificatesDownloadPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsCertificatesCertificateDownloadRequest(keyfactorWebKeyfactorApiModelsCertificatesCertificateDownloadRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificateDownloadCertificateAsync``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesDownloadPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificateDownloadCertificateAsync`: ModelsCertificateDownloadResponse
-    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificateDownloadCertificateAsync`: %v\n", resp)
+    // response from `CertificatesDownloadPost`: CSSCMSDataModelModelsCertificateDownloadResponse
+    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesDownloadPost`: %v\n", resp)
 }
 ```
 
@@ -648,19 +284,19 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCertificateDownloadCertificateAsyncRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCertificatesDownloadPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **rq** | [**ModelsCertificateDownloadRequest**](ModelsCertificateDownloadRequest.md) | Query to filter the certificate to be recovered | 
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | [default to 0]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **keyfactorWebKeyfactorApiModelsCertificatesCertificateDownloadRequest** | [**KeyfactorWebKeyfactorApiModelsCertificatesCertificateDownloadRequest**](KeyfactorWebKeyfactorApiModelsCertificatesCertificateDownloadRequest.md) | Query to filter the certificate to be recovered | 
 
 ### Return type
 
-[**ModelsCertificateDownloadResponse**](ModelsCertificateDownloadResponse.md)
+[**CSSCMSDataModelModelsCertificateDownloadResponse**](CSSCMSDataModelModelsCertificateDownloadResponse.md)
 
 ### Authorization
 
@@ -668,17 +304,179 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## CertificateGetCertificate
+## CertificatesGet
 
-> ModelsCertificateRetrievalResponse CertificateGetCertificate(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).CollectionId(collectionId).Verbose(verbose).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CSSCMSDataModelModelsCertificateRetrievalResponse CertificatesGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludeRevoked(includeRevoked).IncludeExpired(includeExpired).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).CollectionId(collectionId).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).IncludeHasPrivateKey(includeHasPrivateKey).Verbose(verbose).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Returns all certificates according to the provided filter and output parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    includeRevoked := true // bool | Select 'true' to include revoked certificates in the results (optional)
+    includeExpired := true // bool | Select 'true' to include expired certificates in the results (optional)
+    queryString := "queryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
+    pageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
+    returnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
+    sortField := "sortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
+    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder | Field sort direction [0=ascending, 1=descending] (optional)
+    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
+    includeLocations := true // bool | Include locations data for the certificates to be returned (optional) (default to false)
+    includeMetadata := true // bool | Include metadata for the certificates to be returned (optional) (default to false)
+    includeHasPrivateKey := true // bool | Include whether the certificates to be returned have private keys stored in the Keyfactor database (optional) (default to false)
+    verbose := int32(56) // int32 |  (optional) (default to 0)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CertificateApi.CertificatesGet(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludeRevoked(includeRevoked).IncludeExpired(includeExpired).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).CollectionId(collectionId).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).IncludeHasPrivateKey(includeHasPrivateKey).Verbose(verbose).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CertificatesGet`: []CSSCMSDataModelModelsCertificateRetrievalResponse
+    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCertificatesGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **includeRevoked** | **bool** | Select &#39;true&#39; to include revoked certificates in the results | 
+ **includeExpired** | **bool** | Select &#39;true&#39; to include expired certificates in the results | 
+ **queryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
+ **pageReturned** | **int32** | The current page within the result set to be returned | 
+ **returnLimit** | **int32** | Maximum number of records to be returned in a single call | 
+ **sortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
+ **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | [default to 0]
+ **includeLocations** | **bool** | Include locations data for the certificates to be returned | [default to false]
+ **includeMetadata** | **bool** | Include metadata for the certificates to be returned | [default to false]
+ **includeHasPrivateKey** | **bool** | Include whether the certificates to be returned have private keys stored in the Keyfactor database | [default to false]
+ **verbose** | **int32** |  | [default to 0]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+
+### Return type
+
+[**[]CSSCMSDataModelModelsCertificateRetrievalResponse**](CSSCMSDataModelModelsCertificateRetrievalResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CertificatesIdDelete
+
+> CertificatesIdDelete(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Deletes a persisted certificate by its unique id as well as the stored private key (if present) associated with it
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := int32(56) // int32 | Keyfactor identifier of the certificate record
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CertificateApi.CertificatesIdDelete(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesIdDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | Keyfactor identifier of the certificate record | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCertificatesIdDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | [default to 0]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CertificatesIdGet
+
+> CSSCMSDataModelModelsCertificateRetrievalResponse CertificatesIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).CollectionId(collectionId).Verbose(verbose).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a single certificate that matches the id
 
@@ -697,21 +495,21 @@ import (
 func main() {
     id := int32(56) // int32 | Keyfactor certificate identifier
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    includeLocations := true // bool | Include locations data for the certificate to be returned (optional)
-    includeMetadata := true // bool | Include metadata for the certificate to be returned (optional)
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
-    verbose := int32(56) // int32 |  (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    includeLocations := true // bool | Include locations data for the certificate to be returned (optional) (default to false)
+    includeMetadata := true // bool | Include metadata for the certificate to be returned (optional) (default to false)
+    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
+    verbose := int32(56) // int32 |  (optional) (default to 0)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificateGetCertificate(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).CollectionId(collectionId).Verbose(verbose).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.CertificatesIdGet(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).CollectionId(collectionId).Verbose(verbose).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificateGetCertificate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificateGetCertificate`: ModelsCertificateRetrievalResponse
-    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificateGetCertificate`: %v\n", resp)
+    // response from `CertificatesIdGet`: CSSCMSDataModelModelsCertificateRetrievalResponse
+    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesIdGet`: %v\n", resp)
 }
 ```
 
@@ -725,22 +523,22 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCertificateGetCertificateRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCertificatesIdGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **includeLocations** | **bool** | Include locations data for the certificate to be returned | 
- **includeMetadata** | **bool** | Include metadata for the certificate to be returned | 
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
- **verbose** | **int32** |  | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **includeLocations** | **bool** | Include locations data for the certificate to be returned | [default to false]
+ **includeMetadata** | **bool** | Include metadata for the certificate to be returned | [default to false]
+ **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | [default to 0]
+ **verbose** | **int32** |  | [default to 0]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**ModelsCertificateRetrievalResponse**](ModelsCertificateRetrievalResponse.md)
+[**CSSCMSDataModelModelsCertificateRetrievalResponse**](CSSCMSDataModelModelsCertificateRetrievalResponse.md)
 
 ### Authorization
 
@@ -749,18 +547,18 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## CertificateGetCertificateLocations
+## CertificatesIdHistoryGet
 
-> KeyfactorApiModelsCertificatesCertificateLocationsResponse CertificateGetCertificateLocations(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []map[string]interface{} CertificatesIdHistoryGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
-Returns a list of locations the certificate is in
+Gets the history of operations on a certificate
 
 ### Example
 
@@ -775,20 +573,24 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Keyfactor certificate identifier
+    id := int32(56) // int32 | The Id of the certificate
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    pageReturned := int32(56) // int32 |  (optional)
+    returnLimit := int32(56) // int32 |  (optional)
+    sortField := "sortField_example" // string |  (optional)
+    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    collectionId := int32(56) // int32 | The collection the certificate could be in.  Defaults to no collection. (optional) (default to 0)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificateGetCertificateLocations(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.CertificatesIdHistoryGet(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificateGetCertificateLocations``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesIdHistoryGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificateGetCertificateLocations`: KeyfactorApiModelsCertificatesCertificateLocationsResponse
-    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificateGetCertificateLocations`: %v\n", resp)
+    // response from `CertificatesIdHistoryGet`: []map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesIdHistoryGet`: %v\n", resp)
 }
 ```
 
@@ -798,23 +600,27 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Keyfactor certificate identifier | 
+**id** | **int32** | The Id of the certificate | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCertificateGetCertificateLocationsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCertificatesIdHistoryGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **pageReturned** | **int32** |  | 
+ **returnLimit** | **int32** |  | 
+ **sortField** | **string** |  | 
+ **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **collectionId** | **int32** | The collection the certificate could be in.  Defaults to no collection. | [default to 0]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**KeyfactorApiModelsCertificatesCertificateLocationsResponse**](KeyfactorApiModelsCertificatesCertificateLocationsResponse.md)
+**[]map[string]interface{}**
 
 ### Authorization
 
@@ -823,16 +629,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## CertificateGetCertificateSecurity
+## CertificatesIdSecurityGet
 
-> ModelsSecurityCertificatePermissions CertificateGetCertificateSecurity(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsSecurityCertificatePermissions CertificatesIdSecurityGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets the list of Security Identities and which permissions they have on the given certificate.
 
@@ -851,18 +657,18 @@ import (
 func main() {
     id := int32(56) // int32 | The Id of the certificate permissions are being checked on
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | The Id of the collection the certificate belongs in. Defaults to no collection (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    collectionId := int32(56) // int32 | The Id of the collection the certificate belongs in. Defaults to no collection (optional) (default to 0)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificateGetCertificateSecurity(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.CertificatesIdSecurityGet(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificateGetCertificateSecurity``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesIdSecurityGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificateGetCertificateSecurity`: ModelsSecurityCertificatePermissions
-    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificateGetCertificateSecurity`: %v\n", resp)
+    // response from `CertificatesIdSecurityGet`: CSSCMSDataModelModelsSecurityCertificatePermissions
+    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesIdSecurityGet`: %v\n", resp)
 }
 ```
 
@@ -876,19 +682,19 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCertificateGetCertificateSecurityRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCertificatesIdSecurityGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | The Id of the collection the certificate belongs in. Defaults to no collection | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **collectionId** | **int32** | The Id of the collection the certificate belongs in. Defaults to no collection | [default to 0]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**ModelsSecurityCertificatePermissions**](ModelsSecurityCertificatePermissions.md)
+[**CSSCMSDataModelModelsSecurityCertificatePermissions**](CSSCMSDataModelModelsSecurityCertificatePermissions.md)
 
 ### Authorization
 
@@ -897,16 +703,90 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## CertificateIdentityAudit
+## CertificatesIdValidateGet
 
-> []KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse CertificateIdentityAudit(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsCertificateValidationResponse CertificatesIdValidateGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Validates the certificate chain can be built.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := int32(56) // int32 | The Id of the certificate being checked
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    collectionId := int32(56) // int32 | An optional parameter for the collectin Id the certificate is in.  Defaults to no collection (optional) (default to 0)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CertificateApi.CertificatesIdValidateGet(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesIdValidateGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CertificatesIdValidateGet`: CSSCMSDataModelModelsCertificateValidationResponse
+    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesIdValidateGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | The Id of the certificate being checked | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCertificatesIdValidateGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **collectionId** | **int32** | An optional parameter for the collectin Id the certificate is in.  Defaults to no collection | [default to 0]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+
+### Return type
+
+[**CSSCMSDataModelModelsCertificateValidationResponse**](CSSCMSDataModelModelsCertificateValidationResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CertificatesIdentityAuditIdGet
+
+> []KeyfactorWebKeyfactorApiModelsCertificatesCertificateIdentityAuditResponse CertificatesIdentityAuditIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Audit identity permissions for certificate
 
@@ -925,18 +805,18 @@ import (
 func main() {
     id := int32(56) // int32 | The Id of the certificate being checked
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | An optional parameter for the collectin Id the certificate is in.  Defaults to no collection (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    collectionId := int32(56) // int32 | An optional parameter for the collectin Id the certificate is in.  Defaults to no collection (optional) (default to 0)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificateIdentityAudit(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.CertificatesIdentityAuditIdGet(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificateIdentityAudit``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesIdentityAuditIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificateIdentityAudit`: []KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse
-    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificateIdentityAudit`: %v\n", resp)
+    // response from `CertificatesIdentityAuditIdGet`: []KeyfactorWebKeyfactorApiModelsCertificatesCertificateIdentityAuditResponse
+    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesIdentityAuditIdGet`: %v\n", resp)
 }
 ```
 
@@ -950,19 +830,19 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCertificateIdentityAuditRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCertificatesIdentityAuditIdGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | An optional parameter for the collectin Id the certificate is in.  Defaults to no collection | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **collectionId** | **int32** | An optional parameter for the collectin Id the certificate is in.  Defaults to no collection | [default to 0]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse**](KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse.md)
+[**[]KeyfactorWebKeyfactorApiModelsCertificatesCertificateIdentityAuditResponse**](KeyfactorWebKeyfactorApiModelsCertificatesCertificateIdentityAuditResponse.md)
 
 ### Authorization
 
@@ -971,16 +851,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## CertificatePostImportCertificate
+## CertificatesImportPost
 
-> ModelsCertificateImportResponseModel CertificatePostImportCertificate(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Req(req).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsCertificateImportResponseModel CertificatesImportPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateImportRequestModel(cSSCMSDataModelModelsCertificateImportRequestModel).Execute()
 
 Imports the provided certificate into the Keyfactor instance, including any provided associated data
 
@@ -998,18 +878,18 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    req := *openapiclient.NewModelsCertificateImportRequestModel("Certificate_example") // ModelsCertificateImportRequestModel | Request containing the base 64 encoded string and related certificate information, such as certificate stores, metadata, and password
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    cSSCMSDataModelModelsCertificateImportRequestModel := *openapiclient.NewCSSCMSDataModelModelsCertificateImportRequestModel("Certificate_example") // CSSCMSDataModelModelsCertificateImportRequestModel | Request containing the base 64 encoded string and related certificate information, such as certificate stores, metadata, and password (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificatePostImportCertificate(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Req(req).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.CertificatesImportPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateImportRequestModel(cSSCMSDataModelModelsCertificateImportRequestModel).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatePostImportCertificate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesImportPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificatePostImportCertificate`: ModelsCertificateImportResponseModel
-    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatePostImportCertificate`: %v\n", resp)
+    // response from `CertificatesImportPost`: CSSCMSDataModelModelsCertificateImportResponseModel
+    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesImportPost`: %v\n", resp)
 }
 ```
 
@@ -1019,18 +899,18 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCertificatePostImportCertificateRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCertificatesImportPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **req** | [**ModelsCertificateImportRequestModel**](ModelsCertificateImportRequestModel.md) | Request containing the base 64 encoded string and related certificate information, such as certificate stores, metadata, and password | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **cSSCMSDataModelModelsCertificateImportRequestModel** | [**CSSCMSDataModelModelsCertificateImportRequestModel**](CSSCMSDataModelModelsCertificateImportRequestModel.md) | Request containing the base 64 encoded string and related certificate information, such as certificate stores, metadata, and password | 
 
 ### Return type
 
-[**ModelsCertificateImportResponseModel**](ModelsCertificateImportResponseModel.md)
+[**CSSCMSDataModelModelsCertificateImportResponseModel**](CSSCMSDataModelModelsCertificateImportResponseModel.md)
 
 ### Authorization
 
@@ -1038,19 +918,93 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## CertificateQueryCertificates
+## CertificatesLocationsIdGet
 
-> []ModelsCertificateRetrievalResponse CertificateQueryCertificates(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).IncludeHasPrivateKey(includeHasPrivateKey).Verbose(verbose).XKeyfactorApiVersion(xKeyfactorApiVersion).PqQueryString(pqQueryString).PqPageReturned(pqPageReturned).PqReturnLimit(pqReturnLimit).PqSortField(pqSortField).PqSortAscending(pqSortAscending).PqIncludeRevoked(pqIncludeRevoked).PqIncludeExpired(pqIncludeExpired).Execute()
+> KeyfactorWebKeyfactorApiModelsCertificatesCertificateLocationsResponse CertificatesLocationsIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
-Returns all certificates according to the provided filter and output parameters
+Returns a list of locations the certificate is in
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := int32(56) // int32 | Keyfactor certificate identifier
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CertificateApi.CertificatesLocationsIdGet(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesLocationsIdGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CertificatesLocationsIdGet`: KeyfactorWebKeyfactorApiModelsCertificatesCertificateLocationsResponse
+    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesLocationsIdGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | Keyfactor certificate identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCertificatesLocationsIdGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | [default to 0]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+
+### Return type
+
+[**KeyfactorWebKeyfactorApiModelsCertificatesCertificateLocationsResponse**](KeyfactorWebKeyfactorApiModelsCertificatesCertificateLocationsResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CertificatesMetadataAllPut
+
+> CertificatesMetadataAllPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMetadataAllUpdateRequest(cSSCMSDataModelModelsMetadataAllUpdateRequest).Execute()
+
+Updates the metadata for certificates associated with the certificate identifiers or query provided
 
 ### Example
 
@@ -1066,29 +1020,17 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
-    includeLocations := true // bool | Include locations data for the certificates to be returned (optional)
-    includeMetadata := true // bool | Include metadata for the certificates to be returned (optional)
-    includeHasPrivateKey := true // bool | Include whether the certificates to be returned have private keys stored in the Keyfactor database (optional)
-    verbose := int32(56) // int32 |  (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-    pqQueryString := "pqQueryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
-    pqPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    pqReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
-    pqSortField := "pqSortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    pqSortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
-    pqIncludeRevoked := true // bool | Select 'true' to include revoked certificates in the results (optional)
-    pqIncludeExpired := true // bool | Select 'true' to include expired certificates in the results (optional)
+    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    cSSCMSDataModelModelsMetadataAllUpdateRequest := *openapiclient.NewCSSCMSDataModelModelsMetadataAllUpdateRequest([]openapiclient.CSSCMSDataModelModelsMetadataSingleUpdateRequest{*openapiclient.NewCSSCMSDataModelModelsMetadataSingleUpdateRequest()}) // CSSCMSDataModelModelsMetadataAllUpdateRequest | Contains the Keyfactor certificate identifier and the metadata to be updated (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificateQueryCertificates(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).IncludeHasPrivateKey(includeHasPrivateKey).Verbose(verbose).XKeyfactorApiVersion(xKeyfactorApiVersion).PqQueryString(pqQueryString).PqPageReturned(pqPageReturned).PqReturnLimit(pqReturnLimit).PqSortField(pqSortField).PqSortAscending(pqSortAscending).PqIncludeRevoked(pqIncludeRevoked).PqIncludeExpired(pqIncludeExpired).Execute()
+    resp, r, err := apiClient.CertificateApi.CertificatesMetadataAllPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMetadataAllUpdateRequest(cSSCMSDataModelModelsMetadataAllUpdateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificateQueryCertificates``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesMetadataAllPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificateQueryCertificates`: []ModelsCertificateRetrievalResponse
-    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificateQueryCertificates`: %v\n", resp)
 }
 ```
 
@@ -1098,29 +1040,93 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCertificateQueryCertificatesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCertificatesMetadataAllPutRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
- **includeLocations** | **bool** | Include locations data for the certificates to be returned | 
- **includeMetadata** | **bool** | Include metadata for the certificates to be returned | 
- **includeHasPrivateKey** | **bool** | Include whether the certificates to be returned have private keys stored in the Keyfactor database | 
- **verbose** | **int32** |  | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
- **pqQueryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
- **pqPageReturned** | **int32** | The current page within the result set to be returned | 
- **pqReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
- **pqSortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **pqSortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
- **pqIncludeRevoked** | **bool** | Select &#39;true&#39; to include revoked certificates in the results | 
- **pqIncludeExpired** | **bool** | Select &#39;true&#39; to include expired certificates in the results | 
+ **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | [default to 0]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **cSSCMSDataModelModelsMetadataAllUpdateRequest** | [**CSSCMSDataModelModelsMetadataAllUpdateRequest**](CSSCMSDataModelModelsMetadataAllUpdateRequest.md) | Contains the Keyfactor certificate identifier and the metadata to be updated | 
 
 ### Return type
 
-[**[]ModelsCertificateRetrievalResponse**](ModelsCertificateRetrievalResponse.md)
+ (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CertificatesMetadataCompareGet
+
+> bool CertificatesMetadataCompareGet(ctx).CertificateId(certificateId).MetadataFieldName(metadataFieldName).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Value(value).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Compares the metadata value provided with the metadata value associated with the specified certificate
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    certificateId := int32(56) // int32 | Certificate identifier
+    metadataFieldName := "metadataFieldName_example" // string | Metadata field being compared
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    value := "value_example" // string | Value to compare against (optional)
+    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CertificateApi.CertificatesMetadataCompareGet(context.Background()).CertificateId(certificateId).MetadataFieldName(metadataFieldName).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Value(value).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesMetadataCompareGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CertificatesMetadataCompareGet`: bool
+    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesMetadataCompareGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCertificatesMetadataCompareGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **certificateId** | **int32** | Certificate identifier | 
+ **metadataFieldName** | **string** | Metadata field being compared | 
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **value** | **string** | Value to compare against | 
+ **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | [default to 0]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+
+### Return type
+
+**bool**
 
 ### Authorization
 
@@ -1129,16 +1135,294 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## CertificateRecoverCertificateAsync
+## CertificatesMetadataPut
 
-> ModelsRecoveryResponse CertificateRecoverCertificateAsync(ctx).XCertificateformat(xCertificateformat).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Rq(rq).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CertificatesMetadataPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMetadataUpdateRequest(cSSCMSDataModelModelsMetadataUpdateRequest).Execute()
+
+Updates the metadata for the certificate associated with the identifier provided
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    cSSCMSDataModelModelsMetadataUpdateRequest := *openapiclient.NewCSSCMSDataModelModelsMetadataUpdateRequest(map[string]string{"key": "Inner_example"}) // CSSCMSDataModelModelsMetadataUpdateRequest | Contains the Keyfactor certificate identifier and the metadata to be updated (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CertificateApi.CertificatesMetadataPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMetadataUpdateRequest(cSSCMSDataModelModelsMetadataUpdateRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesMetadataPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCertificatesMetadataPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | [default to 0]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **cSSCMSDataModelModelsMetadataUpdateRequest** | [**CSSCMSDataModelModelsMetadataUpdateRequest**](CSSCMSDataModelModelsMetadataUpdateRequest.md) | Contains the Keyfactor certificate identifier and the metadata to be updated | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CertificatesPrivateKeyDelete
+
+> CertificatesPrivateKeyDelete(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
+
+Deletes the persisted private keys of multiple certificates by the unique ids of the Certificates
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    requestBody := []int32{int32(123)} // []int32 | Keyfactor identifiers of the cetficiates for which the associated private keys should be deleted (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CertificateApi.CertificatesPrivateKeyDelete(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesPrivateKeyDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCertificatesPrivateKeyDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | [default to 0]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **requestBody** | **[]int32** | Keyfactor identifiers of the cetficiates for which the associated private keys should be deleted | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CertificatesPrivateKeyIdDelete
+
+> CertificatesPrivateKeyIdDelete(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Deletes the persisted private key of the certificate associated with the provided identifier
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := int32(56) // int32 | Keyfactor identifier of the certificate for which the associated private key should be deleted
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CertificateApi.CertificatesPrivateKeyIdDelete(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesPrivateKeyIdDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | Keyfactor identifier of the certificate for which the associated private key should be deleted | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCertificatesPrivateKeyIdDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | [default to 0]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CertificatesQueryDelete
+
+> CertificatesQueryDelete(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Body(body).Execute()
+
+Deletes multiple persisted certificate entities selected by a given query
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    body := "body_example" // string | Query by which certificates should be filtered for deletion (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CertificateApi.CertificatesQueryDelete(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesQueryDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCertificatesQueryDeleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | [default to 0]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **body** | **string** | Query by which certificates should be filtered for deletion | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CertificatesRecoverPost
+
+> CSSCMSDataModelModelsRecoveryResponse CertificatesRecoverPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsCertificatesCertificateRecoveryRequest(keyfactorWebKeyfactorApiModelsCertificatesCertificateRecoveryRequest).Execute()
 
 Recovers the persisted certificate associated with the provided query
 
@@ -1157,21 +1441,20 @@ import (
 )
 
 func main() {
-    xCertificateformat := "xCertificateformat_example" // string | Desired format [PFX, PEM] (default to "PEM")
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    rq := *openapiclient.NewModelsCertificateRecoveryRequest("Password_example") // ModelsCertificateRecoveryRequest | Query to filter the certificate to be recovered
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    keyfactorWebKeyfactorApiModelsCertificatesCertificateRecoveryRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsCertificatesCertificateRecoveryRequest("Password_example") // KeyfactorWebKeyfactorApiModelsCertificatesCertificateRecoveryRequest | Query to filter the certificate to be recovered (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificateRecoverCertificateAsync(context.Background()).XCertificateformat(xCertificateformat).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Rq(rq).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.CertificatesRecoverPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsCertificatesCertificateRecoveryRequest(keyfactorWebKeyfactorApiModelsCertificatesCertificateRecoveryRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificateRecoverCertificateAsync``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesRecoverPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificateRecoverCertificateAsync`: ModelsRecoveryResponse
-    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificateRecoverCertificateAsync`: %v\n", resp)
+    // response from `CertificatesRecoverPost`: CSSCMSDataModelModelsRecoveryResponse
+    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesRecoverPost`: %v\n", resp)
 }
 ```
 
@@ -1181,20 +1464,19 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCertificateRecoverCertificateAsyncRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCertificatesRecoverPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xCertificateformat** | **string** | Desired format [PFX, PEM] | [default to &quot;PEM&quot;]
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **rq** | [**ModelsCertificateRecoveryRequest**](ModelsCertificateRecoveryRequest.md) | Query to filter the certificate to be recovered | 
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | [default to 0]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **keyfactorWebKeyfactorApiModelsCertificatesCertificateRecoveryRequest** | [**KeyfactorWebKeyfactorApiModelsCertificatesCertificateRecoveryRequest**](KeyfactorWebKeyfactorApiModelsCertificatesCertificateRecoveryRequest.md) | Query to filter the certificate to be recovered | 
 
 ### Return type
 
-[**ModelsRecoveryResponse**](ModelsRecoveryResponse.md)
+[**CSSCMSDataModelModelsRecoveryResponse**](CSSCMSDataModelModelsRecoveryResponse.md)
 
 ### Authorization
 
@@ -1202,17 +1484,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## CertificateRevoke
+## CertificatesRevokePost
 
-> ModelsRevocationRevocationResponse CertificateRevoke(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsRevocationRevocationResponse CertificatesRevokePost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsRevokeCertificateRequest(cSSCMSDataModelModelsRevokeCertificateRequest).Execute()
 
 Revokes the certificates associated with the provided identifiers and associates the provided data with the revocation
 
@@ -1232,18 +1514,18 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    request := *openapiclient.NewModelsRevokeCertificateRequest() // ModelsRevokeCertificateRequest | Contains the Keyfactor certificate identifiers and revocation data
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    cSSCMSDataModelModelsRevokeCertificateRequest := *openapiclient.NewCSSCMSDataModelModelsRevokeCertificateRequest() // CSSCMSDataModelModelsRevokeCertificateRequest | Contains the Keyfactor certificate identifiers and revocation data (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificateRevoke(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.CertificatesRevokePost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsRevokeCertificateRequest(cSSCMSDataModelModelsRevokeCertificateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificateRevoke``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesRevokePost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificateRevoke`: ModelsRevocationRevocationResponse
-    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificateRevoke`: %v\n", resp)
+    // response from `CertificatesRevokePost`: CSSCMSDataModelModelsRevocationRevocationResponse
+    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesRevokePost`: %v\n", resp)
 }
 ```
 
@@ -1253,18 +1535,18 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCertificateRevokeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCertificatesRevokePostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **request** | [**ModelsRevokeCertificateRequest**](ModelsRevokeCertificateRequest.md) | Contains the Keyfactor certificate identifiers and revocation data | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **cSSCMSDataModelModelsRevokeCertificateRequest** | [**CSSCMSDataModelModelsRevokeCertificateRequest**](CSSCMSDataModelModelsRevokeCertificateRequest.md) | Contains the Keyfactor certificate identifiers and revocation data | 
 
 ### Return type
 
-[**ModelsRevocationRevocationResponse**](ModelsRevocationRevocationResponse.md)
+[**CSSCMSDataModelModelsRevocationRevocationResponse**](CSSCMSDataModelModelsRevocationRevocationResponse.md)
 
 ### Authorization
 
@@ -1272,290 +1554,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## CertificateRevokeAll
-
-> ModelsRevocationRevocationResponse CertificateRevokeAll(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Revokes the certificates associated with the provided query and Collection Id and associates the provided data with the revocation
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    request := *openapiclient.NewModelsRevokeAllCertificatesRequest(int32(123), "Comment_example") // ModelsRevokeAllCertificatesRequest | Contains the Keyfactor Query and revocation data
-    collectionId := int32(56) // int32 | A collection Id to be used for permissions and part of the query to revoke certificates (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificateRevokeAll(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Request(request).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificateRevokeAll``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CertificateRevokeAll`: ModelsRevocationRevocationResponse
-    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificateRevokeAll`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCertificateRevokeAllRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **request** | [**ModelsRevokeAllCertificatesRequest**](ModelsRevokeAllCertificatesRequest.md) | Contains the Keyfactor Query and revocation data | 
- **collectionId** | **int32** | A collection Id to be used for permissions and part of the query to revoke certificates | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
-[**ModelsRevocationRevocationResponse**](ModelsRevocationRevocationResponse.md)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## CertificateUpdateAllMetadata
-
-> CertificateUpdateAllMetadata(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).MetadataUpdate(metadataUpdate).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Updates the metadata for certificates associated with the certificate identifiers or query provided
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    metadataUpdate := *openapiclient.NewModelsMetadataAllUpdateRequest([]openapiclient.ModelsMetadataSingleUpdateRequest{*openapiclient.NewModelsMetadataSingleUpdateRequest()}) // ModelsMetadataAllUpdateRequest | Contains the Keyfactor certificate identifier and the metadata to be updated
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificateUpdateAllMetadata(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).MetadataUpdate(metadataUpdate).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificateUpdateAllMetadata``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCertificateUpdateAllMetadataRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **metadataUpdate** | [**ModelsMetadataAllUpdateRequest**](ModelsMetadataAllUpdateRequest.md) | Contains the Keyfactor certificate identifier and the metadata to be updated | 
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## CertificateUpdateMetadata
-
-> CertificateUpdateMetadata(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).MetadataUpdate(metadataUpdate).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Updates the metadata for the certificate associated with the identifier provided
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    metadataUpdate := *openapiclient.NewModelsMetadataUpdateRequest(map[string]string{"key": "Inner_example"}) // ModelsMetadataUpdateRequest | Contains the Keyfactor certificate identifier and the metadata to be updated
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificateUpdateMetadata(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).MetadataUpdate(metadataUpdate).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificateUpdateMetadata``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCertificateUpdateMetadataRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **metadataUpdate** | [**ModelsMetadataUpdateRequest**](ModelsMetadataUpdateRequest.md) | Contains the Keyfactor certificate identifier and the metadata to be updated | 
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## CertificateValidateCertificate
-
-> ModelsCertificateValidationResponse CertificateValidateCertificate(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Validates the certificate chain can be built.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := int32(56) // int32 | The Id of the certificate being checked
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | An optional parameter for the collectin Id the certificate is in.  Defaults to no collection (optional)
-    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificateValidateCertificate(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificateValidateCertificate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CertificateValidateCertificate`: ModelsCertificateValidationResponse
-    fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificateValidateCertificate`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | The Id of the certificate being checked | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCertificateValidateCertificateRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | An optional parameter for the collectin Id the certificate is in.  Defaults to no collection | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
-
-### Return type
-
-[**ModelsCertificateValidationResponse**](ModelsCertificateValidationResponse.md)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml
+- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

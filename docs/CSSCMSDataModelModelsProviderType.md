@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **NullableString** |  | [optional] 
 **ProviderTypeParams** | Pointer to [**[]CSSCMSDataModelModelsProviderTypeParam**](CSSCMSDataModelModelsProviderTypeParam.md) |  | [optional] 
 
 ## Methods
@@ -77,6 +77,16 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
+### SetNameNil
+
+`func (o *CSSCMSDataModelModelsProviderType) SetNameNil(b bool)`
+
+ SetNameNil sets the value for Name to be an explicit nil
+
+### UnsetName
+`func (o *CSSCMSDataModelModelsProviderType) UnsetName()`
+
+UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetProviderTypeParams
 
 `func (o *CSSCMSDataModelModelsProviderType) GetProviderTypeParams() []CSSCMSDataModelModelsProviderTypeParam`
@@ -102,6 +112,16 @@ SetProviderTypeParams sets ProviderTypeParams field to given value.
 
 HasProviderTypeParams returns a boolean if a field has been set.
 
+### SetProviderTypeParamsNil
+
+`func (o *CSSCMSDataModelModelsProviderType) SetProviderTypeParamsNil(b bool)`
+
+ SetProviderTypeParamsNil sets the value for ProviderTypeParams to be an explicit nil
+
+### UnsetProviderTypeParams
+`func (o *CSSCMSDataModelModelsProviderType) UnsetProviderTypeParams()`
+
+UnsetProviderTypeParams ensures that no value is present for ProviderTypeParams, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
