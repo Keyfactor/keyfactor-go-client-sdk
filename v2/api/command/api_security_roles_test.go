@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor-v1
+Keyfactor API Reference and Utility
 
 Testing SecurityRolesApiService
 
@@ -39,45 +39,102 @@ func Test_command_SecurityRolesApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test SecurityRolesApiService SecurityRolesDeleteSecurityRole", func(t *testing.T) {
+	t.Run("Test SecurityRolesApiService SecurityRolesGet", func(t *testing.T) {
 
-		var id interface{}
-
-		id = os.Getenv("SecurityRolesApi_SecurityRolesDeleteSecurityRole_id")
-		id, _ = convertParamInterface(id, "int32")
-		t.Logf("SecurityRolesApi_SecurityRolesDeleteSecurityRole_id: %v", id)
-
-		t.Log("SecurityRolesApi_SecurityRolesDeleteSecurityRole_payload: <none>")
-		httpRes, err := apiClient.SecurityRolesApi.SecurityRolesDeleteSecurityRole(context.Background(), id.(int32)).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test SecurityRolesApiService SecurityRolesGetIdentitiesWithRole", func(t *testing.T) {
-
-		var id interface{}
-
-		id = os.Getenv("SecurityRolesApi_SecurityRolesGetIdentitiesWithRole_id")
-		id, _ = convertParamInterface(id, "int32")
-		t.Logf("SecurityRolesApi_SecurityRolesGetIdentitiesWithRole_id: %v", id)
-
-		t.Log("SecurityRolesApi_SecurityRolesGetIdentitiesWithRole_payload: <none>")
-		resp, httpRes, err := apiClient.SecurityRolesApi.SecurityRolesGetIdentitiesWithRole(context.Background(), id.(int32)).Execute()
+		t.Log("SecurityRolesApi_SecurityRolesGet_payload: <none>")
+		resp, httpRes, err := apiClient.SecurityRolesApi.SecurityRolesGet(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test SecurityRolesApiService SecurityRolesUpdateIdentitiesWithRole", func(t *testing.T) {
+	t.Run("Test SecurityRolesApiService SecurityRolesIdCopyPost", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("SecurityRolesApi_SecurityRolesUpdateIdentitiesWithRole_id")
+		id = os.Getenv("SecurityRolesApi_SecurityRolesIdCopyPost_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("SecurityRolesApi_SecurityRolesUpdateIdentitiesWithRole_id: %v", id)
+		t.Logf("SecurityRolesApi_SecurityRolesIdCopyPost_id: %v", id)
 
-		t.Log("SecurityRolesApi_SecurityRolesUpdateIdentitiesWithRole_payload: <none>")
-		resp, httpRes, err := apiClient.SecurityRolesApi.SecurityRolesUpdateIdentitiesWithRole(context.Background(), id.(int32)).Execute()
+		t.Log("SecurityRolesApi_SecurityRolesIdCopyPost_payload: <none>")
+		resp, httpRes, err := apiClient.SecurityRolesApi.SecurityRolesIdCopyPost(context.Background(), id.(int32)).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SecurityRolesApiService SecurityRolesIdDelete", func(t *testing.T) {
+
+		var id interface{}
+
+		id = os.Getenv("SecurityRolesApi_SecurityRolesIdDelete_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("SecurityRolesApi_SecurityRolesIdDelete_id: %v", id)
+
+		t.Log("SecurityRolesApi_SecurityRolesIdDelete_payload: <none>")
+		httpRes, err := apiClient.SecurityRolesApi.SecurityRolesIdDelete(context.Background(), id.(int32)).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SecurityRolesApiService SecurityRolesIdGet", func(t *testing.T) {
+
+		var id interface{}
+
+		id = os.Getenv("SecurityRolesApi_SecurityRolesIdGet_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("SecurityRolesApi_SecurityRolesIdGet_id: %v", id)
+
+		t.Log("SecurityRolesApi_SecurityRolesIdGet_payload: <none>")
+		resp, httpRes, err := apiClient.SecurityRolesApi.SecurityRolesIdGet(context.Background(), id.(int32)).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SecurityRolesApiService SecurityRolesIdIdentitiesGet", func(t *testing.T) {
+
+		var id interface{}
+
+		id = os.Getenv("SecurityRolesApi_SecurityRolesIdIdentitiesGet_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("SecurityRolesApi_SecurityRolesIdIdentitiesGet_id: %v", id)
+
+		t.Log("SecurityRolesApi_SecurityRolesIdIdentitiesGet_payload: <none>")
+		resp, httpRes, err := apiClient.SecurityRolesApi.SecurityRolesIdIdentitiesGet(context.Background(), id.(int32)).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SecurityRolesApiService SecurityRolesIdIdentitiesPut", func(t *testing.T) {
+
+		var id interface{}
+
+		id = os.Getenv("SecurityRolesApi_SecurityRolesIdIdentitiesPut_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("SecurityRolesApi_SecurityRolesIdIdentitiesPut_id: %v", id)
+
+		t.Log("SecurityRolesApi_SecurityRolesIdIdentitiesPut_payload: <none>")
+		resp, httpRes, err := apiClient.SecurityRolesApi.SecurityRolesIdIdentitiesPut(context.Background(), id.(int32)).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SecurityRolesApiService SecurityRolesPost", func(t *testing.T) {
+
+		t.Log("SecurityRolesApi_SecurityRolesPost_payload: <none>")
+		resp, httpRes, err := apiClient.SecurityRolesApi.SecurityRolesPost(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SecurityRolesApiService SecurityRolesPut", func(t *testing.T) {
+
+		t.Log("SecurityRolesApi_SecurityRolesPut_payload: <none>")
+		resp, httpRes, err := apiClient.SecurityRolesApi.SecurityRolesPut(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

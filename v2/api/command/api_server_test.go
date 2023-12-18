@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor-v1
+Keyfactor API Reference and Utility
 
 Testing ServerApiService
 
@@ -39,90 +39,90 @@ func Test_command_ServerApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test ServerApiService ServerAddAccess", func(t *testing.T) {
+	t.Run("Test ServerApiService SSHServersAccessDelete", func(t *testing.T) {
 
-		t.Log("ServerApi_ServerAddAccess_payload: <none>")
-		resp, httpRes, err := apiClient.ServerApi.ServerAddAccess(context.Background()).Execute()
+		t.Log("ServerApi_SSHServersAccessDelete_payload: <none>")
+		resp, httpRes, err := apiClient.ServerApi.SSHServersAccessDelete(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ServerApiService ServerCreateServer", func(t *testing.T) {
-
-		t.Log("ServerApi_ServerCreateServer_payload: <none>")
-		resp, httpRes, err := apiClient.ServerApi.ServerCreateServer(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test ServerApiService ServerDelete", func(t *testing.T) {
+	t.Run("Test ServerApiService SSHServersAccessIdGet", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("ServerApi_ServerDelete_id")
+		id = os.Getenv("ServerApi_SSHServersAccessIdGet_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("ServerApi_ServerDelete_id: %v", id)
+		t.Logf("ServerApi_SSHServersAccessIdGet_id: %v", id)
 
-		t.Log("ServerApi_ServerDelete_payload: <none>")
-		httpRes, err := apiClient.ServerApi.ServerDelete(context.Background(), id.(int32)).Execute()
+		t.Log("ServerApi_SSHServersAccessIdGet_payload: <none>")
+		resp, httpRes, err := apiClient.ServerApi.SSHServersAccessIdGet(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ServerApiService ServerGet", func(t *testing.T) {
+	t.Run("Test ServerApiService SSHServersAccessPost", func(t *testing.T) {
+
+		t.Log("ServerApi_SSHServersAccessPost_payload: <none>")
+		resp, httpRes, err := apiClient.ServerApi.SSHServersAccessPost(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test ServerApiService SSHServersGet", func(t *testing.T) {
+
+		t.Log("ServerApi_SSHServersGet_payload: <none>")
+		resp, httpRes, err := apiClient.ServerApi.SSHServersGet(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test ServerApiService SSHServersIdDelete", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("ServerApi_ServerGet_id")
+		id = os.Getenv("ServerApi_SSHServersIdDelete_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("ServerApi_ServerGet_id: %v", id)
+		t.Logf("ServerApi_SSHServersIdDelete_id: %v", id)
 
-		t.Log("ServerApi_ServerGet_payload: <none>")
-		resp, httpRes, err := apiClient.ServerApi.ServerGet(context.Background(), id.(int32)).Execute()
+		t.Log("ServerApi_SSHServersIdDelete_payload: <none>")
+		httpRes, err := apiClient.ServerApi.SSHServersIdDelete(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ServerApiService ServerGetAccess", func(t *testing.T) {
+	t.Run("Test ServerApiService SSHServersIdGet", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("ServerApi_ServerGetAccess_id")
+		id = os.Getenv("ServerApi_SSHServersIdGet_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("ServerApi_ServerGetAccess_id: %v", id)
+		t.Logf("ServerApi_SSHServersIdGet_id: %v", id)
 
-		t.Log("ServerApi_ServerGetAccess_payload: <none>")
-		resp, httpRes, err := apiClient.ServerApi.ServerGetAccess(context.Background(), id.(int32)).Execute()
+		t.Log("ServerApi_SSHServersIdGet_payload: <none>")
+		resp, httpRes, err := apiClient.ServerApi.SSHServersIdGet(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ServerApiService ServerQueryServers", func(t *testing.T) {
+	t.Run("Test ServerApiService SSHServersPost", func(t *testing.T) {
 
-		t.Log("ServerApi_ServerQueryServers_payload: <none>")
-		resp, httpRes, err := apiClient.ServerApi.ServerQueryServers(context.Background()).Execute()
+		t.Log("ServerApi_SSHServersPost_payload: <none>")
+		resp, httpRes, err := apiClient.ServerApi.SSHServersPost(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ServerApiService ServerRemoveAccess", func(t *testing.T) {
+	t.Run("Test ServerApiService SSHServersPut", func(t *testing.T) {
 
-		t.Log("ServerApi_ServerRemoveAccess_payload: <none>")
-		resp, httpRes, err := apiClient.ServerApi.ServerRemoveAccess(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test ServerApiService ServerUpdateServer", func(t *testing.T) {
-
-		t.Log("ServerApi_ServerUpdateServer_payload: <none>")
-		resp, httpRes, err := apiClient.ServerApi.ServerUpdateServer(context.Background()).Execute()
+		t.Log("ServerApi_SSHServersPut_payload: <none>")
+		resp, httpRes, err := apiClient.ServerApi.SSHServersPut(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

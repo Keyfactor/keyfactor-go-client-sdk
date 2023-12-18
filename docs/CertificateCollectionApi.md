@@ -36,7 +36,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     queryString := "queryString_example" // string |  (optional)
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
@@ -114,7 +114,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
     keyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionCopyRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionCopyRequest("Name_example", int32(123)) // KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionCopyRequest | Information related to the certificate collection query (optional)
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
 - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -182,7 +182,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     queryString := "queryString_example" // string |  (optional)
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
@@ -259,7 +259,7 @@ import (
 
 func main() {
     id := int32(56) // int32 | The collection to delete
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -329,7 +329,7 @@ import (
 
 func main() {
     id := int32(56) // int32 | The collection to update favorite with
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
     keyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionFavoriteRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionFavoriteRequest(false) // KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionFavoriteRequest | Information for the certificate collection favorite update (optional)
 
@@ -373,7 +373,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -401,7 +401,7 @@ import (
 
 func main() {
     id := int32(56) // int32 | Identifier of the certificate collection
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -473,7 +473,7 @@ import (
 
 func main() {
     name := "name_example" // string | Name of the Collection
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -544,7 +544,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -612,7 +612,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
     keyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest("Name_example") // KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest | Information related to the certificate collection query (optional)
 
@@ -653,7 +653,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
 - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -682,7 +682,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
     keyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionUpdateRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionUpdateRequest("Name_example", int32(123)) // KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionUpdateRequest | Information related to the certificate collection query (optional)
 
@@ -723,7 +723,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
 - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor-v1
+Keyfactor API Reference and Utility
 
 Testing UserApiService
 
@@ -39,66 +39,66 @@ func Test_command_UserApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test UserApiService UserCreateUser", func(t *testing.T) {
+	t.Run("Test UserApiService SSHUsersAccessPost", func(t *testing.T) {
 
-		t.Log("UserApi_UserCreateUser_payload: <none>")
-		resp, httpRes, err := apiClient.UserApi.UserCreateUser(context.Background()).Execute()
+		t.Log("UserApi_SSHUsersAccessPost_payload: <none>")
+		resp, httpRes, err := apiClient.UserApi.SSHUsersAccessPost(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test UserApiService UserDeleteUser", func(t *testing.T) {
+	t.Run("Test UserApiService SSHUsersGet", func(t *testing.T) {
+
+		t.Log("UserApi_SSHUsersGet_payload: <none>")
+		resp, httpRes, err := apiClient.UserApi.SSHUsersGet(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test UserApiService SSHUsersIdDelete", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("UserApi_UserDeleteUser_id")
+		id = os.Getenv("UserApi_SSHUsersIdDelete_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("UserApi_UserDeleteUser_id: %v", id)
+		t.Logf("UserApi_SSHUsersIdDelete_id: %v", id)
 
-		t.Log("UserApi_UserDeleteUser_payload: <none>")
-		httpRes, err := apiClient.UserApi.UserDeleteUser(context.Background(), id.(int32)).Execute()
+		t.Log("UserApi_SSHUsersIdDelete_payload: <none>")
+		httpRes, err := apiClient.UserApi.SSHUsersIdDelete(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test UserApiService UserGetUser", func(t *testing.T) {
+	t.Run("Test UserApiService SSHUsersIdGet", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("UserApi_UserGetUser_id")
+		id = os.Getenv("UserApi_SSHUsersIdGet_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("UserApi_UserGetUser_id: %v", id)
+		t.Logf("UserApi_SSHUsersIdGet_id: %v", id)
 
-		t.Log("UserApi_UserGetUser_payload: <none>")
-		resp, httpRes, err := apiClient.UserApi.UserGetUser(context.Background(), id.(int32)).Execute()
+		t.Log("UserApi_SSHUsersIdGet_payload: <none>")
+		resp, httpRes, err := apiClient.UserApi.SSHUsersIdGet(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test UserApiService UserQueryUsers", func(t *testing.T) {
+	t.Run("Test UserApiService SSHUsersPost", func(t *testing.T) {
 
-		t.Log("UserApi_UserQueryUsers_payload: <none>")
-		resp, httpRes, err := apiClient.UserApi.UserQueryUsers(context.Background()).Execute()
+		t.Log("UserApi_SSHUsersPost_payload: <none>")
+		resp, httpRes, err := apiClient.UserApi.SSHUsersPost(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test UserApiService UserUpdateUser", func(t *testing.T) {
+	t.Run("Test UserApiService SSHUsersPut", func(t *testing.T) {
 
-		t.Log("UserApi_UserUpdateUser_payload: <none>")
-		resp, httpRes, err := apiClient.UserApi.UserUpdateUser(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test UserApiService UserUserAccess", func(t *testing.T) {
-
-		t.Log("UserApi_UserUserAccess_payload: <none>")
-		resp, httpRes, err := apiClient.UserApi.UserUserAccess(context.Background()).Execute()
+		t.Log("UserApi_SSHUsersPut_payload: <none>")
+		resp, httpRes, err := apiClient.UserApi.SSHUsersPut(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

@@ -47,7 +47,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
     keyfactorWebKeyfactorApiModelsCertificatesAnalyzeCertificateRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsCertificatesAnalyzeCertificateRequest() // KeyfactorWebKeyfactorApiModelsCertificatesAnalyzeCertificateRequest | The certificate to analyze (optional)
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
 - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -115,7 +115,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     sortName := "sortName_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
     sortOrder := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder | Field sort direction [0=ascending, 1=descending] (optional)
     query := "query_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
@@ -191,7 +191,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
     requestBody := []int32{int32(123)} // []int32 | The array of ids for certificate that are to be deleted (optional)
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -261,7 +261,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
     keyfactorWebKeyfactorApiModelsCertificatesCertificateDownloadRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsCertificatesCertificateDownloadRequest() // KeyfactorWebKeyfactorApiModelsCertificatesCertificateDownloadRequest | Query to filter the certificate to be recovered (optional)
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
 - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -331,7 +331,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     includeRevoked := true // bool | Select 'true' to include revoked certificates in the results (optional)
     includeExpired := true // bool | Select 'true' to include expired certificates in the results (optional)
     queryString := "queryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
@@ -422,7 +422,7 @@ import (
 
 func main() {
     id := int32(56) // int32 | Keyfactor identifier of the certificate record
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
@@ -494,7 +494,7 @@ import (
 
 func main() {
     id := int32(56) // int32 | Keyfactor certificate identifier
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     includeLocations := true // bool | Include locations data for the certificate to be returned (optional) (default to false)
     includeMetadata := true // bool | Include metadata for the certificate to be returned (optional) (default to false)
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
@@ -574,7 +574,7 @@ import (
 
 func main() {
     id := int32(56) // int32 | The Id of the certificate
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
@@ -656,7 +656,7 @@ import (
 
 func main() {
     id := int32(56) // int32 | The Id of the certificate permissions are being checked on
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     collectionId := int32(56) // int32 | The Id of the collection the certificate belongs in. Defaults to no collection (optional) (default to 0)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
@@ -730,7 +730,7 @@ import (
 
 func main() {
     id := int32(56) // int32 | The Id of the certificate being checked
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     collectionId := int32(56) // int32 | An optional parameter for the collectin Id the certificate is in.  Defaults to no collection (optional) (default to 0)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
@@ -804,7 +804,7 @@ import (
 
 func main() {
     id := int32(56) // int32 | The Id of the certificate being checked
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     collectionId := int32(56) // int32 | An optional parameter for the collectin Id the certificate is in.  Defaults to no collection (optional) (default to 0)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
@@ -877,7 +877,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
     cSSCMSDataModelModelsCertificateImportRequestModel := *openapiclient.NewCSSCMSDataModelModelsCertificateImportRequestModel("Certificate_example") // CSSCMSDataModelModelsCertificateImportRequestModel | Request containing the base 64 encoded string and related certificate information, such as certificate stores, metadata, and password (optional)
 
@@ -918,7 +918,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
 - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -946,7 +946,7 @@ import (
 
 func main() {
     id := int32(56) // int32 | Keyfactor certificate identifier
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
@@ -1019,7 +1019,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
     cSSCMSDataModelModelsMetadataAllUpdateRequest := *openapiclient.NewCSSCMSDataModelModelsMetadataAllUpdateRequest([]openapiclient.CSSCMSDataModelModelsMetadataSingleUpdateRequest{*openapiclient.NewCSSCMSDataModelModelsMetadataSingleUpdateRequest()}) // CSSCMSDataModelModelsMetadataAllUpdateRequest | Contains the Keyfactor certificate identifier and the metadata to be updated (optional)
@@ -1060,7 +1060,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -1089,7 +1089,7 @@ import (
 func main() {
     certificateId := int32(56) // int32 | Certificate identifier
     metadataFieldName := "metadataFieldName_example" // string | Metadata field being compared
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     value := "value_example" // string | Value to compare against (optional)
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
@@ -1161,7 +1161,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
     cSSCMSDataModelModelsMetadataUpdateRequest := *openapiclient.NewCSSCMSDataModelModelsMetadataUpdateRequest(map[string]string{"key": "Inner_example"}) // CSSCMSDataModelModelsMetadataUpdateRequest | Contains the Keyfactor certificate identifier and the metadata to be updated (optional)
@@ -1202,7 +1202,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -1229,7 +1229,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
     requestBody := []int32{int32(123)} // []int32 | Keyfactor identifiers of the cetficiates for which the associated private keys should be deleted (optional)
@@ -1270,7 +1270,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -1298,7 +1298,7 @@ import (
 
 func main() {
     id := int32(56) // int32 | Keyfactor identifier of the certificate for which the associated private key should be deleted
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
@@ -1371,7 +1371,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
     body := "body_example" // string | Query by which certificates should be filtered for deletion (optional)
@@ -1412,7 +1412,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -1441,7 +1441,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
     keyfactorWebKeyfactorApiModelsCertificatesCertificateRecoveryRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsCertificatesCertificateRecoveryRequest("Password_example") // KeyfactorWebKeyfactorApiModelsCertificatesCertificateRecoveryRequest | Query to filter the certificate to be recovered (optional)
@@ -1484,7 +1484,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
 - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -1513,7 +1513,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
     cSSCMSDataModelModelsRevokeCertificateRequest := *openapiclient.NewCSSCMSDataModelModelsRevokeCertificateRequest() // CSSCMSDataModelModelsRevokeCertificateRequest | Contains the Keyfactor certificate identifiers and revocation data (optional)
 
@@ -1554,7 +1554,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
 - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

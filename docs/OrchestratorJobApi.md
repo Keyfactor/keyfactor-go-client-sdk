@@ -34,7 +34,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
     keyfactorWebKeyfactorApiModelsOrchestratorJobsAcknowledgeJobRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsOrchestratorJobsAcknowledgeJobRequest() // KeyfactorWebKeyfactorApiModelsOrchestratorJobsAcknowledgeJobRequest | Information to identify the jobs to acknowledge, either a query or a list of job identifiers (optional)
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -100,7 +100,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
     cSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest := *openapiclient.NewCSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest([]string{"OrchestratorIds_example"}, "JobTypeName_example") // CSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest | Information to use to schedule the jobs, including the type of custom job, agents to use, and job-specific parameters. (optional)
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
 - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -168,7 +168,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
     cSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest := *openapiclient.NewCSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest("AgentId_example", "JobTypeName_example") // CSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest | Information to use to schedule the job, including the type of custom job, agent to use, and job-specific parameters. (optional)
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
 - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -236,7 +236,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     queryString := "queryString_example" // string |  (optional)
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
@@ -313,7 +313,7 @@ import (
 
 func main() {
     jobHistoryId := int64(789) // int64 | Identifier of the job history record to retrieve
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -380,7 +380,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
     keyfactorWebKeyfactorApiModelsOrchestratorJobsRescheduleJobRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsOrchestratorJobsRescheduleJobRequest() // KeyfactorWebKeyfactorApiModelsOrchestratorJobsRescheduleJobRequest | Information to identify the jobs to reschedule, either a query or a list of job identifiers (optional)
 
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -446,7 +446,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     queryString := "queryString_example" // string |  (optional)
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
@@ -522,7 +522,7 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
     keyfactorWebKeyfactorApiModelsOrchestratorJobsUnscheduleJobRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsOrchestratorJobsUnscheduleJobRequest() // KeyfactorWebKeyfactorApiModelsOrchestratorJobsUnscheduleJobRequest | Information to identify the orchestrator jobs to unschedule, either a query or a list of job identifiers (optional)
 
@@ -561,7 +561,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patchjson, application/json, text/json, application/*json
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

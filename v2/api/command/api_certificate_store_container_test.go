@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor-v1
+Keyfactor API Reference and Utility
 
 Testing CertificateStoreContainerApiService
 
@@ -39,24 +39,57 @@ func Test_command_CertificateStoreContainerApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test CertificateStoreContainerApiService CertificateStoreContainerDeleteCertificateStoreContainers", func(t *testing.T) {
+	t.Run("Test CertificateStoreContainerApiService CertificateStoreContainersGet", func(t *testing.T) {
+
+		t.Log("CertificateStoreContainerApi_CertificateStoreContainersGet_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateStoreContainerApi.CertificateStoreContainersGet(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateStoreContainerApiService CertificateStoreContainersIdDelete", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("CertificateStoreContainerApi_CertificateStoreContainerDeleteCertificateStoreContainers_id")
+		id = os.Getenv("CertificateStoreContainerApi_CertificateStoreContainersIdDelete_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("CertificateStoreContainerApi_CertificateStoreContainerDeleteCertificateStoreContainers_id: %v", id)
+		t.Logf("CertificateStoreContainerApi_CertificateStoreContainersIdDelete_id: %v", id)
 
-		t.Log("CertificateStoreContainerApi_CertificateStoreContainerDeleteCertificateStoreContainers_payload: <none>")
-		httpRes, err := apiClient.CertificateStoreContainerApi.CertificateStoreContainerDeleteCertificateStoreContainers(context.Background(), id.(int32)).Execute()
+		t.Log("CertificateStoreContainerApi_CertificateStoreContainersIdDelete_payload: <none>")
+		httpRes, err := apiClient.CertificateStoreContainerApi.CertificateStoreContainersIdDelete(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CertificateStoreContainerApiService CertificateStoreContainerGetAllCertificateStoreContainers", func(t *testing.T) {
+	t.Run("Test CertificateStoreContainerApiService CertificateStoreContainersIdGet", func(t *testing.T) {
 
-		t.Log("CertificateStoreContainerApi_CertificateStoreContainerGetAllCertificateStoreContainers_payload: <none>")
-		resp, httpRes, err := apiClient.CertificateStoreContainerApi.CertificateStoreContainerGetAllCertificateStoreContainers(context.Background()).Execute()
+		var id interface{}
+
+		id = os.Getenv("CertificateStoreContainerApi_CertificateStoreContainersIdGet_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("CertificateStoreContainerApi_CertificateStoreContainersIdGet_id: %v", id)
+
+		t.Log("CertificateStoreContainerApi_CertificateStoreContainersIdGet_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateStoreContainerApi.CertificateStoreContainersIdGet(context.Background(), id.(int32)).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateStoreContainerApiService CertificateStoreContainersPost", func(t *testing.T) {
+
+		t.Log("CertificateStoreContainerApi_CertificateStoreContainersPost_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateStoreContainerApi.CertificateStoreContainersPost(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateStoreContainerApiService CertificateStoreContainersPut", func(t *testing.T) {
+
+		t.Log("CertificateStoreContainerApi_CertificateStoreContainersPut_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateStoreContainerApi.CertificateStoreContainersPut(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

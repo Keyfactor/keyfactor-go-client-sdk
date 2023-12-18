@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor-v1
+Keyfactor API Reference and Utility
 
 Testing LicenseApiService
 
@@ -39,10 +39,10 @@ func Test_command_LicenseApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test LicenseApiService LicenseGetCurrentLicense", func(t *testing.T) {
+	t.Run("Test LicenseApiService LicenseGet", func(t *testing.T) {
 
-		t.Log("LicenseApi_LicenseGetCurrentLicense_payload: <none>")
-		resp, httpRes, err := apiClient.LicenseApi.LicenseGetCurrentLicense(context.Background()).Execute()
+		t.Log("LicenseApi_LicenseGet_payload: <none>")
+		resp, httpRes, err := apiClient.LicenseApi.LicenseGet(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor-v1
+Keyfactor API Reference and Utility
 
 Testing WorkflowDefinitionApiService
 
@@ -39,126 +39,126 @@ func Test_command_WorkflowDefinitionApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionConfigureDefinitionSteps", func(t *testing.T) {
+	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionsDefinitionIdDelete", func(t *testing.T) {
 
 		var definitionId interface{}
 
-		definitionId = os.Getenv("WorkflowDefinitionApi_WorkflowDefinitionConfigureDefinitionSteps_definitionId")
+		definitionId = os.Getenv("WorkflowDefinitionApi_WorkflowDefinitionsDefinitionIdDelete_definitionId")
 		definitionId, _ = convertParamInterface(definitionId, "string")
-		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionConfigureDefinitionSteps_definitionId: %v", definitionId)
+		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionsDefinitionIdDelete_definitionId: %v", definitionId)
 
-		t.Log("WorkflowDefinitionApi_WorkflowDefinitionConfigureDefinitionSteps_payload: <none>")
-		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionConfigureDefinitionSteps(context.Background(), definitionId.(string)).Execute()
+		t.Log("WorkflowDefinitionApi_WorkflowDefinitionsDefinitionIdDelete_payload: <none>")
+		httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionsDefinitionIdDelete(context.Background(), definitionId.(string)).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionsDefinitionIdGet", func(t *testing.T) {
+
+		var definitionId interface{}
+
+		definitionId = os.Getenv("WorkflowDefinitionApi_WorkflowDefinitionsDefinitionIdGet_definitionId")
+		definitionId, _ = convertParamInterface(definitionId, "string")
+		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionsDefinitionIdGet_definitionId: %v", definitionId)
+
+		t.Log("WorkflowDefinitionApi_WorkflowDefinitionsDefinitionIdGet_payload: <none>")
+		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionsDefinitionIdGet(context.Background(), definitionId.(string)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionCreateNewDefinition", func(t *testing.T) {
+	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionsDefinitionIdPublishPost", func(t *testing.T) {
 
-		t.Log("WorkflowDefinitionApi_WorkflowDefinitionCreateNewDefinition_payload: <none>")
-		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionCreateNewDefinition(context.Background()).Execute()
+		var definitionId interface{}
+
+		definitionId = os.Getenv("WorkflowDefinitionApi_WorkflowDefinitionsDefinitionIdPublishPost_definitionId")
+		definitionId, _ = convertParamInterface(definitionId, "string")
+		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionsDefinitionIdPublishPost_definitionId: %v", definitionId)
+
+		t.Log("WorkflowDefinitionApi_WorkflowDefinitionsDefinitionIdPublishPost_payload: <none>")
+		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionsDefinitionIdPublishPost(context.Background(), definitionId.(string)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionDelete", func(t *testing.T) {
+	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionsDefinitionIdPut", func(t *testing.T) {
 
 		var definitionId interface{}
 
-		definitionId = os.Getenv("WorkflowDefinitionApi_WorkflowDefinitionDelete_definitionId")
+		definitionId = os.Getenv("WorkflowDefinitionApi_WorkflowDefinitionsDefinitionIdPut_definitionId")
 		definitionId, _ = convertParamInterface(definitionId, "string")
-		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionDelete_definitionId: %v", definitionId)
+		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionsDefinitionIdPut_definitionId: %v", definitionId)
 
-		t.Log("WorkflowDefinitionApi_WorkflowDefinitionDelete_payload: <none>")
-		httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionDelete(context.Background(), definitionId.(string)).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionGet", func(t *testing.T) {
-
-		var definitionId interface{}
-
-		definitionId = os.Getenv("WorkflowDefinitionApi_WorkflowDefinitionGet_definitionId")
-		definitionId, _ = convertParamInterface(definitionId, "string")
-		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionGet_definitionId: %v", definitionId)
-
-		t.Log("WorkflowDefinitionApi_WorkflowDefinitionGet_payload: <none>")
-		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionGet(context.Background(), definitionId.(string)).Execute()
+		t.Log("WorkflowDefinitionApi_WorkflowDefinitionsDefinitionIdPut_payload: <none>")
+		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionsDefinitionIdPut(context.Background(), definitionId.(string)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionGetStepSchema", func(t *testing.T) {
+	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionsDefinitionIdStepsPut", func(t *testing.T) {
+
+		var definitionId interface{}
+
+		definitionId = os.Getenv("WorkflowDefinitionApi_WorkflowDefinitionsDefinitionIdStepsPut_definitionId")
+		definitionId, _ = convertParamInterface(definitionId, "string")
+		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionsDefinitionIdStepsPut_definitionId: %v", definitionId)
+
+		t.Log("WorkflowDefinitionApi_WorkflowDefinitionsDefinitionIdStepsPut_payload: <none>")
+		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionsDefinitionIdStepsPut(context.Background(), definitionId.(string)).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionsGet", func(t *testing.T) {
+
+		t.Log("WorkflowDefinitionApi_WorkflowDefinitionsGet_payload: <none>")
+		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionsGet(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionsPost", func(t *testing.T) {
+
+		t.Log("WorkflowDefinitionApi_WorkflowDefinitionsPost_payload: <none>")
+		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionsPost(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionsStepsExtensionNameGet", func(t *testing.T) {
 
 		var extensionName interface{}
 
-		extensionName = os.Getenv("WorkflowDefinitionApi_WorkflowDefinitionGetStepSchema_extensionName")
+		extensionName = os.Getenv("WorkflowDefinitionApi_WorkflowDefinitionsStepsExtensionNameGet_extensionName")
 		extensionName, _ = convertParamInterface(extensionName, "string")
-		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionGetStepSchema_extensionName: %v", extensionName)
+		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionsStepsExtensionNameGet_extensionName: %v", extensionName)
 
-		t.Log("WorkflowDefinitionApi_WorkflowDefinitionGetStepSchema_payload: <none>")
-		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionGetStepSchema(context.Background(), extensionName.(string)).Execute()
+		t.Log("WorkflowDefinitionApi_WorkflowDefinitionsStepsExtensionNameGet_payload: <none>")
+		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionsStepsExtensionNameGet(context.Background(), extensionName.(string)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionPublishDefinition", func(t *testing.T) {
+	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionsStepsGet", func(t *testing.T) {
 
-		var definitionId interface{}
-
-		definitionId = os.Getenv("WorkflowDefinitionApi_WorkflowDefinitionPublishDefinition_definitionId")
-		definitionId, _ = convertParamInterface(definitionId, "string")
-		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionPublishDefinition_definitionId: %v", definitionId)
-
-		t.Log("WorkflowDefinitionApi_WorkflowDefinitionPublishDefinition_payload: <none>")
-		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionPublishDefinition(context.Background(), definitionId.(string)).Execute()
+		t.Log("WorkflowDefinitionApi_WorkflowDefinitionsStepsGet_payload: <none>")
+		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionsStepsGet(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionQuery", func(t *testing.T) {
+	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionsTypesGet", func(t *testing.T) {
 
-		t.Log("WorkflowDefinitionApi_WorkflowDefinitionQuery_payload: <none>")
-		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionQuery(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionQueryAvailableSteps", func(t *testing.T) {
-
-		t.Log("WorkflowDefinitionApi_WorkflowDefinitionQueryAvailableSteps_payload: <none>")
-		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionQueryAvailableSteps(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionQueryWorkflowTypes", func(t *testing.T) {
-
-		t.Log("WorkflowDefinitionApi_WorkflowDefinitionQueryWorkflowTypes_payload: <none>")
-		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionQueryWorkflowTypes(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test WorkflowDefinitionApiService WorkflowDefinitionUpdateExistingDefinition", func(t *testing.T) {
-
-		var definitionId interface{}
-
-		definitionId = os.Getenv("WorkflowDefinitionApi_WorkflowDefinitionUpdateExistingDefinition_definitionId")
-		definitionId, _ = convertParamInterface(definitionId, "string")
-		t.Logf("WorkflowDefinitionApi_WorkflowDefinitionUpdateExistingDefinition_definitionId: %v", definitionId)
-
-		t.Log("WorkflowDefinitionApi_WorkflowDefinitionUpdateExistingDefinition_payload: <none>")
-		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionUpdateExistingDefinition(context.Background(), definitionId.(string)).Execute()
+		t.Log("WorkflowDefinitionApi_WorkflowDefinitionsTypesGet_payload: <none>")
+		resp, httpRes, err := apiClient.WorkflowDefinitionApi.WorkflowDefinitionsTypesGet(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor-v1
+Keyfactor API Reference and Utility
 
 Testing PendingAlertApiService
 
@@ -39,93 +39,93 @@ func Test_command_PendingAlertApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test PendingAlertApiService PendingAlertAddPendingAlert", func(t *testing.T) {
+	t.Run("Test PendingAlertApiService AlertsPendingGet", func(t *testing.T) {
 
-		t.Log("PendingAlertApi_PendingAlertAddPendingAlert_payload: <none>")
-		resp, httpRes, err := apiClient.PendingAlertApi.PendingAlertAddPendingAlert(context.Background()).Execute()
+		t.Log("PendingAlertApi_AlertsPendingGet_payload: <none>")
+		resp, httpRes, err := apiClient.PendingAlertApi.AlertsPendingGet(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test PendingAlertApiService PendingAlertDeletePendingAlert", func(t *testing.T) {
+	t.Run("Test PendingAlertApiService AlertsPendingIdDelete", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("PendingAlertApi_PendingAlertDeletePendingAlert_id")
+		id = os.Getenv("PendingAlertApi_AlertsPendingIdDelete_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("PendingAlertApi_PendingAlertDeletePendingAlert_id: %v", id)
+		t.Logf("PendingAlertApi_AlertsPendingIdDelete_id: %v", id)
 
-		t.Log("PendingAlertApi_PendingAlertDeletePendingAlert_payload: <none>")
-		httpRes, err := apiClient.PendingAlertApi.PendingAlertDeletePendingAlert(context.Background(), id.(int32)).Execute()
+		t.Log("PendingAlertApi_AlertsPendingIdDelete_payload: <none>")
+		httpRes, err := apiClient.PendingAlertApi.AlertsPendingIdDelete(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test PendingAlertApiService PendingAlertEditPendingAlert", func(t *testing.T) {
-
-		t.Log("PendingAlertApi_PendingAlertEditPendingAlert_payload: <none>")
-		resp, httpRes, err := apiClient.PendingAlertApi.PendingAlertEditPendingAlert(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test PendingAlertApiService PendingAlertEditSchedule", func(t *testing.T) {
-
-		t.Log("PendingAlertApi_PendingAlertEditSchedule_payload: <none>")
-		resp, httpRes, err := apiClient.PendingAlertApi.PendingAlertEditSchedule(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test PendingAlertApiService PendingAlertGetPendingAlert", func(t *testing.T) {
+	t.Run("Test PendingAlertApiService AlertsPendingIdGet", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("PendingAlertApi_PendingAlertGetPendingAlert_id")
+		id = os.Getenv("PendingAlertApi_AlertsPendingIdGet_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("PendingAlertApi_PendingAlertGetPendingAlert_id: %v", id)
+		t.Logf("PendingAlertApi_AlertsPendingIdGet_id: %v", id)
 
-		t.Log("PendingAlertApi_PendingAlertGetPendingAlert_payload: <none>")
-		resp, httpRes, err := apiClient.PendingAlertApi.PendingAlertGetPendingAlert(context.Background(), id.(int32)).Execute()
+		t.Log("PendingAlertApi_AlertsPendingIdGet_payload: <none>")
+		resp, httpRes, err := apiClient.PendingAlertApi.AlertsPendingIdGet(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test PendingAlertApiService PendingAlertGetPendingAlerts", func(t *testing.T) {
+	t.Run("Test PendingAlertApiService AlertsPendingPost", func(t *testing.T) {
 
-		t.Log("PendingAlertApi_PendingAlertGetPendingAlerts_payload: <none>")
-		resp, httpRes, err := apiClient.PendingAlertApi.PendingAlertGetPendingAlerts(context.Background()).Execute()
+		t.Log("PendingAlertApi_AlertsPendingPost_payload: <none>")
+		resp, httpRes, err := apiClient.PendingAlertApi.AlertsPendingPost(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test PendingAlertApiService PendingAlertGetSchedule", func(t *testing.T) {
+	t.Run("Test PendingAlertApiService AlertsPendingPut", func(t *testing.T) {
 
-		t.Log("PendingAlertApi_PendingAlertGetSchedule_payload: <none>")
-		resp, httpRes, err := apiClient.PendingAlertApi.PendingAlertGetSchedule(context.Background()).Execute()
+		t.Log("PendingAlertApi_AlertsPendingPut_payload: <none>")
+		resp, httpRes, err := apiClient.PendingAlertApi.AlertsPendingPut(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test PendingAlertApiService PendingAlertTestAllPendingAlert", func(t *testing.T) {
+	t.Run("Test PendingAlertApiService AlertsPendingScheduleGet", func(t *testing.T) {
 
-		t.Log("PendingAlertApi_PendingAlertTestAllPendingAlert_payload: <none>")
-		resp, httpRes, err := apiClient.PendingAlertApi.PendingAlertTestAllPendingAlert(context.Background()).Execute()
+		t.Log("PendingAlertApi_AlertsPendingScheduleGet_payload: <none>")
+		resp, httpRes, err := apiClient.PendingAlertApi.AlertsPendingScheduleGet(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test PendingAlertApiService PendingAlertTestPendingAlert", func(t *testing.T) {
+	t.Run("Test PendingAlertApiService AlertsPendingSchedulePut", func(t *testing.T) {
 
-		t.Log("PendingAlertApi_PendingAlertTestPendingAlert_payload: <none>")
-		resp, httpRes, err := apiClient.PendingAlertApi.PendingAlertTestPendingAlert(context.Background()).Execute()
+		t.Log("PendingAlertApi_AlertsPendingSchedulePut_payload: <none>")
+		resp, httpRes, err := apiClient.PendingAlertApi.AlertsPendingSchedulePut(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test PendingAlertApiService AlertsPendingTestAllPost", func(t *testing.T) {
+
+		t.Log("PendingAlertApi_AlertsPendingTestAllPost_payload: <none>")
+		resp, httpRes, err := apiClient.PendingAlertApi.AlertsPendingTestAllPost(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test PendingAlertApiService AlertsPendingTestPost", func(t *testing.T) {
+
+		t.Log("PendingAlertApi_AlertsPendingTestPost_payload: <none>")
+		resp, httpRes, err := apiClient.PendingAlertApi.AlertsPendingTestPost(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

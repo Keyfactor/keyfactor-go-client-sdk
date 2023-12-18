@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor-v1
+Keyfactor API Reference and Utility
 
 Testing ServiceAccountApiService
 
@@ -39,95 +39,95 @@ func Test_command_ServiceAccountApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test ServiceAccountApiService ServiceAccountCreateServiceAccount", func(t *testing.T) {
+	t.Run("Test ServiceAccountApiService SSHServiceAccountsDelete", func(t *testing.T) {
 
-		t.Log("ServiceAccountApi_ServiceAccountCreateServiceAccount_payload: <none>")
-		resp, httpRes, err := apiClient.ServiceAccountApi.ServiceAccountCreateServiceAccount(context.Background()).Execute()
+		t.Log("ServiceAccountApi_SSHServiceAccountsDelete_payload: <none>")
+		httpRes, err := apiClient.ServiceAccountApi.SSHServiceAccountsDelete(context.Background()).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test ServiceAccountApiService SSHServiceAccountsGet", func(t *testing.T) {
+
+		t.Log("ServiceAccountApi_SSHServiceAccountsGet_payload: <none>")
+		resp, httpRes, err := apiClient.ServiceAccountApi.SSHServiceAccountsGet(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ServiceAccountApiService ServiceAccountDeleteServiceAccount", func(t *testing.T) {
+	t.Run("Test ServiceAccountApiService SSHServiceAccountsIdDelete", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("ServiceAccountApi_ServiceAccountDeleteServiceAccount_id")
+		id = os.Getenv("ServiceAccountApi_SSHServiceAccountsIdDelete_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("ServiceAccountApi_ServiceAccountDeleteServiceAccount_id: %v", id)
+		t.Logf("ServiceAccountApi_SSHServiceAccountsIdDelete_id: %v", id)
 
-		t.Log("ServiceAccountApi_ServiceAccountDeleteServiceAccount_payload: <none>")
-		httpRes, err := apiClient.ServiceAccountApi.ServiceAccountDeleteServiceAccount(context.Background(), id.(int32)).Execute()
+		t.Log("ServiceAccountApi_SSHServiceAccountsIdDelete_payload: <none>")
+		httpRes, err := apiClient.ServiceAccountApi.SSHServiceAccountsIdDelete(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ServiceAccountApiService ServiceAccountDeleteServiceAccounts", func(t *testing.T) {
-
-		t.Log("ServiceAccountApi_ServiceAccountDeleteServiceAccounts_payload: <none>")
-		httpRes, err := apiClient.ServiceAccountApi.ServiceAccountDeleteServiceAccounts(context.Background()).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test ServiceAccountApiService ServiceAccountGet", func(t *testing.T) {
+	t.Run("Test ServiceAccountApiService SSHServiceAccountsIdGet", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("ServiceAccountApi_ServiceAccountGet_id")
+		id = os.Getenv("ServiceAccountApi_SSHServiceAccountsIdGet_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("ServiceAccountApi_ServiceAccountGet_id: %v", id)
+		t.Logf("ServiceAccountApi_SSHServiceAccountsIdGet_id: %v", id)
 
-		t.Log("ServiceAccountApi_ServiceAccountGet_payload: <none>")
-		resp, httpRes, err := apiClient.ServiceAccountApi.ServiceAccountGet(context.Background(), id.(int32)).Execute()
+		t.Log("ServiceAccountApi_SSHServiceAccountsIdGet_payload: <none>")
+		resp, httpRes, err := apiClient.ServiceAccountApi.SSHServiceAccountsIdGet(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ServiceAccountApiService ServiceAccountGetServiceAccountKey", func(t *testing.T) {
+	t.Run("Test ServiceAccountApiService SSHServiceAccountsKeyIdGet", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("ServiceAccountApi_ServiceAccountGetServiceAccountKey_id")
+		id = os.Getenv("ServiceAccountApi_SSHServiceAccountsKeyIdGet_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("ServiceAccountApi_ServiceAccountGetServiceAccountKey_id: %v", id)
+		t.Logf("ServiceAccountApi_SSHServiceAccountsKeyIdGet_id: %v", id)
 
-		t.Log("ServiceAccountApi_ServiceAccountGetServiceAccountKey_payload: <none>")
-		resp, httpRes, err := apiClient.ServiceAccountApi.ServiceAccountGetServiceAccountKey(context.Background(), id.(int32)).Execute()
+		t.Log("ServiceAccountApi_SSHServiceAccountsKeyIdGet_payload: <none>")
+		resp, httpRes, err := apiClient.ServiceAccountApi.SSHServiceAccountsKeyIdGet(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ServiceAccountApiService ServiceAccountQueryServiceAccounts", func(t *testing.T) {
+	t.Run("Test ServiceAccountApiService SSHServiceAccountsPost", func(t *testing.T) {
 
-		t.Log("ServiceAccountApi_ServiceAccountQueryServiceAccounts_payload: <none>")
-		resp, httpRes, err := apiClient.ServiceAccountApi.ServiceAccountQueryServiceAccounts(context.Background()).Execute()
+		t.Log("ServiceAccountApi_SSHServiceAccountsPost_payload: <none>")
+		resp, httpRes, err := apiClient.ServiceAccountApi.SSHServiceAccountsPost(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ServiceAccountApiService ServiceAccountRotateServiceAccountKey", func(t *testing.T) {
+	t.Run("Test ServiceAccountApiService SSHServiceAccountsPut", func(t *testing.T) {
+
+		t.Log("ServiceAccountApi_SSHServiceAccountsPut_payload: <none>")
+		resp, httpRes, err := apiClient.ServiceAccountApi.SSHServiceAccountsPut(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test ServiceAccountApiService SSHServiceAccountsRotateIdPost", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("ServiceAccountApi_ServiceAccountRotateServiceAccountKey_id")
+		id = os.Getenv("ServiceAccountApi_SSHServiceAccountsRotateIdPost_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("ServiceAccountApi_ServiceAccountRotateServiceAccountKey_id: %v", id)
+		t.Logf("ServiceAccountApi_SSHServiceAccountsRotateIdPost_id: %v", id)
 
-		t.Log("ServiceAccountApi_ServiceAccountRotateServiceAccountKey_payload: <none>")
-		resp, httpRes, err := apiClient.ServiceAccountApi.ServiceAccountRotateServiceAccountKey(context.Background(), id.(int32)).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test ServiceAccountApiService ServiceAccountUpdateServiceAccount", func(t *testing.T) {
-
-		t.Log("ServiceAccountApi_ServiceAccountUpdateServiceAccount_payload: <none>")
-		resp, httpRes, err := apiClient.ServiceAccountApi.ServiceAccountUpdateServiceAccount(context.Background()).Execute()
+		t.Log("ServiceAccountApi_SSHServiceAccountsRotateIdPost_payload: <none>")
+		resp, httpRes, err := apiClient.ServiceAccountApi.SSHServiceAccountsRotateIdPost(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

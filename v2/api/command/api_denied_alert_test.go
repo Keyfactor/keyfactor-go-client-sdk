@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor-v1
+Keyfactor API Reference and Utility
 
 Testing DeniedAlertApiService
 
@@ -39,57 +39,57 @@ func Test_command_DeniedAlertApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test DeniedAlertApiService DeniedAlertAddDeniedAlert", func(t *testing.T) {
+	t.Run("Test DeniedAlertApiService AlertsDeniedGet", func(t *testing.T) {
 
-		t.Log("DeniedAlertApi_DeniedAlertAddDeniedAlert_payload: <none>")
-		resp, httpRes, err := apiClient.DeniedAlertApi.DeniedAlertAddDeniedAlert(context.Background()).Execute()
+		t.Log("DeniedAlertApi_AlertsDeniedGet_payload: <none>")
+		resp, httpRes, err := apiClient.DeniedAlertApi.AlertsDeniedGet(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test DeniedAlertApiService DeniedAlertDeleteDeniedAlert", func(t *testing.T) {
+	t.Run("Test DeniedAlertApiService AlertsDeniedIdDelete", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("DeniedAlertApi_DeniedAlertDeleteDeniedAlert_id")
+		id = os.Getenv("DeniedAlertApi_AlertsDeniedIdDelete_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("DeniedAlertApi_DeniedAlertDeleteDeniedAlert_id: %v", id)
+		t.Logf("DeniedAlertApi_AlertsDeniedIdDelete_id: %v", id)
 
-		t.Log("DeniedAlertApi_DeniedAlertDeleteDeniedAlert_payload: <none>")
-		httpRes, err := apiClient.DeniedAlertApi.DeniedAlertDeleteDeniedAlert(context.Background(), id.(int32)).Execute()
+		t.Log("DeniedAlertApi_AlertsDeniedIdDelete_payload: <none>")
+		httpRes, err := apiClient.DeniedAlertApi.AlertsDeniedIdDelete(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test DeniedAlertApiService DeniedAlertEditDeniedAlert", func(t *testing.T) {
-
-		t.Log("DeniedAlertApi_DeniedAlertEditDeniedAlert_payload: <none>")
-		resp, httpRes, err := apiClient.DeniedAlertApi.DeniedAlertEditDeniedAlert(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test DeniedAlertApiService DeniedAlertGetDeniedAlert", func(t *testing.T) {
+	t.Run("Test DeniedAlertApiService AlertsDeniedIdGet", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("DeniedAlertApi_DeniedAlertGetDeniedAlert_id")
+		id = os.Getenv("DeniedAlertApi_AlertsDeniedIdGet_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("DeniedAlertApi_DeniedAlertGetDeniedAlert_id: %v", id)
+		t.Logf("DeniedAlertApi_AlertsDeniedIdGet_id: %v", id)
 
-		t.Log("DeniedAlertApi_DeniedAlertGetDeniedAlert_payload: <none>")
-		resp, httpRes, err := apiClient.DeniedAlertApi.DeniedAlertGetDeniedAlert(context.Background(), id.(int32)).Execute()
+		t.Log("DeniedAlertApi_AlertsDeniedIdGet_payload: <none>")
+		resp, httpRes, err := apiClient.DeniedAlertApi.AlertsDeniedIdGet(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test DeniedAlertApiService DeniedAlertGetDeniedAlerts", func(t *testing.T) {
+	t.Run("Test DeniedAlertApiService AlertsDeniedPost", func(t *testing.T) {
 
-		t.Log("DeniedAlertApi_DeniedAlertGetDeniedAlerts_payload: <none>")
-		resp, httpRes, err := apiClient.DeniedAlertApi.DeniedAlertGetDeniedAlerts(context.Background()).Execute()
+		t.Log("DeniedAlertApi_AlertsDeniedPost_payload: <none>")
+		resp, httpRes, err := apiClient.DeniedAlertApi.AlertsDeniedPost(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test DeniedAlertApiService AlertsDeniedPut", func(t *testing.T) {
+
+		t.Log("DeniedAlertApi_AlertsDeniedPut_payload: <none>")
+		resp, httpRes, err := apiClient.DeniedAlertApi.AlertsDeniedPut(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

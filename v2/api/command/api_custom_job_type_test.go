@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor-v1
+Keyfactor API Reference and Utility
 
 Testing CustomJobTypeApiService
 
@@ -39,57 +39,57 @@ func Test_command_CustomJobTypeApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test CustomJobTypeApiService CustomJobTypeCreateJobType", func(t *testing.T) {
+	t.Run("Test CustomJobTypeApiService JobTypesCustomGet", func(t *testing.T) {
 
-		t.Log("CustomJobTypeApi_CustomJobTypeCreateJobType_payload: <none>")
-		resp, httpRes, err := apiClient.CustomJobTypeApi.CustomJobTypeCreateJobType(context.Background()).Execute()
+		t.Log("CustomJobTypeApi_JobTypesCustomGet_payload: <none>")
+		resp, httpRes, err := apiClient.CustomJobTypeApi.JobTypesCustomGet(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CustomJobTypeApiService CustomJobTypeDeleteJobType", func(t *testing.T) {
+	t.Run("Test CustomJobTypeApiService JobTypesCustomIdDelete", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("CustomJobTypeApi_CustomJobTypeDeleteJobType_id")
+		id = os.Getenv("CustomJobTypeApi_JobTypesCustomIdDelete_id")
 		id, _ = convertParamInterface(id, "string")
-		t.Logf("CustomJobTypeApi_CustomJobTypeDeleteJobType_id: %v", id)
+		t.Logf("CustomJobTypeApi_JobTypesCustomIdDelete_id: %v", id)
 
-		t.Log("CustomJobTypeApi_CustomJobTypeDeleteJobType_payload: <none>")
-		httpRes, err := apiClient.CustomJobTypeApi.CustomJobTypeDeleteJobType(context.Background(), id.(string)).Execute()
+		t.Log("CustomJobTypeApi_JobTypesCustomIdDelete_payload: <none>")
+		httpRes, err := apiClient.CustomJobTypeApi.JobTypesCustomIdDelete(context.Background(), id.(string)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CustomJobTypeApiService CustomJobTypeGetJobTypeById", func(t *testing.T) {
+	t.Run("Test CustomJobTypeApiService JobTypesCustomIdGet", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("CustomJobTypeApi_CustomJobTypeGetJobTypeById_id")
+		id = os.Getenv("CustomJobTypeApi_JobTypesCustomIdGet_id")
 		id, _ = convertParamInterface(id, "string")
-		t.Logf("CustomJobTypeApi_CustomJobTypeGetJobTypeById_id: %v", id)
+		t.Logf("CustomJobTypeApi_JobTypesCustomIdGet_id: %v", id)
 
-		t.Log("CustomJobTypeApi_CustomJobTypeGetJobTypeById_payload: <none>")
-		resp, httpRes, err := apiClient.CustomJobTypeApi.CustomJobTypeGetJobTypeById(context.Background(), id.(string)).Execute()
+		t.Log("CustomJobTypeApi_JobTypesCustomIdGet_payload: <none>")
+		resp, httpRes, err := apiClient.CustomJobTypeApi.JobTypesCustomIdGet(context.Background(), id.(string)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CustomJobTypeApiService CustomJobTypeGetJobTypes", func(t *testing.T) {
+	t.Run("Test CustomJobTypeApiService JobTypesCustomPost", func(t *testing.T) {
 
-		t.Log("CustomJobTypeApi_CustomJobTypeGetJobTypes_payload: <none>")
-		resp, httpRes, err := apiClient.CustomJobTypeApi.CustomJobTypeGetJobTypes(context.Background()).Execute()
+		t.Log("CustomJobTypeApi_JobTypesCustomPost_payload: <none>")
+		resp, httpRes, err := apiClient.CustomJobTypeApi.JobTypesCustomPost(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CustomJobTypeApiService CustomJobTypeUpdateJobType", func(t *testing.T) {
+	t.Run("Test CustomJobTypeApiService JobTypesCustomPut", func(t *testing.T) {
 
-		t.Log("CustomJobTypeApi_CustomJobTypeUpdateJobType_payload: <none>")
-		resp, httpRes, err := apiClient.CustomJobTypeApi.CustomJobTypeUpdateJobType(context.Background()).Execute()
+		t.Log("CustomJobTypeApi_JobTypesCustomPut_payload: <none>")
+		resp, httpRes, err := apiClient.CustomJobTypeApi.JobTypesCustomPut(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

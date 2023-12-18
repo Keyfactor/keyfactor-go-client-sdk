@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor-v1
+Keyfactor API Reference and Utility
 
 Testing KeyRotationAlertApiService
 
@@ -39,93 +39,93 @@ func Test_command_KeyRotationAlertApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test KeyRotationAlertApiService KeyRotationAlertAddKeyRotationAlert", func(t *testing.T) {
+	t.Run("Test KeyRotationAlertApiService AlertsKeyRotationGet", func(t *testing.T) {
 
-		t.Log("KeyRotationAlertApi_KeyRotationAlertAddKeyRotationAlert_payload: <none>")
-		resp, httpRes, err := apiClient.KeyRotationAlertApi.KeyRotationAlertAddKeyRotationAlert(context.Background()).Execute()
+		t.Log("KeyRotationAlertApi_AlertsKeyRotationGet_payload: <none>")
+		resp, httpRes, err := apiClient.KeyRotationAlertApi.AlertsKeyRotationGet(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test KeyRotationAlertApiService KeyRotationAlertDeleteKeyRotationAlert", func(t *testing.T) {
+	t.Run("Test KeyRotationAlertApiService AlertsKeyRotationIdDelete", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("KeyRotationAlertApi_KeyRotationAlertDeleteKeyRotationAlert_id")
+		id = os.Getenv("KeyRotationAlertApi_AlertsKeyRotationIdDelete_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("KeyRotationAlertApi_KeyRotationAlertDeleteKeyRotationAlert_id: %v", id)
+		t.Logf("KeyRotationAlertApi_AlertsKeyRotationIdDelete_id: %v", id)
 
-		t.Log("KeyRotationAlertApi_KeyRotationAlertDeleteKeyRotationAlert_payload: <none>")
-		httpRes, err := apiClient.KeyRotationAlertApi.KeyRotationAlertDeleteKeyRotationAlert(context.Background(), id.(int32)).Execute()
+		t.Log("KeyRotationAlertApi_AlertsKeyRotationIdDelete_payload: <none>")
+		httpRes, err := apiClient.KeyRotationAlertApi.AlertsKeyRotationIdDelete(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test KeyRotationAlertApiService KeyRotationAlertEditKeyRotationAlert", func(t *testing.T) {
-
-		t.Log("KeyRotationAlertApi_KeyRotationAlertEditKeyRotationAlert_payload: <none>")
-		resp, httpRes, err := apiClient.KeyRotationAlertApi.KeyRotationAlertEditKeyRotationAlert(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test KeyRotationAlertApiService KeyRotationAlertEditSchedule", func(t *testing.T) {
-
-		t.Log("KeyRotationAlertApi_KeyRotationAlertEditSchedule_payload: <none>")
-		resp, httpRes, err := apiClient.KeyRotationAlertApi.KeyRotationAlertEditSchedule(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test KeyRotationAlertApiService KeyRotationAlertGetKeyRotationAlert", func(t *testing.T) {
+	t.Run("Test KeyRotationAlertApiService AlertsKeyRotationIdGet", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("KeyRotationAlertApi_KeyRotationAlertGetKeyRotationAlert_id")
+		id = os.Getenv("KeyRotationAlertApi_AlertsKeyRotationIdGet_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("KeyRotationAlertApi_KeyRotationAlertGetKeyRotationAlert_id: %v", id)
+		t.Logf("KeyRotationAlertApi_AlertsKeyRotationIdGet_id: %v", id)
 
-		t.Log("KeyRotationAlertApi_KeyRotationAlertGetKeyRotationAlert_payload: <none>")
-		resp, httpRes, err := apiClient.KeyRotationAlertApi.KeyRotationAlertGetKeyRotationAlert(context.Background(), id.(int32)).Execute()
+		t.Log("KeyRotationAlertApi_AlertsKeyRotationIdGet_payload: <none>")
+		resp, httpRes, err := apiClient.KeyRotationAlertApi.AlertsKeyRotationIdGet(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test KeyRotationAlertApiService KeyRotationAlertGetKeyRotationAlerts", func(t *testing.T) {
+	t.Run("Test KeyRotationAlertApiService AlertsKeyRotationPost", func(t *testing.T) {
 
-		t.Log("KeyRotationAlertApi_KeyRotationAlertGetKeyRotationAlerts_payload: <none>")
-		resp, httpRes, err := apiClient.KeyRotationAlertApi.KeyRotationAlertGetKeyRotationAlerts(context.Background()).Execute()
+		t.Log("KeyRotationAlertApi_AlertsKeyRotationPost_payload: <none>")
+		resp, httpRes, err := apiClient.KeyRotationAlertApi.AlertsKeyRotationPost(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test KeyRotationAlertApiService KeyRotationAlertGetSchedule", func(t *testing.T) {
+	t.Run("Test KeyRotationAlertApiService AlertsKeyRotationPut", func(t *testing.T) {
 
-		t.Log("KeyRotationAlertApi_KeyRotationAlertGetSchedule_payload: <none>")
-		resp, httpRes, err := apiClient.KeyRotationAlertApi.KeyRotationAlertGetSchedule(context.Background()).Execute()
+		t.Log("KeyRotationAlertApi_AlertsKeyRotationPut_payload: <none>")
+		resp, httpRes, err := apiClient.KeyRotationAlertApi.AlertsKeyRotationPut(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test KeyRotationAlertApiService KeyRotationAlertTestAllKeyRotationAlert", func(t *testing.T) {
+	t.Run("Test KeyRotationAlertApiService AlertsKeyRotationScheduleGet", func(t *testing.T) {
 
-		t.Log("KeyRotationAlertApi_KeyRotationAlertTestAllKeyRotationAlert_payload: <none>")
-		resp, httpRes, err := apiClient.KeyRotationAlertApi.KeyRotationAlertTestAllKeyRotationAlert(context.Background()).Execute()
+		t.Log("KeyRotationAlertApi_AlertsKeyRotationScheduleGet_payload: <none>")
+		resp, httpRes, err := apiClient.KeyRotationAlertApi.AlertsKeyRotationScheduleGet(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test KeyRotationAlertApiService KeyRotationAlertTestKeyRotationAlert", func(t *testing.T) {
+	t.Run("Test KeyRotationAlertApiService AlertsKeyRotationSchedulePut", func(t *testing.T) {
 
-		t.Log("KeyRotationAlertApi_KeyRotationAlertTestKeyRotationAlert_payload: <none>")
-		resp, httpRes, err := apiClient.KeyRotationAlertApi.KeyRotationAlertTestKeyRotationAlert(context.Background()).Execute()
+		t.Log("KeyRotationAlertApi_AlertsKeyRotationSchedulePut_payload: <none>")
+		resp, httpRes, err := apiClient.KeyRotationAlertApi.AlertsKeyRotationSchedulePut(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test KeyRotationAlertApiService AlertsKeyRotationTestAllPost", func(t *testing.T) {
+
+		t.Log("KeyRotationAlertApi_AlertsKeyRotationTestAllPost_payload: <none>")
+		resp, httpRes, err := apiClient.KeyRotationAlertApi.AlertsKeyRotationTestAllPost(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test KeyRotationAlertApiService AlertsKeyRotationTestPost", func(t *testing.T) {
+
+		t.Log("KeyRotationAlertApi_AlertsKeyRotationTestPost_payload: <none>")
+		resp, httpRes, err := apiClient.KeyRotationAlertApi.AlertsKeyRotationTestPost(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

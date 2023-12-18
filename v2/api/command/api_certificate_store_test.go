@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor-v1
+Keyfactor API Reference and Utility
 
 Testing CertificateStoreApiService
 
@@ -39,114 +39,174 @@ func Test_command_CertificateStoreApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test CertificateStoreApiService CertificateStoreAddCertificate", func(t *testing.T) {
+	t.Run("Test CertificateStoreApiService CertificateStoresApprovePost", func(t *testing.T) {
 
-		t.Log("CertificateStoreApi_CertificateStoreAddCertificate_payload: <none>")
-		resp, httpRes, err := apiClient.CertificateStoreApi.CertificateStoreAddCertificate(context.Background()).Execute()
+		t.Log("CertificateStoreApi_CertificateStoresApprovePost_payload: <none>")
+		httpRes, err := apiClient.CertificateStoreApi.CertificateStoresApprovePost(context.Background()).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateStoreApiService CertificateStoresAssignContainerPut", func(t *testing.T) {
+
+		t.Log("CertificateStoreApi_CertificateStoresAssignContainerPut_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateStoreApi.CertificateStoresAssignContainerPut(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CertificateStoreApiService CertificateStoreApprovePending", func(t *testing.T) {
+	t.Run("Test CertificateStoreApiService CertificateStoresCertificatesAddPost", func(t *testing.T) {
 
-		t.Log("CertificateStoreApi_CertificateStoreApprovePending_payload: <none>")
-		httpRes, err := apiClient.CertificateStoreApi.CertificateStoreApprovePending(context.Background()).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test CertificateStoreApiService CertificateStoreConfigureDiscoveryJob", func(t *testing.T) {
-
-		t.Log("CertificateStoreApi_CertificateStoreConfigureDiscoveryJob_payload: <none>")
-		httpRes, err := apiClient.CertificateStoreApi.CertificateStoreConfigureDiscoveryJob(context.Background()).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test CertificateStoreApiService CertificateStoreCreateCertificateStoreServer", func(t *testing.T) {
-
-		t.Log("CertificateStoreApi_CertificateStoreCreateCertificateStoreServer_payload: <none>")
-		resp, httpRes, err := apiClient.CertificateStoreApi.CertificateStoreCreateCertificateStoreServer(context.Background()).Execute()
+		t.Log("CertificateStoreApi_CertificateStoresCertificatesAddPost_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateStoreApi.CertificateStoresCertificatesAddPost(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CertificateStoreApiService CertificateStoreDeleteCertificateStore", func(t *testing.T) {
+	t.Run("Test CertificateStoreApiService CertificateStoresCertificatesRemovePost", func(t *testing.T) {
+
+		t.Log("CertificateStoreApi_CertificateStoresCertificatesRemovePost_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateStoreApi.CertificateStoresCertificatesRemovePost(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateStoreApiService CertificateStoresDelete", func(t *testing.T) {
+
+		t.Log("CertificateStoreApi_CertificateStoresDelete_payload: <none>")
+		httpRes, err := apiClient.CertificateStoreApi.CertificateStoresDelete(context.Background()).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateStoreApiService CertificateStoresDiscoveryJobPut", func(t *testing.T) {
+
+		t.Log("CertificateStoreApi_CertificateStoresDiscoveryJobPut_payload: <none>")
+		httpRes, err := apiClient.CertificateStoreApi.CertificateStoresDiscoveryJobPut(context.Background()).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateStoreApiService CertificateStoresGet", func(t *testing.T) {
+
+		t.Log("CertificateStoreApi_CertificateStoresGet_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateStoreApi.CertificateStoresGet(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateStoreApiService CertificateStoresIdDelete", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("CertificateStoreApi_CertificateStoreDeleteCertificateStore_id")
+		id = os.Getenv("CertificateStoreApi_CertificateStoresIdDelete_id")
 		id, _ = convertParamInterface(id, "string")
-		t.Logf("CertificateStoreApi_CertificateStoreDeleteCertificateStore_id: %v", id)
+		t.Logf("CertificateStoreApi_CertificateStoresIdDelete_id: %v", id)
 
-		t.Log("CertificateStoreApi_CertificateStoreDeleteCertificateStore_payload: <none>")
-		httpRes, err := apiClient.CertificateStoreApi.CertificateStoreDeleteCertificateStore(context.Background(), id.(string)).Execute()
+		t.Log("CertificateStoreApi_CertificateStoresIdDelete_payload: <none>")
+		httpRes, err := apiClient.CertificateStoreApi.CertificateStoresIdDelete(context.Background(), id.(string)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CertificateStoreApiService CertificateStoreDeleteCertificateStores", func(t *testing.T) {
-
-		t.Log("CertificateStoreApi_CertificateStoreDeleteCertificateStores_payload: <none>")
-		httpRes, err := apiClient.CertificateStoreApi.CertificateStoreDeleteCertificateStores(context.Background()).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test CertificateStoreApiService CertificateStoreGetCertificateStoreInventory", func(t *testing.T) {
+	t.Run("Test CertificateStoreApiService CertificateStoresIdGet", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("CertificateStoreApi_CertificateStoreGetCertificateStoreInventory_id")
+		id = os.Getenv("CertificateStoreApi_CertificateStoresIdGet_id")
 		id, _ = convertParamInterface(id, "string")
-		t.Logf("CertificateStoreApi_CertificateStoreGetCertificateStoreInventory_id: %v", id)
+		t.Logf("CertificateStoreApi_CertificateStoresIdGet_id: %v", id)
 
-		t.Log("CertificateStoreApi_CertificateStoreGetCertificateStoreInventory_payload: <none>")
-		resp, httpRes, err := apiClient.CertificateStoreApi.CertificateStoreGetCertificateStoreInventory(context.Background(), id.(string)).Execute()
+		t.Log("CertificateStoreApi_CertificateStoresIdGet_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateStoreApi.CertificateStoresIdGet(context.Background(), id.(string)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CertificateStoreApiService CertificateStoreRemoveCertificate", func(t *testing.T) {
+	t.Run("Test CertificateStoreApiService CertificateStoresIdInventoryGet", func(t *testing.T) {
 
-		t.Log("CertificateStoreApi_CertificateStoreRemoveCertificate_payload: <none>")
-		resp, httpRes, err := apiClient.CertificateStoreApi.CertificateStoreRemoveCertificate(context.Background()).Execute()
+		var id interface{}
+
+		id = os.Getenv("CertificateStoreApi_CertificateStoresIdInventoryGet_id")
+		id, _ = convertParamInterface(id, "string")
+		t.Logf("CertificateStoreApi_CertificateStoresIdInventoryGet_id: %v", id)
+
+		t.Log("CertificateStoreApi_CertificateStoresIdInventoryGet_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateStoreApi.CertificateStoresIdInventoryGet(context.Background(), id.(string)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CertificateStoreApiService CertificateStoreSchedule", func(t *testing.T) {
+	t.Run("Test CertificateStoreApiService CertificateStoresPasswordPut", func(t *testing.T) {
 
-		t.Log("CertificateStoreApi_CertificateStoreSchedule_payload: <none>")
-		httpRes, err := apiClient.CertificateStoreApi.CertificateStoreSchedule(context.Background()).Execute()
+		t.Log("CertificateStoreApi_CertificateStoresPasswordPut_payload: <none>")
+		httpRes, err := apiClient.CertificateStoreApi.CertificateStoresPasswordPut(context.Background()).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CertificateStoreApiService CertificateStoreScheduleForReenrollment", func(t *testing.T) {
+	t.Run("Test CertificateStoreApiService CertificateStoresPost", func(t *testing.T) {
 
-		t.Log("CertificateStoreApi_CertificateStoreScheduleForReenrollment_payload: <none>")
-		httpRes, err := apiClient.CertificateStoreApi.CertificateStoreScheduleForReenrollment(context.Background()).Execute()
+		t.Log("CertificateStoreApi_CertificateStoresPost_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateStoreApi.CertificateStoresPost(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateStoreApiService CertificateStoresPut", func(t *testing.T) {
+
+		t.Log("CertificateStoreApi_CertificateStoresPut_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateStoreApi.CertificateStoresPut(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateStoreApiService CertificateStoresReenrollmentPost", func(t *testing.T) {
+
+		t.Log("CertificateStoreApi_CertificateStoresReenrollmentPost_payload: <none>")
+		httpRes, err := apiClient.CertificateStoreApi.CertificateStoresReenrollmentPost(context.Background()).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CertificateStoreApiService CertificateStoreSetPassword", func(t *testing.T) {
+	t.Run("Test CertificateStoreApiService CertificateStoresSchedulePost", func(t *testing.T) {
 
-		t.Log("CertificateStoreApi_CertificateStoreSetPassword_payload: <none>")
-		httpRes, err := apiClient.CertificateStoreApi.CertificateStoreSetPassword(context.Background()).Execute()
+		t.Log("CertificateStoreApi_CertificateStoresSchedulePost_payload: <none>")
+		httpRes, err := apiClient.CertificateStoreApi.CertificateStoresSchedulePost(context.Background()).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CertificateStoreApiService CertificateStoreUpdateCertificateStoreServer", func(t *testing.T) {
+	t.Run("Test CertificateStoreApiService CertificateStoresServerGet", func(t *testing.T) {
 
-		t.Log("CertificateStoreApi_CertificateStoreUpdateCertificateStoreServer_payload: <none>")
-		resp, httpRes, err := apiClient.CertificateStoreApi.CertificateStoreUpdateCertificateStoreServer(context.Background()).Execute()
+		t.Log("CertificateStoreApi_CertificateStoresServerGet_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateStoreApi.CertificateStoresServerGet(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateStoreApiService CertificateStoresServerPost", func(t *testing.T) {
+
+		t.Log("CertificateStoreApi_CertificateStoresServerPost_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateStoreApi.CertificateStoresServerPost(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateStoreApiService CertificateStoresServerPut", func(t *testing.T) {
+
+		t.Log("CertificateStoreApi_CertificateStoresServerPut_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateStoreApi.CertificateStoresServerPut(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

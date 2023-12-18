@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor-v1
+Keyfactor API Reference and Utility
 
 Testing CertificateAuthorityApiService
 
@@ -39,74 +39,233 @@ func Test_command_CertificateAuthorityApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test CertificateAuthorityApiService CertificateAuthorityCreateCA", func(t *testing.T) {
+	t.Run("Test CertificateAuthorityApiService CertificateAuthorityAlertRecipientsCAHealthRecipientsGet", func(t *testing.T) {
 
-		t.Log("CertificateAuthorityApi_CertificateAuthorityCreateCA_payload: <none>")
-		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityCreateCA(context.Background()).Execute()
+		t.Log("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAHealthRecipientsGet_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityAlertRecipientsCAHealthRecipientsGet(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CertificateAuthorityApiService CertificateAuthorityDeleteCA", func(t *testing.T) {
+	t.Run("Test CertificateAuthorityApiService CertificateAuthorityAlertRecipientsCAHealthRecipientsIdDelete", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("CertificateAuthorityApi_CertificateAuthorityDeleteCA_id")
+		id = os.Getenv("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAHealthRecipientsIdDelete_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("CertificateAuthorityApi_CertificateAuthorityDeleteCA_id: %v", id)
+		t.Logf("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAHealthRecipientsIdDelete_id: %v", id)
 
-		t.Log("CertificateAuthorityApi_CertificateAuthorityDeleteCA_payload: <none>")
-		httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityDeleteCA(context.Background(), id.(int32)).Execute()
+		t.Log("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAHealthRecipientsIdDelete_payload: <none>")
+		httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityAlertRecipientsCAHealthRecipientsIdDelete(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CertificateAuthorityApiService CertificateAuthorityGetCa", func(t *testing.T) {
+	t.Run("Test CertificateAuthorityApiService CertificateAuthorityAlertRecipientsCAHealthRecipientsIdGet", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("CertificateAuthorityApi_CertificateAuthorityGetCa_id")
+		id = os.Getenv("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAHealthRecipientsIdGet_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("CertificateAuthorityApi_CertificateAuthorityGetCa_id: %v", id)
+		t.Logf("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAHealthRecipientsIdGet_id: %v", id)
 
-		t.Log("CertificateAuthorityApi_CertificateAuthorityGetCa_payload: <none>")
-		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityGetCa(context.Background(), id.(int32)).Execute()
+		t.Log("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAHealthRecipientsIdGet_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityAlertRecipientsCAHealthRecipientsIdGet(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CertificateAuthorityApiService CertificateAuthorityGetCas", func(t *testing.T) {
+	t.Run("Test CertificateAuthorityApiService CertificateAuthorityAlertRecipientsCAHealthRecipientsIdPut", func(t *testing.T) {
 
-		t.Log("CertificateAuthorityApi_CertificateAuthorityGetCas_payload: <none>")
-		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityGetCas(context.Background()).Execute()
+		var id interface{}
+
+		id = os.Getenv("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAHealthRecipientsIdPut_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAHealthRecipientsIdPut_id: %v", id)
+
+		t.Log("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAHealthRecipientsIdPut_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityAlertRecipientsCAHealthRecipientsIdPut(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CertificateAuthorityApiService CertificateAuthorityPublishCRL", func(t *testing.T) {
+	t.Run("Test CertificateAuthorityApiService CertificateAuthorityAlertRecipientsCAHealthRecipientsPost", func(t *testing.T) {
 
-		t.Log("CertificateAuthorityApi_CertificateAuthorityPublishCRL_payload: <none>")
-		httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityPublishCRL(context.Background()).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test CertificateAuthorityApiService CertificateAuthorityTestCertificateAuthority", func(t *testing.T) {
-
-		t.Log("CertificateAuthorityApi_CertificateAuthorityTestCertificateAuthority_payload: <none>")
-		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityTestCertificateAuthority(context.Background()).Execute()
+		t.Log("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAHealthRecipientsPost_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityAlertRecipientsCAHealthRecipientsPost(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CertificateAuthorityApiService CertificateAuthorityUpdateCA", func(t *testing.T) {
+	t.Run("Test CertificateAuthorityApiService CertificateAuthorityAlertRecipientsCAThresholdRecipientsGet", func(t *testing.T) {
 
-		t.Log("CertificateAuthorityApi_CertificateAuthorityUpdateCA_payload: <none>")
-		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityUpdateCA(context.Background()).Execute()
+		t.Log("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAThresholdRecipientsGet_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityAlertRecipientsCAThresholdRecipientsGet(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateAuthorityApiService CertificateAuthorityAlertRecipientsCAThresholdRecipientsIdDelete", func(t *testing.T) {
+
+		var id interface{}
+
+		id = os.Getenv("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAThresholdRecipientsIdDelete_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAThresholdRecipientsIdDelete_id: %v", id)
+
+		t.Log("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAThresholdRecipientsIdDelete_payload: <none>")
+		httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityAlertRecipientsCAThresholdRecipientsIdDelete(context.Background(), id.(int32)).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateAuthorityApiService CertificateAuthorityAlertRecipientsCAThresholdRecipientsIdGet", func(t *testing.T) {
+
+		var id interface{}
+
+		id = os.Getenv("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAThresholdRecipientsIdGet_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAThresholdRecipientsIdGet_id: %v", id)
+
+		t.Log("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAThresholdRecipientsIdGet_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityAlertRecipientsCAThresholdRecipientsIdGet(context.Background(), id.(int32)).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateAuthorityApiService CertificateAuthorityAlertRecipientsCAThresholdRecipientsIdPut", func(t *testing.T) {
+
+		var id interface{}
+
+		id = os.Getenv("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAThresholdRecipientsIdPut_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAThresholdRecipientsIdPut_id: %v", id)
+
+		t.Log("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAThresholdRecipientsIdPut_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityAlertRecipientsCAThresholdRecipientsIdPut(context.Background(), id.(int32)).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateAuthorityApiService CertificateAuthorityAlertRecipientsCAThresholdRecipientsPost", func(t *testing.T) {
+
+		t.Log("CertificateAuthorityApi_CertificateAuthorityAlertRecipientsCAThresholdRecipientsPost_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityAlertRecipientsCAThresholdRecipientsPost(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateAuthorityApiService CertificateAuthorityAvailableForestsGet", func(t *testing.T) {
+
+		t.Log("CertificateAuthorityApi_CertificateAuthorityAvailableForestsGet_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityAvailableForestsGet(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateAuthorityApiService CertificateAuthorityGet", func(t *testing.T) {
+
+		t.Log("CertificateAuthorityApi_CertificateAuthorityGet_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityGet(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateAuthorityApiService CertificateAuthorityHealthMonitoringScheduleGet", func(t *testing.T) {
+
+		t.Log("CertificateAuthorityApi_CertificateAuthorityHealthMonitoringScheduleGet_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityHealthMonitoringScheduleGet(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateAuthorityApiService CertificateAuthorityIdDelete", func(t *testing.T) {
+
+		var id interface{}
+
+		id = os.Getenv("CertificateAuthorityApi_CertificateAuthorityIdDelete_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("CertificateAuthorityApi_CertificateAuthorityIdDelete_id: %v", id)
+
+		t.Log("CertificateAuthorityApi_CertificateAuthorityIdDelete_payload: <none>")
+		httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityIdDelete(context.Background(), id.(int32)).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateAuthorityApiService CertificateAuthorityIdGet", func(t *testing.T) {
+
+		var id interface{}
+
+		id = os.Getenv("CertificateAuthorityApi_CertificateAuthorityIdGet_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("CertificateAuthorityApi_CertificateAuthorityIdGet_id: %v", id)
+
+		t.Log("CertificateAuthorityApi_CertificateAuthorityIdGet_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityIdGet(context.Background(), id.(int32)).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateAuthorityApiService CertificateAuthorityImportPost", func(t *testing.T) {
+
+		t.Log("CertificateAuthorityApi_CertificateAuthorityImportPost_payload: <none>")
+		httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityImportPost(context.Background()).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateAuthorityApiService CertificateAuthorityPost", func(t *testing.T) {
+
+		t.Log("CertificateAuthorityApi_CertificateAuthorityPost_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityPost(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateAuthorityApiService CertificateAuthorityPublishCRLPost", func(t *testing.T) {
+
+		t.Log("CertificateAuthorityApi_CertificateAuthorityPublishCRLPost_payload: <none>")
+		httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityPublishCRLPost(context.Background()).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateAuthorityApiService CertificateAuthorityPut", func(t *testing.T) {
+
+		t.Log("CertificateAuthorityApi_CertificateAuthorityPut_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityPut(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateAuthorityApiService CertificateAuthoritySourceCountGet", func(t *testing.T) {
+
+		t.Log("CertificateAuthorityApi_CertificateAuthoritySourceCountGet_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthoritySourceCountGet(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test CertificateAuthorityApiService CertificateAuthorityTestPost", func(t *testing.T) {
+
+		t.Log("CertificateAuthorityApi_CertificateAuthorityTestPost_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityTestPost(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

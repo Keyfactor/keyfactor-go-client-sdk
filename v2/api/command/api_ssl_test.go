@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor-v1
+Keyfactor API Reference and Utility
 
 Testing SslApiService
 
@@ -39,227 +39,241 @@ func Test_command_SslApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test SslApiService SslAddNetworkRanges", func(t *testing.T) {
-
-		t.Log("SslApi_SslAddNetworkRanges_payload: <none>")
-		httpRes, err := apiClient.SslApi.SslAddNetworkRanges(context.Background()).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test SslApiService SslCreateNetwork", func(t *testing.T) {
-
-		t.Log("SslApi_SslCreateNetwork_payload: <none>")
-		resp, httpRes, err := apiClient.SslApi.SslCreateNetwork(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test SslApiService SslEndpoint", func(t *testing.T) {
+	t.Run("Test SslApiService SSLEndpointsIdGet", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("SslApi_SslEndpoint_id")
+		id = os.Getenv("SslApi_SSLEndpointsIdGet_id")
 		id, _ = convertParamInterface(id, "string")
-		t.Logf("SslApi_SslEndpoint_id: %v", id)
+		t.Logf("SslApi_SSLEndpointsIdGet_id: %v", id)
 
-		t.Log("SslApi_SslEndpoint_payload: <none>")
-		resp, httpRes, err := apiClient.SslApi.SslEndpoint(context.Background(), id.(string)).Execute()
+		t.Log("SslApi_SSLEndpointsIdGet_payload: <none>")
+		resp, httpRes, err := apiClient.SslApi.SSLEndpointsIdGet(context.Background(), id.(string)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test SslApiService SslEndpointHistory", func(t *testing.T) {
+	t.Run("Test SslApiService SSLEndpointsIdHistoryGet", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("SslApi_SslEndpointHistory_id")
+		id = os.Getenv("SslApi_SSLEndpointsIdHistoryGet_id")
 		id, _ = convertParamInterface(id, "string")
-		t.Logf("SslApi_SslEndpointHistory_id: %v", id)
+		t.Logf("SslApi_SSLEndpointsIdHistoryGet_id: %v", id)
 
-		t.Log("SslApi_SslEndpointHistory_payload: <none>")
-		resp, httpRes, err := apiClient.SslApi.SslEndpointHistory(context.Background(), id.(string)).Execute()
+		t.Log("SslApi_SSLEndpointsIdHistoryGet_payload: <none>")
+		resp, httpRes, err := apiClient.SslApi.SSLEndpointsIdHistoryGet(context.Background(), id.(string)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test SslApiService SslGetNetwork", func(t *testing.T) {
+	t.Run("Test SslApiService SSLEndpointsMonitorAllPut", func(t *testing.T) {
+
+		t.Log("SslApi_SSLEndpointsMonitorAllPut_payload: <none>")
+		httpRes, err := apiClient.SslApi.SSLEndpointsMonitorAllPut(context.Background()).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SslApiService SSLEndpointsMonitorStatusPut", func(t *testing.T) {
+
+		t.Log("SslApi_SSLEndpointsMonitorStatusPut_payload: <none>")
+		httpRes, err := apiClient.SslApi.SSLEndpointsMonitorStatusPut(context.Background()).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SslApiService SSLEndpointsReviewAllPut", func(t *testing.T) {
+
+		t.Log("SslApi_SSLEndpointsReviewAllPut_payload: <none>")
+		httpRes, err := apiClient.SslApi.SSLEndpointsReviewAllPut(context.Background()).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SslApiService SSLEndpointsReviewStatusPut", func(t *testing.T) {
+
+		t.Log("SslApi_SSLEndpointsReviewStatusPut_payload: <none>")
+		httpRes, err := apiClient.SslApi.SSLEndpointsReviewStatusPut(context.Background()).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SslApiService SSLGet", func(t *testing.T) {
+
+		t.Log("SslApi_SSLGet_payload: <none>")
+		resp, httpRes, err := apiClient.SslApi.SSLGet(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SslApiService SSLNetworkRangesIdDelete", func(t *testing.T) {
+
+		var id interface{}
+
+		id = os.Getenv("SslApi_SSLNetworkRangesIdDelete_id")
+		id, _ = convertParamInterface(id, "string")
+		t.Logf("SslApi_SSLNetworkRangesIdDelete_id: %v", id)
+
+		t.Log("SslApi_SSLNetworkRangesIdDelete_payload: <none>")
+		httpRes, err := apiClient.SslApi.SSLNetworkRangesIdDelete(context.Background(), id.(string)).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SslApiService SSLNetworkRangesIdGet", func(t *testing.T) {
+
+		var id interface{}
+
+		id = os.Getenv("SslApi_SSLNetworkRangesIdGet_id")
+		id, _ = convertParamInterface(id, "string")
+		t.Logf("SslApi_SSLNetworkRangesIdGet_id: %v", id)
+
+		t.Log("SslApi_SSLNetworkRangesIdGet_payload: <none>")
+		resp, httpRes, err := apiClient.SslApi.SSLNetworkRangesIdGet(context.Background(), id.(string)).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SslApiService SSLNetworkRangesPost", func(t *testing.T) {
+
+		t.Log("SslApi_SSLNetworkRangesPost_payload: <none>")
+		httpRes, err := apiClient.SslApi.SSLNetworkRangesPost(context.Background()).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SslApiService SSLNetworkRangesPut", func(t *testing.T) {
+
+		t.Log("SslApi_SSLNetworkRangesPut_payload: <none>")
+		httpRes, err := apiClient.SslApi.SSLNetworkRangesPut(context.Background()).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SslApiService SSLNetworkRangesValidatePost", func(t *testing.T) {
+
+		t.Log("SslApi_SSLNetworkRangesValidatePost_payload: <none>")
+		httpRes, err := apiClient.SslApi.SSLNetworkRangesValidatePost(context.Background()).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SslApiService SSLNetworksGet", func(t *testing.T) {
+
+		t.Log("SslApi_SSLNetworksGet_payload: <none>")
+		resp, httpRes, err := apiClient.SslApi.SSLNetworksGet(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SslApiService SSLNetworksIdDelete", func(t *testing.T) {
+
+		var id interface{}
+
+		id = os.Getenv("SslApi_SSLNetworksIdDelete_id")
+		id, _ = convertParamInterface(id, "string")
+		t.Logf("SslApi_SSLNetworksIdDelete_id: %v", id)
+
+		t.Log("SslApi_SSLNetworksIdDelete_payload: <none>")
+		httpRes, err := apiClient.SslApi.SSLNetworksIdDelete(context.Background(), id.(string)).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SslApiService SSLNetworksIdPartsGet", func(t *testing.T) {
+
+		var id interface{}
+
+		id = os.Getenv("SslApi_SSLNetworksIdPartsGet_id")
+		id, _ = convertParamInterface(id, "string")
+		t.Logf("SslApi_SSLNetworksIdPartsGet_id: %v", id)
+
+		t.Log("SslApi_SSLNetworksIdPartsGet_payload: <none>")
+		resp, httpRes, err := apiClient.SslApi.SSLNetworksIdPartsGet(context.Background(), id.(string)).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SslApiService SSLNetworksIdResetPost", func(t *testing.T) {
+
+		var id interface{}
+
+		id = os.Getenv("SslApi_SSLNetworksIdResetPost_id")
+		id, _ = convertParamInterface(id, "string")
+		t.Logf("SslApi_SSLNetworksIdResetPost_id: %v", id)
+
+		t.Log("SslApi_SSLNetworksIdResetPost_payload: <none>")
+		httpRes, err := apiClient.SslApi.SSLNetworksIdResetPost(context.Background(), id.(string)).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SslApiService SSLNetworksIdScanPost", func(t *testing.T) {
+
+		var id interface{}
+
+		id = os.Getenv("SslApi_SSLNetworksIdScanPost_id")
+		id, _ = convertParamInterface(id, "string")
+		t.Logf("SslApi_SSLNetworksIdScanPost_id: %v", id)
+
+		t.Log("SslApi_SSLNetworksIdScanPost_payload: <none>")
+		httpRes, err := apiClient.SslApi.SSLNetworksIdScanPost(context.Background(), id.(string)).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SslApiService SSLNetworksIdentifierGet", func(t *testing.T) {
 
 		var identifier interface{}
 
-		identifier = os.Getenv("SslApi_SslGetNetwork_identifier")
+		identifier = os.Getenv("SslApi_SSLNetworksIdentifierGet_identifier")
 		identifier, _ = convertParamInterface(identifier, "string")
-		t.Logf("SslApi_SslGetNetwork_identifier: %v", identifier)
+		t.Logf("SslApi_SSLNetworksIdentifierGet_identifier: %v", identifier)
 
-		t.Log("SslApi_SslGetNetwork_payload: <none>")
-		resp, httpRes, err := apiClient.SslApi.SslGetNetwork(context.Background(), identifier.(string)).Execute()
+		t.Log("SslApi_SSLNetworksIdentifierGet_payload: <none>")
+		resp, httpRes, err := apiClient.SslApi.SSLNetworksIdentifierGet(context.Background(), identifier.(string)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test SslApiService SslGetNetworkRangesForNetwork", func(t *testing.T) {
+	t.Run("Test SslApiService SSLNetworksPost", func(t *testing.T) {
+
+		t.Log("SslApi_SSLNetworksPost_payload: <none>")
+		resp, httpRes, err := apiClient.SslApi.SSLNetworksPost(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SslApiService SSLNetworksPut", func(t *testing.T) {
+
+		t.Log("SslApi_SSLNetworksPut_payload: <none>")
+		resp, httpRes, err := apiClient.SslApi.SSLNetworksPut(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test SslApiService SSLPartsIdGet", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("SslApi_SslGetNetworkRangesForNetwork_id")
+		id = os.Getenv("SslApi_SSLPartsIdGet_id")
 		id, _ = convertParamInterface(id, "string")
-		t.Logf("SslApi_SslGetNetworkRangesForNetwork_id: %v", id)
+		t.Logf("SslApi_SSLPartsIdGet_id: %v", id)
 
-		t.Log("SslApi_SslGetNetworkRangesForNetwork_payload: <none>")
-		resp, httpRes, err := apiClient.SslApi.SslGetNetworkRangesForNetwork(context.Background(), id.(string)).Execute()
+		t.Log("SslApi_SSLPartsIdGet_payload: <none>")
+		resp, httpRes, err := apiClient.SslApi.SSLPartsIdGet(context.Background(), id.(string)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test SslApiService SslGetNetworks", func(t *testing.T) {
-
-		t.Log("SslApi_SslGetNetworks_payload: <none>")
-		resp, httpRes, err := apiClient.SslApi.SslGetNetworks(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test SslApiService SslImmediateSslScan", func(t *testing.T) {
-
-		var id interface{}
-
-		id = os.Getenv("SslApi_SslImmediateSslScan_id")
-		id, _ = convertParamInterface(id, "string")
-		t.Logf("SslApi_SslImmediateSslScan_id: %v", id)
-
-		t.Log("SslApi_SslImmediateSslScan_payload: <none>")
-		httpRes, err := apiClient.SslApi.SslImmediateSslScan(context.Background(), id.(string)).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test SslApiService SslMonitorAll", func(t *testing.T) {
-
-		t.Log("SslApi_SslMonitorAll_payload: <none>")
-		httpRes, err := apiClient.SslApi.SslMonitorAll(context.Background()).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test SslApiService SslMonitoringStatus", func(t *testing.T) {
-
-		t.Log("SslApi_SslMonitoringStatus_payload: <none>")
-		httpRes, err := apiClient.SslApi.SslMonitoringStatus(context.Background()).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test SslApiService SslNetworkScanParts", func(t *testing.T) {
-
-		var id interface{}
-
-		id = os.Getenv("SslApi_SslNetworkScanParts_id")
-		id, _ = convertParamInterface(id, "string")
-		t.Logf("SslApi_SslNetworkScanParts_id: %v", id)
-
-		t.Log("SslApi_SslNetworkScanParts_payload: <none>")
-		resp, httpRes, err := apiClient.SslApi.SslNetworkScanParts(context.Background(), id.(string)).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test SslApiService SslRemoveAllNetworkRanges", func(t *testing.T) {
-
-		var id interface{}
-
-		id = os.Getenv("SslApi_SslRemoveAllNetworkRanges_id")
-		id, _ = convertParamInterface(id, "string")
-		t.Logf("SslApi_SslRemoveAllNetworkRanges_id: %v", id)
-
-		t.Log("SslApi_SslRemoveAllNetworkRanges_payload: <none>")
-		httpRes, err := apiClient.SslApi.SslRemoveAllNetworkRanges(context.Background(), id.(string)).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test SslApiService SslRemoveNetwork", func(t *testing.T) {
-
-		var id interface{}
-
-		id = os.Getenv("SslApi_SslRemoveNetwork_id")
-		id, _ = convertParamInterface(id, "string")
-		t.Logf("SslApi_SslRemoveNetwork_id: %v", id)
-
-		t.Log("SslApi_SslRemoveNetwork_payload: <none>")
-		httpRes, err := apiClient.SslApi.SslRemoveNetwork(context.Background(), id.(string)).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test SslApiService SslResults", func(t *testing.T) {
-
-		t.Log("SslApi_SslResults_payload: <none>")
-		resp, httpRes, err := apiClient.SslApi.SslResults(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test SslApiService SslReviewAll", func(t *testing.T) {
-
-		t.Log("SslApi_SslReviewAll_payload: <none>")
-		httpRes, err := apiClient.SslApi.SslReviewAll(context.Background()).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test SslApiService SslReviewedStatus", func(t *testing.T) {
-
-		t.Log("SslApi_SslReviewedStatus_payload: <none>")
-		httpRes, err := apiClient.SslApi.SslReviewedStatus(context.Background()).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test SslApiService SslScanPart", func(t *testing.T) {
-
-		var id interface{}
-
-		id = os.Getenv("SslApi_SslScanPart_id")
-		id, _ = convertParamInterface(id, "string")
-		t.Logf("SslApi_SslScanPart_id: %v", id)
-
-		t.Log("SslApi_SslScanPart_payload: <none>")
-		resp, httpRes, err := apiClient.SslApi.SslScanPart(context.Background(), id.(string)).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test SslApiService SslSetNetworkRanges", func(t *testing.T) {
-
-		t.Log("SslApi_SslSetNetworkRanges_payload: <none>")
-		httpRes, err := apiClient.SslApi.SslSetNetworkRanges(context.Background()).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test SslApiService SslUpdateNetwork", func(t *testing.T) {
-
-		t.Log("SslApi_SslUpdateNetwork_payload: <none>")
-		resp, httpRes, err := apiClient.SslApi.SslUpdateNetwork(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test SslApiService SslValidateNetworkRanges", func(t *testing.T) {
-
-		t.Log("SslApi_SslValidateNetworkRanges_payload: <none>")
-		httpRes, err := apiClient.SslApi.SslValidateNetworkRanges(context.Background()).Execute()
-		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 

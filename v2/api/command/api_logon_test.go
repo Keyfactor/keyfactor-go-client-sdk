@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor-v1
+Keyfactor API Reference and Utility
 
 Testing LogonApiService
 
@@ -39,57 +39,57 @@ func Test_command_LogonApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test LogonApiService LogonCreateLogon", func(t *testing.T) {
+	t.Run("Test LogonApiService SSHLogonsAccessPost", func(t *testing.T) {
 
-		t.Log("LogonApi_LogonCreateLogon_payload: <none>")
-		resp, httpRes, err := apiClient.LogonApi.LogonCreateLogon(context.Background()).Execute()
+		t.Log("LogonApi_SSHLogonsAccessPost_payload: <none>")
+		resp, httpRes, err := apiClient.LogonApi.SSHLogonsAccessPost(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test LogonApiService LogonDelete", func(t *testing.T) {
+	t.Run("Test LogonApiService SSHLogonsGet", func(t *testing.T) {
+
+		t.Log("LogonApi_SSHLogonsGet_payload: <none>")
+		resp, httpRes, err := apiClient.LogonApi.SSHLogonsGet(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test LogonApiService SSHLogonsIdDelete", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("LogonApi_LogonDelete_id")
+		id = os.Getenv("LogonApi_SSHLogonsIdDelete_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("LogonApi_LogonDelete_id: %v", id)
+		t.Logf("LogonApi_SSHLogonsIdDelete_id: %v", id)
 
-		t.Log("LogonApi_LogonDelete_payload: <none>")
-		httpRes, err := apiClient.LogonApi.LogonDelete(context.Background(), id.(int32)).Execute()
+		t.Log("LogonApi_SSHLogonsIdDelete_payload: <none>")
+		httpRes, err := apiClient.LogonApi.SSHLogonsIdDelete(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test LogonApiService LogonGetLogon", func(t *testing.T) {
+	t.Run("Test LogonApiService SSHLogonsIdGet", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("LogonApi_LogonGetLogon_id")
+		id = os.Getenv("LogonApi_SSHLogonsIdGet_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("LogonApi_LogonGetLogon_id: %v", id)
+		t.Logf("LogonApi_SSHLogonsIdGet_id: %v", id)
 
-		t.Log("LogonApi_LogonGetLogon_payload: <none>")
-		resp, httpRes, err := apiClient.LogonApi.LogonGetLogon(context.Background(), id.(int32)).Execute()
+		t.Log("LogonApi_SSHLogonsIdGet_payload: <none>")
+		resp, httpRes, err := apiClient.LogonApi.SSHLogonsIdGet(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test LogonApiService LogonLogonAccess", func(t *testing.T) {
+	t.Run("Test LogonApiService SSHLogonsPost", func(t *testing.T) {
 
-		t.Log("LogonApi_LogonLogonAccess_payload: <none>")
-		resp, httpRes, err := apiClient.LogonApi.LogonLogonAccess(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test LogonApiService LogonQueryLogons", func(t *testing.T) {
-
-		t.Log("LogonApi_LogonQueryLogons_payload: <none>")
-		resp, httpRes, err := apiClient.LogonApi.LogonQueryLogons(context.Background()).Execute()
+		t.Log("LogonApi_SSHLogonsPost_payload: <none>")
+		resp, httpRes, err := apiClient.LogonApi.SSHLogonsPost(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor-v1
+Keyfactor API Reference and Utility
 
 Testing AuditLogApiService
 
@@ -39,58 +39,57 @@ func Test_command_AuditLogApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test AuditLogApiService AuditLogDownloadCSV", func(t *testing.T) {
+	t.Run("Test AuditLogApiService AuditDownloadGet", func(t *testing.T) {
 
-		t.Log("AuditLogApi_AuditLogDownloadCSV_payload: <none>")
-		resp, httpRes, err := apiClient.AuditLogApi.AuditLogDownloadCSV(context.Background()).Execute()
+		t.Log("AuditLogApi_AuditDownloadGet_payload: <none>")
+		resp, httpRes, err := apiClient.AuditLogApi.AuditDownloadGet(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test AuditLogApiService AuditLogGetAuditLog", func(t *testing.T) {
+	t.Run("Test AuditLogApiService AuditGet", func(t *testing.T) {
+
+		t.Log("AuditLogApi_AuditGet_payload: <none>")
+		resp, httpRes, err := apiClient.AuditLogApi.AuditGet(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test AuditLogApiService AuditIdGet", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("AuditLogApi_AuditLogGetAuditLog_id")
+		id = os.Getenv("AuditLogApi_AuditIdGet_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("AuditLogApi_AuditLogGetAuditLog_id: %v", id)
+		t.Logf("AuditLogApi_AuditIdGet_id: %v", id)
 
-		t.Log("AuditLogApi_AuditLogGetAuditLog_payload: <none>")
-		resp, httpRes, err := apiClient.AuditLogApi.AuditLogGetAuditLog(context.Background(), id.(int32)).Execute()
+		t.Log("AuditLogApi_AuditIdGet_payload: <none>")
+		httpRes, err := apiClient.AuditLogApi.AuditIdGet(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test AuditLogApiService AuditLogGetAuditLogs", func(t *testing.T) {
-
-		t.Log("AuditLogApi_AuditLogGetAuditLogs_payload: <none>")
-		resp, httpRes, err := apiClient.AuditLogApi.AuditLogGetAuditLogs(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test AuditLogApiService AuditLogGetRelatedEntities", func(t *testing.T) {
-
-		t.Log("AuditLogApi_AuditLogGetRelatedEntities_payload: <none>")
-		resp, httpRes, err := apiClient.AuditLogApi.AuditLogGetRelatedEntities(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test AuditLogApiService AuditLogValidateAuditLog", func(t *testing.T) {
+	t.Run("Test AuditLogApiService AuditIdValidateGet", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("AuditLogApi_AuditLogValidateAuditLog_id")
+		id = os.Getenv("AuditLogApi_AuditIdValidateGet_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("AuditLogApi_AuditLogValidateAuditLog_id: %v", id)
+		t.Logf("AuditLogApi_AuditIdValidateGet_id: %v", id)
 
-		t.Log("AuditLogApi_AuditLogValidateAuditLog_payload: <none>")
-		resp, httpRes, err := apiClient.AuditLogApi.AuditLogValidateAuditLog(context.Background(), id.(int32)).Execute()
+		t.Log("AuditLogApi_AuditIdValidateGet_payload: <none>")
+		resp, httpRes, err := apiClient.AuditLogApi.AuditIdValidateGet(context.Background(), id.(int32)).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test AuditLogApiService AuditRelatedEntitiesGet", func(t *testing.T) {
+
+		t.Log("AuditLogApi_AuditRelatedEntitiesGet_payload: <none>")
+		resp, httpRes, err := apiClient.AuditLogApi.AuditRelatedEntitiesGet(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
