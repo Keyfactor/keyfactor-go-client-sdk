@@ -9,8 +9,7 @@ Name | Type | Description | Notes
 **Area** | Pointer to **int32** |  | [optional] 
 **ProviderType** | [**CSSCMSDataModelModelsProviderType**](CSSCMSDataModelModelsProviderType.md) |  | 
 **ProviderTypeParamValues** | Pointer to [**[]CSSCMSDataModelModelsPamProviderTypeParamValue**](CSSCMSDataModelModelsPamProviderTypeParamValue.md) |  | [optional] 
-**SecuredAreaId** | Pointer to **NullableInt32** |  | [optional] 
-**Remote** | Pointer to **bool** |  | [optional] 
+**SecuredAreaId** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -146,16 +145,6 @@ SetProviderTypeParamValues sets ProviderTypeParamValues field to given value.
 
 HasProviderTypeParamValues returns a boolean if a field has been set.
 
-### SetProviderTypeParamValuesNil
-
-`func (o *CSSCMSDataModelModelsProvider) SetProviderTypeParamValuesNil(b bool)`
-
- SetProviderTypeParamValuesNil sets the value for ProviderTypeParamValues to be an explicit nil
-
-### UnsetProviderTypeParamValues
-`func (o *CSSCMSDataModelModelsProvider) UnsetProviderTypeParamValues()`
-
-UnsetProviderTypeParamValues ensures that no value is present for ProviderTypeParamValues, not even an explicit nil
 ### GetSecuredAreaId
 
 `func (o *CSSCMSDataModelModelsProvider) GetSecuredAreaId() int32`
@@ -180,41 +169,6 @@ SetSecuredAreaId sets SecuredAreaId field to given value.
 `func (o *CSSCMSDataModelModelsProvider) HasSecuredAreaId() bool`
 
 HasSecuredAreaId returns a boolean if a field has been set.
-
-### SetSecuredAreaIdNil
-
-`func (o *CSSCMSDataModelModelsProvider) SetSecuredAreaIdNil(b bool)`
-
- SetSecuredAreaIdNil sets the value for SecuredAreaId to be an explicit nil
-
-### UnsetSecuredAreaId
-`func (o *CSSCMSDataModelModelsProvider) UnsetSecuredAreaId()`
-
-UnsetSecuredAreaId ensures that no value is present for SecuredAreaId, not even an explicit nil
-### GetRemote
-
-`func (o *CSSCMSDataModelModelsProvider) GetRemote() bool`
-
-GetRemote returns the Remote field if non-nil, zero value otherwise.
-
-### GetRemoteOk
-
-`func (o *CSSCMSDataModelModelsProvider) GetRemoteOk() (*bool, bool)`
-
-GetRemoteOk returns a tuple with the Remote field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRemote
-
-`func (o *CSSCMSDataModelModelsProvider) SetRemote(v bool)`
-
-SetRemote sets Remote field to given value.
-
-### HasRemote
-
-`func (o *CSSCMSDataModelModelsProvider) HasRemote() bool`
-
-HasRemote returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

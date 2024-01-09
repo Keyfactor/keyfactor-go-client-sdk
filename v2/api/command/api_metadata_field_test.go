@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor API Reference and Utility
+Keyfactor-v1
 
 Testing MetadataFieldApiService
 
@@ -39,95 +39,95 @@ func Test_command_MetadataFieldApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test MetadataFieldApiService MetadataFieldsDelete", func(t *testing.T) {
+	t.Run("Test MetadataFieldApiService MetadataFieldCreateMetadataField", func(t *testing.T) {
 
-		t.Log("MetadataFieldApi_MetadataFieldsDelete_payload: <none>")
-		httpRes, err := apiClient.MetadataFieldApi.MetadataFieldsDelete(context.Background()).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test MetadataFieldApiService MetadataFieldsGet", func(t *testing.T) {
-
-		t.Log("MetadataFieldApi_MetadataFieldsGet_payload: <none>")
-		resp, httpRes, err := apiClient.MetadataFieldApi.MetadataFieldsGet(context.Background()).Execute()
+		t.Log("MetadataFieldApi_MetadataFieldCreateMetadataField_payload: <none>")
+		resp, httpRes, err := apiClient.MetadataFieldApi.MetadataFieldCreateMetadataField(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test MetadataFieldApiService MetadataFieldsIdDelete", func(t *testing.T) {
+	t.Run("Test MetadataFieldApiService MetadataFieldDeleteMetadataField", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("MetadataFieldApi_MetadataFieldsIdDelete_id")
+		id = os.Getenv("MetadataFieldApi_MetadataFieldDeleteMetadataField_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("MetadataFieldApi_MetadataFieldsIdDelete_id: %v", id)
+		t.Logf("MetadataFieldApi_MetadataFieldDeleteMetadataField_id: %v", id)
 
-		t.Log("MetadataFieldApi_MetadataFieldsIdDelete_payload: <none>")
-		httpRes, err := apiClient.MetadataFieldApi.MetadataFieldsIdDelete(context.Background(), id.(int32)).Execute()
+		t.Log("MetadataFieldApi_MetadataFieldDeleteMetadataField_payload: <none>")
+		httpRes, err := apiClient.MetadataFieldApi.MetadataFieldDeleteMetadataField(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test MetadataFieldApiService MetadataFieldsIdGet", func(t *testing.T) {
+	t.Run("Test MetadataFieldApiService MetadataFieldDeleteMetadataFields", func(t *testing.T) {
 
-		var id interface{}
-
-		id = os.Getenv("MetadataFieldApi_MetadataFieldsIdGet_id")
-		id, _ = convertParamInterface(id, "int32")
-		t.Logf("MetadataFieldApi_MetadataFieldsIdGet_id: %v", id)
-
-		t.Log("MetadataFieldApi_MetadataFieldsIdGet_payload: <none>")
-		resp, httpRes, err := apiClient.MetadataFieldApi.MetadataFieldsIdGet(context.Background(), id.(int32)).Execute()
+		t.Log("MetadataFieldApi_MetadataFieldDeleteMetadataFields_payload: <none>")
+		httpRes, err := apiClient.MetadataFieldApi.MetadataFieldDeleteMetadataFields(context.Background()).Execute()
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test MetadataFieldApiService MetadataFieldsIdInUseGet", func(t *testing.T) {
+	t.Run("Test MetadataFieldApiService MetadataFieldGetAllMetadataFields", func(t *testing.T) {
 
-		var id interface{}
-
-		id = os.Getenv("MetadataFieldApi_MetadataFieldsIdInUseGet_id")
-		id, _ = convertParamInterface(id, "int32")
-		t.Logf("MetadataFieldApi_MetadataFieldsIdInUseGet_id: %v", id)
-
-		t.Log("MetadataFieldApi_MetadataFieldsIdInUseGet_payload: <none>")
-		resp, httpRes, err := apiClient.MetadataFieldApi.MetadataFieldsIdInUseGet(context.Background(), id.(int32)).Execute()
+		t.Log("MetadataFieldApi_MetadataFieldGetAllMetadataFields_payload: <none>")
+		resp, httpRes, err := apiClient.MetadataFieldApi.MetadataFieldGetAllMetadataFields(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test MetadataFieldApiService MetadataFieldsNameGet", func(t *testing.T) {
+	t.Run("Test MetadataFieldApiService MetadataFieldGetMetadataField0", func(t *testing.T) {
+
+		var id interface{}
+
+		id = os.Getenv("MetadataFieldApi_MetadataFieldGetMetadataField0_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("MetadataFieldApi_MetadataFieldGetMetadataField0_id: %v", id)
+
+		t.Log("MetadataFieldApi_MetadataFieldGetMetadataField0_payload: <none>")
+		resp, httpRes, err := apiClient.MetadataFieldApi.MetadataFieldGetMetadataField0(context.Background(), id.(int32)).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test MetadataFieldApiService MetadataFieldGetMetadataField1", func(t *testing.T) {
 
 		var name interface{}
 
-		name = os.Getenv("MetadataFieldApi_MetadataFieldsNameGet_name")
+		name = os.Getenv("MetadataFieldApi_MetadataFieldGetMetadataField1_name")
 		name, _ = convertParamInterface(name, "string")
-		t.Logf("MetadataFieldApi_MetadataFieldsNameGet_name: %v", name)
+		t.Logf("MetadataFieldApi_MetadataFieldGetMetadataField1_name: %v", name)
 
-		t.Log("MetadataFieldApi_MetadataFieldsNameGet_payload: <none>")
-		resp, httpRes, err := apiClient.MetadataFieldApi.MetadataFieldsNameGet(context.Background(), name.(string)).Execute()
+		t.Log("MetadataFieldApi_MetadataFieldGetMetadataField1_payload: <none>")
+		resp, httpRes, err := apiClient.MetadataFieldApi.MetadataFieldGetMetadataField1(context.Background(), name.(string)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test MetadataFieldApiService MetadataFieldsPost", func(t *testing.T) {
+	t.Run("Test MetadataFieldApiService MetadataFieldGetMetadataFieldInUse", func(t *testing.T) {
 
-		t.Log("MetadataFieldApi_MetadataFieldsPost_payload: <none>")
-		resp, httpRes, err := apiClient.MetadataFieldApi.MetadataFieldsPost(context.Background()).Execute()
+		var id interface{}
+
+		id = os.Getenv("MetadataFieldApi_MetadataFieldGetMetadataFieldInUse_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("MetadataFieldApi_MetadataFieldGetMetadataFieldInUse_id: %v", id)
+
+		t.Log("MetadataFieldApi_MetadataFieldGetMetadataFieldInUse_payload: <none>")
+		resp, httpRes, err := apiClient.MetadataFieldApi.MetadataFieldGetMetadataFieldInUse(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test MetadataFieldApiService MetadataFieldsPut", func(t *testing.T) {
+	t.Run("Test MetadataFieldApiService MetadataFieldUpdateMetadataField", func(t *testing.T) {
 
-		t.Log("MetadataFieldApi_MetadataFieldsPut_payload: <none>")
-		resp, httpRes, err := apiClient.MetadataFieldApi.MetadataFieldsPut(context.Background()).Execute()
+		t.Log("MetadataFieldApi_MetadataFieldUpdateMetadataField_payload: <none>")
+		resp, httpRes, err := apiClient.MetadataFieldApi.MetadataFieldUpdateMetadataField(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

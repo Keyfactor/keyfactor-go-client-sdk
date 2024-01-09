@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor API Reference and Utility
+Keyfactor-v1
 
 Testing IssuedAlertApiService
 
@@ -39,75 +39,75 @@ func Test_command_IssuedAlertApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test IssuedAlertApiService AlertsIssuedGet", func(t *testing.T) {
+	t.Run("Test IssuedAlertApiService IssuedAlertAddIssuedAlert", func(t *testing.T) {
 
-		t.Log("IssuedAlertApi_AlertsIssuedGet_payload: <none>")
-		resp, httpRes, err := apiClient.IssuedAlertApi.AlertsIssuedGet(context.Background()).Execute()
+		t.Log("IssuedAlertApi_IssuedAlertAddIssuedAlert_payload: <none>")
+		resp, httpRes, err := apiClient.IssuedAlertApi.IssuedAlertAddIssuedAlert(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test IssuedAlertApiService AlertsIssuedIdDelete", func(t *testing.T) {
+	t.Run("Test IssuedAlertApiService IssuedAlertDeleteIssuedAlert", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("IssuedAlertApi_AlertsIssuedIdDelete_id")
+		id = os.Getenv("IssuedAlertApi_IssuedAlertDeleteIssuedAlert_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("IssuedAlertApi_AlertsIssuedIdDelete_id: %v", id)
+		t.Logf("IssuedAlertApi_IssuedAlertDeleteIssuedAlert_id: %v", id)
 
-		t.Log("IssuedAlertApi_AlertsIssuedIdDelete_payload: <none>")
-		httpRes, err := apiClient.IssuedAlertApi.AlertsIssuedIdDelete(context.Background(), id.(int32)).Execute()
+		t.Log("IssuedAlertApi_IssuedAlertDeleteIssuedAlert_payload: <none>")
+		httpRes, err := apiClient.IssuedAlertApi.IssuedAlertDeleteIssuedAlert(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test IssuedAlertApiService AlertsIssuedIdGet", func(t *testing.T) {
+	t.Run("Test IssuedAlertApiService IssuedAlertEditIssuedAlert", func(t *testing.T) {
+
+		t.Log("IssuedAlertApi_IssuedAlertEditIssuedAlert_payload: <none>")
+		resp, httpRes, err := apiClient.IssuedAlertApi.IssuedAlertEditIssuedAlert(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test IssuedAlertApiService IssuedAlertEditSchedule", func(t *testing.T) {
+
+		t.Log("IssuedAlertApi_IssuedAlertEditSchedule_payload: <none>")
+		resp, httpRes, err := apiClient.IssuedAlertApi.IssuedAlertEditSchedule(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test IssuedAlertApiService IssuedAlertGetIssuedAlert", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("IssuedAlertApi_AlertsIssuedIdGet_id")
+		id = os.Getenv("IssuedAlertApi_IssuedAlertGetIssuedAlert_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("IssuedAlertApi_AlertsIssuedIdGet_id: %v", id)
+		t.Logf("IssuedAlertApi_IssuedAlertGetIssuedAlert_id: %v", id)
 
-		t.Log("IssuedAlertApi_AlertsIssuedIdGet_payload: <none>")
-		resp, httpRes, err := apiClient.IssuedAlertApi.AlertsIssuedIdGet(context.Background(), id.(int32)).Execute()
+		t.Log("IssuedAlertApi_IssuedAlertGetIssuedAlert_payload: <none>")
+		resp, httpRes, err := apiClient.IssuedAlertApi.IssuedAlertGetIssuedAlert(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test IssuedAlertApiService AlertsIssuedPost", func(t *testing.T) {
+	t.Run("Test IssuedAlertApiService IssuedAlertGetIssuedAlerts", func(t *testing.T) {
 
-		t.Log("IssuedAlertApi_AlertsIssuedPost_payload: <none>")
-		resp, httpRes, err := apiClient.IssuedAlertApi.AlertsIssuedPost(context.Background()).Execute()
+		t.Log("IssuedAlertApi_IssuedAlertGetIssuedAlerts_payload: <none>")
+		resp, httpRes, err := apiClient.IssuedAlertApi.IssuedAlertGetIssuedAlerts(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test IssuedAlertApiService AlertsIssuedPut", func(t *testing.T) {
+	t.Run("Test IssuedAlertApiService IssuedAlertGetSchedule", func(t *testing.T) {
 
-		t.Log("IssuedAlertApi_AlertsIssuedPut_payload: <none>")
-		resp, httpRes, err := apiClient.IssuedAlertApi.AlertsIssuedPut(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test IssuedAlertApiService AlertsIssuedScheduleGet", func(t *testing.T) {
-
-		t.Log("IssuedAlertApi_AlertsIssuedScheduleGet_payload: <none>")
-		resp, httpRes, err := apiClient.IssuedAlertApi.AlertsIssuedScheduleGet(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test IssuedAlertApiService AlertsIssuedSchedulePut", func(t *testing.T) {
-
-		t.Log("IssuedAlertApi_AlertsIssuedSchedulePut_payload: <none>")
-		resp, httpRes, err := apiClient.IssuedAlertApi.AlertsIssuedSchedulePut(context.Background()).Execute()
+		t.Log("IssuedAlertApi_IssuedAlertGetSchedule_payload: <none>")
+		resp, httpRes, err := apiClient.IssuedAlertApi.IssuedAlertGetSchedule(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

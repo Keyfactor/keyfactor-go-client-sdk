@@ -1,16 +1,16 @@
 # \StatusApi
 
-All URIs are relative to */Keyfactor/API*
+All URIs are relative to *http://keyfactor.example.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**StatusEndpointsGet**](StatusApi.md#StatusEndpointsGet) | **Get** /Status/Endpoints | Returns all endpoints to which the requesting identity has access
+[**StatusGetEndpoints**](StatusApi.md#StatusGetEndpoints) | **Get** /Status/Endpoints | Returns all endpoints to which the requesting identity has access
 
 
 
-## StatusEndpointsGet
+## StatusGetEndpoints
 
-> []string StatusEndpointsGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []string StatusGetEndpoints(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all endpoints to which the requesting identity has access
 
@@ -27,18 +27,18 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.StatusApi.StatusEndpointsGet(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.StatusApi.StatusGetEndpoints(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `StatusApi.StatusEndpointsGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `StatusApi.StatusGetEndpoints``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `StatusEndpointsGet`: []string
-    fmt.Fprintf(os.Stdout, "Response from `StatusApi.StatusEndpointsGet`: %v\n", resp)
+    // response from `StatusGetEndpoints`: []string
+    fmt.Fprintf(os.Stdout, "Response from `StatusApi.StatusGetEndpoints`: %v\n", resp)
 }
 ```
 
@@ -48,13 +48,13 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiStatusEndpointsGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiStatusGetEndpointsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json, text/json, application/xml, text/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

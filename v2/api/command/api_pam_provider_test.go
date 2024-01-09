@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor API Reference and Utility
+Keyfactor-v1
 
 Testing PAMProviderApiService
 
@@ -39,75 +39,75 @@ func Test_command_PAMProviderApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test PAMProviderApiService PamProvidersGet", func(t *testing.T) {
+	t.Run("Test PAMProviderApiService PAMProviderCreatePamProvider", func(t *testing.T) {
 
-		t.Log("PAMProviderApi_PamProvidersGet_payload: <none>")
-		resp, httpRes, err := apiClient.PAMProviderApi.PamProvidersGet(context.Background()).Execute()
+		t.Log("PAMProviderApi_PAMProviderCreatePamProvider_payload: <none>")
+		resp, httpRes, err := apiClient.PAMProviderApi.PAMProviderCreatePamProvider(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test PAMProviderApiService PamProvidersIdDelete", func(t *testing.T) {
+	t.Run("Test PAMProviderApiService PAMProviderCreatePamProviderType", func(t *testing.T) {
+
+		t.Log("PAMProviderApi_PAMProviderCreatePamProviderType_payload: <none>")
+		resp, httpRes, err := apiClient.PAMProviderApi.PAMProviderCreatePamProviderType(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test PAMProviderApiService PAMProviderDeletePamProvider", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("PAMProviderApi_PamProvidersIdDelete_id")
+		id = os.Getenv("PAMProviderApi_PAMProviderDeletePamProvider_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("PAMProviderApi_PamProvidersIdDelete_id: %v", id)
+		t.Logf("PAMProviderApi_PAMProviderDeletePamProvider_id: %v", id)
 
-		t.Log("PAMProviderApi_PamProvidersIdDelete_payload: <none>")
-		httpRes, err := apiClient.PAMProviderApi.PamProvidersIdDelete(context.Background(), id.(int32)).Execute()
+		t.Log("PAMProviderApi_PAMProviderDeletePamProvider_payload: <none>")
+		httpRes, err := apiClient.PAMProviderApi.PAMProviderDeletePamProvider(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test PAMProviderApiService PamProvidersIdGet", func(t *testing.T) {
+	t.Run("Test PAMProviderApiService PAMProviderGetPamProvider", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("PAMProviderApi_PamProvidersIdGet_id")
+		id = os.Getenv("PAMProviderApi_PAMProviderGetPamProvider_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("PAMProviderApi_PamProvidersIdGet_id: %v", id)
+		t.Logf("PAMProviderApi_PAMProviderGetPamProvider_id: %v", id)
 
-		t.Log("PAMProviderApi_PamProvidersIdGet_payload: <none>")
-		resp, httpRes, err := apiClient.PAMProviderApi.PamProvidersIdGet(context.Background(), id.(int32)).Execute()
+		t.Log("PAMProviderApi_PAMProviderGetPamProvider_payload: <none>")
+		resp, httpRes, err := apiClient.PAMProviderApi.PAMProviderGetPamProvider(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test PAMProviderApiService PamProvidersPost", func(t *testing.T) {
+	t.Run("Test PAMProviderApiService PAMProviderGetPamProviderTypes", func(t *testing.T) {
 
-		t.Log("PAMProviderApi_PamProvidersPost_payload: <none>")
-		resp, httpRes, err := apiClient.PAMProviderApi.PamProvidersPost(context.Background()).Execute()
+		t.Log("PAMProviderApi_PAMProviderGetPamProviderTypes_payload: <none>")
+		resp, httpRes, err := apiClient.PAMProviderApi.PAMProviderGetPamProviderTypes(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test PAMProviderApiService PamProvidersPut", func(t *testing.T) {
+	t.Run("Test PAMProviderApiService PAMProviderGetPamProviders", func(t *testing.T) {
 
-		t.Log("PAMProviderApi_PamProvidersPut_payload: <none>")
-		resp, httpRes, err := apiClient.PAMProviderApi.PamProvidersPut(context.Background()).Execute()
+		t.Log("PAMProviderApi_PAMProviderGetPamProviders_payload: <none>")
+		resp, httpRes, err := apiClient.PAMProviderApi.PAMProviderGetPamProviders(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test PAMProviderApiService PamProvidersTypesGet", func(t *testing.T) {
+	t.Run("Test PAMProviderApiService PAMProviderUpdatePamProvider", func(t *testing.T) {
 
-		t.Log("PAMProviderApi_PamProvidersTypesGet_payload: <none>")
-		resp, httpRes, err := apiClient.PAMProviderApi.PamProvidersTypesGet(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test PAMProviderApiService PamProvidersTypesPost", func(t *testing.T) {
-
-		t.Log("PAMProviderApi_PamProvidersTypesPost_payload: <none>")
-		resp, httpRes, err := apiClient.PAMProviderApi.PamProvidersTypesPost(context.Background()).Execute()
+		t.Log("PAMProviderApi_PAMProviderUpdatePamProvider_payload: <none>")
+		resp, httpRes, err := apiClient.PAMProviderApi.PAMProviderUpdatePamProvider(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

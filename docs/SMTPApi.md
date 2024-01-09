@@ -1,22 +1,20 @@
 # \SMTPApi
 
-All URIs are relative to */Keyfactor/API*
+All URIs are relative to *http://keyfactor.example.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SMTPGet**](SMTPApi.md#SMTPGet) | **Get** /SMTP | Gets SMTP profile data
-[**SMTPPut**](SMTPApi.md#SMTPPut) | **Put** /SMTP | Updates SMTP profile data
-[**SMTPTestPost**](SMTPApi.md#SMTPTestPost) | **Post** /SMTP/Test | Tests SMTP profile data
+[**SMTPSMTP**](SMTPApi.md#SMTPSMTP) | **Get** /SMTP | Gets SMTP profile data
+[**SMTPTestSMTP**](SMTPApi.md#SMTPTestSMTP) | **Post** /SMTP/Test | Tests SMTP profile data
+[**SMTPUpdateSMTP**](SMTPApi.md#SMTPUpdateSMTP) | **Put** /SMTP | Updates SMTP profile data
 
 
 
-## SMTPGet
+## SMTPSMTP
 
-> KeyfactorWebKeyfactorApiModelsSMTPSMTPResponse SMTPGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> KeyfactorAPIModelsSMTPSMTPResponse SMTPSMTP(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets SMTP profile data
-
-
 
 ### Example
 
@@ -31,18 +29,18 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SMTPApi.SMTPGet(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SMTPApi.SMTPSMTP(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SMTPApi.SMTPGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SMTPApi.SMTPSMTP``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SMTPGet`: KeyfactorWebKeyfactorApiModelsSMTPSMTPResponse
-    fmt.Fprintf(os.Stdout, "Response from `SMTPApi.SMTPGet`: %v\n", resp)
+    // response from `SMTPSMTP`: KeyfactorAPIModelsSMTPSMTPResponse
+    fmt.Fprintf(os.Stdout, "Response from `SMTPApi.SMTPSMTP`: %v\n", resp)
 }
 ```
 
@@ -52,17 +50,17 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSMTPGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSMTPSMTPRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
 
-[**KeyfactorWebKeyfactorApiModelsSMTPSMTPResponse**](KeyfactorWebKeyfactorApiModelsSMTPSMTPResponse.md)
+[**KeyfactorAPIModelsSMTPSMTPResponse**](KeyfactorAPIModelsSMTPSMTPResponse.md)
 
 ### Authorization
 
@@ -71,90 +69,86 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json, text/json, application/xml, text/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## SMTPPut
+## SMTPTestSMTP
 
-> KeyfactorWebKeyfactorApiModelsSMTPSMTPResponse SMTPPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsSMTPSMTPRequest(keyfactorWebKeyfactorApiModelsSMTPSMTPRequest).Execute()
-
-Updates SMTP profile data
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    keyfactorWebKeyfactorApiModelsSMTPSMTPRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsSMTPSMTPRequest() // KeyfactorWebKeyfactorApiModelsSMTPSMTPRequest |  (optional)
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SMTPApi.SMTPPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsSMTPSMTPRequest(keyfactorWebKeyfactorApiModelsSMTPSMTPRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SMTPApi.SMTPPut``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SMTPPut`: KeyfactorWebKeyfactorApiModelsSMTPSMTPResponse
-    fmt.Fprintf(os.Stdout, "Response from `SMTPApi.SMTPPut`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiSMTPPutRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **keyfactorWebKeyfactorApiModelsSMTPSMTPRequest** | [**KeyfactorWebKeyfactorApiModelsSMTPSMTPRequest**](KeyfactorWebKeyfactorApiModelsSMTPSMTPRequest.md) |  | 
-
-### Return type
-
-[**KeyfactorWebKeyfactorApiModelsSMTPSMTPResponse**](KeyfactorWebKeyfactorApiModelsSMTPSMTPResponse.md)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## SMTPTestPost
-
-> KeyfactorWebKeyfactorApiModelsSMTPSMTPTestResponse SMTPTestPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsSMTPSMTPTestRequest(keyfactorWebKeyfactorApiModelsSMTPSMTPTestRequest).Execute()
+> KeyfactorAPIModelsSMTPSMTPTestResponse SMTPTestSMTP(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).SmtpProfile(smtpProfile).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Tests SMTP profile data
 
+### Example
 
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    smtpProfile := *openapiclient.NewKeyfactorAPIModelsSMTPSMTPTestRequest() // KeyfactorAPIModelsSMTPSMTPTestRequest | 
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SMTPApi.SMTPTestSMTP(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).SmtpProfile(smtpProfile).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SMTPApi.SMTPTestSMTP``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SMTPTestSMTP`: KeyfactorAPIModelsSMTPSMTPTestResponse
+    fmt.Fprintf(os.Stdout, "Response from `SMTPApi.SMTPTestSMTP`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSMTPTestSMTPRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **smtpProfile** | [**KeyfactorAPIModelsSMTPSMTPTestRequest**](KeyfactorAPIModelsSMTPSMTPTestRequest.md) |  | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+
+### Return type
+
+[**KeyfactorAPIModelsSMTPSMTPTestResponse**](KeyfactorAPIModelsSMTPSMTPTestResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SMTPUpdateSMTP
+
+> KeyfactorAPIModelsSMTPSMTPResponse SMTPUpdateSMTP(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).SmtpProfile(smtpProfile).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Updates SMTP profile data
 
 ### Example
 
@@ -169,19 +163,19 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    keyfactorWebKeyfactorApiModelsSMTPSMTPTestRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsSMTPSMTPTestRequest() // KeyfactorWebKeyfactorApiModelsSMTPSMTPTestRequest |  (optional)
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    smtpProfile := *openapiclient.NewKeyfactorAPIModelsSMTPSMTPRequest() // KeyfactorAPIModelsSMTPSMTPRequest | 
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SMTPApi.SMTPTestPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsSMTPSMTPTestRequest(keyfactorWebKeyfactorApiModelsSMTPSMTPTestRequest).Execute()
+    resp, r, err := apiClient.SMTPApi.SMTPUpdateSMTP(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).SmtpProfile(smtpProfile).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SMTPApi.SMTPTestPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SMTPApi.SMTPUpdateSMTP``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SMTPTestPost`: KeyfactorWebKeyfactorApiModelsSMTPSMTPTestResponse
-    fmt.Fprintf(os.Stdout, "Response from `SMTPApi.SMTPTestPost`: %v\n", resp)
+    // response from `SMTPUpdateSMTP`: KeyfactorAPIModelsSMTPSMTPResponse
+    fmt.Fprintf(os.Stdout, "Response from `SMTPApi.SMTPUpdateSMTP`: %v\n", resp)
 }
 ```
 
@@ -191,18 +185,18 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSMTPTestPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSMTPUpdateSMTPRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **keyfactorWebKeyfactorApiModelsSMTPSMTPTestRequest** | [**KeyfactorWebKeyfactorApiModelsSMTPSMTPTestRequest**](KeyfactorWebKeyfactorApiModelsSMTPSMTPTestRequest.md) |  | 
+ **smtpProfile** | [**KeyfactorAPIModelsSMTPSMTPRequest**](KeyfactorAPIModelsSMTPSMTPRequest.md) |  | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
 
-[**KeyfactorWebKeyfactorApiModelsSMTPSMTPTestResponse**](KeyfactorWebKeyfactorApiModelsSMTPSMTPTestResponse.md)
+[**KeyfactorAPIModelsSMTPSMTPResponse**](KeyfactorAPIModelsSMTPSMTPResponse.md)
 
 ### Authorization
 
@@ -210,8 +204,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+- **Accept**: application/json, text/json, application/xml, text/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -1,26 +1,26 @@
 # \PendingAlertApi
 
-All URIs are relative to */Keyfactor/API*
+All URIs are relative to *http://keyfactor.example.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AlertsPendingGet**](PendingAlertApi.md#AlertsPendingGet) | **Get** /Alerts/Pending | Gets all pending alerts according to the provided filter and output parameters
-[**AlertsPendingIdDelete**](PendingAlertApi.md#AlertsPendingIdDelete) | **Delete** /Alerts/Pending/{id} | Delete a pending alert
-[**AlertsPendingIdGet**](PendingAlertApi.md#AlertsPendingIdGet) | **Get** /Alerts/Pending/{id} | Get a pending alert
-[**AlertsPendingPost**](PendingAlertApi.md#AlertsPendingPost) | **Post** /Alerts/Pending | Add a pending alert
-[**AlertsPendingPut**](PendingAlertApi.md#AlertsPendingPut) | **Put** /Alerts/Pending | Edit a pending alert
-[**AlertsPendingScheduleGet**](PendingAlertApi.md#AlertsPendingScheduleGet) | **Get** /Alerts/Pending/Schedule | Get the schedule for pending alerts
-[**AlertsPendingSchedulePut**](PendingAlertApi.md#AlertsPendingSchedulePut) | **Put** /Alerts/Pending/Schedule | Edit schedule
-[**AlertsPendingTestAllPost**](PendingAlertApi.md#AlertsPendingTestAllPost) | **Post** /Alerts/Pending/TestAll | Test all pending alerts. Will send alert emails if SendAlerts is true
-[**AlertsPendingTestPost**](PendingAlertApi.md#AlertsPendingTestPost) | **Post** /Alerts/Pending/Test | Test pending alert. Will send alert emails if SendAlerts is true
+[**PendingAlertAddPendingAlert**](PendingAlertApi.md#PendingAlertAddPendingAlert) | **Post** /Alerts/Pending | Add a pending alert
+[**PendingAlertDeletePendingAlert**](PendingAlertApi.md#PendingAlertDeletePendingAlert) | **Delete** /Alerts/Pending/{id} | Delete a pending alert
+[**PendingAlertEditPendingAlert**](PendingAlertApi.md#PendingAlertEditPendingAlert) | **Put** /Alerts/Pending | Edit a pending alert
+[**PendingAlertEditSchedule**](PendingAlertApi.md#PendingAlertEditSchedule) | **Put** /Alerts/Pending/Schedule | Edit schedule
+[**PendingAlertGetPendingAlert**](PendingAlertApi.md#PendingAlertGetPendingAlert) | **Get** /Alerts/Pending/{id} | Get a pending alert
+[**PendingAlertGetPendingAlerts**](PendingAlertApi.md#PendingAlertGetPendingAlerts) | **Get** /Alerts/Pending | Gets all pending alerts according to the provided filter and output parameters
+[**PendingAlertGetSchedule**](PendingAlertApi.md#PendingAlertGetSchedule) | **Get** /Alerts/Pending/Schedule | Get the schedule for pending alerts
+[**PendingAlertTestAllPendingAlert**](PendingAlertApi.md#PendingAlertTestAllPendingAlert) | **Post** /Alerts/Pending/TestAll | Test all pending alerts. Will send alert emails if SendAlerts is true
+[**PendingAlertTestPendingAlert**](PendingAlertApi.md#PendingAlertTestPendingAlert) | **Post** /Alerts/Pending/Test | Test pending alert. Will send alert emails if SendAlerts is true
 
 
 
-## AlertsPendingGet
+## PendingAlertAddPendingAlert
 
-> []KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse AlertsPendingGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse PendingAlertAddPendingAlert(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Req(req).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
-Gets all pending alerts according to the provided filter and output parameters
+Add a pending alert
 
 ### Example
 
@@ -35,23 +35,19 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    queryString := "queryString_example" // string |  (optional)
-    pageReturned := int32(56) // int32 |  (optional)
-    returnLimit := int32(56) // int32 |  (optional)
-    sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    req := *openapiclient.NewKeyfactorApiModelsAlertsPendingPendingAlertCreationRequest("DisplayName_example", "Subject_example", "Message_example") // KeyfactorApiModelsAlertsPendingPendingAlertCreationRequest | Information for the new alert
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PendingAlertApi.AlertsPendingGet(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.PendingAlertApi.PendingAlertAddPendingAlert(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Req(req).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.AlertsPendingGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.PendingAlertAddPendingAlert``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `AlertsPendingGet`: []KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
-    fmt.Fprintf(os.Stdout, "Response from `PendingAlertApi.AlertsPendingGet`: %v\n", resp)
+    // response from `PendingAlertAddPendingAlert`: KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
+    fmt.Fprintf(os.Stdout, "Response from `PendingAlertApi.PendingAlertAddPendingAlert`: %v\n", resp)
 }
 ```
 
@@ -61,22 +57,18 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAlertsPendingGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPendingAlertAddPendingAlertRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **queryString** | **string** |  | 
- **pageReturned** | **int32** |  | 
- **returnLimit** | **int32** |  | 
- **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **req** | [**KeyfactorApiModelsAlertsPendingPendingAlertCreationRequest**](KeyfactorApiModelsAlertsPendingPendingAlertCreationRequest.md) | Information for the new alert | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
 
-[**[]KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse**](KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse.md)
+[**KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse**](KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse.md)
 
 ### Authorization
 
@@ -84,17 +76,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## AlertsPendingIdDelete
+## PendingAlertDeletePendingAlert
 
-> AlertsPendingIdDelete(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> PendingAlertDeletePendingAlert(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Delete a pending alert
 
@@ -112,14 +104,14 @@ import (
 
 func main() {
     id := int32(56) // int32 | Id for the pending alert
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PendingAlertApi.AlertsPendingIdDelete(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.PendingAlertApi.PendingAlertDeletePendingAlert(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.AlertsPendingIdDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.PendingAlertDeletePendingAlert``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -135,14 +127,14 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAlertsPendingIdDeleteRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPendingAlertDeletePendingAlertRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
 
@@ -162,9 +154,145 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## AlertsPendingIdGet
+## PendingAlertEditPendingAlert
 
-> KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse AlertsPendingIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse PendingAlertEditPendingAlert(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Req(req).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Edit a pending alert
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    req := *openapiclient.NewKeyfactorApiModelsAlertsPendingPendingAlertUpdateRequest("DisplayName_example", "Subject_example", "Message_example") // KeyfactorApiModelsAlertsPendingPendingAlertUpdateRequest | Information for the pending alert
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PendingAlertApi.PendingAlertEditPendingAlert(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Req(req).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.PendingAlertEditPendingAlert``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PendingAlertEditPendingAlert`: KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
+    fmt.Fprintf(os.Stdout, "Response from `PendingAlertApi.PendingAlertEditPendingAlert`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPendingAlertEditPendingAlertRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **req** | [**KeyfactorApiModelsAlertsPendingPendingAlertUpdateRequest**](KeyfactorApiModelsAlertsPendingPendingAlertUpdateRequest.md) | Information for the pending alert | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+
+### Return type
+
+[**KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse**](KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+- **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PendingAlertEditSchedule
+
+> KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse PendingAlertEditSchedule(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).NewSchedule(newSchedule).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Edit schedule
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    newSchedule := *openapiclient.NewKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest() // KeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest | 
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PendingAlertApi.PendingAlertEditSchedule(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).NewSchedule(newSchedule).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.PendingAlertEditSchedule``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PendingAlertEditSchedule`: KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
+    fmt.Fprintf(os.Stdout, "Response from `PendingAlertApi.PendingAlertEditSchedule`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPendingAlertEditScheduleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **newSchedule** | [**KeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest**](KeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest.md) |  | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+
+### Return type
+
+[**KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse**](KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+- **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PendingAlertGetPendingAlert
+
+> KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse PendingAlertGetPendingAlert(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get a pending alert
 
@@ -182,18 +310,18 @@ import (
 
 func main() {
     id := int32(56) // int32 | Id for the pending alert to get
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PendingAlertApi.AlertsPendingIdGet(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.PendingAlertApi.PendingAlertGetPendingAlert(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.AlertsPendingIdGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.PendingAlertGetPendingAlert``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `AlertsPendingIdGet`: KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
-    fmt.Fprintf(os.Stdout, "Response from `PendingAlertApi.AlertsPendingIdGet`: %v\n", resp)
+    // response from `PendingAlertGetPendingAlert`: KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
+    fmt.Fprintf(os.Stdout, "Response from `PendingAlertApi.PendingAlertGetPendingAlert`: %v\n", resp)
 }
 ```
 
@@ -207,18 +335,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAlertsPendingIdGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPendingAlertGetPendingAlertRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
 
-[**KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse**](KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse.md)
+[**KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse**](KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse.md)
 
 ### Authorization
 
@@ -227,18 +355,18 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json, text/json, application/xml, text/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## AlertsPendingPost
+## PendingAlertGetPendingAlerts
 
-> KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse AlertsPendingPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertCreationRequest(keyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertCreationRequest).Execute()
+> []KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse PendingAlertGetPendingAlerts(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PagedQueryQueryString(pagedQueryQueryString).PagedQueryPageReturned(pagedQueryPageReturned).PagedQueryReturnLimit(pagedQueryReturnLimit).PagedQuerySortField(pagedQuerySortField).PagedQuerySortAscending(pagedQuerySortAscending).Execute()
 
-Add a pending alert
+Gets all pending alerts according to the provided filter and output parameters
 
 ### Example
 
@@ -253,19 +381,23 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    keyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertCreationRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertCreationRequest("DisplayName_example", "Subject_example", "Message_example") // KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertCreationRequest | Information for the new alert (optional)
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    pagedQueryQueryString := "pagedQueryQueryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
+    pagedQueryPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
+    pagedQueryReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
+    pagedQuerySortField := "pagedQuerySortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
+    pagedQuerySortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PendingAlertApi.AlertsPendingPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertCreationRequest(keyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertCreationRequest).Execute()
+    resp, r, err := apiClient.PendingAlertApi.PendingAlertGetPendingAlerts(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PagedQueryQueryString(pagedQueryQueryString).PagedQueryPageReturned(pagedQueryPageReturned).PagedQueryReturnLimit(pagedQueryReturnLimit).PagedQuerySortField(pagedQuerySortField).PagedQuerySortAscending(pagedQuerySortAscending).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.AlertsPendingPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.PendingAlertGetPendingAlerts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `AlertsPendingPost`: KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
-    fmt.Fprintf(os.Stdout, "Response from `PendingAlertApi.AlertsPendingPost`: %v\n", resp)
+    // response from `PendingAlertGetPendingAlerts`: []KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
+    fmt.Fprintf(os.Stdout, "Response from `PendingAlertApi.PendingAlertGetPendingAlerts`: %v\n", resp)
 }
 ```
 
@@ -275,18 +407,22 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAlertsPendingPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPendingAlertGetPendingAlertsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **keyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertCreationRequest** | [**KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertCreationRequest**](KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertCreationRequest.md) | Information for the new alert | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **pagedQueryQueryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
+ **pagedQueryPageReturned** | **int32** | The current page within the result set to be returned | 
+ **pagedQueryReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
+ **pagedQuerySortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
+ **pagedQuerySortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
 
 ### Return type
 
-[**KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse**](KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse.md)
+[**[]KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse**](KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse.md)
 
 ### Authorization
 
@@ -294,85 +430,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## AlertsPendingPut
+## PendingAlertGetSchedule
 
-> KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse AlertsPendingPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertUpdateRequest(keyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertUpdateRequest).Execute()
-
-Edit a pending alert
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    keyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertUpdateRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertUpdateRequest("DisplayName_example", "Subject_example", "Message_example") // KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertUpdateRequest | Information for the pending alert (optional)
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PendingAlertApi.AlertsPendingPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertUpdateRequest(keyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertUpdateRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.AlertsPendingPut``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AlertsPendingPut`: KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
-    fmt.Fprintf(os.Stdout, "Response from `PendingAlertApi.AlertsPendingPut`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiAlertsPendingPutRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **keyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertUpdateRequest** | [**KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertUpdateRequest**](KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertUpdateRequest.md) | Information for the pending alert | 
-
-### Return type
-
-[**KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse**](KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse.md)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## AlertsPendingScheduleGet
-
-> KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse AlertsPendingScheduleGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse PendingAlertGetSchedule(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get the schedule for pending alerts
 
@@ -389,18 +457,18 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PendingAlertApi.AlertsPendingScheduleGet(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.PendingAlertApi.PendingAlertGetSchedule(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.AlertsPendingScheduleGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.PendingAlertGetSchedule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `AlertsPendingScheduleGet`: KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
-    fmt.Fprintf(os.Stdout, "Response from `PendingAlertApi.AlertsPendingScheduleGet`: %v\n", resp)
+    // response from `PendingAlertGetSchedule`: KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
+    fmt.Fprintf(os.Stdout, "Response from `PendingAlertApi.PendingAlertGetSchedule`: %v\n", resp)
 }
 ```
 
@@ -410,17 +478,17 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAlertsPendingScheduleGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPendingAlertGetScheduleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
 
-[**KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse**](KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse.md)
+[**KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse**](KeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse.md)
 
 ### Authorization
 
@@ -429,84 +497,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json, text/json, application/xml, text/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## AlertsPendingSchedulePut
+## PendingAlertTestAllPendingAlert
 
-> KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse AlertsPendingSchedulePut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest(keyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest).Execute()
-
-Edit schedule
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    keyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest() // KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest |  (optional)
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PendingAlertApi.AlertsPendingSchedulePut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest(keyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.AlertsPendingSchedulePut``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AlertsPendingSchedulePut`: KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse
-    fmt.Fprintf(os.Stdout, "Response from `PendingAlertApi.AlertsPendingSchedulePut`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiAlertsPendingSchedulePutRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **keyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest** | [**KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest**](KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleRequest.md) |  | 
-
-### Return type
-
-[**KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse**](KeyfactorWebKeyfactorApiModelsAlertsAlertScheduleAlertScheduleResponse.md)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## AlertsPendingTestAllPost
-
-> KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse AlertsPendingTestAllPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestAllRequest(keyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestAllRequest).Execute()
+> KeyfactorApiModelsAlertsPendingPendingAlertTestResponse PendingAlertTestAllPendingAlert(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Req(req).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Test all pending alerts. Will send alert emails if SendAlerts is true
 
@@ -523,19 +523,19 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    keyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestAllRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestAllRequest() // KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestAllRequest | Information for the pending alert (optional)
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    req := *openapiclient.NewKeyfactorApiModelsAlertsPendingPendingAlertTestAllRequest() // KeyfactorApiModelsAlertsPendingPendingAlertTestAllRequest | Information for the pending alert
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PendingAlertApi.AlertsPendingTestAllPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestAllRequest(keyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestAllRequest).Execute()
+    resp, r, err := apiClient.PendingAlertApi.PendingAlertTestAllPendingAlert(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Req(req).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.AlertsPendingTestAllPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.PendingAlertTestAllPendingAlert``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `AlertsPendingTestAllPost`: KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse
-    fmt.Fprintf(os.Stdout, "Response from `PendingAlertApi.AlertsPendingTestAllPost`: %v\n", resp)
+    // response from `PendingAlertTestAllPendingAlert`: KeyfactorApiModelsAlertsPendingPendingAlertTestResponse
+    fmt.Fprintf(os.Stdout, "Response from `PendingAlertApi.PendingAlertTestAllPendingAlert`: %v\n", resp)
 }
 ```
 
@@ -545,18 +545,18 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAlertsPendingTestAllPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPendingAlertTestAllPendingAlertRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **keyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestAllRequest** | [**KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestAllRequest**](KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestAllRequest.md) | Information for the pending alert | 
+ **req** | [**KeyfactorApiModelsAlertsPendingPendingAlertTestAllRequest**](KeyfactorApiModelsAlertsPendingPendingAlertTestAllRequest.md) | Information for the pending alert | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
 
-[**KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse**](KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse.md)
+[**KeyfactorApiModelsAlertsPendingPendingAlertTestResponse**](KeyfactorApiModelsAlertsPendingPendingAlertTestResponse.md)
 
 ### Authorization
 
@@ -564,17 +564,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## AlertsPendingTestPost
+## PendingAlertTestPendingAlert
 
-> KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse AlertsPendingTestPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestRequest(keyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestRequest).Execute()
+> KeyfactorApiModelsAlertsPendingPendingAlertTestResponse PendingAlertTestPendingAlert(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Req(req).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Test pending alert. Will send alert emails if SendAlerts is true
 
@@ -591,19 +591,19 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    keyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestRequest() // KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestRequest | Information for the pending alert (optional)
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    req := *openapiclient.NewKeyfactorApiModelsAlertsPendingPendingAlertTestRequest() // KeyfactorApiModelsAlertsPendingPendingAlertTestRequest | Information for the pending alert
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PendingAlertApi.AlertsPendingTestPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestRequest(keyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestRequest).Execute()
+    resp, r, err := apiClient.PendingAlertApi.PendingAlertTestPendingAlert(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Req(req).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.AlertsPendingTestPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.PendingAlertTestPendingAlert``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `AlertsPendingTestPost`: KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse
-    fmt.Fprintf(os.Stdout, "Response from `PendingAlertApi.AlertsPendingTestPost`: %v\n", resp)
+    // response from `PendingAlertTestPendingAlert`: KeyfactorApiModelsAlertsPendingPendingAlertTestResponse
+    fmt.Fprintf(os.Stdout, "Response from `PendingAlertApi.PendingAlertTestPendingAlert`: %v\n", resp)
 }
 ```
 
@@ -613,18 +613,18 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAlertsPendingTestPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPendingAlertTestPendingAlertRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **keyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestRequest** | [**KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestRequest**](KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestRequest.md) | Information for the pending alert | 
+ **req** | [**KeyfactorApiModelsAlertsPendingPendingAlertTestRequest**](KeyfactorApiModelsAlertsPendingPendingAlertTestRequest.md) | Information for the pending alert | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
 
-[**KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse**](KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse.md)
+[**KeyfactorApiModelsAlertsPendingPendingAlertTestResponse**](KeyfactorApiModelsAlertsPendingPendingAlertTestResponse.md)
 
 ### Authorization
 
@@ -632,8 +632,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

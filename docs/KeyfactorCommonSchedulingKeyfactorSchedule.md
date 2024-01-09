@@ -4,14 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Immediate** | Pointer to **NullableBool** |  | [optional] 
+**Immediate** | Pointer to **bool** |  | [optional] 
 **Interval** | Pointer to [**KeyfactorCommonSchedulingModelsIntervalModel**](KeyfactorCommonSchedulingModelsIntervalModel.md) |  | [optional] 
 **Daily** | Pointer to [**KeyfactorCommonSchedulingModelsTimeModel**](KeyfactorCommonSchedulingModelsTimeModel.md) |  | [optional] 
 **Weekly** | Pointer to [**KeyfactorCommonSchedulingModelsWeeklyModel**](KeyfactorCommonSchedulingModelsWeeklyModel.md) |  | [optional] 
 **Monthly** | Pointer to [**KeyfactorCommonSchedulingModelsMonthlyModel**](KeyfactorCommonSchedulingModelsMonthlyModel.md) |  | [optional] 
 **ExactlyOnce** | Pointer to [**KeyfactorCommonSchedulingModelsTimeModel**](KeyfactorCommonSchedulingModelsTimeModel.md) |  | [optional] 
-**Schedule** | Pointer to **NullableString** |  | [optional] 
-**IsEmpty** | Pointer to **bool** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -57,16 +55,6 @@ SetImmediate sets Immediate field to given value.
 
 HasImmediate returns a boolean if a field has been set.
 
-### SetImmediateNil
-
-`func (o *KeyfactorCommonSchedulingKeyfactorSchedule) SetImmediateNil(b bool)`
-
- SetImmediateNil sets the value for Immediate to be an explicit nil
-
-### UnsetImmediate
-`func (o *KeyfactorCommonSchedulingKeyfactorSchedule) UnsetImmediate()`
-
-UnsetImmediate ensures that no value is present for Immediate, not even an explicit nil
 ### GetInterval
 
 `func (o *KeyfactorCommonSchedulingKeyfactorSchedule) GetInterval() KeyfactorCommonSchedulingModelsIntervalModel`
@@ -191,66 +179,6 @@ SetExactlyOnce sets ExactlyOnce field to given value.
 `func (o *KeyfactorCommonSchedulingKeyfactorSchedule) HasExactlyOnce() bool`
 
 HasExactlyOnce returns a boolean if a field has been set.
-
-### GetSchedule
-
-`func (o *KeyfactorCommonSchedulingKeyfactorSchedule) GetSchedule() string`
-
-GetSchedule returns the Schedule field if non-nil, zero value otherwise.
-
-### GetScheduleOk
-
-`func (o *KeyfactorCommonSchedulingKeyfactorSchedule) GetScheduleOk() (*string, bool)`
-
-GetScheduleOk returns a tuple with the Schedule field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSchedule
-
-`func (o *KeyfactorCommonSchedulingKeyfactorSchedule) SetSchedule(v string)`
-
-SetSchedule sets Schedule field to given value.
-
-### HasSchedule
-
-`func (o *KeyfactorCommonSchedulingKeyfactorSchedule) HasSchedule() bool`
-
-HasSchedule returns a boolean if a field has been set.
-
-### SetScheduleNil
-
-`func (o *KeyfactorCommonSchedulingKeyfactorSchedule) SetScheduleNil(b bool)`
-
- SetScheduleNil sets the value for Schedule to be an explicit nil
-
-### UnsetSchedule
-`func (o *KeyfactorCommonSchedulingKeyfactorSchedule) UnsetSchedule()`
-
-UnsetSchedule ensures that no value is present for Schedule, not even an explicit nil
-### GetIsEmpty
-
-`func (o *KeyfactorCommonSchedulingKeyfactorSchedule) GetIsEmpty() bool`
-
-GetIsEmpty returns the IsEmpty field if non-nil, zero value otherwise.
-
-### GetIsEmptyOk
-
-`func (o *KeyfactorCommonSchedulingKeyfactorSchedule) GetIsEmptyOk() (*bool, bool)`
-
-GetIsEmptyOk returns a tuple with the IsEmpty field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsEmpty
-
-`func (o *KeyfactorCommonSchedulingKeyfactorSchedule) SetIsEmpty(v bool)`
-
-SetIsEmpty sets IsEmpty field to given value.
-
-### HasIsEmpty
-
-`func (o *KeyfactorCommonSchedulingKeyfactorSchedule) HasIsEmpty() bool`
-
-HasIsEmpty returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

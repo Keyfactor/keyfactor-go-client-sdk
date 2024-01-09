@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor API Reference and Utility
+Keyfactor-v1
 
 Testing StatusApiService
 
@@ -39,10 +39,10 @@ func Test_command_StatusApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test StatusApiService StatusEndpointsGet", func(t *testing.T) {
+	t.Run("Test StatusApiService StatusGetEndpoints", func(t *testing.T) {
 
-		t.Log("StatusApi_StatusEndpointsGet_payload: <none>")
-		resp, httpRes, err := apiClient.StatusApi.StatusEndpointsGet(context.Background()).Execute()
+		t.Log("StatusApi_StatusGetEndpoints_payload: <none>")
+		resp, httpRes, err := apiClient.StatusApi.StatusGetEndpoints(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

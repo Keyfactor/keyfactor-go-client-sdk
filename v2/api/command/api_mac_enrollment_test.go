@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor API Reference and Utility
+Keyfactor-v1
 
 Testing MacEnrollmentApiService
 
@@ -39,19 +39,19 @@ func Test_command_MacEnrollmentApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test MacEnrollmentApiService MacEnrollmentGet", func(t *testing.T) {
+	t.Run("Test MacEnrollmentApiService MacEnrollmentEditMacEnrollment", func(t *testing.T) {
 
-		t.Log("MacEnrollmentApi_MacEnrollmentGet_payload: <none>")
-		resp, httpRes, err := apiClient.MacEnrollmentApi.MacEnrollmentGet(context.Background()).Execute()
+		t.Log("MacEnrollmentApi_MacEnrollmentEditMacEnrollment_payload: <none>")
+		resp, httpRes, err := apiClient.MacEnrollmentApi.MacEnrollmentEditMacEnrollment(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test MacEnrollmentApiService MacEnrollmentPut", func(t *testing.T) {
+	t.Run("Test MacEnrollmentApiService MacEnrollmentMacEnrollment", func(t *testing.T) {
 
-		t.Log("MacEnrollmentApi_MacEnrollmentPut_payload: <none>")
-		resp, httpRes, err := apiClient.MacEnrollmentApi.MacEnrollmentPut(context.Background()).Execute()
+		t.Log("MacEnrollmentApi_MacEnrollmentMacEnrollment_payload: <none>")
+		resp, httpRes, err := apiClient.MacEnrollmentApi.MacEnrollmentMacEnrollment(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

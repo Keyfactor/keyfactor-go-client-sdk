@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor API Reference and Utility
+Keyfactor-v1
 
 Testing ServerGroupApiService
 
@@ -39,105 +39,105 @@ func Test_command_ServerGroupApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test ServerGroupApiService SSHServerGroupsAccessDelete", func(t *testing.T) {
+	t.Run("Test ServerGroupApiService ServerGroupAddAccess", func(t *testing.T) {
 
-		t.Log("ServerGroupApi_SSHServerGroupsAccessDelete_payload: <none>")
-		resp, httpRes, err := apiClient.ServerGroupApi.SSHServerGroupsAccessDelete(context.Background()).Execute()
+		t.Log("ServerGroupApi_ServerGroupAddAccess_payload: <none>")
+		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupAddAccess(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ServerGroupApiService SSHServerGroupsAccessIdGet", func(t *testing.T) {
+	t.Run("Test ServerGroupApiService ServerGroupCreateServerGroup", func(t *testing.T) {
+
+		t.Log("ServerGroupApi_ServerGroupCreateServerGroup_payload: <none>")
+		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupCreateServerGroup(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test ServerGroupApiService ServerGroupDelete", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("ServerGroupApi_SSHServerGroupsAccessIdGet_id")
+		id = os.Getenv("ServerGroupApi_ServerGroupDelete_id")
 		id, _ = convertParamInterface(id, "string")
-		t.Logf("ServerGroupApi_SSHServerGroupsAccessIdGet_id: %v", id)
+		t.Logf("ServerGroupApi_ServerGroupDelete_id: %v", id)
 
-		t.Log("ServerGroupApi_SSHServerGroupsAccessIdGet_payload: <none>")
-		resp, httpRes, err := apiClient.ServerGroupApi.SSHServerGroupsAccessIdGet(context.Background(), id.(string)).Execute()
+		t.Log("ServerGroupApi_ServerGroupDelete_payload: <none>")
+		httpRes, err := apiClient.ServerGroupApi.ServerGroupDelete(context.Background(), id.(string)).Execute()
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ServerGroupApiService SSHServerGroupsAccessPost", func(t *testing.T) {
-
-		t.Log("ServerGroupApi_SSHServerGroupsAccessPost_payload: <none>")
-		resp, httpRes, err := apiClient.ServerGroupApi.SSHServerGroupsAccessPost(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test ServerGroupApiService SSHServerGroupsGet", func(t *testing.T) {
-
-		t.Log("ServerGroupApi_SSHServerGroupsGet_payload: <none>")
-		resp, httpRes, err := apiClient.ServerGroupApi.SSHServerGroupsGet(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test ServerGroupApiService SSHServerGroupsIdDelete", func(t *testing.T) {
+	t.Run("Test ServerGroupApiService ServerGroupGetAccess", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("ServerGroupApi_SSHServerGroupsIdDelete_id")
+		id = os.Getenv("ServerGroupApi_ServerGroupGetAccess_id")
 		id, _ = convertParamInterface(id, "string")
-		t.Logf("ServerGroupApi_SSHServerGroupsIdDelete_id: %v", id)
+		t.Logf("ServerGroupApi_ServerGroupGetAccess_id: %v", id)
 
-		t.Log("ServerGroupApi_SSHServerGroupsIdDelete_payload: <none>")
-		httpRes, err := apiClient.ServerGroupApi.SSHServerGroupsIdDelete(context.Background(), id.(string)).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test ServerGroupApiService SSHServerGroupsIdGet", func(t *testing.T) {
-
-		var id interface{}
-
-		id = os.Getenv("ServerGroupApi_SSHServerGroupsIdGet_id")
-		id, _ = convertParamInterface(id, "string")
-		t.Logf("ServerGroupApi_SSHServerGroupsIdGet_id: %v", id)
-
-		t.Log("ServerGroupApi_SSHServerGroupsIdGet_payload: <none>")
-		resp, httpRes, err := apiClient.ServerGroupApi.SSHServerGroupsIdGet(context.Background(), id.(string)).Execute()
+		t.Log("ServerGroupApi_ServerGroupGetAccess_payload: <none>")
+		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupGetAccess(context.Background(), id.(string)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ServerGroupApiService SSHServerGroupsNameGet", func(t *testing.T) {
+	t.Run("Test ServerGroupApiService ServerGroupGetGroup", func(t *testing.T) {
+
+		var id interface{}
+
+		id = os.Getenv("ServerGroupApi_ServerGroupGetGroup_id")
+		id, _ = convertParamInterface(id, "string")
+		t.Logf("ServerGroupApi_ServerGroupGetGroup_id: %v", id)
+
+		t.Log("ServerGroupApi_ServerGroupGetGroup_payload: <none>")
+		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupGetGroup(context.Background(), id.(string)).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test ServerGroupApiService ServerGroupGetGroupByName", func(t *testing.T) {
 
 		var name interface{}
 
-		name = os.Getenv("ServerGroupApi_SSHServerGroupsNameGet_name")
+		name = os.Getenv("ServerGroupApi_ServerGroupGetGroupByName_name")
 		name, _ = convertParamInterface(name, "string")
-		t.Logf("ServerGroupApi_SSHServerGroupsNameGet_name: %v", name)
+		t.Logf("ServerGroupApi_ServerGroupGetGroupByName_name: %v", name)
 
-		t.Log("ServerGroupApi_SSHServerGroupsNameGet_payload: <none>")
-		resp, httpRes, err := apiClient.ServerGroupApi.SSHServerGroupsNameGet(context.Background(), name.(string)).Execute()
+		t.Log("ServerGroupApi_ServerGroupGetGroupByName_payload: <none>")
+		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupGetGroupByName(context.Background(), name.(string)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ServerGroupApiService SSHServerGroupsPost", func(t *testing.T) {
+	t.Run("Test ServerGroupApiService ServerGroupQueryServerGroups", func(t *testing.T) {
 
-		t.Log("ServerGroupApi_SSHServerGroupsPost_payload: <none>")
-		resp, httpRes, err := apiClient.ServerGroupApi.SSHServerGroupsPost(context.Background()).Execute()
+		t.Log("ServerGroupApi_ServerGroupQueryServerGroups_payload: <none>")
+		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupQueryServerGroups(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ServerGroupApiService SSHServerGroupsPut", func(t *testing.T) {
+	t.Run("Test ServerGroupApiService ServerGroupRemoveAccess", func(t *testing.T) {
 
-		t.Log("ServerGroupApi_SSHServerGroupsPut_payload: <none>")
-		resp, httpRes, err := apiClient.ServerGroupApi.SSHServerGroupsPut(context.Background()).Execute()
+		t.Log("ServerGroupApi_ServerGroupRemoveAccess_payload: <none>")
+		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupRemoveAccess(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test ServerGroupApiService ServerGroupUpdateServerGroup", func(t *testing.T) {
+
+		t.Log("ServerGroupApi_ServerGroupUpdateServerGroup_payload: <none>")
+		resp, httpRes, err := apiClient.ServerGroupApi.ServerGroupUpdateServerGroup(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor API Reference and Utility
+Keyfactor-v1
 
 Testing SMTPApiService
 
@@ -39,28 +39,28 @@ func Test_command_SMTPApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test SMTPApiService SMTPGet", func(t *testing.T) {
+	t.Run("Test SMTPApiService SMTPSMTP", func(t *testing.T) {
 
-		t.Log("SMTPApi_SMTPGet_payload: <none>")
-		resp, httpRes, err := apiClient.SMTPApi.SMTPGet(context.Background()).Execute()
+		t.Log("SMTPApi_SMTPSMTP_payload: <none>")
+		resp, httpRes, err := apiClient.SMTPApi.SMTPSMTP(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test SMTPApiService SMTPPut", func(t *testing.T) {
+	t.Run("Test SMTPApiService SMTPTestSMTP", func(t *testing.T) {
 
-		t.Log("SMTPApi_SMTPPut_payload: <none>")
-		resp, httpRes, err := apiClient.SMTPApi.SMTPPut(context.Background()).Execute()
+		t.Log("SMTPApi_SMTPTestSMTP_payload: <none>")
+		resp, httpRes, err := apiClient.SMTPApi.SMTPTestSMTP(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test SMTPApiService SMTPTestPost", func(t *testing.T) {
+	t.Run("Test SMTPApiService SMTPUpdateSMTP", func(t *testing.T) {
 
-		t.Log("SMTPApi_SMTPTestPost_payload: <none>")
-		resp, httpRes, err := apiClient.SMTPApi.SMTPTestPost(context.Background()).Execute()
+		t.Log("SMTPApi_SMTPUpdateSMTP_payload: <none>")
+		resp, httpRes, err := apiClient.SMTPApi.SMTPUpdateSMTP(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

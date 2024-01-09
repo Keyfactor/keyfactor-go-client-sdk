@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor API Reference and Utility
+Keyfactor-v1
 
 Testing CertificateCollectionApiService
 
@@ -39,113 +39,81 @@ func Test_command_CertificateCollectionApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test CertificateCollectionApiService CertificateCollectionsCollectionListGet", func(t *testing.T) {
+	t.Run("Test CertificateCollectionApiService CertificateCollectionCopyFromExistingCollection", func(t *testing.T) {
 
-		t.Log("CertificateCollectionApi_CertificateCollectionsCollectionListGet_payload: <none>")
-		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionsCollectionListGet(context.Background()).Execute()
+		t.Log("CertificateCollectionApi_CertificateCollectionCopyFromExistingCollection_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionCopyFromExistingCollection(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CertificateCollectionApiService CertificateCollectionsCopyPost", func(t *testing.T) {
+	t.Run("Test CertificateCollectionApiService CertificateCollectionCreateCollection", func(t *testing.T) {
 
-		t.Log("CertificateCollectionApi_CertificateCollectionsCopyPost_payload: <none>")
-		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionsCopyPost(context.Background()).Execute()
+		t.Log("CertificateCollectionApi_CertificateCollectionCreateCollection_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionCreateCollection(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CertificateCollectionApiService CertificateCollectionsGet", func(t *testing.T) {
-
-		t.Log("CertificateCollectionApi_CertificateCollectionsGet_payload: <none>")
-		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionsGet(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test CertificateCollectionApiService CertificateCollectionsIdDelete", func(t *testing.T) {
+	t.Run("Test CertificateCollectionApiService CertificateCollectionGetCollection0", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("CertificateCollectionApi_CertificateCollectionsIdDelete_id")
+		id = os.Getenv("CertificateCollectionApi_CertificateCollectionGetCollection0_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("CertificateCollectionApi_CertificateCollectionsIdDelete_id: %v", id)
+		t.Logf("CertificateCollectionApi_CertificateCollectionGetCollection0_id: %v", id)
 
-		t.Log("CertificateCollectionApi_CertificateCollectionsIdDelete_payload: <none>")
-		httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionsIdDelete(context.Background(), id.(int32)).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test CertificateCollectionApiService CertificateCollectionsIdFavoritePut", func(t *testing.T) {
-
-		var id interface{}
-
-		id = os.Getenv("CertificateCollectionApi_CertificateCollectionsIdFavoritePut_id")
-		id, _ = convertParamInterface(id, "int32")
-		t.Logf("CertificateCollectionApi_CertificateCollectionsIdFavoritePut_id: %v", id)
-
-		t.Log("CertificateCollectionApi_CertificateCollectionsIdFavoritePut_payload: <none>")
-		httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionsIdFavoritePut(context.Background(), id.(int32)).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test CertificateCollectionApiService CertificateCollectionsIdGet", func(t *testing.T) {
-
-		var id interface{}
-
-		id = os.Getenv("CertificateCollectionApi_CertificateCollectionsIdGet_id")
-		id, _ = convertParamInterface(id, "int32")
-		t.Logf("CertificateCollectionApi_CertificateCollectionsIdGet_id: %v", id)
-
-		t.Log("CertificateCollectionApi_CertificateCollectionsIdGet_payload: <none>")
-		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionsIdGet(context.Background(), id.(int32)).Execute()
+		t.Log("CertificateCollectionApi_CertificateCollectionGetCollection0_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionGetCollection0(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CertificateCollectionApiService CertificateCollectionsNameGet", func(t *testing.T) {
+	t.Run("Test CertificateCollectionApiService CertificateCollectionGetCollection1", func(t *testing.T) {
 
 		var name interface{}
 
-		name = os.Getenv("CertificateCollectionApi_CertificateCollectionsNameGet_name")
+		name = os.Getenv("CertificateCollectionApi_CertificateCollectionGetCollection1_name")
 		name, _ = convertParamInterface(name, "string")
-		t.Logf("CertificateCollectionApi_CertificateCollectionsNameGet_name: %v", name)
+		t.Logf("CertificateCollectionApi_CertificateCollectionGetCollection1_name: %v", name)
 
-		t.Log("CertificateCollectionApi_CertificateCollectionsNameGet_payload: <none>")
-		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionsNameGet(context.Background(), name.(string)).Execute()
+		t.Log("CertificateCollectionApi_CertificateCollectionGetCollection1_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionGetCollection1(context.Background(), name.(string)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CertificateCollectionApiService CertificateCollectionsNavItemsGet", func(t *testing.T) {
+	t.Run("Test CertificateCollectionApiService CertificateCollectionGetCollections", func(t *testing.T) {
 
-		t.Log("CertificateCollectionApi_CertificateCollectionsNavItemsGet_payload: <none>")
-		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionsNavItemsGet(context.Background()).Execute()
+		t.Log("CertificateCollectionApi_CertificateCollectionGetCollections_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionGetCollections(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CertificateCollectionApiService CertificateCollectionsPost", func(t *testing.T) {
+	t.Run("Test CertificateCollectionApiService CertificateCollectionSetCollectionPermissions", func(t *testing.T) {
 
-		t.Log("CertificateCollectionApi_CertificateCollectionsPost_payload: <none>")
-		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionsPost(context.Background()).Execute()
+		var id interface{}
+
+		id = os.Getenv("CertificateCollectionApi_CertificateCollectionSetCollectionPermissions_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("CertificateCollectionApi_CertificateCollectionSetCollectionPermissions_id: %v", id)
+
+		t.Log("CertificateCollectionApi_CertificateCollectionSetCollectionPermissions_payload: <none>")
+		httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionSetCollectionPermissions(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test CertificateCollectionApiService CertificateCollectionsPut", func(t *testing.T) {
+	t.Run("Test CertificateCollectionApiService CertificateCollectionUpdateCollection", func(t *testing.T) {
 
-		t.Log("CertificateCollectionApi_CertificateCollectionsPut_payload: <none>")
-		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionsPut(context.Background()).Execute()
+		t.Log("CertificateCollectionApi_CertificateCollectionUpdateCollection_payload: <none>")
+		resp, httpRes, err := apiClient.CertificateCollectionApi.CertificateCollectionUpdateCollection(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

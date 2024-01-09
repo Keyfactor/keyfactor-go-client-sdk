@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Days** | Pointer to **[]int32** |  | [optional] 
 **Time** | Pointer to **time.Time** |  | [optional] 
-**Days** | Pointer to [**[]SystemDayOfWeek**](SystemDayOfWeek.md) |  | [optional] 
 
 ## Methods
 
@@ -25,6 +25,31 @@ will change when the set of required properties is changed
 NewKeyfactorCommonSchedulingModelsWeeklyModelWithDefaults instantiates a new KeyfactorCommonSchedulingModelsWeeklyModel object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetDays
+
+`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDays() []int32`
+
+GetDays returns the Days field if non-nil, zero value otherwise.
+
+### GetDaysOk
+
+`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDaysOk() (*[]int32, bool)`
+
+GetDaysOk returns a tuple with the Days field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDays
+
+`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) SetDays(v []int32)`
+
+SetDays sets Days field to given value.
+
+### HasDays
+
+`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) HasDays() bool`
+
+HasDays returns a boolean if a field has been set.
 
 ### GetTime
 
@@ -51,41 +76,6 @@ SetTime sets Time field to given value.
 
 HasTime returns a boolean if a field has been set.
 
-### GetDays
-
-`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDays() []SystemDayOfWeek`
-
-GetDays returns the Days field if non-nil, zero value otherwise.
-
-### GetDaysOk
-
-`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDaysOk() (*[]SystemDayOfWeek, bool)`
-
-GetDaysOk returns a tuple with the Days field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDays
-
-`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) SetDays(v []SystemDayOfWeek)`
-
-SetDays sets Days field to given value.
-
-### HasDays
-
-`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) HasDays() bool`
-
-HasDays returns a boolean if a field has been set.
-
-### SetDaysNil
-
-`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) SetDaysNil(b bool)`
-
- SetDaysNil sets the value for Days to be an explicit nil
-
-### UnsetDays
-`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) UnsetDays()`
-
-UnsetDays ensures that no value is present for Days, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

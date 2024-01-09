@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor API Reference and Utility
+Keyfactor-v1
 
 Testing MonitoringApiService
 
@@ -39,84 +39,84 @@ func Test_command_MonitoringApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test MonitoringApiService MonitoringResolveOCSPPost", func(t *testing.T) {
+	t.Run("Test MonitoringApiService MonitoringAddRevocationMonitoring", func(t *testing.T) {
 
-		t.Log("MonitoringApi_MonitoringResolveOCSPPost_payload: <none>")
-		resp, httpRes, err := apiClient.MonitoringApi.MonitoringResolveOCSPPost(context.Background()).Execute()
+		t.Log("MonitoringApi_MonitoringAddRevocationMonitoring_payload: <none>")
+		resp, httpRes, err := apiClient.MonitoringApi.MonitoringAddRevocationMonitoring(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test MonitoringApiService MonitoringRevocationGet", func(t *testing.T) {
-
-		t.Log("MonitoringApi_MonitoringRevocationGet_payload: <none>")
-		resp, httpRes, err := apiClient.MonitoringApi.MonitoringRevocationGet(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test MonitoringApiService MonitoringRevocationIdDelete", func(t *testing.T) {
+	t.Run("Test MonitoringApiService MonitoringDeleteRevocationMonitoring", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("MonitoringApi_MonitoringRevocationIdDelete_id")
+		id = os.Getenv("MonitoringApi_MonitoringDeleteRevocationMonitoring_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("MonitoringApi_MonitoringRevocationIdDelete_id: %v", id)
+		t.Logf("MonitoringApi_MonitoringDeleteRevocationMonitoring_id: %v", id)
 
-		t.Log("MonitoringApi_MonitoringRevocationIdDelete_payload: <none>")
-		httpRes, err := apiClient.MonitoringApi.MonitoringRevocationIdDelete(context.Background(), id.(int32)).Execute()
+		t.Log("MonitoringApi_MonitoringDeleteRevocationMonitoring_payload: <none>")
+		httpRes, err := apiClient.MonitoringApi.MonitoringDeleteRevocationMonitoring(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test MonitoringApiService MonitoringRevocationIdGet", func(t *testing.T) {
+	t.Run("Test MonitoringApiService MonitoringEditRevocationMonitoring", func(t *testing.T) {
+
+		t.Log("MonitoringApi_MonitoringEditRevocationMonitoring_payload: <none>")
+		resp, httpRes, err := apiClient.MonitoringApi.MonitoringEditRevocationMonitoring(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test MonitoringApiService MonitoringGetRevocationMonitoring", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("MonitoringApi_MonitoringRevocationIdGet_id")
+		id = os.Getenv("MonitoringApi_MonitoringGetRevocationMonitoring_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("MonitoringApi_MonitoringRevocationIdGet_id: %v", id)
+		t.Logf("MonitoringApi_MonitoringGetRevocationMonitoring_id: %v", id)
 
-		t.Log("MonitoringApi_MonitoringRevocationIdGet_payload: <none>")
-		resp, httpRes, err := apiClient.MonitoringApi.MonitoringRevocationIdGet(context.Background(), id.(int32)).Execute()
+		t.Log("MonitoringApi_MonitoringGetRevocationMonitoring_payload: <none>")
+		resp, httpRes, err := apiClient.MonitoringApi.MonitoringGetRevocationMonitoring(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test MonitoringApiService MonitoringRevocationPost", func(t *testing.T) {
+	t.Run("Test MonitoringApiService MonitoringGetRevocationMonitoringEndpoints", func(t *testing.T) {
 
-		t.Log("MonitoringApi_MonitoringRevocationPost_payload: <none>")
-		resp, httpRes, err := apiClient.MonitoringApi.MonitoringRevocationPost(context.Background()).Execute()
+		t.Log("MonitoringApi_MonitoringGetRevocationMonitoringEndpoints_payload: <none>")
+		resp, httpRes, err := apiClient.MonitoringApi.MonitoringGetRevocationMonitoringEndpoints(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test MonitoringApiService MonitoringRevocationPut", func(t *testing.T) {
+	t.Run("Test MonitoringApiService MonitoringResolveOCSP", func(t *testing.T) {
 
-		t.Log("MonitoringApi_MonitoringRevocationPut_payload: <none>")
-		resp, httpRes, err := apiClient.MonitoringApi.MonitoringRevocationPut(context.Background()).Execute()
+		t.Log("MonitoringApi_MonitoringResolveOCSP_payload: <none>")
+		resp, httpRes, err := apiClient.MonitoringApi.MonitoringResolveOCSP(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test MonitoringApiService MonitoringRevocationTestAllPost", func(t *testing.T) {
+	t.Run("Test MonitoringApiService MonitoringTestAllRevocationMonitoringAlert", func(t *testing.T) {
 
-		t.Log("MonitoringApi_MonitoringRevocationTestAllPost_payload: <none>")
-		resp, httpRes, err := apiClient.MonitoringApi.MonitoringRevocationTestAllPost(context.Background()).Execute()
+		t.Log("MonitoringApi_MonitoringTestAllRevocationMonitoringAlert_payload: <none>")
+		resp, httpRes, err := apiClient.MonitoringApi.MonitoringTestAllRevocationMonitoringAlert(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test MonitoringApiService MonitoringRevocationTestPost", func(t *testing.T) {
+	t.Run("Test MonitoringApiService MonitoringTestRevocationMonitoringAlert", func(t *testing.T) {
 
-		t.Log("MonitoringApi_MonitoringRevocationTestPost_payload: <none>")
-		resp, httpRes, err := apiClient.MonitoringApi.MonitoringRevocationTestPost(context.Background()).Execute()
+		t.Log("MonitoringApi_MonitoringTestRevocationMonitoringAlert_payload: <none>")
+		resp, httpRes, err := apiClient.MonitoringApi.MonitoringTestRevocationMonitoringAlert(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

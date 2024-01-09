@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor API Reference and Utility
+Keyfactor-v1
 
 Testing WorkflowInstanceApiService
 
@@ -39,101 +39,101 @@ func Test_command_WorkflowInstanceApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test WorkflowInstanceApiService WorkflowInstancesAssignedToMeGet", func(t *testing.T) {
+	t.Run("Test WorkflowInstanceApiService WorkflowInstanceDeleteInstance", func(t *testing.T) {
 
-		t.Log("WorkflowInstanceApi_WorkflowInstancesAssignedToMeGet_payload: <none>")
-		resp, httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstancesAssignedToMeGet(context.Background()).Execute()
+		var instanceId interface{}
+
+		instanceId = os.Getenv("WorkflowInstanceApi_WorkflowInstanceDeleteInstance_instanceId")
+		instanceId, _ = convertParamInterface(instanceId, "string")
+		t.Logf("WorkflowInstanceApi_WorkflowInstanceDeleteInstance_instanceId: %v", instanceId)
+
+		t.Log("WorkflowInstanceApi_WorkflowInstanceDeleteInstance_payload: <none>")
+		httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceDeleteInstance(context.Background(), instanceId.(string)).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test WorkflowInstanceApiService WorkflowInstanceGet", func(t *testing.T) {
+
+		var instanceId interface{}
+
+		instanceId = os.Getenv("WorkflowInstanceApi_WorkflowInstanceGet_instanceId")
+		instanceId, _ = convertParamInterface(instanceId, "string")
+		t.Logf("WorkflowInstanceApi_WorkflowInstanceGet_instanceId: %v", instanceId)
+
+		t.Log("WorkflowInstanceApi_WorkflowInstanceGet_payload: <none>")
+		resp, httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceGet(context.Background(), instanceId.(string)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test WorkflowInstanceApiService WorkflowInstancesGet", func(t *testing.T) {
+	t.Run("Test WorkflowInstanceApiService WorkflowInstanceQuery", func(t *testing.T) {
 
-		t.Log("WorkflowInstanceApi_WorkflowInstancesGet_payload: <none>")
-		resp, httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstancesGet(context.Background()).Execute()
+		t.Log("WorkflowInstanceApi_WorkflowInstanceQuery_payload: <none>")
+		resp, httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceQuery(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test WorkflowInstanceApiService WorkflowInstancesInstanceIdDelete", func(t *testing.T) {
+	t.Run("Test WorkflowInstanceApiService WorkflowInstanceQueryInstancesAssignedToMe", func(t *testing.T) {
 
-		var instanceId interface{}
-
-		instanceId = os.Getenv("WorkflowInstanceApi_WorkflowInstancesInstanceIdDelete_instanceId")
-		instanceId, _ = convertParamInterface(instanceId, "string")
-		t.Logf("WorkflowInstanceApi_WorkflowInstancesInstanceIdDelete_instanceId: %v", instanceId)
-
-		t.Log("WorkflowInstanceApi_WorkflowInstancesInstanceIdDelete_payload: <none>")
-		httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstancesInstanceIdDelete(context.Background(), instanceId.(string)).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test WorkflowInstanceApiService WorkflowInstancesInstanceIdGet", func(t *testing.T) {
-
-		var instanceId interface{}
-
-		instanceId = os.Getenv("WorkflowInstanceApi_WorkflowInstancesInstanceIdGet_instanceId")
-		instanceId, _ = convertParamInterface(instanceId, "string")
-		t.Logf("WorkflowInstanceApi_WorkflowInstancesInstanceIdGet_instanceId: %v", instanceId)
-
-		t.Log("WorkflowInstanceApi_WorkflowInstancesInstanceIdGet_payload: <none>")
-		resp, httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstancesInstanceIdGet(context.Background(), instanceId.(string)).Execute()
+		t.Log("WorkflowInstanceApi_WorkflowInstanceQueryInstancesAssignedToMe_payload: <none>")
+		resp, httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceQueryInstancesAssignedToMe(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test WorkflowInstanceApiService WorkflowInstancesInstanceIdRestartPost", func(t *testing.T) {
+	t.Run("Test WorkflowInstanceApiService WorkflowInstanceQueryInstancesStartedByMe", func(t *testing.T) {
 
-		var instanceId interface{}
-
-		instanceId = os.Getenv("WorkflowInstanceApi_WorkflowInstancesInstanceIdRestartPost_instanceId")
-		instanceId, _ = convertParamInterface(instanceId, "string")
-		t.Logf("WorkflowInstanceApi_WorkflowInstancesInstanceIdRestartPost_instanceId: %v", instanceId)
-
-		t.Log("WorkflowInstanceApi_WorkflowInstancesInstanceIdRestartPost_payload: <none>")
-		httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstancesInstanceIdRestartPost(context.Background(), instanceId.(string)).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test WorkflowInstanceApiService WorkflowInstancesInstanceIdSignalsPost", func(t *testing.T) {
-
-		var instanceId interface{}
-
-		instanceId = os.Getenv("WorkflowInstanceApi_WorkflowInstancesInstanceIdSignalsPost_instanceId")
-		instanceId, _ = convertParamInterface(instanceId, "string")
-		t.Logf("WorkflowInstanceApi_WorkflowInstancesInstanceIdSignalsPost_instanceId: %v", instanceId)
-
-		t.Log("WorkflowInstanceApi_WorkflowInstancesInstanceIdSignalsPost_payload: <none>")
-		httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstancesInstanceIdSignalsPost(context.Background(), instanceId.(string)).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test WorkflowInstanceApiService WorkflowInstancesInstanceIdStopPost", func(t *testing.T) {
-
-		var instanceId interface{}
-
-		instanceId = os.Getenv("WorkflowInstanceApi_WorkflowInstancesInstanceIdStopPost_instanceId")
-		instanceId, _ = convertParamInterface(instanceId, "string")
-		t.Logf("WorkflowInstanceApi_WorkflowInstancesInstanceIdStopPost_instanceId: %v", instanceId)
-
-		t.Log("WorkflowInstanceApi_WorkflowInstancesInstanceIdStopPost_payload: <none>")
-		httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstancesInstanceIdStopPost(context.Background(), instanceId.(string)).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test WorkflowInstanceApiService WorkflowInstancesMyGet", func(t *testing.T) {
-
-		t.Log("WorkflowInstanceApi_WorkflowInstancesMyGet_payload: <none>")
-		resp, httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstancesMyGet(context.Background()).Execute()
+		t.Log("WorkflowInstanceApi_WorkflowInstanceQueryInstancesStartedByMe_payload: <none>")
+		resp, httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceQueryInstancesStartedByMe(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test WorkflowInstanceApiService WorkflowInstanceRestart", func(t *testing.T) {
+
+		var instanceId interface{}
+
+		instanceId = os.Getenv("WorkflowInstanceApi_WorkflowInstanceRestart_instanceId")
+		instanceId, _ = convertParamInterface(instanceId, "string")
+		t.Logf("WorkflowInstanceApi_WorkflowInstanceRestart_instanceId: %v", instanceId)
+
+		t.Log("WorkflowInstanceApi_WorkflowInstanceRestart_payload: <none>")
+		httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceRestart(context.Background(), instanceId.(string)).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test WorkflowInstanceApiService WorkflowInstanceSignal", func(t *testing.T) {
+
+		var instanceId interface{}
+
+		instanceId = os.Getenv("WorkflowInstanceApi_WorkflowInstanceSignal_instanceId")
+		instanceId, _ = convertParamInterface(instanceId, "string")
+		t.Logf("WorkflowInstanceApi_WorkflowInstanceSignal_instanceId: %v", instanceId)
+
+		t.Log("WorkflowInstanceApi_WorkflowInstanceSignal_payload: <none>")
+		httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceSignal(context.Background(), instanceId.(string)).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test WorkflowInstanceApiService WorkflowInstanceStop", func(t *testing.T) {
+
+		var instanceId interface{}
+
+		instanceId = os.Getenv("WorkflowInstanceApi_WorkflowInstanceStop_instanceId")
+		instanceId, _ = convertParamInterface(instanceId, "string")
+		t.Logf("WorkflowInstanceApi_WorkflowInstanceStop_instanceId: %v", instanceId)
+
+		t.Log("WorkflowInstanceApi_WorkflowInstanceStop_payload: <none>")
+		httpRes, err := apiClient.WorkflowInstanceApi.WorkflowInstanceStop(context.Background(), instanceId.(string)).Execute()
+		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 

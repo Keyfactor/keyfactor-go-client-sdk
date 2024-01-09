@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Time** | Pointer to **time.Time** |  | [optional] 
 **Day** | Pointer to **int32** |  | [optional] 
+**Time** | Pointer to **time.Time** |  | [optional] 
 
 ## Methods
 
@@ -25,31 +25,6 @@ will change when the set of required properties is changed
 NewKeyfactorCommonSchedulingModelsMonthlyModelWithDefaults instantiates a new KeyfactorCommonSchedulingModelsMonthlyModel object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetTime
-
-`func (o *KeyfactorCommonSchedulingModelsMonthlyModel) GetTime() time.Time`
-
-GetTime returns the Time field if non-nil, zero value otherwise.
-
-### GetTimeOk
-
-`func (o *KeyfactorCommonSchedulingModelsMonthlyModel) GetTimeOk() (*time.Time, bool)`
-
-GetTimeOk returns a tuple with the Time field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTime
-
-`func (o *KeyfactorCommonSchedulingModelsMonthlyModel) SetTime(v time.Time)`
-
-SetTime sets Time field to given value.
-
-### HasTime
-
-`func (o *KeyfactorCommonSchedulingModelsMonthlyModel) HasTime() bool`
-
-HasTime returns a boolean if a field has been set.
 
 ### GetDay
 
@@ -75,6 +50,31 @@ SetDay sets Day field to given value.
 `func (o *KeyfactorCommonSchedulingModelsMonthlyModel) HasDay() bool`
 
 HasDay returns a boolean if a field has been set.
+
+### GetTime
+
+`func (o *KeyfactorCommonSchedulingModelsMonthlyModel) GetTime() time.Time`
+
+GetTime returns the Time field if non-nil, zero value otherwise.
+
+### GetTimeOk
+
+`func (o *KeyfactorCommonSchedulingModelsMonthlyModel) GetTimeOk() (*time.Time, bool)`
+
+GetTimeOk returns a tuple with the Time field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTime
+
+`func (o *KeyfactorCommonSchedulingModelsMonthlyModel) SetTime(v time.Time)`
+
+SetTime sets Time field to given value.
+
+### HasTime
+
+`func (o *KeyfactorCommonSchedulingModelsMonthlyModel) HasTime() bool`
+
+HasTime returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

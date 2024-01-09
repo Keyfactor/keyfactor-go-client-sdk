@@ -1,21 +1,19 @@
 # \MacEnrollmentApi
 
-All URIs are relative to */Keyfactor/API*
+All URIs are relative to *http://keyfactor.example.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**MacEnrollmentGet**](MacEnrollmentApi.md#MacEnrollmentGet) | **Get** /MacEnrollment | Gets mac enrollment settings data
-[**MacEnrollmentPut**](MacEnrollmentApi.md#MacEnrollmentPut) | **Put** /MacEnrollment | Updates mac enrollment settings data
+[**MacEnrollmentEditMacEnrollment**](MacEnrollmentApi.md#MacEnrollmentEditMacEnrollment) | **Put** /MacEnrollment | Updates mac enrollment settings data
+[**MacEnrollmentMacEnrollment**](MacEnrollmentApi.md#MacEnrollmentMacEnrollment) | **Get** /MacEnrollment | Gets mac enrollment settings data
 
 
 
-## MacEnrollmentGet
+## MacEnrollmentEditMacEnrollment
 
-> KeyfactorWebKeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel MacEnrollmentGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel MacEnrollmentEditMacEnrollment(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).MacEnrollmentSettings(macEnrollmentSettings).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
-Gets mac enrollment settings data
-
-
+Updates mac enrollment settings data
 
 ### Example
 
@@ -30,18 +28,19 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    macEnrollmentSettings := *openapiclient.NewKeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel() // KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel | 
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MacEnrollmentApi.MacEnrollmentGet(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.MacEnrollmentApi.MacEnrollmentEditMacEnrollment(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).MacEnrollmentSettings(macEnrollmentSettings).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MacEnrollmentApi.MacEnrollmentGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MacEnrollmentApi.MacEnrollmentEditMacEnrollment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `MacEnrollmentGet`: KeyfactorWebKeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel
-    fmt.Fprintf(os.Stdout, "Response from `MacEnrollmentApi.MacEnrollmentGet`: %v\n", resp)
+    // response from `MacEnrollmentEditMacEnrollment`: KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel
+    fmt.Fprintf(os.Stdout, "Response from `MacEnrollmentApi.MacEnrollmentEditMacEnrollment`: %v\n", resp)
 }
 ```
 
@@ -51,17 +50,84 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiMacEnrollmentGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiMacEnrollmentEditMacEnrollmentRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **macEnrollmentSettings** | [**KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel**](KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel.md) |  | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
 
-[**KeyfactorWebKeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel**](KeyfactorWebKeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel.md)
+[**KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel**](KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+- **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## MacEnrollmentMacEnrollment
+
+> KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel MacEnrollmentMacEnrollment(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Gets mac enrollment settings data
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MacEnrollmentApi.MacEnrollmentMacEnrollment(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MacEnrollmentApi.MacEnrollmentMacEnrollment``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `MacEnrollmentMacEnrollment`: KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel
+    fmt.Fprintf(os.Stdout, "Response from `MacEnrollmentApi.MacEnrollmentMacEnrollment`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiMacEnrollmentMacEnrollmentRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+
+### Return type
+
+[**KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel**](KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel.md)
 
 ### Authorization
 
@@ -70,77 +136,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## MacEnrollmentPut
-
-> KeyfactorWebKeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel MacEnrollmentPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel(keyfactorWebKeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel).Execute()
-
-Updates mac enrollment settings data
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    keyfactorWebKeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel := *openapiclient.NewKeyfactorWebKeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel() // KeyfactorWebKeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel |  (optional)
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MacEnrollmentApi.MacEnrollmentPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel(keyfactorWebKeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MacEnrollmentApi.MacEnrollmentPut``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MacEnrollmentPut`: KeyfactorWebKeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel
-    fmt.Fprintf(os.Stdout, "Response from `MacEnrollmentApi.MacEnrollmentPut`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiMacEnrollmentPutRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **keyfactorWebKeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel** | [**KeyfactorWebKeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel**](KeyfactorWebKeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel.md) |  | 
-
-### Return type
-
-[**KeyfactorWebKeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel**](KeyfactorWebKeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel.md)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json, text/json, application/xml, text/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

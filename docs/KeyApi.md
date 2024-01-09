@@ -1,24 +1,24 @@
 # \KeyApi
 
-All URIs are relative to */Keyfactor/API*
+All URIs are relative to *http://keyfactor.example.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SSHKeysMyKeyGet**](KeyApi.md#SSHKeysMyKeyGet) | **Get** /SSH/Keys/MyKey | Returns the current key of the requesting user
-[**SSHKeysMyKeyPost**](KeyApi.md#SSHKeysMyKeyPost) | **Post** /SSH/Keys/MyKey | Generates an SSH Key Pair for the requesting user.
-[**SSHKeysMyKeyPut**](KeyApi.md#SSHKeysMyKeyPut) | **Put** /SSH/Keys/MyKey | Updates the requesting user&#39;s SSH key
-[**SSHKeysUnmanagedDelete**](KeyApi.md#SSHKeysUnmanagedDelete) | **Delete** /SSH/Keys/Unmanaged | Deletes Unmanaged Keys associated with the provided identifiers
-[**SSHKeysUnmanagedGet**](KeyApi.md#SSHKeysUnmanagedGet) | **Get** /SSH/Keys/Unmanaged | Returns Unmanaged SSH keys
-[**SSHKeysUnmanagedIdDelete**](KeyApi.md#SSHKeysUnmanagedIdDelete) | **Delete** /SSH/Keys/Unmanaged/{id} | Deletes Unmanaged Key associated with the provided identifier
-[**SSHKeysUnmanagedIdGet**](KeyApi.md#SSHKeysUnmanagedIdGet) | **Get** /SSH/Keys/Unmanaged/{id} | Returns an unmanaged SSH key with provided id.
+[**KeyDeleteUnmanagedKey**](KeyApi.md#KeyDeleteUnmanagedKey) | **Delete** /SSH/Keys/Unmanaged/{id} | Deletes Unmanaged Key associated with the provided identifier
+[**KeyDeleteUnmanagedKeys**](KeyApi.md#KeyDeleteUnmanagedKeys) | **Delete** /SSH/Keys/Unmanaged | Deletes Unmanaged Keys associated with the provided identifiers
+[**KeyGenerateKey**](KeyApi.md#KeyGenerateKey) | **Post** /SSH/Keys/MyKey | Generates an SSH Key Pair for the requesting user.
+[**KeyGetMyKey**](KeyApi.md#KeyGetMyKey) | **Get** /SSH/Keys/MyKey | Returns the current key of the requesting user
+[**KeyGetUnmanagedKey**](KeyApi.md#KeyGetUnmanagedKey) | **Get** /SSH/Keys/Unmanaged/{id} | Returns an unmanaged SSH key with provided id.
+[**KeyGetUnmanagedKeys**](KeyApi.md#KeyGetUnmanagedKeys) | **Get** /SSH/Keys/Unmanaged | Returns Unmanaged SSH keys
+[**KeyUpdate**](KeyApi.md#KeyUpdate) | **Put** /SSH/Keys/MyKey | Updates the requesting user&#39;s SSH key
 
 
 
-## SSHKeysMyKeyGet
+## KeyDeleteUnmanagedKey
 
-> CSSCMSDataModelModelsSSHKeysKeyResponse SSHKeysMyKeyGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludePrivateKey(includePrivateKey).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> KeyDeleteUnmanagedKey(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
-Returns the current key of the requesting user
+Deletes Unmanaged Key associated with the provided identifier
 
 ### Example
 
@@ -33,19 +33,87 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    includePrivateKey := true // bool | Whether or not to include the private key. If true, you must supply the X-Keyfactor-Key-Passphrase header (optional) (default to false)
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    id := int32(56) // int32 | Keyfactor identifer of the Key to be deleted
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyApi.SSHKeysMyKeyGet(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludePrivateKey(includePrivateKey).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.KeyApi.KeyDeleteUnmanagedKey(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyApi.SSHKeysMyKeyGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyApi.KeyDeleteUnmanagedKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHKeysMyKeyGet`: CSSCMSDataModelModelsSSHKeysKeyResponse
-    fmt.Fprintf(os.Stdout, "Response from `KeyApi.SSHKeysMyKeyGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | Keyfactor identifer of the Key to be deleted | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiKeyDeleteUnmanagedKeyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## KeyDeleteUnmanagedKeys
+
+> KeyDeleteUnmanagedKeys(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Ids(ids).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Deletes Unmanaged Keys associated with the provided identifiers
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    ids := []int32{int32(123)} // []int32 | Keyfactor identifers of the Keys to be deleted
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.KeyApi.KeyDeleteUnmanagedKeys(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Ids(ids).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyApi.KeyDeleteUnmanagedKeys``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
 }
 ```
 
@@ -55,18 +123,18 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSSHKeysMyKeyGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiKeyDeleteUnmanagedKeysRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **includePrivateKey** | **bool** | Whether or not to include the private key. If true, you must supply the X-Keyfactor-Key-Passphrase header | [default to false]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **ids** | **[]int32** | Keyfactor identifers of the Keys to be deleted | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHKeysKeyResponse**](CSSCMSDataModelModelsSSHKeysKeyResponse.md)
+ (empty response body)
 
 ### Authorization
 
@@ -74,17 +142,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## SSHKeysMyKeyPost
+## KeyGenerateKey
 
-> CSSCMSDataModelModelsSSHKeysKeyResponse SSHKeysMyKeyPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHKeysKeyGenerationRequest(cSSCMSDataModelModelsSSHKeysKeyGenerationRequest).Execute()
+> ModelsSSHKeysKeyResponse KeyGenerateKey(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).GenerationRequest(generationRequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Generates an SSH Key Pair for the requesting user.
 
@@ -103,19 +171,19 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsSSHKeysKeyGenerationRequest := *openapiclient.NewCSSCMSDataModelModelsSSHKeysKeyGenerationRequest("KeyType_example", "PrivateKeyFormat_example", int32(123), "Email_example", "Password_example") // CSSCMSDataModelModelsSSHKeysKeyGenerationRequest | Object containing information about the key to be generated (optional)
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    generationRequest := *openapiclient.NewModelsSSHKeysKeyGenerationRequest("KeyType_example", "PrivateKeyFormat_example", int32(123), "Email_example", "Password_example") // ModelsSSHKeysKeyGenerationRequest | Object containing information about the key to be generated
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyApi.SSHKeysMyKeyPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHKeysKeyGenerationRequest(cSSCMSDataModelModelsSSHKeysKeyGenerationRequest).Execute()
+    resp, r, err := apiClient.KeyApi.KeyGenerateKey(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).GenerationRequest(generationRequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyApi.SSHKeysMyKeyPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyApi.KeyGenerateKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHKeysMyKeyPost`: CSSCMSDataModelModelsSSHKeysKeyResponse
-    fmt.Fprintf(os.Stdout, "Response from `KeyApi.SSHKeysMyKeyPost`: %v\n", resp)
+    // response from `KeyGenerateKey`: ModelsSSHKeysKeyResponse
+    fmt.Fprintf(os.Stdout, "Response from `KeyApi.KeyGenerateKey`: %v\n", resp)
 }
 ```
 
@@ -125,18 +193,18 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSSHKeysMyKeyPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiKeyGenerateKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsSSHKeysKeyGenerationRequest** | [**CSSCMSDataModelModelsSSHKeysKeyGenerationRequest**](CSSCMSDataModelModelsSSHKeysKeyGenerationRequest.md) | Object containing information about the key to be generated | 
+ **generationRequest** | [**ModelsSSHKeysKeyGenerationRequest**](ModelsSSHKeysKeyGenerationRequest.md) | Object containing information about the key to be generated | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHKeysKeyResponse**](CSSCMSDataModelModelsSSHKeysKeyResponse.md)
+[**ModelsSSHKeysKeyResponse**](ModelsSSHKeysKeyResponse.md)
 
 ### Authorization
 
@@ -144,19 +212,19 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## SSHKeysMyKeyPut
+## KeyGetMyKey
 
-> CSSCMSDataModelModelsSSHKeysKeyResponse SSHKeysMyKeyPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHKeysKeyUpdateRequest(cSSCMSDataModelModelsSSHKeysKeyUpdateRequest).Execute()
+> ModelsSSHKeysKeyResponse KeyGetMyKey(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorKeyPassphrase(xKeyfactorKeyPassphrase).IncludePrivateKey(includePrivateKey).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
-Updates the requesting user's SSH key
+Returns the current key of the requesting user
 
 ### Example
 
@@ -171,19 +239,20 @@ import (
 )
 
 func main() {
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsSSHKeysKeyUpdateRequest := *openapiclient.NewCSSCMSDataModelModelsSSHKeysKeyUpdateRequest(int32(123), "Email_example") // CSSCMSDataModelModelsSSHKeysKeyUpdateRequest | Updated state of the SSH key (optional)
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorKeyPassphrase := "xKeyfactorKeyPassphrase_example" // string | Key password
+    includePrivateKey := true // bool | Whether or not to include the private key. If true, you must supply the X-Keyfactor-Key-Passphrase header (optional)
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyApi.SSHKeysMyKeyPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHKeysKeyUpdateRequest(cSSCMSDataModelModelsSSHKeysKeyUpdateRequest).Execute()
+    resp, r, err := apiClient.KeyApi.KeyGetMyKey(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorKeyPassphrase(xKeyfactorKeyPassphrase).IncludePrivateKey(includePrivateKey).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyApi.SSHKeysMyKeyPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyApi.KeyGetMyKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHKeysMyKeyPut`: CSSCMSDataModelModelsSSHKeysKeyResponse
-    fmt.Fprintf(os.Stdout, "Response from `KeyApi.SSHKeysMyKeyPut`: %v\n", resp)
+    // response from `KeyGetMyKey`: ModelsSSHKeysKeyResponse
+    fmt.Fprintf(os.Stdout, "Response from `KeyApi.KeyGetMyKey`: %v\n", resp)
 }
 ```
 
@@ -193,160 +262,19 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSSHKeysMyKeyPutRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiKeyGetMyKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsSSHKeysKeyUpdateRequest** | [**CSSCMSDataModelModelsSSHKeysKeyUpdateRequest**](CSSCMSDataModelModelsSSHKeysKeyUpdateRequest.md) | Updated state of the SSH key | 
+ **xKeyfactorKeyPassphrase** | **string** | Key password | 
+ **includePrivateKey** | **bool** | Whether or not to include the private key. If true, you must supply the X-Keyfactor-Key-Passphrase header | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHKeysKeyResponse**](CSSCMSDataModelModelsSSHKeysKeyResponse.md)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## SSHKeysUnmanagedDelete
-
-> SSHKeysUnmanagedDelete(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
-
-Deletes Unmanaged Keys associated with the provided identifiers
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    requestBody := []int32{int32(123)} // []int32 | Keyfactor identifers of the Keys to be deleted (optional)
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyApi.SSHKeysUnmanagedDelete(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyApi.SSHKeysUnmanagedDelete``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiSSHKeysUnmanagedDeleteRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **requestBody** | **[]int32** | Keyfactor identifers of the Keys to be deleted | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## SSHKeysUnmanagedGet
-
-> []CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse SSHKeysUnmanagedGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Returns Unmanaged SSH keys
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    queryString := "queryString_example" // string |  (optional)
-    pageReturned := int32(56) // int32 |  (optional)
-    returnLimit := int32(56) // int32 |  (optional)
-    sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyApi.SSHKeysUnmanagedGet(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyApi.SSHKeysUnmanagedGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `SSHKeysUnmanagedGet`: []CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse
-    fmt.Fprintf(os.Stdout, "Response from `KeyApi.SSHKeysUnmanagedGet`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiSSHKeysUnmanagedGetRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **queryString** | **string** |  | 
- **pageReturned** | **int32** |  | 
- **returnLimit** | **int32** |  | 
- **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
-
-### Return type
-
-[**[]CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse**](CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse.md)
+[**ModelsSSHKeysKeyResponse**](ModelsSSHKeysKeyResponse.md)
 
 ### Authorization
 
@@ -355,86 +283,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## SSHKeysUnmanagedIdDelete
+## KeyGetUnmanagedKey
 
-> SSHKeysUnmanagedIdDelete(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Deletes Unmanaged Key associated with the provided identifier
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    id := int32(56) // int32 | Keyfactor identifer of the Key to be deleted
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyApi.SSHKeysUnmanagedIdDelete(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyApi.SSHKeysUnmanagedIdDelete``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Keyfactor identifer of the Key to be deleted | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiSSHKeysUnmanagedIdDeleteRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## SSHKeysUnmanagedIdGet
-
-> CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse SSHKeysUnmanagedIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ModelsSSHKeysUnmanagedKeyResponse KeyGetUnmanagedKey(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns an unmanaged SSH key with provided id.
 
@@ -452,18 +310,18 @@ import (
 
 func main() {
     id := int32(56) // int32 | The id of the key to get
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyApi.SSHKeysUnmanagedIdGet(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.KeyApi.KeyGetUnmanagedKey(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KeyApi.SSHKeysUnmanagedIdGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyApi.KeyGetUnmanagedKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHKeysUnmanagedIdGet`: CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse
-    fmt.Fprintf(os.Stdout, "Response from `KeyApi.SSHKeysUnmanagedIdGet`: %v\n", resp)
+    // response from `KeyGetUnmanagedKey`: ModelsSSHKeysUnmanagedKeyResponse
+    fmt.Fprintf(os.Stdout, "Response from `KeyApi.KeyGetUnmanagedKey`: %v\n", resp)
 }
 ```
 
@@ -477,18 +335,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSSHKeysUnmanagedIdGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiKeyGetUnmanagedKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse**](CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse.md)
+[**ModelsSSHKeysUnmanagedKeyResponse**](ModelsSSHKeysUnmanagedKeyResponse.md)
 
 ### Authorization
 
@@ -497,7 +355,151 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## KeyGetUnmanagedKeys
+
+> []ModelsSSHKeysUnmanagedKeyResponse KeyGetUnmanagedKeys(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PqQueryString(pqQueryString).PqPageReturned(pqPageReturned).PqReturnLimit(pqReturnLimit).PqSortField(pqSortField).PqSortAscending(pqSortAscending).Execute()
+
+Returns Unmanaged SSH keys
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    pqQueryString := "pqQueryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
+    pqPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
+    pqReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
+    pqSortField := "pqSortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
+    pqSortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.KeyApi.KeyGetUnmanagedKeys(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PqQueryString(pqQueryString).PqPageReturned(pqPageReturned).PqReturnLimit(pqReturnLimit).PqSortField(pqSortField).PqSortAscending(pqSortAscending).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyApi.KeyGetUnmanagedKeys``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `KeyGetUnmanagedKeys`: []ModelsSSHKeysUnmanagedKeyResponse
+    fmt.Fprintf(os.Stdout, "Response from `KeyApi.KeyGetUnmanagedKeys`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiKeyGetUnmanagedKeysRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **pqQueryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
+ **pqPageReturned** | **int32** | The current page within the result set to be returned | 
+ **pqReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
+ **pqSortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
+ **pqSortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+
+### Return type
+
+[**[]ModelsSSHKeysUnmanagedKeyResponse**](ModelsSSHKeysUnmanagedKeyResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## KeyUpdate
+
+> ModelsSSHKeysKeyResponse KeyUpdate(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).KeyUpdateRequest(keyUpdateRequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Updates the requesting user's SSH key
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    keyUpdateRequest := *openapiclient.NewModelsSSHKeysKeyUpdateRequest(int32(123), "Email_example") // ModelsSSHKeysKeyUpdateRequest | Updated state of the SSH key
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.KeyApi.KeyUpdate(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).KeyUpdateRequest(keyUpdateRequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyApi.KeyUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `KeyUpdate`: ModelsSSHKeysKeyResponse
+    fmt.Fprintf(os.Stdout, "Response from `KeyApi.KeyUpdate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiKeyUpdateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **keyUpdateRequest** | [**ModelsSSHKeysKeyUpdateRequest**](ModelsSSHKeysKeyUpdateRequest.md) | Updated state of the SSH key | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+
+### Return type
+
+[**ModelsSSHKeysKeyResponse**](ModelsSSHKeysKeyResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+- **Accept**: application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

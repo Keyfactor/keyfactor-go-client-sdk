@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor API Reference and Utility
+Keyfactor-v1
 
 Testing AgentPoolApiService
 
@@ -39,66 +39,66 @@ func Test_command_AgentPoolApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test AgentPoolApiService AgentPoolsAgentsGet", func(t *testing.T) {
+	t.Run("Test AgentPoolApiService AgentPoolCreateAgentPool", func(t *testing.T) {
 
-		t.Log("AgentPoolApi_AgentPoolsAgentsGet_payload: <none>")
-		resp, httpRes, err := apiClient.AgentPoolApi.AgentPoolsAgentsGet(context.Background()).Execute()
+		t.Log("AgentPoolApi_AgentPoolCreateAgentPool_payload: <none>")
+		resp, httpRes, err := apiClient.AgentPoolApi.AgentPoolCreateAgentPool(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test AgentPoolApiService AgentPoolsGet", func(t *testing.T) {
-
-		t.Log("AgentPoolApi_AgentPoolsGet_payload: <none>")
-		resp, httpRes, err := apiClient.AgentPoolApi.AgentPoolsGet(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test AgentPoolApiService AgentPoolsIdDelete", func(t *testing.T) {
+	t.Run("Test AgentPoolApiService AgentPoolDeleteAgentPool", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("AgentPoolApi_AgentPoolsIdDelete_id")
+		id = os.Getenv("AgentPoolApi_AgentPoolDeleteAgentPool_id")
 		id, _ = convertParamInterface(id, "string")
-		t.Logf("AgentPoolApi_AgentPoolsIdDelete_id: %v", id)
+		t.Logf("AgentPoolApi_AgentPoolDeleteAgentPool_id: %v", id)
 
-		t.Log("AgentPoolApi_AgentPoolsIdDelete_payload: <none>")
-		httpRes, err := apiClient.AgentPoolApi.AgentPoolsIdDelete(context.Background(), id.(string)).Execute()
+		t.Log("AgentPoolApi_AgentPoolDeleteAgentPool_payload: <none>")
+		httpRes, err := apiClient.AgentPoolApi.AgentPoolDeleteAgentPool(context.Background(), id.(string)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test AgentPoolApiService AgentPoolsIdGet", func(t *testing.T) {
+	t.Run("Test AgentPoolApiService AgentPoolGetAgentPoolById", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("AgentPoolApi_AgentPoolsIdGet_id")
+		id = os.Getenv("AgentPoolApi_AgentPoolGetAgentPoolById_id")
 		id, _ = convertParamInterface(id, "string")
-		t.Logf("AgentPoolApi_AgentPoolsIdGet_id: %v", id)
+		t.Logf("AgentPoolApi_AgentPoolGetAgentPoolById_id: %v", id)
 
-		t.Log("AgentPoolApi_AgentPoolsIdGet_payload: <none>")
-		resp, httpRes, err := apiClient.AgentPoolApi.AgentPoolsIdGet(context.Background(), id.(string)).Execute()
+		t.Log("AgentPoolApi_AgentPoolGetAgentPoolById_payload: <none>")
+		resp, httpRes, err := apiClient.AgentPoolApi.AgentPoolGetAgentPoolById(context.Background(), id.(string)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test AgentPoolApiService AgentPoolsPost", func(t *testing.T) {
+	t.Run("Test AgentPoolApiService AgentPoolGetAgentPools", func(t *testing.T) {
 
-		t.Log("AgentPoolApi_AgentPoolsPost_payload: <none>")
-		resp, httpRes, err := apiClient.AgentPoolApi.AgentPoolsPost(context.Background()).Execute()
+		t.Log("AgentPoolApi_AgentPoolGetAgentPools_payload: <none>")
+		resp, httpRes, err := apiClient.AgentPoolApi.AgentPoolGetAgentPools(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test AgentPoolApiService AgentPoolsPut", func(t *testing.T) {
+	t.Run("Test AgentPoolApiService AgentPoolGetDefaultAgentPoolAgents", func(t *testing.T) {
 
-		t.Log("AgentPoolApi_AgentPoolsPut_payload: <none>")
-		resp, httpRes, err := apiClient.AgentPoolApi.AgentPoolsPut(context.Background()).Execute()
+		t.Log("AgentPoolApi_AgentPoolGetDefaultAgentPoolAgents_payload: <none>")
+		resp, httpRes, err := apiClient.AgentPoolApi.AgentPoolGetDefaultAgentPoolAgents(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test AgentPoolApiService AgentPoolUpdateAgentPool", func(t *testing.T) {
+
+		t.Log("AgentPoolApi_AgentPoolUpdateAgentPool_payload: <none>")
+		resp, httpRes, err := apiClient.AgentPoolApi.AgentPoolUpdateAgentPool(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

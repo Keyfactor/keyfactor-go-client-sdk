@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor API Reference and Utility
+Keyfactor-v1
 
 Testing TemplateApiService
 
@@ -39,69 +39,69 @@ func Test_command_TemplateApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test TemplateApiService TemplatesGet", func(t *testing.T) {
+	t.Run("Test TemplateApiService TemplateGetGlobalSettings", func(t *testing.T) {
 
-		t.Log("TemplateApi_TemplatesGet_payload: <none>")
-		resp, httpRes, err := apiClient.TemplateApi.TemplatesGet(context.Background()).Execute()
+		t.Log("TemplateApi_TemplateGetGlobalSettings_payload: <none>")
+		resp, httpRes, err := apiClient.TemplateApi.TemplateGetGlobalSettings(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test TemplateApiService TemplatesIdGet", func(t *testing.T) {
+	t.Run("Test TemplateApiService TemplateGetTemplate", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("TemplateApi_TemplatesIdGet_id")
+		id = os.Getenv("TemplateApi_TemplateGetTemplate_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("TemplateApi_TemplatesIdGet_id: %v", id)
+		t.Logf("TemplateApi_TemplateGetTemplate_id: %v", id)
 
-		t.Log("TemplateApi_TemplatesIdGet_payload: <none>")
-		resp, httpRes, err := apiClient.TemplateApi.TemplatesIdGet(context.Background(), id.(int32)).Execute()
+		t.Log("TemplateApi_TemplateGetTemplate_payload: <none>")
+		resp, httpRes, err := apiClient.TemplateApi.TemplateGetTemplate(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test TemplateApiService TemplatesImportPost", func(t *testing.T) {
+	t.Run("Test TemplateApiService TemplateGetTemplates", func(t *testing.T) {
 
-		t.Log("TemplateApi_TemplatesImportPost_payload: <none>")
-		httpRes, err := apiClient.TemplateApi.TemplatesImportPost(context.Background()).Execute()
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test TemplateApiService TemplatesPut", func(t *testing.T) {
-
-		t.Log("TemplateApi_TemplatesPut_payload: <none>")
-		resp, httpRes, err := apiClient.TemplateApi.TemplatesPut(context.Background()).Execute()
+		t.Log("TemplateApi_TemplateGetTemplates_payload: <none>")
+		resp, httpRes, err := apiClient.TemplateApi.TemplateGetTemplates(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test TemplateApiService TemplatesSettingsGet", func(t *testing.T) {
+	t.Run("Test TemplateApiService TemplateGetValidSubjectParts", func(t *testing.T) {
 
-		t.Log("TemplateApi_TemplatesSettingsGet_payload: <none>")
-		resp, httpRes, err := apiClient.TemplateApi.TemplatesSettingsGet(context.Background()).Execute()
+		t.Log("TemplateApi_TemplateGetValidSubjectParts_payload: <none>")
+		resp, httpRes, err := apiClient.TemplateApi.TemplateGetValidSubjectParts(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test TemplateApiService TemplatesSettingsPut", func(t *testing.T) {
+	t.Run("Test TemplateApiService TemplateImport", func(t *testing.T) {
 
-		t.Log("TemplateApi_TemplatesSettingsPut_payload: <none>")
-		resp, httpRes, err := apiClient.TemplateApi.TemplatesSettingsPut(context.Background()).Execute()
+		t.Log("TemplateApi_TemplateImport_payload: <none>")
+		httpRes, err := apiClient.TemplateApi.TemplateImport(context.Background()).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test TemplateApiService TemplateUpdateGlobalSettings", func(t *testing.T) {
+
+		t.Log("TemplateApi_TemplateUpdateGlobalSettings_payload: <none>")
+		resp, httpRes, err := apiClient.TemplateApi.TemplateUpdateGlobalSettings(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test TemplateApiService TemplatesSubjectPartsGet", func(t *testing.T) {
+	t.Run("Test TemplateApiService TemplateUpdateTemplate", func(t *testing.T) {
 
-		t.Log("TemplateApi_TemplatesSubjectPartsGet_payload: <none>")
-		resp, httpRes, err := apiClient.TemplateApi.TemplatesSubjectPartsGet(context.Background()).Execute()
+		t.Log("TemplateApi_TemplateUpdateTemplate_payload: <none>")
+		resp, httpRes, err := apiClient.TemplateApi.TemplateUpdateTemplate(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

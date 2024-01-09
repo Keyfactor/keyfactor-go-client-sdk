@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.
 
-Keyfactor API Reference and Utility
+Keyfactor-v1
 
 Testing ReportsApiService
 
@@ -39,194 +39,194 @@ func Test_command_ReportsApiService(t *testing.T) {
 
 	apiClient := NewAPIClient(configuration)
 
-	t.Run("Test ReportsApiService ReportsCustomGet", func(t *testing.T) {
+	t.Run("Test ReportsApiService ReportsCreateCustomReport", func(t *testing.T) {
 
-		t.Log("ReportsApi_ReportsCustomGet_payload: <none>")
-		resp, httpRes, err := apiClient.ReportsApi.ReportsCustomGet(context.Background()).Execute()
+		t.Log("ReportsApi_ReportsCreateCustomReport_payload: <none>")
+		resp, httpRes, err := apiClient.ReportsApi.ReportsCreateCustomReport(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ReportsApiService ReportsCustomIdDelete", func(t *testing.T) {
+	t.Run("Test ReportsApiService ReportsCreateReportSchedule", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("ReportsApi_ReportsCustomIdDelete_id")
+		id = os.Getenv("ReportsApi_ReportsCreateReportSchedule_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("ReportsApi_ReportsCustomIdDelete_id: %v", id)
+		t.Logf("ReportsApi_ReportsCreateReportSchedule_id: %v", id)
 
-		t.Log("ReportsApi_ReportsCustomIdDelete_payload: <none>")
-		httpRes, err := apiClient.ReportsApi.ReportsCustomIdDelete(context.Background(), id.(int32)).Execute()
+		t.Log("ReportsApi_ReportsCreateReportSchedule_payload: <none>")
+		resp, httpRes, err := apiClient.ReportsApi.ReportsCreateReportSchedule(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ReportsApiService ReportsCustomIdGet", func(t *testing.T) {
+	t.Run("Test ReportsApiService ReportsDeleteReport", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("ReportsApi_ReportsCustomIdGet_id")
+		id = os.Getenv("ReportsApi_ReportsDeleteReport_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("ReportsApi_ReportsCustomIdGet_id: %v", id)
+		t.Logf("ReportsApi_ReportsDeleteReport_id: %v", id)
 
-		t.Log("ReportsApi_ReportsCustomIdGet_payload: <none>")
-		resp, httpRes, err := apiClient.ReportsApi.ReportsCustomIdGet(context.Background(), id.(int32)).Execute()
+		t.Log("ReportsApi_ReportsDeleteReport_payload: <none>")
+		httpRes, err := apiClient.ReportsApi.ReportsDeleteReport(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ReportsApiService ReportsCustomPost", func(t *testing.T) {
-
-		t.Log("ReportsApi_ReportsCustomPost_payload: <none>")
-		resp, httpRes, err := apiClient.ReportsApi.ReportsCustomPost(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test ReportsApiService ReportsCustomPut", func(t *testing.T) {
-
-		t.Log("ReportsApi_ReportsCustomPut_payload: <none>")
-		resp, httpRes, err := apiClient.ReportsApi.ReportsCustomPut(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test ReportsApiService ReportsGet", func(t *testing.T) {
-
-		t.Log("ReportsApi_ReportsGet_payload: <none>")
-		resp, httpRes, err := apiClient.ReportsApi.ReportsGet(context.Background()).Execute()
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-	})
-
-	t.Run("Test ReportsApiService ReportsIdGet", func(t *testing.T) {
+	t.Run("Test ReportsApiService ReportsDeleteReportSchedule", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("ReportsApi_ReportsIdGet_id")
+		id = os.Getenv("ReportsApi_ReportsDeleteReportSchedule_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("ReportsApi_ReportsIdGet_id: %v", id)
+		t.Logf("ReportsApi_ReportsDeleteReportSchedule_id: %v", id)
 
-		t.Log("ReportsApi_ReportsIdGet_payload: <none>")
-		resp, httpRes, err := apiClient.ReportsApi.ReportsIdGet(context.Background(), id.(int32)).Execute()
+		t.Log("ReportsApi_ReportsDeleteReportSchedule_payload: <none>")
+		httpRes, err := apiClient.ReportsApi.ReportsDeleteReportSchedule(context.Background(), id.(int32)).Execute()
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test ReportsApiService ReportsGetCustomReport", func(t *testing.T) {
+
+		var id interface{}
+
+		id = os.Getenv("ReportsApi_ReportsGetCustomReport_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("ReportsApi_ReportsGetCustomReport_id: %v", id)
+
+		t.Log("ReportsApi_ReportsGetCustomReport_payload: <none>")
+		resp, httpRes, err := apiClient.ReportsApi.ReportsGetCustomReport(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ReportsApiService ReportsIdParametersGet", func(t *testing.T) {
+	t.Run("Test ReportsApiService ReportsGetReport", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("ReportsApi_ReportsIdParametersGet_id")
+		id = os.Getenv("ReportsApi_ReportsGetReport_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("ReportsApi_ReportsIdParametersGet_id: %v", id)
+		t.Logf("ReportsApi_ReportsGetReport_id: %v", id)
 
-		t.Log("ReportsApi_ReportsIdParametersGet_payload: <none>")
-		resp, httpRes, err := apiClient.ReportsApi.ReportsIdParametersGet(context.Background(), id.(int32)).Execute()
+		t.Log("ReportsApi_ReportsGetReport_payload: <none>")
+		resp, httpRes, err := apiClient.ReportsApi.ReportsGetReport(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ReportsApiService ReportsIdParametersPut", func(t *testing.T) {
+	t.Run("Test ReportsApiService ReportsGetReportParameters", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("ReportsApi_ReportsIdParametersPut_id")
+		id = os.Getenv("ReportsApi_ReportsGetReportParameters_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("ReportsApi_ReportsIdParametersPut_id: %v", id)
+		t.Logf("ReportsApi_ReportsGetReportParameters_id: %v", id)
 
-		t.Log("ReportsApi_ReportsIdParametersPut_payload: <none>")
-		resp, httpRes, err := apiClient.ReportsApi.ReportsIdParametersPut(context.Background(), id.(int32)).Execute()
+		t.Log("ReportsApi_ReportsGetReportParameters_payload: <none>")
+		resp, httpRes, err := apiClient.ReportsApi.ReportsGetReportParameters(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ReportsApiService ReportsIdSchedulesGet", func(t *testing.T) {
+	t.Run("Test ReportsApiService ReportsGetReportSchedule", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("ReportsApi_ReportsIdSchedulesGet_id")
+		id = os.Getenv("ReportsApi_ReportsGetReportSchedule_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("ReportsApi_ReportsIdSchedulesGet_id: %v", id)
+		t.Logf("ReportsApi_ReportsGetReportSchedule_id: %v", id)
 
-		t.Log("ReportsApi_ReportsIdSchedulesGet_payload: <none>")
-		resp, httpRes, err := apiClient.ReportsApi.ReportsIdSchedulesGet(context.Background(), id.(int32)).Execute()
+		t.Log("ReportsApi_ReportsGetReportSchedule_payload: <none>")
+		resp, httpRes, err := apiClient.ReportsApi.ReportsGetReportSchedule(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ReportsApiService ReportsIdSchedulesPost", func(t *testing.T) {
+	t.Run("Test ReportsApiService ReportsGetReportSchedules", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("ReportsApi_ReportsIdSchedulesPost_id")
+		id = os.Getenv("ReportsApi_ReportsGetReportSchedules_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("ReportsApi_ReportsIdSchedulesPost_id: %v", id)
+		t.Logf("ReportsApi_ReportsGetReportSchedules_id: %v", id)
 
-		t.Log("ReportsApi_ReportsIdSchedulesPost_payload: <none>")
-		resp, httpRes, err := apiClient.ReportsApi.ReportsIdSchedulesPost(context.Background(), id.(int32)).Execute()
+		t.Log("ReportsApi_ReportsGetReportSchedules_payload: <none>")
+		resp, httpRes, err := apiClient.ReportsApi.ReportsGetReportSchedules(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ReportsApiService ReportsIdSchedulesPut", func(t *testing.T) {
+	t.Run("Test ReportsApiService ReportsQueryCustomReports", func(t *testing.T) {
 
-		var id interface{}
-
-		id = os.Getenv("ReportsApi_ReportsIdSchedulesPut_id")
-		id, _ = convertParamInterface(id, "int32")
-		t.Logf("ReportsApi_ReportsIdSchedulesPut_id: %v", id)
-
-		t.Log("ReportsApi_ReportsIdSchedulesPut_payload: <none>")
-		resp, httpRes, err := apiClient.ReportsApi.ReportsIdSchedulesPut(context.Background(), id.(int32)).Execute()
+		t.Log("ReportsApi_ReportsQueryCustomReports_payload: <none>")
+		resp, httpRes, err := apiClient.ReportsApi.ReportsQueryCustomReports(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ReportsApiService ReportsPut", func(t *testing.T) {
+	t.Run("Test ReportsApiService ReportsQueryReports", func(t *testing.T) {
 
-		t.Log("ReportsApi_ReportsPut_payload: <none>")
-		resp, httpRes, err := apiClient.ReportsApi.ReportsPut(context.Background()).Execute()
+		t.Log("ReportsApi_ReportsQueryReports_payload: <none>")
+		resp, httpRes, err := apiClient.ReportsApi.ReportsQueryReports(context.Background()).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ReportsApiService ReportsSchedulesIdDelete", func(t *testing.T) {
+	t.Run("Test ReportsApiService ReportsUpdateCustomReport", func(t *testing.T) {
 
-		var id interface{}
-
-		id = os.Getenv("ReportsApi_ReportsSchedulesIdDelete_id")
-		id, _ = convertParamInterface(id, "int32")
-		t.Logf("ReportsApi_ReportsSchedulesIdDelete_id: %v", id)
-
-		t.Log("ReportsApi_ReportsSchedulesIdDelete_payload: <none>")
-		httpRes, err := apiClient.ReportsApi.ReportsSchedulesIdDelete(context.Background(), id.(int32)).Execute()
+		t.Log("ReportsApi_ReportsUpdateCustomReport_payload: <none>")
+		resp, httpRes, err := apiClient.ReportsApi.ReportsUpdateCustomReport(context.Background()).Execute()
 		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
-	t.Run("Test ReportsApiService ReportsSchedulesIdGet", func(t *testing.T) {
+	t.Run("Test ReportsApiService ReportsUpdateReport", func(t *testing.T) {
+
+		t.Log("ReportsApi_ReportsUpdateReport_payload: <none>")
+		resp, httpRes, err := apiClient.ReportsApi.ReportsUpdateReport(context.Background()).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test ReportsApiService ReportsUpdateReportParameters", func(t *testing.T) {
 
 		var id interface{}
 
-		id = os.Getenv("ReportsApi_ReportsSchedulesIdGet_id")
+		id = os.Getenv("ReportsApi_ReportsUpdateReportParameters_id")
 		id, _ = convertParamInterface(id, "int32")
-		t.Logf("ReportsApi_ReportsSchedulesIdGet_id: %v", id)
+		t.Logf("ReportsApi_ReportsUpdateReportParameters_id: %v", id)
 
-		t.Log("ReportsApi_ReportsSchedulesIdGet_payload: <none>")
-		resp, httpRes, err := apiClient.ReportsApi.ReportsSchedulesIdGet(context.Background(), id.(int32)).Execute()
+		t.Log("ReportsApi_ReportsUpdateReportParameters_payload: <none>")
+		resp, httpRes, err := apiClient.ReportsApi.ReportsUpdateReportParameters(context.Background(), id.(int32)).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
+	t.Run("Test ReportsApiService ReportsUpdateReportSchedule", func(t *testing.T) {
+
+		var id interface{}
+
+		id = os.Getenv("ReportsApi_ReportsUpdateReportSchedule_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("ReportsApi_ReportsUpdateReportSchedule_id: %v", id)
+
+		t.Log("ReportsApi_ReportsUpdateReportSchedule_payload: <none>")
+		resp, httpRes, err := apiClient.ReportsApi.ReportsUpdateReportSchedule(context.Background(), id.(int32)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
