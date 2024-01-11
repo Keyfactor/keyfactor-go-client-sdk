@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**SecurityRolesDeleteSecurityRole**](SecurityRolesApi.md#SecurityRolesDeleteSecurityRole) | **Delete** /Security/Roles/{id} | Deletes the security role whose ID is provided.
 [**SecurityRolesGetIdentitiesWithRole**](SecurityRolesApi.md#SecurityRolesGetIdentitiesWithRole) | **Get** /Security/Roles/{id}/Identities | Returns all identities which have the security role that matches the id.
+[**SecurityRolesGetSecurityRole**](SecurityRolesApi.md#SecurityRolesGetSecurityRole) | **Get** /Security/Roles/{id} | Returns a single security role that matches the id.
 [**SecurityRolesUpdateIdentitiesWithRole**](SecurityRolesApi.md#SecurityRolesUpdateIdentitiesWithRole) | **Put** /Security/Roles/{id}/Identities | Updates the identities which have the security role that matches the id.
 
 
@@ -137,6 +138,78 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]KeyfactorApiModelsSecurityRolesRoleIdentitiesResponse**](KeyfactorApiModelsSecurityRolesRoleIdentitiesResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SecurityRolesGetSecurityRole
+
+> ModelsSecuritySecurityRolesSecurityRoleResponse SecurityRolesGetSecurityRole(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Returns a single security role that matches the id.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := int32(56) // int32 | Security role identifier
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecurityRolesApi.SecurityRolesGetSecurityRole(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolesApi.SecurityRolesGetSecurityRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SecurityRolesGetSecurityRole`: ModelsSecuritySecurityRolesSecurityRoleResponse
+    fmt.Fprintf(os.Stdout, "Response from `SecurityRolesApi.SecurityRolesGetSecurityRole`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | Security role identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSecurityRolesGetSecurityRoleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+
+### Return type
+
+[**ModelsSecuritySecurityRolesSecurityRoleResponse**](ModelsSecuritySecurityRolesSecurityRoleResponse.md)
 
 ### Authorization
 

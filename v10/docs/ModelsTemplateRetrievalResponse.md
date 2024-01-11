@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | **int32** |  | 
 **CommonName** | Pointer to **string** |  | [optional] 
 **TemplateName** | Pointer to **string** |  | [optional] 
 **Oid** | Pointer to **string** |  | [optional] 
@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 
 ### NewModelsTemplateRetrievalResponse
 
-`func NewModelsTemplateRetrievalResponse() *ModelsTemplateRetrievalResponse`
+`func NewModelsTemplateRetrievalResponse(id int32, ) *ModelsTemplateRetrievalResponse`
 
 NewModelsTemplateRetrievalResponse instantiates a new ModelsTemplateRetrievalResponse object
 This constructor will assign default values to properties that have it defined,
@@ -69,11 +69,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *ModelsTemplateRetrievalResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetCommonName
 

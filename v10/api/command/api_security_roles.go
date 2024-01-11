@@ -277,6 +277,134 @@ func (a *SecurityRolesApiService) SecurityRolesGetIdentitiesWithRoleExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiSecurityRolesGetSecurityRoleRequest struct {
+	ctx                     context.Context
+	ApiService              *SecurityRolesApiService
+	id                      int32
+	xKeyfactorRequestedWith *string
+	xKeyfactorApiVersion    *string
+}
+
+// Type of the request [XMLHttpRequest, APIClient]
+func (r ApiSecurityRolesGetSecurityRoleRequest) XKeyfactorRequestedWith(xKeyfactorRequestedWith string) ApiSecurityRolesGetSecurityRoleRequest {
+	r.xKeyfactorRequestedWith = &xKeyfactorRequestedWith
+	return r
+}
+
+// Desired version of the api, if not provided defaults to v1
+func (r ApiSecurityRolesGetSecurityRoleRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) ApiSecurityRolesGetSecurityRoleRequest {
+	r.xKeyfactorApiVersion = &xKeyfactorApiVersion
+	return r
+}
+
+func (r ApiSecurityRolesGetSecurityRoleRequest) Execute() (*ModelsSecuritySecurityRolesSecurityRoleResponse, *http.Response, error) {
+	return r.ApiService.SecurityRolesGetSecurityRoleExecute(r)
+}
+
+/*
+SecurityRolesGetSecurityRole Returns a single security role that matches the id.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Security role identifier
+	@return ApiSecurityRolesGetSecurityRoleRequest
+*/
+func (a *SecurityRolesApiService) SecurityRolesGetSecurityRole(ctx context.Context, id int32) ApiSecurityRolesGetSecurityRoleRequest {
+	xKeyfactorApiVersion := "1"
+	xKeyfactorRequestedWith := "APIClient"
+
+	return ApiSecurityRolesGetSecurityRoleRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		xKeyfactorApiVersion:    &xKeyfactorApiVersion,
+		xKeyfactorRequestedWith: &xKeyfactorRequestedWith,
+		id:                      id,
+	}
+}
+
+// Execute executes the request
+//
+//	@return ModelsSecuritySecurityRolesSecurityRoleResponse
+func (a *SecurityRolesApiService) SecurityRolesGetSecurityRoleExecute(r ApiSecurityRolesGetSecurityRoleRequest) (*ModelsSecuritySecurityRolesSecurityRoleResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModelsSecuritySecurityRolesSecurityRoleResponse
+	)
+
+	apiBasePath := a.client.cfg.APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
+
+	localVarPath := apiBasePath + "/Security/Roles/{id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json", "text/json", "application/xml", "text/xml"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.xKeyfactorApiVersion != nil {
+		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
+	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiSecurityRolesUpdateIdentitiesWithRoleRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolesApiService

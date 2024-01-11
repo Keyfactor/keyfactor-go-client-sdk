@@ -314,6 +314,7 @@ Class | Method | HTTP request | Description
 *SecurityRolePermissionsApi* | [**SecurityRolePermissionsSetGlobalPermissions**](docs/SecurityRolePermissionsApi.md#securityrolepermissionssetglobalpermissions) | **Put** /Security/Roles/{id}/Permissions/Global | Adds global permissions to the security role that matches the id.
 *SecurityRolesApi* | [**SecurityRolesDeleteSecurityRole**](docs/SecurityRolesApi.md#securityrolesdeletesecurityrole) | **Delete** /Security/Roles/{id} | Deletes the security role whose ID is provided.
 *SecurityRolesApi* | [**SecurityRolesGetIdentitiesWithRole**](docs/SecurityRolesApi.md#securityrolesgetidentitieswithrole) | **Get** /Security/Roles/{id}/Identities | Returns all identities which have the security role that matches the id.
+*SecurityRolesApi* | [**SecurityRolesGetSecurityRole**](docs/SecurityRolesApi.md#securityrolesgetsecurityrole) | **Get** /Security/Roles/{id} | Returns a single security role that matches the id.
 *SecurityRolesApi* | [**SecurityRolesUpdateIdentitiesWithRole**](docs/SecurityRolesApi.md#securityrolesupdateidentitieswithrole) | **Put** /Security/Roles/{id}/Identities | Updates the identities which have the security role that matches the id.
 *ServerApi* | [**ServerAddAccess**](docs/ServerApi.md#serveraddaccess) | **Post** /SSH/Servers/Access | Updates logons and users with access to those logons for an existing server
 *ServerApi* | [**ServerCreateServer**](docs/ServerApi.md#servercreateserver) | **Post** /SSH/Servers | Creates a server with the provided properties
@@ -744,7 +745,9 @@ Class | Method | HTTP request | Description
  - [ModelsSecurityIdentitiesSecurityIdentityLookupResponse](docs/ModelsSecurityIdentitiesSecurityIdentityLookupResponse.md)
  - [ModelsSecurityIdentitiesSecurityIdentityPermissionsResponse](docs/ModelsSecurityIdentitiesSecurityIdentityPermissionsResponse.md)
  - [ModelsSecurityIdentitiesSecurityIdentityRequest](docs/ModelsSecurityIdentitiesSecurityIdentityRequest.md)
+ - [ModelsSecurityIdentitiesSecurityIdentityResponse](docs/ModelsSecurityIdentitiesSecurityIdentityResponse.md)
  - [ModelsSecuritySecurityRolesSecurityRoleCreationRequest](docs/ModelsSecuritySecurityRolesSecurityRoleCreationRequest.md)
+ - [ModelsSecuritySecurityRolesSecurityRoleResponse](docs/ModelsSecuritySecurityRolesSecurityRoleResponse.md)
  - [ModelsSecuritySecurityRolesSecurityRoleResponseBase](docs/ModelsSecuritySecurityRolesSecurityRoleResponseBase.md)
  - [ModelsSecuritySecurityRolesSecurityRoleUpdateRequest](docs/ModelsSecuritySecurityRolesSecurityRoleUpdateRequest.md)
  - [ModelsSubjectAlternativeName](docs/ModelsSubjectAlternativeName.md)

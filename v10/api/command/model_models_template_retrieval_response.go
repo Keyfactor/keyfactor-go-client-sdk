@@ -30,7 +30,7 @@ var _ MappedNullable = &ModelsTemplateRetrievalResponse{}
 
 // ModelsTemplateRetrievalResponse struct for ModelsTemplateRetrievalResponse
 type ModelsTemplateRetrievalResponse struct {
-	Id                     *int32                                                        `json:"Id,omitempty"`
+	Id                     int32                                                         `json:"Id"`
 	CommonName             *string                                                       `json:"CommonName,omitempty"`
 	TemplateName           *string                                                       `json:"TemplateName,omitempty"`
 	Oid                    *string                                                       `json:"Oid,omitempty"`
@@ -65,8 +65,9 @@ type _ModelsTemplateRetrievalResponse ModelsTemplateRetrievalResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsTemplateRetrievalResponse() *ModelsTemplateRetrievalResponse {
+func NewModelsTemplateRetrievalResponse(id int32) *ModelsTemplateRetrievalResponse {
 	this := ModelsTemplateRetrievalResponse{}
+	this.Id = id
 	return &this
 }
 
@@ -78,36 +79,28 @@ func NewModelsTemplateRetrievalResponseWithDefaults() *ModelsTemplateRetrievalRe
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *ModelsTemplateRetrievalResponse) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
 		var ret int32
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *ModelsTemplateRetrievalResponse) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *ModelsTemplateRetrievalResponse) HasId() bool {
-	if o != nil && !isNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given int32 and assigns it to the Id field.
+// SetId sets field value
 func (o *ModelsTemplateRetrievalResponse) SetId(v int32) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetCommonName returns the CommonName field value if set, zero value otherwise.
@@ -931,9 +924,7 @@ func (o ModelsTemplateRetrievalResponse) MarshalJSON() ([]byte, error) {
 
 func (o ModelsTemplateRetrievalResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
-		toSerialize["Id"] = o.Id
-	}
+	toSerialize["Id"] = o.Id
 	if !isNil(o.CommonName) {
 		toSerialize["CommonName"] = o.CommonName
 	}

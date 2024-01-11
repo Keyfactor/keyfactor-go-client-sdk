@@ -68,6 +68,21 @@ func Test_command_SecurityRolesApiService(t *testing.T) {
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
 
+	t.Run("Test SecurityRolesApiService SecurityRolesGetSecurityRole", func(t *testing.T) {
+
+		var id interface{}
+
+		id = os.Getenv("SecurityRolesApi_SecurityRolesGetSecurityRole_id")
+		id, _ = convertParamInterface(id, "int32")
+		t.Logf("SecurityRolesApi_SecurityRolesGetSecurityRole_id: %v", id)
+
+		t.Log("SecurityRolesApi_SecurityRolesGetSecurityRole_payload: <none>")
+		resp, httpRes, err := apiClient.SecurityRolesApi.SecurityRolesGetSecurityRole(context.Background(), id.(int32)).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+	})
+
 	t.Run("Test SecurityRolesApiService SecurityRolesUpdateIdentitiesWithRole", func(t *testing.T) {
 
 		var id interface{}
