@@ -30,17 +30,17 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertif
 
 // KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest struct for KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest
 type KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest struct {
-	CertificateId     int32                                        `json:"certificateId"`
-	CertificateStores []CSSCMSDataModelModelsCertificateStoreEntry `json:"certificateStores"`
-	Schedule          KeyfactorCommonSchedulingKeyfactorSchedule   `json:"schedule"`
-	CollectionId      NullableInt32                                `json:"collectionId,omitempty"`
+	CertificateId     int32                                      `json:"certificateId"`
+	CertificateStores []ModelsCertificateStoreEntry              `json:"certificateStores"`
+	Schedule          KeyfactorCommonSchedulingKeyfactorSchedule `json:"schedule"`
+	CollectionId      NullableInt32                              `json:"collectionId,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest instantiates a new KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest(certificateId int32, certificateStores []CSSCMSDataModelModelsCertificateStoreEntry, schedule KeyfactorCommonSchedulingKeyfactorSchedule) *KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest {
+func NewKeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest(certificateId int32, certificateStores []ModelsCertificateStoreEntry, schedule KeyfactorCommonSchedulingKeyfactorSchedule) *KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest {
 	this := KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest{}
 	this.CertificateId = certificateId
 	this.CertificateStores = certificateStores
@@ -81,9 +81,9 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest) S
 }
 
 // GetCertificateStores returns the CertificateStores field value
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCertificateStores() []CSSCMSDataModelModelsCertificateStoreEntry {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCertificateStores() []ModelsCertificateStoreEntry {
 	if o == nil {
-		var ret []CSSCMSDataModelModelsCertificateStoreEntry
+		var ret []ModelsCertificateStoreEntry
 		return ret
 	}
 
@@ -92,7 +92,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest) G
 
 // GetCertificateStoresOk returns a tuple with the CertificateStores field value
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCertificateStoresOk() ([]CSSCMSDataModelModelsCertificateStoreEntry, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCertificateStoresOk() ([]ModelsCertificateStoreEntry, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -100,7 +100,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest) G
 }
 
 // SetCertificateStores sets field value
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest) SetCertificateStores(v []CSSCMSDataModelModelsCertificateStoreEntry) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest) SetCertificateStores(v []ModelsCertificateStoreEntry) {
 	o.CertificateStores = v
 }
 

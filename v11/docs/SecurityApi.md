@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ## SecurityContainersIdRolesGet
 
-> []CSSCMSDataModelModelsCertificateStoreContainerPermissions SecurityContainersIdRolesGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsCertificateStoreContainerPermissions SecurityContainersIdRolesGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all the permissions of a certificate store container through the id
 
@@ -118,7 +118,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityApi.SecurityContainersIdRolesGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SecurityContainersIdRolesGet`: []CSSCMSDataModelModelsCertificateStoreContainerPermissions
+    // response from `SecurityContainersIdRolesGet`: []ModelsCertificateStoreContainerPermissions
     fmt.Fprintf(os.Stdout, "Response from `SecurityApi.SecurityContainersIdRolesGet`: %v\n", resp)
 }
 ```
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsCertificateStoreContainerPermissions**](CSSCMSDataModelModelsCertificateStoreContainerPermissions.md)
+[**[]ModelsCertificateStoreContainerPermissions**](ModelsCertificateStoreContainerPermissions.md)
 
 ### Authorization
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ## SecurityContainersIdRolesPost
 
-> []CSSCMSDataModelModelsCertificateStoreContainerPermissions SecurityContainersIdRolesPost(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoreContainerPermissions(cSSCMSDataModelModelsCertificateStoreContainerPermissions).Execute()
+> []ModelsCertificateStoreContainerPermissions SecurityContainersIdRolesPost(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsCertificateStoreContainerPermissions(modelsCertificateStoreContainerPermissions).Execute()
 
 Edit a certificate store container's permissions. Reminder: Name field should be left blank.
 
@@ -182,16 +182,16 @@ func main() {
     id := int32(56) // int32 | Information for the securitycontainer
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsCertificateStoreContainerPermissions := []openapiclient.CSSCMSDataModelModelsCertificateStoreContainerPermissions{*openapiclient.NewCSSCMSDataModelModelsCertificateStoreContainerPermissions()} // []CSSCMSDataModelModelsCertificateStoreContainerPermissions | Information for the updated security role (optional)
+    modelsCertificateStoreContainerPermissions := []openapiclient.ModelsCertificateStoreContainerPermissions{*openapiclient.NewModelsCertificateStoreContainerPermissions()} // []ModelsCertificateStoreContainerPermissions | Information for the updated security role (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityApi.SecurityContainersIdRolesPost(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoreContainerPermissions(cSSCMSDataModelModelsCertificateStoreContainerPermissions).Execute()
+    resp, r, err := apiClient.SecurityApi.SecurityContainersIdRolesPost(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsCertificateStoreContainerPermissions(modelsCertificateStoreContainerPermissions).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityApi.SecurityContainersIdRolesPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SecurityContainersIdRolesPost`: []CSSCMSDataModelModelsCertificateStoreContainerPermissions
+    // response from `SecurityContainersIdRolesPost`: []ModelsCertificateStoreContainerPermissions
     fmt.Fprintf(os.Stdout, "Response from `SecurityApi.SecurityContainersIdRolesPost`: %v\n", resp)
 }
 ```
@@ -214,11 +214,11 @@ Name | Type | Description  | Notes
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsCertificateStoreContainerPermissions** | [**[]CSSCMSDataModelModelsCertificateStoreContainerPermissions**](CSSCMSDataModelModelsCertificateStoreContainerPermissions.md) | Information for the updated security role | 
+ **modelsCertificateStoreContainerPermissions** | [**[]ModelsCertificateStoreContainerPermissions**](ModelsCertificateStoreContainerPermissions.md) | Information for the updated security role | 
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsCertificateStoreContainerPermissions**](CSSCMSDataModelModelsCertificateStoreContainerPermissions.md)
+[**[]ModelsCertificateStoreContainerPermissions**](ModelsCertificateStoreContainerPermissions.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     validate := true // bool |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **validate** | **bool** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 

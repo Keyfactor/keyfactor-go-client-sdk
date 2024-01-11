@@ -41,7 +41,7 @@ type ApiAlertsDeniedGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -71,7 +71,7 @@ func (r ApiAlertsDeniedGetRequest) SortField(sortField string) ApiAlertsDeniedGe
 	return r
 }
 
-func (r ApiAlertsDeniedGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiAlertsDeniedGetRequest {
+func (r ApiAlertsDeniedGetRequest) SortAscending(sortAscending int32) ApiAlertsDeniedGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }

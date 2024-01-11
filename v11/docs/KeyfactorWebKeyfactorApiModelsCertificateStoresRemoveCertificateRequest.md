@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CertificateStores** | [**[]CSSCMSDataModelModelsCertificateLocationSpecifier**](CSSCMSDataModelModelsCertificateLocationSpecifier.md) |  | 
+**CertificateStores** | [**[]ModelsCertificateLocationSpecifier**](ModelsCertificateLocationSpecifier.md) |  | 
 **Schedule** | [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | 
 **CollectionId** | Pointer to **NullableInt32** |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewKeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest
 
-`func NewKeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest(certificateStores []CSSCMSDataModelModelsCertificateLocationSpecifier, schedule KeyfactorCommonSchedulingKeyfactorSchedule, ) *KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest`
+`func NewKeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest(certificateStores []ModelsCertificateLocationSpecifier, schedule KeyfactorCommonSchedulingKeyfactorSchedule, ) *KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest`
 
 NewKeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest instantiates a new KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCertificateStores
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest) GetCertificateStores() []CSSCMSDataModelModelsCertificateLocationSpecifier`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest) GetCertificateStores() []ModelsCertificateLocationSpecifier`
 
 GetCertificateStores returns the CertificateStores field if non-nil, zero value otherwise.
 
 ### GetCertificateStoresOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest) GetCertificateStoresOk() (*[]CSSCMSDataModelModelsCertificateLocationSpecifier, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest) GetCertificateStoresOk() (*[]ModelsCertificateLocationSpecifier, bool)`
 
 GetCertificateStoresOk returns a tuple with the CertificateStores field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertificateStores
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest) SetCertificateStores(v []CSSCMSDataModelModelsCertificateLocationSpecifier)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest) SetCertificateStores(v []ModelsCertificateLocationSpecifier)`
 
 SetCertificateStores sets CertificateStores field to given value.
 

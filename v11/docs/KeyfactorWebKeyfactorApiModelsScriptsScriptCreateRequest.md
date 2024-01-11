@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Contents** | **string** |  | 
-**Categories** | Pointer to [**[]CSSCMSDataModelEnumsScriptCategories**](CSSCMSDataModelEnumsScriptCategories.md) |  | [optional] 
+**Categories** | Pointer to **[]int32** |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetContents sets Contents field to given value.
 
 ### GetCategories
 
-`func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptCreateRequest) GetCategories() []CSSCMSDataModelEnumsScriptCategories`
+`func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptCreateRequest) GetCategories() []int32`
 
 GetCategories returns the Categories field if non-nil, zero value otherwise.
 
 ### GetCategoriesOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptCreateRequest) GetCategoriesOk() (*[]CSSCMSDataModelEnumsScriptCategories, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptCreateRequest) GetCategoriesOk() (*[]int32, bool)`
 
 GetCategoriesOk returns a tuple with the Categories field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCategories
 
-`func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptCreateRequest) SetCategories(v []CSSCMSDataModelEnumsScriptCategories)`
+`func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptCreateRequest) SetCategories(v []int32)`
 
 SetCategories sets Categories field to given value.
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CertificateId** | **int32** |  | 
-**CertificateStores** | [**[]CSSCMSDataModelModelsCertificateStoreEntry**](CSSCMSDataModelModelsCertificateStoreEntry.md) |  | 
+**CertificateStores** | [**[]ModelsCertificateStoreEntry**](ModelsCertificateStoreEntry.md) |  | 
 **Schedule** | [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | 
 **CollectionId** | Pointer to **NullableInt32** |  | [optional] 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewKeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest
 
-`func NewKeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest(certificateId int32, certificateStores []CSSCMSDataModelModelsCertificateStoreEntry, schedule KeyfactorCommonSchedulingKeyfactorSchedule, ) *KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest`
+`func NewKeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest(certificateId int32, certificateStores []ModelsCertificateStoreEntry, schedule KeyfactorCommonSchedulingKeyfactorSchedule, ) *KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest`
 
 NewKeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest instantiates a new KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -50,20 +50,20 @@ SetCertificateId sets CertificateId field to given value.
 
 ### GetCertificateStores
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCertificateStores() []CSSCMSDataModelModelsCertificateStoreEntry`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCertificateStores() []ModelsCertificateStoreEntry`
 
 GetCertificateStores returns the CertificateStores field if non-nil, zero value otherwise.
 
 ### GetCertificateStoresOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCertificateStoresOk() (*[]CSSCMSDataModelModelsCertificateStoreEntry, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCertificateStoresOk() (*[]ModelsCertificateStoreEntry, bool)`
 
 GetCertificateStoresOk returns a tuple with the CertificateStores field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertificateStores
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest) SetCertificateStores(v []CSSCMSDataModelModelsCertificateStoreEntry)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest) SetCertificateStores(v []ModelsCertificateStoreEntry)`
 
 SetCertificateStores sets CertificateStores field to given value.
 

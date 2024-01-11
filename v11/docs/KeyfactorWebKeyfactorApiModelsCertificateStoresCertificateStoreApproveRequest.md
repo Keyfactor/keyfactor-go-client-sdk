@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **ContainerId** | Pointer to **NullableInt32** |  | [optional] 
 **CertStoreType** | Pointer to **int32** |  | [optional] 
 **Properties** | Pointer to **NullableString** |  | [optional] 
-**Password** | Pointer to [**CSSCMSDataModelModelsKeyfactorAPISecret**](CSSCMSDataModelModelsKeyfactorAPISecret.md) |  | [optional] 
+**Password** | Pointer to [**ModelsKeyfactorAPISecret**](ModelsKeyfactorAPISecret.md) |  | [optional] 
 
 ## Methods
 
@@ -151,20 +151,20 @@ HasProperties returns a boolean if a field has been set.
 UnsetProperties ensures that no value is present for Properties, not even an explicit nil
 ### GetPassword
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetPassword() CSSCMSDataModelModelsKeyfactorAPISecret`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetPassword() ModelsKeyfactorAPISecret`
 
 GetPassword returns the Password field if non-nil, zero value otherwise.
 
 ### GetPasswordOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetPasswordOk() (*CSSCMSDataModelModelsKeyfactorAPISecret, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetPasswordOk() (*ModelsKeyfactorAPISecret, bool)`
 
 GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPassword
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) SetPassword(v CSSCMSDataModelModelsKeyfactorAPISecret)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) SetPassword(v ModelsKeyfactorAPISecret)`
 
 SetPassword sets Password field to given value.
 

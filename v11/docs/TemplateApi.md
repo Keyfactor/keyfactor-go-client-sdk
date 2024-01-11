@@ -38,7 +38,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
@@ -383,7 +383,7 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    keyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplateSettingsRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplateSettingsRequest([]openapiclient.KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplateRegexRequest{*openapiclient.NewKeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplateRegexRequest("SubjectPart_example")}, []openapiclient.KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplateDefaultRequest{*openapiclient.NewKeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplateDefaultRequest("SubjectPart_example")}, *openapiclient.NewKeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest(false, false, false, *openapiclient.NewCSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo())) // KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplateSettingsRequest | The new global template settings. (optional)
+    keyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplateSettingsRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplateSettingsRequest([]openapiclient.KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplateRegexRequest{*openapiclient.NewKeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplateRegexRequest("SubjectPart_example")}, []openapiclient.KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplateDefaultRequest{*openapiclient.NewKeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplateDefaultRequest("SubjectPart_example")}, *openapiclient.NewKeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest(false, false, false, *openapiclient.NewModelsTemplatesAlgorithmsKeyInfo())) // KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplateSettingsRequest | The new global template settings. (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)

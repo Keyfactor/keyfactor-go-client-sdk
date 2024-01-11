@@ -34,7 +34,7 @@ type KeyfactorWebKeyfactorApiModelsCertificateStoreContainersCertificateStoreCon
 	Name              NullableString                              `json:"name,omitempty"`
 	Schedule          *KeyfactorCommonSchedulingKeyfactorSchedule `json:"schedule,omitempty"`
 	CertStoreType     *int32                                      `json:"certStoreType,omitempty"`
-	CertificateStores []CSSCMSDataModelModelsCertificateStore     `json:"certificateStores,omitempty"`
+	CertificateStores []ModelsCertificateStore                    `json:"certificateStores,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsCertificateStoreContainersCertificateStoreContainerResponse instantiates a new KeyfactorWebKeyfactorApiModelsCertificateStoreContainersCertificateStoreContainerResponse object
@@ -194,9 +194,9 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoreContainersCertificateStor
 }
 
 // GetCertificateStores returns the CertificateStores field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoreContainersCertificateStoreContainerResponse) GetCertificateStores() []CSSCMSDataModelModelsCertificateStore {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoreContainersCertificateStoreContainerResponse) GetCertificateStores() []ModelsCertificateStore {
 	if o == nil {
-		var ret []CSSCMSDataModelModelsCertificateStore
+		var ret []ModelsCertificateStore
 		return ret
 	}
 	return o.CertificateStores
@@ -205,7 +205,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoreContainersCertificateStor
 // GetCertificateStoresOk returns a tuple with the CertificateStores field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoreContainersCertificateStoreContainerResponse) GetCertificateStoresOk() ([]CSSCMSDataModelModelsCertificateStore, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoreContainersCertificateStoreContainerResponse) GetCertificateStoresOk() ([]ModelsCertificateStore, bool) {
 	if o == nil || isNil(o.CertificateStores) {
 		return nil, false
 	}
@@ -221,8 +221,8 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoreContainersCertificateStor
 	return false
 }
 
-// SetCertificateStores gets a reference to the given []CSSCMSDataModelModelsCertificateStore and assigns it to the CertificateStores field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoreContainersCertificateStoreContainerResponse) SetCertificateStores(v []CSSCMSDataModelModelsCertificateStore) {
+// SetCertificateStores gets a reference to the given []ModelsCertificateStore and assigns it to the CertificateStores field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoreContainersCertificateStoreContainerResponse) SetCertificateStores(v []ModelsCertificateStore) {
 	o.CertificateStores = v
 }
 

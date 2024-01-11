@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **MonitorSchedule** | Pointer to [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | [optional] 
 **DiscoverPercentComplete** | Pointer to **float64** |  | [optional] 
 **MonitorPercentComplete** | Pointer to **float64** |  | [optional] 
-**DiscoverStatus** | Pointer to [**CSSCMSCoreEnumsSslNetworkJobStatus**](CSSCMSCoreEnumsSslNetworkJobStatus.md) |  | [optional] 
-**MonitorStatus** | Pointer to [**CSSCMSCoreEnumsSslNetworkJobStatus**](CSSCMSCoreEnumsSslNetworkJobStatus.md) |  | [optional] 
+**DiscoverStatus** | Pointer to **int32** |  | [optional] 
+**MonitorStatus** | Pointer to **int32** |  | [optional] 
 **DiscoverLastScanned** | Pointer to **NullableTime** |  | [optional] 
 **MonitorLastScanned** | Pointer to **NullableTime** |  | [optional] 
 **SslAlertRecipients** | Pointer to **[]string** |  | [optional] 
@@ -341,20 +341,20 @@ HasMonitorPercentComplete returns a boolean if a field has been set.
 
 ### GetDiscoverStatus
 
-`func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) GetDiscoverStatus() CSSCMSCoreEnumsSslNetworkJobStatus`
+`func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) GetDiscoverStatus() int32`
 
 GetDiscoverStatus returns the DiscoverStatus field if non-nil, zero value otherwise.
 
 ### GetDiscoverStatusOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) GetDiscoverStatusOk() (*CSSCMSCoreEnumsSslNetworkJobStatus, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) GetDiscoverStatusOk() (*int32, bool)`
 
 GetDiscoverStatusOk returns a tuple with the DiscoverStatus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDiscoverStatus
 
-`func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) SetDiscoverStatus(v CSSCMSCoreEnumsSslNetworkJobStatus)`
+`func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) SetDiscoverStatus(v int32)`
 
 SetDiscoverStatus sets DiscoverStatus field to given value.
 
@@ -366,20 +366,20 @@ HasDiscoverStatus returns a boolean if a field has been set.
 
 ### GetMonitorStatus
 
-`func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) GetMonitorStatus() CSSCMSCoreEnumsSslNetworkJobStatus`
+`func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) GetMonitorStatus() int32`
 
 GetMonitorStatus returns the MonitorStatus field if non-nil, zero value otherwise.
 
 ### GetMonitorStatusOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) GetMonitorStatusOk() (*CSSCMSCoreEnumsSslNetworkJobStatus, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) GetMonitorStatusOk() (*int32, bool)`
 
 GetMonitorStatusOk returns a tuple with the MonitorStatus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMonitorStatus
 
-`func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) SetMonitorStatus(v CSSCMSCoreEnumsSslNetworkJobStatus)`
+`func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) SetMonitorStatus(v int32)`
 
 SetMonitorStatus sets MonitorStatus field to given value.
 

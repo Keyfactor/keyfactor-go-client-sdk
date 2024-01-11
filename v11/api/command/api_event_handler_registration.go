@@ -41,7 +41,7 @@ type ApiEventHandlerRegistrationGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -71,7 +71,7 @@ func (r ApiEventHandlerRegistrationGetRequest) SortField(sortField string) ApiEv
 	return r
 }
 
-func (r ApiEventHandlerRegistrationGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiEventHandlerRegistrationGetRequest {
+func (r ApiEventHandlerRegistrationGetRequest) SortAscending(sortAscending int32) ApiEventHandlerRegistrationGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }

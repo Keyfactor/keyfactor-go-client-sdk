@@ -30,17 +30,17 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitio
 
 // KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest struct for KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest
 type KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest struct {
-	ClaimType                    CSSCMSCoreEnumsClaimType `json:"claimType"`
-	ClaimValue                   string                   `json:"claimValue"`
-	ProviderAuthenticationScheme string                   `json:"providerAuthenticationScheme"`
-	Description                  string                   `json:"description"`
+	ClaimType                    int32  `json:"claimType"`
+	ClaimValue                   string `json:"claimValue"`
+	ProviderAuthenticationScheme string `json:"providerAuthenticationScheme"`
+	Description                  string `json:"description"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest instantiates a new KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest(claimType CSSCMSCoreEnumsClaimType, claimValue string, providerAuthenticationScheme string, description string) *KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest {
+func NewKeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest(claimType int32, claimValue string, providerAuthenticationScheme string, description string) *KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest {
 	this := KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest{}
 	this.ClaimType = claimType
 	this.ClaimValue = claimValue
@@ -58,9 +58,9 @@ func NewKeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefin
 }
 
 // GetClaimType returns the ClaimType field value
-func (o *KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest) GetClaimType() CSSCMSCoreEnumsClaimType {
+func (o *KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest) GetClaimType() int32 {
 	if o == nil {
-		var ret CSSCMSCoreEnumsClaimType
+		var ret int32
 		return ret
 	}
 
@@ -69,7 +69,7 @@ func (o *KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefi
 
 // GetClaimTypeOk returns a tuple with the ClaimType field value
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest) GetClaimTypeOk() (*CSSCMSCoreEnumsClaimType, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest) GetClaimTypeOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -77,7 +77,7 @@ func (o *KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefi
 }
 
 // SetClaimType sets field value
-func (o *KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest) SetClaimType(v CSSCMSCoreEnumsClaimType) {
+func (o *KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest) SetClaimType(v int32) {
 	o.ClaimType = v
 }
 

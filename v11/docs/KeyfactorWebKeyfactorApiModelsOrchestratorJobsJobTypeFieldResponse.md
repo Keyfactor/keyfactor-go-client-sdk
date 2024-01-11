@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **NullableString** |  | [optional] 
-**Type** | Pointer to [**CSSCMSDataModelEnumsDataType**](CSSCMSDataModelEnumsDataType.md) |  | [optional] 
+**Type** | Pointer to **int32** |  | [optional] 
 **DefaultValue** | Pointer to **NullableString** |  | [optional] 
 **Required** | Pointer to **bool** |  | [optional] 
 
@@ -65,20 +65,20 @@ HasName returns a boolean if a field has been set.
 UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetType
 
-`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) GetType() CSSCMSDataModelEnumsDataType`
+`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) GetType() int32`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) GetTypeOk() (*CSSCMSDataModelEnumsDataType, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) GetTypeOk() (*int32, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) SetType(v CSSCMSDataModelEnumsDataType)`
+`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) SetType(v int32)`
 
 SetType sets Type field to given value.
 

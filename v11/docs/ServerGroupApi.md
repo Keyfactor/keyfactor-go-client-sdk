@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## SSHServerGroupsAccessDelete
 
-> CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse SSHServerGroupsAccessDelete(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest(cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest).Execute()
+> ModelsSSHAccessServerGroupAccessResponse SSHServerGroupsAccessDelete(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHAccessServerGroupAccessRequest(modelsSSHAccessServerGroupAccessRequest).Execute()
 
 Removes access mappings for the specified server group
 
@@ -37,16 +37,16 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest := *openapiclient.NewCSSCMSDataModelModelsSSHAccessServerGroupAccessRequest("ServerGroupId_example", []openapiclient.CSSCMSDataModelModelsSSHAccessLogonUserAccessRequest{*openapiclient.NewCSSCMSDataModelModelsSSHAccessLogonUserAccessRequest()}) // CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest |  (optional)
+    modelsSSHAccessServerGroupAccessRequest := *openapiclient.NewModelsSSHAccessServerGroupAccessRequest("ServerGroupId_example", []openapiclient.ModelsSSHAccessLogonUserAccessRequest{*openapiclient.NewModelsSSHAccessLogonUserAccessRequest()}) // ModelsSSHAccessServerGroupAccessRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerGroupApi.SSHServerGroupsAccessDelete(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest(cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest).Execute()
+    resp, r, err := apiClient.ServerGroupApi.SSHServerGroupsAccessDelete(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHAccessServerGroupAccessRequest(modelsSSHAccessServerGroupAccessRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.SSHServerGroupsAccessDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHServerGroupsAccessDelete`: CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse
+    // response from `SSHServerGroupsAccessDelete`: ModelsSSHAccessServerGroupAccessResponse
     fmt.Fprintf(os.Stdout, "Response from `ServerGroupApi.SSHServerGroupsAccessDelete`: %v\n", resp)
 }
 ```
@@ -64,11 +64,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest** | [**CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest**](CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest.md) |  | 
+ **modelsSSHAccessServerGroupAccessRequest** | [**ModelsSSHAccessServerGroupAccessRequest**](ModelsSSHAccessServerGroupAccessRequest.md) |  | 
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse**](CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse.md)
+[**ModelsSSHAccessServerGroupAccessResponse**](ModelsSSHAccessServerGroupAccessResponse.md)
 
 ### Authorization
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ## SSHServerGroupsAccessIdGet
 
-> CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse SSHServerGroupsAccessIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ModelsSSHAccessServerGroupAccessResponse SSHServerGroupsAccessIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Retrieves logons and users with access to those logons for an existing server group
 
@@ -114,7 +114,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.SSHServerGroupsAccessIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHServerGroupsAccessIdGet`: CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse
+    // response from `SSHServerGroupsAccessIdGet`: ModelsSSHAccessServerGroupAccessResponse
     fmt.Fprintf(os.Stdout, "Response from `ServerGroupApi.SSHServerGroupsAccessIdGet`: %v\n", resp)
 }
 ```
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse**](CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse.md)
+[**ModelsSSHAccessServerGroupAccessResponse**](ModelsSSHAccessServerGroupAccessResponse.md)
 
 ### Authorization
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ## SSHServerGroupsAccessPost
 
-> CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse SSHServerGroupsAccessPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest(cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest).Execute()
+> ModelsSSHAccessServerGroupAccessResponse SSHServerGroupsAccessPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHAccessServerGroupAccessRequest(modelsSSHAccessServerGroupAccessRequest).Execute()
 
 Add access rules to the server group
 
@@ -177,16 +177,16 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest := *openapiclient.NewCSSCMSDataModelModelsSSHAccessServerGroupAccessRequest("ServerGroupId_example", []openapiclient.CSSCMSDataModelModelsSSHAccessLogonUserAccessRequest{*openapiclient.NewCSSCMSDataModelModelsSSHAccessLogonUserAccessRequest()}) // CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest |  (optional)
+    modelsSSHAccessServerGroupAccessRequest := *openapiclient.NewModelsSSHAccessServerGroupAccessRequest("ServerGroupId_example", []openapiclient.ModelsSSHAccessLogonUserAccessRequest{*openapiclient.NewModelsSSHAccessLogonUserAccessRequest()}) // ModelsSSHAccessServerGroupAccessRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerGroupApi.SSHServerGroupsAccessPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest(cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest).Execute()
+    resp, r, err := apiClient.ServerGroupApi.SSHServerGroupsAccessPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHAccessServerGroupAccessRequest(modelsSSHAccessServerGroupAccessRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.SSHServerGroupsAccessPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHServerGroupsAccessPost`: CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse
+    // response from `SSHServerGroupsAccessPost`: ModelsSSHAccessServerGroupAccessResponse
     fmt.Fprintf(os.Stdout, "Response from `ServerGroupApi.SSHServerGroupsAccessPost`: %v\n", resp)
 }
 ```
@@ -204,11 +204,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest** | [**CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest**](CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest.md) |  | 
+ **modelsSSHAccessServerGroupAccessRequest** | [**ModelsSSHAccessServerGroupAccessRequest**](ModelsSSHAccessServerGroupAccessRequest.md) |  | 
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse**](CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse.md)
+[**ModelsSSHAccessServerGroupAccessResponse**](ModelsSSHAccessServerGroupAccessResponse.md)
 
 ### Authorization
 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ## SSHServerGroupsGet
 
-> []CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse SSHServerGroupsGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsSSHServerGroupsServerGroupResponse SSHServerGroupsGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all server groups according to the provided filter parameters
 
@@ -248,7 +248,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -258,7 +258,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.SSHServerGroupsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHServerGroupsGet`: []CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse
+    // response from `SSHServerGroupsGet`: []ModelsSSHServerGroupsServerGroupResponse
     fmt.Fprintf(os.Stdout, "Response from `ServerGroupApi.SSHServerGroupsGet`: %v\n", resp)
 }
 ```
@@ -279,12 +279,12 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse**](CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse.md)
+[**[]ModelsSSHServerGroupsServerGroupResponse**](ModelsSSHServerGroupsServerGroupResponse.md)
 
 ### Authorization
 
@@ -372,7 +372,7 @@ Name | Type | Description  | Notes
 
 ## SSHServerGroupsIdGet
 
-> CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse SSHServerGroupsIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ModelsSSHServerGroupsServerGroupResponse SSHServerGroupsIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a ServerGroup associated with the provided identifier
 
@@ -400,7 +400,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.SSHServerGroupsIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHServerGroupsIdGet`: CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse
+    // response from `SSHServerGroupsIdGet`: ModelsSSHServerGroupsServerGroupResponse
     fmt.Fprintf(os.Stdout, "Response from `ServerGroupApi.SSHServerGroupsIdGet`: %v\n", resp)
 }
 ```
@@ -426,7 +426,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse**](CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse.md)
+[**ModelsSSHServerGroupsServerGroupResponse**](ModelsSSHServerGroupsServerGroupResponse.md)
 
 ### Authorization
 
@@ -444,7 +444,7 @@ Name | Type | Description  | Notes
 
 ## SSHServerGroupsNameGet
 
-> CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse SSHServerGroupsNameGet(ctx, name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ModelsSSHServerGroupsServerGroupResponse SSHServerGroupsNameGet(ctx, name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a ServerGroup associated with the provided identifier
 
@@ -472,7 +472,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.SSHServerGroupsNameGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHServerGroupsNameGet`: CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse
+    // response from `SSHServerGroupsNameGet`: ModelsSSHServerGroupsServerGroupResponse
     fmt.Fprintf(os.Stdout, "Response from `ServerGroupApi.SSHServerGroupsNameGet`: %v\n", resp)
 }
 ```
@@ -498,7 +498,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse**](CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse.md)
+[**ModelsSSHServerGroupsServerGroupResponse**](ModelsSSHServerGroupsServerGroupResponse.md)
 
 ### Authorization
 
@@ -516,7 +516,7 @@ Name | Type | Description  | Notes
 
 ## SSHServerGroupsPost
 
-> CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse SSHServerGroupsPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest(cSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest).Execute()
+> ModelsSSHServerGroupsServerGroupResponse SSHServerGroupsPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHServerGroupsServerGroupCreationRequest(modelsSSHServerGroupsServerGroupCreationRequest).Execute()
 
 Creates a server group with the provided properties
 
@@ -535,16 +535,16 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest := *openapiclient.NewCSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest("OwnerName_example", "GroupName_example") // CSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest | Server group properties to be applied to the new group (optional)
+    modelsSSHServerGroupsServerGroupCreationRequest := *openapiclient.NewModelsSSHServerGroupsServerGroupCreationRequest("OwnerName_example", "GroupName_example") // ModelsSSHServerGroupsServerGroupCreationRequest | Server group properties to be applied to the new group (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerGroupApi.SSHServerGroupsPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest(cSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest).Execute()
+    resp, r, err := apiClient.ServerGroupApi.SSHServerGroupsPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHServerGroupsServerGroupCreationRequest(modelsSSHServerGroupsServerGroupCreationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.SSHServerGroupsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHServerGroupsPost`: CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse
+    // response from `SSHServerGroupsPost`: ModelsSSHServerGroupsServerGroupResponse
     fmt.Fprintf(os.Stdout, "Response from `ServerGroupApi.SSHServerGroupsPost`: %v\n", resp)
 }
 ```
@@ -562,11 +562,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest** | [**CSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest**](CSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest.md) | Server group properties to be applied to the new group | 
+ **modelsSSHServerGroupsServerGroupCreationRequest** | [**ModelsSSHServerGroupsServerGroupCreationRequest**](ModelsSSHServerGroupsServerGroupCreationRequest.md) | Server group properties to be applied to the new group | 
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse**](CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse.md)
+[**ModelsSSHServerGroupsServerGroupResponse**](ModelsSSHServerGroupsServerGroupResponse.md)
 
 ### Authorization
 
@@ -584,7 +584,7 @@ Name | Type | Description  | Notes
 
 ## SSHServerGroupsPut
 
-> CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse SSHServerGroupsPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest(cSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest).Execute()
+> ModelsSSHServerGroupsServerGroupResponse SSHServerGroupsPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHServerGroupsServerGroupUpdateRequest(modelsSSHServerGroupsServerGroupUpdateRequest).Execute()
 
 Updates an existing server group with the provided properties
 
@@ -603,16 +603,16 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest := *openapiclient.NewCSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest("Id_example", "OwnerName_example", "GroupName_example", false) // CSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest | Server group properties to be applied to the existing group (optional)
+    modelsSSHServerGroupsServerGroupUpdateRequest := *openapiclient.NewModelsSSHServerGroupsServerGroupUpdateRequest("Id_example", "OwnerName_example", "GroupName_example", false) // ModelsSSHServerGroupsServerGroupUpdateRequest | Server group properties to be applied to the existing group (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerGroupApi.SSHServerGroupsPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest(cSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest).Execute()
+    resp, r, err := apiClient.ServerGroupApi.SSHServerGroupsPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHServerGroupsServerGroupUpdateRequest(modelsSSHServerGroupsServerGroupUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.SSHServerGroupsPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHServerGroupsPut`: CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse
+    // response from `SSHServerGroupsPut`: ModelsSSHServerGroupsServerGroupResponse
     fmt.Fprintf(os.Stdout, "Response from `ServerGroupApi.SSHServerGroupsPut`: %v\n", resp)
 }
 ```
@@ -630,11 +630,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest** | [**CSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest**](CSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest.md) | Server group properties to be applied to the existing group | 
+ **modelsSSHServerGroupsServerGroupUpdateRequest** | [**ModelsSSHServerGroupsServerGroupUpdateRequest**](ModelsSSHServerGroupsServerGroupUpdateRequest.md) | Server group properties to be applied to the existing group | 
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse**](CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse.md)
+[**ModelsSSHServerGroupsServerGroupResponse**](ModelsSSHServerGroupsServerGroupResponse.md)
 
 ### Authorization
 

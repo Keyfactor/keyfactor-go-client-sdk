@@ -41,7 +41,7 @@ type ApiAuditDownloadGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -71,7 +71,7 @@ func (r ApiAuditDownloadGetRequest) SortField(sortField string) ApiAuditDownload
 	return r
 }
 
-func (r ApiAuditDownloadGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiAuditDownloadGetRequest {
+func (r ApiAuditDownloadGetRequest) SortAscending(sortAscending int32) ApiAuditDownloadGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -210,7 +210,7 @@ type ApiAuditGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -240,7 +240,7 @@ func (r ApiAuditGetRequest) SortField(sortField string) ApiAuditGetRequest {
 	return r
 }
 
-func (r ApiAuditGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiAuditGetRequest {
+func (r ApiAuditGetRequest) SortAscending(sortAscending int32) ApiAuditGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -631,7 +631,7 @@ type ApiAuditRelatedEntitiesGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -661,7 +661,7 @@ func (r ApiAuditRelatedEntitiesGetRequest) SortField(sortField string) ApiAuditR
 	return r
 }
 
-func (r ApiAuditRelatedEntitiesGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiAuditRelatedEntitiesGetRequest {
+func (r ApiAuditRelatedEntitiesGetRequest) SortAscending(sortAscending int32) ApiAuditRelatedEntitiesGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }

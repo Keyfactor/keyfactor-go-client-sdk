@@ -41,7 +41,7 @@ type ApiComponentInstallationGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -71,7 +71,7 @@ func (r ApiComponentInstallationGetRequest) SortField(sortField string) ApiCompo
 	return r
 }
 
-func (r ApiComponentInstallationGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiComponentInstallationGetRequest {
+func (r ApiComponentInstallationGetRequest) SortAscending(sortAscending int32) ApiComponentInstallationGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }

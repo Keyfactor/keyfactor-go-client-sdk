@@ -30,11 +30,11 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsTemplatesTemplatePolicyReq
 
 // KeyfactorWebKeyfactorApiModelsTemplatesTemplatePolicyRequestResponseModel struct for KeyfactorWebKeyfactorApiModelsTemplatesTemplatePolicyRequestResponseModel
 type KeyfactorWebKeyfactorApiModelsTemplatesTemplatePolicyRequestResponseModel struct {
-	TemplateId     *int32                                           `json:"templateId,omitempty"`
-	AllowKeyReuse  NullableBool                                     `json:"allowKeyReuse,omitempty"`
-	AllowWildcards NullableBool                                     `json:"allowWildcards,omitempty"`
-	RfcEnforcement NullableBool                                     `json:"rfcEnforcement,omitempty"`
-	KeyInfo        *CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo `json:"keyInfo,omitempty"`
+	TemplateId     *int32                            `json:"templateId,omitempty"`
+	AllowKeyReuse  NullableBool                      `json:"allowKeyReuse,omitempty"`
+	AllowWildcards NullableBool                      `json:"allowWildcards,omitempty"`
+	RfcEnforcement NullableBool                      `json:"rfcEnforcement,omitempty"`
+	KeyInfo        *ModelsTemplatesAlgorithmsKeyInfo `json:"keyInfo,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsTemplatesTemplatePolicyRequestResponseModel instantiates a new KeyfactorWebKeyfactorApiModelsTemplatesTemplatePolicyRequestResponseModel object
@@ -216,9 +216,9 @@ func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplatePolicyRequestResponseMod
 }
 
 // GetKeyInfo returns the KeyInfo field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplatePolicyRequestResponseModel) GetKeyInfo() CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo {
+func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplatePolicyRequestResponseModel) GetKeyInfo() ModelsTemplatesAlgorithmsKeyInfo {
 	if o == nil || isNil(o.KeyInfo) {
-		var ret CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo
+		var ret ModelsTemplatesAlgorithmsKeyInfo
 		return ret
 	}
 	return *o.KeyInfo
@@ -226,7 +226,7 @@ func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplatePolicyRequestResponseMod
 
 // GetKeyInfoOk returns a tuple with the KeyInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplatePolicyRequestResponseModel) GetKeyInfoOk() (*CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplatePolicyRequestResponseModel) GetKeyInfoOk() (*ModelsTemplatesAlgorithmsKeyInfo, bool) {
 	if o == nil || isNil(o.KeyInfo) {
 		return nil, false
 	}
@@ -242,8 +242,8 @@ func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplatePolicyRequestResponseMod
 	return false
 }
 
-// SetKeyInfo gets a reference to the given CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo and assigns it to the KeyInfo field.
-func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplatePolicyRequestResponseModel) SetKeyInfo(v CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo) {
+// SetKeyInfo gets a reference to the given ModelsTemplatesAlgorithmsKeyInfo and assigns it to the KeyInfo field.
+func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplatePolicyRequestResponseModel) SetKeyInfo(v ModelsTemplatesAlgorithmsKeyInfo) {
 	o.KeyInfo = &v
 }
 

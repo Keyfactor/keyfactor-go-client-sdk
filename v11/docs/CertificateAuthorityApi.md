@@ -818,7 +818,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -849,7 +849,7 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
@@ -1216,7 +1216,7 @@ Name | Type | Description  | Notes
 
 ## CertificateAuthorityPublishCRLPost
 
-> CertificateAuthorityPublishCRLPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCRLRequestModel(cSSCMSDataModelModelsCRLRequestModel).Execute()
+> CertificateAuthorityPublishCRLPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsCRLRequestModel(modelsCRLRequestModel).Execute()
 
 Publishes a CRL according to the provided request
 
@@ -1235,11 +1235,11 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsCRLRequestModel := *openapiclient.NewCSSCMSDataModelModelsCRLRequestModel("CertificateAuthorityLogicalName_example") // CSSCMSDataModelModelsCRLRequestModel | Host and logical name of the CA for which the CRL should be published (optional)
+    modelsCRLRequestModel := *openapiclient.NewModelsCRLRequestModel("CertificateAuthorityLogicalName_example") // ModelsCRLRequestModel | Host and logical name of the CA for which the CRL should be published (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.CertificateAuthorityPublishCRLPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCRLRequestModel(cSSCMSDataModelModelsCRLRequestModel).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.CertificateAuthorityPublishCRLPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsCRLRequestModel(modelsCRLRequestModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.CertificateAuthorityPublishCRLPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1260,7 +1260,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsCRLRequestModel** | [**CSSCMSDataModelModelsCRLRequestModel**](CSSCMSDataModelModelsCRLRequestModel.md) | Host and logical name of the CA for which the CRL should be published | 
+ **modelsCRLRequestModel** | [**ModelsCRLRequestModel**](ModelsCRLRequestModel.md) | Host and logical name of the CA for which the CRL should be published | 
 
 ### Return type
 
@@ -1418,7 +1418,7 @@ Name | Type | Description  | Notes
 
 ## CertificateAuthorityTestPost
 
-> KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityTestResponse CertificateAuthorityTestPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest(cSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest).Execute()
+> KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityTestResponse CertificateAuthorityTestPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsCertificateAuthoritiesCertificateAuthorityTestRequest(modelsCertificateAuthoritiesCertificateAuthorityTestRequest).Execute()
 
 Validates the connection info for the CA provided by the model.
 
@@ -1437,11 +1437,11 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest := *openapiclient.NewCSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest() // CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest | The CA being tested. (optional)
+    modelsCertificateAuthoritiesCertificateAuthorityTestRequest := *openapiclient.NewModelsCertificateAuthoritiesCertificateAuthorityTestRequest() // ModelsCertificateAuthoritiesCertificateAuthorityTestRequest | The CA being tested. (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.CertificateAuthorityTestPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest(cSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.CertificateAuthorityTestPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsCertificateAuthoritiesCertificateAuthorityTestRequest(modelsCertificateAuthoritiesCertificateAuthorityTestRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.CertificateAuthorityTestPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1464,7 +1464,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest** | [**CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest**](CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest.md) | The CA being tested. | 
+ **modelsCertificateAuthoritiesCertificateAuthorityTestRequest** | [**ModelsCertificateAuthoritiesCertificateAuthorityTestRequest**](ModelsCertificateAuthoritiesCertificateAuthorityTestRequest.md) | The CA being tested. | 
 
 ### Return type
 

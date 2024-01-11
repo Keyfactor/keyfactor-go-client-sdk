@@ -31,7 +31,7 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertT
 // KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse struct for KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse
 type KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse struct {
 	PendingAlerts    []KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertResponse `json:"pendingAlerts,omitempty"`
-	AlertBuildResult *CSSCMSDataModelEnumsAlertBuildResult                             `json:"alertBuildResult,omitempty"`
+	AlertBuildResult *int32                                                            `json:"alertBuildResult,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse instantiates a new KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse object
@@ -85,9 +85,9 @@ func (o *KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse) Se
 }
 
 // GetAlertBuildResult returns the AlertBuildResult field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse) GetAlertBuildResult() CSSCMSDataModelEnumsAlertBuildResult {
+func (o *KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse) GetAlertBuildResult() int32 {
 	if o == nil || isNil(o.AlertBuildResult) {
-		var ret CSSCMSDataModelEnumsAlertBuildResult
+		var ret int32
 		return ret
 	}
 	return *o.AlertBuildResult
@@ -95,7 +95,7 @@ func (o *KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse) Ge
 
 // GetAlertBuildResultOk returns a tuple with the AlertBuildResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse) GetAlertBuildResultOk() (*CSSCMSDataModelEnumsAlertBuildResult, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse) GetAlertBuildResultOk() (*int32, bool) {
 	if o == nil || isNil(o.AlertBuildResult) {
 		return nil, false
 	}
@@ -111,8 +111,8 @@ func (o *KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse) Ha
 	return false
 }
 
-// SetAlertBuildResult gets a reference to the given CSSCMSDataModelEnumsAlertBuildResult and assigns it to the AlertBuildResult field.
-func (o *KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse) SetAlertBuildResult(v CSSCMSDataModelEnumsAlertBuildResult) {
+// SetAlertBuildResult gets a reference to the given int32 and assigns it to the AlertBuildResult field.
+func (o *KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse) SetAlertBuildResult(v int32) {
 	o.AlertBuildResult = &v
 }
 

@@ -44,9 +44,9 @@ type KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse str
 	AgentAssigned           *bool                                       `json:"agentAssigned,omitempty"`
 	ContainerName           NullableString                              `json:"containerName,omitempty"`
 	InventorySchedule       *KeyfactorCommonSchedulingKeyfactorSchedule `json:"inventorySchedule,omitempty"`
-	ReenrollmentStatus      *CSSCMSDataModelModelsReenrollmentStatus    `json:"reenrollmentStatus,omitempty"`
+	ReenrollmentStatus      *ModelsReenrollmentStatus                   `json:"reenrollmentStatus,omitempty"`
 	SetNewPasswordAllowed   *bool                                       `json:"setNewPasswordAllowed,omitempty"`
-	Password                *CSSCMSDataModelModelsKeyfactorSecret       `json:"password,omitempty"`
+	Password                *ModelsKeyfactorSecret                      `json:"password,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse instantiates a new KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse object
@@ -603,9 +603,9 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse
 }
 
 // GetReenrollmentStatus returns the ReenrollmentStatus field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetReenrollmentStatus() CSSCMSDataModelModelsReenrollmentStatus {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetReenrollmentStatus() ModelsReenrollmentStatus {
 	if o == nil || isNil(o.ReenrollmentStatus) {
-		var ret CSSCMSDataModelModelsReenrollmentStatus
+		var ret ModelsReenrollmentStatus
 		return ret
 	}
 	return *o.ReenrollmentStatus
@@ -613,7 +613,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse
 
 // GetReenrollmentStatusOk returns a tuple with the ReenrollmentStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetReenrollmentStatusOk() (*CSSCMSDataModelModelsReenrollmentStatus, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetReenrollmentStatusOk() (*ModelsReenrollmentStatus, bool) {
 	if o == nil || isNil(o.ReenrollmentStatus) {
 		return nil, false
 	}
@@ -629,8 +629,8 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse
 	return false
 }
 
-// SetReenrollmentStatus gets a reference to the given CSSCMSDataModelModelsReenrollmentStatus and assigns it to the ReenrollmentStatus field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) SetReenrollmentStatus(v CSSCMSDataModelModelsReenrollmentStatus) {
+// SetReenrollmentStatus gets a reference to the given ModelsReenrollmentStatus and assigns it to the ReenrollmentStatus field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) SetReenrollmentStatus(v ModelsReenrollmentStatus) {
 	o.ReenrollmentStatus = &v
 }
 
@@ -667,9 +667,9 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse
 }
 
 // GetPassword returns the Password field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetPassword() CSSCMSDataModelModelsKeyfactorSecret {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetPassword() ModelsKeyfactorSecret {
 	if o == nil || isNil(o.Password) {
-		var ret CSSCMSDataModelModelsKeyfactorSecret
+		var ret ModelsKeyfactorSecret
 		return ret
 	}
 	return *o.Password
@@ -677,7 +677,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse
 
 // GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetPasswordOk() (*CSSCMSDataModelModelsKeyfactorSecret, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetPasswordOk() (*ModelsKeyfactorSecret, bool) {
 	if o == nil || isNil(o.Password) {
 		return nil, false
 	}
@@ -693,8 +693,8 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse
 	return false
 }
 
-// SetPassword gets a reference to the given CSSCMSDataModelModelsKeyfactorSecret and assigns it to the Password field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) SetPassword(v CSSCMSDataModelModelsKeyfactorSecret) {
+// SetPassword gets a reference to the given ModelsKeyfactorSecret and assigns it to the Password field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) SetPassword(v ModelsKeyfactorSecret) {
 	o.Password = &v
 }
 

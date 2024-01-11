@@ -30,14 +30,14 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsIdentityProviderIdentityPr
 
 // KeyfactorWebKeyfactorApiModelsIdentityProviderIdentityProviderParameterUpdateRequest struct for KeyfactorWebKeyfactorApiModelsIdentityProviderIdentityProviderParameterUpdateRequest
 type KeyfactorWebKeyfactorApiModelsIdentityProviderIdentityProviderParameterUpdateRequest struct {
-	OidcAudience            NullableString                           `json:"oidcAudience,omitempty"`
-	NameClaimType           NullableString                           `json:"nameClaimType,omitempty"`
-	RoleClaimType           NullableString                           `json:"roleClaimType,omitempty"`
-	UniqueClaimType         NullableString                           `json:"uniqueClaimType,omitempty"`
-	FallbackUniqueClaimType NullableString                           `json:"fallbackUniqueClaimType,omitempty"`
-	ClientId                NullableString                           `json:"clientId,omitempty"`
-	ClientSecret            *CSSCMSDataModelModelsKeyfactorAPISecret `json:"clientSecret,omitempty"`
-	Timeout                 NullableString                           `json:"timeout,omitempty"`
+	OidcAudience            NullableString            `json:"oidcAudience,omitempty"`
+	NameClaimType           NullableString            `json:"nameClaimType,omitempty"`
+	RoleClaimType           NullableString            `json:"roleClaimType,omitempty"`
+	UniqueClaimType         NullableString            `json:"uniqueClaimType,omitempty"`
+	FallbackUniqueClaimType NullableString            `json:"fallbackUniqueClaimType,omitempty"`
+	ClientId                NullableString            `json:"clientId,omitempty"`
+	ClientSecret            *ModelsKeyfactorAPISecret `json:"clientSecret,omitempty"`
+	Timeout                 NullableString            `json:"timeout,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsIdentityProviderIdentityProviderParameterUpdateRequest instantiates a new KeyfactorWebKeyfactorApiModelsIdentityProviderIdentityProviderParameterUpdateRequest object
@@ -316,9 +316,9 @@ func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderIdentityProviderParameter
 }
 
 // GetClientSecret returns the ClientSecret field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderIdentityProviderParameterUpdateRequest) GetClientSecret() CSSCMSDataModelModelsKeyfactorAPISecret {
+func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderIdentityProviderParameterUpdateRequest) GetClientSecret() ModelsKeyfactorAPISecret {
 	if o == nil || isNil(o.ClientSecret) {
-		var ret CSSCMSDataModelModelsKeyfactorAPISecret
+		var ret ModelsKeyfactorAPISecret
 		return ret
 	}
 	return *o.ClientSecret
@@ -326,7 +326,7 @@ func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderIdentityProviderParameter
 
 // GetClientSecretOk returns a tuple with the ClientSecret field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderIdentityProviderParameterUpdateRequest) GetClientSecretOk() (*CSSCMSDataModelModelsKeyfactorAPISecret, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderIdentityProviderParameterUpdateRequest) GetClientSecretOk() (*ModelsKeyfactorAPISecret, bool) {
 	if o == nil || isNil(o.ClientSecret) {
 		return nil, false
 	}
@@ -342,8 +342,8 @@ func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderIdentityProviderParameter
 	return false
 }
 
-// SetClientSecret gets a reference to the given CSSCMSDataModelModelsKeyfactorAPISecret and assigns it to the ClientSecret field.
-func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderIdentityProviderParameterUpdateRequest) SetClientSecret(v CSSCMSDataModelModelsKeyfactorAPISecret) {
+// SetClientSecret gets a reference to the given ModelsKeyfactorAPISecret and assigns it to the ClientSecret field.
+func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderIdentityProviderParameterUpdateRequest) SetClientSecret(v ModelsKeyfactorAPISecret) {
 	o.ClientSecret = &v
 }
 

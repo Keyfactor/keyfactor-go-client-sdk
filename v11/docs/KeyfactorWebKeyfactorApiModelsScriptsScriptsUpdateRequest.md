@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** |  | [optional] 
 **Contents** | Pointer to **NullableString** |  | [optional] 
-**Categories** | Pointer to [**[]CSSCMSDataModelEnumsScriptCategories**](CSSCMSDataModelEnumsScriptCategories.md) |  | [optional] 
+**Categories** | Pointer to **[]int32** |  | [optional] 
 
 ## Methods
 
@@ -89,20 +89,20 @@ HasContents returns a boolean if a field has been set.
 UnsetContents ensures that no value is present for Contents, not even an explicit nil
 ### GetCategories
 
-`func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptsUpdateRequest) GetCategories() []CSSCMSDataModelEnumsScriptCategories`
+`func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptsUpdateRequest) GetCategories() []int32`
 
 GetCategories returns the Categories field if non-nil, zero value otherwise.
 
 ### GetCategoriesOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptsUpdateRequest) GetCategoriesOk() (*[]CSSCMSDataModelEnumsScriptCategories, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptsUpdateRequest) GetCategoriesOk() (*[]int32, bool)`
 
 GetCategoriesOk returns a tuple with the Categories field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCategories
 
-`func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptsUpdateRequest) SetCategories(v []CSSCMSDataModelEnumsScriptCategories)`
+`func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptsUpdateRequest) SetCategories(v []int32)`
 
 SetCategories sets Categories field to given value.
 

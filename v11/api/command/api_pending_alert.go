@@ -41,7 +41,7 @@ type ApiAlertsPendingGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -71,7 +71,7 @@ func (r ApiAlertsPendingGetRequest) SortField(sortField string) ApiAlertsPending
 	return r
 }
 
-func (r ApiAlertsPendingGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiAlertsPendingGetRequest {
+func (r ApiAlertsPendingGetRequest) SortAscending(sortAscending int32) ApiAlertsPendingGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }

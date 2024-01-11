@@ -30,11 +30,11 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsCertificateStoresCertifica
 
 // KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest struct for KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest
 type KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest struct {
-	Id            *string                                  `json:"id,omitempty"`
-	ContainerId   NullableInt32                            `json:"containerId,omitempty"`
-	CertStoreType *int32                                   `json:"certStoreType,omitempty"`
-	Properties    NullableString                           `json:"properties,omitempty"`
-	Password      *CSSCMSDataModelModelsKeyfactorAPISecret `json:"password,omitempty"`
+	Id            *string                   `json:"id,omitempty"`
+	ContainerId   NullableInt32             `json:"containerId,omitempty"`
+	CertStoreType *int32                    `json:"certStoreType,omitempty"`
+	Properties    NullableString            `json:"properties,omitempty"`
+	Password      *ModelsKeyfactorAPISecret `json:"password,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest instantiates a new KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest object
@@ -205,9 +205,9 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreApproveR
 }
 
 // GetPassword returns the Password field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetPassword() CSSCMSDataModelModelsKeyfactorAPISecret {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetPassword() ModelsKeyfactorAPISecret {
 	if o == nil || isNil(o.Password) {
-		var ret CSSCMSDataModelModelsKeyfactorAPISecret
+		var ret ModelsKeyfactorAPISecret
 		return ret
 	}
 	return *o.Password
@@ -215,7 +215,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreApproveR
 
 // GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetPasswordOk() (*CSSCMSDataModelModelsKeyfactorAPISecret, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetPasswordOk() (*ModelsKeyfactorAPISecret, bool) {
 	if o == nil || isNil(o.Password) {
 		return nil, false
 	}
@@ -231,8 +231,8 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreApproveR
 	return false
 }
 
-// SetPassword gets a reference to the given CSSCMSDataModelModelsKeyfactorAPISecret and assigns it to the Password field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) SetPassword(v CSSCMSDataModelModelsKeyfactorAPISecret) {
+// SetPassword gets a reference to the given ModelsKeyfactorAPISecret and assigns it to the Password field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) SetPassword(v ModelsKeyfactorAPISecret) {
 	o.Password = &v
 }
 

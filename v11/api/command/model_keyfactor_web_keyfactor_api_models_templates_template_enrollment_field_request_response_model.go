@@ -30,10 +30,10 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsTemplatesTemplateEnrollmen
 
 // KeyfactorWebKeyfactorApiModelsTemplatesTemplateEnrollmentFieldRequestResponseModel struct for KeyfactorWebKeyfactorApiModelsTemplatesTemplateEnrollmentFieldRequestResponseModel
 type KeyfactorWebKeyfactorApiModelsTemplatesTemplateEnrollmentFieldRequestResponseModel struct {
-	Id       *int32                                      `json:"id,omitempty"`
-	Name     NullableString                              `json:"name,omitempty"`
-	Options  []string                                    `json:"options,omitempty"`
-	DataType *CSSCMSCoreEnumsTemplateEnrollmentFieldType `json:"dataType,omitempty"`
+	Id       *int32         `json:"id,omitempty"`
+	Name     NullableString `json:"name,omitempty"`
+	Options  []string       `json:"options,omitempty"`
+	DataType *int32         `json:"dataType,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsTemplatesTemplateEnrollmentFieldRequestResponseModel instantiates a new KeyfactorWebKeyfactorApiModelsTemplatesTemplateEnrollmentFieldRequestResponseModel object
@@ -162,9 +162,9 @@ func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateEnrollmentFieldRequestRe
 }
 
 // GetDataType returns the DataType field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateEnrollmentFieldRequestResponseModel) GetDataType() CSSCMSCoreEnumsTemplateEnrollmentFieldType {
+func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateEnrollmentFieldRequestResponseModel) GetDataType() int32 {
 	if o == nil || isNil(o.DataType) {
-		var ret CSSCMSCoreEnumsTemplateEnrollmentFieldType
+		var ret int32
 		return ret
 	}
 	return *o.DataType
@@ -172,7 +172,7 @@ func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateEnrollmentFieldRequestRe
 
 // GetDataTypeOk returns a tuple with the DataType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateEnrollmentFieldRequestResponseModel) GetDataTypeOk() (*CSSCMSCoreEnumsTemplateEnrollmentFieldType, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateEnrollmentFieldRequestResponseModel) GetDataTypeOk() (*int32, bool) {
 	if o == nil || isNil(o.DataType) {
 		return nil, false
 	}
@@ -188,8 +188,8 @@ func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateEnrollmentFieldRequestRe
 	return false
 }
 
-// SetDataType gets a reference to the given CSSCMSCoreEnumsTemplateEnrollmentFieldType and assigns it to the DataType field.
-func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateEnrollmentFieldRequestResponseModel) SetDataType(v CSSCMSCoreEnumsTemplateEnrollmentFieldType) {
+// SetDataType gets a reference to the given int32 and assigns it to the DataType field.
+func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateEnrollmentFieldRequestResponseModel) SetDataType(v int32) {
 	o.DataType = &v
 }
 

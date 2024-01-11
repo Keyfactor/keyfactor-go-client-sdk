@@ -41,8 +41,8 @@ type KeyfactorWebKeyfactorApiModelsSslNetworkResponse struct {
 	MonitorSchedule         *KeyfactorCommonSchedulingKeyfactorSchedule          `json:"monitorSchedule,omitempty"`
 	DiscoverPercentComplete *float64                                             `json:"discoverPercentComplete,omitempty"`
 	MonitorPercentComplete  *float64                                             `json:"monitorPercentComplete,omitempty"`
-	DiscoverStatus          *CSSCMSCoreEnumsSslNetworkJobStatus                  `json:"discoverStatus,omitempty"`
-	MonitorStatus           *CSSCMSCoreEnumsSslNetworkJobStatus                  `json:"monitorStatus,omitempty"`
+	DiscoverStatus          *int32                                               `json:"discoverStatus,omitempty"`
+	MonitorStatus           *int32                                               `json:"monitorStatus,omitempty"`
 	DiscoverLastScanned     NullableTime                                         `json:"discoverLastScanned,omitempty"`
 	MonitorLastScanned      NullableTime                                         `json:"monitorLastScanned,omitempty"`
 	SslAlertRecipients      []string                                             `json:"sslAlertRecipients,omitempty"`
@@ -440,9 +440,9 @@ func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) SetMonitorPercentComp
 }
 
 // GetDiscoverStatus returns the DiscoverStatus field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) GetDiscoverStatus() CSSCMSCoreEnumsSslNetworkJobStatus {
+func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) GetDiscoverStatus() int32 {
 	if o == nil || isNil(o.DiscoverStatus) {
-		var ret CSSCMSCoreEnumsSslNetworkJobStatus
+		var ret int32
 		return ret
 	}
 	return *o.DiscoverStatus
@@ -450,7 +450,7 @@ func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) GetDiscoverStatus() C
 
 // GetDiscoverStatusOk returns a tuple with the DiscoverStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) GetDiscoverStatusOk() (*CSSCMSCoreEnumsSslNetworkJobStatus, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) GetDiscoverStatusOk() (*int32, bool) {
 	if o == nil || isNil(o.DiscoverStatus) {
 		return nil, false
 	}
@@ -466,15 +466,15 @@ func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) HasDiscoverStatus() b
 	return false
 }
 
-// SetDiscoverStatus gets a reference to the given CSSCMSCoreEnumsSslNetworkJobStatus and assigns it to the DiscoverStatus field.
-func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) SetDiscoverStatus(v CSSCMSCoreEnumsSslNetworkJobStatus) {
+// SetDiscoverStatus gets a reference to the given int32 and assigns it to the DiscoverStatus field.
+func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) SetDiscoverStatus(v int32) {
 	o.DiscoverStatus = &v
 }
 
 // GetMonitorStatus returns the MonitorStatus field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) GetMonitorStatus() CSSCMSCoreEnumsSslNetworkJobStatus {
+func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) GetMonitorStatus() int32 {
 	if o == nil || isNil(o.MonitorStatus) {
-		var ret CSSCMSCoreEnumsSslNetworkJobStatus
+		var ret int32
 		return ret
 	}
 	return *o.MonitorStatus
@@ -482,7 +482,7 @@ func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) GetMonitorStatus() CS
 
 // GetMonitorStatusOk returns a tuple with the MonitorStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) GetMonitorStatusOk() (*CSSCMSCoreEnumsSslNetworkJobStatus, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) GetMonitorStatusOk() (*int32, bool) {
 	if o == nil || isNil(o.MonitorStatus) {
 		return nil, false
 	}
@@ -498,8 +498,8 @@ func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) HasMonitorStatus() bo
 	return false
 }
 
-// SetMonitorStatus gets a reference to the given CSSCMSCoreEnumsSslNetworkJobStatus and assigns it to the MonitorStatus field.
-func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) SetMonitorStatus(v CSSCMSCoreEnumsSslNetworkJobStatus) {
+// SetMonitorStatus gets a reference to the given int32 and assigns it to the MonitorStatus field.
+func (o *KeyfactorWebKeyfactorApiModelsSslNetworkResponse) SetMonitorStatus(v int32) {
 	o.MonitorStatus = &v
 }
 

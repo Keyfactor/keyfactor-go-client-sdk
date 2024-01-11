@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schedule** | Pointer to [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | [optional] 
 **JobFields** | Pointer to [**[]KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobFieldResponse**](KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobFieldResponse.md) |  | [optional] 
 **RequestTimestamp** | Pointer to **time.Time** |  | [optional] 
-**OrchestratorJobPairs** | Pointer to [**[]CSSCMSDataModelModelsOrchestratorJobsBulkOrchestratorJobPair**](CSSCMSDataModelModelsOrchestratorJobsBulkOrchestratorJobPair.md) |  | [optional] 
+**OrchestratorJobPairs** | Pointer to [**[]ModelsOrchestratorJobsBulkOrchestratorJobPair**](ModelsOrchestratorJobsBulkOrchestratorJobPair.md) |  | [optional] 
 **FailedOrchestratorIds** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
@@ -152,20 +152,20 @@ HasRequestTimestamp returns a boolean if a field has been set.
 
 ### GetOrchestratorJobPairs
 
-`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsBulkJobResponse) GetOrchestratorJobPairs() []CSSCMSDataModelModelsOrchestratorJobsBulkOrchestratorJobPair`
+`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsBulkJobResponse) GetOrchestratorJobPairs() []ModelsOrchestratorJobsBulkOrchestratorJobPair`
 
 GetOrchestratorJobPairs returns the OrchestratorJobPairs field if non-nil, zero value otherwise.
 
 ### GetOrchestratorJobPairsOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsBulkJobResponse) GetOrchestratorJobPairsOk() (*[]CSSCMSDataModelModelsOrchestratorJobsBulkOrchestratorJobPair, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsBulkJobResponse) GetOrchestratorJobPairsOk() (*[]ModelsOrchestratorJobsBulkOrchestratorJobPair, bool)`
 
 GetOrchestratorJobPairsOk returns a tuple with the OrchestratorJobPairs field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrchestratorJobPairs
 
-`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsBulkJobResponse) SetOrchestratorJobPairs(v []CSSCMSDataModelModelsOrchestratorJobsBulkOrchestratorJobPair)`
+`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsBulkJobResponse) SetOrchestratorJobPairs(v []ModelsOrchestratorJobsBulkOrchestratorJobPair)`
 
 SetOrchestratorJobPairs sets OrchestratorJobPairs field to given value.
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RevocationMonitoringAlerts** | Pointer to [**[]CSSCMSDataModelModelsMonitoringRevocationMonitoringAlertResponse**](CSSCMSDataModelModelsMonitoringRevocationMonitoringAlertResponse.md) |  | [optional] 
-**AlertBuildResult** | Pointer to [**CSSCMSDataModelEnumsAlertBuildResult**](CSSCMSDataModelEnumsAlertBuildResult.md) |  | [optional] 
+**RevocationMonitoringAlerts** | Pointer to [**[]ModelsMonitoringRevocationMonitoringAlertResponse**](ModelsMonitoringRevocationMonitoringAlertResponse.md) |  | [optional] 
+**AlertBuildResult** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRevocationMonitoringAlerts
 
-`func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetRevocationMonitoringAlerts() []CSSCMSDataModelModelsMonitoringRevocationMonitoringAlertResponse`
+`func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetRevocationMonitoringAlerts() []ModelsMonitoringRevocationMonitoringAlertResponse`
 
 GetRevocationMonitoringAlerts returns the RevocationMonitoringAlerts field if non-nil, zero value otherwise.
 
 ### GetRevocationMonitoringAlertsOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetRevocationMonitoringAlertsOk() (*[]CSSCMSDataModelModelsMonitoringRevocationMonitoringAlertResponse, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetRevocationMonitoringAlertsOk() (*[]ModelsMonitoringRevocationMonitoringAlertResponse, bool)`
 
 GetRevocationMonitoringAlertsOk returns a tuple with the RevocationMonitoringAlerts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRevocationMonitoringAlerts
 
-`func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) SetRevocationMonitoringAlerts(v []CSSCMSDataModelModelsMonitoringRevocationMonitoringAlertResponse)`
+`func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) SetRevocationMonitoringAlerts(v []ModelsMonitoringRevocationMonitoringAlertResponse)`
 
 SetRevocationMonitoringAlerts sets RevocationMonitoringAlerts field to given value.
 
@@ -63,20 +63,20 @@ HasRevocationMonitoringAlerts returns a boolean if a field has been set.
 UnsetRevocationMonitoringAlerts ensures that no value is present for RevocationMonitoringAlerts, not even an explicit nil
 ### GetAlertBuildResult
 
-`func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetAlertBuildResult() CSSCMSDataModelEnumsAlertBuildResult`
+`func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetAlertBuildResult() int32`
 
 GetAlertBuildResult returns the AlertBuildResult field if non-nil, zero value otherwise.
 
 ### GetAlertBuildResultOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetAlertBuildResultOk() (*CSSCMSDataModelEnumsAlertBuildResult, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetAlertBuildResultOk() (*int32, bool)`
 
 GetAlertBuildResultOk returns a tuple with the AlertBuildResult field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAlertBuildResult
 
-`func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) SetAlertBuildResult(v CSSCMSDataModelEnumsAlertBuildResult)`
+`func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) SetAlertBuildResult(v int32)`
 
 SetAlertBuildResult sets AlertBuildResult field to given value.
 

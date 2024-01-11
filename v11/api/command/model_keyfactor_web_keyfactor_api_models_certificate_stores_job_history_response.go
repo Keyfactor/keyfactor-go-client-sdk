@@ -31,18 +31,18 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistor
 
 // KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse struct for KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse
 type KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse struct {
-	JobHistoryId   *int64                                                           `json:"jobHistoryId,omitempty"`
-	AgentMachine   NullableString                                                   `json:"agentMachine,omitempty"`
-	JobId          *string                                                          `json:"jobId,omitempty"`
-	Schedule       *KeyfactorCommonSchedulingKeyfactorSchedule                      `json:"schedule,omitempty"`
-	JobType        NullableString                                                   `json:"jobType,omitempty"`
-	OperationStart *time.Time                                                       `json:"operationStart,omitempty"`
-	OperationEnd   NullableTime                                                     `json:"operationEnd,omitempty"`
-	Message        NullableString                                                   `json:"message,omitempty"`
-	Result         *KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobResult `json:"result,omitempty"`
-	Status         *KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobStatus `json:"status,omitempty"`
-	StorePath      NullableString                                                   `json:"storePath,omitempty"`
-	ClientMachine  NullableString                                                   `json:"clientMachine,omitempty"`
+	JobHistoryId   *int64                                      `json:"jobHistoryId,omitempty"`
+	AgentMachine   NullableString                              `json:"agentMachine,omitempty"`
+	JobId          *string                                     `json:"jobId,omitempty"`
+	Schedule       *KeyfactorCommonSchedulingKeyfactorSchedule `json:"schedule,omitempty"`
+	JobType        NullableString                              `json:"jobType,omitempty"`
+	OperationStart *time.Time                                  `json:"operationStart,omitempty"`
+	OperationEnd   NullableTime                                `json:"operationEnd,omitempty"`
+	Message        NullableString                              `json:"message,omitempty"`
+	Result         *int32                                      `json:"result,omitempty"`
+	Status         *int32                                      `json:"status,omitempty"`
+	StorePath      NullableString                              `json:"storePath,omitempty"`
+	ClientMachine  NullableString                              `json:"clientMachine,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse instantiates a new KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse object
@@ -363,9 +363,9 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) Unse
 }
 
 // GetResult returns the Result field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) GetResult() KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobResult {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) GetResult() int32 {
 	if o == nil || isNil(o.Result) {
-		var ret KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobResult
+		var ret int32
 		return ret
 	}
 	return *o.Result
@@ -373,7 +373,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) GetR
 
 // GetResultOk returns a tuple with the Result field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) GetResultOk() (*KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobResult, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) GetResultOk() (*int32, bool) {
 	if o == nil || isNil(o.Result) {
 		return nil, false
 	}
@@ -389,15 +389,15 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) HasR
 	return false
 }
 
-// SetResult gets a reference to the given KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobResult and assigns it to the Result field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) SetResult(v KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobResult) {
+// SetResult gets a reference to the given int32 and assigns it to the Result field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) SetResult(v int32) {
 	o.Result = &v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) GetStatus() KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobStatus {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) GetStatus() int32 {
 	if o == nil || isNil(o.Status) {
-		var ret KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobStatus
+		var ret int32
 		return ret
 	}
 	return *o.Status
@@ -405,7 +405,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) GetS
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) GetStatusOk() (*KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobStatus, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) GetStatusOk() (*int32, bool) {
 	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
@@ -421,8 +421,8 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) HasS
 	return false
 }
 
-// SetStatus gets a reference to the given KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobStatus and assigns it to the Status field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) SetStatus(v KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobStatus) {
+// SetStatus gets a reference to the given int32 and assigns it to the Status field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) SetStatus(v int32) {
 	o.Status = &v
 }
 

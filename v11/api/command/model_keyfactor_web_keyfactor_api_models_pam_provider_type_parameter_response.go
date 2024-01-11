@@ -30,11 +30,11 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsPAMProviderTypeParameterRe
 
 // KeyfactorWebKeyfactorApiModelsPAMProviderTypeParameterResponse struct for KeyfactorWebKeyfactorApiModelsPAMProviderTypeParameterResponse
 type KeyfactorWebKeyfactorApiModelsPAMProviderTypeParameterResponse struct {
-	Id            *int32                                    `json:"id,omitempty"`
-	Name          NullableString                            `json:"name,omitempty"`
-	DisplayName   NullableString                            `json:"displayName,omitempty"`
-	DataType      *CSSCMSDataModelEnumsPamParameterDataType `json:"dataType,omitempty"`
-	InstanceLevel *bool                                     `json:"instanceLevel,omitempty"`
+	Id            *int32         `json:"id,omitempty"`
+	Name          NullableString `json:"name,omitempty"`
+	DisplayName   NullableString `json:"displayName,omitempty"`
+	DataType      *int32         `json:"dataType,omitempty"`
+	InstanceLevel *bool          `json:"instanceLevel,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsPAMProviderTypeParameterResponse instantiates a new KeyfactorWebKeyfactorApiModelsPAMProviderTypeParameterResponse object
@@ -173,9 +173,9 @@ func (o *KeyfactorWebKeyfactorApiModelsPAMProviderTypeParameterResponse) UnsetDi
 }
 
 // GetDataType returns the DataType field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsPAMProviderTypeParameterResponse) GetDataType() CSSCMSDataModelEnumsPamParameterDataType {
+func (o *KeyfactorWebKeyfactorApiModelsPAMProviderTypeParameterResponse) GetDataType() int32 {
 	if o == nil || isNil(o.DataType) {
-		var ret CSSCMSDataModelEnumsPamParameterDataType
+		var ret int32
 		return ret
 	}
 	return *o.DataType
@@ -183,7 +183,7 @@ func (o *KeyfactorWebKeyfactorApiModelsPAMProviderTypeParameterResponse) GetData
 
 // GetDataTypeOk returns a tuple with the DataType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsPAMProviderTypeParameterResponse) GetDataTypeOk() (*CSSCMSDataModelEnumsPamParameterDataType, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsPAMProviderTypeParameterResponse) GetDataTypeOk() (*int32, bool) {
 	if o == nil || isNil(o.DataType) {
 		return nil, false
 	}
@@ -199,8 +199,8 @@ func (o *KeyfactorWebKeyfactorApiModelsPAMProviderTypeParameterResponse) HasData
 	return false
 }
 
-// SetDataType gets a reference to the given CSSCMSDataModelEnumsPamParameterDataType and assigns it to the DataType field.
-func (o *KeyfactorWebKeyfactorApiModelsPAMProviderTypeParameterResponse) SetDataType(v CSSCMSDataModelEnumsPamParameterDataType) {
+// SetDataType gets a reference to the given int32 and assigns it to the DataType field.
+func (o *KeyfactorWebKeyfactorApiModelsPAMProviderTypeParameterResponse) SetDataType(v int32) {
 	o.DataType = &v
 }
 

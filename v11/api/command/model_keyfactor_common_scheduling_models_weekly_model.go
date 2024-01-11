@@ -31,8 +31,8 @@ var _ MappedNullable = &KeyfactorCommonSchedulingModelsWeeklyModel{}
 
 // KeyfactorCommonSchedulingModelsWeeklyModel struct for KeyfactorCommonSchedulingModelsWeeklyModel
 type KeyfactorCommonSchedulingModelsWeeklyModel struct {
-	Time *time.Time        `json:"time,omitempty"`
-	Days []SystemDayOfWeek `json:"days,omitempty"`
+	Time *time.Time `json:"time,omitempty"`
+	Days []int32    `json:"days,omitempty"`
 }
 
 // NewKeyfactorCommonSchedulingModelsWeeklyModel instantiates a new KeyfactorCommonSchedulingModelsWeeklyModel object
@@ -85,9 +85,9 @@ func (o *KeyfactorCommonSchedulingModelsWeeklyModel) SetTime(v time.Time) {
 }
 
 // GetDays returns the Days field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDays() []SystemDayOfWeek {
+func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDays() []int32 {
 	if o == nil {
-		var ret []SystemDayOfWeek
+		var ret []int32
 		return ret
 	}
 	return o.Days
@@ -96,7 +96,7 @@ func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDays() []SystemDayOfWeek
 // GetDaysOk returns a tuple with the Days field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDaysOk() ([]SystemDayOfWeek, bool) {
+func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDaysOk() ([]int32, bool) {
 	if o == nil || isNil(o.Days) {
 		return nil, false
 	}
@@ -112,8 +112,8 @@ func (o *KeyfactorCommonSchedulingModelsWeeklyModel) HasDays() bool {
 	return false
 }
 
-// SetDays gets a reference to the given []SystemDayOfWeek and assigns it to the Days field.
-func (o *KeyfactorCommonSchedulingModelsWeeklyModel) SetDays(v []SystemDayOfWeek) {
+// SetDays gets a reference to the given []int32 and assigns it to the Days field.
+func (o *KeyfactorCommonSchedulingModelsWeeklyModel) SetDays(v []int32) {
 	o.Days = v
 }
 

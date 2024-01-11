@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **OperationStart** | Pointer to **time.Time** |  | [optional] 
 **OperationEnd** | Pointer to **NullableTime** |  | [optional] 
 **Message** | Pointer to **NullableString** |  | [optional] 
-**Result** | Pointer to [**KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobResult**](KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobResult.md) |  | [optional] 
-**Status** | Pointer to [**KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobStatus**](KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobStatus.md) |  | [optional] 
+**Result** | Pointer to **int32** |  | [optional] 
+**Status** | Pointer to **int32** |  | [optional] 
 **StorePath** | Pointer to **NullableString** |  | [optional] 
 **ClientMachine** | Pointer to **NullableString** |  | [optional] 
 
@@ -278,20 +278,20 @@ HasMessage returns a boolean if a field has been set.
 UnsetMessage ensures that no value is present for Message, not even an explicit nil
 ### GetResult
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) GetResult() KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobResult`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) GetResult() int32`
 
 GetResult returns the Result field if non-nil, zero value otherwise.
 
 ### GetResultOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) GetResultOk() (*KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobResult, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) GetResultOk() (*int32, bool)`
 
 GetResultOk returns a tuple with the Result field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResult
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) SetResult(v KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobResult)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) SetResult(v int32)`
 
 SetResult sets Result field to given value.
 
@@ -303,20 +303,20 @@ HasResult returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) GetStatus() KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobStatus`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) GetStatus() int32`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) GetStatusOk() (*KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobStatus, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) GetStatusOk() (*int32, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) SetStatus(v KeyfactorOrchestratorsCommonEnumsOrchestratorJobStatusJobStatus)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresJobHistoryResponse) SetStatus(v int32)`
 
 SetStatus sets Status field to given value.
 

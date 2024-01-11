@@ -41,7 +41,7 @@ type ApiAlertsExpirationGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -71,7 +71,7 @@ func (r ApiAlertsExpirationGetRequest) SortField(sortField string) ApiAlertsExpi
 	return r
 }
 
-func (r ApiAlertsExpirationGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiAlertsExpirationGetRequest {
+func (r ApiAlertsExpirationGetRequest) SortAscending(sortAscending int32) ApiAlertsExpirationGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }

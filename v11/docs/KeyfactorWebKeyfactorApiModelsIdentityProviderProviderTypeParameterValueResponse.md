@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **Name** | Pointer to **NullableString** |  | [optional] 
 **DisplayName** | Pointer to **NullableString** |  | [optional] 
 **Required** | Pointer to **bool** |  | [optional] 
-**DataType** | Pointer to [**CSSCMSDataModelEnumsIdentityProviderDataType**](CSSCMSDataModelEnumsIdentityProviderDataType.md) |  | [optional] 
+**DataType** | Pointer to **int32** |  | [optional] 
 **Value** | Pointer to **NullableString** |  | [optional] 
-**SecretValue** | Pointer to [**CSSCMSDataModelModelsKeyfactorAPISecret**](CSSCMSDataModelModelsKeyfactorAPISecret.md) |  | [optional] 
+**SecretValue** | Pointer to [**ModelsKeyfactorAPISecret**](ModelsKeyfactorAPISecret.md) |  | [optional] 
 
 ## Methods
 
@@ -153,20 +153,20 @@ HasRequired returns a boolean if a field has been set.
 
 ### GetDataType
 
-`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) GetDataType() CSSCMSDataModelEnumsIdentityProviderDataType`
+`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) GetDataType() int32`
 
 GetDataType returns the DataType field if non-nil, zero value otherwise.
 
 ### GetDataTypeOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) GetDataTypeOk() (*CSSCMSDataModelEnumsIdentityProviderDataType, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) GetDataTypeOk() (*int32, bool)`
 
 GetDataTypeOk returns a tuple with the DataType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataType
 
-`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) SetDataType(v CSSCMSDataModelEnumsIdentityProviderDataType)`
+`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) SetDataType(v int32)`
 
 SetDataType sets DataType field to given value.
 
@@ -213,20 +213,20 @@ HasValue returns a boolean if a field has been set.
 UnsetValue ensures that no value is present for Value, not even an explicit nil
 ### GetSecretValue
 
-`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) GetSecretValue() CSSCMSDataModelModelsKeyfactorAPISecret`
+`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) GetSecretValue() ModelsKeyfactorAPISecret`
 
 GetSecretValue returns the SecretValue field if non-nil, zero value otherwise.
 
 ### GetSecretValueOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) GetSecretValueOk() (*CSSCMSDataModelModelsKeyfactorAPISecret, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) GetSecretValueOk() (*ModelsKeyfactorAPISecret, bool)`
 
 GetSecretValueOk returns a tuple with the SecretValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecretValue
 
-`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) SetSecretValue(v CSSCMSDataModelModelsKeyfactorAPISecret)`
+`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) SetSecretValue(v ModelsKeyfactorAPISecret)`
 
 SetSecretValue sets SecretValue field to given value.
 

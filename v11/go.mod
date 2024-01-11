@@ -1,6 +1,6 @@
 module github.com/Keyfactor/keyfactor-go-client-sdk/v11
 
-go 1.21
+go 1.20
 
 require github.com/stretchr/testify v1.8.4
 

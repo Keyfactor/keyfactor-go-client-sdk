@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ClaimType** | [**CSSCMSCoreEnumsClaimType**](CSSCMSCoreEnumsClaimType.md) |  | 
+**ClaimType** | **int32** |  | 
 **ClaimValue** | **string** |  | 
 **ProviderAuthenticationScheme** | **string** |  | 
 **Description** | **string** |  | 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewKeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest
 
-`func NewKeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest(claimType CSSCMSCoreEnumsClaimType, claimValue string, providerAuthenticationScheme string, description string, ) *KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest`
+`func NewKeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest(claimType int32, claimValue string, providerAuthenticationScheme string, description string, ) *KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest`
 
 NewKeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest instantiates a new KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetClaimType
 
-`func (o *KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest) GetClaimType() CSSCMSCoreEnumsClaimType`
+`func (o *KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest) GetClaimType() int32`
 
 GetClaimType returns the ClaimType field if non-nil, zero value otherwise.
 
 ### GetClaimTypeOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest) GetClaimTypeOk() (*CSSCMSCoreEnumsClaimType, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest) GetClaimTypeOk() (*int32, bool)`
 
 GetClaimTypeOk returns a tuple with the ClaimType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClaimType
 
-`func (o *KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest) SetClaimType(v CSSCMSCoreEnumsClaimType)`
+`func (o *KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest) SetClaimType(v int32)`
 
 SetClaimType sets ClaimType field to given value.
 

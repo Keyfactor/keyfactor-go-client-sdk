@@ -31,21 +31,21 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse
 
 // KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse struct for KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse
 type KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse struct {
-	AgentId                     *string                           `json:"agentId,omitempty"`
-	ClientMachine               NullableString                    `json:"clientMachine,omitempty"`
-	Username                    NullableString                    `json:"username,omitempty"`
-	AgentPlatform               *CSSCMSCoreEnumsAgentPlatformType `json:"agentPlatform,omitempty"`
-	Version                     NullableString                    `json:"version,omitempty"`
-	Status                      *CSSCMSCoreEnumsAgentStatusType   `json:"status,omitempty"`
-	LastSeen                    *time.Time                        `json:"lastSeen,omitempty"`
-	Capabilities                []string                          `json:"capabilities,omitempty"`
-	Blueprint                   NullableString                    `json:"blueprint,omitempty"`
-	Thumbprint                  NullableString                    `json:"thumbprint,omitempty"`
-	LegacyThumbprint            NullableString                    `json:"legacyThumbprint,omitempty"`
-	AuthCertificateReenrollment NullableString                    `json:"authCertificateReenrollment,omitempty"`
-	LastThumbprintUsed          NullableString                    `json:"lastThumbprintUsed,omitempty"`
-	LastErrorCode               NullableInt64                     `json:"lastErrorCode,omitempty"`
-	LastErrorMessage            NullableString                    `json:"lastErrorMessage,omitempty"`
+	AgentId                     *string        `json:"agentId,omitempty"`
+	ClientMachine               NullableString `json:"clientMachine,omitempty"`
+	Username                    NullableString `json:"username,omitempty"`
+	AgentPlatform               *int32         `json:"agentPlatform,omitempty"`
+	Version                     NullableString `json:"version,omitempty"`
+	Status                      *int32         `json:"status,omitempty"`
+	LastSeen                    *time.Time     `json:"lastSeen,omitempty"`
+	Capabilities                []string       `json:"capabilities,omitempty"`
+	Blueprint                   NullableString `json:"blueprint,omitempty"`
+	Thumbprint                  NullableString `json:"thumbprint,omitempty"`
+	LegacyThumbprint            NullableString `json:"legacyThumbprint,omitempty"`
+	AuthCertificateReenrollment NullableString `json:"authCertificateReenrollment,omitempty"`
+	LastThumbprintUsed          NullableString `json:"lastThumbprintUsed,omitempty"`
+	LastErrorCode               NullableInt64  `json:"lastErrorCode,omitempty"`
+	LastErrorMessage            NullableString `json:"lastErrorMessage,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse instantiates a new KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse object
@@ -184,9 +184,9 @@ func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) UnsetUsername
 }
 
 // GetAgentPlatform returns the AgentPlatform field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) GetAgentPlatform() CSSCMSCoreEnumsAgentPlatformType {
+func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) GetAgentPlatform() int32 {
 	if o == nil || isNil(o.AgentPlatform) {
-		var ret CSSCMSCoreEnumsAgentPlatformType
+		var ret int32
 		return ret
 	}
 	return *o.AgentPlatform
@@ -194,7 +194,7 @@ func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) GetAgentPlatf
 
 // GetAgentPlatformOk returns a tuple with the AgentPlatform field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) GetAgentPlatformOk() (*CSSCMSCoreEnumsAgentPlatformType, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) GetAgentPlatformOk() (*int32, bool) {
 	if o == nil || isNil(o.AgentPlatform) {
 		return nil, false
 	}
@@ -210,8 +210,8 @@ func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) HasAgentPlatf
 	return false
 }
 
-// SetAgentPlatform gets a reference to the given CSSCMSCoreEnumsAgentPlatformType and assigns it to the AgentPlatform field.
-func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) SetAgentPlatform(v CSSCMSCoreEnumsAgentPlatformType) {
+// SetAgentPlatform gets a reference to the given int32 and assigns it to the AgentPlatform field.
+func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) SetAgentPlatform(v int32) {
 	o.AgentPlatform = &v
 }
 
@@ -259,9 +259,9 @@ func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) UnsetVersion(
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) GetStatus() CSSCMSCoreEnumsAgentStatusType {
+func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) GetStatus() int32 {
 	if o == nil || isNil(o.Status) {
-		var ret CSSCMSCoreEnumsAgentStatusType
+		var ret int32
 		return ret
 	}
 	return *o.Status
@@ -269,7 +269,7 @@ func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) GetStatus() C
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) GetStatusOk() (*CSSCMSCoreEnumsAgentStatusType, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) GetStatusOk() (*int32, bool) {
 	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
@@ -285,8 +285,8 @@ func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) HasStatus() b
 	return false
 }
 
-// SetStatus gets a reference to the given CSSCMSCoreEnumsAgentStatusType and assigns it to the Status field.
-func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) SetStatus(v CSSCMSCoreEnumsAgentStatusType) {
+// SetStatus gets a reference to the given int32 and assigns it to the Status field.
+func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) SetStatus(v int32) {
 	o.Status = &v
 }
 

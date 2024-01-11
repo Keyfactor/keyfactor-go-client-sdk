@@ -30,30 +30,30 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCert
 
 // KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse struct for KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse
 type KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse struct {
-	Name                NullableString                                                                 `json:"name,omitempty"`
-	ShortName           NullableString                                                                 `json:"shortName,omitempty"`
-	Capability          NullableString                                                                 `json:"capability,omitempty"`
-	StoreType           NullableInt32                                                                  `json:"storeType,omitempty"`
-	ImportType          NullableInt32                                                                  `json:"importType,omitempty"`
-	LocalStore          *bool                                                                          `json:"localStore,omitempty"`
-	SupportedOperations *CSSCMSDataModelModelsCertStoreTypeSupportedOperations                         `json:"supportedOperations,omitempty"`
-	Properties          []CSSCMSDataModelModelsCertificateStoreTypeProperty                            `json:"properties,omitempty"`
-	EntryParameters     []CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter `json:"entryParameters,omitempty"`
-	PasswordOptions     *CSSCMSDataModelModelsCertStoreTypePasswordOptions                             `json:"passwordOptions,omitempty"`
-	StorePathType       NullableString                                                                 `json:"storePathType,omitempty"`
-	StorePathValue      NullableString                                                                 `json:"storePathValue,omitempty"`
-	PrivateKeyAllowed   *CSSCMSCoreEnumsCertStorePrivateKey                                            `json:"privateKeyAllowed,omitempty"`
-	JobProperties       []string                                                                       `json:"jobProperties,omitempty"`
-	ServerRequired      *bool                                                                          `json:"serverRequired,omitempty"`
-	PowerShell          *bool                                                                          `json:"powerShell,omitempty"`
-	BlueprintAllowed    *bool                                                                          `json:"blueprintAllowed,omitempty"`
-	CustomAliasAllowed  *KeyfactorOrchestratorsCommonEnumsCertStoreCustomAlias                         `json:"customAliasAllowed,omitempty"`
-	ServerRegistration  NullableInt32                                                                  `json:"serverRegistration,omitempty"`
-	InventoryEndpoint   NullableString                                                                 `json:"inventoryEndpoint,omitempty"`
-	InventoryJobType    *string                                                                        `json:"inventoryJobType,omitempty"`
-	ManagementJobType   NullableString                                                                 `json:"managementJobType,omitempty"`
-	DiscoveryJobType    NullableString                                                                 `json:"discoveryJobType,omitempty"`
-	EnrollmentJobType   NullableString                                                                 `json:"enrollmentJobType,omitempty"`
+	Name                NullableString                                                  `json:"name,omitempty"`
+	ShortName           NullableString                                                  `json:"shortName,omitempty"`
+	Capability          NullableString                                                  `json:"capability,omitempty"`
+	StoreType           NullableInt32                                                   `json:"storeType,omitempty"`
+	ImportType          NullableInt32                                                   `json:"importType,omitempty"`
+	LocalStore          *bool                                                           `json:"localStore,omitempty"`
+	SupportedOperations *ModelsCertStoreTypeSupportedOperations                         `json:"supportedOperations,omitempty"`
+	Properties          []ModelsCertificateStoreTypeProperty                            `json:"properties,omitempty"`
+	EntryParameters     []ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter `json:"entryParameters,omitempty"`
+	PasswordOptions     *ModelsCertStoreTypePasswordOptions                             `json:"passwordOptions,omitempty"`
+	StorePathType       NullableString                                                  `json:"storePathType,omitempty"`
+	StorePathValue      NullableString                                                  `json:"storePathValue,omitempty"`
+	PrivateKeyAllowed   *int32                                                          `json:"privateKeyAllowed,omitempty"`
+	JobProperties       []string                                                        `json:"jobProperties,omitempty"`
+	ServerRequired      *bool                                                           `json:"serverRequired,omitempty"`
+	PowerShell          *bool                                                           `json:"powerShell,omitempty"`
+	BlueprintAllowed    *bool                                                           `json:"blueprintAllowed,omitempty"`
+	CustomAliasAllowed  *int32                                                          `json:"customAliasAllowed,omitempty"`
+	ServerRegistration  NullableInt32                                                   `json:"serverRegistration,omitempty"`
+	InventoryEndpoint   NullableString                                                  `json:"inventoryEndpoint,omitempty"`
+	InventoryJobType    *string                                                         `json:"inventoryJobType,omitempty"`
+	ManagementJobType   NullableString                                                  `json:"managementJobType,omitempty"`
+	DiscoveryJobType    NullableString                                                  `json:"discoveryJobType,omitempty"`
+	EnrollmentJobType   NullableString                                                  `json:"enrollmentJobType,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse instantiates a new KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse object
@@ -321,9 +321,9 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTyp
 }
 
 // GetSupportedOperations returns the SupportedOperations field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetSupportedOperations() CSSCMSDataModelModelsCertStoreTypeSupportedOperations {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetSupportedOperations() ModelsCertStoreTypeSupportedOperations {
 	if o == nil || isNil(o.SupportedOperations) {
-		var ret CSSCMSDataModelModelsCertStoreTypeSupportedOperations
+		var ret ModelsCertStoreTypeSupportedOperations
 		return ret
 	}
 	return *o.SupportedOperations
@@ -331,7 +331,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTyp
 
 // GetSupportedOperationsOk returns a tuple with the SupportedOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetSupportedOperationsOk() (*CSSCMSDataModelModelsCertStoreTypeSupportedOperations, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetSupportedOperationsOk() (*ModelsCertStoreTypeSupportedOperations, bool) {
 	if o == nil || isNil(o.SupportedOperations) {
 		return nil, false
 	}
@@ -347,15 +347,15 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTyp
 	return false
 }
 
-// SetSupportedOperations gets a reference to the given CSSCMSDataModelModelsCertStoreTypeSupportedOperations and assigns it to the SupportedOperations field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetSupportedOperations(v CSSCMSDataModelModelsCertStoreTypeSupportedOperations) {
+// SetSupportedOperations gets a reference to the given ModelsCertStoreTypeSupportedOperations and assigns it to the SupportedOperations field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetSupportedOperations(v ModelsCertStoreTypeSupportedOperations) {
 	o.SupportedOperations = &v
 }
 
 // GetProperties returns the Properties field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetProperties() []CSSCMSDataModelModelsCertificateStoreTypeProperty {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetProperties() []ModelsCertificateStoreTypeProperty {
 	if o == nil {
-		var ret []CSSCMSDataModelModelsCertificateStoreTypeProperty
+		var ret []ModelsCertificateStoreTypeProperty
 		return ret
 	}
 	return o.Properties
@@ -364,7 +364,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTyp
 // GetPropertiesOk returns a tuple with the Properties field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetPropertiesOk() ([]CSSCMSDataModelModelsCertificateStoreTypeProperty, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetPropertiesOk() ([]ModelsCertificateStoreTypeProperty, bool) {
 	if o == nil || isNil(o.Properties) {
 		return nil, false
 	}
@@ -380,15 +380,15 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTyp
 	return false
 }
 
-// SetProperties gets a reference to the given []CSSCMSDataModelModelsCertificateStoreTypeProperty and assigns it to the Properties field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetProperties(v []CSSCMSDataModelModelsCertificateStoreTypeProperty) {
+// SetProperties gets a reference to the given []ModelsCertificateStoreTypeProperty and assigns it to the Properties field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetProperties(v []ModelsCertificateStoreTypeProperty) {
 	o.Properties = v
 }
 
 // GetEntryParameters returns the EntryParameters field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetEntryParameters() []CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetEntryParameters() []ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter {
 	if o == nil {
-		var ret []CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter
+		var ret []ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter
 		return ret
 	}
 	return o.EntryParameters
@@ -397,7 +397,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTyp
 // GetEntryParametersOk returns a tuple with the EntryParameters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetEntryParametersOk() ([]CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetEntryParametersOk() ([]ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter, bool) {
 	if o == nil || isNil(o.EntryParameters) {
 		return nil, false
 	}
@@ -413,15 +413,15 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTyp
 	return false
 }
 
-// SetEntryParameters gets a reference to the given []CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter and assigns it to the EntryParameters field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetEntryParameters(v []CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) {
+// SetEntryParameters gets a reference to the given []ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter and assigns it to the EntryParameters field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetEntryParameters(v []ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) {
 	o.EntryParameters = v
 }
 
 // GetPasswordOptions returns the PasswordOptions field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetPasswordOptions() CSSCMSDataModelModelsCertStoreTypePasswordOptions {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetPasswordOptions() ModelsCertStoreTypePasswordOptions {
 	if o == nil || isNil(o.PasswordOptions) {
-		var ret CSSCMSDataModelModelsCertStoreTypePasswordOptions
+		var ret ModelsCertStoreTypePasswordOptions
 		return ret
 	}
 	return *o.PasswordOptions
@@ -429,7 +429,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTyp
 
 // GetPasswordOptionsOk returns a tuple with the PasswordOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetPasswordOptionsOk() (*CSSCMSDataModelModelsCertStoreTypePasswordOptions, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetPasswordOptionsOk() (*ModelsCertStoreTypePasswordOptions, bool) {
 	if o == nil || isNil(o.PasswordOptions) {
 		return nil, false
 	}
@@ -445,8 +445,8 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTyp
 	return false
 }
 
-// SetPasswordOptions gets a reference to the given CSSCMSDataModelModelsCertStoreTypePasswordOptions and assigns it to the PasswordOptions field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetPasswordOptions(v CSSCMSDataModelModelsCertStoreTypePasswordOptions) {
+// SetPasswordOptions gets a reference to the given ModelsCertStoreTypePasswordOptions and assigns it to the PasswordOptions field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetPasswordOptions(v ModelsCertStoreTypePasswordOptions) {
 	o.PasswordOptions = &v
 }
 
@@ -537,9 +537,9 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTyp
 }
 
 // GetPrivateKeyAllowed returns the PrivateKeyAllowed field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetPrivateKeyAllowed() CSSCMSCoreEnumsCertStorePrivateKey {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetPrivateKeyAllowed() int32 {
 	if o == nil || isNil(o.PrivateKeyAllowed) {
-		var ret CSSCMSCoreEnumsCertStorePrivateKey
+		var ret int32
 		return ret
 	}
 	return *o.PrivateKeyAllowed
@@ -547,7 +547,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTyp
 
 // GetPrivateKeyAllowedOk returns a tuple with the PrivateKeyAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetPrivateKeyAllowedOk() (*CSSCMSCoreEnumsCertStorePrivateKey, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetPrivateKeyAllowedOk() (*int32, bool) {
 	if o == nil || isNil(o.PrivateKeyAllowed) {
 		return nil, false
 	}
@@ -563,8 +563,8 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTyp
 	return false
 }
 
-// SetPrivateKeyAllowed gets a reference to the given CSSCMSCoreEnumsCertStorePrivateKey and assigns it to the PrivateKeyAllowed field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetPrivateKeyAllowed(v CSSCMSCoreEnumsCertStorePrivateKey) {
+// SetPrivateKeyAllowed gets a reference to the given int32 and assigns it to the PrivateKeyAllowed field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetPrivateKeyAllowed(v int32) {
 	o.PrivateKeyAllowed = &v
 }
 
@@ -698,9 +698,9 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTyp
 }
 
 // GetCustomAliasAllowed returns the CustomAliasAllowed field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetCustomAliasAllowed() KeyfactorOrchestratorsCommonEnumsCertStoreCustomAlias {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetCustomAliasAllowed() int32 {
 	if o == nil || isNil(o.CustomAliasAllowed) {
-		var ret KeyfactorOrchestratorsCommonEnumsCertStoreCustomAlias
+		var ret int32
 		return ret
 	}
 	return *o.CustomAliasAllowed
@@ -708,7 +708,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTyp
 
 // GetCustomAliasAllowedOk returns a tuple with the CustomAliasAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetCustomAliasAllowedOk() (*KeyfactorOrchestratorsCommonEnumsCertStoreCustomAlias, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetCustomAliasAllowedOk() (*int32, bool) {
 	if o == nil || isNil(o.CustomAliasAllowed) {
 		return nil, false
 	}
@@ -724,8 +724,8 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTyp
 	return false
 }
 
-// SetCustomAliasAllowed gets a reference to the given KeyfactorOrchestratorsCommonEnumsCertStoreCustomAlias and assigns it to the CustomAliasAllowed field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetCustomAliasAllowed(v KeyfactorOrchestratorsCommonEnumsCertStoreCustomAlias) {
+// SetCustomAliasAllowed gets a reference to the given int32 and assigns it to the CustomAliasAllowed field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetCustomAliasAllowed(v int32) {
 	o.CustomAliasAllowed = &v
 }
 

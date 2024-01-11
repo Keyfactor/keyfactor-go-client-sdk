@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## SSHKeysMyKeyGet
 
-> CSSCMSDataModelModelsSSHKeysKeyResponse SSHKeysMyKeyGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludePrivateKey(includePrivateKey).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ModelsSSHKeysKeyResponse SSHKeysMyKeyGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludePrivateKey(includePrivateKey).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns the current key of the requesting user
 
@@ -44,7 +44,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KeyApi.SSHKeysMyKeyGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHKeysMyKeyGet`: CSSCMSDataModelModelsSSHKeysKeyResponse
+    // response from `SSHKeysMyKeyGet`: ModelsSSHKeysKeyResponse
     fmt.Fprintf(os.Stdout, "Response from `KeyApi.SSHKeysMyKeyGet`: %v\n", resp)
 }
 ```
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHKeysKeyResponse**](CSSCMSDataModelModelsSSHKeysKeyResponse.md)
+[**ModelsSSHKeysKeyResponse**](ModelsSSHKeysKeyResponse.md)
 
 ### Authorization
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## SSHKeysMyKeyPost
 
-> CSSCMSDataModelModelsSSHKeysKeyResponse SSHKeysMyKeyPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHKeysKeyGenerationRequest(cSSCMSDataModelModelsSSHKeysKeyGenerationRequest).Execute()
+> ModelsSSHKeysKeyResponse SSHKeysMyKeyPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHKeysKeyGenerationRequest(modelsSSHKeysKeyGenerationRequest).Execute()
 
 Generates an SSH Key Pair for the requesting user.
 
@@ -105,16 +105,16 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsSSHKeysKeyGenerationRequest := *openapiclient.NewCSSCMSDataModelModelsSSHKeysKeyGenerationRequest("KeyType_example", "PrivateKeyFormat_example", int32(123), "Email_example", "Password_example") // CSSCMSDataModelModelsSSHKeysKeyGenerationRequest | Object containing information about the key to be generated (optional)
+    modelsSSHKeysKeyGenerationRequest := *openapiclient.NewModelsSSHKeysKeyGenerationRequest("KeyType_example", "PrivateKeyFormat_example", int32(123), "Email_example", "Password_example") // ModelsSSHKeysKeyGenerationRequest | Object containing information about the key to be generated (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyApi.SSHKeysMyKeyPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHKeysKeyGenerationRequest(cSSCMSDataModelModelsSSHKeysKeyGenerationRequest).Execute()
+    resp, r, err := apiClient.KeyApi.SSHKeysMyKeyPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHKeysKeyGenerationRequest(modelsSSHKeysKeyGenerationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KeyApi.SSHKeysMyKeyPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHKeysMyKeyPost`: CSSCMSDataModelModelsSSHKeysKeyResponse
+    // response from `SSHKeysMyKeyPost`: ModelsSSHKeysKeyResponse
     fmt.Fprintf(os.Stdout, "Response from `KeyApi.SSHKeysMyKeyPost`: %v\n", resp)
 }
 ```
@@ -132,11 +132,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsSSHKeysKeyGenerationRequest** | [**CSSCMSDataModelModelsSSHKeysKeyGenerationRequest**](CSSCMSDataModelModelsSSHKeysKeyGenerationRequest.md) | Object containing information about the key to be generated | 
+ **modelsSSHKeysKeyGenerationRequest** | [**ModelsSSHKeysKeyGenerationRequest**](ModelsSSHKeysKeyGenerationRequest.md) | Object containing information about the key to be generated | 
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHKeysKeyResponse**](CSSCMSDataModelModelsSSHKeysKeyResponse.md)
+[**ModelsSSHKeysKeyResponse**](ModelsSSHKeysKeyResponse.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ## SSHKeysMyKeyPut
 
-> CSSCMSDataModelModelsSSHKeysKeyResponse SSHKeysMyKeyPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHKeysKeyUpdateRequest(cSSCMSDataModelModelsSSHKeysKeyUpdateRequest).Execute()
+> ModelsSSHKeysKeyResponse SSHKeysMyKeyPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHKeysKeyUpdateRequest(modelsSSHKeysKeyUpdateRequest).Execute()
 
 Updates the requesting user's SSH key
 
@@ -173,16 +173,16 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsSSHKeysKeyUpdateRequest := *openapiclient.NewCSSCMSDataModelModelsSSHKeysKeyUpdateRequest(int32(123), "Email_example") // CSSCMSDataModelModelsSSHKeysKeyUpdateRequest | Updated state of the SSH key (optional)
+    modelsSSHKeysKeyUpdateRequest := *openapiclient.NewModelsSSHKeysKeyUpdateRequest(int32(123), "Email_example") // ModelsSSHKeysKeyUpdateRequest | Updated state of the SSH key (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyApi.SSHKeysMyKeyPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHKeysKeyUpdateRequest(cSSCMSDataModelModelsSSHKeysKeyUpdateRequest).Execute()
+    resp, r, err := apiClient.KeyApi.SSHKeysMyKeyPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHKeysKeyUpdateRequest(modelsSSHKeysKeyUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KeyApi.SSHKeysMyKeyPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHKeysMyKeyPut`: CSSCMSDataModelModelsSSHKeysKeyResponse
+    // response from `SSHKeysMyKeyPut`: ModelsSSHKeysKeyResponse
     fmt.Fprintf(os.Stdout, "Response from `KeyApi.SSHKeysMyKeyPut`: %v\n", resp)
 }
 ```
@@ -200,11 +200,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsSSHKeysKeyUpdateRequest** | [**CSSCMSDataModelModelsSSHKeysKeyUpdateRequest**](CSSCMSDataModelModelsSSHKeysKeyUpdateRequest.md) | Updated state of the SSH key | 
+ **modelsSSHKeysKeyUpdateRequest** | [**ModelsSSHKeysKeyUpdateRequest**](ModelsSSHKeysKeyUpdateRequest.md) | Updated state of the SSH key | 
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHKeysKeyResponse**](CSSCMSDataModelModelsSSHKeysKeyResponse.md)
+[**ModelsSSHKeysKeyResponse**](ModelsSSHKeysKeyResponse.md)
 
 ### Authorization
 
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 
 ## SSHKeysUnmanagedGet
 
-> []CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse SSHKeysUnmanagedGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsSSHKeysUnmanagedKeyResponse SSHKeysUnmanagedGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns Unmanaged SSH keys
 
@@ -310,7 +310,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -320,7 +320,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KeyApi.SSHKeysUnmanagedGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHKeysUnmanagedGet`: []CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse
+    // response from `SSHKeysUnmanagedGet`: []ModelsSSHKeysUnmanagedKeyResponse
     fmt.Fprintf(os.Stdout, "Response from `KeyApi.SSHKeysUnmanagedGet`: %v\n", resp)
 }
 ```
@@ -341,12 +341,12 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse**](CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse.md)
+[**[]ModelsSSHKeysUnmanagedKeyResponse**](ModelsSSHKeysUnmanagedKeyResponse.md)
 
 ### Authorization
 
@@ -434,7 +434,7 @@ Name | Type | Description  | Notes
 
 ## SSHKeysUnmanagedIdGet
 
-> CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse SSHKeysUnmanagedIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ModelsSSHKeysUnmanagedKeyResponse SSHKeysUnmanagedIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns an unmanaged SSH key with provided id.
 
@@ -462,7 +462,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KeyApi.SSHKeysUnmanagedIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHKeysUnmanagedIdGet`: CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse
+    // response from `SSHKeysUnmanagedIdGet`: ModelsSSHKeysUnmanagedKeyResponse
     fmt.Fprintf(os.Stdout, "Response from `KeyApi.SSHKeysUnmanagedIdGet`: %v\n", resp)
 }
 ```
@@ -488,7 +488,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse**](CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse.md)
+[**ModelsSSHKeysUnmanagedKeyResponse**](ModelsSSHKeysUnmanagedKeyResponse.md)
 
 ### Authorization
 

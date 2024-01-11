@@ -34,11 +34,11 @@ import (
 type CSRGenerationApiService service
 
 type ApiCSRGenerationGeneratePostRequest struct {
-	ctx                                                 context.Context
-	ApiService                                          *CSRGenerationApiService
-	xKeyfactorRequestedWith                             *string
-	xKeyfactorApiVersion                                *string
-	cSSCMSDataModelModelsEnrollmentCSRGenerationRequest *CSSCMSDataModelModelsEnrollmentCSRGenerationRequest
+	ctx                                  context.Context
+	ApiService                           *CSRGenerationApiService
+	xKeyfactorRequestedWith              *string
+	xKeyfactorApiVersion                 *string
+	modelsEnrollmentCSRGenerationRequest *ModelsEnrollmentCSRGenerationRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -54,12 +54,12 @@ func (r ApiCSRGenerationGeneratePostRequest) XKeyfactorApiVersion(xKeyfactorApiV
 }
 
 // CSR properties used to define the request - Key type [RSA, ECC], Key sizes (ex: RSA 1024, 2048, 4096/ECC 256, 384, 521), template short name or OID
-func (r ApiCSRGenerationGeneratePostRequest) CSSCMSDataModelModelsEnrollmentCSRGenerationRequest(cSSCMSDataModelModelsEnrollmentCSRGenerationRequest CSSCMSDataModelModelsEnrollmentCSRGenerationRequest) ApiCSRGenerationGeneratePostRequest {
-	r.cSSCMSDataModelModelsEnrollmentCSRGenerationRequest = &cSSCMSDataModelModelsEnrollmentCSRGenerationRequest
+func (r ApiCSRGenerationGeneratePostRequest) ModelsEnrollmentCSRGenerationRequest(modelsEnrollmentCSRGenerationRequest ModelsEnrollmentCSRGenerationRequest) ApiCSRGenerationGeneratePostRequest {
+	r.modelsEnrollmentCSRGenerationRequest = &modelsEnrollmentCSRGenerationRequest
 	return r
 }
 
-func (r ApiCSRGenerationGeneratePostRequest) Execute() (*CSSCMSDataModelModelsCSRContents, *http.Response, error) {
+func (r ApiCSRGenerationGeneratePostRequest) Execute() (*ModelsCSRContents, *http.Response, error) {
 	return r.ApiService.CSRGenerationGeneratePostExecute(r)
 }
 
@@ -83,13 +83,13 @@ func (a *CSRGenerationApiService) CSRGenerationGeneratePost(ctx context.Context)
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsCSRContents
-func (a *CSRGenerationApiService) CSRGenerationGeneratePostExecute(r ApiCSRGenerationGeneratePostRequest) (*CSSCMSDataModelModelsCSRContents, *http.Response, error) {
+//	@return ModelsCSRContents
+func (a *CSRGenerationApiService) CSRGenerationGeneratePostExecute(r ApiCSRGenerationGeneratePostRequest) (*ModelsCSRContents, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsCSRContents
+		localVarReturnValue *ModelsCSRContents
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -128,7 +128,7 @@ func (a *CSRGenerationApiService) CSRGenerationGeneratePostExecute(r ApiCSRGener
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsEnrollmentCSRGenerationRequest
+	localVarPostBody = r.modelsEnrollmentCSRGenerationRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -295,7 +295,7 @@ type ApiCSRGenerationPendingGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -325,7 +325,7 @@ func (r ApiCSRGenerationPendingGetRequest) SortField(sortField string) ApiCSRGen
 	return r
 }
 
-func (r ApiCSRGenerationPendingGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiCSRGenerationPendingGetRequest {
+func (r ApiCSRGenerationPendingGetRequest) SortAscending(sortAscending int32) ApiCSRGenerationPendingGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -336,7 +336,7 @@ func (r ApiCSRGenerationPendingGetRequest) XKeyfactorApiVersion(xKeyfactorApiVer
 	return r
 }
 
-func (r ApiCSRGenerationPendingGetRequest) Execute() ([]CSSCMSDataModelModelsPendingCSRResponse, *http.Response, error) {
+func (r ApiCSRGenerationPendingGetRequest) Execute() ([]ModelsPendingCSRResponse, *http.Response, error) {
 	return r.ApiService.CSRGenerationPendingGetExecute(r)
 }
 
@@ -360,13 +360,13 @@ func (a *CSRGenerationApiService) CSRGenerationPendingGet(ctx context.Context) A
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsPendingCSRResponse
-func (a *CSRGenerationApiService) CSRGenerationPendingGetExecute(r ApiCSRGenerationPendingGetRequest) ([]CSSCMSDataModelModelsPendingCSRResponse, *http.Response, error) {
+//	@return []ModelsPendingCSRResponse
+func (a *CSRGenerationApiService) CSRGenerationPendingGetExecute(r ApiCSRGenerationPendingGetRequest) ([]ModelsPendingCSRResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsPendingCSRResponse
+		localVarReturnValue []ModelsPendingCSRResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -598,7 +598,7 @@ func (r ApiCSRGenerationPendingIdGetRequest) XKeyfactorApiVersion(xKeyfactorApiV
 	return r
 }
 
-func (r ApiCSRGenerationPendingIdGetRequest) Execute() (*CSSCMSDataModelModelsCSRGenerationResponseModel, *http.Response, error) {
+func (r ApiCSRGenerationPendingIdGetRequest) Execute() (*ModelsCSRGenerationResponseModel, *http.Response, error) {
 	return r.ApiService.CSRGenerationPendingIdGetExecute(r)
 }
 
@@ -624,13 +624,13 @@ func (a *CSRGenerationApiService) CSRGenerationPendingIdGet(ctx context.Context,
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsCSRGenerationResponseModel
-func (a *CSRGenerationApiService) CSRGenerationPendingIdGetExecute(r ApiCSRGenerationPendingIdGetRequest) (*CSSCMSDataModelModelsCSRGenerationResponseModel, *http.Response, error) {
+//	@return ModelsCSRGenerationResponseModel
+func (a *CSRGenerationApiService) CSRGenerationPendingIdGetExecute(r ApiCSRGenerationPendingIdGetRequest) (*ModelsCSRGenerationResponseModel, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsCSRGenerationResponseModel
+		localVarReturnValue *ModelsCSRGenerationResponseModel
 	)
 
 	apiBasePath := a.client.cfg.APIPath

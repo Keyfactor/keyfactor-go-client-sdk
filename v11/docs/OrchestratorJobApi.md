@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## OrchestratorJobsCustomBulkPost
 
-> KeyfactorWebKeyfactorApiModelsOrchestratorJobsBulkJobResponse OrchestratorJobsCustomBulkPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest(cSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest).Execute()
+> KeyfactorWebKeyfactorApiModelsOrchestratorJobsBulkJobResponse OrchestratorJobsCustomBulkPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsOrchestratorJobsScheduleBulkJobRequest(modelsOrchestratorJobsScheduleBulkJobRequest).Execute()
 
 Schedules the same job for a custom JobType on the specified agents using the provided information
 
@@ -102,11 +102,11 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest := *openapiclient.NewCSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest([]string{"OrchestratorIds_example"}, "JobTypeName_example") // CSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest | Information to use to schedule the jobs, including the type of custom job, agents to use, and job-specific parameters. (optional)
+    modelsOrchestratorJobsScheduleBulkJobRequest := *openapiclient.NewModelsOrchestratorJobsScheduleBulkJobRequest([]string{"OrchestratorIds_example"}, "JobTypeName_example") // ModelsOrchestratorJobsScheduleBulkJobRequest | Information to use to schedule the jobs, including the type of custom job, agents to use, and job-specific parameters. (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrchestratorJobApi.OrchestratorJobsCustomBulkPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest(cSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest).Execute()
+    resp, r, err := apiClient.OrchestratorJobApi.OrchestratorJobsCustomBulkPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsOrchestratorJobsScheduleBulkJobRequest(modelsOrchestratorJobsScheduleBulkJobRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrchestratorJobApi.OrchestratorJobsCustomBulkPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest** | [**CSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest**](CSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest.md) | Information to use to schedule the jobs, including the type of custom job, agents to use, and job-specific parameters. | 
+ **modelsOrchestratorJobsScheduleBulkJobRequest** | [**ModelsOrchestratorJobsScheduleBulkJobRequest**](ModelsOrchestratorJobsScheduleBulkJobRequest.md) | Information to use to schedule the jobs, including the type of custom job, agents to use, and job-specific parameters. | 
 
 ### Return type
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## OrchestratorJobsCustomPost
 
-> KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobResponse OrchestratorJobsCustomPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest(cSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest).Execute()
+> KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobResponse OrchestratorJobsCustomPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsOrchestratorJobsScheduleJobRequest(modelsOrchestratorJobsScheduleJobRequest).Execute()
 
 Schedules a job for a custom JobType on the agent using the provided information
 
@@ -170,11 +170,11 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest := *openapiclient.NewCSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest("AgentId_example", "JobTypeName_example") // CSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest | Information to use to schedule the job, including the type of custom job, agent to use, and job-specific parameters. (optional)
+    modelsOrchestratorJobsScheduleJobRequest := *openapiclient.NewModelsOrchestratorJobsScheduleJobRequest("AgentId_example", "JobTypeName_example") // ModelsOrchestratorJobsScheduleJobRequest | Information to use to schedule the job, including the type of custom job, agent to use, and job-specific parameters. (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrchestratorJobApi.OrchestratorJobsCustomPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest(cSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest).Execute()
+    resp, r, err := apiClient.OrchestratorJobApi.OrchestratorJobsCustomPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsOrchestratorJobsScheduleJobRequest(modelsOrchestratorJobsScheduleJobRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrchestratorJobApi.OrchestratorJobsCustomPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest** | [**CSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest**](CSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest.md) | Information to use to schedule the job, including the type of custom job, agent to use, and job-specific parameters. | 
+ **modelsOrchestratorJobsScheduleJobRequest** | [**ModelsOrchestratorJobsScheduleJobRequest**](ModelsOrchestratorJobsScheduleJobRequest.md) | Information to use to schedule the job, including the type of custom job, agent to use, and job-specific parameters. | 
 
 ### Return type
 
@@ -241,7 +241,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
@@ -429,7 +429,7 @@ Name | Type | Description  | Notes
 
 ## OrchestratorJobsScheduledJobsGet
 
-> []CSSCMSDataModelModelsOrchestratorJobsJob OrchestratorJobsScheduledJobsGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsOrchestratorJobsJob OrchestratorJobsScheduledJobsGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all scheduled orchestrator jobs according to the provided filter and output parameters
 
@@ -451,7 +451,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -461,7 +461,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrchestratorJobApi.OrchestratorJobsScheduledJobsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `OrchestratorJobsScheduledJobsGet`: []CSSCMSDataModelModelsOrchestratorJobsJob
+    // response from `OrchestratorJobsScheduledJobsGet`: []ModelsOrchestratorJobsJob
     fmt.Fprintf(os.Stdout, "Response from `OrchestratorJobApi.OrchestratorJobsScheduledJobsGet`: %v\n", resp)
 }
 ```
@@ -482,12 +482,12 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsOrchestratorJobsJob**](CSSCMSDataModelModelsOrchestratorJobsJob.md)
+[**[]ModelsOrchestratorJobsJob**](ModelsOrchestratorJobsJob.md)
 
 ### Authorization
 

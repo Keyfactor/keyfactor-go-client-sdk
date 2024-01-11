@@ -41,7 +41,7 @@ type ApiSecurityClaimsGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -71,7 +71,7 @@ func (r ApiSecurityClaimsGetRequest) SortField(sortField string) ApiSecurityClai
 	return r
 }
 
-func (r ApiSecurityClaimsGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiSecurityClaimsGetRequest {
+func (r ApiSecurityClaimsGetRequest) SortAscending(sortAscending int32) ApiSecurityClaimsGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -715,14 +715,14 @@ func (a *SecurityClaimsApiService) SecurityClaimsPutExecute(r ApiSecurityClaimsP
 type ApiSecurityClaimsRolesGetRequest struct {
 	ctx                          context.Context
 	ApiService                   *SecurityClaimsApiService
-	claimType                    *CSSCMSCoreEnumsClaimType
+	claimType                    *int32
 	claimValue                   *string
 	providerAuthenticationScheme *string
 	xKeyfactorRequestedWith      *string
 	xKeyfactorApiVersion         *string
 }
 
-func (r ApiSecurityClaimsRolesGetRequest) ClaimType(claimType CSSCMSCoreEnumsClaimType) ApiSecurityClaimsRolesGetRequest {
+func (r ApiSecurityClaimsRolesGetRequest) ClaimType(claimType int32) ApiSecurityClaimsRolesGetRequest {
 	r.claimType = &claimType
 	return r
 }

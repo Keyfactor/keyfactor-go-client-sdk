@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **UniqueClaimType** | Pointer to **NullableString** |  | [optional] 
 **FallbackUniqueClaimType** | Pointer to **NullableString** |  | [optional] 
 **ClientId** | Pointer to **NullableString** |  | [optional] 
-**ClientSecret** | Pointer to [**CSSCMSDataModelModelsKeyfactorAPISecret**](CSSCMSDataModelModelsKeyfactorAPISecret.md) |  | [optional] 
+**ClientSecret** | Pointer to [**ModelsKeyfactorAPISecret**](ModelsKeyfactorAPISecret.md) |  | [optional] 
 **Timeout** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
@@ -244,20 +244,20 @@ HasClientId returns a boolean if a field has been set.
 UnsetClientId ensures that no value is present for ClientId, not even an explicit nil
 ### GetClientSecret
 
-`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderIdentityProviderParameterUpdateRequest) GetClientSecret() CSSCMSDataModelModelsKeyfactorAPISecret`
+`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderIdentityProviderParameterUpdateRequest) GetClientSecret() ModelsKeyfactorAPISecret`
 
 GetClientSecret returns the ClientSecret field if non-nil, zero value otherwise.
 
 ### GetClientSecretOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderIdentityProviderParameterUpdateRequest) GetClientSecretOk() (*CSSCMSDataModelModelsKeyfactorAPISecret, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderIdentityProviderParameterUpdateRequest) GetClientSecretOk() (*ModelsKeyfactorAPISecret, bool)`
 
 GetClientSecretOk returns a tuple with the ClientSecret field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClientSecret
 
-`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderIdentityProviderParameterUpdateRequest) SetClientSecret(v CSSCMSDataModelModelsKeyfactorAPISecret)`
+`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderIdentityProviderParameterUpdateRequest) SetClientSecret(v ModelsKeyfactorAPISecret)`
 
 SetClientSecret sets ClientSecret field to given value.
 

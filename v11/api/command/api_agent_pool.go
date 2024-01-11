@@ -41,7 +41,7 @@ type ApiAgentPoolsAgentsGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -76,7 +76,7 @@ func (r ApiAgentPoolsAgentsGetRequest) SortField(sortField string) ApiAgentPools
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiAgentPoolsAgentsGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiAgentPoolsAgentsGetRequest {
+func (r ApiAgentPoolsAgentsGetRequest) SortAscending(sortAscending int32) ApiAgentPoolsAgentsGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -215,7 +215,7 @@ type ApiAgentPoolsGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -250,7 +250,7 @@ func (r ApiAgentPoolsGetRequest) SortField(sortField string) ApiAgentPoolsGetReq
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiAgentPoolsGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiAgentPoolsGetRequest {
+func (r ApiAgentPoolsGetRequest) SortAscending(sortAscending int32) ApiAgentPoolsGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }

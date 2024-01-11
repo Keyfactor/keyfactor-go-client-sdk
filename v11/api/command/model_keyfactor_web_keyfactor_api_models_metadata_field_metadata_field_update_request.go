@@ -30,16 +30,16 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataField
 
 // KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest struct for KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest
 type KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest struct {
-	Id           int32                                  `json:"id"`
-	Name         string                                 `json:"name"`
-	Description  string                                 `json:"description"`
-	DataType     CSSCMSCoreEnumsMetadataDataType        `json:"dataType"`
-	Hint         NullableString                         `json:"hint,omitempty"`
-	Validation   NullableString                         `json:"validation,omitempty"`
-	Enrollment   *CSSCMSCoreEnumsMetadataTypeEnrollment `json:"enrollment,omitempty"`
-	Message      NullableString                         `json:"message,omitempty"`
-	Options      NullableString                         `json:"options,omitempty"`
-	DefaultValue NullableString                         `json:"defaultValue,omitempty"`
+	Id           int32          `json:"id"`
+	Name         string         `json:"name"`
+	Description  string         `json:"description"`
+	DataType     int32          `json:"dataType"`
+	Hint         NullableString `json:"hint,omitempty"`
+	Validation   NullableString `json:"validation,omitempty"`
+	Enrollment   *int32         `json:"enrollment,omitempty"`
+	Message      NullableString `json:"message,omitempty"`
+	Options      NullableString `json:"options,omitempty"`
+	DefaultValue NullableString `json:"defaultValue,omitempty"`
 	// Deprecated
 	AllowAPI *bool `json:"allowAPI,omitempty"`
 	// Deprecated
@@ -51,7 +51,7 @@ type KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest struc
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest(id int32, name string, description string, dataType CSSCMSCoreEnumsMetadataDataType, displayOrder int32) *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest {
+func NewKeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest(id int32, name string, description string, dataType int32, displayOrder int32) *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest {
 	this := KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest{}
 	this.Id = id
 	this.Name = name
@@ -142,9 +142,9 @@ func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) 
 }
 
 // GetDataType returns the DataType field value
-func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetDataType() CSSCMSCoreEnumsMetadataDataType {
+func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetDataType() int32 {
 	if o == nil {
-		var ret CSSCMSCoreEnumsMetadataDataType
+		var ret int32
 		return ret
 	}
 
@@ -153,7 +153,7 @@ func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) 
 
 // GetDataTypeOk returns a tuple with the DataType field value
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetDataTypeOk() (*CSSCMSCoreEnumsMetadataDataType, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetDataTypeOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -161,7 +161,7 @@ func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) 
 }
 
 // SetDataType sets field value
-func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) SetDataType(v CSSCMSCoreEnumsMetadataDataType) {
+func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) SetDataType(v int32) {
 	o.DataType = v
 }
 
@@ -252,9 +252,9 @@ func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) 
 }
 
 // GetEnrollment returns the Enrollment field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetEnrollment() CSSCMSCoreEnumsMetadataTypeEnrollment {
+func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetEnrollment() int32 {
 	if o == nil || isNil(o.Enrollment) {
-		var ret CSSCMSCoreEnumsMetadataTypeEnrollment
+		var ret int32
 		return ret
 	}
 	return *o.Enrollment
@@ -262,7 +262,7 @@ func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) 
 
 // GetEnrollmentOk returns a tuple with the Enrollment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetEnrollmentOk() (*CSSCMSCoreEnumsMetadataTypeEnrollment, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetEnrollmentOk() (*int32, bool) {
 	if o == nil || isNil(o.Enrollment) {
 		return nil, false
 	}
@@ -278,8 +278,8 @@ func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) 
 	return false
 }
 
-// SetEnrollment gets a reference to the given CSSCMSCoreEnumsMetadataTypeEnrollment and assigns it to the Enrollment field.
-func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) SetEnrollment(v CSSCMSCoreEnumsMetadataTypeEnrollment) {
+// SetEnrollment gets a reference to the given int32 and assigns it to the Enrollment field.
+func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) SetEnrollment(v int32) {
 	o.Enrollment = &v
 }
 

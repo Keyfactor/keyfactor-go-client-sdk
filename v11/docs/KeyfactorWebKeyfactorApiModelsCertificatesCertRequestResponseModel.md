@@ -12,13 +12,13 @@ Name | Type | Description | Notes
 **CertificateAuthority** | Pointer to **NullableString** |  | [optional] 
 **Template** | Pointer to **NullableString** |  | [optional] 
 **Requester** | Pointer to **NullableString** |  | [optional] 
-**State** | Pointer to [**KeyfactorPKIEnumsCertificateState**](KeyfactorPKIEnumsCertificateState.md) |  | [optional] 
+**State** | Pointer to **int32** |  | [optional] 
 **StateString** | Pointer to **NullableString** |  | [optional] [readonly] 
 **Metadata** | Pointer to **map[string]string** |  | [optional] 
 **DenialComment** | Pointer to **NullableString** |  | [optional] 
 **KeyLength** | Pointer to **NullableString** |  | [optional] 
 **SaNs** | Pointer to **[]string** |  | [optional] 
-**CertStores** | Pointer to [**[]CSSCMSDataModelModelsWorkflowCertificateRequestCertStoreModel**](CSSCMSDataModelModelsWorkflowCertificateRequestCertStoreModel.md) |  | [optional] 
+**CertStores** | Pointer to [**[]ModelsWorkflowCertificateRequestCertStoreModel**](ModelsWorkflowCertificateRequestCertStoreModel.md) |  | [optional] 
 **Curve** | Pointer to **NullableString** |  | [optional] 
 **SubjectAltNames** | Pointer to [**[]KeyfactorWebKeyfactorApiModelsCertificatesSubjectAlternativeName**](KeyfactorWebKeyfactorApiModelsCertificatesSubjectAlternativeName.md) |  | [optional] 
 
@@ -313,20 +313,20 @@ HasRequester returns a boolean if a field has been set.
 UnsetRequester ensures that no value is present for Requester, not even an explicit nil
 ### GetState
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) GetState() KeyfactorPKIEnumsCertificateState`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) GetState() int32`
 
 GetState returns the State field if non-nil, zero value otherwise.
 
 ### GetStateOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) GetStateOk() (*KeyfactorPKIEnumsCertificateState, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) GetStateOk() (*int32, bool)`
 
 GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetState
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) SetState(v KeyfactorPKIEnumsCertificateState)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) SetState(v int32)`
 
 SetState sets State field to given value.
 
@@ -513,20 +513,20 @@ HasSaNs returns a boolean if a field has been set.
 UnsetSaNs ensures that no value is present for SaNs, not even an explicit nil
 ### GetCertStores
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) GetCertStores() []CSSCMSDataModelModelsWorkflowCertificateRequestCertStoreModel`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) GetCertStores() []ModelsWorkflowCertificateRequestCertStoreModel`
 
 GetCertStores returns the CertStores field if non-nil, zero value otherwise.
 
 ### GetCertStoresOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) GetCertStoresOk() (*[]CSSCMSDataModelModelsWorkflowCertificateRequestCertStoreModel, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) GetCertStoresOk() (*[]ModelsWorkflowCertificateRequestCertStoreModel, bool)`
 
 GetCertStoresOk returns a tuple with the CertStores field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertStores
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) SetCertStores(v []CSSCMSDataModelModelsWorkflowCertificateRequestCertStoreModel)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) SetCertStores(v []ModelsWorkflowCertificateRequestCertStoreModel)`
 
 SetCertStores sets CertStores field to given value.
 

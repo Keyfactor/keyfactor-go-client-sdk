@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 ## CertificatesAnalyzePost
 
-> []CSSCMSDataModelModelsCertificateDetails CertificatesAnalyzePost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsCertificatesAnalyzeCertificateRequest(keyfactorWebKeyfactorApiModelsCertificatesAnalyzeCertificateRequest).Execute()
+> []ModelsCertificateDetails CertificatesAnalyzePost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsCertificatesAnalyzeCertificateRequest(keyfactorWebKeyfactorApiModelsCertificatesAnalyzeCertificateRequest).Execute()
 
 Returns the public information of the certificate
 
@@ -58,7 +58,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesAnalyzePost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificatesAnalyzePost`: []CSSCMSDataModelModelsCertificateDetails
+    // response from `CertificatesAnalyzePost`: []ModelsCertificateDetails
     fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesAnalyzePost`: %v\n", resp)
 }
 ```
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsCertificateDetails**](CSSCMSDataModelModelsCertificateDetails.md)
+[**[]ModelsCertificateDetails**](ModelsCertificateDetails.md)
 
 ### Authorization
 
@@ -117,7 +117,7 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     sortName := "sortName_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    sortOrder := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder | Field sort direction [0=ascending, 1=descending] (optional)
+    sortOrder := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
     query := "query_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificat (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **sortName** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **sortOrder** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **sortOrder** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
  **query** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
  **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificat | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 ## CertificatesDownloadPost
 
-> CSSCMSDataModelModelsCertificateDownloadResponse CertificatesDownloadPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsCertificatesCertificateDownloadRequest(keyfactorWebKeyfactorApiModelsCertificatesCertificateDownloadRequest).Execute()
+> ModelsCertificateDownloadResponse CertificatesDownloadPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsCertificatesCertificateDownloadRequest(keyfactorWebKeyfactorApiModelsCertificatesCertificateDownloadRequest).Execute()
 
 Downloads the persisted certificate associated with the provided query
 
@@ -273,7 +273,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesDownloadPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificatesDownloadPost`: CSSCMSDataModelModelsCertificateDownloadResponse
+    // response from `CertificatesDownloadPost`: ModelsCertificateDownloadResponse
     fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesDownloadPost`: %v\n", resp)
 }
 ```
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsCertificateDownloadResponse**](CSSCMSDataModelModelsCertificateDownloadResponse.md)
+[**ModelsCertificateDownloadResponse**](ModelsCertificateDownloadResponse.md)
 
 ### Authorization
 
@@ -314,7 +314,7 @@ Name | Type | Description  | Notes
 
 ## CertificatesGet
 
-> []CSSCMSDataModelModelsCertificateRetrievalResponse CertificatesGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludeRevoked(includeRevoked).IncludeExpired(includeExpired).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).CollectionId(collectionId).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).IncludeHasPrivateKey(includeHasPrivateKey).Verbose(verbose).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsCertificateRetrievalResponse CertificatesGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludeRevoked(includeRevoked).IncludeExpired(includeExpired).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).CollectionId(collectionId).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).IncludeHasPrivateKey(includeHasPrivateKey).Verbose(verbose).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all certificates according to the provided filter and output parameters
 
@@ -338,7 +338,7 @@ func main() {
     pageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
     returnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
     sortField := "sortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder | Field sort direction [0=ascending, 1=descending] (optional)
+    sortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
     includeLocations := true // bool | Include locations data for the certificates to be returned (optional) (default to false)
     includeMetadata := true // bool | Include metadata for the certificates to be returned (optional) (default to false)
@@ -353,7 +353,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificatesGet`: []CSSCMSDataModelModelsCertificateRetrievalResponse
+    // response from `CertificatesGet`: []ModelsCertificateRetrievalResponse
     fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesGet`: %v\n", resp)
 }
 ```
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** | The current page within the result set to be returned | 
  **returnLimit** | **int32** | Maximum number of records to be returned in a single call | 
  **sortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **sortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
  **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | [default to 0]
  **includeLocations** | **bool** | Include locations data for the certificates to be returned | [default to false]
  **includeMetadata** | **bool** | Include metadata for the certificates to be returned | [default to false]
@@ -386,7 +386,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsCertificateRetrievalResponse**](CSSCMSDataModelModelsCertificateRetrievalResponse.md)
+[**[]ModelsCertificateRetrievalResponse**](ModelsCertificateRetrievalResponse.md)
 
 ### Authorization
 
@@ -476,7 +476,7 @@ Name | Type | Description  | Notes
 
 ## CertificatesIdGet
 
-> CSSCMSDataModelModelsCertificateRetrievalResponse CertificatesIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).CollectionId(collectionId).Verbose(verbose).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ModelsCertificateRetrievalResponse CertificatesIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).CollectionId(collectionId).Verbose(verbose).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a single certificate that matches the id
 
@@ -508,7 +508,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificatesIdGet`: CSSCMSDataModelModelsCertificateRetrievalResponse
+    // response from `CertificatesIdGet`: ModelsCertificateRetrievalResponse
     fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesIdGet`: %v\n", resp)
 }
 ```
@@ -538,7 +538,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsCertificateRetrievalResponse**](CSSCMSDataModelModelsCertificateRetrievalResponse.md)
+[**ModelsCertificateRetrievalResponse**](ModelsCertificateRetrievalResponse.md)
 
 ### Authorization
 
@@ -578,7 +578,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     collectionId := int32(56) // int32 | The collection the certificate could be in.  Defaults to no collection. (optional) (default to 0)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
@@ -614,7 +614,7 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **collectionId** | **int32** | The collection the certificate could be in.  Defaults to no collection. | [default to 0]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
@@ -638,7 +638,7 @@ Name | Type | Description  | Notes
 
 ## CertificatesIdSecurityGet
 
-> CSSCMSDataModelModelsSecurityCertificatePermissions CertificatesIdSecurityGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ModelsSecurityCertificatePermissions CertificatesIdSecurityGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets the list of Security Identities and which permissions they have on the given certificate.
 
@@ -667,7 +667,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesIdSecurityGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificatesIdSecurityGet`: CSSCMSDataModelModelsSecurityCertificatePermissions
+    // response from `CertificatesIdSecurityGet`: ModelsSecurityCertificatePermissions
     fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesIdSecurityGet`: %v\n", resp)
 }
 ```
@@ -694,7 +694,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsSecurityCertificatePermissions**](CSSCMSDataModelModelsSecurityCertificatePermissions.md)
+[**ModelsSecurityCertificatePermissions**](ModelsSecurityCertificatePermissions.md)
 
 ### Authorization
 
@@ -712,7 +712,7 @@ Name | Type | Description  | Notes
 
 ## CertificatesIdValidateGet
 
-> CSSCMSDataModelModelsCertificateValidationResponse CertificatesIdValidateGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ModelsCertificateValidationResponse CertificatesIdValidateGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Validates the certificate chain can be built.
 
@@ -741,7 +741,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesIdValidateGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificatesIdValidateGet`: CSSCMSDataModelModelsCertificateValidationResponse
+    // response from `CertificatesIdValidateGet`: ModelsCertificateValidationResponse
     fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesIdValidateGet`: %v\n", resp)
 }
 ```
@@ -768,7 +768,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsCertificateValidationResponse**](CSSCMSDataModelModelsCertificateValidationResponse.md)
+[**ModelsCertificateValidationResponse**](ModelsCertificateValidationResponse.md)
 
 ### Authorization
 
@@ -860,7 +860,7 @@ Name | Type | Description  | Notes
 
 ## CertificatesImportPost
 
-> CSSCMSDataModelModelsCertificateImportResponseModel CertificatesImportPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateImportRequestModel(cSSCMSDataModelModelsCertificateImportRequestModel).Execute()
+> ModelsCertificateImportResponseModel CertificatesImportPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsCertificateImportRequestModel(modelsCertificateImportRequestModel).Execute()
 
 Imports the provided certificate into the Keyfactor instance, including any provided associated data
 
@@ -879,16 +879,16 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsCertificateImportRequestModel := *openapiclient.NewCSSCMSDataModelModelsCertificateImportRequestModel("Certificate_example") // CSSCMSDataModelModelsCertificateImportRequestModel | Request containing the base 64 encoded string and related certificate information, such as certificate stores, metadata, and password (optional)
+    modelsCertificateImportRequestModel := *openapiclient.NewModelsCertificateImportRequestModel("Certificate_example") // ModelsCertificateImportRequestModel | Request containing the base 64 encoded string and related certificate information, such as certificate stores, metadata, and password (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificatesImportPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateImportRequestModel(cSSCMSDataModelModelsCertificateImportRequestModel).Execute()
+    resp, r, err := apiClient.CertificateApi.CertificatesImportPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsCertificateImportRequestModel(modelsCertificateImportRequestModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesImportPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificatesImportPost`: CSSCMSDataModelModelsCertificateImportResponseModel
+    // response from `CertificatesImportPost`: ModelsCertificateImportResponseModel
     fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesImportPost`: %v\n", resp)
 }
 ```
@@ -906,11 +906,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsCertificateImportRequestModel** | [**CSSCMSDataModelModelsCertificateImportRequestModel**](CSSCMSDataModelModelsCertificateImportRequestModel.md) | Request containing the base 64 encoded string and related certificate information, such as certificate stores, metadata, and password | 
+ **modelsCertificateImportRequestModel** | [**ModelsCertificateImportRequestModel**](ModelsCertificateImportRequestModel.md) | Request containing the base 64 encoded string and related certificate information, such as certificate stores, metadata, and password | 
 
 ### Return type
 
-[**CSSCMSDataModelModelsCertificateImportResponseModel**](CSSCMSDataModelModelsCertificateImportResponseModel.md)
+[**ModelsCertificateImportResponseModel**](ModelsCertificateImportResponseModel.md)
 
 ### Authorization
 
@@ -1002,7 +1002,7 @@ Name | Type | Description  | Notes
 
 ## CertificatesMetadataAllPut
 
-> CertificatesMetadataAllPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMetadataAllUpdateRequest(cSSCMSDataModelModelsMetadataAllUpdateRequest).Execute()
+> CertificatesMetadataAllPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsMetadataAllUpdateRequest(modelsMetadataAllUpdateRequest).Execute()
 
 Updates the metadata for certificates associated with the certificate identifiers or query provided
 
@@ -1022,11 +1022,11 @@ func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsMetadataAllUpdateRequest := *openapiclient.NewCSSCMSDataModelModelsMetadataAllUpdateRequest([]openapiclient.CSSCMSDataModelModelsMetadataSingleUpdateRequest{*openapiclient.NewCSSCMSDataModelModelsMetadataSingleUpdateRequest()}) // CSSCMSDataModelModelsMetadataAllUpdateRequest | Contains the Keyfactor certificate identifier and the metadata to be updated (optional)
+    modelsMetadataAllUpdateRequest := *openapiclient.NewModelsMetadataAllUpdateRequest([]openapiclient.ModelsMetadataSingleUpdateRequest{*openapiclient.NewModelsMetadataSingleUpdateRequest()}) // ModelsMetadataAllUpdateRequest | Contains the Keyfactor certificate identifier and the metadata to be updated (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificatesMetadataAllPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMetadataAllUpdateRequest(cSSCMSDataModelModelsMetadataAllUpdateRequest).Execute()
+    resp, r, err := apiClient.CertificateApi.CertificatesMetadataAllPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsMetadataAllUpdateRequest(modelsMetadataAllUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesMetadataAllPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1048,7 +1048,7 @@ Name | Type | Description  | Notes
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | [default to 0]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsMetadataAllUpdateRequest** | [**CSSCMSDataModelModelsMetadataAllUpdateRequest**](CSSCMSDataModelModelsMetadataAllUpdateRequest.md) | Contains the Keyfactor certificate identifier and the metadata to be updated | 
+ **modelsMetadataAllUpdateRequest** | [**ModelsMetadataAllUpdateRequest**](ModelsMetadataAllUpdateRequest.md) | Contains the Keyfactor certificate identifier and the metadata to be updated | 
 
 ### Return type
 
@@ -1144,7 +1144,7 @@ Name | Type | Description  | Notes
 
 ## CertificatesMetadataPut
 
-> CertificatesMetadataPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMetadataUpdateRequest(cSSCMSDataModelModelsMetadataUpdateRequest).Execute()
+> CertificatesMetadataPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsMetadataUpdateRequest(modelsMetadataUpdateRequest).Execute()
 
 Updates the metadata for the certificate associated with the identifier provided
 
@@ -1164,11 +1164,11 @@ func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional) (default to 0)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsMetadataUpdateRequest := *openapiclient.NewCSSCMSDataModelModelsMetadataUpdateRequest(map[string]string{"key": "Inner_example"}) // CSSCMSDataModelModelsMetadataUpdateRequest | Contains the Keyfactor certificate identifier and the metadata to be updated (optional)
+    modelsMetadataUpdateRequest := *openapiclient.NewModelsMetadataUpdateRequest(map[string]string{"key": "Inner_example"}) // ModelsMetadataUpdateRequest | Contains the Keyfactor certificate identifier and the metadata to be updated (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificatesMetadataPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMetadataUpdateRequest(cSSCMSDataModelModelsMetadataUpdateRequest).Execute()
+    resp, r, err := apiClient.CertificateApi.CertificatesMetadataPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsMetadataUpdateRequest(modelsMetadataUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesMetadataPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1190,7 +1190,7 @@ Name | Type | Description  | Notes
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | [default to 0]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsMetadataUpdateRequest** | [**CSSCMSDataModelModelsMetadataUpdateRequest**](CSSCMSDataModelModelsMetadataUpdateRequest.md) | Contains the Keyfactor certificate identifier and the metadata to be updated | 
+ **modelsMetadataUpdateRequest** | [**ModelsMetadataUpdateRequest**](ModelsMetadataUpdateRequest.md) | Contains the Keyfactor certificate identifier and the metadata to be updated | 
 
 ### Return type
 
@@ -1422,7 +1422,7 @@ Name | Type | Description  | Notes
 
 ## CertificatesRecoverPost
 
-> CSSCMSDataModelModelsRecoveryResponse CertificatesRecoverPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsCertificatesCertificateRecoveryRequest(keyfactorWebKeyfactorApiModelsCertificatesCertificateRecoveryRequest).Execute()
+> ModelsRecoveryResponse CertificatesRecoverPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).KeyfactorWebKeyfactorApiModelsCertificatesCertificateRecoveryRequest(keyfactorWebKeyfactorApiModelsCertificatesCertificateRecoveryRequest).Execute()
 
 Recovers the persisted certificate associated with the provided query
 
@@ -1453,7 +1453,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesRecoverPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificatesRecoverPost`: CSSCMSDataModelModelsRecoveryResponse
+    // response from `CertificatesRecoverPost`: ModelsRecoveryResponse
     fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesRecoverPost`: %v\n", resp)
 }
 ```
@@ -1476,7 +1476,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsRecoveryResponse**](CSSCMSDataModelModelsRecoveryResponse.md)
+[**ModelsRecoveryResponse**](ModelsRecoveryResponse.md)
 
 ### Authorization
 
@@ -1494,7 +1494,7 @@ Name | Type | Description  | Notes
 
 ## CertificatesRevokePost
 
-> CSSCMSDataModelModelsRevocationRevocationResponse CertificatesRevokePost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsRevokeCertificateRequest(cSSCMSDataModelModelsRevokeCertificateRequest).Execute()
+> ModelsRevocationRevocationResponse CertificatesRevokePost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsRevokeCertificateRequest(modelsRevokeCertificateRequest).Execute()
 
 Revokes the certificates associated with the provided identifiers and associates the provided data with the revocation
 
@@ -1515,16 +1515,16 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsRevokeCertificateRequest := *openapiclient.NewCSSCMSDataModelModelsRevokeCertificateRequest() // CSSCMSDataModelModelsRevokeCertificateRequest | Contains the Keyfactor certificate identifiers and revocation data (optional)
+    modelsRevokeCertificateRequest := *openapiclient.NewModelsRevokeCertificateRequest() // ModelsRevokeCertificateRequest | Contains the Keyfactor certificate identifiers and revocation data (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CertificatesRevokePost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsRevokeCertificateRequest(cSSCMSDataModelModelsRevokeCertificateRequest).Execute()
+    resp, r, err := apiClient.CertificateApi.CertificatesRevokePost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsRevokeCertificateRequest(modelsRevokeCertificateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CertificatesRevokePost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificatesRevokePost`: CSSCMSDataModelModelsRevocationRevocationResponse
+    // response from `CertificatesRevokePost`: ModelsRevocationRevocationResponse
     fmt.Fprintf(os.Stdout, "Response from `CertificateApi.CertificatesRevokePost`: %v\n", resp)
 }
 ```
@@ -1542,11 +1542,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsRevokeCertificateRequest** | [**CSSCMSDataModelModelsRevokeCertificateRequest**](CSSCMSDataModelModelsRevokeCertificateRequest.md) | Contains the Keyfactor certificate identifiers and revocation data | 
+ **modelsRevokeCertificateRequest** | [**ModelsRevokeCertificateRequest**](ModelsRevokeCertificateRequest.md) | Contains the Keyfactor certificate identifiers and revocation data | 
 
 ### Return type
 
-[**CSSCMSDataModelModelsRevocationRevocationResponse**](CSSCMSDataModelModelsRevocationRevocationResponse.md)
+[**ModelsRevocationRevocationResponse**](ModelsRevocationRevocationResponse.md)
 
 ### Authorization
 

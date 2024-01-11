@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PendingAlerts** | Pointer to [**[]KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertResponse**](KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertResponse.md) |  | [optional] 
-**AlertBuildResult** | Pointer to [**CSSCMSDataModelEnumsAlertBuildResult**](CSSCMSDataModelEnumsAlertBuildResult.md) |  | [optional] 
+**AlertBuildResult** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -63,20 +63,20 @@ HasPendingAlerts returns a boolean if a field has been set.
 UnsetPendingAlerts ensures that no value is present for PendingAlerts, not even an explicit nil
 ### GetAlertBuildResult
 
-`func (o *KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse) GetAlertBuildResult() CSSCMSDataModelEnumsAlertBuildResult`
+`func (o *KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse) GetAlertBuildResult() int32`
 
 GetAlertBuildResult returns the AlertBuildResult field if non-nil, zero value otherwise.
 
 ### GetAlertBuildResultOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse) GetAlertBuildResultOk() (*CSSCMSDataModelEnumsAlertBuildResult, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse) GetAlertBuildResultOk() (*int32, bool)`
 
 GetAlertBuildResultOk returns a tuple with the AlertBuildResult field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAlertBuildResult
 
-`func (o *KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse) SetAlertBuildResult(v CSSCMSDataModelEnumsAlertBuildResult)`
+`func (o *KeyfactorWebKeyfactorApiModelsAlertsPendingPendingAlertTestResponse) SetAlertBuildResult(v int32)`
 
 SetAlertBuildResult sets AlertBuildResult field to given value.
 

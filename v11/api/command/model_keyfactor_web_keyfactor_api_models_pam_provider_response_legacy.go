@@ -33,7 +33,7 @@ type KeyfactorWebKeyfactorApiModelsPAMProviderResponseLegacy struct {
 	Id                      *int32                                                               `json:"id,omitempty"`
 	Name                    NullableString                                                       `json:"name,omitempty"`
 	Area                    *int32                                                               `json:"area,omitempty"`
-	ProviderType            *CSSCMSDataModelModelsProviderType                                   `json:"providerType,omitempty"`
+	ProviderType            *ModelsProviderType                                                  `json:"providerType,omitempty"`
 	ProviderTypeParamValues []KeyfactorWebKeyfactorApiModelsPAMPamProviderTypeParamValueResponse `json:"providerTypeParamValues,omitempty"`
 	SecuredAreaId           NullableInt32                                                        `json:"securedAreaId,omitempty"`
 	Remote                  *bool                                                                `json:"remote,omitempty"`
@@ -164,9 +164,9 @@ func (o *KeyfactorWebKeyfactorApiModelsPAMProviderResponseLegacy) SetArea(v int3
 }
 
 // GetProviderType returns the ProviderType field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsPAMProviderResponseLegacy) GetProviderType() CSSCMSDataModelModelsProviderType {
+func (o *KeyfactorWebKeyfactorApiModelsPAMProviderResponseLegacy) GetProviderType() ModelsProviderType {
 	if o == nil || isNil(o.ProviderType) {
-		var ret CSSCMSDataModelModelsProviderType
+		var ret ModelsProviderType
 		return ret
 	}
 	return *o.ProviderType
@@ -174,7 +174,7 @@ func (o *KeyfactorWebKeyfactorApiModelsPAMProviderResponseLegacy) GetProviderTyp
 
 // GetProviderTypeOk returns a tuple with the ProviderType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsPAMProviderResponseLegacy) GetProviderTypeOk() (*CSSCMSDataModelModelsProviderType, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsPAMProviderResponseLegacy) GetProviderTypeOk() (*ModelsProviderType, bool) {
 	if o == nil || isNil(o.ProviderType) {
 		return nil, false
 	}
@@ -190,8 +190,8 @@ func (o *KeyfactorWebKeyfactorApiModelsPAMProviderResponseLegacy) HasProviderTyp
 	return false
 }
 
-// SetProviderType gets a reference to the given CSSCMSDataModelModelsProviderType and assigns it to the ProviderType field.
-func (o *KeyfactorWebKeyfactorApiModelsPAMProviderResponseLegacy) SetProviderType(v CSSCMSDataModelModelsProviderType) {
+// SetProviderType gets a reference to the given ModelsProviderType and assigns it to the ProviderType field.
+func (o *KeyfactorWebKeyfactorApiModelsPAMProviderResponseLegacy) SetProviderType(v ModelsProviderType) {
 	o.ProviderType = &v
 }
 

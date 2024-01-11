@@ -53,7 +53,7 @@ func (r ApiSSLEndpointsIdGetRequest) XKeyfactorApiVersion(xKeyfactorApiVersion s
 	return r
 }
 
-func (r ApiSSLEndpointsIdGetRequest) Execute() (*CSSCMSDataModelModelsSSLEndpoint, *http.Response, error) {
+func (r ApiSSLEndpointsIdGetRequest) Execute() (*ModelsSSLEndpoint, *http.Response, error) {
 	return r.ApiService.SSLEndpointsIdGetExecute(r)
 }
 
@@ -79,13 +79,13 @@ func (a *SslApiService) SSLEndpointsIdGet(ctx context.Context, id string) ApiSSL
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSLEndpoint
-func (a *SslApiService) SSLEndpointsIdGetExecute(r ApiSSLEndpointsIdGetRequest) (*CSSCMSDataModelModelsSSLEndpoint, *http.Response, error) {
+//	@return ModelsSSLEndpoint
+func (a *SslApiService) SSLEndpointsIdGetExecute(r ApiSSLEndpointsIdGetRequest) (*ModelsSSLEndpoint, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSLEndpoint
+		localVarReturnValue *ModelsSSLEndpoint
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -170,7 +170,7 @@ type ApiSSLEndpointsIdHistoryGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -200,7 +200,7 @@ func (r ApiSSLEndpointsIdHistoryGetRequest) SortField(sortField string) ApiSSLEn
 	return r
 }
 
-func (r ApiSSLEndpointsIdHistoryGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiSSLEndpointsIdHistoryGetRequest {
+func (r ApiSSLEndpointsIdHistoryGetRequest) SortAscending(sortAscending int32) ApiSSLEndpointsIdHistoryGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -211,7 +211,7 @@ func (r ApiSSLEndpointsIdHistoryGetRequest) XKeyfactorApiVersion(xKeyfactorApiVe
 	return r
 }
 
-func (r ApiSSLEndpointsIdHistoryGetRequest) Execute() ([]CSSCMSDataModelModelsSSLEndpointHistoryResponse, *http.Response, error) {
+func (r ApiSSLEndpointsIdHistoryGetRequest) Execute() ([]ModelsSSLEndpointHistoryResponse, *http.Response, error) {
 	return r.ApiService.SSLEndpointsIdHistoryGetExecute(r)
 }
 
@@ -237,13 +237,13 @@ func (a *SslApiService) SSLEndpointsIdHistoryGet(ctx context.Context, id string)
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsSSLEndpointHistoryResponse
-func (a *SslApiService) SSLEndpointsIdHistoryGetExecute(r ApiSSLEndpointsIdHistoryGetRequest) ([]CSSCMSDataModelModelsSSLEndpointHistoryResponse, *http.Response, error) {
+//	@return []ModelsSSLEndpointHistoryResponse
+func (a *SslApiService) SSLEndpointsIdHistoryGetExecute(r ApiSSLEndpointsIdHistoryGetRequest) ([]ModelsSSLEndpointHistoryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsSSLEndpointHistoryResponse
+		localVarReturnValue []ModelsSSLEndpointHistoryResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -457,11 +457,11 @@ func (a *SslApiService) SSLEndpointsMonitorAllPutExecute(r ApiSSLEndpointsMonito
 }
 
 type ApiSSLEndpointsMonitorStatusPutRequest struct {
-	ctx                                           context.Context
-	ApiService                                    *SslApiService
-	xKeyfactorRequestedWith                       *string
-	xKeyfactorApiVersion                          *string
-	cSSCMSDataModelModelsSSLEndpointStatusRequest *[]CSSCMSDataModelModelsSSLEndpointStatusRequest
+	ctx                            context.Context
+	ApiService                     *SslApiService
+	xKeyfactorRequestedWith        *string
+	xKeyfactorApiVersion           *string
+	modelsSSLEndpointStatusRequest *[]ModelsSSLEndpointStatusRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -477,8 +477,8 @@ func (r ApiSSLEndpointsMonitorStatusPutRequest) XKeyfactorApiVersion(xKeyfactorA
 }
 
 // Endpoints and statuses to be set for each
-func (r ApiSSLEndpointsMonitorStatusPutRequest) CSSCMSDataModelModelsSSLEndpointStatusRequest(cSSCMSDataModelModelsSSLEndpointStatusRequest []CSSCMSDataModelModelsSSLEndpointStatusRequest) ApiSSLEndpointsMonitorStatusPutRequest {
-	r.cSSCMSDataModelModelsSSLEndpointStatusRequest = &cSSCMSDataModelModelsSSLEndpointStatusRequest
+func (r ApiSSLEndpointsMonitorStatusPutRequest) ModelsSSLEndpointStatusRequest(modelsSSLEndpointStatusRequest []ModelsSSLEndpointStatusRequest) ApiSSLEndpointsMonitorStatusPutRequest {
+	r.modelsSSLEndpointStatusRequest = &modelsSSLEndpointStatusRequest
 	return r
 }
 
@@ -548,7 +548,7 @@ func (a *SslApiService) SSLEndpointsMonitorStatusPutExecute(r ApiSSLEndpointsMon
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsSSLEndpointStatusRequest
+	localVarPostBody = r.modelsSSLEndpointStatusRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -700,11 +700,11 @@ func (a *SslApiService) SSLEndpointsReviewAllPutExecute(r ApiSSLEndpointsReviewA
 }
 
 type ApiSSLEndpointsReviewStatusPutRequest struct {
-	ctx                                           context.Context
-	ApiService                                    *SslApiService
-	xKeyfactorRequestedWith                       *string
-	xKeyfactorApiVersion                          *string
-	cSSCMSDataModelModelsSSLEndpointStatusRequest *[]CSSCMSDataModelModelsSSLEndpointStatusRequest
+	ctx                            context.Context
+	ApiService                     *SslApiService
+	xKeyfactorRequestedWith        *string
+	xKeyfactorApiVersion           *string
+	modelsSSLEndpointStatusRequest *[]ModelsSSLEndpointStatusRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -720,8 +720,8 @@ func (r ApiSSLEndpointsReviewStatusPutRequest) XKeyfactorApiVersion(xKeyfactorAp
 }
 
 // Endpoints and statuses for each
-func (r ApiSSLEndpointsReviewStatusPutRequest) CSSCMSDataModelModelsSSLEndpointStatusRequest(cSSCMSDataModelModelsSSLEndpointStatusRequest []CSSCMSDataModelModelsSSLEndpointStatusRequest) ApiSSLEndpointsReviewStatusPutRequest {
-	r.cSSCMSDataModelModelsSSLEndpointStatusRequest = &cSSCMSDataModelModelsSSLEndpointStatusRequest
+func (r ApiSSLEndpointsReviewStatusPutRequest) ModelsSSLEndpointStatusRequest(modelsSSLEndpointStatusRequest []ModelsSSLEndpointStatusRequest) ApiSSLEndpointsReviewStatusPutRequest {
+	r.modelsSSLEndpointStatusRequest = &modelsSSLEndpointStatusRequest
 	return r
 }
 
@@ -791,7 +791,7 @@ func (a *SslApiService) SSLEndpointsReviewStatusPutExecute(r ApiSSLEndpointsRevi
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsSSLEndpointStatusRequest
+	localVarPostBody = r.modelsSSLEndpointStatusRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -828,7 +828,7 @@ type ApiSSLGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -858,7 +858,7 @@ func (r ApiSSLGetRequest) SortField(sortField string) ApiSSLGetRequest {
 	return r
 }
 
-func (r ApiSSLGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiSSLGetRequest {
+func (r ApiSSLGetRequest) SortAscending(sortAscending int32) ApiSSLGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -869,7 +869,7 @@ func (r ApiSSLGetRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) ApiS
 	return r
 }
 
-func (r ApiSSLGetRequest) Execute() ([]CSSCMSDataModelModelsSSLSslScanResult, *http.Response, error) {
+func (r ApiSSLGetRequest) Execute() ([]ModelsSSLSslScanResult, *http.Response, error) {
 	return r.ApiService.SSLGetExecute(r)
 }
 
@@ -893,13 +893,13 @@ func (a *SslApiService) SSLGet(ctx context.Context) ApiSSLGetRequest {
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsSSLSslScanResult
-func (a *SslApiService) SSLGetExecute(r ApiSSLGetRequest) ([]CSSCMSDataModelModelsSSLSslScanResult, *http.Response, error) {
+//	@return []ModelsSSLSslScanResult
+func (a *SslApiService) SSLGetExecute(r ApiSSLGetRequest) ([]ModelsSSLSslScanResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsSSLSslScanResult
+		localVarReturnValue []ModelsSSLSslScanResult
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -1125,7 +1125,7 @@ func (r ApiSSLNetworkRangesIdGetRequest) XKeyfactorApiVersion(xKeyfactorApiVersi
 	return r
 }
 
-func (r ApiSSLNetworkRangesIdGetRequest) Execute() ([]CSSCMSDataModelModelsSSLNetworkDefinition, *http.Response, error) {
+func (r ApiSSLNetworkRangesIdGetRequest) Execute() ([]ModelsSSLNetworkDefinition, *http.Response, error) {
 	return r.ApiService.SSLNetworkRangesIdGetExecute(r)
 }
 
@@ -1151,13 +1151,13 @@ func (a *SslApiService) SSLNetworkRangesIdGet(ctx context.Context, id string) Ap
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsSSLNetworkDefinition
-func (a *SslApiService) SSLNetworkRangesIdGetExecute(r ApiSSLNetworkRangesIdGetRequest) ([]CSSCMSDataModelModelsSSLNetworkDefinition, *http.Response, error) {
+//	@return []ModelsSSLNetworkDefinition
+func (a *SslApiService) SSLNetworkRangesIdGetExecute(r ApiSSLNetworkRangesIdGetRequest) ([]ModelsSSLNetworkDefinition, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsSSLNetworkDefinition
+		localVarReturnValue []ModelsSSLNetworkDefinition
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -1234,11 +1234,11 @@ func (a *SslApiService) SSLNetworkRangesIdGetExecute(r ApiSSLNetworkRangesIdGetR
 }
 
 type ApiSSLNetworkRangesPostRequest struct {
-	ctx                                          context.Context
-	ApiService                                   *SslApiService
-	xKeyfactorRequestedWith                      *string
-	xKeyfactorApiVersion                         *string
-	cSSCMSDataModelModelsSSLNetworkRangesRequest *CSSCMSDataModelModelsSSLNetworkRangesRequest
+	ctx                           context.Context
+	ApiService                    *SslApiService
+	xKeyfactorRequestedWith       *string
+	xKeyfactorApiVersion          *string
+	modelsSSLNetworkRangesRequest *ModelsSSLNetworkRangesRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1254,8 +1254,8 @@ func (r ApiSSLNetworkRangesPostRequest) XKeyfactorApiVersion(xKeyfactorApiVersio
 }
 
 // Network definition identifier and the ranges to be added
-func (r ApiSSLNetworkRangesPostRequest) CSSCMSDataModelModelsSSLNetworkRangesRequest(cSSCMSDataModelModelsSSLNetworkRangesRequest CSSCMSDataModelModelsSSLNetworkRangesRequest) ApiSSLNetworkRangesPostRequest {
-	r.cSSCMSDataModelModelsSSLNetworkRangesRequest = &cSSCMSDataModelModelsSSLNetworkRangesRequest
+func (r ApiSSLNetworkRangesPostRequest) ModelsSSLNetworkRangesRequest(modelsSSLNetworkRangesRequest ModelsSSLNetworkRangesRequest) ApiSSLNetworkRangesPostRequest {
+	r.modelsSSLNetworkRangesRequest = &modelsSSLNetworkRangesRequest
 	return r
 }
 
@@ -1325,7 +1325,7 @@ func (a *SslApiService) SSLNetworkRangesPostExecute(r ApiSSLNetworkRangesPostReq
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsSSLNetworkRangesRequest
+	localVarPostBody = r.modelsSSLNetworkRangesRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1355,11 +1355,11 @@ func (a *SslApiService) SSLNetworkRangesPostExecute(r ApiSSLNetworkRangesPostReq
 }
 
 type ApiSSLNetworkRangesPutRequest struct {
-	ctx                                          context.Context
-	ApiService                                   *SslApiService
-	xKeyfactorRequestedWith                      *string
-	xKeyfactorApiVersion                         *string
-	cSSCMSDataModelModelsSSLNetworkRangesRequest *CSSCMSDataModelModelsSSLNetworkRangesRequest
+	ctx                           context.Context
+	ApiService                    *SslApiService
+	xKeyfactorRequestedWith       *string
+	xKeyfactorApiVersion          *string
+	modelsSSLNetworkRangesRequest *ModelsSSLNetworkRangesRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1375,8 +1375,8 @@ func (r ApiSSLNetworkRangesPutRequest) XKeyfactorApiVersion(xKeyfactorApiVersion
 }
 
 // Network range defitions and the network to which they should be set
-func (r ApiSSLNetworkRangesPutRequest) CSSCMSDataModelModelsSSLNetworkRangesRequest(cSSCMSDataModelModelsSSLNetworkRangesRequest CSSCMSDataModelModelsSSLNetworkRangesRequest) ApiSSLNetworkRangesPutRequest {
-	r.cSSCMSDataModelModelsSSLNetworkRangesRequest = &cSSCMSDataModelModelsSSLNetworkRangesRequest
+func (r ApiSSLNetworkRangesPutRequest) ModelsSSLNetworkRangesRequest(modelsSSLNetworkRangesRequest ModelsSSLNetworkRangesRequest) ApiSSLNetworkRangesPutRequest {
+	r.modelsSSLNetworkRangesRequest = &modelsSSLNetworkRangesRequest
 	return r
 }
 
@@ -1446,7 +1446,7 @@ func (a *SslApiService) SSLNetworkRangesPutExecute(r ApiSSLNetworkRangesPutReque
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsSSLNetworkRangesRequest
+	localVarPostBody = r.modelsSSLNetworkRangesRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1604,7 +1604,7 @@ type ApiSSLNetworksGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -1639,7 +1639,7 @@ func (r ApiSSLNetworksGetRequest) SortField(sortField string) ApiSSLNetworksGetR
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiSSLNetworksGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiSSLNetworksGetRequest {
+func (r ApiSSLNetworksGetRequest) SortAscending(sortAscending int32) ApiSSLNetworksGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -1891,12 +1891,12 @@ type ApiSSLNetworksIdPartsGetRequest struct {
 	ApiService              *SslApiService
 	id                      string
 	xKeyfactorRequestedWith *string
-	jobType                 *KeyfactorOrchestratorsCommonEnumsSslJobType
+	jobType                 *int32
 	queryString             *string
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -1906,7 +1906,7 @@ func (r ApiSSLNetworksIdPartsGetRequest) XKeyfactorRequestedWith(xKeyfactorReque
 	return r
 }
 
-func (r ApiSSLNetworksIdPartsGetRequest) JobType(jobType KeyfactorOrchestratorsCommonEnumsSslJobType) ApiSSLNetworksIdPartsGetRequest {
+func (r ApiSSLNetworksIdPartsGetRequest) JobType(jobType int32) ApiSSLNetworksIdPartsGetRequest {
 	r.jobType = &jobType
 	return r
 }
@@ -1931,7 +1931,7 @@ func (r ApiSSLNetworksIdPartsGetRequest) SortField(sortField string) ApiSSLNetwo
 	return r
 }
 
-func (r ApiSSLNetworksIdPartsGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiSSLNetworksIdPartsGetRequest {
+func (r ApiSSLNetworksIdPartsGetRequest) SortAscending(sortAscending int32) ApiSSLNetworksIdPartsGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -1942,7 +1942,7 @@ func (r ApiSSLNetworksIdPartsGetRequest) XKeyfactorApiVersion(xKeyfactorApiVersi
 	return r
 }
 
-func (r ApiSSLNetworksIdPartsGetRequest) Execute() ([]CSSCMSDataModelModelsSSLDisplayScanJobPart, *http.Response, error) {
+func (r ApiSSLNetworksIdPartsGetRequest) Execute() ([]ModelsSSLDisplayScanJobPart, *http.Response, error) {
 	return r.ApiService.SSLNetworksIdPartsGetExecute(r)
 }
 
@@ -1968,13 +1968,13 @@ func (a *SslApiService) SSLNetworksIdPartsGet(ctx context.Context, id string) Ap
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsSSLDisplayScanJobPart
-func (a *SslApiService) SSLNetworksIdPartsGetExecute(r ApiSSLNetworksIdPartsGetRequest) ([]CSSCMSDataModelModelsSSLDisplayScanJobPart, *http.Response, error) {
+//	@return []ModelsSSLDisplayScanJobPart
+func (a *SslApiService) SSLNetworksIdPartsGetExecute(r ApiSSLNetworksIdPartsGetRequest) ([]ModelsSSLDisplayScanJobPart, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsSSLDisplayScanJobPart
+		localVarReturnValue []ModelsSSLDisplayScanJobPart
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -2185,12 +2185,12 @@ func (a *SslApiService) SSLNetworksIdResetPostExecute(r ApiSSLNetworksIdResetPos
 }
 
 type ApiSSLNetworksIdScanPostRequest struct {
-	ctx                                             context.Context
-	ApiService                                      *SslApiService
-	id                                              string
-	xKeyfactorRequestedWith                         *string
-	xKeyfactorApiVersion                            *string
-	cSSCMSDataModelModelsSSLImmediateSslScanRequest *CSSCMSDataModelModelsSSLImmediateSslScanRequest
+	ctx                              context.Context
+	ApiService                       *SslApiService
+	id                               string
+	xKeyfactorRequestedWith          *string
+	xKeyfactorApiVersion             *string
+	modelsSSLImmediateSslScanRequest *ModelsSSLImmediateSslScanRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -2206,8 +2206,8 @@ func (r ApiSSLNetworksIdScanPostRequest) XKeyfactorApiVersion(xKeyfactorApiVersi
 }
 
 // Request for an immediate SSL Scan
-func (r ApiSSLNetworksIdScanPostRequest) CSSCMSDataModelModelsSSLImmediateSslScanRequest(cSSCMSDataModelModelsSSLImmediateSslScanRequest CSSCMSDataModelModelsSSLImmediateSslScanRequest) ApiSSLNetworksIdScanPostRequest {
-	r.cSSCMSDataModelModelsSSLImmediateSslScanRequest = &cSSCMSDataModelModelsSSLImmediateSslScanRequest
+func (r ApiSSLNetworksIdScanPostRequest) ModelsSSLImmediateSslScanRequest(modelsSSLImmediateSslScanRequest ModelsSSLImmediateSslScanRequest) ApiSSLNetworksIdScanPostRequest {
+	r.modelsSSLImmediateSslScanRequest = &modelsSSLImmediateSslScanRequest
 	return r
 }
 
@@ -2280,7 +2280,7 @@ func (a *SslApiService) SSLNetworksIdScanPostExecute(r ApiSSLNetworksIdScanPostR
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsSSLImmediateSslScanRequest
+	localVarPostBody = r.modelsSSLImmediateSslScanRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2723,7 +2723,7 @@ func (r ApiSSLPartsIdGetRequest) XKeyfactorApiVersion(xKeyfactorApiVersion strin
 	return r
 }
 
-func (r ApiSSLPartsIdGetRequest) Execute() (*CSSCMSDataModelModelsSSLScanJobPart, *http.Response, error) {
+func (r ApiSSLPartsIdGetRequest) Execute() (*ModelsSSLScanJobPart, *http.Response, error) {
 	return r.ApiService.SSLPartsIdGetExecute(r)
 }
 
@@ -2749,13 +2749,13 @@ func (a *SslApiService) SSLPartsIdGet(ctx context.Context, id string) ApiSSLPart
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSLScanJobPart
-func (a *SslApiService) SSLPartsIdGetExecute(r ApiSSLPartsIdGetRequest) (*CSSCMSDataModelModelsSSLScanJobPart, *http.Response, error) {
+//	@return ModelsSSLScanJobPart
+func (a *SslApiService) SSLPartsIdGetExecute(r ApiSSLPartsIdGetRequest) (*ModelsSSLScanJobPart, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSLScanJobPart
+		localVarReturnValue *ModelsSSLScanJobPart
 	)
 
 	apiBasePath := a.client.cfg.APIPath

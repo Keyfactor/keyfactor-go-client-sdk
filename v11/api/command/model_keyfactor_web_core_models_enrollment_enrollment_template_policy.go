@@ -30,10 +30,10 @@ var _ MappedNullable = &KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy
 
 // KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy struct for KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy
 type KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy struct {
-	KeyInfo        *CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo `json:"keyInfo,omitempty"`
-	AllowKeyReuse  *bool                                            `json:"allowKeyReuse,omitempty"`
-	AllowWildcards *bool                                            `json:"allowWildcards,omitempty"`
-	RfcEnforcement *bool                                            `json:"rfcEnforcement,omitempty"`
+	KeyInfo        *ModelsTemplatesAlgorithmsKeyInfo `json:"keyInfo,omitempty"`
+	AllowKeyReuse  *bool                             `json:"allowKeyReuse,omitempty"`
+	AllowWildcards *bool                             `json:"allowWildcards,omitempty"`
+	RfcEnforcement *bool                             `json:"rfcEnforcement,omitempty"`
 }
 
 // NewKeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy instantiates a new KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy object
@@ -54,9 +54,9 @@ func NewKeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicyWithDefaults() *
 }
 
 // GetKeyInfo returns the KeyInfo field value if set, zero value otherwise.
-func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetKeyInfo() CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo {
+func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetKeyInfo() ModelsTemplatesAlgorithmsKeyInfo {
 	if o == nil || isNil(o.KeyInfo) {
-		var ret CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo
+		var ret ModelsTemplatesAlgorithmsKeyInfo
 		return ret
 	}
 	return *o.KeyInfo
@@ -64,7 +64,7 @@ func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetKeyInfo() 
 
 // GetKeyInfoOk returns a tuple with the KeyInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetKeyInfoOk() (*CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo, bool) {
+func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetKeyInfoOk() (*ModelsTemplatesAlgorithmsKeyInfo, bool) {
 	if o == nil || isNil(o.KeyInfo) {
 		return nil, false
 	}
@@ -80,8 +80,8 @@ func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) HasKeyInfo() 
 	return false
 }
 
-// SetKeyInfo gets a reference to the given CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo and assigns it to the KeyInfo field.
-func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) SetKeyInfo(v CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo) {
+// SetKeyInfo gets a reference to the given ModelsTemplatesAlgorithmsKeyInfo and assigns it to the KeyInfo field.
+func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) SetKeyInfo(v ModelsTemplatesAlgorithmsKeyInfo) {
 	o.KeyInfo = &v
 }
 

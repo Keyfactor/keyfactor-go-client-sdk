@@ -10,18 +10,18 @@ Name | Type | Description | Notes
 **StoreType** | Pointer to **NullableInt32** |  | [optional] 
 **ImportType** | Pointer to **NullableInt32** |  | [optional] 
 **LocalStore** | Pointer to **bool** |  | [optional] 
-**SupportedOperations** | Pointer to [**CSSCMSDataModelModelsCertStoreTypeSupportedOperations**](CSSCMSDataModelModelsCertStoreTypeSupportedOperations.md) |  | [optional] 
-**Properties** | Pointer to [**[]CSSCMSDataModelModelsCertificateStoreTypeProperty**](CSSCMSDataModelModelsCertificateStoreTypeProperty.md) |  | [optional] 
-**EntryParameters** | Pointer to [**[]CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter**](CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter.md) |  | [optional] 
-**PasswordOptions** | Pointer to [**CSSCMSDataModelModelsCertStoreTypePasswordOptions**](CSSCMSDataModelModelsCertStoreTypePasswordOptions.md) |  | [optional] 
+**SupportedOperations** | Pointer to [**ModelsCertStoreTypeSupportedOperations**](ModelsCertStoreTypeSupportedOperations.md) |  | [optional] 
+**Properties** | Pointer to [**[]ModelsCertificateStoreTypeProperty**](ModelsCertificateStoreTypeProperty.md) |  | [optional] 
+**EntryParameters** | Pointer to [**[]ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter**](ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter.md) |  | [optional] 
+**PasswordOptions** | Pointer to [**ModelsCertStoreTypePasswordOptions**](ModelsCertStoreTypePasswordOptions.md) |  | [optional] 
 **StorePathType** | Pointer to **NullableString** |  | [optional] 
 **StorePathValue** | Pointer to **NullableString** |  | [optional] 
-**PrivateKeyAllowed** | Pointer to [**CSSCMSCoreEnumsCertStorePrivateKey**](CSSCMSCoreEnumsCertStorePrivateKey.md) |  | [optional] 
+**PrivateKeyAllowed** | Pointer to **int32** |  | [optional] 
 **JobProperties** | Pointer to **[]string** |  | [optional] [readonly] 
 **ServerRequired** | Pointer to **bool** |  | [optional] 
 **PowerShell** | Pointer to **bool** |  | [optional] 
 **BlueprintAllowed** | Pointer to **bool** |  | [optional] 
-**CustomAliasAllowed** | Pointer to [**KeyfactorOrchestratorsCommonEnumsCertStoreCustomAlias**](KeyfactorOrchestratorsCommonEnumsCertStoreCustomAlias.md) |  | [optional] 
+**CustomAliasAllowed** | Pointer to **int32** |  | [optional] 
 **ServerRegistration** | Pointer to **NullableInt32** |  | [optional] 
 **InventoryEndpoint** | Pointer to **NullableString** |  | [optional] 
 **InventoryJobType** | Pointer to **string** |  | [optional] 
@@ -250,20 +250,20 @@ HasLocalStore returns a boolean if a field has been set.
 
 ### GetSupportedOperations
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetSupportedOperations() CSSCMSDataModelModelsCertStoreTypeSupportedOperations`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetSupportedOperations() ModelsCertStoreTypeSupportedOperations`
 
 GetSupportedOperations returns the SupportedOperations field if non-nil, zero value otherwise.
 
 ### GetSupportedOperationsOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetSupportedOperationsOk() (*CSSCMSDataModelModelsCertStoreTypeSupportedOperations, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetSupportedOperationsOk() (*ModelsCertStoreTypeSupportedOperations, bool)`
 
 GetSupportedOperationsOk returns a tuple with the SupportedOperations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSupportedOperations
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetSupportedOperations(v CSSCMSDataModelModelsCertStoreTypeSupportedOperations)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetSupportedOperations(v ModelsCertStoreTypeSupportedOperations)`
 
 SetSupportedOperations sets SupportedOperations field to given value.
 
@@ -275,20 +275,20 @@ HasSupportedOperations returns a boolean if a field has been set.
 
 ### GetProperties
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetProperties() []CSSCMSDataModelModelsCertificateStoreTypeProperty`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetProperties() []ModelsCertificateStoreTypeProperty`
 
 GetProperties returns the Properties field if non-nil, zero value otherwise.
 
 ### GetPropertiesOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetPropertiesOk() (*[]CSSCMSDataModelModelsCertificateStoreTypeProperty, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetPropertiesOk() (*[]ModelsCertificateStoreTypeProperty, bool)`
 
 GetPropertiesOk returns a tuple with the Properties field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProperties
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetProperties(v []CSSCMSDataModelModelsCertificateStoreTypeProperty)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetProperties(v []ModelsCertificateStoreTypeProperty)`
 
 SetProperties sets Properties field to given value.
 
@@ -310,20 +310,20 @@ HasProperties returns a boolean if a field has been set.
 UnsetProperties ensures that no value is present for Properties, not even an explicit nil
 ### GetEntryParameters
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetEntryParameters() []CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetEntryParameters() []ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter`
 
 GetEntryParameters returns the EntryParameters field if non-nil, zero value otherwise.
 
 ### GetEntryParametersOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetEntryParametersOk() (*[]CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetEntryParametersOk() (*[]ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter, bool)`
 
 GetEntryParametersOk returns a tuple with the EntryParameters field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEntryParameters
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetEntryParameters(v []CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetEntryParameters(v []ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter)`
 
 SetEntryParameters sets EntryParameters field to given value.
 
@@ -345,20 +345,20 @@ HasEntryParameters returns a boolean if a field has been set.
 UnsetEntryParameters ensures that no value is present for EntryParameters, not even an explicit nil
 ### GetPasswordOptions
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetPasswordOptions() CSSCMSDataModelModelsCertStoreTypePasswordOptions`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetPasswordOptions() ModelsCertStoreTypePasswordOptions`
 
 GetPasswordOptions returns the PasswordOptions field if non-nil, zero value otherwise.
 
 ### GetPasswordOptionsOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetPasswordOptionsOk() (*CSSCMSDataModelModelsCertStoreTypePasswordOptions, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetPasswordOptionsOk() (*ModelsCertStoreTypePasswordOptions, bool)`
 
 GetPasswordOptionsOk returns a tuple with the PasswordOptions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPasswordOptions
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetPasswordOptions(v CSSCMSDataModelModelsCertStoreTypePasswordOptions)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetPasswordOptions(v ModelsCertStoreTypePasswordOptions)`
 
 SetPasswordOptions sets PasswordOptions field to given value.
 
@@ -440,20 +440,20 @@ HasStorePathValue returns a boolean if a field has been set.
 UnsetStorePathValue ensures that no value is present for StorePathValue, not even an explicit nil
 ### GetPrivateKeyAllowed
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetPrivateKeyAllowed() CSSCMSCoreEnumsCertStorePrivateKey`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetPrivateKeyAllowed() int32`
 
 GetPrivateKeyAllowed returns the PrivateKeyAllowed field if non-nil, zero value otherwise.
 
 ### GetPrivateKeyAllowedOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetPrivateKeyAllowedOk() (*CSSCMSCoreEnumsCertStorePrivateKey, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetPrivateKeyAllowedOk() (*int32, bool)`
 
 GetPrivateKeyAllowedOk returns a tuple with the PrivateKeyAllowed field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrivateKeyAllowed
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetPrivateKeyAllowed(v CSSCMSCoreEnumsCertStorePrivateKey)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetPrivateKeyAllowed(v int32)`
 
 SetPrivateKeyAllowed sets PrivateKeyAllowed field to given value.
 
@@ -575,20 +575,20 @@ HasBlueprintAllowed returns a boolean if a field has been set.
 
 ### GetCustomAliasAllowed
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetCustomAliasAllowed() KeyfactorOrchestratorsCommonEnumsCertStoreCustomAlias`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetCustomAliasAllowed() int32`
 
 GetCustomAliasAllowed returns the CustomAliasAllowed field if non-nil, zero value otherwise.
 
 ### GetCustomAliasAllowedOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetCustomAliasAllowedOk() (*KeyfactorOrchestratorsCommonEnumsCertStoreCustomAlias, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetCustomAliasAllowedOk() (*int32, bool)`
 
 GetCustomAliasAllowedOk returns a tuple with the CustomAliasAllowed field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomAliasAllowed
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetCustomAliasAllowed(v KeyfactorOrchestratorsCommonEnumsCertStoreCustomAlias)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetCustomAliasAllowed(v int32)`
 
 SetCustomAliasAllowed sets CustomAliasAllowed field to given value.
 

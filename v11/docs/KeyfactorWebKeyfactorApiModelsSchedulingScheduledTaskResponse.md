@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** |  | [optional] 
 **Schedule** | Pointer to **NullableString** |  | [optional] 
-**ScheduleType** | Pointer to [**CSSCMSCoreEnumsScheduledTaskType**](CSSCMSCoreEnumsScheduledTaskType.md) |  | [optional] 
+**ScheduleType** | Pointer to **int32** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **NullableString** |  | [optional] 
 **EntityId** | Pointer to **NullableInt64** |  | [optional] 
@@ -93,20 +93,20 @@ HasSchedule returns a boolean if a field has been set.
 UnsetSchedule ensures that no value is present for Schedule, not even an explicit nil
 ### GetScheduleType
 
-`func (o *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskResponse) GetScheduleType() CSSCMSCoreEnumsScheduledTaskType`
+`func (o *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskResponse) GetScheduleType() int32`
 
 GetScheduleType returns the ScheduleType field if non-nil, zero value otherwise.
 
 ### GetScheduleTypeOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskResponse) GetScheduleTypeOk() (*CSSCMSCoreEnumsScheduledTaskType, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskResponse) GetScheduleTypeOk() (*int32, bool)`
 
 GetScheduleTypeOk returns a tuple with the ScheduleType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScheduleType
 
-`func (o *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskResponse) SetScheduleType(v CSSCMSCoreEnumsScheduledTaskType)`
+`func (o *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskResponse) SetScheduleType(v int32)`
 
 SetScheduleType sets ScheduleType field to given value.
 

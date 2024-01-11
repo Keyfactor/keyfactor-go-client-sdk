@@ -174,7 +174,7 @@ type ApiMonitoringRevocationGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -204,7 +204,7 @@ func (r ApiMonitoringRevocationGetRequest) SortField(sortField string) ApiMonito
 	return r
 }
 
-func (r ApiMonitoringRevocationGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiMonitoringRevocationGetRequest {
+func (r ApiMonitoringRevocationGetRequest) SortAscending(sortAscending int32) ApiMonitoringRevocationGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }

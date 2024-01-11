@@ -30,10 +30,10 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsScriptsScriptResponse{}
 
 // KeyfactorWebKeyfactorApiModelsScriptsScriptResponse struct for KeyfactorWebKeyfactorApiModelsScriptsScriptResponse
 type KeyfactorWebKeyfactorApiModelsScriptsScriptResponse struct {
-	Id         *int32                                 `json:"id,omitempty"`
-	Name       NullableString                         `json:"name,omitempty"`
-	Contents   NullableString                         `json:"contents,omitempty"`
-	Categories []CSSCMSDataModelEnumsScriptCategories `json:"categories,omitempty"`
+	Id         *int32         `json:"id,omitempty"`
+	Name       NullableString `json:"name,omitempty"`
+	Contents   NullableString `json:"contents,omitempty"`
+	Categories []int32        `json:"categories,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsScriptsScriptResponse instantiates a new KeyfactorWebKeyfactorApiModelsScriptsScriptResponse object
@@ -172,9 +172,9 @@ func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptResponse) UnsetContents() {
 }
 
 // GetCategories returns the Categories field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptResponse) GetCategories() []CSSCMSDataModelEnumsScriptCategories {
+func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptResponse) GetCategories() []int32 {
 	if o == nil {
-		var ret []CSSCMSDataModelEnumsScriptCategories
+		var ret []int32
 		return ret
 	}
 	return o.Categories
@@ -183,7 +183,7 @@ func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptResponse) GetCategories() []
 // GetCategoriesOk returns a tuple with the Categories field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptResponse) GetCategoriesOk() ([]CSSCMSDataModelEnumsScriptCategories, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptResponse) GetCategoriesOk() ([]int32, bool) {
 	if o == nil || isNil(o.Categories) {
 		return nil, false
 	}
@@ -199,8 +199,8 @@ func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptResponse) HasCategories() bo
 	return false
 }
 
-// SetCategories gets a reference to the given []CSSCMSDataModelEnumsScriptCategories and assigns it to the Categories field.
-func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptResponse) SetCategories(v []CSSCMSDataModelEnumsScriptCategories) {
+// SetCategories gets a reference to the given []int32 and assigns it to the Categories field.
+func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptResponse) SetCategories(v []int32) {
 	o.Categories = v
 }
 

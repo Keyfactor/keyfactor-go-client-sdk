@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **AllowKeyReuse** | **bool** | Whether or not keys can be reused. | 
 **AllowWildcards** | **bool** | Whether or not wildcards can be used. | 
 **RfcEnforcement** | **bool** | Whether or not RFC 2818 compliance should be enforced. | 
-**KeyInfo** | [**CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo**](CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo.md) |  | 
+**KeyInfo** | [**ModelsTemplatesAlgorithmsKeyInfo**](ModelsTemplatesAlgorithmsKeyInfo.md) |  | 
 
 ## Methods
 
 ### NewKeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest
 
-`func NewKeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest(allowKeyReuse bool, allowWildcards bool, rfcEnforcement bool, keyInfo CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo, ) *KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest`
+`func NewKeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest(allowKeyReuse bool, allowWildcards bool, rfcEnforcement bool, keyInfo ModelsTemplatesAlgorithmsKeyInfo, ) *KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest`
 
 NewKeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest instantiates a new KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest object
 This constructor will assign default values to properties that have it defined,
@@ -116,20 +116,20 @@ SetRfcEnforcement sets RfcEnforcement field to given value.
 
 ### GetKeyInfo
 
-`func (o *KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest) GetKeyInfo() CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo`
+`func (o *KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest) GetKeyInfo() ModelsTemplatesAlgorithmsKeyInfo`
 
 GetKeyInfo returns the KeyInfo field if non-nil, zero value otherwise.
 
 ### GetKeyInfoOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest) GetKeyInfoOk() (*CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest) GetKeyInfoOk() (*ModelsTemplatesAlgorithmsKeyInfo, bool)`
 
 GetKeyInfoOk returns a tuple with the KeyInfo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyInfo
 
-`func (o *KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest) SetKeyInfo(v CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo)`
+`func (o *KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest) SetKeyInfo(v ModelsTemplatesAlgorithmsKeyInfo)`
 
 SetKeyInfo sets KeyInfo field to given value.
 

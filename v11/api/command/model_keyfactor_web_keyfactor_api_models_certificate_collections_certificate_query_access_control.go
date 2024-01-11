@@ -30,8 +30,8 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsCertificateCollectionsCert
 
 // KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateQueryAccessControl struct for KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateQueryAccessControl
 type KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateQueryAccessControl struct {
-	RoleId          *int32                                          `json:"roleId,omitempty"`
-	AreaPermissions []CSSCMSCorePermissionsWebConsoleAreaPermission `json:"areaPermissions,omitempty"`
+	RoleId          *int32  `json:"roleId,omitempty"`
+	AreaPermissions []int32 `json:"areaPermissions,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateQueryAccessControl instantiates a new KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateQueryAccessControl object
@@ -84,9 +84,9 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateQueryAcc
 }
 
 // GetAreaPermissions returns the AreaPermissions field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateQueryAccessControl) GetAreaPermissions() []CSSCMSCorePermissionsWebConsoleAreaPermission {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateQueryAccessControl) GetAreaPermissions() []int32 {
 	if o == nil {
-		var ret []CSSCMSCorePermissionsWebConsoleAreaPermission
+		var ret []int32
 		return ret
 	}
 	return o.AreaPermissions
@@ -95,7 +95,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateQueryAcc
 // GetAreaPermissionsOk returns a tuple with the AreaPermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateQueryAccessControl) GetAreaPermissionsOk() ([]CSSCMSCorePermissionsWebConsoleAreaPermission, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateQueryAccessControl) GetAreaPermissionsOk() ([]int32, bool) {
 	if o == nil || isNil(o.AreaPermissions) {
 		return nil, false
 	}
@@ -111,8 +111,8 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateQueryAcc
 	return false
 }
 
-// SetAreaPermissions gets a reference to the given []CSSCMSCorePermissionsWebConsoleAreaPermission and assigns it to the AreaPermissions field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateQueryAccessControl) SetAreaPermissions(v []CSSCMSCorePermissionsWebConsoleAreaPermission) {
+// SetAreaPermissions gets a reference to the given []int32 and assigns it to the AreaPermissions field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateQueryAccessControl) SetAreaPermissions(v []int32) {
 	o.AreaPermissions = v
 }
 

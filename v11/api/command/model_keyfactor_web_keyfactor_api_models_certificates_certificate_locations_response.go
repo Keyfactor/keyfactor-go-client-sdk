@@ -30,7 +30,7 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsCertificatesCertificateLoc
 
 // KeyfactorWebKeyfactorApiModelsCertificatesCertificateLocationsResponse struct for KeyfactorWebKeyfactorApiModelsCertificatesCertificateLocationsResponse
 type KeyfactorWebKeyfactorApiModelsCertificatesCertificateLocationsResponse struct {
-	Details []CSSCMSDataModelModelsCertStoreLocationsCertificateLocationsGroup `json:"details,omitempty"`
+	Details []ModelsCertStoreLocationsCertificateLocationsGroup `json:"details,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsCertificatesCertificateLocationsResponse instantiates a new KeyfactorWebKeyfactorApiModelsCertificatesCertificateLocationsResponse object
@@ -51,9 +51,9 @@ func NewKeyfactorWebKeyfactorApiModelsCertificatesCertificateLocationsResponseWi
 }
 
 // GetDetails returns the Details field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertificateLocationsResponse) GetDetails() []CSSCMSDataModelModelsCertStoreLocationsCertificateLocationsGroup {
+func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertificateLocationsResponse) GetDetails() []ModelsCertStoreLocationsCertificateLocationsGroup {
 	if o == nil {
-		var ret []CSSCMSDataModelModelsCertStoreLocationsCertificateLocationsGroup
+		var ret []ModelsCertStoreLocationsCertificateLocationsGroup
 		return ret
 	}
 	return o.Details
@@ -62,7 +62,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertificateLocationsResponse)
 // GetDetailsOk returns a tuple with the Details field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertificateLocationsResponse) GetDetailsOk() ([]CSSCMSDataModelModelsCertStoreLocationsCertificateLocationsGroup, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertificateLocationsResponse) GetDetailsOk() ([]ModelsCertStoreLocationsCertificateLocationsGroup, bool) {
 	if o == nil || isNil(o.Details) {
 		return nil, false
 	}
@@ -78,8 +78,8 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertificateLocationsResponse)
 	return false
 }
 
-// SetDetails gets a reference to the given []CSSCMSDataModelModelsCertStoreLocationsCertificateLocationsGroup and assigns it to the Details field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertificateLocationsResponse) SetDetails(v []CSSCMSDataModelModelsCertStoreLocationsCertificateLocationsGroup) {
+// SetDetails gets a reference to the given []ModelsCertStoreLocationsCertificateLocationsGroup and assigns it to the Details field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertificateLocationsResponse) SetDetails(v []ModelsCertStoreLocationsCertificateLocationsGroup) {
 	o.Details = v
 }
 

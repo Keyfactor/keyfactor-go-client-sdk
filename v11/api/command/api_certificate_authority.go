@@ -1477,7 +1477,7 @@ type ApiCertificateAuthorityGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -1507,7 +1507,7 @@ func (r ApiCertificateAuthorityGetRequest) SortField(sortField string) ApiCertif
 	return r
 }
 
-func (r ApiCertificateAuthorityGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiCertificateAuthorityGetRequest {
+func (r ApiCertificateAuthorityGetRequest) SortAscending(sortAscending int32) ApiCertificateAuthorityGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -2270,11 +2270,11 @@ func (a *CertificateAuthorityApiService) CertificateAuthorityPostExecute(r ApiCe
 }
 
 type ApiCertificateAuthorityPublishCRLPostRequest struct {
-	ctx                                  context.Context
-	ApiService                           *CertificateAuthorityApiService
-	xKeyfactorRequestedWith              *string
-	xKeyfactorApiVersion                 *string
-	cSSCMSDataModelModelsCRLRequestModel *CSSCMSDataModelModelsCRLRequestModel
+	ctx                     context.Context
+	ApiService              *CertificateAuthorityApiService
+	xKeyfactorRequestedWith *string
+	xKeyfactorApiVersion    *string
+	modelsCRLRequestModel   *ModelsCRLRequestModel
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -2290,8 +2290,8 @@ func (r ApiCertificateAuthorityPublishCRLPostRequest) XKeyfactorApiVersion(xKeyf
 }
 
 // Host and logical name of the CA for which the CRL should be published
-func (r ApiCertificateAuthorityPublishCRLPostRequest) CSSCMSDataModelModelsCRLRequestModel(cSSCMSDataModelModelsCRLRequestModel CSSCMSDataModelModelsCRLRequestModel) ApiCertificateAuthorityPublishCRLPostRequest {
-	r.cSSCMSDataModelModelsCRLRequestModel = &cSSCMSDataModelModelsCRLRequestModel
+func (r ApiCertificateAuthorityPublishCRLPostRequest) ModelsCRLRequestModel(modelsCRLRequestModel ModelsCRLRequestModel) ApiCertificateAuthorityPublishCRLPostRequest {
+	r.modelsCRLRequestModel = &modelsCRLRequestModel
 	return r
 }
 
@@ -2361,7 +2361,7 @@ func (a *CertificateAuthorityApiService) CertificateAuthorityPublishCRLPostExecu
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsCRLRequestModel
+	localVarPostBody = r.modelsCRLRequestModel
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2656,11 +2656,11 @@ func (a *CertificateAuthorityApiService) CertificateAuthoritySourceCountGetExecu
 }
 
 type ApiCertificateAuthorityTestPostRequest struct {
-	ctx                                                                        context.Context
-	ApiService                                                                 *CertificateAuthorityApiService
-	xKeyfactorRequestedWith                                                    *string
-	xKeyfactorApiVersion                                                       *string
-	cSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest *CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest
+	ctx                                                         context.Context
+	ApiService                                                  *CertificateAuthorityApiService
+	xKeyfactorRequestedWith                                     *string
+	xKeyfactorApiVersion                                        *string
+	modelsCertificateAuthoritiesCertificateAuthorityTestRequest *ModelsCertificateAuthoritiesCertificateAuthorityTestRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -2676,8 +2676,8 @@ func (r ApiCertificateAuthorityTestPostRequest) XKeyfactorApiVersion(xKeyfactorA
 }
 
 // The CA being tested.
-func (r ApiCertificateAuthorityTestPostRequest) CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest(cSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest) ApiCertificateAuthorityTestPostRequest {
-	r.cSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest = &cSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest
+func (r ApiCertificateAuthorityTestPostRequest) ModelsCertificateAuthoritiesCertificateAuthorityTestRequest(modelsCertificateAuthoritiesCertificateAuthorityTestRequest ModelsCertificateAuthoritiesCertificateAuthorityTestRequest) ApiCertificateAuthorityTestPostRequest {
+	r.modelsCertificateAuthoritiesCertificateAuthorityTestRequest = &modelsCertificateAuthoritiesCertificateAuthorityTestRequest
 	return r
 }
 
@@ -2750,7 +2750,7 @@ func (a *CertificateAuthorityApiService) CertificateAuthorityTestPostExecute(r A
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest
+	localVarPostBody = r.modelsCertificateAuthoritiesCertificateAuthorityTestRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

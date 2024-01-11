@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **RoleId** | Pointer to **int32** |  | [optional] 
-**AreaPermissions** | Pointer to [**[]CSSCMSCorePermissionsWebConsoleAreaPermission**](CSSCMSCorePermissionsWebConsoleAreaPermission.md) |  | [optional] 
+**AreaPermissions** | Pointer to **[]int32** |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasRoleId returns a boolean if a field has been set.
 
 ### GetAreaPermissions
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateQueryAccessControl) GetAreaPermissions() []CSSCMSCorePermissionsWebConsoleAreaPermission`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateQueryAccessControl) GetAreaPermissions() []int32`
 
 GetAreaPermissions returns the AreaPermissions field if non-nil, zero value otherwise.
 
 ### GetAreaPermissionsOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateQueryAccessControl) GetAreaPermissionsOk() (*[]CSSCMSCorePermissionsWebConsoleAreaPermission, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateQueryAccessControl) GetAreaPermissionsOk() (*[]int32, bool)`
 
 GetAreaPermissionsOk returns a tuple with the AreaPermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAreaPermissions
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateQueryAccessControl) SetAreaPermissions(v []CSSCMSCorePermissionsWebConsoleAreaPermission)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateQueryAccessControl) SetAreaPermissions(v []int32)`
 
 SetAreaPermissions sets AreaPermissions field to given value.
 

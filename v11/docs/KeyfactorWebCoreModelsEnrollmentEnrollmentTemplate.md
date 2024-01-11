@@ -11,10 +11,10 @@ Name | Type | Description | Notes
 **RequiresApproval** | Pointer to **bool** |  | [optional] 
 **RfcEnforcement** | Pointer to **bool** |  | [optional] 
 **CAs** | Pointer to [**[]KeyfactorWebCoreModelsEnrollmentEnrollmentCA**](KeyfactorWebCoreModelsEnrollmentEnrollmentCA.md) |  | [optional] 
-**EnrollmentFields** | Pointer to [**[]CSSCMSDataModelModelsTemplatesTemplateEnrollmentField**](CSSCMSDataModelModelsTemplatesTemplateEnrollmentField.md) |  | [optional] 
-**MetadataFields** | Pointer to [**[]CSSCMSDataModelModelsTemplatesTemplateMetadataField**](CSSCMSDataModelModelsTemplatesTemplateMetadataField.md) |  | [optional] 
-**Regexes** | Pointer to [**[]CSSCMSDataModelModelsTemplatesTemplateRegex**](CSSCMSDataModelModelsTemplatesTemplateRegex.md) |  | [optional] 
-**ExtendedKeyUsages** | Pointer to [**[]CSSCMSDataModelModelsExtendedKeyUsage**](CSSCMSDataModelModelsExtendedKeyUsage.md) |  | [optional] 
+**EnrollmentFields** | Pointer to [**[]ModelsTemplatesTemplateEnrollmentField**](ModelsTemplatesTemplateEnrollmentField.md) |  | [optional] 
+**MetadataFields** | Pointer to [**[]ModelsTemplatesTemplateMetadataField**](ModelsTemplatesTemplateMetadataField.md) |  | [optional] 
+**Regexes** | Pointer to [**[]ModelsTemplatesTemplateRegex**](ModelsTemplatesTemplateRegex.md) |  | [optional] 
+**ExtendedKeyUsages** | Pointer to [**[]ModelsExtendedKeyUsage**](ModelsExtendedKeyUsage.md) |  | [optional] 
 **EnrollmentTemplatePolicy** | Pointer to [**KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy**](KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy.md) |  | [optional] 
 **KeySize** | Pointer to **NullableString** |  | [optional] 
 **KeyType** | Pointer to **NullableString** |  | [optional] 
@@ -256,20 +256,20 @@ HasCAs returns a boolean if a field has been set.
 UnsetCAs ensures that no value is present for CAs, not even an explicit nil
 ### GetEnrollmentFields
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetEnrollmentFields() []CSSCMSDataModelModelsTemplatesTemplateEnrollmentField`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetEnrollmentFields() []ModelsTemplatesTemplateEnrollmentField`
 
 GetEnrollmentFields returns the EnrollmentFields field if non-nil, zero value otherwise.
 
 ### GetEnrollmentFieldsOk
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetEnrollmentFieldsOk() (*[]CSSCMSDataModelModelsTemplatesTemplateEnrollmentField, bool)`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetEnrollmentFieldsOk() (*[]ModelsTemplatesTemplateEnrollmentField, bool)`
 
 GetEnrollmentFieldsOk returns a tuple with the EnrollmentFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnrollmentFields
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) SetEnrollmentFields(v []CSSCMSDataModelModelsTemplatesTemplateEnrollmentField)`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) SetEnrollmentFields(v []ModelsTemplatesTemplateEnrollmentField)`
 
 SetEnrollmentFields sets EnrollmentFields field to given value.
 
@@ -291,20 +291,20 @@ HasEnrollmentFields returns a boolean if a field has been set.
 UnsetEnrollmentFields ensures that no value is present for EnrollmentFields, not even an explicit nil
 ### GetMetadataFields
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetMetadataFields() []CSSCMSDataModelModelsTemplatesTemplateMetadataField`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetMetadataFields() []ModelsTemplatesTemplateMetadataField`
 
 GetMetadataFields returns the MetadataFields field if non-nil, zero value otherwise.
 
 ### GetMetadataFieldsOk
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetMetadataFieldsOk() (*[]CSSCMSDataModelModelsTemplatesTemplateMetadataField, bool)`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetMetadataFieldsOk() (*[]ModelsTemplatesTemplateMetadataField, bool)`
 
 GetMetadataFieldsOk returns a tuple with the MetadataFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadataFields
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) SetMetadataFields(v []CSSCMSDataModelModelsTemplatesTemplateMetadataField)`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) SetMetadataFields(v []ModelsTemplatesTemplateMetadataField)`
 
 SetMetadataFields sets MetadataFields field to given value.
 
@@ -326,20 +326,20 @@ HasMetadataFields returns a boolean if a field has been set.
 UnsetMetadataFields ensures that no value is present for MetadataFields, not even an explicit nil
 ### GetRegexes
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetRegexes() []CSSCMSDataModelModelsTemplatesTemplateRegex`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetRegexes() []ModelsTemplatesTemplateRegex`
 
 GetRegexes returns the Regexes field if non-nil, zero value otherwise.
 
 ### GetRegexesOk
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetRegexesOk() (*[]CSSCMSDataModelModelsTemplatesTemplateRegex, bool)`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetRegexesOk() (*[]ModelsTemplatesTemplateRegex, bool)`
 
 GetRegexesOk returns a tuple with the Regexes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRegexes
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) SetRegexes(v []CSSCMSDataModelModelsTemplatesTemplateRegex)`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) SetRegexes(v []ModelsTemplatesTemplateRegex)`
 
 SetRegexes sets Regexes field to given value.
 
@@ -361,20 +361,20 @@ HasRegexes returns a boolean if a field has been set.
 UnsetRegexes ensures that no value is present for Regexes, not even an explicit nil
 ### GetExtendedKeyUsages
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetExtendedKeyUsages() []CSSCMSDataModelModelsExtendedKeyUsage`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetExtendedKeyUsages() []ModelsExtendedKeyUsage`
 
 GetExtendedKeyUsages returns the ExtendedKeyUsages field if non-nil, zero value otherwise.
 
 ### GetExtendedKeyUsagesOk
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetExtendedKeyUsagesOk() (*[]CSSCMSDataModelModelsExtendedKeyUsage, bool)`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetExtendedKeyUsagesOk() (*[]ModelsExtendedKeyUsage, bool)`
 
 GetExtendedKeyUsagesOk returns a tuple with the ExtendedKeyUsages field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExtendedKeyUsages
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) SetExtendedKeyUsages(v []CSSCMSDataModelModelsExtendedKeyUsage)`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) SetExtendedKeyUsages(v []ModelsExtendedKeyUsage)`
 
 SetExtendedKeyUsages sets ExtendedKeyUsages field to given value.
 

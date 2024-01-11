@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **NullableString** |  | [optional] 
 **Schedule** | Pointer to [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | [optional] 
 **CertStoreType** | Pointer to **int32** |  | [optional] 
-**CertificateStores** | Pointer to [**[]CSSCMSDataModelModelsCertificateStore**](CSSCMSDataModelModelsCertificateStore.md) |  | [optional] 
+**CertificateStores** | Pointer to [**[]ModelsCertificateStore**](ModelsCertificateStore.md) |  | [optional] 
 
 ## Methods
 
@@ -141,20 +141,20 @@ HasCertStoreType returns a boolean if a field has been set.
 
 ### GetCertificateStores
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoreContainersCertificateStoreContainerResponse) GetCertificateStores() []CSSCMSDataModelModelsCertificateStore`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoreContainersCertificateStoreContainerResponse) GetCertificateStores() []ModelsCertificateStore`
 
 GetCertificateStores returns the CertificateStores field if non-nil, zero value otherwise.
 
 ### GetCertificateStoresOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoreContainersCertificateStoreContainerResponse) GetCertificateStoresOk() (*[]CSSCMSDataModelModelsCertificateStore, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoreContainersCertificateStoreContainerResponse) GetCertificateStoresOk() (*[]ModelsCertificateStore, bool)`
 
 GetCertificateStoresOk returns a tuple with the CertificateStores field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertificateStores
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoreContainersCertificateStoreContainerResponse) SetCertificateStores(v []CSSCMSDataModelModelsCertificateStore)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoreContainersCertificateStoreContainerResponse) SetCertificateStores(v []ModelsCertificateStore)`
 
 SetCertificateStores sets CertificateStores field to given value.
 

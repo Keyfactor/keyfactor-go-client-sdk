@@ -35,8 +35,8 @@ type KeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentPolicyRe
 	// Whether or not wildcards can be used.
 	AllowWildcards *bool `json:"allowWildcards,omitempty"`
 	// Whether or not RFC 2818 compliance should be enforced.
-	RfcEnforcement *bool                                            `json:"rfcEnforcement,omitempty"`
-	KeyInfo        *CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo `json:"keyInfo,omitempty"`
+	RfcEnforcement *bool                             `json:"rfcEnforcement,omitempty"`
+	KeyInfo        *ModelsTemplatesAlgorithmsKeyInfo `json:"keyInfo,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentPolicyResponse instantiates a new KeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentPolicyResponse object
@@ -153,9 +153,9 @@ func (o *KeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentPoli
 }
 
 // GetKeyInfo returns the KeyInfo field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentPolicyResponse) GetKeyInfo() CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo {
+func (o *KeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentPolicyResponse) GetKeyInfo() ModelsTemplatesAlgorithmsKeyInfo {
 	if o == nil || isNil(o.KeyInfo) {
-		var ret CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo
+		var ret ModelsTemplatesAlgorithmsKeyInfo
 		return ret
 	}
 	return *o.KeyInfo
@@ -163,7 +163,7 @@ func (o *KeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentPoli
 
 // GetKeyInfoOk returns a tuple with the KeyInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentPolicyResponse) GetKeyInfoOk() (*CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentPolicyResponse) GetKeyInfoOk() (*ModelsTemplatesAlgorithmsKeyInfo, bool) {
 	if o == nil || isNil(o.KeyInfo) {
 		return nil, false
 	}
@@ -179,8 +179,8 @@ func (o *KeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentPoli
 	return false
 }
 
-// SetKeyInfo gets a reference to the given CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo and assigns it to the KeyInfo field.
-func (o *KeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentPolicyResponse) SetKeyInfo(v CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo) {
+// SetKeyInfo gets a reference to the given ModelsTemplatesAlgorithmsKeyInfo and assigns it to the KeyInfo field.
+func (o *KeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentPolicyResponse) SetKeyInfo(v ModelsTemplatesAlgorithmsKeyInfo) {
 	o.KeyInfo = &v
 }
 

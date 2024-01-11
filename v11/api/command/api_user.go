@@ -34,11 +34,11 @@ import (
 type UserApiService service
 
 type ApiSSHUsersAccessPostRequest struct {
-	ctx                                               context.Context
-	ApiService                                        *UserApiService
-	xKeyfactorRequestedWith                           *string
-	xKeyfactorApiVersion                              *string
-	cSSCMSDataModelModelsSSHUsersSshUserUpdateRequest *CSSCMSDataModelModelsSSHUsersSshUserUpdateRequest
+	ctx                                context.Context
+	ApiService                         *UserApiService
+	xKeyfactorRequestedWith            *string
+	xKeyfactorApiVersion               *string
+	modelsSSHUsersSshUserUpdateRequest *ModelsSSHUsersSshUserUpdateRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -54,12 +54,12 @@ func (r ApiSSHUsersAccessPostRequest) XKeyfactorApiVersion(xKeyfactorApiVersion 
 }
 
 // Logons to add the existing user
-func (r ApiSSHUsersAccessPostRequest) CSSCMSDataModelModelsSSHUsersSshUserUpdateRequest(cSSCMSDataModelModelsSSHUsersSshUserUpdateRequest CSSCMSDataModelModelsSSHUsersSshUserUpdateRequest) ApiSSHUsersAccessPostRequest {
-	r.cSSCMSDataModelModelsSSHUsersSshUserUpdateRequest = &cSSCMSDataModelModelsSSHUsersSshUserUpdateRequest
+func (r ApiSSHUsersAccessPostRequest) ModelsSSHUsersSshUserUpdateRequest(modelsSSHUsersSshUserUpdateRequest ModelsSSHUsersSshUserUpdateRequest) ApiSSHUsersAccessPostRequest {
+	r.modelsSSHUsersSshUserUpdateRequest = &modelsSSHUsersSshUserUpdateRequest
 	return r
 }
 
-func (r ApiSSHUsersAccessPostRequest) Execute() (*CSSCMSDataModelModelsSSHUsersSshUserAccessResponse, *http.Response, error) {
+func (r ApiSSHUsersAccessPostRequest) Execute() (*ModelsSSHUsersSshUserAccessResponse, *http.Response, error) {
 	return r.ApiService.SSHUsersAccessPostExecute(r)
 }
 
@@ -83,13 +83,13 @@ func (a *UserApiService) SSHUsersAccessPost(ctx context.Context) ApiSSHUsersAcce
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHUsersSshUserAccessResponse
-func (a *UserApiService) SSHUsersAccessPostExecute(r ApiSSHUsersAccessPostRequest) (*CSSCMSDataModelModelsSSHUsersSshUserAccessResponse, *http.Response, error) {
+//	@return ModelsSSHUsersSshUserAccessResponse
+func (a *UserApiService) SSHUsersAccessPostExecute(r ApiSSHUsersAccessPostRequest) (*ModelsSSHUsersSshUserAccessResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHUsersSshUserAccessResponse
+		localVarReturnValue *ModelsSSHUsersSshUserAccessResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -128,7 +128,7 @@ func (a *UserApiService) SSHUsersAccessPostExecute(r ApiSSHUsersAccessPostReques
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsSSHUsersSshUserUpdateRequest
+	localVarPostBody = r.modelsSSHUsersSshUserUpdateRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -174,7 +174,7 @@ type ApiSSHUsersGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	showOwnedAccess         *bool
 	xKeyfactorApiVersion    *string
 }
@@ -205,7 +205,7 @@ func (r ApiSSHUsersGetRequest) SortField(sortField string) ApiSSHUsersGetRequest
 	return r
 }
 
-func (r ApiSSHUsersGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiSSHUsersGetRequest {
+func (r ApiSSHUsersGetRequest) SortAscending(sortAscending int32) ApiSSHUsersGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -222,7 +222,7 @@ func (r ApiSSHUsersGetRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string)
 	return r
 }
 
-func (r ApiSSHUsersGetRequest) Execute() ([]CSSCMSDataModelModelsSSHUsersSshUserResponse, *http.Response, error) {
+func (r ApiSSHUsersGetRequest) Execute() ([]ModelsSSHUsersSshUserResponse, *http.Response, error) {
 	return r.ApiService.SSHUsersGetExecute(r)
 }
 
@@ -246,13 +246,13 @@ func (a *UserApiService) SSHUsersGet(ctx context.Context) ApiSSHUsersGetRequest 
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsSSHUsersSshUserResponse
-func (a *UserApiService) SSHUsersGetExecute(r ApiSSHUsersGetRequest) ([]CSSCMSDataModelModelsSSHUsersSshUserResponse, *http.Response, error) {
+//	@return []ModelsSSHUsersSshUserResponse
+func (a *UserApiService) SSHUsersGetExecute(r ApiSSHUsersGetRequest) ([]ModelsSSHUsersSshUserResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsSSHUsersSshUserResponse
+		localVarReturnValue []ModelsSSHUsersSshUserResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -481,7 +481,7 @@ func (r ApiSSHUsersIdGetRequest) XKeyfactorApiVersion(xKeyfactorApiVersion strin
 	return r
 }
 
-func (r ApiSSHUsersIdGetRequest) Execute() (*CSSCMSDataModelModelsSSHUsersSshUserResponse, *http.Response, error) {
+func (r ApiSSHUsersIdGetRequest) Execute() (*ModelsSSHUsersSshUserResponse, *http.Response, error) {
 	return r.ApiService.SSHUsersIdGetExecute(r)
 }
 
@@ -507,13 +507,13 @@ func (a *UserApiService) SSHUsersIdGet(ctx context.Context, id int32) ApiSSHUser
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHUsersSshUserResponse
-func (a *UserApiService) SSHUsersIdGetExecute(r ApiSSHUsersIdGetRequest) (*CSSCMSDataModelModelsSSHUsersSshUserResponse, *http.Response, error) {
+//	@return ModelsSSHUsersSshUserResponse
+func (a *UserApiService) SSHUsersIdGetExecute(r ApiSSHUsersIdGetRequest) (*ModelsSSHUsersSshUserResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHUsersSshUserResponse
+		localVarReturnValue *ModelsSSHUsersSshUserResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -590,11 +590,11 @@ func (a *UserApiService) SSHUsersIdGetExecute(r ApiSSHUsersIdGetRequest) (*CSSCM
 }
 
 type ApiSSHUsersPostRequest struct {
-	ctx                                                 context.Context
-	ApiService                                          *UserApiService
-	xKeyfactorRequestedWith                             *string
-	xKeyfactorApiVersion                                *string
-	cSSCMSDataModelModelsSSHUsersSshUserCreationRequest *CSSCMSDataModelModelsSSHUsersSshUserCreationRequest
+	ctx                                  context.Context
+	ApiService                           *UserApiService
+	xKeyfactorRequestedWith              *string
+	xKeyfactorApiVersion                 *string
+	modelsSSHUsersSshUserCreationRequest *ModelsSSHUsersSshUserCreationRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -610,12 +610,12 @@ func (r ApiSSHUsersPostRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string
 }
 
 // SSH user to be created.
-func (r ApiSSHUsersPostRequest) CSSCMSDataModelModelsSSHUsersSshUserCreationRequest(cSSCMSDataModelModelsSSHUsersSshUserCreationRequest CSSCMSDataModelModelsSSHUsersSshUserCreationRequest) ApiSSHUsersPostRequest {
-	r.cSSCMSDataModelModelsSSHUsersSshUserCreationRequest = &cSSCMSDataModelModelsSSHUsersSshUserCreationRequest
+func (r ApiSSHUsersPostRequest) ModelsSSHUsersSshUserCreationRequest(modelsSSHUsersSshUserCreationRequest ModelsSSHUsersSshUserCreationRequest) ApiSSHUsersPostRequest {
+	r.modelsSSHUsersSshUserCreationRequest = &modelsSSHUsersSshUserCreationRequest
 	return r
 }
 
-func (r ApiSSHUsersPostRequest) Execute() (*CSSCMSDataModelModelsSSHUsersSshUserResponse, *http.Response, error) {
+func (r ApiSSHUsersPostRequest) Execute() (*ModelsSSHUsersSshUserResponse, *http.Response, error) {
 	return r.ApiService.SSHUsersPostExecute(r)
 }
 
@@ -639,13 +639,13 @@ func (a *UserApiService) SSHUsersPost(ctx context.Context) ApiSSHUsersPostReques
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHUsersSshUserResponse
-func (a *UserApiService) SSHUsersPostExecute(r ApiSSHUsersPostRequest) (*CSSCMSDataModelModelsSSHUsersSshUserResponse, *http.Response, error) {
+//	@return ModelsSSHUsersSshUserResponse
+func (a *UserApiService) SSHUsersPostExecute(r ApiSSHUsersPostRequest) (*ModelsSSHUsersSshUserResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHUsersSshUserResponse
+		localVarReturnValue *ModelsSSHUsersSshUserResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -684,7 +684,7 @@ func (a *UserApiService) SSHUsersPostExecute(r ApiSSHUsersPostRequest) (*CSSCMSD
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsSSHUsersSshUserCreationRequest
+	localVarPostBody = r.modelsSSHUsersSshUserCreationRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -723,11 +723,11 @@ func (a *UserApiService) SSHUsersPostExecute(r ApiSSHUsersPostRequest) (*CSSCMSD
 }
 
 type ApiSSHUsersPutRequest struct {
-	ctx                                               context.Context
-	ApiService                                        *UserApiService
-	xKeyfactorRequestedWith                           *string
-	xKeyfactorApiVersion                              *string
-	cSSCMSDataModelModelsSSHUsersSshUserUpdateRequest *CSSCMSDataModelModelsSSHUsersSshUserUpdateRequest
+	ctx                                context.Context
+	ApiService                         *UserApiService
+	xKeyfactorRequestedWith            *string
+	xKeyfactorApiVersion               *string
+	modelsSSHUsersSshUserUpdateRequest *ModelsSSHUsersSshUserUpdateRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -743,12 +743,12 @@ func (r ApiSSHUsersPutRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string)
 }
 
 // The new state of the SSH user to update.
-func (r ApiSSHUsersPutRequest) CSSCMSDataModelModelsSSHUsersSshUserUpdateRequest(cSSCMSDataModelModelsSSHUsersSshUserUpdateRequest CSSCMSDataModelModelsSSHUsersSshUserUpdateRequest) ApiSSHUsersPutRequest {
-	r.cSSCMSDataModelModelsSSHUsersSshUserUpdateRequest = &cSSCMSDataModelModelsSSHUsersSshUserUpdateRequest
+func (r ApiSSHUsersPutRequest) ModelsSSHUsersSshUserUpdateRequest(modelsSSHUsersSshUserUpdateRequest ModelsSSHUsersSshUserUpdateRequest) ApiSSHUsersPutRequest {
+	r.modelsSSHUsersSshUserUpdateRequest = &modelsSSHUsersSshUserUpdateRequest
 	return r
 }
 
-func (r ApiSSHUsersPutRequest) Execute() (*CSSCMSDataModelModelsSSHUsersSshUserResponse, *http.Response, error) {
+func (r ApiSSHUsersPutRequest) Execute() (*ModelsSSHUsersSshUserResponse, *http.Response, error) {
 	return r.ApiService.SSHUsersPutExecute(r)
 }
 
@@ -772,13 +772,13 @@ func (a *UserApiService) SSHUsersPut(ctx context.Context) ApiSSHUsersPutRequest 
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHUsersSshUserResponse
-func (a *UserApiService) SSHUsersPutExecute(r ApiSSHUsersPutRequest) (*CSSCMSDataModelModelsSSHUsersSshUserResponse, *http.Response, error) {
+//	@return ModelsSSHUsersSshUserResponse
+func (a *UserApiService) SSHUsersPutExecute(r ApiSSHUsersPutRequest) (*ModelsSSHUsersSshUserResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHUsersSshUserResponse
+		localVarReturnValue *ModelsSSHUsersSshUserResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -817,7 +817,7 @@ func (a *UserApiService) SSHUsersPutExecute(r ApiSSHUsersPutRequest) (*CSSCMSDat
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsSSHUsersSshUserUpdateRequest
+	localVarPostBody = r.modelsSSHUsersSshUserUpdateRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

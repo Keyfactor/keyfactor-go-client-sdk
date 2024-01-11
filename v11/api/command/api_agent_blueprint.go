@@ -315,7 +315,7 @@ type ApiAgentBluePrintGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -340,7 +340,7 @@ func (r ApiAgentBluePrintGetRequest) SortField(sortField string) ApiAgentBluePri
 	return r
 }
 
-func (r ApiAgentBluePrintGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiAgentBluePrintGetRequest {
+func (r ApiAgentBluePrintGetRequest) SortAscending(sortAscending int32) ApiAgentBluePrintGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -730,7 +730,7 @@ type ApiAgentBluePrintIdJobsGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -755,7 +755,7 @@ func (r ApiAgentBluePrintIdJobsGetRequest) SortField(sortField string) ApiAgentB
 	return r
 }
 
-func (r ApiAgentBluePrintIdJobsGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiAgentBluePrintIdJobsGetRequest {
+func (r ApiAgentBluePrintIdJobsGetRequest) SortAscending(sortAscending int32) ApiAgentBluePrintIdJobsGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -894,7 +894,7 @@ type ApiAgentBluePrintIdStoresGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -919,7 +919,7 @@ func (r ApiAgentBluePrintIdStoresGetRequest) SortField(sortField string) ApiAgen
 	return r
 }
 
-func (r ApiAgentBluePrintIdStoresGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiAgentBluePrintIdStoresGetRequest {
+func (r ApiAgentBluePrintIdStoresGetRequest) SortAscending(sortAscending int32) ApiAgentBluePrintIdStoresGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }

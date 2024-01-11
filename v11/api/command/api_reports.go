@@ -42,7 +42,7 @@ type ApiReportsCustomGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -77,7 +77,7 @@ func (r ApiReportsCustomGetRequest) SortField(sortField string) ApiReportsCustom
 	return r
 }
 
-func (r ApiReportsCustomGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiReportsCustomGetRequest {
+func (r ApiReportsCustomGetRequest) SortAscending(sortAscending int32) ApiReportsCustomGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -742,7 +742,7 @@ type ApiReportsGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -777,7 +777,7 @@ func (r ApiReportsGetRequest) SortField(sortField string) ApiReportsGetRequest {
 	return r
 }
 
-func (r ApiReportsGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiReportsGetRequest {
+func (r ApiReportsGetRequest) SortAscending(sortAscending int32) ApiReportsGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -788,7 +788,7 @@ func (r ApiReportsGetRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) 
 	return r
 }
 
-func (r ApiReportsGetRequest) Execute() ([]CSSCMSDataModelModelsReport, *http.Response, error) {
+func (r ApiReportsGetRequest) Execute() ([]ModelsReport, *http.Response, error) {
 	return r.ApiService.ReportsGetExecute(r)
 }
 
@@ -812,13 +812,13 @@ func (a *ReportsApiService) ReportsGet(ctx context.Context) ApiReportsGetRequest
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsReport
-func (a *ReportsApiService) ReportsGetExecute(r ApiReportsGetRequest) ([]CSSCMSDataModelModelsReport, *http.Response, error) {
+//	@return []ModelsReport
+func (a *ReportsApiService) ReportsGetExecute(r ApiReportsGetRequest) ([]ModelsReport, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsReport
+		localVarReturnValue []ModelsReport
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -931,7 +931,7 @@ func (r ApiReportsIdGetRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string
 	return r
 }
 
-func (r ApiReportsIdGetRequest) Execute() (*CSSCMSDataModelModelsReport, *http.Response, error) {
+func (r ApiReportsIdGetRequest) Execute() (*ModelsReport, *http.Response, error) {
 	return r.ApiService.ReportsIdGetExecute(r)
 }
 
@@ -957,13 +957,13 @@ func (a *ReportsApiService) ReportsIdGet(ctx context.Context, id int32) ApiRepor
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsReport
-func (a *ReportsApiService) ReportsIdGetExecute(r ApiReportsIdGetRequest) (*CSSCMSDataModelModelsReport, *http.Response, error) {
+//	@return ModelsReport
+func (a *ReportsApiService) ReportsIdGetExecute(r ApiReportsIdGetRequest) (*ModelsReport, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsReport
+		localVarReturnValue *ModelsReport
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -1065,7 +1065,7 @@ func (r ApiReportsIdParametersGetRequest) XKeyfactorApiVersion(xKeyfactorApiVers
 	return r
 }
 
-func (r ApiReportsIdParametersGetRequest) Execute() ([]CSSCMSDataModelModelsReportParameters, *http.Response, error) {
+func (r ApiReportsIdParametersGetRequest) Execute() ([]ModelsReportParameters, *http.Response, error) {
 	return r.ApiService.ReportsIdParametersGetExecute(r)
 }
 
@@ -1091,13 +1091,13 @@ func (a *ReportsApiService) ReportsIdParametersGet(ctx context.Context, id int32
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsReportParameters
-func (a *ReportsApiService) ReportsIdParametersGetExecute(r ApiReportsIdParametersGetRequest) ([]CSSCMSDataModelModelsReportParameters, *http.Response, error) {
+//	@return []ModelsReportParameters
+func (a *ReportsApiService) ReportsIdParametersGetExecute(r ApiReportsIdParametersGetRequest) ([]ModelsReportParameters, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsReportParameters
+		localVarReturnValue []ModelsReportParameters
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -1174,12 +1174,12 @@ func (a *ReportsApiService) ReportsIdParametersGetExecute(r ApiReportsIdParamete
 }
 
 type ApiReportsIdParametersPutRequest struct {
-	ctx                                          context.Context
-	ApiService                                   *ReportsApiService
-	id                                           int32
-	xKeyfactorRequestedWith                      *string
-	xKeyfactorApiVersion                         *string
-	cSSCMSDataModelModelsReportParametersRequest *[]CSSCMSDataModelModelsReportParametersRequest
+	ctx                           context.Context
+	ApiService                    *ReportsApiService
+	id                            int32
+	xKeyfactorRequestedWith       *string
+	xKeyfactorApiVersion          *string
+	modelsReportParametersRequest *[]ModelsReportParametersRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1195,12 +1195,12 @@ func (r ApiReportsIdParametersPutRequest) XKeyfactorApiVersion(xKeyfactorApiVers
 }
 
 // A List of the parameters to be updated
-func (r ApiReportsIdParametersPutRequest) CSSCMSDataModelModelsReportParametersRequest(cSSCMSDataModelModelsReportParametersRequest []CSSCMSDataModelModelsReportParametersRequest) ApiReportsIdParametersPutRequest {
-	r.cSSCMSDataModelModelsReportParametersRequest = &cSSCMSDataModelModelsReportParametersRequest
+func (r ApiReportsIdParametersPutRequest) ModelsReportParametersRequest(modelsReportParametersRequest []ModelsReportParametersRequest) ApiReportsIdParametersPutRequest {
+	r.modelsReportParametersRequest = &modelsReportParametersRequest
 	return r
 }
 
-func (r ApiReportsIdParametersPutRequest) Execute() ([]CSSCMSDataModelModelsReportParameters, *http.Response, error) {
+func (r ApiReportsIdParametersPutRequest) Execute() ([]ModelsReportParameters, *http.Response, error) {
 	return r.ApiService.ReportsIdParametersPutExecute(r)
 }
 
@@ -1226,13 +1226,13 @@ func (a *ReportsApiService) ReportsIdParametersPut(ctx context.Context, id int32
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsReportParameters
-func (a *ReportsApiService) ReportsIdParametersPutExecute(r ApiReportsIdParametersPutRequest) ([]CSSCMSDataModelModelsReportParameters, *http.Response, error) {
+//	@return []ModelsReportParameters
+func (a *ReportsApiService) ReportsIdParametersPutExecute(r ApiReportsIdParametersPutRequest) ([]ModelsReportParameters, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsReportParameters
+		localVarReturnValue []ModelsReportParameters
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -1272,7 +1272,7 @@ func (a *ReportsApiService) ReportsIdParametersPutExecute(r ApiReportsIdParamete
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsReportParametersRequest
+	localVarPostBody = r.modelsReportParametersRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1319,7 +1319,7 @@ type ApiReportsIdSchedulesGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -1354,7 +1354,7 @@ func (r ApiReportsIdSchedulesGetRequest) SortField(sortField string) ApiReportsI
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiReportsIdSchedulesGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiReportsIdSchedulesGetRequest {
+func (r ApiReportsIdSchedulesGetRequest) SortAscending(sortAscending int32) ApiReportsIdSchedulesGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -1763,11 +1763,11 @@ func (a *ReportsApiService) ReportsIdSchedulesPutExecute(r ApiReportsIdSchedules
 }
 
 type ApiReportsPutRequest struct {
-	ctx                                     context.Context
-	ApiService                              *ReportsApiService
-	xKeyfactorRequestedWith                 *string
-	xKeyfactorApiVersion                    *string
-	cSSCMSDataModelModelsReportRequestModel *CSSCMSDataModelModelsReportRequestModel
+	ctx                      context.Context
+	ApiService               *ReportsApiService
+	xKeyfactorRequestedWith  *string
+	xKeyfactorApiVersion     *string
+	modelsReportRequestModel *ModelsReportRequestModel
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1783,12 +1783,12 @@ func (r ApiReportsPutRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) 
 }
 
 // This object is used to update the Favorite, In Navigator and the Remove Duplicates if the &#39;Uses Collections&#39; is true.
-func (r ApiReportsPutRequest) CSSCMSDataModelModelsReportRequestModel(cSSCMSDataModelModelsReportRequestModel CSSCMSDataModelModelsReportRequestModel) ApiReportsPutRequest {
-	r.cSSCMSDataModelModelsReportRequestModel = &cSSCMSDataModelModelsReportRequestModel
+func (r ApiReportsPutRequest) ModelsReportRequestModel(modelsReportRequestModel ModelsReportRequestModel) ApiReportsPutRequest {
+	r.modelsReportRequestModel = &modelsReportRequestModel
 	return r
 }
 
-func (r ApiReportsPutRequest) Execute() (*CSSCMSDataModelModelsReport, *http.Response, error) {
+func (r ApiReportsPutRequest) Execute() (*ModelsReport, *http.Response, error) {
 	return r.ApiService.ReportsPutExecute(r)
 }
 
@@ -1812,13 +1812,13 @@ func (a *ReportsApiService) ReportsPut(ctx context.Context) ApiReportsPutRequest
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsReport
-func (a *ReportsApiService) ReportsPutExecute(r ApiReportsPutRequest) (*CSSCMSDataModelModelsReport, *http.Response, error) {
+//	@return ModelsReport
+func (a *ReportsApiService) ReportsPutExecute(r ApiReportsPutRequest) (*ModelsReport, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsReport
+		localVarReturnValue *ModelsReport
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -1857,7 +1857,7 @@ func (a *ReportsApiService) ReportsPutExecute(r ApiReportsPutRequest) (*CSSCMSDa
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsReportRequestModel
+	localVarPostBody = r.modelsReportRequestModel
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

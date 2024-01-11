@@ -164,7 +164,7 @@ type ApiCertificateStoreTypesGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -194,7 +194,7 @@ func (r ApiCertificateStoreTypesGetRequest) SortField(sortField string) ApiCerti
 	return r
 }
 
-func (r ApiCertificateStoreTypesGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiCertificateStoreTypesGetRequest {
+func (r ApiCertificateStoreTypesGetRequest) SortAscending(sortAscending int32) ApiCertificateStoreTypesGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }

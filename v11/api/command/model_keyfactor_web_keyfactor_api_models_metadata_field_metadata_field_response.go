@@ -30,16 +30,16 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataField
 
 // KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse struct for KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse
 type KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse struct {
-	Id           *int32                                 `json:"id,omitempty"`
-	Name         NullableString                         `json:"name,omitempty"`
-	Description  NullableString                         `json:"description,omitempty"`
-	DataType     *CSSCMSCoreEnumsMetadataDataType       `json:"dataType,omitempty"`
-	Hint         NullableString                         `json:"hint,omitempty"`
-	Validation   NullableString                         `json:"validation,omitempty"`
-	Enrollment   *CSSCMSCoreEnumsMetadataTypeEnrollment `json:"enrollment,omitempty"`
-	Message      NullableString                         `json:"message,omitempty"`
-	Options      NullableString                         `json:"options,omitempty"`
-	DefaultValue NullableString                         `json:"defaultValue,omitempty"`
+	Id           *int32         `json:"id,omitempty"`
+	Name         NullableString `json:"name,omitempty"`
+	Description  NullableString `json:"description,omitempty"`
+	DataType     *int32         `json:"dataType,omitempty"`
+	Hint         NullableString `json:"hint,omitempty"`
+	Validation   NullableString `json:"validation,omitempty"`
+	Enrollment   *int32         `json:"enrollment,omitempty"`
+	Message      NullableString `json:"message,omitempty"`
+	Options      NullableString `json:"options,omitempty"`
+	DefaultValue NullableString `json:"defaultValue,omitempty"`
 	// Deprecated
 	AllowAPI *bool `json:"allowAPI,omitempty"`
 	// Deprecated
@@ -183,9 +183,9 @@ func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) Unset
 }
 
 // GetDataType returns the DataType field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetDataType() CSSCMSCoreEnumsMetadataDataType {
+func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetDataType() int32 {
 	if o == nil || isNil(o.DataType) {
-		var ret CSSCMSCoreEnumsMetadataDataType
+		var ret int32
 		return ret
 	}
 	return *o.DataType
@@ -193,7 +193,7 @@ func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetDa
 
 // GetDataTypeOk returns a tuple with the DataType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetDataTypeOk() (*CSSCMSCoreEnumsMetadataDataType, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetDataTypeOk() (*int32, bool) {
 	if o == nil || isNil(o.DataType) {
 		return nil, false
 	}
@@ -209,8 +209,8 @@ func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) HasDa
 	return false
 }
 
-// SetDataType gets a reference to the given CSSCMSCoreEnumsMetadataDataType and assigns it to the DataType field.
-func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) SetDataType(v CSSCMSCoreEnumsMetadataDataType) {
+// SetDataType gets a reference to the given int32 and assigns it to the DataType field.
+func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) SetDataType(v int32) {
 	o.DataType = &v
 }
 
@@ -301,9 +301,9 @@ func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) Unset
 }
 
 // GetEnrollment returns the Enrollment field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetEnrollment() CSSCMSCoreEnumsMetadataTypeEnrollment {
+func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetEnrollment() int32 {
 	if o == nil || isNil(o.Enrollment) {
-		var ret CSSCMSCoreEnumsMetadataTypeEnrollment
+		var ret int32
 		return ret
 	}
 	return *o.Enrollment
@@ -311,7 +311,7 @@ func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetEn
 
 // GetEnrollmentOk returns a tuple with the Enrollment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetEnrollmentOk() (*CSSCMSCoreEnumsMetadataTypeEnrollment, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetEnrollmentOk() (*int32, bool) {
 	if o == nil || isNil(o.Enrollment) {
 		return nil, false
 	}
@@ -327,8 +327,8 @@ func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) HasEn
 	return false
 }
 
-// SetEnrollment gets a reference to the given CSSCMSCoreEnumsMetadataTypeEnrollment and assigns it to the Enrollment field.
-func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) SetEnrollment(v CSSCMSCoreEnumsMetadataTypeEnrollment) {
+// SetEnrollment gets a reference to the given int32 and assigns it to the Enrollment field.
+func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) SetEnrollment(v int32) {
 	o.Enrollment = &v
 }
 

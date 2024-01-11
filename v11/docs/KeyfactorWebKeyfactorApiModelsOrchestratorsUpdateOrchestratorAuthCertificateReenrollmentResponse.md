@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **FailedOrchestratorIds** | Pointer to **[]string** |  | [optional] 
-**Status** | Pointer to [**CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment**](CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment.md) |  | [optional] 
+**Status** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -63,20 +63,20 @@ HasFailedOrchestratorIds returns a boolean if a field has been set.
 UnsetFailedOrchestratorIds ensures that no value is present for FailedOrchestratorIds, not even an explicit nil
 ### GetStatus
 
-`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse) GetStatus() CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment`
+`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse) GetStatus() int32`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse) GetStatusOk() (*CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse) GetStatusOk() (*int32, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse) SetStatus(v CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment)`
+`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse) SetStatus(v int32)`
 
 SetStatus sets Status field to given value.
 

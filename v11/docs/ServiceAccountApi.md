@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## SSHServiceAccountsGet
 
-> []CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse SSHServiceAccountsGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsSSHServiceAccountsServiceAccountResponse SSHServiceAccountsGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all ServiceAccounts according to the provided filter parameters
 
@@ -105,7 +105,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -115,7 +115,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAccountApi.SSHServiceAccountsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHServiceAccountsGet`: []CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse
+    // response from `SSHServiceAccountsGet`: []ModelsSSHServiceAccountsServiceAccountResponse
     fmt.Fprintf(os.Stdout, "Response from `ServiceAccountApi.SSHServiceAccountsGet`: %v\n", resp)
 }
 ```
@@ -136,12 +136,12 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse**](CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse.md)
+[**[]ModelsSSHServiceAccountsServiceAccountResponse**](ModelsSSHServiceAccountsServiceAccountResponse.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ## SSHServiceAccountsIdGet
 
-> CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse SSHServiceAccountsIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ModelsSSHServiceAccountsServiceAccountResponse SSHServiceAccountsIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a ServiceAccount associated with the provided identifier
 
@@ -257,7 +257,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAccountApi.SSHServiceAccountsIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHServiceAccountsIdGet`: CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse
+    // response from `SSHServiceAccountsIdGet`: ModelsSSHServiceAccountsServiceAccountResponse
     fmt.Fprintf(os.Stdout, "Response from `ServiceAccountApi.SSHServiceAccountsIdGet`: %v\n", resp)
 }
 ```
@@ -283,7 +283,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse**](CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse.md)
+[**ModelsSSHServiceAccountsServiceAccountResponse**](ModelsSSHServiceAccountsServiceAccountResponse.md)
 
 ### Authorization
 
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ## SSHServiceAccountsKeyIdGet
 
-> CSSCMSDataModelModelsSSHKeysKeyResponse SSHServiceAccountsKeyIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludePrivateKey(includePrivateKey).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ModelsSSHKeysKeyResponse SSHServiceAccountsKeyIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludePrivateKey(includePrivateKey).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns an SSH key with or without private key based on the provided parameters.
 
@@ -330,7 +330,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAccountApi.SSHServiceAccountsKeyIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHServiceAccountsKeyIdGet`: CSSCMSDataModelModelsSSHKeysKeyResponse
+    // response from `SSHServiceAccountsKeyIdGet`: ModelsSSHKeysKeyResponse
     fmt.Fprintf(os.Stdout, "Response from `ServiceAccountApi.SSHServiceAccountsKeyIdGet`: %v\n", resp)
 }
 ```
@@ -357,7 +357,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHKeysKeyResponse**](CSSCMSDataModelModelsSSHKeysKeyResponse.md)
+[**ModelsSSHKeysKeyResponse**](ModelsSSHKeysKeyResponse.md)
 
 ### Authorization
 
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 
 ## SSHServiceAccountsPost
 
-> CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse SSHServiceAccountsPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest(cSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest).Execute()
+> ModelsSSHServiceAccountsServiceAccountResponse SSHServiceAccountsPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHServiceAccountsServiceAccountCreationRequest(modelsSSHServiceAccountsServiceAccountCreationRequest).Execute()
 
 Creates a ServiceAccount with the provided properties
 
@@ -394,16 +394,16 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest := *openapiclient.NewCSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest(*openapiclient.NewCSSCMSDataModelModelsSSHKeysKeyGenerationRequest("KeyType_example", "PrivateKeyFormat_example", int32(123), "Email_example", "Password_example"), *openapiclient.NewCSSCMSDataModelModelsSSHServiceAccountsServiceAccountUserCreationRequest("Username_example"), "ClientHostname_example", "ServerGroupId_example") // CSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest | ServiceAccount properties to be applied to the new ServiceAccount (optional)
+    modelsSSHServiceAccountsServiceAccountCreationRequest := *openapiclient.NewModelsSSHServiceAccountsServiceAccountCreationRequest(*openapiclient.NewModelsSSHKeysKeyGenerationRequest("KeyType_example", "PrivateKeyFormat_example", int32(123), "Email_example", "Password_example"), *openapiclient.NewModelsSSHServiceAccountsServiceAccountUserCreationRequest("Username_example"), "ClientHostname_example", "ServerGroupId_example") // ModelsSSHServiceAccountsServiceAccountCreationRequest | ServiceAccount properties to be applied to the new ServiceAccount (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServiceAccountApi.SSHServiceAccountsPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest(cSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest).Execute()
+    resp, r, err := apiClient.ServiceAccountApi.SSHServiceAccountsPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHServiceAccountsServiceAccountCreationRequest(modelsSSHServiceAccountsServiceAccountCreationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAccountApi.SSHServiceAccountsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHServiceAccountsPost`: CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse
+    // response from `SSHServiceAccountsPost`: ModelsSSHServiceAccountsServiceAccountResponse
     fmt.Fprintf(os.Stdout, "Response from `ServiceAccountApi.SSHServiceAccountsPost`: %v\n", resp)
 }
 ```
@@ -421,11 +421,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest** | [**CSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest**](CSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest.md) | ServiceAccount properties to be applied to the new ServiceAccount | 
+ **modelsSSHServiceAccountsServiceAccountCreationRequest** | [**ModelsSSHServiceAccountsServiceAccountCreationRequest**](ModelsSSHServiceAccountsServiceAccountCreationRequest.md) | ServiceAccount properties to be applied to the new ServiceAccount | 
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse**](CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse.md)
+[**ModelsSSHServiceAccountsServiceAccountResponse**](ModelsSSHServiceAccountsServiceAccountResponse.md)
 
 ### Authorization
 
@@ -443,7 +443,7 @@ Name | Type | Description  | Notes
 
 ## SSHServiceAccountsPut
 
-> CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse SSHServiceAccountsPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest(cSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest).Execute()
+> ModelsSSHServiceAccountsServiceAccountResponse SSHServiceAccountsPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHServiceAccountsServiceAccountUpdateRequest(modelsSSHServiceAccountsServiceAccountUpdateRequest).Execute()
 
 Updates an SSH key for a specified service account.
 
@@ -462,16 +462,16 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest := *openapiclient.NewCSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest(*openapiclient.NewCSSCMSDataModelModelsSSHKeysKeyUpdateRequest(int32(123), "Email_example"), int32(123)) // CSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest | The id of the service account and the updated state of the SSH key. (optional)
+    modelsSSHServiceAccountsServiceAccountUpdateRequest := *openapiclient.NewModelsSSHServiceAccountsServiceAccountUpdateRequest(*openapiclient.NewModelsSSHKeysKeyUpdateRequest(int32(123), "Email_example"), int32(123)) // ModelsSSHServiceAccountsServiceAccountUpdateRequest | The id of the service account and the updated state of the SSH key. (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServiceAccountApi.SSHServiceAccountsPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest(cSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest).Execute()
+    resp, r, err := apiClient.ServiceAccountApi.SSHServiceAccountsPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHServiceAccountsServiceAccountUpdateRequest(modelsSSHServiceAccountsServiceAccountUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAccountApi.SSHServiceAccountsPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHServiceAccountsPut`: CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse
+    // response from `SSHServiceAccountsPut`: ModelsSSHServiceAccountsServiceAccountResponse
     fmt.Fprintf(os.Stdout, "Response from `ServiceAccountApi.SSHServiceAccountsPut`: %v\n", resp)
 }
 ```
@@ -489,11 +489,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest** | [**CSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest**](CSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest.md) | The id of the service account and the updated state of the SSH key. | 
+ **modelsSSHServiceAccountsServiceAccountUpdateRequest** | [**ModelsSSHServiceAccountsServiceAccountUpdateRequest**](ModelsSSHServiceAccountsServiceAccountUpdateRequest.md) | The id of the service account and the updated state of the SSH key. | 
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse**](CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse.md)
+[**ModelsSSHServiceAccountsServiceAccountResponse**](ModelsSSHServiceAccountsServiceAccountResponse.md)
 
 ### Authorization
 
@@ -511,7 +511,7 @@ Name | Type | Description  | Notes
 
 ## SSHServiceAccountsRotateIdPost
 
-> CSSCMSDataModelModelsSSHKeysKeyResponse SSHServiceAccountsRotateIdPost(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHKeysKeyGenerationRequest(cSSCMSDataModelModelsSSHKeysKeyGenerationRequest).Execute()
+> ModelsSSHKeysKeyResponse SSHServiceAccountsRotateIdPost(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHKeysKeyGenerationRequest(modelsSSHKeysKeyGenerationRequest).Execute()
 
 Rotate an SSH key for a specified service account.
 
@@ -531,16 +531,16 @@ func main() {
     id := int32(56) // int32 | The id of the service account and the updated state of the SSH key.
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsSSHKeysKeyGenerationRequest := *openapiclient.NewCSSCMSDataModelModelsSSHKeysKeyGenerationRequest("KeyType_example", "PrivateKeyFormat_example", int32(123), "Email_example", "Password_example") // CSSCMSDataModelModelsSSHKeysKeyGenerationRequest |  (optional)
+    modelsSSHKeysKeyGenerationRequest := *openapiclient.NewModelsSSHKeysKeyGenerationRequest("KeyType_example", "PrivateKeyFormat_example", int32(123), "Email_example", "Password_example") // ModelsSSHKeysKeyGenerationRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServiceAccountApi.SSHServiceAccountsRotateIdPost(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHKeysKeyGenerationRequest(cSSCMSDataModelModelsSSHKeysKeyGenerationRequest).Execute()
+    resp, r, err := apiClient.ServiceAccountApi.SSHServiceAccountsRotateIdPost(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHKeysKeyGenerationRequest(modelsSSHKeysKeyGenerationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAccountApi.SSHServiceAccountsRotateIdPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHServiceAccountsRotateIdPost`: CSSCMSDataModelModelsSSHKeysKeyResponse
+    // response from `SSHServiceAccountsRotateIdPost`: ModelsSSHKeysKeyResponse
     fmt.Fprintf(os.Stdout, "Response from `ServiceAccountApi.SSHServiceAccountsRotateIdPost`: %v\n", resp)
 }
 ```
@@ -563,11 +563,11 @@ Name | Type | Description  | Notes
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsSSHKeysKeyGenerationRequest** | [**CSSCMSDataModelModelsSSHKeysKeyGenerationRequest**](CSSCMSDataModelModelsSSHKeysKeyGenerationRequest.md) |  | 
+ **modelsSSHKeysKeyGenerationRequest** | [**ModelsSSHKeysKeyGenerationRequest**](ModelsSSHKeysKeyGenerationRequest.md) |  | 
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHKeysKeyResponse**](CSSCMSDataModelModelsSSHKeysKeyResponse.md)
+[**ModelsSSHKeysKeyResponse**](ModelsSSHKeysKeyResponse.md)
 
 ### Authorization
 

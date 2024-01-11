@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Time** | Pointer to **time.Time** |  | [optional] 
-**Days** | Pointer to [**[]SystemDayOfWeek**](SystemDayOfWeek.md) |  | [optional] 
+**Days** | Pointer to **[]int32** |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasTime returns a boolean if a field has been set.
 
 ### GetDays
 
-`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDays() []SystemDayOfWeek`
+`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDays() []int32`
 
 GetDays returns the Days field if non-nil, zero value otherwise.
 
 ### GetDaysOk
 
-`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDaysOk() (*[]SystemDayOfWeek, bool)`
+`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDaysOk() (*[]int32, bool)`
 
 GetDaysOk returns a tuple with the Days field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDays
 
-`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) SetDays(v []SystemDayOfWeek)`
+`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) SetDays(v []int32)`
 
 SetDays sets Days field to given value.
 

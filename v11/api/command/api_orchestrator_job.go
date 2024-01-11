@@ -154,11 +154,11 @@ func (a *OrchestratorJobApiService) OrchestratorJobsAcknowledgePostExecute(r Api
 }
 
 type ApiOrchestratorJobsCustomBulkPostRequest struct {
-	ctx                                                         context.Context
-	ApiService                                                  *OrchestratorJobApiService
-	xKeyfactorRequestedWith                                     *string
-	xKeyfactorApiVersion                                        *string
-	cSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest *CSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest
+	ctx                                          context.Context
+	ApiService                                   *OrchestratorJobApiService
+	xKeyfactorRequestedWith                      *string
+	xKeyfactorApiVersion                         *string
+	modelsOrchestratorJobsScheduleBulkJobRequest *ModelsOrchestratorJobsScheduleBulkJobRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -174,8 +174,8 @@ func (r ApiOrchestratorJobsCustomBulkPostRequest) XKeyfactorApiVersion(xKeyfacto
 }
 
 // Information to use to schedule the jobs, including the type of custom job, agents to use, and job-specific parameters.
-func (r ApiOrchestratorJobsCustomBulkPostRequest) CSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest(cSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest CSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest) ApiOrchestratorJobsCustomBulkPostRequest {
-	r.cSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest = &cSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest
+func (r ApiOrchestratorJobsCustomBulkPostRequest) ModelsOrchestratorJobsScheduleBulkJobRequest(modelsOrchestratorJobsScheduleBulkJobRequest ModelsOrchestratorJobsScheduleBulkJobRequest) ApiOrchestratorJobsCustomBulkPostRequest {
+	r.modelsOrchestratorJobsScheduleBulkJobRequest = &modelsOrchestratorJobsScheduleBulkJobRequest
 	return r
 }
 
@@ -248,7 +248,7 @@ func (a *OrchestratorJobApiService) OrchestratorJobsCustomBulkPostExecute(r ApiO
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest
+	localVarPostBody = r.modelsOrchestratorJobsScheduleBulkJobRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -287,11 +287,11 @@ func (a *OrchestratorJobApiService) OrchestratorJobsCustomBulkPostExecute(r ApiO
 }
 
 type ApiOrchestratorJobsCustomPostRequest struct {
-	ctx                                                     context.Context
-	ApiService                                              *OrchestratorJobApiService
-	xKeyfactorRequestedWith                                 *string
-	xKeyfactorApiVersion                                    *string
-	cSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest *CSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest
+	ctx                                      context.Context
+	ApiService                               *OrchestratorJobApiService
+	xKeyfactorRequestedWith                  *string
+	xKeyfactorApiVersion                     *string
+	modelsOrchestratorJobsScheduleJobRequest *ModelsOrchestratorJobsScheduleJobRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -307,8 +307,8 @@ func (r ApiOrchestratorJobsCustomPostRequest) XKeyfactorApiVersion(xKeyfactorApi
 }
 
 // Information to use to schedule the job, including the type of custom job, agent to use, and job-specific parameters.
-func (r ApiOrchestratorJobsCustomPostRequest) CSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest(cSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest CSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest) ApiOrchestratorJobsCustomPostRequest {
-	r.cSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest = &cSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest
+func (r ApiOrchestratorJobsCustomPostRequest) ModelsOrchestratorJobsScheduleJobRequest(modelsOrchestratorJobsScheduleJobRequest ModelsOrchestratorJobsScheduleJobRequest) ApiOrchestratorJobsCustomPostRequest {
+	r.modelsOrchestratorJobsScheduleJobRequest = &modelsOrchestratorJobsScheduleJobRequest
 	return r
 }
 
@@ -381,7 +381,7 @@ func (a *OrchestratorJobApiService) OrchestratorJobsCustomPostExecute(r ApiOrche
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest
+	localVarPostBody = r.modelsOrchestratorJobsScheduleJobRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -427,7 +427,7 @@ type ApiOrchestratorJobsJobHistoryGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -457,7 +457,7 @@ func (r ApiOrchestratorJobsJobHistoryGetRequest) SortField(sortField string) Api
 	return r
 }
 
-func (r ApiOrchestratorJobsJobHistoryGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiOrchestratorJobsJobHistoryGetRequest {
+func (r ApiOrchestratorJobsJobHistoryGetRequest) SortAscending(sortAscending int32) ApiOrchestratorJobsJobHistoryGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -852,7 +852,7 @@ type ApiOrchestratorJobsScheduledJobsGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -882,7 +882,7 @@ func (r ApiOrchestratorJobsScheduledJobsGetRequest) SortField(sortField string) 
 	return r
 }
 
-func (r ApiOrchestratorJobsScheduledJobsGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiOrchestratorJobsScheduledJobsGetRequest {
+func (r ApiOrchestratorJobsScheduledJobsGetRequest) SortAscending(sortAscending int32) ApiOrchestratorJobsScheduledJobsGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -893,7 +893,7 @@ func (r ApiOrchestratorJobsScheduledJobsGetRequest) XKeyfactorApiVersion(xKeyfac
 	return r
 }
 
-func (r ApiOrchestratorJobsScheduledJobsGetRequest) Execute() ([]CSSCMSDataModelModelsOrchestratorJobsJob, *http.Response, error) {
+func (r ApiOrchestratorJobsScheduledJobsGetRequest) Execute() ([]ModelsOrchestratorJobsJob, *http.Response, error) {
 	return r.ApiService.OrchestratorJobsScheduledJobsGetExecute(r)
 }
 
@@ -917,13 +917,13 @@ func (a *OrchestratorJobApiService) OrchestratorJobsScheduledJobsGet(ctx context
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsOrchestratorJobsJob
-func (a *OrchestratorJobApiService) OrchestratorJobsScheduledJobsGetExecute(r ApiOrchestratorJobsScheduledJobsGetRequest) ([]CSSCMSDataModelModelsOrchestratorJobsJob, *http.Response, error) {
+//	@return []ModelsOrchestratorJobsJob
+func (a *OrchestratorJobApiService) OrchestratorJobsScheduledJobsGetExecute(r ApiOrchestratorJobsScheduledJobsGetRequest) ([]ModelsOrchestratorJobsJob, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsOrchestratorJobsJob
+		localVarReturnValue []ModelsOrchestratorJobsJob
 	)
 
 	apiBasePath := a.client.cfg.APIPath

@@ -41,7 +41,7 @@ type ApiPermissionSetsGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -71,7 +71,7 @@ func (r ApiPermissionSetsGetRequest) SortField(sortField string) ApiPermissionSe
 	return r
 }
 
-func (r ApiPermissionSetsGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiPermissionSetsGetRequest {
+func (r ApiPermissionSetsGetRequest) SortAscending(sortAscending int32) ApiPermissionSetsGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }

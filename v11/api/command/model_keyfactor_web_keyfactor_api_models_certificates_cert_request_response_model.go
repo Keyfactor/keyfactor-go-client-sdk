@@ -39,13 +39,13 @@ type KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel struct {
 	CertificateAuthority NullableString                                                     `json:"certificateAuthority,omitempty"`
 	Template             NullableString                                                     `json:"template,omitempty"`
 	Requester            NullableString                                                     `json:"requester,omitempty"`
-	State                *KeyfactorPKIEnumsCertificateState                                 `json:"state,omitempty"`
+	State                *int32                                                             `json:"state,omitempty"`
 	StateString          NullableString                                                     `json:"stateString,omitempty"`
 	Metadata             map[string]string                                                  `json:"metadata,omitempty"`
 	DenialComment        NullableString                                                     `json:"denialComment,omitempty"`
 	KeyLength            NullableString                                                     `json:"keyLength,omitempty"`
 	SaNs                 []string                                                           `json:"saNs,omitempty"`
-	CertStores           []CSSCMSDataModelModelsWorkflowCertificateRequestCertStoreModel    `json:"certStores,omitempty"`
+	CertStores           []ModelsWorkflowCertificateRequestCertStoreModel                   `json:"certStores,omitempty"`
 	Curve                NullableString                                                     `json:"curve,omitempty"`
 	SubjectAltNames      []KeyfactorWebKeyfactorApiModelsCertificatesSubjectAlternativeName `json:"subjectAltNames,omitempty"`
 }
@@ -401,9 +401,9 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) Uns
 }
 
 // GetState returns the State field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) GetState() KeyfactorPKIEnumsCertificateState {
+func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) GetState() int32 {
 	if o == nil || isNil(o.State) {
-		var ret KeyfactorPKIEnumsCertificateState
+		var ret int32
 		return ret
 	}
 	return *o.State
@@ -411,7 +411,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) Get
 
 // GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) GetStateOk() (*KeyfactorPKIEnumsCertificateState, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) GetStateOk() (*int32, bool) {
 	if o == nil || isNil(o.State) {
 		return nil, false
 	}
@@ -427,8 +427,8 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) Has
 	return false
 }
 
-// SetState gets a reference to the given KeyfactorPKIEnumsCertificateState and assigns it to the State field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) SetState(v KeyfactorPKIEnumsCertificateState) {
+// SetState gets a reference to the given int32 and assigns it to the State field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) SetState(v int32) {
 	o.State = &v
 }
 
@@ -628,9 +628,9 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) Set
 }
 
 // GetCertStores returns the CertStores field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) GetCertStores() []CSSCMSDataModelModelsWorkflowCertificateRequestCertStoreModel {
+func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) GetCertStores() []ModelsWorkflowCertificateRequestCertStoreModel {
 	if o == nil {
-		var ret []CSSCMSDataModelModelsWorkflowCertificateRequestCertStoreModel
+		var ret []ModelsWorkflowCertificateRequestCertStoreModel
 		return ret
 	}
 	return o.CertStores
@@ -639,7 +639,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) Get
 // GetCertStoresOk returns a tuple with the CertStores field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) GetCertStoresOk() ([]CSSCMSDataModelModelsWorkflowCertificateRequestCertStoreModel, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) GetCertStoresOk() ([]ModelsWorkflowCertificateRequestCertStoreModel, bool) {
 	if o == nil || isNil(o.CertStores) {
 		return nil, false
 	}
@@ -655,8 +655,8 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) Has
 	return false
 }
 
-// SetCertStores gets a reference to the given []CSSCMSDataModelModelsWorkflowCertificateRequestCertStoreModel and assigns it to the CertStores field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) SetCertStores(v []CSSCMSDataModelModelsWorkflowCertificateRequestCertStoreModel) {
+// SetCertStores gets a reference to the given []ModelsWorkflowCertificateRequestCertStoreModel and assigns it to the CertStores field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificatesCertRequestResponseModel) SetCertStores(v []ModelsWorkflowCertificateRequestCertStoreModel) {
 	o.CertStores = v
 }
 

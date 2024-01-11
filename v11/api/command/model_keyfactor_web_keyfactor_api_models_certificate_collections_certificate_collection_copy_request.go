@@ -30,13 +30,13 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsCertificateCollectionsCert
 
 // KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionCopyRequest struct for KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionCopyRequest
 type KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionCopyRequest struct {
-	Name             string                               `json:"name"`
-	Description      NullableString                       `json:"description,omitempty"`
-	Query            NullableString                       `json:"query,omitempty"`
-	DuplicationField *CSSCMSCoreEnumsDuplicateSubjectType `json:"duplicationField,omitempty"`
-	ShowOnDashboard  *bool                                `json:"showOnDashboard,omitempty"`
-	Favorite         *bool                                `json:"favorite,omitempty"`
-	CopyFromId       int32                                `json:"copyFromId"`
+	Name             string         `json:"name"`
+	Description      NullableString `json:"description,omitempty"`
+	Query            NullableString `json:"query,omitempty"`
+	DuplicationField *int32         `json:"duplicationField,omitempty"`
+	ShowOnDashboard  *bool          `json:"showOnDashboard,omitempty"`
+	Favorite         *bool          `json:"favorite,omitempty"`
+	CopyFromId       int32          `json:"copyFromId"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionCopyRequest instantiates a new KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionCopyRequest object
@@ -169,9 +169,9 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollecti
 }
 
 // GetDuplicationField returns the DuplicationField field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionCopyRequest) GetDuplicationField() CSSCMSCoreEnumsDuplicateSubjectType {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionCopyRequest) GetDuplicationField() int32 {
 	if o == nil || isNil(o.DuplicationField) {
-		var ret CSSCMSCoreEnumsDuplicateSubjectType
+		var ret int32
 		return ret
 	}
 	return *o.DuplicationField
@@ -179,7 +179,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollecti
 
 // GetDuplicationFieldOk returns a tuple with the DuplicationField field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionCopyRequest) GetDuplicationFieldOk() (*CSSCMSCoreEnumsDuplicateSubjectType, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionCopyRequest) GetDuplicationFieldOk() (*int32, bool) {
 	if o == nil || isNil(o.DuplicationField) {
 		return nil, false
 	}
@@ -195,8 +195,8 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollecti
 	return false
 }
 
-// SetDuplicationField gets a reference to the given CSSCMSCoreEnumsDuplicateSubjectType and assigns it to the DuplicationField field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionCopyRequest) SetDuplicationField(v CSSCMSCoreEnumsDuplicateSubjectType) {
+// SetDuplicationField gets a reference to the given int32 and assigns it to the DuplicationField field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionCopyRequest) SetDuplicationField(v int32) {
 	o.DuplicationField = &v
 }
 

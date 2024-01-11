@@ -30,9 +30,9 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsScriptsScriptQueryResponse
 
 // KeyfactorWebKeyfactorApiModelsScriptsScriptQueryResponse struct for KeyfactorWebKeyfactorApiModelsScriptsScriptQueryResponse
 type KeyfactorWebKeyfactorApiModelsScriptsScriptQueryResponse struct {
-	Id         *int32                                 `json:"id,omitempty"`
-	Name       NullableString                         `json:"name,omitempty"`
-	Categories []CSSCMSDataModelEnumsScriptCategories `json:"categories,omitempty"`
+	Id         *int32         `json:"id,omitempty"`
+	Name       NullableString `json:"name,omitempty"`
+	Categories []int32        `json:"categories,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsScriptsScriptQueryResponse instantiates a new KeyfactorWebKeyfactorApiModelsScriptsScriptQueryResponse object
@@ -128,9 +128,9 @@ func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptQueryResponse) UnsetName() {
 }
 
 // GetCategories returns the Categories field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptQueryResponse) GetCategories() []CSSCMSDataModelEnumsScriptCategories {
+func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptQueryResponse) GetCategories() []int32 {
 	if o == nil {
-		var ret []CSSCMSDataModelEnumsScriptCategories
+		var ret []int32
 		return ret
 	}
 	return o.Categories
@@ -139,7 +139,7 @@ func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptQueryResponse) GetCategories
 // GetCategoriesOk returns a tuple with the Categories field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptQueryResponse) GetCategoriesOk() ([]CSSCMSDataModelEnumsScriptCategories, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptQueryResponse) GetCategoriesOk() ([]int32, bool) {
 	if o == nil || isNil(o.Categories) {
 		return nil, false
 	}
@@ -155,8 +155,8 @@ func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptQueryResponse) HasCategories
 	return false
 }
 
-// SetCategories gets a reference to the given []CSSCMSDataModelEnumsScriptCategories and assigns it to the Categories field.
-func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptQueryResponse) SetCategories(v []CSSCMSDataModelEnumsScriptCategories) {
+// SetCategories gets a reference to the given []int32 and assigns it to the Categories field.
+func (o *KeyfactorWebKeyfactorApiModelsScriptsScriptQueryResponse) SetCategories(v []int32) {
 	o.Categories = v
 }
 

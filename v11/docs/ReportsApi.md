@@ -47,7 +47,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ## ReportsGet
 
-> []CSSCMSDataModelModelsReport ReportsGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).AmmendedQuery(ammendedQuery).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsReport ReportsGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).AmmendedQuery(ammendedQuery).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all built-in reports according to the provided filter and output parameters
 
@@ -403,7 +403,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -413,7 +413,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ReportsApi.ReportsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ReportsGet`: []CSSCMSDataModelModelsReport
+    // response from `ReportsGet`: []ModelsReport
     fmt.Fprintf(os.Stdout, "Response from `ReportsApi.ReportsGet`: %v\n", resp)
 }
 ```
@@ -435,12 +435,12 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsReport**](CSSCMSDataModelModelsReport.md)
+[**[]ModelsReport**](ModelsReport.md)
 
 ### Authorization
 
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 
 ## ReportsIdGet
 
-> CSSCMSDataModelModelsReport ReportsIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ModelsReport ReportsIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a single built-in report that matches the id
 
@@ -486,7 +486,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ReportsApi.ReportsIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ReportsIdGet`: CSSCMSDataModelModelsReport
+    // response from `ReportsIdGet`: ModelsReport
     fmt.Fprintf(os.Stdout, "Response from `ReportsApi.ReportsIdGet`: %v\n", resp)
 }
 ```
@@ -512,7 +512,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsReport**](CSSCMSDataModelModelsReport.md)
+[**ModelsReport**](ModelsReport.md)
 
 ### Authorization
 
@@ -530,7 +530,7 @@ Name | Type | Description  | Notes
 
 ## ReportsIdParametersGet
 
-> []CSSCMSDataModelModelsReportParameters ReportsIdParametersGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsReportParameters ReportsIdParametersGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get a built-in report's parameters that matches the id of the report.
 
@@ -558,7 +558,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ReportsApi.ReportsIdParametersGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ReportsIdParametersGet`: []CSSCMSDataModelModelsReportParameters
+    // response from `ReportsIdParametersGet`: []ModelsReportParameters
     fmt.Fprintf(os.Stdout, "Response from `ReportsApi.ReportsIdParametersGet`: %v\n", resp)
 }
 ```
@@ -584,7 +584,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsReportParameters**](CSSCMSDataModelModelsReportParameters.md)
+[**[]ModelsReportParameters**](ModelsReportParameters.md)
 
 ### Authorization
 
@@ -602,7 +602,7 @@ Name | Type | Description  | Notes
 
 ## ReportsIdParametersPut
 
-> []CSSCMSDataModelModelsReportParameters ReportsIdParametersPut(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsReportParametersRequest(cSSCMSDataModelModelsReportParametersRequest).Execute()
+> []ModelsReportParameters ReportsIdParametersPut(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsReportParametersRequest(modelsReportParametersRequest).Execute()
 
 Update a built-in report's parameters that matches the id of the report.
 
@@ -622,16 +622,16 @@ func main() {
     id := int32(56) // int32 | Report identifier
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsReportParametersRequest := []openapiclient.CSSCMSDataModelModelsReportParametersRequest{*openapiclient.NewCSSCMSDataModelModelsReportParametersRequest()} // []CSSCMSDataModelModelsReportParametersRequest | A List of the parameters to be updated (optional)
+    modelsReportParametersRequest := []openapiclient.ModelsReportParametersRequest{*openapiclient.NewModelsReportParametersRequest()} // []ModelsReportParametersRequest | A List of the parameters to be updated (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReportsApi.ReportsIdParametersPut(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsReportParametersRequest(cSSCMSDataModelModelsReportParametersRequest).Execute()
+    resp, r, err := apiClient.ReportsApi.ReportsIdParametersPut(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsReportParametersRequest(modelsReportParametersRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReportsApi.ReportsIdParametersPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ReportsIdParametersPut`: []CSSCMSDataModelModelsReportParameters
+    // response from `ReportsIdParametersPut`: []ModelsReportParameters
     fmt.Fprintf(os.Stdout, "Response from `ReportsApi.ReportsIdParametersPut`: %v\n", resp)
 }
 ```
@@ -654,11 +654,11 @@ Name | Type | Description  | Notes
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsReportParametersRequest** | [**[]CSSCMSDataModelModelsReportParametersRequest**](CSSCMSDataModelModelsReportParametersRequest.md) | A List of the parameters to be updated | 
+ **modelsReportParametersRequest** | [**[]ModelsReportParametersRequest**](ModelsReportParametersRequest.md) | A List of the parameters to be updated | 
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsReportParameters**](CSSCMSDataModelModelsReportParameters.md)
+[**[]ModelsReportParameters**](ModelsReportParameters.md)
 
 ### Authorization
 
@@ -699,7 +699,7 @@ func main() {
     pageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
     returnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
     sortField := "sortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder | Field sort direction [0=ascending, 1=descending] (optional)
+    sortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -735,7 +735,7 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** | The current page within the result set to be returned | 
  **returnLimit** | **int32** | Maximum number of records to be returned in a single call | 
  **sortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **sortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
@@ -906,7 +906,7 @@ Name | Type | Description  | Notes
 
 ## ReportsPut
 
-> CSSCMSDataModelModelsReport ReportsPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsReportRequestModel(cSSCMSDataModelModelsReportRequestModel).Execute()
+> ModelsReport ReportsPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsReportRequestModel(modelsReportRequestModel).Execute()
 
 Updates a single built-in report that matches the id. Only some fields can be updated.
 
@@ -925,16 +925,16 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsReportRequestModel := *openapiclient.NewCSSCMSDataModelModelsReportRequestModel() // CSSCMSDataModelModelsReportRequestModel | This object is used to update the Favorite, In Navigator and the Remove Duplicates if the 'Uses Collections' is true. (optional)
+    modelsReportRequestModel := *openapiclient.NewModelsReportRequestModel() // ModelsReportRequestModel | This object is used to update the Favorite, In Navigator and the Remove Duplicates if the 'Uses Collections' is true. (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReportsApi.ReportsPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsReportRequestModel(cSSCMSDataModelModelsReportRequestModel).Execute()
+    resp, r, err := apiClient.ReportsApi.ReportsPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsReportRequestModel(modelsReportRequestModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReportsApi.ReportsPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ReportsPut`: CSSCMSDataModelModelsReport
+    // response from `ReportsPut`: ModelsReport
     fmt.Fprintf(os.Stdout, "Response from `ReportsApi.ReportsPut`: %v\n", resp)
 }
 ```
@@ -952,11 +952,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsReportRequestModel** | [**CSSCMSDataModelModelsReportRequestModel**](CSSCMSDataModelModelsReportRequestModel.md) | This object is used to update the Favorite, In Navigator and the Remove Duplicates if the &#39;Uses Collections&#39; is true. | 
+ **modelsReportRequestModel** | [**ModelsReportRequestModel**](ModelsReportRequestModel.md) | This object is used to update the Favorite, In Navigator and the Remove Duplicates if the &#39;Uses Collections&#39; is true. | 
 
 ### Return type
 
-[**CSSCMSDataModelModelsReport**](CSSCMSDataModelModelsReport.md)
+[**ModelsReport**](ModelsReport.md)
 
 ### Authorization
 

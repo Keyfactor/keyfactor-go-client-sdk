@@ -13,11 +13,11 @@ Name | Type | Description | Notes
 **ForestRoot** | Pointer to **NullableString** |  | [optional] [readonly] 
 **ConfigurationTenant** | Pointer to **NullableString** |  | [optional] 
 **FriendlyName** | Pointer to **NullableString** |  | [optional] 
-**KeyRetention** | Pointer to [**CSSCMSCoreEnumsKeyRetentionPolicy**](CSSCMSCoreEnumsKeyRetentionPolicy.md) |  | [optional] 
+**KeyRetention** | Pointer to **int32** |  | [optional] 
 **KeyRetentionDays** | Pointer to **NullableInt32** |  | [optional] 
 **KeyArchival** | Pointer to **bool** |  | [optional] 
 **EnrollmentFields** | Pointer to [**[]KeyfactorWebKeyfactorApiModelsTemplatesTemplateEnrollmentFieldRequestResponseModel**](KeyfactorWebKeyfactorApiModelsTemplatesTemplateEnrollmentFieldRequestResponseModel.md) |  | [optional] 
-**AllowedEnrollmentTypes** | Pointer to [**CSSCMSCoreEnumsEnrollmentType**](CSSCMSCoreEnumsEnrollmentType.md) |  | [optional] 
+**AllowedEnrollmentTypes** | Pointer to **int32** |  | [optional] 
 **TemplateRegexes** | Pointer to [**[]KeyfactorWebKeyfactorApiModelsTemplatesTemplateRegexRequestResponseModel**](KeyfactorWebKeyfactorApiModelsTemplatesTemplateRegexRequestResponseModel.md) |  | [optional] 
 **UseAllowedRequesters** | Pointer to **bool** |  | [optional] 
 **AllowedRequesters** | Pointer to **[]string** |  | [optional] 
@@ -354,20 +354,20 @@ HasFriendlyName returns a boolean if a field has been set.
 UnsetFriendlyName ensures that no value is present for FriendlyName, not even an explicit nil
 ### GetKeyRetention
 
-`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) GetKeyRetention() CSSCMSCoreEnumsKeyRetentionPolicy`
+`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) GetKeyRetention() int32`
 
 GetKeyRetention returns the KeyRetention field if non-nil, zero value otherwise.
 
 ### GetKeyRetentionOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) GetKeyRetentionOk() (*CSSCMSCoreEnumsKeyRetentionPolicy, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) GetKeyRetentionOk() (*int32, bool)`
 
 GetKeyRetentionOk returns a tuple with the KeyRetention field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyRetention
 
-`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) SetKeyRetention(v CSSCMSCoreEnumsKeyRetentionPolicy)`
+`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) SetKeyRetention(v int32)`
 
 SetKeyRetention sets KeyRetention field to given value.
 
@@ -474,20 +474,20 @@ HasEnrollmentFields returns a boolean if a field has been set.
 UnsetEnrollmentFields ensures that no value is present for EnrollmentFields, not even an explicit nil
 ### GetAllowedEnrollmentTypes
 
-`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) GetAllowedEnrollmentTypes() CSSCMSCoreEnumsEnrollmentType`
+`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) GetAllowedEnrollmentTypes() int32`
 
 GetAllowedEnrollmentTypes returns the AllowedEnrollmentTypes field if non-nil, zero value otherwise.
 
 ### GetAllowedEnrollmentTypesOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) GetAllowedEnrollmentTypesOk() (*CSSCMSCoreEnumsEnrollmentType, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) GetAllowedEnrollmentTypesOk() (*int32, bool)`
 
 GetAllowedEnrollmentTypesOk returns a tuple with the AllowedEnrollmentTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowedEnrollmentTypes
 
-`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) SetAllowedEnrollmentTypes(v CSSCMSCoreEnumsEnrollmentType)`
+`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) SetAllowedEnrollmentTypes(v int32)`
 
 SetAllowedEnrollmentTypes sets AllowedEnrollmentTypes field to given value.
 

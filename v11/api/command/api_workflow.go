@@ -59,7 +59,7 @@ func (r ApiWorkflowCertificatesApprovePostRequest) RequestBody(requestBody []int
 	return r
 }
 
-func (r ApiWorkflowCertificatesApprovePostRequest) Execute() (*CSSCMSDataModelModelsWorkflowApproveDenyResult, *http.Response, error) {
+func (r ApiWorkflowCertificatesApprovePostRequest) Execute() (*ModelsWorkflowApproveDenyResult, *http.Response, error) {
 	return r.ApiService.WorkflowCertificatesApprovePostExecute(r)
 }
 
@@ -83,13 +83,13 @@ func (a *WorkflowApiService) WorkflowCertificatesApprovePost(ctx context.Context
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsWorkflowApproveDenyResult
-func (a *WorkflowApiService) WorkflowCertificatesApprovePostExecute(r ApiWorkflowCertificatesApprovePostRequest) (*CSSCMSDataModelModelsWorkflowApproveDenyResult, *http.Response, error) {
+//	@return ModelsWorkflowApproveDenyResult
+func (a *WorkflowApiService) WorkflowCertificatesApprovePostExecute(r ApiWorkflowCertificatesApprovePostRequest) (*ModelsWorkflowApproveDenyResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsWorkflowApproveDenyResult
+		localVarReturnValue *ModelsWorkflowApproveDenyResult
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -174,7 +174,7 @@ type ApiWorkflowCertificatesDeniedGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -204,7 +204,7 @@ func (r ApiWorkflowCertificatesDeniedGetRequest) SortField(sortField string) Api
 	return r
 }
 
-func (r ApiWorkflowCertificatesDeniedGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiWorkflowCertificatesDeniedGetRequest {
+func (r ApiWorkflowCertificatesDeniedGetRequest) SortAscending(sortAscending int32) ApiWorkflowCertificatesDeniedGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -215,7 +215,7 @@ func (r ApiWorkflowCertificatesDeniedGetRequest) XKeyfactorApiVersion(xKeyfactor
 	return r
 }
 
-func (r ApiWorkflowCertificatesDeniedGetRequest) Execute() ([]CSSCMSDataModelModelsWorkflowCertificateRequestModel, *http.Response, error) {
+func (r ApiWorkflowCertificatesDeniedGetRequest) Execute() ([]ModelsWorkflowCertificateRequestModel, *http.Response, error) {
 	return r.ApiService.WorkflowCertificatesDeniedGetExecute(r)
 }
 
@@ -239,13 +239,13 @@ func (a *WorkflowApiService) WorkflowCertificatesDeniedGet(ctx context.Context) 
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsWorkflowCertificateRequestModel
-func (a *WorkflowApiService) WorkflowCertificatesDeniedGetExecute(r ApiWorkflowCertificatesDeniedGetRequest) ([]CSSCMSDataModelModelsWorkflowCertificateRequestModel, *http.Response, error) {
+//	@return []ModelsWorkflowCertificateRequestModel
+func (a *WorkflowApiService) WorkflowCertificatesDeniedGetExecute(r ApiWorkflowCertificatesDeniedGetRequest) ([]ModelsWorkflowCertificateRequestModel, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsWorkflowCertificateRequestModel
+		localVarReturnValue []ModelsWorkflowCertificateRequestModel
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -336,11 +336,11 @@ func (a *WorkflowApiService) WorkflowCertificatesDeniedGetExecute(r ApiWorkflowC
 }
 
 type ApiWorkflowCertificatesDenyPostRequest struct {
-	ctx                                        context.Context
-	ApiService                                 *WorkflowApiService
-	xKeyfactorRequestedWith                    *string
-	xKeyfactorApiVersion                       *string
-	cSSCMSDataModelModelsWorkflowDenialRequest *CSSCMSDataModelModelsWorkflowDenialRequest
+	ctx                         context.Context
+	ApiService                  *WorkflowApiService
+	xKeyfactorRequestedWith     *string
+	xKeyfactorApiVersion        *string
+	modelsWorkflowDenialRequest *ModelsWorkflowDenialRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -356,12 +356,12 @@ func (r ApiWorkflowCertificatesDenyPostRequest) XKeyfactorApiVersion(xKeyfactorA
 }
 
 // Keyfactor identifiers of the certificate requests to be denied and any denial comments
-func (r ApiWorkflowCertificatesDenyPostRequest) CSSCMSDataModelModelsWorkflowDenialRequest(cSSCMSDataModelModelsWorkflowDenialRequest CSSCMSDataModelModelsWorkflowDenialRequest) ApiWorkflowCertificatesDenyPostRequest {
-	r.cSSCMSDataModelModelsWorkflowDenialRequest = &cSSCMSDataModelModelsWorkflowDenialRequest
+func (r ApiWorkflowCertificatesDenyPostRequest) ModelsWorkflowDenialRequest(modelsWorkflowDenialRequest ModelsWorkflowDenialRequest) ApiWorkflowCertificatesDenyPostRequest {
+	r.modelsWorkflowDenialRequest = &modelsWorkflowDenialRequest
 	return r
 }
 
-func (r ApiWorkflowCertificatesDenyPostRequest) Execute() (*CSSCMSDataModelModelsWorkflowApproveDenyResult, *http.Response, error) {
+func (r ApiWorkflowCertificatesDenyPostRequest) Execute() (*ModelsWorkflowApproveDenyResult, *http.Response, error) {
 	return r.ApiService.WorkflowCertificatesDenyPostExecute(r)
 }
 
@@ -385,13 +385,13 @@ func (a *WorkflowApiService) WorkflowCertificatesDenyPost(ctx context.Context) A
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsWorkflowApproveDenyResult
-func (a *WorkflowApiService) WorkflowCertificatesDenyPostExecute(r ApiWorkflowCertificatesDenyPostRequest) (*CSSCMSDataModelModelsWorkflowApproveDenyResult, *http.Response, error) {
+//	@return ModelsWorkflowApproveDenyResult
+func (a *WorkflowApiService) WorkflowCertificatesDenyPostExecute(r ApiWorkflowCertificatesDenyPostRequest) (*ModelsWorkflowApproveDenyResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsWorkflowApproveDenyResult
+		localVarReturnValue *ModelsWorkflowApproveDenyResult
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -430,7 +430,7 @@ func (a *WorkflowApiService) WorkflowCertificatesDenyPostExecute(r ApiWorkflowCe
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsWorkflowDenialRequest
+	localVarPostBody = r.modelsWorkflowDenialRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -476,7 +476,7 @@ type ApiWorkflowCertificatesExternalValidationGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -506,7 +506,7 @@ func (r ApiWorkflowCertificatesExternalValidationGetRequest) SortField(sortField
 	return r
 }
 
-func (r ApiWorkflowCertificatesExternalValidationGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiWorkflowCertificatesExternalValidationGetRequest {
+func (r ApiWorkflowCertificatesExternalValidationGetRequest) SortAscending(sortAscending int32) ApiWorkflowCertificatesExternalValidationGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -517,7 +517,7 @@ func (r ApiWorkflowCertificatesExternalValidationGetRequest) XKeyfactorApiVersio
 	return r
 }
 
-func (r ApiWorkflowCertificatesExternalValidationGetRequest) Execute() ([]CSSCMSDataModelModelsWorkflowCertificateRequestModel, *http.Response, error) {
+func (r ApiWorkflowCertificatesExternalValidationGetRequest) Execute() ([]ModelsWorkflowCertificateRequestModel, *http.Response, error) {
 	return r.ApiService.WorkflowCertificatesExternalValidationGetExecute(r)
 }
 
@@ -541,13 +541,13 @@ func (a *WorkflowApiService) WorkflowCertificatesExternalValidationGet(ctx conte
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsWorkflowCertificateRequestModel
-func (a *WorkflowApiService) WorkflowCertificatesExternalValidationGetExecute(r ApiWorkflowCertificatesExternalValidationGetRequest) ([]CSSCMSDataModelModelsWorkflowCertificateRequestModel, *http.Response, error) {
+//	@return []ModelsWorkflowCertificateRequestModel
+func (a *WorkflowApiService) WorkflowCertificatesExternalValidationGetExecute(r ApiWorkflowCertificatesExternalValidationGetRequest) ([]ModelsWorkflowCertificateRequestModel, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsWorkflowCertificateRequestModel
+		localVarReturnValue []ModelsWorkflowCertificateRequestModel
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -773,7 +773,7 @@ type ApiWorkflowCertificatesPendingGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -803,7 +803,7 @@ func (r ApiWorkflowCertificatesPendingGetRequest) SortField(sortField string) Ap
 	return r
 }
 
-func (r ApiWorkflowCertificatesPendingGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiWorkflowCertificatesPendingGetRequest {
+func (r ApiWorkflowCertificatesPendingGetRequest) SortAscending(sortAscending int32) ApiWorkflowCertificatesPendingGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -814,7 +814,7 @@ func (r ApiWorkflowCertificatesPendingGetRequest) XKeyfactorApiVersion(xKeyfacto
 	return r
 }
 
-func (r ApiWorkflowCertificatesPendingGetRequest) Execute() ([]CSSCMSDataModelModelsWorkflowCertificateRequestModel, *http.Response, error) {
+func (r ApiWorkflowCertificatesPendingGetRequest) Execute() ([]ModelsWorkflowCertificateRequestModel, *http.Response, error) {
 	return r.ApiService.WorkflowCertificatesPendingGetExecute(r)
 }
 
@@ -838,13 +838,13 @@ func (a *WorkflowApiService) WorkflowCertificatesPendingGet(ctx context.Context)
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsWorkflowCertificateRequestModel
-func (a *WorkflowApiService) WorkflowCertificatesPendingGetExecute(r ApiWorkflowCertificatesPendingGetRequest) ([]CSSCMSDataModelModelsWorkflowCertificateRequestModel, *http.Response, error) {
+//	@return []ModelsWorkflowCertificateRequestModel
+func (a *WorkflowApiService) WorkflowCertificatesPendingGetExecute(r ApiWorkflowCertificatesPendingGetRequest) ([]ModelsWorkflowCertificateRequestModel, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsWorkflowCertificateRequestModel
+		localVarReturnValue []ModelsWorkflowCertificateRequestModel
 	)
 
 	apiBasePath := a.client.cfg.APIPath

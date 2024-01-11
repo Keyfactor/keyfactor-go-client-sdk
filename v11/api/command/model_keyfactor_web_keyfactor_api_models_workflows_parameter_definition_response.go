@@ -30,14 +30,14 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefiniti
 
 // KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse struct for KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse
 type KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse struct {
-	DisplayName             NullableString                      `json:"displayName,omitempty"`
-	ParameterType           *KeyfactorWorkflowsDataType         `json:"parameterType,omitempty"`
-	Required                *bool                               `json:"required,omitempty"`
-	DefaultValue            NullableString                      `json:"defaultValue,omitempty"`
-	ControlType             *KeyfactorWorkflowsInputControlType `json:"controlType,omitempty"`
-	PotentialValues         map[string]string                   `json:"potentialValues,omitempty"`
-	SupportTokenReplacement *bool                               `json:"supportTokenReplacement,omitempty"`
-	DependsOn               map[string]string                   `json:"dependsOn,omitempty"`
+	DisplayName             NullableString    `json:"displayName,omitempty"`
+	ParameterType           *int32            `json:"parameterType,omitempty"`
+	Required                *bool             `json:"required,omitempty"`
+	DefaultValue            NullableString    `json:"defaultValue,omitempty"`
+	ControlType             *int32            `json:"controlType,omitempty"`
+	PotentialValues         map[string]string `json:"potentialValues,omitempty"`
+	SupportTokenReplacement *bool             `json:"supportTokenReplacement,omitempty"`
+	DependsOn               map[string]string `json:"dependsOn,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse instantiates a new KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse object
@@ -101,9 +101,9 @@ func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) Uns
 }
 
 // GetParameterType returns the ParameterType field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetParameterType() KeyfactorWorkflowsDataType {
+func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetParameterType() int32 {
 	if o == nil || isNil(o.ParameterType) {
-		var ret KeyfactorWorkflowsDataType
+		var ret int32
 		return ret
 	}
 	return *o.ParameterType
@@ -111,7 +111,7 @@ func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) Get
 
 // GetParameterTypeOk returns a tuple with the ParameterType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetParameterTypeOk() (*KeyfactorWorkflowsDataType, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetParameterTypeOk() (*int32, bool) {
 	if o == nil || isNil(o.ParameterType) {
 		return nil, false
 	}
@@ -127,8 +127,8 @@ func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) Has
 	return false
 }
 
-// SetParameterType gets a reference to the given KeyfactorWorkflowsDataType and assigns it to the ParameterType field.
-func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) SetParameterType(v KeyfactorWorkflowsDataType) {
+// SetParameterType gets a reference to the given int32 and assigns it to the ParameterType field.
+func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) SetParameterType(v int32) {
 	o.ParameterType = &v
 }
 
@@ -208,9 +208,9 @@ func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) Uns
 }
 
 // GetControlType returns the ControlType field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetControlType() KeyfactorWorkflowsInputControlType {
+func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetControlType() int32 {
 	if o == nil || isNil(o.ControlType) {
-		var ret KeyfactorWorkflowsInputControlType
+		var ret int32
 		return ret
 	}
 	return *o.ControlType
@@ -218,7 +218,7 @@ func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) Get
 
 // GetControlTypeOk returns a tuple with the ControlType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetControlTypeOk() (*KeyfactorWorkflowsInputControlType, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetControlTypeOk() (*int32, bool) {
 	if o == nil || isNil(o.ControlType) {
 		return nil, false
 	}
@@ -234,8 +234,8 @@ func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) Has
 	return false
 }
 
-// SetControlType gets a reference to the given KeyfactorWorkflowsInputControlType and assigns it to the ControlType field.
-func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) SetControlType(v KeyfactorWorkflowsInputControlType) {
+// SetControlType gets a reference to the given int32 and assigns it to the ControlType field.
+func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) SetControlType(v int32) {
 	o.ControlType = &v
 }
 

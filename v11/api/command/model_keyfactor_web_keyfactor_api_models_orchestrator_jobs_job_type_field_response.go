@@ -30,10 +30,10 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeFie
 
 // KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse struct for KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse
 type KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse struct {
-	Name         NullableString                `json:"name,omitempty"`
-	Type         *CSSCMSDataModelEnumsDataType `json:"type,omitempty"`
-	DefaultValue NullableString                `json:"defaultValue,omitempty"`
-	Required     *bool                         `json:"required,omitempty"`
+	Name         NullableString `json:"name,omitempty"`
+	Type         *int32         `json:"type,omitempty"`
+	DefaultValue NullableString `json:"defaultValue,omitempty"`
+	Required     *bool          `json:"required,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse instantiates a new KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse object
@@ -97,9 +97,9 @@ func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) Uns
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) GetType() CSSCMSDataModelEnumsDataType {
+func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) GetType() int32 {
 	if o == nil || isNil(o.Type) {
-		var ret CSSCMSDataModelEnumsDataType
+		var ret int32
 		return ret
 	}
 	return *o.Type
@@ -107,7 +107,7 @@ func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) Get
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) GetTypeOk() (*CSSCMSDataModelEnumsDataType, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) GetTypeOk() (*int32, bool) {
 	if o == nil || isNil(o.Type) {
 		return nil, false
 	}
@@ -123,8 +123,8 @@ func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) Has
 	return false
 }
 
-// SetType gets a reference to the given CSSCMSDataModelEnumsDataType and assigns it to the Type field.
-func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) SetType(v CSSCMSDataModelEnumsDataType) {
+// SetType gets a reference to the given int32 and assigns it to the Type field.
+func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) SetType(v int32) {
 	o.Type = &v
 }
 

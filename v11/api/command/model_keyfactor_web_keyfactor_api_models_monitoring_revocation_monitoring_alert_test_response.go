@@ -30,8 +30,8 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonito
 
 // KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse struct for KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse
 type KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse struct {
-	RevocationMonitoringAlerts []CSSCMSDataModelModelsMonitoringRevocationMonitoringAlertResponse `json:"revocationMonitoringAlerts,omitempty"`
-	AlertBuildResult           *CSSCMSDataModelEnumsAlertBuildResult                              `json:"alertBuildResult,omitempty"`
+	RevocationMonitoringAlerts []ModelsMonitoringRevocationMonitoringAlertResponse `json:"revocationMonitoringAlerts,omitempty"`
+	AlertBuildResult           *int32                                              `json:"alertBuildResult,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse instantiates a new KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse object
@@ -52,9 +52,9 @@ func NewKeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestRes
 }
 
 // GetRevocationMonitoringAlerts returns the RevocationMonitoringAlerts field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetRevocationMonitoringAlerts() []CSSCMSDataModelModelsMonitoringRevocationMonitoringAlertResponse {
+func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetRevocationMonitoringAlerts() []ModelsMonitoringRevocationMonitoringAlertResponse {
 	if o == nil {
-		var ret []CSSCMSDataModelModelsMonitoringRevocationMonitoringAlertResponse
+		var ret []ModelsMonitoringRevocationMonitoringAlertResponse
 		return ret
 	}
 	return o.RevocationMonitoringAlerts
@@ -63,7 +63,7 @@ func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestRe
 // GetRevocationMonitoringAlertsOk returns a tuple with the RevocationMonitoringAlerts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetRevocationMonitoringAlertsOk() ([]CSSCMSDataModelModelsMonitoringRevocationMonitoringAlertResponse, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetRevocationMonitoringAlertsOk() ([]ModelsMonitoringRevocationMonitoringAlertResponse, bool) {
 	if o == nil || isNil(o.RevocationMonitoringAlerts) {
 		return nil, false
 	}
@@ -79,15 +79,15 @@ func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestRe
 	return false
 }
 
-// SetRevocationMonitoringAlerts gets a reference to the given []CSSCMSDataModelModelsMonitoringRevocationMonitoringAlertResponse and assigns it to the RevocationMonitoringAlerts field.
-func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) SetRevocationMonitoringAlerts(v []CSSCMSDataModelModelsMonitoringRevocationMonitoringAlertResponse) {
+// SetRevocationMonitoringAlerts gets a reference to the given []ModelsMonitoringRevocationMonitoringAlertResponse and assigns it to the RevocationMonitoringAlerts field.
+func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) SetRevocationMonitoringAlerts(v []ModelsMonitoringRevocationMonitoringAlertResponse) {
 	o.RevocationMonitoringAlerts = v
 }
 
 // GetAlertBuildResult returns the AlertBuildResult field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetAlertBuildResult() CSSCMSDataModelEnumsAlertBuildResult {
+func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetAlertBuildResult() int32 {
 	if o == nil || isNil(o.AlertBuildResult) {
-		var ret CSSCMSDataModelEnumsAlertBuildResult
+		var ret int32
 		return ret
 	}
 	return *o.AlertBuildResult
@@ -95,7 +95,7 @@ func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestRe
 
 // GetAlertBuildResultOk returns a tuple with the AlertBuildResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetAlertBuildResultOk() (*CSSCMSDataModelEnumsAlertBuildResult, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetAlertBuildResultOk() (*int32, bool) {
 	if o == nil || isNil(o.AlertBuildResult) {
 		return nil, false
 	}
@@ -111,8 +111,8 @@ func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestRe
 	return false
 }
 
-// SetAlertBuildResult gets a reference to the given CSSCMSDataModelEnumsAlertBuildResult and assigns it to the AlertBuildResult field.
-func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) SetAlertBuildResult(v CSSCMSDataModelEnumsAlertBuildResult) {
+// SetAlertBuildResult gets a reference to the given int32 and assigns it to the AlertBuildResult field.
+func (o *KeyfactorWebKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) SetAlertBuildResult(v int32) {
 	o.AlertBuildResult = &v
 }
 

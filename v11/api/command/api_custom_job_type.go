@@ -41,7 +41,7 @@ type ApiJobTypesCustomGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -71,7 +71,7 @@ func (r ApiJobTypesCustomGetRequest) SortField(sortField string) ApiJobTypesCust
 	return r
 }
 
-func (r ApiJobTypesCustomGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiJobTypesCustomGetRequest {
+func (r ApiJobTypesCustomGetRequest) SortAscending(sortAscending int32) ApiJobTypesCustomGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -447,11 +447,11 @@ func (a *CustomJobTypeApiService) JobTypesCustomIdGetExecute(r ApiJobTypesCustom
 }
 
 type ApiJobTypesCustomPostRequest struct {
-	ctx                                                       context.Context
-	ApiService                                                *CustomJobTypeApiService
-	xKeyfactorRequestedWith                                   *string
-	xKeyfactorApiVersion                                      *string
-	cSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest *CSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest
+	ctx                                        context.Context
+	ApiService                                 *CustomJobTypeApiService
+	xKeyfactorRequestedWith                    *string
+	xKeyfactorApiVersion                       *string
+	modelsOrchestratorJobsJobTypeCreateRequest *ModelsOrchestratorJobsJobTypeCreateRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -467,8 +467,8 @@ func (r ApiJobTypesCustomPostRequest) XKeyfactorApiVersion(xKeyfactorApiVersion 
 }
 
 // job type properties to be applied to the new job type
-func (r ApiJobTypesCustomPostRequest) CSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest(cSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest CSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest) ApiJobTypesCustomPostRequest {
-	r.cSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest = &cSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest
+func (r ApiJobTypesCustomPostRequest) ModelsOrchestratorJobsJobTypeCreateRequest(modelsOrchestratorJobsJobTypeCreateRequest ModelsOrchestratorJobsJobTypeCreateRequest) ApiJobTypesCustomPostRequest {
+	r.modelsOrchestratorJobsJobTypeCreateRequest = &modelsOrchestratorJobsJobTypeCreateRequest
 	return r
 }
 
@@ -541,7 +541,7 @@ func (a *CustomJobTypeApiService) JobTypesCustomPostExecute(r ApiJobTypesCustomP
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest
+	localVarPostBody = r.modelsOrchestratorJobsJobTypeCreateRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -580,11 +580,11 @@ func (a *CustomJobTypeApiService) JobTypesCustomPostExecute(r ApiJobTypesCustomP
 }
 
 type ApiJobTypesCustomPutRequest struct {
-	ctx                                                       context.Context
-	ApiService                                                *CustomJobTypeApiService
-	xKeyfactorRequestedWith                                   *string
-	xKeyfactorApiVersion                                      *string
-	cSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest *CSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest
+	ctx                                        context.Context
+	ApiService                                 *CustomJobTypeApiService
+	xKeyfactorRequestedWith                    *string
+	xKeyfactorApiVersion                       *string
+	modelsOrchestratorJobsJobTypeUpdateRequest *ModelsOrchestratorJobsJobTypeUpdateRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -600,8 +600,8 @@ func (r ApiJobTypesCustomPutRequest) XKeyfactorApiVersion(xKeyfactorApiVersion s
 }
 
 // job type properties to be applied to the existing job type
-func (r ApiJobTypesCustomPutRequest) CSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest(cSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest CSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest) ApiJobTypesCustomPutRequest {
-	r.cSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest = &cSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest
+func (r ApiJobTypesCustomPutRequest) ModelsOrchestratorJobsJobTypeUpdateRequest(modelsOrchestratorJobsJobTypeUpdateRequest ModelsOrchestratorJobsJobTypeUpdateRequest) ApiJobTypesCustomPutRequest {
+	r.modelsOrchestratorJobsJobTypeUpdateRequest = &modelsOrchestratorJobsJobTypeUpdateRequest
 	return r
 }
 
@@ -674,7 +674,7 @@ func (a *CustomJobTypeApiService) JobTypesCustomPutExecute(r ApiJobTypesCustomPu
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest
+	localVarPostBody = r.modelsOrchestratorJobsJobTypeUpdateRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

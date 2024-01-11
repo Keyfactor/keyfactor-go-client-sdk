@@ -41,7 +41,7 @@ type ApiWorkflowInstancesAssignedToMeGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -71,7 +71,7 @@ func (r ApiWorkflowInstancesAssignedToMeGetRequest) SortField(sortField string) 
 	return r
 }
 
-func (r ApiWorkflowInstancesAssignedToMeGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiWorkflowInstancesAssignedToMeGetRequest {
+func (r ApiWorkflowInstancesAssignedToMeGetRequest) SortAscending(sortAscending int32) ApiWorkflowInstancesAssignedToMeGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -210,7 +210,7 @@ type ApiWorkflowInstancesGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -240,7 +240,7 @@ func (r ApiWorkflowInstancesGetRequest) SortField(sortField string) ApiWorkflowI
 	return r
 }
 
-func (r ApiWorkflowInstancesGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiWorkflowInstancesGetRequest {
+func (r ApiWorkflowInstancesGetRequest) SortAscending(sortAscending int32) ApiWorkflowInstancesGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -990,7 +990,7 @@ type ApiWorkflowInstancesMyGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -1020,7 +1020,7 @@ func (r ApiWorkflowInstancesMyGetRequest) SortField(sortField string) ApiWorkflo
 	return r
 }
 
-func (r ApiWorkflowInstancesMyGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiWorkflowInstancesMyGetRequest {
+func (r ApiWorkflowInstancesMyGetRequest) SortAscending(sortAscending int32) ApiWorkflowInstancesMyGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }

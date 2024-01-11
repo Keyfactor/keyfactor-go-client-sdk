@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Signature** | Pointer to **NullableString** |  | [optional] 
 **Category** | Pointer to **int32** |  | [optional] 
 **Operation** | Pointer to **int32** |  | [optional] 
-**Level** | Pointer to [**KeyfactorAuditingEnumsAuditLogLevel**](KeyfactorAuditingEnumsAuditLogLevel.md) |  | [optional] 
+**Level** | Pointer to **int32** |  | [optional] 
 **User** | Pointer to **NullableString** |  | [optional] 
 **EntityType** | Pointer to **NullableString** |  | [optional] 
 **AuditIdentifier** | Pointer to **NullableString** |  | [optional] 
@@ -207,20 +207,20 @@ HasOperation returns a boolean if a field has been set.
 
 ### GetLevel
 
-`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevel() KeyfactorAuditingEnumsAuditLogLevel`
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevel() int32`
 
 GetLevel returns the Level field if non-nil, zero value otherwise.
 
 ### GetLevelOk
 
-`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevelOk() (*KeyfactorAuditingEnumsAuditLogLevel, bool)`
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevelOk() (*int32, bool)`
 
 GetLevelOk returns a tuple with the Level field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLevel
 
-`func (o *KeyfactorAuditingQueryingAuditLogEntry) SetLevel(v KeyfactorAuditingEnumsAuditLogLevel)`
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) SetLevel(v int32)`
 
 SetLevel sets Level field to given value.
 

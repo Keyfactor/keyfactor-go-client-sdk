@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** |  | [optional] 
-**ScheduleType** | [**CSSCMSCoreEnumsScheduledTaskType**](CSSCMSCoreEnumsScheduledTaskType.md) |  | 
+**ScheduleType** | **int32** |  | 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Interval** | Pointer to **NullableInt32** |  | [optional] 
 **TimeOfDay** | Pointer to **NullableTime** |  | [optional] 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewKeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskRequest
 
-`func NewKeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskRequest(scheduleType CSSCMSCoreEnumsScheduledTaskType, ) *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskRequest`
+`func NewKeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskRequest(scheduleType int32, ) *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskRequest`
 
 NewKeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskRequest instantiates a new KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskRequest object
 This constructor will assign default values to properties that have it defined,
@@ -56,20 +56,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetScheduleType
 
-`func (o *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskRequest) GetScheduleType() CSSCMSCoreEnumsScheduledTaskType`
+`func (o *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskRequest) GetScheduleType() int32`
 
 GetScheduleType returns the ScheduleType field if non-nil, zero value otherwise.
 
 ### GetScheduleTypeOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskRequest) GetScheduleTypeOk() (*CSSCMSCoreEnumsScheduledTaskType, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskRequest) GetScheduleTypeOk() (*int32, bool)`
 
 GetScheduleTypeOk returns a tuple with the ScheduleType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScheduleType
 
-`func (o *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskRequest) SetScheduleType(v CSSCMSCoreEnumsScheduledTaskType)`
+`func (o *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskRequest) SetScheduleType(v int32)`
 
 SetScheduleType sets ScheduleType field to given value.
 

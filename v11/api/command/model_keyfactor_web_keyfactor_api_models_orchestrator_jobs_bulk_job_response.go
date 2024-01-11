@@ -35,7 +35,7 @@ type KeyfactorWebKeyfactorApiModelsOrchestratorJobsBulkJobResponse struct {
 	Schedule              *KeyfactorCommonSchedulingKeyfactorSchedule                      `json:"schedule,omitempty"`
 	JobFields             []KeyfactorWebKeyfactorApiModelsOrchestratorJobsJobFieldResponse `json:"jobFields,omitempty"`
 	RequestTimestamp      *time.Time                                                       `json:"requestTimestamp,omitempty"`
-	OrchestratorJobPairs  []CSSCMSDataModelModelsOrchestratorJobsBulkOrchestratorJobPair   `json:"orchestratorJobPairs,omitempty"`
+	OrchestratorJobPairs  []ModelsOrchestratorJobsBulkOrchestratorJobPair                  `json:"orchestratorJobPairs,omitempty"`
 	FailedOrchestratorIds []string                                                         `json:"failedOrchestratorIds,omitempty"`
 }
 
@@ -197,9 +197,9 @@ func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsBulkJobResponse) SetReque
 }
 
 // GetOrchestratorJobPairs returns the OrchestratorJobPairs field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsBulkJobResponse) GetOrchestratorJobPairs() []CSSCMSDataModelModelsOrchestratorJobsBulkOrchestratorJobPair {
+func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsBulkJobResponse) GetOrchestratorJobPairs() []ModelsOrchestratorJobsBulkOrchestratorJobPair {
 	if o == nil {
-		var ret []CSSCMSDataModelModelsOrchestratorJobsBulkOrchestratorJobPair
+		var ret []ModelsOrchestratorJobsBulkOrchestratorJobPair
 		return ret
 	}
 	return o.OrchestratorJobPairs
@@ -208,7 +208,7 @@ func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsBulkJobResponse) GetOrche
 // GetOrchestratorJobPairsOk returns a tuple with the OrchestratorJobPairs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsBulkJobResponse) GetOrchestratorJobPairsOk() ([]CSSCMSDataModelModelsOrchestratorJobsBulkOrchestratorJobPair, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsBulkJobResponse) GetOrchestratorJobPairsOk() ([]ModelsOrchestratorJobsBulkOrchestratorJobPair, bool) {
 	if o == nil || isNil(o.OrchestratorJobPairs) {
 		return nil, false
 	}
@@ -224,8 +224,8 @@ func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsBulkJobResponse) HasOrche
 	return false
 }
 
-// SetOrchestratorJobPairs gets a reference to the given []CSSCMSDataModelModelsOrchestratorJobsBulkOrchestratorJobPair and assigns it to the OrchestratorJobPairs field.
-func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsBulkJobResponse) SetOrchestratorJobPairs(v []CSSCMSDataModelModelsOrchestratorJobsBulkOrchestratorJobPair) {
+// SetOrchestratorJobPairs gets a reference to the given []ModelsOrchestratorJobsBulkOrchestratorJobPair and assigns it to the OrchestratorJobPairs field.
+func (o *KeyfactorWebKeyfactorApiModelsOrchestratorJobsBulkJobResponse) SetOrchestratorJobPairs(v []ModelsOrchestratorJobsBulkOrchestratorJobPair) {
 	o.OrchestratorJobPairs = v
 }
 

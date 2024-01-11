@@ -41,7 +41,7 @@ type ApiAlertsKeyRotationGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -71,7 +71,7 @@ func (r ApiAlertsKeyRotationGetRequest) SortField(sortField string) ApiAlertsKey
 	return r
 }
 
-func (r ApiAlertsKeyRotationGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiAlertsKeyRotationGetRequest {
+func (r ApiAlertsKeyRotationGetRequest) SortAscending(sortAscending int32) ApiAlertsKeyRotationGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }

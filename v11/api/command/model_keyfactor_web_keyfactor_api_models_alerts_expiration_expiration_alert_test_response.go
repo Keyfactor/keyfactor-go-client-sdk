@@ -31,7 +31,7 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsAlertsExpirationExpiration
 // KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse struct for KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse
 type KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse struct {
 	ExpirationAlerts []KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertResponse `json:"expirationAlerts,omitempty"`
-	AlertBuildResult *CSSCMSDataModelEnumsAlertBuildResult                                   `json:"alertBuildResult,omitempty"`
+	AlertBuildResult *int32                                                                  `json:"alertBuildResult,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse instantiates a new KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse object
@@ -85,9 +85,9 @@ func (o *KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestRespon
 }
 
 // GetAlertBuildResult returns the AlertBuildResult field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse) GetAlertBuildResult() CSSCMSDataModelEnumsAlertBuildResult {
+func (o *KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse) GetAlertBuildResult() int32 {
 	if o == nil || isNil(o.AlertBuildResult) {
-		var ret CSSCMSDataModelEnumsAlertBuildResult
+		var ret int32
 		return ret
 	}
 	return *o.AlertBuildResult
@@ -95,7 +95,7 @@ func (o *KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestRespon
 
 // GetAlertBuildResultOk returns a tuple with the AlertBuildResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse) GetAlertBuildResultOk() (*CSSCMSDataModelEnumsAlertBuildResult, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse) GetAlertBuildResultOk() (*int32, bool) {
 	if o == nil || isNil(o.AlertBuildResult) {
 		return nil, false
 	}
@@ -111,8 +111,8 @@ func (o *KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestRespon
 	return false
 }
 
-// SetAlertBuildResult gets a reference to the given CSSCMSDataModelEnumsAlertBuildResult and assigns it to the AlertBuildResult field.
-func (o *KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse) SetAlertBuildResult(v CSSCMSDataModelEnumsAlertBuildResult) {
+// SetAlertBuildResult gets a reference to the given int32 and assigns it to the AlertBuildResult field.
+func (o *KeyfactorWebKeyfactorApiModelsAlertsExpirationExpirationAlertTestResponse) SetAlertBuildResult(v int32) {
 	o.AlertBuildResult = &v
 }
 

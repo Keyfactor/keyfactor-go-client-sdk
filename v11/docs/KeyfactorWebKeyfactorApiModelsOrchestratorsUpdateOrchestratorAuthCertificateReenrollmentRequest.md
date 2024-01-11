@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **OrchestratorIds** | Pointer to **[]string** |  | [optional] 
 **Status** | **string** |  | 
-**StatusEnum** | Pointer to [**CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment**](CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment.md) |  | [optional] 
+**StatusEnum** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -84,20 +84,20 @@ SetStatus sets Status field to given value.
 
 ### GetStatusEnum
 
-`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest) GetStatusEnum() CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment`
+`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest) GetStatusEnum() int32`
 
 GetStatusEnum returns the StatusEnum field if non-nil, zero value otherwise.
 
 ### GetStatusEnumOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest) GetStatusEnumOk() (*CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest) GetStatusEnumOk() (*int32, bool)`
 
 GetStatusEnumOk returns a tuple with the StatusEnum field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatusEnum
 
-`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest) SetStatusEnum(v CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment)`
+`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest) SetStatusEnum(v int32)`
 
 SetStatusEnum sets StatusEnum field to given value.
 

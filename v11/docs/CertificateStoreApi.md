@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ## CertificateStoresAssignContainerPut
 
-> []KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse CertificateStoresAssignContainerPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsContainerAssignment(cSSCMSDataModelModelsContainerAssignment).Execute()
+> []KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse CertificateStoresAssignContainerPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsContainerAssignment(modelsContainerAssignment).Execute()
 
 Assigns the provided certificate stores to the provided container
 
@@ -112,11 +112,11 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsContainerAssignment := *openapiclient.NewCSSCMSDataModelModelsContainerAssignment([]string{"KeystoreIds_example"}) // CSSCMSDataModelModelsContainerAssignment | Keyfactor certificate store identifiers and the container properties (optional)
+    modelsContainerAssignment := *openapiclient.NewModelsContainerAssignment([]string{"KeystoreIds_example"}) // ModelsContainerAssignment | Keyfactor certificate store identifiers and the container properties (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.CertificateStoresAssignContainerPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsContainerAssignment(cSSCMSDataModelModelsContainerAssignment).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.CertificateStoresAssignContainerPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsContainerAssignment(modelsContainerAssignment).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.CertificateStoresAssignContainerPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsContainerAssignment** | [**CSSCMSDataModelModelsContainerAssignment**](CSSCMSDataModelModelsContainerAssignment.md) | Keyfactor certificate store identifiers and the container properties | 
+ **modelsContainerAssignment** | [**ModelsContainerAssignment**](ModelsContainerAssignment.md) | Keyfactor certificate store identifiers and the container properties | 
 
 ### Return type
 
@@ -180,7 +180,7 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    keyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest(int32(123), []openapiclient.CSSCMSDataModelModelsCertificateStoreEntry{*openapiclient.NewCSSCMSDataModelModelsCertificateStoreEntry("CertificateStoreId_example")}, *openapiclient.NewKeyfactorCommonSchedulingKeyfactorSchedule()) // KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest | Configuration details of the management job (optional)
+    keyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest(int32(123), []openapiclient.ModelsCertificateStoreEntry{*openapiclient.NewModelsCertificateStoreEntry("CertificateStoreId_example")}, *openapiclient.NewKeyfactorCommonSchedulingKeyfactorSchedule()) // KeyfactorWebKeyfactorApiModelsCertificateStoresAddCertificateRequest | Configuration details of the management job (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -248,7 +248,7 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    keyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest([]openapiclient.CSSCMSDataModelModelsCertificateLocationSpecifier{*openapiclient.NewCSSCMSDataModelModelsCertificateLocationSpecifier()}, *openapiclient.NewKeyfactorCommonSchedulingKeyfactorSchedule()) // KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest | Configuration details of the management job (optional)
+    keyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest([]openapiclient.ModelsCertificateLocationSpecifier{*openapiclient.NewModelsCertificateLocationSpecifier()}, *openapiclient.NewKeyfactorCommonSchedulingKeyfactorSchedule()) // KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest | Configuration details of the management job (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -365,7 +365,7 @@ Name | Type | Description  | Notes
 
 ## CertificateStoresDiscoveryJobPut
 
-> CertificateStoresDiscoveryJobPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsDiscoveryJobRequest(cSSCMSDataModelModelsDiscoveryJobRequest).Execute()
+> CertificateStoresDiscoveryJobPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsDiscoveryJobRequest(modelsDiscoveryJobRequest).Execute()
 
 Configures a discovery job to locate currently unmanaged certificate stores
 
@@ -384,11 +384,11 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsDiscoveryJobRequest := *openapiclient.NewCSSCMSDataModelModelsDiscoveryJobRequest(int32(123)) // CSSCMSDataModelModelsDiscoveryJobRequest | Configuration properties of the discovery job (optional)
+    modelsDiscoveryJobRequest := *openapiclient.NewModelsDiscoveryJobRequest(int32(123)) // ModelsDiscoveryJobRequest | Configuration properties of the discovery job (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.CertificateStoresDiscoveryJobPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsDiscoveryJobRequest(cSSCMSDataModelModelsDiscoveryJobRequest).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.CertificateStoresDiscoveryJobPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsDiscoveryJobRequest(modelsDiscoveryJobRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.CertificateStoresDiscoveryJobPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsDiscoveryJobRequest** | [**CSSCMSDataModelModelsDiscoveryJobRequest**](CSSCMSDataModelModelsDiscoveryJobRequest.md) | Configuration properties of the discovery job | 
+ **modelsDiscoveryJobRequest** | [**ModelsDiscoveryJobRequest**](ModelsDiscoveryJobRequest.md) | Configuration properties of the discovery job | 
 
 ### Return type
 
@@ -455,7 +455,7 @@ func main() {
     pageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
     returnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
     sortField := "sortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder | Field sort direction [0=ascending, 1=descending] (optional)
+    sortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -488,7 +488,7 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** | The current page within the result set to be returned | 
  **returnLimit** | **int32** | Maximum number of records to be returned in a single call | 
  **sortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **sortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
@@ -653,7 +653,7 @@ Name | Type | Description  | Notes
 
 ## CertificateStoresIdInventoryGet
 
-> []CSSCMSDataModelModelsCertificateStoreInventory CertificateStoresIdInventoryGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsCertificateStoreInventory CertificateStoresIdInventoryGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a single certificate store's inventory associated with the provided id
 
@@ -675,7 +675,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -685,7 +685,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.CertificateStoresIdInventoryGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificateStoresIdInventoryGet`: []CSSCMSDataModelModelsCertificateStoreInventory
+    // response from `CertificateStoresIdInventoryGet`: []ModelsCertificateStoreInventory
     fmt.Fprintf(os.Stdout, "Response from `CertificateStoreApi.CertificateStoresIdInventoryGet`: %v\n", resp)
 }
 ```
@@ -710,12 +710,12 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsCertificateStoreInventory**](CSSCMSDataModelModelsCertificateStoreInventory.md)
+[**[]ModelsCertificateStoreInventory**](ModelsCertificateStoreInventory.md)
 
 ### Authorization
 
@@ -733,7 +733,7 @@ Name | Type | Description  | Notes
 
 ## CertificateStoresPasswordPut
 
-> CertificateStoresPasswordPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertStoreNewPasswordRequest(cSSCMSDataModelModelsCertStoreNewPasswordRequest).Execute()
+> CertificateStoresPasswordPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsCertStoreNewPasswordRequest(modelsCertStoreNewPasswordRequest).Execute()
 
 Sets a password for the requested certificate store
 
@@ -752,11 +752,11 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsCertStoreNewPasswordRequest := *openapiclient.NewCSSCMSDataModelModelsCertStoreNewPasswordRequest("CertStoreId_example", interface{}(123)) // CSSCMSDataModelModelsCertStoreNewPasswordRequest | Identifier of the certificate store and the password to be applied to it (optional)
+    modelsCertStoreNewPasswordRequest := *openapiclient.NewModelsCertStoreNewPasswordRequest("CertStoreId_example", interface{}(123)) // ModelsCertStoreNewPasswordRequest | Identifier of the certificate store and the password to be applied to it (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.CertificateStoresPasswordPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertStoreNewPasswordRequest(cSSCMSDataModelModelsCertStoreNewPasswordRequest).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.CertificateStoresPasswordPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsCertStoreNewPasswordRequest(modelsCertStoreNewPasswordRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.CertificateStoresPasswordPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -777,7 +777,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsCertStoreNewPasswordRequest** | [**CSSCMSDataModelModelsCertStoreNewPasswordRequest**](CSSCMSDataModelModelsCertStoreNewPasswordRequest.md) | Identifier of the certificate store and the password to be applied to it | 
+ **modelsCertStoreNewPasswordRequest** | [**ModelsCertStoreNewPasswordRequest**](ModelsCertStoreNewPasswordRequest.md) | Identifier of the certificate store and the password to be applied to it | 
 
 ### Return type
 
@@ -799,7 +799,7 @@ Name | Type | Description  | Notes
 
 ## CertificateStoresPost
 
-> KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse CertificateStoresPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest(cSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest).Execute()
+> KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse CertificateStoresPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsCertificateStoresCertificateStoreCreateRequest(modelsCertificateStoresCertificateStoreCreateRequest).Execute()
 
 Creates a new certificate store with the provided properties
 
@@ -818,11 +818,11 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest := *openapiclient.NewCSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest() // CSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest | Certificate store to be created with the provided properties (optional)
+    modelsCertificateStoresCertificateStoreCreateRequest := *openapiclient.NewModelsCertificateStoresCertificateStoreCreateRequest() // ModelsCertificateStoresCertificateStoreCreateRequest | Certificate store to be created with the provided properties (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.CertificateStoresPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest(cSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.CertificateStoresPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsCertificateStoresCertificateStoreCreateRequest(modelsCertificateStoresCertificateStoreCreateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.CertificateStoresPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -845,7 +845,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest** | [**CSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest**](CSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest.md) | Certificate store to be created with the provided properties | 
+ **modelsCertificateStoresCertificateStoreCreateRequest** | [**ModelsCertificateStoresCertificateStoreCreateRequest**](ModelsCertificateStoresCertificateStoreCreateRequest.md) | Certificate store to be created with the provided properties | 
 
 ### Return type
 
@@ -867,7 +867,7 @@ Name | Type | Description  | Notes
 
 ## CertificateStoresPut
 
-> KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse CertificateStoresPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest(cSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest).Execute()
+> KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse CertificateStoresPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsCertificateStoresCertificateStoreUpdateRequest(modelsCertificateStoresCertificateStoreUpdateRequest).Execute()
 
 Updates a given certificate store with the properties of the provided instance
 
@@ -886,11 +886,11 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest := *openapiclient.NewCSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest() // CSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest | Certificate store to be updated with the provided properties (optional)
+    modelsCertificateStoresCertificateStoreUpdateRequest := *openapiclient.NewModelsCertificateStoresCertificateStoreUpdateRequest() // ModelsCertificateStoresCertificateStoreUpdateRequest | Certificate store to be updated with the provided properties (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.CertificateStoresPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest(cSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.CertificateStoresPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsCertificateStoresCertificateStoreUpdateRequest(modelsCertificateStoresCertificateStoreUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.CertificateStoresPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -913,7 +913,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest** | [**CSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest**](CSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest.md) | Certificate store to be updated with the provided properties | 
+ **modelsCertificateStoresCertificateStoreUpdateRequest** | [**ModelsCertificateStoresCertificateStoreUpdateRequest**](ModelsCertificateStoresCertificateStoreUpdateRequest.md) | Certificate store to be updated with the provided properties | 
 
 ### Return type
 
@@ -1001,7 +1001,7 @@ Name | Type | Description  | Notes
 
 ## CertificateStoresSchedulePost
 
-> CertificateStoresSchedulePost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertStoresSchedule(cSSCMSDataModelModelsCertStoresSchedule).Execute()
+> CertificateStoresSchedulePost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsCertStoresSchedule(modelsCertStoresSchedule).Execute()
 
 Creates an inventory schedule for the provided certificate stores
 
@@ -1020,11 +1020,11 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsCertStoresSchedule := *openapiclient.NewCSSCMSDataModelModelsCertStoresSchedule([]string{"StoreIds_example"}) // CSSCMSDataModelModelsCertStoresSchedule | Certificate store identifiers and the desired schedule (optional)
+    modelsCertStoresSchedule := *openapiclient.NewModelsCertStoresSchedule([]string{"StoreIds_example"}) // ModelsCertStoresSchedule | Certificate store identifiers and the desired schedule (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.CertificateStoresSchedulePost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertStoresSchedule(cSSCMSDataModelModelsCertStoresSchedule).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.CertificateStoresSchedulePost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsCertStoresSchedule(modelsCertStoresSchedule).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.CertificateStoresSchedulePost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1045,7 +1045,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsCertStoresSchedule** | [**CSSCMSDataModelModelsCertStoresSchedule**](CSSCMSDataModelModelsCertStoresSchedule.md) | Certificate store identifiers and the desired schedule | 
+ **modelsCertStoresSchedule** | [**ModelsCertStoresSchedule**](ModelsCertStoresSchedule.md) | Certificate store identifiers and the desired schedule | 
 
 ### Return type
 
@@ -1067,7 +1067,7 @@ Name | Type | Description  | Notes
 
 ## CertificateStoresServerGet
 
-> []CSSCMSDataModelModelsCertificateStoreServer CertificateStoresServerGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsCertificateStoreServer CertificateStoresServerGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all certificate store servers according to the provided filter and output parameters
 
@@ -1089,7 +1089,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -1099,7 +1099,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.CertificateStoresServerGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificateStoresServerGet`: []CSSCMSDataModelModelsCertificateStoreServer
+    // response from `CertificateStoresServerGet`: []ModelsCertificateStoreServer
     fmt.Fprintf(os.Stdout, "Response from `CertificateStoreApi.CertificateStoresServerGet`: %v\n", resp)
 }
 ```
@@ -1120,12 +1120,12 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsCertificateStoreServer**](CSSCMSDataModelModelsCertificateStoreServer.md)
+[**[]ModelsCertificateStoreServer**](ModelsCertificateStoreServer.md)
 
 ### Authorization
 
@@ -1143,7 +1143,7 @@ Name | Type | Description  | Notes
 
 ## CertificateStoresServerPost
 
-> CSSCMSDataModelModelsCertificateStoreServerResponse CertificateStoresServerPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoreCreateServerRequest(cSSCMSDataModelModelsCertificateStoreCreateServerRequest).Execute()
+> ModelsCertificateStoreServerResponse CertificateStoresServerPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsCertificateStoreCreateServerRequest(modelsCertificateStoreCreateServerRequest).Execute()
 
 Creates a new certificate store server with the provided properties
 
@@ -1162,16 +1162,16 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsCertificateStoreCreateServerRequest := *openapiclient.NewCSSCMSDataModelModelsCertificateStoreCreateServerRequest(*openapiclient.NewCSSCMSDataModelModelsKeyfactorAPISecret(), *openapiclient.NewCSSCMSDataModelModelsKeyfactorAPISecret(), false, int32(123), "Name_example") // CSSCMSDataModelModelsCertificateStoreCreateServerRequest | Certificate store server to be created with the provided properties (optional)
+    modelsCertificateStoreCreateServerRequest := *openapiclient.NewModelsCertificateStoreCreateServerRequest(*openapiclient.NewModelsKeyfactorAPISecret(), *openapiclient.NewModelsKeyfactorAPISecret(), false, int32(123), "Name_example") // ModelsCertificateStoreCreateServerRequest | Certificate store server to be created with the provided properties (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.CertificateStoresServerPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoreCreateServerRequest(cSSCMSDataModelModelsCertificateStoreCreateServerRequest).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.CertificateStoresServerPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsCertificateStoreCreateServerRequest(modelsCertificateStoreCreateServerRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.CertificateStoresServerPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificateStoresServerPost`: CSSCMSDataModelModelsCertificateStoreServerResponse
+    // response from `CertificateStoresServerPost`: ModelsCertificateStoreServerResponse
     fmt.Fprintf(os.Stdout, "Response from `CertificateStoreApi.CertificateStoresServerPost`: %v\n", resp)
 }
 ```
@@ -1189,11 +1189,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsCertificateStoreCreateServerRequest** | [**CSSCMSDataModelModelsCertificateStoreCreateServerRequest**](CSSCMSDataModelModelsCertificateStoreCreateServerRequest.md) | Certificate store server to be created with the provided properties | 
+ **modelsCertificateStoreCreateServerRequest** | [**ModelsCertificateStoreCreateServerRequest**](ModelsCertificateStoreCreateServerRequest.md) | Certificate store server to be created with the provided properties | 
 
 ### Return type
 
-[**CSSCMSDataModelModelsCertificateStoreServerResponse**](CSSCMSDataModelModelsCertificateStoreServerResponse.md)
+[**ModelsCertificateStoreServerResponse**](ModelsCertificateStoreServerResponse.md)
 
 ### Authorization
 
@@ -1211,7 +1211,7 @@ Name | Type | Description  | Notes
 
 ## CertificateStoresServerPut
 
-> CSSCMSDataModelModelsCertificateStoreServerResponse CertificateStoresServerPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoreUpdateServerRequest(cSSCMSDataModelModelsCertificateStoreUpdateServerRequest).Execute()
+> ModelsCertificateStoreServerResponse CertificateStoresServerPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsCertificateStoreUpdateServerRequest(modelsCertificateStoreUpdateServerRequest).Execute()
 
 Updates a given certificate store server with the properties of the provided instance
 
@@ -1230,16 +1230,16 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsCertificateStoreUpdateServerRequest := *openapiclient.NewCSSCMSDataModelModelsCertificateStoreUpdateServerRequest(int32(123), *openapiclient.NewCSSCMSDataModelModelsKeyfactorAPISecret(), *openapiclient.NewCSSCMSDataModelModelsKeyfactorAPISecret(), false, "Name_example") // CSSCMSDataModelModelsCertificateStoreUpdateServerRequest | Server to be updated with the provided properties (optional)
+    modelsCertificateStoreUpdateServerRequest := *openapiclient.NewModelsCertificateStoreUpdateServerRequest(int32(123), *openapiclient.NewModelsKeyfactorAPISecret(), *openapiclient.NewModelsKeyfactorAPISecret(), false, "Name_example") // ModelsCertificateStoreUpdateServerRequest | Server to be updated with the provided properties (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.CertificateStoresServerPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoreUpdateServerRequest(cSSCMSDataModelModelsCertificateStoreUpdateServerRequest).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.CertificateStoresServerPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsCertificateStoreUpdateServerRequest(modelsCertificateStoreUpdateServerRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.CertificateStoresServerPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificateStoresServerPut`: CSSCMSDataModelModelsCertificateStoreServerResponse
+    // response from `CertificateStoresServerPut`: ModelsCertificateStoreServerResponse
     fmt.Fprintf(os.Stdout, "Response from `CertificateStoreApi.CertificateStoresServerPut`: %v\n", resp)
 }
 ```
@@ -1257,11 +1257,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsCertificateStoreUpdateServerRequest** | [**CSSCMSDataModelModelsCertificateStoreUpdateServerRequest**](CSSCMSDataModelModelsCertificateStoreUpdateServerRequest.md) | Server to be updated with the provided properties | 
+ **modelsCertificateStoreUpdateServerRequest** | [**ModelsCertificateStoreUpdateServerRequest**](ModelsCertificateStoreUpdateServerRequest.md) | Server to be updated with the provided properties | 
 
 ### Return type
 
-[**CSSCMSDataModelModelsCertificateStoreServerResponse**](CSSCMSDataModelModelsCertificateStoreServerResponse.md)
+[**ModelsCertificateStoreServerResponse**](ModelsCertificateStoreServerResponse.md)
 
 ### Authorization
 

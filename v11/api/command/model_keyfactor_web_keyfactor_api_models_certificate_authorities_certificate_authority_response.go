@@ -30,42 +30,42 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCert
 
 // KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse struct for KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse
 type KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse struct {
-	Id                            *int32                                                                          `json:"id,omitempty"`
-	LogicalName                   NullableString                                                                  `json:"logicalName,omitempty"`
-	HostName                      NullableString                                                                  `json:"hostName,omitempty"`
-	Delegate                      *bool                                                                           `json:"delegate,omitempty"`
-	DelegateEnrollment            *bool                                                                           `json:"delegateEnrollment,omitempty"`
-	ForestRoot                    NullableString                                                                  `json:"forestRoot,omitempty"`
-	ConfigurationTenant           NullableString                                                                  `json:"configurationTenant,omitempty"`
-	Remote                        *bool                                                                           `json:"remote,omitempty"`
-	Agent                         NullableString                                                                  `json:"agent,omitempty"`
-	Standalone                    *bool                                                                           `json:"standalone,omitempty"`
-	MonitorThresholds             *bool                                                                           `json:"monitorThresholds,omitempty"`
-	IssuanceMax                   NullableInt32                                                                   `json:"issuanceMax,omitempty"`
-	IssuanceMin                   NullableInt32                                                                   `json:"issuanceMin,omitempty"`
-	DenialMax                     NullableInt32                                                                   `json:"denialMax,omitempty"`
-	FailureMax                    NullableInt32                                                                   `json:"failureMax,omitempty"`
-	RfcEnforcement                *bool                                                                           `json:"rfcEnforcement,omitempty"`
-	Properties                    NullableString                                                                  `json:"properties,omitempty"`
-	AllowedEnrollmentTypes        *CSSCMSCoreEnumsEnrollmentType                                                  `json:"allowedEnrollmentTypes,omitempty"`
-	KeyRetention                  *CSSCMSCoreEnumsKeyRetentionPolicy                                              `json:"keyRetention,omitempty"`
-	KeyRetentionDays              NullableInt32                                                                   `json:"keyRetentionDays,omitempty"`
-	ExplicitCredentials           *bool                                                                           `json:"explicitCredentials,omitempty"`
-	SubscriberTerms               *bool                                                                           `json:"subscriberTerms,omitempty"`
-	ExplicitUser                  NullableString                                                                  `json:"explicitUser,omitempty"`
-	ExplicitPassword              *CSSCMSDataModelModelsKeyfactorAPISecret                                        `json:"explicitPassword,omitempty"`
-	UseAllowedRequesters          *bool                                                                           `json:"useAllowedRequesters,omitempty"`
-	AllowedRequesters             []string                                                                        `json:"allowedRequesters,omitempty"`
-	FullScan                      *KeyfactorCommonSchedulingKeyfactorSchedule                                     `json:"fullScan,omitempty"`
-	IncrementalScan               *KeyfactorCommonSchedulingKeyfactorSchedule                                     `json:"incrementalScan,omitempty"`
-	ThresholdCheck                *KeyfactorCommonSchedulingKeyfactorSchedule                                     `json:"thresholdCheck,omitempty"`
-	CaType                        *CSSCMSCoreEnumsCertificateAuthorityType                                        `json:"caType,omitempty"`
-	AuthCertificate               *CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate `json:"authCertificate,omitempty"`
-	EnforceUniqueDN               *bool                                                                           `json:"enforceUniqueDN,omitempty"`
-	AllowOneClickRenewals         *bool                                                                           `json:"allowOneClickRenewals,omitempty"`
-	NewEndEntityOnRenewAndReissue *bool                                                                           `json:"newEndEntityOnRenewAndReissue,omitempty"`
-	CaSyncScheduledTasks          []CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityScheduledTask  `json:"caSyncScheduledTasks,omitempty"`
-	LastScan                      NullableString                                                                  `json:"lastScan,omitempty"`
+	Id                            *int32                                                           `json:"id,omitempty"`
+	LogicalName                   NullableString                                                   `json:"logicalName,omitempty"`
+	HostName                      NullableString                                                   `json:"hostName,omitempty"`
+	Delegate                      *bool                                                            `json:"delegate,omitempty"`
+	DelegateEnrollment            *bool                                                            `json:"delegateEnrollment,omitempty"`
+	ForestRoot                    NullableString                                                   `json:"forestRoot,omitempty"`
+	ConfigurationTenant           NullableString                                                   `json:"configurationTenant,omitempty"`
+	Remote                        *bool                                                            `json:"remote,omitempty"`
+	Agent                         NullableString                                                   `json:"agent,omitempty"`
+	Standalone                    *bool                                                            `json:"standalone,omitempty"`
+	MonitorThresholds             *bool                                                            `json:"monitorThresholds,omitempty"`
+	IssuanceMax                   NullableInt32                                                    `json:"issuanceMax,omitempty"`
+	IssuanceMin                   NullableInt32                                                    `json:"issuanceMin,omitempty"`
+	DenialMax                     NullableInt32                                                    `json:"denialMax,omitempty"`
+	FailureMax                    NullableInt32                                                    `json:"failureMax,omitempty"`
+	RfcEnforcement                *bool                                                            `json:"rfcEnforcement,omitempty"`
+	Properties                    NullableString                                                   `json:"properties,omitempty"`
+	AllowedEnrollmentTypes        *int32                                                           `json:"allowedEnrollmentTypes,omitempty"`
+	KeyRetention                  *int32                                                           `json:"keyRetention,omitempty"`
+	KeyRetentionDays              NullableInt32                                                    `json:"keyRetentionDays,omitempty"`
+	ExplicitCredentials           *bool                                                            `json:"explicitCredentials,omitempty"`
+	SubscriberTerms               *bool                                                            `json:"subscriberTerms,omitempty"`
+	ExplicitUser                  NullableString                                                   `json:"explicitUser,omitempty"`
+	ExplicitPassword              *ModelsKeyfactorAPISecret                                        `json:"explicitPassword,omitempty"`
+	UseAllowedRequesters          *bool                                                            `json:"useAllowedRequesters,omitempty"`
+	AllowedRequesters             []string                                                         `json:"allowedRequesters,omitempty"`
+	FullScan                      *KeyfactorCommonSchedulingKeyfactorSchedule                      `json:"fullScan,omitempty"`
+	IncrementalScan               *KeyfactorCommonSchedulingKeyfactorSchedule                      `json:"incrementalScan,omitempty"`
+	ThresholdCheck                *KeyfactorCommonSchedulingKeyfactorSchedule                      `json:"thresholdCheck,omitempty"`
+	CaType                        *int32                                                           `json:"caType,omitempty"`
+	AuthCertificate               *ModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate `json:"authCertificate,omitempty"`
+	EnforceUniqueDN               *bool                                                            `json:"enforceUniqueDN,omitempty"`
+	AllowOneClickRenewals         *bool                                                            `json:"allowOneClickRenewals,omitempty"`
+	NewEndEntityOnRenewAndReissue *bool                                                            `json:"newEndEntityOnRenewAndReissue,omitempty"`
+	CaSyncScheduledTasks          []ModelsCertificateAuthoritiesCertificateAuthorityScheduledTask  `json:"caSyncScheduledTasks,omitempty"`
+	LastScan                      NullableString                                                   `json:"lastScan,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse instantiates a new KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse object
@@ -740,9 +740,9 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 }
 
 // GetAllowedEnrollmentTypes returns the AllowedEnrollmentTypes field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetAllowedEnrollmentTypes() CSSCMSCoreEnumsEnrollmentType {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetAllowedEnrollmentTypes() int32 {
 	if o == nil || isNil(o.AllowedEnrollmentTypes) {
-		var ret CSSCMSCoreEnumsEnrollmentType
+		var ret int32
 		return ret
 	}
 	return *o.AllowedEnrollmentTypes
@@ -750,7 +750,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 
 // GetAllowedEnrollmentTypesOk returns a tuple with the AllowedEnrollmentTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetAllowedEnrollmentTypesOk() (*CSSCMSCoreEnumsEnrollmentType, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetAllowedEnrollmentTypesOk() (*int32, bool) {
 	if o == nil || isNil(o.AllowedEnrollmentTypes) {
 		return nil, false
 	}
@@ -766,15 +766,15 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 	return false
 }
 
-// SetAllowedEnrollmentTypes gets a reference to the given CSSCMSCoreEnumsEnrollmentType and assigns it to the AllowedEnrollmentTypes field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) SetAllowedEnrollmentTypes(v CSSCMSCoreEnumsEnrollmentType) {
+// SetAllowedEnrollmentTypes gets a reference to the given int32 and assigns it to the AllowedEnrollmentTypes field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) SetAllowedEnrollmentTypes(v int32) {
 	o.AllowedEnrollmentTypes = &v
 }
 
 // GetKeyRetention returns the KeyRetention field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetKeyRetention() CSSCMSCoreEnumsKeyRetentionPolicy {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetKeyRetention() int32 {
 	if o == nil || isNil(o.KeyRetention) {
-		var ret CSSCMSCoreEnumsKeyRetentionPolicy
+		var ret int32
 		return ret
 	}
 	return *o.KeyRetention
@@ -782,7 +782,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 
 // GetKeyRetentionOk returns a tuple with the KeyRetention field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetKeyRetentionOk() (*CSSCMSCoreEnumsKeyRetentionPolicy, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetKeyRetentionOk() (*int32, bool) {
 	if o == nil || isNil(o.KeyRetention) {
 		return nil, false
 	}
@@ -798,8 +798,8 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 	return false
 }
 
-// SetKeyRetention gets a reference to the given CSSCMSCoreEnumsKeyRetentionPolicy and assigns it to the KeyRetention field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) SetKeyRetention(v CSSCMSCoreEnumsKeyRetentionPolicy) {
+// SetKeyRetention gets a reference to the given int32 and assigns it to the KeyRetention field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) SetKeyRetention(v int32) {
 	o.KeyRetention = &v
 }
 
@@ -954,9 +954,9 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 }
 
 // GetExplicitPassword returns the ExplicitPassword field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetExplicitPassword() CSSCMSDataModelModelsKeyfactorAPISecret {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetExplicitPassword() ModelsKeyfactorAPISecret {
 	if o == nil || isNil(o.ExplicitPassword) {
-		var ret CSSCMSDataModelModelsKeyfactorAPISecret
+		var ret ModelsKeyfactorAPISecret
 		return ret
 	}
 	return *o.ExplicitPassword
@@ -964,7 +964,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 
 // GetExplicitPasswordOk returns a tuple with the ExplicitPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetExplicitPasswordOk() (*CSSCMSDataModelModelsKeyfactorAPISecret, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetExplicitPasswordOk() (*ModelsKeyfactorAPISecret, bool) {
 	if o == nil || isNil(o.ExplicitPassword) {
 		return nil, false
 	}
@@ -980,8 +980,8 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 	return false
 }
 
-// SetExplicitPassword gets a reference to the given CSSCMSDataModelModelsKeyfactorAPISecret and assigns it to the ExplicitPassword field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) SetExplicitPassword(v CSSCMSDataModelModelsKeyfactorAPISecret) {
+// SetExplicitPassword gets a reference to the given ModelsKeyfactorAPISecret and assigns it to the ExplicitPassword field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) SetExplicitPassword(v ModelsKeyfactorAPISecret) {
 	o.ExplicitPassword = &v
 }
 
@@ -1147,9 +1147,9 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 }
 
 // GetCaType returns the CaType field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetCaType() CSSCMSCoreEnumsCertificateAuthorityType {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetCaType() int32 {
 	if o == nil || isNil(o.CaType) {
-		var ret CSSCMSCoreEnumsCertificateAuthorityType
+		var ret int32
 		return ret
 	}
 	return *o.CaType
@@ -1157,7 +1157,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 
 // GetCaTypeOk returns a tuple with the CaType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetCaTypeOk() (*CSSCMSCoreEnumsCertificateAuthorityType, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetCaTypeOk() (*int32, bool) {
 	if o == nil || isNil(o.CaType) {
 		return nil, false
 	}
@@ -1173,15 +1173,15 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 	return false
 }
 
-// SetCaType gets a reference to the given CSSCMSCoreEnumsCertificateAuthorityType and assigns it to the CaType field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) SetCaType(v CSSCMSCoreEnumsCertificateAuthorityType) {
+// SetCaType gets a reference to the given int32 and assigns it to the CaType field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) SetCaType(v int32) {
 	o.CaType = &v
 }
 
 // GetAuthCertificate returns the AuthCertificate field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetAuthCertificate() CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetAuthCertificate() ModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate {
 	if o == nil || isNil(o.AuthCertificate) {
-		var ret CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate
+		var ret ModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate
 		return ret
 	}
 	return *o.AuthCertificate
@@ -1189,7 +1189,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 
 // GetAuthCertificateOk returns a tuple with the AuthCertificate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetAuthCertificateOk() (*CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetAuthCertificateOk() (*ModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate, bool) {
 	if o == nil || isNil(o.AuthCertificate) {
 		return nil, false
 	}
@@ -1205,8 +1205,8 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 	return false
 }
 
-// SetAuthCertificate gets a reference to the given CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate and assigns it to the AuthCertificate field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) SetAuthCertificate(v CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate) {
+// SetAuthCertificate gets a reference to the given ModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate and assigns it to the AuthCertificate field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) SetAuthCertificate(v ModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate) {
 	o.AuthCertificate = &v
 }
 
@@ -1307,9 +1307,9 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 }
 
 // GetCaSyncScheduledTasks returns the CaSyncScheduledTasks field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetCaSyncScheduledTasks() []CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityScheduledTask {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetCaSyncScheduledTasks() []ModelsCertificateAuthoritiesCertificateAuthorityScheduledTask {
 	if o == nil {
-		var ret []CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityScheduledTask
+		var ret []ModelsCertificateAuthoritiesCertificateAuthorityScheduledTask
 		return ret
 	}
 	return o.CaSyncScheduledTasks
@@ -1318,7 +1318,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 // GetCaSyncScheduledTasksOk returns a tuple with the CaSyncScheduledTasks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetCaSyncScheduledTasksOk() ([]CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityScheduledTask, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) GetCaSyncScheduledTasksOk() ([]ModelsCertificateAuthoritiesCertificateAuthorityScheduledTask, bool) {
 	if o == nil || isNil(o.CaSyncScheduledTasks) {
 		return nil, false
 	}
@@ -1334,8 +1334,8 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 	return false
 }
 
-// SetCaSyncScheduledTasks gets a reference to the given []CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityScheduledTask and assigns it to the CaSyncScheduledTasks field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) SetCaSyncScheduledTasks(v []CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityScheduledTask) {
+// SetCaSyncScheduledTasks gets a reference to the given []ModelsCertificateAuthoritiesCertificateAuthorityScheduledTask and assigns it to the CaSyncScheduledTasks field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityResponse) SetCaSyncScheduledTasks(v []ModelsCertificateAuthoritiesCertificateAuthorityScheduledTask) {
 	o.CaSyncScheduledTasks = v
 }
 

@@ -59,7 +59,7 @@ func (r ApiSSHKeysMyKeyGetRequest) XKeyfactorApiVersion(xKeyfactorApiVersion str
 	return r
 }
 
-func (r ApiSSHKeysMyKeyGetRequest) Execute() (*CSSCMSDataModelModelsSSHKeysKeyResponse, *http.Response, error) {
+func (r ApiSSHKeysMyKeyGetRequest) Execute() (*ModelsSSHKeysKeyResponse, *http.Response, error) {
 	return r.ApiService.SSHKeysMyKeyGetExecute(r)
 }
 
@@ -83,13 +83,13 @@ func (a *KeyApiService) SSHKeysMyKeyGet(ctx context.Context) ApiSSHKeysMyKeyGetR
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHKeysKeyResponse
-func (a *KeyApiService) SSHKeysMyKeyGetExecute(r ApiSSHKeysMyKeyGetRequest) (*CSSCMSDataModelModelsSSHKeysKeyResponse, *http.Response, error) {
+//	@return ModelsSSHKeysKeyResponse
+func (a *KeyApiService) SSHKeysMyKeyGetExecute(r ApiSSHKeysMyKeyGetRequest) (*ModelsSSHKeysKeyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHKeysKeyResponse
+		localVarReturnValue *ModelsSSHKeysKeyResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -168,11 +168,11 @@ func (a *KeyApiService) SSHKeysMyKeyGetExecute(r ApiSSHKeysMyKeyGetRequest) (*CS
 }
 
 type ApiSSHKeysMyKeyPostRequest struct {
-	ctx                                              context.Context
-	ApiService                                       *KeyApiService
-	xKeyfactorRequestedWith                          *string
-	xKeyfactorApiVersion                             *string
-	cSSCMSDataModelModelsSSHKeysKeyGenerationRequest *CSSCMSDataModelModelsSSHKeysKeyGenerationRequest
+	ctx                               context.Context
+	ApiService                        *KeyApiService
+	xKeyfactorRequestedWith           *string
+	xKeyfactorApiVersion              *string
+	modelsSSHKeysKeyGenerationRequest *ModelsSSHKeysKeyGenerationRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -188,12 +188,12 @@ func (r ApiSSHKeysMyKeyPostRequest) XKeyfactorApiVersion(xKeyfactorApiVersion st
 }
 
 // Object containing information about the key to be generated
-func (r ApiSSHKeysMyKeyPostRequest) CSSCMSDataModelModelsSSHKeysKeyGenerationRequest(cSSCMSDataModelModelsSSHKeysKeyGenerationRequest CSSCMSDataModelModelsSSHKeysKeyGenerationRequest) ApiSSHKeysMyKeyPostRequest {
-	r.cSSCMSDataModelModelsSSHKeysKeyGenerationRequest = &cSSCMSDataModelModelsSSHKeysKeyGenerationRequest
+func (r ApiSSHKeysMyKeyPostRequest) ModelsSSHKeysKeyGenerationRequest(modelsSSHKeysKeyGenerationRequest ModelsSSHKeysKeyGenerationRequest) ApiSSHKeysMyKeyPostRequest {
+	r.modelsSSHKeysKeyGenerationRequest = &modelsSSHKeysKeyGenerationRequest
 	return r
 }
 
-func (r ApiSSHKeysMyKeyPostRequest) Execute() (*CSSCMSDataModelModelsSSHKeysKeyResponse, *http.Response, error) {
+func (r ApiSSHKeysMyKeyPostRequest) Execute() (*ModelsSSHKeysKeyResponse, *http.Response, error) {
 	return r.ApiService.SSHKeysMyKeyPostExecute(r)
 }
 
@@ -232,13 +232,13 @@ func (a *KeyApiService) SSHKeysMyKeyPost(ctx context.Context) ApiSSHKeysMyKeyPos
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHKeysKeyResponse
-func (a *KeyApiService) SSHKeysMyKeyPostExecute(r ApiSSHKeysMyKeyPostRequest) (*CSSCMSDataModelModelsSSHKeysKeyResponse, *http.Response, error) {
+//	@return ModelsSSHKeysKeyResponse
+func (a *KeyApiService) SSHKeysMyKeyPostExecute(r ApiSSHKeysMyKeyPostRequest) (*ModelsSSHKeysKeyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHKeysKeyResponse
+		localVarReturnValue *ModelsSSHKeysKeyResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -277,7 +277,7 @@ func (a *KeyApiService) SSHKeysMyKeyPostExecute(r ApiSSHKeysMyKeyPostRequest) (*
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsSSHKeysKeyGenerationRequest
+	localVarPostBody = r.modelsSSHKeysKeyGenerationRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -316,11 +316,11 @@ func (a *KeyApiService) SSHKeysMyKeyPostExecute(r ApiSSHKeysMyKeyPostRequest) (*
 }
 
 type ApiSSHKeysMyKeyPutRequest struct {
-	ctx                                          context.Context
-	ApiService                                   *KeyApiService
-	xKeyfactorRequestedWith                      *string
-	xKeyfactorApiVersion                         *string
-	cSSCMSDataModelModelsSSHKeysKeyUpdateRequest *CSSCMSDataModelModelsSSHKeysKeyUpdateRequest
+	ctx                           context.Context
+	ApiService                    *KeyApiService
+	xKeyfactorRequestedWith       *string
+	xKeyfactorApiVersion          *string
+	modelsSSHKeysKeyUpdateRequest *ModelsSSHKeysKeyUpdateRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -336,12 +336,12 @@ func (r ApiSSHKeysMyKeyPutRequest) XKeyfactorApiVersion(xKeyfactorApiVersion str
 }
 
 // Updated state of the SSH key
-func (r ApiSSHKeysMyKeyPutRequest) CSSCMSDataModelModelsSSHKeysKeyUpdateRequest(cSSCMSDataModelModelsSSHKeysKeyUpdateRequest CSSCMSDataModelModelsSSHKeysKeyUpdateRequest) ApiSSHKeysMyKeyPutRequest {
-	r.cSSCMSDataModelModelsSSHKeysKeyUpdateRequest = &cSSCMSDataModelModelsSSHKeysKeyUpdateRequest
+func (r ApiSSHKeysMyKeyPutRequest) ModelsSSHKeysKeyUpdateRequest(modelsSSHKeysKeyUpdateRequest ModelsSSHKeysKeyUpdateRequest) ApiSSHKeysMyKeyPutRequest {
+	r.modelsSSHKeysKeyUpdateRequest = &modelsSSHKeysKeyUpdateRequest
 	return r
 }
 
-func (r ApiSSHKeysMyKeyPutRequest) Execute() (*CSSCMSDataModelModelsSSHKeysKeyResponse, *http.Response, error) {
+func (r ApiSSHKeysMyKeyPutRequest) Execute() (*ModelsSSHKeysKeyResponse, *http.Response, error) {
 	return r.ApiService.SSHKeysMyKeyPutExecute(r)
 }
 
@@ -365,13 +365,13 @@ func (a *KeyApiService) SSHKeysMyKeyPut(ctx context.Context) ApiSSHKeysMyKeyPutR
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHKeysKeyResponse
-func (a *KeyApiService) SSHKeysMyKeyPutExecute(r ApiSSHKeysMyKeyPutRequest) (*CSSCMSDataModelModelsSSHKeysKeyResponse, *http.Response, error) {
+//	@return ModelsSSHKeysKeyResponse
+func (a *KeyApiService) SSHKeysMyKeyPutExecute(r ApiSSHKeysMyKeyPutRequest) (*ModelsSSHKeysKeyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHKeysKeyResponse
+		localVarReturnValue *ModelsSSHKeysKeyResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -410,7 +410,7 @@ func (a *KeyApiService) SSHKeysMyKeyPutExecute(r ApiSSHKeysMyKeyPutRequest) (*CS
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsSSHKeysKeyUpdateRequest
+	localVarPostBody = r.modelsSSHKeysKeyUpdateRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -577,7 +577,7 @@ type ApiSSHKeysUnmanagedGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -607,7 +607,7 @@ func (r ApiSSHKeysUnmanagedGetRequest) SortField(sortField string) ApiSSHKeysUnm
 	return r
 }
 
-func (r ApiSSHKeysUnmanagedGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiSSHKeysUnmanagedGetRequest {
+func (r ApiSSHKeysUnmanagedGetRequest) SortAscending(sortAscending int32) ApiSSHKeysUnmanagedGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -618,7 +618,7 @@ func (r ApiSSHKeysUnmanagedGetRequest) XKeyfactorApiVersion(xKeyfactorApiVersion
 	return r
 }
 
-func (r ApiSSHKeysUnmanagedGetRequest) Execute() ([]CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse, *http.Response, error) {
+func (r ApiSSHKeysUnmanagedGetRequest) Execute() ([]ModelsSSHKeysUnmanagedKeyResponse, *http.Response, error) {
 	return r.ApiService.SSHKeysUnmanagedGetExecute(r)
 }
 
@@ -642,13 +642,13 @@ func (a *KeyApiService) SSHKeysUnmanagedGet(ctx context.Context) ApiSSHKeysUnman
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse
-func (a *KeyApiService) SSHKeysUnmanagedGetExecute(r ApiSSHKeysUnmanagedGetRequest) ([]CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse, *http.Response, error) {
+//	@return []ModelsSSHKeysUnmanagedKeyResponse
+func (a *KeyApiService) SSHKeysUnmanagedGetExecute(r ApiSSHKeysUnmanagedGetRequest) ([]ModelsSSHKeysUnmanagedKeyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse
+		localVarReturnValue []ModelsSSHKeysUnmanagedKeyResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -880,7 +880,7 @@ func (r ApiSSHKeysUnmanagedIdGetRequest) XKeyfactorApiVersion(xKeyfactorApiVersi
 	return r
 }
 
-func (r ApiSSHKeysUnmanagedIdGetRequest) Execute() (*CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse, *http.Response, error) {
+func (r ApiSSHKeysUnmanagedIdGetRequest) Execute() (*ModelsSSHKeysUnmanagedKeyResponse, *http.Response, error) {
 	return r.ApiService.SSHKeysUnmanagedIdGetExecute(r)
 }
 
@@ -906,13 +906,13 @@ func (a *KeyApiService) SSHKeysUnmanagedIdGet(ctx context.Context, id int32) Api
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse
-func (a *KeyApiService) SSHKeysUnmanagedIdGetExecute(r ApiSSHKeysUnmanagedIdGetRequest) (*CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse, *http.Response, error) {
+//	@return ModelsSSHKeysUnmanagedKeyResponse
+func (a *KeyApiService) SSHKeysUnmanagedIdGetExecute(r ApiSSHKeysUnmanagedIdGetRequest) (*ModelsSSHKeysUnmanagedKeyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse
+		localVarReturnValue *ModelsSSHKeysUnmanagedKeyResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath

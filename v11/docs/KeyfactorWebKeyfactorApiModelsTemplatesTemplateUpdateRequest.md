@@ -6,12 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** |  | [optional] 
 **FriendlyName** | Pointer to **NullableString** |  | [optional] 
-**KeyRetention** | Pointer to [**CSSCMSCoreEnumsKeyRetentionPolicy**](CSSCMSCoreEnumsKeyRetentionPolicy.md) |  | [optional] 
+**KeyRetention** | Pointer to **int32** |  | [optional] 
 **KeyRetentionDays** | Pointer to **NullableInt32** |  | [optional] 
 **KeyArchival** | Pointer to **bool** |  | [optional] 
 **EnrollmentFields** | Pointer to [**[]KeyfactorWebKeyfactorApiModelsTemplatesTemplateEnrollmentFieldRequestResponseModel**](KeyfactorWebKeyfactorApiModelsTemplatesTemplateEnrollmentFieldRequestResponseModel.md) |  | [optional] 
 **MetadataFields** | Pointer to [**[]KeyfactorWebKeyfactorApiModelsTemplatesTemplateMetadataFieldRequestResponseModel**](KeyfactorWebKeyfactorApiModelsTemplatesTemplateMetadataFieldRequestResponseModel.md) |  | [optional] 
-**AllowedEnrollmentTypes** | Pointer to [**CSSCMSCoreEnumsEnrollmentType**](CSSCMSCoreEnumsEnrollmentType.md) |  | [optional] 
+**AllowedEnrollmentTypes** | Pointer to **int32** |  | [optional] 
 **TemplateRegexes** | Pointer to [**[]KeyfactorWebKeyfactorApiModelsTemplatesTemplateRegexRequestResponseModel**](KeyfactorWebKeyfactorApiModelsTemplatesTemplateRegexRequestResponseModel.md) |  | [optional] 
 **TemplateDefaults** | Pointer to [**[]KeyfactorWebKeyfactorApiModelsTemplatesTemplateDefaultRequestResponseModel**](KeyfactorWebKeyfactorApiModelsTemplatesTemplateDefaultRequestResponseModel.md) |  | [optional] 
 **TemplatePolicy** | Pointer to [**KeyfactorWebKeyfactorApiModelsTemplatesTemplatePolicyRequestResponseModel**](KeyfactorWebKeyfactorApiModelsTemplatesTemplatePolicyRequestResponseModel.md) |  | [optional] 
@@ -102,20 +102,20 @@ HasFriendlyName returns a boolean if a field has been set.
 UnsetFriendlyName ensures that no value is present for FriendlyName, not even an explicit nil
 ### GetKeyRetention
 
-`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateUpdateRequest) GetKeyRetention() CSSCMSCoreEnumsKeyRetentionPolicy`
+`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateUpdateRequest) GetKeyRetention() int32`
 
 GetKeyRetention returns the KeyRetention field if non-nil, zero value otherwise.
 
 ### GetKeyRetentionOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateUpdateRequest) GetKeyRetentionOk() (*CSSCMSCoreEnumsKeyRetentionPolicy, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateUpdateRequest) GetKeyRetentionOk() (*int32, bool)`
 
 GetKeyRetentionOk returns a tuple with the KeyRetention field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyRetention
 
-`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateUpdateRequest) SetKeyRetention(v CSSCMSCoreEnumsKeyRetentionPolicy)`
+`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateUpdateRequest) SetKeyRetention(v int32)`
 
 SetKeyRetention sets KeyRetention field to given value.
 
@@ -257,20 +257,20 @@ HasMetadataFields returns a boolean if a field has been set.
 UnsetMetadataFields ensures that no value is present for MetadataFields, not even an explicit nil
 ### GetAllowedEnrollmentTypes
 
-`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateUpdateRequest) GetAllowedEnrollmentTypes() CSSCMSCoreEnumsEnrollmentType`
+`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateUpdateRequest) GetAllowedEnrollmentTypes() int32`
 
 GetAllowedEnrollmentTypes returns the AllowedEnrollmentTypes field if non-nil, zero value otherwise.
 
 ### GetAllowedEnrollmentTypesOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateUpdateRequest) GetAllowedEnrollmentTypesOk() (*CSSCMSCoreEnumsEnrollmentType, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateUpdateRequest) GetAllowedEnrollmentTypesOk() (*int32, bool)`
 
 GetAllowedEnrollmentTypesOk returns a tuple with the AllowedEnrollmentTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowedEnrollmentTypes
 
-`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateUpdateRequest) SetAllowedEnrollmentTypes(v CSSCMSCoreEnumsEnrollmentType)`
+`func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateUpdateRequest) SetAllowedEnrollmentTypes(v int32)`
 
 SetAllowedEnrollmentTypes sets AllowedEnrollmentTypes field to given value.
 

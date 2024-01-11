@@ -31,13 +31,13 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskRes
 
 // KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskResponse struct for KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskResponse
 type KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskResponse struct {
-	Id           *int32                            `json:"id,omitempty"`
-	Schedule     NullableString                    `json:"schedule,omitempty"`
-	ScheduleType *CSSCMSCoreEnumsScheduledTaskType `json:"scheduleType,omitempty"`
-	Enabled      *bool                             `json:"enabled,omitempty"`
-	Name         NullableString                    `json:"name,omitempty"`
-	EntityId     NullableInt64                     `json:"entityId,omitempty"`
-	LastRun      NullableTime                      `json:"lastRun,omitempty"`
+	Id           *int32         `json:"id,omitempty"`
+	Schedule     NullableString `json:"schedule,omitempty"`
+	ScheduleType *int32         `json:"scheduleType,omitempty"`
+	Enabled      *bool          `json:"enabled,omitempty"`
+	Name         NullableString `json:"name,omitempty"`
+	EntityId     NullableInt64  `json:"entityId,omitempty"`
+	LastRun      NullableTime   `json:"lastRun,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskResponse instantiates a new KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskResponse object
@@ -133,9 +133,9 @@ func (o *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskResponse) UnsetSch
 }
 
 // GetScheduleType returns the ScheduleType field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskResponse) GetScheduleType() CSSCMSCoreEnumsScheduledTaskType {
+func (o *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskResponse) GetScheduleType() int32 {
 	if o == nil || isNil(o.ScheduleType) {
-		var ret CSSCMSCoreEnumsScheduledTaskType
+		var ret int32
 		return ret
 	}
 	return *o.ScheduleType
@@ -143,7 +143,7 @@ func (o *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskResponse) GetSched
 
 // GetScheduleTypeOk returns a tuple with the ScheduleType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskResponse) GetScheduleTypeOk() (*CSSCMSCoreEnumsScheduledTaskType, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskResponse) GetScheduleTypeOk() (*int32, bool) {
 	if o == nil || isNil(o.ScheduleType) {
 		return nil, false
 	}
@@ -159,8 +159,8 @@ func (o *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskResponse) HasSched
 	return false
 }
 
-// SetScheduleType gets a reference to the given CSSCMSCoreEnumsScheduledTaskType and assigns it to the ScheduleType field.
-func (o *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskResponse) SetScheduleType(v CSSCMSCoreEnumsScheduledTaskType) {
+// SetScheduleType gets a reference to the given int32 and assigns it to the ScheduleType field.
+func (o *KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskResponse) SetScheduleType(v int32) {
 	o.ScheduleType = &v
 }
 

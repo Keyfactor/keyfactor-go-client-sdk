@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StartDay** | Pointer to [**SystemDayOfWeek**](SystemDayOfWeek.md) |  | [optional] 
+**StartDay** | Pointer to **int32** |  | [optional] 
 **StartTime** | Pointer to **time.Time** |  | [optional] 
-**EndDay** | Pointer to [**SystemDayOfWeek**](SystemDayOfWeek.md) |  | [optional] 
+**EndDay** | Pointer to **int32** |  | [optional] 
 **EndTime** | Pointer to **time.Time** |  | [optional] 
 
 ## Methods
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetStartDay
 
-`func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) GetStartDay() SystemDayOfWeek`
+`func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) GetStartDay() int32`
 
 GetStartDay returns the StartDay field if non-nil, zero value otherwise.
 
 ### GetStartDayOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) GetStartDayOk() (*SystemDayOfWeek, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) GetStartDayOk() (*int32, bool)`
 
 GetStartDayOk returns a tuple with the StartDay field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStartDay
 
-`func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) SetStartDay(v SystemDayOfWeek)`
+`func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) SetStartDay(v int32)`
 
 SetStartDay sets StartDay field to given value.
 
@@ -80,20 +80,20 @@ HasStartTime returns a boolean if a field has been set.
 
 ### GetEndDay
 
-`func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) GetEndDay() SystemDayOfWeek`
+`func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) GetEndDay() int32`
 
 GetEndDay returns the EndDay field if non-nil, zero value otherwise.
 
 ### GetEndDayOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) GetEndDayOk() (*SystemDayOfWeek, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) GetEndDayOk() (*int32, bool)`
 
 GetEndDayOk returns a tuple with the EndDay field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEndDay
 
-`func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) SetEndDay(v SystemDayOfWeek)`
+`func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) SetEndDay(v int32)`
 
 SetEndDay sets EndDay field to given value.
 

@@ -31,7 +31,7 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotati
 // KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse struct for KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse
 type KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse struct {
 	KeyRotationAlerts []KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertResponse `json:"keyRotationAlerts,omitempty"`
-	AlertBuildResult  *CSSCMSDataModelEnumsAlertBuildResult                                     `json:"alertBuildResult,omitempty"`
+	AlertBuildResult  *int32                                                                    `json:"alertBuildResult,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse instantiates a new KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse object
@@ -85,9 +85,9 @@ func (o *KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResp
 }
 
 // GetAlertBuildResult returns the AlertBuildResult field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse) GetAlertBuildResult() CSSCMSDataModelEnumsAlertBuildResult {
+func (o *KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse) GetAlertBuildResult() int32 {
 	if o == nil || isNil(o.AlertBuildResult) {
-		var ret CSSCMSDataModelEnumsAlertBuildResult
+		var ret int32
 		return ret
 	}
 	return *o.AlertBuildResult
@@ -95,7 +95,7 @@ func (o *KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResp
 
 // GetAlertBuildResultOk returns a tuple with the AlertBuildResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse) GetAlertBuildResultOk() (*CSSCMSDataModelEnumsAlertBuildResult, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse) GetAlertBuildResultOk() (*int32, bool) {
 	if o == nil || isNil(o.AlertBuildResult) {
 		return nil, false
 	}
@@ -111,8 +111,8 @@ func (o *KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResp
 	return false
 }
 
-// SetAlertBuildResult gets a reference to the given CSSCMSDataModelEnumsAlertBuildResult and assigns it to the AlertBuildResult field.
-func (o *KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse) SetAlertBuildResult(v CSSCMSDataModelEnumsAlertBuildResult) {
+// SetAlertBuildResult gets a reference to the given int32 and assigns it to the AlertBuildResult field.
+func (o *KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse) SetAlertBuildResult(v int32) {
 	o.AlertBuildResult = &v
 }
 

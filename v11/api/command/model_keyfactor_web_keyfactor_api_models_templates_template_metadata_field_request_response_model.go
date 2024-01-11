@@ -30,12 +30,12 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsTemplatesTemplateMetadataF
 
 // KeyfactorWebKeyfactorApiModelsTemplatesTemplateMetadataFieldRequestResponseModel struct for KeyfactorWebKeyfactorApiModelsTemplatesTemplateMetadataFieldRequestResponseModel
 type KeyfactorWebKeyfactorApiModelsTemplatesTemplateMetadataFieldRequestResponseModel struct {
-	Id           *int32                                 `json:"id,omitempty"`
-	DefaultValue NullableString                         `json:"defaultValue,omitempty"`
-	MetadataId   *int32                                 `json:"metadataId,omitempty"`
-	Validation   NullableString                         `json:"validation,omitempty"`
-	Enrollment   *CSSCMSCoreEnumsMetadataTypeEnrollment `json:"enrollment,omitempty"`
-	Message      NullableString                         `json:"message,omitempty"`
+	Id           *int32         `json:"id,omitempty"`
+	DefaultValue NullableString `json:"defaultValue,omitempty"`
+	MetadataId   *int32         `json:"metadataId,omitempty"`
+	Validation   NullableString `json:"validation,omitempty"`
+	Enrollment   *int32         `json:"enrollment,omitempty"`
+	Message      NullableString `json:"message,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsTemplatesTemplateMetadataFieldRequestResponseModel instantiates a new KeyfactorWebKeyfactorApiModelsTemplatesTemplateMetadataFieldRequestResponseModel object
@@ -206,9 +206,9 @@ func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateMetadataFieldRequestResp
 }
 
 // GetEnrollment returns the Enrollment field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateMetadataFieldRequestResponseModel) GetEnrollment() CSSCMSCoreEnumsMetadataTypeEnrollment {
+func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateMetadataFieldRequestResponseModel) GetEnrollment() int32 {
 	if o == nil || isNil(o.Enrollment) {
-		var ret CSSCMSCoreEnumsMetadataTypeEnrollment
+		var ret int32
 		return ret
 	}
 	return *o.Enrollment
@@ -216,7 +216,7 @@ func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateMetadataFieldRequestResp
 
 // GetEnrollmentOk returns a tuple with the Enrollment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateMetadataFieldRequestResponseModel) GetEnrollmentOk() (*CSSCMSCoreEnumsMetadataTypeEnrollment, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateMetadataFieldRequestResponseModel) GetEnrollmentOk() (*int32, bool) {
 	if o == nil || isNil(o.Enrollment) {
 		return nil, false
 	}
@@ -232,8 +232,8 @@ func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateMetadataFieldRequestResp
 	return false
 }
 
-// SetEnrollment gets a reference to the given CSSCMSCoreEnumsMetadataTypeEnrollment and assigns it to the Enrollment field.
-func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateMetadataFieldRequestResponseModel) SetEnrollment(v CSSCMSCoreEnumsMetadataTypeEnrollment) {
+// SetEnrollment gets a reference to the given int32 and assigns it to the Enrollment field.
+func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateMetadataFieldRequestResponseModel) SetEnrollment(v int32) {
 	o.Enrollment = &v
 }
 

@@ -34,11 +34,11 @@ import (
 type LogonApiService service
 
 type ApiSSHLogonsAccessPostRequest struct {
-	ctx                                              context.Context
-	ApiService                                       *LogonApiService
-	xKeyfactorRequestedWith                          *string
-	xKeyfactorApiVersion                             *string
-	cSSCMSDataModelModelsSSHLogonsLogonAccessRequest *CSSCMSDataModelModelsSSHLogonsLogonAccessRequest
+	ctx                               context.Context
+	ApiService                        *LogonApiService
+	xKeyfactorRequestedWith           *string
+	xKeyfactorApiVersion              *string
+	modelsSSHLogonsLogonAccessRequest *ModelsSSHLogonsLogonAccessRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -54,12 +54,12 @@ func (r ApiSSHLogonsAccessPostRequest) XKeyfactorApiVersion(xKeyfactorApiVersion
 }
 
 // Users to add the existing logon
-func (r ApiSSHLogonsAccessPostRequest) CSSCMSDataModelModelsSSHLogonsLogonAccessRequest(cSSCMSDataModelModelsSSHLogonsLogonAccessRequest CSSCMSDataModelModelsSSHLogonsLogonAccessRequest) ApiSSHLogonsAccessPostRequest {
-	r.cSSCMSDataModelModelsSSHLogonsLogonAccessRequest = &cSSCMSDataModelModelsSSHLogonsLogonAccessRequest
+func (r ApiSSHLogonsAccessPostRequest) ModelsSSHLogonsLogonAccessRequest(modelsSSHLogonsLogonAccessRequest ModelsSSHLogonsLogonAccessRequest) ApiSSHLogonsAccessPostRequest {
+	r.modelsSSHLogonsLogonAccessRequest = &modelsSSHLogonsLogonAccessRequest
 	return r
 }
 
-func (r ApiSSHLogonsAccessPostRequest) Execute() (*CSSCMSDataModelModelsSSHAccessLogonUserAccessResponse, *http.Response, error) {
+func (r ApiSSHLogonsAccessPostRequest) Execute() (*ModelsSSHAccessLogonUserAccessResponse, *http.Response, error) {
 	return r.ApiService.SSHLogonsAccessPostExecute(r)
 }
 
@@ -83,13 +83,13 @@ func (a *LogonApiService) SSHLogonsAccessPost(ctx context.Context) ApiSSHLogonsA
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHAccessLogonUserAccessResponse
-func (a *LogonApiService) SSHLogonsAccessPostExecute(r ApiSSHLogonsAccessPostRequest) (*CSSCMSDataModelModelsSSHAccessLogonUserAccessResponse, *http.Response, error) {
+//	@return ModelsSSHAccessLogonUserAccessResponse
+func (a *LogonApiService) SSHLogonsAccessPostExecute(r ApiSSHLogonsAccessPostRequest) (*ModelsSSHAccessLogonUserAccessResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHAccessLogonUserAccessResponse
+		localVarReturnValue *ModelsSSHAccessLogonUserAccessResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -128,7 +128,7 @@ func (a *LogonApiService) SSHLogonsAccessPostExecute(r ApiSSHLogonsAccessPostReq
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsSSHLogonsLogonAccessRequest
+	localVarPostBody = r.modelsSSHLogonsLogonAccessRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -174,7 +174,7 @@ type ApiSSHLogonsGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -204,7 +204,7 @@ func (r ApiSSHLogonsGetRequest) SortField(sortField string) ApiSSHLogonsGetReque
 	return r
 }
 
-func (r ApiSSHLogonsGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiSSHLogonsGetRequest {
+func (r ApiSSHLogonsGetRequest) SortAscending(sortAscending int32) ApiSSHLogonsGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -215,7 +215,7 @@ func (r ApiSSHLogonsGetRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string
 	return r
 }
 
-func (r ApiSSHLogonsGetRequest) Execute() ([]CSSCMSDataModelModelsSSHLogonsLogonQueryResponse, *http.Response, error) {
+func (r ApiSSHLogonsGetRequest) Execute() ([]ModelsSSHLogonsLogonQueryResponse, *http.Response, error) {
 	return r.ApiService.SSHLogonsGetExecute(r)
 }
 
@@ -239,13 +239,13 @@ func (a *LogonApiService) SSHLogonsGet(ctx context.Context) ApiSSHLogonsGetReque
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsSSHLogonsLogonQueryResponse
-func (a *LogonApiService) SSHLogonsGetExecute(r ApiSSHLogonsGetRequest) ([]CSSCMSDataModelModelsSSHLogonsLogonQueryResponse, *http.Response, error) {
+//	@return []ModelsSSHLogonsLogonQueryResponse
+func (a *LogonApiService) SSHLogonsGetExecute(r ApiSSHLogonsGetRequest) ([]ModelsSSHLogonsLogonQueryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsSSHLogonsLogonQueryResponse
+		localVarReturnValue []ModelsSSHLogonsLogonQueryResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -471,7 +471,7 @@ func (r ApiSSHLogonsIdGetRequest) XKeyfactorApiVersion(xKeyfactorApiVersion stri
 	return r
 }
 
-func (r ApiSSHLogonsIdGetRequest) Execute() (*CSSCMSDataModelModelsSSHLogonsLogonResponse, *http.Response, error) {
+func (r ApiSSHLogonsIdGetRequest) Execute() (*ModelsSSHLogonsLogonResponse, *http.Response, error) {
 	return r.ApiService.SSHLogonsIdGetExecute(r)
 }
 
@@ -497,13 +497,13 @@ func (a *LogonApiService) SSHLogonsIdGet(ctx context.Context, id int32) ApiSSHLo
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHLogonsLogonResponse
-func (a *LogonApiService) SSHLogonsIdGetExecute(r ApiSSHLogonsIdGetRequest) (*CSSCMSDataModelModelsSSHLogonsLogonResponse, *http.Response, error) {
+//	@return ModelsSSHLogonsLogonResponse
+func (a *LogonApiService) SSHLogonsIdGetExecute(r ApiSSHLogonsIdGetRequest) (*ModelsSSHLogonsLogonResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHLogonsLogonResponse
+		localVarReturnValue *ModelsSSHLogonsLogonResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -580,11 +580,11 @@ func (a *LogonApiService) SSHLogonsIdGetExecute(r ApiSSHLogonsIdGetRequest) (*CS
 }
 
 type ApiSSHLogonsPostRequest struct {
-	ctx                                                context.Context
-	ApiService                                         *LogonApiService
-	xKeyfactorRequestedWith                            *string
-	xKeyfactorApiVersion                               *string
-	cSSCMSDataModelModelsSSHLogonsLogonCreationRequest *CSSCMSDataModelModelsSSHLogonsLogonCreationRequest
+	ctx                                 context.Context
+	ApiService                          *LogonApiService
+	xKeyfactorRequestedWith             *string
+	xKeyfactorApiVersion                *string
+	modelsSSHLogonsLogonCreationRequest *ModelsSSHLogonsLogonCreationRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -600,12 +600,12 @@ func (r ApiSSHLogonsPostRequest) XKeyfactorApiVersion(xKeyfactorApiVersion strin
 }
 
 // Logon properties to be applied to the new logon
-func (r ApiSSHLogonsPostRequest) CSSCMSDataModelModelsSSHLogonsLogonCreationRequest(cSSCMSDataModelModelsSSHLogonsLogonCreationRequest CSSCMSDataModelModelsSSHLogonsLogonCreationRequest) ApiSSHLogonsPostRequest {
-	r.cSSCMSDataModelModelsSSHLogonsLogonCreationRequest = &cSSCMSDataModelModelsSSHLogonsLogonCreationRequest
+func (r ApiSSHLogonsPostRequest) ModelsSSHLogonsLogonCreationRequest(modelsSSHLogonsLogonCreationRequest ModelsSSHLogonsLogonCreationRequest) ApiSSHLogonsPostRequest {
+	r.modelsSSHLogonsLogonCreationRequest = &modelsSSHLogonsLogonCreationRequest
 	return r
 }
 
-func (r ApiSSHLogonsPostRequest) Execute() (*CSSCMSDataModelModelsSSHLogonsLogonResponse, *http.Response, error) {
+func (r ApiSSHLogonsPostRequest) Execute() (*ModelsSSHLogonsLogonResponse, *http.Response, error) {
 	return r.ApiService.SSHLogonsPostExecute(r)
 }
 
@@ -629,13 +629,13 @@ func (a *LogonApiService) SSHLogonsPost(ctx context.Context) ApiSSHLogonsPostReq
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHLogonsLogonResponse
-func (a *LogonApiService) SSHLogonsPostExecute(r ApiSSHLogonsPostRequest) (*CSSCMSDataModelModelsSSHLogonsLogonResponse, *http.Response, error) {
+//	@return ModelsSSHLogonsLogonResponse
+func (a *LogonApiService) SSHLogonsPostExecute(r ApiSSHLogonsPostRequest) (*ModelsSSHLogonsLogonResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHLogonsLogonResponse
+		localVarReturnValue *ModelsSSHLogonsLogonResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -674,7 +674,7 @@ func (a *LogonApiService) SSHLogonsPostExecute(r ApiSSHLogonsPostRequest) (*CSSC
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsSSHLogonsLogonCreationRequest
+	localVarPostBody = r.modelsSSHLogonsLogonCreationRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

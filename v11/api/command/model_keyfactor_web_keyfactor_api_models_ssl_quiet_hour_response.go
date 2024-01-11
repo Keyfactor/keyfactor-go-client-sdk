@@ -31,10 +31,10 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsSslQuietHourResponse{}
 
 // KeyfactorWebKeyfactorApiModelsSslQuietHourResponse struct for KeyfactorWebKeyfactorApiModelsSslQuietHourResponse
 type KeyfactorWebKeyfactorApiModelsSslQuietHourResponse struct {
-	StartDay  *SystemDayOfWeek `json:"startDay,omitempty"`
-	StartTime *time.Time       `json:"startTime,omitempty"`
-	EndDay    *SystemDayOfWeek `json:"endDay,omitempty"`
-	EndTime   *time.Time       `json:"endTime,omitempty"`
+	StartDay  *int32     `json:"startDay,omitempty"`
+	StartTime *time.Time `json:"startTime,omitempty"`
+	EndDay    *int32     `json:"endDay,omitempty"`
+	EndTime   *time.Time `json:"endTime,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsSslQuietHourResponse instantiates a new KeyfactorWebKeyfactorApiModelsSslQuietHourResponse object
@@ -55,9 +55,9 @@ func NewKeyfactorWebKeyfactorApiModelsSslQuietHourResponseWithDefaults() *Keyfac
 }
 
 // GetStartDay returns the StartDay field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) GetStartDay() SystemDayOfWeek {
+func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) GetStartDay() int32 {
 	if o == nil || isNil(o.StartDay) {
-		var ret SystemDayOfWeek
+		var ret int32
 		return ret
 	}
 	return *o.StartDay
@@ -65,7 +65,7 @@ func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) GetStartDay() Syste
 
 // GetStartDayOk returns a tuple with the StartDay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) GetStartDayOk() (*SystemDayOfWeek, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) GetStartDayOk() (*int32, bool) {
 	if o == nil || isNil(o.StartDay) {
 		return nil, false
 	}
@@ -81,8 +81,8 @@ func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) HasStartDay() bool 
 	return false
 }
 
-// SetStartDay gets a reference to the given SystemDayOfWeek and assigns it to the StartDay field.
-func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) SetStartDay(v SystemDayOfWeek) {
+// SetStartDay gets a reference to the given int32 and assigns it to the StartDay field.
+func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) SetStartDay(v int32) {
 	o.StartDay = &v
 }
 
@@ -119,9 +119,9 @@ func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) SetStartTime(v time
 }
 
 // GetEndDay returns the EndDay field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) GetEndDay() SystemDayOfWeek {
+func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) GetEndDay() int32 {
 	if o == nil || isNil(o.EndDay) {
-		var ret SystemDayOfWeek
+		var ret int32
 		return ret
 	}
 	return *o.EndDay
@@ -129,7 +129,7 @@ func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) GetEndDay() SystemD
 
 // GetEndDayOk returns a tuple with the EndDay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) GetEndDayOk() (*SystemDayOfWeek, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) GetEndDayOk() (*int32, bool) {
 	if o == nil || isNil(o.EndDay) {
 		return nil, false
 	}
@@ -145,8 +145,8 @@ func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) HasEndDay() bool {
 	return false
 }
 
-// SetEndDay gets a reference to the given SystemDayOfWeek and assigns it to the EndDay field.
-func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) SetEndDay(v SystemDayOfWeek) {
+// SetEndDay gets a reference to the given int32 and assigns it to the EndDay field.
+func (o *KeyfactorWebKeyfactorApiModelsSslQuietHourResponse) SetEndDay(v int32) {
 	o.EndDay = &v
 }
 

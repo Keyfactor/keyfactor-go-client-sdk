@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **NullableString** |  | [optional] 
 **Area** | Pointer to **int32** |  | [optional] 
-**ProviderType** | Pointer to [**CSSCMSDataModelModelsProviderType**](CSSCMSDataModelModelsProviderType.md) |  | [optional] 
+**ProviderType** | Pointer to [**ModelsProviderType**](ModelsProviderType.md) |  | [optional] 
 **ProviderTypeParamValues** | Pointer to [**[]KeyfactorWebKeyfactorApiModelsPAMPamProviderTypeParamValueResponse**](KeyfactorWebKeyfactorApiModelsPAMPamProviderTypeParamValueResponse.md) |  | [optional] 
 **SecuredAreaId** | Pointer to **NullableInt32** |  | [optional] 
 **Remote** | Pointer to **bool** |  | [optional] 
@@ -118,20 +118,20 @@ HasArea returns a boolean if a field has been set.
 
 ### GetProviderType
 
-`func (o *KeyfactorWebKeyfactorApiModelsPAMProviderResponseLegacy) GetProviderType() CSSCMSDataModelModelsProviderType`
+`func (o *KeyfactorWebKeyfactorApiModelsPAMProviderResponseLegacy) GetProviderType() ModelsProviderType`
 
 GetProviderType returns the ProviderType field if non-nil, zero value otherwise.
 
 ### GetProviderTypeOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsPAMProviderResponseLegacy) GetProviderTypeOk() (*CSSCMSDataModelModelsProviderType, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsPAMProviderResponseLegacy) GetProviderTypeOk() (*ModelsProviderType, bool)`
 
 GetProviderTypeOk returns a tuple with the ProviderType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProviderType
 
-`func (o *KeyfactorWebKeyfactorApiModelsPAMProviderResponseLegacy) SetProviderType(v CSSCMSDataModelModelsProviderType)`
+`func (o *KeyfactorWebKeyfactorApiModelsPAMProviderResponseLegacy) SetProviderType(v ModelsProviderType)`
 
 SetProviderType sets ProviderType field to given value.
 

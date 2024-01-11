@@ -42,7 +42,7 @@ type ApiSecurityRolesGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -77,7 +77,7 @@ func (r ApiSecurityRolesGetRequest) SortField(sortField string) ApiSecurityRoles
 	return r
 }
 
-func (r ApiSecurityRolesGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiSecurityRolesGetRequest {
+func (r ApiSecurityRolesGetRequest) SortAscending(sortAscending int32) ApiSecurityRolesGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }

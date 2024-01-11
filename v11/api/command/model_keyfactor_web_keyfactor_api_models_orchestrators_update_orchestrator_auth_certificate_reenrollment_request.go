@@ -30,9 +30,9 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchest
 
 // KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest struct for KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest
 type KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest struct {
-	OrchestratorIds []string                                                `json:"orchestratorIds,omitempty"`
-	Status          string                                                  `json:"status"`
-	StatusEnum      *CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment `json:"statusEnum,omitempty"`
+	OrchestratorIds []string `json:"orchestratorIds,omitempty"`
+	Status          string   `json:"status"`
+	StatusEnum      *int32   `json:"statusEnum,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest instantiates a new KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest object
@@ -111,9 +111,9 @@ func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertif
 }
 
 // GetStatusEnum returns the StatusEnum field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest) GetStatusEnum() CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment {
+func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest) GetStatusEnum() int32 {
 	if o == nil || isNil(o.StatusEnum) {
-		var ret CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment
+		var ret int32
 		return ret
 	}
 	return *o.StatusEnum
@@ -121,7 +121,7 @@ func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertif
 
 // GetStatusEnumOk returns a tuple with the StatusEnum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest) GetStatusEnumOk() (*CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest) GetStatusEnumOk() (*int32, bool) {
 	if o == nil || isNil(o.StatusEnum) {
 		return nil, false
 	}
@@ -137,8 +137,8 @@ func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertif
 	return false
 }
 
-// SetStatusEnum gets a reference to the given CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment and assigns it to the StatusEnum field.
-func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest) SetStatusEnum(v CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment) {
+// SetStatusEnum gets a reference to the given int32 and assigns it to the StatusEnum field.
+func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest) SetStatusEnum(v int32) {
 	o.StatusEnum = &v
 }
 

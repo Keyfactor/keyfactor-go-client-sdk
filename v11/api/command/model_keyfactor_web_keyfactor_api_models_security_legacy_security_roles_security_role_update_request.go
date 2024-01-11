@@ -45,7 +45,7 @@ type KeyfactorWebKeyfactorApiModelsSecurityLegacySecurityRolesSecurityRoleUpdate
 	// The Id of the permission set the role belongs to.
 	PermissionSetId *string `json:"permissionSetId,omitempty"`
 	// The Keyfactor identities to assign to the updated role
-	Identities []CSSCMSDataModelModelsSecurityIdentitiesSecurityIdentityIdentifier `json:"identities,omitempty"`
+	Identities []ModelsSecurityIdentitiesSecurityIdentityIdentifier `json:"identities,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsSecurityLegacySecurityRolesSecurityRoleUpdateRequest instantiates a new KeyfactorWebKeyfactorApiModelsSecurityLegacySecurityRolesSecurityRoleUpdateRequest object
@@ -270,9 +270,9 @@ func (o *KeyfactorWebKeyfactorApiModelsSecurityLegacySecurityRolesSecurityRoleUp
 }
 
 // GetIdentities returns the Identities field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *KeyfactorWebKeyfactorApiModelsSecurityLegacySecurityRolesSecurityRoleUpdateRequest) GetIdentities() []CSSCMSDataModelModelsSecurityIdentitiesSecurityIdentityIdentifier {
+func (o *KeyfactorWebKeyfactorApiModelsSecurityLegacySecurityRolesSecurityRoleUpdateRequest) GetIdentities() []ModelsSecurityIdentitiesSecurityIdentityIdentifier {
 	if o == nil {
-		var ret []CSSCMSDataModelModelsSecurityIdentitiesSecurityIdentityIdentifier
+		var ret []ModelsSecurityIdentitiesSecurityIdentityIdentifier
 		return ret
 	}
 	return o.Identities
@@ -281,7 +281,7 @@ func (o *KeyfactorWebKeyfactorApiModelsSecurityLegacySecurityRolesSecurityRoleUp
 // GetIdentitiesOk returns a tuple with the Identities field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *KeyfactorWebKeyfactorApiModelsSecurityLegacySecurityRolesSecurityRoleUpdateRequest) GetIdentitiesOk() ([]CSSCMSDataModelModelsSecurityIdentitiesSecurityIdentityIdentifier, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsSecurityLegacySecurityRolesSecurityRoleUpdateRequest) GetIdentitiesOk() ([]ModelsSecurityIdentitiesSecurityIdentityIdentifier, bool) {
 	if o == nil || isNil(o.Identities) {
 		return nil, false
 	}
@@ -297,8 +297,8 @@ func (o *KeyfactorWebKeyfactorApiModelsSecurityLegacySecurityRolesSecurityRoleUp
 	return false
 }
 
-// SetIdentities gets a reference to the given []CSSCMSDataModelModelsSecurityIdentitiesSecurityIdentityIdentifier and assigns it to the Identities field.
-func (o *KeyfactorWebKeyfactorApiModelsSecurityLegacySecurityRolesSecurityRoleUpdateRequest) SetIdentities(v []CSSCMSDataModelModelsSecurityIdentitiesSecurityIdentityIdentifier) {
+// SetIdentities gets a reference to the given []ModelsSecurityIdentitiesSecurityIdentityIdentifier and assigns it to the Identities field.
+func (o *KeyfactorWebKeyfactorApiModelsSecurityLegacySecurityRolesSecurityRoleUpdateRequest) SetIdentities(v []ModelsSecurityIdentitiesSecurityIdentityIdentifier) {
 	o.Identities = v
 }
 

@@ -30,16 +30,16 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCer
 
 // KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest struct for KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest
 type KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest struct {
-	CertificateStores []CSSCMSDataModelModelsCertificateLocationSpecifier `json:"certificateStores"`
-	Schedule          KeyfactorCommonSchedulingKeyfactorSchedule          `json:"schedule"`
-	CollectionId      NullableInt32                                       `json:"collectionId,omitempty"`
+	CertificateStores []ModelsCertificateLocationSpecifier       `json:"certificateStores"`
+	Schedule          KeyfactorCommonSchedulingKeyfactorSchedule `json:"schedule"`
+	CollectionId      NullableInt32                              `json:"collectionId,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest instantiates a new KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest(certificateStores []CSSCMSDataModelModelsCertificateLocationSpecifier, schedule KeyfactorCommonSchedulingKeyfactorSchedule) *KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest {
+func NewKeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest(certificateStores []ModelsCertificateLocationSpecifier, schedule KeyfactorCommonSchedulingKeyfactorSchedule) *KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest {
 	this := KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest{}
 	this.CertificateStores = certificateStores
 	this.Schedule = schedule
@@ -55,9 +55,9 @@ func NewKeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequestW
 }
 
 // GetCertificateStores returns the CertificateStores field value
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest) GetCertificateStores() []CSSCMSDataModelModelsCertificateLocationSpecifier {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest) GetCertificateStores() []ModelsCertificateLocationSpecifier {
 	if o == nil {
-		var ret []CSSCMSDataModelModelsCertificateLocationSpecifier
+		var ret []ModelsCertificateLocationSpecifier
 		return ret
 	}
 
@@ -66,7 +66,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest
 
 // GetCertificateStoresOk returns a tuple with the CertificateStores field value
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest) GetCertificateStoresOk() ([]CSSCMSDataModelModelsCertificateLocationSpecifier, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest) GetCertificateStoresOk() ([]ModelsCertificateLocationSpecifier, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -74,7 +74,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest
 }
 
 // SetCertificateStores sets field value
-func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest) SetCertificateStores(v []CSSCMSDataModelModelsCertificateLocationSpecifier) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresRemoveCertificateRequest) SetCertificateStores(v []ModelsCertificateLocationSpecifier) {
 	o.CertificateStores = v
 }
 

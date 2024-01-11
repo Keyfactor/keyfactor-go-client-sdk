@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **AllowKeyReuse** | Pointer to **bool** | Whether or not keys can be reused. | [optional] 
 **AllowWildcards** | Pointer to **bool** | Whether or not wildcards can be used. | [optional] 
 **RfcEnforcement** | Pointer to **bool** | Whether or not RFC 2818 compliance should be enforced. | [optional] 
-**KeyInfo** | Pointer to [**CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo**](CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo.md) |  | [optional] 
+**KeyInfo** | Pointer to [**ModelsTemplatesAlgorithmsKeyInfo**](ModelsTemplatesAlgorithmsKeyInfo.md) |  | [optional] 
 
 ## Methods
 
@@ -105,20 +105,20 @@ HasRfcEnforcement returns a boolean if a field has been set.
 
 ### GetKeyInfo
 
-`func (o *KeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentPolicyResponse) GetKeyInfo() CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo`
+`func (o *KeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentPolicyResponse) GetKeyInfo() ModelsTemplatesAlgorithmsKeyInfo`
 
 GetKeyInfo returns the KeyInfo field if non-nil, zero value otherwise.
 
 ### GetKeyInfoOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentPolicyResponse) GetKeyInfoOk() (*CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentPolicyResponse) GetKeyInfoOk() (*ModelsTemplatesAlgorithmsKeyInfo, bool)`
 
 GetKeyInfoOk returns a tuple with the KeyInfo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyInfo
 
-`func (o *KeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentPolicyResponse) SetKeyInfo(v CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo)`
+`func (o *KeyfactorWebKeyfactorApiModelsTemplatesEnrollmentTemplateEnrollmentPolicyResponse) SetKeyInfo(v ModelsTemplatesAlgorithmsKeyInfo)`
 
 SetKeyInfo sets KeyInfo field to given value.
 

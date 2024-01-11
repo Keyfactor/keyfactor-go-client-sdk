@@ -187,7 +187,7 @@ func (r ApiSecurityContainersIdRolesGetRequest) XKeyfactorApiVersion(xKeyfactorA
 	return r
 }
 
-func (r ApiSecurityContainersIdRolesGetRequest) Execute() ([]CSSCMSDataModelModelsCertificateStoreContainerPermissions, *http.Response, error) {
+func (r ApiSecurityContainersIdRolesGetRequest) Execute() ([]ModelsCertificateStoreContainerPermissions, *http.Response, error) {
 	return r.ApiService.SecurityContainersIdRolesGetExecute(r)
 }
 
@@ -213,13 +213,13 @@ func (a *SecurityApiService) SecurityContainersIdRolesGet(ctx context.Context, i
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsCertificateStoreContainerPermissions
-func (a *SecurityApiService) SecurityContainersIdRolesGetExecute(r ApiSecurityContainersIdRolesGetRequest) ([]CSSCMSDataModelModelsCertificateStoreContainerPermissions, *http.Response, error) {
+//	@return []ModelsCertificateStoreContainerPermissions
+func (a *SecurityApiService) SecurityContainersIdRolesGetExecute(r ApiSecurityContainersIdRolesGetRequest) ([]ModelsCertificateStoreContainerPermissions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsCertificateStoreContainerPermissions
+		localVarReturnValue []ModelsCertificateStoreContainerPermissions
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -296,12 +296,12 @@ func (a *SecurityApiService) SecurityContainersIdRolesGetExecute(r ApiSecurityCo
 }
 
 type ApiSecurityContainersIdRolesPostRequest struct {
-	ctx                                                       context.Context
-	ApiService                                                *SecurityApiService
-	id                                                        int32
-	xKeyfactorRequestedWith                                   *string
-	xKeyfactorApiVersion                                      *string
-	cSSCMSDataModelModelsCertificateStoreContainerPermissions *[]CSSCMSDataModelModelsCertificateStoreContainerPermissions
+	ctx                                        context.Context
+	ApiService                                 *SecurityApiService
+	id                                         int32
+	xKeyfactorRequestedWith                    *string
+	xKeyfactorApiVersion                       *string
+	modelsCertificateStoreContainerPermissions *[]ModelsCertificateStoreContainerPermissions
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -317,12 +317,12 @@ func (r ApiSecurityContainersIdRolesPostRequest) XKeyfactorApiVersion(xKeyfactor
 }
 
 // Information for the updated security role
-func (r ApiSecurityContainersIdRolesPostRequest) CSSCMSDataModelModelsCertificateStoreContainerPermissions(cSSCMSDataModelModelsCertificateStoreContainerPermissions []CSSCMSDataModelModelsCertificateStoreContainerPermissions) ApiSecurityContainersIdRolesPostRequest {
-	r.cSSCMSDataModelModelsCertificateStoreContainerPermissions = &cSSCMSDataModelModelsCertificateStoreContainerPermissions
+func (r ApiSecurityContainersIdRolesPostRequest) ModelsCertificateStoreContainerPermissions(modelsCertificateStoreContainerPermissions []ModelsCertificateStoreContainerPermissions) ApiSecurityContainersIdRolesPostRequest {
+	r.modelsCertificateStoreContainerPermissions = &modelsCertificateStoreContainerPermissions
 	return r
 }
 
-func (r ApiSecurityContainersIdRolesPostRequest) Execute() ([]CSSCMSDataModelModelsCertificateStoreContainerPermissions, *http.Response, error) {
+func (r ApiSecurityContainersIdRolesPostRequest) Execute() ([]ModelsCertificateStoreContainerPermissions, *http.Response, error) {
 	return r.ApiService.SecurityContainersIdRolesPostExecute(r)
 }
 
@@ -348,13 +348,13 @@ func (a *SecurityApiService) SecurityContainersIdRolesPost(ctx context.Context, 
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsCertificateStoreContainerPermissions
-func (a *SecurityApiService) SecurityContainersIdRolesPostExecute(r ApiSecurityContainersIdRolesPostRequest) ([]CSSCMSDataModelModelsCertificateStoreContainerPermissions, *http.Response, error) {
+//	@return []ModelsCertificateStoreContainerPermissions
+func (a *SecurityApiService) SecurityContainersIdRolesPostExecute(r ApiSecurityContainersIdRolesPostRequest) ([]ModelsCertificateStoreContainerPermissions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsCertificateStoreContainerPermissions
+		localVarReturnValue []ModelsCertificateStoreContainerPermissions
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -394,7 +394,7 @@ func (a *SecurityApiService) SecurityContainersIdRolesPostExecute(r ApiSecurityC
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsCertificateStoreContainerPermissions
+	localVarPostBody = r.modelsCertificateStoreContainerPermissions
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -439,7 +439,7 @@ type ApiSecurityIdentitiesGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	validate                *bool
 	xKeyfactorApiVersion    *string
 }
@@ -465,7 +465,7 @@ func (r ApiSecurityIdentitiesGetRequest) SortField(sortField string) ApiSecurity
 	return r
 }
 
-func (r ApiSecurityIdentitiesGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiSecurityIdentitiesGetRequest {
+func (r ApiSecurityIdentitiesGetRequest) SortAscending(sortAscending int32) ApiSecurityIdentitiesGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }

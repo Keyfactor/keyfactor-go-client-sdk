@@ -162,7 +162,7 @@ type ApiSSHServiceAccountsGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -192,7 +192,7 @@ func (r ApiSSHServiceAccountsGetRequest) SortField(sortField string) ApiSSHServi
 	return r
 }
 
-func (r ApiSSHServiceAccountsGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiSSHServiceAccountsGetRequest {
+func (r ApiSSHServiceAccountsGetRequest) SortAscending(sortAscending int32) ApiSSHServiceAccountsGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -203,7 +203,7 @@ func (r ApiSSHServiceAccountsGetRequest) XKeyfactorApiVersion(xKeyfactorApiVersi
 	return r
 }
 
-func (r ApiSSHServiceAccountsGetRequest) Execute() ([]CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
+func (r ApiSSHServiceAccountsGetRequest) Execute() ([]ModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
 	return r.ApiService.SSHServiceAccountsGetExecute(r)
 }
 
@@ -227,13 +227,13 @@ func (a *ServiceAccountApiService) SSHServiceAccountsGet(ctx context.Context) Ap
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse
-func (a *ServiceAccountApiService) SSHServiceAccountsGetExecute(r ApiSSHServiceAccountsGetRequest) ([]CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
+//	@return []ModelsSSHServiceAccountsServiceAccountResponse
+func (a *ServiceAccountApiService) SSHServiceAccountsGetExecute(r ApiSSHServiceAccountsGetRequest) ([]ModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse
+		localVarReturnValue []ModelsSSHServiceAccountsServiceAccountResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -465,7 +465,7 @@ func (r ApiSSHServiceAccountsIdGetRequest) XKeyfactorApiVersion(xKeyfactorApiVer
 	return r
 }
 
-func (r ApiSSHServiceAccountsIdGetRequest) Execute() (*CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
+func (r ApiSSHServiceAccountsIdGetRequest) Execute() (*ModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
 	return r.ApiService.SSHServiceAccountsIdGetExecute(r)
 }
 
@@ -491,13 +491,13 @@ func (a *ServiceAccountApiService) SSHServiceAccountsIdGet(ctx context.Context, 
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse
-func (a *ServiceAccountApiService) SSHServiceAccountsIdGetExecute(r ApiSSHServiceAccountsIdGetRequest) (*CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
+//	@return ModelsSSHServiceAccountsServiceAccountResponse
+func (a *ServiceAccountApiService) SSHServiceAccountsIdGetExecute(r ApiSSHServiceAccountsIdGetRequest) (*ModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse
+		localVarReturnValue *ModelsSSHServiceAccountsServiceAccountResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -606,7 +606,7 @@ func (r ApiSSHServiceAccountsKeyIdGetRequest) XKeyfactorApiVersion(xKeyfactorApi
 	return r
 }
 
-func (r ApiSSHServiceAccountsKeyIdGetRequest) Execute() (*CSSCMSDataModelModelsSSHKeysKeyResponse, *http.Response, error) {
+func (r ApiSSHServiceAccountsKeyIdGetRequest) Execute() (*ModelsSSHKeysKeyResponse, *http.Response, error) {
 	return r.ApiService.SSHServiceAccountsKeyIdGetExecute(r)
 }
 
@@ -632,13 +632,13 @@ func (a *ServiceAccountApiService) SSHServiceAccountsKeyIdGet(ctx context.Contex
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHKeysKeyResponse
-func (a *ServiceAccountApiService) SSHServiceAccountsKeyIdGetExecute(r ApiSSHServiceAccountsKeyIdGetRequest) (*CSSCMSDataModelModelsSSHKeysKeyResponse, *http.Response, error) {
+//	@return ModelsSSHKeysKeyResponse
+func (a *ServiceAccountApiService) SSHServiceAccountsKeyIdGetExecute(r ApiSSHServiceAccountsKeyIdGetRequest) (*ModelsSSHKeysKeyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHKeysKeyResponse
+		localVarReturnValue *ModelsSSHKeysKeyResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -718,11 +718,11 @@ func (a *ServiceAccountApiService) SSHServiceAccountsKeyIdGetExecute(r ApiSSHSer
 }
 
 type ApiSSHServiceAccountsPostRequest struct {
-	ctx                                                                  context.Context
-	ApiService                                                           *ServiceAccountApiService
-	xKeyfactorRequestedWith                                              *string
-	xKeyfactorApiVersion                                                 *string
-	cSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest *CSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest
+	ctx                                                   context.Context
+	ApiService                                            *ServiceAccountApiService
+	xKeyfactorRequestedWith                               *string
+	xKeyfactorApiVersion                                  *string
+	modelsSSHServiceAccountsServiceAccountCreationRequest *ModelsSSHServiceAccountsServiceAccountCreationRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -738,12 +738,12 @@ func (r ApiSSHServiceAccountsPostRequest) XKeyfactorApiVersion(xKeyfactorApiVers
 }
 
 // ServiceAccount properties to be applied to the new ServiceAccount
-func (r ApiSSHServiceAccountsPostRequest) CSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest(cSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest CSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest) ApiSSHServiceAccountsPostRequest {
-	r.cSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest = &cSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest
+func (r ApiSSHServiceAccountsPostRequest) ModelsSSHServiceAccountsServiceAccountCreationRequest(modelsSSHServiceAccountsServiceAccountCreationRequest ModelsSSHServiceAccountsServiceAccountCreationRequest) ApiSSHServiceAccountsPostRequest {
+	r.modelsSSHServiceAccountsServiceAccountCreationRequest = &modelsSSHServiceAccountsServiceAccountCreationRequest
 	return r
 }
 
-func (r ApiSSHServiceAccountsPostRequest) Execute() (*CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
+func (r ApiSSHServiceAccountsPostRequest) Execute() (*ModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
 	return r.ApiService.SSHServiceAccountsPostExecute(r)
 }
 
@@ -767,13 +767,13 @@ func (a *ServiceAccountApiService) SSHServiceAccountsPost(ctx context.Context) A
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse
-func (a *ServiceAccountApiService) SSHServiceAccountsPostExecute(r ApiSSHServiceAccountsPostRequest) (*CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
+//	@return ModelsSSHServiceAccountsServiceAccountResponse
+func (a *ServiceAccountApiService) SSHServiceAccountsPostExecute(r ApiSSHServiceAccountsPostRequest) (*ModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse
+		localVarReturnValue *ModelsSSHServiceAccountsServiceAccountResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -812,7 +812,7 @@ func (a *ServiceAccountApiService) SSHServiceAccountsPostExecute(r ApiSSHService
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest
+	localVarPostBody = r.modelsSSHServiceAccountsServiceAccountCreationRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -851,11 +851,11 @@ func (a *ServiceAccountApiService) SSHServiceAccountsPostExecute(r ApiSSHService
 }
 
 type ApiSSHServiceAccountsPutRequest struct {
-	ctx                                                                context.Context
-	ApiService                                                         *ServiceAccountApiService
-	xKeyfactorRequestedWith                                            *string
-	xKeyfactorApiVersion                                               *string
-	cSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest *CSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest
+	ctx                                                 context.Context
+	ApiService                                          *ServiceAccountApiService
+	xKeyfactorRequestedWith                             *string
+	xKeyfactorApiVersion                                *string
+	modelsSSHServiceAccountsServiceAccountUpdateRequest *ModelsSSHServiceAccountsServiceAccountUpdateRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -871,12 +871,12 @@ func (r ApiSSHServiceAccountsPutRequest) XKeyfactorApiVersion(xKeyfactorApiVersi
 }
 
 // The id of the service account and the updated state of the SSH key.
-func (r ApiSSHServiceAccountsPutRequest) CSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest(cSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest CSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest) ApiSSHServiceAccountsPutRequest {
-	r.cSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest = &cSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest
+func (r ApiSSHServiceAccountsPutRequest) ModelsSSHServiceAccountsServiceAccountUpdateRequest(modelsSSHServiceAccountsServiceAccountUpdateRequest ModelsSSHServiceAccountsServiceAccountUpdateRequest) ApiSSHServiceAccountsPutRequest {
+	r.modelsSSHServiceAccountsServiceAccountUpdateRequest = &modelsSSHServiceAccountsServiceAccountUpdateRequest
 	return r
 }
 
-func (r ApiSSHServiceAccountsPutRequest) Execute() (*CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
+func (r ApiSSHServiceAccountsPutRequest) Execute() (*ModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
 	return r.ApiService.SSHServiceAccountsPutExecute(r)
 }
 
@@ -900,13 +900,13 @@ func (a *ServiceAccountApiService) SSHServiceAccountsPut(ctx context.Context) Ap
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse
-func (a *ServiceAccountApiService) SSHServiceAccountsPutExecute(r ApiSSHServiceAccountsPutRequest) (*CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
+//	@return ModelsSSHServiceAccountsServiceAccountResponse
+func (a *ServiceAccountApiService) SSHServiceAccountsPutExecute(r ApiSSHServiceAccountsPutRequest) (*ModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse
+		localVarReturnValue *ModelsSSHServiceAccountsServiceAccountResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -945,7 +945,7 @@ func (a *ServiceAccountApiService) SSHServiceAccountsPutExecute(r ApiSSHServiceA
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest
+	localVarPostBody = r.modelsSSHServiceAccountsServiceAccountUpdateRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -984,12 +984,12 @@ func (a *ServiceAccountApiService) SSHServiceAccountsPutExecute(r ApiSSHServiceA
 }
 
 type ApiSSHServiceAccountsRotateIdPostRequest struct {
-	ctx                                              context.Context
-	ApiService                                       *ServiceAccountApiService
-	id                                               int32
-	xKeyfactorRequestedWith                          *string
-	xKeyfactorApiVersion                             *string
-	cSSCMSDataModelModelsSSHKeysKeyGenerationRequest *CSSCMSDataModelModelsSSHKeysKeyGenerationRequest
+	ctx                               context.Context
+	ApiService                        *ServiceAccountApiService
+	id                                int32
+	xKeyfactorRequestedWith           *string
+	xKeyfactorApiVersion              *string
+	modelsSSHKeysKeyGenerationRequest *ModelsSSHKeysKeyGenerationRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1004,12 +1004,12 @@ func (r ApiSSHServiceAccountsRotateIdPostRequest) XKeyfactorApiVersion(xKeyfacto
 	return r
 }
 
-func (r ApiSSHServiceAccountsRotateIdPostRequest) CSSCMSDataModelModelsSSHKeysKeyGenerationRequest(cSSCMSDataModelModelsSSHKeysKeyGenerationRequest CSSCMSDataModelModelsSSHKeysKeyGenerationRequest) ApiSSHServiceAccountsRotateIdPostRequest {
-	r.cSSCMSDataModelModelsSSHKeysKeyGenerationRequest = &cSSCMSDataModelModelsSSHKeysKeyGenerationRequest
+func (r ApiSSHServiceAccountsRotateIdPostRequest) ModelsSSHKeysKeyGenerationRequest(modelsSSHKeysKeyGenerationRequest ModelsSSHKeysKeyGenerationRequest) ApiSSHServiceAccountsRotateIdPostRequest {
+	r.modelsSSHKeysKeyGenerationRequest = &modelsSSHKeysKeyGenerationRequest
 	return r
 }
 
-func (r ApiSSHServiceAccountsRotateIdPostRequest) Execute() (*CSSCMSDataModelModelsSSHKeysKeyResponse, *http.Response, error) {
+func (r ApiSSHServiceAccountsRotateIdPostRequest) Execute() (*ModelsSSHKeysKeyResponse, *http.Response, error) {
 	return r.ApiService.SSHServiceAccountsRotateIdPostExecute(r)
 }
 
@@ -1035,13 +1035,13 @@ func (a *ServiceAccountApiService) SSHServiceAccountsRotateIdPost(ctx context.Co
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHKeysKeyResponse
-func (a *ServiceAccountApiService) SSHServiceAccountsRotateIdPostExecute(r ApiSSHServiceAccountsRotateIdPostRequest) (*CSSCMSDataModelModelsSSHKeysKeyResponse, *http.Response, error) {
+//	@return ModelsSSHKeysKeyResponse
+func (a *ServiceAccountApiService) SSHServiceAccountsRotateIdPostExecute(r ApiSSHServiceAccountsRotateIdPostRequest) (*ModelsSSHKeysKeyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHKeysKeyResponse
+		localVarReturnValue *ModelsSSHKeysKeyResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -1081,7 +1081,7 @@ func (a *ServiceAccountApiService) SSHServiceAccountsRotateIdPostExecute(r ApiSS
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsSSHKeysKeyGenerationRequest
+	localVarPostBody = r.modelsSSHKeysKeyGenerationRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

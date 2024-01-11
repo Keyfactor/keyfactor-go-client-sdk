@@ -30,8 +30,8 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchest
 
 // KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse struct for KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse
 type KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse struct {
-	FailedOrchestratorIds []string                                                `json:"failedOrchestratorIds,omitempty"`
-	Status                *CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment `json:"status,omitempty"`
+	FailedOrchestratorIds []string `json:"failedOrchestratorIds,omitempty"`
+	Status                *int32   `json:"status,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse instantiates a new KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse object
@@ -85,9 +85,9 @@ func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertif
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse) GetStatus() CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment {
+func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse) GetStatus() int32 {
 	if o == nil || isNil(o.Status) {
-		var ret CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment
+		var ret int32
 		return ret
 	}
 	return *o.Status
@@ -95,7 +95,7 @@ func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertif
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse) GetStatusOk() (*CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse) GetStatusOk() (*int32, bool) {
 	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
@@ -111,8 +111,8 @@ func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertif
 	return false
 }
 
-// SetStatus gets a reference to the given CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment and assigns it to the Status field.
-func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse) SetStatus(v CSSCMSCoreEnumsOrchestratorAuthCertificateReenrollment) {
+// SetStatus gets a reference to the given int32 and assigns it to the Status field.
+func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse) SetStatus(v int32) {
 	o.Status = &v
 }
 

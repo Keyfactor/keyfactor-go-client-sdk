@@ -37,7 +37,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
@@ -252,7 +252,7 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    keyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest(openapiclient.CSS.CMS.Core.Enums.ClaimType(0), "ClaimValue_example", "ProviderAuthenticationScheme_example", "Description_example") // KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest | Claim Definition Creation Request (optional)
+    keyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest(int32(123), "ClaimValue_example", "ProviderAuthenticationScheme_example", "Description_example") // KeyfactorWebKeyfactorApiModelsSecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest | Claim Definition Creation Request (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -386,7 +386,7 @@ import (
 )
 
 func main() {
-    claimType := openapiclient.CSS.CMS.Core.Enums.ClaimType(0) // CSSCMSCoreEnumsClaimType | 
+    claimType := int32(56) // int32 | 
     claimValue := "claimValue_example" // string | 
     providerAuthenticationScheme := "providerAuthenticationScheme_example" // string | 
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
@@ -415,7 +415,7 @@ Other parameters are passed through a pointer to a apiSecurityClaimsRolesGetRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **claimType** | [**CSSCMSCoreEnumsClaimType**](CSSCMSCoreEnumsClaimType.md) |  | 
+ **claimType** | **int32** |  | 
  **claimValue** | **string** |  | 
  **providerAuthenticationScheme** | **string** |  | 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]

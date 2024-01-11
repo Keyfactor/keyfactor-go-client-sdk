@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## CSRGenerationGeneratePost
 
-> CSSCMSDataModelModelsCSRContents CSRGenerationGeneratePost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsEnrollmentCSRGenerationRequest(cSSCMSDataModelModelsEnrollmentCSRGenerationRequest).Execute()
+> ModelsCSRContents CSRGenerationGeneratePost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsEnrollmentCSRGenerationRequest(modelsEnrollmentCSRGenerationRequest).Execute()
 
 Generates a CSR according the properties provided
 
@@ -33,16 +33,16 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsEnrollmentCSRGenerationRequest := *openapiclient.NewCSSCMSDataModelModelsEnrollmentCSRGenerationRequest("Subject_example", "KeyType_example") // CSSCMSDataModelModelsEnrollmentCSRGenerationRequest | CSR properties used to define the request - Key type [RSA, ECC], Key sizes (ex: RSA 1024, 2048, 4096/ECC 256, 384, 521), template short name or OID (optional)
+    modelsEnrollmentCSRGenerationRequest := *openapiclient.NewModelsEnrollmentCSRGenerationRequest("Subject_example", "KeyType_example") // ModelsEnrollmentCSRGenerationRequest | CSR properties used to define the request - Key type [RSA, ECC], Key sizes (ex: RSA 1024, 2048, 4096/ECC 256, 384, 521), template short name or OID (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CSRGenerationApi.CSRGenerationGeneratePost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsEnrollmentCSRGenerationRequest(cSSCMSDataModelModelsEnrollmentCSRGenerationRequest).Execute()
+    resp, r, err := apiClient.CSRGenerationApi.CSRGenerationGeneratePost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsEnrollmentCSRGenerationRequest(modelsEnrollmentCSRGenerationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CSRGenerationApi.CSRGenerationGeneratePost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CSRGenerationGeneratePost`: CSSCMSDataModelModelsCSRContents
+    // response from `CSRGenerationGeneratePost`: ModelsCSRContents
     fmt.Fprintf(os.Stdout, "Response from `CSRGenerationApi.CSRGenerationGeneratePost`: %v\n", resp)
 }
 ```
@@ -60,11 +60,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsEnrollmentCSRGenerationRequest** | [**CSSCMSDataModelModelsEnrollmentCSRGenerationRequest**](CSSCMSDataModelModelsEnrollmentCSRGenerationRequest.md) | CSR properties used to define the request - Key type [RSA, ECC], Key sizes (ex: RSA 1024, 2048, 4096/ECC 256, 384, 521), template short name or OID | 
+ **modelsEnrollmentCSRGenerationRequest** | [**ModelsEnrollmentCSRGenerationRequest**](ModelsEnrollmentCSRGenerationRequest.md) | CSR properties used to define the request - Key type [RSA, ECC], Key sizes (ex: RSA 1024, 2048, 4096/ECC 256, 384, 521), template short name or OID | 
 
 ### Return type
 
-[**CSSCMSDataModelModelsCSRContents**](CSSCMSDataModelModelsCSRContents.md)
+[**ModelsCSRContents**](ModelsCSRContents.md)
 
 ### Authorization
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ## CSRGenerationPendingGet
 
-> []CSSCMSDataModelModelsPendingCSRResponse CSRGenerationPendingGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsPendingCSRResponse CSRGenerationPendingGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a list of the currently pending CSRs according to the provided query
 
@@ -170,7 +170,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -180,7 +180,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CSRGenerationApi.CSRGenerationPendingGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CSRGenerationPendingGet`: []CSSCMSDataModelModelsPendingCSRResponse
+    // response from `CSRGenerationPendingGet`: []ModelsPendingCSRResponse
     fmt.Fprintf(os.Stdout, "Response from `CSRGenerationApi.CSRGenerationPendingGet`: %v\n", resp)
 }
 ```
@@ -201,12 +201,12 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsPendingCSRResponse**](CSSCMSDataModelModelsPendingCSRResponse.md)
+[**[]ModelsPendingCSRResponse**](ModelsPendingCSRResponse.md)
 
 ### Authorization
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 ## CSRGenerationPendingIdGet
 
-> CSSCMSDataModelModelsCSRGenerationResponseModel CSRGenerationPendingIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ModelsCSRGenerationResponseModel CSRGenerationPendingIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a previously generated CSR associated with the provided identifier
 
@@ -322,7 +322,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CSRGenerationApi.CSRGenerationPendingIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CSRGenerationPendingIdGet`: CSSCMSDataModelModelsCSRGenerationResponseModel
+    // response from `CSRGenerationPendingIdGet`: ModelsCSRGenerationResponseModel
     fmt.Fprintf(os.Stdout, "Response from `CSRGenerationApi.CSRGenerationPendingIdGet`: %v\n", resp)
 }
 ```
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsCSRGenerationResponseModel**](CSSCMSDataModelModelsCSRGenerationResponseModel.md)
+[**ModelsCSRGenerationResponseModel**](ModelsCSRGenerationResponseModel.md)
 
 ### Authorization
 

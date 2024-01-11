@@ -39,11 +39,11 @@ type KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse 
 	ForestRoot             NullableString                                                                       `json:"forestRoot,omitempty"`
 	ConfigurationTenant    NullableString                                                                       `json:"configurationTenant,omitempty"`
 	FriendlyName           NullableString                                                                       `json:"friendlyName,omitempty"`
-	KeyRetention           *CSSCMSCoreEnumsKeyRetentionPolicy                                                   `json:"keyRetention,omitempty"`
+	KeyRetention           *int32                                                                               `json:"keyRetention,omitempty"`
 	KeyRetentionDays       NullableInt32                                                                        `json:"keyRetentionDays,omitempty"`
 	KeyArchival            *bool                                                                                `json:"keyArchival,omitempty"`
 	EnrollmentFields       []KeyfactorWebKeyfactorApiModelsTemplatesTemplateEnrollmentFieldRequestResponseModel `json:"enrollmentFields,omitempty"`
-	AllowedEnrollmentTypes *CSSCMSCoreEnumsEnrollmentType                                                       `json:"allowedEnrollmentTypes,omitempty"`
+	AllowedEnrollmentTypes *int32                                                                               `json:"allowedEnrollmentTypes,omitempty"`
 	TemplateRegexes        []KeyfactorWebKeyfactorApiModelsTemplatesTemplateRegexRequestResponseModel           `json:"templateRegexes,omitempty"`
 	UseAllowedRequesters   *bool                                                                                `json:"useAllowedRequesters,omitempty"`
 	AllowedRequesters      []string                                                                             `json:"allowedRequesters,omitempty"`
@@ -449,9 +449,9 @@ func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalRespo
 }
 
 // GetKeyRetention returns the KeyRetention field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) GetKeyRetention() CSSCMSCoreEnumsKeyRetentionPolicy {
+func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) GetKeyRetention() int32 {
 	if o == nil || isNil(o.KeyRetention) {
-		var ret CSSCMSCoreEnumsKeyRetentionPolicy
+		var ret int32
 		return ret
 	}
 	return *o.KeyRetention
@@ -459,7 +459,7 @@ func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalRespo
 
 // GetKeyRetentionOk returns a tuple with the KeyRetention field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) GetKeyRetentionOk() (*CSSCMSCoreEnumsKeyRetentionPolicy, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) GetKeyRetentionOk() (*int32, bool) {
 	if o == nil || isNil(o.KeyRetention) {
 		return nil, false
 	}
@@ -475,8 +475,8 @@ func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalRespo
 	return false
 }
 
-// SetKeyRetention gets a reference to the given CSSCMSCoreEnumsKeyRetentionPolicy and assigns it to the KeyRetention field.
-func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) SetKeyRetention(v CSSCMSCoreEnumsKeyRetentionPolicy) {
+// SetKeyRetention gets a reference to the given int32 and assigns it to the KeyRetention field.
+func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) SetKeyRetention(v int32) {
 	o.KeyRetention = &v
 }
 
@@ -589,9 +589,9 @@ func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalRespo
 }
 
 // GetAllowedEnrollmentTypes returns the AllowedEnrollmentTypes field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) GetAllowedEnrollmentTypes() CSSCMSCoreEnumsEnrollmentType {
+func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) GetAllowedEnrollmentTypes() int32 {
 	if o == nil || isNil(o.AllowedEnrollmentTypes) {
-		var ret CSSCMSCoreEnumsEnrollmentType
+		var ret int32
 		return ret
 	}
 	return *o.AllowedEnrollmentTypes
@@ -599,7 +599,7 @@ func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalRespo
 
 // GetAllowedEnrollmentTypesOk returns a tuple with the AllowedEnrollmentTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) GetAllowedEnrollmentTypesOk() (*CSSCMSCoreEnumsEnrollmentType, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) GetAllowedEnrollmentTypesOk() (*int32, bool) {
 	if o == nil || isNil(o.AllowedEnrollmentTypes) {
 		return nil, false
 	}
@@ -615,8 +615,8 @@ func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalRespo
 	return false
 }
 
-// SetAllowedEnrollmentTypes gets a reference to the given CSSCMSCoreEnumsEnrollmentType and assigns it to the AllowedEnrollmentTypes field.
-func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) SetAllowedEnrollmentTypes(v CSSCMSCoreEnumsEnrollmentType) {
+// SetAllowedEnrollmentTypes gets a reference to the given int32 and assigns it to the AllowedEnrollmentTypes field.
+func (o *KeyfactorWebKeyfactorApiModelsTemplatesTemplateCollectionRetrievalResponse) SetAllowedEnrollmentTypes(v int32) {
 	o.AllowedEnrollmentTypes = &v
 }
 

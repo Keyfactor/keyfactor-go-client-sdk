@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **NullableString** |  | [optional] 
 **DisplayName** | Pointer to **NullableString** |  | [optional] 
-**DataType** | Pointer to [**CSSCMSDataModelEnumsIdentityProviderDataType**](CSSCMSDataModelEnumsIdentityProviderDataType.md) |  | [optional] 
+**DataType** | Pointer to **int32** |  | [optional] 
 **Required** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -126,20 +126,20 @@ HasDisplayName returns a boolean if a field has been set.
 UnsetDisplayName ensures that no value is present for DisplayName, not even an explicit nil
 ### GetDataType
 
-`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterResponse) GetDataType() CSSCMSDataModelEnumsIdentityProviderDataType`
+`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterResponse) GetDataType() int32`
 
 GetDataType returns the DataType field if non-nil, zero value otherwise.
 
 ### GetDataTypeOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterResponse) GetDataTypeOk() (*CSSCMSDataModelEnumsIdentityProviderDataType, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterResponse) GetDataTypeOk() (*int32, bool)`
 
 GetDataTypeOk returns a tuple with the DataType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataType
 
-`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterResponse) SetDataType(v CSSCMSDataModelEnumsIdentityProviderDataType)`
+`func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterResponse) SetDataType(v int32)`
 
 SetDataType sets DataType field to given value.
 

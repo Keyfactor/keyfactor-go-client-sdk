@@ -37,7 +37,7 @@ func main() {
     pageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
     returnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
     sortField := "sortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder | Field sort direction [0=ascending, 1=descending] (optional)
+    sortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** | The current page within the result set to be returned | 
  **returnLimit** | **int32** | Maximum number of records to be returned in a single call | 
  **sortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **sortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
@@ -113,7 +113,7 @@ func main() {
     pageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
     returnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
     sortField := "sortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder | Field sort direction [0=ascending, 1=descending] (optional)
+    sortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** | The current page within the result set to be returned | 
  **returnLimit** | **int32** | Maximum number of records to be returned in a single call | 
  **sortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **sortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type

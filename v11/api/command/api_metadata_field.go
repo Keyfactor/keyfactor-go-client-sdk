@@ -174,7 +174,7 @@ type ApiMetadataFieldsGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -204,7 +204,7 @@ func (r ApiMetadataFieldsGetRequest) SortField(sortField string) ApiMetadataFiel
 	return r
 }
 
-func (r ApiMetadataFieldsGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiMetadataFieldsGetRequest {
+func (r ApiMetadataFieldsGetRequest) SortAscending(sortAscending int32) ApiMetadataFieldsGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -215,7 +215,7 @@ func (r ApiMetadataFieldsGetRequest) XKeyfactorApiVersion(xKeyfactorApiVersion s
 	return r
 }
 
-func (r ApiMetadataFieldsGetRequest) Execute() ([]CSSCMSDataModelModelsMetadataFieldTypeModel, *http.Response, error) {
+func (r ApiMetadataFieldsGetRequest) Execute() ([]ModelsMetadataFieldTypeModel, *http.Response, error) {
 	return r.ApiService.MetadataFieldsGetExecute(r)
 }
 
@@ -239,13 +239,13 @@ func (a *MetadataFieldApiService) MetadataFieldsGet(ctx context.Context) ApiMeta
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsMetadataFieldTypeModel
-func (a *MetadataFieldApiService) MetadataFieldsGetExecute(r ApiMetadataFieldsGetRequest) ([]CSSCMSDataModelModelsMetadataFieldTypeModel, *http.Response, error) {
+//	@return []ModelsMetadataFieldTypeModel
+func (a *MetadataFieldApiService) MetadataFieldsGetExecute(r ApiMetadataFieldsGetRequest) ([]ModelsMetadataFieldTypeModel, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsMetadataFieldTypeModel
+		localVarReturnValue []ModelsMetadataFieldTypeModel
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -487,7 +487,7 @@ func (r ApiMetadataFieldsIdGetRequest) XKeyfactorApiVersion(xKeyfactorApiVersion
 	return r
 }
 
-func (r ApiMetadataFieldsIdGetRequest) Execute() (*CSSCMSDataModelModelsMetadataFieldTypeModel, *http.Response, error) {
+func (r ApiMetadataFieldsIdGetRequest) Execute() (*ModelsMetadataFieldTypeModel, *http.Response, error) {
 	return r.ApiService.MetadataFieldsIdGetExecute(r)
 }
 
@@ -513,13 +513,13 @@ func (a *MetadataFieldApiService) MetadataFieldsIdGet(ctx context.Context, id in
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsMetadataFieldTypeModel
-func (a *MetadataFieldApiService) MetadataFieldsIdGetExecute(r ApiMetadataFieldsIdGetRequest) (*CSSCMSDataModelModelsMetadataFieldTypeModel, *http.Response, error) {
+//	@return ModelsMetadataFieldTypeModel
+func (a *MetadataFieldApiService) MetadataFieldsIdGetExecute(r ApiMetadataFieldsIdGetRequest) (*ModelsMetadataFieldTypeModel, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsMetadataFieldTypeModel
+		localVarReturnValue *ModelsMetadataFieldTypeModel
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -749,7 +749,7 @@ func (r ApiMetadataFieldsNameGetRequest) XKeyfactorApiVersion(xKeyfactorApiVersi
 	return r
 }
 
-func (r ApiMetadataFieldsNameGetRequest) Execute() (*CSSCMSDataModelModelsMetadataFieldTypeModel, *http.Response, error) {
+func (r ApiMetadataFieldsNameGetRequest) Execute() (*ModelsMetadataFieldTypeModel, *http.Response, error) {
 	return r.ApiService.MetadataFieldsNameGetExecute(r)
 }
 
@@ -775,13 +775,13 @@ func (a *MetadataFieldApiService) MetadataFieldsNameGet(ctx context.Context, nam
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsMetadataFieldTypeModel
-func (a *MetadataFieldApiService) MetadataFieldsNameGetExecute(r ApiMetadataFieldsNameGetRequest) (*CSSCMSDataModelModelsMetadataFieldTypeModel, *http.Response, error) {
+//	@return ModelsMetadataFieldTypeModel
+func (a *MetadataFieldApiService) MetadataFieldsNameGetExecute(r ApiMetadataFieldsNameGetRequest) (*ModelsMetadataFieldTypeModel, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsMetadataFieldTypeModel
+		localVarReturnValue *ModelsMetadataFieldTypeModel
 	)
 
 	apiBasePath := a.client.cfg.APIPath

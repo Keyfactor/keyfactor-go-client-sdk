@@ -41,7 +41,7 @@ type ApiPamProvidersGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -76,7 +76,7 @@ func (r ApiPamProvidersGetRequest) SortField(sortField string) ApiPamProvidersGe
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiPamProvidersGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiPamProvidersGetRequest {
+func (r ApiPamProvidersGetRequest) SortAscending(sortAscending int32) ApiPamProvidersGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }

@@ -41,7 +41,7 @@ type ApiTemplatesGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -71,7 +71,7 @@ func (r ApiTemplatesGetRequest) SortField(sortField string) ApiTemplatesGetReque
 	return r
 }
 
-func (r ApiTemplatesGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiTemplatesGetRequest {
+func (r ApiTemplatesGetRequest) SortAscending(sortAscending int32) ApiTemplatesGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }

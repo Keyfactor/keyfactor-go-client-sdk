@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## SSHUsersAccessPost
 
-> CSSCMSDataModelModelsSSHUsersSshUserAccessResponse SSHUsersAccessPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHUsersSshUserUpdateRequest(cSSCMSDataModelModelsSSHUsersSshUserUpdateRequest).Execute()
+> ModelsSSHUsersSshUserAccessResponse SSHUsersAccessPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHUsersSshUserUpdateRequest(modelsSSHUsersSshUserUpdateRequest).Execute()
 
 Updates logon access for a user
 
@@ -34,16 +34,16 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsSSHUsersSshUserUpdateRequest := *openapiclient.NewCSSCMSDataModelModelsSSHUsersSshUserUpdateRequest(int32(123)) // CSSCMSDataModelModelsSSHUsersSshUserUpdateRequest | Logons to add the existing user (optional)
+    modelsSSHUsersSshUserUpdateRequest := *openapiclient.NewModelsSSHUsersSshUserUpdateRequest(int32(123)) // ModelsSSHUsersSshUserUpdateRequest | Logons to add the existing user (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserApi.SSHUsersAccessPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHUsersSshUserUpdateRequest(cSSCMSDataModelModelsSSHUsersSshUserUpdateRequest).Execute()
+    resp, r, err := apiClient.UserApi.SSHUsersAccessPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHUsersSshUserUpdateRequest(modelsSSHUsersSshUserUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UserApi.SSHUsersAccessPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHUsersAccessPost`: CSSCMSDataModelModelsSSHUsersSshUserAccessResponse
+    // response from `SSHUsersAccessPost`: ModelsSSHUsersSshUserAccessResponse
     fmt.Fprintf(os.Stdout, "Response from `UserApi.SSHUsersAccessPost`: %v\n", resp)
 }
 ```
@@ -61,11 +61,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsSSHUsersSshUserUpdateRequest** | [**CSSCMSDataModelModelsSSHUsersSshUserUpdateRequest**](CSSCMSDataModelModelsSSHUsersSshUserUpdateRequest.md) | Logons to add the existing user | 
+ **modelsSSHUsersSshUserUpdateRequest** | [**ModelsSSHUsersSshUserUpdateRequest**](ModelsSSHUsersSshUserUpdateRequest.md) | Logons to add the existing user | 
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHUsersSshUserAccessResponse**](CSSCMSDataModelModelsSSHUsersSshUserAccessResponse.md)
+[**ModelsSSHUsersSshUserAccessResponse**](ModelsSSHUsersSshUserAccessResponse.md)
 
 ### Authorization
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## SSHUsersGet
 
-> []CSSCMSDataModelModelsSSHUsersSshUserResponse SSHUsersGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).ShowOwnedAccess(showOwnedAccess).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsSSHUsersSshUserResponse SSHUsersGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).ShowOwnedAccess(showOwnedAccess).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns users matching the criteria from the provided query parameters
 
@@ -105,7 +105,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     showOwnedAccess := true // bool | Whether or not to return only logons that have access to servers the requesting user owns (optional) (default to false)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
@@ -116,7 +116,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `UserApi.SSHUsersGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHUsersGet`: []CSSCMSDataModelModelsSSHUsersSshUserResponse
+    // response from `SSHUsersGet`: []ModelsSSHUsersSshUserResponse
     fmt.Fprintf(os.Stdout, "Response from `UserApi.SSHUsersGet`: %v\n", resp)
 }
 ```
@@ -137,13 +137,13 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **showOwnedAccess** | **bool** | Whether or not to return only logons that have access to servers the requesting user owns | [default to false]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsSSHUsersSshUserResponse**](CSSCMSDataModelModelsSSHUsersSshUserResponse.md)
+[**[]ModelsSSHUsersSshUserResponse**](ModelsSSHUsersSshUserResponse.md)
 
 ### Authorization
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ## SSHUsersIdGet
 
-> CSSCMSDataModelModelsSSHUsersSshUserResponse SSHUsersIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ModelsSSHUsersSshUserResponse SSHUsersIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Looks up information about an existing SSH user.
 
@@ -259,7 +259,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `UserApi.SSHUsersIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHUsersIdGet`: CSSCMSDataModelModelsSSHUsersSshUserResponse
+    // response from `SSHUsersIdGet`: ModelsSSHUsersSshUserResponse
     fmt.Fprintf(os.Stdout, "Response from `UserApi.SSHUsersIdGet`: %v\n", resp)
 }
 ```
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHUsersSshUserResponse**](CSSCMSDataModelModelsSSHUsersSshUserResponse.md)
+[**ModelsSSHUsersSshUserResponse**](ModelsSSHUsersSshUserResponse.md)
 
 ### Authorization
 
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 ## SSHUsersPost
 
-> CSSCMSDataModelModelsSSHUsersSshUserResponse SSHUsersPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHUsersSshUserCreationRequest(cSSCMSDataModelModelsSSHUsersSshUserCreationRequest).Execute()
+> ModelsSSHUsersSshUserResponse SSHUsersPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHUsersSshUserCreationRequest(modelsSSHUsersSshUserCreationRequest).Execute()
 
 Creates a new SSH User.
 
@@ -322,16 +322,16 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsSSHUsersSshUserCreationRequest := *openapiclient.NewCSSCMSDataModelModelsSSHUsersSshUserCreationRequest("Username_example") // CSSCMSDataModelModelsSSHUsersSshUserCreationRequest | SSH user to be created. (optional)
+    modelsSSHUsersSshUserCreationRequest := *openapiclient.NewModelsSSHUsersSshUserCreationRequest("Username_example") // ModelsSSHUsersSshUserCreationRequest | SSH user to be created. (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserApi.SSHUsersPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHUsersSshUserCreationRequest(cSSCMSDataModelModelsSSHUsersSshUserCreationRequest).Execute()
+    resp, r, err := apiClient.UserApi.SSHUsersPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHUsersSshUserCreationRequest(modelsSSHUsersSshUserCreationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UserApi.SSHUsersPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHUsersPost`: CSSCMSDataModelModelsSSHUsersSshUserResponse
+    // response from `SSHUsersPost`: ModelsSSHUsersSshUserResponse
     fmt.Fprintf(os.Stdout, "Response from `UserApi.SSHUsersPost`: %v\n", resp)
 }
 ```
@@ -349,11 +349,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsSSHUsersSshUserCreationRequest** | [**CSSCMSDataModelModelsSSHUsersSshUserCreationRequest**](CSSCMSDataModelModelsSSHUsersSshUserCreationRequest.md) | SSH user to be created. | 
+ **modelsSSHUsersSshUserCreationRequest** | [**ModelsSSHUsersSshUserCreationRequest**](ModelsSSHUsersSshUserCreationRequest.md) | SSH user to be created. | 
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHUsersSshUserResponse**](CSSCMSDataModelModelsSSHUsersSshUserResponse.md)
+[**ModelsSSHUsersSshUserResponse**](ModelsSSHUsersSshUserResponse.md)
 
 ### Authorization
 
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 
 ## SSHUsersPut
 
-> CSSCMSDataModelModelsSSHUsersSshUserResponse SSHUsersPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHUsersSshUserUpdateRequest(cSSCMSDataModelModelsSSHUsersSshUserUpdateRequest).Execute()
+> ModelsSSHUsersSshUserResponse SSHUsersPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHUsersSshUserUpdateRequest(modelsSSHUsersSshUserUpdateRequest).Execute()
 
 Updates information about a given user.
 
@@ -390,16 +390,16 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsSSHUsersSshUserUpdateRequest := *openapiclient.NewCSSCMSDataModelModelsSSHUsersSshUserUpdateRequest(int32(123)) // CSSCMSDataModelModelsSSHUsersSshUserUpdateRequest | The new state of the SSH user to update. (optional)
+    modelsSSHUsersSshUserUpdateRequest := *openapiclient.NewModelsSSHUsersSshUserUpdateRequest(int32(123)) // ModelsSSHUsersSshUserUpdateRequest | The new state of the SSH user to update. (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserApi.SSHUsersPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHUsersSshUserUpdateRequest(cSSCMSDataModelModelsSSHUsersSshUserUpdateRequest).Execute()
+    resp, r, err := apiClient.UserApi.SSHUsersPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHUsersSshUserUpdateRequest(modelsSSHUsersSshUserUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UserApi.SSHUsersPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHUsersPut`: CSSCMSDataModelModelsSSHUsersSshUserResponse
+    // response from `SSHUsersPut`: ModelsSSHUsersSshUserResponse
     fmt.Fprintf(os.Stdout, "Response from `UserApi.SSHUsersPut`: %v\n", resp)
 }
 ```
@@ -417,11 +417,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsSSHUsersSshUserUpdateRequest** | [**CSSCMSDataModelModelsSSHUsersSshUserUpdateRequest**](CSSCMSDataModelModelsSSHUsersSshUserUpdateRequest.md) | The new state of the SSH user to update. | 
+ **modelsSSHUsersSshUserUpdateRequest** | [**ModelsSSHUsersSshUserUpdateRequest**](ModelsSSHUsersSshUserUpdateRequest.md) | The new state of the SSH user to update. | 
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHUsersSshUserResponse**](CSSCMSDataModelModelsSSHUsersSshUserResponse.md)
+[**ModelsSSHUsersSshUserResponse**](ModelsSSHUsersSshUserResponse.md)
 
 ### Authorization
 

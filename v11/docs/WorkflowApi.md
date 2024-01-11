@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## WorkflowCertificatesApprovePost
 
-> CSSCMSDataModelModelsWorkflowApproveDenyResult WorkflowCertificatesApprovePost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
+> ModelsWorkflowApproveDenyResult WorkflowCertificatesApprovePost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
 
 Approves pending certificate requests associated with the provided ids
 
@@ -43,7 +43,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowApi.WorkflowCertificatesApprovePost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `WorkflowCertificatesApprovePost`: CSSCMSDataModelModelsWorkflowApproveDenyResult
+    // response from `WorkflowCertificatesApprovePost`: ModelsWorkflowApproveDenyResult
     fmt.Fprintf(os.Stdout, "Response from `WorkflowApi.WorkflowCertificatesApprovePost`: %v\n", resp)
 }
 ```
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsWorkflowApproveDenyResult**](CSSCMSDataModelModelsWorkflowApproveDenyResult.md)
+[**ModelsWorkflowApproveDenyResult**](ModelsWorkflowApproveDenyResult.md)
 
 ### Authorization
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## WorkflowCertificatesDeniedGet
 
-> []CSSCMSDataModelModelsWorkflowCertificateRequestModel WorkflowCertificatesDeniedGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsWorkflowCertificateRequestModel WorkflowCertificatesDeniedGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets a collection of denied certificate requests based on the provided query.
 
@@ -105,7 +105,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -115,7 +115,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowApi.WorkflowCertificatesDeniedGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `WorkflowCertificatesDeniedGet`: []CSSCMSDataModelModelsWorkflowCertificateRequestModel
+    // response from `WorkflowCertificatesDeniedGet`: []ModelsWorkflowCertificateRequestModel
     fmt.Fprintf(os.Stdout, "Response from `WorkflowApi.WorkflowCertificatesDeniedGet`: %v\n", resp)
 }
 ```
@@ -136,12 +136,12 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsWorkflowCertificateRequestModel**](CSSCMSDataModelModelsWorkflowCertificateRequestModel.md)
+[**[]ModelsWorkflowCertificateRequestModel**](ModelsWorkflowCertificateRequestModel.md)
 
 ### Authorization
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ## WorkflowCertificatesDenyPost
 
-> CSSCMSDataModelModelsWorkflowApproveDenyResult WorkflowCertificatesDenyPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsWorkflowDenialRequest(cSSCMSDataModelModelsWorkflowDenialRequest).Execute()
+> ModelsWorkflowApproveDenyResult WorkflowCertificatesDenyPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsWorkflowDenialRequest(modelsWorkflowDenialRequest).Execute()
 
 Denies pending certificate requests associated with the provided ids
 
@@ -178,16 +178,16 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsWorkflowDenialRequest := *openapiclient.NewCSSCMSDataModelModelsWorkflowDenialRequest() // CSSCMSDataModelModelsWorkflowDenialRequest | Keyfactor identifiers of the certificate requests to be denied and any denial comments (optional)
+    modelsWorkflowDenialRequest := *openapiclient.NewModelsWorkflowDenialRequest() // ModelsWorkflowDenialRequest | Keyfactor identifiers of the certificate requests to be denied and any denial comments (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowApi.WorkflowCertificatesDenyPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsWorkflowDenialRequest(cSSCMSDataModelModelsWorkflowDenialRequest).Execute()
+    resp, r, err := apiClient.WorkflowApi.WorkflowCertificatesDenyPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsWorkflowDenialRequest(modelsWorkflowDenialRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowApi.WorkflowCertificatesDenyPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `WorkflowCertificatesDenyPost`: CSSCMSDataModelModelsWorkflowApproveDenyResult
+    // response from `WorkflowCertificatesDenyPost`: ModelsWorkflowApproveDenyResult
     fmt.Fprintf(os.Stdout, "Response from `WorkflowApi.WorkflowCertificatesDenyPost`: %v\n", resp)
 }
 ```
@@ -205,11 +205,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsWorkflowDenialRequest** | [**CSSCMSDataModelModelsWorkflowDenialRequest**](CSSCMSDataModelModelsWorkflowDenialRequest.md) | Keyfactor identifiers of the certificate requests to be denied and any denial comments | 
+ **modelsWorkflowDenialRequest** | [**ModelsWorkflowDenialRequest**](ModelsWorkflowDenialRequest.md) | Keyfactor identifiers of the certificate requests to be denied and any denial comments | 
 
 ### Return type
 
-[**CSSCMSDataModelModelsWorkflowApproveDenyResult**](CSSCMSDataModelModelsWorkflowApproveDenyResult.md)
+[**ModelsWorkflowApproveDenyResult**](ModelsWorkflowApproveDenyResult.md)
 
 ### Authorization
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ## WorkflowCertificatesExternalValidationGet
 
-> []CSSCMSDataModelModelsWorkflowCertificateRequestModel WorkflowCertificatesExternalValidationGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsWorkflowCertificateRequestModel WorkflowCertificatesExternalValidationGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets a collection of external validation certificate requests based on the provided query.
 
@@ -249,7 +249,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -259,7 +259,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowApi.WorkflowCertificatesExternalValidationGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `WorkflowCertificatesExternalValidationGet`: []CSSCMSDataModelModelsWorkflowCertificateRequestModel
+    // response from `WorkflowCertificatesExternalValidationGet`: []ModelsWorkflowCertificateRequestModel
     fmt.Fprintf(os.Stdout, "Response from `WorkflowApi.WorkflowCertificatesExternalValidationGet`: %v\n", resp)
 }
 ```
@@ -280,12 +280,12 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsWorkflowCertificateRequestModel**](CSSCMSDataModelModelsWorkflowCertificateRequestModel.md)
+[**[]ModelsWorkflowCertificateRequestModel**](ModelsWorkflowCertificateRequestModel.md)
 
 ### Authorization
 
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 
 ## WorkflowCertificatesPendingGet
 
-> []CSSCMSDataModelModelsWorkflowCertificateRequestModel WorkflowCertificatesPendingGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsWorkflowCertificateRequestModel WorkflowCertificatesPendingGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets a collection of pending certificate requests based on the provided query.
 
@@ -397,7 +397,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -407,7 +407,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowApi.WorkflowCertificatesPendingGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `WorkflowCertificatesPendingGet`: []CSSCMSDataModelModelsWorkflowCertificateRequestModel
+    // response from `WorkflowCertificatesPendingGet`: []ModelsWorkflowCertificateRequestModel
     fmt.Fprintf(os.Stdout, "Response from `WorkflowApi.WorkflowCertificatesPendingGet`: %v\n", resp)
 }
 ```
@@ -428,12 +428,12 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsWorkflowCertificateRequestModel**](CSSCMSDataModelModelsWorkflowCertificateRequestModel.md)
+[**[]ModelsWorkflowCertificateRequestModel**](ModelsWorkflowCertificateRequestModel.md)
 
 ### Authorization
 

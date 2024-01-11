@@ -34,11 +34,11 @@ import (
 type ServerGroupApiService service
 
 type ApiSSHServerGroupsAccessDeleteRequest struct {
-	ctx                                                    context.Context
-	ApiService                                             *ServerGroupApiService
-	xKeyfactorRequestedWith                                *string
-	xKeyfactorApiVersion                                   *string
-	cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest *CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest
+	ctx                                     context.Context
+	ApiService                              *ServerGroupApiService
+	xKeyfactorRequestedWith                 *string
+	xKeyfactorApiVersion                    *string
+	modelsSSHAccessServerGroupAccessRequest *ModelsSSHAccessServerGroupAccessRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -53,12 +53,12 @@ func (r ApiSSHServerGroupsAccessDeleteRequest) XKeyfactorApiVersion(xKeyfactorAp
 	return r
 }
 
-func (r ApiSSHServerGroupsAccessDeleteRequest) CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest(cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest) ApiSSHServerGroupsAccessDeleteRequest {
-	r.cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest = &cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest
+func (r ApiSSHServerGroupsAccessDeleteRequest) ModelsSSHAccessServerGroupAccessRequest(modelsSSHAccessServerGroupAccessRequest ModelsSSHAccessServerGroupAccessRequest) ApiSSHServerGroupsAccessDeleteRequest {
+	r.modelsSSHAccessServerGroupAccessRequest = &modelsSSHAccessServerGroupAccessRequest
 	return r
 }
 
-func (r ApiSSHServerGroupsAccessDeleteRequest) Execute() (*CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse, *http.Response, error) {
+func (r ApiSSHServerGroupsAccessDeleteRequest) Execute() (*ModelsSSHAccessServerGroupAccessResponse, *http.Response, error) {
 	return r.ApiService.SSHServerGroupsAccessDeleteExecute(r)
 }
 
@@ -82,13 +82,13 @@ func (a *ServerGroupApiService) SSHServerGroupsAccessDelete(ctx context.Context)
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse
-func (a *ServerGroupApiService) SSHServerGroupsAccessDeleteExecute(r ApiSSHServerGroupsAccessDeleteRequest) (*CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse, *http.Response, error) {
+//	@return ModelsSSHAccessServerGroupAccessResponse
+func (a *ServerGroupApiService) SSHServerGroupsAccessDeleteExecute(r ApiSSHServerGroupsAccessDeleteRequest) (*ModelsSSHAccessServerGroupAccessResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse
+		localVarReturnValue *ModelsSSHAccessServerGroupAccessResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -127,7 +127,7 @@ func (a *ServerGroupApiService) SSHServerGroupsAccessDeleteExecute(r ApiSSHServe
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest
+	localVarPostBody = r.modelsSSHAccessServerGroupAccessRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -185,7 +185,7 @@ func (r ApiSSHServerGroupsAccessIdGetRequest) XKeyfactorApiVersion(xKeyfactorApi
 	return r
 }
 
-func (r ApiSSHServerGroupsAccessIdGetRequest) Execute() (*CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse, *http.Response, error) {
+func (r ApiSSHServerGroupsAccessIdGetRequest) Execute() (*ModelsSSHAccessServerGroupAccessResponse, *http.Response, error) {
 	return r.ApiService.SSHServerGroupsAccessIdGetExecute(r)
 }
 
@@ -211,13 +211,13 @@ func (a *ServerGroupApiService) SSHServerGroupsAccessIdGet(ctx context.Context, 
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse
-func (a *ServerGroupApiService) SSHServerGroupsAccessIdGetExecute(r ApiSSHServerGroupsAccessIdGetRequest) (*CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse, *http.Response, error) {
+//	@return ModelsSSHAccessServerGroupAccessResponse
+func (a *ServerGroupApiService) SSHServerGroupsAccessIdGetExecute(r ApiSSHServerGroupsAccessIdGetRequest) (*ModelsSSHAccessServerGroupAccessResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse
+		localVarReturnValue *ModelsSSHAccessServerGroupAccessResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -294,11 +294,11 @@ func (a *ServerGroupApiService) SSHServerGroupsAccessIdGetExecute(r ApiSSHServer
 }
 
 type ApiSSHServerGroupsAccessPostRequest struct {
-	ctx                                                    context.Context
-	ApiService                                             *ServerGroupApiService
-	xKeyfactorRequestedWith                                *string
-	xKeyfactorApiVersion                                   *string
-	cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest *CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest
+	ctx                                     context.Context
+	ApiService                              *ServerGroupApiService
+	xKeyfactorRequestedWith                 *string
+	xKeyfactorApiVersion                    *string
+	modelsSSHAccessServerGroupAccessRequest *ModelsSSHAccessServerGroupAccessRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -313,12 +313,12 @@ func (r ApiSSHServerGroupsAccessPostRequest) XKeyfactorApiVersion(xKeyfactorApiV
 	return r
 }
 
-func (r ApiSSHServerGroupsAccessPostRequest) CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest(cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest) ApiSSHServerGroupsAccessPostRequest {
-	r.cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest = &cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest
+func (r ApiSSHServerGroupsAccessPostRequest) ModelsSSHAccessServerGroupAccessRequest(modelsSSHAccessServerGroupAccessRequest ModelsSSHAccessServerGroupAccessRequest) ApiSSHServerGroupsAccessPostRequest {
+	r.modelsSSHAccessServerGroupAccessRequest = &modelsSSHAccessServerGroupAccessRequest
 	return r
 }
 
-func (r ApiSSHServerGroupsAccessPostRequest) Execute() (*CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse, *http.Response, error) {
+func (r ApiSSHServerGroupsAccessPostRequest) Execute() (*ModelsSSHAccessServerGroupAccessResponse, *http.Response, error) {
 	return r.ApiService.SSHServerGroupsAccessPostExecute(r)
 }
 
@@ -342,13 +342,13 @@ func (a *ServerGroupApiService) SSHServerGroupsAccessPost(ctx context.Context) A
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse
-func (a *ServerGroupApiService) SSHServerGroupsAccessPostExecute(r ApiSSHServerGroupsAccessPostRequest) (*CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse, *http.Response, error) {
+//	@return ModelsSSHAccessServerGroupAccessResponse
+func (a *ServerGroupApiService) SSHServerGroupsAccessPostExecute(r ApiSSHServerGroupsAccessPostRequest) (*ModelsSSHAccessServerGroupAccessResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse
+		localVarReturnValue *ModelsSSHAccessServerGroupAccessResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -387,7 +387,7 @@ func (a *ServerGroupApiService) SSHServerGroupsAccessPostExecute(r ApiSSHServerG
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest
+	localVarPostBody = r.modelsSSHAccessServerGroupAccessRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -433,7 +433,7 @@ type ApiSSHServerGroupsGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -463,7 +463,7 @@ func (r ApiSSHServerGroupsGetRequest) SortField(sortField string) ApiSSHServerGr
 	return r
 }
 
-func (r ApiSSHServerGroupsGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiSSHServerGroupsGetRequest {
+func (r ApiSSHServerGroupsGetRequest) SortAscending(sortAscending int32) ApiSSHServerGroupsGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -474,7 +474,7 @@ func (r ApiSSHServerGroupsGetRequest) XKeyfactorApiVersion(xKeyfactorApiVersion 
 	return r
 }
 
-func (r ApiSSHServerGroupsGetRequest) Execute() ([]CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
+func (r ApiSSHServerGroupsGetRequest) Execute() ([]ModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
 	return r.ApiService.SSHServerGroupsGetExecute(r)
 }
 
@@ -498,13 +498,13 @@ func (a *ServerGroupApiService) SSHServerGroupsGet(ctx context.Context) ApiSSHSe
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse
-func (a *ServerGroupApiService) SSHServerGroupsGetExecute(r ApiSSHServerGroupsGetRequest) ([]CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
+//	@return []ModelsSSHServerGroupsServerGroupResponse
+func (a *ServerGroupApiService) SSHServerGroupsGetExecute(r ApiSSHServerGroupsGetRequest) ([]ModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse
+		localVarReturnValue []ModelsSSHServerGroupsServerGroupResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -730,7 +730,7 @@ func (r ApiSSHServerGroupsIdGetRequest) XKeyfactorApiVersion(xKeyfactorApiVersio
 	return r
 }
 
-func (r ApiSSHServerGroupsIdGetRequest) Execute() (*CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
+func (r ApiSSHServerGroupsIdGetRequest) Execute() (*ModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
 	return r.ApiService.SSHServerGroupsIdGetExecute(r)
 }
 
@@ -756,13 +756,13 @@ func (a *ServerGroupApiService) SSHServerGroupsIdGet(ctx context.Context, id str
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse
-func (a *ServerGroupApiService) SSHServerGroupsIdGetExecute(r ApiSSHServerGroupsIdGetRequest) (*CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
+//	@return ModelsSSHServerGroupsServerGroupResponse
+func (a *ServerGroupApiService) SSHServerGroupsIdGetExecute(r ApiSSHServerGroupsIdGetRequest) (*ModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse
+		localVarReturnValue *ModelsSSHServerGroupsServerGroupResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -858,7 +858,7 @@ func (r ApiSSHServerGroupsNameGetRequest) XKeyfactorApiVersion(xKeyfactorApiVers
 	return r
 }
 
-func (r ApiSSHServerGroupsNameGetRequest) Execute() (*CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
+func (r ApiSSHServerGroupsNameGetRequest) Execute() (*ModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
 	return r.ApiService.SSHServerGroupsNameGetExecute(r)
 }
 
@@ -884,13 +884,13 @@ func (a *ServerGroupApiService) SSHServerGroupsNameGet(ctx context.Context, name
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse
-func (a *ServerGroupApiService) SSHServerGroupsNameGetExecute(r ApiSSHServerGroupsNameGetRequest) (*CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
+//	@return ModelsSSHServerGroupsServerGroupResponse
+func (a *ServerGroupApiService) SSHServerGroupsNameGetExecute(r ApiSSHServerGroupsNameGetRequest) (*ModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse
+		localVarReturnValue *ModelsSSHServerGroupsServerGroupResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -967,11 +967,11 @@ func (a *ServerGroupApiService) SSHServerGroupsNameGetExecute(r ApiSSHServerGrou
 }
 
 type ApiSSHServerGroupsPostRequest struct {
-	ctx                                                            context.Context
-	ApiService                                                     *ServerGroupApiService
-	xKeyfactorRequestedWith                                        *string
-	xKeyfactorApiVersion                                           *string
-	cSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest *CSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest
+	ctx                                             context.Context
+	ApiService                                      *ServerGroupApiService
+	xKeyfactorRequestedWith                         *string
+	xKeyfactorApiVersion                            *string
+	modelsSSHServerGroupsServerGroupCreationRequest *ModelsSSHServerGroupsServerGroupCreationRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -987,12 +987,12 @@ func (r ApiSSHServerGroupsPostRequest) XKeyfactorApiVersion(xKeyfactorApiVersion
 }
 
 // Server group properties to be applied to the new group
-func (r ApiSSHServerGroupsPostRequest) CSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest(cSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest CSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest) ApiSSHServerGroupsPostRequest {
-	r.cSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest = &cSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest
+func (r ApiSSHServerGroupsPostRequest) ModelsSSHServerGroupsServerGroupCreationRequest(modelsSSHServerGroupsServerGroupCreationRequest ModelsSSHServerGroupsServerGroupCreationRequest) ApiSSHServerGroupsPostRequest {
+	r.modelsSSHServerGroupsServerGroupCreationRequest = &modelsSSHServerGroupsServerGroupCreationRequest
 	return r
 }
 
-func (r ApiSSHServerGroupsPostRequest) Execute() (*CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
+func (r ApiSSHServerGroupsPostRequest) Execute() (*ModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
 	return r.ApiService.SSHServerGroupsPostExecute(r)
 }
 
@@ -1016,13 +1016,13 @@ func (a *ServerGroupApiService) SSHServerGroupsPost(ctx context.Context) ApiSSHS
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse
-func (a *ServerGroupApiService) SSHServerGroupsPostExecute(r ApiSSHServerGroupsPostRequest) (*CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
+//	@return ModelsSSHServerGroupsServerGroupResponse
+func (a *ServerGroupApiService) SSHServerGroupsPostExecute(r ApiSSHServerGroupsPostRequest) (*ModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse
+		localVarReturnValue *ModelsSSHServerGroupsServerGroupResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -1061,7 +1061,7 @@ func (a *ServerGroupApiService) SSHServerGroupsPostExecute(r ApiSSHServerGroupsP
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest
+	localVarPostBody = r.modelsSSHServerGroupsServerGroupCreationRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1100,11 +1100,11 @@ func (a *ServerGroupApiService) SSHServerGroupsPostExecute(r ApiSSHServerGroupsP
 }
 
 type ApiSSHServerGroupsPutRequest struct {
-	ctx                                                          context.Context
-	ApiService                                                   *ServerGroupApiService
-	xKeyfactorRequestedWith                                      *string
-	xKeyfactorApiVersion                                         *string
-	cSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest *CSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest
+	ctx                                           context.Context
+	ApiService                                    *ServerGroupApiService
+	xKeyfactorRequestedWith                       *string
+	xKeyfactorApiVersion                          *string
+	modelsSSHServerGroupsServerGroupUpdateRequest *ModelsSSHServerGroupsServerGroupUpdateRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1120,12 +1120,12 @@ func (r ApiSSHServerGroupsPutRequest) XKeyfactorApiVersion(xKeyfactorApiVersion 
 }
 
 // Server group properties to be applied to the existing group
-func (r ApiSSHServerGroupsPutRequest) CSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest(cSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest CSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest) ApiSSHServerGroupsPutRequest {
-	r.cSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest = &cSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest
+func (r ApiSSHServerGroupsPutRequest) ModelsSSHServerGroupsServerGroupUpdateRequest(modelsSSHServerGroupsServerGroupUpdateRequest ModelsSSHServerGroupsServerGroupUpdateRequest) ApiSSHServerGroupsPutRequest {
+	r.modelsSSHServerGroupsServerGroupUpdateRequest = &modelsSSHServerGroupsServerGroupUpdateRequest
 	return r
 }
 
-func (r ApiSSHServerGroupsPutRequest) Execute() (*CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
+func (r ApiSSHServerGroupsPutRequest) Execute() (*ModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
 	return r.ApiService.SSHServerGroupsPutExecute(r)
 }
 
@@ -1149,13 +1149,13 @@ func (a *ServerGroupApiService) SSHServerGroupsPut(ctx context.Context) ApiSSHSe
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse
-func (a *ServerGroupApiService) SSHServerGroupsPutExecute(r ApiSSHServerGroupsPutRequest) (*CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
+//	@return ModelsSSHServerGroupsServerGroupResponse
+func (a *ServerGroupApiService) SSHServerGroupsPutExecute(r ApiSSHServerGroupsPutRequest) (*ModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse
+		localVarReturnValue *ModelsSSHServerGroupsServerGroupResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -1194,7 +1194,7 @@ func (a *ServerGroupApiService) SSHServerGroupsPutExecute(r ApiSSHServerGroupsPu
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest
+	localVarPostBody = r.modelsSSHServerGroupsServerGroupUpdateRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

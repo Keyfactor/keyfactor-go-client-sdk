@@ -156,11 +156,11 @@ func (a *CertificateStoreApiService) CertificateStoresApprovePostExecute(r ApiCe
 }
 
 type ApiCertificateStoresAssignContainerPutRequest struct {
-	ctx                                      context.Context
-	ApiService                               *CertificateStoreApiService
-	xKeyfactorRequestedWith                  *string
-	xKeyfactorApiVersion                     *string
-	cSSCMSDataModelModelsContainerAssignment *CSSCMSDataModelModelsContainerAssignment
+	ctx                       context.Context
+	ApiService                *CertificateStoreApiService
+	xKeyfactorRequestedWith   *string
+	xKeyfactorApiVersion      *string
+	modelsContainerAssignment *ModelsContainerAssignment
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -176,8 +176,8 @@ func (r ApiCertificateStoresAssignContainerPutRequest) XKeyfactorApiVersion(xKey
 }
 
 // Keyfactor certificate store identifiers and the container properties
-func (r ApiCertificateStoresAssignContainerPutRequest) CSSCMSDataModelModelsContainerAssignment(cSSCMSDataModelModelsContainerAssignment CSSCMSDataModelModelsContainerAssignment) ApiCertificateStoresAssignContainerPutRequest {
-	r.cSSCMSDataModelModelsContainerAssignment = &cSSCMSDataModelModelsContainerAssignment
+func (r ApiCertificateStoresAssignContainerPutRequest) ModelsContainerAssignment(modelsContainerAssignment ModelsContainerAssignment) ApiCertificateStoresAssignContainerPutRequest {
+	r.modelsContainerAssignment = &modelsContainerAssignment
 	return r
 }
 
@@ -250,7 +250,7 @@ func (a *CertificateStoreApiService) CertificateStoresAssignContainerPutExecute(
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsContainerAssignment
+	localVarPostBody = r.modelsContainerAssignment
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -678,11 +678,11 @@ func (a *CertificateStoreApiService) CertificateStoresDeleteExecute(r ApiCertifi
 }
 
 type ApiCertificateStoresDiscoveryJobPutRequest struct {
-	ctx                                      context.Context
-	ApiService                               *CertificateStoreApiService
-	xKeyfactorRequestedWith                  *string
-	xKeyfactorApiVersion                     *string
-	cSSCMSDataModelModelsDiscoveryJobRequest *CSSCMSDataModelModelsDiscoveryJobRequest
+	ctx                       context.Context
+	ApiService                *CertificateStoreApiService
+	xKeyfactorRequestedWith   *string
+	xKeyfactorApiVersion      *string
+	modelsDiscoveryJobRequest *ModelsDiscoveryJobRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -698,8 +698,8 @@ func (r ApiCertificateStoresDiscoveryJobPutRequest) XKeyfactorApiVersion(xKeyfac
 }
 
 // Configuration properties of the discovery job
-func (r ApiCertificateStoresDiscoveryJobPutRequest) CSSCMSDataModelModelsDiscoveryJobRequest(cSSCMSDataModelModelsDiscoveryJobRequest CSSCMSDataModelModelsDiscoveryJobRequest) ApiCertificateStoresDiscoveryJobPutRequest {
-	r.cSSCMSDataModelModelsDiscoveryJobRequest = &cSSCMSDataModelModelsDiscoveryJobRequest
+func (r ApiCertificateStoresDiscoveryJobPutRequest) ModelsDiscoveryJobRequest(modelsDiscoveryJobRequest ModelsDiscoveryJobRequest) ApiCertificateStoresDiscoveryJobPutRequest {
+	r.modelsDiscoveryJobRequest = &modelsDiscoveryJobRequest
 	return r
 }
 
@@ -769,7 +769,7 @@ func (a *CertificateStoreApiService) CertificateStoresDiscoveryJobPutExecute(r A
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsDiscoveryJobRequest
+	localVarPostBody = r.modelsDiscoveryJobRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -808,7 +808,7 @@ type ApiCertificateStoresGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -855,7 +855,7 @@ func (r ApiCertificateStoresGetRequest) SortField(sortField string) ApiCertifica
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiCertificateStoresGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiCertificateStoresGetRequest {
+func (r ApiCertificateStoresGetRequest) SortAscending(sortAscending int32) ApiCertificateStoresGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -1252,7 +1252,7 @@ type ApiCertificateStoresIdInventoryGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -1277,7 +1277,7 @@ func (r ApiCertificateStoresIdInventoryGetRequest) SortField(sortField string) A
 	return r
 }
 
-func (r ApiCertificateStoresIdInventoryGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiCertificateStoresIdInventoryGetRequest {
+func (r ApiCertificateStoresIdInventoryGetRequest) SortAscending(sortAscending int32) ApiCertificateStoresIdInventoryGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -1288,7 +1288,7 @@ func (r ApiCertificateStoresIdInventoryGetRequest) XKeyfactorApiVersion(xKeyfact
 	return r
 }
 
-func (r ApiCertificateStoresIdInventoryGetRequest) Execute() ([]CSSCMSDataModelModelsCertificateStoreInventory, *http.Response, error) {
+func (r ApiCertificateStoresIdInventoryGetRequest) Execute() ([]ModelsCertificateStoreInventory, *http.Response, error) {
 	return r.ApiService.CertificateStoresIdInventoryGetExecute(r)
 }
 
@@ -1314,13 +1314,13 @@ func (a *CertificateStoreApiService) CertificateStoresIdInventoryGet(ctx context
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsCertificateStoreInventory
-func (a *CertificateStoreApiService) CertificateStoresIdInventoryGetExecute(r ApiCertificateStoresIdInventoryGetRequest) ([]CSSCMSDataModelModelsCertificateStoreInventory, *http.Response, error) {
+//	@return []ModelsCertificateStoreInventory
+func (a *CertificateStoreApiService) CertificateStoresIdInventoryGetExecute(r ApiCertificateStoresIdInventoryGetRequest) ([]ModelsCertificateStoreInventory, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsCertificateStoreInventory
+		localVarReturnValue []ModelsCertificateStoreInventory
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -1409,11 +1409,11 @@ func (a *CertificateStoreApiService) CertificateStoresIdInventoryGetExecute(r Ap
 }
 
 type ApiCertificateStoresPasswordPutRequest struct {
-	ctx                                              context.Context
-	ApiService                                       *CertificateStoreApiService
-	xKeyfactorRequestedWith                          *string
-	xKeyfactorApiVersion                             *string
-	cSSCMSDataModelModelsCertStoreNewPasswordRequest *CSSCMSDataModelModelsCertStoreNewPasswordRequest
+	ctx                               context.Context
+	ApiService                        *CertificateStoreApiService
+	xKeyfactorRequestedWith           *string
+	xKeyfactorApiVersion              *string
+	modelsCertStoreNewPasswordRequest *ModelsCertStoreNewPasswordRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1429,8 +1429,8 @@ func (r ApiCertificateStoresPasswordPutRequest) XKeyfactorApiVersion(xKeyfactorA
 }
 
 // Identifier of the certificate store and the password to be applied to it
-func (r ApiCertificateStoresPasswordPutRequest) CSSCMSDataModelModelsCertStoreNewPasswordRequest(cSSCMSDataModelModelsCertStoreNewPasswordRequest CSSCMSDataModelModelsCertStoreNewPasswordRequest) ApiCertificateStoresPasswordPutRequest {
-	r.cSSCMSDataModelModelsCertStoreNewPasswordRequest = &cSSCMSDataModelModelsCertStoreNewPasswordRequest
+func (r ApiCertificateStoresPasswordPutRequest) ModelsCertStoreNewPasswordRequest(modelsCertStoreNewPasswordRequest ModelsCertStoreNewPasswordRequest) ApiCertificateStoresPasswordPutRequest {
+	r.modelsCertStoreNewPasswordRequest = &modelsCertStoreNewPasswordRequest
 	return r
 }
 
@@ -1500,7 +1500,7 @@ func (a *CertificateStoreApiService) CertificateStoresPasswordPutExecute(r ApiCe
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsCertStoreNewPasswordRequest
+	localVarPostBody = r.modelsCertStoreNewPasswordRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1530,11 +1530,11 @@ func (a *CertificateStoreApiService) CertificateStoresPasswordPutExecute(r ApiCe
 }
 
 type ApiCertificateStoresPostRequest struct {
-	ctx                                                                 context.Context
-	ApiService                                                          *CertificateStoreApiService
-	xKeyfactorRequestedWith                                             *string
-	xKeyfactorApiVersion                                                *string
-	cSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest *CSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest
+	ctx                                                  context.Context
+	ApiService                                           *CertificateStoreApiService
+	xKeyfactorRequestedWith                              *string
+	xKeyfactorApiVersion                                 *string
+	modelsCertificateStoresCertificateStoreCreateRequest *ModelsCertificateStoresCertificateStoreCreateRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1550,8 +1550,8 @@ func (r ApiCertificateStoresPostRequest) XKeyfactorApiVersion(xKeyfactorApiVersi
 }
 
 // Certificate store to be created with the provided properties
-func (r ApiCertificateStoresPostRequest) CSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest(cSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest CSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest) ApiCertificateStoresPostRequest {
-	r.cSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest = &cSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest
+func (r ApiCertificateStoresPostRequest) ModelsCertificateStoresCertificateStoreCreateRequest(modelsCertificateStoresCertificateStoreCreateRequest ModelsCertificateStoresCertificateStoreCreateRequest) ApiCertificateStoresPostRequest {
+	r.modelsCertificateStoresCertificateStoreCreateRequest = &modelsCertificateStoresCertificateStoreCreateRequest
 	return r
 }
 
@@ -1624,7 +1624,7 @@ func (a *CertificateStoreApiService) CertificateStoresPostExecute(r ApiCertifica
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest
+	localVarPostBody = r.modelsCertificateStoresCertificateStoreCreateRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1663,11 +1663,11 @@ func (a *CertificateStoreApiService) CertificateStoresPostExecute(r ApiCertifica
 }
 
 type ApiCertificateStoresPutRequest struct {
-	ctx                                                                 context.Context
-	ApiService                                                          *CertificateStoreApiService
-	xKeyfactorRequestedWith                                             *string
-	xKeyfactorApiVersion                                                *string
-	cSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest *CSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest
+	ctx                                                  context.Context
+	ApiService                                           *CertificateStoreApiService
+	xKeyfactorRequestedWith                              *string
+	xKeyfactorApiVersion                                 *string
+	modelsCertificateStoresCertificateStoreUpdateRequest *ModelsCertificateStoresCertificateStoreUpdateRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1683,8 +1683,8 @@ func (r ApiCertificateStoresPutRequest) XKeyfactorApiVersion(xKeyfactorApiVersio
 }
 
 // Certificate store to be updated with the provided properties
-func (r ApiCertificateStoresPutRequest) CSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest(cSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest CSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest) ApiCertificateStoresPutRequest {
-	r.cSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest = &cSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest
+func (r ApiCertificateStoresPutRequest) ModelsCertificateStoresCertificateStoreUpdateRequest(modelsCertificateStoresCertificateStoreUpdateRequest ModelsCertificateStoresCertificateStoreUpdateRequest) ApiCertificateStoresPutRequest {
+	r.modelsCertificateStoresCertificateStoreUpdateRequest = &modelsCertificateStoresCertificateStoreUpdateRequest
 	return r
 }
 
@@ -1757,7 +1757,7 @@ func (a *CertificateStoreApiService) CertificateStoresPutExecute(r ApiCertificat
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest
+	localVarPostBody = r.modelsCertificateStoresCertificateStoreUpdateRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1917,11 +1917,11 @@ func (a *CertificateStoreApiService) CertificateStoresReenrollmentPostExecute(r 
 }
 
 type ApiCertificateStoresSchedulePostRequest struct {
-	ctx                                     context.Context
-	ApiService                              *CertificateStoreApiService
-	xKeyfactorRequestedWith                 *string
-	xKeyfactorApiVersion                    *string
-	cSSCMSDataModelModelsCertStoresSchedule *CSSCMSDataModelModelsCertStoresSchedule
+	ctx                      context.Context
+	ApiService               *CertificateStoreApiService
+	xKeyfactorRequestedWith  *string
+	xKeyfactorApiVersion     *string
+	modelsCertStoresSchedule *ModelsCertStoresSchedule
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1937,8 +1937,8 @@ func (r ApiCertificateStoresSchedulePostRequest) XKeyfactorApiVersion(xKeyfactor
 }
 
 // Certificate store identifiers and the desired schedule
-func (r ApiCertificateStoresSchedulePostRequest) CSSCMSDataModelModelsCertStoresSchedule(cSSCMSDataModelModelsCertStoresSchedule CSSCMSDataModelModelsCertStoresSchedule) ApiCertificateStoresSchedulePostRequest {
-	r.cSSCMSDataModelModelsCertStoresSchedule = &cSSCMSDataModelModelsCertStoresSchedule
+func (r ApiCertificateStoresSchedulePostRequest) ModelsCertStoresSchedule(modelsCertStoresSchedule ModelsCertStoresSchedule) ApiCertificateStoresSchedulePostRequest {
+	r.modelsCertStoresSchedule = &modelsCertStoresSchedule
 	return r
 }
 
@@ -2008,7 +2008,7 @@ func (a *CertificateStoreApiService) CertificateStoresSchedulePostExecute(r ApiC
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsCertStoresSchedule
+	localVarPostBody = r.modelsCertStoresSchedule
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2045,7 +2045,7 @@ type ApiCertificateStoresServerGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -2075,7 +2075,7 @@ func (r ApiCertificateStoresServerGetRequest) SortField(sortField string) ApiCer
 	return r
 }
 
-func (r ApiCertificateStoresServerGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiCertificateStoresServerGetRequest {
+func (r ApiCertificateStoresServerGetRequest) SortAscending(sortAscending int32) ApiCertificateStoresServerGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -2086,7 +2086,7 @@ func (r ApiCertificateStoresServerGetRequest) XKeyfactorApiVersion(xKeyfactorApi
 	return r
 }
 
-func (r ApiCertificateStoresServerGetRequest) Execute() ([]CSSCMSDataModelModelsCertificateStoreServer, *http.Response, error) {
+func (r ApiCertificateStoresServerGetRequest) Execute() ([]ModelsCertificateStoreServer, *http.Response, error) {
 	return r.ApiService.CertificateStoresServerGetExecute(r)
 }
 
@@ -2112,15 +2112,15 @@ func (a *CertificateStoreApiService) CertificateStoresServerGet(ctx context.Cont
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsCertificateStoreServer
+//	@return []ModelsCertificateStoreServer
 //
 // Deprecated
-func (a *CertificateStoreApiService) CertificateStoresServerGetExecute(r ApiCertificateStoresServerGetRequest) ([]CSSCMSDataModelModelsCertificateStoreServer, *http.Response, error) {
+func (a *CertificateStoreApiService) CertificateStoresServerGetExecute(r ApiCertificateStoresServerGetRequest) ([]ModelsCertificateStoreServer, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsCertificateStoreServer
+		localVarReturnValue []ModelsCertificateStoreServer
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -2211,11 +2211,11 @@ func (a *CertificateStoreApiService) CertificateStoresServerGetExecute(r ApiCert
 }
 
 type ApiCertificateStoresServerPostRequest struct {
-	ctx                                                      context.Context
-	ApiService                                               *CertificateStoreApiService
-	xKeyfactorRequestedWith                                  *string
-	xKeyfactorApiVersion                                     *string
-	cSSCMSDataModelModelsCertificateStoreCreateServerRequest *CSSCMSDataModelModelsCertificateStoreCreateServerRequest
+	ctx                                       context.Context
+	ApiService                                *CertificateStoreApiService
+	xKeyfactorRequestedWith                   *string
+	xKeyfactorApiVersion                      *string
+	modelsCertificateStoreCreateServerRequest *ModelsCertificateStoreCreateServerRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -2231,12 +2231,12 @@ func (r ApiCertificateStoresServerPostRequest) XKeyfactorApiVersion(xKeyfactorAp
 }
 
 // Certificate store server to be created with the provided properties
-func (r ApiCertificateStoresServerPostRequest) CSSCMSDataModelModelsCertificateStoreCreateServerRequest(cSSCMSDataModelModelsCertificateStoreCreateServerRequest CSSCMSDataModelModelsCertificateStoreCreateServerRequest) ApiCertificateStoresServerPostRequest {
-	r.cSSCMSDataModelModelsCertificateStoreCreateServerRequest = &cSSCMSDataModelModelsCertificateStoreCreateServerRequest
+func (r ApiCertificateStoresServerPostRequest) ModelsCertificateStoreCreateServerRequest(modelsCertificateStoreCreateServerRequest ModelsCertificateStoreCreateServerRequest) ApiCertificateStoresServerPostRequest {
+	r.modelsCertificateStoreCreateServerRequest = &modelsCertificateStoreCreateServerRequest
 	return r
 }
 
-func (r ApiCertificateStoresServerPostRequest) Execute() (*CSSCMSDataModelModelsCertificateStoreServerResponse, *http.Response, error) {
+func (r ApiCertificateStoresServerPostRequest) Execute() (*ModelsCertificateStoreServerResponse, *http.Response, error) {
 	return r.ApiService.CertificateStoresServerPostExecute(r)
 }
 
@@ -2262,15 +2262,15 @@ func (a *CertificateStoreApiService) CertificateStoresServerPost(ctx context.Con
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsCertificateStoreServerResponse
+//	@return ModelsCertificateStoreServerResponse
 //
 // Deprecated
-func (a *CertificateStoreApiService) CertificateStoresServerPostExecute(r ApiCertificateStoresServerPostRequest) (*CSSCMSDataModelModelsCertificateStoreServerResponse, *http.Response, error) {
+func (a *CertificateStoreApiService) CertificateStoresServerPostExecute(r ApiCertificateStoresServerPostRequest) (*ModelsCertificateStoreServerResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsCertificateStoreServerResponse
+		localVarReturnValue *ModelsCertificateStoreServerResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -2309,7 +2309,7 @@ func (a *CertificateStoreApiService) CertificateStoresServerPostExecute(r ApiCer
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsCertificateStoreCreateServerRequest
+	localVarPostBody = r.modelsCertificateStoreCreateServerRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2348,11 +2348,11 @@ func (a *CertificateStoreApiService) CertificateStoresServerPostExecute(r ApiCer
 }
 
 type ApiCertificateStoresServerPutRequest struct {
-	ctx                                                      context.Context
-	ApiService                                               *CertificateStoreApiService
-	xKeyfactorRequestedWith                                  *string
-	xKeyfactorApiVersion                                     *string
-	cSSCMSDataModelModelsCertificateStoreUpdateServerRequest *CSSCMSDataModelModelsCertificateStoreUpdateServerRequest
+	ctx                                       context.Context
+	ApiService                                *CertificateStoreApiService
+	xKeyfactorRequestedWith                   *string
+	xKeyfactorApiVersion                      *string
+	modelsCertificateStoreUpdateServerRequest *ModelsCertificateStoreUpdateServerRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -2368,12 +2368,12 @@ func (r ApiCertificateStoresServerPutRequest) XKeyfactorApiVersion(xKeyfactorApi
 }
 
 // Server to be updated with the provided properties
-func (r ApiCertificateStoresServerPutRequest) CSSCMSDataModelModelsCertificateStoreUpdateServerRequest(cSSCMSDataModelModelsCertificateStoreUpdateServerRequest CSSCMSDataModelModelsCertificateStoreUpdateServerRequest) ApiCertificateStoresServerPutRequest {
-	r.cSSCMSDataModelModelsCertificateStoreUpdateServerRequest = &cSSCMSDataModelModelsCertificateStoreUpdateServerRequest
+func (r ApiCertificateStoresServerPutRequest) ModelsCertificateStoreUpdateServerRequest(modelsCertificateStoreUpdateServerRequest ModelsCertificateStoreUpdateServerRequest) ApiCertificateStoresServerPutRequest {
+	r.modelsCertificateStoreUpdateServerRequest = &modelsCertificateStoreUpdateServerRequest
 	return r
 }
 
-func (r ApiCertificateStoresServerPutRequest) Execute() (*CSSCMSDataModelModelsCertificateStoreServerResponse, *http.Response, error) {
+func (r ApiCertificateStoresServerPutRequest) Execute() (*ModelsCertificateStoreServerResponse, *http.Response, error) {
 	return r.ApiService.CertificateStoresServerPutExecute(r)
 }
 
@@ -2399,15 +2399,15 @@ func (a *CertificateStoreApiService) CertificateStoresServerPut(ctx context.Cont
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsCertificateStoreServerResponse
+//	@return ModelsCertificateStoreServerResponse
 //
 // Deprecated
-func (a *CertificateStoreApiService) CertificateStoresServerPutExecute(r ApiCertificateStoresServerPutRequest) (*CSSCMSDataModelModelsCertificateStoreServerResponse, *http.Response, error) {
+func (a *CertificateStoreApiService) CertificateStoresServerPutExecute(r ApiCertificateStoresServerPutRequest) (*ModelsCertificateStoreServerResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsCertificateStoreServerResponse
+		localVarReturnValue *ModelsCertificateStoreServerResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -2446,7 +2446,7 @@ func (a *CertificateStoreApiService) CertificateStoresServerPutExecute(r ApiCert
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsCertificateStoreUpdateServerRequest
+	localVarPostBody = r.modelsCertificateStoreUpdateServerRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

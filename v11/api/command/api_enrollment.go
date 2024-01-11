@@ -60,7 +60,7 @@ func (r ApiEnrollmentAvailableRenewalIdIdGetRequest) XKeyfactorApiVersion(xKeyfa
 	return r
 }
 
-func (r ApiEnrollmentAvailableRenewalIdIdGetRequest) Execute() (*CSSCMSDataModelModelsEnrollmentAvailableRenewal, *http.Response, error) {
+func (r ApiEnrollmentAvailableRenewalIdIdGetRequest) Execute() (*ModelsEnrollmentAvailableRenewal, *http.Response, error) {
 	return r.ApiService.EnrollmentAvailableRenewalIdIdGetExecute(r)
 }
 
@@ -93,13 +93,13 @@ func (a *EnrollmentApiService) EnrollmentAvailableRenewalIdIdGet(ctx context.Con
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsEnrollmentAvailableRenewal
-func (a *EnrollmentApiService) EnrollmentAvailableRenewalIdIdGetExecute(r ApiEnrollmentAvailableRenewalIdIdGetRequest) (*CSSCMSDataModelModelsEnrollmentAvailableRenewal, *http.Response, error) {
+//	@return ModelsEnrollmentAvailableRenewal
+func (a *EnrollmentApiService) EnrollmentAvailableRenewalIdIdGetExecute(r ApiEnrollmentAvailableRenewalIdIdGetRequest) (*ModelsEnrollmentAvailableRenewal, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsEnrollmentAvailableRenewal
+		localVarReturnValue *ModelsEnrollmentAvailableRenewal
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -211,7 +211,7 @@ func (r ApiEnrollmentAvailableRenewalThumbprintThumbprintGetRequest) XKeyfactorA
 	return r
 }
 
-func (r ApiEnrollmentAvailableRenewalThumbprintThumbprintGetRequest) Execute() (*CSSCMSDataModelModelsEnrollmentAvailableRenewal, *http.Response, error) {
+func (r ApiEnrollmentAvailableRenewalThumbprintThumbprintGetRequest) Execute() (*ModelsEnrollmentAvailableRenewal, *http.Response, error) {
 	return r.ApiService.EnrollmentAvailableRenewalThumbprintThumbprintGetExecute(r)
 }
 
@@ -237,13 +237,13 @@ func (a *EnrollmentApiService) EnrollmentAvailableRenewalThumbprintThumbprintGet
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsEnrollmentAvailableRenewal
-func (a *EnrollmentApiService) EnrollmentAvailableRenewalThumbprintThumbprintGetExecute(r ApiEnrollmentAvailableRenewalThumbprintThumbprintGetRequest) (*CSSCMSDataModelModelsEnrollmentAvailableRenewal, *http.Response, error) {
+//	@return ModelsEnrollmentAvailableRenewal
+func (a *EnrollmentApiService) EnrollmentAvailableRenewalThumbprintThumbprintGetExecute(r ApiEnrollmentAvailableRenewalThumbprintThumbprintGetRequest) (*ModelsEnrollmentAvailableRenewal, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsEnrollmentAvailableRenewal
+		localVarReturnValue *ModelsEnrollmentAvailableRenewal
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -447,11 +447,11 @@ func (a *EnrollmentApiService) EnrollmentCSRContextMyGetExecute(r ApiEnrollmentC
 }
 
 type ApiEnrollmentCSRParsePostRequest struct {
-	ctx                              context.Context
-	ApiService                       *EnrollmentApiService
-	xKeyfactorRequestedWith          *string
-	xKeyfactorApiVersion             *string
-	cSSCMSDataModelModelsCSRContents *CSSCMSDataModelModelsCSRContents
+	ctx                     context.Context
+	ApiService              *EnrollmentApiService
+	xKeyfactorRequestedWith *string
+	xKeyfactorApiVersion    *string
+	modelsCSRContents       *ModelsCSRContents
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -467,8 +467,8 @@ func (r ApiEnrollmentCSRParsePostRequest) XKeyfactorApiVersion(xKeyfactorApiVers
 }
 
 // CSR to be parsed
-func (r ApiEnrollmentCSRParsePostRequest) CSSCMSDataModelModelsCSRContents(cSSCMSDataModelModelsCSRContents CSSCMSDataModelModelsCSRContents) ApiEnrollmentCSRParsePostRequest {
-	r.cSSCMSDataModelModelsCSRContents = &cSSCMSDataModelModelsCSRContents
+func (r ApiEnrollmentCSRParsePostRequest) ModelsCSRContents(modelsCSRContents ModelsCSRContents) ApiEnrollmentCSRParsePostRequest {
+	r.modelsCSRContents = &modelsCSRContents
 	return r
 }
 
@@ -543,7 +543,7 @@ func (a *EnrollmentApiService) EnrollmentCSRParsePostExecute(r ApiEnrollmentCSRP
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsCSRContents
+	localVarPostBody = r.modelsCSRContents
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -582,11 +582,11 @@ func (a *EnrollmentApiService) EnrollmentCSRParsePostExecute(r ApiEnrollmentCSRP
 }
 
 type ApiEnrollmentCSRPostRequest struct {
-	ctx                                                 context.Context
-	ApiService                                          *EnrollmentApiService
-	xKeyfactorRequestedWith                             *string
-	xKeyfactorApiVersion                                *string
-	cSSCMSDataModelModelsEnrollmentCSREnrollmentRequest *CSSCMSDataModelModelsEnrollmentCSREnrollmentRequest
+	ctx                                  context.Context
+	ApiService                           *EnrollmentApiService
+	xKeyfactorRequestedWith              *string
+	xKeyfactorApiVersion                 *string
+	modelsEnrollmentCSREnrollmentRequest *ModelsEnrollmentCSREnrollmentRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -602,12 +602,12 @@ func (r ApiEnrollmentCSRPostRequest) XKeyfactorApiVersion(xKeyfactorApiVersion s
 }
 
 // Information needed to perform the CSR Enrollment
-func (r ApiEnrollmentCSRPostRequest) CSSCMSDataModelModelsEnrollmentCSREnrollmentRequest(cSSCMSDataModelModelsEnrollmentCSREnrollmentRequest CSSCMSDataModelModelsEnrollmentCSREnrollmentRequest) ApiEnrollmentCSRPostRequest {
-	r.cSSCMSDataModelModelsEnrollmentCSREnrollmentRequest = &cSSCMSDataModelModelsEnrollmentCSREnrollmentRequest
+func (r ApiEnrollmentCSRPostRequest) ModelsEnrollmentCSREnrollmentRequest(modelsEnrollmentCSREnrollmentRequest ModelsEnrollmentCSREnrollmentRequest) ApiEnrollmentCSRPostRequest {
+	r.modelsEnrollmentCSREnrollmentRequest = &modelsEnrollmentCSREnrollmentRequest
 	return r
 }
 
-func (r ApiEnrollmentCSRPostRequest) Execute() (*CSSCMSDataModelModelsEnrollmentCSREnrollmentResponse, *http.Response, error) {
+func (r ApiEnrollmentCSRPostRequest) Execute() (*ModelsEnrollmentCSREnrollmentResponse, *http.Response, error) {
 	return r.ApiService.EnrollmentCSRPostExecute(r)
 }
 
@@ -648,13 +648,13 @@ func (a *EnrollmentApiService) EnrollmentCSRPost(ctx context.Context) ApiEnrollm
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsEnrollmentCSREnrollmentResponse
-func (a *EnrollmentApiService) EnrollmentCSRPostExecute(r ApiEnrollmentCSRPostRequest) (*CSSCMSDataModelModelsEnrollmentCSREnrollmentResponse, *http.Response, error) {
+//	@return ModelsEnrollmentCSREnrollmentResponse
+func (a *EnrollmentApiService) EnrollmentCSRPostExecute(r ApiEnrollmentCSRPostRequest) (*ModelsEnrollmentCSREnrollmentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsEnrollmentCSREnrollmentResponse
+		localVarReturnValue *ModelsEnrollmentCSREnrollmentResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -693,7 +693,7 @@ func (a *EnrollmentApiService) EnrollmentCSRPostExecute(r ApiEnrollmentCSRPostRe
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsEnrollmentCSREnrollmentRequest
+	localVarPostBody = r.modelsEnrollmentCSREnrollmentRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -989,11 +989,11 @@ func (a *EnrollmentApiService) EnrollmentPFXDeployPostExecute(r ApiEnrollmentPFX
 }
 
 type ApiEnrollmentPFXPostRequest struct {
-	ctx                                                 context.Context
-	ApiService                                          *EnrollmentApiService
-	xKeyfactorRequestedWith                             *string
-	xKeyfactorApiVersion                                *string
-	cSSCMSDataModelModelsEnrollmentPFXEnrollmentRequest *CSSCMSDataModelModelsEnrollmentPFXEnrollmentRequest
+	ctx                                  context.Context
+	ApiService                           *EnrollmentApiService
+	xKeyfactorRequestedWith              *string
+	xKeyfactorApiVersion                 *string
+	modelsEnrollmentPFXEnrollmentRequest *ModelsEnrollmentPFXEnrollmentRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1009,12 +1009,12 @@ func (r ApiEnrollmentPFXPostRequest) XKeyfactorApiVersion(xKeyfactorApiVersion s
 }
 
 // The information needed to perform the PFX Enrollment
-func (r ApiEnrollmentPFXPostRequest) CSSCMSDataModelModelsEnrollmentPFXEnrollmentRequest(cSSCMSDataModelModelsEnrollmentPFXEnrollmentRequest CSSCMSDataModelModelsEnrollmentPFXEnrollmentRequest) ApiEnrollmentPFXPostRequest {
-	r.cSSCMSDataModelModelsEnrollmentPFXEnrollmentRequest = &cSSCMSDataModelModelsEnrollmentPFXEnrollmentRequest
+func (r ApiEnrollmentPFXPostRequest) ModelsEnrollmentPFXEnrollmentRequest(modelsEnrollmentPFXEnrollmentRequest ModelsEnrollmentPFXEnrollmentRequest) ApiEnrollmentPFXPostRequest {
+	r.modelsEnrollmentPFXEnrollmentRequest = &modelsEnrollmentPFXEnrollmentRequest
 	return r
 }
 
-func (r ApiEnrollmentPFXPostRequest) Execute() (*CSSCMSDataModelModelsEnrollmentPFXEnrollmentResponse, *http.Response, error) {
+func (r ApiEnrollmentPFXPostRequest) Execute() (*ModelsEnrollmentPFXEnrollmentResponse, *http.Response, error) {
 	return r.ApiService.EnrollmentPFXPostExecute(r)
 }
 
@@ -1058,13 +1058,13 @@ func (a *EnrollmentApiService) EnrollmentPFXPost(ctx context.Context) ApiEnrollm
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsEnrollmentPFXEnrollmentResponse
-func (a *EnrollmentApiService) EnrollmentPFXPostExecute(r ApiEnrollmentPFXPostRequest) (*CSSCMSDataModelModelsEnrollmentPFXEnrollmentResponse, *http.Response, error) {
+//	@return ModelsEnrollmentPFXEnrollmentResponse
+func (a *EnrollmentApiService) EnrollmentPFXPostExecute(r ApiEnrollmentPFXPostRequest) (*ModelsEnrollmentPFXEnrollmentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsEnrollmentPFXEnrollmentResponse
+		localVarReturnValue *ModelsEnrollmentPFXEnrollmentResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -1103,7 +1103,7 @@ func (a *EnrollmentApiService) EnrollmentPFXPostExecute(r ApiEnrollmentPFXPostRe
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsEnrollmentPFXEnrollmentRequest
+	localVarPostBody = r.modelsEnrollmentPFXEnrollmentRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1142,11 +1142,11 @@ func (a *EnrollmentApiService) EnrollmentPFXPostExecute(r ApiEnrollmentPFXPostRe
 }
 
 type ApiEnrollmentPFXReplacePostRequest struct {
-	ctx                                                                context.Context
-	ApiService                                                         *EnrollmentApiService
-	xKeyfactorRequestedWith                                            *string
-	xKeyfactorApiVersion                                               *string
-	cSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest *CSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest
+	ctx                                                 context.Context
+	ApiService                                          *EnrollmentApiService
+	xKeyfactorRequestedWith                             *string
+	xKeyfactorApiVersion                                *string
+	modelsEnrollmentExistingEnrollmentManagementRequest *ModelsEnrollmentExistingEnrollmentManagementRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1162,8 +1162,8 @@ func (r ApiEnrollmentPFXReplacePostRequest) XKeyfactorApiVersion(xKeyfactorApiVe
 }
 
 // The request to create the management jobs, which includes the request Id of the new pfx and the Id of the existing certificate
-func (r ApiEnrollmentPFXReplacePostRequest) CSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest(cSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest CSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest) ApiEnrollmentPFXReplacePostRequest {
-	r.cSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest = &cSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest
+func (r ApiEnrollmentPFXReplacePostRequest) ModelsEnrollmentExistingEnrollmentManagementRequest(modelsEnrollmentExistingEnrollmentManagementRequest ModelsEnrollmentExistingEnrollmentManagementRequest) ApiEnrollmentPFXReplacePostRequest {
+	r.modelsEnrollmentExistingEnrollmentManagementRequest = &modelsEnrollmentExistingEnrollmentManagementRequest
 	return r
 }
 
@@ -1236,7 +1236,7 @@ func (a *EnrollmentApiService) EnrollmentPFXReplacePostExecute(r ApiEnrollmentPF
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest
+	localVarPostBody = r.modelsEnrollmentExistingEnrollmentManagementRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1275,12 +1275,12 @@ func (a *EnrollmentApiService) EnrollmentPFXReplacePostExecute(r ApiEnrollmentPF
 }
 
 type ApiEnrollmentRenewPostRequest struct {
-	ctx                                           context.Context
-	ApiService                                    *EnrollmentApiService
-	xKeyfactorRequestedWith                       *string
-	collectionId                                  *int32
-	xKeyfactorApiVersion                          *string
-	cSSCMSDataModelModelsEnrollmentRenewalRequest *CSSCMSDataModelModelsEnrollmentRenewalRequest
+	ctx                            context.Context
+	ApiService                     *EnrollmentApiService
+	xKeyfactorRequestedWith        *string
+	collectionId                   *int32
+	xKeyfactorApiVersion           *string
+	modelsEnrollmentRenewalRequest *ModelsEnrollmentRenewalRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1302,12 +1302,12 @@ func (r ApiEnrollmentRenewPostRequest) XKeyfactorApiVersion(xKeyfactorApiVersion
 }
 
 // The information needed to perform the renewal
-func (r ApiEnrollmentRenewPostRequest) CSSCMSDataModelModelsEnrollmentRenewalRequest(cSSCMSDataModelModelsEnrollmentRenewalRequest CSSCMSDataModelModelsEnrollmentRenewalRequest) ApiEnrollmentRenewPostRequest {
-	r.cSSCMSDataModelModelsEnrollmentRenewalRequest = &cSSCMSDataModelModelsEnrollmentRenewalRequest
+func (r ApiEnrollmentRenewPostRequest) ModelsEnrollmentRenewalRequest(modelsEnrollmentRenewalRequest ModelsEnrollmentRenewalRequest) ApiEnrollmentRenewPostRequest {
+	r.modelsEnrollmentRenewalRequest = &modelsEnrollmentRenewalRequest
 	return r
 }
 
-func (r ApiEnrollmentRenewPostRequest) Execute() (*CSSCMSDataModelModelsEnrollmentRenewalResponse, *http.Response, error) {
+func (r ApiEnrollmentRenewPostRequest) Execute() (*ModelsEnrollmentRenewalResponse, *http.Response, error) {
 	return r.ApiService.EnrollmentRenewPostExecute(r)
 }
 
@@ -1331,13 +1331,13 @@ func (a *EnrollmentApiService) EnrollmentRenewPost(ctx context.Context) ApiEnrol
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsEnrollmentRenewalResponse
-func (a *EnrollmentApiService) EnrollmentRenewPostExecute(r ApiEnrollmentRenewPostRequest) (*CSSCMSDataModelModelsEnrollmentRenewalResponse, *http.Response, error) {
+//	@return ModelsEnrollmentRenewalResponse
+func (a *EnrollmentApiService) EnrollmentRenewPostExecute(r ApiEnrollmentRenewPostRequest) (*ModelsEnrollmentRenewalResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsEnrollmentRenewalResponse
+		localVarReturnValue *ModelsEnrollmentRenewalResponse
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -1379,7 +1379,7 @@ func (a *EnrollmentApiService) EnrollmentRenewPostExecute(r ApiEnrollmentRenewPo
 	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.cSSCMSDataModelModelsEnrollmentRenewalRequest
+	localVarPostBody = r.modelsEnrollmentRenewalRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## SSHLogonsAccessPost
 
-> CSSCMSDataModelModelsSSHAccessLogonUserAccessResponse SSHLogonsAccessPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHLogonsLogonAccessRequest(cSSCMSDataModelModelsSSHLogonsLogonAccessRequest).Execute()
+> ModelsSSHAccessLogonUserAccessResponse SSHLogonsAccessPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHLogonsLogonAccessRequest(modelsSSHLogonsLogonAccessRequest).Execute()
 
 Updates the users with access to an existing logon
 
@@ -33,16 +33,16 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsSSHLogonsLogonAccessRequest := *openapiclient.NewCSSCMSDataModelModelsSSHLogonsLogonAccessRequest(int32(123)) // CSSCMSDataModelModelsSSHLogonsLogonAccessRequest | Users to add the existing logon (optional)
+    modelsSSHLogonsLogonAccessRequest := *openapiclient.NewModelsSSHLogonsLogonAccessRequest(int32(123)) // ModelsSSHLogonsLogonAccessRequest | Users to add the existing logon (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogonApi.SSHLogonsAccessPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHLogonsLogonAccessRequest(cSSCMSDataModelModelsSSHLogonsLogonAccessRequest).Execute()
+    resp, r, err := apiClient.LogonApi.SSHLogonsAccessPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHLogonsLogonAccessRequest(modelsSSHLogonsLogonAccessRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LogonApi.SSHLogonsAccessPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHLogonsAccessPost`: CSSCMSDataModelModelsSSHAccessLogonUserAccessResponse
+    // response from `SSHLogonsAccessPost`: ModelsSSHAccessLogonUserAccessResponse
     fmt.Fprintf(os.Stdout, "Response from `LogonApi.SSHLogonsAccessPost`: %v\n", resp)
 }
 ```
@@ -60,11 +60,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsSSHLogonsLogonAccessRequest** | [**CSSCMSDataModelModelsSSHLogonsLogonAccessRequest**](CSSCMSDataModelModelsSSHLogonsLogonAccessRequest.md) | Users to add the existing logon | 
+ **modelsSSHLogonsLogonAccessRequest** | [**ModelsSSHLogonsLogonAccessRequest**](ModelsSSHLogonsLogonAccessRequest.md) | Users to add the existing logon | 
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHAccessLogonUserAccessResponse**](CSSCMSDataModelModelsSSHAccessLogonUserAccessResponse.md)
+[**ModelsSSHAccessLogonUserAccessResponse**](ModelsSSHAccessLogonUserAccessResponse.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## SSHLogonsGet
 
-> []CSSCMSDataModelModelsSSHLogonsLogonQueryResponse SSHLogonsGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsSSHLogonsLogonQueryResponse SSHLogonsGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all Logons according to the provided filter parameters
 
@@ -104,7 +104,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -114,7 +114,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `LogonApi.SSHLogonsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHLogonsGet`: []CSSCMSDataModelModelsSSHLogonsLogonQueryResponse
+    // response from `SSHLogonsGet`: []ModelsSSHLogonsLogonQueryResponse
     fmt.Fprintf(os.Stdout, "Response from `LogonApi.SSHLogonsGet`: %v\n", resp)
 }
 ```
@@ -135,12 +135,12 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsSSHLogonsLogonQueryResponse**](CSSCMSDataModelModelsSSHLogonsLogonQueryResponse.md)
+[**[]ModelsSSHLogonsLogonQueryResponse**](ModelsSSHLogonsLogonQueryResponse.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ## SSHLogonsIdGet
 
-> CSSCMSDataModelModelsSSHLogonsLogonResponse SSHLogonsIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ModelsSSHLogonsLogonResponse SSHLogonsIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Fetches a Logon associated with the provided identifier
 
@@ -256,7 +256,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `LogonApi.SSHLogonsIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHLogonsIdGet`: CSSCMSDataModelModelsSSHLogonsLogonResponse
+    // response from `SSHLogonsIdGet`: ModelsSSHLogonsLogonResponse
     fmt.Fprintf(os.Stdout, "Response from `LogonApi.SSHLogonsIdGet`: %v\n", resp)
 }
 ```
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHLogonsLogonResponse**](CSSCMSDataModelModelsSSHLogonsLogonResponse.md)
+[**ModelsSSHLogonsLogonResponse**](ModelsSSHLogonsLogonResponse.md)
 
 ### Authorization
 
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ## SSHLogonsPost
 
-> CSSCMSDataModelModelsSSHLogonsLogonResponse SSHLogonsPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHLogonsLogonCreationRequest(cSSCMSDataModelModelsSSHLogonsLogonCreationRequest).Execute()
+> ModelsSSHLogonsLogonResponse SSHLogonsPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHLogonsLogonCreationRequest(modelsSSHLogonsLogonCreationRequest).Execute()
 
 Creates a logon with the provided properties
 
@@ -319,16 +319,16 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsSSHLogonsLogonCreationRequest := *openapiclient.NewCSSCMSDataModelModelsSSHLogonsLogonCreationRequest("Username_example", int32(123)) // CSSCMSDataModelModelsSSHLogonsLogonCreationRequest | Logon properties to be applied to the new logon (optional)
+    modelsSSHLogonsLogonCreationRequest := *openapiclient.NewModelsSSHLogonsLogonCreationRequest("Username_example", int32(123)) // ModelsSSHLogonsLogonCreationRequest | Logon properties to be applied to the new logon (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogonApi.SSHLogonsPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHLogonsLogonCreationRequest(cSSCMSDataModelModelsSSHLogonsLogonCreationRequest).Execute()
+    resp, r, err := apiClient.LogonApi.SSHLogonsPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSHLogonsLogonCreationRequest(modelsSSHLogonsLogonCreationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LogonApi.SSHLogonsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSHLogonsPost`: CSSCMSDataModelModelsSSHLogonsLogonResponse
+    // response from `SSHLogonsPost`: ModelsSSHLogonsLogonResponse
     fmt.Fprintf(os.Stdout, "Response from `LogonApi.SSHLogonsPost`: %v\n", resp)
 }
 ```
@@ -346,11 +346,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsSSHLogonsLogonCreationRequest** | [**CSSCMSDataModelModelsSSHLogonsLogonCreationRequest**](CSSCMSDataModelModelsSSHLogonsLogonCreationRequest.md) | Logon properties to be applied to the new logon | 
+ **modelsSSHLogonsLogonCreationRequest** | [**ModelsSSHLogonsLogonCreationRequest**](ModelsSSHLogonsLogonCreationRequest.md) | Logon properties to be applied to the new logon | 
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSHLogonsLogonResponse**](CSSCMSDataModelModelsSSHLogonsLogonResponse.md)
+[**ModelsSSHLogonsLogonResponse**](ModelsSSHLogonsLogonResponse.md)
 
 ### Authorization
 

@@ -41,7 +41,7 @@ type ApiCertificateCollectionsCollectionListGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -71,7 +71,7 @@ func (r ApiCertificateCollectionsCollectionListGetRequest) SortField(sortField s
 	return r
 }
 
-func (r ApiCertificateCollectionsCollectionListGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiCertificateCollectionsCollectionListGetRequest {
+func (r ApiCertificateCollectionsCollectionListGetRequest) SortAscending(sortAscending int32) ApiCertificateCollectionsCollectionListGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -351,7 +351,7 @@ type ApiCertificateCollectionsGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -381,7 +381,7 @@ func (r ApiCertificateCollectionsGetRequest) SortField(sortField string) ApiCert
 	return r
 }
 
-func (r ApiCertificateCollectionsGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiCertificateCollectionsGetRequest {
+func (r ApiCertificateCollectionsGetRequest) SortAscending(sortAscending int32) ApiCertificateCollectionsGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }
@@ -392,7 +392,7 @@ func (r ApiCertificateCollectionsGetRequest) XKeyfactorApiVersion(xKeyfactorApiV
 	return r
 }
 
-func (r ApiCertificateCollectionsGetRequest) Execute() ([]CSSCMSDataModelModelsCertificateQuery, *http.Response, error) {
+func (r ApiCertificateCollectionsGetRequest) Execute() ([]ModelsCertificateQuery, *http.Response, error) {
 	return r.ApiService.CertificateCollectionsGetExecute(r)
 }
 
@@ -416,13 +416,13 @@ func (a *CertificateCollectionApiService) CertificateCollectionsGet(ctx context.
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsCertificateQuery
-func (a *CertificateCollectionApiService) CertificateCollectionsGetExecute(r ApiCertificateCollectionsGetRequest) ([]CSSCMSDataModelModelsCertificateQuery, *http.Response, error) {
+//	@return []ModelsCertificateQuery
+func (a *CertificateCollectionApiService) CertificateCollectionsGetExecute(r ApiCertificateCollectionsGetRequest) ([]ModelsCertificateQuery, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsCertificateQuery
+		localVarReturnValue []ModelsCertificateQuery
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -779,7 +779,7 @@ func (r ApiCertificateCollectionsIdGetRequest) XKeyfactorApiVersion(xKeyfactorAp
 	return r
 }
 
-func (r ApiCertificateCollectionsIdGetRequest) Execute() (*CSSCMSDataModelModelsCertificateQuery, *http.Response, error) {
+func (r ApiCertificateCollectionsIdGetRequest) Execute() (*ModelsCertificateQuery, *http.Response, error) {
 	return r.ApiService.CertificateCollectionsIdGetExecute(r)
 }
 
@@ -805,13 +805,13 @@ func (a *CertificateCollectionApiService) CertificateCollectionsIdGet(ctx contex
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsCertificateQuery
-func (a *CertificateCollectionApiService) CertificateCollectionsIdGetExecute(r ApiCertificateCollectionsIdGetRequest) (*CSSCMSDataModelModelsCertificateQuery, *http.Response, error) {
+//	@return ModelsCertificateQuery
+func (a *CertificateCollectionApiService) CertificateCollectionsIdGetExecute(r ApiCertificateCollectionsIdGetRequest) (*ModelsCertificateQuery, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsCertificateQuery
+		localVarReturnValue *ModelsCertificateQuery
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -907,7 +907,7 @@ func (r ApiCertificateCollectionsNameGetRequest) XKeyfactorApiVersion(xKeyfactor
 	return r
 }
 
-func (r ApiCertificateCollectionsNameGetRequest) Execute() (*CSSCMSDataModelModelsCertificateQuery, *http.Response, error) {
+func (r ApiCertificateCollectionsNameGetRequest) Execute() (*ModelsCertificateQuery, *http.Response, error) {
 	return r.ApiService.CertificateCollectionsNameGetExecute(r)
 }
 
@@ -933,13 +933,13 @@ func (a *CertificateCollectionApiService) CertificateCollectionsNameGet(ctx cont
 
 // Execute executes the request
 //
-//	@return CSSCMSDataModelModelsCertificateQuery
-func (a *CertificateCollectionApiService) CertificateCollectionsNameGetExecute(r ApiCertificateCollectionsNameGetRequest) (*CSSCMSDataModelModelsCertificateQuery, *http.Response, error) {
+//	@return ModelsCertificateQuery
+func (a *CertificateCollectionApiService) CertificateCollectionsNameGetExecute(r ApiCertificateCollectionsNameGetRequest) (*ModelsCertificateQuery, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CSSCMSDataModelModelsCertificateQuery
+		localVarReturnValue *ModelsCertificateQuery
 	)
 
 	apiBasePath := a.client.cfg.APIPath
@@ -1034,7 +1034,7 @@ func (r ApiCertificateCollectionsNavItemsGetRequest) XKeyfactorApiVersion(xKeyfa
 	return r
 }
 
-func (r ApiCertificateCollectionsNavItemsGetRequest) Execute() ([]CSSCMSDataModelModelsCertificateCollectionNavItem, *http.Response, error) {
+func (r ApiCertificateCollectionsNavItemsGetRequest) Execute() ([]ModelsCertificateCollectionNavItem, *http.Response, error) {
 	return r.ApiService.CertificateCollectionsNavItemsGetExecute(r)
 }
 
@@ -1058,13 +1058,13 @@ func (a *CertificateCollectionApiService) CertificateCollectionsNavItemsGet(ctx 
 
 // Execute executes the request
 //
-//	@return []CSSCMSDataModelModelsCertificateCollectionNavItem
-func (a *CertificateCollectionApiService) CertificateCollectionsNavItemsGetExecute(r ApiCertificateCollectionsNavItemsGetRequest) ([]CSSCMSDataModelModelsCertificateCollectionNavItem, *http.Response, error) {
+//	@return []ModelsCertificateCollectionNavItem
+func (a *CertificateCollectionApiService) CertificateCollectionsNavItemsGetExecute(r ApiCertificateCollectionsNavItemsGetRequest) ([]ModelsCertificateCollectionNavItem, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsCertificateCollectionNavItem
+		localVarReturnValue []ModelsCertificateCollectionNavItem
 	)
 
 	apiBasePath := a.client.cfg.APIPath

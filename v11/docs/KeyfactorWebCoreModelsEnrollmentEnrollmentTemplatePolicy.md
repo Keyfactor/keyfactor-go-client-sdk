@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**KeyInfo** | Pointer to [**CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo**](CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo.md) |  | [optional] 
+**KeyInfo** | Pointer to [**ModelsTemplatesAlgorithmsKeyInfo**](ModelsTemplatesAlgorithmsKeyInfo.md) |  | [optional] 
 **AllowKeyReuse** | Pointer to **bool** |  | [optional] 
 **AllowWildcards** | Pointer to **bool** |  | [optional] 
 **RfcEnforcement** | Pointer to **bool** |  | [optional] 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetKeyInfo
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetKeyInfo() CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetKeyInfo() ModelsTemplatesAlgorithmsKeyInfo`
 
 GetKeyInfo returns the KeyInfo field if non-nil, zero value otherwise.
 
 ### GetKeyInfoOk
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetKeyInfoOk() (*CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo, bool)`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetKeyInfoOk() (*ModelsTemplatesAlgorithmsKeyInfo, bool)`
 
 GetKeyInfoOk returns a tuple with the KeyInfo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyInfo
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) SetKeyInfo(v CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo)`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) SetKeyInfo(v ModelsTemplatesAlgorithmsKeyInfo)`
 
 SetKeyInfo sets KeyInfo field to given value.
 

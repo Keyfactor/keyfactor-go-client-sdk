@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 ## SSLEndpointsIdGet
 
-> CSSCMSDataModelModelsSSLEndpoint SSLEndpointsIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ModelsSSLEndpoint SSLEndpointsIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns the details of the associated scanning endpoint
 
@@ -58,7 +58,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.SSLEndpointsIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSLEndpointsIdGet`: CSSCMSDataModelModelsSSLEndpoint
+    // response from `SSLEndpointsIdGet`: ModelsSSLEndpoint
     fmt.Fprintf(os.Stdout, "Response from `SslApi.SSLEndpointsIdGet`: %v\n", resp)
 }
 ```
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSLEndpoint**](CSSCMSDataModelModelsSSLEndpoint.md)
+[**ModelsSSLEndpoint**](ModelsSSLEndpoint.md)
 
 ### Authorization
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ## SSLEndpointsIdHistoryGet
 
-> []CSSCMSDataModelModelsSSLEndpointHistoryResponse SSLEndpointsIdHistoryGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsSSLEndpointHistoryResponse SSLEndpointsIdHistoryGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a list of the scan results for the provided endpoint according to the provided filter and output parameters
 
@@ -125,7 +125,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -135,7 +135,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.SSLEndpointsIdHistoryGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSLEndpointsIdHistoryGet`: []CSSCMSDataModelModelsSSLEndpointHistoryResponse
+    // response from `SSLEndpointsIdHistoryGet`: []ModelsSSLEndpointHistoryResponse
     fmt.Fprintf(os.Stdout, "Response from `SslApi.SSLEndpointsIdHistoryGet`: %v\n", resp)
 }
 ```
@@ -161,12 +161,12 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsSSLEndpointHistoryResponse**](CSSCMSDataModelModelsSSLEndpointHistoryResponse.md)
+[**[]ModelsSSLEndpointHistoryResponse**](ModelsSSLEndpointHistoryResponse.md)
 
 ### Authorization
 
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 
 ## SSLEndpointsMonitorStatusPut
 
-> SSLEndpointsMonitorStatusPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLEndpointStatusRequest(cSSCMSDataModelModelsSSLEndpointStatusRequest).Execute()
+> SSLEndpointsMonitorStatusPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSLEndpointStatusRequest(modelsSSLEndpointStatusRequest).Execute()
 
 Sets the monitored status according to the provided endpoint and boolean status
 
@@ -269,11 +269,11 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsSSLEndpointStatusRequest := []openapiclient.CSSCMSDataModelModelsSSLEndpointStatusRequest{*openapiclient.NewCSSCMSDataModelModelsSSLEndpointStatusRequest("Id_example", false)} // []CSSCMSDataModelModelsSSLEndpointStatusRequest | Endpoints and statuses to be set for each (optional)
+    modelsSSLEndpointStatusRequest := []openapiclient.ModelsSSLEndpointStatusRequest{*openapiclient.NewModelsSSLEndpointStatusRequest("Id_example", false)} // []ModelsSSLEndpointStatusRequest | Endpoints and statuses to be set for each (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.SSLEndpointsMonitorStatusPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLEndpointStatusRequest(cSSCMSDataModelModelsSSLEndpointStatusRequest).Execute()
+    resp, r, err := apiClient.SslApi.SSLEndpointsMonitorStatusPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSLEndpointStatusRequest(modelsSSLEndpointStatusRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.SSLEndpointsMonitorStatusPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsSSLEndpointStatusRequest** | [**[]CSSCMSDataModelModelsSSLEndpointStatusRequest**](CSSCMSDataModelModelsSSLEndpointStatusRequest.md) | Endpoints and statuses to be set for each | 
+ **modelsSSLEndpointStatusRequest** | [**[]ModelsSSLEndpointStatusRequest**](ModelsSSLEndpointStatusRequest.md) | Endpoints and statuses to be set for each | 
 
 ### Return type
 
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 
 ## SSLEndpointsReviewStatusPut
 
-> SSLEndpointsReviewStatusPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLEndpointStatusRequest(cSSCMSDataModelModelsSSLEndpointStatusRequest).Execute()
+> SSLEndpointsReviewStatusPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSLEndpointStatusRequest(modelsSSLEndpointStatusRequest).Execute()
 
 Sets the reviewed status according to the provided endpoint and boolean status
 
@@ -401,11 +401,11 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsSSLEndpointStatusRequest := []openapiclient.CSSCMSDataModelModelsSSLEndpointStatusRequest{*openapiclient.NewCSSCMSDataModelModelsSSLEndpointStatusRequest("Id_example", false)} // []CSSCMSDataModelModelsSSLEndpointStatusRequest | Endpoints and statuses for each (optional)
+    modelsSSLEndpointStatusRequest := []openapiclient.ModelsSSLEndpointStatusRequest{*openapiclient.NewModelsSSLEndpointStatusRequest("Id_example", false)} // []ModelsSSLEndpointStatusRequest | Endpoints and statuses for each (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.SSLEndpointsReviewStatusPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLEndpointStatusRequest(cSSCMSDataModelModelsSSLEndpointStatusRequest).Execute()
+    resp, r, err := apiClient.SslApi.SSLEndpointsReviewStatusPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSLEndpointStatusRequest(modelsSSLEndpointStatusRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.SSLEndpointsReviewStatusPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -426,7 +426,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsSSLEndpointStatusRequest** | [**[]CSSCMSDataModelModelsSSLEndpointStatusRequest**](CSSCMSDataModelModelsSSLEndpointStatusRequest.md) | Endpoints and statuses for each | 
+ **modelsSSLEndpointStatusRequest** | [**[]ModelsSSLEndpointStatusRequest**](ModelsSSLEndpointStatusRequest.md) | Endpoints and statuses for each | 
 
 ### Return type
 
@@ -448,7 +448,7 @@ Name | Type | Description  | Notes
 
 ## SSLGet
 
-> []CSSCMSDataModelModelsSSLSslScanResult SSLGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsSSLSslScanResult SSLGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a list of the endpoint scan results according to the provided filter and output parameters
 
@@ -470,7 +470,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -480,7 +480,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.SSLGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSLGet`: []CSSCMSDataModelModelsSSLSslScanResult
+    // response from `SSLGet`: []ModelsSSLSslScanResult
     fmt.Fprintf(os.Stdout, "Response from `SslApi.SSLGet`: %v\n", resp)
 }
 ```
@@ -501,12 +501,12 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsSSLSslScanResult**](CSSCMSDataModelModelsSSLSslScanResult.md)
+[**[]ModelsSSLSslScanResult**](ModelsSSLSslScanResult.md)
 
 ### Authorization
 
@@ -594,7 +594,7 @@ Name | Type | Description  | Notes
 
 ## SSLNetworkRangesIdGet
 
-> []CSSCMSDataModelModelsSSLNetworkDefinition SSLNetworkRangesIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsSSLNetworkDefinition SSLNetworkRangesIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns the network range definitions for the provided network definition
 
@@ -622,7 +622,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.SSLNetworkRangesIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSLNetworkRangesIdGet`: []CSSCMSDataModelModelsSSLNetworkDefinition
+    // response from `SSLNetworkRangesIdGet`: []ModelsSSLNetworkDefinition
     fmt.Fprintf(os.Stdout, "Response from `SslApi.SSLNetworkRangesIdGet`: %v\n", resp)
 }
 ```
@@ -648,7 +648,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsSSLNetworkDefinition**](CSSCMSDataModelModelsSSLNetworkDefinition.md)
+[**[]ModelsSSLNetworkDefinition**](ModelsSSLNetworkDefinition.md)
 
 ### Authorization
 
@@ -666,7 +666,7 @@ Name | Type | Description  | Notes
 
 ## SSLNetworkRangesPost
 
-> SSLNetworkRangesPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLNetworkRangesRequest(cSSCMSDataModelModelsSSLNetworkRangesRequest).Execute()
+> SSLNetworkRangesPost(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSLNetworkRangesRequest(modelsSSLNetworkRangesRequest).Execute()
 
 Adds the provided network range definitions to the associated network definition
 
@@ -685,11 +685,11 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsSSLNetworkRangesRequest := *openapiclient.NewCSSCMSDataModelModelsSSLNetworkRangesRequest("NetworkId_example", []string{"Ranges_example"}) // CSSCMSDataModelModelsSSLNetworkRangesRequest | Network definition identifier and the ranges to be added (optional)
+    modelsSSLNetworkRangesRequest := *openapiclient.NewModelsSSLNetworkRangesRequest("NetworkId_example", []string{"Ranges_example"}) // ModelsSSLNetworkRangesRequest | Network definition identifier and the ranges to be added (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.SSLNetworkRangesPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLNetworkRangesRequest(cSSCMSDataModelModelsSSLNetworkRangesRequest).Execute()
+    resp, r, err := apiClient.SslApi.SSLNetworkRangesPost(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSLNetworkRangesRequest(modelsSSLNetworkRangesRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.SSLNetworkRangesPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -710,7 +710,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsSSLNetworkRangesRequest** | [**CSSCMSDataModelModelsSSLNetworkRangesRequest**](CSSCMSDataModelModelsSSLNetworkRangesRequest.md) | Network definition identifier and the ranges to be added | 
+ **modelsSSLNetworkRangesRequest** | [**ModelsSSLNetworkRangesRequest**](ModelsSSLNetworkRangesRequest.md) | Network definition identifier and the ranges to be added | 
 
 ### Return type
 
@@ -732,7 +732,7 @@ Name | Type | Description  | Notes
 
 ## SSLNetworkRangesPut
 
-> SSLNetworkRangesPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLNetworkRangesRequest(cSSCMSDataModelModelsSSLNetworkRangesRequest).Execute()
+> SSLNetworkRangesPut(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSLNetworkRangesRequest(modelsSSLNetworkRangesRequest).Execute()
 
 Configures network range definitions for the provided network
 
@@ -751,11 +751,11 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsSSLNetworkRangesRequest := *openapiclient.NewCSSCMSDataModelModelsSSLNetworkRangesRequest("NetworkId_example", []string{"Ranges_example"}) // CSSCMSDataModelModelsSSLNetworkRangesRequest | Network range defitions and the network to which they should be set (optional)
+    modelsSSLNetworkRangesRequest := *openapiclient.NewModelsSSLNetworkRangesRequest("NetworkId_example", []string{"Ranges_example"}) // ModelsSSLNetworkRangesRequest | Network range defitions and the network to which they should be set (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.SSLNetworkRangesPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLNetworkRangesRequest(cSSCMSDataModelModelsSSLNetworkRangesRequest).Execute()
+    resp, r, err := apiClient.SslApi.SSLNetworkRangesPut(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSLNetworkRangesRequest(modelsSSLNetworkRangesRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.SSLNetworkRangesPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -776,7 +776,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsSSLNetworkRangesRequest** | [**CSSCMSDataModelModelsSSLNetworkRangesRequest**](CSSCMSDataModelModelsSSLNetworkRangesRequest.md) | Network range defitions and the network to which they should be set | 
+ **modelsSSLNetworkRangesRequest** | [**ModelsSSLNetworkRangesRequest**](ModelsSSLNetworkRangesRequest.md) | Network range defitions and the network to which they should be set | 
 
 ### Return type
 
@@ -886,7 +886,7 @@ func main() {
     pageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
     returnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
     sortField := "sortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder | Field sort direction [0=ascending, 1=descending] (optional)
+    sortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -917,7 +917,7 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** | The current page within the result set to be returned | 
  **returnLimit** | **int32** | Maximum number of records to be returned in a single call | 
  **sortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **sortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
@@ -1010,7 +1010,7 @@ Name | Type | Description  | Notes
 
 ## SSLNetworksIdPartsGet
 
-> []CSSCMSDataModelModelsSSLDisplayScanJobPart SSLNetworksIdPartsGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).JobType(jobType).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsSSLDisplayScanJobPart SSLNetworksIdPartsGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).JobType(jobType).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns the scan job components comprising the entire scan job to be executed
 
@@ -1029,12 +1029,12 @@ import (
 func main() {
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Keyfactor network definition identifier
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    jobType := openapiclient.Keyfactor.Orchestrators.Common.Enums.SslJobType(0) // KeyfactorOrchestratorsCommonEnumsSslJobType |  (optional)
+    jobType := int32(56) // int32 |  (optional)
     queryString := "queryString_example" // string |  (optional)
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -1044,7 +1044,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.SSLNetworksIdPartsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSLNetworksIdPartsGet`: []CSSCMSDataModelModelsSSLDisplayScanJobPart
+    // response from `SSLNetworksIdPartsGet`: []ModelsSSLDisplayScanJobPart
     fmt.Fprintf(os.Stdout, "Response from `SslApi.SSLNetworksIdPartsGet`: %v\n", resp)
 }
 ```
@@ -1066,17 +1066,17 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **jobType** | [**KeyfactorOrchestratorsCommonEnumsSslJobType**](KeyfactorOrchestratorsCommonEnumsSslJobType.md) |  | 
+ **jobType** | **int32** |  | 
  **queryString** | **string** |  | 
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsSSLDisplayScanJobPart**](CSSCMSDataModelModelsSSLDisplayScanJobPart.md)
+[**[]ModelsSSLDisplayScanJobPart**](ModelsSSLDisplayScanJobPart.md)
 
 ### Authorization
 
@@ -1164,7 +1164,7 @@ Name | Type | Description  | Notes
 
 ## SSLNetworksIdScanPost
 
-> SSLNetworksIdScanPost(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLImmediateSslScanRequest(cSSCMSDataModelModelsSSLImmediateSslScanRequest).Execute()
+> SSLNetworksIdScanPost(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSLImmediateSslScanRequest(modelsSSLImmediateSslScanRequest).Execute()
 
 Starts an SSL Scan for the network according to the associated network definition
 
@@ -1184,11 +1184,11 @@ func main() {
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Keyfactor network identifier
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    cSSCMSDataModelModelsSSLImmediateSslScanRequest := *openapiclient.NewCSSCMSDataModelModelsSSLImmediateSslScanRequest(false, false) // CSSCMSDataModelModelsSSLImmediateSslScanRequest | Request for an immediate SSL Scan (optional)
+    modelsSSLImmediateSslScanRequest := *openapiclient.NewModelsSSLImmediateSslScanRequest(false, false) // ModelsSSLImmediateSslScanRequest | Request for an immediate SSL Scan (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.SSLNetworksIdScanPost(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLImmediateSslScanRequest(cSSCMSDataModelModelsSSLImmediateSslScanRequest).Execute()
+    resp, r, err := apiClient.SslApi.SSLNetworksIdScanPost(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ModelsSSLImmediateSslScanRequest(modelsSSLImmediateSslScanRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.SSLNetworksIdScanPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1214,7 +1214,7 @@ Name | Type | Description  | Notes
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **cSSCMSDataModelModelsSSLImmediateSslScanRequest** | [**CSSCMSDataModelModelsSSLImmediateSslScanRequest**](CSSCMSDataModelModelsSSLImmediateSslScanRequest.md) | Request for an immediate SSL Scan | 
+ **modelsSSLImmediateSslScanRequest** | [**ModelsSSLImmediateSslScanRequest**](ModelsSSLImmediateSslScanRequest.md) | Request for an immediate SSL Scan | 
 
 ### Return type
 
@@ -1444,7 +1444,7 @@ Name | Type | Description  | Notes
 
 ## SSLPartsIdGet
 
-> CSSCMSDataModelModelsSSLScanJobPart SSLPartsIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ModelsSSLScanJobPart SSLPartsIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns the execution details of the associated network scan job part
 
@@ -1472,7 +1472,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.SSLPartsIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SSLPartsIdGet`: CSSCMSDataModelModelsSSLScanJobPart
+    // response from `SSLPartsIdGet`: ModelsSSLScanJobPart
     fmt.Fprintf(os.Stdout, "Response from `SslApi.SSLPartsIdGet`: %v\n", resp)
 }
 ```
@@ -1498,7 +1498,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsSSLScanJobPart**](CSSCMSDataModelModelsSSLScanJobPart.md)
+[**ModelsSSLScanJobPart**](ModelsSSLScanJobPart.md)
 
 ### Authorization
 

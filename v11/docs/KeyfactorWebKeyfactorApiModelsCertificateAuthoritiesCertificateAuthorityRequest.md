@@ -20,21 +20,21 @@ Name | Type | Description | Notes
 **FailureMax** | Pointer to **NullableInt32** |  | [optional] 
 **RfcEnforcement** | Pointer to **bool** |  | [optional] 
 **Properties** | Pointer to **NullableString** |  | [optional] 
-**AllowedEnrollmentTypes** | Pointer to [**CSSCMSCoreEnumsEnrollmentType**](CSSCMSCoreEnumsEnrollmentType.md) |  | [optional] 
-**KeyRetention** | Pointer to [**CSSCMSCoreEnumsKeyRetentionPolicy**](CSSCMSCoreEnumsKeyRetentionPolicy.md) |  | [optional] 
+**AllowedEnrollmentTypes** | Pointer to **int32** |  | [optional] 
+**KeyRetention** | Pointer to **int32** |  | [optional] 
 **KeyRetentionDays** | Pointer to **NullableInt32** |  | [optional] 
 **ExplicitCredentials** | Pointer to **bool** |  | [optional] 
 **SubscriberTerms** | Pointer to **bool** |  | [optional] 
 **ExplicitUser** | Pointer to **NullableString** |  | [optional] 
-**ExplicitPassword** | Pointer to [**CSSCMSDataModelModelsKeyfactorAPISecret**](CSSCMSDataModelModelsKeyfactorAPISecret.md) |  | [optional] 
+**ExplicitPassword** | Pointer to [**ModelsKeyfactorAPISecret**](ModelsKeyfactorAPISecret.md) |  | [optional] 
 **UseAllowedRequesters** | Pointer to **bool** |  | [optional] 
 **AllowedRequesters** | Pointer to **[]string** |  | [optional] 
 **FullScan** | Pointer to [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | [optional] 
 **IncrementalScan** | Pointer to [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | [optional] 
 **ThresholdCheck** | Pointer to [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | [optional] 
-**AuthCertificatePassword** | Pointer to [**CSSCMSDataModelModelsKeyfactorAPISecret**](CSSCMSDataModelModelsKeyfactorAPISecret.md) |  | [optional] 
-**AuthCertificate** | Pointer to [**CSSCMSDataModelModelsKeyfactorAPISecret**](CSSCMSDataModelModelsKeyfactorAPISecret.md) |  | [optional] 
-**CaType** | Pointer to [**CSSCMSCoreEnumsCertificateAuthorityType**](CSSCMSCoreEnumsCertificateAuthorityType.md) |  | [optional] 
+**AuthCertificatePassword** | Pointer to [**ModelsKeyfactorAPISecret**](ModelsKeyfactorAPISecret.md) |  | [optional] 
+**AuthCertificate** | Pointer to [**ModelsKeyfactorAPISecret**](ModelsKeyfactorAPISecret.md) |  | [optional] 
+**CaType** | Pointer to **int32** |  | [optional] 
 **EnforceUniqueDN** | Pointer to **bool** |  | [optional] 
 **AllowOneClickRenewals** | Pointer to **bool** |  | [optional] 
 **NewEndEntityOnRenewAndReissue** | Pointer to **bool** |  | [optional] 
@@ -550,20 +550,20 @@ HasProperties returns a boolean if a field has been set.
 UnsetProperties ensures that no value is present for Properties, not even an explicit nil
 ### GetAllowedEnrollmentTypes
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAllowedEnrollmentTypes() CSSCMSCoreEnumsEnrollmentType`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAllowedEnrollmentTypes() int32`
 
 GetAllowedEnrollmentTypes returns the AllowedEnrollmentTypes field if non-nil, zero value otherwise.
 
 ### GetAllowedEnrollmentTypesOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAllowedEnrollmentTypesOk() (*CSSCMSCoreEnumsEnrollmentType, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAllowedEnrollmentTypesOk() (*int32, bool)`
 
 GetAllowedEnrollmentTypesOk returns a tuple with the AllowedEnrollmentTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowedEnrollmentTypes
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetAllowedEnrollmentTypes(v CSSCMSCoreEnumsEnrollmentType)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetAllowedEnrollmentTypes(v int32)`
 
 SetAllowedEnrollmentTypes sets AllowedEnrollmentTypes field to given value.
 
@@ -575,20 +575,20 @@ HasAllowedEnrollmentTypes returns a boolean if a field has been set.
 
 ### GetKeyRetention
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetKeyRetention() CSSCMSCoreEnumsKeyRetentionPolicy`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetKeyRetention() int32`
 
 GetKeyRetention returns the KeyRetention field if non-nil, zero value otherwise.
 
 ### GetKeyRetentionOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetKeyRetentionOk() (*CSSCMSCoreEnumsKeyRetentionPolicy, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetKeyRetentionOk() (*int32, bool)`
 
 GetKeyRetentionOk returns a tuple with the KeyRetention field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyRetention
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetKeyRetention(v CSSCMSCoreEnumsKeyRetentionPolicy)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetKeyRetention(v int32)`
 
 SetKeyRetention sets KeyRetention field to given value.
 
@@ -720,20 +720,20 @@ HasExplicitUser returns a boolean if a field has been set.
 UnsetExplicitUser ensures that no value is present for ExplicitUser, not even an explicit nil
 ### GetExplicitPassword
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetExplicitPassword() CSSCMSDataModelModelsKeyfactorAPISecret`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetExplicitPassword() ModelsKeyfactorAPISecret`
 
 GetExplicitPassword returns the ExplicitPassword field if non-nil, zero value otherwise.
 
 ### GetExplicitPasswordOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetExplicitPasswordOk() (*CSSCMSDataModelModelsKeyfactorAPISecret, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetExplicitPasswordOk() (*ModelsKeyfactorAPISecret, bool)`
 
 GetExplicitPasswordOk returns a tuple with the ExplicitPassword field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExplicitPassword
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetExplicitPassword(v CSSCMSDataModelModelsKeyfactorAPISecret)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetExplicitPassword(v ModelsKeyfactorAPISecret)`
 
 SetExplicitPassword sets ExplicitPassword field to given value.
 
@@ -880,20 +880,20 @@ HasThresholdCheck returns a boolean if a field has been set.
 
 ### GetAuthCertificatePassword
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificatePassword() CSSCMSDataModelModelsKeyfactorAPISecret`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificatePassword() ModelsKeyfactorAPISecret`
 
 GetAuthCertificatePassword returns the AuthCertificatePassword field if non-nil, zero value otherwise.
 
 ### GetAuthCertificatePasswordOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificatePasswordOk() (*CSSCMSDataModelModelsKeyfactorAPISecret, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificatePasswordOk() (*ModelsKeyfactorAPISecret, bool)`
 
 GetAuthCertificatePasswordOk returns a tuple with the AuthCertificatePassword field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthCertificatePassword
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetAuthCertificatePassword(v CSSCMSDataModelModelsKeyfactorAPISecret)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetAuthCertificatePassword(v ModelsKeyfactorAPISecret)`
 
 SetAuthCertificatePassword sets AuthCertificatePassword field to given value.
 
@@ -905,20 +905,20 @@ HasAuthCertificatePassword returns a boolean if a field has been set.
 
 ### GetAuthCertificate
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificate() CSSCMSDataModelModelsKeyfactorAPISecret`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificate() ModelsKeyfactorAPISecret`
 
 GetAuthCertificate returns the AuthCertificate field if non-nil, zero value otherwise.
 
 ### GetAuthCertificateOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificateOk() (*CSSCMSDataModelModelsKeyfactorAPISecret, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificateOk() (*ModelsKeyfactorAPISecret, bool)`
 
 GetAuthCertificateOk returns a tuple with the AuthCertificate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthCertificate
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetAuthCertificate(v CSSCMSDataModelModelsKeyfactorAPISecret)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetAuthCertificate(v ModelsKeyfactorAPISecret)`
 
 SetAuthCertificate sets AuthCertificate field to given value.
 
@@ -930,20 +930,20 @@ HasAuthCertificate returns a boolean if a field has been set.
 
 ### GetCaType
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetCaType() CSSCMSCoreEnumsCertificateAuthorityType`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetCaType() int32`
 
 GetCaType returns the CaType field if non-nil, zero value otherwise.
 
 ### GetCaTypeOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetCaTypeOk() (*CSSCMSCoreEnumsCertificateAuthorityType, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetCaTypeOk() (*int32, bool)`
 
 GetCaTypeOk returns a tuple with the CaType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCaType
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetCaType(v CSSCMSCoreEnumsCertificateAuthorityType)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetCaType(v int32)`
 
 SetCaType sets CaType field to given value.
 

@@ -37,15 +37,15 @@ type KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest st
 	// Whether or not wildcards can be used.
 	AllowWildcards bool `json:"allowWildcards"`
 	// Whether or not RFC 2818 compliance should be enforced.
-	RfcEnforcement bool                                            `json:"rfcEnforcement"`
-	KeyInfo        CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo `json:"keyInfo"`
+	RfcEnforcement bool                             `json:"rfcEnforcement"`
+	KeyInfo        ModelsTemplatesAlgorithmsKeyInfo `json:"keyInfo"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest instantiates a new KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest(allowKeyReuse bool, allowWildcards bool, rfcEnforcement bool, keyInfo CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo) *KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest {
+func NewKeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest(allowKeyReuse bool, allowWildcards bool, rfcEnforcement bool, keyInfo ModelsTemplatesAlgorithmsKeyInfo) *KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest {
 	this := KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest{}
 	this.AllowKeyReuse = allowKeyReuse
 	this.AllowWildcards = allowWildcards
@@ -167,9 +167,9 @@ func (o *KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyReques
 }
 
 // GetKeyInfo returns the KeyInfo field value
-func (o *KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest) GetKeyInfo() CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo {
+func (o *KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest) GetKeyInfo() ModelsTemplatesAlgorithmsKeyInfo {
 	if o == nil {
-		var ret CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo
+		var ret ModelsTemplatesAlgorithmsKeyInfo
 		return ret
 	}
 
@@ -178,7 +178,7 @@ func (o *KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyReques
 
 // GetKeyInfoOk returns a tuple with the KeyInfo field value
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest) GetKeyInfoOk() (*CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest) GetKeyInfoOk() (*ModelsTemplatesAlgorithmsKeyInfo, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -186,7 +186,7 @@ func (o *KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyReques
 }
 
 // SetKeyInfo sets field value
-func (o *KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest) SetKeyInfo(v CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo) {
+func (o *KeyfactorWebKeyfactorApiModelsTemplatesGlobalGlobalTemplatePolicyRequest) SetKeyInfo(v ModelsTemplatesAlgorithmsKeyInfo) {
 	o.KeyInfo = v
 }
 

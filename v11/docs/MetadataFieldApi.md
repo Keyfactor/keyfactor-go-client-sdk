@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ## MetadataFieldsGet
 
-> []CSSCMSDataModelModelsMetadataFieldTypeModel MetadataFieldsGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsMetadataFieldTypeModel MetadataFieldsGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all metadata field types according to the provided filter and output parameters
 
@@ -111,7 +111,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -121,7 +121,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.MetadataFieldsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `MetadataFieldsGet`: []CSSCMSDataModelModelsMetadataFieldTypeModel
+    // response from `MetadataFieldsGet`: []ModelsMetadataFieldTypeModel
     fmt.Fprintf(os.Stdout, "Response from `MetadataFieldApi.MetadataFieldsGet`: %v\n", resp)
 }
 ```
@@ -142,12 +142,12 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsMetadataFieldTypeModel**](CSSCMSDataModelModelsMetadataFieldTypeModel.md)
+[**[]ModelsMetadataFieldTypeModel**](ModelsMetadataFieldTypeModel.md)
 
 ### Authorization
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ## MetadataFieldsIdGet
 
-> CSSCMSDataModelModelsMetadataFieldTypeModel MetadataFieldsIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ModelsMetadataFieldTypeModel MetadataFieldsIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets a persisted metadata field type by its unique id
 
@@ -267,7 +267,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.MetadataFieldsIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `MetadataFieldsIdGet`: CSSCMSDataModelModelsMetadataFieldTypeModel
+    // response from `MetadataFieldsIdGet`: ModelsMetadataFieldTypeModel
     fmt.Fprintf(os.Stdout, "Response from `MetadataFieldApi.MetadataFieldsIdGet`: %v\n", resp)
 }
 ```
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsMetadataFieldTypeModel**](CSSCMSDataModelModelsMetadataFieldTypeModel.md)
+[**ModelsMetadataFieldTypeModel**](ModelsMetadataFieldTypeModel.md)
 
 ### Authorization
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 ## MetadataFieldsNameGet
 
-> CSSCMSDataModelModelsMetadataFieldTypeModel MetadataFieldsNameGet(ctx, name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ModelsMetadataFieldTypeModel MetadataFieldsNameGet(ctx, name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets a persisted metadata field type by its unique name
 
@@ -413,7 +413,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.MetadataFieldsNameGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `MetadataFieldsNameGet`: CSSCMSDataModelModelsMetadataFieldTypeModel
+    // response from `MetadataFieldsNameGet`: ModelsMetadataFieldTypeModel
     fmt.Fprintf(os.Stdout, "Response from `MetadataFieldApi.MetadataFieldsNameGet`: %v\n", resp)
 }
 ```
@@ -439,7 +439,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsMetadataFieldTypeModel**](CSSCMSDataModelModelsMetadataFieldTypeModel.md)
+[**ModelsMetadataFieldTypeModel**](ModelsMetadataFieldTypeModel.md)
 
 ### Authorization
 
@@ -478,7 +478,7 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    keyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest("Name_example", "Description_example", openapiclient.CSS.CMS.Core.Enums.MetadataDataType(1)) // KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest | Properties of the metadata field type to be created (optional)
+    keyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest("Name_example", "Description_example", int32(123)) // KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest | Properties of the metadata field type to be created (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -548,7 +548,7 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    keyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest(int32(123), "Name_example", "Description_example", openapiclient.CSS.CMS.Core.Enums.MetadataDataType(1), int32(123)) // KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest | Properties of the metadata field type to be updated (optional)
+    keyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest(int32(123), "Name_example", "Description_example", int32(123), int32(123)) // KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest | Properties of the metadata field type to be updated (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)

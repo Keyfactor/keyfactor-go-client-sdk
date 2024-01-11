@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **NullableString** |  | [optional] 
 **Content** | Pointer to **NullableString** |  | [optional] [readonly] 
 **Query** | Pointer to **NullableString** |  | [optional] 
-**DuplicationField** | Pointer to [**CSSCMSCoreEnumsDuplicateSubjectType**](CSSCMSCoreEnumsDuplicateSubjectType.md) |  | [optional] 
+**DuplicationField** | Pointer to **int32** |  | [optional] 
 **ShowOnDashboard** | Pointer to **bool** |  | [optional] 
 **Favorite** | Pointer to **bool** |  | [optional] 
 
@@ -199,20 +199,20 @@ HasQuery returns a boolean if a field has been set.
 UnsetQuery ensures that no value is present for Query, not even an explicit nil
 ### GetDuplicationField
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) GetDuplicationField() CSSCMSCoreEnumsDuplicateSubjectType`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) GetDuplicationField() int32`
 
 GetDuplicationField returns the DuplicationField field if non-nil, zero value otherwise.
 
 ### GetDuplicationFieldOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) GetDuplicationFieldOk() (*CSSCMSCoreEnumsDuplicateSubjectType, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) GetDuplicationFieldOk() (*int32, bool)`
 
 GetDuplicationFieldOk returns a tuple with the DuplicationField field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDuplicationField
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) SetDuplicationField(v CSSCMSCoreEnumsDuplicateSubjectType)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) SetDuplicationField(v int32)`
 
 SetDuplicationField sets DuplicationField field to given value.
 

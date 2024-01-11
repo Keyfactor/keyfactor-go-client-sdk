@@ -283,7 +283,7 @@ type ApiAgentsGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -313,7 +313,7 @@ func (r ApiAgentsGetRequest) SortField(sortField string) ApiAgentsGetRequest {
 	return r
 }
 
-func (r ApiAgentsGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiAgentsGetRequest {
+func (r ApiAgentsGetRequest) SortAscending(sortAscending int32) ApiAgentsGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }

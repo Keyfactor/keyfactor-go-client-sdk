@@ -18,9 +18,9 @@ Name | Type | Description | Notes
 **AgentAssigned** | Pointer to **bool** |  | [optional] 
 **ContainerName** | Pointer to **NullableString** |  | [optional] 
 **InventorySchedule** | Pointer to [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | [optional] 
-**ReenrollmentStatus** | Pointer to [**CSSCMSDataModelModelsReenrollmentStatus**](CSSCMSDataModelModelsReenrollmentStatus.md) |  | [optional] 
+**ReenrollmentStatus** | Pointer to [**ModelsReenrollmentStatus**](ModelsReenrollmentStatus.md) |  | [optional] 
 **SetNewPasswordAllowed** | Pointer to **bool** |  | [optional] 
-**Password** | Pointer to [**CSSCMSDataModelModelsKeyfactorSecret**](CSSCMSDataModelModelsKeyfactorSecret.md) |  | [optional] 
+**Password** | Pointer to [**ModelsKeyfactorSecret**](ModelsKeyfactorSecret.md) |  | [optional] 
 
 ## Methods
 
@@ -473,20 +473,20 @@ HasInventorySchedule returns a boolean if a field has been set.
 
 ### GetReenrollmentStatus
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetReenrollmentStatus() CSSCMSDataModelModelsReenrollmentStatus`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetReenrollmentStatus() ModelsReenrollmentStatus`
 
 GetReenrollmentStatus returns the ReenrollmentStatus field if non-nil, zero value otherwise.
 
 ### GetReenrollmentStatusOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetReenrollmentStatusOk() (*CSSCMSDataModelModelsReenrollmentStatus, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetReenrollmentStatusOk() (*ModelsReenrollmentStatus, bool)`
 
 GetReenrollmentStatusOk returns a tuple with the ReenrollmentStatus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReenrollmentStatus
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) SetReenrollmentStatus(v CSSCMSDataModelModelsReenrollmentStatus)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) SetReenrollmentStatus(v ModelsReenrollmentStatus)`
 
 SetReenrollmentStatus sets ReenrollmentStatus field to given value.
 
@@ -523,20 +523,20 @@ HasSetNewPasswordAllowed returns a boolean if a field has been set.
 
 ### GetPassword
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetPassword() CSSCMSDataModelModelsKeyfactorSecret`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetPassword() ModelsKeyfactorSecret`
 
 GetPassword returns the Password field if non-nil, zero value otherwise.
 
 ### GetPasswordOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetPasswordOk() (*CSSCMSDataModelModelsKeyfactorSecret, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetPasswordOk() (*ModelsKeyfactorSecret, bool)`
 
 GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPassword
 
-`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) SetPassword(v CSSCMSDataModelModelsKeyfactorSecret)`
+`func (o *KeyfactorWebKeyfactorApiModelsCertificateStoresCertificateStoreResponse) SetPassword(v ModelsKeyfactorSecret)`
 
 SetPassword sets Password field to given value.
 

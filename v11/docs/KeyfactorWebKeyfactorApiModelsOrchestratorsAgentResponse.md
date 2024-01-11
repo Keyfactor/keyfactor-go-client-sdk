@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **AgentId** | Pointer to **string** |  | [optional] 
 **ClientMachine** | Pointer to **NullableString** |  | [optional] 
 **Username** | Pointer to **NullableString** |  | [optional] 
-**AgentPlatform** | Pointer to [**CSSCMSCoreEnumsAgentPlatformType**](CSSCMSCoreEnumsAgentPlatformType.md) |  | [optional] 
+**AgentPlatform** | Pointer to **int32** |  | [optional] 
 **Version** | Pointer to **NullableString** |  | [optional] 
-**Status** | Pointer to [**CSSCMSCoreEnumsAgentStatusType**](CSSCMSCoreEnumsAgentStatusType.md) |  | [optional] 
+**Status** | Pointer to **int32** |  | [optional] 
 **LastSeen** | Pointer to **time.Time** |  | [optional] 
 **Capabilities** | Pointer to **[]string** |  | [optional] 
 **Blueprint** | Pointer to **NullableString** |  | [optional] 
@@ -136,20 +136,20 @@ HasUsername returns a boolean if a field has been set.
 UnsetUsername ensures that no value is present for Username, not even an explicit nil
 ### GetAgentPlatform
 
-`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) GetAgentPlatform() CSSCMSCoreEnumsAgentPlatformType`
+`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) GetAgentPlatform() int32`
 
 GetAgentPlatform returns the AgentPlatform field if non-nil, zero value otherwise.
 
 ### GetAgentPlatformOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) GetAgentPlatformOk() (*CSSCMSCoreEnumsAgentPlatformType, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) GetAgentPlatformOk() (*int32, bool)`
 
 GetAgentPlatformOk returns a tuple with the AgentPlatform field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAgentPlatform
 
-`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) SetAgentPlatform(v CSSCMSCoreEnumsAgentPlatformType)`
+`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) SetAgentPlatform(v int32)`
 
 SetAgentPlatform sets AgentPlatform field to given value.
 
@@ -196,20 +196,20 @@ HasVersion returns a boolean if a field has been set.
 UnsetVersion ensures that no value is present for Version, not even an explicit nil
 ### GetStatus
 
-`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) GetStatus() CSSCMSCoreEnumsAgentStatusType`
+`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) GetStatus() int32`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) GetStatusOk() (*CSSCMSCoreEnumsAgentStatusType, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) GetStatusOk() (*int32, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) SetStatus(v CSSCMSCoreEnumsAgentStatusType)`
+`func (o *KeyfactorWebKeyfactorApiModelsOrchestratorsAgentResponse) SetStatus(v int32)`
 
 SetStatus sets Status field to given value.
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to [**KeyfactorWorkflowsWorkflowInstanceStatus**](KeyfactorWorkflowsWorkflowInstanceStatus.md) |  | [optional] 
+**Status** | Pointer to **int32** |  | [optional] 
 **CurrentStepId** | Pointer to **string** |  | [optional] 
 **StatusMessage** | Pointer to **NullableString** |  | [optional] 
 **Definition** | Pointer to [**KeyfactorWebKeyfactorApiModelsWorkflowsInstanceDefinitionResponse**](KeyfactorWebKeyfactorApiModelsWorkflowsInstanceDefinitionResponse.md) |  | [optional] 
@@ -62,20 +62,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *KeyfactorWebKeyfactorApiModelsWorkflowsInstanceQueryResponse) GetStatus() KeyfactorWorkflowsWorkflowInstanceStatus`
+`func (o *KeyfactorWebKeyfactorApiModelsWorkflowsInstanceQueryResponse) GetStatus() int32`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsWorkflowsInstanceQueryResponse) GetStatusOk() (*KeyfactorWorkflowsWorkflowInstanceStatus, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsWorkflowsInstanceQueryResponse) GetStatusOk() (*int32, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *KeyfactorWebKeyfactorApiModelsWorkflowsInstanceQueryResponse) SetStatus(v KeyfactorWorkflowsWorkflowInstanceStatus)`
+`func (o *KeyfactorWebKeyfactorApiModelsWorkflowsInstanceQueryResponse) SetStatus(v int32)`
 
 SetStatus sets Status field to given value.
 

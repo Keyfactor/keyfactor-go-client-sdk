@@ -30,11 +30,11 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTy
 
 // KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterResponse struct for KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterResponse
 type KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterResponse struct {
-	Id          *int32                                        `json:"id,omitempty"`
-	Name        NullableString                                `json:"name,omitempty"`
-	DisplayName NullableString                                `json:"displayName,omitempty"`
-	DataType    *CSSCMSDataModelEnumsIdentityProviderDataType `json:"dataType,omitempty"`
-	Required    *bool                                         `json:"required,omitempty"`
+	Id          *int32         `json:"id,omitempty"`
+	Name        NullableString `json:"name,omitempty"`
+	DisplayName NullableString `json:"displayName,omitempty"`
+	DataType    *int32         `json:"dataType,omitempty"`
+	Required    *bool          `json:"required,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterResponse instantiates a new KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterResponse object
@@ -173,9 +173,9 @@ func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterResp
 }
 
 // GetDataType returns the DataType field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterResponse) GetDataType() CSSCMSDataModelEnumsIdentityProviderDataType {
+func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterResponse) GetDataType() int32 {
 	if o == nil || isNil(o.DataType) {
-		var ret CSSCMSDataModelEnumsIdentityProviderDataType
+		var ret int32
 		return ret
 	}
 	return *o.DataType
@@ -183,7 +183,7 @@ func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterResp
 
 // GetDataTypeOk returns a tuple with the DataType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterResponse) GetDataTypeOk() (*CSSCMSDataModelEnumsIdentityProviderDataType, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterResponse) GetDataTypeOk() (*int32, bool) {
 	if o == nil || isNil(o.DataType) {
 		return nil, false
 	}
@@ -199,8 +199,8 @@ func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterResp
 	return false
 }
 
-// SetDataType gets a reference to the given CSSCMSDataModelEnumsIdentityProviderDataType and assigns it to the DataType field.
-func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterResponse) SetDataType(v CSSCMSDataModelEnumsIdentityProviderDataType) {
+// SetDataType gets a reference to the given int32 and assigns it to the DataType field.
+func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterResponse) SetDataType(v int32) {
 	o.DataType = &v
 }
 

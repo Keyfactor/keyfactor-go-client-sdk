@@ -31,17 +31,17 @@ var _ MappedNullable = &KeyfactorAuditingQueryingAuditLogEntry{}
 
 // KeyfactorAuditingQueryingAuditLogEntry struct for KeyfactorAuditingQueryingAuditLogEntry
 type KeyfactorAuditingQueryingAuditLogEntry struct {
-	Id                  *int32                               `json:"id,omitempty"`
-	Timestamp           *time.Time                           `json:"timestamp,omitempty"`
-	Message             NullableString                       `json:"message,omitempty"`
-	Signature           NullableString                       `json:"signature,omitempty"`
-	Category            *int32                               `json:"category,omitempty"`
-	Operation           *int32                               `json:"operation,omitempty"`
-	Level               *KeyfactorAuditingEnumsAuditLogLevel `json:"level,omitempty"`
-	User                NullableString                       `json:"user,omitempty"`
-	EntityType          NullableString                       `json:"entityType,omitempty"`
-	AuditIdentifier     NullableString                       `json:"auditIdentifier,omitempty"`
-	ImmutableIdentifier NullableString                       `json:"immutableIdentifier,omitempty"`
+	Id                  *int32         `json:"id,omitempty"`
+	Timestamp           *time.Time     `json:"timestamp,omitempty"`
+	Message             NullableString `json:"message,omitempty"`
+	Signature           NullableString `json:"signature,omitempty"`
+	Category            *int32         `json:"category,omitempty"`
+	Operation           *int32         `json:"operation,omitempty"`
+	Level               *int32         `json:"level,omitempty"`
+	User                NullableString `json:"user,omitempty"`
+	EntityType          NullableString `json:"entityType,omitempty"`
+	AuditIdentifier     NullableString `json:"auditIdentifier,omitempty"`
+	ImmutableIdentifier NullableString `json:"immutableIdentifier,omitempty"`
 }
 
 // NewKeyfactorAuditingQueryingAuditLogEntry instantiates a new KeyfactorAuditingQueryingAuditLogEntry object
@@ -276,9 +276,9 @@ func (o *KeyfactorAuditingQueryingAuditLogEntry) SetOperation(v int32) {
 }
 
 // GetLevel returns the Level field value if set, zero value otherwise.
-func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevel() KeyfactorAuditingEnumsAuditLogLevel {
+func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevel() int32 {
 	if o == nil || isNil(o.Level) {
-		var ret KeyfactorAuditingEnumsAuditLogLevel
+		var ret int32
 		return ret
 	}
 	return *o.Level
@@ -286,7 +286,7 @@ func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevel() KeyfactorAuditingEnu
 
 // GetLevelOk returns a tuple with the Level field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevelOk() (*KeyfactorAuditingEnumsAuditLogLevel, bool) {
+func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevelOk() (*int32, bool) {
 	if o == nil || isNil(o.Level) {
 		return nil, false
 	}
@@ -302,8 +302,8 @@ func (o *KeyfactorAuditingQueryingAuditLogEntry) HasLevel() bool {
 	return false
 }
 
-// SetLevel gets a reference to the given KeyfactorAuditingEnumsAuditLogLevel and assigns it to the Level field.
-func (o *KeyfactorAuditingQueryingAuditLogEntry) SetLevel(v KeyfactorAuditingEnumsAuditLogLevel) {
+// SetLevel gets a reference to the given int32 and assigns it to the Level field.
+func (o *KeyfactorAuditingQueryingAuditLogEntry) SetLevel(v int32) {
 	o.Level = &v
 }
 

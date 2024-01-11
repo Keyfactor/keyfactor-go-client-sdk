@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **DisplayName** | Pointer to **NullableString** |  | [optional] 
-**DataType** | Pointer to [**CSSCMSDataModelEnumsPamParameterDataType**](CSSCMSDataModelEnumsPamParameterDataType.md) |  | [optional] 
+**DataType** | Pointer to **int32** |  | [optional] 
 **InstanceLevel** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -85,20 +85,20 @@ HasDisplayName returns a boolean if a field has been set.
 UnsetDisplayName ensures that no value is present for DisplayName, not even an explicit nil
 ### GetDataType
 
-`func (o *KeyfactorWebKeyfactorApiModelsPAMProviderTypeParameterCreateRequest) GetDataType() CSSCMSDataModelEnumsPamParameterDataType`
+`func (o *KeyfactorWebKeyfactorApiModelsPAMProviderTypeParameterCreateRequest) GetDataType() int32`
 
 GetDataType returns the DataType field if non-nil, zero value otherwise.
 
 ### GetDataTypeOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsPAMProviderTypeParameterCreateRequest) GetDataTypeOk() (*CSSCMSDataModelEnumsPamParameterDataType, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsPAMProviderTypeParameterCreateRequest) GetDataTypeOk() (*int32, bool)`
 
 GetDataTypeOk returns a tuple with the DataType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataType
 
-`func (o *KeyfactorWebKeyfactorApiModelsPAMProviderTypeParameterCreateRequest) SetDataType(v CSSCMSDataModelEnumsPamParameterDataType)`
+`func (o *KeyfactorWebKeyfactorApiModelsPAMProviderTypeParameterCreateRequest) SetDataType(v int32)`
 
 SetDataType sets DataType field to given value.
 

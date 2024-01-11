@@ -41,7 +41,7 @@ type ApiExtensionsScriptsGetRequest struct {
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
+	sortAscending           *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -71,7 +71,7 @@ func (r ApiExtensionsScriptsGetRequest) SortField(sortField string) ApiExtension
 	return r
 }
 
-func (r ApiExtensionsScriptsGetRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiExtensionsScriptsGetRequest {
+func (r ApiExtensionsScriptsGetRequest) SortAscending(sortAscending int32) ApiExtensionsScriptsGetRequest {
 	r.sortAscending = &sortAscending
 	return r
 }

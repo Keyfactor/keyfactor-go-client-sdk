@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Private** | Pointer to **bool** | Whether or not the security role should be private | [optional] 
 **Permissions** | Pointer to **[]string** | The permissions to include in the role. These must be supplied in the format \&quot;Area:Permission\&quot; | [optional] 
 **PermissionSetId** | Pointer to **string** | The Id of the permission set the role belongs to. | [optional] 
-**Identities** | Pointer to [**[]CSSCMSDataModelModelsSecurityIdentitiesSecurityIdentityIdentifier**](CSSCMSDataModelModelsSecurityIdentitiesSecurityIdentityIdentifier.md) | The Keyfactor identities to assign to the updated role | [optional] 
+**Identities** | Pointer to [**[]ModelsSecurityIdentitiesSecurityIdentityIdentifier**](ModelsSecurityIdentitiesSecurityIdentityIdentifier.md) | The Keyfactor identities to assign to the updated role | [optional] 
 
 ## Methods
 
@@ -204,20 +204,20 @@ HasPermissionSetId returns a boolean if a field has been set.
 
 ### GetIdentities
 
-`func (o *KeyfactorWebKeyfactorApiModelsSecurityLegacySecurityRolesSecurityRoleUpdateRequest) GetIdentities() []CSSCMSDataModelModelsSecurityIdentitiesSecurityIdentityIdentifier`
+`func (o *KeyfactorWebKeyfactorApiModelsSecurityLegacySecurityRolesSecurityRoleUpdateRequest) GetIdentities() []ModelsSecurityIdentitiesSecurityIdentityIdentifier`
 
 GetIdentities returns the Identities field if non-nil, zero value otherwise.
 
 ### GetIdentitiesOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsSecurityLegacySecurityRolesSecurityRoleUpdateRequest) GetIdentitiesOk() (*[]CSSCMSDataModelModelsSecurityIdentitiesSecurityIdentityIdentifier, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsSecurityLegacySecurityRolesSecurityRoleUpdateRequest) GetIdentitiesOk() (*[]ModelsSecurityIdentitiesSecurityIdentityIdentifier, bool)`
 
 GetIdentitiesOk returns a tuple with the Identities field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIdentities
 
-`func (o *KeyfactorWebKeyfactorApiModelsSecurityLegacySecurityRolesSecurityRoleUpdateRequest) SetIdentities(v []CSSCMSDataModelModelsSecurityIdentitiesSecurityIdentityIdentifier)`
+`func (o *KeyfactorWebKeyfactorApiModelsSecurityLegacySecurityRolesSecurityRoleUpdateRequest) SetIdentities(v []ModelsSecurityIdentitiesSecurityIdentityIdentifier)`
 
 SetIdentities sets Identities field to given value.
 

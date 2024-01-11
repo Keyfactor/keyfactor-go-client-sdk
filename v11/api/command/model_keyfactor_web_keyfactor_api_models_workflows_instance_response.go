@@ -32,7 +32,7 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsWorkflowsInstanceResponse{
 // KeyfactorWebKeyfactorApiModelsWorkflowsInstanceResponse struct for KeyfactorWebKeyfactorApiModelsWorkflowsInstanceResponse
 type KeyfactorWebKeyfactorApiModelsWorkflowsInstanceResponse struct {
 	Id                     *string                                                            `json:"id,omitempty"`
-	Status                 *KeyfactorWorkflowsWorkflowInstanceStatus                          `json:"status,omitempty"`
+	Status                 *int32                                                             `json:"status,omitempty"`
 	CurrentStepId          *string                                                            `json:"currentStepId,omitempty"`
 	StatusMessage          NullableString                                                     `json:"statusMessage,omitempty"`
 	Signals                []KeyfactorWebKeyfactorApiModelsWorkflowsAvailableSignalResponse   `json:"signals,omitempty"`
@@ -97,9 +97,9 @@ func (o *KeyfactorWebKeyfactorApiModelsWorkflowsInstanceResponse) SetId(v string
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsWorkflowsInstanceResponse) GetStatus() KeyfactorWorkflowsWorkflowInstanceStatus {
+func (o *KeyfactorWebKeyfactorApiModelsWorkflowsInstanceResponse) GetStatus() int32 {
 	if o == nil || isNil(o.Status) {
-		var ret KeyfactorWorkflowsWorkflowInstanceStatus
+		var ret int32
 		return ret
 	}
 	return *o.Status
@@ -107,7 +107,7 @@ func (o *KeyfactorWebKeyfactorApiModelsWorkflowsInstanceResponse) GetStatus() Ke
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsWorkflowsInstanceResponse) GetStatusOk() (*KeyfactorWorkflowsWorkflowInstanceStatus, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsWorkflowsInstanceResponse) GetStatusOk() (*int32, bool) {
 	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
@@ -123,8 +123,8 @@ func (o *KeyfactorWebKeyfactorApiModelsWorkflowsInstanceResponse) HasStatus() bo
 	return false
 }
 
-// SetStatus gets a reference to the given KeyfactorWorkflowsWorkflowInstanceStatus and assigns it to the Status field.
-func (o *KeyfactorWebKeyfactorApiModelsWorkflowsInstanceResponse) SetStatus(v KeyfactorWorkflowsWorkflowInstanceStatus) {
+// SetStatus gets a reference to the given int32 and assigns it to the Status field.
+func (o *KeyfactorWebKeyfactorApiModelsWorkflowsInstanceResponse) SetStatus(v int32) {
 	o.Status = &v
 }
 

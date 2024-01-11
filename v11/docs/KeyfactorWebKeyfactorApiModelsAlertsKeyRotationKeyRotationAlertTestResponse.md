@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **KeyRotationAlerts** | Pointer to [**[]KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertResponse**](KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertResponse.md) |  | [optional] 
-**AlertBuildResult** | Pointer to [**CSSCMSDataModelEnumsAlertBuildResult**](CSSCMSDataModelEnumsAlertBuildResult.md) |  | [optional] 
+**AlertBuildResult** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -63,20 +63,20 @@ HasKeyRotationAlerts returns a boolean if a field has been set.
 UnsetKeyRotationAlerts ensures that no value is present for KeyRotationAlerts, not even an explicit nil
 ### GetAlertBuildResult
 
-`func (o *KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse) GetAlertBuildResult() CSSCMSDataModelEnumsAlertBuildResult`
+`func (o *KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse) GetAlertBuildResult() int32`
 
 GetAlertBuildResult returns the AlertBuildResult field if non-nil, zero value otherwise.
 
 ### GetAlertBuildResultOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse) GetAlertBuildResultOk() (*CSSCMSDataModelEnumsAlertBuildResult, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse) GetAlertBuildResultOk() (*int32, bool)`
 
 GetAlertBuildResultOk returns a tuple with the AlertBuildResult field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAlertBuildResult
 
-`func (o *KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse) SetAlertBuildResult(v CSSCMSDataModelEnumsAlertBuildResult)`
+`func (o *KeyfactorWebKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse) SetAlertBuildResult(v int32)`
 
 SetAlertBuildResult sets AlertBuildResult field to given value.
 

@@ -30,13 +30,13 @@ var _ MappedNullable = &KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTy
 
 // KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse struct for KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse
 type KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse struct {
-	Id          *int32                                        `json:"id,omitempty"`
-	Name        NullableString                                `json:"name,omitempty"`
-	DisplayName NullableString                                `json:"displayName,omitempty"`
-	Required    *bool                                         `json:"required,omitempty"`
-	DataType    *CSSCMSDataModelEnumsIdentityProviderDataType `json:"dataType,omitempty"`
-	Value       NullableString                                `json:"value,omitempty"`
-	SecretValue *CSSCMSDataModelModelsKeyfactorAPISecret      `json:"secretValue,omitempty"`
+	Id          *int32                    `json:"id,omitempty"`
+	Name        NullableString            `json:"name,omitempty"`
+	DisplayName NullableString            `json:"displayName,omitempty"`
+	Required    *bool                     `json:"required,omitempty"`
+	DataType    *int32                    `json:"dataType,omitempty"`
+	Value       NullableString            `json:"value,omitempty"`
+	SecretValue *ModelsKeyfactorAPISecret `json:"secretValue,omitempty"`
 }
 
 // NewKeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse instantiates a new KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse object
@@ -207,9 +207,9 @@ func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValu
 }
 
 // GetDataType returns the DataType field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) GetDataType() CSSCMSDataModelEnumsIdentityProviderDataType {
+func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) GetDataType() int32 {
 	if o == nil || isNil(o.DataType) {
-		var ret CSSCMSDataModelEnumsIdentityProviderDataType
+		var ret int32
 		return ret
 	}
 	return *o.DataType
@@ -217,7 +217,7 @@ func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValu
 
 // GetDataTypeOk returns a tuple with the DataType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) GetDataTypeOk() (*CSSCMSDataModelEnumsIdentityProviderDataType, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) GetDataTypeOk() (*int32, bool) {
 	if o == nil || isNil(o.DataType) {
 		return nil, false
 	}
@@ -233,8 +233,8 @@ func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValu
 	return false
 }
 
-// SetDataType gets a reference to the given CSSCMSDataModelEnumsIdentityProviderDataType and assigns it to the DataType field.
-func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) SetDataType(v CSSCMSDataModelEnumsIdentityProviderDataType) {
+// SetDataType gets a reference to the given int32 and assigns it to the DataType field.
+func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) SetDataType(v int32) {
 	o.DataType = &v
 }
 
@@ -282,9 +282,9 @@ func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValu
 }
 
 // GetSecretValue returns the SecretValue field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) GetSecretValue() CSSCMSDataModelModelsKeyfactorAPISecret {
+func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) GetSecretValue() ModelsKeyfactorAPISecret {
 	if o == nil || isNil(o.SecretValue) {
-		var ret CSSCMSDataModelModelsKeyfactorAPISecret
+		var ret ModelsKeyfactorAPISecret
 		return ret
 	}
 	return *o.SecretValue
@@ -292,7 +292,7 @@ func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValu
 
 // GetSecretValueOk returns a tuple with the SecretValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) GetSecretValueOk() (*CSSCMSDataModelModelsKeyfactorAPISecret, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) GetSecretValueOk() (*ModelsKeyfactorAPISecret, bool) {
 	if o == nil || isNil(o.SecretValue) {
 		return nil, false
 	}
@@ -308,8 +308,8 @@ func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValu
 	return false
 }
 
-// SetSecretValue gets a reference to the given CSSCMSDataModelModelsKeyfactorAPISecret and assigns it to the SecretValue field.
-func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) SetSecretValue(v CSSCMSDataModelModelsKeyfactorAPISecret) {
+// SetSecretValue gets a reference to the given ModelsKeyfactorAPISecret and assigns it to the SecretValue field.
+func (o *KeyfactorWebKeyfactorApiModelsIdentityProviderProviderTypeParameterValueResponse) SetSecretValue(v ModelsKeyfactorAPISecret) {
 	o.SecretValue = &v
 }
 

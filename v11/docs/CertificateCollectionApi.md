@@ -41,7 +41,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ## CertificateCollectionsGet
 
-> []CSSCMSDataModelModelsCertificateQuery CertificateCollectionsGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsCertificateQuery CertificateCollectionsGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all certificate collections
 
@@ -187,7 +187,7 @@ func main() {
     pageReturned := int32(56) // int32 |  (optional)
     returnLimit := int32(56) // int32 |  (optional)
     sortField := "sortField_example" // string |  (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensionsSortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder |  (optional)
+    sortAscending := int32(56) // int32 |  (optional)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -197,7 +197,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateCollectionApi.CertificateCollectionsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificateCollectionsGet`: []CSSCMSDataModelModelsCertificateQuery
+    // response from `CertificateCollectionsGet`: []ModelsCertificateQuery
     fmt.Fprintf(os.Stdout, "Response from `CertificateCollectionApi.CertificateCollectionsGet`: %v\n", resp)
 }
 ```
@@ -218,12 +218,12 @@ Name | Type | Description  | Notes
  **pageReturned** | **int32** |  | 
  **returnLimit** | **int32** |  | 
  **sortField** | **string** |  | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) |  | 
+ **sortAscending** | **int32** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsCertificateQuery**](CSSCMSDataModelModelsCertificateQuery.md)
+[**[]ModelsCertificateQuery**](ModelsCertificateQuery.md)
 
 ### Authorization
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 ## CertificateCollectionsIdGet
 
-> CSSCMSDataModelModelsCertificateQuery CertificateCollectionsIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ModelsCertificateQuery CertificateCollectionsIdGet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns the certificate collection definition associated with the provided Keyfactor identifier
 
@@ -411,7 +411,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateCollectionApi.CertificateCollectionsIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificateCollectionsIdGet`: CSSCMSDataModelModelsCertificateQuery
+    // response from `CertificateCollectionsIdGet`: ModelsCertificateQuery
     fmt.Fprintf(os.Stdout, "Response from `CertificateCollectionApi.CertificateCollectionsIdGet`: %v\n", resp)
 }
 ```
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsCertificateQuery**](CSSCMSDataModelModelsCertificateQuery.md)
+[**ModelsCertificateQuery**](ModelsCertificateQuery.md)
 
 ### Authorization
 
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 
 ## CertificateCollectionsNameGet
 
-> CSSCMSDataModelModelsCertificateQuery CertificateCollectionsNameGet(ctx, name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ModelsCertificateQuery CertificateCollectionsNameGet(ctx, name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns the certificate collection associated with the provided collection name
 
@@ -483,7 +483,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateCollectionApi.CertificateCollectionsNameGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificateCollectionsNameGet`: CSSCMSDataModelModelsCertificateQuery
+    // response from `CertificateCollectionsNameGet`: ModelsCertificateQuery
     fmt.Fprintf(os.Stdout, "Response from `CertificateCollectionApi.CertificateCollectionsNameGet`: %v\n", resp)
 }
 ```
@@ -509,7 +509,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CSSCMSDataModelModelsCertificateQuery**](CSSCMSDataModelModelsCertificateQuery.md)
+[**ModelsCertificateQuery**](ModelsCertificateQuery.md)
 
 ### Authorization
 
@@ -527,7 +527,7 @@ Name | Type | Description  | Notes
 
 ## CertificateCollectionsNavItemsGet
 
-> []CSSCMSDataModelModelsCertificateCollectionNavItem CertificateCollectionsNavItemsGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ModelsCertificateCollectionNavItem CertificateCollectionsNavItemsGet(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get the list of navigation items for certificate collection
 
@@ -554,7 +554,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateCollectionApi.CertificateCollectionsNavItemsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CertificateCollectionsNavItemsGet`: []CSSCMSDataModelModelsCertificateCollectionNavItem
+    // response from `CertificateCollectionsNavItemsGet`: []ModelsCertificateCollectionNavItem
     fmt.Fprintf(os.Stdout, "Response from `CertificateCollectionApi.CertificateCollectionsNavItemsGet`: %v\n", resp)
 }
 ```
@@ -575,7 +575,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]CSSCMSDataModelModelsCertificateCollectionNavItem**](CSSCMSDataModelModelsCertificateCollectionNavItem.md)
+[**[]ModelsCertificateCollectionNavItem**](ModelsCertificateCollectionNavItem.md)
 
 ### Authorization
 

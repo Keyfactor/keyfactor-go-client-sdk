@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **TemplateId** | Pointer to **int32** |  | [optional] 
-**KeyInfo** | Pointer to [**CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo**](CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo.md) |  | [optional] 
+**KeyInfo** | Pointer to [**ModelsTemplatesAlgorithmsKeyInfo**](ModelsTemplatesAlgorithmsKeyInfo.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasTemplateId returns a boolean if a field has been set.
 
 ### GetKeyInfo
 
-`func (o *KeyfactorWebKeyfactorApiModelsTemplatesKeyAlgorithmsResponseModel) GetKeyInfo() CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo`
+`func (o *KeyfactorWebKeyfactorApiModelsTemplatesKeyAlgorithmsResponseModel) GetKeyInfo() ModelsTemplatesAlgorithmsKeyInfo`
 
 GetKeyInfo returns the KeyInfo field if non-nil, zero value otherwise.
 
 ### GetKeyInfoOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsTemplatesKeyAlgorithmsResponseModel) GetKeyInfoOk() (*CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsTemplatesKeyAlgorithmsResponseModel) GetKeyInfoOk() (*ModelsTemplatesAlgorithmsKeyInfo, bool)`
 
 GetKeyInfoOk returns a tuple with the KeyInfo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyInfo
 
-`func (o *KeyfactorWebKeyfactorApiModelsTemplatesKeyAlgorithmsResponseModel) SetKeyInfo(v CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo)`
+`func (o *KeyfactorWebKeyfactorApiModelsTemplatesKeyAlgorithmsResponseModel) SetKeyInfo(v ModelsTemplatesAlgorithmsKeyInfo)`
 
 SetKeyInfo sets KeyInfo field to given value.
 

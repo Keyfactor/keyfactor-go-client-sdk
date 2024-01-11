@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DisplayName** | Pointer to **NullableString** |  | [optional] 
-**ParameterType** | Pointer to [**KeyfactorWorkflowsDataType**](KeyfactorWorkflowsDataType.md) |  | [optional] 
+**ParameterType** | Pointer to **int32** |  | [optional] 
 **Required** | Pointer to **bool** |  | [optional] 
 **DefaultValue** | Pointer to **NullableString** |  | [optional] 
-**ControlType** | Pointer to [**KeyfactorWorkflowsInputControlType**](KeyfactorWorkflowsInputControlType.md) |  | [optional] 
+**ControlType** | Pointer to **int32** |  | [optional] 
 **PotentialValues** | Pointer to **map[string]string** |  | [optional] 
 **SupportTokenReplacement** | Pointer to **bool** |  | [optional] 
 **DependsOn** | Pointer to **map[string]string** |  | [optional] 
@@ -69,20 +69,20 @@ HasDisplayName returns a boolean if a field has been set.
 UnsetDisplayName ensures that no value is present for DisplayName, not even an explicit nil
 ### GetParameterType
 
-`func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetParameterType() KeyfactorWorkflowsDataType`
+`func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetParameterType() int32`
 
 GetParameterType returns the ParameterType field if non-nil, zero value otherwise.
 
 ### GetParameterTypeOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetParameterTypeOk() (*KeyfactorWorkflowsDataType, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetParameterTypeOk() (*int32, bool)`
 
 GetParameterTypeOk returns a tuple with the ParameterType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParameterType
 
-`func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) SetParameterType(v KeyfactorWorkflowsDataType)`
+`func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) SetParameterType(v int32)`
 
 SetParameterType sets ParameterType field to given value.
 
@@ -154,20 +154,20 @@ HasDefaultValue returns a boolean if a field has been set.
 UnsetDefaultValue ensures that no value is present for DefaultValue, not even an explicit nil
 ### GetControlType
 
-`func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetControlType() KeyfactorWorkflowsInputControlType`
+`func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetControlType() int32`
 
 GetControlType returns the ControlType field if non-nil, zero value otherwise.
 
 ### GetControlTypeOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetControlTypeOk() (*KeyfactorWorkflowsInputControlType, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetControlTypeOk() (*int32, bool)`
 
 GetControlTypeOk returns a tuple with the ControlType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetControlType
 
-`func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) SetControlType(v KeyfactorWorkflowsInputControlType)`
+`func (o *KeyfactorWebKeyfactorApiModelsWorkflowsParameterDefinitionResponse) SetControlType(v int32)`
 
 SetControlType sets ControlType field to given value.
 

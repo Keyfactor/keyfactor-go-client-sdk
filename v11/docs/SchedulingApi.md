@@ -29,7 +29,7 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    keyfactorWebKeyfactorApiModelsSchedulingScheduledTaskRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskRequest(openapiclient.CSS.CMS.Core.Enums.ScheduledTaskType(0)) // KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskRequest |  (optional)
+    keyfactorWebKeyfactorApiModelsSchedulingScheduledTaskRequest := *openapiclient.NewKeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskRequest(int32(123)) // KeyfactorWebKeyfactorApiModelsSchedulingScheduledTaskRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)

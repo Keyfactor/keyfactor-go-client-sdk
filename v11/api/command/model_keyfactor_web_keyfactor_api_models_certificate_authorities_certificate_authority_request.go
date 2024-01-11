@@ -46,21 +46,21 @@ type KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityReq
 	FailureMax                    NullableInt32                               `json:"failureMax,omitempty"`
 	RfcEnforcement                *bool                                       `json:"rfcEnforcement,omitempty"`
 	Properties                    NullableString                              `json:"properties,omitempty"`
-	AllowedEnrollmentTypes        *CSSCMSCoreEnumsEnrollmentType              `json:"allowedEnrollmentTypes,omitempty"`
-	KeyRetention                  *CSSCMSCoreEnumsKeyRetentionPolicy          `json:"keyRetention,omitempty"`
+	AllowedEnrollmentTypes        *int32                                      `json:"allowedEnrollmentTypes,omitempty"`
+	KeyRetention                  *int32                                      `json:"keyRetention,omitempty"`
 	KeyRetentionDays              NullableInt32                               `json:"keyRetentionDays,omitempty"`
 	ExplicitCredentials           *bool                                       `json:"explicitCredentials,omitempty"`
 	SubscriberTerms               *bool                                       `json:"subscriberTerms,omitempty"`
 	ExplicitUser                  NullableString                              `json:"explicitUser,omitempty"`
-	ExplicitPassword              *CSSCMSDataModelModelsKeyfactorAPISecret    `json:"explicitPassword,omitempty"`
+	ExplicitPassword              *ModelsKeyfactorAPISecret                   `json:"explicitPassword,omitempty"`
 	UseAllowedRequesters          *bool                                       `json:"useAllowedRequesters,omitempty"`
 	AllowedRequesters             []string                                    `json:"allowedRequesters,omitempty"`
 	FullScan                      *KeyfactorCommonSchedulingKeyfactorSchedule `json:"fullScan,omitempty"`
 	IncrementalScan               *KeyfactorCommonSchedulingKeyfactorSchedule `json:"incrementalScan,omitempty"`
 	ThresholdCheck                *KeyfactorCommonSchedulingKeyfactorSchedule `json:"thresholdCheck,omitempty"`
-	AuthCertificatePassword       *CSSCMSDataModelModelsKeyfactorAPISecret    `json:"authCertificatePassword,omitempty"`
-	AuthCertificate               *CSSCMSDataModelModelsKeyfactorAPISecret    `json:"authCertificate,omitempty"`
-	CaType                        *CSSCMSCoreEnumsCertificateAuthorityType    `json:"caType,omitempty"`
+	AuthCertificatePassword       *ModelsKeyfactorAPISecret                   `json:"authCertificatePassword,omitempty"`
+	AuthCertificate               *ModelsKeyfactorAPISecret                   `json:"authCertificate,omitempty"`
+	CaType                        *int32                                      `json:"caType,omitempty"`
 	EnforceUniqueDN               *bool                                       `json:"enforceUniqueDN,omitempty"`
 	AllowOneClickRenewals         *bool                                       `json:"allowOneClickRenewals,omitempty"`
 	NewEndEntityOnRenewAndReissue *bool                                       `json:"newEndEntityOnRenewAndReissue,omitempty"`
@@ -695,9 +695,9 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 }
 
 // GetAllowedEnrollmentTypes returns the AllowedEnrollmentTypes field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAllowedEnrollmentTypes() CSSCMSCoreEnumsEnrollmentType {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAllowedEnrollmentTypes() int32 {
 	if o == nil || isNil(o.AllowedEnrollmentTypes) {
-		var ret CSSCMSCoreEnumsEnrollmentType
+		var ret int32
 		return ret
 	}
 	return *o.AllowedEnrollmentTypes
@@ -705,7 +705,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 
 // GetAllowedEnrollmentTypesOk returns a tuple with the AllowedEnrollmentTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAllowedEnrollmentTypesOk() (*CSSCMSCoreEnumsEnrollmentType, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAllowedEnrollmentTypesOk() (*int32, bool) {
 	if o == nil || isNil(o.AllowedEnrollmentTypes) {
 		return nil, false
 	}
@@ -721,15 +721,15 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 	return false
 }
 
-// SetAllowedEnrollmentTypes gets a reference to the given CSSCMSCoreEnumsEnrollmentType and assigns it to the AllowedEnrollmentTypes field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetAllowedEnrollmentTypes(v CSSCMSCoreEnumsEnrollmentType) {
+// SetAllowedEnrollmentTypes gets a reference to the given int32 and assigns it to the AllowedEnrollmentTypes field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetAllowedEnrollmentTypes(v int32) {
 	o.AllowedEnrollmentTypes = &v
 }
 
 // GetKeyRetention returns the KeyRetention field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetKeyRetention() CSSCMSCoreEnumsKeyRetentionPolicy {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetKeyRetention() int32 {
 	if o == nil || isNil(o.KeyRetention) {
-		var ret CSSCMSCoreEnumsKeyRetentionPolicy
+		var ret int32
 		return ret
 	}
 	return *o.KeyRetention
@@ -737,7 +737,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 
 // GetKeyRetentionOk returns a tuple with the KeyRetention field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetKeyRetentionOk() (*CSSCMSCoreEnumsKeyRetentionPolicy, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetKeyRetentionOk() (*int32, bool) {
 	if o == nil || isNil(o.KeyRetention) {
 		return nil, false
 	}
@@ -753,8 +753,8 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 	return false
 }
 
-// SetKeyRetention gets a reference to the given CSSCMSCoreEnumsKeyRetentionPolicy and assigns it to the KeyRetention field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetKeyRetention(v CSSCMSCoreEnumsKeyRetentionPolicy) {
+// SetKeyRetention gets a reference to the given int32 and assigns it to the KeyRetention field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetKeyRetention(v int32) {
 	o.KeyRetention = &v
 }
 
@@ -909,9 +909,9 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 }
 
 // GetExplicitPassword returns the ExplicitPassword field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetExplicitPassword() CSSCMSDataModelModelsKeyfactorAPISecret {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetExplicitPassword() ModelsKeyfactorAPISecret {
 	if o == nil || isNil(o.ExplicitPassword) {
-		var ret CSSCMSDataModelModelsKeyfactorAPISecret
+		var ret ModelsKeyfactorAPISecret
 		return ret
 	}
 	return *o.ExplicitPassword
@@ -919,7 +919,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 
 // GetExplicitPasswordOk returns a tuple with the ExplicitPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetExplicitPasswordOk() (*CSSCMSDataModelModelsKeyfactorAPISecret, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetExplicitPasswordOk() (*ModelsKeyfactorAPISecret, bool) {
 	if o == nil || isNil(o.ExplicitPassword) {
 		return nil, false
 	}
@@ -935,8 +935,8 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 	return false
 }
 
-// SetExplicitPassword gets a reference to the given CSSCMSDataModelModelsKeyfactorAPISecret and assigns it to the ExplicitPassword field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetExplicitPassword(v CSSCMSDataModelModelsKeyfactorAPISecret) {
+// SetExplicitPassword gets a reference to the given ModelsKeyfactorAPISecret and assigns it to the ExplicitPassword field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetExplicitPassword(v ModelsKeyfactorAPISecret) {
 	o.ExplicitPassword = &v
 }
 
@@ -1102,9 +1102,9 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 }
 
 // GetAuthCertificatePassword returns the AuthCertificatePassword field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificatePassword() CSSCMSDataModelModelsKeyfactorAPISecret {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificatePassword() ModelsKeyfactorAPISecret {
 	if o == nil || isNil(o.AuthCertificatePassword) {
-		var ret CSSCMSDataModelModelsKeyfactorAPISecret
+		var ret ModelsKeyfactorAPISecret
 		return ret
 	}
 	return *o.AuthCertificatePassword
@@ -1112,7 +1112,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 
 // GetAuthCertificatePasswordOk returns a tuple with the AuthCertificatePassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificatePasswordOk() (*CSSCMSDataModelModelsKeyfactorAPISecret, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificatePasswordOk() (*ModelsKeyfactorAPISecret, bool) {
 	if o == nil || isNil(o.AuthCertificatePassword) {
 		return nil, false
 	}
@@ -1128,15 +1128,15 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 	return false
 }
 
-// SetAuthCertificatePassword gets a reference to the given CSSCMSDataModelModelsKeyfactorAPISecret and assigns it to the AuthCertificatePassword field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetAuthCertificatePassword(v CSSCMSDataModelModelsKeyfactorAPISecret) {
+// SetAuthCertificatePassword gets a reference to the given ModelsKeyfactorAPISecret and assigns it to the AuthCertificatePassword field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetAuthCertificatePassword(v ModelsKeyfactorAPISecret) {
 	o.AuthCertificatePassword = &v
 }
 
 // GetAuthCertificate returns the AuthCertificate field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificate() CSSCMSDataModelModelsKeyfactorAPISecret {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificate() ModelsKeyfactorAPISecret {
 	if o == nil || isNil(o.AuthCertificate) {
-		var ret CSSCMSDataModelModelsKeyfactorAPISecret
+		var ret ModelsKeyfactorAPISecret
 		return ret
 	}
 	return *o.AuthCertificate
@@ -1144,7 +1144,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 
 // GetAuthCertificateOk returns a tuple with the AuthCertificate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificateOk() (*CSSCMSDataModelModelsKeyfactorAPISecret, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificateOk() (*ModelsKeyfactorAPISecret, bool) {
 	if o == nil || isNil(o.AuthCertificate) {
 		return nil, false
 	}
@@ -1160,15 +1160,15 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 	return false
 }
 
-// SetAuthCertificate gets a reference to the given CSSCMSDataModelModelsKeyfactorAPISecret and assigns it to the AuthCertificate field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetAuthCertificate(v CSSCMSDataModelModelsKeyfactorAPISecret) {
+// SetAuthCertificate gets a reference to the given ModelsKeyfactorAPISecret and assigns it to the AuthCertificate field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetAuthCertificate(v ModelsKeyfactorAPISecret) {
 	o.AuthCertificate = &v
 }
 
 // GetCaType returns the CaType field value if set, zero value otherwise.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetCaType() CSSCMSCoreEnumsCertificateAuthorityType {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetCaType() int32 {
 	if o == nil || isNil(o.CaType) {
-		var ret CSSCMSCoreEnumsCertificateAuthorityType
+		var ret int32
 		return ret
 	}
 	return *o.CaType
@@ -1176,7 +1176,7 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 
 // GetCaTypeOk returns a tuple with the CaType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetCaTypeOk() (*CSSCMSCoreEnumsCertificateAuthorityType, bool) {
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) GetCaTypeOk() (*int32, bool) {
 	if o == nil || isNil(o.CaType) {
 		return nil, false
 	}
@@ -1192,8 +1192,8 @@ func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorit
 	return false
 }
 
-// SetCaType gets a reference to the given CSSCMSCoreEnumsCertificateAuthorityType and assigns it to the CaType field.
-func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetCaType(v CSSCMSCoreEnumsCertificateAuthorityType) {
+// SetCaType gets a reference to the given int32 and assigns it to the CaType field.
+func (o *KeyfactorWebKeyfactorApiModelsCertificateAuthoritiesCertificateAuthorityRequest) SetCaType(v int32) {
 	o.CaType = &v
 }
 

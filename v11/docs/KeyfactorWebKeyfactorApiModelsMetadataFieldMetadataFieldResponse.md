@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
-**DataType** | Pointer to [**CSSCMSCoreEnumsMetadataDataType**](CSSCMSCoreEnumsMetadataDataType.md) |  | [optional] 
+**DataType** | Pointer to **int32** |  | [optional] 
 **Hint** | Pointer to **NullableString** |  | [optional] 
 **Validation** | Pointer to **NullableString** |  | [optional] 
-**Enrollment** | Pointer to [**CSSCMSCoreEnumsMetadataTypeEnrollment**](CSSCMSCoreEnumsMetadataTypeEnrollment.md) |  | [optional] 
+**Enrollment** | Pointer to **int32** |  | [optional] 
 **Message** | Pointer to **NullableString** |  | [optional] 
 **Options** | Pointer to **NullableString** |  | [optional] 
 **DefaultValue** | Pointer to **NullableString** |  | [optional] 
@@ -134,20 +134,20 @@ HasDescription returns a boolean if a field has been set.
 UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetDataType
 
-`func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetDataType() CSSCMSCoreEnumsMetadataDataType`
+`func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetDataType() int32`
 
 GetDataType returns the DataType field if non-nil, zero value otherwise.
 
 ### GetDataTypeOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetDataTypeOk() (*CSSCMSCoreEnumsMetadataDataType, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetDataTypeOk() (*int32, bool)`
 
 GetDataTypeOk returns a tuple with the DataType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataType
 
-`func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) SetDataType(v CSSCMSCoreEnumsMetadataDataType)`
+`func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) SetDataType(v int32)`
 
 SetDataType sets DataType field to given value.
 
@@ -229,20 +229,20 @@ HasValidation returns a boolean if a field has been set.
 UnsetValidation ensures that no value is present for Validation, not even an explicit nil
 ### GetEnrollment
 
-`func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetEnrollment() CSSCMSCoreEnumsMetadataTypeEnrollment`
+`func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetEnrollment() int32`
 
 GetEnrollment returns the Enrollment field if non-nil, zero value otherwise.
 
 ### GetEnrollmentOk
 
-`func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetEnrollmentOk() (*CSSCMSCoreEnumsMetadataTypeEnrollment, bool)`
+`func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetEnrollmentOk() (*int32, bool)`
 
 GetEnrollmentOk returns a tuple with the Enrollment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnrollment
 
-`func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) SetEnrollment(v CSSCMSCoreEnumsMetadataTypeEnrollment)`
+`func (o *KeyfactorWebKeyfactorApiModelsMetadataFieldMetadataFieldResponse) SetEnrollment(v int32)`
 
 SetEnrollment sets Enrollment field to given value.
 
