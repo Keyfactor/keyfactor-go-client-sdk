@@ -31,7 +31,7 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsPendingPendingAlertTestResponse{
 // KeyfactorApiModelsAlertsPendingPendingAlertTestResponse struct for KeyfactorApiModelsAlertsPendingPendingAlertTestResponse
 type KeyfactorApiModelsAlertsPendingPendingAlertTestResponse struct {
 	PendingAlerts        []KeyfactorApiModelsAlertsPendingPendingAlertResponse `json:"PendingAlerts,omitempty"`
-	AlertBuildResult     *int32                                                `json:"AlertBuildResult,omitempty"`
+	AlertBuildResult     *int64                                                `json:"AlertBuildResult,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -87,9 +87,9 @@ func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestResponse) SetPendingAler
 }
 
 // GetAlertBuildResult returns the AlertBuildResult field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestResponse) GetAlertBuildResult() int32 {
+func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestResponse) GetAlertBuildResult() int64 {
 	if o == nil || isNil(o.AlertBuildResult) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AlertBuildResult
@@ -97,7 +97,7 @@ func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestResponse) GetAlertBuildR
 
 // GetAlertBuildResultOk returns a tuple with the AlertBuildResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestResponse) GetAlertBuildResultOk() (*int32, bool) {
+func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestResponse) GetAlertBuildResultOk() (*int64, bool) {
 	if o == nil || isNil(o.AlertBuildResult) {
 		return nil, false
 	}
@@ -113,8 +113,8 @@ func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestResponse) HasAlertBuildR
 	return false
 }
 
-// SetAlertBuildResult gets a reference to the given int32 and assigns it to the AlertBuildResult field.
-func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestResponse) SetAlertBuildResult(v int32) {
+// SetAlertBuildResult gets a reference to the given int64 and assigns it to the AlertBuildResult field.
+func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestResponse) SetAlertBuildResult(v int64) {
 	o.AlertBuildResult = &v
 }
 

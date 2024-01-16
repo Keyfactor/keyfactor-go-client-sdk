@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ImportStatus** | Pointer to **int32** |  | [optional] 
-**JobStatus** | Pointer to **int32** |  | [optional] 
+**ImportStatus** | Pointer to **int64** |  | [optional] 
+**JobStatus** | Pointer to **int64** |  | [optional] 
 **InvalidKeystores** | Pointer to [**[]ModelsInvalidKeystore**](ModelsInvalidKeystore.md) |  | [optional] 
 **Thumbprint** | Pointer to **string** |  | [optional] 
 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetImportStatus
 
-`func (o *ModelsCertificateImportResponseModel) GetImportStatus() int32`
+`func (o *ModelsCertificateImportResponseModel) GetImportStatus() int64`
 
 GetImportStatus returns the ImportStatus field if non-nil, zero value otherwise.
 
 ### GetImportStatusOk
 
-`func (o *ModelsCertificateImportResponseModel) GetImportStatusOk() (*int32, bool)`
+`func (o *ModelsCertificateImportResponseModel) GetImportStatusOk() (*int64, bool)`
 
 GetImportStatusOk returns a tuple with the ImportStatus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetImportStatus
 
-`func (o *ModelsCertificateImportResponseModel) SetImportStatus(v int32)`
+`func (o *ModelsCertificateImportResponseModel) SetImportStatus(v int64)`
 
 SetImportStatus sets ImportStatus field to given value.
 
@@ -55,20 +55,20 @@ HasImportStatus returns a boolean if a field has been set.
 
 ### GetJobStatus
 
-`func (o *ModelsCertificateImportResponseModel) GetJobStatus() int32`
+`func (o *ModelsCertificateImportResponseModel) GetJobStatus() int64`
 
 GetJobStatus returns the JobStatus field if non-nil, zero value otherwise.
 
 ### GetJobStatusOk
 
-`func (o *ModelsCertificateImportResponseModel) GetJobStatusOk() (*int32, bool)`
+`func (o *ModelsCertificateImportResponseModel) GetJobStatusOk() (*int64, bool)`
 
 GetJobStatusOk returns a tuple with the JobStatus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetJobStatus
 
-`func (o *ModelsCertificateImportResponseModel) SetJobStatus(v int32)`
+`func (o *ModelsCertificateImportResponseModel) SetJobStatus(v int64)`
 
 SetJobStatus sets JobStatus field to given value.
 

@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ExistingCertificateId** | Pointer to **int32** |  | [optional] 
-**CertificateId** | Pointer to **int32** |  | [optional] 
-**RequestId** | Pointer to **int32** |  | [optional] 
+**ExistingCertificateId** | Pointer to **int64** |  | [optional] 
+**CertificateId** | Pointer to **int64** |  | [optional] 
+**RequestId** | Pointer to **int64** |  | [optional] 
 **Password** | Pointer to **string** |  | [optional] 
 **JobTime** | Pointer to **time.Time** |  | [optional] 
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetExistingCertificateId
 
-`func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetExistingCertificateId() int32`
+`func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetExistingCertificateId() int64`
 
 GetExistingCertificateId returns the ExistingCertificateId field if non-nil, zero value otherwise.
 
 ### GetExistingCertificateIdOk
 
-`func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetExistingCertificateIdOk() (*int32, bool)`
+`func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetExistingCertificateIdOk() (*int64, bool)`
 
 GetExistingCertificateIdOk returns a tuple with the ExistingCertificateId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExistingCertificateId
 
-`func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) SetExistingCertificateId(v int32)`
+`func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) SetExistingCertificateId(v int64)`
 
 SetExistingCertificateId sets ExistingCertificateId field to given value.
 
@@ -56,20 +56,20 @@ HasExistingCertificateId returns a boolean if a field has been set.
 
 ### GetCertificateId
 
-`func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetCertificateId() int32`
+`func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetCertificateId() int64`
 
 GetCertificateId returns the CertificateId field if non-nil, zero value otherwise.
 
 ### GetCertificateIdOk
 
-`func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetCertificateIdOk() (*int32, bool)`
+`func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetCertificateIdOk() (*int64, bool)`
 
 GetCertificateIdOk returns a tuple with the CertificateId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertificateId
 
-`func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) SetCertificateId(v int32)`
+`func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) SetCertificateId(v int64)`
 
 SetCertificateId sets CertificateId field to given value.
 
@@ -81,20 +81,20 @@ HasCertificateId returns a boolean if a field has been set.
 
 ### GetRequestId
 
-`func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetRequestId() int32`
+`func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetRequestId() int64`
 
 GetRequestId returns the RequestId field if non-nil, zero value otherwise.
 
 ### GetRequestIdOk
 
-`func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetRequestIdOk() (*int32, bool)`
+`func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetRequestIdOk() (*int64, bool)`
 
 GetRequestIdOk returns a tuple with the RequestId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRequestId
 
-`func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) SetRequestId(v int32)`
+`func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) SetRequestId(v int64)`
 
 SetRequestId sets RequestId field to given value.
 

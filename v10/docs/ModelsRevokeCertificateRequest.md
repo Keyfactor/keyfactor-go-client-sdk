@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CertificateIds** | Pointer to **[]int32** |  | [optional] 
-**Reason** | Pointer to **int32** |  | [optional] 
+**CertificateIds** | Pointer to **[]int64** |  | [optional] 
+**Reason** | Pointer to **int64** |  | [optional] 
 **Comment** | Pointer to **string** |  | [optional] 
 **EffectiveDate** | Pointer to **time.Time** |  | [optional] 
-**CollectionId** | Pointer to **int32** |  | [optional] 
+**CollectionId** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCertificateIds
 
-`func (o *ModelsRevokeCertificateRequest) GetCertificateIds() []int32`
+`func (o *ModelsRevokeCertificateRequest) GetCertificateIds() []int64`
 
 GetCertificateIds returns the CertificateIds field if non-nil, zero value otherwise.
 
 ### GetCertificateIdsOk
 
-`func (o *ModelsRevokeCertificateRequest) GetCertificateIdsOk() (*[]int32, bool)`
+`func (o *ModelsRevokeCertificateRequest) GetCertificateIdsOk() (*[]int64, bool)`
 
 GetCertificateIdsOk returns a tuple with the CertificateIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertificateIds
 
-`func (o *ModelsRevokeCertificateRequest) SetCertificateIds(v []int32)`
+`func (o *ModelsRevokeCertificateRequest) SetCertificateIds(v []int64)`
 
 SetCertificateIds sets CertificateIds field to given value.
 
@@ -56,20 +56,20 @@ HasCertificateIds returns a boolean if a field has been set.
 
 ### GetReason
 
-`func (o *ModelsRevokeCertificateRequest) GetReason() int32`
+`func (o *ModelsRevokeCertificateRequest) GetReason() int64`
 
 GetReason returns the Reason field if non-nil, zero value otherwise.
 
 ### GetReasonOk
 
-`func (o *ModelsRevokeCertificateRequest) GetReasonOk() (*int32, bool)`
+`func (o *ModelsRevokeCertificateRequest) GetReasonOk() (*int64, bool)`
 
 GetReasonOk returns a tuple with the Reason field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReason
 
-`func (o *ModelsRevokeCertificateRequest) SetReason(v int32)`
+`func (o *ModelsRevokeCertificateRequest) SetReason(v int64)`
 
 SetReason sets Reason field to given value.
 
@@ -131,20 +131,20 @@ HasEffectiveDate returns a boolean if a field has been set.
 
 ### GetCollectionId
 
-`func (o *ModelsRevokeCertificateRequest) GetCollectionId() int32`
+`func (o *ModelsRevokeCertificateRequest) GetCollectionId() int64`
 
 GetCollectionId returns the CollectionId field if non-nil, zero value otherwise.
 
 ### GetCollectionIdOk
 
-`func (o *ModelsRevokeCertificateRequest) GetCollectionIdOk() (*int32, bool)`
+`func (o *ModelsRevokeCertificateRequest) GetCollectionIdOk() (*int64, bool)`
 
 GetCollectionIdOk returns a tuple with the CollectionId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCollectionId
 
-`func (o *ModelsRevokeCertificateRequest) SetCollectionId(v int32)`
+`func (o *ModelsRevokeCertificateRequest) SetCollectionId(v int64)`
 
 SetCollectionId sets CollectionId field to given value.
 

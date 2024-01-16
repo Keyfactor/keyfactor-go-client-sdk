@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **DisplayName** | **string** |  | 
 **Subject** | **string** |  | 
 **Message** | **string** |  | 
-**RotationWarningDays** | **int32** |  | 
+**RotationWarningDays** | **int64** |  | 
 **RegisteredEventHandler** | Pointer to [**KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest**](KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest.md) |  | [optional] 
 **EventHandlerParameters** | Pointer to [**[]KeyfactorApiModelsEventHandlerEventHandlerParameterRequest**](KeyfactorApiModelsEventHandlerEventHandlerParameterRequest.md) |  | [optional] 
 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest
 
-`func NewKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest(displayName string, subject string, message string, rotationWarningDays int32, ) *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest`
+`func NewKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest(displayName string, subject string, message string, rotationWarningDays int64, ) *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest`
 
 NewKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest instantiates a new KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest) GetId() int32`
+`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest) GetIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest) SetId(v int32)`
+`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -118,20 +118,20 @@ SetMessage sets Message field to given value.
 
 ### GetRotationWarningDays
 
-`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest) GetRotationWarningDays() int32`
+`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest) GetRotationWarningDays() int64`
 
 GetRotationWarningDays returns the RotationWarningDays field if non-nil, zero value otherwise.
 
 ### GetRotationWarningDaysOk
 
-`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest) GetRotationWarningDaysOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest) GetRotationWarningDaysOk() (*int64, bool)`
 
 GetRotationWarningDaysOk returns a tuple with the RotationWarningDays field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRotationWarningDays
 
-`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest) SetRotationWarningDays(v int32)`
+`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertUpdateRequest) SetRotationWarningDays(v int64)`
 
 SetRotationWarningDays sets RotationWarningDays field to given value.
 

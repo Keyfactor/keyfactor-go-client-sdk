@@ -30,12 +30,12 @@ var _ MappedNullable = &ModelsCertificateQuery{}
 
 // ModelsCertificateQuery struct for ModelsCertificateQuery
 type ModelsCertificateQuery struct {
-	Id                   *int32  `json:"Id,omitempty"`
+	Id                   *int64  `json:"Id,omitempty"`
 	Name                 *string `json:"Name,omitempty"`
 	Description          *string `json:"Description,omitempty"`
 	Automated            *bool   `json:"Automated,omitempty"`
 	Content              *string `json:"Content,omitempty"`
-	DuplicationField     *int32  `json:"DuplicationField,omitempty"`
+	DuplicationField     *int64  `json:"DuplicationField,omitempty"`
 	ShowOnDashboard      *bool   `json:"ShowOnDashboard,omitempty"`
 	Favorite             *bool   `json:"Favorite,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -61,9 +61,9 @@ func NewModelsCertificateQueryWithDefaults() *ModelsCertificateQuery {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsCertificateQuery) GetId() int32 {
+func (o *ModelsCertificateQuery) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -71,7 +71,7 @@ func (o *ModelsCertificateQuery) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateQuery) GetIdOk() (*int32, bool) {
+func (o *ModelsCertificateQuery) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -87,8 +87,8 @@ func (o *ModelsCertificateQuery) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsCertificateQuery) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsCertificateQuery) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -221,9 +221,9 @@ func (o *ModelsCertificateQuery) SetContent(v string) {
 }
 
 // GetDuplicationField returns the DuplicationField field value if set, zero value otherwise.
-func (o *ModelsCertificateQuery) GetDuplicationField() int32 {
+func (o *ModelsCertificateQuery) GetDuplicationField() int64 {
 	if o == nil || isNil(o.DuplicationField) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DuplicationField
@@ -231,7 +231,7 @@ func (o *ModelsCertificateQuery) GetDuplicationField() int32 {
 
 // GetDuplicationFieldOk returns a tuple with the DuplicationField field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateQuery) GetDuplicationFieldOk() (*int32, bool) {
+func (o *ModelsCertificateQuery) GetDuplicationFieldOk() (*int64, bool) {
 	if o == nil || isNil(o.DuplicationField) {
 		return nil, false
 	}
@@ -247,8 +247,8 @@ func (o *ModelsCertificateQuery) HasDuplicationField() bool {
 	return false
 }
 
-// SetDuplicationField gets a reference to the given int32 and assigns it to the DuplicationField field.
-func (o *ModelsCertificateQuery) SetDuplicationField(v int32) {
+// SetDuplicationField gets a reference to the given int64 and assigns it to the DuplicationField field.
+func (o *ModelsCertificateQuery) SetDuplicationField(v int64) {
 	o.DuplicationField = &v
 }
 

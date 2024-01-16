@@ -31,7 +31,7 @@ var _ MappedNullable = &KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest{}
 // KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest struct for KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest
 type KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest struct {
 	// The allowed RSA key sizes.
-	RSAValidKeySizes []int32 `json:"RSAValidKeySizes"`
+	RSAValidKeySizes []int64 `json:"RSAValidKeySizes"`
 	// The allowed ECC curves.
 	ECCValidCurves []string `json:"ECCValidCurves"`
 	// Whether or not keys can be reused.
@@ -49,7 +49,7 @@ type _KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest KeyfactorApiModelsT
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest(rSAValidKeySizes []int32, eCCValidCurves []string, allowKeyReuse bool, allowWildcards bool, rFCEnforcement bool) *KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest {
+func NewKeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest(rSAValidKeySizes []int64, eCCValidCurves []string, allowKeyReuse bool, allowWildcards bool, rFCEnforcement bool) *KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest {
 	this := KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest{}
 	this.RSAValidKeySizes = rSAValidKeySizes
 	this.ECCValidCurves = eCCValidCurves
@@ -68,9 +68,9 @@ func NewKeyfactorApiModelsTemplatesGlobalTemplatePolicyRequestWithDefaults() *Ke
 }
 
 // GetRSAValidKeySizes returns the RSAValidKeySizes field value
-func (o *KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest) GetRSAValidKeySizes() []int32 {
+func (o *KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest) GetRSAValidKeySizes() []int64 {
 	if o == nil {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 
@@ -79,7 +79,7 @@ func (o *KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest) GetRSAValidKeyS
 
 // GetRSAValidKeySizesOk returns a tuple with the RSAValidKeySizes field value
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest) GetRSAValidKeySizesOk() ([]int32, bool) {
+func (o *KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest) GetRSAValidKeySizesOk() ([]int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -87,7 +87,7 @@ func (o *KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest) GetRSAValidKeyS
 }
 
 // SetRSAValidKeySizes sets field value
-func (o *KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest) SetRSAValidKeySizes(v []int32) {
+func (o *KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest) SetRSAValidKeySizes(v []int64) {
 	o.RSAValidKeySizes = v
 }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **int32** |  | 
+**Id** | **int64** |  | 
 **CommonName** | Pointer to **string** |  | [optional] 
 **TemplateName** | Pointer to **string** |  | [optional] 
 **Oid** | Pointer to **string** |  | [optional] 
@@ -13,24 +13,24 @@ Name | Type | Description | Notes
 **ForestRoot** | Pointer to **string** |  | [optional] [readonly] 
 **ConfigurationTenant** | Pointer to **string** |  | [optional] 
 **FriendlyName** | Pointer to **string** |  | [optional] 
-**KeyRetention** | Pointer to **int32** |  | [optional] 
-**KeyRetentionDays** | Pointer to **int32** |  | [optional] 
+**KeyRetention** | Pointer to **int64** |  | [optional] 
+**KeyRetentionDays** | Pointer to **int64** |  | [optional] 
 **KeyArchival** | Pointer to **bool** |  | [optional] 
 **EnrollmentFields** | Pointer to [**[]ModelsTemplateCollectionRetrievalResponseTemplateEnrollmentFieldModel**](ModelsTemplateCollectionRetrievalResponseTemplateEnrollmentFieldModel.md) |  | [optional] 
-**AllowedEnrollmentTypes** | Pointer to **int32** |  | [optional] 
+**AllowedEnrollmentTypes** | Pointer to **int64** |  | [optional] 
 **TemplateRegexes** | Pointer to [**[]ModelsTemplateCollectionRetrievalResponseTemplateRegexModel**](ModelsTemplateCollectionRetrievalResponseTemplateRegexModel.md) |  | [optional] 
 **UseAllowedRequesters** | Pointer to **bool** |  | [optional] 
 **AllowedRequesters** | Pointer to **[]string** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
 **RequiresApproval** | Pointer to **bool** |  | [optional] 
-**KeyUsage** | Pointer to **int32** |  | [optional] 
+**KeyUsage** | Pointer to **int64** |  | [optional] 
 **ExtendedKeyUsages** | Pointer to [**[]ModelsTemplateCollectionRetrievalResponseExtendedKeyUsageModel**](ModelsTemplateCollectionRetrievalResponseExtendedKeyUsageModel.md) |  | [optional] 
 
 ## Methods
 
 ### NewModelsTemplateCollectionRetrievalResponse
 
-`func NewModelsTemplateCollectionRetrievalResponse(id int32, ) *ModelsTemplateCollectionRetrievalResponse`
+`func NewModelsTemplateCollectionRetrievalResponse(id int64, ) *ModelsTemplateCollectionRetrievalResponse`
 
 NewModelsTemplateCollectionRetrievalResponse instantiates a new ModelsTemplateCollectionRetrievalResponse object
 This constructor will assign default values to properties that have it defined,
@@ -47,20 +47,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ModelsTemplateCollectionRetrievalResponse) GetId() int32`
+`func (o *ModelsTemplateCollectionRetrievalResponse) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsTemplateCollectionRetrievalResponse) GetIdOk() (*int32, bool)`
+`func (o *ModelsTemplateCollectionRetrievalResponse) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsTemplateCollectionRetrievalResponse) SetId(v int32)`
+`func (o *ModelsTemplateCollectionRetrievalResponse) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -267,20 +267,20 @@ HasFriendlyName returns a boolean if a field has been set.
 
 ### GetKeyRetention
 
-`func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyRetention() int32`
+`func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyRetention() int64`
 
 GetKeyRetention returns the KeyRetention field if non-nil, zero value otherwise.
 
 ### GetKeyRetentionOk
 
-`func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyRetentionOk() (*int32, bool)`
+`func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyRetentionOk() (*int64, bool)`
 
 GetKeyRetentionOk returns a tuple with the KeyRetention field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyRetention
 
-`func (o *ModelsTemplateCollectionRetrievalResponse) SetKeyRetention(v int32)`
+`func (o *ModelsTemplateCollectionRetrievalResponse) SetKeyRetention(v int64)`
 
 SetKeyRetention sets KeyRetention field to given value.
 
@@ -292,20 +292,20 @@ HasKeyRetention returns a boolean if a field has been set.
 
 ### GetKeyRetentionDays
 
-`func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyRetentionDays() int32`
+`func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyRetentionDays() int64`
 
 GetKeyRetentionDays returns the KeyRetentionDays field if non-nil, zero value otherwise.
 
 ### GetKeyRetentionDaysOk
 
-`func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyRetentionDaysOk() (*int32, bool)`
+`func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyRetentionDaysOk() (*int64, bool)`
 
 GetKeyRetentionDaysOk returns a tuple with the KeyRetentionDays field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyRetentionDays
 
-`func (o *ModelsTemplateCollectionRetrievalResponse) SetKeyRetentionDays(v int32)`
+`func (o *ModelsTemplateCollectionRetrievalResponse) SetKeyRetentionDays(v int64)`
 
 SetKeyRetentionDays sets KeyRetentionDays field to given value.
 
@@ -367,20 +367,20 @@ HasEnrollmentFields returns a boolean if a field has been set.
 
 ### GetAllowedEnrollmentTypes
 
-`func (o *ModelsTemplateCollectionRetrievalResponse) GetAllowedEnrollmentTypes() int32`
+`func (o *ModelsTemplateCollectionRetrievalResponse) GetAllowedEnrollmentTypes() int64`
 
 GetAllowedEnrollmentTypes returns the AllowedEnrollmentTypes field if non-nil, zero value otherwise.
 
 ### GetAllowedEnrollmentTypesOk
 
-`func (o *ModelsTemplateCollectionRetrievalResponse) GetAllowedEnrollmentTypesOk() (*int32, bool)`
+`func (o *ModelsTemplateCollectionRetrievalResponse) GetAllowedEnrollmentTypesOk() (*int64, bool)`
 
 GetAllowedEnrollmentTypesOk returns a tuple with the AllowedEnrollmentTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowedEnrollmentTypes
 
-`func (o *ModelsTemplateCollectionRetrievalResponse) SetAllowedEnrollmentTypes(v int32)`
+`func (o *ModelsTemplateCollectionRetrievalResponse) SetAllowedEnrollmentTypes(v int64)`
 
 SetAllowedEnrollmentTypes sets AllowedEnrollmentTypes field to given value.
 
@@ -517,20 +517,20 @@ HasRequiresApproval returns a boolean if a field has been set.
 
 ### GetKeyUsage
 
-`func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyUsage() int32`
+`func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyUsage() int64`
 
 GetKeyUsage returns the KeyUsage field if non-nil, zero value otherwise.
 
 ### GetKeyUsageOk
 
-`func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyUsageOk() (*int32, bool)`
+`func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyUsageOk() (*int64, bool)`
 
 GetKeyUsageOk returns a tuple with the KeyUsage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyUsage
 
-`func (o *ModelsTemplateCollectionRetrievalResponse) SetKeyUsage(v int32)`
+`func (o *ModelsTemplateCollectionRetrievalResponse) SetKeyUsage(v int64)`
 
 SetKeyUsage sets KeyUsage field to given value.
 

@@ -283,10 +283,10 @@ type ApiWorkflowInstanceQueryRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -308,13 +308,13 @@ func (r ApiWorkflowInstanceQueryRequest) PqQueryString(pqQueryString string) Api
 }
 
 // The current page within the result set to be returned
-func (r ApiWorkflowInstanceQueryRequest) PqPageReturned(pqPageReturned int32) ApiWorkflowInstanceQueryRequest {
+func (r ApiWorkflowInstanceQueryRequest) PqPageReturned(pqPageReturned int64) ApiWorkflowInstanceQueryRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiWorkflowInstanceQueryRequest) PqReturnLimit(pqReturnLimit int32) ApiWorkflowInstanceQueryRequest {
+func (r ApiWorkflowInstanceQueryRequest) PqReturnLimit(pqReturnLimit int64) ApiWorkflowInstanceQueryRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -326,7 +326,7 @@ func (r ApiWorkflowInstanceQueryRequest) PqSortField(pqSortField string) ApiWork
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiWorkflowInstanceQueryRequest) PqSortAscending(pqSortAscending int32) ApiWorkflowInstanceQueryRequest {
+func (r ApiWorkflowInstanceQueryRequest) PqSortAscending(pqSortAscending int64) ApiWorkflowInstanceQueryRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }
@@ -457,10 +457,10 @@ type ApiWorkflowInstanceQueryInstancesAssignedToMeRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -482,13 +482,13 @@ func (r ApiWorkflowInstanceQueryInstancesAssignedToMeRequest) PqQueryString(pqQu
 }
 
 // The current page within the result set to be returned
-func (r ApiWorkflowInstanceQueryInstancesAssignedToMeRequest) PqPageReturned(pqPageReturned int32) ApiWorkflowInstanceQueryInstancesAssignedToMeRequest {
+func (r ApiWorkflowInstanceQueryInstancesAssignedToMeRequest) PqPageReturned(pqPageReturned int64) ApiWorkflowInstanceQueryInstancesAssignedToMeRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiWorkflowInstanceQueryInstancesAssignedToMeRequest) PqReturnLimit(pqReturnLimit int32) ApiWorkflowInstanceQueryInstancesAssignedToMeRequest {
+func (r ApiWorkflowInstanceQueryInstancesAssignedToMeRequest) PqReturnLimit(pqReturnLimit int64) ApiWorkflowInstanceQueryInstancesAssignedToMeRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -500,7 +500,7 @@ func (r ApiWorkflowInstanceQueryInstancesAssignedToMeRequest) PqSortField(pqSort
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiWorkflowInstanceQueryInstancesAssignedToMeRequest) PqSortAscending(pqSortAscending int32) ApiWorkflowInstanceQueryInstancesAssignedToMeRequest {
+func (r ApiWorkflowInstanceQueryInstancesAssignedToMeRequest) PqSortAscending(pqSortAscending int64) ApiWorkflowInstanceQueryInstancesAssignedToMeRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }
@@ -631,10 +631,10 @@ type ApiWorkflowInstanceQueryInstancesStartedByMeRequest struct {
 	xKeyfactorRequestedWith    *string
 	xKeyfactorApiVersion       *string
 	instanceQueryQueryString   *string
-	instanceQueryPageReturned  *int32
-	instanceQueryReturnLimit   *int32
+	instanceQueryPageReturned  *int64
+	instanceQueryReturnLimit   *int64
 	instanceQuerySortField     *string
-	instanceQuerySortAscending *int32
+	instanceQuerySortAscending *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -656,13 +656,13 @@ func (r ApiWorkflowInstanceQueryInstancesStartedByMeRequest) InstanceQueryQueryS
 }
 
 // The current page within the result set to be returned
-func (r ApiWorkflowInstanceQueryInstancesStartedByMeRequest) InstanceQueryPageReturned(instanceQueryPageReturned int32) ApiWorkflowInstanceQueryInstancesStartedByMeRequest {
+func (r ApiWorkflowInstanceQueryInstancesStartedByMeRequest) InstanceQueryPageReturned(instanceQueryPageReturned int64) ApiWorkflowInstanceQueryInstancesStartedByMeRequest {
 	r.instanceQueryPageReturned = &instanceQueryPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiWorkflowInstanceQueryInstancesStartedByMeRequest) InstanceQueryReturnLimit(instanceQueryReturnLimit int32) ApiWorkflowInstanceQueryInstancesStartedByMeRequest {
+func (r ApiWorkflowInstanceQueryInstancesStartedByMeRequest) InstanceQueryReturnLimit(instanceQueryReturnLimit int64) ApiWorkflowInstanceQueryInstancesStartedByMeRequest {
 	r.instanceQueryReturnLimit = &instanceQueryReturnLimit
 	return r
 }
@@ -674,7 +674,7 @@ func (r ApiWorkflowInstanceQueryInstancesStartedByMeRequest) InstanceQuerySortFi
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiWorkflowInstanceQueryInstancesStartedByMeRequest) InstanceQuerySortAscending(instanceQuerySortAscending int32) ApiWorkflowInstanceQueryInstancesStartedByMeRequest {
+func (r ApiWorkflowInstanceQueryInstancesStartedByMeRequest) InstanceQuerySortAscending(instanceQuerySortAscending int64) ApiWorkflowInstanceQueryInstancesStartedByMeRequest {
 	r.instanceQuerySortAscending = &instanceQuerySortAscending
 	return r
 }
@@ -804,7 +804,7 @@ type ApiWorkflowInstanceRestartRequest struct {
 	ApiService              *WorkflowInstanceApiService
 	instanceId              string
 	xKeyfactorRequestedWith *string
-	version                 *int32
+	version                 *int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -815,7 +815,7 @@ func (r ApiWorkflowInstanceRestartRequest) XKeyfactorRequestedWith(xKeyfactorReq
 }
 
 // The version of the definition to restart the instance against. Defaults to the published version.
-func (r ApiWorkflowInstanceRestartRequest) Version(version int32) ApiWorkflowInstanceRestartRequest {
+func (r ApiWorkflowInstanceRestartRequest) Version(version int64) ApiWorkflowInstanceRestartRequest {
 	r.version = &version
 	return r
 }

@@ -31,13 +31,13 @@ var _ MappedNullable = &KeyfactorAuditingQueryingAuditLogEntry{}
 
 // KeyfactorAuditingQueryingAuditLogEntry struct for KeyfactorAuditingQueryingAuditLogEntry
 type KeyfactorAuditingQueryingAuditLogEntry struct {
-	Id                   *int32     `json:"Id,omitempty"`
+	Id                   *int64     `json:"Id,omitempty"`
 	Timestamp            *time.Time `json:"Timestamp,omitempty"`
 	Message              *string    `json:"Message,omitempty"`
 	Signature            *string    `json:"Signature,omitempty"`
-	Category             *int32     `json:"Category,omitempty"`
-	Operation            *int32     `json:"Operation,omitempty"`
-	Level                *int32     `json:"Level,omitempty"`
+	Category             *int64     `json:"Category,omitempty"`
+	Operation            *int64     `json:"Operation,omitempty"`
+	Level                *int64     `json:"Level,omitempty"`
 	User                 *string    `json:"User,omitempty"`
 	EntityType           *string    `json:"EntityType,omitempty"`
 	AuditIdentifier      *string    `json:"AuditIdentifier,omitempty"`
@@ -65,9 +65,9 @@ func NewKeyfactorAuditingQueryingAuditLogEntryWithDefaults() *KeyfactorAuditingQ
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *KeyfactorAuditingQueryingAuditLogEntry) GetId() int32 {
+func (o *KeyfactorAuditingQueryingAuditLogEntry) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -75,7 +75,7 @@ func (o *KeyfactorAuditingQueryingAuditLogEntry) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorAuditingQueryingAuditLogEntry) GetIdOk() (*int32, bool) {
+func (o *KeyfactorAuditingQueryingAuditLogEntry) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -91,8 +91,8 @@ func (o *KeyfactorAuditingQueryingAuditLogEntry) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *KeyfactorAuditingQueryingAuditLogEntry) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *KeyfactorAuditingQueryingAuditLogEntry) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -193,9 +193,9 @@ func (o *KeyfactorAuditingQueryingAuditLogEntry) SetSignature(v string) {
 }
 
 // GetCategory returns the Category field value if set, zero value otherwise.
-func (o *KeyfactorAuditingQueryingAuditLogEntry) GetCategory() int32 {
+func (o *KeyfactorAuditingQueryingAuditLogEntry) GetCategory() int64 {
 	if o == nil || isNil(o.Category) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Category
@@ -203,7 +203,7 @@ func (o *KeyfactorAuditingQueryingAuditLogEntry) GetCategory() int32 {
 
 // GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorAuditingQueryingAuditLogEntry) GetCategoryOk() (*int32, bool) {
+func (o *KeyfactorAuditingQueryingAuditLogEntry) GetCategoryOk() (*int64, bool) {
 	if o == nil || isNil(o.Category) {
 		return nil, false
 	}
@@ -219,15 +219,15 @@ func (o *KeyfactorAuditingQueryingAuditLogEntry) HasCategory() bool {
 	return false
 }
 
-// SetCategory gets a reference to the given int32 and assigns it to the Category field.
-func (o *KeyfactorAuditingQueryingAuditLogEntry) SetCategory(v int32) {
+// SetCategory gets a reference to the given int64 and assigns it to the Category field.
+func (o *KeyfactorAuditingQueryingAuditLogEntry) SetCategory(v int64) {
 	o.Category = &v
 }
 
 // GetOperation returns the Operation field value if set, zero value otherwise.
-func (o *KeyfactorAuditingQueryingAuditLogEntry) GetOperation() int32 {
+func (o *KeyfactorAuditingQueryingAuditLogEntry) GetOperation() int64 {
 	if o == nil || isNil(o.Operation) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Operation
@@ -235,7 +235,7 @@ func (o *KeyfactorAuditingQueryingAuditLogEntry) GetOperation() int32 {
 
 // GetOperationOk returns a tuple with the Operation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorAuditingQueryingAuditLogEntry) GetOperationOk() (*int32, bool) {
+func (o *KeyfactorAuditingQueryingAuditLogEntry) GetOperationOk() (*int64, bool) {
 	if o == nil || isNil(o.Operation) {
 		return nil, false
 	}
@@ -251,15 +251,15 @@ func (o *KeyfactorAuditingQueryingAuditLogEntry) HasOperation() bool {
 	return false
 }
 
-// SetOperation gets a reference to the given int32 and assigns it to the Operation field.
-func (o *KeyfactorAuditingQueryingAuditLogEntry) SetOperation(v int32) {
+// SetOperation gets a reference to the given int64 and assigns it to the Operation field.
+func (o *KeyfactorAuditingQueryingAuditLogEntry) SetOperation(v int64) {
 	o.Operation = &v
 }
 
 // GetLevel returns the Level field value if set, zero value otherwise.
-func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevel() int32 {
+func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevel() int64 {
 	if o == nil || isNil(o.Level) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Level
@@ -267,7 +267,7 @@ func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevel() int32 {
 
 // GetLevelOk returns a tuple with the Level field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevelOk() (*int32, bool) {
+func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevelOk() (*int64, bool) {
 	if o == nil || isNil(o.Level) {
 		return nil, false
 	}
@@ -283,8 +283,8 @@ func (o *KeyfactorAuditingQueryingAuditLogEntry) HasLevel() bool {
 	return false
 }
 
-// SetLevel gets a reference to the given int32 and assigns it to the Level field.
-func (o *KeyfactorAuditingQueryingAuditLogEntry) SetLevel(v int32) {
+// SetLevel gets a reference to the given int64 and assigns it to the Level field.
+func (o *KeyfactorAuditingQueryingAuditLogEntry) SetLevel(v int64) {
 	o.Level = &v
 }
 

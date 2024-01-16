@@ -33,7 +33,7 @@ type KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest struct {
 	DisplayName            string                                                       `json:"DisplayName"`
 	Subject                string                                                       `json:"Subject"`
 	Message                string                                                       `json:"Message"`
-	RotationWarningDays    int32                                                        `json:"RotationWarningDays"`
+	RotationWarningDays    int64                                                        `json:"RotationWarningDays"`
 	RegisteredEventHandler *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest `json:"RegisteredEventHandler,omitempty"`
 	EventHandlerParameters []KeyfactorApiModelsEventHandlerEventHandlerParameterRequest `json:"EventHandlerParameters,omitempty"`
 	AdditionalProperties   map[string]interface{}
@@ -45,7 +45,7 @@ type _KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest Keyfact
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest(displayName string, subject string, message string, rotationWarningDays int32) *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest {
+func NewKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest(displayName string, subject string, message string, rotationWarningDays int64) *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest {
 	this := KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest{}
 	this.DisplayName = displayName
 	this.Subject = subject
@@ -135,9 +135,9 @@ func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest) Set
 }
 
 // GetRotationWarningDays returns the RotationWarningDays field value
-func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest) GetRotationWarningDays() int32 {
+func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest) GetRotationWarningDays() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -146,7 +146,7 @@ func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest) Get
 
 // GetRotationWarningDaysOk returns a tuple with the RotationWarningDays field value
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest) GetRotationWarningDaysOk() (*int32, bool) {
+func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest) GetRotationWarningDaysOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -154,7 +154,7 @@ func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest) Get
 }
 
 // SetRotationWarningDays sets field value
-func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest) SetRotationWarningDays(v int32) {
+func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest) SetRotationWarningDays(v int64) {
 	o.RotationWarningDays = v
 }
 

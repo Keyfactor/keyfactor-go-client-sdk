@@ -34,10 +34,10 @@ type ModelsPkcs10CertificateResponse struct {
 	IssuerDN     NullableString `json:"IssuerDN,omitempty"`
 	Thumbprint   *string        `json:"Thumbprint,omitempty"`
 	// The integer ID of the certificate in the keyfactor database, if Issued
-	KeyfactorID  *int32   `json:"KeyfactorID,omitempty"`
+	KeyfactorID  *int64   `json:"KeyfactorID,omitempty"`
 	Certificates []string `json:"Certificates,omitempty"`
 	// The integer id of the certificate request in the Keyfactor database, if one exists.
-	KeyfactorRequestId   *int32            `json:"KeyfactorRequestId,omitempty"`
+	KeyfactorRequestId   *int64            `json:"KeyfactorRequestId,omitempty"`
 	RequestDisposition   *string           `json:"RequestDisposition,omitempty"`
 	DispositionMessage   *string           `json:"DispositionMessage,omitempty"`
 	EnrollmentContext    map[string]string `json:"EnrollmentContext,omitempty"`
@@ -171,9 +171,9 @@ func (o *ModelsPkcs10CertificateResponse) SetThumbprint(v string) {
 }
 
 // GetKeyfactorID returns the KeyfactorID field value if set, zero value otherwise.
-func (o *ModelsPkcs10CertificateResponse) GetKeyfactorID() int32 {
+func (o *ModelsPkcs10CertificateResponse) GetKeyfactorID() int64 {
 	if o == nil || isNil(o.KeyfactorID) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KeyfactorID
@@ -181,7 +181,7 @@ func (o *ModelsPkcs10CertificateResponse) GetKeyfactorID() int32 {
 
 // GetKeyfactorIDOk returns a tuple with the KeyfactorID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsPkcs10CertificateResponse) GetKeyfactorIDOk() (*int32, bool) {
+func (o *ModelsPkcs10CertificateResponse) GetKeyfactorIDOk() (*int64, bool) {
 	if o == nil || isNil(o.KeyfactorID) {
 		return nil, false
 	}
@@ -197,8 +197,8 @@ func (o *ModelsPkcs10CertificateResponse) HasKeyfactorID() bool {
 	return false
 }
 
-// SetKeyfactorID gets a reference to the given int32 and assigns it to the KeyfactorID field.
-func (o *ModelsPkcs10CertificateResponse) SetKeyfactorID(v int32) {
+// SetKeyfactorID gets a reference to the given int64 and assigns it to the KeyfactorID field.
+func (o *ModelsPkcs10CertificateResponse) SetKeyfactorID(v int64) {
 	o.KeyfactorID = &v
 }
 
@@ -235,9 +235,9 @@ func (o *ModelsPkcs10CertificateResponse) SetCertificates(v []string) {
 }
 
 // GetKeyfactorRequestId returns the KeyfactorRequestId field value if set, zero value otherwise.
-func (o *ModelsPkcs10CertificateResponse) GetKeyfactorRequestId() int32 {
+func (o *ModelsPkcs10CertificateResponse) GetKeyfactorRequestId() int64 {
 	if o == nil || isNil(o.KeyfactorRequestId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KeyfactorRequestId
@@ -245,7 +245,7 @@ func (o *ModelsPkcs10CertificateResponse) GetKeyfactorRequestId() int32 {
 
 // GetKeyfactorRequestIdOk returns a tuple with the KeyfactorRequestId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsPkcs10CertificateResponse) GetKeyfactorRequestIdOk() (*int32, bool) {
+func (o *ModelsPkcs10CertificateResponse) GetKeyfactorRequestIdOk() (*int64, bool) {
 	if o == nil || isNil(o.KeyfactorRequestId) {
 		return nil, false
 	}
@@ -261,8 +261,8 @@ func (o *ModelsPkcs10CertificateResponse) HasKeyfactorRequestId() bool {
 	return false
 }
 
-// SetKeyfactorRequestId gets a reference to the given int32 and assigns it to the KeyfactorRequestId field.
-func (o *ModelsPkcs10CertificateResponse) SetKeyfactorRequestId(v int32) {
+// SetKeyfactorRequestId gets a reference to the given int64 and assigns it to the KeyfactorRequestId field.
+func (o *ModelsPkcs10CertificateResponse) SetKeyfactorRequestId(v int64) {
 	o.KeyfactorRequestId = &v
 }
 

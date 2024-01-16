@@ -160,7 +160,7 @@ func (a *TemplateApiService) TemplateGetGlobalSettingsExecute(r ApiTemplateGetGl
 type ApiTemplateGetTemplateRequest struct {
 	ctx                     context.Context
 	ApiService              *TemplateApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -188,7 +188,7 @@ TemplateGetTemplate Returns the certificate template associated with the provide
 	@param id Keyfactor identifier of the certificate template
 	@return ApiTemplateGetTemplateRequest
 */
-func (a *TemplateApiService) TemplateGetTemplate(ctx context.Context, id int32) ApiTemplateGetTemplateRequest {
+func (a *TemplateApiService) TemplateGetTemplate(ctx context.Context, id int64) ApiTemplateGetTemplateRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -291,10 +291,10 @@ type ApiTemplateGetTemplatesRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	sqQueryString           *string
-	sqPageReturned          *int32
-	sqReturnLimit           *int32
+	sqPageReturned          *int64
+	sqReturnLimit           *int64
 	sqSortField             *string
-	sqSortAscending         *int32
+	sqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -316,13 +316,13 @@ func (r ApiTemplateGetTemplatesRequest) SqQueryString(sqQueryString string) ApiT
 }
 
 // The current page within the result set to be returned
-func (r ApiTemplateGetTemplatesRequest) SqPageReturned(sqPageReturned int32) ApiTemplateGetTemplatesRequest {
+func (r ApiTemplateGetTemplatesRequest) SqPageReturned(sqPageReturned int64) ApiTemplateGetTemplatesRequest {
 	r.sqPageReturned = &sqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiTemplateGetTemplatesRequest) SqReturnLimit(sqReturnLimit int32) ApiTemplateGetTemplatesRequest {
+func (r ApiTemplateGetTemplatesRequest) SqReturnLimit(sqReturnLimit int64) ApiTemplateGetTemplatesRequest {
 	r.sqReturnLimit = &sqReturnLimit
 	return r
 }
@@ -334,7 +334,7 @@ func (r ApiTemplateGetTemplatesRequest) SqSortField(sqSortField string) ApiTempl
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiTemplateGetTemplatesRequest) SqSortAscending(sqSortAscending int32) ApiTemplateGetTemplatesRequest {
+func (r ApiTemplateGetTemplatesRequest) SqSortAscending(sqSortAscending int64) ApiTemplateGetTemplatesRequest {
 	r.sqSortAscending = &sqSortAscending
 	return r
 }

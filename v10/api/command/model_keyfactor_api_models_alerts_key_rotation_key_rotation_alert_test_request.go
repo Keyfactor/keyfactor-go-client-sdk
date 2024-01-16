@@ -31,7 +31,7 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestR
 
 // KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestRequest struct for KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestRequest
 type KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestRequest struct {
-	AlertId                *int32     `json:"AlertId,omitempty"`
+	AlertId                *int64     `json:"AlertId,omitempty"`
 	EvaluationDate         *time.Time `json:"EvaluationDate,omitempty"`
 	PreviousEvaluationDate *time.Time `json:"PreviousEvaluationDate,omitempty"`
 	SendAlerts             *bool      `json:"SendAlerts,omitempty"`
@@ -58,9 +58,9 @@ func NewKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestRequestWithDefaul
 }
 
 // GetAlertId returns the AlertId field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestRequest) GetAlertId() int32 {
+func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestRequest) GetAlertId() int64 {
 	if o == nil || isNil(o.AlertId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AlertId
@@ -68,7 +68,7 @@ func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestRequest) GetAler
 
 // GetAlertIdOk returns a tuple with the AlertId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestRequest) GetAlertIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestRequest) GetAlertIdOk() (*int64, bool) {
 	if o == nil || isNil(o.AlertId) {
 		return nil, false
 	}
@@ -84,8 +84,8 @@ func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestRequest) HasAler
 	return false
 }
 
-// SetAlertId gets a reference to the given int32 and assigns it to the AlertId field.
-func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestRequest) SetAlertId(v int32) {
+// SetAlertId gets a reference to the given int64 and assigns it to the AlertId field.
+func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestRequest) SetAlertId(v int64) {
 	o.AlertId = &v
 }
 

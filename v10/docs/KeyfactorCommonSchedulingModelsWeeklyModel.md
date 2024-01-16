@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Days** | Pointer to **[]int32** |  | [optional] 
+**Days** | Pointer to **[]int64** |  | [optional] 
 **Time** | Pointer to **time.Time** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDays
 
-`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDays() []int32`
+`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDays() []int64`
 
 GetDays returns the Days field if non-nil, zero value otherwise.
 
 ### GetDaysOk
 
-`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDaysOk() (*[]int32, bool)`
+`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDaysOk() (*[]int64, bool)`
 
 GetDaysOk returns a tuple with the Days field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDays
 
-`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) SetDays(v []int32)`
+`func (o *KeyfactorCommonSchedulingModelsWeeklyModel) SetDays(v []int64)`
 
 SetDays sets Days field to given value.
 

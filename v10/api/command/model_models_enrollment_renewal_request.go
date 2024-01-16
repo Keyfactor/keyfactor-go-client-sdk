@@ -31,7 +31,7 @@ var _ MappedNullable = &ModelsEnrollmentRenewalRequest{}
 
 // ModelsEnrollmentRenewalRequest struct for ModelsEnrollmentRenewalRequest
 type ModelsEnrollmentRenewalRequest struct {
-	CertificateId        *int32     `json:"CertificateId,omitempty"`
+	CertificateId        *int64     `json:"CertificateId,omitempty"`
 	Thumbprint           *string    `json:"Thumbprint,omitempty"`
 	CertificateAuthority *string    `json:"CertificateAuthority,omitempty"`
 	Template             *string    `json:"Template,omitempty"`
@@ -59,9 +59,9 @@ func NewModelsEnrollmentRenewalRequestWithDefaults() *ModelsEnrollmentRenewalReq
 }
 
 // GetCertificateId returns the CertificateId field value if set, zero value otherwise.
-func (o *ModelsEnrollmentRenewalRequest) GetCertificateId() int32 {
+func (o *ModelsEnrollmentRenewalRequest) GetCertificateId() int64 {
 	if o == nil || isNil(o.CertificateId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CertificateId
@@ -69,7 +69,7 @@ func (o *ModelsEnrollmentRenewalRequest) GetCertificateId() int32 {
 
 // GetCertificateIdOk returns a tuple with the CertificateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsEnrollmentRenewalRequest) GetCertificateIdOk() (*int32, bool) {
+func (o *ModelsEnrollmentRenewalRequest) GetCertificateIdOk() (*int64, bool) {
 	if o == nil || isNil(o.CertificateId) {
 		return nil, false
 	}
@@ -85,8 +85,8 @@ func (o *ModelsEnrollmentRenewalRequest) HasCertificateId() bool {
 	return false
 }
 
-// SetCertificateId gets a reference to the given int32 and assigns it to the CertificateId field.
-func (o *ModelsEnrollmentRenewalRequest) SetCertificateId(v int32) {
+// SetCertificateId gets a reference to the given int64 and assigns it to the CertificateId field.
+func (o *ModelsEnrollmentRenewalRequest) SetCertificateId(v int64) {
 	o.CertificateId = &v
 }
 

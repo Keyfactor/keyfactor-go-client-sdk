@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **int32** | The Id of the security role to update | 
+**Id** | **int64** | The Id of the security role to update | 
 **Name** | **string** | The name of the security role to update | 
 **Description** | **string** | The description to be used on the updated security role | 
 **Enabled** | Pointer to **bool** | Whether or not the security role should be enabled | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewModelsSecuritySecurityRolesSecurityRoleUpdateRequest
 
-`func NewModelsSecuritySecurityRolesSecurityRoleUpdateRequest(id int32, name string, description string, ) *ModelsSecuritySecurityRolesSecurityRoleUpdateRequest`
+`func NewModelsSecuritySecurityRolesSecurityRoleUpdateRequest(id int64, name string, description string, ) *ModelsSecuritySecurityRolesSecurityRoleUpdateRequest`
 
 NewModelsSecuritySecurityRolesSecurityRoleUpdateRequest instantiates a new ModelsSecuritySecurityRolesSecurityRoleUpdateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ModelsSecuritySecurityRolesSecurityRoleUpdateRequest) GetId() int32`
+`func (o *ModelsSecuritySecurityRolesSecurityRoleUpdateRequest) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsSecuritySecurityRolesSecurityRoleUpdateRequest) GetIdOk() (*int32, bool)`
+`func (o *ModelsSecuritySecurityRolesSecurityRoleUpdateRequest) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsSecuritySecurityRolesSecurityRoleUpdateRequest) SetId(v int32)`
+`func (o *ModelsSecuritySecurityRolesSecurityRoleUpdateRequest) SetId(v int64)`
 
 SetId sets Id field to given value.
 

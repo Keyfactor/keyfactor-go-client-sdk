@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CertificateId** | Pointer to **int32** |  | [optional] 
+**CertificateId** | Pointer to **int64** |  | [optional] 
 **Thumbprint** | Pointer to **string** |  | [optional] 
 **CertificateAuthority** | Pointer to **string** |  | [optional] 
 **Template** | Pointer to **string** |  | [optional] 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCertificateId
 
-`func (o *ModelsEnrollmentRenewalRequest) GetCertificateId() int32`
+`func (o *ModelsEnrollmentRenewalRequest) GetCertificateId() int64`
 
 GetCertificateId returns the CertificateId field if non-nil, zero value otherwise.
 
 ### GetCertificateIdOk
 
-`func (o *ModelsEnrollmentRenewalRequest) GetCertificateIdOk() (*int32, bool)`
+`func (o *ModelsEnrollmentRenewalRequest) GetCertificateIdOk() (*int64, bool)`
 
 GetCertificateIdOk returns a tuple with the CertificateId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertificateId
 
-`func (o *ModelsEnrollmentRenewalRequest) SetCertificateId(v int32)`
+`func (o *ModelsEnrollmentRenewalRequest) SetCertificateId(v int64)`
 
 SetCertificateId sets CertificateId field to given value.
 

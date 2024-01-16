@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServerId** | Pointer to **int32** |  | [optional] 
+**ServerId** | Pointer to **int64** |  | [optional] 
 **LogonUsers** | Pointer to [**[]ModelsSSHAccessLogonUserAccessResponse**](ModelsSSHAccessLogonUserAccessResponse.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetServerId
 
-`func (o *ModelsSSHAccessServerAccessResponse) GetServerId() int32`
+`func (o *ModelsSSHAccessServerAccessResponse) GetServerId() int64`
 
 GetServerId returns the ServerId field if non-nil, zero value otherwise.
 
 ### GetServerIdOk
 
-`func (o *ModelsSSHAccessServerAccessResponse) GetServerIdOk() (*int32, bool)`
+`func (o *ModelsSSHAccessServerAccessResponse) GetServerIdOk() (*int64, bool)`
 
 GetServerIdOk returns a tuple with the ServerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerId
 
-`func (o *ModelsSSHAccessServerAccessResponse) SetServerId(v int32)`
+`func (o *ModelsSSHAccessServerAccessResponse) SetServerId(v int64)`
 
 SetServerId sets ServerId field to given value.
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **EnableReminder** | Pointer to **bool** |  | [optional] 
-**WarningDays** | Pointer to **int32** |  | [optional] 
+**WarningDays** | Pointer to **int64** |  | [optional] 
 **Recipients** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
@@ -54,20 +54,20 @@ HasEnableReminder returns a boolean if a field has been set.
 
 ### GetWarningDays
 
-`func (o *KeyfactorApiModelsMonitoringEmailRequest) GetWarningDays() int32`
+`func (o *KeyfactorApiModelsMonitoringEmailRequest) GetWarningDays() int64`
 
 GetWarningDays returns the WarningDays field if non-nil, zero value otherwise.
 
 ### GetWarningDaysOk
 
-`func (o *KeyfactorApiModelsMonitoringEmailRequest) GetWarningDaysOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsMonitoringEmailRequest) GetWarningDaysOk() (*int64, bool)`
 
 GetWarningDaysOk returns a tuple with the WarningDays field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWarningDays
 
-`func (o *KeyfactorApiModelsMonitoringEmailRequest) SetWarningDays(v int32)`
+`func (o *KeyfactorApiModelsMonitoringEmailRequest) SetWarningDays(v int64)`
 
 SetWarningDays sets WarningDays field to given value.
 

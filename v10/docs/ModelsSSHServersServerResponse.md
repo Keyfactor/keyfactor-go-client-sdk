@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **AgentId** | Pointer to **string** |  | [optional] 
 **Hostname** | Pointer to **string** |  | [optional] 
 **ServerGroupId** | Pointer to **string** |  | [optional] 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Owner** | Pointer to [**ModelsSSHUsersSshUserResponse**](ModelsSSHUsersSshUserResponse.md) |  | [optional] 
 **GroupName** | Pointer to **string** |  | [optional] 
 **Orchestrator** | Pointer to **string** |  | [optional] 
-**Port** | Pointer to **int32** |  | [optional] 
+**Port** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ModelsSSHServersServerResponse) GetId() int32`
+`func (o *ModelsSSHServersServerResponse) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsSSHServersServerResponse) GetIdOk() (*int32, bool)`
+`func (o *ModelsSSHServersServerResponse) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsSSHServersServerResponse) SetId(v int32)`
+`func (o *ModelsSSHServersServerResponse) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -261,20 +261,20 @@ HasOrchestrator returns a boolean if a field has been set.
 
 ### GetPort
 
-`func (o *ModelsSSHServersServerResponse) GetPort() int32`
+`func (o *ModelsSSHServersServerResponse) GetPort() int64`
 
 GetPort returns the Port field if non-nil, zero value otherwise.
 
 ### GetPortOk
 
-`func (o *ModelsSSHServersServerResponse) GetPortOk() (*int32, bool)`
+`func (o *ModelsSSHServersServerResponse) GetPortOk() (*int64, bool)`
 
 GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPort
 
-`func (o *ModelsSSHServersServerResponse) SetPort(v int32)`
+`func (o *ModelsSSHServersServerResponse) SetPort(v int64)`
 
 SetPort sets Port field to given value.
 

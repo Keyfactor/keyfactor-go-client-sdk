@@ -107,9 +107,9 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | The Keyfactor certificate Id
+    id := int64(789) // int64 | The Keyfactor certificate Id
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | The collection id for the given certificate (optional)
+    collectionId := int64(789) // int64 | The collection id for the given certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -130,7 +130,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | The Keyfactor certificate Id | 
+**id** | **int64** | The Keyfactor certificate Id | 
 
 ### Other Parameters
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | The collection id for the given certificate | 
+ **collectionId** | **int64** | The collection id for the given certificate | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
@@ -183,7 +183,7 @@ import (
 func main() {
     thumbprint := "thumbprint_example" // string | The certificate thumbprint
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | The collection id for the given certificate (optional)
+    collectionId := int64(789) // int64 | The collection id for the given certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | The collection id for the given certificate | 
+ **collectionId** | **int64** | The collection id for the given certificate | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
@@ -387,7 +387,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | 
+    id := int64(789) // int64 | 
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
@@ -409,7 +409,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** |  | 
+**id** | **int64** |  | 
 
 ### Other Parameters
 
@@ -743,7 +743,7 @@ import (
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     request := *openapiclient.NewModelsEnrollmentRenewalRequest() // ModelsEnrollmentRenewalRequest | The information needed to perform the renewal
-    collectionId := int32(56) // int32 | The collection id for the given certificate (optional)
+    collectionId := int64(789) // int64 | The collection id for the given certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -771,7 +771,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **request** | [**ModelsEnrollmentRenewalRequest**](ModelsEnrollmentRenewalRequest.md) | The information needed to perform the renewal | 
- **collectionId** | **int32** | The collection id for the given certificate | 
+ **collectionId** | **int64** | The collection id for the given certificate | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type

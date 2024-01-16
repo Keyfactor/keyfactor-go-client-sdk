@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OverwriteSchedules** | Pointer to **bool** |  | [optional] 
 **Schedule** | Pointer to **string** |  | [optional] 
-**CertStoreType** | Pointer to **int32** |  | [optional] 
-**StoreCount** | Pointer to **int32** |  | [optional] 
+**CertStoreType** | Pointer to **int64** |  | [optional] 
+**StoreCount** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ModelsCertificateStoreContainerListResponse) GetId() int32`
+`func (o *ModelsCertificateStoreContainerListResponse) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsCertificateStoreContainerListResponse) GetIdOk() (*int32, bool)`
+`func (o *ModelsCertificateStoreContainerListResponse) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsCertificateStoreContainerListResponse) SetId(v int32)`
+`func (o *ModelsCertificateStoreContainerListResponse) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -132,20 +132,20 @@ HasSchedule returns a boolean if a field has been set.
 
 ### GetCertStoreType
 
-`func (o *ModelsCertificateStoreContainerListResponse) GetCertStoreType() int32`
+`func (o *ModelsCertificateStoreContainerListResponse) GetCertStoreType() int64`
 
 GetCertStoreType returns the CertStoreType field if non-nil, zero value otherwise.
 
 ### GetCertStoreTypeOk
 
-`func (o *ModelsCertificateStoreContainerListResponse) GetCertStoreTypeOk() (*int32, bool)`
+`func (o *ModelsCertificateStoreContainerListResponse) GetCertStoreTypeOk() (*int64, bool)`
 
 GetCertStoreTypeOk returns a tuple with the CertStoreType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertStoreType
 
-`func (o *ModelsCertificateStoreContainerListResponse) SetCertStoreType(v int32)`
+`func (o *ModelsCertificateStoreContainerListResponse) SetCertStoreType(v int64)`
 
 SetCertStoreType sets CertStoreType field to given value.
 
@@ -157,20 +157,20 @@ HasCertStoreType returns a boolean if a field has been set.
 
 ### GetStoreCount
 
-`func (o *ModelsCertificateStoreContainerListResponse) GetStoreCount() int32`
+`func (o *ModelsCertificateStoreContainerListResponse) GetStoreCount() int64`
 
 GetStoreCount returns the StoreCount field if non-nil, zero value otherwise.
 
 ### GetStoreCountOk
 
-`func (o *ModelsCertificateStoreContainerListResponse) GetStoreCountOk() (*int32, bool)`
+`func (o *ModelsCertificateStoreContainerListResponse) GetStoreCountOk() (*int64, bool)`
 
 GetStoreCountOk returns a tuple with the StoreCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStoreCount
 
-`func (o *ModelsCertificateStoreContainerListResponse) SetStoreCount(v int32)`
+`func (o *ModelsCertificateStoreContainerListResponse) SetStoreCount(v int64)`
 
 SetStoreCount sets StoreCount field to given value.
 

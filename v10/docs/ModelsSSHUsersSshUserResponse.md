@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **Key** | Pointer to [**ModelsSSHKeysKeyResponse**](ModelsSSHKeysKeyResponse.md) |  | [optional] 
 **Username** | Pointer to **string** |  | [optional] 
-**LogonIds** | Pointer to **[]int32** |  | [optional] 
+**LogonIds** | Pointer to **[]int64** |  | [optional] 
 
 ## Methods
 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ModelsSSHUsersSshUserResponse) GetId() int32`
+`func (o *ModelsSSHUsersSshUserResponse) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsSSHUsersSshUserResponse) GetIdOk() (*int32, bool)`
+`func (o *ModelsSSHUsersSshUserResponse) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsSSHUsersSshUserResponse) SetId(v int32)`
+`func (o *ModelsSSHUsersSshUserResponse) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -105,20 +105,20 @@ HasUsername returns a boolean if a field has been set.
 
 ### GetLogonIds
 
-`func (o *ModelsSSHUsersSshUserResponse) GetLogonIds() []int32`
+`func (o *ModelsSSHUsersSshUserResponse) GetLogonIds() []int64`
 
 GetLogonIds returns the LogonIds field if non-nil, zero value otherwise.
 
 ### GetLogonIdsOk
 
-`func (o *ModelsSSHUsersSshUserResponse) GetLogonIdsOk() (*[]int32, bool)`
+`func (o *ModelsSSHUsersSshUserResponse) GetLogonIdsOk() (*[]int64, bool)`
 
 GetLogonIdsOk returns a tuple with the LogonIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLogonIds
 
-`func (o *ModelsSSHUsersSshUserResponse) SetLogonIds(v []int32)`
+`func (o *ModelsSSHUsersSshUserResponse) SetLogonIds(v []int64)`
 
 SetLogonIds sets LogonIds field to given value.
 

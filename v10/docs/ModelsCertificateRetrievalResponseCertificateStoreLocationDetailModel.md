@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **StorePath** | Pointer to **string** |  | [optional] 
 **AgentPool** | Pointer to **string** |  | [optional] 
 **IPAddress** | Pointer to **string** |  | [optional] 
-**Port** | Pointer to **int32** |  | [optional] 
+**Port** | Pointer to **int64** |  | [optional] 
 **NetworkName** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -106,20 +106,20 @@ HasIPAddress returns a boolean if a field has been set.
 
 ### GetPort
 
-`func (o *ModelsCertificateRetrievalResponseCertificateStoreLocationDetailModel) GetPort() int32`
+`func (o *ModelsCertificateRetrievalResponseCertificateStoreLocationDetailModel) GetPort() int64`
 
 GetPort returns the Port field if non-nil, zero value otherwise.
 
 ### GetPortOk
 
-`func (o *ModelsCertificateRetrievalResponseCertificateStoreLocationDetailModel) GetPortOk() (*int32, bool)`
+`func (o *ModelsCertificateRetrievalResponseCertificateStoreLocationDetailModel) GetPortOk() (*int64, bool)`
 
 GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPort
 
-`func (o *ModelsCertificateRetrievalResponseCertificateStoreLocationDetailModel) SetPort(v int32)`
+`func (o *ModelsCertificateRetrievalResponseCertificateStoreLocationDetailModel) SetPort(v int64)`
 
 SetPort sets Port field to given value.
 

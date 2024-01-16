@@ -99,7 +99,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Keyfactor identifier of the certificate template
+    id := int64(789) // int64 | Keyfactor identifier of the certificate template
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
@@ -121,7 +121,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Keyfactor identifier of the certificate template | 
+**id** | **int64** | Keyfactor identifier of the certificate template | 
 
 ### Other Parameters
 
@@ -174,10 +174,10 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
     sqQueryString := "sqQueryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
-    sqPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    sqReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
+    sqPageReturned := int64(789) // int64 | The current page within the result set to be returned (optional)
+    sqReturnLimit := int64(789) // int64 | Maximum number of records to be returned in a single call (optional)
     sqSortField := "sqSortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    sqSortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    sqSortAscending := int64(789) // int64 | Field sort direction [0=ascending, 1=descending] (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -205,10 +205,10 @@ Name | Type | Description  | Notes
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
  **sqQueryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
- **sqPageReturned** | **int32** | The current page within the result set to be returned | 
- **sqReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
+ **sqPageReturned** | **int64** | The current page within the result set to be returned | 
+ **sqReturnLimit** | **int64** | Maximum number of records to be returned in a single call | 
  **sqSortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **sqSortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **sqSortAscending** | **int64** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
 
 ### Return type
 
@@ -380,7 +380,7 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    settings := *openapiclient.NewKeyfactorApiModelsTemplatesGlobalTemplateSettingsRequest([]openapiclient.KeyfactorApiModelsTemplatesGlobalTemplateRegexRequest{*openapiclient.NewKeyfactorApiModelsTemplatesGlobalTemplateRegexRequest("SubjectPart_example")}, []openapiclient.KeyfactorApiModelsTemplatesGlobalTemplateDefaultRequest{*openapiclient.NewKeyfactorApiModelsTemplatesGlobalTemplateDefaultRequest("SubjectPart_example")}, *openapiclient.NewKeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest([]int32{int32(123)}, []string{"ECCValidCurves_example"}, false, false, false)) // KeyfactorApiModelsTemplatesGlobalTemplateSettingsRequest | The new global template settings.
+    settings := *openapiclient.NewKeyfactorApiModelsTemplatesGlobalTemplateSettingsRequest([]openapiclient.KeyfactorApiModelsTemplatesGlobalTemplateRegexRequest{*openapiclient.NewKeyfactorApiModelsTemplatesGlobalTemplateRegexRequest("SubjectPart_example")}, []openapiclient.KeyfactorApiModelsTemplatesGlobalTemplateDefaultRequest{*openapiclient.NewKeyfactorApiModelsTemplatesGlobalTemplateDefaultRequest("SubjectPart_example")}, *openapiclient.NewKeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest([]int64{int64(123)}, []string{"ECCValidCurves_example"}, false, false, false)) // KeyfactorApiModelsTemplatesGlobalTemplateSettingsRequest | The new global template settings.
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))

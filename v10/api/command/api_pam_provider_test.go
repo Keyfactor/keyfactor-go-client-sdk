@@ -62,11 +62,11 @@ func Test_command_PAMProviderApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("PAMProviderApi_PAMProviderDeletePamProvider_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("PAMProviderApi_PAMProviderDeletePamProvider_id: %v", id)
 
 		t.Log("PAMProviderApi_PAMProviderDeletePamProvider_payload: <none>")
-		httpRes, err := apiClient.PAMProviderApi.PAMProviderDeletePamProvider(context.Background(), id.(int32)).Execute()
+		httpRes, err := apiClient.PAMProviderApi.PAMProviderDeletePamProvider(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
@@ -76,11 +76,11 @@ func Test_command_PAMProviderApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("PAMProviderApi_PAMProviderGetPamProvider_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("PAMProviderApi_PAMProviderGetPamProvider_id: %v", id)
 
 		t.Log("PAMProviderApi_PAMProviderGetPamProvider_payload: <none>")
-		resp, httpRes, err := apiClient.PAMProviderApi.PAMProviderGetPamProvider(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.PAMProviderApi.PAMProviderGetPamProvider(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

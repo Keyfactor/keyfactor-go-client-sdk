@@ -6,20 +6,20 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Description** | **string** |  | 
-**DataType** | **int32** |  | 
+**DataType** | **int64** |  | 
 **Hint** | Pointer to **string** |  | [optional] 
 **Validation** | Pointer to **string** |  | [optional] 
-**Enrollment** | Pointer to **int32** |  | [optional] 
+**Enrollment** | Pointer to **int64** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 **Options** | Pointer to **string** |  | [optional] 
 **DefaultValue** | Pointer to **string** |  | [optional] 
-**DisplayOrder** | Pointer to **int32** |  | [optional] 
+**DisplayOrder** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
 ### NewKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest
 
-`func NewKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest(name string, description string, dataType int32, ) *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest`
+`func NewKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest(name string, description string, dataType int64, ) *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest`
 
 NewKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest instantiates a new KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -76,20 +76,20 @@ SetDescription sets Description field to given value.
 
 ### GetDataType
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetDataType() int32`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetDataType() int64`
 
 GetDataType returns the DataType field if non-nil, zero value otherwise.
 
 ### GetDataTypeOk
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetDataTypeOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetDataTypeOk() (*int64, bool)`
 
 GetDataTypeOk returns a tuple with the DataType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataType
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) SetDataType(v int32)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) SetDataType(v int64)`
 
 SetDataType sets DataType field to given value.
 
@@ -146,20 +146,20 @@ HasValidation returns a boolean if a field has been set.
 
 ### GetEnrollment
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetEnrollment() int32`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetEnrollment() int64`
 
 GetEnrollment returns the Enrollment field if non-nil, zero value otherwise.
 
 ### GetEnrollmentOk
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetEnrollmentOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetEnrollmentOk() (*int64, bool)`
 
 GetEnrollmentOk returns a tuple with the Enrollment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnrollment
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) SetEnrollment(v int32)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) SetEnrollment(v int64)`
 
 SetEnrollment sets Enrollment field to given value.
 
@@ -246,20 +246,20 @@ HasDefaultValue returns a boolean if a field has been set.
 
 ### GetDisplayOrder
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetDisplayOrder() int32`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetDisplayOrder() int64`
 
 GetDisplayOrder returns the DisplayOrder field if non-nil, zero value otherwise.
 
 ### GetDisplayOrderOk
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetDisplayOrderOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetDisplayOrderOk() (*int64, bool)`
 
 GetDisplayOrderOk returns a tuple with the DisplayOrder field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDisplayOrder
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) SetDisplayOrder(v int32)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) SetDisplayOrder(v int64)`
 
 SetDisplayOrder sets DisplayOrder field to given value.
 

@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **Key** | Pointer to **string** |  | [optional] 
 **KeyDisplayName** | Pointer to **string** |  | [optional] 
 **WorkflowType** | Pointer to **string** |  | [optional] 
-**DraftVersion** | Pointer to **int32** |  | [optional] 
-**PublishedVersion** | Pointer to **int32** |  | [optional] 
+**DraftVersion** | Pointer to **int64** |  | [optional] 
+**PublishedVersion** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -158,20 +158,20 @@ HasWorkflowType returns a boolean if a field has been set.
 
 ### GetDraftVersion
 
-`func (o *KeyfactorApiModelsWorkflowsDefinitionQueryResponse) GetDraftVersion() int32`
+`func (o *KeyfactorApiModelsWorkflowsDefinitionQueryResponse) GetDraftVersion() int64`
 
 GetDraftVersion returns the DraftVersion field if non-nil, zero value otherwise.
 
 ### GetDraftVersionOk
 
-`func (o *KeyfactorApiModelsWorkflowsDefinitionQueryResponse) GetDraftVersionOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsWorkflowsDefinitionQueryResponse) GetDraftVersionOk() (*int64, bool)`
 
 GetDraftVersionOk returns a tuple with the DraftVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDraftVersion
 
-`func (o *KeyfactorApiModelsWorkflowsDefinitionQueryResponse) SetDraftVersion(v int32)`
+`func (o *KeyfactorApiModelsWorkflowsDefinitionQueryResponse) SetDraftVersion(v int64)`
 
 SetDraftVersion sets DraftVersion field to given value.
 
@@ -183,20 +183,20 @@ HasDraftVersion returns a boolean if a field has been set.
 
 ### GetPublishedVersion
 
-`func (o *KeyfactorApiModelsWorkflowsDefinitionQueryResponse) GetPublishedVersion() int32`
+`func (o *KeyfactorApiModelsWorkflowsDefinitionQueryResponse) GetPublishedVersion() int64`
 
 GetPublishedVersion returns the PublishedVersion field if non-nil, zero value otherwise.
 
 ### GetPublishedVersionOk
 
-`func (o *KeyfactorApiModelsWorkflowsDefinitionQueryResponse) GetPublishedVersionOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsWorkflowsDefinitionQueryResponse) GetPublishedVersionOk() (*int64, bool)`
 
 GetPublishedVersionOk returns a tuple with the PublishedVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPublishedVersion
 
-`func (o *KeyfactorApiModelsWorkflowsDefinitionQueryResponse) SetPublishedVersion(v int32)`
+`func (o *KeyfactorApiModelsWorkflowsDefinitionQueryResponse) SetPublishedVersion(v int64)`
 
 SetPublishedVersion sets PublishedVersion field to given value.
 

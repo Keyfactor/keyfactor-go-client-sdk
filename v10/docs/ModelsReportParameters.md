@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **ParameterName** | Pointer to **string** |  | [optional] 
-**ParameterType** | Pointer to **int32** |  | [optional] 
+**ParameterType** | Pointer to **int64** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **DefaultValue** | Pointer to **string** |  | [optional] 
-**DisplayOrder** | Pointer to **int32** |  | [optional] 
-**ParameterVisibility** | Pointer to **int32** |  | [optional] 
+**DisplayOrder** | Pointer to **int64** |  | [optional] 
+**ParameterVisibility** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ModelsReportParameters) GetId() int32`
+`func (o *ModelsReportParameters) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsReportParameters) GetIdOk() (*int32, bool)`
+`func (o *ModelsReportParameters) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsReportParameters) SetId(v int32)`
+`func (o *ModelsReportParameters) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -84,20 +84,20 @@ HasParameterName returns a boolean if a field has been set.
 
 ### GetParameterType
 
-`func (o *ModelsReportParameters) GetParameterType() int32`
+`func (o *ModelsReportParameters) GetParameterType() int64`
 
 GetParameterType returns the ParameterType field if non-nil, zero value otherwise.
 
 ### GetParameterTypeOk
 
-`func (o *ModelsReportParameters) GetParameterTypeOk() (*int32, bool)`
+`func (o *ModelsReportParameters) GetParameterTypeOk() (*int64, bool)`
 
 GetParameterTypeOk returns a tuple with the ParameterType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParameterType
 
-`func (o *ModelsReportParameters) SetParameterType(v int32)`
+`func (o *ModelsReportParameters) SetParameterType(v int64)`
 
 SetParameterType sets ParameterType field to given value.
 
@@ -184,20 +184,20 @@ HasDefaultValue returns a boolean if a field has been set.
 
 ### GetDisplayOrder
 
-`func (o *ModelsReportParameters) GetDisplayOrder() int32`
+`func (o *ModelsReportParameters) GetDisplayOrder() int64`
 
 GetDisplayOrder returns the DisplayOrder field if non-nil, zero value otherwise.
 
 ### GetDisplayOrderOk
 
-`func (o *ModelsReportParameters) GetDisplayOrderOk() (*int32, bool)`
+`func (o *ModelsReportParameters) GetDisplayOrderOk() (*int64, bool)`
 
 GetDisplayOrderOk returns a tuple with the DisplayOrder field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDisplayOrder
 
-`func (o *ModelsReportParameters) SetDisplayOrder(v int32)`
+`func (o *ModelsReportParameters) SetDisplayOrder(v int64)`
 
 SetDisplayOrder sets DisplayOrder field to given value.
 
@@ -209,20 +209,20 @@ HasDisplayOrder returns a boolean if a field has been set.
 
 ### GetParameterVisibility
 
-`func (o *ModelsReportParameters) GetParameterVisibility() int32`
+`func (o *ModelsReportParameters) GetParameterVisibility() int64`
 
 GetParameterVisibility returns the ParameterVisibility field if non-nil, zero value otherwise.
 
 ### GetParameterVisibilityOk
 
-`func (o *ModelsReportParameters) GetParameterVisibilityOk() (*int32, bool)`
+`func (o *ModelsReportParameters) GetParameterVisibilityOk() (*int64, bool)`
 
 GetParameterVisibilityOk returns a tuple with the ParameterVisibility field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParameterVisibility
 
-`func (o *ModelsReportParameters) SetParameterVisibility(v int32)`
+`func (o *ModelsReportParameters) SetParameterVisibility(v int64)`
 
 SetParameterVisibility sets ParameterVisibility field to given value.
 

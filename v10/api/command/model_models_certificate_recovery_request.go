@@ -31,7 +31,7 @@ var _ MappedNullable = &ModelsCertificateRecoveryRequest{}
 // ModelsCertificateRecoveryRequest struct for ModelsCertificateRecoveryRequest
 type ModelsCertificateRecoveryRequest struct {
 	Password             string         `json:"Password"`
-	CertID               *int32         `json:"CertID,omitempty"`
+	CertID               *int64         `json:"CertID,omitempty"`
 	SerialNumber         *string        `json:"SerialNumber,omitempty"`
 	IssuerDN             NullableString `json:"IssuerDN,omitempty"`
 	Thumbprint           *string        `json:"Thumbprint,omitempty"`
@@ -84,9 +84,9 @@ func (o *ModelsCertificateRecoveryRequest) SetPassword(v string) {
 }
 
 // GetCertID returns the CertID field value if set, zero value otherwise.
-func (o *ModelsCertificateRecoveryRequest) GetCertID() int32 {
+func (o *ModelsCertificateRecoveryRequest) GetCertID() int64 {
 	if o == nil || isNil(o.CertID) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CertID
@@ -94,7 +94,7 @@ func (o *ModelsCertificateRecoveryRequest) GetCertID() int32 {
 
 // GetCertIDOk returns a tuple with the CertID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRecoveryRequest) GetCertIDOk() (*int32, bool) {
+func (o *ModelsCertificateRecoveryRequest) GetCertIDOk() (*int64, bool) {
 	if o == nil || isNil(o.CertID) {
 		return nil, false
 	}
@@ -110,8 +110,8 @@ func (o *ModelsCertificateRecoveryRequest) HasCertID() bool {
 	return false
 }
 
-// SetCertID gets a reference to the given int32 and assigns it to the CertID field.
-func (o *ModelsCertificateRecoveryRequest) SetCertID(v int32) {
+// SetCertID gets a reference to the given int64 and assigns it to the CertID field.
+func (o *ModelsCertificateRecoveryRequest) SetCertID(v int64) {
 	o.CertID = &v
 }
 

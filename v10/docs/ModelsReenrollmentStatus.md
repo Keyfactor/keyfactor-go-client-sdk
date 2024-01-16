@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **AgentId** | Pointer to **string** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 **JobProperties** | Pointer to **string** |  | [optional] 
-**CustomAliasAllowed** | Pointer to **int32** |  | [optional] 
+**CustomAliasAllowed** | Pointer to **int64** |  | [optional] 
 **EntryParameters** | Pointer to [**[]ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter**](ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter.md) |  | [optional] 
 
 ## Methods
@@ -132,20 +132,20 @@ HasJobProperties returns a boolean if a field has been set.
 
 ### GetCustomAliasAllowed
 
-`func (o *ModelsReenrollmentStatus) GetCustomAliasAllowed() int32`
+`func (o *ModelsReenrollmentStatus) GetCustomAliasAllowed() int64`
 
 GetCustomAliasAllowed returns the CustomAliasAllowed field if non-nil, zero value otherwise.
 
 ### GetCustomAliasAllowedOk
 
-`func (o *ModelsReenrollmentStatus) GetCustomAliasAllowedOk() (*int32, bool)`
+`func (o *ModelsReenrollmentStatus) GetCustomAliasAllowedOk() (*int64, bool)`
 
 GetCustomAliasAllowedOk returns a tuple with the CustomAliasAllowed field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomAliasAllowed
 
-`func (o *ModelsReenrollmentStatus) SetCustomAliasAllowed(v int32)`
+`func (o *ModelsReenrollmentStatus) SetCustomAliasAllowed(v int64)`
 
 SetCustomAliasAllowed sets CustomAliasAllowed field to given value.
 

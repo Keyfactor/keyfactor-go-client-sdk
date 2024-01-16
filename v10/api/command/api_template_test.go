@@ -53,11 +53,11 @@ func Test_command_TemplateApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("TemplateApi_TemplateGetTemplate_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("TemplateApi_TemplateGetTemplate_id: %v", id)
 
 		t.Log("TemplateApi_TemplateGetTemplate_payload: <none>")
-		resp, httpRes, err := apiClient.TemplateApi.TemplateGetTemplate(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.TemplateApi.TemplateGetTemplate(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

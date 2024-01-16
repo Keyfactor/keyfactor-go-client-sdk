@@ -34,7 +34,7 @@ type ModelsRevokeAllCertificatesRequest struct {
 	// The query string of the certificates to revoke
 	Query *string `json:"Query,omitempty"`
 	// The Reason for revocation
-	Reason int32 `json:"Reason"`
+	Reason int64 `json:"Reason"`
 	// A comment for auditing purposes
 	Comment string `json:"Comment"`
 	// The date when the certificates are to appear on the revocation list
@@ -52,7 +52,7 @@ type _ModelsRevokeAllCertificatesRequest ModelsRevokeAllCertificatesRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsRevokeAllCertificatesRequest(reason int32, comment string) *ModelsRevokeAllCertificatesRequest {
+func NewModelsRevokeAllCertificatesRequest(reason int64, comment string) *ModelsRevokeAllCertificatesRequest {
 	this := ModelsRevokeAllCertificatesRequest{}
 	this.Reason = reason
 	this.Comment = comment
@@ -100,9 +100,9 @@ func (o *ModelsRevokeAllCertificatesRequest) SetQuery(v string) {
 }
 
 // GetReason returns the Reason field value
-func (o *ModelsRevokeAllCertificatesRequest) GetReason() int32 {
+func (o *ModelsRevokeAllCertificatesRequest) GetReason() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -111,7 +111,7 @@ func (o *ModelsRevokeAllCertificatesRequest) GetReason() int32 {
 
 // GetReasonOk returns a tuple with the Reason field value
 // and a boolean to check if the value has been set.
-func (o *ModelsRevokeAllCertificatesRequest) GetReasonOk() (*int32, bool) {
+func (o *ModelsRevokeAllCertificatesRequest) GetReasonOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -119,7 +119,7 @@ func (o *ModelsRevokeAllCertificatesRequest) GetReasonOk() (*int32, bool) {
 }
 
 // SetReason sets field value
-func (o *ModelsRevokeAllCertificatesRequest) SetReason(v int32) {
+func (o *ModelsRevokeAllCertificatesRequest) SetReason(v int64) {
 	o.Reason = v
 }
 

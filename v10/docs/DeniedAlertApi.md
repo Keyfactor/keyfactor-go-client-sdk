@@ -99,7 +99,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Id for the denied alert
+    id := int64(789) // int64 | Id for the denied alert
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
@@ -119,7 +119,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Id for the denied alert | 
+**id** | **int64** | Id for the denied alert | 
 
 ### Other Parameters
 
@@ -237,7 +237,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Id for the denied alert to get
+    id := int64(789) // int64 | Id for the denied alert to get
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
@@ -259,7 +259,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Id for the denied alert to get | 
+**id** | **int64** | Id for the denied alert to get | 
 
 ### Other Parameters
 
@@ -312,10 +312,10 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
     pagedQueryQueryString := "pagedQueryQueryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
-    pagedQueryPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    pagedQueryReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
+    pagedQueryPageReturned := int64(789) // int64 | The current page within the result set to be returned (optional)
+    pagedQueryReturnLimit := int64(789) // int64 | Maximum number of records to be returned in a single call (optional)
     pagedQuerySortField := "pagedQuerySortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    pagedQuerySortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    pagedQuerySortAscending := int64(789) // int64 | Field sort direction [0=ascending, 1=descending] (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -343,10 +343,10 @@ Name | Type | Description  | Notes
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
  **pagedQueryQueryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
- **pagedQueryPageReturned** | **int32** | The current page within the result set to be returned | 
- **pagedQueryReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
+ **pagedQueryPageReturned** | **int64** | The current page within the result set to be returned | 
+ **pagedQueryReturnLimit** | **int64** | Maximum number of records to be returned in a single call | 
  **pagedQuerySortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **pagedQuerySortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **pagedQuerySortAscending** | **int64** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
 
 ### Return type
 

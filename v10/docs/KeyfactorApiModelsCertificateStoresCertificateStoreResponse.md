@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | A string indicating the GUID of the certificate store within Keyfactor Command. This ID is automatically set by Keyfactor Command. | [optional] 
-**ContainerId** | Pointer to **int32** | An integer indicating the ID of the certificate store&#39;s associated certificate store container, if applicable (see GET Certificate Store Containers). | [optional] 
+**ContainerId** | Pointer to **int64** | An integer indicating the ID of the certificate store&#39;s associated certificate store container, if applicable (see GET Certificate Store Containers). | [optional] 
 **DisplayName** | Pointer to **string** | A string indicating the display name of the certificate store. | [optional] 
 **ClientMachine** | Pointer to **string** | The string value of the client machine. The value for this will vary depending on the certificate store type. For example, for a Java keystore or an F5 device, it is the hostname of the machine on which the store is located, but for an Amazon Web Services store, it is the FQDN of the Keyfactor Command Windows Orchestrator. See Adding or Modifying a Certificate Store in the Keyfactor Command Reference Guide for more information. | [optional] 
 **Storepath** | Pointer to **string** | A string indicating the path to the certificate store on the target. The format for this path will vary depending on the certificate store type. For example, for a Java keystore, this will be a file path (e.g. /opt/myapp/store.jks), but for an F5 device, this will be a partition name on the device (e.g. Common). See Adding or Modifying a Certificate Store in the Keyfactor Command Reference Guide for more information. The maximum number of characters supported in this field is 722. | [optional] 
 **CertStoreInventoryJobId** | Pointer to **string** | A string indicating the GUID that identifies the inventory job for the certificate store in the Keyfactor Command database. This will be null if an inventory schedule is not set for the certificate store. | [optional] 
-**CertStoreType** | Pointer to **int32** | An integer indicating the ID of the certificate store type, as defined in Keyfactor Command, for this certificate store. (0-Javakeystore,2-PEMFile, 3-F5SSLProfiles,4-IISRoots, 5-NetScaler, 6-IISPersonal, 7-F5WebServer, 8-IISRevoked, 9-F5WebServerREST, 10-F5SSLProfilesREST, 11-F5CABundlesREST, 100-AmazonWebServices, 101-FileTransferProtocol) | [optional] 
+**CertStoreType** | Pointer to **int64** | An integer indicating the ID of the certificate store type, as defined in Keyfactor Command, for this certificate store. (0-Javakeystore,2-PEMFile, 3-F5SSLProfiles,4-IISRoots, 5-NetScaler, 6-IISPersonal, 7-F5WebServer, 8-IISRevoked, 9-F5WebServerREST, 10-F5SSLProfilesREST, 11-F5CABundlesREST, 100-AmazonWebServices, 101-FileTransferProtocol) | [optional] 
 **Approved** | Pointer to **bool** | A Boolean that indicates whether a certificate store is approved (true) or not (false). If a certificate store is approved, it can be used and updated. A certificate store that has been discovered using the discover feature but not yet marked as approved will be false here. | [optional] 
 **CreateIfMissing** | Pointer to **bool** | A Boolean that indicates whether a new certificate store should be created with the information provided (true) or not (false). This option is only valid for Java keystores and any custom certificate store types you have defined to support this functionality. | [optional] 
 **Properties** | Pointer to **string** | Some types of certificate stores have additional properties that are stored in this parameter. The data is stored in a series of, typically, key value pairs that define the property name and value (see GET Certificate Store Types for more information).  As of Keyfactor Command v10, this parameter is used to store certificate store server usernames, server passwords, and the UseSSL flag. Built-in certificate stores that typically require configuration of certificate store server parameters include NetScaler and F5 stores. The legacy methods for managing certificate store server credentials have been deprecated but are retained for backwards compatiblity. For more information, see POST Certificate Stores Server.  When reading this field, the values are returned as simple key value pairs, with the values being individual values. When writing, the values are specified as objects, though they are typically single values.  | [optional] 
@@ -67,20 +67,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetContainerId
 
-`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetContainerId() int32`
+`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetContainerId() int64`
 
 GetContainerId returns the ContainerId field if non-nil, zero value otherwise.
 
 ### GetContainerIdOk
 
-`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetContainerIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetContainerIdOk() (*int64, bool)`
 
 GetContainerIdOk returns a tuple with the ContainerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContainerId
 
-`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) SetContainerId(v int32)`
+`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) SetContainerId(v int64)`
 
 SetContainerId sets ContainerId field to given value.
 
@@ -192,20 +192,20 @@ HasCertStoreInventoryJobId returns a boolean if a field has been set.
 
 ### GetCertStoreType
 
-`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetCertStoreType() int32`
+`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetCertStoreType() int64`
 
 GetCertStoreType returns the CertStoreType field if non-nil, zero value otherwise.
 
 ### GetCertStoreTypeOk
 
-`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetCertStoreTypeOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetCertStoreTypeOk() (*int64, bool)`
 
 GetCertStoreTypeOk returns a tuple with the CertStoreType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertStoreType
 
-`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) SetCertStoreType(v int32)`
+`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) SetCertStoreType(v int64)`
 
 SetCertStoreType sets CertStoreType field to given value.
 

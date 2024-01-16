@@ -31,9 +31,9 @@ var _ MappedNullable = &ModelsEnrollmentExistingEnrollmentManagementRequest{}
 
 // ModelsEnrollmentExistingEnrollmentManagementRequest struct for ModelsEnrollmentExistingEnrollmentManagementRequest
 type ModelsEnrollmentExistingEnrollmentManagementRequest struct {
-	ExistingCertificateId *int32     `json:"ExistingCertificateId,omitempty"`
-	CertificateId         *int32     `json:"CertificateId,omitempty"`
-	RequestId             *int32     `json:"RequestId,omitempty"`
+	ExistingCertificateId *int64     `json:"ExistingCertificateId,omitempty"`
+	CertificateId         *int64     `json:"CertificateId,omitempty"`
+	RequestId             *int64     `json:"RequestId,omitempty"`
 	Password              *string    `json:"Password,omitempty"`
 	JobTime               *time.Time `json:"JobTime,omitempty"`
 	AdditionalProperties  map[string]interface{}
@@ -59,9 +59,9 @@ func NewModelsEnrollmentExistingEnrollmentManagementRequestWithDefaults() *Model
 }
 
 // GetExistingCertificateId returns the ExistingCertificateId field value if set, zero value otherwise.
-func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetExistingCertificateId() int32 {
+func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetExistingCertificateId() int64 {
 	if o == nil || isNil(o.ExistingCertificateId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ExistingCertificateId
@@ -69,7 +69,7 @@ func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetExistingCertifi
 
 // GetExistingCertificateIdOk returns a tuple with the ExistingCertificateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetExistingCertificateIdOk() (*int32, bool) {
+func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetExistingCertificateIdOk() (*int64, bool) {
 	if o == nil || isNil(o.ExistingCertificateId) {
 		return nil, false
 	}
@@ -85,15 +85,15 @@ func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) HasExistingCertifi
 	return false
 }
 
-// SetExistingCertificateId gets a reference to the given int32 and assigns it to the ExistingCertificateId field.
-func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) SetExistingCertificateId(v int32) {
+// SetExistingCertificateId gets a reference to the given int64 and assigns it to the ExistingCertificateId field.
+func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) SetExistingCertificateId(v int64) {
 	o.ExistingCertificateId = &v
 }
 
 // GetCertificateId returns the CertificateId field value if set, zero value otherwise.
-func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetCertificateId() int32 {
+func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetCertificateId() int64 {
 	if o == nil || isNil(o.CertificateId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CertificateId
@@ -101,7 +101,7 @@ func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetCertificateId()
 
 // GetCertificateIdOk returns a tuple with the CertificateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetCertificateIdOk() (*int32, bool) {
+func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetCertificateIdOk() (*int64, bool) {
 	if o == nil || isNil(o.CertificateId) {
 		return nil, false
 	}
@@ -117,15 +117,15 @@ func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) HasCertificateId()
 	return false
 }
 
-// SetCertificateId gets a reference to the given int32 and assigns it to the CertificateId field.
-func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) SetCertificateId(v int32) {
+// SetCertificateId gets a reference to the given int64 and assigns it to the CertificateId field.
+func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) SetCertificateId(v int64) {
 	o.CertificateId = &v
 }
 
 // GetRequestId returns the RequestId field value if set, zero value otherwise.
-func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetRequestId() int32 {
+func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetRequestId() int64 {
 	if o == nil || isNil(o.RequestId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RequestId
@@ -133,7 +133,7 @@ func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetRequestId() int
 
 // GetRequestIdOk returns a tuple with the RequestId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetRequestIdOk() (*int32, bool) {
+func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) GetRequestIdOk() (*int64, bool) {
 	if o == nil || isNil(o.RequestId) {
 		return nil, false
 	}
@@ -149,8 +149,8 @@ func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) HasRequestId() boo
 	return false
 }
 
-// SetRequestId gets a reference to the given int32 and assigns it to the RequestId field.
-func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) SetRequestId(v int32) {
+// SetRequestId gets a reference to the given int64 and assigns it to the RequestId field.
+func (o *ModelsEnrollmentExistingEnrollmentManagementRequest) SetRequestId(v int64) {
 	o.RequestId = &v
 }
 

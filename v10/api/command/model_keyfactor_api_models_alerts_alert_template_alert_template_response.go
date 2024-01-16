@@ -30,7 +30,7 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsAlertTemplateAlertTemplateRespon
 
 // KeyfactorApiModelsAlertsAlertTemplateAlertTemplateResponse struct for KeyfactorApiModelsAlertsAlertTemplateAlertTemplateResponse
 type KeyfactorApiModelsAlertsAlertTemplateAlertTemplateResponse struct {
-	Id                   *int32  `json:"Id,omitempty"`
+	Id                   *int64  `json:"Id,omitempty"`
 	DisplayName          *string `json:"DisplayName,omitempty"`
 	ForestRoot           *string `json:"ForestRoot,omitempty"`
 	ConfigurationTenant  *string `json:"ConfigurationTenant,omitempty"`
@@ -57,9 +57,9 @@ func NewKeyfactorApiModelsAlertsAlertTemplateAlertTemplateResponseWithDefaults()
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsAlertsAlertTemplateAlertTemplateResponse) GetId() int32 {
+func (o *KeyfactorApiModelsAlertsAlertTemplateAlertTemplateResponse) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -67,7 +67,7 @@ func (o *KeyfactorApiModelsAlertsAlertTemplateAlertTemplateResponse) GetId() int
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsAlertsAlertTemplateAlertTemplateResponse) GetIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsAlertsAlertTemplateAlertTemplateResponse) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -83,8 +83,8 @@ func (o *KeyfactorApiModelsAlertsAlertTemplateAlertTemplateResponse) HasId() boo
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *KeyfactorApiModelsAlertsAlertTemplateAlertTemplateResponse) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *KeyfactorApiModelsAlertsAlertTemplateAlertTemplateResponse) SetId(v int64) {
 	o.Id = &v
 }
 

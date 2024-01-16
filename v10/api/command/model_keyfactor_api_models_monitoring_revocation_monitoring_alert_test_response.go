@@ -31,7 +31,7 @@ var _ MappedNullable = &KeyfactorApiModelsMonitoringRevocationMonitoringAlertTes
 // KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse struct for KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse
 type KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse struct {
 	RevocationMonitoringAlerts []ModelsMonitoringRevocationMonitoringAlertResponse `json:"RevocationMonitoringAlerts,omitempty"`
-	AlertBuildResult           *int32                                              `json:"AlertBuildResult,omitempty"`
+	AlertBuildResult           *int64                                              `json:"AlertBuildResult,omitempty"`
 	AdditionalProperties       map[string]interface{}
 }
 
@@ -87,9 +87,9 @@ func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) SetR
 }
 
 // GetAlertBuildResult returns the AlertBuildResult field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetAlertBuildResult() int32 {
+func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetAlertBuildResult() int64 {
 	if o == nil || isNil(o.AlertBuildResult) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AlertBuildResult
@@ -97,7 +97,7 @@ func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetA
 
 // GetAlertBuildResultOk returns a tuple with the AlertBuildResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetAlertBuildResultOk() (*int32, bool) {
+func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetAlertBuildResultOk() (*int64, bool) {
 	if o == nil || isNil(o.AlertBuildResult) {
 		return nil, false
 	}
@@ -113,8 +113,8 @@ func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) HasA
 	return false
 }
 
-// SetAlertBuildResult gets a reference to the given int32 and assigns it to the AlertBuildResult field.
-func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) SetAlertBuildResult(v int32) {
+// SetAlertBuildResult gets a reference to the given int64 and assigns it to the AlertBuildResult field.
+func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) SetAlertBuildResult(v int64) {
 	o.AlertBuildResult = &v
 }
 

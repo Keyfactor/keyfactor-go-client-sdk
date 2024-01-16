@@ -36,7 +36,7 @@ type KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse struct {
 	AgentBlueprintId      *string                                                      `json:"AgentBlueprintId,omitempty"`
 	JobType               *string                                                      `json:"JobType,omitempty"`
 	JobTypeName           *string                                                      `json:"JobTypeName,omitempty"`
-	OperationType         *int32                                                       `json:"OperationType,omitempty"`
+	OperationType         *int64                                                       `json:"OperationType,omitempty"`
 	Thumbprint            *string                                                      `json:"Thumbprint,omitempty"`
 	Contents              *string                                                      `json:"Contents,omitempty"`
 	Alias                 *string                                                      `json:"Alias,omitempty"`
@@ -237,9 +237,9 @@ func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse) SetJobTypeNa
 }
 
 // GetOperationType returns the OperationType field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse) GetOperationType() int32 {
+func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse) GetOperationType() int64 {
 	if o == nil || isNil(o.OperationType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OperationType
@@ -247,7 +247,7 @@ func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse) GetOperation
 
 // GetOperationTypeOk returns a tuple with the OperationType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse) GetOperationTypeOk() (*int32, bool) {
+func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse) GetOperationTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.OperationType) {
 		return nil, false
 	}
@@ -263,8 +263,8 @@ func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse) HasOperation
 	return false
 }
 
-// SetOperationType gets a reference to the given int32 and assigns it to the OperationType field.
-func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse) SetOperationType(v int32) {
+// SetOperationType gets a reference to the given int64 and assigns it to the OperationType field.
+func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse) SetOperationType(v int64) {
 	o.OperationType = &v
 }
 

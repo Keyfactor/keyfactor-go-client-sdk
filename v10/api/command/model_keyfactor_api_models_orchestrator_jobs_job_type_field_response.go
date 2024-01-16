@@ -31,7 +31,7 @@ var _ MappedNullable = &KeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse{}
 // KeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse struct for KeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse
 type KeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse struct {
 	Name                 *string `json:"Name,omitempty"`
-	Type                 *int32  `json:"Type,omitempty"`
+	Type                 *int64  `json:"Type,omitempty"`
 	DefaultValue         *string `json:"DefaultValue,omitempty"`
 	Required             *bool   `json:"Required,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -89,9 +89,9 @@ func (o *KeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) SetName(v strin
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) GetType() int32 {
+func (o *KeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) GetType() int64 {
 	if o == nil || isNil(o.Type) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Type
@@ -99,7 +99,7 @@ func (o *KeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) GetType() int32
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) GetTypeOk() (*int32, bool) {
+func (o *KeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) GetTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.Type) {
 		return nil, false
 	}
@@ -115,8 +115,8 @@ func (o *KeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) HasType() bool 
 	return false
 }
 
-// SetType gets a reference to the given int32 and assigns it to the Type field.
-func (o *KeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) SetType(v int32) {
+// SetType gets a reference to the given int64 and assigns it to the Type field.
+func (o *KeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) SetType(v int64) {
 	o.Type = &v
 }
 

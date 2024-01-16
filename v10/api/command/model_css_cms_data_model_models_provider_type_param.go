@@ -30,10 +30,10 @@ var _ MappedNullable = &CSSCMSDataModelModelsProviderTypeParam{}
 
 // CSSCMSDataModelModelsProviderTypeParam struct for CSSCMSDataModelModelsProviderTypeParam
 type CSSCMSDataModelModelsProviderTypeParam struct {
-	Id                   *int32                             `json:"Id,omitempty"`
+	Id                   *int64                             `json:"Id,omitempty"`
 	Name                 *string                            `json:"Name,omitempty"`
 	DisplayName          *string                            `json:"DisplayName,omitempty"`
-	DataType             *int32                             `json:"DataType,omitempty"`
+	DataType             *int64                             `json:"DataType,omitempty"`
 	InstanceLevel        *bool                              `json:"InstanceLevel,omitempty"`
 	ProviderType         *CSSCMSDataModelModelsProviderType `json:"ProviderType,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -59,9 +59,9 @@ func NewCSSCMSDataModelModelsProviderTypeParamWithDefaults() *CSSCMSDataModelMod
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *CSSCMSDataModelModelsProviderTypeParam) GetId() int32 {
+func (o *CSSCMSDataModelModelsProviderTypeParam) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -69,7 +69,7 @@ func (o *CSSCMSDataModelModelsProviderTypeParam) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CSSCMSDataModelModelsProviderTypeParam) GetIdOk() (*int32, bool) {
+func (o *CSSCMSDataModelModelsProviderTypeParam) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -85,8 +85,8 @@ func (o *CSSCMSDataModelModelsProviderTypeParam) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *CSSCMSDataModelModelsProviderTypeParam) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *CSSCMSDataModelModelsProviderTypeParam) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -155,9 +155,9 @@ func (o *CSSCMSDataModelModelsProviderTypeParam) SetDisplayName(v string) {
 }
 
 // GetDataType returns the DataType field value if set, zero value otherwise.
-func (o *CSSCMSDataModelModelsProviderTypeParam) GetDataType() int32 {
+func (o *CSSCMSDataModelModelsProviderTypeParam) GetDataType() int64 {
 	if o == nil || isNil(o.DataType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DataType
@@ -165,7 +165,7 @@ func (o *CSSCMSDataModelModelsProviderTypeParam) GetDataType() int32 {
 
 // GetDataTypeOk returns a tuple with the DataType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CSSCMSDataModelModelsProviderTypeParam) GetDataTypeOk() (*int32, bool) {
+func (o *CSSCMSDataModelModelsProviderTypeParam) GetDataTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.DataType) {
 		return nil, false
 	}
@@ -181,8 +181,8 @@ func (o *CSSCMSDataModelModelsProviderTypeParam) HasDataType() bool {
 	return false
 }
 
-// SetDataType gets a reference to the given int32 and assigns it to the DataType field.
-func (o *CSSCMSDataModelModelsProviderTypeParam) SetDataType(v int32) {
+// SetDataType gets a reference to the given int64 and assigns it to the DataType field.
+func (o *CSSCMSDataModelModelsProviderTypeParam) SetDataType(v int64) {
 	o.DataType = &v
 }
 

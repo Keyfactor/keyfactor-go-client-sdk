@@ -31,7 +31,7 @@ var _ MappedNullable = &KeyfactorApiModelsMonitoringDashboardResponse{}
 // KeyfactorApiModelsMonitoringDashboardResponse struct for KeyfactorApiModelsMonitoringDashboardResponse
 type KeyfactorApiModelsMonitoringDashboardResponse struct {
 	Show                 *bool  `json:"Show,omitempty"`
-	WarningHours         *int32 `json:"WarningHours,omitempty"`
+	WarningHours         *int64 `json:"WarningHours,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -87,9 +87,9 @@ func (o *KeyfactorApiModelsMonitoringDashboardResponse) SetShow(v bool) {
 }
 
 // GetWarningHours returns the WarningHours field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsMonitoringDashboardResponse) GetWarningHours() int32 {
+func (o *KeyfactorApiModelsMonitoringDashboardResponse) GetWarningHours() int64 {
 	if o == nil || isNil(o.WarningHours) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WarningHours
@@ -97,7 +97,7 @@ func (o *KeyfactorApiModelsMonitoringDashboardResponse) GetWarningHours() int32 
 
 // GetWarningHoursOk returns a tuple with the WarningHours field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsMonitoringDashboardResponse) GetWarningHoursOk() (*int32, bool) {
+func (o *KeyfactorApiModelsMonitoringDashboardResponse) GetWarningHoursOk() (*int64, bool) {
 	if o == nil || isNil(o.WarningHours) {
 		return nil, false
 	}
@@ -113,8 +113,8 @@ func (o *KeyfactorApiModelsMonitoringDashboardResponse) HasWarningHours() bool {
 	return false
 }
 
-// SetWarningHours gets a reference to the given int32 and assigns it to the WarningHours field.
-func (o *KeyfactorApiModelsMonitoringDashboardResponse) SetWarningHours(v int32) {
+// SetWarningHours gets a reference to the given int64 and assigns it to the WarningHours field.
+func (o *KeyfactorApiModelsMonitoringDashboardResponse) SetWarningHours(v int64) {
 	o.WarningHours = &v
 }
 

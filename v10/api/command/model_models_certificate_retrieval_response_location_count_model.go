@@ -31,7 +31,7 @@ var _ MappedNullable = &ModelsCertificateRetrievalResponseLocationCountModel{}
 // ModelsCertificateRetrievalResponseLocationCountModel struct for ModelsCertificateRetrievalResponseLocationCountModel
 type ModelsCertificateRetrievalResponseLocationCountModel struct {
 	Type                 *string `json:"Type,omitempty"`
-	Count                *int32  `json:"Count,omitempty"`
+	Count                *int64  `json:"Count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -87,9 +87,9 @@ func (o *ModelsCertificateRetrievalResponseLocationCountModel) SetType(v string)
 }
 
 // GetCount returns the Count field value if set, zero value otherwise.
-func (o *ModelsCertificateRetrievalResponseLocationCountModel) GetCount() int32 {
+func (o *ModelsCertificateRetrievalResponseLocationCountModel) GetCount() int64 {
 	if o == nil || isNil(o.Count) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Count
@@ -97,7 +97,7 @@ func (o *ModelsCertificateRetrievalResponseLocationCountModel) GetCount() int32 
 
 // GetCountOk returns a tuple with the Count field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRetrievalResponseLocationCountModel) GetCountOk() (*int32, bool) {
+func (o *ModelsCertificateRetrievalResponseLocationCountModel) GetCountOk() (*int64, bool) {
 	if o == nil || isNil(o.Count) {
 		return nil, false
 	}
@@ -113,8 +113,8 @@ func (o *ModelsCertificateRetrievalResponseLocationCountModel) HasCount() bool {
 	return false
 }
 
-// SetCount gets a reference to the given int32 and assigns it to the Count field.
-func (o *ModelsCertificateRetrievalResponseLocationCountModel) SetCount(v int32) {
+// SetCount gets a reference to the given int64 and assigns it to the Count field.
+func (o *ModelsCertificateRetrievalResponseLocationCountModel) SetCount(v int64) {
 	o.Count = &v
 }
 

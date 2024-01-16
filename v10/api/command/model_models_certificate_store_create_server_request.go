@@ -33,9 +33,9 @@ type ModelsCertificateStoreCreateServerRequest struct {
 	Username             ModelsKeyfactorAPISecret `json:"Username"`
 	Password             ModelsKeyfactorAPISecret `json:"Password"`
 	UseSSL               bool                     `json:"UseSSL"`
-	ServerType           int32                    `json:"ServerType"`
+	ServerType           int64                    `json:"ServerType"`
 	Name                 string                   `json:"Name"`
-	Container            *int32                   `json:"Container,omitempty"`
+	Container            *int64                   `json:"Container,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,7 +45,7 @@ type _ModelsCertificateStoreCreateServerRequest ModelsCertificateStoreCreateServ
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsCertificateStoreCreateServerRequest(username ModelsKeyfactorAPISecret, password ModelsKeyfactorAPISecret, useSSL bool, serverType int32, name string) *ModelsCertificateStoreCreateServerRequest {
+func NewModelsCertificateStoreCreateServerRequest(username ModelsKeyfactorAPISecret, password ModelsKeyfactorAPISecret, useSSL bool, serverType int64, name string) *ModelsCertificateStoreCreateServerRequest {
 	this := ModelsCertificateStoreCreateServerRequest{}
 	this.Username = username
 	this.Password = password
@@ -136,9 +136,9 @@ func (o *ModelsCertificateStoreCreateServerRequest) SetUseSSL(v bool) {
 }
 
 // GetServerType returns the ServerType field value
-func (o *ModelsCertificateStoreCreateServerRequest) GetServerType() int32 {
+func (o *ModelsCertificateStoreCreateServerRequest) GetServerType() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -147,7 +147,7 @@ func (o *ModelsCertificateStoreCreateServerRequest) GetServerType() int32 {
 
 // GetServerTypeOk returns a tuple with the ServerType field value
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateStoreCreateServerRequest) GetServerTypeOk() (*int32, bool) {
+func (o *ModelsCertificateStoreCreateServerRequest) GetServerTypeOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -155,7 +155,7 @@ func (o *ModelsCertificateStoreCreateServerRequest) GetServerTypeOk() (*int32, b
 }
 
 // SetServerType sets field value
-func (o *ModelsCertificateStoreCreateServerRequest) SetServerType(v int32) {
+func (o *ModelsCertificateStoreCreateServerRequest) SetServerType(v int64) {
 	o.ServerType = v
 }
 
@@ -184,9 +184,9 @@ func (o *ModelsCertificateStoreCreateServerRequest) SetName(v string) {
 }
 
 // GetContainer returns the Container field value if set, zero value otherwise.
-func (o *ModelsCertificateStoreCreateServerRequest) GetContainer() int32 {
+func (o *ModelsCertificateStoreCreateServerRequest) GetContainer() int64 {
 	if o == nil || isNil(o.Container) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Container
@@ -194,7 +194,7 @@ func (o *ModelsCertificateStoreCreateServerRequest) GetContainer() int32 {
 
 // GetContainerOk returns a tuple with the Container field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateStoreCreateServerRequest) GetContainerOk() (*int32, bool) {
+func (o *ModelsCertificateStoreCreateServerRequest) GetContainerOk() (*int64, bool) {
 	if o == nil || isNil(o.Container) {
 		return nil, false
 	}
@@ -210,8 +210,8 @@ func (o *ModelsCertificateStoreCreateServerRequest) HasContainer() bool {
 	return false
 }
 
-// SetContainer gets a reference to the given int32 and assigns it to the Container field.
-func (o *ModelsCertificateStoreCreateServerRequest) SetContainer(v int32) {
+// SetContainer gets a reference to the given int64 and assigns it to the Container field.
+func (o *ModelsCertificateStoreCreateServerRequest) SetContainer(v int64) {
 	o.Container = &v
 }
 

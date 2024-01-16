@@ -54,11 +54,11 @@ func Test_command_EnrollmentApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("EnrollmentApi_EnrollmentAvailableRenewalId_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("EnrollmentApi_EnrollmentAvailableRenewalId_id: %v", id)
 
 		t.Log("EnrollmentApi_EnrollmentAvailableRenewalId_payload: <none>")
-		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentAvailableRenewalId(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentAvailableRenewalId(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -102,11 +102,11 @@ func Test_command_EnrollmentApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("EnrollmentApi_EnrollmentGetTemplateEnrollmentSettings_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("EnrollmentApi_EnrollmentGetTemplateEnrollmentSettings_id: %v", id)
 
 		t.Log("EnrollmentApi_EnrollmentGetTemplateEnrollmentSettings_payload: <none>")
-		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentGetTemplateEnrollmentSettings(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.EnrollmentApi.EnrollmentGetTemplateEnrollmentSettings(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

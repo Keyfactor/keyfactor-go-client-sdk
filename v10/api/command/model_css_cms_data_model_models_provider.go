@@ -30,12 +30,12 @@ var _ MappedNullable = &CSSCMSDataModelModelsProvider{}
 
 // CSSCMSDataModelModelsProvider struct for CSSCMSDataModelModelsProvider
 type CSSCMSDataModelModelsProvider struct {
-	Id                      *int32                                           `json:"Id,omitempty"`
+	Id                      *int64                                           `json:"Id,omitempty"`
 	Name                    string                                           `json:"Name"`
-	Area                    *int32                                           `json:"Area,omitempty"`
+	Area                    *int64                                           `json:"Area,omitempty"`
 	ProviderType            CSSCMSDataModelModelsProviderType                `json:"ProviderType"`
 	ProviderTypeParamValues []CSSCMSDataModelModelsPamProviderTypeParamValue `json:"ProviderTypeParamValues,omitempty"`
-	SecuredAreaId           *int32                                           `json:"SecuredAreaId,omitempty"`
+	SecuredAreaId           *int64                                           `json:"SecuredAreaId,omitempty"`
 	AdditionalProperties    map[string]interface{}
 }
 
@@ -61,9 +61,9 @@ func NewCSSCMSDataModelModelsProviderWithDefaults() *CSSCMSDataModelModelsProvid
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *CSSCMSDataModelModelsProvider) GetId() int32 {
+func (o *CSSCMSDataModelModelsProvider) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -71,7 +71,7 @@ func (o *CSSCMSDataModelModelsProvider) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CSSCMSDataModelModelsProvider) GetIdOk() (*int32, bool) {
+func (o *CSSCMSDataModelModelsProvider) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -87,8 +87,8 @@ func (o *CSSCMSDataModelModelsProvider) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *CSSCMSDataModelModelsProvider) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *CSSCMSDataModelModelsProvider) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -117,9 +117,9 @@ func (o *CSSCMSDataModelModelsProvider) SetName(v string) {
 }
 
 // GetArea returns the Area field value if set, zero value otherwise.
-func (o *CSSCMSDataModelModelsProvider) GetArea() int32 {
+func (o *CSSCMSDataModelModelsProvider) GetArea() int64 {
 	if o == nil || isNil(o.Area) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Area
@@ -127,7 +127,7 @@ func (o *CSSCMSDataModelModelsProvider) GetArea() int32 {
 
 // GetAreaOk returns a tuple with the Area field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CSSCMSDataModelModelsProvider) GetAreaOk() (*int32, bool) {
+func (o *CSSCMSDataModelModelsProvider) GetAreaOk() (*int64, bool) {
 	if o == nil || isNil(o.Area) {
 		return nil, false
 	}
@@ -143,8 +143,8 @@ func (o *CSSCMSDataModelModelsProvider) HasArea() bool {
 	return false
 }
 
-// SetArea gets a reference to the given int32 and assigns it to the Area field.
-func (o *CSSCMSDataModelModelsProvider) SetArea(v int32) {
+// SetArea gets a reference to the given int64 and assigns it to the Area field.
+func (o *CSSCMSDataModelModelsProvider) SetArea(v int64) {
 	o.Area = &v
 }
 
@@ -205,9 +205,9 @@ func (o *CSSCMSDataModelModelsProvider) SetProviderTypeParamValues(v []CSSCMSDat
 }
 
 // GetSecuredAreaId returns the SecuredAreaId field value if set, zero value otherwise.
-func (o *CSSCMSDataModelModelsProvider) GetSecuredAreaId() int32 {
+func (o *CSSCMSDataModelModelsProvider) GetSecuredAreaId() int64 {
 	if o == nil || isNil(o.SecuredAreaId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SecuredAreaId
@@ -215,7 +215,7 @@ func (o *CSSCMSDataModelModelsProvider) GetSecuredAreaId() int32 {
 
 // GetSecuredAreaIdOk returns a tuple with the SecuredAreaId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CSSCMSDataModelModelsProvider) GetSecuredAreaIdOk() (*int32, bool) {
+func (o *CSSCMSDataModelModelsProvider) GetSecuredAreaIdOk() (*int64, bool) {
 	if o == nil || isNil(o.SecuredAreaId) {
 		return nil, false
 	}
@@ -231,8 +231,8 @@ func (o *CSSCMSDataModelModelsProvider) HasSecuredAreaId() bool {
 	return false
 }
 
-// SetSecuredAreaId gets a reference to the given int32 and assigns it to the SecuredAreaId field.
-func (o *CSSCMSDataModelModelsProvider) SetSecuredAreaId(v int32) {
+// SetSecuredAreaId gets a reference to the given int64 and assigns it to the SecuredAreaId field.
+func (o *CSSCMSDataModelModelsProvider) SetSecuredAreaId(v int64) {
 	o.SecuredAreaId = &v
 }
 

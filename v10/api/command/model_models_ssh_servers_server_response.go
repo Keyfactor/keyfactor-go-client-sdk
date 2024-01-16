@@ -30,7 +30,7 @@ var _ MappedNullable = &ModelsSSHServersServerResponse{}
 
 // ModelsSSHServersServerResponse struct for ModelsSSHServersServerResponse
 type ModelsSSHServersServerResponse struct {
-	Id                   *int32                                      `json:"Id,omitempty"`
+	Id                   *int64                                      `json:"Id,omitempty"`
 	AgentId              *string                                     `json:"AgentId,omitempty"`
 	Hostname             *string                                     `json:"Hostname,omitempty"`
 	ServerGroupId        *string                                     `json:"ServerGroupId,omitempty"`
@@ -39,7 +39,7 @@ type ModelsSSHServersServerResponse struct {
 	Owner                *ModelsSSHUsersSshUserResponse              `json:"Owner,omitempty"`
 	GroupName            *string                                     `json:"GroupName,omitempty"`
 	Orchestrator         *string                                     `json:"Orchestrator,omitempty"`
-	Port                 *int32                                      `json:"Port,omitempty"`
+	Port                 *int64                                      `json:"Port,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -63,9 +63,9 @@ func NewModelsSSHServersServerResponseWithDefaults() *ModelsSSHServersServerResp
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsSSHServersServerResponse) GetId() int32 {
+func (o *ModelsSSHServersServerResponse) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -73,7 +73,7 @@ func (o *ModelsSSHServersServerResponse) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSHServersServerResponse) GetIdOk() (*int32, bool) {
+func (o *ModelsSSHServersServerResponse) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -89,8 +89,8 @@ func (o *ModelsSSHServersServerResponse) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsSSHServersServerResponse) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsSSHServersServerResponse) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -351,9 +351,9 @@ func (o *ModelsSSHServersServerResponse) SetOrchestrator(v string) {
 }
 
 // GetPort returns the Port field value if set, zero value otherwise.
-func (o *ModelsSSHServersServerResponse) GetPort() int32 {
+func (o *ModelsSSHServersServerResponse) GetPort() int64 {
 	if o == nil || isNil(o.Port) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Port
@@ -361,7 +361,7 @@ func (o *ModelsSSHServersServerResponse) GetPort() int32 {
 
 // GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSHServersServerResponse) GetPortOk() (*int32, bool) {
+func (o *ModelsSSHServersServerResponse) GetPortOk() (*int64, bool) {
 	if o == nil || isNil(o.Port) {
 		return nil, false
 	}
@@ -377,8 +377,8 @@ func (o *ModelsSSHServersServerResponse) HasPort() bool {
 	return false
 }
 
-// SetPort gets a reference to the given int32 and assigns it to the Port field.
-func (o *ModelsSSHServersServerResponse) SetPort(v int32) {
+// SetPort gets a reference to the given int64 and assigns it to the Port field.
+func (o *ModelsSSHServersServerResponse) SetPort(v int64) {
 	o.Port = &v
 }
 

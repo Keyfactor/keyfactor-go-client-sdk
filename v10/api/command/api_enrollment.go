@@ -172,9 +172,9 @@ func (a *EnrollmentApiService) EnrollmentAddToExistingCertStoresExecute(r ApiEnr
 type ApiEnrollmentAvailableRenewalIdRequest struct {
 	ctx                     context.Context
 	ApiService              *EnrollmentApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
-	collectionId            *int32
+	collectionId            *int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -185,7 +185,7 @@ func (r ApiEnrollmentAvailableRenewalIdRequest) XKeyfactorRequestedWith(xKeyfact
 }
 
 // The collection id for the given certificate
-func (r ApiEnrollmentAvailableRenewalIdRequest) CollectionId(collectionId int32) ApiEnrollmentAvailableRenewalIdRequest {
+func (r ApiEnrollmentAvailableRenewalIdRequest) CollectionId(collectionId int64) ApiEnrollmentAvailableRenewalIdRequest {
 	r.collectionId = &collectionId
 	return r
 }
@@ -214,7 +214,7 @@ EnrollmentAvailableRenewalId Returns the type of renewal available for a given c
 	@param id The Keyfactor certificate Id
 	@return ApiEnrollmentAvailableRenewalIdRequest
 */
-func (a *EnrollmentApiService) EnrollmentAvailableRenewalId(ctx context.Context, id int32) ApiEnrollmentAvailableRenewalIdRequest {
+func (a *EnrollmentApiService) EnrollmentAvailableRenewalId(ctx context.Context, id int64) ApiEnrollmentAvailableRenewalIdRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -319,7 +319,7 @@ type ApiEnrollmentAvailableRenewalThumbprintRequest struct {
 	ApiService              *EnrollmentApiService
 	thumbprint              string
 	xKeyfactorRequestedWith *string
-	collectionId            *int32
+	collectionId            *int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -330,7 +330,7 @@ func (r ApiEnrollmentAvailableRenewalThumbprintRequest) XKeyfactorRequestedWith(
 }
 
 // The collection id for the given certificate
-func (r ApiEnrollmentAvailableRenewalThumbprintRequest) CollectionId(collectionId int32) ApiEnrollmentAvailableRenewalThumbprintRequest {
+func (r ApiEnrollmentAvailableRenewalThumbprintRequest) CollectionId(collectionId int64) ApiEnrollmentAvailableRenewalThumbprintRequest {
 	r.collectionId = &collectionId
 	return r
 }
@@ -703,7 +703,7 @@ func (a *EnrollmentApiService) EnrollmentGetMyPFXContextExecute(r ApiEnrollmentG
 type ApiEnrollmentGetTemplateEnrollmentSettingsRequest struct {
 	ctx                     context.Context
 	ApiService              *EnrollmentApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -731,7 +731,7 @@ EnrollmentGetTemplateEnrollmentSettings Gets the template settings to use during
 	@param id
 	@return ApiEnrollmentGetTemplateEnrollmentSettingsRequest
 */
-func (a *EnrollmentApiService) EnrollmentGetTemplateEnrollmentSettings(ctx context.Context, id int32) ApiEnrollmentGetTemplateEnrollmentSettingsRequest {
+func (a *EnrollmentApiService) EnrollmentGetTemplateEnrollmentSettings(ctx context.Context, id int64) ApiEnrollmentGetTemplateEnrollmentSettingsRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -1442,7 +1442,7 @@ type ApiEnrollmentRenewRequest struct {
 	ApiService              *EnrollmentApiService
 	xKeyfactorRequestedWith *string
 	request                 *ModelsEnrollmentRenewalRequest
-	collectionId            *int32
+	collectionId            *int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -1459,7 +1459,7 @@ func (r ApiEnrollmentRenewRequest) Request(request ModelsEnrollmentRenewalReques
 }
 
 // The collection id for the given certificate
-func (r ApiEnrollmentRenewRequest) CollectionId(collectionId int32) ApiEnrollmentRenewRequest {
+func (r ApiEnrollmentRenewRequest) CollectionId(collectionId int64) ApiEnrollmentRenewRequest {
 	r.collectionId = &collectionId
 	return r
 }

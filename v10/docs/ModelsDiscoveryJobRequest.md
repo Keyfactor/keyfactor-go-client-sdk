@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClientMachine** | Pointer to **string** |  | [optional] 
 **AgentId** | Pointer to **string** |  | [optional] 
-**Type** | **int32** |  | 
+**Type** | **int64** |  | 
 **JobExecutionTimestamp** | Pointer to **time.Time** |  | [optional] 
 **Dirs** | Pointer to **string** |  | [optional] 
 **IgnoredDirs** | Pointer to **string** |  | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewModelsDiscoveryJobRequest
 
-`func NewModelsDiscoveryJobRequest(type_ int32, ) *ModelsDiscoveryJobRequest`
+`func NewModelsDiscoveryJobRequest(type_ int64, ) *ModelsDiscoveryJobRequest`
 
 NewModelsDiscoveryJobRequest instantiates a new ModelsDiscoveryJobRequest object
 This constructor will assign default values to properties that have it defined,
@@ -89,20 +89,20 @@ HasAgentId returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *ModelsDiscoveryJobRequest) GetType() int32`
+`func (o *ModelsDiscoveryJobRequest) GetType() int64`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ModelsDiscoveryJobRequest) GetTypeOk() (*int32, bool)`
+`func (o *ModelsDiscoveryJobRequest) GetTypeOk() (*int64, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ModelsDiscoveryJobRequest) SetType(v int32)`
+`func (o *ModelsDiscoveryJobRequest) SetType(v int64)`
 
 SetType sets Type field to given value.
 

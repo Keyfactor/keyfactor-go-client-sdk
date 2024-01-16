@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CertificateContents** | Pointer to **string** |  | [optional] 
-**CertificateAuthorityId** | Pointer to **int32** |  | [optional] 
+**CertificateAuthorityId** | Pointer to **int64** |  | [optional] 
 **AuthorityName** | Pointer to **string** |  | [optional] 
 **AuthorityNameId** | Pointer to **string** |  | [optional] 
 **AuthorityKeyId** | Pointer to **string** |  | [optional] 
@@ -57,20 +57,20 @@ HasCertificateContents returns a boolean if a field has been set.
 
 ### GetCertificateAuthorityId
 
-`func (o *KeyfactorApiModelsMonitoringOCSPParametersRequest) GetCertificateAuthorityId() int32`
+`func (o *KeyfactorApiModelsMonitoringOCSPParametersRequest) GetCertificateAuthorityId() int64`
 
 GetCertificateAuthorityId returns the CertificateAuthorityId field if non-nil, zero value otherwise.
 
 ### GetCertificateAuthorityIdOk
 
-`func (o *KeyfactorApiModelsMonitoringOCSPParametersRequest) GetCertificateAuthorityIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsMonitoringOCSPParametersRequest) GetCertificateAuthorityIdOk() (*int64, bool)`
 
 GetCertificateAuthorityIdOk returns a tuple with the CertificateAuthorityId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertificateAuthorityId
 
-`func (o *KeyfactorApiModelsMonitoringOCSPParametersRequest) SetCertificateAuthorityId(v int32)`
+`func (o *KeyfactorApiModelsMonitoringOCSPParametersRequest) SetCertificateAuthorityId(v int64)`
 
 SetCertificateAuthorityId sets CertificateAuthorityId field to given value.
 

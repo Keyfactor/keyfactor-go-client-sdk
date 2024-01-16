@@ -30,7 +30,7 @@ var _ MappedNullable = &ModelsExtendedKeyUsage{}
 
 // ModelsExtendedKeyUsage struct for ModelsExtendedKeyUsage
 type ModelsExtendedKeyUsage struct {
-	Id                   *int32  `json:"Id,omitempty"`
+	Id                   *int64  `json:"Id,omitempty"`
 	Oid                  *string `json:"Oid,omitempty"`
 	DisplayName          *string `json:"DisplayName,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -56,9 +56,9 @@ func NewModelsExtendedKeyUsageWithDefaults() *ModelsExtendedKeyUsage {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsExtendedKeyUsage) GetId() int32 {
+func (o *ModelsExtendedKeyUsage) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -66,7 +66,7 @@ func (o *ModelsExtendedKeyUsage) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsExtendedKeyUsage) GetIdOk() (*int32, bool) {
+func (o *ModelsExtendedKeyUsage) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -82,8 +82,8 @@ func (o *ModelsExtendedKeyUsage) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsExtendedKeyUsage) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsExtendedKeyUsage) SetId(v int64) {
 	o.Id = &v
 }
 

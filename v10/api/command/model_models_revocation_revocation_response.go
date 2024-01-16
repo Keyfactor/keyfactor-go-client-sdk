@@ -30,7 +30,7 @@ var _ MappedNullable = &ModelsRevocationRevocationResponse{}
 
 // ModelsRevocationRevocationResponse struct for ModelsRevocationRevocationResponse
 type ModelsRevocationRevocationResponse struct {
-	RevokedIds           []int32                                       `json:"RevokedIds,omitempty"`
+	RevokedIds           []int64                                       `json:"RevokedIds,omitempty"`
 	SuspendedCerts       []ModelsRevocationSuspendedRevocationResponse `json:"SuspendedCerts,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -55,9 +55,9 @@ func NewModelsRevocationRevocationResponseWithDefaults() *ModelsRevocationRevoca
 }
 
 // GetRevokedIds returns the RevokedIds field value if set, zero value otherwise.
-func (o *ModelsRevocationRevocationResponse) GetRevokedIds() []int32 {
+func (o *ModelsRevocationRevocationResponse) GetRevokedIds() []int64 {
 	if o == nil || isNil(o.RevokedIds) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.RevokedIds
@@ -65,7 +65,7 @@ func (o *ModelsRevocationRevocationResponse) GetRevokedIds() []int32 {
 
 // GetRevokedIdsOk returns a tuple with the RevokedIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsRevocationRevocationResponse) GetRevokedIdsOk() ([]int32, bool) {
+func (o *ModelsRevocationRevocationResponse) GetRevokedIdsOk() ([]int64, bool) {
 	if o == nil || isNil(o.RevokedIds) {
 		return nil, false
 	}
@@ -81,8 +81,8 @@ func (o *ModelsRevocationRevocationResponse) HasRevokedIds() bool {
 	return false
 }
 
-// SetRevokedIds gets a reference to the given []int32 and assigns it to the RevokedIds field.
-func (o *ModelsRevocationRevocationResponse) SetRevokedIds(v []int32) {
+// SetRevokedIds gets a reference to the given []int64 and assigns it to the RevokedIds field.
+func (o *ModelsRevocationRevocationResponse) SetRevokedIds(v []int64) {
 	o.RevokedIds = v
 }
 

@@ -30,14 +30,14 @@ var _ MappedNullable = &ModelsReportParameters{}
 
 // ModelsReportParameters struct for ModelsReportParameters
 type ModelsReportParameters struct {
-	Id                   *int32  `json:"Id,omitempty"`
+	Id                   *int64  `json:"Id,omitempty"`
 	ParameterName        *string `json:"ParameterName,omitempty"`
-	ParameterType        *int32  `json:"ParameterType,omitempty"`
+	ParameterType        *int64  `json:"ParameterType,omitempty"`
 	DisplayName          *string `json:"DisplayName,omitempty"`
 	Description          *string `json:"Description,omitempty"`
 	DefaultValue         *string `json:"DefaultValue,omitempty"`
-	DisplayOrder         *int32  `json:"DisplayOrder,omitempty"`
-	ParameterVisibility  *int32  `json:"ParameterVisibility,omitempty"`
+	DisplayOrder         *int64  `json:"DisplayOrder,omitempty"`
+	ParameterVisibility  *int64  `json:"ParameterVisibility,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -61,9 +61,9 @@ func NewModelsReportParametersWithDefaults() *ModelsReportParameters {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsReportParameters) GetId() int32 {
+func (o *ModelsReportParameters) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -71,7 +71,7 @@ func (o *ModelsReportParameters) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsReportParameters) GetIdOk() (*int32, bool) {
+func (o *ModelsReportParameters) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -87,8 +87,8 @@ func (o *ModelsReportParameters) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsReportParameters) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsReportParameters) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -125,9 +125,9 @@ func (o *ModelsReportParameters) SetParameterName(v string) {
 }
 
 // GetParameterType returns the ParameterType field value if set, zero value otherwise.
-func (o *ModelsReportParameters) GetParameterType() int32 {
+func (o *ModelsReportParameters) GetParameterType() int64 {
 	if o == nil || isNil(o.ParameterType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ParameterType
@@ -135,7 +135,7 @@ func (o *ModelsReportParameters) GetParameterType() int32 {
 
 // GetParameterTypeOk returns a tuple with the ParameterType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsReportParameters) GetParameterTypeOk() (*int32, bool) {
+func (o *ModelsReportParameters) GetParameterTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.ParameterType) {
 		return nil, false
 	}
@@ -151,8 +151,8 @@ func (o *ModelsReportParameters) HasParameterType() bool {
 	return false
 }
 
-// SetParameterType gets a reference to the given int32 and assigns it to the ParameterType field.
-func (o *ModelsReportParameters) SetParameterType(v int32) {
+// SetParameterType gets a reference to the given int64 and assigns it to the ParameterType field.
+func (o *ModelsReportParameters) SetParameterType(v int64) {
 	o.ParameterType = &v
 }
 
@@ -253,9 +253,9 @@ func (o *ModelsReportParameters) SetDefaultValue(v string) {
 }
 
 // GetDisplayOrder returns the DisplayOrder field value if set, zero value otherwise.
-func (o *ModelsReportParameters) GetDisplayOrder() int32 {
+func (o *ModelsReportParameters) GetDisplayOrder() int64 {
 	if o == nil || isNil(o.DisplayOrder) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DisplayOrder
@@ -263,7 +263,7 @@ func (o *ModelsReportParameters) GetDisplayOrder() int32 {
 
 // GetDisplayOrderOk returns a tuple with the DisplayOrder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsReportParameters) GetDisplayOrderOk() (*int32, bool) {
+func (o *ModelsReportParameters) GetDisplayOrderOk() (*int64, bool) {
 	if o == nil || isNil(o.DisplayOrder) {
 		return nil, false
 	}
@@ -279,15 +279,15 @@ func (o *ModelsReportParameters) HasDisplayOrder() bool {
 	return false
 }
 
-// SetDisplayOrder gets a reference to the given int32 and assigns it to the DisplayOrder field.
-func (o *ModelsReportParameters) SetDisplayOrder(v int32) {
+// SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
+func (o *ModelsReportParameters) SetDisplayOrder(v int64) {
 	o.DisplayOrder = &v
 }
 
 // GetParameterVisibility returns the ParameterVisibility field value if set, zero value otherwise.
-func (o *ModelsReportParameters) GetParameterVisibility() int32 {
+func (o *ModelsReportParameters) GetParameterVisibility() int64 {
 	if o == nil || isNil(o.ParameterVisibility) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ParameterVisibility
@@ -295,7 +295,7 @@ func (o *ModelsReportParameters) GetParameterVisibility() int32 {
 
 // GetParameterVisibilityOk returns a tuple with the ParameterVisibility field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsReportParameters) GetParameterVisibilityOk() (*int32, bool) {
+func (o *ModelsReportParameters) GetParameterVisibilityOk() (*int64, bool) {
 	if o == nil || isNil(o.ParameterVisibility) {
 		return nil, false
 	}
@@ -311,8 +311,8 @@ func (o *ModelsReportParameters) HasParameterVisibility() bool {
 	return false
 }
 
-// SetParameterVisibility gets a reference to the given int32 and assigns it to the ParameterVisibility field.
-func (o *ModelsReportParameters) SetParameterVisibility(v int32) {
+// SetParameterVisibility gets a reference to the given int64 and assigns it to the ParameterVisibility field.
+func (o *ModelsReportParameters) SetParameterVisibility(v int64) {
 	o.ParameterVisibility = &v
 }
 

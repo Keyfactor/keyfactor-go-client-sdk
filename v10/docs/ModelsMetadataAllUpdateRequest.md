@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Query** | Pointer to **string** |  | [optional] 
-**CertificateIds** | Pointer to **[]int32** |  | [optional] 
+**CertificateIds** | Pointer to **[]int64** |  | [optional] 
 **Metadata** | [**[]ModelsMetadataSingleUpdateRequest**](ModelsMetadataSingleUpdateRequest.md) |  | 
 
 ## Methods
@@ -54,20 +54,20 @@ HasQuery returns a boolean if a field has been set.
 
 ### GetCertificateIds
 
-`func (o *ModelsMetadataAllUpdateRequest) GetCertificateIds() []int32`
+`func (o *ModelsMetadataAllUpdateRequest) GetCertificateIds() []int64`
 
 GetCertificateIds returns the CertificateIds field if non-nil, zero value otherwise.
 
 ### GetCertificateIdsOk
 
-`func (o *ModelsMetadataAllUpdateRequest) GetCertificateIdsOk() (*[]int32, bool)`
+`func (o *ModelsMetadataAllUpdateRequest) GetCertificateIdsOk() (*[]int64, bool)`
 
 GetCertificateIdsOk returns a tuple with the CertificateIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertificateIds
 
-`func (o *ModelsMetadataAllUpdateRequest) SetCertificateIds(v []int32)`
+`func (o *ModelsMetadataAllUpdateRequest) SetCertificateIds(v []int64)`
 
 SetCertificateIds sets CertificateIds field to given value.
 

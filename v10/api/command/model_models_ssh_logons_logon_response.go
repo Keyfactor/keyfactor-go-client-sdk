@@ -31,11 +31,11 @@ var _ MappedNullable = &ModelsSSHLogonsLogonResponse{}
 
 // ModelsSSHLogonsLogonResponse struct for ModelsSSHLogonsLogonResponse
 type ModelsSSHLogonsLogonResponse struct {
-	Id                   *int32                          `json:"Id,omitempty"`
+	Id                   *int64                          `json:"Id,omitempty"`
 	Username             *string                         `json:"Username,omitempty"`
 	LastLogon            *time.Time                      `json:"LastLogon,omitempty"`
 	Server               *ModelsSSHServersServerResponse `json:"Server,omitempty"`
-	KeyCount             *int32                          `json:"KeyCount,omitempty"`
+	KeyCount             *int64                          `json:"KeyCount,omitempty"`
 	Access               []ModelsSSHUsersSshUserResponse `json:"Access,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -60,9 +60,9 @@ func NewModelsSSHLogonsLogonResponseWithDefaults() *ModelsSSHLogonsLogonResponse
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsSSHLogonsLogonResponse) GetId() int32 {
+func (o *ModelsSSHLogonsLogonResponse) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -70,7 +70,7 @@ func (o *ModelsSSHLogonsLogonResponse) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSHLogonsLogonResponse) GetIdOk() (*int32, bool) {
+func (o *ModelsSSHLogonsLogonResponse) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -86,8 +86,8 @@ func (o *ModelsSSHLogonsLogonResponse) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsSSHLogonsLogonResponse) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsSSHLogonsLogonResponse) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -188,9 +188,9 @@ func (o *ModelsSSHLogonsLogonResponse) SetServer(v ModelsSSHServersServerRespons
 }
 
 // GetKeyCount returns the KeyCount field value if set, zero value otherwise.
-func (o *ModelsSSHLogonsLogonResponse) GetKeyCount() int32 {
+func (o *ModelsSSHLogonsLogonResponse) GetKeyCount() int64 {
 	if o == nil || isNil(o.KeyCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KeyCount
@@ -198,7 +198,7 @@ func (o *ModelsSSHLogonsLogonResponse) GetKeyCount() int32 {
 
 // GetKeyCountOk returns a tuple with the KeyCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSHLogonsLogonResponse) GetKeyCountOk() (*int32, bool) {
+func (o *ModelsSSHLogonsLogonResponse) GetKeyCountOk() (*int64, bool) {
 	if o == nil || isNil(o.KeyCount) {
 		return nil, false
 	}
@@ -214,8 +214,8 @@ func (o *ModelsSSHLogonsLogonResponse) HasKeyCount() bool {
 	return false
 }
 
-// SetKeyCount gets a reference to the given int32 and assigns it to the KeyCount field.
-func (o *ModelsSSHLogonsLogonResponse) SetKeyCount(v int32) {
+// SetKeyCount gets a reference to the given int64 and assigns it to the KeyCount field.
+func (o *ModelsSSHLogonsLogonResponse) SetKeyCount(v int64) {
 	o.KeyCount = &v
 }
 

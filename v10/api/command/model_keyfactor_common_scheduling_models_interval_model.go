@@ -30,7 +30,7 @@ var _ MappedNullable = &KeyfactorCommonSchedulingModelsIntervalModel{}
 
 // KeyfactorCommonSchedulingModelsIntervalModel struct for KeyfactorCommonSchedulingModelsIntervalModel
 type KeyfactorCommonSchedulingModelsIntervalModel struct {
-	Minutes              *int32 `json:"Minutes,omitempty"`
+	Minutes              *int64 `json:"Minutes,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -54,9 +54,9 @@ func NewKeyfactorCommonSchedulingModelsIntervalModelWithDefaults() *KeyfactorCom
 }
 
 // GetMinutes returns the Minutes field value if set, zero value otherwise.
-func (o *KeyfactorCommonSchedulingModelsIntervalModel) GetMinutes() int32 {
+func (o *KeyfactorCommonSchedulingModelsIntervalModel) GetMinutes() int64 {
 	if o == nil || isNil(o.Minutes) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Minutes
@@ -64,7 +64,7 @@ func (o *KeyfactorCommonSchedulingModelsIntervalModel) GetMinutes() int32 {
 
 // GetMinutesOk returns a tuple with the Minutes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorCommonSchedulingModelsIntervalModel) GetMinutesOk() (*int32, bool) {
+func (o *KeyfactorCommonSchedulingModelsIntervalModel) GetMinutesOk() (*int64, bool) {
 	if o == nil || isNil(o.Minutes) {
 		return nil, false
 	}
@@ -80,8 +80,8 @@ func (o *KeyfactorCommonSchedulingModelsIntervalModel) HasMinutes() bool {
 	return false
 }
 
-// SetMinutes gets a reference to the given int32 and assigns it to the Minutes field.
-func (o *KeyfactorCommonSchedulingModelsIntervalModel) SetMinutes(v int32) {
+// SetMinutes gets a reference to the given int64 and assigns it to the Minutes field.
+func (o *KeyfactorCommonSchedulingModelsIntervalModel) SetMinutes(v int64) {
 	o.Minutes = &v
 }
 

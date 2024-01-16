@@ -30,12 +30,12 @@ var _ MappedNullable = &KeyfactorApiModelsCertificateCollectionsCertificateColle
 
 // KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest struct for KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest
 type KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest struct {
-	CopyFromId           *int32  `json:"CopyFromId,omitempty"`
-	Id                   *int32  `json:"Id,omitempty"`
+	CopyFromId           *int64  `json:"CopyFromId,omitempty"`
+	Id                   *int64  `json:"Id,omitempty"`
 	Name                 string  `json:"Name"`
 	Description          *string `json:"Description,omitempty"`
 	Query                *string `json:"Query,omitempty"`
-	DuplicationField     *int32  `json:"DuplicationField,omitempty"`
+	DuplicationField     *int64  `json:"DuplicationField,omitempty"`
 	ShowOnDashboard      *bool   `json:"ShowOnDashboard,omitempty"`
 	Favorite             *bool   `json:"Favorite,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -62,9 +62,9 @@ func NewKeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateReque
 }
 
 // GetCopyFromId returns the CopyFromId field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest) GetCopyFromId() int32 {
+func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest) GetCopyFromId() int64 {
 	if o == nil || isNil(o.CopyFromId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CopyFromId
@@ -72,7 +72,7 @@ func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequ
 
 // GetCopyFromIdOk returns a tuple with the CopyFromId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest) GetCopyFromIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest) GetCopyFromIdOk() (*int64, bool) {
 	if o == nil || isNil(o.CopyFromId) {
 		return nil, false
 	}
@@ -88,15 +88,15 @@ func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequ
 	return false
 }
 
-// SetCopyFromId gets a reference to the given int32 and assigns it to the CopyFromId field.
-func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest) SetCopyFromId(v int32) {
+// SetCopyFromId gets a reference to the given int64 and assigns it to the CopyFromId field.
+func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest) SetCopyFromId(v int64) {
 	o.CopyFromId = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest) GetId() int32 {
+func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -104,7 +104,7 @@ func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequ
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest) GetIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -120,8 +120,8 @@ func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequ
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -214,9 +214,9 @@ func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequ
 }
 
 // GetDuplicationField returns the DuplicationField field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest) GetDuplicationField() int32 {
+func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest) GetDuplicationField() int64 {
 	if o == nil || isNil(o.DuplicationField) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DuplicationField
@@ -224,7 +224,7 @@ func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequ
 
 // GetDuplicationFieldOk returns a tuple with the DuplicationField field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest) GetDuplicationFieldOk() (*int32, bool) {
+func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest) GetDuplicationFieldOk() (*int64, bool) {
 	if o == nil || isNil(o.DuplicationField) {
 		return nil, false
 	}
@@ -240,8 +240,8 @@ func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequ
 	return false
 }
 
-// SetDuplicationField gets a reference to the given int32 and assigns it to the DuplicationField field.
-func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest) SetDuplicationField(v int32) {
+// SetDuplicationField gets a reference to the given int64 and assigns it to the DuplicationField field.
+func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionCreateRequest) SetDuplicationField(v int64) {
 	o.DuplicationField = &v
 }
 

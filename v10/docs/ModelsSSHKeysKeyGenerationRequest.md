@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **KeyType** | **string** |  | 
 **PrivateKeyFormat** | **string** |  | 
-**KeyLength** | **int32** |  | 
+**KeyLength** | **int64** |  | 
 **Email** | **string** |  | 
 **Password** | **string** |  | 
 **Comment** | Pointer to **string** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewModelsSSHKeysKeyGenerationRequest
 
-`func NewModelsSSHKeysKeyGenerationRequest(keyType string, privateKeyFormat string, keyLength int32, email string, password string, ) *ModelsSSHKeysKeyGenerationRequest`
+`func NewModelsSSHKeysKeyGenerationRequest(keyType string, privateKeyFormat string, keyLength int64, email string, password string, ) *ModelsSSHKeysKeyGenerationRequest`
 
 NewModelsSSHKeysKeyGenerationRequest instantiates a new ModelsSSHKeysKeyGenerationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -72,20 +72,20 @@ SetPrivateKeyFormat sets PrivateKeyFormat field to given value.
 
 ### GetKeyLength
 
-`func (o *ModelsSSHKeysKeyGenerationRequest) GetKeyLength() int32`
+`func (o *ModelsSSHKeysKeyGenerationRequest) GetKeyLength() int64`
 
 GetKeyLength returns the KeyLength field if non-nil, zero value otherwise.
 
 ### GetKeyLengthOk
 
-`func (o *ModelsSSHKeysKeyGenerationRequest) GetKeyLengthOk() (*int32, bool)`
+`func (o *ModelsSSHKeysKeyGenerationRequest) GetKeyLengthOk() (*int64, bool)`
 
 GetKeyLengthOk returns a tuple with the KeyLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyLength
 
-`func (o *ModelsSSHKeysKeyGenerationRequest) SetKeyLength(v int32)`
+`func (o *ModelsSSHKeysKeyGenerationRequest) SetKeyLength(v int64)`
 
 SetKeyLength sets KeyLength field to given value.
 

@@ -35,9 +35,9 @@ type ModelsAgentsAgentPool struct {
 	// Name of the agent pool
 	Name string `json:"Name"`
 	// Number of agents that can perform discovery jobs
-	DiscoverAgentsCount *int32 `json:"DiscoverAgentsCount,omitempty"`
+	DiscoverAgentsCount *int64 `json:"DiscoverAgentsCount,omitempty"`
 	// Number of agents that can perform monitoring jobs
-	MonitorAgentsCount *int32 `json:"MonitorAgentsCount,omitempty"`
+	MonitorAgentsCount *int64 `json:"MonitorAgentsCount,omitempty"`
 	// List of the agents assigned to the pool
 	Agents               []ModelsAgentsAgentPoolAgent `json:"Agents,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -120,9 +120,9 @@ func (o *ModelsAgentsAgentPool) SetName(v string) {
 }
 
 // GetDiscoverAgentsCount returns the DiscoverAgentsCount field value if set, zero value otherwise.
-func (o *ModelsAgentsAgentPool) GetDiscoverAgentsCount() int32 {
+func (o *ModelsAgentsAgentPool) GetDiscoverAgentsCount() int64 {
 	if o == nil || isNil(o.DiscoverAgentsCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DiscoverAgentsCount
@@ -130,7 +130,7 @@ func (o *ModelsAgentsAgentPool) GetDiscoverAgentsCount() int32 {
 
 // GetDiscoverAgentsCountOk returns a tuple with the DiscoverAgentsCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsAgentsAgentPool) GetDiscoverAgentsCountOk() (*int32, bool) {
+func (o *ModelsAgentsAgentPool) GetDiscoverAgentsCountOk() (*int64, bool) {
 	if o == nil || isNil(o.DiscoverAgentsCount) {
 		return nil, false
 	}
@@ -146,15 +146,15 @@ func (o *ModelsAgentsAgentPool) HasDiscoverAgentsCount() bool {
 	return false
 }
 
-// SetDiscoverAgentsCount gets a reference to the given int32 and assigns it to the DiscoverAgentsCount field.
-func (o *ModelsAgentsAgentPool) SetDiscoverAgentsCount(v int32) {
+// SetDiscoverAgentsCount gets a reference to the given int64 and assigns it to the DiscoverAgentsCount field.
+func (o *ModelsAgentsAgentPool) SetDiscoverAgentsCount(v int64) {
 	o.DiscoverAgentsCount = &v
 }
 
 // GetMonitorAgentsCount returns the MonitorAgentsCount field value if set, zero value otherwise.
-func (o *ModelsAgentsAgentPool) GetMonitorAgentsCount() int32 {
+func (o *ModelsAgentsAgentPool) GetMonitorAgentsCount() int64 {
 	if o == nil || isNil(o.MonitorAgentsCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MonitorAgentsCount
@@ -162,7 +162,7 @@ func (o *ModelsAgentsAgentPool) GetMonitorAgentsCount() int32 {
 
 // GetMonitorAgentsCountOk returns a tuple with the MonitorAgentsCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsAgentsAgentPool) GetMonitorAgentsCountOk() (*int32, bool) {
+func (o *ModelsAgentsAgentPool) GetMonitorAgentsCountOk() (*int64, bool) {
 	if o == nil || isNil(o.MonitorAgentsCount) {
 		return nil, false
 	}
@@ -178,8 +178,8 @@ func (o *ModelsAgentsAgentPool) HasMonitorAgentsCount() bool {
 	return false
 }
 
-// SetMonitorAgentsCount gets a reference to the given int32 and assigns it to the MonitorAgentsCount field.
-func (o *ModelsAgentsAgentPool) SetMonitorAgentsCount(v int32) {
+// SetMonitorAgentsCount gets a reference to the given int64 and assigns it to the MonitorAgentsCount field.
+func (o *ModelsAgentsAgentPool) SetMonitorAgentsCount(v int64) {
 	o.MonitorAgentsCount = &v
 }
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CustomURL** | Pointer to **string** |  | [optional] 
-**Id** | **int32** |  | 
+**Id** | **int64** |  | 
 **DisplayName** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **InNavigator** | Pointer to **bool** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewModelsCustomReportUpdateRequest
 
-`func NewModelsCustomReportUpdateRequest(id int32, ) *ModelsCustomReportUpdateRequest`
+`func NewModelsCustomReportUpdateRequest(id int64, ) *ModelsCustomReportUpdateRequest`
 
 NewModelsCustomReportUpdateRequest instantiates a new ModelsCustomReportUpdateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -57,20 +57,20 @@ HasCustomURL returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *ModelsCustomReportUpdateRequest) GetId() int32`
+`func (o *ModelsCustomReportUpdateRequest) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsCustomReportUpdateRequest) GetIdOk() (*int32, bool)`
+`func (o *ModelsCustomReportUpdateRequest) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsCustomReportUpdateRequest) SetId(v int32)`
+`func (o *ModelsCustomReportUpdateRequest) SetId(v int64)`
 
 SetId sets Id field to given value.
 

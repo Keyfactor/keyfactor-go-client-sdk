@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RoleId** | Pointer to **int32** |  | [optional] 
+**RoleId** | Pointer to **int64** |  | [optional] 
 **Permissions** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRoleId
 
-`func (o *ModelsCollectionRolePermissions) GetRoleId() int32`
+`func (o *ModelsCollectionRolePermissions) GetRoleId() int64`
 
 GetRoleId returns the RoleId field if non-nil, zero value otherwise.
 
 ### GetRoleIdOk
 
-`func (o *ModelsCollectionRolePermissions) GetRoleIdOk() (*int32, bool)`
+`func (o *ModelsCollectionRolePermissions) GetRoleIdOk() (*int64, bool)`
 
 GetRoleIdOk returns a tuple with the RoleId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRoleId
 
-`func (o *ModelsCollectionRolePermissions) SetRoleId(v int32)`
+`func (o *ModelsCollectionRolePermissions) SetRoleId(v int64)`
 
 SetRoleId sets RoleId field to given value.
 

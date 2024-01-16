@@ -71,11 +71,11 @@ func Test_command_WorkflowApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("WorkflowApi_WorkflowGetCertificateRequestDetails_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("WorkflowApi_WorkflowGetCertificateRequestDetails_id: %v", id)
 
 		t.Log("WorkflowApi_WorkflowGetCertificateRequestDetails_payload: <none>")
-		resp, httpRes, err := apiClient.WorkflowApi.WorkflowGetCertificateRequestDetails(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.WorkflowApi.WorkflowGetCertificateRequestDetails(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

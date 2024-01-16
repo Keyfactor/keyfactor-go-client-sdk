@@ -30,9 +30,9 @@ var _ MappedNullable = &CSSCMSDataModelModelsPamProviderTypeParamValue{}
 
 // CSSCMSDataModelModelsPamProviderTypeParamValue struct for CSSCMSDataModelModelsPamProviderTypeParamValue
 type CSSCMSDataModelModelsPamProviderTypeParamValue struct {
-	Id                   *int32                                  `json:"Id,omitempty"`
+	Id                   *int64                                  `json:"Id,omitempty"`
 	Value                *string                                 `json:"Value,omitempty"`
-	InstanceId           *int32                                  `json:"InstanceId,omitempty"`
+	InstanceId           *int64                                  `json:"InstanceId,omitempty"`
 	InstanceGuid         *string                                 `json:"InstanceGuid,omitempty"`
 	Provider             *CSSCMSDataModelModelsProvider          `json:"Provider,omitempty"`
 	ProviderTypeParam    *CSSCMSDataModelModelsProviderTypeParam `json:"ProviderTypeParam,omitempty"`
@@ -59,9 +59,9 @@ func NewCSSCMSDataModelModelsPamProviderTypeParamValueWithDefaults() *CSSCMSData
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) GetId() int32 {
+func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -69,7 +69,7 @@ func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) GetIdOk() (*int32, bool) {
+func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -85,8 +85,8 @@ func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -123,9 +123,9 @@ func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) SetValue(v string) {
 }
 
 // GetInstanceId returns the InstanceId field value if set, zero value otherwise.
-func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) GetInstanceId() int32 {
+func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) GetInstanceId() int64 {
 	if o == nil || isNil(o.InstanceId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.InstanceId
@@ -133,7 +133,7 @@ func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) GetInstanceId() int32 {
 
 // GetInstanceIdOk returns a tuple with the InstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) GetInstanceIdOk() (*int32, bool) {
+func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) GetInstanceIdOk() (*int64, bool) {
 	if o == nil || isNil(o.InstanceId) {
 		return nil, false
 	}
@@ -149,8 +149,8 @@ func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) HasInstanceId() bool {
 	return false
 }
 
-// SetInstanceId gets a reference to the given int32 and assigns it to the InstanceId field.
-func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) SetInstanceId(v int32) {
+// SetInstanceId gets a reference to the given int64 and assigns it to the InstanceId field.
+func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) SetInstanceId(v int64) {
 	o.InstanceId = &v
 }
 

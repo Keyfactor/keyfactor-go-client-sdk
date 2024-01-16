@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **StoreMachine** | Pointer to **string** |  | [optional] 
 **StorePath** | Pointer to **string** |  | [optional] 
-**StoreType** | Pointer to **int32** |  | [optional] 
+**StoreType** | Pointer to **int64** |  | [optional] 
 **Alias** | Pointer to **string** |  | [optional] 
-**ChainLevel** | Pointer to **int32** |  | [optional] 
+**ChainLevel** | Pointer to **int64** |  | [optional] 
 **CertStoreId** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -82,20 +82,20 @@ HasStorePath returns a boolean if a field has been set.
 
 ### GetStoreType
 
-`func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) GetStoreType() int32`
+`func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) GetStoreType() int64`
 
 GetStoreType returns the StoreType field if non-nil, zero value otherwise.
 
 ### GetStoreTypeOk
 
-`func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) GetStoreTypeOk() (*int32, bool)`
+`func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) GetStoreTypeOk() (*int64, bool)`
 
 GetStoreTypeOk returns a tuple with the StoreType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStoreType
 
-`func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) SetStoreType(v int32)`
+`func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) SetStoreType(v int64)`
 
 SetStoreType sets StoreType field to given value.
 
@@ -132,20 +132,20 @@ HasAlias returns a boolean if a field has been set.
 
 ### GetChainLevel
 
-`func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) GetChainLevel() int32`
+`func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) GetChainLevel() int64`
 
 GetChainLevel returns the ChainLevel field if non-nil, zero value otherwise.
 
 ### GetChainLevelOk
 
-`func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) GetChainLevelOk() (*int32, bool)`
+`func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) GetChainLevelOk() (*int64, bool)`
 
 GetChainLevelOk returns a tuple with the ChainLevel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChainLevel
 
-`func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) SetChainLevel(v int32)`
+`func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) SetChainLevel(v int64)`
 
 SetChainLevel sets ChainLevel field to given value.
 

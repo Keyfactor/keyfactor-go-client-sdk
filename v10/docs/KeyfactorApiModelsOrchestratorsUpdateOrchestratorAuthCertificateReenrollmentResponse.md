@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **FailedOrchestratorIds** | Pointer to **[]string** |  | [optional] 
-**Status** | Pointer to **int32** |  | [optional] 
+**Status** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasFailedOrchestratorIds returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *KeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse) GetStatus() int32`
+`func (o *KeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse) GetStatus() int64`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *KeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse) GetStatusOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse) GetStatusOk() (*int64, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *KeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse) SetStatus(v int32)`
+`func (o *KeyfactorApiModelsOrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse) SetStatus(v int64)`
 
 SetStatus sets Status field to given value.
 

@@ -30,9 +30,9 @@ var _ MappedNullable = &ModelsCertificateStoreServerResponse{}
 
 // ModelsCertificateStoreServerResponse struct for ModelsCertificateStoreServerResponse
 type ModelsCertificateStoreServerResponse struct {
-	Id                   *int32  `json:"Id,omitempty"`
+	Id                   *int64  `json:"Id,omitempty"`
 	UseSSL               *bool   `json:"UseSSL,omitempty"`
-	ServerType           *int32  `json:"ServerType,omitempty"`
+	ServerType           *int64  `json:"ServerType,omitempty"`
 	Name                 *string `json:"Name,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -57,9 +57,9 @@ func NewModelsCertificateStoreServerResponseWithDefaults() *ModelsCertificateSto
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsCertificateStoreServerResponse) GetId() int32 {
+func (o *ModelsCertificateStoreServerResponse) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -67,7 +67,7 @@ func (o *ModelsCertificateStoreServerResponse) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateStoreServerResponse) GetIdOk() (*int32, bool) {
+func (o *ModelsCertificateStoreServerResponse) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -83,8 +83,8 @@ func (o *ModelsCertificateStoreServerResponse) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsCertificateStoreServerResponse) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsCertificateStoreServerResponse) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -121,9 +121,9 @@ func (o *ModelsCertificateStoreServerResponse) SetUseSSL(v bool) {
 }
 
 // GetServerType returns the ServerType field value if set, zero value otherwise.
-func (o *ModelsCertificateStoreServerResponse) GetServerType() int32 {
+func (o *ModelsCertificateStoreServerResponse) GetServerType() int64 {
 	if o == nil || isNil(o.ServerType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ServerType
@@ -131,7 +131,7 @@ func (o *ModelsCertificateStoreServerResponse) GetServerType() int32 {
 
 // GetServerTypeOk returns a tuple with the ServerType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateStoreServerResponse) GetServerTypeOk() (*int32, bool) {
+func (o *ModelsCertificateStoreServerResponse) GetServerTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.ServerType) {
 		return nil, false
 	}
@@ -147,8 +147,8 @@ func (o *ModelsCertificateStoreServerResponse) HasServerType() bool {
 	return false
 }
 
-// SetServerType gets a reference to the given int32 and assigns it to the ServerType field.
-func (o *ModelsCertificateStoreServerResponse) SetServerType(v int32) {
+// SetServerType gets a reference to the given int64 and assigns it to the ServerType field.
+func (o *ModelsCertificateStoreServerResponse) SetServerType(v int64) {
 	o.ServerType = &v
 }
 

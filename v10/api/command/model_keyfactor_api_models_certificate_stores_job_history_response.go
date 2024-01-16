@@ -39,8 +39,8 @@ type KeyfactorApiModelsCertificateStoresJobHistoryResponse struct {
 	OperationStart       *time.Time                                  `json:"OperationStart,omitempty"`
 	OperationEnd         *time.Time                                  `json:"OperationEnd,omitempty"`
 	Message              *string                                     `json:"Message,omitempty"`
-	Result               *int32                                      `json:"Result,omitempty"`
-	Status               *int32                                      `json:"Status,omitempty"`
+	Result               *int64                                      `json:"Result,omitempty"`
+	Status               *int64                                      `json:"Status,omitempty"`
 	StorePath            *string                                     `json:"StorePath,omitempty"`
 	ClientMachine        *string                                     `json:"ClientMachine,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -322,9 +322,9 @@ func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) SetMessage(v str
 }
 
 // GetResult returns the Result field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) GetResult() int32 {
+func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) GetResult() int64 {
 	if o == nil || isNil(o.Result) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Result
@@ -332,7 +332,7 @@ func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) GetResult() int3
 
 // GetResultOk returns a tuple with the Result field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) GetResultOk() (*int32, bool) {
+func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) GetResultOk() (*int64, bool) {
 	if o == nil || isNil(o.Result) {
 		return nil, false
 	}
@@ -348,15 +348,15 @@ func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) HasResult() bool
 	return false
 }
 
-// SetResult gets a reference to the given int32 and assigns it to the Result field.
-func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) SetResult(v int32) {
+// SetResult gets a reference to the given int64 and assigns it to the Result field.
+func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) SetResult(v int64) {
 	o.Result = &v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) GetStatus() int32 {
+func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) GetStatus() int64 {
 	if o == nil || isNil(o.Status) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status
@@ -364,7 +364,7 @@ func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) GetStatus() int3
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) GetStatusOk() (*int32, bool) {
+func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) GetStatusOk() (*int64, bool) {
 	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
@@ -380,8 +380,8 @@ func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) HasStatus() bool
 	return false
 }
 
-// SetStatus gets a reference to the given int32 and assigns it to the Status field.
-func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) SetStatus(v int32) {
+// SetStatus gets a reference to the given int64 and assigns it to the Status field.
+func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) SetStatus(v int64) {
 	o.Status = &v
 }
 

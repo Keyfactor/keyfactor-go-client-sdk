@@ -38,8 +38,8 @@ type KeyfactorApiModelsWorkflowsDefinitionResponse struct {
 	IsPublished          *bool                                               `json:"IsPublished,omitempty"`
 	WorkflowType         *string                                             `json:"WorkflowType,omitempty"`
 	Steps                []KeyfactorApiModelsWorkflowsDefinitionStepResponse `json:"Steps,omitempty"`
-	DraftVersion         *int32                                              `json:"DraftVersion,omitempty"`
-	PublishedVersion     *int32                                              `json:"PublishedVersion,omitempty"`
+	DraftVersion         *int64                                              `json:"DraftVersion,omitempty"`
+	PublishedVersion     *int64                                              `json:"PublishedVersion,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -319,9 +319,9 @@ func (o *KeyfactorApiModelsWorkflowsDefinitionResponse) SetSteps(v []KeyfactorAp
 }
 
 // GetDraftVersion returns the DraftVersion field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsWorkflowsDefinitionResponse) GetDraftVersion() int32 {
+func (o *KeyfactorApiModelsWorkflowsDefinitionResponse) GetDraftVersion() int64 {
 	if o == nil || isNil(o.DraftVersion) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DraftVersion
@@ -329,7 +329,7 @@ func (o *KeyfactorApiModelsWorkflowsDefinitionResponse) GetDraftVersion() int32 
 
 // GetDraftVersionOk returns a tuple with the DraftVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsWorkflowsDefinitionResponse) GetDraftVersionOk() (*int32, bool) {
+func (o *KeyfactorApiModelsWorkflowsDefinitionResponse) GetDraftVersionOk() (*int64, bool) {
 	if o == nil || isNil(o.DraftVersion) {
 		return nil, false
 	}
@@ -345,15 +345,15 @@ func (o *KeyfactorApiModelsWorkflowsDefinitionResponse) HasDraftVersion() bool {
 	return false
 }
 
-// SetDraftVersion gets a reference to the given int32 and assigns it to the DraftVersion field.
-func (o *KeyfactorApiModelsWorkflowsDefinitionResponse) SetDraftVersion(v int32) {
+// SetDraftVersion gets a reference to the given int64 and assigns it to the DraftVersion field.
+func (o *KeyfactorApiModelsWorkflowsDefinitionResponse) SetDraftVersion(v int64) {
 	o.DraftVersion = &v
 }
 
 // GetPublishedVersion returns the PublishedVersion field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsWorkflowsDefinitionResponse) GetPublishedVersion() int32 {
+func (o *KeyfactorApiModelsWorkflowsDefinitionResponse) GetPublishedVersion() int64 {
 	if o == nil || isNil(o.PublishedVersion) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PublishedVersion
@@ -361,7 +361,7 @@ func (o *KeyfactorApiModelsWorkflowsDefinitionResponse) GetPublishedVersion() in
 
 // GetPublishedVersionOk returns a tuple with the PublishedVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsWorkflowsDefinitionResponse) GetPublishedVersionOk() (*int32, bool) {
+func (o *KeyfactorApiModelsWorkflowsDefinitionResponse) GetPublishedVersionOk() (*int64, bool) {
 	if o == nil || isNil(o.PublishedVersion) {
 		return nil, false
 	}
@@ -377,8 +377,8 @@ func (o *KeyfactorApiModelsWorkflowsDefinitionResponse) HasPublishedVersion() bo
 	return false
 }
 
-// SetPublishedVersion gets a reference to the given int32 and assigns it to the PublishedVersion field.
-func (o *KeyfactorApiModelsWorkflowsDefinitionResponse) SetPublishedVersion(v int32) {
+// SetPublishedVersion gets a reference to the given int64 and assigns it to the PublishedVersion field.
+func (o *KeyfactorApiModelsWorkflowsDefinitionResponse) SetPublishedVersion(v int64) {
 	o.PublishedVersion = &v
 }
 

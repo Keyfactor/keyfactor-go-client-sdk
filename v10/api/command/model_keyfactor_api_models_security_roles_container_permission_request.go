@@ -30,7 +30,7 @@ var _ MappedNullable = &KeyfactorApiModelsSecurityRolesContainerPermissionReques
 
 // KeyfactorApiModelsSecurityRolesContainerPermissionRequest struct for KeyfactorApiModelsSecurityRolesContainerPermissionRequest
 type KeyfactorApiModelsSecurityRolesContainerPermissionRequest struct {
-	ContainerId          *int32  `json:"ContainerId,omitempty"`
+	ContainerId          *int64  `json:"ContainerId,omitempty"`
 	Permission           *string `json:"Permission,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -55,9 +55,9 @@ func NewKeyfactorApiModelsSecurityRolesContainerPermissionRequestWithDefaults() 
 }
 
 // GetContainerId returns the ContainerId field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsSecurityRolesContainerPermissionRequest) GetContainerId() int32 {
+func (o *KeyfactorApiModelsSecurityRolesContainerPermissionRequest) GetContainerId() int64 {
 	if o == nil || isNil(o.ContainerId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ContainerId
@@ -65,7 +65,7 @@ func (o *KeyfactorApiModelsSecurityRolesContainerPermissionRequest) GetContainer
 
 // GetContainerIdOk returns a tuple with the ContainerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsSecurityRolesContainerPermissionRequest) GetContainerIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsSecurityRolesContainerPermissionRequest) GetContainerIdOk() (*int64, bool) {
 	if o == nil || isNil(o.ContainerId) {
 		return nil, false
 	}
@@ -81,8 +81,8 @@ func (o *KeyfactorApiModelsSecurityRolesContainerPermissionRequest) HasContainer
 	return false
 }
 
-// SetContainerId gets a reference to the given int32 and assigns it to the ContainerId field.
-func (o *KeyfactorApiModelsSecurityRolesContainerPermissionRequest) SetContainerId(v int32) {
+// SetContainerId gets a reference to the given int64 and assigns it to the ContainerId field.
+func (o *KeyfactorApiModelsSecurityRolesContainerPermissionRequest) SetContainerId(v int64) {
 	o.ContainerId = &v
 }
 

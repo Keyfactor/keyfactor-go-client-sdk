@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TemplateId** | Pointer to **NullableInt32** |  | [optional] 
+**TemplateId** | Pointer to **NullableInt64** |  | [optional] 
 **SubjectPart** | Pointer to **string** |  | [optional] 
 **Regex** | Pointer to **string** |  | [optional] 
 **Error** | Pointer to **string** |  | [optional] 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetTemplateId
 
-`func (o *ModelsTemplateUpdateRequestTemplateRegexModel) GetTemplateId() int32`
+`func (o *ModelsTemplateUpdateRequestTemplateRegexModel) GetTemplateId() int64`
 
 GetTemplateId returns the TemplateId field if non-nil, zero value otherwise.
 
 ### GetTemplateIdOk
 
-`func (o *ModelsTemplateUpdateRequestTemplateRegexModel) GetTemplateIdOk() (*int32, bool)`
+`func (o *ModelsTemplateUpdateRequestTemplateRegexModel) GetTemplateIdOk() (*int64, bool)`
 
 GetTemplateIdOk returns a tuple with the TemplateId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTemplateId
 
-`func (o *ModelsTemplateUpdateRequestTemplateRegexModel) SetTemplateId(v int32)`
+`func (o *ModelsTemplateUpdateRequestTemplateRegexModel) SetTemplateId(v int64)`
 
 SetTemplateId sets TemplateId field to given value.
 

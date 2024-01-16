@@ -62,11 +62,11 @@ func Test_command_ServerApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("ServerApi_ServerDelete_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("ServerApi_ServerDelete_id: %v", id)
 
 		t.Log("ServerApi_ServerDelete_payload: <none>")
-		httpRes, err := apiClient.ServerApi.ServerDelete(context.Background(), id.(int32)).Execute()
+		httpRes, err := apiClient.ServerApi.ServerDelete(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
@@ -76,11 +76,11 @@ func Test_command_ServerApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("ServerApi_ServerGet_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("ServerApi_ServerGet_id: %v", id)
 
 		t.Log("ServerApi_ServerGet_payload: <none>")
-		resp, httpRes, err := apiClient.ServerApi.ServerGet(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.ServerApi.ServerGet(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -91,11 +91,11 @@ func Test_command_ServerApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("ServerApi_ServerGetAccess_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("ServerApi_ServerGetAccess_id: %v", id)
 
 		t.Log("ServerApi_ServerGetAccess_payload: <none>")
-		resp, httpRes, err := apiClient.ServerApi.ServerGetAccess(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.ServerApi.ServerGetAccess(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

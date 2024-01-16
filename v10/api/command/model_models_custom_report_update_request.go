@@ -31,7 +31,7 @@ var _ MappedNullable = &ModelsCustomReportUpdateRequest{}
 // ModelsCustomReportUpdateRequest The CustomReport can be used to create and update a custom report.
 type ModelsCustomReportUpdateRequest struct {
 	CustomURL            *string `json:"CustomURL,omitempty"`
-	Id                   int32   `json:"Id"`
+	Id                   int64   `json:"Id"`
 	DisplayName          *string `json:"DisplayName,omitempty"`
 	Description          *string `json:"Description,omitempty"`
 	InNavigator          *bool   `json:"InNavigator,omitempty"`
@@ -45,7 +45,7 @@ type _ModelsCustomReportUpdateRequest ModelsCustomReportUpdateRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsCustomReportUpdateRequest(id int32) *ModelsCustomReportUpdateRequest {
+func NewModelsCustomReportUpdateRequest(id int64) *ModelsCustomReportUpdateRequest {
 	this := ModelsCustomReportUpdateRequest{}
 	this.Id = id
 	return &this
@@ -92,9 +92,9 @@ func (o *ModelsCustomReportUpdateRequest) SetCustomURL(v string) {
 }
 
 // GetId returns the Id field value
-func (o *ModelsCustomReportUpdateRequest) GetId() int32 {
+func (o *ModelsCustomReportUpdateRequest) GetId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -103,7 +103,7 @@ func (o *ModelsCustomReportUpdateRequest) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *ModelsCustomReportUpdateRequest) GetIdOk() (*int32, bool) {
+func (o *ModelsCustomReportUpdateRequest) GetIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -111,7 +111,7 @@ func (o *ModelsCustomReportUpdateRequest) GetIdOk() (*int32, bool) {
 }
 
 // SetId sets field value
-func (o *ModelsCustomReportUpdateRequest) SetId(v int32) {
+func (o *ModelsCustomReportUpdateRequest) SetId(v int64) {
 	o.Id = v
 }
 

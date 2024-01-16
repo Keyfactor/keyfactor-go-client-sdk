@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RevokedIds** | Pointer to **[]int32** |  | [optional] 
+**RevokedIds** | Pointer to **[]int64** |  | [optional] 
 **SuspendedCerts** | Pointer to [**[]ModelsRevocationSuspendedRevocationResponse**](ModelsRevocationSuspendedRevocationResponse.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRevokedIds
 
-`func (o *ModelsRevocationRevocationResponse) GetRevokedIds() []int32`
+`func (o *ModelsRevocationRevocationResponse) GetRevokedIds() []int64`
 
 GetRevokedIds returns the RevokedIds field if non-nil, zero value otherwise.
 
 ### GetRevokedIdsOk
 
-`func (o *ModelsRevocationRevocationResponse) GetRevokedIdsOk() (*[]int32, bool)`
+`func (o *ModelsRevocationRevocationResponse) GetRevokedIdsOk() (*[]int64, bool)`
 
 GetRevokedIdsOk returns a tuple with the RevokedIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRevokedIds
 
-`func (o *ModelsRevocationRevocationResponse) SetRevokedIds(v []int32)`
+`func (o *ModelsRevocationRevocationResponse) SetRevokedIds(v []int64)`
 
 SetRevokedIds sets RevokedIds field to given value.
 

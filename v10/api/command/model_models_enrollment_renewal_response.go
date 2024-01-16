@@ -30,8 +30,8 @@ var _ MappedNullable = &ModelsEnrollmentRenewalResponse{}
 
 // ModelsEnrollmentRenewalResponse struct for ModelsEnrollmentRenewalResponse
 type ModelsEnrollmentRenewalResponse struct {
-	KeyfactorId          *int32         `json:"KeyfactorId,omitempty"`
-	KeyfactorRequestId   *int32         `json:"KeyfactorRequestId,omitempty"`
+	KeyfactorId          *int64         `json:"KeyfactorId,omitempty"`
+	KeyfactorRequestId   *int64         `json:"KeyfactorRequestId,omitempty"`
 	Thumbprint           *string        `json:"Thumbprint,omitempty"`
 	SerialNumber         *string        `json:"SerialNumber,omitempty"`
 	IssuerDN             NullableString `json:"IssuerDN,omitempty"`
@@ -61,9 +61,9 @@ func NewModelsEnrollmentRenewalResponseWithDefaults() *ModelsEnrollmentRenewalRe
 }
 
 // GetKeyfactorId returns the KeyfactorId field value if set, zero value otherwise.
-func (o *ModelsEnrollmentRenewalResponse) GetKeyfactorId() int32 {
+func (o *ModelsEnrollmentRenewalResponse) GetKeyfactorId() int64 {
 	if o == nil || isNil(o.KeyfactorId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KeyfactorId
@@ -71,7 +71,7 @@ func (o *ModelsEnrollmentRenewalResponse) GetKeyfactorId() int32 {
 
 // GetKeyfactorIdOk returns a tuple with the KeyfactorId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsEnrollmentRenewalResponse) GetKeyfactorIdOk() (*int32, bool) {
+func (o *ModelsEnrollmentRenewalResponse) GetKeyfactorIdOk() (*int64, bool) {
 	if o == nil || isNil(o.KeyfactorId) {
 		return nil, false
 	}
@@ -87,15 +87,15 @@ func (o *ModelsEnrollmentRenewalResponse) HasKeyfactorId() bool {
 	return false
 }
 
-// SetKeyfactorId gets a reference to the given int32 and assigns it to the KeyfactorId field.
-func (o *ModelsEnrollmentRenewalResponse) SetKeyfactorId(v int32) {
+// SetKeyfactorId gets a reference to the given int64 and assigns it to the KeyfactorId field.
+func (o *ModelsEnrollmentRenewalResponse) SetKeyfactorId(v int64) {
 	o.KeyfactorId = &v
 }
 
 // GetKeyfactorRequestId returns the KeyfactorRequestId field value if set, zero value otherwise.
-func (o *ModelsEnrollmentRenewalResponse) GetKeyfactorRequestId() int32 {
+func (o *ModelsEnrollmentRenewalResponse) GetKeyfactorRequestId() int64 {
 	if o == nil || isNil(o.KeyfactorRequestId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KeyfactorRequestId
@@ -103,7 +103,7 @@ func (o *ModelsEnrollmentRenewalResponse) GetKeyfactorRequestId() int32 {
 
 // GetKeyfactorRequestIdOk returns a tuple with the KeyfactorRequestId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsEnrollmentRenewalResponse) GetKeyfactorRequestIdOk() (*int32, bool) {
+func (o *ModelsEnrollmentRenewalResponse) GetKeyfactorRequestIdOk() (*int64, bool) {
 	if o == nil || isNil(o.KeyfactorRequestId) {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ModelsEnrollmentRenewalResponse) HasKeyfactorRequestId() bool {
 	return false
 }
 
-// SetKeyfactorRequestId gets a reference to the given int32 and assigns it to the KeyfactorRequestId field.
-func (o *ModelsEnrollmentRenewalResponse) SetKeyfactorRequestId(v int32) {
+// SetKeyfactorRequestId gets a reference to the given int64 and assigns it to the KeyfactorRequestId field.
+func (o *ModelsEnrollmentRenewalResponse) SetKeyfactorRequestId(v int64) {
 	o.KeyfactorRequestId = &v
 }
 

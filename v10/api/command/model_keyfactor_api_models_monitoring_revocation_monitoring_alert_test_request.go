@@ -31,7 +31,7 @@ var _ MappedNullable = &KeyfactorApiModelsMonitoringRevocationMonitoringAlertTes
 
 // KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestRequest struct for KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestRequest
 type KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestRequest struct {
-	AlertId              *int32     `json:"AlertId,omitempty"`
+	AlertId              *int64     `json:"AlertId,omitempty"`
 	EvaluationDate       *time.Time `json:"EvaluationDate,omitempty"`
 	SendAlerts           *bool      `json:"SendAlerts,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -57,9 +57,9 @@ func NewKeyfactorApiModelsMonitoringRevocationMonitoringAlertTestRequestWithDefa
 }
 
 // GetAlertId returns the AlertId field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestRequest) GetAlertId() int32 {
+func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestRequest) GetAlertId() int64 {
 	if o == nil || isNil(o.AlertId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AlertId
@@ -67,7 +67,7 @@ func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestRequest) GetAl
 
 // GetAlertIdOk returns a tuple with the AlertId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestRequest) GetAlertIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestRequest) GetAlertIdOk() (*int64, bool) {
 	if o == nil || isNil(o.AlertId) {
 		return nil, false
 	}
@@ -83,8 +83,8 @@ func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestRequest) HasAl
 	return false
 }
 
-// SetAlertId gets a reference to the given int32 and assigns it to the AlertId field.
-func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestRequest) SetAlertId(v int32) {
+// SetAlertId gets a reference to the given int64 and assigns it to the AlertId field.
+func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestRequest) SetAlertId(v int64) {
 	o.AlertId = &v
 }
 

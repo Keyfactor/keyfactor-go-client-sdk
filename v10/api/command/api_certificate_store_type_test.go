@@ -53,11 +53,11 @@ func Test_command_CertificateStoreTypeApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("CertificateStoreTypeApi_CertificateStoreTypeDeleteCertificateStoreType_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("CertificateStoreTypeApi_CertificateStoreTypeDeleteCertificateStoreType_id: %v", id)
 
 		t.Log("CertificateStoreTypeApi_CertificateStoreTypeDeleteCertificateStoreType_payload: <none>")
-		httpRes, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeDeleteCertificateStoreType(context.Background(), id.(int32)).Execute()
+		httpRes, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeDeleteCertificateStoreType(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
@@ -75,11 +75,11 @@ func Test_command_CertificateStoreTypeApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("CertificateStoreTypeApi_CertificateStoreTypeGetCertificateStoreType0_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("CertificateStoreTypeApi_CertificateStoreTypeGetCertificateStoreType0_id: %v", id)
 
 		t.Log("CertificateStoreTypeApi_CertificateStoreTypeGetCertificateStoreType0_payload: <none>")
-		resp, httpRes, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeGetCertificateStoreType0(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.CertificateStoreTypeApi.CertificateStoreTypeGetCertificateStoreType0(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

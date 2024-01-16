@@ -30,8 +30,8 @@ var _ MappedNullable = &ModelsReport{}
 
 // ModelsReport struct for ModelsReport
 type ModelsReport struct {
-	Id                      *int32                   `json:"Id,omitempty"`
-	Scheduled               *int32                   `json:"Scheduled,omitempty"`
+	Id                      *int64                   `json:"Id,omitempty"`
+	Scheduled               *int64                   `json:"Scheduled,omitempty"`
 	DisplayName             *string                  `json:"DisplayName,omitempty"`
 	Description             *string                  `json:"Description,omitempty"`
 	ReportPath              *string                  `json:"ReportPath,omitempty"`
@@ -68,9 +68,9 @@ func NewModelsReportWithDefaults() *ModelsReport {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsReport) GetId() int32 {
+func (o *ModelsReport) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -78,7 +78,7 @@ func (o *ModelsReport) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsReport) GetIdOk() (*int32, bool) {
+func (o *ModelsReport) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -94,15 +94,15 @@ func (o *ModelsReport) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsReport) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsReport) SetId(v int64) {
 	o.Id = &v
 }
 
 // GetScheduled returns the Scheduled field value if set, zero value otherwise.
-func (o *ModelsReport) GetScheduled() int32 {
+func (o *ModelsReport) GetScheduled() int64 {
 	if o == nil || isNil(o.Scheduled) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Scheduled
@@ -110,7 +110,7 @@ func (o *ModelsReport) GetScheduled() int32 {
 
 // GetScheduledOk returns a tuple with the Scheduled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsReport) GetScheduledOk() (*int32, bool) {
+func (o *ModelsReport) GetScheduledOk() (*int64, bool) {
 	if o == nil || isNil(o.Scheduled) {
 		return nil, false
 	}
@@ -126,8 +126,8 @@ func (o *ModelsReport) HasScheduled() bool {
 	return false
 }
 
-// SetScheduled gets a reference to the given int32 and assigns it to the Scheduled field.
-func (o *ModelsReport) SetScheduled(v int32) {
+// SetScheduled gets a reference to the given int64 and assigns it to the Scheduled field.
+func (o *ModelsReport) SetScheduled(v int64) {
 	o.Scheduled = &v
 }
 

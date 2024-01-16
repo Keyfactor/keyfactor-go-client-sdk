@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **AgentBlueprintStoreId** | Pointer to **string** |  | [optional] 
 **AgentBlueprintId** | Pointer to **string** |  | [optional] 
 **StorePath** | Pointer to **string** |  | [optional] 
-**ContainerId** | Pointer to **int32** |  | [optional] 
-**CertStoreType** | Pointer to **int32** |  | [optional] 
+**ContainerId** | Pointer to **int64** |  | [optional] 
+**CertStoreType** | Pointer to **int64** |  | [optional] 
 **CertStoreTypeName** | Pointer to **string** |  | [optional] 
 **Approved** | Pointer to **bool** |  | [optional] 
 **CreateIfMissing** | Pointer to **bool** |  | [optional] 
@@ -110,20 +110,20 @@ HasStorePath returns a boolean if a field has been set.
 
 ### GetContainerId
 
-`func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) GetContainerId() int32`
+`func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) GetContainerId() int64`
 
 GetContainerId returns the ContainerId field if non-nil, zero value otherwise.
 
 ### GetContainerIdOk
 
-`func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) GetContainerIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) GetContainerIdOk() (*int64, bool)`
 
 GetContainerIdOk returns a tuple with the ContainerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContainerId
 
-`func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) SetContainerId(v int32)`
+`func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) SetContainerId(v int64)`
 
 SetContainerId sets ContainerId field to given value.
 
@@ -135,20 +135,20 @@ HasContainerId returns a boolean if a field has been set.
 
 ### GetCertStoreType
 
-`func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) GetCertStoreType() int32`
+`func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) GetCertStoreType() int64`
 
 GetCertStoreType returns the CertStoreType field if non-nil, zero value otherwise.
 
 ### GetCertStoreTypeOk
 
-`func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) GetCertStoreTypeOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) GetCertStoreTypeOk() (*int64, bool)`
 
 GetCertStoreTypeOk returns a tuple with the CertStoreType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertStoreType
 
-`func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) SetCertStoreType(v int32)`
+`func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) SetCertStoreType(v int64)`
 
 SetCertStoreType sets CertStoreType field to given value.
 

@@ -30,7 +30,7 @@ var _ MappedNullable = &KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCo
 
 // KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest struct for KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest
 type KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest struct {
-	CollectionId         *int32  `json:"CollectionId,omitempty"`
+	CollectionId         *int64  `json:"CollectionId,omitempty"`
 	Permission           *string `json:"Permission,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -55,9 +55,9 @@ func NewKeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissi
 }
 
 // GetCollectionId returns the CollectionId field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest) GetCollectionId() int32 {
+func (o *KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest) GetCollectionId() int64 {
 	if o == nil || isNil(o.CollectionId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CollectionId
@@ -65,7 +65,7 @@ func (o *KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermiss
 
 // GetCollectionIdOk returns a tuple with the CollectionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest) GetCollectionIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest) GetCollectionIdOk() (*int64, bool) {
 	if o == nil || isNil(o.CollectionId) {
 		return nil, false
 	}
@@ -81,8 +81,8 @@ func (o *KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermiss
 	return false
 }
 
-// SetCollectionId gets a reference to the given int32 and assigns it to the CollectionId field.
-func (o *KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest) SetCollectionId(v int32) {
+// SetCollectionId gets a reference to the given int64 and assigns it to the CollectionId field.
+func (o *KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest) SetCollectionId(v int64) {
 	o.CollectionId = &v
 }
 

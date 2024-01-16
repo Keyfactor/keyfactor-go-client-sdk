@@ -101,7 +101,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | 
+    id := int64(789) // int64 | 
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
@@ -121,7 +121,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** |  | 
+**id** | **int64** |  | 
 
 ### Other Parameters
 
@@ -171,7 +171,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | 
+    id := int64(789) // int64 | 
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
@@ -193,7 +193,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** |  | 
+**id** | **int64** |  | 
 
 ### Other Parameters
 
@@ -246,10 +246,10 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
     pqQueryString := "pqQueryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
-    pqPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    pqReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
+    pqPageReturned := int64(789) // int64 | The current page within the result set to be returned (optional)
+    pqReturnLimit := int64(789) // int64 | Maximum number of records to be returned in a single call (optional)
     pqSortField := "pqSortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    pqSortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    pqSortAscending := int64(789) // int64 | Field sort direction [0=ascending, 1=descending] (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -277,10 +277,10 @@ Name | Type | Description  | Notes
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
  **pqQueryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
- **pqPageReturned** | **int32** | The current page within the result set to be returned | 
- **pqReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
+ **pqPageReturned** | **int64** | The current page within the result set to be returned | 
+ **pqReturnLimit** | **int64** | Maximum number of records to be returned in a single call | 
  **pqSortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **pqSortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **pqSortAscending** | **int64** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
 
 ### Return type
 

@@ -53,11 +53,11 @@ func Test_command_LogonApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("LogonApi_LogonDelete_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("LogonApi_LogonDelete_id: %v", id)
 
 		t.Log("LogonApi_LogonDelete_payload: <none>")
-		httpRes, err := apiClient.LogonApi.LogonDelete(context.Background(), id.(int32)).Execute()
+		httpRes, err := apiClient.LogonApi.LogonDelete(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
@@ -67,11 +67,11 @@ func Test_command_LogonApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("LogonApi_LogonGetLogon_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("LogonApi_LogonGetLogon_id: %v", id)
 
 		t.Log("LogonApi_LogonGetLogon_payload: <none>")
-		resp, httpRes, err := apiClient.LogonApi.LogonGetLogon(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.LogonApi.LogonGetLogon(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

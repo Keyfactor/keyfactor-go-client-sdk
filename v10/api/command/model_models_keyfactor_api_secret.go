@@ -32,7 +32,7 @@ var _ MappedNullable = &ModelsKeyfactorAPISecret{}
 type ModelsKeyfactorAPISecret struct {
 	SecretValue          *string            `json:"SecretValue,omitempty"`
 	Parameters           *map[string]string `json:"Parameters,omitempty"`
-	Provider             *int32             `json:"Provider,omitempty"`
+	Provider             *int64             `json:"Provider,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -120,9 +120,9 @@ func (o *ModelsKeyfactorAPISecret) SetParameters(v map[string]string) {
 }
 
 // GetProvider returns the Provider field value if set, zero value otherwise.
-func (o *ModelsKeyfactorAPISecret) GetProvider() int32 {
+func (o *ModelsKeyfactorAPISecret) GetProvider() int64 {
 	if o == nil || isNil(o.Provider) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Provider
@@ -130,7 +130,7 @@ func (o *ModelsKeyfactorAPISecret) GetProvider() int32 {
 
 // GetProviderOk returns a tuple with the Provider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsKeyfactorAPISecret) GetProviderOk() (*int32, bool) {
+func (o *ModelsKeyfactorAPISecret) GetProviderOk() (*int64, bool) {
 	if o == nil || isNil(o.Provider) {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *ModelsKeyfactorAPISecret) HasProvider() bool {
 	return false
 }
 
-// SetProvider gets a reference to the given int32 and assigns it to the Provider field.
-func (o *ModelsKeyfactorAPISecret) SetProvider(v int32) {
+// SetProvider gets a reference to the given int64 and assigns it to the Provider field.
+func (o *ModelsKeyfactorAPISecret) SetProvider(v int64) {
 	o.Provider = &v
 }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Minutes** | Pointer to **int32** |  | [optional] 
+**Minutes** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMinutes
 
-`func (o *KeyfactorCommonSchedulingModelsIntervalModel) GetMinutes() int32`
+`func (o *KeyfactorCommonSchedulingModelsIntervalModel) GetMinutes() int64`
 
 GetMinutes returns the Minutes field if non-nil, zero value otherwise.
 
 ### GetMinutesOk
 
-`func (o *KeyfactorCommonSchedulingModelsIntervalModel) GetMinutesOk() (*int32, bool)`
+`func (o *KeyfactorCommonSchedulingModelsIntervalModel) GetMinutesOk() (*int64, bool)`
 
 GetMinutesOk returns a tuple with the Minutes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinutes
 
-`func (o *KeyfactorCommonSchedulingModelsIntervalModel) SetMinutes(v int32)`
+`func (o *KeyfactorCommonSchedulingModelsIntervalModel) SetMinutes(v int64)`
 
 SetMinutes sets Minutes field to given value.
 

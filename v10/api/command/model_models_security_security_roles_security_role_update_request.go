@@ -31,7 +31,7 @@ var _ MappedNullable = &ModelsSecuritySecurityRolesSecurityRoleUpdateRequest{}
 // ModelsSecuritySecurityRolesSecurityRoleUpdateRequest struct for ModelsSecuritySecurityRolesSecurityRoleUpdateRequest
 type ModelsSecuritySecurityRolesSecurityRoleUpdateRequest struct {
 	// The Id of the security role to update
-	Id int32 `json:"Id"`
+	Id int64 `json:"Id"`
 	// The name of the security role to update
 	Name string `json:"Name"`
 	// The description to be used on the updated security role
@@ -53,7 +53,7 @@ type _ModelsSecuritySecurityRolesSecurityRoleUpdateRequest ModelsSecuritySecurit
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsSecuritySecurityRolesSecurityRoleUpdateRequest(id int32, name string, description string) *ModelsSecuritySecurityRolesSecurityRoleUpdateRequest {
+func NewModelsSecuritySecurityRolesSecurityRoleUpdateRequest(id int64, name string, description string) *ModelsSecuritySecurityRolesSecurityRoleUpdateRequest {
 	this := ModelsSecuritySecurityRolesSecurityRoleUpdateRequest{}
 	this.Id = id
 	this.Name = name
@@ -70,9 +70,9 @@ func NewModelsSecuritySecurityRolesSecurityRoleUpdateRequestWithDefaults() *Mode
 }
 
 // GetId returns the Id field value
-func (o *ModelsSecuritySecurityRolesSecurityRoleUpdateRequest) GetId() int32 {
+func (o *ModelsSecuritySecurityRolesSecurityRoleUpdateRequest) GetId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -81,7 +81,7 @@ func (o *ModelsSecuritySecurityRolesSecurityRoleUpdateRequest) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *ModelsSecuritySecurityRolesSecurityRoleUpdateRequest) GetIdOk() (*int32, bool) {
+func (o *ModelsSecuritySecurityRolesSecurityRoleUpdateRequest) GetIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -89,7 +89,7 @@ func (o *ModelsSecuritySecurityRolesSecurityRoleUpdateRequest) GetIdOk() (*int32
 }
 
 // SetId sets field value
-func (o *ModelsSecuritySecurityRolesSecurityRoleUpdateRequest) SetId(v int32) {
+func (o *ModelsSecuritySecurityRolesSecurityRoleUpdateRequest) SetId(v int64) {
 	o.Id = v
 }
 

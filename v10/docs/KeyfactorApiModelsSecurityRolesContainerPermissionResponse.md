@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ContainerId** | Pointer to **int32** |  | [optional] 
+**ContainerId** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Permission** | Pointer to **string** |  | [optional] 
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetContainerId
 
-`func (o *KeyfactorApiModelsSecurityRolesContainerPermissionResponse) GetContainerId() int32`
+`func (o *KeyfactorApiModelsSecurityRolesContainerPermissionResponse) GetContainerId() int64`
 
 GetContainerId returns the ContainerId field if non-nil, zero value otherwise.
 
 ### GetContainerIdOk
 
-`func (o *KeyfactorApiModelsSecurityRolesContainerPermissionResponse) GetContainerIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsSecurityRolesContainerPermissionResponse) GetContainerIdOk() (*int64, bool)`
 
 GetContainerIdOk returns a tuple with the ContainerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContainerId
 
-`func (o *KeyfactorApiModelsSecurityRolesContainerPermissionResponse) SetContainerId(v int32)`
+`func (o *KeyfactorApiModelsSecurityRolesContainerPermissionResponse) SetContainerId(v int64)`
 
 SetContainerId sets ContainerId field to given value.
 

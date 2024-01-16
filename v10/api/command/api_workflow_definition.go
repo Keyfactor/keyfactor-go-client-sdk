@@ -432,7 +432,7 @@ type ApiWorkflowDefinitionGetRequest struct {
 	ApiService              *WorkflowDefinitionApiService
 	definitionId            string
 	xKeyfactorRequestedWith *string
-	definitionVersion       *int32
+	definitionVersion       *int64
 	exportable              *bool
 	xKeyfactorApiVersion    *string
 }
@@ -444,7 +444,7 @@ func (r ApiWorkflowDefinitionGetRequest) XKeyfactorRequestedWith(xKeyfactorReque
 }
 
 // The version to retrieve. If this value is not specified, the latest version will be returned.
-func (r ApiWorkflowDefinitionGetRequest) DefinitionVersion(definitionVersion int32) ApiWorkflowDefinitionGetRequest {
+func (r ApiWorkflowDefinitionGetRequest) DefinitionVersion(definitionVersion int64) ApiWorkflowDefinitionGetRequest {
 	r.definitionVersion = &definitionVersion
 	return r
 }
@@ -837,10 +837,10 @@ type ApiWorkflowDefinitionQueryRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	queryQueryString        *string
-	queryPageReturned       *int32
-	queryReturnLimit        *int32
+	queryPageReturned       *int64
+	queryReturnLimit        *int64
 	querySortField          *string
-	querySortAscending      *int32
+	querySortAscending      *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -862,13 +862,13 @@ func (r ApiWorkflowDefinitionQueryRequest) QueryQueryString(queryQueryString str
 }
 
 // The current page within the result set to be returned
-func (r ApiWorkflowDefinitionQueryRequest) QueryPageReturned(queryPageReturned int32) ApiWorkflowDefinitionQueryRequest {
+func (r ApiWorkflowDefinitionQueryRequest) QueryPageReturned(queryPageReturned int64) ApiWorkflowDefinitionQueryRequest {
 	r.queryPageReturned = &queryPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiWorkflowDefinitionQueryRequest) QueryReturnLimit(queryReturnLimit int32) ApiWorkflowDefinitionQueryRequest {
+func (r ApiWorkflowDefinitionQueryRequest) QueryReturnLimit(queryReturnLimit int64) ApiWorkflowDefinitionQueryRequest {
 	r.queryReturnLimit = &queryReturnLimit
 	return r
 }
@@ -880,7 +880,7 @@ func (r ApiWorkflowDefinitionQueryRequest) QuerySortField(querySortField string)
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiWorkflowDefinitionQueryRequest) QuerySortAscending(querySortAscending int32) ApiWorkflowDefinitionQueryRequest {
+func (r ApiWorkflowDefinitionQueryRequest) QuerySortAscending(querySortAscending int64) ApiWorkflowDefinitionQueryRequest {
 	r.querySortAscending = &querySortAscending
 	return r
 }
@@ -1011,10 +1011,10 @@ type ApiWorkflowDefinitionQueryAvailableStepsRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	queryQueryString        *string
-	queryPageReturned       *int32
-	queryReturnLimit        *int32
+	queryPageReturned       *int64
+	queryReturnLimit        *int64
 	querySortField          *string
-	querySortAscending      *int32
+	querySortAscending      *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1036,13 +1036,13 @@ func (r ApiWorkflowDefinitionQueryAvailableStepsRequest) QueryQueryString(queryQ
 }
 
 // The current page within the result set to be returned
-func (r ApiWorkflowDefinitionQueryAvailableStepsRequest) QueryPageReturned(queryPageReturned int32) ApiWorkflowDefinitionQueryAvailableStepsRequest {
+func (r ApiWorkflowDefinitionQueryAvailableStepsRequest) QueryPageReturned(queryPageReturned int64) ApiWorkflowDefinitionQueryAvailableStepsRequest {
 	r.queryPageReturned = &queryPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiWorkflowDefinitionQueryAvailableStepsRequest) QueryReturnLimit(queryReturnLimit int32) ApiWorkflowDefinitionQueryAvailableStepsRequest {
+func (r ApiWorkflowDefinitionQueryAvailableStepsRequest) QueryReturnLimit(queryReturnLimit int64) ApiWorkflowDefinitionQueryAvailableStepsRequest {
 	r.queryReturnLimit = &queryReturnLimit
 	return r
 }
@@ -1054,7 +1054,7 @@ func (r ApiWorkflowDefinitionQueryAvailableStepsRequest) QuerySortField(querySor
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiWorkflowDefinitionQueryAvailableStepsRequest) QuerySortAscending(querySortAscending int32) ApiWorkflowDefinitionQueryAvailableStepsRequest {
+func (r ApiWorkflowDefinitionQueryAvailableStepsRequest) QuerySortAscending(querySortAscending int64) ApiWorkflowDefinitionQueryAvailableStepsRequest {
 	r.querySortAscending = &querySortAscending
 	return r
 }
@@ -1185,10 +1185,10 @@ type ApiWorkflowDefinitionQueryWorkflowTypesRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	queryQueryString        *string
-	queryPageReturned       *int32
-	queryReturnLimit        *int32
+	queryPageReturned       *int64
+	queryReturnLimit        *int64
 	querySortField          *string
-	querySortAscending      *int32
+	querySortAscending      *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1210,13 +1210,13 @@ func (r ApiWorkflowDefinitionQueryWorkflowTypesRequest) QueryQueryString(queryQu
 }
 
 // The current page within the result set to be returned
-func (r ApiWorkflowDefinitionQueryWorkflowTypesRequest) QueryPageReturned(queryPageReturned int32) ApiWorkflowDefinitionQueryWorkflowTypesRequest {
+func (r ApiWorkflowDefinitionQueryWorkflowTypesRequest) QueryPageReturned(queryPageReturned int64) ApiWorkflowDefinitionQueryWorkflowTypesRequest {
 	r.queryPageReturned = &queryPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiWorkflowDefinitionQueryWorkflowTypesRequest) QueryReturnLimit(queryReturnLimit int32) ApiWorkflowDefinitionQueryWorkflowTypesRequest {
+func (r ApiWorkflowDefinitionQueryWorkflowTypesRequest) QueryReturnLimit(queryReturnLimit int64) ApiWorkflowDefinitionQueryWorkflowTypesRequest {
 	r.queryReturnLimit = &queryReturnLimit
 	return r
 }
@@ -1228,7 +1228,7 @@ func (r ApiWorkflowDefinitionQueryWorkflowTypesRequest) QuerySortField(querySort
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiWorkflowDefinitionQueryWorkflowTypesRequest) QuerySortAscending(querySortAscending int32) ApiWorkflowDefinitionQueryWorkflowTypesRequest {
+func (r ApiWorkflowDefinitionQueryWorkflowTypesRequest) QuerySortAscending(querySortAscending int64) ApiWorkflowDefinitionQueryWorkflowTypesRequest {
 	r.querySortAscending = &querySortAscending
 	return r
 }

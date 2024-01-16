@@ -30,9 +30,9 @@ var _ MappedNullable = &ModelsCertificateRetrievalResponseSubjectAlternativeName
 
 // ModelsCertificateRetrievalResponseSubjectAlternativeNameModel struct for ModelsCertificateRetrievalResponseSubjectAlternativeNameModel
 type ModelsCertificateRetrievalResponseSubjectAlternativeNameModel struct {
-	Id                   *int32  `json:"Id,omitempty"`
+	Id                   *int64  `json:"Id,omitempty"`
 	Value                *string `json:"Value,omitempty"`
-	Type                 *int32  `json:"Type,omitempty"`
+	Type                 *int64  `json:"Type,omitempty"`
 	ValueHash            *string `json:"ValueHash,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -57,9 +57,9 @@ func NewModelsCertificateRetrievalResponseSubjectAlternativeNameModelWithDefault
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) GetId() int32 {
+func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -67,7 +67,7 @@ func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) GetId() 
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) GetIdOk() (*int32, bool) {
+func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -83,8 +83,8 @@ func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) HasId() 
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -121,9 +121,9 @@ func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) SetValue
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) GetType() int32 {
+func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) GetType() int64 {
 	if o == nil || isNil(o.Type) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Type
@@ -131,7 +131,7 @@ func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) GetType(
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) GetTypeOk() (*int32, bool) {
+func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) GetTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.Type) {
 		return nil, false
 	}
@@ -147,8 +147,8 @@ func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) HasType(
 	return false
 }
 
-// SetType gets a reference to the given int32 and assigns it to the Type field.
-func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) SetType(v int32) {
+// SetType gets a reference to the given int64 and assigns it to the Type field.
+func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) SetType(v int64) {
 	o.Type = &v
 }
 

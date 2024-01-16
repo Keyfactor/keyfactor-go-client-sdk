@@ -53,11 +53,11 @@ func Test_command_KeyRotationAlertApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("KeyRotationAlertApi_KeyRotationAlertDeleteKeyRotationAlert_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("KeyRotationAlertApi_KeyRotationAlertDeleteKeyRotationAlert_id: %v", id)
 
 		t.Log("KeyRotationAlertApi_KeyRotationAlertDeleteKeyRotationAlert_payload: <none>")
-		httpRes, err := apiClient.KeyRotationAlertApi.KeyRotationAlertDeleteKeyRotationAlert(context.Background(), id.(int32)).Execute()
+		httpRes, err := apiClient.KeyRotationAlertApi.KeyRotationAlertDeleteKeyRotationAlert(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
@@ -85,11 +85,11 @@ func Test_command_KeyRotationAlertApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("KeyRotationAlertApi_KeyRotationAlertGetKeyRotationAlert_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("KeyRotationAlertApi_KeyRotationAlertGetKeyRotationAlert_id: %v", id)
 
 		t.Log("KeyRotationAlertApi_KeyRotationAlertGetKeyRotationAlert_payload: <none>")
-		resp, httpRes, err := apiClient.KeyRotationAlertApi.KeyRotationAlertGetKeyRotationAlert(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.KeyRotationAlertApi.KeyRotationAlertGetKeyRotationAlert(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

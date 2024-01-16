@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **int32** |  | 
+**Id** | **int64** |  | 
 **UseHandler** | **bool** |  | 
 
 ## Methods
 
 ### NewKeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest
 
-`func NewKeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest(id int32, useHandler bool, ) *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest`
+`func NewKeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest(id int64, useHandler bool, ) *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest`
 
 NewKeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest instantiates a new KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest) GetId() int32`
+`func (o *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest) GetIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest) SetId(v int32)`
+`func (o *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest) SetId(v int64)`
 
 SetId sets Id field to given value.
 

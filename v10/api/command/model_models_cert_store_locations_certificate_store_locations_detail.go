@@ -31,13 +31,13 @@ var _ MappedNullable = &ModelsCertStoreLocationsCertificateStoreLocationsDetail{
 // ModelsCertStoreLocationsCertificateStoreLocationsDetail struct for ModelsCertStoreLocationsCertificateStoreLocationsDetail
 type ModelsCertStoreLocationsCertificateStoreLocationsDetail struct {
 	StoreId              *string `json:"StoreId,omitempty"`
-	StoreTypeId          *int32  `json:"StoreTypeId,omitempty"`
+	StoreTypeId          *int64  `json:"StoreTypeId,omitempty"`
 	ClientMachine        *string `json:"ClientMachine,omitempty"`
 	StorePath            *string `json:"StorePath,omitempty"`
 	AgentPool            *string `json:"AgentPool,omitempty"`
 	Alias                *string `json:"Alias,omitempty"`
 	IPAddress            *string `json:"IPAddress,omitempty"`
-	Port                 *int32  `json:"Port,omitempty"`
+	Port                 *int64  `json:"Port,omitempty"`
 	NetworkName          *string `json:"NetworkName,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -94,9 +94,9 @@ func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) SetStoreId(v s
 }
 
 // GetStoreTypeId returns the StoreTypeId field value if set, zero value otherwise.
-func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) GetStoreTypeId() int32 {
+func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) GetStoreTypeId() int64 {
 	if o == nil || isNil(o.StoreTypeId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.StoreTypeId
@@ -104,7 +104,7 @@ func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) GetStoreTypeId
 
 // GetStoreTypeIdOk returns a tuple with the StoreTypeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) GetStoreTypeIdOk() (*int32, bool) {
+func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) GetStoreTypeIdOk() (*int64, bool) {
 	if o == nil || isNil(o.StoreTypeId) {
 		return nil, false
 	}
@@ -120,8 +120,8 @@ func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) HasStoreTypeId
 	return false
 }
 
-// SetStoreTypeId gets a reference to the given int32 and assigns it to the StoreTypeId field.
-func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) SetStoreTypeId(v int32) {
+// SetStoreTypeId gets a reference to the given int64 and assigns it to the StoreTypeId field.
+func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) SetStoreTypeId(v int64) {
 	o.StoreTypeId = &v
 }
 
@@ -286,9 +286,9 @@ func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) SetIPAddress(v
 }
 
 // GetPort returns the Port field value if set, zero value otherwise.
-func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) GetPort() int32 {
+func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) GetPort() int64 {
 	if o == nil || isNil(o.Port) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Port
@@ -296,7 +296,7 @@ func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) GetPort() int3
 
 // GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) GetPortOk() (*int32, bool) {
+func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) GetPortOk() (*int64, bool) {
 	if o == nil || isNil(o.Port) {
 		return nil, false
 	}
@@ -312,8 +312,8 @@ func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) HasPort() bool
 	return false
 }
 
-// SetPort gets a reference to the given int32 and assigns it to the Port field.
-func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) SetPort(v int32) {
+// SetPort gets a reference to the given int64 and assigns it to the Port field.
+func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) SetPort(v int64) {
 	o.Port = &v
 }
 

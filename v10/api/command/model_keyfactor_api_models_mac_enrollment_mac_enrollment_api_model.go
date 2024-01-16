@@ -30,9 +30,9 @@ var _ MappedNullable = &KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel{}
 
 // KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel struct for KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel
 type KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel struct {
-	Id                   *int32  `json:"Id,omitempty"`
+	Id                   *int64  `json:"Id,omitempty"`
 	Enabled              *bool   `json:"Enabled,omitempty"`
-	Interval             *int32  `json:"Interval,omitempty"`
+	Interval             *int64  `json:"Interval,omitempty"`
 	UseMetadata          *bool   `json:"UseMetadata,omitempty"`
 	MetadataField        *string `json:"MetadataField,omitempty"`
 	MetadataValue        *string `json:"MetadataValue,omitempty"`
@@ -59,9 +59,9 @@ func NewKeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModelWithDefaults() *Keyf
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel) GetId() int32 {
+func (o *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -69,7 +69,7 @@ func (o *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel) GetIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -85,8 +85,8 @@ func (o *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -123,9 +123,9 @@ func (o *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel) SetEnabled(v bool
 }
 
 // GetInterval returns the Interval field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel) GetInterval() int32 {
+func (o *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel) GetInterval() int64 {
 	if o == nil || isNil(o.Interval) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Interval
@@ -133,7 +133,7 @@ func (o *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel) GetInterval() int
 
 // GetIntervalOk returns a tuple with the Interval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel) GetIntervalOk() (*int32, bool) {
+func (o *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel) GetIntervalOk() (*int64, bool) {
 	if o == nil || isNil(o.Interval) {
 		return nil, false
 	}
@@ -149,8 +149,8 @@ func (o *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel) HasInterval() boo
 	return false
 }
 
-// SetInterval gets a reference to the given int32 and assigns it to the Interval field.
-func (o *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel) SetInterval(v int32) {
+// SetInterval gets a reference to the given int64 and assigns it to the Interval field.
+func (o *KeyfactorApiModelsMacEnrollmentMacEnrollmentAPIModel) SetInterval(v int64) {
 	o.Interval = &v
 }
 

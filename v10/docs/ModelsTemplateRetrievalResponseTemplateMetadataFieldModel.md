@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **DefaultValue** | Pointer to **string** |  | [optional] 
-**MetadataId** | Pointer to **int32** |  | [optional] 
+**MetadataId** | Pointer to **int64** |  | [optional] 
 **Validation** | Pointer to **string** |  | [optional] 
-**Enrollment** | Pointer to **int32** |  | [optional] 
+**Enrollment** | Pointer to **int64** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetId() int32`
+`func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetIdOk() (*int32, bool)`
+`func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) SetId(v int32)`
+`func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -82,20 +82,20 @@ HasDefaultValue returns a boolean if a field has been set.
 
 ### GetMetadataId
 
-`func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetMetadataId() int32`
+`func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetMetadataId() int64`
 
 GetMetadataId returns the MetadataId field if non-nil, zero value otherwise.
 
 ### GetMetadataIdOk
 
-`func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetMetadataIdOk() (*int32, bool)`
+`func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetMetadataIdOk() (*int64, bool)`
 
 GetMetadataIdOk returns a tuple with the MetadataId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadataId
 
-`func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) SetMetadataId(v int32)`
+`func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) SetMetadataId(v int64)`
 
 SetMetadataId sets MetadataId field to given value.
 
@@ -132,20 +132,20 @@ HasValidation returns a boolean if a field has been set.
 
 ### GetEnrollment
 
-`func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetEnrollment() int32`
+`func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetEnrollment() int64`
 
 GetEnrollment returns the Enrollment field if non-nil, zero value otherwise.
 
 ### GetEnrollmentOk
 
-`func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetEnrollmentOk() (*int32, bool)`
+`func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetEnrollmentOk() (*int64, bool)`
 
 GetEnrollmentOk returns a tuple with the Enrollment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnrollment
 
-`func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) SetEnrollment(v int32)`
+`func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) SetEnrollment(v int64)`
 
 SetEnrollment sets Enrollment field to given value.
 

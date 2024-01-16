@@ -31,7 +31,7 @@ var _ MappedNullable = &ModelsCertificateStoresCertificateStoreUpdateRequest{}
 // ModelsCertificateStoresCertificateStoreUpdateRequest struct for ModelsCertificateStoresCertificateStoreUpdateRequest
 type ModelsCertificateStoresCertificateStoreUpdateRequest struct {
 	Id                   *string                                     `json:"Id,omitempty"`
-	ContainerId          *int32                                      `json:"ContainerId,omitempty"`
+	ContainerId          *int64                                      `json:"ContainerId,omitempty"`
 	CreateIfMissing      *bool                                       `json:"CreateIfMissing,omitempty"`
 	Properties           *string                                     `json:"Properties,omitempty"`
 	AgentId              *string                                     `json:"AgentId,omitempty"`
@@ -92,9 +92,9 @@ func (o *ModelsCertificateStoresCertificateStoreUpdateRequest) SetId(v string) {
 }
 
 // GetContainerId returns the ContainerId field value if set, zero value otherwise.
-func (o *ModelsCertificateStoresCertificateStoreUpdateRequest) GetContainerId() int32 {
+func (o *ModelsCertificateStoresCertificateStoreUpdateRequest) GetContainerId() int64 {
 	if o == nil || isNil(o.ContainerId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ContainerId
@@ -102,7 +102,7 @@ func (o *ModelsCertificateStoresCertificateStoreUpdateRequest) GetContainerId() 
 
 // GetContainerIdOk returns a tuple with the ContainerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateStoresCertificateStoreUpdateRequest) GetContainerIdOk() (*int32, bool) {
+func (o *ModelsCertificateStoresCertificateStoreUpdateRequest) GetContainerIdOk() (*int64, bool) {
 	if o == nil || isNil(o.ContainerId) {
 		return nil, false
 	}
@@ -118,8 +118,8 @@ func (o *ModelsCertificateStoresCertificateStoreUpdateRequest) HasContainerId() 
 	return false
 }
 
-// SetContainerId gets a reference to the given int32 and assigns it to the ContainerId field.
-func (o *ModelsCertificateStoresCertificateStoreUpdateRequest) SetContainerId(v int32) {
+// SetContainerId gets a reference to the given int64 and assigns it to the ContainerId field.
+func (o *ModelsCertificateStoresCertificateStoreUpdateRequest) SetContainerId(v int64) {
 	o.ContainerId = &v
 }
 

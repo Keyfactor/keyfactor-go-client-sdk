@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Username** | **string** |  | 
-**LogonIds** | Pointer to **[]int32** |  | [optional] 
+**LogonIds** | Pointer to **[]int64** |  | [optional] 
 
 ## Methods
 
@@ -48,20 +48,20 @@ SetUsername sets Username field to given value.
 
 ### GetLogonIds
 
-`func (o *ModelsSSHUsersSshUserCreationRequest) GetLogonIds() []int32`
+`func (o *ModelsSSHUsersSshUserCreationRequest) GetLogonIds() []int64`
 
 GetLogonIds returns the LogonIds field if non-nil, zero value otherwise.
 
 ### GetLogonIdsOk
 
-`func (o *ModelsSSHUsersSshUserCreationRequest) GetLogonIdsOk() (*[]int32, bool)`
+`func (o *ModelsSSHUsersSshUserCreationRequest) GetLogonIdsOk() (*[]int64, bool)`
 
 GetLogonIdsOk returns a tuple with the LogonIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLogonIds
 
-`func (o *ModelsSSHUsersSshUserCreationRequest) SetLogonIds(v []int32)`
+`func (o *ModelsSSHUsersSshUserCreationRequest) SetLogonIds(v []int64)`
 
 SetLogonIds sets LogonIds field to given value.
 

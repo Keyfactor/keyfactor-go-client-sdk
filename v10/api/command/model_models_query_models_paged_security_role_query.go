@@ -35,13 +35,13 @@ type ModelsQueryModelsPagedSecurityRoleQuery struct {
 	// Contents of the query (ex: field1 -eq value1 AND field2 -gt value2)
 	QueryString *string `json:"QueryString,omitempty"`
 	// The current page within the result set to be returned
-	PageReturned *int32 `json:"PageReturned,omitempty"`
+	PageReturned *int64 `json:"PageReturned,omitempty"`
 	// Maximum number of records to be returned in a single call
-	ReturnLimit *int32 `json:"ReturnLimit,omitempty"`
+	ReturnLimit *int64 `json:"ReturnLimit,omitempty"`
 	// Field by which the results should be sorted (view results via Management Portal for sortable columns)
 	SortField *string `json:"SortField,omitempty"`
 	// Field sort direction [0=ascending, 1=descending]
-	SortAscending        *int32 `json:"SortAscending,omitempty"`
+	SortAscending        *int64 `json:"SortAscending,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -129,9 +129,9 @@ func (o *ModelsQueryModelsPagedSecurityRoleQuery) SetQueryString(v string) {
 }
 
 // GetPageReturned returns the PageReturned field value if set, zero value otherwise.
-func (o *ModelsQueryModelsPagedSecurityRoleQuery) GetPageReturned() int32 {
+func (o *ModelsQueryModelsPagedSecurityRoleQuery) GetPageReturned() int64 {
 	if o == nil || isNil(o.PageReturned) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PageReturned
@@ -139,7 +139,7 @@ func (o *ModelsQueryModelsPagedSecurityRoleQuery) GetPageReturned() int32 {
 
 // GetPageReturnedOk returns a tuple with the PageReturned field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsQueryModelsPagedSecurityRoleQuery) GetPageReturnedOk() (*int32, bool) {
+func (o *ModelsQueryModelsPagedSecurityRoleQuery) GetPageReturnedOk() (*int64, bool) {
 	if o == nil || isNil(o.PageReturned) {
 		return nil, false
 	}
@@ -155,15 +155,15 @@ func (o *ModelsQueryModelsPagedSecurityRoleQuery) HasPageReturned() bool {
 	return false
 }
 
-// SetPageReturned gets a reference to the given int32 and assigns it to the PageReturned field.
-func (o *ModelsQueryModelsPagedSecurityRoleQuery) SetPageReturned(v int32) {
+// SetPageReturned gets a reference to the given int64 and assigns it to the PageReturned field.
+func (o *ModelsQueryModelsPagedSecurityRoleQuery) SetPageReturned(v int64) {
 	o.PageReturned = &v
 }
 
 // GetReturnLimit returns the ReturnLimit field value if set, zero value otherwise.
-func (o *ModelsQueryModelsPagedSecurityRoleQuery) GetReturnLimit() int32 {
+func (o *ModelsQueryModelsPagedSecurityRoleQuery) GetReturnLimit() int64 {
 	if o == nil || isNil(o.ReturnLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ReturnLimit
@@ -171,7 +171,7 @@ func (o *ModelsQueryModelsPagedSecurityRoleQuery) GetReturnLimit() int32 {
 
 // GetReturnLimitOk returns a tuple with the ReturnLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsQueryModelsPagedSecurityRoleQuery) GetReturnLimitOk() (*int32, bool) {
+func (o *ModelsQueryModelsPagedSecurityRoleQuery) GetReturnLimitOk() (*int64, bool) {
 	if o == nil || isNil(o.ReturnLimit) {
 		return nil, false
 	}
@@ -187,8 +187,8 @@ func (o *ModelsQueryModelsPagedSecurityRoleQuery) HasReturnLimit() bool {
 	return false
 }
 
-// SetReturnLimit gets a reference to the given int32 and assigns it to the ReturnLimit field.
-func (o *ModelsQueryModelsPagedSecurityRoleQuery) SetReturnLimit(v int32) {
+// SetReturnLimit gets a reference to the given int64 and assigns it to the ReturnLimit field.
+func (o *ModelsQueryModelsPagedSecurityRoleQuery) SetReturnLimit(v int64) {
 	o.ReturnLimit = &v
 }
 
@@ -225,9 +225,9 @@ func (o *ModelsQueryModelsPagedSecurityRoleQuery) SetSortField(v string) {
 }
 
 // GetSortAscending returns the SortAscending field value if set, zero value otherwise.
-func (o *ModelsQueryModelsPagedSecurityRoleQuery) GetSortAscending() int32 {
+func (o *ModelsQueryModelsPagedSecurityRoleQuery) GetSortAscending() int64 {
 	if o == nil || isNil(o.SortAscending) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SortAscending
@@ -235,7 +235,7 @@ func (o *ModelsQueryModelsPagedSecurityRoleQuery) GetSortAscending() int32 {
 
 // GetSortAscendingOk returns a tuple with the SortAscending field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsQueryModelsPagedSecurityRoleQuery) GetSortAscendingOk() (*int32, bool) {
+func (o *ModelsQueryModelsPagedSecurityRoleQuery) GetSortAscendingOk() (*int64, bool) {
 	if o == nil || isNil(o.SortAscending) {
 		return nil, false
 	}
@@ -251,8 +251,8 @@ func (o *ModelsQueryModelsPagedSecurityRoleQuery) HasSortAscending() bool {
 	return false
 }
 
-// SetSortAscending gets a reference to the given int32 and assigns it to the SortAscending field.
-func (o *ModelsQueryModelsPagedSecurityRoleQuery) SetSortAscending(v int32) {
+// SetSortAscending gets a reference to the given int64 and assigns it to the SortAscending field.
+func (o *ModelsQueryModelsPagedSecurityRoleQuery) SetSortAscending(v int64) {
 	o.SortAscending = &v
 }
 

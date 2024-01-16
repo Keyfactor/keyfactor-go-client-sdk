@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **KeyUpdateRequest** | [**ModelsSSHKeysKeyUpdateRequest**](ModelsSSHKeysKeyUpdateRequest.md) |  | 
-**Id** | **int32** |  | 
+**Id** | **int64** |  | 
 
 ## Methods
 
 ### NewModelsSSHServiceAccountsServiceAccountUpdateRequest
 
-`func NewModelsSSHServiceAccountsServiceAccountUpdateRequest(keyUpdateRequest ModelsSSHKeysKeyUpdateRequest, id int32, ) *ModelsSSHServiceAccountsServiceAccountUpdateRequest`
+`func NewModelsSSHServiceAccountsServiceAccountUpdateRequest(keyUpdateRequest ModelsSSHKeysKeyUpdateRequest, id int64, ) *ModelsSSHServiceAccountsServiceAccountUpdateRequest`
 
 NewModelsSSHServiceAccountsServiceAccountUpdateRequest instantiates a new ModelsSSHServiceAccountsServiceAccountUpdateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -48,20 +48,20 @@ SetKeyUpdateRequest sets KeyUpdateRequest field to given value.
 
 ### GetId
 
-`func (o *ModelsSSHServiceAccountsServiceAccountUpdateRequest) GetId() int32`
+`func (o *ModelsSSHServiceAccountsServiceAccountUpdateRequest) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsSSHServiceAccountsServiceAccountUpdateRequest) GetIdOk() (*int32, bool)`
+`func (o *ModelsSSHServiceAccountsServiceAccountUpdateRequest) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsSSHServiceAccountsServiceAccountUpdateRequest) SetId(v int32)`
+`func (o *ModelsSSHServiceAccountsServiceAccountUpdateRequest) SetId(v int64)`
 
 SetId sets Id field to given value.
 

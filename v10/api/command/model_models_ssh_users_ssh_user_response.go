@@ -30,10 +30,10 @@ var _ MappedNullable = &ModelsSSHUsersSshUserResponse{}
 
 // ModelsSSHUsersSshUserResponse struct for ModelsSSHUsersSshUserResponse
 type ModelsSSHUsersSshUserResponse struct {
-	Id                   *int32                    `json:"Id,omitempty"`
+	Id                   *int64                    `json:"Id,omitempty"`
 	Key                  *ModelsSSHKeysKeyResponse `json:"Key,omitempty"`
 	Username             *string                   `json:"Username,omitempty"`
-	LogonIds             []int32                   `json:"LogonIds,omitempty"`
+	LogonIds             []int64                   `json:"LogonIds,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -57,9 +57,9 @@ func NewModelsSSHUsersSshUserResponseWithDefaults() *ModelsSSHUsersSshUserRespon
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsSSHUsersSshUserResponse) GetId() int32 {
+func (o *ModelsSSHUsersSshUserResponse) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -67,7 +67,7 @@ func (o *ModelsSSHUsersSshUserResponse) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSHUsersSshUserResponse) GetIdOk() (*int32, bool) {
+func (o *ModelsSSHUsersSshUserResponse) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -83,8 +83,8 @@ func (o *ModelsSSHUsersSshUserResponse) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsSSHUsersSshUserResponse) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsSSHUsersSshUserResponse) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -153,9 +153,9 @@ func (o *ModelsSSHUsersSshUserResponse) SetUsername(v string) {
 }
 
 // GetLogonIds returns the LogonIds field value if set, zero value otherwise.
-func (o *ModelsSSHUsersSshUserResponse) GetLogonIds() []int32 {
+func (o *ModelsSSHUsersSshUserResponse) GetLogonIds() []int64 {
 	if o == nil || isNil(o.LogonIds) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.LogonIds
@@ -163,7 +163,7 @@ func (o *ModelsSSHUsersSshUserResponse) GetLogonIds() []int32 {
 
 // GetLogonIdsOk returns a tuple with the LogonIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSHUsersSshUserResponse) GetLogonIdsOk() ([]int32, bool) {
+func (o *ModelsSSHUsersSshUserResponse) GetLogonIdsOk() ([]int64, bool) {
 	if o == nil || isNil(o.LogonIds) {
 		return nil, false
 	}
@@ -179,8 +179,8 @@ func (o *ModelsSSHUsersSshUserResponse) HasLogonIds() bool {
 	return false
 }
 
-// SetLogonIds gets a reference to the given []int32 and assigns it to the LogonIds field.
-func (o *ModelsSSHUsersSshUserResponse) SetLogonIds(v []int32) {
+// SetLogonIds gets a reference to the given []int64 and assigns it to the LogonIds field.
+func (o *ModelsSSHUsersSshUserResponse) SetLogonIds(v []int64) {
 	o.LogonIds = v
 }
 

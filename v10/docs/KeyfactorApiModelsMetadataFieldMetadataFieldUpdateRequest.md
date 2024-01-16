@@ -4,23 +4,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **int32** |  | 
+**Id** | **int64** |  | 
 **Name** | **string** |  | 
 **Description** | **string** |  | 
-**DataType** | **int32** |  | 
+**DataType** | **int64** |  | 
 **Hint** | Pointer to **string** |  | [optional] 
 **Validation** | Pointer to **string** |  | [optional] 
-**Enrollment** | Pointer to **int32** |  | [optional] 
+**Enrollment** | Pointer to **int64** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 **Options** | Pointer to **string** |  | [optional] 
 **DefaultValue** | Pointer to **string** |  | [optional] 
-**DisplayOrder** | Pointer to **int32** |  | [optional] 
+**DisplayOrder** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
 ### NewKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest
 
-`func NewKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest(id int32, name string, description string, dataType int32, ) *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest`
+`func NewKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest(id int64, name string, description string, dataType int64, ) *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest`
 
 NewKeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest instantiates a new KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -37,20 +37,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetId() int32`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) SetId(v int32)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -97,20 +97,20 @@ SetDescription sets Description field to given value.
 
 ### GetDataType
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetDataType() int32`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetDataType() int64`
 
 GetDataType returns the DataType field if non-nil, zero value otherwise.
 
 ### GetDataTypeOk
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetDataTypeOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetDataTypeOk() (*int64, bool)`
 
 GetDataTypeOk returns a tuple with the DataType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataType
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) SetDataType(v int32)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) SetDataType(v int64)`
 
 SetDataType sets DataType field to given value.
 
@@ -167,20 +167,20 @@ HasValidation returns a boolean if a field has been set.
 
 ### GetEnrollment
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetEnrollment() int32`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetEnrollment() int64`
 
 GetEnrollment returns the Enrollment field if non-nil, zero value otherwise.
 
 ### GetEnrollmentOk
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetEnrollmentOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetEnrollmentOk() (*int64, bool)`
 
 GetEnrollmentOk returns a tuple with the Enrollment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnrollment
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) SetEnrollment(v int32)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) SetEnrollment(v int64)`
 
 SetEnrollment sets Enrollment field to given value.
 
@@ -267,20 +267,20 @@ HasDefaultValue returns a boolean if a field has been set.
 
 ### GetDisplayOrder
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetDisplayOrder() int32`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetDisplayOrder() int64`
 
 GetDisplayOrder returns the DisplayOrder field if non-nil, zero value otherwise.
 
 ### GetDisplayOrderOk
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetDisplayOrderOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) GetDisplayOrderOk() (*int64, bool)`
 
 GetDisplayOrderOk returns a tuple with the DisplayOrder field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDisplayOrder
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) SetDisplayOrder(v int32)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldUpdateRequest) SetDisplayOrder(v int64)`
 
 SetDisplayOrder sets DisplayOrder field to given value.
 

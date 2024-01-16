@@ -172,7 +172,7 @@ func (a *ServiceAccountApiService) ServiceAccountCreateServiceAccountExecute(r A
 type ApiServiceAccountDeleteServiceAccountRequest struct {
 	ctx                     context.Context
 	ApiService              *ServiceAccountApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -200,7 +200,7 @@ ServiceAccountDeleteServiceAccount Deletes a ServiceAccount associated with the 
 	@param id Keyfactor identifer of the ServiceAccount to be deleted
 	@return ApiServiceAccountDeleteServiceAccountRequest
 */
-func (a *ServiceAccountApiService) ServiceAccountDeleteServiceAccount(ctx context.Context, id int32) ApiServiceAccountDeleteServiceAccountRequest {
+func (a *ServiceAccountApiService) ServiceAccountDeleteServiceAccount(ctx context.Context, id int64) ApiServiceAccountDeleteServiceAccountRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -289,7 +289,7 @@ type ApiServiceAccountDeleteServiceAccountsRequest struct {
 	ctx                     context.Context
 	ApiService              *ServiceAccountApiService
 	xKeyfactorRequestedWith *string
-	ids                     *[]int32
+	ids                     *[]int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -300,7 +300,7 @@ func (r ApiServiceAccountDeleteServiceAccountsRequest) XKeyfactorRequestedWith(x
 }
 
 // Keyfactor identifers of the ServiceAccounts to be deleted
-func (r ApiServiceAccountDeleteServiceAccountsRequest) Ids(ids []int32) ApiServiceAccountDeleteServiceAccountsRequest {
+func (r ApiServiceAccountDeleteServiceAccountsRequest) Ids(ids []int64) ApiServiceAccountDeleteServiceAccountsRequest {
 	r.ids = &ids
 	return r
 }
@@ -412,7 +412,7 @@ func (a *ServiceAccountApiService) ServiceAccountDeleteServiceAccountsExecute(r 
 type ApiServiceAccountGetRequest struct {
 	ctx                     context.Context
 	ApiService              *ServiceAccountApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -440,7 +440,7 @@ ServiceAccountGet Returns a ServiceAccount associated with the provided identifi
 	@param id Keyfactor identifier of the ServiceAccount
 	@return ApiServiceAccountGetRequest
 */
-func (a *ServiceAccountApiService) ServiceAccountGet(ctx context.Context, id int32) ApiServiceAccountGetRequest {
+func (a *ServiceAccountApiService) ServiceAccountGet(ctx context.Context, id int64) ApiServiceAccountGetRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -540,7 +540,7 @@ func (a *ServiceAccountApiService) ServiceAccountGetExecute(r ApiServiceAccountG
 type ApiServiceAccountGetServiceAccountKeyRequest struct {
 	ctx                     context.Context
 	ApiService              *ServiceAccountApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	includePrivateKey       *bool
 	xKeyfactorApiVersion    *string
@@ -575,7 +575,7 @@ ServiceAccountGetServiceAccountKey Returns an SSH key with or without private ke
 	@param id The id of the service account to obtain information on
 	@return ApiServiceAccountGetServiceAccountKeyRequest
 */
-func (a *ServiceAccountApiService) ServiceAccountGetServiceAccountKey(ctx context.Context, id int32) ApiServiceAccountGetServiceAccountKeyRequest {
+func (a *ServiceAccountApiService) ServiceAccountGetServiceAccountKey(ctx context.Context, id int64) ApiServiceAccountGetServiceAccountKeyRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -681,10 +681,10 @@ type ApiServiceAccountQueryServiceAccountsRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -706,13 +706,13 @@ func (r ApiServiceAccountQueryServiceAccountsRequest) PqQueryString(pqQueryStrin
 }
 
 // The current page within the result set to be returned
-func (r ApiServiceAccountQueryServiceAccountsRequest) PqPageReturned(pqPageReturned int32) ApiServiceAccountQueryServiceAccountsRequest {
+func (r ApiServiceAccountQueryServiceAccountsRequest) PqPageReturned(pqPageReturned int64) ApiServiceAccountQueryServiceAccountsRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiServiceAccountQueryServiceAccountsRequest) PqReturnLimit(pqReturnLimit int32) ApiServiceAccountQueryServiceAccountsRequest {
+func (r ApiServiceAccountQueryServiceAccountsRequest) PqReturnLimit(pqReturnLimit int64) ApiServiceAccountQueryServiceAccountsRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -724,7 +724,7 @@ func (r ApiServiceAccountQueryServiceAccountsRequest) PqSortField(pqSortField st
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiServiceAccountQueryServiceAccountsRequest) PqSortAscending(pqSortAscending int32) ApiServiceAccountQueryServiceAccountsRequest {
+func (r ApiServiceAccountQueryServiceAccountsRequest) PqSortAscending(pqSortAscending int64) ApiServiceAccountQueryServiceAccountsRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }
@@ -852,7 +852,7 @@ func (a *ServiceAccountApiService) ServiceAccountQueryServiceAccountsExecute(r A
 type ApiServiceAccountRotateServiceAccountKeyRequest struct {
 	ctx                     context.Context
 	ApiService              *ServiceAccountApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	rotationRequest         *ModelsSSHKeysKeyGenerationRequest
 	xKeyfactorApiVersion    *string
@@ -886,7 +886,7 @@ ServiceAccountRotateServiceAccountKey Rotate an SSH key for a specified service 
 	@param id The id of the service account and the updated state of the SSH key.
 	@return ApiServiceAccountRotateServiceAccountKeyRequest
 */
-func (a *ServiceAccountApiService) ServiceAccountRotateServiceAccountKey(ctx context.Context, id int32) ApiServiceAccountRotateServiceAccountKeyRequest {
+func (a *ServiceAccountApiService) ServiceAccountRotateServiceAccountKey(ctx context.Context, id int64) ApiServiceAccountRotateServiceAccountKeyRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 

@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
 **Subject** | Pointer to **string** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 **Recipient** | Pointer to **string** |  | [optional] 
-**RotationWarningDays** | Pointer to **int32** |  | [optional] 
+**RotationWarningDays** | Pointer to **int64** |  | [optional] 
 **RegisteredEventHandler** | Pointer to [**KeyfactorApiModelsEventHandlerRegisteredEventHandlerResponse**](KeyfactorApiModelsEventHandlerRegisteredEventHandlerResponse.md) |  | [optional] 
 **EventHandlerParameters** | Pointer to [**[]KeyfactorApiModelsEventHandlerEventHandlerParameterResponse**](KeyfactorApiModelsEventHandlerEventHandlerParameterResponse.md) |  | [optional] 
 
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) GetId() int32`
+`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) GetIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) SetId(v int32)`
+`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -159,20 +159,20 @@ HasRecipient returns a boolean if a field has been set.
 
 ### GetRotationWarningDays
 
-`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) GetRotationWarningDays() int32`
+`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) GetRotationWarningDays() int64`
 
 GetRotationWarningDays returns the RotationWarningDays field if non-nil, zero value otherwise.
 
 ### GetRotationWarningDaysOk
 
-`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) GetRotationWarningDaysOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) GetRotationWarningDaysOk() (*int64, bool)`
 
 GetRotationWarningDaysOk returns a tuple with the RotationWarningDays field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRotationWarningDays
 
-`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) SetRotationWarningDays(v int32)`
+`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) SetRotationWarningDays(v int64)`
 
 SetRotationWarningDays sets RotationWarningDays field to given value.
 

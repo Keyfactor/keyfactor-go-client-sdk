@@ -34,7 +34,7 @@ type ModelsSSLSslScanResult struct {
 	ReverseDNS           *string `json:"ReverseDNS,omitempty"`
 	SNIName              *string `json:"SNIName,omitempty"`
 	IpAddress            *string `json:"IpAddress,omitempty"`
-	Port                 *int32  `json:"Port,omitempty"`
+	Port                 *int64  `json:"Port,omitempty"`
 	CertificateFound     *bool   `json:"CertificateFound,omitempty"`
 	AgentPoolName        *string `json:"AgentPoolName,omitempty"`
 	NetworkName          *string `json:"NetworkName,omitempty"`
@@ -192,9 +192,9 @@ func (o *ModelsSSLSslScanResult) SetIpAddress(v string) {
 }
 
 // GetPort returns the Port field value if set, zero value otherwise.
-func (o *ModelsSSLSslScanResult) GetPort() int32 {
+func (o *ModelsSSLSslScanResult) GetPort() int64 {
 	if o == nil || isNil(o.Port) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Port
@@ -202,7 +202,7 @@ func (o *ModelsSSLSslScanResult) GetPort() int32 {
 
 // GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSLSslScanResult) GetPortOk() (*int32, bool) {
+func (o *ModelsSSLSslScanResult) GetPortOk() (*int64, bool) {
 	if o == nil || isNil(o.Port) {
 		return nil, false
 	}
@@ -218,8 +218,8 @@ func (o *ModelsSSLSslScanResult) HasPort() bool {
 	return false
 }
 
-// SetPort gets a reference to the given int32 and assigns it to the Port field.
-func (o *ModelsSSLSslScanResult) SetPort(v int32) {
+// SetPort gets a reference to the given int64 and assigns it to the Port field.
+func (o *ModelsSSLSslScanResult) SetPort(v int64) {
 	o.Port = &v
 }
 

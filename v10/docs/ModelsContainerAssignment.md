@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CertStoreContainerId** | Pointer to **int32** |  | [optional] 
+**CertStoreContainerId** | Pointer to **int64** |  | [optional] 
 **NewContainerName** | Pointer to **string** |  | [optional] 
-**NewContainerType** | Pointer to **int32** |  | [optional] 
+**NewContainerType** | Pointer to **int64** |  | [optional] 
 **KeystoreIds** | **[]string** |  | 
 
 ## Methods
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCertStoreContainerId
 
-`func (o *ModelsContainerAssignment) GetCertStoreContainerId() int32`
+`func (o *ModelsContainerAssignment) GetCertStoreContainerId() int64`
 
 GetCertStoreContainerId returns the CertStoreContainerId field if non-nil, zero value otherwise.
 
 ### GetCertStoreContainerIdOk
 
-`func (o *ModelsContainerAssignment) GetCertStoreContainerIdOk() (*int32, bool)`
+`func (o *ModelsContainerAssignment) GetCertStoreContainerIdOk() (*int64, bool)`
 
 GetCertStoreContainerIdOk returns a tuple with the CertStoreContainerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertStoreContainerId
 
-`func (o *ModelsContainerAssignment) SetCertStoreContainerId(v int32)`
+`func (o *ModelsContainerAssignment) SetCertStoreContainerId(v int64)`
 
 SetCertStoreContainerId sets CertStoreContainerId field to given value.
 
@@ -80,20 +80,20 @@ HasNewContainerName returns a boolean if a field has been set.
 
 ### GetNewContainerType
 
-`func (o *ModelsContainerAssignment) GetNewContainerType() int32`
+`func (o *ModelsContainerAssignment) GetNewContainerType() int64`
 
 GetNewContainerType returns the NewContainerType field if non-nil, zero value otherwise.
 
 ### GetNewContainerTypeOk
 
-`func (o *ModelsContainerAssignment) GetNewContainerTypeOk() (*int32, bool)`
+`func (o *ModelsContainerAssignment) GetNewContainerTypeOk() (*int64, bool)`
 
 GetNewContainerTypeOk returns a tuple with the NewContainerType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNewContainerType
 
-`func (o *ModelsContainerAssignment) SetNewContainerType(v int32)`
+`func (o *ModelsContainerAssignment) SetNewContainerType(v int64)`
 
 SetNewContainerType sets NewContainerType field to given value.
 

@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **OperationStart** | Pointer to **time.Time** |  | [optional] 
 **OperationEnd** | Pointer to **time.Time** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
-**Result** | Pointer to **int32** |  | [optional] 
-**Status** | Pointer to **int32** |  | [optional] 
+**Result** | Pointer to **int64** |  | [optional] 
+**Status** | Pointer to **int64** |  | [optional] 
 **StorePath** | Pointer to **string** |  | [optional] 
 **ClientMachine** | Pointer to **string** |  | [optional] 
 
@@ -238,20 +238,20 @@ HasMessage returns a boolean if a field has been set.
 
 ### GetResult
 
-`func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) GetResult() int32`
+`func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) GetResult() int64`
 
 GetResult returns the Result field if non-nil, zero value otherwise.
 
 ### GetResultOk
 
-`func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) GetResultOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) GetResultOk() (*int64, bool)`
 
 GetResultOk returns a tuple with the Result field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResult
 
-`func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) SetResult(v int32)`
+`func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) SetResult(v int64)`
 
 SetResult sets Result field to given value.
 
@@ -263,20 +263,20 @@ HasResult returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) GetStatus() int32`
+`func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) GetStatus() int64`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) GetStatusOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) GetStatusOk() (*int64, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) SetStatus(v int32)`
+`func (o *KeyfactorApiModelsCertificateStoresJobHistoryResponse) SetStatus(v int64)`
 
 SetStatus sets Status field to given value.
 

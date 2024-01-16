@@ -31,7 +31,7 @@ var _ MappedNullable = &ModelsMetadataAllUpdateRequest{}
 // ModelsMetadataAllUpdateRequest struct for ModelsMetadataAllUpdateRequest
 type ModelsMetadataAllUpdateRequest struct {
 	Query                *string                             `json:"Query,omitempty"`
-	CertificateIds       []int32                             `json:"CertificateIds,omitempty"`
+	CertificateIds       []int64                             `json:"CertificateIds,omitempty"`
 	Metadata             []ModelsMetadataSingleUpdateRequest `json:"Metadata"`
 	AdditionalProperties map[string]interface{}
 }
@@ -89,9 +89,9 @@ func (o *ModelsMetadataAllUpdateRequest) SetQuery(v string) {
 }
 
 // GetCertificateIds returns the CertificateIds field value if set, zero value otherwise.
-func (o *ModelsMetadataAllUpdateRequest) GetCertificateIds() []int32 {
+func (o *ModelsMetadataAllUpdateRequest) GetCertificateIds() []int64 {
 	if o == nil || isNil(o.CertificateIds) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.CertificateIds
@@ -99,7 +99,7 @@ func (o *ModelsMetadataAllUpdateRequest) GetCertificateIds() []int32 {
 
 // GetCertificateIdsOk returns a tuple with the CertificateIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsMetadataAllUpdateRequest) GetCertificateIdsOk() ([]int32, bool) {
+func (o *ModelsMetadataAllUpdateRequest) GetCertificateIdsOk() ([]int64, bool) {
 	if o == nil || isNil(o.CertificateIds) {
 		return nil, false
 	}
@@ -115,8 +115,8 @@ func (o *ModelsMetadataAllUpdateRequest) HasCertificateIds() bool {
 	return false
 }
 
-// SetCertificateIds gets a reference to the given []int32 and assigns it to the CertificateIds field.
-func (o *ModelsMetadataAllUpdateRequest) SetCertificateIds(v []int32) {
+// SetCertificateIds gets a reference to the given []int64 and assigns it to the CertificateIds field.
+func (o *ModelsMetadataAllUpdateRequest) SetCertificateIds(v []int64) {
 	o.CertificateIds = v
 }
 

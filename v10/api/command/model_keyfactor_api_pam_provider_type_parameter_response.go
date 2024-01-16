@@ -30,10 +30,10 @@ var _ MappedNullable = &KeyfactorApiPAMProviderTypeParameterResponse{}
 
 // KeyfactorApiPAMProviderTypeParameterResponse struct for KeyfactorApiPAMProviderTypeParameterResponse
 type KeyfactorApiPAMProviderTypeParameterResponse struct {
-	Id                   *int32  `json:"Id,omitempty"`
+	Id                   *int64  `json:"Id,omitempty"`
 	Name                 *string `json:"Name,omitempty"`
 	DisplayName          *string `json:"DisplayName,omitempty"`
-	DataType             *int32  `json:"DataType,omitempty"`
+	DataType             *int64  `json:"DataType,omitempty"`
 	InstanceLevel        *bool   `json:"InstanceLevel,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -58,9 +58,9 @@ func NewKeyfactorApiPAMProviderTypeParameterResponseWithDefaults() *KeyfactorApi
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *KeyfactorApiPAMProviderTypeParameterResponse) GetId() int32 {
+func (o *KeyfactorApiPAMProviderTypeParameterResponse) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -68,7 +68,7 @@ func (o *KeyfactorApiPAMProviderTypeParameterResponse) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiPAMProviderTypeParameterResponse) GetIdOk() (*int32, bool) {
+func (o *KeyfactorApiPAMProviderTypeParameterResponse) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -84,8 +84,8 @@ func (o *KeyfactorApiPAMProviderTypeParameterResponse) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *KeyfactorApiPAMProviderTypeParameterResponse) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *KeyfactorApiPAMProviderTypeParameterResponse) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -154,9 +154,9 @@ func (o *KeyfactorApiPAMProviderTypeParameterResponse) SetDisplayName(v string) 
 }
 
 // GetDataType returns the DataType field value if set, zero value otherwise.
-func (o *KeyfactorApiPAMProviderTypeParameterResponse) GetDataType() int32 {
+func (o *KeyfactorApiPAMProviderTypeParameterResponse) GetDataType() int64 {
 	if o == nil || isNil(o.DataType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DataType
@@ -164,7 +164,7 @@ func (o *KeyfactorApiPAMProviderTypeParameterResponse) GetDataType() int32 {
 
 // GetDataTypeOk returns a tuple with the DataType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiPAMProviderTypeParameterResponse) GetDataTypeOk() (*int32, bool) {
+func (o *KeyfactorApiPAMProviderTypeParameterResponse) GetDataTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.DataType) {
 		return nil, false
 	}
@@ -180,8 +180,8 @@ func (o *KeyfactorApiPAMProviderTypeParameterResponse) HasDataType() bool {
 	return false
 }
 
-// SetDataType gets a reference to the given int32 and assigns it to the DataType field.
-func (o *KeyfactorApiPAMProviderTypeParameterResponse) SetDataType(v int32) {
+// SetDataType gets a reference to the given int64 and assigns it to the DataType field.
+func (o *KeyfactorApiPAMProviderTypeParameterResponse) SetDataType(v int64) {
 	o.DataType = &v
 }
 

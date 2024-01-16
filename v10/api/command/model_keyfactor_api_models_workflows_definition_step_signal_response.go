@@ -31,7 +31,7 @@ var _ MappedNullable = &KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse{
 // KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse struct for KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse
 type KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse struct {
 	// The roles that are allowed to send this signal.
-	RoleIds              []int32 `json:"RoleIds,omitempty"`
+	RoleIds              []int64 `json:"RoleIds,omitempty"`
 	SignalName           *string `json:"SignalName,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -56,9 +56,9 @@ func NewKeyfactorApiModelsWorkflowsDefinitionStepSignalResponseWithDefaults() *K
 }
 
 // GetRoleIds returns the RoleIds field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse) GetRoleIds() []int32 {
+func (o *KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse) GetRoleIds() []int64 {
 	if o == nil || isNil(o.RoleIds) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.RoleIds
@@ -66,7 +66,7 @@ func (o *KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse) GetRoleIds() [
 
 // GetRoleIdsOk returns a tuple with the RoleIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse) GetRoleIdsOk() ([]int32, bool) {
+func (o *KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse) GetRoleIdsOk() ([]int64, bool) {
 	if o == nil || isNil(o.RoleIds) {
 		return nil, false
 	}
@@ -82,8 +82,8 @@ func (o *KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse) HasRoleIds() b
 	return false
 }
 
-// SetRoleIds gets a reference to the given []int32 and assigns it to the RoleIds field.
-func (o *KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse) SetRoleIds(v []int32) {
+// SetRoleIds gets a reference to the given []int64 and assigns it to the RoleIds field.
+func (o *KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse) SetRoleIds(v []int64) {
 	o.RoleIds = v
 }
 

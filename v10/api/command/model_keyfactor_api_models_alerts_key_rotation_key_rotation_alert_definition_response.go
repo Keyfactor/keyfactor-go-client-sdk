@@ -30,12 +30,12 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefin
 
 // KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse struct for KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse
 type KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse struct {
-	Id                     *int32                                                        `json:"Id,omitempty"`
+	Id                     *int64                                                        `json:"Id,omitempty"`
 	DisplayName            *string                                                       `json:"DisplayName,omitempty"`
 	Subject                *string                                                       `json:"Subject,omitempty"`
 	Message                *string                                                       `json:"Message,omitempty"`
 	Recipient              *string                                                       `json:"Recipient,omitempty"`
-	RotationWarningDays    *int32                                                        `json:"RotationWarningDays,omitempty"`
+	RotationWarningDays    *int64                                                        `json:"RotationWarningDays,omitempty"`
 	RegisteredEventHandler *KeyfactorApiModelsEventHandlerRegisteredEventHandlerResponse `json:"RegisteredEventHandler,omitempty"`
 	EventHandlerParameters []KeyfactorApiModelsEventHandlerEventHandlerParameterResponse `json:"EventHandlerParameters,omitempty"`
 	AdditionalProperties   map[string]interface{}
@@ -61,9 +61,9 @@ func NewKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponseWit
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) GetId() int32 {
+func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -71,7 +71,7 @@ func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) 
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) GetIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -87,8 +87,8 @@ func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) 
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -221,9 +221,9 @@ func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) 
 }
 
 // GetRotationWarningDays returns the RotationWarningDays field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) GetRotationWarningDays() int32 {
+func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) GetRotationWarningDays() int64 {
 	if o == nil || isNil(o.RotationWarningDays) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RotationWarningDays
@@ -231,7 +231,7 @@ func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) 
 
 // GetRotationWarningDaysOk returns a tuple with the RotationWarningDays field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) GetRotationWarningDaysOk() (*int32, bool) {
+func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) GetRotationWarningDaysOk() (*int64, bool) {
 	if o == nil || isNil(o.RotationWarningDays) {
 		return nil, false
 	}
@@ -247,8 +247,8 @@ func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) 
 	return false
 }
 
-// SetRotationWarningDays gets a reference to the given int32 and assigns it to the RotationWarningDays field.
-func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) SetRotationWarningDays(v int32) {
+// SetRotationWarningDays gets a reference to the given int64 and assigns it to the RotationWarningDays field.
+func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertDefinitionResponse) SetRotationWarningDays(v int64) {
 	o.RotationWarningDays = &v
 }
 

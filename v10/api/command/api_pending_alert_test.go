@@ -53,11 +53,11 @@ func Test_command_PendingAlertApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("PendingAlertApi_PendingAlertDeletePendingAlert_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("PendingAlertApi_PendingAlertDeletePendingAlert_id: %v", id)
 
 		t.Log("PendingAlertApi_PendingAlertDeletePendingAlert_payload: <none>")
-		httpRes, err := apiClient.PendingAlertApi.PendingAlertDeletePendingAlert(context.Background(), id.(int32)).Execute()
+		httpRes, err := apiClient.PendingAlertApi.PendingAlertDeletePendingAlert(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
@@ -85,11 +85,11 @@ func Test_command_PendingAlertApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("PendingAlertApi_PendingAlertGetPendingAlert_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("PendingAlertApi_PendingAlertGetPendingAlert_id: %v", id)
 
 		t.Log("PendingAlertApi_PendingAlertGetPendingAlert_payload: <none>")
-		resp, httpRes, err := apiClient.PendingAlertApi.PendingAlertGetPendingAlert(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.PendingAlertApi.PendingAlertGetPendingAlert(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

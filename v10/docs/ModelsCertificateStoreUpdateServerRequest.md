@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **int32** |  | 
+**Id** | **int64** |  | 
 **Username** | [**ModelsKeyfactorAPISecret**](ModelsKeyfactorAPISecret.md) |  | 
 **Password** | [**ModelsKeyfactorAPISecret**](ModelsKeyfactorAPISecret.md) |  | 
 **UseSSL** | **bool** |  | 
 **Name** | **string** |  | 
-**Container** | Pointer to **int32** |  | [optional] 
+**Container** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
 ### NewModelsCertificateStoreUpdateServerRequest
 
-`func NewModelsCertificateStoreUpdateServerRequest(id int32, username ModelsKeyfactorAPISecret, password ModelsKeyfactorAPISecret, useSSL bool, name string, ) *ModelsCertificateStoreUpdateServerRequest`
+`func NewModelsCertificateStoreUpdateServerRequest(id int64, username ModelsKeyfactorAPISecret, password ModelsKeyfactorAPISecret, useSSL bool, name string, ) *ModelsCertificateStoreUpdateServerRequest`
 
 NewModelsCertificateStoreUpdateServerRequest instantiates a new ModelsCertificateStoreUpdateServerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ModelsCertificateStoreUpdateServerRequest) GetId() int32`
+`func (o *ModelsCertificateStoreUpdateServerRequest) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsCertificateStoreUpdateServerRequest) GetIdOk() (*int32, bool)`
+`func (o *ModelsCertificateStoreUpdateServerRequest) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsCertificateStoreUpdateServerRequest) SetId(v int32)`
+`func (o *ModelsCertificateStoreUpdateServerRequest) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -132,20 +132,20 @@ SetName sets Name field to given value.
 
 ### GetContainer
 
-`func (o *ModelsCertificateStoreUpdateServerRequest) GetContainer() int32`
+`func (o *ModelsCertificateStoreUpdateServerRequest) GetContainer() int64`
 
 GetContainer returns the Container field if non-nil, zero value otherwise.
 
 ### GetContainerOk
 
-`func (o *ModelsCertificateStoreUpdateServerRequest) GetContainerOk() (*int32, bool)`
+`func (o *ModelsCertificateStoreUpdateServerRequest) GetContainerOk() (*int64, bool)`
 
 GetContainerOk returns a tuple with the Container field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContainer
 
-`func (o *ModelsCertificateStoreUpdateServerRequest) SetContainer(v int32)`
+`func (o *ModelsCertificateStoreUpdateServerRequest) SetContainer(v int64)`
 
 SetContainer sets Container field to given value.
 

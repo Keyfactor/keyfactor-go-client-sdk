@@ -256,10 +256,10 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
     pqQueryString := "pqQueryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
-    pqPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    pqReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
+    pqPageReturned := int64(789) // int64 | The current page within the result set to be returned (optional)
+    pqReturnLimit := int64(789) // int64 | Maximum number of records to be returned in a single call (optional)
     pqSortField := "pqSortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    pqSortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    pqSortAscending := int64(789) // int64 | Field sort direction [0=ascending, 1=descending] (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -292,10 +292,10 @@ Name | Type | Description  | Notes
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
  **pqQueryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
- **pqPageReturned** | **int32** | The current page within the result set to be returned | 
- **pqReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
+ **pqPageReturned** | **int64** | The current page within the result set to be returned | 
+ **pqReturnLimit** | **int64** | Maximum number of records to be returned in a single call | 
  **pqSortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **pqSortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **pqSortAscending** | **int64** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
 
 ### Return type
 
@@ -481,10 +481,10 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
     sqQueryString := "sqQueryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
-    sqPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    sqReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
+    sqPageReturned := int64(789) // int64 | The current page within the result set to be returned (optional)
+    sqReturnLimit := int64(789) // int64 | Maximum number of records to be returned in a single call (optional)
     sqSortField := "sqSortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    sqSortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    sqSortAscending := int64(789) // int64 | Field sort direction [0=ascending, 1=descending] (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -512,10 +512,10 @@ Name | Type | Description  | Notes
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
  **sqQueryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
- **sqPageReturned** | **int32** | The current page within the result set to be returned | 
- **sqReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
+ **sqPageReturned** | **int64** | The current page within the result set to be returned | 
+ **sqReturnLimit** | **int64** | Maximum number of records to be returned in a single call | 
  **sqSortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **sqSortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **sqSortAscending** | **int64** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
 
 ### Return type
 
@@ -761,12 +761,12 @@ func main() {
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Keyfactor network definition identifier
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-    pagedQueryJobType := int32(56) // int32 |  (optional)
+    pagedQueryJobType := int64(789) // int64 |  (optional)
     pagedQueryQueryString := "pagedQueryQueryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
-    pagedQueryPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    pagedQueryReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
+    pagedQueryPageReturned := int64(789) // int64 | The current page within the result set to be returned (optional)
+    pagedQueryReturnLimit := int64(789) // int64 | Maximum number of records to be returned in a single call (optional)
     pagedQuerySortField := "pagedQuerySortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    pagedQuerySortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    pagedQuerySortAscending := int64(789) // int64 | Field sort direction [0=ascending, 1=descending] (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -798,12 +798,12 @@ Name | Type | Description  | Notes
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
- **pagedQueryJobType** | **int32** |  | 
+ **pagedQueryJobType** | **int64** |  | 
  **pagedQueryQueryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
- **pagedQueryPageReturned** | **int32** | The current page within the result set to be returned | 
- **pagedQueryReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
+ **pagedQueryPageReturned** | **int64** | The current page within the result set to be returned | 
+ **pagedQueryReturnLimit** | **int64** | Maximum number of records to be returned in a single call | 
  **pagedQuerySortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **pagedQuerySortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **pagedQuerySortAscending** | **int64** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
 
 ### Return type
 
@@ -985,10 +985,10 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
     pqQueryString := "pqQueryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
-    pqPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    pqReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
+    pqPageReturned := int64(789) // int64 | The current page within the result set to be returned (optional)
+    pqReturnLimit := int64(789) // int64 | Maximum number of records to be returned in a single call (optional)
     pqSortField := "pqSortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    pqSortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    pqSortAscending := int64(789) // int64 | Field sort direction [0=ascending, 1=descending] (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1016,10 +1016,10 @@ Name | Type | Description  | Notes
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
  **pqQueryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
- **pqPageReturned** | **int32** | The current page within the result set to be returned | 
- **pqReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
+ **pqPageReturned** | **int64** | The current page within the result set to be returned | 
+ **pqReturnLimit** | **int64** | Maximum number of records to be returned in a single call | 
  **pqSortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **pqSortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **pqSortAscending** | **int64** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
 
 ### Return type
 

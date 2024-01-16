@@ -419,10 +419,10 @@ type ApiCustomJobTypeGetJobTypesRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -444,13 +444,13 @@ func (r ApiCustomJobTypeGetJobTypesRequest) PqQueryString(pqQueryString string) 
 }
 
 // The current page within the result set to be returned
-func (r ApiCustomJobTypeGetJobTypesRequest) PqPageReturned(pqPageReturned int32) ApiCustomJobTypeGetJobTypesRequest {
+func (r ApiCustomJobTypeGetJobTypesRequest) PqPageReturned(pqPageReturned int64) ApiCustomJobTypeGetJobTypesRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiCustomJobTypeGetJobTypesRequest) PqReturnLimit(pqReturnLimit int32) ApiCustomJobTypeGetJobTypesRequest {
+func (r ApiCustomJobTypeGetJobTypesRequest) PqReturnLimit(pqReturnLimit int64) ApiCustomJobTypeGetJobTypesRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -462,7 +462,7 @@ func (r ApiCustomJobTypeGetJobTypesRequest) PqSortField(pqSortField string) ApiC
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiCustomJobTypeGetJobTypesRequest) PqSortAscending(pqSortAscending int32) ApiCustomJobTypeGetJobTypesRequest {
+func (r ApiCustomJobTypeGetJobTypesRequest) PqSortAscending(pqSortAscending int64) ApiCustomJobTypeGetJobTypesRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }

@@ -7,17 +7,17 @@ Name | Type | Description | Notes
 **ScanJobPartId** | Pointer to **string** |  | [optional] 
 **LogicalScanJobId** | Pointer to **string** |  | [optional] 
 **AgentJobId** | Pointer to **string** |  | [optional] 
-**EstimatedEndpointCount** | Pointer to **int32** |  | [optional] 
-**Status** | Pointer to **int32** |  | [optional] 
-**StatTotalEndpointCount** | Pointer to **int32** |  | [optional] 
-**StatTimedOutConnectingCount** | Pointer to **int32** |  | [optional] 
-**StatConnectionRefusedCount** | Pointer to **int32** |  | [optional] 
-**StatTimedOutDownloadingCount** | Pointer to **int32** |  | [optional] 
-**StatExceptionDownloadingCount** | Pointer to **int32** |  | [optional] 
-**StatNotSslCount** | Pointer to **int32** |  | [optional] 
-**StatBadSslHandshakeCount** | Pointer to **int32** |  | [optional] 
-**StatCertificateFoundCount** | Pointer to **int32** |  | [optional] 
-**StatNoCertificateCount** | Pointer to **int32** |  | [optional] 
+**EstimatedEndpointCount** | Pointer to **int64** |  | [optional] 
+**Status** | Pointer to **int64** |  | [optional] 
+**StatTotalEndpointCount** | Pointer to **int64** |  | [optional] 
+**StatTimedOutConnectingCount** | Pointer to **int64** |  | [optional] 
+**StatConnectionRefusedCount** | Pointer to **int64** |  | [optional] 
+**StatTimedOutDownloadingCount** | Pointer to **int64** |  | [optional] 
+**StatExceptionDownloadingCount** | Pointer to **int64** |  | [optional] 
+**StatNotSslCount** | Pointer to **int64** |  | [optional] 
+**StatBadSslHandshakeCount** | Pointer to **int64** |  | [optional] 
+**StatCertificateFoundCount** | Pointer to **int64** |  | [optional] 
+**StatNoCertificateCount** | Pointer to **int64** |  | [optional] 
 **ScanJobPartDefinitions** | Pointer to [**[]ModelsSSLScanJobPartDefinition**](ModelsSSLScanJobPartDefinition.md) |  | [optional] 
 **StartTime** | Pointer to **time.Time** |  | [optional] 
 **EndTime** | Pointer to **time.Time** |  | [optional] 
@@ -118,20 +118,20 @@ HasAgentJobId returns a boolean if a field has been set.
 
 ### GetEstimatedEndpointCount
 
-`func (o *ModelsSSLScanJobPart) GetEstimatedEndpointCount() int32`
+`func (o *ModelsSSLScanJobPart) GetEstimatedEndpointCount() int64`
 
 GetEstimatedEndpointCount returns the EstimatedEndpointCount field if non-nil, zero value otherwise.
 
 ### GetEstimatedEndpointCountOk
 
-`func (o *ModelsSSLScanJobPart) GetEstimatedEndpointCountOk() (*int32, bool)`
+`func (o *ModelsSSLScanJobPart) GetEstimatedEndpointCountOk() (*int64, bool)`
 
 GetEstimatedEndpointCountOk returns a tuple with the EstimatedEndpointCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEstimatedEndpointCount
 
-`func (o *ModelsSSLScanJobPart) SetEstimatedEndpointCount(v int32)`
+`func (o *ModelsSSLScanJobPart) SetEstimatedEndpointCount(v int64)`
 
 SetEstimatedEndpointCount sets EstimatedEndpointCount field to given value.
 
@@ -143,20 +143,20 @@ HasEstimatedEndpointCount returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *ModelsSSLScanJobPart) GetStatus() int32`
+`func (o *ModelsSSLScanJobPart) GetStatus() int64`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *ModelsSSLScanJobPart) GetStatusOk() (*int32, bool)`
+`func (o *ModelsSSLScanJobPart) GetStatusOk() (*int64, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *ModelsSSLScanJobPart) SetStatus(v int32)`
+`func (o *ModelsSSLScanJobPart) SetStatus(v int64)`
 
 SetStatus sets Status field to given value.
 
@@ -168,20 +168,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetStatTotalEndpointCount
 
-`func (o *ModelsSSLScanJobPart) GetStatTotalEndpointCount() int32`
+`func (o *ModelsSSLScanJobPart) GetStatTotalEndpointCount() int64`
 
 GetStatTotalEndpointCount returns the StatTotalEndpointCount field if non-nil, zero value otherwise.
 
 ### GetStatTotalEndpointCountOk
 
-`func (o *ModelsSSLScanJobPart) GetStatTotalEndpointCountOk() (*int32, bool)`
+`func (o *ModelsSSLScanJobPart) GetStatTotalEndpointCountOk() (*int64, bool)`
 
 GetStatTotalEndpointCountOk returns a tuple with the StatTotalEndpointCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatTotalEndpointCount
 
-`func (o *ModelsSSLScanJobPart) SetStatTotalEndpointCount(v int32)`
+`func (o *ModelsSSLScanJobPart) SetStatTotalEndpointCount(v int64)`
 
 SetStatTotalEndpointCount sets StatTotalEndpointCount field to given value.
 
@@ -193,20 +193,20 @@ HasStatTotalEndpointCount returns a boolean if a field has been set.
 
 ### GetStatTimedOutConnectingCount
 
-`func (o *ModelsSSLScanJobPart) GetStatTimedOutConnectingCount() int32`
+`func (o *ModelsSSLScanJobPart) GetStatTimedOutConnectingCount() int64`
 
 GetStatTimedOutConnectingCount returns the StatTimedOutConnectingCount field if non-nil, zero value otherwise.
 
 ### GetStatTimedOutConnectingCountOk
 
-`func (o *ModelsSSLScanJobPart) GetStatTimedOutConnectingCountOk() (*int32, bool)`
+`func (o *ModelsSSLScanJobPart) GetStatTimedOutConnectingCountOk() (*int64, bool)`
 
 GetStatTimedOutConnectingCountOk returns a tuple with the StatTimedOutConnectingCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatTimedOutConnectingCount
 
-`func (o *ModelsSSLScanJobPart) SetStatTimedOutConnectingCount(v int32)`
+`func (o *ModelsSSLScanJobPart) SetStatTimedOutConnectingCount(v int64)`
 
 SetStatTimedOutConnectingCount sets StatTimedOutConnectingCount field to given value.
 
@@ -218,20 +218,20 @@ HasStatTimedOutConnectingCount returns a boolean if a field has been set.
 
 ### GetStatConnectionRefusedCount
 
-`func (o *ModelsSSLScanJobPart) GetStatConnectionRefusedCount() int32`
+`func (o *ModelsSSLScanJobPart) GetStatConnectionRefusedCount() int64`
 
 GetStatConnectionRefusedCount returns the StatConnectionRefusedCount field if non-nil, zero value otherwise.
 
 ### GetStatConnectionRefusedCountOk
 
-`func (o *ModelsSSLScanJobPart) GetStatConnectionRefusedCountOk() (*int32, bool)`
+`func (o *ModelsSSLScanJobPart) GetStatConnectionRefusedCountOk() (*int64, bool)`
 
 GetStatConnectionRefusedCountOk returns a tuple with the StatConnectionRefusedCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatConnectionRefusedCount
 
-`func (o *ModelsSSLScanJobPart) SetStatConnectionRefusedCount(v int32)`
+`func (o *ModelsSSLScanJobPart) SetStatConnectionRefusedCount(v int64)`
 
 SetStatConnectionRefusedCount sets StatConnectionRefusedCount field to given value.
 
@@ -243,20 +243,20 @@ HasStatConnectionRefusedCount returns a boolean if a field has been set.
 
 ### GetStatTimedOutDownloadingCount
 
-`func (o *ModelsSSLScanJobPart) GetStatTimedOutDownloadingCount() int32`
+`func (o *ModelsSSLScanJobPart) GetStatTimedOutDownloadingCount() int64`
 
 GetStatTimedOutDownloadingCount returns the StatTimedOutDownloadingCount field if non-nil, zero value otherwise.
 
 ### GetStatTimedOutDownloadingCountOk
 
-`func (o *ModelsSSLScanJobPart) GetStatTimedOutDownloadingCountOk() (*int32, bool)`
+`func (o *ModelsSSLScanJobPart) GetStatTimedOutDownloadingCountOk() (*int64, bool)`
 
 GetStatTimedOutDownloadingCountOk returns a tuple with the StatTimedOutDownloadingCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatTimedOutDownloadingCount
 
-`func (o *ModelsSSLScanJobPart) SetStatTimedOutDownloadingCount(v int32)`
+`func (o *ModelsSSLScanJobPart) SetStatTimedOutDownloadingCount(v int64)`
 
 SetStatTimedOutDownloadingCount sets StatTimedOutDownloadingCount field to given value.
 
@@ -268,20 +268,20 @@ HasStatTimedOutDownloadingCount returns a boolean if a field has been set.
 
 ### GetStatExceptionDownloadingCount
 
-`func (o *ModelsSSLScanJobPart) GetStatExceptionDownloadingCount() int32`
+`func (o *ModelsSSLScanJobPart) GetStatExceptionDownloadingCount() int64`
 
 GetStatExceptionDownloadingCount returns the StatExceptionDownloadingCount field if non-nil, zero value otherwise.
 
 ### GetStatExceptionDownloadingCountOk
 
-`func (o *ModelsSSLScanJobPart) GetStatExceptionDownloadingCountOk() (*int32, bool)`
+`func (o *ModelsSSLScanJobPart) GetStatExceptionDownloadingCountOk() (*int64, bool)`
 
 GetStatExceptionDownloadingCountOk returns a tuple with the StatExceptionDownloadingCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatExceptionDownloadingCount
 
-`func (o *ModelsSSLScanJobPart) SetStatExceptionDownloadingCount(v int32)`
+`func (o *ModelsSSLScanJobPart) SetStatExceptionDownloadingCount(v int64)`
 
 SetStatExceptionDownloadingCount sets StatExceptionDownloadingCount field to given value.
 
@@ -293,20 +293,20 @@ HasStatExceptionDownloadingCount returns a boolean if a field has been set.
 
 ### GetStatNotSslCount
 
-`func (o *ModelsSSLScanJobPart) GetStatNotSslCount() int32`
+`func (o *ModelsSSLScanJobPart) GetStatNotSslCount() int64`
 
 GetStatNotSslCount returns the StatNotSslCount field if non-nil, zero value otherwise.
 
 ### GetStatNotSslCountOk
 
-`func (o *ModelsSSLScanJobPart) GetStatNotSslCountOk() (*int32, bool)`
+`func (o *ModelsSSLScanJobPart) GetStatNotSslCountOk() (*int64, bool)`
 
 GetStatNotSslCountOk returns a tuple with the StatNotSslCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatNotSslCount
 
-`func (o *ModelsSSLScanJobPart) SetStatNotSslCount(v int32)`
+`func (o *ModelsSSLScanJobPart) SetStatNotSslCount(v int64)`
 
 SetStatNotSslCount sets StatNotSslCount field to given value.
 
@@ -318,20 +318,20 @@ HasStatNotSslCount returns a boolean if a field has been set.
 
 ### GetStatBadSslHandshakeCount
 
-`func (o *ModelsSSLScanJobPart) GetStatBadSslHandshakeCount() int32`
+`func (o *ModelsSSLScanJobPart) GetStatBadSslHandshakeCount() int64`
 
 GetStatBadSslHandshakeCount returns the StatBadSslHandshakeCount field if non-nil, zero value otherwise.
 
 ### GetStatBadSslHandshakeCountOk
 
-`func (o *ModelsSSLScanJobPart) GetStatBadSslHandshakeCountOk() (*int32, bool)`
+`func (o *ModelsSSLScanJobPart) GetStatBadSslHandshakeCountOk() (*int64, bool)`
 
 GetStatBadSslHandshakeCountOk returns a tuple with the StatBadSslHandshakeCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatBadSslHandshakeCount
 
-`func (o *ModelsSSLScanJobPart) SetStatBadSslHandshakeCount(v int32)`
+`func (o *ModelsSSLScanJobPart) SetStatBadSslHandshakeCount(v int64)`
 
 SetStatBadSslHandshakeCount sets StatBadSslHandshakeCount field to given value.
 
@@ -343,20 +343,20 @@ HasStatBadSslHandshakeCount returns a boolean if a field has been set.
 
 ### GetStatCertificateFoundCount
 
-`func (o *ModelsSSLScanJobPart) GetStatCertificateFoundCount() int32`
+`func (o *ModelsSSLScanJobPart) GetStatCertificateFoundCount() int64`
 
 GetStatCertificateFoundCount returns the StatCertificateFoundCount field if non-nil, zero value otherwise.
 
 ### GetStatCertificateFoundCountOk
 
-`func (o *ModelsSSLScanJobPart) GetStatCertificateFoundCountOk() (*int32, bool)`
+`func (o *ModelsSSLScanJobPart) GetStatCertificateFoundCountOk() (*int64, bool)`
 
 GetStatCertificateFoundCountOk returns a tuple with the StatCertificateFoundCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatCertificateFoundCount
 
-`func (o *ModelsSSLScanJobPart) SetStatCertificateFoundCount(v int32)`
+`func (o *ModelsSSLScanJobPart) SetStatCertificateFoundCount(v int64)`
 
 SetStatCertificateFoundCount sets StatCertificateFoundCount field to given value.
 
@@ -368,20 +368,20 @@ HasStatCertificateFoundCount returns a boolean if a field has been set.
 
 ### GetStatNoCertificateCount
 
-`func (o *ModelsSSLScanJobPart) GetStatNoCertificateCount() int32`
+`func (o *ModelsSSLScanJobPart) GetStatNoCertificateCount() int64`
 
 GetStatNoCertificateCount returns the StatNoCertificateCount field if non-nil, zero value otherwise.
 
 ### GetStatNoCertificateCountOk
 
-`func (o *ModelsSSLScanJobPart) GetStatNoCertificateCountOk() (*int32, bool)`
+`func (o *ModelsSSLScanJobPart) GetStatNoCertificateCountOk() (*int64, bool)`
 
 GetStatNoCertificateCountOk returns a tuple with the StatNoCertificateCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatNoCertificateCount
 
-`func (o *ModelsSSLScanJobPart) SetStatNoCertificateCount(v int32)`
+`func (o *ModelsSSLScanJobPart) SetStatNoCertificateCount(v int64)`
 
 SetStatNoCertificateCount sets StatNoCertificateCount field to given value.
 

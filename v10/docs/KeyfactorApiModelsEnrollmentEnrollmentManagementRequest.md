@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Stores** | Pointer to [**[]KeyfactorApiModelsEnrollmentManagementStoreRequest**](KeyfactorApiModelsEnrollmentManagementStoreRequest.md) | The stores to add the certificate to. Values in this collection will take precedence over values in {Models.Enrollment.SpecificEnrollmentManagementRequest.StoreTypes}. | [optional] 
 **StoreIds** | Pointer to **[]string** |  | [optional] 
 **StoreTypes** | Pointer to [**[]KeyfactorApiModelsEnrollmentManagementStoreTypeRequest**](KeyfactorApiModelsEnrollmentManagementStoreTypeRequest.md) |  | [optional] 
-**CertificateId** | Pointer to **int32** |  | [optional] 
-**RequestId** | Pointer to **int32** |  | [optional] 
+**CertificateId** | Pointer to **int64** |  | [optional] 
+**RequestId** | Pointer to **int64** |  | [optional] 
 **Password** | **string** |  | 
 **JobTime** | Pointer to **time.Time** |  | [optional] 
 
@@ -108,20 +108,20 @@ HasStoreTypes returns a boolean if a field has been set.
 
 ### GetCertificateId
 
-`func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) GetCertificateId() int32`
+`func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) GetCertificateId() int64`
 
 GetCertificateId returns the CertificateId field if non-nil, zero value otherwise.
 
 ### GetCertificateIdOk
 
-`func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) GetCertificateIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) GetCertificateIdOk() (*int64, bool)`
 
 GetCertificateIdOk returns a tuple with the CertificateId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertificateId
 
-`func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) SetCertificateId(v int32)`
+`func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) SetCertificateId(v int64)`
 
 SetCertificateId sets CertificateId field to given value.
 
@@ -133,20 +133,20 @@ HasCertificateId returns a boolean if a field has been set.
 
 ### GetRequestId
 
-`func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) GetRequestId() int32`
+`func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) GetRequestId() int64`
 
 GetRequestId returns the RequestId field if non-nil, zero value otherwise.
 
 ### GetRequestIdOk
 
-`func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) GetRequestIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) GetRequestIdOk() (*int64, bool)`
 
 GetRequestIdOk returns a tuple with the RequestId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRequestId
 
-`func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) SetRequestId(v int32)`
+`func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) SetRequestId(v int64)`
 
 SetRequestId sets RequestId field to given value.
 

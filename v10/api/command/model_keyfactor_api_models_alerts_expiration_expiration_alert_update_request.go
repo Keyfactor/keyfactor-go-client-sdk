@@ -30,12 +30,12 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateR
 
 // KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest struct for KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest
 type KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest struct {
-	Id                     *int32                                                       `json:"Id,omitempty"`
+	Id                     *int64                                                       `json:"Id,omitempty"`
 	DisplayName            string                                                       `json:"DisplayName"`
 	Subject                string                                                       `json:"Subject"`
 	Message                string                                                       `json:"Message"`
-	ExpirationWarningDays  int32                                                        `json:"ExpirationWarningDays"`
-	CertificateQueryId     *int32                                                       `json:"CertificateQueryId,omitempty"`
+	ExpirationWarningDays  int64                                                        `json:"ExpirationWarningDays"`
+	CertificateQueryId     *int64                                                       `json:"CertificateQueryId,omitempty"`
 	RegisteredEventHandler *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest `json:"RegisteredEventHandler,omitempty"`
 	Recipients             []string                                                     `json:"Recipients,omitempty"`
 	EventHandlerParameters []KeyfactorApiModelsEventHandlerEventHandlerParameterRequest `json:"EventHandlerParameters,omitempty"`
@@ -48,7 +48,7 @@ type _KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest KeyfactorAp
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest(displayName string, subject string, message string, expirationWarningDays int32) *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest {
+func NewKeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest(displayName string, subject string, message string, expirationWarningDays int64) *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest {
 	this := KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest{}
 	this.DisplayName = displayName
 	this.Subject = subject
@@ -66,9 +66,9 @@ func NewKeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequestWithDefaul
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) GetId() int32 {
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -76,7 +76,7 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) GetId()
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) GetIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -92,8 +92,8 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) HasId()
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -170,9 +170,9 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) SetMess
 }
 
 // GetExpirationWarningDays returns the ExpirationWarningDays field value
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) GetExpirationWarningDays() int32 {
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) GetExpirationWarningDays() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -181,7 +181,7 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) GetExpi
 
 // GetExpirationWarningDaysOk returns a tuple with the ExpirationWarningDays field value
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) GetExpirationWarningDaysOk() (*int32, bool) {
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) GetExpirationWarningDaysOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -189,14 +189,14 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) GetExpi
 }
 
 // SetExpirationWarningDays sets field value
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) SetExpirationWarningDays(v int32) {
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) SetExpirationWarningDays(v int64) {
 	o.ExpirationWarningDays = v
 }
 
 // GetCertificateQueryId returns the CertificateQueryId field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) GetCertificateQueryId() int32 {
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) GetCertificateQueryId() int64 {
 	if o == nil || isNil(o.CertificateQueryId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CertificateQueryId
@@ -204,7 +204,7 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) GetCert
 
 // GetCertificateQueryIdOk returns a tuple with the CertificateQueryId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) GetCertificateQueryIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) GetCertificateQueryIdOk() (*int64, bool) {
 	if o == nil || isNil(o.CertificateQueryId) {
 		return nil, false
 	}
@@ -220,8 +220,8 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) HasCert
 	return false
 }
 
-// SetCertificateQueryId gets a reference to the given int32 and assigns it to the CertificateQueryId field.
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) SetCertificateQueryId(v int32) {
+// SetCertificateQueryId gets a reference to the given int64 and assigns it to the CertificateQueryId field.
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertUpdateRequest) SetCertificateQueryId(v int64) {
 	o.CertificateQueryId = &v
 }
 

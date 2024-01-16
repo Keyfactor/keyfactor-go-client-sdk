@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **Name** | **string** |  | 
-**Area** | Pointer to **int32** |  | [optional] 
+**Area** | Pointer to **int64** |  | [optional] 
 **ProviderType** | [**CSSCMSDataModelModelsProviderType**](CSSCMSDataModelModelsProviderType.md) |  | 
 **ProviderTypeParamValues** | Pointer to [**[]CSSCMSDataModelModelsPamProviderTypeParamValue**](CSSCMSDataModelModelsPamProviderTypeParamValue.md) |  | [optional] 
-**SecuredAreaId** | Pointer to **int32** |  | [optional] 
+**SecuredAreaId** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *CSSCMSDataModelModelsProvider) GetId() int32`
+`func (o *CSSCMSDataModelModelsProvider) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *CSSCMSDataModelModelsProvider) GetIdOk() (*int32, bool)`
+`func (o *CSSCMSDataModelModelsProvider) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *CSSCMSDataModelModelsProvider) SetId(v int32)`
+`func (o *CSSCMSDataModelModelsProvider) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -77,20 +77,20 @@ SetName sets Name field to given value.
 
 ### GetArea
 
-`func (o *CSSCMSDataModelModelsProvider) GetArea() int32`
+`func (o *CSSCMSDataModelModelsProvider) GetArea() int64`
 
 GetArea returns the Area field if non-nil, zero value otherwise.
 
 ### GetAreaOk
 
-`func (o *CSSCMSDataModelModelsProvider) GetAreaOk() (*int32, bool)`
+`func (o *CSSCMSDataModelModelsProvider) GetAreaOk() (*int64, bool)`
 
 GetAreaOk returns a tuple with the Area field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetArea
 
-`func (o *CSSCMSDataModelModelsProvider) SetArea(v int32)`
+`func (o *CSSCMSDataModelModelsProvider) SetArea(v int64)`
 
 SetArea sets Area field to given value.
 
@@ -147,20 +147,20 @@ HasProviderTypeParamValues returns a boolean if a field has been set.
 
 ### GetSecuredAreaId
 
-`func (o *CSSCMSDataModelModelsProvider) GetSecuredAreaId() int32`
+`func (o *CSSCMSDataModelModelsProvider) GetSecuredAreaId() int64`
 
 GetSecuredAreaId returns the SecuredAreaId field if non-nil, zero value otherwise.
 
 ### GetSecuredAreaIdOk
 
-`func (o *CSSCMSDataModelModelsProvider) GetSecuredAreaIdOk() (*int32, bool)`
+`func (o *CSSCMSDataModelModelsProvider) GetSecuredAreaIdOk() (*int64, bool)`
 
 GetSecuredAreaIdOk returns a tuple with the SecuredAreaId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecuredAreaId
 
-`func (o *CSSCMSDataModelModelsProvider) SetSecuredAreaId(v int32)`
+`func (o *CSSCMSDataModelModelsProvider) SetSecuredAreaId(v int64)`
 
 SetSecuredAreaId sets SecuredAreaId field to given value.
 

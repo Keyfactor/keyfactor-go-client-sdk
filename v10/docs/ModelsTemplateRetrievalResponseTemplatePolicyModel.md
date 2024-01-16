@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TemplateId** | Pointer to **NullableInt32** |  | [optional] 
-**RSAValidKeySizes** | Pointer to **[]int32** |  | [optional] 
+**TemplateId** | Pointer to **NullableInt64** |  | [optional] 
+**RSAValidKeySizes** | Pointer to **[]int64** |  | [optional] 
 **ECCValidCurves** | Pointer to **[]string** |  | [optional] 
 **AllowKeyReuse** | Pointer to **bool** |  | [optional] 
 **AllowWildcards** | Pointer to **bool** |  | [optional] 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetTemplateId
 
-`func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) GetTemplateId() int32`
+`func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) GetTemplateId() int64`
 
 GetTemplateId returns the TemplateId field if non-nil, zero value otherwise.
 
 ### GetTemplateIdOk
 
-`func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) GetTemplateIdOk() (*int32, bool)`
+`func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) GetTemplateIdOk() (*int64, bool)`
 
 GetTemplateIdOk returns a tuple with the TemplateId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTemplateId
 
-`func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) SetTemplateId(v int32)`
+`func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) SetTemplateId(v int64)`
 
 SetTemplateId sets TemplateId field to given value.
 
@@ -67,20 +67,20 @@ HasTemplateId returns a boolean if a field has been set.
 UnsetTemplateId ensures that no value is present for TemplateId, not even an explicit nil
 ### GetRSAValidKeySizes
 
-`func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) GetRSAValidKeySizes() []int32`
+`func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) GetRSAValidKeySizes() []int64`
 
 GetRSAValidKeySizes returns the RSAValidKeySizes field if non-nil, zero value otherwise.
 
 ### GetRSAValidKeySizesOk
 
-`func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) GetRSAValidKeySizesOk() (*[]int32, bool)`
+`func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) GetRSAValidKeySizesOk() (*[]int64, bool)`
 
 GetRSAValidKeySizesOk returns a tuple with the RSAValidKeySizes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRSAValidKeySizes
 
-`func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) SetRSAValidKeySizes(v []int32)`
+`func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) SetRSAValidKeySizes(v []int64)`
 
 SetRSAValidKeySizes sets RSAValidKeySizes field to given value.
 

@@ -31,7 +31,7 @@ var _ MappedNullable = &ModelsCustomReport{}
 // ModelsCustomReport The CustomReport can be used to create and update a custom report.
 type ModelsCustomReport struct {
 	CustomURL            *string `json:"CustomURL,omitempty"`
-	Id                   *int32  `json:"Id,omitempty"`
+	Id                   *int64  `json:"Id,omitempty"`
 	DisplayName          *string `json:"DisplayName,omitempty"`
 	Description          *string `json:"Description,omitempty"`
 	InNavigator          *bool   `json:"InNavigator,omitempty"`
@@ -91,9 +91,9 @@ func (o *ModelsCustomReport) SetCustomURL(v string) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsCustomReport) GetId() int32 {
+func (o *ModelsCustomReport) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -101,7 +101,7 @@ func (o *ModelsCustomReport) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCustomReport) GetIdOk() (*int32, bool) {
+func (o *ModelsCustomReport) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -117,8 +117,8 @@ func (o *ModelsCustomReport) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsCustomReport) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsCustomReport) SetId(v int64) {
 	o.Id = &v
 }
 

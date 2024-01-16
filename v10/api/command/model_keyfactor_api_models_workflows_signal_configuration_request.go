@@ -33,7 +33,7 @@ type KeyfactorApiModelsWorkflowsSignalConfigurationRequest struct {
 	// The name of the signal.
 	SignalName *string `json:"SignalName,omitempty"`
 	// The roles that are allowed to send the signal.
-	RoleIds              []int32 `json:"RoleIds,omitempty"`
+	RoleIds              []int64 `json:"RoleIds,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -89,9 +89,9 @@ func (o *KeyfactorApiModelsWorkflowsSignalConfigurationRequest) SetSignalName(v 
 }
 
 // GetRoleIds returns the RoleIds field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsWorkflowsSignalConfigurationRequest) GetRoleIds() []int32 {
+func (o *KeyfactorApiModelsWorkflowsSignalConfigurationRequest) GetRoleIds() []int64 {
 	if o == nil || isNil(o.RoleIds) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.RoleIds
@@ -99,7 +99,7 @@ func (o *KeyfactorApiModelsWorkflowsSignalConfigurationRequest) GetRoleIds() []i
 
 // GetRoleIdsOk returns a tuple with the RoleIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsWorkflowsSignalConfigurationRequest) GetRoleIdsOk() ([]int32, bool) {
+func (o *KeyfactorApiModelsWorkflowsSignalConfigurationRequest) GetRoleIdsOk() ([]int64, bool) {
 	if o == nil || isNil(o.RoleIds) {
 		return nil, false
 	}
@@ -115,8 +115,8 @@ func (o *KeyfactorApiModelsWorkflowsSignalConfigurationRequest) HasRoleIds() boo
 	return false
 }
 
-// SetRoleIds gets a reference to the given []int32 and assigns it to the RoleIds field.
-func (o *KeyfactorApiModelsWorkflowsSignalConfigurationRequest) SetRoleIds(v []int32) {
+// SetRoleIds gets a reference to the given []int64 and assigns it to the RoleIds field.
+func (o *KeyfactorApiModelsWorkflowsSignalConfigurationRequest) SetRoleIds(v []int64) {
 	o.RoleIds = v
 }
 

@@ -30,7 +30,7 @@ var _ MappedNullable = &KeyfactorApiModelsSecurityRolesRoleIdentitiesRequest{}
 
 // KeyfactorApiModelsSecurityRolesRoleIdentitiesRequest struct for KeyfactorApiModelsSecurityRolesRoleIdentitiesRequest
 type KeyfactorApiModelsSecurityRolesRoleIdentitiesRequest struct {
-	Ids                  []int32 `json:"Ids,omitempty"`
+	Ids                  []int64 `json:"Ids,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -54,9 +54,9 @@ func NewKeyfactorApiModelsSecurityRolesRoleIdentitiesRequestWithDefaults() *Keyf
 }
 
 // GetIds returns the Ids field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsSecurityRolesRoleIdentitiesRequest) GetIds() []int32 {
+func (o *KeyfactorApiModelsSecurityRolesRoleIdentitiesRequest) GetIds() []int64 {
 	if o == nil || isNil(o.Ids) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.Ids
@@ -64,7 +64,7 @@ func (o *KeyfactorApiModelsSecurityRolesRoleIdentitiesRequest) GetIds() []int32 
 
 // GetIdsOk returns a tuple with the Ids field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsSecurityRolesRoleIdentitiesRequest) GetIdsOk() ([]int32, bool) {
+func (o *KeyfactorApiModelsSecurityRolesRoleIdentitiesRequest) GetIdsOk() ([]int64, bool) {
 	if o == nil || isNil(o.Ids) {
 		return nil, false
 	}
@@ -80,8 +80,8 @@ func (o *KeyfactorApiModelsSecurityRolesRoleIdentitiesRequest) HasIds() bool {
 	return false
 }
 
-// SetIds gets a reference to the given []int32 and assigns it to the Ids field.
-func (o *KeyfactorApiModelsSecurityRolesRoleIdentitiesRequest) SetIds(v []int32) {
+// SetIds gets a reference to the given []int64 and assigns it to the Ids field.
+func (o *KeyfactorApiModelsSecurityRolesRoleIdentitiesRequest) SetIds(v []int64) {
 	o.Ids = v
 }
 

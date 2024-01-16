@@ -43,7 +43,7 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    addRequest := *openapiclient.NewKeyfactorApiModelsCertificateStoresAddCertificateRequest(int32(123), []openapiclient.ModelsCertificateStoreEntry{*openapiclient.NewModelsCertificateStoreEntry("00000000-0000-0000-0000-000000000000")}, *openapiclient.NewKeyfactorCommonSchedulingKeyfactorSchedule()) // KeyfactorApiModelsCertificateStoresAddCertificateRequest | Configuration details of the management job
+    addRequest := *openapiclient.NewKeyfactorApiModelsCertificateStoresAddCertificateRequest(int64(123), []openapiclient.ModelsCertificateStoreEntry{*openapiclient.NewModelsCertificateStoreEntry("00000000-0000-0000-0000-000000000000")}, *openapiclient.NewKeyfactorCommonSchedulingKeyfactorSchedule()) // KeyfactorApiModelsCertificateStoresAddCertificateRequest | Configuration details of the management job
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -177,7 +177,7 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    discoveryJobRequest := *openapiclient.NewModelsDiscoveryJobRequest(int32(123)) // ModelsDiscoveryJobRequest | Configuration properties of the discovery job
+    discoveryJobRequest := *openapiclient.NewModelsDiscoveryJobRequest(int64(123)) // ModelsDiscoveryJobRequest | Configuration properties of the discovery job
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -311,7 +311,7 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    request := *openapiclient.NewModelsCertificateStoreCreateServerRequest(*openapiclient.NewModelsKeyfactorAPISecret(), *openapiclient.NewModelsKeyfactorAPISecret(), false, int32(123), "Name_example") // ModelsCertificateStoreCreateServerRequest | Certificate store server to be created with the provided properties
+    request := *openapiclient.NewModelsCertificateStoreCreateServerRequest(*openapiclient.NewModelsKeyfactorAPISecret(), *openapiclient.NewModelsKeyfactorAPISecret(), false, int64(123), "Name_example") // ModelsCertificateStoreCreateServerRequest | Certificate store server to be created with the provided properties
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -591,10 +591,10 @@ func main() {
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Keyfactor identifier (GUID) of the certificate store
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-    queryPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    queryReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
+    queryPageReturned := int64(789) // int64 | The current page within the result set to be returned (optional)
+    queryReturnLimit := int64(789) // int64 | Maximum number of records to be returned in a single call (optional)
     querySortField := "querySortField_example" // string | Field by which the results should be sorted (OperationStart, OperationEnd, UserName) (optional)
-    querySortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    querySortAscending := int64(789) // int64 | Field sort direction [0=ascending, 1=descending] (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -626,10 +626,10 @@ Name | Type | Description  | Notes
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
- **queryPageReturned** | **int32** | The current page within the result set to be returned | 
- **queryReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
+ **queryPageReturned** | **int64** | The current page within the result set to be returned | 
+ **queryReturnLimit** | **int64** | Maximum number of records to be returned in a single call | 
  **querySortField** | **string** | Field by which the results should be sorted (OperationStart, OperationEnd, UserName) | 
- **querySortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **querySortAscending** | **int64** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
 
 ### Return type
 
@@ -671,10 +671,10 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
     certificateStoreQueryQueryString := "certificateStoreQueryQueryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
-    certificateStoreQueryPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    certificateStoreQueryReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
+    certificateStoreQueryPageReturned := int64(789) // int64 | The current page within the result set to be returned (optional)
+    certificateStoreQueryReturnLimit := int64(789) // int64 | Maximum number of records to be returned in a single call (optional)
     certificateStoreQuerySortField := "certificateStoreQuerySortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    certificateStoreQuerySortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    certificateStoreQuerySortAscending := int64(789) // int64 | Field sort direction [0=ascending, 1=descending] (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -702,10 +702,10 @@ Name | Type | Description  | Notes
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
  **certificateStoreQueryQueryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
- **certificateStoreQueryPageReturned** | **int32** | The current page within the result set to be returned | 
- **certificateStoreQueryReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
+ **certificateStoreQueryPageReturned** | **int64** | The current page within the result set to be returned | 
+ **certificateStoreQueryReturnLimit** | **int64** | Maximum number of records to be returned in a single call | 
  **certificateStoreQuerySortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **certificateStoreQuerySortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **certificateStoreQuerySortAscending** | **int64** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
 
 ### Return type
 
@@ -1079,7 +1079,7 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    request := *openapiclient.NewModelsCertificateStoreUpdateServerRequest(int32(123), *openapiclient.NewModelsKeyfactorAPISecret(), *openapiclient.NewModelsKeyfactorAPISecret(), false, "Name_example") // ModelsCertificateStoreUpdateServerRequest | Server to be updated with the provided properties
+    request := *openapiclient.NewModelsCertificateStoreUpdateServerRequest(int64(123), *openapiclient.NewModelsKeyfactorAPISecret(), *openapiclient.NewModelsKeyfactorAPISecret(), false, "Name_example") // ModelsCertificateStoreUpdateServerRequest | Server to be updated with the provided properties
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))

@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **ShortName** | Pointer to **string** |  | [optional] 
 **Capability** | Pointer to **string** |  | [optional] 
-**StoreType** | Pointer to **int32** |  | [optional] 
-**ImportType** | Pointer to **int32** |  | [optional] 
+**StoreType** | Pointer to **int64** |  | [optional] 
+**ImportType** | Pointer to **int64** |  | [optional] 
 **LocalStore** | Pointer to **bool** |  | [optional] 
 **SupportedOperations** | Pointer to [**ModelsCertStoreTypeSupportedOperations**](ModelsCertStoreTypeSupportedOperations.md) |  | [optional] 
 **Properties** | Pointer to [**[]ModelsCertificateStoreTypeProperty**](ModelsCertificateStoreTypeProperty.md) |  | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **PowerShell** | Pointer to **bool** |  | [optional] 
 **BlueprintAllowed** | Pointer to **bool** |  | [optional] 
 **CustomAliasAllowed** | Pointer to **string** |  | [optional] 
-**ServerRegistration** | Pointer to **int32** |  | [optional] 
+**ServerRegistration** | Pointer to **int64** |  | [optional] 
 **InventoryEndpoint** | Pointer to **string** |  | [optional] 
 **InventoryJobType** | Pointer to **string** |  | [optional] 
 **ManagementJobType** | Pointer to **string** |  | [optional] 
@@ -125,20 +125,20 @@ HasCapability returns a boolean if a field has been set.
 
 ### GetStoreType
 
-`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetStoreType() int32`
+`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetStoreType() int64`
 
 GetStoreType returns the StoreType field if non-nil, zero value otherwise.
 
 ### GetStoreTypeOk
 
-`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetStoreTypeOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetStoreTypeOk() (*int64, bool)`
 
 GetStoreTypeOk returns a tuple with the StoreType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStoreType
 
-`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetStoreType(v int32)`
+`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetStoreType(v int64)`
 
 SetStoreType sets StoreType field to given value.
 
@@ -150,20 +150,20 @@ HasStoreType returns a boolean if a field has been set.
 
 ### GetImportType
 
-`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetImportType() int32`
+`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetImportType() int64`
 
 GetImportType returns the ImportType field if non-nil, zero value otherwise.
 
 ### GetImportTypeOk
 
-`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetImportTypeOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetImportTypeOk() (*int64, bool)`
 
 GetImportTypeOk returns a tuple with the ImportType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetImportType
 
-`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetImportType(v int32)`
+`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetImportType(v int64)`
 
 SetImportType sets ImportType field to given value.
 
@@ -500,20 +500,20 @@ HasCustomAliasAllowed returns a boolean if a field has been set.
 
 ### GetServerRegistration
 
-`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetServerRegistration() int32`
+`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetServerRegistration() int64`
 
 GetServerRegistration returns the ServerRegistration field if non-nil, zero value otherwise.
 
 ### GetServerRegistrationOk
 
-`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetServerRegistrationOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetServerRegistrationOk() (*int64, bool)`
 
 GetServerRegistrationOk returns a tuple with the ServerRegistration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerRegistration
 
-`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetServerRegistration(v int32)`
+`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetServerRegistration(v int64)`
 
 SetServerRegistration sets ServerRegistration field to given value.
 

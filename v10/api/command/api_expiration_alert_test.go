@@ -53,11 +53,11 @@ func Test_command_ExpirationAlertApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("ExpirationAlertApi_ExpirationAlertDeleteExpirationAlert_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("ExpirationAlertApi_ExpirationAlertDeleteExpirationAlert_id: %v", id)
 
 		t.Log("ExpirationAlertApi_ExpirationAlertDeleteExpirationAlert_payload: <none>")
-		httpRes, err := apiClient.ExpirationAlertApi.ExpirationAlertDeleteExpirationAlert(context.Background(), id.(int32)).Execute()
+		httpRes, err := apiClient.ExpirationAlertApi.ExpirationAlertDeleteExpirationAlert(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
@@ -85,11 +85,11 @@ func Test_command_ExpirationAlertApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("ExpirationAlertApi_ExpirationAlertGetExpirationAlert_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("ExpirationAlertApi_ExpirationAlertGetExpirationAlert_id: %v", id)
 
 		t.Log("ExpirationAlertApi_ExpirationAlertGetExpirationAlert_payload: <none>")
-		resp, httpRes, err := apiClient.ExpirationAlertApi.ExpirationAlertGetExpirationAlert(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.ExpirationAlertApi.ExpirationAlertGetExpirationAlert(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

@@ -31,7 +31,7 @@ var _ MappedNullable = &KeyfactorApiModelsTemplatesTemplateEnrollmentPolicyRespo
 // KeyfactorApiModelsTemplatesTemplateEnrollmentPolicyResponse struct for KeyfactorApiModelsTemplatesTemplateEnrollmentPolicyResponse
 type KeyfactorApiModelsTemplatesTemplateEnrollmentPolicyResponse struct {
 	// The allowed RSA key sizes.
-	RSAValidKeySizes []int32 `json:"RSAValidKeySizes,omitempty"`
+	RSAValidKeySizes []int64 `json:"RSAValidKeySizes,omitempty"`
 	// The allowed ECC curves.
 	ECCValidCurves []string `json:"ECCValidCurves,omitempty"`
 	// Whether or not keys can be reused.
@@ -63,9 +63,9 @@ func NewKeyfactorApiModelsTemplatesTemplateEnrollmentPolicyResponseWithDefaults(
 }
 
 // GetRSAValidKeySizes returns the RSAValidKeySizes field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsTemplatesTemplateEnrollmentPolicyResponse) GetRSAValidKeySizes() []int32 {
+func (o *KeyfactorApiModelsTemplatesTemplateEnrollmentPolicyResponse) GetRSAValidKeySizes() []int64 {
 	if o == nil || isNil(o.RSAValidKeySizes) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.RSAValidKeySizes
@@ -73,7 +73,7 @@ func (o *KeyfactorApiModelsTemplatesTemplateEnrollmentPolicyResponse) GetRSAVali
 
 // GetRSAValidKeySizesOk returns a tuple with the RSAValidKeySizes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsTemplatesTemplateEnrollmentPolicyResponse) GetRSAValidKeySizesOk() ([]int32, bool) {
+func (o *KeyfactorApiModelsTemplatesTemplateEnrollmentPolicyResponse) GetRSAValidKeySizesOk() ([]int64, bool) {
 	if o == nil || isNil(o.RSAValidKeySizes) {
 		return nil, false
 	}
@@ -89,8 +89,8 @@ func (o *KeyfactorApiModelsTemplatesTemplateEnrollmentPolicyResponse) HasRSAVali
 	return false
 }
 
-// SetRSAValidKeySizes gets a reference to the given []int32 and assigns it to the RSAValidKeySizes field.
-func (o *KeyfactorApiModelsTemplatesTemplateEnrollmentPolicyResponse) SetRSAValidKeySizes(v []int32) {
+// SetRSAValidKeySizes gets a reference to the given []int64 and assigns it to the RSAValidKeySizes field.
+func (o *KeyfactorApiModelsTemplatesTemplateEnrollmentPolicyResponse) SetRSAValidKeySizes(v []int64) {
 	o.RSAValidKeySizes = v
 }
 

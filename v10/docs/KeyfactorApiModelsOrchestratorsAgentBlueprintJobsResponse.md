@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **AgentBlueprintId** | Pointer to **string** |  | [optional] 
 **JobType** | Pointer to **string** |  | [optional] 
 **JobTypeName** | Pointer to **string** |  | [optional] 
-**OperationType** | Pointer to **int32** |  | [optional] 
+**OperationType** | Pointer to **int64** |  | [optional] 
 **Thumbprint** | Pointer to **string** |  | [optional] 
 **Contents** | Pointer to **string** |  | [optional] 
 **Alias** | Pointer to **string** |  | [optional] 
@@ -174,20 +174,20 @@ HasJobTypeName returns a boolean if a field has been set.
 
 ### GetOperationType
 
-`func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse) GetOperationType() int32`
+`func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse) GetOperationType() int64`
 
 GetOperationType returns the OperationType field if non-nil, zero value otherwise.
 
 ### GetOperationTypeOk
 
-`func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse) GetOperationTypeOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse) GetOperationTypeOk() (*int64, bool)`
 
 GetOperationTypeOk returns a tuple with the OperationType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOperationType
 
-`func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse) SetOperationType(v int32)`
+`func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintJobsResponse) SetOperationType(v int64)`
 
 SetOperationType sets OperationType field to given value.
 

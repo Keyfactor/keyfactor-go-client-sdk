@@ -53,11 +53,11 @@ func Test_command_IssuedAlertApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("IssuedAlertApi_IssuedAlertDeleteIssuedAlert_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("IssuedAlertApi_IssuedAlertDeleteIssuedAlert_id: %v", id)
 
 		t.Log("IssuedAlertApi_IssuedAlertDeleteIssuedAlert_payload: <none>")
-		httpRes, err := apiClient.IssuedAlertApi.IssuedAlertDeleteIssuedAlert(context.Background(), id.(int32)).Execute()
+		httpRes, err := apiClient.IssuedAlertApi.IssuedAlertDeleteIssuedAlert(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
@@ -85,11 +85,11 @@ func Test_command_IssuedAlertApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("IssuedAlertApi_IssuedAlertGetIssuedAlert_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("IssuedAlertApi_IssuedAlertGetIssuedAlert_id: %v", id)
 
 		t.Log("IssuedAlertApi_IssuedAlertGetIssuedAlert_payload: <none>")
-		resp, httpRes, err := apiClient.IssuedAlertApi.IssuedAlertGetIssuedAlert(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.IssuedAlertApi.IssuedAlertGetIssuedAlert(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

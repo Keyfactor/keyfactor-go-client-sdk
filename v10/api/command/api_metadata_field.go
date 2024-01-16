@@ -174,7 +174,7 @@ func (a *MetadataFieldApiService) MetadataFieldCreateMetadataFieldExecute(r ApiM
 type ApiMetadataFieldDeleteMetadataFieldRequest struct {
 	ctx                     context.Context
 	ApiService              *MetadataFieldApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	force                   *bool
 	xKeyfactorApiVersion    *string
@@ -209,7 +209,7 @@ MetadataFieldDeleteMetadataField Deletes a persisted metadata field type by its 
 	@param id Keyfactor identifier of the metadata field type
 	@return ApiMetadataFieldDeleteMetadataFieldRequest
 */
-func (a *MetadataFieldApiService) MetadataFieldDeleteMetadataField(ctx context.Context, id int32) ApiMetadataFieldDeleteMetadataFieldRequest {
+func (a *MetadataFieldApiService) MetadataFieldDeleteMetadataField(ctx context.Context, id int64) ApiMetadataFieldDeleteMetadataFieldRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -301,7 +301,7 @@ type ApiMetadataFieldDeleteMetadataFieldsRequest struct {
 	ctx                     context.Context
 	ApiService              *MetadataFieldApiService
 	xKeyfactorRequestedWith *string
-	ids                     *[]int32
+	ids                     *[]int64
 	force                   *bool
 	xKeyfactorApiVersion    *string
 }
@@ -313,7 +313,7 @@ func (r ApiMetadataFieldDeleteMetadataFieldsRequest) XKeyfactorRequestedWith(xKe
 }
 
 // Array of Keyfactor identifiers for metadata field types to be deleted
-func (r ApiMetadataFieldDeleteMetadataFieldsRequest) Ids(ids []int32) ApiMetadataFieldDeleteMetadataFieldsRequest {
+func (r ApiMetadataFieldDeleteMetadataFieldsRequest) Ids(ids []int64) ApiMetadataFieldDeleteMetadataFieldsRequest {
 	r.ids = &ids
 	return r
 }
@@ -439,10 +439,10 @@ type ApiMetadataFieldGetAllMetadataFieldsRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -464,13 +464,13 @@ func (r ApiMetadataFieldGetAllMetadataFieldsRequest) PqQueryString(pqQueryString
 }
 
 // The current page within the result set to be returned
-func (r ApiMetadataFieldGetAllMetadataFieldsRequest) PqPageReturned(pqPageReturned int32) ApiMetadataFieldGetAllMetadataFieldsRequest {
+func (r ApiMetadataFieldGetAllMetadataFieldsRequest) PqPageReturned(pqPageReturned int64) ApiMetadataFieldGetAllMetadataFieldsRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiMetadataFieldGetAllMetadataFieldsRequest) PqReturnLimit(pqReturnLimit int32) ApiMetadataFieldGetAllMetadataFieldsRequest {
+func (r ApiMetadataFieldGetAllMetadataFieldsRequest) PqReturnLimit(pqReturnLimit int64) ApiMetadataFieldGetAllMetadataFieldsRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -482,7 +482,7 @@ func (r ApiMetadataFieldGetAllMetadataFieldsRequest) PqSortField(pqSortField str
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiMetadataFieldGetAllMetadataFieldsRequest) PqSortAscending(pqSortAscending int32) ApiMetadataFieldGetAllMetadataFieldsRequest {
+func (r ApiMetadataFieldGetAllMetadataFieldsRequest) PqSortAscending(pqSortAscending int64) ApiMetadataFieldGetAllMetadataFieldsRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }
@@ -610,7 +610,7 @@ func (a *MetadataFieldApiService) MetadataFieldGetAllMetadataFieldsExecute(r Api
 type ApiMetadataFieldGetMetadataField0Request struct {
 	ctx                     context.Context
 	ApiService              *MetadataFieldApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -638,7 +638,7 @@ MetadataFieldGetMetadataField0 Gets a persisted metadata field type by its uniqu
 	@param id The unique id of the metadata field type
 	@return ApiMetadataFieldGetMetadataField0Request
 */
-func (a *MetadataFieldApiService) MetadataFieldGetMetadataField0(ctx context.Context, id int32) ApiMetadataFieldGetMetadataField0Request {
+func (a *MetadataFieldApiService) MetadataFieldGetMetadataField0(ctx context.Context, id int64) ApiMetadataFieldGetMetadataField0Request {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -866,7 +866,7 @@ func (a *MetadataFieldApiService) MetadataFieldGetMetadataField1Execute(r ApiMet
 type ApiMetadataFieldGetMetadataFieldInUseRequest struct {
 	ctx                     context.Context
 	ApiService              *MetadataFieldApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -894,7 +894,7 @@ MetadataFieldGetMetadataFieldInUse Determines if a metadata field type associate
 	@param id Keyfactor identitifer of the metadata field
 	@return ApiMetadataFieldGetMetadataFieldInUseRequest
 */
-func (a *MetadataFieldApiService) MetadataFieldGetMetadataFieldInUse(ctx context.Context, id int32) ApiMetadataFieldGetMetadataFieldInUseRequest {
+func (a *MetadataFieldApiService) MetadataFieldGetMetadataFieldInUse(ctx context.Context, id int64) ApiMetadataFieldGetMetadataFieldInUseRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 

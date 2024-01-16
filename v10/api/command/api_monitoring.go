@@ -172,7 +172,7 @@ func (a *MonitoringApiService) MonitoringAddRevocationMonitoringExecute(r ApiMon
 type ApiMonitoringDeleteRevocationMonitoringRequest struct {
 	ctx                     context.Context
 	ApiService              *MonitoringApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -200,7 +200,7 @@ MonitoringDeleteRevocationMonitoring Delete a revocation monitoring endpoint
 	@param id Id for the revocation monitoring endpoint
 	@return ApiMonitoringDeleteRevocationMonitoringRequest
 */
-func (a *MonitoringApiService) MonitoringDeleteRevocationMonitoring(ctx context.Context, id int32) ApiMonitoringDeleteRevocationMonitoringRequest {
+func (a *MonitoringApiService) MonitoringDeleteRevocationMonitoring(ctx context.Context, id int64) ApiMonitoringDeleteRevocationMonitoringRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -424,7 +424,7 @@ func (a *MonitoringApiService) MonitoringEditRevocationMonitoringExecute(r ApiMo
 type ApiMonitoringGetRevocationMonitoringRequest struct {
 	ctx                     context.Context
 	ApiService              *MonitoringApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -452,7 +452,7 @@ MonitoringGetRevocationMonitoring Get a revocation monitoring endpoint
 	@param id Id for the endpoint to get
 	@return ApiMonitoringGetRevocationMonitoringRequest
 */
-func (a *MonitoringApiService) MonitoringGetRevocationMonitoring(ctx context.Context, id int32) ApiMonitoringGetRevocationMonitoringRequest {
+func (a *MonitoringApiService) MonitoringGetRevocationMonitoring(ctx context.Context, id int64) ApiMonitoringGetRevocationMonitoringRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -555,10 +555,10 @@ type ApiMonitoringGetRevocationMonitoringEndpointsRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pagedQueryQueryString   *string
-	pagedQueryPageReturned  *int32
-	pagedQueryReturnLimit   *int32
+	pagedQueryPageReturned  *int64
+	pagedQueryReturnLimit   *int64
 	pagedQuerySortField     *string
-	pagedQuerySortAscending *int32
+	pagedQuerySortAscending *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -580,13 +580,13 @@ func (r ApiMonitoringGetRevocationMonitoringEndpointsRequest) PagedQueryQueryStr
 }
 
 // The current page within the result set to be returned
-func (r ApiMonitoringGetRevocationMonitoringEndpointsRequest) PagedQueryPageReturned(pagedQueryPageReturned int32) ApiMonitoringGetRevocationMonitoringEndpointsRequest {
+func (r ApiMonitoringGetRevocationMonitoringEndpointsRequest) PagedQueryPageReturned(pagedQueryPageReturned int64) ApiMonitoringGetRevocationMonitoringEndpointsRequest {
 	r.pagedQueryPageReturned = &pagedQueryPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiMonitoringGetRevocationMonitoringEndpointsRequest) PagedQueryReturnLimit(pagedQueryReturnLimit int32) ApiMonitoringGetRevocationMonitoringEndpointsRequest {
+func (r ApiMonitoringGetRevocationMonitoringEndpointsRequest) PagedQueryReturnLimit(pagedQueryReturnLimit int64) ApiMonitoringGetRevocationMonitoringEndpointsRequest {
 	r.pagedQueryReturnLimit = &pagedQueryReturnLimit
 	return r
 }
@@ -598,7 +598,7 @@ func (r ApiMonitoringGetRevocationMonitoringEndpointsRequest) PagedQuerySortFiel
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiMonitoringGetRevocationMonitoringEndpointsRequest) PagedQuerySortAscending(pagedQuerySortAscending int32) ApiMonitoringGetRevocationMonitoringEndpointsRequest {
+func (r ApiMonitoringGetRevocationMonitoringEndpointsRequest) PagedQuerySortAscending(pagedQuerySortAscending int64) ApiMonitoringGetRevocationMonitoringEndpointsRequest {
 	r.pagedQuerySortAscending = &pagedQuerySortAscending
 	return r
 }

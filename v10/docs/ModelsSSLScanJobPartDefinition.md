@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ItemType** | Pointer to **int32** |  | [optional] 
+**ItemType** | Pointer to **int64** |  | [optional] 
 **Value** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetItemType
 
-`func (o *ModelsSSLScanJobPartDefinition) GetItemType() int32`
+`func (o *ModelsSSLScanJobPartDefinition) GetItemType() int64`
 
 GetItemType returns the ItemType field if non-nil, zero value otherwise.
 
 ### GetItemTypeOk
 
-`func (o *ModelsSSLScanJobPartDefinition) GetItemTypeOk() (*int32, bool)`
+`func (o *ModelsSSLScanJobPartDefinition) GetItemTypeOk() (*int64, bool)`
 
 GetItemTypeOk returns a tuple with the ItemType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetItemType
 
-`func (o *ModelsSSLScanJobPartDefinition) SetItemType(v int32)`
+`func (o *ModelsSSLScanJobPartDefinition) SetItemType(v int64)`
 
 SetItemType sets ItemType field to given value.
 

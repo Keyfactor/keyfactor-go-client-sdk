@@ -30,7 +30,7 @@ var _ MappedNullable = &ModelsCertificateStoreTypeProperty{}
 
 // ModelsCertificateStoreTypeProperty struct for ModelsCertificateStoreTypeProperty
 type ModelsCertificateStoreTypeProperty struct {
-	StoreTypeId          *int32  `json:"StoreTypeId,omitempty"`
+	StoreTypeId          *int64  `json:"StoreTypeId,omitempty"`
 	Name                 *string `json:"Name,omitempty"`
 	DisplayName          *string `json:"DisplayName,omitempty"`
 	Type                 *string `json:"Type,omitempty"`
@@ -60,9 +60,9 @@ func NewModelsCertificateStoreTypePropertyWithDefaults() *ModelsCertificateStore
 }
 
 // GetStoreTypeId returns the StoreTypeId field value if set, zero value otherwise.
-func (o *ModelsCertificateStoreTypeProperty) GetStoreTypeId() int32 {
+func (o *ModelsCertificateStoreTypeProperty) GetStoreTypeId() int64 {
 	if o == nil || isNil(o.StoreTypeId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.StoreTypeId
@@ -70,7 +70,7 @@ func (o *ModelsCertificateStoreTypeProperty) GetStoreTypeId() int32 {
 
 // GetStoreTypeIdOk returns a tuple with the StoreTypeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateStoreTypeProperty) GetStoreTypeIdOk() (*int32, bool) {
+func (o *ModelsCertificateStoreTypeProperty) GetStoreTypeIdOk() (*int64, bool) {
 	if o == nil || isNil(o.StoreTypeId) {
 		return nil, false
 	}
@@ -86,8 +86,8 @@ func (o *ModelsCertificateStoreTypeProperty) HasStoreTypeId() bool {
 	return false
 }
 
-// SetStoreTypeId gets a reference to the given int32 and assigns it to the StoreTypeId field.
-func (o *ModelsCertificateStoreTypeProperty) SetStoreTypeId(v int32) {
+// SetStoreTypeId gets a reference to the given int64 and assigns it to the StoreTypeId field.
+func (o *ModelsCertificateStoreTypeProperty) SetStoreTypeId(v int64) {
 	o.StoreTypeId = &v
 }
 

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **SANs** | Pointer to **[]string** |  | [optional] 
 **CertStores** | Pointer to [**[]ModelsWorkflowCertificateRequestCertStoreModel**](ModelsWorkflowCertificateRequestCertStoreModel.md) |  | [optional] 
 **Curve** | Pointer to **NullableString** |  | [optional] 
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **CARequestId** | Pointer to **string** |  | [optional] 
 **CommonName** | Pointer to **string** |  | [optional] 
 **DistinguishedName** | Pointer to **string** |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **CertificateAuthority** | Pointer to **string** |  | [optional] 
 **Template** | Pointer to **string** |  | [optional] 
 **Requester** | Pointer to **string** |  | [optional] 
-**State** | Pointer to **int32** |  | [optional] 
+**State** | Pointer to **int64** |  | [optional] 
 **StateString** | Pointer to **string** |  | [optional] [readonly] 
 **Metadata** | Pointer to **map[string]string** |  | [optional] 
 
@@ -177,20 +177,20 @@ HasCurve returns a boolean if a field has been set.
 UnsetCurve ensures that no value is present for Curve, not even an explicit nil
 ### GetId
 
-`func (o *ModelsWorkflowCertificateRequestDetailsModel) GetId() int32`
+`func (o *ModelsWorkflowCertificateRequestDetailsModel) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsWorkflowCertificateRequestDetailsModel) GetIdOk() (*int32, bool)`
+`func (o *ModelsWorkflowCertificateRequestDetailsModel) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsWorkflowCertificateRequestDetailsModel) SetId(v int32)`
+`func (o *ModelsWorkflowCertificateRequestDetailsModel) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -377,20 +377,20 @@ HasRequester returns a boolean if a field has been set.
 
 ### GetState
 
-`func (o *ModelsWorkflowCertificateRequestDetailsModel) GetState() int32`
+`func (o *ModelsWorkflowCertificateRequestDetailsModel) GetState() int64`
 
 GetState returns the State field if non-nil, zero value otherwise.
 
 ### GetStateOk
 
-`func (o *ModelsWorkflowCertificateRequestDetailsModel) GetStateOk() (*int32, bool)`
+`func (o *ModelsWorkflowCertificateRequestDetailsModel) GetStateOk() (*int64, bool)`
 
 GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetState
 
-`func (o *ModelsWorkflowCertificateRequestDetailsModel) SetState(v int32)`
+`func (o *ModelsWorkflowCertificateRequestDetailsModel) SetState(v int64)`
 
 SetState sets State field to given value.
 

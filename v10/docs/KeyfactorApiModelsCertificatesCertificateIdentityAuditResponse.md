@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | Id of the account represented by the audit response | [optional] 
+**Id** | Pointer to **int64** | Id of the account represented by the audit response | [optional] 
 **AccountName** | Pointer to **string** | Name of the account represented by the audit response | [optional] 
 **IdentityType** | Pointer to **string** | The type of account represented by the audit response (User or Group) | [optional] 
 **SID** | Pointer to **string** | The SID of the account represented by the audit reponse | [optional] 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse) GetId() int32`
+`func (o *KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse) GetIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse) SetId(v int32)`
+`func (o *KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse) SetId(v int64)`
 
 SetId sets Id field to given value.
 

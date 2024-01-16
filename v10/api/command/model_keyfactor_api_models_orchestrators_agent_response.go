@@ -38,11 +38,11 @@ type KeyfactorApiModelsOrchestratorsAgentResponse struct {
 	// A string indicating the Active Directory user or service account the orchestrator is using to connect to Keyfactor Command.
 	Username *string `json:"Username,omitempty"`
 	// An integer indicating the platform for the orchestrator. - 0 = Unknown - 1 = Keyfactor Windows Orchestrator - 2 = Keyfactor Java Agent - 3 = Keyfactor Mac Auto-Enrollment Agent - 4 = Keyfactor Android Agent - 5 = Keyfactor Native Agent - 6 = Keyfactor Bash Orchestrator - 7 = Keyfactor Universal Orchestrator
-	AgentPlatform *int32 `json:"AgentPlatform,omitempty"`
+	AgentPlatform *int64 `json:"AgentPlatform,omitempty"`
 	// A string indicating the version of the orchestrator.
 	Version *string `json:"Version,omitempty"`
 	// An integer indicating the orchestrator status: - 1 = New - 2 = Approved - 3 = Disapproved
-	Status *int32 `json:"Status,omitempty"`
+	Status *int64 `json:"Status,omitempty"`
 	// The time, in UTC, at which the orchestrator last contacted Keyfactor Command.
 	LastSeen *time.Time `json:"LastSeen,omitempty"`
 	// An array of strings indicating the capabilities reported by the orchestrator. These may be built-in or custom capabilities.
@@ -180,9 +180,9 @@ func (o *KeyfactorApiModelsOrchestratorsAgentResponse) SetUsername(v string) {
 }
 
 // GetAgentPlatform returns the AgentPlatform field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsOrchestratorsAgentResponse) GetAgentPlatform() int32 {
+func (o *KeyfactorApiModelsOrchestratorsAgentResponse) GetAgentPlatform() int64 {
 	if o == nil || isNil(o.AgentPlatform) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AgentPlatform
@@ -190,7 +190,7 @@ func (o *KeyfactorApiModelsOrchestratorsAgentResponse) GetAgentPlatform() int32 
 
 // GetAgentPlatformOk returns a tuple with the AgentPlatform field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsOrchestratorsAgentResponse) GetAgentPlatformOk() (*int32, bool) {
+func (o *KeyfactorApiModelsOrchestratorsAgentResponse) GetAgentPlatformOk() (*int64, bool) {
 	if o == nil || isNil(o.AgentPlatform) {
 		return nil, false
 	}
@@ -206,8 +206,8 @@ func (o *KeyfactorApiModelsOrchestratorsAgentResponse) HasAgentPlatform() bool {
 	return false
 }
 
-// SetAgentPlatform gets a reference to the given int32 and assigns it to the AgentPlatform field.
-func (o *KeyfactorApiModelsOrchestratorsAgentResponse) SetAgentPlatform(v int32) {
+// SetAgentPlatform gets a reference to the given int64 and assigns it to the AgentPlatform field.
+func (o *KeyfactorApiModelsOrchestratorsAgentResponse) SetAgentPlatform(v int64) {
 	o.AgentPlatform = &v
 }
 
@@ -244,9 +244,9 @@ func (o *KeyfactorApiModelsOrchestratorsAgentResponse) SetVersion(v string) {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsOrchestratorsAgentResponse) GetStatus() int32 {
+func (o *KeyfactorApiModelsOrchestratorsAgentResponse) GetStatus() int64 {
 	if o == nil || isNil(o.Status) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status
@@ -254,7 +254,7 @@ func (o *KeyfactorApiModelsOrchestratorsAgentResponse) GetStatus() int32 {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsOrchestratorsAgentResponse) GetStatusOk() (*int32, bool) {
+func (o *KeyfactorApiModelsOrchestratorsAgentResponse) GetStatusOk() (*int64, bool) {
 	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
@@ -270,8 +270,8 @@ func (o *KeyfactorApiModelsOrchestratorsAgentResponse) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given int32 and assigns it to the Status field.
-func (o *KeyfactorApiModelsOrchestratorsAgentResponse) SetStatus(v int32) {
+// SetStatus gets a reference to the given int64 and assigns it to the Status field.
+func (o *KeyfactorApiModelsOrchestratorsAgentResponse) SetStatus(v int64) {
 	o.Status = &v
 }
 

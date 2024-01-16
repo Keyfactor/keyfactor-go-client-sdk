@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Comment** | Pointer to **string** |  | [optional] 
-**CertificateRequestIds** | Pointer to **[]int32** |  | [optional] 
+**CertificateRequestIds** | Pointer to **[]int64** |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasComment returns a boolean if a field has been set.
 
 ### GetCertificateRequestIds
 
-`func (o *ModelsWorkflowDenialRequest) GetCertificateRequestIds() []int32`
+`func (o *ModelsWorkflowDenialRequest) GetCertificateRequestIds() []int64`
 
 GetCertificateRequestIds returns the CertificateRequestIds field if non-nil, zero value otherwise.
 
 ### GetCertificateRequestIdsOk
 
-`func (o *ModelsWorkflowDenialRequest) GetCertificateRequestIdsOk() (*[]int32, bool)`
+`func (o *ModelsWorkflowDenialRequest) GetCertificateRequestIdsOk() (*[]int64, bool)`
 
 GetCertificateRequestIdsOk returns a tuple with the CertificateRequestIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertificateRequestIds
 
-`func (o *ModelsWorkflowDenialRequest) SetCertificateRequestIds(v []int32)`
+`func (o *ModelsWorkflowDenialRequest) SetCertificateRequestIds(v []int64)`
 
 SetCertificateRequestIds sets CertificateRequestIds field to given value.
 

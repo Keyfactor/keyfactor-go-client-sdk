@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **FeatureID** | Pointer to **string** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**Quantity** | Pointer to **int32** |  | [optional] 
+**Quantity** | Pointer to **int64** |  | [optional] 
 **ExpirationDate** | Pointer to **time.Time** |  | [optional] 
 
 ## Methods
@@ -106,20 +106,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetQuantity
 
-`func (o *KeyfactorApiModelsLicenseLicenseResponseLicensedFeature) GetQuantity() int32`
+`func (o *KeyfactorApiModelsLicenseLicenseResponseLicensedFeature) GetQuantity() int64`
 
 GetQuantity returns the Quantity field if non-nil, zero value otherwise.
 
 ### GetQuantityOk
 
-`func (o *KeyfactorApiModelsLicenseLicenseResponseLicensedFeature) GetQuantityOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsLicenseLicenseResponseLicensedFeature) GetQuantityOk() (*int64, bool)`
 
 GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQuantity
 
-`func (o *KeyfactorApiModelsLicenseLicenseResponseLicensedFeature) SetQuantity(v int32)`
+`func (o *KeyfactorApiModelsLicenseLicenseResponseLicensedFeature) SetQuantity(v int64)`
 
 SetQuantity sets Quantity field to given value.
 

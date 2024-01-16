@@ -36,7 +36,7 @@ type SecurityApiService service
 type ApiSecurityDeleteSecurityIdentityRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -64,7 +64,7 @@ SecurityDeleteSecurityIdentity Deletes the security identity whose ID is provide
 	@param id The ID of the security identity to be deleted.
 	@return ApiSecurityDeleteSecurityIdentityRequest
 */
-func (a *SecurityApiService) SecurityDeleteSecurityIdentity(ctx context.Context, id int32) ApiSecurityDeleteSecurityIdentityRequest {
+func (a *SecurityApiService) SecurityDeleteSecurityIdentity(ctx context.Context, id int64) ApiSecurityDeleteSecurityIdentityRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -152,7 +152,7 @@ func (a *SecurityApiService) SecurityDeleteSecurityIdentityExecute(r ApiSecurity
 type ApiSecurityIdentityPermissionsRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -180,7 +180,7 @@ SecurityIdentityPermissions Gets an object representing the permissions of the i
 	@param id The identifier of the security identity
 	@return ApiSecurityIdentityPermissionsRequest
 */
-func (a *SecurityApiService) SecurityIdentityPermissions(ctx context.Context, id int32) ApiSecurityIdentityPermissionsRequest {
+func (a *SecurityApiService) SecurityIdentityPermissions(ctx context.Context, id int64) ApiSecurityIdentityPermissionsRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 

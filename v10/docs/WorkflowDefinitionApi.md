@@ -252,7 +252,7 @@ import (
 func main() {
     definitionId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The Id of the definition to retrieve.
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    definitionVersion := int32(56) // int32 | The version to retrieve. If this value is not specified, the latest version will be returned. (optional)
+    definitionVersion := int64(789) // int64 | The version to retrieve. If this value is not specified, the latest version will be returned. (optional)
     exportable := true // bool | Indicates if the response should be cleansed of role ids for export. (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **definitionVersion** | **int32** | The version to retrieve. If this value is not specified, the latest version will be returned. | 
+ **definitionVersion** | **int64** | The version to retrieve. If this value is not specified, the latest version will be returned. | 
  **exportable** | **bool** | Indicates if the response should be cleansed of role ids for export. | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
@@ -473,10 +473,10 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
     queryQueryString := "queryQueryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
-    queryPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    queryReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
+    queryPageReturned := int64(789) // int64 | The current page within the result set to be returned (optional)
+    queryReturnLimit := int64(789) // int64 | Maximum number of records to be returned in a single call (optional)
     querySortField := "querySortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    querySortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    querySortAscending := int64(789) // int64 | Field sort direction [0=ascending, 1=descending] (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -504,10 +504,10 @@ Name | Type | Description  | Notes
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
  **queryQueryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
- **queryPageReturned** | **int32** | The current page within the result set to be returned | 
- **queryReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
+ **queryPageReturned** | **int64** | The current page within the result set to be returned | 
+ **queryReturnLimit** | **int64** | Maximum number of records to be returned in a single call | 
  **querySortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **querySortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **querySortAscending** | **int64** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
 
 ### Return type
 
@@ -549,10 +549,10 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
     queryQueryString := "queryQueryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
-    queryPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    queryReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
+    queryPageReturned := int64(789) // int64 | The current page within the result set to be returned (optional)
+    queryReturnLimit := int64(789) // int64 | Maximum number of records to be returned in a single call (optional)
     querySortField := "querySortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    querySortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    querySortAscending := int64(789) // int64 | Field sort direction [0=ascending, 1=descending] (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -580,10 +580,10 @@ Name | Type | Description  | Notes
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
  **queryQueryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
- **queryPageReturned** | **int32** | The current page within the result set to be returned | 
- **queryReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
+ **queryPageReturned** | **int64** | The current page within the result set to be returned | 
+ **queryReturnLimit** | **int64** | Maximum number of records to be returned in a single call | 
  **querySortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **querySortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **querySortAscending** | **int64** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
 
 ### Return type
 
@@ -625,10 +625,10 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
     queryQueryString := "queryQueryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
-    queryPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    queryReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
+    queryPageReturned := int64(789) // int64 | The current page within the result set to be returned (optional)
+    queryReturnLimit := int64(789) // int64 | Maximum number of records to be returned in a single call (optional)
     querySortField := "querySortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    querySortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    querySortAscending := int64(789) // int64 | Field sort direction [0=ascending, 1=descending] (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -656,10 +656,10 @@ Name | Type | Description  | Notes
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
  **queryQueryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
- **queryPageReturned** | **int32** | The current page within the result set to be returned | 
- **queryReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
+ **queryPageReturned** | **int64** | The current page within the result set to be returned | 
+ **queryReturnLimit** | **int64** | Maximum number of records to be returned in a single call | 
  **querySortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **querySortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **querySortAscending** | **int64** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
 
 ### Return type
 

@@ -33,8 +33,8 @@ type KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse struct {
 	AgentBlueprintStoreId *string `json:"AgentBlueprintStoreId,omitempty"`
 	AgentBlueprintId      *string `json:"AgentBlueprintId,omitempty"`
 	StorePath             *string `json:"StorePath,omitempty"`
-	ContainerId           *int32  `json:"ContainerId,omitempty"`
-	CertStoreType         *int32  `json:"CertStoreType,omitempty"`
+	ContainerId           *int64  `json:"ContainerId,omitempty"`
+	CertStoreType         *int64  `json:"CertStoreType,omitempty"`
 	CertStoreTypeName     *string `json:"CertStoreTypeName,omitempty"`
 	Approved              *bool   `json:"Approved,omitempty"`
 	CreateIfMissing       *bool   `json:"CreateIfMissing,omitempty"`
@@ -158,9 +158,9 @@ func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) SetStorePa
 }
 
 // GetContainerId returns the ContainerId field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) GetContainerId() int32 {
+func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) GetContainerId() int64 {
 	if o == nil || isNil(o.ContainerId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ContainerId
@@ -168,7 +168,7 @@ func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) GetContain
 
 // GetContainerIdOk returns a tuple with the ContainerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) GetContainerIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) GetContainerIdOk() (*int64, bool) {
 	if o == nil || isNil(o.ContainerId) {
 		return nil, false
 	}
@@ -184,15 +184,15 @@ func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) HasContain
 	return false
 }
 
-// SetContainerId gets a reference to the given int32 and assigns it to the ContainerId field.
-func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) SetContainerId(v int32) {
+// SetContainerId gets a reference to the given int64 and assigns it to the ContainerId field.
+func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) SetContainerId(v int64) {
 	o.ContainerId = &v
 }
 
 // GetCertStoreType returns the CertStoreType field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) GetCertStoreType() int32 {
+func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) GetCertStoreType() int64 {
 	if o == nil || isNil(o.CertStoreType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CertStoreType
@@ -200,7 +200,7 @@ func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) GetCertSto
 
 // GetCertStoreTypeOk returns a tuple with the CertStoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) GetCertStoreTypeOk() (*int32, bool) {
+func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) GetCertStoreTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.CertStoreType) {
 		return nil, false
 	}
@@ -216,8 +216,8 @@ func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) HasCertSto
 	return false
 }
 
-// SetCertStoreType gets a reference to the given int32 and assigns it to the CertStoreType field.
-func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) SetCertStoreType(v int32) {
+// SetCertStoreType gets a reference to the given int64 and assigns it to the CertStoreType field.
+func (o *KeyfactorApiModelsOrchestratorsAgentBlueprintStoresResponse) SetCertStoreType(v int64) {
 	o.CertStoreType = &v
 }
 

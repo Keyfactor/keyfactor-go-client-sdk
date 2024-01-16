@@ -31,7 +31,7 @@ var _ MappedNullable = &KeyfactorApiModelsCertificatesCertificateIdentityAuditRe
 // KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse Represents an account with a list of permission granted to it on a given certificate by either a role or collection
 type KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse struct {
 	// Id of the account represented by the audit response
-	Id *int32 `json:"Id,omitempty"`
+	Id *int64 `json:"Id,omitempty"`
 	// Name of the account represented by the audit response
 	AccountName *string `json:"AccountName,omitempty"`
 	// The type of account represented by the audit response (User or Group)
@@ -63,9 +63,9 @@ func NewKeyfactorApiModelsCertificatesCertificateIdentityAuditResponseWithDefaul
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse) GetId() int32 {
+func (o *KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -73,7 +73,7 @@ func (o *KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse) GetId()
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse) GetIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -89,8 +89,8 @@ func (o *KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse) HasId()
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *KeyfactorApiModelsCertificatesCertificateIdentityAuditResponse) SetId(v int64) {
 	o.Id = &v
 }
 

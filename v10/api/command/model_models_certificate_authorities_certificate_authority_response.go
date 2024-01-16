@@ -30,7 +30,7 @@ var _ MappedNullable = &ModelsCertificateAuthoritiesCertificateAuthorityResponse
 
 // ModelsCertificateAuthoritiesCertificateAuthorityResponse struct for ModelsCertificateAuthoritiesCertificateAuthorityResponse
 type ModelsCertificateAuthoritiesCertificateAuthorityResponse struct {
-	Id                     *int32                                                           `json:"Id,omitempty"`
+	Id                     *int64                                                           `json:"Id,omitempty"`
 	LogicalName            *string                                                          `json:"LogicalName,omitempty"`
 	HostName               *string                                                          `json:"HostName,omitempty"`
 	Delegate               *bool                                                            `json:"Delegate,omitempty"`
@@ -41,15 +41,15 @@ type ModelsCertificateAuthoritiesCertificateAuthorityResponse struct {
 	Agent                  *string                                                          `json:"Agent,omitempty"`
 	Standalone             *bool                                                            `json:"Standalone,omitempty"`
 	MonitorThresholds      *bool                                                            `json:"MonitorThresholds,omitempty"`
-	IssuanceMax            *int32                                                           `json:"IssuanceMax,omitempty"`
-	IssuanceMin            *int32                                                           `json:"IssuanceMin,omitempty"`
-	DenialMax              *int32                                                           `json:"DenialMax,omitempty"`
-	FailureMax             *int32                                                           `json:"FailureMax,omitempty"`
+	IssuanceMax            *int64                                                           `json:"IssuanceMax,omitempty"`
+	IssuanceMin            *int64                                                           `json:"IssuanceMin,omitempty"`
+	DenialMax              *int64                                                           `json:"DenialMax,omitempty"`
+	FailureMax             *int64                                                           `json:"FailureMax,omitempty"`
 	RFCEnforcement         *bool                                                            `json:"RFCEnforcement,omitempty"`
 	Properties             *string                                                          `json:"Properties,omitempty"`
-	AllowedEnrollmentTypes *int32                                                           `json:"AllowedEnrollmentTypes,omitempty"`
-	KeyRetention           *int32                                                           `json:"KeyRetention,omitempty"`
-	KeyRetentionDays       *int32                                                           `json:"KeyRetentionDays,omitempty"`
+	AllowedEnrollmentTypes *int64                                                           `json:"AllowedEnrollmentTypes,omitempty"`
+	KeyRetention           *int64                                                           `json:"KeyRetention,omitempty"`
+	KeyRetentionDays       *int64                                                           `json:"KeyRetentionDays,omitempty"`
 	ExplicitCredentials    *bool                                                            `json:"ExplicitCredentials,omitempty"`
 	SubscriberTerms        *bool                                                            `json:"SubscriberTerms,omitempty"`
 	ExplicitUser           *string                                                          `json:"ExplicitUser,omitempty"`
@@ -59,7 +59,7 @@ type ModelsCertificateAuthoritiesCertificateAuthorityResponse struct {
 	FullScan               *KeyfactorCommonSchedulingKeyfactorSchedule                      `json:"FullScan,omitempty"`
 	IncrementalScan        *KeyfactorCommonSchedulingKeyfactorSchedule                      `json:"IncrementalScan,omitempty"`
 	ThresholdCheck         *KeyfactorCommonSchedulingKeyfactorSchedule                      `json:"ThresholdCheck,omitempty"`
-	CAType                 *int32                                                           `json:"CAType,omitempty"`
+	CAType                 *int64                                                           `json:"CAType,omitempty"`
 	AuthCertificate        *ModelsCertificateAuthoritiesCertificateAuthorityAuthCertificate `json:"AuthCertificate,omitempty"`
 	EnforceUniqueDN        *bool                                                            `json:"EnforceUniqueDN,omitempty"`
 	LastScan               *string                                                          `json:"LastScan,omitempty"`
@@ -86,9 +86,9 @@ func NewModelsCertificateAuthoritiesCertificateAuthorityResponseWithDefaults() *
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetId() int32 {
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -96,7 +96,7 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetId() int32
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetIdOk() (*int32, bool) {
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -112,8 +112,8 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) HasId() bool 
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -438,9 +438,9 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) SetMonitorThr
 }
 
 // GetIssuanceMax returns the IssuanceMax field value if set, zero value otherwise.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetIssuanceMax() int32 {
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetIssuanceMax() int64 {
 	if o == nil || isNil(o.IssuanceMax) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.IssuanceMax
@@ -448,7 +448,7 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetIssuanceMa
 
 // GetIssuanceMaxOk returns a tuple with the IssuanceMax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetIssuanceMaxOk() (*int32, bool) {
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetIssuanceMaxOk() (*int64, bool) {
 	if o == nil || isNil(o.IssuanceMax) {
 		return nil, false
 	}
@@ -464,15 +464,15 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) HasIssuanceMa
 	return false
 }
 
-// SetIssuanceMax gets a reference to the given int32 and assigns it to the IssuanceMax field.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) SetIssuanceMax(v int32) {
+// SetIssuanceMax gets a reference to the given int64 and assigns it to the IssuanceMax field.
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) SetIssuanceMax(v int64) {
 	o.IssuanceMax = &v
 }
 
 // GetIssuanceMin returns the IssuanceMin field value if set, zero value otherwise.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetIssuanceMin() int32 {
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetIssuanceMin() int64 {
 	if o == nil || isNil(o.IssuanceMin) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.IssuanceMin
@@ -480,7 +480,7 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetIssuanceMi
 
 // GetIssuanceMinOk returns a tuple with the IssuanceMin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetIssuanceMinOk() (*int32, bool) {
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetIssuanceMinOk() (*int64, bool) {
 	if o == nil || isNil(o.IssuanceMin) {
 		return nil, false
 	}
@@ -496,15 +496,15 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) HasIssuanceMi
 	return false
 }
 
-// SetIssuanceMin gets a reference to the given int32 and assigns it to the IssuanceMin field.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) SetIssuanceMin(v int32) {
+// SetIssuanceMin gets a reference to the given int64 and assigns it to the IssuanceMin field.
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) SetIssuanceMin(v int64) {
 	o.IssuanceMin = &v
 }
 
 // GetDenialMax returns the DenialMax field value if set, zero value otherwise.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetDenialMax() int32 {
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetDenialMax() int64 {
 	if o == nil || isNil(o.DenialMax) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DenialMax
@@ -512,7 +512,7 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetDenialMax(
 
 // GetDenialMaxOk returns a tuple with the DenialMax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetDenialMaxOk() (*int32, bool) {
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetDenialMaxOk() (*int64, bool) {
 	if o == nil || isNil(o.DenialMax) {
 		return nil, false
 	}
@@ -528,15 +528,15 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) HasDenialMax(
 	return false
 }
 
-// SetDenialMax gets a reference to the given int32 and assigns it to the DenialMax field.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) SetDenialMax(v int32) {
+// SetDenialMax gets a reference to the given int64 and assigns it to the DenialMax field.
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) SetDenialMax(v int64) {
 	o.DenialMax = &v
 }
 
 // GetFailureMax returns the FailureMax field value if set, zero value otherwise.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetFailureMax() int32 {
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetFailureMax() int64 {
 	if o == nil || isNil(o.FailureMax) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.FailureMax
@@ -544,7 +544,7 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetFailureMax
 
 // GetFailureMaxOk returns a tuple with the FailureMax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetFailureMaxOk() (*int32, bool) {
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetFailureMaxOk() (*int64, bool) {
 	if o == nil || isNil(o.FailureMax) {
 		return nil, false
 	}
@@ -560,8 +560,8 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) HasFailureMax
 	return false
 }
 
-// SetFailureMax gets a reference to the given int32 and assigns it to the FailureMax field.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) SetFailureMax(v int32) {
+// SetFailureMax gets a reference to the given int64 and assigns it to the FailureMax field.
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) SetFailureMax(v int64) {
 	o.FailureMax = &v
 }
 
@@ -630,9 +630,9 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) SetProperties
 }
 
 // GetAllowedEnrollmentTypes returns the AllowedEnrollmentTypes field value if set, zero value otherwise.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetAllowedEnrollmentTypes() int32 {
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetAllowedEnrollmentTypes() int64 {
 	if o == nil || isNil(o.AllowedEnrollmentTypes) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllowedEnrollmentTypes
@@ -640,7 +640,7 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetAllowedEnr
 
 // GetAllowedEnrollmentTypesOk returns a tuple with the AllowedEnrollmentTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetAllowedEnrollmentTypesOk() (*int32, bool) {
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetAllowedEnrollmentTypesOk() (*int64, bool) {
 	if o == nil || isNil(o.AllowedEnrollmentTypes) {
 		return nil, false
 	}
@@ -656,15 +656,15 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) HasAllowedEnr
 	return false
 }
 
-// SetAllowedEnrollmentTypes gets a reference to the given int32 and assigns it to the AllowedEnrollmentTypes field.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) SetAllowedEnrollmentTypes(v int32) {
+// SetAllowedEnrollmentTypes gets a reference to the given int64 and assigns it to the AllowedEnrollmentTypes field.
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) SetAllowedEnrollmentTypes(v int64) {
 	o.AllowedEnrollmentTypes = &v
 }
 
 // GetKeyRetention returns the KeyRetention field value if set, zero value otherwise.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetKeyRetention() int32 {
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetKeyRetention() int64 {
 	if o == nil || isNil(o.KeyRetention) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KeyRetention
@@ -672,7 +672,7 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetKeyRetenti
 
 // GetKeyRetentionOk returns a tuple with the KeyRetention field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetKeyRetentionOk() (*int32, bool) {
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetKeyRetentionOk() (*int64, bool) {
 	if o == nil || isNil(o.KeyRetention) {
 		return nil, false
 	}
@@ -688,15 +688,15 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) HasKeyRetenti
 	return false
 }
 
-// SetKeyRetention gets a reference to the given int32 and assigns it to the KeyRetention field.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) SetKeyRetention(v int32) {
+// SetKeyRetention gets a reference to the given int64 and assigns it to the KeyRetention field.
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) SetKeyRetention(v int64) {
 	o.KeyRetention = &v
 }
 
 // GetKeyRetentionDays returns the KeyRetentionDays field value if set, zero value otherwise.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetKeyRetentionDays() int32 {
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetKeyRetentionDays() int64 {
 	if o == nil || isNil(o.KeyRetentionDays) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KeyRetentionDays
@@ -704,7 +704,7 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetKeyRetenti
 
 // GetKeyRetentionDaysOk returns a tuple with the KeyRetentionDays field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetKeyRetentionDaysOk() (*int32, bool) {
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetKeyRetentionDaysOk() (*int64, bool) {
 	if o == nil || isNil(o.KeyRetentionDays) {
 		return nil, false
 	}
@@ -720,8 +720,8 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) HasKeyRetenti
 	return false
 }
 
-// SetKeyRetentionDays gets a reference to the given int32 and assigns it to the KeyRetentionDays field.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) SetKeyRetentionDays(v int32) {
+// SetKeyRetentionDays gets a reference to the given int64 and assigns it to the KeyRetentionDays field.
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) SetKeyRetentionDays(v int64) {
 	o.KeyRetentionDays = &v
 }
 
@@ -1014,9 +1014,9 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) SetThresholdC
 }
 
 // GetCAType returns the CAType field value if set, zero value otherwise.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetCAType() int32 {
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetCAType() int64 {
 	if o == nil || isNil(o.CAType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CAType
@@ -1024,7 +1024,7 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetCAType() i
 
 // GetCATypeOk returns a tuple with the CAType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetCATypeOk() (*int32, bool) {
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) GetCATypeOk() (*int64, bool) {
 	if o == nil || isNil(o.CAType) {
 		return nil, false
 	}
@@ -1040,8 +1040,8 @@ func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) HasCAType() b
 	return false
 }
 
-// SetCAType gets a reference to the given int32 and assigns it to the CAType field.
-func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) SetCAType(v int32) {
+// SetCAType gets a reference to the given int64 and assigns it to the CAType field.
+func (o *ModelsCertificateAuthoritiesCertificateAuthorityResponse) SetCAType(v int64) {
 	o.CAType = &v
 }
 

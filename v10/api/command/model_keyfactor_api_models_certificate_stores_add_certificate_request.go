@@ -30,10 +30,10 @@ var _ MappedNullable = &KeyfactorApiModelsCertificateStoresAddCertificateRequest
 
 // KeyfactorApiModelsCertificateStoresAddCertificateRequest struct for KeyfactorApiModelsCertificateStoresAddCertificateRequest
 type KeyfactorApiModelsCertificateStoresAddCertificateRequest struct {
-	CertificateId        int32                                      `json:"CertificateId"`
+	CertificateId        int64                                      `json:"CertificateId"`
 	CertificateStores    []ModelsCertificateStoreEntry              `json:"CertificateStores"`
 	Schedule             KeyfactorCommonSchedulingKeyfactorSchedule `json:"Schedule"`
-	CollectionId         *int32                                     `json:"CollectionId,omitempty"`
+	CollectionId         *int64                                     `json:"CollectionId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -43,7 +43,7 @@ type _KeyfactorApiModelsCertificateStoresAddCertificateRequest KeyfactorApiModel
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKeyfactorApiModelsCertificateStoresAddCertificateRequest(certificateId int32, certificateStores []ModelsCertificateStoreEntry, schedule KeyfactorCommonSchedulingKeyfactorSchedule) *KeyfactorApiModelsCertificateStoresAddCertificateRequest {
+func NewKeyfactorApiModelsCertificateStoresAddCertificateRequest(certificateId int64, certificateStores []ModelsCertificateStoreEntry, schedule KeyfactorCommonSchedulingKeyfactorSchedule) *KeyfactorApiModelsCertificateStoresAddCertificateRequest {
 	this := KeyfactorApiModelsCertificateStoresAddCertificateRequest{}
 	this.CertificateId = certificateId
 	this.CertificateStores = certificateStores
@@ -60,9 +60,9 @@ func NewKeyfactorApiModelsCertificateStoresAddCertificateRequestWithDefaults() *
 }
 
 // GetCertificateId returns the CertificateId field value
-func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCertificateId() int32 {
+func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCertificateId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -71,7 +71,7 @@ func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCertificat
 
 // GetCertificateIdOk returns a tuple with the CertificateId field value
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCertificateIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCertificateIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -79,7 +79,7 @@ func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCertificat
 }
 
 // SetCertificateId sets field value
-func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) SetCertificateId(v int32) {
+func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) SetCertificateId(v int64) {
 	o.CertificateId = v
 }
 
@@ -132,9 +132,9 @@ func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) SetSchedule(v
 }
 
 // GetCollectionId returns the CollectionId field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCollectionId() int32 {
+func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCollectionId() int64 {
 	if o == nil || isNil(o.CollectionId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CollectionId
@@ -142,7 +142,7 @@ func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCollection
 
 // GetCollectionIdOk returns a tuple with the CollectionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCollectionIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCollectionIdOk() (*int64, bool) {
 	if o == nil || isNil(o.CollectionId) {
 		return nil, false
 	}
@@ -158,8 +158,8 @@ func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) HasCollection
 	return false
 }
 
-// SetCollectionId gets a reference to the given int32 and assigns it to the CollectionId field.
-func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) SetCollectionId(v int32) {
+// SetCollectionId gets a reference to the given int64 and assigns it to the CollectionId field.
+func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) SetCollectionId(v int64) {
 	o.CollectionId = &v
 }
 

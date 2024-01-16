@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Host** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **int32** |  | [optional] 
-**Port** | Pointer to **int32** |  | [optional] 
-**RelayAuthenticationType** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
+**Port** | Pointer to **int64** |  | [optional] 
+**RelayAuthenticationType** | Pointer to **int64** |  | [optional] 
 **RelayUsername** | Pointer to **string** |  | [optional] 
 **SenderAccount** | Pointer to **string** |  | [optional] 
 **SenderName** | Pointer to **string** |  | [optional] 
@@ -59,20 +59,20 @@ HasHost returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetId() int32`
+`func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetIdOk() (*int32, bool)`
+`func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *KeyfactorAPIModelsSMTPSMTPResponse) SetId(v int32)`
+`func (o *KeyfactorAPIModelsSMTPSMTPResponse) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -84,20 +84,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetPort
 
-`func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetPort() int32`
+`func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetPort() int64`
 
 GetPort returns the Port field if non-nil, zero value otherwise.
 
 ### GetPortOk
 
-`func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetPortOk() (*int32, bool)`
+`func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetPortOk() (*int64, bool)`
 
 GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPort
 
-`func (o *KeyfactorAPIModelsSMTPSMTPResponse) SetPort(v int32)`
+`func (o *KeyfactorAPIModelsSMTPSMTPResponse) SetPort(v int64)`
 
 SetPort sets Port field to given value.
 
@@ -109,20 +109,20 @@ HasPort returns a boolean if a field has been set.
 
 ### GetRelayAuthenticationType
 
-`func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetRelayAuthenticationType() int32`
+`func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetRelayAuthenticationType() int64`
 
 GetRelayAuthenticationType returns the RelayAuthenticationType field if non-nil, zero value otherwise.
 
 ### GetRelayAuthenticationTypeOk
 
-`func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetRelayAuthenticationTypeOk() (*int32, bool)`
+`func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetRelayAuthenticationTypeOk() (*int64, bool)`
 
 GetRelayAuthenticationTypeOk returns a tuple with the RelayAuthenticationType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelayAuthenticationType
 
-`func (o *KeyfactorAPIModelsSMTPSMTPResponse) SetRelayAuthenticationType(v int32)`
+`func (o *KeyfactorAPIModelsSMTPSMTPResponse) SetRelayAuthenticationType(v int64)`
 
 SetRelayAuthenticationType sets RelayAuthenticationType field to given value.
 

@@ -33,7 +33,7 @@ type ModelsCertificateRetrievalResponseCertificateStoreLocationDetailModel struc
 	StorePath            *string `json:"StorePath,omitempty"`
 	AgentPool            *string `json:"AgentPool,omitempty"`
 	IPAddress            *string `json:"IPAddress,omitempty"`
-	Port                 *int32  `json:"Port,omitempty"`
+	Port                 *int64  `json:"Port,omitempty"`
 	NetworkName          *string `json:"NetworkName,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -154,9 +154,9 @@ func (o *ModelsCertificateRetrievalResponseCertificateStoreLocationDetailModel) 
 }
 
 // GetPort returns the Port field value if set, zero value otherwise.
-func (o *ModelsCertificateRetrievalResponseCertificateStoreLocationDetailModel) GetPort() int32 {
+func (o *ModelsCertificateRetrievalResponseCertificateStoreLocationDetailModel) GetPort() int64 {
 	if o == nil || isNil(o.Port) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Port
@@ -164,7 +164,7 @@ func (o *ModelsCertificateRetrievalResponseCertificateStoreLocationDetailModel) 
 
 // GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRetrievalResponseCertificateStoreLocationDetailModel) GetPortOk() (*int32, bool) {
+func (o *ModelsCertificateRetrievalResponseCertificateStoreLocationDetailModel) GetPortOk() (*int64, bool) {
 	if o == nil || isNil(o.Port) {
 		return nil, false
 	}
@@ -180,8 +180,8 @@ func (o *ModelsCertificateRetrievalResponseCertificateStoreLocationDetailModel) 
 	return false
 }
 
-// SetPort gets a reference to the given int32 and assigns it to the Port field.
-func (o *ModelsCertificateRetrievalResponseCertificateStoreLocationDetailModel) SetPort(v int32) {
+// SetPort gets a reference to the given int64 and assigns it to the Port field.
+func (o *ModelsCertificateRetrievalResponseCertificateStoreLocationDetailModel) SetPort(v int64) {
 	o.Port = &v
 }
 

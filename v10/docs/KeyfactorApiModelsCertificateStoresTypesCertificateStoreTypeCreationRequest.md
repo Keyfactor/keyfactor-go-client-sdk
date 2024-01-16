@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **PowerShell** | Pointer to **bool** |  | [optional] 
 **BlueprintAllowed** | Pointer to **bool** |  | [optional] 
 **CustomAliasAllowed** | Pointer to **string** |  | [optional] 
-**ServerRegistration** | Pointer to **int32** |  | [optional] 
+**ServerRegistration** | Pointer to **int64** |  | [optional] 
 **InventoryEndpoint** | Pointer to **string** |  | [optional] 
 **InventoryJobTypeId** | Pointer to **string** |  | [optional] 
 **ManagementJobTypeId** | Pointer to **string** |  | [optional] 
@@ -387,20 +387,20 @@ HasCustomAliasAllowed returns a boolean if a field has been set.
 
 ### GetServerRegistration
 
-`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeCreationRequest) GetServerRegistration() int32`
+`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeCreationRequest) GetServerRegistration() int64`
 
 GetServerRegistration returns the ServerRegistration field if non-nil, zero value otherwise.
 
 ### GetServerRegistrationOk
 
-`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeCreationRequest) GetServerRegistrationOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeCreationRequest) GetServerRegistrationOk() (*int64, bool)`
 
 GetServerRegistrationOk returns a tuple with the ServerRegistration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerRegistration
 
-`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeCreationRequest) SetServerRegistration(v int32)`
+`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeCreationRequest) SetServerRegistration(v int64)`
 
 SetServerRegistration sets ServerRegistration field to given value.
 

@@ -53,11 +53,11 @@ func Test_command_ReportsApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("ReportsApi_ReportsCreateReportSchedule_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("ReportsApi_ReportsCreateReportSchedule_id: %v", id)
 
 		t.Log("ReportsApi_ReportsCreateReportSchedule_payload: <none>")
-		resp, httpRes, err := apiClient.ReportsApi.ReportsCreateReportSchedule(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.ReportsApi.ReportsCreateReportSchedule(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -68,11 +68,11 @@ func Test_command_ReportsApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("ReportsApi_ReportsDeleteReport_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("ReportsApi_ReportsDeleteReport_id: %v", id)
 
 		t.Log("ReportsApi_ReportsDeleteReport_payload: <none>")
-		httpRes, err := apiClient.ReportsApi.ReportsDeleteReport(context.Background(), id.(int32)).Execute()
+		httpRes, err := apiClient.ReportsApi.ReportsDeleteReport(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
@@ -82,11 +82,11 @@ func Test_command_ReportsApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("ReportsApi_ReportsDeleteReportSchedule_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("ReportsApi_ReportsDeleteReportSchedule_id: %v", id)
 
 		t.Log("ReportsApi_ReportsDeleteReportSchedule_payload: <none>")
-		httpRes, err := apiClient.ReportsApi.ReportsDeleteReportSchedule(context.Background(), id.(int32)).Execute()
+		httpRes, err := apiClient.ReportsApi.ReportsDeleteReportSchedule(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
@@ -96,11 +96,11 @@ func Test_command_ReportsApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("ReportsApi_ReportsGetCustomReport_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("ReportsApi_ReportsGetCustomReport_id: %v", id)
 
 		t.Log("ReportsApi_ReportsGetCustomReport_payload: <none>")
-		resp, httpRes, err := apiClient.ReportsApi.ReportsGetCustomReport(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.ReportsApi.ReportsGetCustomReport(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -111,11 +111,11 @@ func Test_command_ReportsApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("ReportsApi_ReportsGetReport_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("ReportsApi_ReportsGetReport_id: %v", id)
 
 		t.Log("ReportsApi_ReportsGetReport_payload: <none>")
-		resp, httpRes, err := apiClient.ReportsApi.ReportsGetReport(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.ReportsApi.ReportsGetReport(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -126,11 +126,11 @@ func Test_command_ReportsApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("ReportsApi_ReportsGetReportParameters_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("ReportsApi_ReportsGetReportParameters_id: %v", id)
 
 		t.Log("ReportsApi_ReportsGetReportParameters_payload: <none>")
-		resp, httpRes, err := apiClient.ReportsApi.ReportsGetReportParameters(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.ReportsApi.ReportsGetReportParameters(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -141,11 +141,11 @@ func Test_command_ReportsApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("ReportsApi_ReportsGetReportSchedule_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("ReportsApi_ReportsGetReportSchedule_id: %v", id)
 
 		t.Log("ReportsApi_ReportsGetReportSchedule_payload: <none>")
-		resp, httpRes, err := apiClient.ReportsApi.ReportsGetReportSchedule(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.ReportsApi.ReportsGetReportSchedule(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -156,11 +156,11 @@ func Test_command_ReportsApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("ReportsApi_ReportsGetReportSchedules_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("ReportsApi_ReportsGetReportSchedules_id: %v", id)
 
 		t.Log("ReportsApi_ReportsGetReportSchedules_payload: <none>")
-		resp, httpRes, err := apiClient.ReportsApi.ReportsGetReportSchedules(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.ReportsApi.ReportsGetReportSchedules(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -207,11 +207,11 @@ func Test_command_ReportsApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("ReportsApi_ReportsUpdateReportParameters_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("ReportsApi_ReportsUpdateReportParameters_id: %v", id)
 
 		t.Log("ReportsApi_ReportsUpdateReportParameters_payload: <none>")
-		resp, httpRes, err := apiClient.ReportsApi.ReportsUpdateReportParameters(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.ReportsApi.ReportsUpdateReportParameters(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -222,11 +222,11 @@ func Test_command_ReportsApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("ReportsApi_ReportsUpdateReportSchedule_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("ReportsApi_ReportsUpdateReportSchedule_id: %v", id)
 
 		t.Log("ReportsApi_ReportsUpdateReportSchedule_payload: <none>")
-		resp, httpRes, err := apiClient.ReportsApi.ReportsUpdateReportSchedule(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.ReportsApi.ReportsUpdateReportSchedule(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

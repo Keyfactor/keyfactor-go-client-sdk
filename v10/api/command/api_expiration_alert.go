@@ -172,7 +172,7 @@ func (a *ExpirationAlertApiService) ExpirationAlertAddExpirationAlertExecute(r A
 type ApiExpirationAlertDeleteExpirationAlertRequest struct {
 	ctx                     context.Context
 	ApiService              *ExpirationAlertApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -200,7 +200,7 @@ ExpirationAlertDeleteExpirationAlert Delete an expiration alert
 	@param id Id for the expiration alert
 	@return ApiExpirationAlertDeleteExpirationAlertRequest
 */
-func (a *ExpirationAlertApiService) ExpirationAlertDeleteExpirationAlert(ctx context.Context, id int32) ApiExpirationAlertDeleteExpirationAlertRequest {
+func (a *ExpirationAlertApiService) ExpirationAlertDeleteExpirationAlert(ctx context.Context, id int64) ApiExpirationAlertDeleteExpirationAlertRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -559,7 +559,7 @@ func (a *ExpirationAlertApiService) ExpirationAlertEditScheduleExecute(r ApiExpi
 type ApiExpirationAlertGetExpirationAlertRequest struct {
 	ctx                     context.Context
 	ApiService              *ExpirationAlertApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -587,7 +587,7 @@ ExpirationAlertGetExpirationAlert Get an expiration alert
 	@param id Id for the expiration alert to get
 	@return ApiExpirationAlertGetExpirationAlertRequest
 */
-func (a *ExpirationAlertApiService) ExpirationAlertGetExpirationAlert(ctx context.Context, id int32) ApiExpirationAlertGetExpirationAlertRequest {
+func (a *ExpirationAlertApiService) ExpirationAlertGetExpirationAlert(ctx context.Context, id int64) ApiExpirationAlertGetExpirationAlertRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -690,10 +690,10 @@ type ApiExpirationAlertGetExpirationAlertsRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pagedQueryQueryString   *string
-	pagedQueryPageReturned  *int32
-	pagedQueryReturnLimit   *int32
+	pagedQueryPageReturned  *int64
+	pagedQueryReturnLimit   *int64
 	pagedQuerySortField     *string
-	pagedQuerySortAscending *int32
+	pagedQuerySortAscending *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -715,13 +715,13 @@ func (r ApiExpirationAlertGetExpirationAlertsRequest) PagedQueryQueryString(page
 }
 
 // The current page within the result set to be returned
-func (r ApiExpirationAlertGetExpirationAlertsRequest) PagedQueryPageReturned(pagedQueryPageReturned int32) ApiExpirationAlertGetExpirationAlertsRequest {
+func (r ApiExpirationAlertGetExpirationAlertsRequest) PagedQueryPageReturned(pagedQueryPageReturned int64) ApiExpirationAlertGetExpirationAlertsRequest {
 	r.pagedQueryPageReturned = &pagedQueryPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiExpirationAlertGetExpirationAlertsRequest) PagedQueryReturnLimit(pagedQueryReturnLimit int32) ApiExpirationAlertGetExpirationAlertsRequest {
+func (r ApiExpirationAlertGetExpirationAlertsRequest) PagedQueryReturnLimit(pagedQueryReturnLimit int64) ApiExpirationAlertGetExpirationAlertsRequest {
 	r.pagedQueryReturnLimit = &pagedQueryReturnLimit
 	return r
 }
@@ -733,7 +733,7 @@ func (r ApiExpirationAlertGetExpirationAlertsRequest) PagedQuerySortField(pagedQ
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiExpirationAlertGetExpirationAlertsRequest) PagedQuerySortAscending(pagedQuerySortAscending int32) ApiExpirationAlertGetExpirationAlertsRequest {
+func (r ApiExpirationAlertGetExpirationAlertsRequest) PagedQuerySortAscending(pagedQuerySortAscending int64) ApiExpirationAlertGetExpirationAlertsRequest {
 	r.pagedQuerySortAscending = &pagedQuerySortAscending
 	return r
 }

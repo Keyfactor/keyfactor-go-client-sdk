@@ -30,7 +30,7 @@ var _ MappedNullable = &KeyfactorApiModelsMonitoringOCSPParametersResponse{}
 
 // KeyfactorApiModelsMonitoringOCSPParametersResponse struct for KeyfactorApiModelsMonitoringOCSPParametersResponse
 type KeyfactorApiModelsMonitoringOCSPParametersResponse struct {
-	CertificateAuthorityId *int32  `json:"CertificateAuthorityId,omitempty"`
+	CertificateAuthorityId *int64  `json:"CertificateAuthorityId,omitempty"`
 	AuthorityName          *string `json:"AuthorityName,omitempty"`
 	AuthorityNameId        *string `json:"AuthorityNameId,omitempty"`
 	AuthorityKeyId         *string `json:"AuthorityKeyId,omitempty"`
@@ -58,9 +58,9 @@ func NewKeyfactorApiModelsMonitoringOCSPParametersResponseWithDefaults() *Keyfac
 }
 
 // GetCertificateAuthorityId returns the CertificateAuthorityId field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsMonitoringOCSPParametersResponse) GetCertificateAuthorityId() int32 {
+func (o *KeyfactorApiModelsMonitoringOCSPParametersResponse) GetCertificateAuthorityId() int64 {
 	if o == nil || isNil(o.CertificateAuthorityId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CertificateAuthorityId
@@ -68,7 +68,7 @@ func (o *KeyfactorApiModelsMonitoringOCSPParametersResponse) GetCertificateAutho
 
 // GetCertificateAuthorityIdOk returns a tuple with the CertificateAuthorityId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsMonitoringOCSPParametersResponse) GetCertificateAuthorityIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsMonitoringOCSPParametersResponse) GetCertificateAuthorityIdOk() (*int64, bool) {
 	if o == nil || isNil(o.CertificateAuthorityId) {
 		return nil, false
 	}
@@ -84,8 +84,8 @@ func (o *KeyfactorApiModelsMonitoringOCSPParametersResponse) HasCertificateAutho
 	return false
 }
 
-// SetCertificateAuthorityId gets a reference to the given int32 and assigns it to the CertificateAuthorityId field.
-func (o *KeyfactorApiModelsMonitoringOCSPParametersResponse) SetCertificateAuthorityId(v int32) {
+// SetCertificateAuthorityId gets a reference to the given int64 and assigns it to the CertificateAuthorityId field.
+func (o *KeyfactorApiModelsMonitoringOCSPParametersResponse) SetCertificateAuthorityId(v int64) {
 	o.CertificateAuthorityId = &v
 }
 

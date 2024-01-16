@@ -30,7 +30,7 @@ var _ MappedNullable = &ModelsEnrollmentAvailableRenewal{}
 
 // ModelsEnrollmentAvailableRenewal struct for ModelsEnrollmentAvailableRenewal
 type ModelsEnrollmentAvailableRenewal struct {
-	AvailableRenewalType *int32  `json:"AvailableRenewalType,omitempty"`
+	AvailableRenewalType *int64  `json:"AvailableRenewalType,omitempty"`
 	Message              *string `json:"Message,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -55,9 +55,9 @@ func NewModelsEnrollmentAvailableRenewalWithDefaults() *ModelsEnrollmentAvailabl
 }
 
 // GetAvailableRenewalType returns the AvailableRenewalType field value if set, zero value otherwise.
-func (o *ModelsEnrollmentAvailableRenewal) GetAvailableRenewalType() int32 {
+func (o *ModelsEnrollmentAvailableRenewal) GetAvailableRenewalType() int64 {
 	if o == nil || isNil(o.AvailableRenewalType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AvailableRenewalType
@@ -65,7 +65,7 @@ func (o *ModelsEnrollmentAvailableRenewal) GetAvailableRenewalType() int32 {
 
 // GetAvailableRenewalTypeOk returns a tuple with the AvailableRenewalType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsEnrollmentAvailableRenewal) GetAvailableRenewalTypeOk() (*int32, bool) {
+func (o *ModelsEnrollmentAvailableRenewal) GetAvailableRenewalTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.AvailableRenewalType) {
 		return nil, false
 	}
@@ -81,8 +81,8 @@ func (o *ModelsEnrollmentAvailableRenewal) HasAvailableRenewalType() bool {
 	return false
 }
 
-// SetAvailableRenewalType gets a reference to the given int32 and assigns it to the AvailableRenewalType field.
-func (o *ModelsEnrollmentAvailableRenewal) SetAvailableRenewalType(v int32) {
+// SetAvailableRenewalType gets a reference to the given int64 and assigns it to the AvailableRenewalType field.
+func (o *ModelsEnrollmentAvailableRenewal) SetAvailableRenewalType(v int64) {
 	o.AvailableRenewalType = &v
 }
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Show** | **bool** |  | 
-**WarningHours** | Pointer to **int32** |  | [optional] 
+**WarningHours** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -48,20 +48,20 @@ SetShow sets Show field to given value.
 
 ### GetWarningHours
 
-`func (o *KeyfactorApiModelsMonitoringDashboardRequest) GetWarningHours() int32`
+`func (o *KeyfactorApiModelsMonitoringDashboardRequest) GetWarningHours() int64`
 
 GetWarningHours returns the WarningHours field if non-nil, zero value otherwise.
 
 ### GetWarningHoursOk
 
-`func (o *KeyfactorApiModelsMonitoringDashboardRequest) GetWarningHoursOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsMonitoringDashboardRequest) GetWarningHoursOk() (*int64, bool)`
 
 GetWarningHoursOk returns a tuple with the WarningHours field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWarningHours
 
-`func (o *KeyfactorApiModelsMonitoringDashboardRequest) SetWarningHours(v int32)`
+`func (o *KeyfactorApiModelsMonitoringDashboardRequest) SetWarningHours(v int64)`
 
 SetWarningHours sets WarningHours field to given value.
 

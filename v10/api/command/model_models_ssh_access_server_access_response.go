@@ -30,7 +30,7 @@ var _ MappedNullable = &ModelsSSHAccessServerAccessResponse{}
 
 // ModelsSSHAccessServerAccessResponse struct for ModelsSSHAccessServerAccessResponse
 type ModelsSSHAccessServerAccessResponse struct {
-	ServerId             *int32                                   `json:"ServerId,omitempty"`
+	ServerId             *int64                                   `json:"ServerId,omitempty"`
 	LogonUsers           []ModelsSSHAccessLogonUserAccessResponse `json:"LogonUsers,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -55,9 +55,9 @@ func NewModelsSSHAccessServerAccessResponseWithDefaults() *ModelsSSHAccessServer
 }
 
 // GetServerId returns the ServerId field value if set, zero value otherwise.
-func (o *ModelsSSHAccessServerAccessResponse) GetServerId() int32 {
+func (o *ModelsSSHAccessServerAccessResponse) GetServerId() int64 {
 	if o == nil || isNil(o.ServerId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ServerId
@@ -65,7 +65,7 @@ func (o *ModelsSSHAccessServerAccessResponse) GetServerId() int32 {
 
 // GetServerIdOk returns a tuple with the ServerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSHAccessServerAccessResponse) GetServerIdOk() (*int32, bool) {
+func (o *ModelsSSHAccessServerAccessResponse) GetServerIdOk() (*int64, bool) {
 	if o == nil || isNil(o.ServerId) {
 		return nil, false
 	}
@@ -81,8 +81,8 @@ func (o *ModelsSSHAccessServerAccessResponse) HasServerId() bool {
 	return false
 }
 
-// SetServerId gets a reference to the given int32 and assigns it to the ServerId field.
-func (o *ModelsSSHAccessServerAccessResponse) SetServerId(v int32) {
+// SetServerId gets a reference to the given int64 and assigns it to the ServerId field.
+func (o *ModelsSSHAccessServerAccessResponse) SetServerId(v int64) {
 	o.ServerId = &v
 }
 

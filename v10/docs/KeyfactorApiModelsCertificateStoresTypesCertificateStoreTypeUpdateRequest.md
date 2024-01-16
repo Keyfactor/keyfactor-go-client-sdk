@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StoreType** | **int32** |  | 
+**StoreType** | **int64** |  | 
 **Name** | **string** |  | 
 **ShortName** | **string** |  | 
 **Capability** | Pointer to **string** |  | [optional] 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest
 
-`func NewKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest(storeType int32, name string, shortName string, ) *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest`
+`func NewKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest(storeType int64, name string, shortName string, ) *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest`
 
 NewKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest instantiates a new KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -42,20 +42,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetStoreType
 
-`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest) GetStoreType() int32`
+`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest) GetStoreType() int64`
 
 GetStoreType returns the StoreType field if non-nil, zero value otherwise.
 
 ### GetStoreTypeOk
 
-`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest) GetStoreTypeOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest) GetStoreTypeOk() (*int64, bool)`
 
 GetStoreTypeOk returns a tuple with the StoreType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStoreType
 
-`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest) SetStoreType(v int32)`
+`func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest) SetStoreType(v int64)`
 
 SetStoreType sets StoreType field to given value.
 

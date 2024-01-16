@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AlertId** | Pointer to **int32** |  | [optional] 
+**AlertId** | Pointer to **int64** |  | [optional] 
 **SendAlerts** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAlertId
 
-`func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestRequest) GetAlertId() int32`
+`func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestRequest) GetAlertId() int64`
 
 GetAlertId returns the AlertId field if non-nil, zero value otherwise.
 
 ### GetAlertIdOk
 
-`func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestRequest) GetAlertIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestRequest) GetAlertIdOk() (*int64, bool)`
 
 GetAlertIdOk returns a tuple with the AlertId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAlertId
 
-`func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestRequest) SetAlertId(v int32)`
+`func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestRequest) SetAlertId(v int64)`
 
 SetAlertId sets AlertId field to given value.
 

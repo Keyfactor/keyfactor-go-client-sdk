@@ -30,7 +30,7 @@ var _ MappedNullable = &ModelsSSHAccessServerAccessRequest{}
 
 // ModelsSSHAccessServerAccessRequest struct for ModelsSSHAccessServerAccessRequest
 type ModelsSSHAccessServerAccessRequest struct {
-	ServerId             int32                                   `json:"ServerId"`
+	ServerId             int64                                   `json:"ServerId"`
 	LogonUsers           []ModelsSSHAccessLogonUserAccessRequest `json:"LogonUsers"`
 	AdditionalProperties map[string]interface{}
 }
@@ -41,7 +41,7 @@ type _ModelsSSHAccessServerAccessRequest ModelsSSHAccessServerAccessRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsSSHAccessServerAccessRequest(serverId int32, logonUsers []ModelsSSHAccessLogonUserAccessRequest) *ModelsSSHAccessServerAccessRequest {
+func NewModelsSSHAccessServerAccessRequest(serverId int64, logonUsers []ModelsSSHAccessLogonUserAccessRequest) *ModelsSSHAccessServerAccessRequest {
 	this := ModelsSSHAccessServerAccessRequest{}
 	this.ServerId = serverId
 	this.LogonUsers = logonUsers
@@ -57,9 +57,9 @@ func NewModelsSSHAccessServerAccessRequestWithDefaults() *ModelsSSHAccessServerA
 }
 
 // GetServerId returns the ServerId field value
-func (o *ModelsSSHAccessServerAccessRequest) GetServerId() int32 {
+func (o *ModelsSSHAccessServerAccessRequest) GetServerId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -68,7 +68,7 @@ func (o *ModelsSSHAccessServerAccessRequest) GetServerId() int32 {
 
 // GetServerIdOk returns a tuple with the ServerId field value
 // and a boolean to check if the value has been set.
-func (o *ModelsSSHAccessServerAccessRequest) GetServerIdOk() (*int32, bool) {
+func (o *ModelsSSHAccessServerAccessRequest) GetServerIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -76,7 +76,7 @@ func (o *ModelsSSHAccessServerAccessRequest) GetServerIdOk() (*int32, bool) {
 }
 
 // SetServerId sets field value
-func (o *ModelsSSHAccessServerAccessRequest) SetServerId(v int32) {
+func (o *ModelsSSHAccessServerAccessRequest) SetServerId(v int64) {
 	o.ServerId = v
 }
 

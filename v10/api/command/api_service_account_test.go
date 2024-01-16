@@ -53,11 +53,11 @@ func Test_command_ServiceAccountApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("ServiceAccountApi_ServiceAccountDeleteServiceAccount_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("ServiceAccountApi_ServiceAccountDeleteServiceAccount_id: %v", id)
 
 		t.Log("ServiceAccountApi_ServiceAccountDeleteServiceAccount_payload: <none>")
-		httpRes, err := apiClient.ServiceAccountApi.ServiceAccountDeleteServiceAccount(context.Background(), id.(int32)).Execute()
+		httpRes, err := apiClient.ServiceAccountApi.ServiceAccountDeleteServiceAccount(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
@@ -75,11 +75,11 @@ func Test_command_ServiceAccountApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("ServiceAccountApi_ServiceAccountGet_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("ServiceAccountApi_ServiceAccountGet_id: %v", id)
 
 		t.Log("ServiceAccountApi_ServiceAccountGet_payload: <none>")
-		resp, httpRes, err := apiClient.ServiceAccountApi.ServiceAccountGet(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.ServiceAccountApi.ServiceAccountGet(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -90,11 +90,11 @@ func Test_command_ServiceAccountApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("ServiceAccountApi_ServiceAccountGetServiceAccountKey_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("ServiceAccountApi_ServiceAccountGetServiceAccountKey_id: %v", id)
 
 		t.Log("ServiceAccountApi_ServiceAccountGetServiceAccountKey_payload: <none>")
-		resp, httpRes, err := apiClient.ServiceAccountApi.ServiceAccountGetServiceAccountKey(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.ServiceAccountApi.ServiceAccountGetServiceAccountKey(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -114,11 +114,11 @@ func Test_command_ServiceAccountApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("ServiceAccountApi_ServiceAccountRotateServiceAccountKey_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("ServiceAccountApi_ServiceAccountRotateServiceAccountKey_id: %v", id)
 
 		t.Log("ServiceAccountApi_ServiceAccountRotateServiceAccountKey_payload: <none>")
-		resp, httpRes, err := apiClient.ServiceAccountApi.ServiceAccountRotateServiceAccountKey(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.ServiceAccountApi.ServiceAccountRotateServiceAccountKey(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

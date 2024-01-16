@@ -31,7 +31,7 @@ var _ MappedNullable = &ModelsSSHUsersSshUserCreationRequest{}
 // ModelsSSHUsersSshUserCreationRequest struct for ModelsSSHUsersSshUserCreationRequest
 type ModelsSSHUsersSshUserCreationRequest struct {
 	Username             string  `json:"Username"`
-	LogonIds             []int32 `json:"LogonIds,omitempty"`
+	LogonIds             []int64 `json:"LogonIds,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,9 +80,9 @@ func (o *ModelsSSHUsersSshUserCreationRequest) SetUsername(v string) {
 }
 
 // GetLogonIds returns the LogonIds field value if set, zero value otherwise.
-func (o *ModelsSSHUsersSshUserCreationRequest) GetLogonIds() []int32 {
+func (o *ModelsSSHUsersSshUserCreationRequest) GetLogonIds() []int64 {
 	if o == nil || isNil(o.LogonIds) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.LogonIds
@@ -90,7 +90,7 @@ func (o *ModelsSSHUsersSshUserCreationRequest) GetLogonIds() []int32 {
 
 // GetLogonIdsOk returns a tuple with the LogonIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSHUsersSshUserCreationRequest) GetLogonIdsOk() ([]int32, bool) {
+func (o *ModelsSSHUsersSshUserCreationRequest) GetLogonIdsOk() ([]int64, bool) {
 	if o == nil || isNil(o.LogonIds) {
 		return nil, false
 	}
@@ -106,8 +106,8 @@ func (o *ModelsSSHUsersSshUserCreationRequest) HasLogonIds() bool {
 	return false
 }
 
-// SetLogonIds gets a reference to the given []int32 and assigns it to the LogonIds field.
-func (o *ModelsSSHUsersSshUserCreationRequest) SetLogonIds(v []int32) {
+// SetLogonIds gets a reference to the given []int64 and assigns it to the LogonIds field.
+func (o *ModelsSSHUsersSshUserCreationRequest) SetLogonIds(v []int64) {
 	o.LogonIds = v
 }
 

@@ -30,11 +30,11 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest{}
 
 // KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest struct for KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest
 type KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest struct {
-	Id                     *int32                                                       `json:"Id,omitempty"`
+	Id                     *int64                                                       `json:"Id,omitempty"`
 	DisplayName            string                                                       `json:"DisplayName"`
 	Subject                string                                                       `json:"Subject"`
 	Message                string                                                       `json:"Message"`
-	TemplateId             NullableInt32                                                `json:"TemplateId,omitempty"`
+	TemplateId             NullableInt64                                                `json:"TemplateId,omitempty"`
 	RegisteredEventHandler *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest `json:"RegisteredEventHandler,omitempty"`
 	Recipients             []string                                                     `json:"Recipients,omitempty"`
 	EventHandlerParameters []KeyfactorApiModelsEventHandlerEventHandlerParameterRequest `json:"EventHandlerParameters,omitempty"`
@@ -64,9 +64,9 @@ func NewKeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequestWithDefaults() *Ke
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) GetId() int32 {
+func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -74,7 +74,7 @@ func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) GetIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -90,8 +90,8 @@ func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -168,9 +168,9 @@ func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) SetMessage(v st
 }
 
 // GetTemplateId returns the TemplateId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) GetTemplateId() int32 {
+func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) GetTemplateId() int64 {
 	if o == nil || isNil(o.TemplateId.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TemplateId.Get()
@@ -179,7 +179,7 @@ func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) GetTemplateId()
 // GetTemplateIdOk returns a tuple with the TemplateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) GetTemplateIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) GetTemplateIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -195,8 +195,8 @@ func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) HasTemplateId()
 	return false
 }
 
-// SetTemplateId gets a reference to the given NullableInt32 and assigns it to the TemplateId field.
-func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) SetTemplateId(v int32) {
+// SetTemplateId gets a reference to the given NullableInt64 and assigns it to the TemplateId field.
+func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) SetTemplateId(v int64) {
 	o.TemplateId.Set(&v)
 }
 

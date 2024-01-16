@@ -36,7 +36,7 @@ type ModelsEnrollmentPFXEnrollmentRequest struct {
 	PopulateMissingValuesFromAD *bool                             `json:"PopulateMissingValuesFromAD,omitempty"`
 	Subject                     *string                           `json:"Subject,omitempty"`
 	IncludeChain                *bool                             `json:"IncludeChain,omitempty"`
-	RenewalCertificateId        *int32                            `json:"RenewalCertificateId,omitempty"`
+	RenewalCertificateId        *int64                            `json:"RenewalCertificateId,omitempty"`
 	CertificateAuthority        *string                           `json:"CertificateAuthority,omitempty"`
 	Metadata                    map[string]interface{}            `json:"Metadata,omitempty"`
 	AdditionalEnrollmentFields  map[string]map[string]interface{} `json:"AdditionalEnrollmentFields,omitempty"`
@@ -226,9 +226,9 @@ func (o *ModelsEnrollmentPFXEnrollmentRequest) SetIncludeChain(v bool) {
 }
 
 // GetRenewalCertificateId returns the RenewalCertificateId field value if set, zero value otherwise.
-func (o *ModelsEnrollmentPFXEnrollmentRequest) GetRenewalCertificateId() int32 {
+func (o *ModelsEnrollmentPFXEnrollmentRequest) GetRenewalCertificateId() int64 {
 	if o == nil || isNil(o.RenewalCertificateId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RenewalCertificateId
@@ -236,7 +236,7 @@ func (o *ModelsEnrollmentPFXEnrollmentRequest) GetRenewalCertificateId() int32 {
 
 // GetRenewalCertificateIdOk returns a tuple with the RenewalCertificateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsEnrollmentPFXEnrollmentRequest) GetRenewalCertificateIdOk() (*int32, bool) {
+func (o *ModelsEnrollmentPFXEnrollmentRequest) GetRenewalCertificateIdOk() (*int64, bool) {
 	if o == nil || isNil(o.RenewalCertificateId) {
 		return nil, false
 	}
@@ -252,8 +252,8 @@ func (o *ModelsEnrollmentPFXEnrollmentRequest) HasRenewalCertificateId() bool {
 	return false
 }
 
-// SetRenewalCertificateId gets a reference to the given int32 and assigns it to the RenewalCertificateId field.
-func (o *ModelsEnrollmentPFXEnrollmentRequest) SetRenewalCertificateId(v int32) {
+// SetRenewalCertificateId gets a reference to the given int64 and assigns it to the RenewalCertificateId field.
+func (o *ModelsEnrollmentPFXEnrollmentRequest) SetRenewalCertificateId(v int64) {
 	o.RenewalCertificateId = &v
 }
 

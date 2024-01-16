@@ -171,7 +171,7 @@ func (a *CertificateAuthorityApiService) CertificateAuthorityCreateCAExecute(r A
 type ApiCertificateAuthorityDeleteCARequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateAuthorityApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -199,7 +199,7 @@ CertificateAuthorityDeleteCA Deletes a CertificateAuthority from the system, spe
 	@param id
 	@return ApiCertificateAuthorityDeleteCARequest
 */
-func (a *CertificateAuthorityApiService) CertificateAuthorityDeleteCA(ctx context.Context, id int32) ApiCertificateAuthorityDeleteCARequest {
+func (a *CertificateAuthorityApiService) CertificateAuthorityDeleteCA(ctx context.Context, id int64) ApiCertificateAuthorityDeleteCARequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -287,7 +287,7 @@ func (a *CertificateAuthorityApiService) CertificateAuthorityDeleteCAExecute(r A
 type ApiCertificateAuthorityGetCaRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateAuthorityApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -315,7 +315,7 @@ CertificateAuthorityGetCa Returns details for a single CA, specified by ID
 	@param id
 	@return ApiCertificateAuthorityGetCaRequest
 */
-func (a *CertificateAuthorityApiService) CertificateAuthorityGetCa(ctx context.Context, id int32) ApiCertificateAuthorityGetCaRequest {
+func (a *CertificateAuthorityApiService) CertificateAuthorityGetCa(ctx context.Context, id int64) ApiCertificateAuthorityGetCaRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -418,10 +418,10 @@ type ApiCertificateAuthorityGetCasRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -443,13 +443,13 @@ func (r ApiCertificateAuthorityGetCasRequest) PqQueryString(pqQueryString string
 }
 
 // The current page within the result set to be returned
-func (r ApiCertificateAuthorityGetCasRequest) PqPageReturned(pqPageReturned int32) ApiCertificateAuthorityGetCasRequest {
+func (r ApiCertificateAuthorityGetCasRequest) PqPageReturned(pqPageReturned int64) ApiCertificateAuthorityGetCasRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiCertificateAuthorityGetCasRequest) PqReturnLimit(pqReturnLimit int32) ApiCertificateAuthorityGetCasRequest {
+func (r ApiCertificateAuthorityGetCasRequest) PqReturnLimit(pqReturnLimit int64) ApiCertificateAuthorityGetCasRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -461,7 +461,7 @@ func (r ApiCertificateAuthorityGetCasRequest) PqSortField(pqSortField string) Ap
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiCertificateAuthorityGetCasRequest) PqSortAscending(pqSortAscending int32) ApiCertificateAuthorityGetCasRequest {
+func (r ApiCertificateAuthorityGetCasRequest) PqSortAscending(pqSortAscending int64) ApiCertificateAuthorityGetCasRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }

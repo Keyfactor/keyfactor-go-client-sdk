@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **DisplayName** | Pointer to **string** |  | [optional] 
-**DataType** | Pointer to **int32** |  | [optional] 
+**DataType** | Pointer to **int64** |  | [optional] 
 **InstanceLevel** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -75,20 +75,20 @@ HasDisplayName returns a boolean if a field has been set.
 
 ### GetDataType
 
-`func (o *KeyfactorApiPAMProviderTypeParameterCreateRequest) GetDataType() int32`
+`func (o *KeyfactorApiPAMProviderTypeParameterCreateRequest) GetDataType() int64`
 
 GetDataType returns the DataType field if non-nil, zero value otherwise.
 
 ### GetDataTypeOk
 
-`func (o *KeyfactorApiPAMProviderTypeParameterCreateRequest) GetDataTypeOk() (*int32, bool)`
+`func (o *KeyfactorApiPAMProviderTypeParameterCreateRequest) GetDataTypeOk() (*int64, bool)`
 
 GetDataTypeOk returns a tuple with the DataType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataType
 
-`func (o *KeyfactorApiPAMProviderTypeParameterCreateRequest) SetDataType(v int32)`
+`func (o *KeyfactorApiPAMProviderTypeParameterCreateRequest) SetDataType(v int64)`
 
 SetDataType sets DataType field to given value.
 

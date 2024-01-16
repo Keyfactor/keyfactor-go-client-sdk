@@ -31,7 +31,7 @@ var _ MappedNullable = &KeyfactorApiModelsMonitoringEmailResponse{}
 // KeyfactorApiModelsMonitoringEmailResponse struct for KeyfactorApiModelsMonitoringEmailResponse
 type KeyfactorApiModelsMonitoringEmailResponse struct {
 	EnableReminder       *bool    `json:"EnableReminder,omitempty"`
-	WarningDays          *int32   `json:"WarningDays,omitempty"`
+	WarningDays          *int64   `json:"WarningDays,omitempty"`
 	Recipients           []string `json:"Recipients,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -88,9 +88,9 @@ func (o *KeyfactorApiModelsMonitoringEmailResponse) SetEnableReminder(v bool) {
 }
 
 // GetWarningDays returns the WarningDays field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsMonitoringEmailResponse) GetWarningDays() int32 {
+func (o *KeyfactorApiModelsMonitoringEmailResponse) GetWarningDays() int64 {
 	if o == nil || isNil(o.WarningDays) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WarningDays
@@ -98,7 +98,7 @@ func (o *KeyfactorApiModelsMonitoringEmailResponse) GetWarningDays() int32 {
 
 // GetWarningDaysOk returns a tuple with the WarningDays field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsMonitoringEmailResponse) GetWarningDaysOk() (*int32, bool) {
+func (o *KeyfactorApiModelsMonitoringEmailResponse) GetWarningDaysOk() (*int64, bool) {
 	if o == nil || isNil(o.WarningDays) {
 		return nil, false
 	}
@@ -114,8 +114,8 @@ func (o *KeyfactorApiModelsMonitoringEmailResponse) HasWarningDays() bool {
 	return false
 }
 
-// SetWarningDays gets a reference to the given int32 and assigns it to the WarningDays field.
-func (o *KeyfactorApiModelsMonitoringEmailResponse) SetWarningDays(v int32) {
+// SetWarningDays gets a reference to the given int64 and assigns it to the WarningDays field.
+func (o *KeyfactorApiModelsMonitoringEmailResponse) SetWarningDays(v int64) {
 	o.WarningDays = &v
 }
 

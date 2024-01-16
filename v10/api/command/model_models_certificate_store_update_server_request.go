@@ -30,12 +30,12 @@ var _ MappedNullable = &ModelsCertificateStoreUpdateServerRequest{}
 
 // ModelsCertificateStoreUpdateServerRequest struct for ModelsCertificateStoreUpdateServerRequest
 type ModelsCertificateStoreUpdateServerRequest struct {
-	Id                   int32                    `json:"Id"`
+	Id                   int64                    `json:"Id"`
 	Username             ModelsKeyfactorAPISecret `json:"Username"`
 	Password             ModelsKeyfactorAPISecret `json:"Password"`
 	UseSSL               bool                     `json:"UseSSL"`
 	Name                 string                   `json:"Name"`
-	Container            *int32                   `json:"Container,omitempty"`
+	Container            *int64                   `json:"Container,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,7 +45,7 @@ type _ModelsCertificateStoreUpdateServerRequest ModelsCertificateStoreUpdateServ
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsCertificateStoreUpdateServerRequest(id int32, username ModelsKeyfactorAPISecret, password ModelsKeyfactorAPISecret, useSSL bool, name string) *ModelsCertificateStoreUpdateServerRequest {
+func NewModelsCertificateStoreUpdateServerRequest(id int64, username ModelsKeyfactorAPISecret, password ModelsKeyfactorAPISecret, useSSL bool, name string) *ModelsCertificateStoreUpdateServerRequest {
 	this := ModelsCertificateStoreUpdateServerRequest{}
 	this.Id = id
 	this.Username = username
@@ -64,9 +64,9 @@ func NewModelsCertificateStoreUpdateServerRequestWithDefaults() *ModelsCertifica
 }
 
 // GetId returns the Id field value
-func (o *ModelsCertificateStoreUpdateServerRequest) GetId() int32 {
+func (o *ModelsCertificateStoreUpdateServerRequest) GetId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -75,7 +75,7 @@ func (o *ModelsCertificateStoreUpdateServerRequest) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateStoreUpdateServerRequest) GetIdOk() (*int32, bool) {
+func (o *ModelsCertificateStoreUpdateServerRequest) GetIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -83,7 +83,7 @@ func (o *ModelsCertificateStoreUpdateServerRequest) GetIdOk() (*int32, bool) {
 }
 
 // SetId sets field value
-func (o *ModelsCertificateStoreUpdateServerRequest) SetId(v int32) {
+func (o *ModelsCertificateStoreUpdateServerRequest) SetId(v int64) {
 	o.Id = v
 }
 
@@ -184,9 +184,9 @@ func (o *ModelsCertificateStoreUpdateServerRequest) SetName(v string) {
 }
 
 // GetContainer returns the Container field value if set, zero value otherwise.
-func (o *ModelsCertificateStoreUpdateServerRequest) GetContainer() int32 {
+func (o *ModelsCertificateStoreUpdateServerRequest) GetContainer() int64 {
 	if o == nil || isNil(o.Container) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Container
@@ -194,7 +194,7 @@ func (o *ModelsCertificateStoreUpdateServerRequest) GetContainer() int32 {
 
 // GetContainerOk returns a tuple with the Container field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateStoreUpdateServerRequest) GetContainerOk() (*int32, bool) {
+func (o *ModelsCertificateStoreUpdateServerRequest) GetContainerOk() (*int64, bool) {
 	if o == nil || isNil(o.Container) {
 		return nil, false
 	}
@@ -210,8 +210,8 @@ func (o *ModelsCertificateStoreUpdateServerRequest) HasContainer() bool {
 	return false
 }
 
-// SetContainer gets a reference to the given int32 and assigns it to the Container field.
-func (o *ModelsCertificateStoreUpdateServerRequest) SetContainer(v int32) {
+// SetContainer gets a reference to the given int64 and assigns it to the Container field.
+func (o *ModelsCertificateStoreUpdateServerRequest) SetContainer(v int64) {
 	o.Container = &v
 }
 

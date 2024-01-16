@@ -33,8 +33,8 @@ type KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest struct {
 	DisplayName            string                                                       `json:"DisplayName"`
 	Subject                string                                                       `json:"Subject"`
 	Message                string                                                       `json:"Message"`
-	ExpirationWarningDays  int32                                                        `json:"ExpirationWarningDays"`
-	CertificateQueryId     *int32                                                       `json:"CertificateQueryId,omitempty"`
+	ExpirationWarningDays  int64                                                        `json:"ExpirationWarningDays"`
+	CertificateQueryId     *int64                                                       `json:"CertificateQueryId,omitempty"`
 	RegisteredEventHandler *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest `json:"RegisteredEventHandler,omitempty"`
 	Recipients             []string                                                     `json:"Recipients,omitempty"`
 	EventHandlerParameters []KeyfactorApiModelsEventHandlerEventHandlerParameterRequest `json:"EventHandlerParameters,omitempty"`
@@ -47,7 +47,7 @@ type _KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest Keyfactor
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest(displayName string, subject string, message string, expirationWarningDays int32) *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest {
+func NewKeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest(displayName string, subject string, message string, expirationWarningDays int64) *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest {
 	this := KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest{}
 	this.DisplayName = displayName
 	this.Subject = subject
@@ -137,9 +137,9 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) SetMe
 }
 
 // GetExpirationWarningDays returns the ExpirationWarningDays field value
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) GetExpirationWarningDays() int32 {
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) GetExpirationWarningDays() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -148,7 +148,7 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) GetEx
 
 // GetExpirationWarningDaysOk returns a tuple with the ExpirationWarningDays field value
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) GetExpirationWarningDaysOk() (*int32, bool) {
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) GetExpirationWarningDaysOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -156,14 +156,14 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) GetEx
 }
 
 // SetExpirationWarningDays sets field value
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) SetExpirationWarningDays(v int32) {
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) SetExpirationWarningDays(v int64) {
 	o.ExpirationWarningDays = v
 }
 
 // GetCertificateQueryId returns the CertificateQueryId field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) GetCertificateQueryId() int32 {
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) GetCertificateQueryId() int64 {
 	if o == nil || isNil(o.CertificateQueryId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CertificateQueryId
@@ -171,7 +171,7 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) GetCe
 
 // GetCertificateQueryIdOk returns a tuple with the CertificateQueryId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) GetCertificateQueryIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) GetCertificateQueryIdOk() (*int64, bool) {
 	if o == nil || isNil(o.CertificateQueryId) {
 		return nil, false
 	}
@@ -187,8 +187,8 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) HasCe
 	return false
 }
 
-// SetCertificateQueryId gets a reference to the given int32 and assigns it to the CertificateQueryId field.
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) SetCertificateQueryId(v int32) {
+// SetCertificateQueryId gets a reference to the given int64 and assigns it to the CertificateQueryId field.
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) SetCertificateQueryId(v int64) {
 	o.CertificateQueryId = &v
 }
 

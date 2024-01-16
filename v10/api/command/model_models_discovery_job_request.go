@@ -33,7 +33,7 @@ var _ MappedNullable = &ModelsDiscoveryJobRequest{}
 type ModelsDiscoveryJobRequest struct {
 	ClientMachine         *string                   `json:"ClientMachine,omitempty"`
 	AgentId               *string                   `json:"AgentId,omitempty"`
-	Type                  int32                     `json:"Type"`
+	Type                  int64                     `json:"Type"`
 	JobExecutionTimestamp *time.Time                `json:"JobExecutionTimestamp,omitempty"`
 	Dirs                  *string                   `json:"Dirs,omitempty"`
 	IgnoredDirs           *string                   `json:"IgnoredDirs,omitempty"`
@@ -53,7 +53,7 @@ type _ModelsDiscoveryJobRequest ModelsDiscoveryJobRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsDiscoveryJobRequest(type_ int32) *ModelsDiscoveryJobRequest {
+func NewModelsDiscoveryJobRequest(type_ int64) *ModelsDiscoveryJobRequest {
 	this := ModelsDiscoveryJobRequest{}
 	this.Type = type_
 	return &this
@@ -132,9 +132,9 @@ func (o *ModelsDiscoveryJobRequest) SetAgentId(v string) {
 }
 
 // GetType returns the Type field value
-func (o *ModelsDiscoveryJobRequest) GetType() int32 {
+func (o *ModelsDiscoveryJobRequest) GetType() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -143,7 +143,7 @@ func (o *ModelsDiscoveryJobRequest) GetType() int32 {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *ModelsDiscoveryJobRequest) GetTypeOk() (*int32, bool) {
+func (o *ModelsDiscoveryJobRequest) GetTypeOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -151,7 +151,7 @@ func (o *ModelsDiscoveryJobRequest) GetTypeOk() (*int32, bool) {
 }
 
 // SetType sets field value
-func (o *ModelsDiscoveryJobRequest) SetType(v int32) {
+func (o *ModelsDiscoveryJobRequest) SetType(v int64) {
 	o.Type = v
 }
 

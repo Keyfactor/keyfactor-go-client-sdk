@@ -30,7 +30,7 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsPendingPendingAlertDefinitionRes
 
 // KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse struct for KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse
 type KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse struct {
-	Id                     *int32                                                        `json:"Id,omitempty"`
+	Id                     *int64                                                        `json:"Id,omitempty"`
 	DisplayName            *string                                                       `json:"DisplayName,omitempty"`
 	Subject                *string                                                       `json:"Subject,omitempty"`
 	Message                *string                                                       `json:"Message,omitempty"`
@@ -61,9 +61,9 @@ func NewKeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponseWithDefault
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse) GetId() int32 {
+func (o *KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -71,7 +71,7 @@ func (o *KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse) GetId() 
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse) GetIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -87,8 +87,8 @@ func (o *KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse) HasId() 
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *KeyfactorApiModelsAlertsPendingPendingAlertDefinitionResponse) SetId(v int64) {
 	o.Id = &v
 }
 

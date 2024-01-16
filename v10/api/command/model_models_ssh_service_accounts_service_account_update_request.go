@@ -31,7 +31,7 @@ var _ MappedNullable = &ModelsSSHServiceAccountsServiceAccountUpdateRequest{}
 // ModelsSSHServiceAccountsServiceAccountUpdateRequest struct for ModelsSSHServiceAccountsServiceAccountUpdateRequest
 type ModelsSSHServiceAccountsServiceAccountUpdateRequest struct {
 	KeyUpdateRequest     ModelsSSHKeysKeyUpdateRequest `json:"KeyUpdateRequest"`
-	Id                   int32                         `json:"Id"`
+	Id                   int64                         `json:"Id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -41,7 +41,7 @@ type _ModelsSSHServiceAccountsServiceAccountUpdateRequest ModelsSSHServiceAccoun
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsSSHServiceAccountsServiceAccountUpdateRequest(keyUpdateRequest ModelsSSHKeysKeyUpdateRequest, id int32) *ModelsSSHServiceAccountsServiceAccountUpdateRequest {
+func NewModelsSSHServiceAccountsServiceAccountUpdateRequest(keyUpdateRequest ModelsSSHKeysKeyUpdateRequest, id int64) *ModelsSSHServiceAccountsServiceAccountUpdateRequest {
 	this := ModelsSSHServiceAccountsServiceAccountUpdateRequest{}
 	this.KeyUpdateRequest = keyUpdateRequest
 	this.Id = id
@@ -81,9 +81,9 @@ func (o *ModelsSSHServiceAccountsServiceAccountUpdateRequest) SetKeyUpdateReques
 }
 
 // GetId returns the Id field value
-func (o *ModelsSSHServiceAccountsServiceAccountUpdateRequest) GetId() int32 {
+func (o *ModelsSSHServiceAccountsServiceAccountUpdateRequest) GetId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -92,7 +92,7 @@ func (o *ModelsSSHServiceAccountsServiceAccountUpdateRequest) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *ModelsSSHServiceAccountsServiceAccountUpdateRequest) GetIdOk() (*int32, bool) {
+func (o *ModelsSSHServiceAccountsServiceAccountUpdateRequest) GetIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -100,7 +100,7 @@ func (o *ModelsSSHServiceAccountsServiceAccountUpdateRequest) GetIdOk() (*int32,
 }
 
 // SetId sets field value
-func (o *ModelsSSHServiceAccountsServiceAccountUpdateRequest) SetId(v int32) {
+func (o *ModelsSSHServiceAccountsServiceAccountUpdateRequest) SetId(v int64) {
 	o.Id = v
 }
 

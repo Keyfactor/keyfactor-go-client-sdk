@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **EndpointId** | Pointer to **string** |  | [optional] 
 **AuditId** | Pointer to **int64** |  | [optional] 
 **Timestamp** | Pointer to **time.Time** |  | [optional] 
-**Status** | Pointer to **int32** |  | [optional] 
-**JobType** | Pointer to **int32** |  | [optional] 
-**ProbeType** | Pointer to **int32** |  | [optional] 
+**Status** | Pointer to **int64** |  | [optional] 
+**JobType** | Pointer to **int64** |  | [optional] 
+**ProbeType** | Pointer to **int64** |  | [optional] 
 **ReverseDNS** | Pointer to **string** |  | [optional] 
 **HistoryCertificates** | Pointer to [**[]ModelsSSLEndpointHistoryResponseCertificateModel**](ModelsSSLEndpointHistoryResponseCertificateModel.md) |  | [optional] 
 
@@ -135,20 +135,20 @@ HasTimestamp returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *ModelsSSLEndpointHistoryResponse) GetStatus() int32`
+`func (o *ModelsSSLEndpointHistoryResponse) GetStatus() int64`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *ModelsSSLEndpointHistoryResponse) GetStatusOk() (*int32, bool)`
+`func (o *ModelsSSLEndpointHistoryResponse) GetStatusOk() (*int64, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *ModelsSSLEndpointHistoryResponse) SetStatus(v int32)`
+`func (o *ModelsSSLEndpointHistoryResponse) SetStatus(v int64)`
 
 SetStatus sets Status field to given value.
 
@@ -160,20 +160,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetJobType
 
-`func (o *ModelsSSLEndpointHistoryResponse) GetJobType() int32`
+`func (o *ModelsSSLEndpointHistoryResponse) GetJobType() int64`
 
 GetJobType returns the JobType field if non-nil, zero value otherwise.
 
 ### GetJobTypeOk
 
-`func (o *ModelsSSLEndpointHistoryResponse) GetJobTypeOk() (*int32, bool)`
+`func (o *ModelsSSLEndpointHistoryResponse) GetJobTypeOk() (*int64, bool)`
 
 GetJobTypeOk returns a tuple with the JobType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetJobType
 
-`func (o *ModelsSSLEndpointHistoryResponse) SetJobType(v int32)`
+`func (o *ModelsSSLEndpointHistoryResponse) SetJobType(v int64)`
 
 SetJobType sets JobType field to given value.
 
@@ -185,20 +185,20 @@ HasJobType returns a boolean if a field has been set.
 
 ### GetProbeType
 
-`func (o *ModelsSSLEndpointHistoryResponse) GetProbeType() int32`
+`func (o *ModelsSSLEndpointHistoryResponse) GetProbeType() int64`
 
 GetProbeType returns the ProbeType field if non-nil, zero value otherwise.
 
 ### GetProbeTypeOk
 
-`func (o *ModelsSSLEndpointHistoryResponse) GetProbeTypeOk() (*int32, bool)`
+`func (o *ModelsSSLEndpointHistoryResponse) GetProbeTypeOk() (*int64, bool)`
 
 GetProbeTypeOk returns a tuple with the ProbeType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProbeType
 
-`func (o *ModelsSSLEndpointHistoryResponse) SetProbeType(v int32)`
+`func (o *ModelsSSLEndpointHistoryResponse) SetProbeType(v int64)`
 
 SetProbeType sets ProbeType field to given value.
 

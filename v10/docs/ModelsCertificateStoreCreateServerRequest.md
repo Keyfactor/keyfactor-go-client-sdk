@@ -7,15 +7,15 @@ Name | Type | Description | Notes
 **Username** | [**ModelsKeyfactorAPISecret**](ModelsKeyfactorAPISecret.md) |  | 
 **Password** | [**ModelsKeyfactorAPISecret**](ModelsKeyfactorAPISecret.md) |  | 
 **UseSSL** | **bool** |  | 
-**ServerType** | **int32** |  | 
+**ServerType** | **int64** |  | 
 **Name** | **string** |  | 
-**Container** | Pointer to **int32** |  | [optional] 
+**Container** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
 ### NewModelsCertificateStoreCreateServerRequest
 
-`func NewModelsCertificateStoreCreateServerRequest(username ModelsKeyfactorAPISecret, password ModelsKeyfactorAPISecret, useSSL bool, serverType int32, name string, ) *ModelsCertificateStoreCreateServerRequest`
+`func NewModelsCertificateStoreCreateServerRequest(username ModelsKeyfactorAPISecret, password ModelsKeyfactorAPISecret, useSSL bool, serverType int64, name string, ) *ModelsCertificateStoreCreateServerRequest`
 
 NewModelsCertificateStoreCreateServerRequest instantiates a new ModelsCertificateStoreCreateServerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -92,20 +92,20 @@ SetUseSSL sets UseSSL field to given value.
 
 ### GetServerType
 
-`func (o *ModelsCertificateStoreCreateServerRequest) GetServerType() int32`
+`func (o *ModelsCertificateStoreCreateServerRequest) GetServerType() int64`
 
 GetServerType returns the ServerType field if non-nil, zero value otherwise.
 
 ### GetServerTypeOk
 
-`func (o *ModelsCertificateStoreCreateServerRequest) GetServerTypeOk() (*int32, bool)`
+`func (o *ModelsCertificateStoreCreateServerRequest) GetServerTypeOk() (*int64, bool)`
 
 GetServerTypeOk returns a tuple with the ServerType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerType
 
-`func (o *ModelsCertificateStoreCreateServerRequest) SetServerType(v int32)`
+`func (o *ModelsCertificateStoreCreateServerRequest) SetServerType(v int64)`
 
 SetServerType sets ServerType field to given value.
 
@@ -132,20 +132,20 @@ SetName sets Name field to given value.
 
 ### GetContainer
 
-`func (o *ModelsCertificateStoreCreateServerRequest) GetContainer() int32`
+`func (o *ModelsCertificateStoreCreateServerRequest) GetContainer() int64`
 
 GetContainer returns the Container field if non-nil, zero value otherwise.
 
 ### GetContainerOk
 
-`func (o *ModelsCertificateStoreCreateServerRequest) GetContainerOk() (*int32, bool)`
+`func (o *ModelsCertificateStoreCreateServerRequest) GetContainerOk() (*int64, bool)`
 
 GetContainerOk returns a tuple with the Container field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContainer
 
-`func (o *ModelsCertificateStoreCreateServerRequest) SetContainer(v int32)`
+`func (o *ModelsCertificateStoreCreateServerRequest) SetContainer(v int64)`
 
 SetContainer sets Container field to given value.
 

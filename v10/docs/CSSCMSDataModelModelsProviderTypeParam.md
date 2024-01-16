@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
-**DataType** | Pointer to **int32** |  | [optional] 
+**DataType** | Pointer to **int64** |  | [optional] 
 **InstanceLevel** | Pointer to **bool** |  | [optional] 
 **ProviderType** | Pointer to [**CSSCMSDataModelModelsProviderType**](CSSCMSDataModelModelsProviderType.md) |  | [optional] 
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *CSSCMSDataModelModelsProviderTypeParam) GetId() int32`
+`func (o *CSSCMSDataModelModelsProviderTypeParam) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *CSSCMSDataModelModelsProviderTypeParam) GetIdOk() (*int32, bool)`
+`func (o *CSSCMSDataModelModelsProviderTypeParam) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *CSSCMSDataModelModelsProviderTypeParam) SetId(v int32)`
+`func (o *CSSCMSDataModelModelsProviderTypeParam) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -107,20 +107,20 @@ HasDisplayName returns a boolean if a field has been set.
 
 ### GetDataType
 
-`func (o *CSSCMSDataModelModelsProviderTypeParam) GetDataType() int32`
+`func (o *CSSCMSDataModelModelsProviderTypeParam) GetDataType() int64`
 
 GetDataType returns the DataType field if non-nil, zero value otherwise.
 
 ### GetDataTypeOk
 
-`func (o *CSSCMSDataModelModelsProviderTypeParam) GetDataTypeOk() (*int32, bool)`
+`func (o *CSSCMSDataModelModelsProviderTypeParam) GetDataTypeOk() (*int64, bool)`
 
 GetDataTypeOk returns a tuple with the DataType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataType
 
-`func (o *CSSCMSDataModelModelsProviderTypeParam) SetDataType(v int32)`
+`func (o *CSSCMSDataModelModelsProviderTypeParam) SetDataType(v int64)`
 
 SetDataType sets DataType field to given value.
 

@@ -30,9 +30,9 @@ var _ MappedNullable = &ModelsSSHServersServerUpdateRequest{}
 
 // ModelsSSHServersServerUpdateRequest struct for ModelsSSHServersServerUpdateRequest
 type ModelsSSHServersServerUpdateRequest struct {
-	Id                   int32  `json:"Id"`
+	Id                   int64  `json:"Id"`
 	UnderManagement      *bool  `json:"UnderManagement,omitempty"`
-	Port                 *int32 `json:"Port,omitempty"`
+	Port                 *int64 `json:"Port,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -42,7 +42,7 @@ type _ModelsSSHServersServerUpdateRequest ModelsSSHServersServerUpdateRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsSSHServersServerUpdateRequest(id int32) *ModelsSSHServersServerUpdateRequest {
+func NewModelsSSHServersServerUpdateRequest(id int64) *ModelsSSHServersServerUpdateRequest {
 	this := ModelsSSHServersServerUpdateRequest{}
 	this.Id = id
 	return &this
@@ -57,9 +57,9 @@ func NewModelsSSHServersServerUpdateRequestWithDefaults() *ModelsSSHServersServe
 }
 
 // GetId returns the Id field value
-func (o *ModelsSSHServersServerUpdateRequest) GetId() int32 {
+func (o *ModelsSSHServersServerUpdateRequest) GetId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -68,7 +68,7 @@ func (o *ModelsSSHServersServerUpdateRequest) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *ModelsSSHServersServerUpdateRequest) GetIdOk() (*int32, bool) {
+func (o *ModelsSSHServersServerUpdateRequest) GetIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -76,7 +76,7 @@ func (o *ModelsSSHServersServerUpdateRequest) GetIdOk() (*int32, bool) {
 }
 
 // SetId sets field value
-func (o *ModelsSSHServersServerUpdateRequest) SetId(v int32) {
+func (o *ModelsSSHServersServerUpdateRequest) SetId(v int64) {
 	o.Id = v
 }
 
@@ -113,9 +113,9 @@ func (o *ModelsSSHServersServerUpdateRequest) SetUnderManagement(v bool) {
 }
 
 // GetPort returns the Port field value if set, zero value otherwise.
-func (o *ModelsSSHServersServerUpdateRequest) GetPort() int32 {
+func (o *ModelsSSHServersServerUpdateRequest) GetPort() int64 {
 	if o == nil || isNil(o.Port) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Port
@@ -123,7 +123,7 @@ func (o *ModelsSSHServersServerUpdateRequest) GetPort() int32 {
 
 // GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSHServersServerUpdateRequest) GetPortOk() (*int32, bool) {
+func (o *ModelsSSHServersServerUpdateRequest) GetPortOk() (*int64, bool) {
 	if o == nil || isNil(o.Port) {
 		return nil, false
 	}
@@ -139,8 +139,8 @@ func (o *ModelsSSHServersServerUpdateRequest) HasPort() bool {
 	return false
 }
 
-// SetPort gets a reference to the given int32 and assigns it to the Port field.
-func (o *ModelsSSHServersServerUpdateRequest) SetPort(v int32) {
+// SetPort gets a reference to the given int64 and assigns it to the Port field.
+func (o *ModelsSSHServersServerUpdateRequest) SetPort(v int64) {
 	o.Port = &v
 }
 

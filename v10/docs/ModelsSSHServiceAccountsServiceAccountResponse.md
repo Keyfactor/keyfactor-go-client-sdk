@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **ClientHostname** | Pointer to **string** |  | [optional] 
 **ServerGroup** | Pointer to [**ModelsSSHServerGroupsServerGroupResponse**](ModelsSSHServerGroupsServerGroupResponse.md) |  | [optional] 
 **User** | Pointer to [**ModelsSSHUsersSshUserResponse**](ModelsSSHUsersSshUserResponse.md) |  | [optional] 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ModelsSSHServiceAccountsServiceAccountResponse) GetId() int32`
+`func (o *ModelsSSHServiceAccountsServiceAccountResponse) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsSSHServiceAccountsServiceAccountResponse) GetIdOk() (*int32, bool)`
+`func (o *ModelsSSHServiceAccountsServiceAccountResponse) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsSSHServiceAccountsServiceAccountResponse) SetId(v int32)`
+`func (o *ModelsSSHServiceAccountsServiceAccountResponse) SetId(v int64)`
 
 SetId sets Id field to given value.
 

@@ -31,8 +31,8 @@ var _ MappedNullable = &KeyfactorApiModelsCertificateStoresCertificateStoreAppro
 // KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest struct for KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest
 type KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest struct {
 	Id                   *string                   `json:"Id,omitempty"`
-	ContainerId          *int32                    `json:"ContainerId,omitempty"`
-	CertStoreType        *int32                    `json:"CertStoreType,omitempty"`
+	ContainerId          *int64                    `json:"ContainerId,omitempty"`
+	CertStoreType        *int64                    `json:"CertStoreType,omitempty"`
 	Properties           *string                   `json:"Properties,omitempty"`
 	Password             *ModelsKeyfactorAPISecret `json:"Password,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -90,9 +90,9 @@ func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) SetI
 }
 
 // GetContainerId returns the ContainerId field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetContainerId() int32 {
+func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetContainerId() int64 {
 	if o == nil || isNil(o.ContainerId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ContainerId
@@ -100,7 +100,7 @@ func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetC
 
 // GetContainerIdOk returns a tuple with the ContainerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetContainerIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetContainerIdOk() (*int64, bool) {
 	if o == nil || isNil(o.ContainerId) {
 		return nil, false
 	}
@@ -116,15 +116,15 @@ func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) HasC
 	return false
 }
 
-// SetContainerId gets a reference to the given int32 and assigns it to the ContainerId field.
-func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) SetContainerId(v int32) {
+// SetContainerId gets a reference to the given int64 and assigns it to the ContainerId field.
+func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) SetContainerId(v int64) {
 	o.ContainerId = &v
 }
 
 // GetCertStoreType returns the CertStoreType field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetCertStoreType() int32 {
+func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetCertStoreType() int64 {
 	if o == nil || isNil(o.CertStoreType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CertStoreType
@@ -132,7 +132,7 @@ func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetC
 
 // GetCertStoreTypeOk returns a tuple with the CertStoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetCertStoreTypeOk() (*int32, bool) {
+func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetCertStoreTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.CertStoreType) {
 		return nil, false
 	}
@@ -148,8 +148,8 @@ func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) HasC
 	return false
 }
 
-// SetCertStoreType gets a reference to the given int32 and assigns it to the CertStoreType field.
-func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) SetCertStoreType(v int32) {
+// SetCertStoreType gets a reference to the given int64 and assigns it to the CertStoreType field.
+func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) SetCertStoreType(v int64) {
 	o.CertStoreType = &v
 }
 

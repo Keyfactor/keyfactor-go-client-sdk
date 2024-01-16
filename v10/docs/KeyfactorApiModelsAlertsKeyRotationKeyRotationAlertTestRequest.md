@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AlertId** | Pointer to **int32** |  | [optional] 
+**AlertId** | Pointer to **int64** |  | [optional] 
 **EvaluationDate** | Pointer to **time.Time** |  | [optional] 
 **PreviousEvaluationDate** | Pointer to **time.Time** |  | [optional] 
 **SendAlerts** | Pointer to **bool** |  | [optional] 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAlertId
 
-`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestRequest) GetAlertId() int32`
+`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestRequest) GetAlertId() int64`
 
 GetAlertId returns the AlertId field if non-nil, zero value otherwise.
 
 ### GetAlertIdOk
 
-`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestRequest) GetAlertIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestRequest) GetAlertIdOk() (*int64, bool)`
 
 GetAlertIdOk returns a tuple with the AlertId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAlertId
 
-`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestRequest) SetAlertId(v int32)`
+`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestRequest) SetAlertId(v int64)`
 
 SetAlertId sets AlertId field to given value.
 

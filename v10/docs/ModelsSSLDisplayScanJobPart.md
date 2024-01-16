@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ScanJobPartId** | Pointer to **string** |  | [optional] 
 **Agent** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to **int32** |  | [optional] 
+**Status** | Pointer to **int64** |  | [optional] 
 **StartTime** | Pointer to **time.Time** |  | [optional] 
 **EndTime** | Pointer to **time.Time** |  | [optional] 
-**EndpointCount** | Pointer to **int32** |  | [optional] 
+**EndpointCount** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -82,20 +82,20 @@ HasAgent returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *ModelsSSLDisplayScanJobPart) GetStatus() int32`
+`func (o *ModelsSSLDisplayScanJobPart) GetStatus() int64`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *ModelsSSLDisplayScanJobPart) GetStatusOk() (*int32, bool)`
+`func (o *ModelsSSLDisplayScanJobPart) GetStatusOk() (*int64, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *ModelsSSLDisplayScanJobPart) SetStatus(v int32)`
+`func (o *ModelsSSLDisplayScanJobPart) SetStatus(v int64)`
 
 SetStatus sets Status field to given value.
 
@@ -157,20 +157,20 @@ HasEndTime returns a boolean if a field has been set.
 
 ### GetEndpointCount
 
-`func (o *ModelsSSLDisplayScanJobPart) GetEndpointCount() int32`
+`func (o *ModelsSSLDisplayScanJobPart) GetEndpointCount() int64`
 
 GetEndpointCount returns the EndpointCount field if non-nil, zero value otherwise.
 
 ### GetEndpointCountOk
 
-`func (o *ModelsSSLDisplayScanJobPart) GetEndpointCountOk() (*int32, bool)`
+`func (o *ModelsSSLDisplayScanJobPart) GetEndpointCountOk() (*int64, bool)`
 
 GetEndpointCountOk returns a tuple with the EndpointCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEndpointCount
 
-`func (o *ModelsSSLDisplayScanJobPart) SetEndpointCount(v int32)`
+`func (o *ModelsSSLDisplayScanJobPart) SetEndpointCount(v int64)`
 
 SetEndpointCount sets EndpointCount field to given value.
 

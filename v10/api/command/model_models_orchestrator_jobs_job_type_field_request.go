@@ -31,7 +31,7 @@ var _ MappedNullable = &ModelsOrchestratorJobsJobTypeFieldRequest{}
 // ModelsOrchestratorJobsJobTypeFieldRequest struct for ModelsOrchestratorJobsJobTypeFieldRequest
 type ModelsOrchestratorJobsJobTypeFieldRequest struct {
 	Name                 string  `json:"Name"`
-	Type                 int32   `json:"Type"`
+	Type                 int64   `json:"Type"`
 	DefaultValue         *string `json:"DefaultValue,omitempty"`
 	Required             *bool   `json:"Required,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -43,7 +43,7 @@ type _ModelsOrchestratorJobsJobTypeFieldRequest ModelsOrchestratorJobsJobTypeFie
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsOrchestratorJobsJobTypeFieldRequest(name string, type_ int32) *ModelsOrchestratorJobsJobTypeFieldRequest {
+func NewModelsOrchestratorJobsJobTypeFieldRequest(name string, type_ int64) *ModelsOrchestratorJobsJobTypeFieldRequest {
 	this := ModelsOrchestratorJobsJobTypeFieldRequest{}
 	this.Name = name
 	this.Type = type_
@@ -83,9 +83,9 @@ func (o *ModelsOrchestratorJobsJobTypeFieldRequest) SetName(v string) {
 }
 
 // GetType returns the Type field value
-func (o *ModelsOrchestratorJobsJobTypeFieldRequest) GetType() int32 {
+func (o *ModelsOrchestratorJobsJobTypeFieldRequest) GetType() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -94,7 +94,7 @@ func (o *ModelsOrchestratorJobsJobTypeFieldRequest) GetType() int32 {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *ModelsOrchestratorJobsJobTypeFieldRequest) GetTypeOk() (*int32, bool) {
+func (o *ModelsOrchestratorJobsJobTypeFieldRequest) GetTypeOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -102,7 +102,7 @@ func (o *ModelsOrchestratorJobsJobTypeFieldRequest) GetTypeOk() (*int32, bool) {
 }
 
 // SetType sets field value
-func (o *ModelsOrchestratorJobsJobTypeFieldRequest) SetType(v int32) {
+func (o *ModelsOrchestratorJobsJobTypeFieldRequest) SetType(v int64) {
 	o.Type = v
 }
 

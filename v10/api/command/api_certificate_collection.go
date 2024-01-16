@@ -324,7 +324,7 @@ func (a *CertificateCollectionApiService) CertificateCollectionCreateCollectionE
 type ApiCertificateCollectionGetCollection0Request struct {
 	ctx                     context.Context
 	ApiService              *CertificateCollectionApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -352,7 +352,7 @@ CertificateCollectionGetCollection0 Returns the certificate collection definitio
 	@param id Identifier of the certificate collection
 	@return ApiCertificateCollectionGetCollection0Request
 */
-func (a *CertificateCollectionApiService) CertificateCollectionGetCollection0(ctx context.Context, id int32) ApiCertificateCollectionGetCollection0Request {
+func (a *CertificateCollectionApiService) CertificateCollectionGetCollection0(ctx context.Context, id int64) ApiCertificateCollectionGetCollection0Request {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -583,10 +583,10 @@ type ApiCertificateCollectionGetCollectionsRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -608,13 +608,13 @@ func (r ApiCertificateCollectionGetCollectionsRequest) PqQueryString(pqQueryStri
 }
 
 // The current page within the result set to be returned
-func (r ApiCertificateCollectionGetCollectionsRequest) PqPageReturned(pqPageReturned int32) ApiCertificateCollectionGetCollectionsRequest {
+func (r ApiCertificateCollectionGetCollectionsRequest) PqPageReturned(pqPageReturned int64) ApiCertificateCollectionGetCollectionsRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiCertificateCollectionGetCollectionsRequest) PqReturnLimit(pqReturnLimit int32) ApiCertificateCollectionGetCollectionsRequest {
+func (r ApiCertificateCollectionGetCollectionsRequest) PqReturnLimit(pqReturnLimit int64) ApiCertificateCollectionGetCollectionsRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -626,7 +626,7 @@ func (r ApiCertificateCollectionGetCollectionsRequest) PqSortField(pqSortField s
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiCertificateCollectionGetCollectionsRequest) PqSortAscending(pqSortAscending int32) ApiCertificateCollectionGetCollectionsRequest {
+func (r ApiCertificateCollectionGetCollectionsRequest) PqSortAscending(pqSortAscending int64) ApiCertificateCollectionGetCollectionsRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }
@@ -754,7 +754,7 @@ func (a *CertificateCollectionApiService) CertificateCollectionGetCollectionsExe
 type ApiCertificateCollectionSetCollectionPermissionsRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateCollectionApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	collectionPermissions   *[]ModelsCollectionRolePermissions
 	xKeyfactorApiVersion    *string
@@ -793,7 +793,7 @@ This endpoint should not be used as its use will potentially cause users to lose
 
 Deprecated
 */
-func (a *CertificateCollectionApiService) CertificateCollectionSetCollectionPermissions(ctx context.Context, id int32) ApiCertificateCollectionSetCollectionPermissionsRequest {
+func (a *CertificateCollectionApiService) CertificateCollectionSetCollectionPermissions(ctx context.Context, id int64) ApiCertificateCollectionSetCollectionPermissionsRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 

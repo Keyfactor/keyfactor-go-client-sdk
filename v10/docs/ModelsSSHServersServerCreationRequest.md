@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Hostname** | **string** |  | 
 **ServerGroupId** | **string** |  | 
 **UnderManagement** | Pointer to **bool** |  | [optional] 
-**Port** | Pointer to **int32** |  | [optional] 
+**Port** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -116,20 +116,20 @@ HasUnderManagement returns a boolean if a field has been set.
 
 ### GetPort
 
-`func (o *ModelsSSHServersServerCreationRequest) GetPort() int32`
+`func (o *ModelsSSHServersServerCreationRequest) GetPort() int64`
 
 GetPort returns the Port field if non-nil, zero value otherwise.
 
 ### GetPortOk
 
-`func (o *ModelsSSHServersServerCreationRequest) GetPortOk() (*int32, bool)`
+`func (o *ModelsSSHServersServerCreationRequest) GetPortOk() (*int64, bool)`
 
 GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPort
 
-`func (o *ModelsSSHServersServerCreationRequest) SetPort(v int32)`
+`func (o *ModelsSSHServersServerCreationRequest) SetPort(v int64)`
 
 SetPort sets Port field to given value.
 

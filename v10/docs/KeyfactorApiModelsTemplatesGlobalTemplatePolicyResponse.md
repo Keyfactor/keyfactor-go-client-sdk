@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RSAValidKeySizes** | Pointer to **[]int32** | The allowed RSA key sizes. | [optional] 
+**RSAValidKeySizes** | Pointer to **[]int64** | The allowed RSA key sizes. | [optional] 
 **ECCValidCurves** | Pointer to **[]string** | The allowed ECC curves. | [optional] 
 **AllowKeyReuse** | Pointer to **bool** | Whether or not keys can be reused. | [optional] 
 **AllowWildcards** | Pointer to **bool** | Whether or not wildcards can be used. | [optional] 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRSAValidKeySizes
 
-`func (o *KeyfactorApiModelsTemplatesGlobalTemplatePolicyResponse) GetRSAValidKeySizes() []int32`
+`func (o *KeyfactorApiModelsTemplatesGlobalTemplatePolicyResponse) GetRSAValidKeySizes() []int64`
 
 GetRSAValidKeySizes returns the RSAValidKeySizes field if non-nil, zero value otherwise.
 
 ### GetRSAValidKeySizesOk
 
-`func (o *KeyfactorApiModelsTemplatesGlobalTemplatePolicyResponse) GetRSAValidKeySizesOk() (*[]int32, bool)`
+`func (o *KeyfactorApiModelsTemplatesGlobalTemplatePolicyResponse) GetRSAValidKeySizesOk() (*[]int64, bool)`
 
 GetRSAValidKeySizesOk returns a tuple with the RSAValidKeySizes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRSAValidKeySizes
 
-`func (o *KeyfactorApiModelsTemplatesGlobalTemplatePolicyResponse) SetRSAValidKeySizes(v []int32)`
+`func (o *KeyfactorApiModelsTemplatesGlobalTemplatePolicyResponse) SetRSAValidKeySizes(v []int64)`
 
 SetRSAValidKeySizes sets RSAValidKeySizes field to given value.
 

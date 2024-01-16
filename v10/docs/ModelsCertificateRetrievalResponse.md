@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **Thumbprint** | Pointer to **string** |  | [optional] 
 **SerialNumber** | Pointer to **string** |  | [optional] 
 **IssuedDN** | Pointer to **NullableString** |  | [optional] 
@@ -13,28 +13,28 @@ Name | Type | Description | Notes
 **NotBefore** | Pointer to **time.Time** |  | [optional] 
 **NotAfter** | Pointer to **time.Time** |  | [optional] 
 **IssuerDN** | Pointer to **NullableString** |  | [optional] 
-**PrincipalId** | Pointer to **NullableInt32** |  | [optional] 
-**TemplateId** | Pointer to **NullableInt32** |  | [optional] 
-**CertState** | Pointer to **int32** |  | [optional] 
-**KeySizeInBits** | Pointer to **int32** |  | [optional] 
-**KeyType** | Pointer to **int32** |  | [optional] 
-**RequesterId** | Pointer to **int32** |  | [optional] 
+**PrincipalId** | Pointer to **NullableInt64** |  | [optional] 
+**TemplateId** | Pointer to **NullableInt64** |  | [optional] 
+**CertState** | Pointer to **int64** |  | [optional] 
+**KeySizeInBits** | Pointer to **int64** |  | [optional] 
+**KeyType** | Pointer to **int64** |  | [optional] 
+**RequesterId** | Pointer to **int64** |  | [optional] 
 **IssuedOU** | Pointer to **NullableString** |  | [optional] 
 **IssuedEmail** | Pointer to **NullableString** |  | [optional] 
-**KeyUsage** | Pointer to **int32** |  | [optional] 
+**KeyUsage** | Pointer to **int64** |  | [optional] 
 **SigningAlgorithm** | Pointer to **string** |  | [optional] 
 **CertStateString** | Pointer to **string** |  | [optional] 
 **KeyTypeString** | Pointer to **string** |  | [optional] 
 **RevocationEffDate** | Pointer to **NullableTime** |  | [optional] 
-**RevocationReason** | Pointer to **NullableInt32** |  | [optional] 
+**RevocationReason** | Pointer to **NullableInt64** |  | [optional] 
 **RevocationComment** | Pointer to **NullableString** |  | [optional] 
-**CertificateAuthorityId** | Pointer to **int32** |  | [optional] 
+**CertificateAuthorityId** | Pointer to **int64** |  | [optional] 
 **CertificateAuthorityName** | Pointer to **string** |  | [optional] 
 **TemplateName** | Pointer to **string** | Full template display name. | [optional] 
 **ArchivedKey** | Pointer to **bool** |  | [optional] 
 **HasPrivateKey** | Pointer to **bool** |  | [optional] 
 **PrincipalName** | Pointer to **NullableString** |  | [optional] 
-**CertRequestId** | Pointer to **int32** |  | [optional] 
+**CertRequestId** | Pointer to **int64** |  | [optional] 
 **RequesterName** | Pointer to **string** |  | [optional] 
 **ContentBytes** | Pointer to **string** |  | [optional] 
 **ExtendedKeyUsages** | Pointer to [**[]ModelsCertificateRetrievalResponseExtendedKeyUsageModel**](ModelsCertificateRetrievalResponseExtendedKeyUsageModel.md) |  | [optional] 
@@ -44,7 +44,7 @@ Name | Type | Description | Notes
 **SSLLocations** | Pointer to [**[]ModelsCertificateRetrievalResponseCertificateStoreLocationDetailModel**](ModelsCertificateRetrievalResponseCertificateStoreLocationDetailModel.md) |  | [optional] 
 **Locations** | Pointer to [**[]ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel**](ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel.md) |  | [optional] 
 **Metadata** | Pointer to **map[string]string** |  | [optional] 
-**CertificateKeyId** | Pointer to **int32** |  | [optional] 
+**CertificateKeyId** | Pointer to **int64** |  | [optional] 
 **CARowIndex** | Pointer to **int64** |  | [optional] [readonly] 
 **CARecordId** | Pointer to **string** |  | [optional] 
 **DetailedKeyUsage** | Pointer to [**ModelsCertificateRetrievalResponseDetailedKeyUsageModel**](ModelsCertificateRetrievalResponseDetailedKeyUsageModel.md) |  | [optional] 
@@ -72,20 +72,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ModelsCertificateRetrievalResponse) GetId() int32`
+`func (o *ModelsCertificateRetrievalResponse) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsCertificateRetrievalResponse) GetIdOk() (*int32, bool)`
+`func (o *ModelsCertificateRetrievalResponse) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsCertificateRetrievalResponse) SetId(v int32)`
+`func (o *ModelsCertificateRetrievalResponse) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -327,20 +327,20 @@ HasIssuerDN returns a boolean if a field has been set.
 UnsetIssuerDN ensures that no value is present for IssuerDN, not even an explicit nil
 ### GetPrincipalId
 
-`func (o *ModelsCertificateRetrievalResponse) GetPrincipalId() int32`
+`func (o *ModelsCertificateRetrievalResponse) GetPrincipalId() int64`
 
 GetPrincipalId returns the PrincipalId field if non-nil, zero value otherwise.
 
 ### GetPrincipalIdOk
 
-`func (o *ModelsCertificateRetrievalResponse) GetPrincipalIdOk() (*int32, bool)`
+`func (o *ModelsCertificateRetrievalResponse) GetPrincipalIdOk() (*int64, bool)`
 
 GetPrincipalIdOk returns a tuple with the PrincipalId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrincipalId
 
-`func (o *ModelsCertificateRetrievalResponse) SetPrincipalId(v int32)`
+`func (o *ModelsCertificateRetrievalResponse) SetPrincipalId(v int64)`
 
 SetPrincipalId sets PrincipalId field to given value.
 
@@ -362,20 +362,20 @@ HasPrincipalId returns a boolean if a field has been set.
 UnsetPrincipalId ensures that no value is present for PrincipalId, not even an explicit nil
 ### GetTemplateId
 
-`func (o *ModelsCertificateRetrievalResponse) GetTemplateId() int32`
+`func (o *ModelsCertificateRetrievalResponse) GetTemplateId() int64`
 
 GetTemplateId returns the TemplateId field if non-nil, zero value otherwise.
 
 ### GetTemplateIdOk
 
-`func (o *ModelsCertificateRetrievalResponse) GetTemplateIdOk() (*int32, bool)`
+`func (o *ModelsCertificateRetrievalResponse) GetTemplateIdOk() (*int64, bool)`
 
 GetTemplateIdOk returns a tuple with the TemplateId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTemplateId
 
-`func (o *ModelsCertificateRetrievalResponse) SetTemplateId(v int32)`
+`func (o *ModelsCertificateRetrievalResponse) SetTemplateId(v int64)`
 
 SetTemplateId sets TemplateId field to given value.
 
@@ -397,20 +397,20 @@ HasTemplateId returns a boolean if a field has been set.
 UnsetTemplateId ensures that no value is present for TemplateId, not even an explicit nil
 ### GetCertState
 
-`func (o *ModelsCertificateRetrievalResponse) GetCertState() int32`
+`func (o *ModelsCertificateRetrievalResponse) GetCertState() int64`
 
 GetCertState returns the CertState field if non-nil, zero value otherwise.
 
 ### GetCertStateOk
 
-`func (o *ModelsCertificateRetrievalResponse) GetCertStateOk() (*int32, bool)`
+`func (o *ModelsCertificateRetrievalResponse) GetCertStateOk() (*int64, bool)`
 
 GetCertStateOk returns a tuple with the CertState field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertState
 
-`func (o *ModelsCertificateRetrievalResponse) SetCertState(v int32)`
+`func (o *ModelsCertificateRetrievalResponse) SetCertState(v int64)`
 
 SetCertState sets CertState field to given value.
 
@@ -422,20 +422,20 @@ HasCertState returns a boolean if a field has been set.
 
 ### GetKeySizeInBits
 
-`func (o *ModelsCertificateRetrievalResponse) GetKeySizeInBits() int32`
+`func (o *ModelsCertificateRetrievalResponse) GetKeySizeInBits() int64`
 
 GetKeySizeInBits returns the KeySizeInBits field if non-nil, zero value otherwise.
 
 ### GetKeySizeInBitsOk
 
-`func (o *ModelsCertificateRetrievalResponse) GetKeySizeInBitsOk() (*int32, bool)`
+`func (o *ModelsCertificateRetrievalResponse) GetKeySizeInBitsOk() (*int64, bool)`
 
 GetKeySizeInBitsOk returns a tuple with the KeySizeInBits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeySizeInBits
 
-`func (o *ModelsCertificateRetrievalResponse) SetKeySizeInBits(v int32)`
+`func (o *ModelsCertificateRetrievalResponse) SetKeySizeInBits(v int64)`
 
 SetKeySizeInBits sets KeySizeInBits field to given value.
 
@@ -447,20 +447,20 @@ HasKeySizeInBits returns a boolean if a field has been set.
 
 ### GetKeyType
 
-`func (o *ModelsCertificateRetrievalResponse) GetKeyType() int32`
+`func (o *ModelsCertificateRetrievalResponse) GetKeyType() int64`
 
 GetKeyType returns the KeyType field if non-nil, zero value otherwise.
 
 ### GetKeyTypeOk
 
-`func (o *ModelsCertificateRetrievalResponse) GetKeyTypeOk() (*int32, bool)`
+`func (o *ModelsCertificateRetrievalResponse) GetKeyTypeOk() (*int64, bool)`
 
 GetKeyTypeOk returns a tuple with the KeyType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyType
 
-`func (o *ModelsCertificateRetrievalResponse) SetKeyType(v int32)`
+`func (o *ModelsCertificateRetrievalResponse) SetKeyType(v int64)`
 
 SetKeyType sets KeyType field to given value.
 
@@ -472,20 +472,20 @@ HasKeyType returns a boolean if a field has been set.
 
 ### GetRequesterId
 
-`func (o *ModelsCertificateRetrievalResponse) GetRequesterId() int32`
+`func (o *ModelsCertificateRetrievalResponse) GetRequesterId() int64`
 
 GetRequesterId returns the RequesterId field if non-nil, zero value otherwise.
 
 ### GetRequesterIdOk
 
-`func (o *ModelsCertificateRetrievalResponse) GetRequesterIdOk() (*int32, bool)`
+`func (o *ModelsCertificateRetrievalResponse) GetRequesterIdOk() (*int64, bool)`
 
 GetRequesterIdOk returns a tuple with the RequesterId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRequesterId
 
-`func (o *ModelsCertificateRetrievalResponse) SetRequesterId(v int32)`
+`func (o *ModelsCertificateRetrievalResponse) SetRequesterId(v int64)`
 
 SetRequesterId sets RequesterId field to given value.
 
@@ -567,20 +567,20 @@ HasIssuedEmail returns a boolean if a field has been set.
 UnsetIssuedEmail ensures that no value is present for IssuedEmail, not even an explicit nil
 ### GetKeyUsage
 
-`func (o *ModelsCertificateRetrievalResponse) GetKeyUsage() int32`
+`func (o *ModelsCertificateRetrievalResponse) GetKeyUsage() int64`
 
 GetKeyUsage returns the KeyUsage field if non-nil, zero value otherwise.
 
 ### GetKeyUsageOk
 
-`func (o *ModelsCertificateRetrievalResponse) GetKeyUsageOk() (*int32, bool)`
+`func (o *ModelsCertificateRetrievalResponse) GetKeyUsageOk() (*int64, bool)`
 
 GetKeyUsageOk returns a tuple with the KeyUsage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyUsage
 
-`func (o *ModelsCertificateRetrievalResponse) SetKeyUsage(v int32)`
+`func (o *ModelsCertificateRetrievalResponse) SetKeyUsage(v int64)`
 
 SetKeyUsage sets KeyUsage field to given value.
 
@@ -702,20 +702,20 @@ HasRevocationEffDate returns a boolean if a field has been set.
 UnsetRevocationEffDate ensures that no value is present for RevocationEffDate, not even an explicit nil
 ### GetRevocationReason
 
-`func (o *ModelsCertificateRetrievalResponse) GetRevocationReason() int32`
+`func (o *ModelsCertificateRetrievalResponse) GetRevocationReason() int64`
 
 GetRevocationReason returns the RevocationReason field if non-nil, zero value otherwise.
 
 ### GetRevocationReasonOk
 
-`func (o *ModelsCertificateRetrievalResponse) GetRevocationReasonOk() (*int32, bool)`
+`func (o *ModelsCertificateRetrievalResponse) GetRevocationReasonOk() (*int64, bool)`
 
 GetRevocationReasonOk returns a tuple with the RevocationReason field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRevocationReason
 
-`func (o *ModelsCertificateRetrievalResponse) SetRevocationReason(v int32)`
+`func (o *ModelsCertificateRetrievalResponse) SetRevocationReason(v int64)`
 
 SetRevocationReason sets RevocationReason field to given value.
 
@@ -772,20 +772,20 @@ HasRevocationComment returns a boolean if a field has been set.
 UnsetRevocationComment ensures that no value is present for RevocationComment, not even an explicit nil
 ### GetCertificateAuthorityId
 
-`func (o *ModelsCertificateRetrievalResponse) GetCertificateAuthorityId() int32`
+`func (o *ModelsCertificateRetrievalResponse) GetCertificateAuthorityId() int64`
 
 GetCertificateAuthorityId returns the CertificateAuthorityId field if non-nil, zero value otherwise.
 
 ### GetCertificateAuthorityIdOk
 
-`func (o *ModelsCertificateRetrievalResponse) GetCertificateAuthorityIdOk() (*int32, bool)`
+`func (o *ModelsCertificateRetrievalResponse) GetCertificateAuthorityIdOk() (*int64, bool)`
 
 GetCertificateAuthorityIdOk returns a tuple with the CertificateAuthorityId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertificateAuthorityId
 
-`func (o *ModelsCertificateRetrievalResponse) SetCertificateAuthorityId(v int32)`
+`func (o *ModelsCertificateRetrievalResponse) SetCertificateAuthorityId(v int64)`
 
 SetCertificateAuthorityId sets CertificateAuthorityId field to given value.
 
@@ -932,20 +932,20 @@ HasPrincipalName returns a boolean if a field has been set.
 UnsetPrincipalName ensures that no value is present for PrincipalName, not even an explicit nil
 ### GetCertRequestId
 
-`func (o *ModelsCertificateRetrievalResponse) GetCertRequestId() int32`
+`func (o *ModelsCertificateRetrievalResponse) GetCertRequestId() int64`
 
 GetCertRequestId returns the CertRequestId field if non-nil, zero value otherwise.
 
 ### GetCertRequestIdOk
 
-`func (o *ModelsCertificateRetrievalResponse) GetCertRequestIdOk() (*int32, bool)`
+`func (o *ModelsCertificateRetrievalResponse) GetCertRequestIdOk() (*int64, bool)`
 
 GetCertRequestIdOk returns a tuple with the CertRequestId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertRequestId
 
-`func (o *ModelsCertificateRetrievalResponse) SetCertRequestId(v int32)`
+`func (o *ModelsCertificateRetrievalResponse) SetCertRequestId(v int64)`
 
 SetCertRequestId sets CertRequestId field to given value.
 
@@ -1182,20 +1182,20 @@ HasMetadata returns a boolean if a field has been set.
 
 ### GetCertificateKeyId
 
-`func (o *ModelsCertificateRetrievalResponse) GetCertificateKeyId() int32`
+`func (o *ModelsCertificateRetrievalResponse) GetCertificateKeyId() int64`
 
 GetCertificateKeyId returns the CertificateKeyId field if non-nil, zero value otherwise.
 
 ### GetCertificateKeyIdOk
 
-`func (o *ModelsCertificateRetrievalResponse) GetCertificateKeyIdOk() (*int32, bool)`
+`func (o *ModelsCertificateRetrievalResponse) GetCertificateKeyIdOk() (*int64, bool)`
 
 GetCertificateKeyIdOk returns a tuple with the CertificateKeyId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertificateKeyId
 
-`func (o *ModelsCertificateRetrievalResponse) SetCertificateKeyId(v int32)`
+`func (o *ModelsCertificateRetrievalResponse) SetCertificateKeyId(v int64)`
 
 SetCertificateKeyId sets CertificateKeyId field to given value.
 

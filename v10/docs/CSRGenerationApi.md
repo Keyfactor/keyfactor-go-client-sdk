@@ -31,7 +31,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Keyfactor identifer of the CSR to be deleted
+    id := int64(789) // int64 | Keyfactor identifer of the CSR to be deleted
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Keyfactor identifer of the CSR to be deleted | 
+**id** | **int64** | Keyfactor identifer of the CSR to be deleted | 
 
 ### Other Parameters
 
@@ -102,7 +102,7 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    ids := []int32{int32(123)} // []int32 | Array of Keyfactor identifiers for the CSRs to be deleted
+    ids := []int64{int64(123)} // []int64 | Array of Keyfactor identifiers for the CSRs to be deleted
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -127,7 +127,7 @@ Other parameters are passed through a pointer to a apiCSRGenerationDeleteCSRsReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **ids** | **[]int32** | Array of Keyfactor identifiers for the CSRs to be deleted | 
+ **ids** | **[]int64** | Array of Keyfactor identifiers for the CSRs to be deleted | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
@@ -167,7 +167,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Keyfactor identifier of the CSR
+    id := int64(789) // int64 | Keyfactor identifier of the CSR
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
@@ -189,7 +189,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Keyfactor identifier of the CSR | 
+**id** | **int64** | Keyfactor identifier of the CSR | 
 
 ### Other Parameters
 
@@ -242,10 +242,10 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
     sqQueryString := "sqQueryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
-    sqPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    sqReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
+    sqPageReturned := int64(789) // int64 | The current page within the result set to be returned (optional)
+    sqReturnLimit := int64(789) // int64 | Maximum number of records to be returned in a single call (optional)
     sqSortField := "sqSortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    sqSortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    sqSortAscending := int64(789) // int64 | Field sort direction [0=ascending, 1=descending] (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -273,10 +273,10 @@ Name | Type | Description  | Notes
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
  **sqQueryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
- **sqPageReturned** | **int32** | The current page within the result set to be returned | 
- **sqReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
+ **sqPageReturned** | **int64** | The current page within the result set to be returned | 
+ **sqReturnLimit** | **int64** | Maximum number of records to be returned in a single call | 
  **sqSortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **sqSortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **sqSortAscending** | **int64** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
 
 ### Return type
 
@@ -316,7 +316,7 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    context := *openapiclient.NewModelsEnrollmentCSRGenerationRequest("Subject_example", "KeyType_example", int32(123)) // ModelsEnrollmentCSRGenerationRequest | CSR properties used to define the request - Key type [RSA, ECC], Key sizes (ex: RSA 1024, 2048, 4096/ECC 256, 384, 521), template short name or OID
+    context := *openapiclient.NewModelsEnrollmentCSRGenerationRequest("Subject_example", "KeyType_example", int64(123)) // ModelsEnrollmentCSRGenerationRequest | CSR properties used to define the request - Key type [RSA, ECC], Key sizes (ex: RSA 1024, 2048, 4096/ECC 256, 384, 521), template short name or OID
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))

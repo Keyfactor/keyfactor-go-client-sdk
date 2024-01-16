@@ -30,10 +30,10 @@ var _ MappedNullable = &ModelsTemplateRetrievalResponseTemplateEnrollmentFieldMo
 
 // ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel struct for ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel
 type ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel struct {
-	Id                   *int32   `json:"Id,omitempty"`
+	Id                   *int64   `json:"Id,omitempty"`
 	Name                 *string  `json:"Name,omitempty"`
 	Options              []string `json:"Options,omitempty"`
-	DataType             *int32   `json:"DataType,omitempty"`
+	DataType             *int64   `json:"DataType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -57,9 +57,9 @@ func NewModelsTemplateRetrievalResponseTemplateEnrollmentFieldModelWithDefaults(
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel) GetId() int32 {
+func (o *ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -67,7 +67,7 @@ func (o *ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel) GetId() in
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel) GetIdOk() (*int32, bool) {
+func (o *ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -83,8 +83,8 @@ func (o *ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel) HasId() bo
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -153,9 +153,9 @@ func (o *ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel) SetOptions
 }
 
 // GetDataType returns the DataType field value if set, zero value otherwise.
-func (o *ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel) GetDataType() int32 {
+func (o *ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel) GetDataType() int64 {
 	if o == nil || isNil(o.DataType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DataType
@@ -163,7 +163,7 @@ func (o *ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel) GetDataTyp
 
 // GetDataTypeOk returns a tuple with the DataType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel) GetDataTypeOk() (*int32, bool) {
+func (o *ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel) GetDataTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.DataType) {
 		return nil, false
 	}
@@ -179,8 +179,8 @@ func (o *ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel) HasDataTyp
 	return false
 }
 
-// SetDataType gets a reference to the given int32 and assigns it to the DataType field.
-func (o *ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel) SetDataType(v int32) {
+// SetDataType gets a reference to the given int64 and assigns it to the DataType field.
+func (o *ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel) SetDataType(v int64) {
 	o.DataType = &v
 }
 

@@ -30,7 +30,7 @@ var _ MappedNullable = &KeyfactorApiModelsEnrollmentManagementStoreTypeRequest{}
 
 // KeyfactorApiModelsEnrollmentManagementStoreTypeRequest struct for KeyfactorApiModelsEnrollmentManagementStoreTypeRequest
 type KeyfactorApiModelsEnrollmentManagementStoreTypeRequest struct {
-	StoreTypeId          *int32                   `json:"StoreTypeId,omitempty"`
+	StoreTypeId          *int64                   `json:"StoreTypeId,omitempty"`
 	Alias                *string                  `json:"Alias,omitempty"`
 	Overwrite            *bool                    `json:"Overwrite,omitempty"`
 	Properties           []map[string]interface{} `json:"Properties,omitempty"`
@@ -57,9 +57,9 @@ func NewKeyfactorApiModelsEnrollmentManagementStoreTypeRequestWithDefaults() *Ke
 }
 
 // GetStoreTypeId returns the StoreTypeId field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsEnrollmentManagementStoreTypeRequest) GetStoreTypeId() int32 {
+func (o *KeyfactorApiModelsEnrollmentManagementStoreTypeRequest) GetStoreTypeId() int64 {
 	if o == nil || isNil(o.StoreTypeId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.StoreTypeId
@@ -67,7 +67,7 @@ func (o *KeyfactorApiModelsEnrollmentManagementStoreTypeRequest) GetStoreTypeId(
 
 // GetStoreTypeIdOk returns a tuple with the StoreTypeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsEnrollmentManagementStoreTypeRequest) GetStoreTypeIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsEnrollmentManagementStoreTypeRequest) GetStoreTypeIdOk() (*int64, bool) {
 	if o == nil || isNil(o.StoreTypeId) {
 		return nil, false
 	}
@@ -83,8 +83,8 @@ func (o *KeyfactorApiModelsEnrollmentManagementStoreTypeRequest) HasStoreTypeId(
 	return false
 }
 
-// SetStoreTypeId gets a reference to the given int32 and assigns it to the StoreTypeId field.
-func (o *KeyfactorApiModelsEnrollmentManagementStoreTypeRequest) SetStoreTypeId(v int32) {
+// SetStoreTypeId gets a reference to the given int64 and assigns it to the StoreTypeId field.
+func (o *KeyfactorApiModelsEnrollmentManagementStoreTypeRequest) SetStoreTypeId(v int64) {
 	o.StoreTypeId = &v
 }
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SecretValue** | Pointer to **string** |  | [optional] 
 **Parameters** | Pointer to **map[string]string** |  | [optional] 
-**Provider** | Pointer to **int32** |  | [optional] 
+**Provider** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasParameters returns a boolean if a field has been set.
 
 ### GetProvider
 
-`func (o *ModelsKeyfactorAPISecret) GetProvider() int32`
+`func (o *ModelsKeyfactorAPISecret) GetProvider() int64`
 
 GetProvider returns the Provider field if non-nil, zero value otherwise.
 
 ### GetProviderOk
 
-`func (o *ModelsKeyfactorAPISecret) GetProviderOk() (*int32, bool)`
+`func (o *ModelsKeyfactorAPISecret) GetProviderOk() (*int64, bool)`
 
 GetProviderOk returns a tuple with the Provider field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvider
 
-`func (o *ModelsKeyfactorAPISecret) SetProvider(v int32)`
+`func (o *ModelsKeyfactorAPISecret) SetProvider(v int64)`
 
 SetProvider sets Provider field to given value.
 

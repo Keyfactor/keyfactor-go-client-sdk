@@ -172,7 +172,7 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeCreateCertificateSt
 type ApiCertificateStoreTypeDeleteCertificateStoreTypeRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateStoreTypeApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -202,7 +202,7 @@ This will ignore individual delete failures, and continue processing certificate
 	@param id Keyfactor identifier of the certificate store type to be deleted
 	@return ApiCertificateStoreTypeDeleteCertificateStoreTypeRequest
 */
-func (a *CertificateStoreTypeApiService) CertificateStoreTypeDeleteCertificateStoreType(ctx context.Context, id int32) ApiCertificateStoreTypeDeleteCertificateStoreTypeRequest {
+func (a *CertificateStoreTypeApiService) CertificateStoreTypeDeleteCertificateStoreType(ctx context.Context, id int64) ApiCertificateStoreTypeDeleteCertificateStoreTypeRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -291,7 +291,7 @@ type ApiCertificateStoreTypeDeleteCertificateStoreTypesRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateStoreTypeApiService
 	xKeyfactorRequestedWith *string
-	ids                     *[]int32
+	ids                     *[]int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -302,7 +302,7 @@ func (r ApiCertificateStoreTypeDeleteCertificateStoreTypesRequest) XKeyfactorReq
 }
 
 // Array of Keyfactor identifiers of the certificate store types to be deleted
-func (r ApiCertificateStoreTypeDeleteCertificateStoreTypesRequest) Ids(ids []int32) ApiCertificateStoreTypeDeleteCertificateStoreTypesRequest {
+func (r ApiCertificateStoreTypeDeleteCertificateStoreTypesRequest) Ids(ids []int64) ApiCertificateStoreTypeDeleteCertificateStoreTypesRequest {
 	r.ids = &ids
 	return r
 }
@@ -416,7 +416,7 @@ func (a *CertificateStoreTypeApiService) CertificateStoreTypeDeleteCertificateSt
 type ApiCertificateStoreTypeGetCertificateStoreType0Request struct {
 	ctx                     context.Context
 	ApiService              *CertificateStoreTypeApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -444,7 +444,7 @@ CertificateStoreTypeGetCertificateStoreType0 Returns a single certificate store 
 	@param id Keyfactor identifier of the certificate store type
 	@return ApiCertificateStoreTypeGetCertificateStoreType0Request
 */
-func (a *CertificateStoreTypeApiService) CertificateStoreTypeGetCertificateStoreType0(ctx context.Context, id int32) ApiCertificateStoreTypeGetCertificateStoreType0Request {
+func (a *CertificateStoreTypeApiService) CertificateStoreTypeGetCertificateStoreType0(ctx context.Context, id int64) ApiCertificateStoreTypeGetCertificateStoreType0Request {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -675,10 +675,10 @@ type ApiCertificateStoreTypeGetTypesRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	cstqueryQueryString     *string
-	cstqueryPageReturned    *int32
-	cstqueryReturnLimit     *int32
+	cstqueryPageReturned    *int64
+	cstqueryReturnLimit     *int64
 	cstquerySortField       *string
-	cstquerySortAscending   *int32
+	cstquerySortAscending   *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -700,13 +700,13 @@ func (r ApiCertificateStoreTypeGetTypesRequest) CstqueryQueryString(cstqueryQuer
 }
 
 // The current page within the result set to be returned
-func (r ApiCertificateStoreTypeGetTypesRequest) CstqueryPageReturned(cstqueryPageReturned int32) ApiCertificateStoreTypeGetTypesRequest {
+func (r ApiCertificateStoreTypeGetTypesRequest) CstqueryPageReturned(cstqueryPageReturned int64) ApiCertificateStoreTypeGetTypesRequest {
 	r.cstqueryPageReturned = &cstqueryPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiCertificateStoreTypeGetTypesRequest) CstqueryReturnLimit(cstqueryReturnLimit int32) ApiCertificateStoreTypeGetTypesRequest {
+func (r ApiCertificateStoreTypeGetTypesRequest) CstqueryReturnLimit(cstqueryReturnLimit int64) ApiCertificateStoreTypeGetTypesRequest {
 	r.cstqueryReturnLimit = &cstqueryReturnLimit
 	return r
 }
@@ -718,7 +718,7 @@ func (r ApiCertificateStoreTypeGetTypesRequest) CstquerySortField(cstquerySortFi
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiCertificateStoreTypeGetTypesRequest) CstquerySortAscending(cstquerySortAscending int32) ApiCertificateStoreTypeGetTypesRequest {
+func (r ApiCertificateStoreTypeGetTypesRequest) CstquerySortAscending(cstquerySortAscending int64) ApiCertificateStoreTypeGetTypesRequest {
 	r.cstquerySortAscending = &cstquerySortAscending
 	return r
 }

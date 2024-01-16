@@ -31,7 +31,7 @@ var _ MappedNullable = &ModelsWorkflowDenialRequest{}
 // ModelsWorkflowDenialRequest struct for ModelsWorkflowDenialRequest
 type ModelsWorkflowDenialRequest struct {
 	Comment               *string `json:"Comment,omitempty"`
-	CertificateRequestIds []int32 `json:"CertificateRequestIds,omitempty"`
+	CertificateRequestIds []int64 `json:"CertificateRequestIds,omitempty"`
 	AdditionalProperties  map[string]interface{}
 }
 
@@ -87,9 +87,9 @@ func (o *ModelsWorkflowDenialRequest) SetComment(v string) {
 }
 
 // GetCertificateRequestIds returns the CertificateRequestIds field value if set, zero value otherwise.
-func (o *ModelsWorkflowDenialRequest) GetCertificateRequestIds() []int32 {
+func (o *ModelsWorkflowDenialRequest) GetCertificateRequestIds() []int64 {
 	if o == nil || isNil(o.CertificateRequestIds) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.CertificateRequestIds
@@ -97,7 +97,7 @@ func (o *ModelsWorkflowDenialRequest) GetCertificateRequestIds() []int32 {
 
 // GetCertificateRequestIdsOk returns a tuple with the CertificateRequestIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsWorkflowDenialRequest) GetCertificateRequestIdsOk() ([]int32, bool) {
+func (o *ModelsWorkflowDenialRequest) GetCertificateRequestIdsOk() ([]int64, bool) {
 	if o == nil || isNil(o.CertificateRequestIds) {
 		return nil, false
 	}
@@ -113,8 +113,8 @@ func (o *ModelsWorkflowDenialRequest) HasCertificateRequestIds() bool {
 	return false
 }
 
-// SetCertificateRequestIds gets a reference to the given []int32 and assigns it to the CertificateRequestIds field.
-func (o *ModelsWorkflowDenialRequest) SetCertificateRequestIds(v []int32) {
+// SetCertificateRequestIds gets a reference to the given []int64 and assigns it to the CertificateRequestIds field.
+func (o *ModelsWorkflowDenialRequest) SetCertificateRequestIds(v []int64) {
 	o.CertificateRequestIds = v
 }
 

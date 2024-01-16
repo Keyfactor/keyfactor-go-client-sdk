@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RoleIds** | Pointer to **[]int32** | The roles that are allowed to send this signal. | [optional] 
+**RoleIds** | Pointer to **[]int64** | The roles that are allowed to send this signal. | [optional] 
 **SignalName** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRoleIds
 
-`func (o *KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse) GetRoleIds() []int32`
+`func (o *KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse) GetRoleIds() []int64`
 
 GetRoleIds returns the RoleIds field if non-nil, zero value otherwise.
 
 ### GetRoleIdsOk
 
-`func (o *KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse) GetRoleIdsOk() (*[]int32, bool)`
+`func (o *KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse) GetRoleIdsOk() (*[]int64, bool)`
 
 GetRoleIdsOk returns a tuple with the RoleIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRoleIds
 
-`func (o *KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse) SetRoleIds(v []int32)`
+`func (o *KeyfactorApiModelsWorkflowsDefinitionStepSignalResponse) SetRoleIds(v []int64)`
 
 SetRoleIds sets RoleIds field to given value.
 

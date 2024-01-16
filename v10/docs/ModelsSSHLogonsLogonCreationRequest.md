@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Username** | **string** |  | 
-**ServerId** | **int32** |  | 
-**UserIds** | Pointer to **[]int32** |  | [optional] 
+**ServerId** | **int64** |  | 
+**UserIds** | Pointer to **[]int64** |  | [optional] 
 
 ## Methods
 
 ### NewModelsSSHLogonsLogonCreationRequest
 
-`func NewModelsSSHLogonsLogonCreationRequest(username string, serverId int32, ) *ModelsSSHLogonsLogonCreationRequest`
+`func NewModelsSSHLogonsLogonCreationRequest(username string, serverId int64, ) *ModelsSSHLogonsLogonCreationRequest`
 
 NewModelsSSHLogonsLogonCreationRequest instantiates a new ModelsSSHLogonsLogonCreationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetUsername sets Username field to given value.
 
 ### GetServerId
 
-`func (o *ModelsSSHLogonsLogonCreationRequest) GetServerId() int32`
+`func (o *ModelsSSHLogonsLogonCreationRequest) GetServerId() int64`
 
 GetServerId returns the ServerId field if non-nil, zero value otherwise.
 
 ### GetServerIdOk
 
-`func (o *ModelsSSHLogonsLogonCreationRequest) GetServerIdOk() (*int32, bool)`
+`func (o *ModelsSSHLogonsLogonCreationRequest) GetServerIdOk() (*int64, bool)`
 
 GetServerIdOk returns a tuple with the ServerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerId
 
-`func (o *ModelsSSHLogonsLogonCreationRequest) SetServerId(v int32)`
+`func (o *ModelsSSHLogonsLogonCreationRequest) SetServerId(v int64)`
 
 SetServerId sets ServerId field to given value.
 
 
 ### GetUserIds
 
-`func (o *ModelsSSHLogonsLogonCreationRequest) GetUserIds() []int32`
+`func (o *ModelsSSHLogonsLogonCreationRequest) GetUserIds() []int64`
 
 GetUserIds returns the UserIds field if non-nil, zero value otherwise.
 
 ### GetUserIdsOk
 
-`func (o *ModelsSSHLogonsLogonCreationRequest) GetUserIdsOk() (*[]int32, bool)`
+`func (o *ModelsSSHLogonsLogonCreationRequest) GetUserIdsOk() (*[]int64, bool)`
 
 GetUserIdsOk returns a tuple with the UserIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserIds
 
-`func (o *ModelsSSHLogonsLogonCreationRequest) SetUserIds(v []int32)`
+`func (o *ModelsSSHLogonsLogonCreationRequest) SetUserIds(v []int64)`
 
 SetUserIds sets UserIds field to given value.
 

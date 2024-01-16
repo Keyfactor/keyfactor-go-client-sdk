@@ -172,7 +172,7 @@ func (a *LogonApiService) LogonCreateLogonExecute(r ApiLogonCreateLogonRequest) 
 type ApiLogonDeleteRequest struct {
 	ctx                     context.Context
 	ApiService              *LogonApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -200,7 +200,7 @@ LogonDelete Deletes a Logon associated with the provided identifier
 	@param id Keyfactor identifer of the Logon to be deleted
 	@return ApiLogonDeleteRequest
 */
-func (a *LogonApiService) LogonDelete(ctx context.Context, id int32) ApiLogonDeleteRequest {
+func (a *LogonApiService) LogonDelete(ctx context.Context, id int64) ApiLogonDeleteRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -288,7 +288,7 @@ func (a *LogonApiService) LogonDeleteExecute(r ApiLogonDeleteRequest) (*http.Res
 type ApiLogonGetLogonRequest struct {
 	ctx                     context.Context
 	ApiService              *LogonApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -316,7 +316,7 @@ LogonGetLogon Fetches a Logon associated with the provided identifier
 	@param id Keyfactor identifer of the Logon to be Fetched
 	@return ApiLogonGetLogonRequest
 */
-func (a *LogonApiService) LogonGetLogon(ctx context.Context, id int32) ApiLogonGetLogonRequest {
+func (a *LogonApiService) LogonGetLogon(ctx context.Context, id int64) ApiLogonGetLogonRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -555,10 +555,10 @@ type ApiLogonQueryLogonsRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -580,13 +580,13 @@ func (r ApiLogonQueryLogonsRequest) PqQueryString(pqQueryString string) ApiLogon
 }
 
 // The current page within the result set to be returned
-func (r ApiLogonQueryLogonsRequest) PqPageReturned(pqPageReturned int32) ApiLogonQueryLogonsRequest {
+func (r ApiLogonQueryLogonsRequest) PqPageReturned(pqPageReturned int64) ApiLogonQueryLogonsRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiLogonQueryLogonsRequest) PqReturnLimit(pqReturnLimit int32) ApiLogonQueryLogonsRequest {
+func (r ApiLogonQueryLogonsRequest) PqReturnLimit(pqReturnLimit int64) ApiLogonQueryLogonsRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -598,7 +598,7 @@ func (r ApiLogonQueryLogonsRequest) PqSortField(pqSortField string) ApiLogonQuer
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiLogonQueryLogonsRequest) PqSortAscending(pqSortAscending int32) ApiLogonQueryLogonsRequest {
+func (r ApiLogonQueryLogonsRequest) PqSortAscending(pqSortAscending int64) ApiLogonQueryLogonsRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }

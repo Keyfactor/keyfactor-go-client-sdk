@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CARowId** | Pointer to **int32** |  | [optional] [readonly] 
+**CARowId** | Pointer to **int64** |  | [optional] [readonly] 
 **CARequestId** | Pointer to **string** |  | [optional] 
 **CAHost** | Pointer to **string** |  | [optional] 
 **CALogicalName** | Pointer to **string** |  | [optional] 
-**KeyfactorRequestId** | Pointer to **int32** |  | [optional] 
+**KeyfactorRequestId** | Pointer to **int64** |  | [optional] 
 **Comment** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCARowId
 
-`func (o *ModelsWorkflowProcessedCertificateRequest) GetCARowId() int32`
+`func (o *ModelsWorkflowProcessedCertificateRequest) GetCARowId() int64`
 
 GetCARowId returns the CARowId field if non-nil, zero value otherwise.
 
 ### GetCARowIdOk
 
-`func (o *ModelsWorkflowProcessedCertificateRequest) GetCARowIdOk() (*int32, bool)`
+`func (o *ModelsWorkflowProcessedCertificateRequest) GetCARowIdOk() (*int64, bool)`
 
 GetCARowIdOk returns a tuple with the CARowId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCARowId
 
-`func (o *ModelsWorkflowProcessedCertificateRequest) SetCARowId(v int32)`
+`func (o *ModelsWorkflowProcessedCertificateRequest) SetCARowId(v int64)`
 
 SetCARowId sets CARowId field to given value.
 
@@ -132,20 +132,20 @@ HasCALogicalName returns a boolean if a field has been set.
 
 ### GetKeyfactorRequestId
 
-`func (o *ModelsWorkflowProcessedCertificateRequest) GetKeyfactorRequestId() int32`
+`func (o *ModelsWorkflowProcessedCertificateRequest) GetKeyfactorRequestId() int64`
 
 GetKeyfactorRequestId returns the KeyfactorRequestId field if non-nil, zero value otherwise.
 
 ### GetKeyfactorRequestIdOk
 
-`func (o *ModelsWorkflowProcessedCertificateRequest) GetKeyfactorRequestIdOk() (*int32, bool)`
+`func (o *ModelsWorkflowProcessedCertificateRequest) GetKeyfactorRequestIdOk() (*int64, bool)`
 
 GetKeyfactorRequestIdOk returns a tuple with the KeyfactorRequestId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyfactorRequestId
 
-`func (o *ModelsWorkflowProcessedCertificateRequest) SetKeyfactorRequestId(v int32)`
+`func (o *ModelsWorkflowProcessedCertificateRequest) SetKeyfactorRequestId(v int64)`
 
 SetKeyfactorRequestId sets KeyfactorRequestId field to given value.
 

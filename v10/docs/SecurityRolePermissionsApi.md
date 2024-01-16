@@ -38,7 +38,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Security role identifier
+    id := int64(789) // int64 | Security role identifier
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     collectionPermissions := []openapiclient.KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest{*openapiclient.NewKeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest()} // []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest | Collections permissions
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
@@ -61,7 +61,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Security role identifier | 
+**id** | **int64** | Security role identifier | 
 
 ### Other Parameters
 
@@ -114,7 +114,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Security role identifier
+    id := int64(789) // int64 | Security role identifier
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     containerPermissions := []openapiclient.KeyfactorApiModelsSecurityRolesContainerPermissionRequest{*openapiclient.NewKeyfactorApiModelsSecurityRolesContainerPermissionRequest()} // []KeyfactorApiModelsSecurityRolesContainerPermissionRequest | Container permissions
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
@@ -137,7 +137,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Security role identifier | 
+**id** | **int64** | Security role identifier | 
 
 ### Other Parameters
 
@@ -190,7 +190,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Security role identifier
+    id := int64(789) // int64 | Security role identifier
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     globalPermissions := []openapiclient.KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionRequest{*openapiclient.NewKeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionRequest()} // []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionRequest | Global permissions
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
@@ -213,7 +213,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Security role identifier | 
+**id** | **int64** | Security role identifier | 
 
 ### Other Parameters
 
@@ -264,7 +264,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Security role identifier
+    id := int64(789) // int64 | Security role identifier
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
@@ -286,7 +286,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Security role identifier | 
+**id** | **int64** | Security role identifier | 
 
 ### Other Parameters
 
@@ -336,7 +336,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Security role identifier
+    id := int64(789) // int64 | Security role identifier
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
@@ -358,7 +358,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Security role identifier | 
+**id** | **int64** | Security role identifier | 
 
 ### Other Parameters
 
@@ -408,7 +408,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Security role identifier
+    id := int64(789) // int64 | Security role identifier
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
@@ -430,7 +430,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Security role identifier | 
+**id** | **int64** | Security role identifier | 
 
 ### Other Parameters
 
@@ -480,7 +480,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Security role identifier
+    id := int64(789) // int64 | Security role identifier
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
@@ -502,7 +502,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Security role identifier | 
+**id** | **int64** | Security role identifier | 
 
 ### Other Parameters
 
@@ -554,7 +554,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Security role identifier
+    id := int64(789) // int64 | Security role identifier
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     collectionPermissions := []openapiclient.KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest{*openapiclient.NewKeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest()} // []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest | Collections permissions
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
@@ -577,7 +577,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Security role identifier | 
+**id** | **int64** | Security role identifier | 
 
 ### Other Parameters
 
@@ -630,7 +630,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Security role identifier
+    id := int64(789) // int64 | Security role identifier
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     containerPermissions := []openapiclient.KeyfactorApiModelsSecurityRolesContainerPermissionRequest{*openapiclient.NewKeyfactorApiModelsSecurityRolesContainerPermissionRequest()} // []KeyfactorApiModelsSecurityRolesContainerPermissionRequest | Container permissions
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
@@ -653,7 +653,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Security role identifier | 
+**id** | **int64** | Security role identifier | 
 
 ### Other Parameters
 
@@ -706,7 +706,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Security role identifier
+    id := int64(789) // int64 | Security role identifier
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     globalPermissions := []openapiclient.KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionRequest{*openapiclient.NewKeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionRequest()} // []KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionRequest | Global permissions
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
@@ -729,7 +729,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Security role identifier | 
+**id** | **int64** | Security role identifier | 
 
 ### Other Parameters
 

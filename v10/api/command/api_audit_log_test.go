@@ -53,11 +53,11 @@ func Test_command_AuditLogApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("AuditLogApi_AuditLogGetAuditLog_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("AuditLogApi_AuditLogGetAuditLog_id: %v", id)
 
 		t.Log("AuditLogApi_AuditLogGetAuditLog_payload: <none>")
-		resp, httpRes, err := apiClient.AuditLogApi.AuditLogGetAuditLog(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.AuditLogApi.AuditLogGetAuditLog(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -86,11 +86,11 @@ func Test_command_AuditLogApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("AuditLogApi_AuditLogValidateAuditLog_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("AuditLogApi_AuditLogValidateAuditLog_id: %v", id)
 
 		t.Log("AuditLogApi_AuditLogValidateAuditLog_payload: <none>")
-		resp, httpRes, err := apiClient.AuditLogApi.AuditLogValidateAuditLog(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.AuditLogApi.AuditLogValidateAuditLog(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

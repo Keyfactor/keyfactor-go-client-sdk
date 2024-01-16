@@ -33,7 +33,7 @@ type KeyfactorApiModelsAlertsPendingPendingAlertResponse struct {
 	Subject              *string  `json:"Subject,omitempty"`
 	Message              *string  `json:"Message,omitempty"`
 	Recipients           []string `json:"Recipients,omitempty"`
-	CARequestId          *int32   `json:"CARequestId,omitempty"`
+	CARequestId          *int64   `json:"CARequestId,omitempty"`
 	CommonName           *string  `json:"CommonName,omitempty"`
 	LogicalName          *string  `json:"LogicalName,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -155,9 +155,9 @@ func (o *KeyfactorApiModelsAlertsPendingPendingAlertResponse) SetRecipients(v []
 }
 
 // GetCARequestId returns the CARequestId field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsAlertsPendingPendingAlertResponse) GetCARequestId() int32 {
+func (o *KeyfactorApiModelsAlertsPendingPendingAlertResponse) GetCARequestId() int64 {
 	if o == nil || isNil(o.CARequestId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CARequestId
@@ -165,7 +165,7 @@ func (o *KeyfactorApiModelsAlertsPendingPendingAlertResponse) GetCARequestId() i
 
 // GetCARequestIdOk returns a tuple with the CARequestId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsAlertsPendingPendingAlertResponse) GetCARequestIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsAlertsPendingPendingAlertResponse) GetCARequestIdOk() (*int64, bool) {
 	if o == nil || isNil(o.CARequestId) {
 		return nil, false
 	}
@@ -181,8 +181,8 @@ func (o *KeyfactorApiModelsAlertsPendingPendingAlertResponse) HasCARequestId() b
 	return false
 }
 
-// SetCARequestId gets a reference to the given int32 and assigns it to the CARequestId field.
-func (o *KeyfactorApiModelsAlertsPendingPendingAlertResponse) SetCARequestId(v int32) {
+// SetCARequestId gets a reference to the given int64 and assigns it to the CARequestId field.
+func (o *KeyfactorApiModelsAlertsPendingPendingAlertResponse) SetCARequestId(v int64) {
 	o.CARequestId = &v
 }
 

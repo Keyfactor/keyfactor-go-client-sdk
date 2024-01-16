@@ -31,13 +31,13 @@ var _ MappedNullable = &ModelsQueryModelsPagedCertificateStoreInventoryQuery{}
 // ModelsQueryModelsPagedCertificateStoreInventoryQuery struct for ModelsQueryModelsPagedCertificateStoreInventoryQuery
 type ModelsQueryModelsPagedCertificateStoreInventoryQuery struct {
 	// The current page within the result set to be returned
-	PageReturned *int32 `json:"PageReturned,omitempty"`
+	PageReturned *int64 `json:"PageReturned,omitempty"`
 	// Maximum number of records to be returned in a single call
-	ReturnLimit *int32 `json:"ReturnLimit,omitempty"`
+	ReturnLimit *int64 `json:"ReturnLimit,omitempty"`
 	// Field by which the results should be sorted (OperationStart, OperationEnd, UserName)
 	SortField *string `json:"SortField,omitempty"`
 	// Field sort direction [0=ascending, 1=descending]
-	SortAscending        *int32 `json:"SortAscending,omitempty"`
+	SortAscending        *int64 `json:"SortAscending,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -61,9 +61,9 @@ func NewModelsQueryModelsPagedCertificateStoreInventoryQueryWithDefaults() *Mode
 }
 
 // GetPageReturned returns the PageReturned field value if set, zero value otherwise.
-func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) GetPageReturned() int32 {
+func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) GetPageReturned() int64 {
 	if o == nil || isNil(o.PageReturned) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PageReturned
@@ -71,7 +71,7 @@ func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) GetPageReturned()
 
 // GetPageReturnedOk returns a tuple with the PageReturned field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) GetPageReturnedOk() (*int32, bool) {
+func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) GetPageReturnedOk() (*int64, bool) {
 	if o == nil || isNil(o.PageReturned) {
 		return nil, false
 	}
@@ -87,15 +87,15 @@ func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) HasPageReturned()
 	return false
 }
 
-// SetPageReturned gets a reference to the given int32 and assigns it to the PageReturned field.
-func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) SetPageReturned(v int32) {
+// SetPageReturned gets a reference to the given int64 and assigns it to the PageReturned field.
+func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) SetPageReturned(v int64) {
 	o.PageReturned = &v
 }
 
 // GetReturnLimit returns the ReturnLimit field value if set, zero value otherwise.
-func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) GetReturnLimit() int32 {
+func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) GetReturnLimit() int64 {
 	if o == nil || isNil(o.ReturnLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ReturnLimit
@@ -103,7 +103,7 @@ func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) GetReturnLimit() 
 
 // GetReturnLimitOk returns a tuple with the ReturnLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) GetReturnLimitOk() (*int32, bool) {
+func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) GetReturnLimitOk() (*int64, bool) {
 	if o == nil || isNil(o.ReturnLimit) {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) HasReturnLimit() 
 	return false
 }
 
-// SetReturnLimit gets a reference to the given int32 and assigns it to the ReturnLimit field.
-func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) SetReturnLimit(v int32) {
+// SetReturnLimit gets a reference to the given int64 and assigns it to the ReturnLimit field.
+func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) SetReturnLimit(v int64) {
 	o.ReturnLimit = &v
 }
 
@@ -157,9 +157,9 @@ func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) SetSortField(v st
 }
 
 // GetSortAscending returns the SortAscending field value if set, zero value otherwise.
-func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) GetSortAscending() int32 {
+func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) GetSortAscending() int64 {
 	if o == nil || isNil(o.SortAscending) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SortAscending
@@ -167,7 +167,7 @@ func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) GetSortAscending(
 
 // GetSortAscendingOk returns a tuple with the SortAscending field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) GetSortAscendingOk() (*int32, bool) {
+func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) GetSortAscendingOk() (*int64, bool) {
 	if o == nil || isNil(o.SortAscending) {
 		return nil, false
 	}
@@ -183,8 +183,8 @@ func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) HasSortAscending(
 	return false
 }
 
-// SetSortAscending gets a reference to the given int32 and assigns it to the SortAscending field.
-func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) SetSortAscending(v int32) {
+// SetSortAscending gets a reference to the given int64 and assigns it to the SortAscending field.
+func (o *ModelsQueryModelsPagedCertificateStoreInventoryQuery) SetSortAscending(v int64) {
 	o.SortAscending = &v
 }
 

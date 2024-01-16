@@ -172,14 +172,14 @@ func (a *CertificateApiService) CertificateAnalyzeCertExecute(r ApiCertificateAn
 type ApiCertificateCertificateHistoryRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
-	collectionId            *int32
+	collectionId            *int64
 	xKeyfactorApiVersion    *string
-	queryPageReturned       *int32
-	queryReturnLimit        *int32
+	queryPageReturned       *int64
+	queryReturnLimit        *int64
 	querySortField          *string
-	querySortAscending      *int32
+	querySortAscending      *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -189,7 +189,7 @@ func (r ApiCertificateCertificateHistoryRequest) XKeyfactorRequestedWith(xKeyfac
 }
 
 // The collection the certificate could be in.  Defaults to no collection.
-func (r ApiCertificateCertificateHistoryRequest) CollectionId(collectionId int32) ApiCertificateCertificateHistoryRequest {
+func (r ApiCertificateCertificateHistoryRequest) CollectionId(collectionId int64) ApiCertificateCertificateHistoryRequest {
 	r.collectionId = &collectionId
 	return r
 }
@@ -201,13 +201,13 @@ func (r ApiCertificateCertificateHistoryRequest) XKeyfactorApiVersion(xKeyfactor
 }
 
 // The current page within the result set to be returned
-func (r ApiCertificateCertificateHistoryRequest) QueryPageReturned(queryPageReturned int32) ApiCertificateCertificateHistoryRequest {
+func (r ApiCertificateCertificateHistoryRequest) QueryPageReturned(queryPageReturned int64) ApiCertificateCertificateHistoryRequest {
 	r.queryPageReturned = &queryPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiCertificateCertificateHistoryRequest) QueryReturnLimit(queryReturnLimit int32) ApiCertificateCertificateHistoryRequest {
+func (r ApiCertificateCertificateHistoryRequest) QueryReturnLimit(queryReturnLimit int64) ApiCertificateCertificateHistoryRequest {
 	r.queryReturnLimit = &queryReturnLimit
 	return r
 }
@@ -219,7 +219,7 @@ func (r ApiCertificateCertificateHistoryRequest) QuerySortField(querySortField s
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiCertificateCertificateHistoryRequest) QuerySortAscending(querySortAscending int32) ApiCertificateCertificateHistoryRequest {
+func (r ApiCertificateCertificateHistoryRequest) QuerySortAscending(querySortAscending int64) ApiCertificateCertificateHistoryRequest {
 	r.querySortAscending = &querySortAscending
 	return r
 }
@@ -235,7 +235,7 @@ CertificateCertificateHistory Gets the history of operations on a certificate
 	@param id The Id of the certificate
 	@return ApiCertificateCertificateHistoryRequest
 */
-func (a *CertificateApiService) CertificateCertificateHistory(ctx context.Context, id int32) ApiCertificateCertificateHistoryRequest {
+func (a *CertificateApiService) CertificateCertificateHistory(ctx context.Context, id int64) ApiCertificateCertificateHistoryRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -350,16 +350,16 @@ func (a *CertificateApiService) CertificateCertificateHistoryExecute(r ApiCertif
 type ApiCertificateCompareMetadataRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
-	certificateId           *int32
+	certificateId           *int64
 	metadataFieldName       *string
 	value                   *string
 	xKeyfactorRequestedWith *string
-	collectionId            *int32
+	collectionId            *int64
 	xKeyfactorApiVersion    *string
 }
 
 // Certificate identifier
-func (r ApiCertificateCompareMetadataRequest) CertificateId(certificateId int32) ApiCertificateCompareMetadataRequest {
+func (r ApiCertificateCompareMetadataRequest) CertificateId(certificateId int64) ApiCertificateCompareMetadataRequest {
 	r.certificateId = &certificateId
 	return r
 }
@@ -383,7 +383,7 @@ func (r ApiCertificateCompareMetadataRequest) XKeyfactorRequestedWith(xKeyfactor
 }
 
 // Optional certificate collection identifier used to ensure user access to the certificate
-func (r ApiCertificateCompareMetadataRequest) CollectionId(collectionId int32) ApiCertificateCompareMetadataRequest {
+func (r ApiCertificateCompareMetadataRequest) CollectionId(collectionId int64) ApiCertificateCompareMetadataRequest {
 	r.collectionId = &collectionId
 	return r
 }
@@ -519,7 +519,7 @@ type ApiCertificateDeleteByQueryRequest struct {
 	ApiService              *CertificateApiService
 	xKeyfactorRequestedWith *string
 	sq                      *string
-	collectionId            *int32
+	collectionId            *int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -536,7 +536,7 @@ func (r ApiCertificateDeleteByQueryRequest) Sq(sq string) ApiCertificateDeleteBy
 }
 
 // Optional certificate collection identifier used to ensure user access to the certificate
-func (r ApiCertificateDeleteByQueryRequest) CollectionId(collectionId int32) ApiCertificateDeleteByQueryRequest {
+func (r ApiCertificateDeleteByQueryRequest) CollectionId(collectionId int64) ApiCertificateDeleteByQueryRequest {
 	r.collectionId = &collectionId
 	return r
 }
@@ -653,9 +653,9 @@ func (a *CertificateApiService) CertificateDeleteByQueryExecute(r ApiCertificate
 type ApiCertificateDeleteCertificateRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
-	collectionId            *int32
+	collectionId            *int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -666,7 +666,7 @@ func (r ApiCertificateDeleteCertificateRequest) XKeyfactorRequestedWith(xKeyfact
 }
 
 // Optional certificate collection identifier used to ensure user access to the certificate
-func (r ApiCertificateDeleteCertificateRequest) CollectionId(collectionId int32) ApiCertificateDeleteCertificateRequest {
+func (r ApiCertificateDeleteCertificateRequest) CollectionId(collectionId int64) ApiCertificateDeleteCertificateRequest {
 	r.collectionId = &collectionId
 	return r
 }
@@ -688,7 +688,7 @@ CertificateDeleteCertificate Deletes a persisted certificate by its unique id as
 	@param id Keyfactor identifier of the certificate record
 	@return ApiCertificateDeleteCertificateRequest
 */
-func (a *CertificateApiService) CertificateDeleteCertificate(ctx context.Context, id int32) ApiCertificateDeleteCertificateRequest {
+func (a *CertificateApiService) CertificateDeleteCertificate(ctx context.Context, id int64) ApiCertificateDeleteCertificateRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -780,8 +780,8 @@ type ApiCertificateDeleteCertificatesRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
 	xKeyfactorRequestedWith *string
-	ids                     *[]int32
-	collectionId            *int32
+	ids                     *[]int64
+	collectionId            *int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -792,13 +792,13 @@ func (r ApiCertificateDeleteCertificatesRequest) XKeyfactorRequestedWith(xKeyfac
 }
 
 // The array of ids for certificate that are to be deleted
-func (r ApiCertificateDeleteCertificatesRequest) Ids(ids []int32) ApiCertificateDeleteCertificatesRequest {
+func (r ApiCertificateDeleteCertificatesRequest) Ids(ids []int64) ApiCertificateDeleteCertificatesRequest {
 	r.ids = &ids
 	return r
 }
 
 // Optional certificate collection identifier used to ensure user access to the certificate
-func (r ApiCertificateDeleteCertificatesRequest) CollectionId(collectionId int32) ApiCertificateDeleteCertificatesRequest {
+func (r ApiCertificateDeleteCertificatesRequest) CollectionId(collectionId int64) ApiCertificateDeleteCertificatesRequest {
 	r.collectionId = &collectionId
 	return r
 }
@@ -916,8 +916,8 @@ type ApiCertificateDeletePrivateKeys0Request struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
 	xKeyfactorRequestedWith *string
-	ids                     *[]int32
-	collectionId            *int32
+	ids                     *[]int64
+	collectionId            *int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -928,13 +928,13 @@ func (r ApiCertificateDeletePrivateKeys0Request) XKeyfactorRequestedWith(xKeyfac
 }
 
 // Keyfactor identifiers of the cetficiates for which the associated private keys should be deleted
-func (r ApiCertificateDeletePrivateKeys0Request) Ids(ids []int32) ApiCertificateDeletePrivateKeys0Request {
+func (r ApiCertificateDeletePrivateKeys0Request) Ids(ids []int64) ApiCertificateDeletePrivateKeys0Request {
 	r.ids = &ids
 	return r
 }
 
 // Optional certificate collection identifier used to ensure user access to the certificate
-func (r ApiCertificateDeletePrivateKeys0Request) CollectionId(collectionId int32) ApiCertificateDeletePrivateKeys0Request {
+func (r ApiCertificateDeletePrivateKeys0Request) CollectionId(collectionId int64) ApiCertificateDeletePrivateKeys0Request {
 	r.collectionId = &collectionId
 	return r
 }
@@ -1049,9 +1049,9 @@ func (a *CertificateApiService) CertificateDeletePrivateKeys0Execute(r ApiCertif
 type ApiCertificateDeletePrivateKeys1Request struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
-	collectionId            *int32
+	collectionId            *int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -1062,7 +1062,7 @@ func (r ApiCertificateDeletePrivateKeys1Request) XKeyfactorRequestedWith(xKeyfac
 }
 
 // Optional certificate collection identifier used to ensure user access to the certificate
-func (r ApiCertificateDeletePrivateKeys1Request) CollectionId(collectionId int32) ApiCertificateDeletePrivateKeys1Request {
+func (r ApiCertificateDeletePrivateKeys1Request) CollectionId(collectionId int64) ApiCertificateDeletePrivateKeys1Request {
 	r.collectionId = &collectionId
 	return r
 }
@@ -1084,7 +1084,7 @@ CertificateDeletePrivateKeys1 Deletes the persisted private key of the certifica
 	@param id Keyfactor identifier of the certificate for which the associated private key should be deleted
 	@return ApiCertificateDeletePrivateKeys1Request
 */
-func (a *CertificateApiService) CertificateDeletePrivateKeys1(ctx context.Context, id int32) ApiCertificateDeletePrivateKeys1Request {
+func (a *CertificateApiService) CertificateDeletePrivateKeys1(ctx context.Context, id int64) ApiCertificateDeletePrivateKeys1Request {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -1177,7 +1177,7 @@ type ApiCertificateDownloadCertificateAsyncRequest struct {
 	ApiService              *CertificateApiService
 	xKeyfactorRequestedWith *string
 	rq                      *ModelsCertificateDownloadRequest
-	collectionId            *int32
+	collectionId            *int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -1194,7 +1194,7 @@ func (r ApiCertificateDownloadCertificateAsyncRequest) Rq(rq ModelsCertificateDo
 }
 
 // Optional certificate collection identifier used to ensure user access to the certificate
-func (r ApiCertificateDownloadCertificateAsyncRequest) CollectionId(collectionId int32) ApiCertificateDownloadCertificateAsyncRequest {
+func (r ApiCertificateDownloadCertificateAsyncRequest) CollectionId(collectionId int64) ApiCertificateDownloadCertificateAsyncRequest {
 	r.collectionId = &collectionId
 	return r
 }
@@ -1326,12 +1326,12 @@ func (a *CertificateApiService) CertificateDownloadCertificateAsyncExecute(r Api
 type ApiCertificateGetCertificateRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	includeLocations        *bool
 	includeMetadata         *bool
-	collectionId            *int32
-	verbose                 *int32
+	collectionId            *int64
+	verbose                 *int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -1354,12 +1354,12 @@ func (r ApiCertificateGetCertificateRequest) IncludeMetadata(includeMetadata boo
 }
 
 // Optional certificate collection identifier used to ensure user access to the certificate
-func (r ApiCertificateGetCertificateRequest) CollectionId(collectionId int32) ApiCertificateGetCertificateRequest {
+func (r ApiCertificateGetCertificateRequest) CollectionId(collectionId int64) ApiCertificateGetCertificateRequest {
 	r.collectionId = &collectionId
 	return r
 }
 
-func (r ApiCertificateGetCertificateRequest) Verbose(verbose int32) ApiCertificateGetCertificateRequest {
+func (r ApiCertificateGetCertificateRequest) Verbose(verbose int64) ApiCertificateGetCertificateRequest {
 	r.verbose = &verbose
 	return r
 }
@@ -1381,7 +1381,7 @@ CertificateGetCertificate Returns a single certificate that matches the id
 	@param id Keyfactor certificate identifier
 	@return ApiCertificateGetCertificateRequest
 */
-func (a *CertificateApiService) CertificateGetCertificate(ctx context.Context, id int32) ApiCertificateGetCertificateRequest {
+func (a *CertificateApiService) CertificateGetCertificate(ctx context.Context, id int64) ApiCertificateGetCertificateRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -1493,9 +1493,9 @@ func (a *CertificateApiService) CertificateGetCertificateExecute(r ApiCertificat
 type ApiCertificateGetCertificateLocationsRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
-	collectionId            *int32
+	collectionId            *int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -1506,7 +1506,7 @@ func (r ApiCertificateGetCertificateLocationsRequest) XKeyfactorRequestedWith(xK
 }
 
 // Optional certificate collection identifier used to ensure user access to the certificate
-func (r ApiCertificateGetCertificateLocationsRequest) CollectionId(collectionId int32) ApiCertificateGetCertificateLocationsRequest {
+func (r ApiCertificateGetCertificateLocationsRequest) CollectionId(collectionId int64) ApiCertificateGetCertificateLocationsRequest {
 	r.collectionId = &collectionId
 	return r
 }
@@ -1528,7 +1528,7 @@ CertificateGetCertificateLocations Returns a list of locations the certificate i
 	@param id Keyfactor certificate identifier
 	@return ApiCertificateGetCertificateLocationsRequest
 */
-func (a *CertificateApiService) CertificateGetCertificateLocations(ctx context.Context, id int32) ApiCertificateGetCertificateLocationsRequest {
+func (a *CertificateApiService) CertificateGetCertificateLocations(ctx context.Context, id int64) ApiCertificateGetCertificateLocationsRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -1631,9 +1631,9 @@ func (a *CertificateApiService) CertificateGetCertificateLocationsExecute(r ApiC
 type ApiCertificateGetCertificateSecurityRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
-	collectionId            *int32
+	collectionId            *int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -1644,7 +1644,7 @@ func (r ApiCertificateGetCertificateSecurityRequest) XKeyfactorRequestedWith(xKe
 }
 
 // The Id of the collection the certificate belongs in. Defaults to no collection
-func (r ApiCertificateGetCertificateSecurityRequest) CollectionId(collectionId int32) ApiCertificateGetCertificateSecurityRequest {
+func (r ApiCertificateGetCertificateSecurityRequest) CollectionId(collectionId int64) ApiCertificateGetCertificateSecurityRequest {
 	r.collectionId = &collectionId
 	return r
 }
@@ -1666,7 +1666,7 @@ CertificateGetCertificateSecurity Gets the list of Security Identities and which
 	@param id The Id of the certificate permissions are being checked on
 	@return ApiCertificateGetCertificateSecurityRequest
 */
-func (a *CertificateApiService) CertificateGetCertificateSecurity(ctx context.Context, id int32) ApiCertificateGetCertificateSecurityRequest {
+func (a *CertificateApiService) CertificateGetCertificateSecurity(ctx context.Context, id int64) ApiCertificateGetCertificateSecurityRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -1769,9 +1769,9 @@ func (a *CertificateApiService) CertificateGetCertificateSecurityExecute(r ApiCe
 type ApiCertificateIdentityAuditRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
-	collectionId            *int32
+	collectionId            *int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -1782,7 +1782,7 @@ func (r ApiCertificateIdentityAuditRequest) XKeyfactorRequestedWith(xKeyfactorRe
 }
 
 // An optional parameter for the collectin Id the certificate is in.  Defaults to no collection
-func (r ApiCertificateIdentityAuditRequest) CollectionId(collectionId int32) ApiCertificateIdentityAuditRequest {
+func (r ApiCertificateIdentityAuditRequest) CollectionId(collectionId int64) ApiCertificateIdentityAuditRequest {
 	r.collectionId = &collectionId
 	return r
 }
@@ -1804,7 +1804,7 @@ CertificateIdentityAudit Audit identity permissions for certificate
 	@param id The Id of the certificate being checked
 	@return ApiCertificateIdentityAuditRequest
 */
-func (a *CertificateApiService) CertificateIdentityAudit(ctx context.Context, id int32) ApiCertificateIdentityAuditRequest {
+func (a *CertificateApiService) CertificateIdentityAudit(ctx context.Context, id int64) ApiCertificateIdentityAuditRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -2044,17 +2044,17 @@ type ApiCertificateQueryCertificatesRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
 	xKeyfactorRequestedWith *string
-	collectionId            *int32
+	collectionId            *int64
 	includeLocations        *bool
 	includeMetadata         *bool
 	includeHasPrivateKey    *bool
-	verbose                 *int32
+	verbose                 *int64
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 	pqIncludeRevoked        *bool
 	pqIncludeExpired        *bool
 }
@@ -2066,7 +2066,7 @@ func (r ApiCertificateQueryCertificatesRequest) XKeyfactorRequestedWith(xKeyfact
 }
 
 // Optional certificate collection identifier used to ensure user access to the certificate
-func (r ApiCertificateQueryCertificatesRequest) CollectionId(collectionId int32) ApiCertificateQueryCertificatesRequest {
+func (r ApiCertificateQueryCertificatesRequest) CollectionId(collectionId int64) ApiCertificateQueryCertificatesRequest {
 	r.collectionId = &collectionId
 	return r
 }
@@ -2089,7 +2089,7 @@ func (r ApiCertificateQueryCertificatesRequest) IncludeHasPrivateKey(includeHasP
 	return r
 }
 
-func (r ApiCertificateQueryCertificatesRequest) Verbose(verbose int32) ApiCertificateQueryCertificatesRequest {
+func (r ApiCertificateQueryCertificatesRequest) Verbose(verbose int64) ApiCertificateQueryCertificatesRequest {
 	r.verbose = &verbose
 	return r
 }
@@ -2107,13 +2107,13 @@ func (r ApiCertificateQueryCertificatesRequest) PqQueryString(pqQueryString stri
 }
 
 // The current page within the result set to be returned
-func (r ApiCertificateQueryCertificatesRequest) PqPageReturned(pqPageReturned int32) ApiCertificateQueryCertificatesRequest {
+func (r ApiCertificateQueryCertificatesRequest) PqPageReturned(pqPageReturned int64) ApiCertificateQueryCertificatesRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiCertificateQueryCertificatesRequest) PqReturnLimit(pqReturnLimit int32) ApiCertificateQueryCertificatesRequest {
+func (r ApiCertificateQueryCertificatesRequest) PqReturnLimit(pqReturnLimit int64) ApiCertificateQueryCertificatesRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -2125,7 +2125,7 @@ func (r ApiCertificateQueryCertificatesRequest) PqSortField(pqSortField string) 
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiCertificateQueryCertificatesRequest) PqSortAscending(pqSortAscending int32) ApiCertificateQueryCertificatesRequest {
+func (r ApiCertificateQueryCertificatesRequest) PqSortAscending(pqSortAscending int64) ApiCertificateQueryCertificatesRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }
@@ -2289,7 +2289,7 @@ type ApiCertificateRecoverCertificateAsyncRequest struct {
 	xCertificateformat      *string
 	xKeyfactorRequestedWith *string
 	rq                      *ModelsCertificateRecoveryRequest
-	collectionId            *int32
+	collectionId            *int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -2312,7 +2312,7 @@ func (r ApiCertificateRecoverCertificateAsyncRequest) Rq(rq ModelsCertificateRec
 }
 
 // Optional certificate collection identifier used to ensure user access to the certificate
-func (r ApiCertificateRecoverCertificateAsyncRequest) CollectionId(collectionId int32) ApiCertificateRecoverCertificateAsyncRequest {
+func (r ApiCertificateRecoverCertificateAsyncRequest) CollectionId(collectionId int64) ApiCertificateRecoverCertificateAsyncRequest {
 	r.collectionId = &collectionId
 	return r
 }
@@ -2602,7 +2602,7 @@ type ApiCertificateRevokeAllRequest struct {
 	ApiService              *CertificateApiService
 	xKeyfactorRequestedWith *string
 	request                 *ModelsRevokeAllCertificatesRequest
-	collectionId            *int32
+	collectionId            *int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -2619,7 +2619,7 @@ func (r ApiCertificateRevokeAllRequest) Request(request ModelsRevokeAllCertifica
 }
 
 // A collection Id to be used for permissions and part of the query to revoke certificates
-func (r ApiCertificateRevokeAllRequest) CollectionId(collectionId int32) ApiCertificateRevokeAllRequest {
+func (r ApiCertificateRevokeAllRequest) CollectionId(collectionId int64) ApiCertificateRevokeAllRequest {
 	r.collectionId = &collectionId
 	return r
 }
@@ -2762,7 +2762,7 @@ type ApiCertificateUpdateAllMetadataRequest struct {
 	ApiService              *CertificateApiService
 	xKeyfactorRequestedWith *string
 	metadataUpdate          *ModelsMetadataAllUpdateRequest
-	collectionId            *int32
+	collectionId            *int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -2779,7 +2779,7 @@ func (r ApiCertificateUpdateAllMetadataRequest) MetadataUpdate(metadataUpdate Mo
 }
 
 // Optional certificate collection identifier used to ensure user access to the certificate
-func (r ApiCertificateUpdateAllMetadataRequest) CollectionId(collectionId int32) ApiCertificateUpdateAllMetadataRequest {
+func (r ApiCertificateUpdateAllMetadataRequest) CollectionId(collectionId int64) ApiCertificateUpdateAllMetadataRequest {
 	r.collectionId = &collectionId
 	return r
 }
@@ -2896,7 +2896,7 @@ type ApiCertificateUpdateMetadataRequest struct {
 	ApiService              *CertificateApiService
 	xKeyfactorRequestedWith *string
 	metadataUpdate          *ModelsMetadataUpdateRequest
-	collectionId            *int32
+	collectionId            *int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -2913,7 +2913,7 @@ func (r ApiCertificateUpdateMetadataRequest) MetadataUpdate(metadataUpdate Model
 }
 
 // Optional certificate collection identifier used to ensure user access to the certificate
-func (r ApiCertificateUpdateMetadataRequest) CollectionId(collectionId int32) ApiCertificateUpdateMetadataRequest {
+func (r ApiCertificateUpdateMetadataRequest) CollectionId(collectionId int64) ApiCertificateUpdateMetadataRequest {
 	r.collectionId = &collectionId
 	return r
 }
@@ -3028,9 +3028,9 @@ func (a *CertificateApiService) CertificateUpdateMetadataExecute(r ApiCertificat
 type ApiCertificateValidateCertificateRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
-	collectionId            *int32
+	collectionId            *int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -3041,7 +3041,7 @@ func (r ApiCertificateValidateCertificateRequest) XKeyfactorRequestedWith(xKeyfa
 }
 
 // An optional parameter for the collectin Id the certificate is in.  Defaults to no collection
-func (r ApiCertificateValidateCertificateRequest) CollectionId(collectionId int32) ApiCertificateValidateCertificateRequest {
+func (r ApiCertificateValidateCertificateRequest) CollectionId(collectionId int64) ApiCertificateValidateCertificateRequest {
 	r.collectionId = &collectionId
 	return r
 }
@@ -3063,7 +3063,7 @@ CertificateValidateCertificate Validates the certificate chain can be built.
 	@param id The Id of the certificate being checked
 	@return ApiCertificateValidateCertificateRequest
 */
-func (a *CertificateApiService) CertificateValidateCertificate(ctx context.Context, id int32) ApiCertificateValidateCertificateRequest {
+func (a *CertificateApiService) CertificateValidateCertificate(ctx context.Context, id int64) ApiCertificateValidateCertificateRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 

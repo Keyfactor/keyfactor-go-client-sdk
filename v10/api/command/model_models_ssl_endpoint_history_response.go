@@ -35,9 +35,9 @@ type ModelsSSLEndpointHistoryResponse struct {
 	EndpointId           *string                                            `json:"EndpointId,omitempty"`
 	AuditId              *int64                                             `json:"AuditId,omitempty"`
 	Timestamp            *time.Time                                         `json:"Timestamp,omitempty"`
-	Status               *int32                                             `json:"Status,omitempty"`
-	JobType              *int32                                             `json:"JobType,omitempty"`
-	ProbeType            *int32                                             `json:"ProbeType,omitempty"`
+	Status               *int64                                             `json:"Status,omitempty"`
+	JobType              *int64                                             `json:"JobType,omitempty"`
+	ProbeType            *int64                                             `json:"ProbeType,omitempty"`
 	ReverseDNS           *string                                            `json:"ReverseDNS,omitempty"`
 	HistoryCertificates  []ModelsSSLEndpointHistoryResponseCertificateModel `json:"HistoryCertificates,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -191,9 +191,9 @@ func (o *ModelsSSLEndpointHistoryResponse) SetTimestamp(v time.Time) {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *ModelsSSLEndpointHistoryResponse) GetStatus() int32 {
+func (o *ModelsSSLEndpointHistoryResponse) GetStatus() int64 {
 	if o == nil || isNil(o.Status) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status
@@ -201,7 +201,7 @@ func (o *ModelsSSLEndpointHistoryResponse) GetStatus() int32 {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSLEndpointHistoryResponse) GetStatusOk() (*int32, bool) {
+func (o *ModelsSSLEndpointHistoryResponse) GetStatusOk() (*int64, bool) {
 	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
@@ -217,15 +217,15 @@ func (o *ModelsSSLEndpointHistoryResponse) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given int32 and assigns it to the Status field.
-func (o *ModelsSSLEndpointHistoryResponse) SetStatus(v int32) {
+// SetStatus gets a reference to the given int64 and assigns it to the Status field.
+func (o *ModelsSSLEndpointHistoryResponse) SetStatus(v int64) {
 	o.Status = &v
 }
 
 // GetJobType returns the JobType field value if set, zero value otherwise.
-func (o *ModelsSSLEndpointHistoryResponse) GetJobType() int32 {
+func (o *ModelsSSLEndpointHistoryResponse) GetJobType() int64 {
 	if o == nil || isNil(o.JobType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.JobType
@@ -233,7 +233,7 @@ func (o *ModelsSSLEndpointHistoryResponse) GetJobType() int32 {
 
 // GetJobTypeOk returns a tuple with the JobType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSLEndpointHistoryResponse) GetJobTypeOk() (*int32, bool) {
+func (o *ModelsSSLEndpointHistoryResponse) GetJobTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.JobType) {
 		return nil, false
 	}
@@ -249,15 +249,15 @@ func (o *ModelsSSLEndpointHistoryResponse) HasJobType() bool {
 	return false
 }
 
-// SetJobType gets a reference to the given int32 and assigns it to the JobType field.
-func (o *ModelsSSLEndpointHistoryResponse) SetJobType(v int32) {
+// SetJobType gets a reference to the given int64 and assigns it to the JobType field.
+func (o *ModelsSSLEndpointHistoryResponse) SetJobType(v int64) {
 	o.JobType = &v
 }
 
 // GetProbeType returns the ProbeType field value if set, zero value otherwise.
-func (o *ModelsSSLEndpointHistoryResponse) GetProbeType() int32 {
+func (o *ModelsSSLEndpointHistoryResponse) GetProbeType() int64 {
 	if o == nil || isNil(o.ProbeType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ProbeType
@@ -265,7 +265,7 @@ func (o *ModelsSSLEndpointHistoryResponse) GetProbeType() int32 {
 
 // GetProbeTypeOk returns a tuple with the ProbeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSLEndpointHistoryResponse) GetProbeTypeOk() (*int32, bool) {
+func (o *ModelsSSLEndpointHistoryResponse) GetProbeTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.ProbeType) {
 		return nil, false
 	}
@@ -281,8 +281,8 @@ func (o *ModelsSSLEndpointHistoryResponse) HasProbeType() bool {
 	return false
 }
 
-// SetProbeType gets a reference to the given int32 and assigns it to the ProbeType field.
-func (o *ModelsSSLEndpointHistoryResponse) SetProbeType(v int32) {
+// SetProbeType gets a reference to the given int64 and assigns it to the ProbeType field.
+func (o *ModelsSSLEndpointHistoryResponse) SetProbeType(v int64) {
 	o.ProbeType = &v
 }
 

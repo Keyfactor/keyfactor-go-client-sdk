@@ -35,8 +35,8 @@ type KeyfactorApiModelsEnrollmentEnrollmentManagementRequest struct {
 	Stores               []KeyfactorApiModelsEnrollmentManagementStoreRequest     `json:"Stores,omitempty"`
 	StoreIds             []string                                                 `json:"StoreIds,omitempty"`
 	StoreTypes           []KeyfactorApiModelsEnrollmentManagementStoreTypeRequest `json:"StoreTypes,omitempty"`
-	CertificateId        *int32                                                   `json:"CertificateId,omitempty"`
-	RequestId            *int32                                                   `json:"RequestId,omitempty"`
+	CertificateId        *int64                                                   `json:"CertificateId,omitempty"`
+	RequestId            *int64                                                   `json:"RequestId,omitempty"`
 	Password             string                                                   `json:"Password"`
 	JobTime              *time.Time                                               `json:"JobTime,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -159,9 +159,9 @@ func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) SetStoreTypes(
 }
 
 // GetCertificateId returns the CertificateId field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) GetCertificateId() int32 {
+func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) GetCertificateId() int64 {
 	if o == nil || isNil(o.CertificateId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CertificateId
@@ -169,7 +169,7 @@ func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) GetCertificate
 
 // GetCertificateIdOk returns a tuple with the CertificateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) GetCertificateIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) GetCertificateIdOk() (*int64, bool) {
 	if o == nil || isNil(o.CertificateId) {
 		return nil, false
 	}
@@ -185,15 +185,15 @@ func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) HasCertificate
 	return false
 }
 
-// SetCertificateId gets a reference to the given int32 and assigns it to the CertificateId field.
-func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) SetCertificateId(v int32) {
+// SetCertificateId gets a reference to the given int64 and assigns it to the CertificateId field.
+func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) SetCertificateId(v int64) {
 	o.CertificateId = &v
 }
 
 // GetRequestId returns the RequestId field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) GetRequestId() int32 {
+func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) GetRequestId() int64 {
 	if o == nil || isNil(o.RequestId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RequestId
@@ -201,7 +201,7 @@ func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) GetRequestId()
 
 // GetRequestIdOk returns a tuple with the RequestId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) GetRequestIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) GetRequestIdOk() (*int64, bool) {
 	if o == nil || isNil(o.RequestId) {
 		return nil, false
 	}
@@ -217,8 +217,8 @@ func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) HasRequestId()
 	return false
 }
 
-// SetRequestId gets a reference to the given int32 and assigns it to the RequestId field.
-func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) SetRequestId(v int32) {
+// SetRequestId gets a reference to the given int64 and assigns it to the RequestId field.
+func (o *KeyfactorApiModelsEnrollmentEnrollmentManagementRequest) SetRequestId(v int64) {
 	o.RequestId = &v
 }
 

@@ -30,12 +30,12 @@ var _ MappedNullable = &KeyfactorApiModelsCertificateCollectionsCertificateColle
 
 // KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse struct for KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse
 type KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse struct {
-	Id                   *int32  `json:"Id,omitempty"`
+	Id                   *int64  `json:"Id,omitempty"`
 	Name                 *string `json:"Name,omitempty"`
 	Description          *string `json:"Description,omitempty"`
 	Content              *string `json:"Content,omitempty"`
 	Query                *string `json:"Query,omitempty"`
-	DuplicationField     *int32  `json:"DuplicationField,omitempty"`
+	DuplicationField     *int64  `json:"DuplicationField,omitempty"`
 	ShowOnDashboard      *bool   `json:"ShowOnDashboard,omitempty"`
 	Favorite             *bool   `json:"Favorite,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -61,9 +61,9 @@ func NewKeyfactorApiModelsCertificateCollectionsCertificateCollectionResponseWit
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) GetId() int32 {
+func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -71,7 +71,7 @@ func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) 
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) GetIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -87,8 +87,8 @@ func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) 
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -221,9 +221,9 @@ func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) 
 }
 
 // GetDuplicationField returns the DuplicationField field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) GetDuplicationField() int32 {
+func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) GetDuplicationField() int64 {
 	if o == nil || isNil(o.DuplicationField) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DuplicationField
@@ -231,7 +231,7 @@ func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) 
 
 // GetDuplicationFieldOk returns a tuple with the DuplicationField field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) GetDuplicationFieldOk() (*int32, bool) {
+func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) GetDuplicationFieldOk() (*int64, bool) {
 	if o == nil || isNil(o.DuplicationField) {
 		return nil, false
 	}
@@ -247,8 +247,8 @@ func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) 
 	return false
 }
 
-// SetDuplicationField gets a reference to the given int32 and assigns it to the DuplicationField field.
-func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) SetDuplicationField(v int32) {
+// SetDuplicationField gets a reference to the given int64 and assigns it to the DuplicationField field.
+func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) SetDuplicationField(v int64) {
 	o.DuplicationField = &v
 }
 

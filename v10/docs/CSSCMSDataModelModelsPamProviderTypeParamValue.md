@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **Value** | Pointer to **string** |  | [optional] 
-**InstanceId** | Pointer to **int32** |  | [optional] 
+**InstanceId** | Pointer to **int64** |  | [optional] 
 **InstanceGuid** | Pointer to **string** |  | [optional] 
 **Provider** | Pointer to [**CSSCMSDataModelModelsProvider**](CSSCMSDataModelModelsProvider.md) |  | [optional] 
 **ProviderTypeParam** | Pointer to [**CSSCMSDataModelModelsProviderTypeParam**](CSSCMSDataModelModelsProviderTypeParam.md) |  | [optional] 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) GetId() int32`
+`func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) GetIdOk() (*int32, bool)`
+`func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) SetId(v int32)`
+`func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -82,20 +82,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetInstanceId
 
-`func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) GetInstanceId() int32`
+`func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) GetInstanceId() int64`
 
 GetInstanceId returns the InstanceId field if non-nil, zero value otherwise.
 
 ### GetInstanceIdOk
 
-`func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) GetInstanceIdOk() (*int32, bool)`
+`func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) GetInstanceIdOk() (*int64, bool)`
 
 GetInstanceIdOk returns a tuple with the InstanceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstanceId
 
-`func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) SetInstanceId(v int32)`
+`func (o *CSSCMSDataModelModelsPamProviderTypeParamValue) SetInstanceId(v int64)`
 
 SetInstanceId sets InstanceId field to given value.
 

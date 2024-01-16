@@ -34,17 +34,17 @@ type ModelsSSLScanJobPart struct {
 	ScanJobPartId                 *string                          `json:"ScanJobPartId,omitempty"`
 	LogicalScanJobId              *string                          `json:"LogicalScanJobId,omitempty"`
 	AgentJobId                    *string                          `json:"AgentJobId,omitempty"`
-	EstimatedEndpointCount        *int32                           `json:"EstimatedEndpointCount,omitempty"`
-	Status                        *int32                           `json:"Status,omitempty"`
-	StatTotalEndpointCount        *int32                           `json:"StatTotalEndpointCount,omitempty"`
-	StatTimedOutConnectingCount   *int32                           `json:"StatTimedOutConnectingCount,omitempty"`
-	StatConnectionRefusedCount    *int32                           `json:"StatConnectionRefusedCount,omitempty"`
-	StatTimedOutDownloadingCount  *int32                           `json:"StatTimedOutDownloadingCount,omitempty"`
-	StatExceptionDownloadingCount *int32                           `json:"StatExceptionDownloadingCount,omitempty"`
-	StatNotSslCount               *int32                           `json:"StatNotSslCount,omitempty"`
-	StatBadSslHandshakeCount      *int32                           `json:"StatBadSslHandshakeCount,omitempty"`
-	StatCertificateFoundCount     *int32                           `json:"StatCertificateFoundCount,omitempty"`
-	StatNoCertificateCount        *int32                           `json:"StatNoCertificateCount,omitempty"`
+	EstimatedEndpointCount        *int64                           `json:"EstimatedEndpointCount,omitempty"`
+	Status                        *int64                           `json:"Status,omitempty"`
+	StatTotalEndpointCount        *int64                           `json:"StatTotalEndpointCount,omitempty"`
+	StatTimedOutConnectingCount   *int64                           `json:"StatTimedOutConnectingCount,omitempty"`
+	StatConnectionRefusedCount    *int64                           `json:"StatConnectionRefusedCount,omitempty"`
+	StatTimedOutDownloadingCount  *int64                           `json:"StatTimedOutDownloadingCount,omitempty"`
+	StatExceptionDownloadingCount *int64                           `json:"StatExceptionDownloadingCount,omitempty"`
+	StatNotSslCount               *int64                           `json:"StatNotSslCount,omitempty"`
+	StatBadSslHandshakeCount      *int64                           `json:"StatBadSslHandshakeCount,omitempty"`
+	StatCertificateFoundCount     *int64                           `json:"StatCertificateFoundCount,omitempty"`
+	StatNoCertificateCount        *int64                           `json:"StatNoCertificateCount,omitempty"`
 	ScanJobPartDefinitions        []ModelsSSLScanJobPartDefinition `json:"ScanJobPartDefinitions,omitempty"`
 	StartTime                     *time.Time                       `json:"StartTime,omitempty"`
 	EndTime                       *time.Time                       `json:"EndTime,omitempty"`
@@ -167,9 +167,9 @@ func (o *ModelsSSLScanJobPart) SetAgentJobId(v string) {
 }
 
 // GetEstimatedEndpointCount returns the EstimatedEndpointCount field value if set, zero value otherwise.
-func (o *ModelsSSLScanJobPart) GetEstimatedEndpointCount() int32 {
+func (o *ModelsSSLScanJobPart) GetEstimatedEndpointCount() int64 {
 	if o == nil || isNil(o.EstimatedEndpointCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.EstimatedEndpointCount
@@ -177,7 +177,7 @@ func (o *ModelsSSLScanJobPart) GetEstimatedEndpointCount() int32 {
 
 // GetEstimatedEndpointCountOk returns a tuple with the EstimatedEndpointCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSLScanJobPart) GetEstimatedEndpointCountOk() (*int32, bool) {
+func (o *ModelsSSLScanJobPart) GetEstimatedEndpointCountOk() (*int64, bool) {
 	if o == nil || isNil(o.EstimatedEndpointCount) {
 		return nil, false
 	}
@@ -193,15 +193,15 @@ func (o *ModelsSSLScanJobPart) HasEstimatedEndpointCount() bool {
 	return false
 }
 
-// SetEstimatedEndpointCount gets a reference to the given int32 and assigns it to the EstimatedEndpointCount field.
-func (o *ModelsSSLScanJobPart) SetEstimatedEndpointCount(v int32) {
+// SetEstimatedEndpointCount gets a reference to the given int64 and assigns it to the EstimatedEndpointCount field.
+func (o *ModelsSSLScanJobPart) SetEstimatedEndpointCount(v int64) {
 	o.EstimatedEndpointCount = &v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *ModelsSSLScanJobPart) GetStatus() int32 {
+func (o *ModelsSSLScanJobPart) GetStatus() int64 {
 	if o == nil || isNil(o.Status) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status
@@ -209,7 +209,7 @@ func (o *ModelsSSLScanJobPart) GetStatus() int32 {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSLScanJobPart) GetStatusOk() (*int32, bool) {
+func (o *ModelsSSLScanJobPart) GetStatusOk() (*int64, bool) {
 	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
@@ -225,15 +225,15 @@ func (o *ModelsSSLScanJobPart) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given int32 and assigns it to the Status field.
-func (o *ModelsSSLScanJobPart) SetStatus(v int32) {
+// SetStatus gets a reference to the given int64 and assigns it to the Status field.
+func (o *ModelsSSLScanJobPart) SetStatus(v int64) {
 	o.Status = &v
 }
 
 // GetStatTotalEndpointCount returns the StatTotalEndpointCount field value if set, zero value otherwise.
-func (o *ModelsSSLScanJobPart) GetStatTotalEndpointCount() int32 {
+func (o *ModelsSSLScanJobPart) GetStatTotalEndpointCount() int64 {
 	if o == nil || isNil(o.StatTotalEndpointCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.StatTotalEndpointCount
@@ -241,7 +241,7 @@ func (o *ModelsSSLScanJobPart) GetStatTotalEndpointCount() int32 {
 
 // GetStatTotalEndpointCountOk returns a tuple with the StatTotalEndpointCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSLScanJobPart) GetStatTotalEndpointCountOk() (*int32, bool) {
+func (o *ModelsSSLScanJobPart) GetStatTotalEndpointCountOk() (*int64, bool) {
 	if o == nil || isNil(o.StatTotalEndpointCount) {
 		return nil, false
 	}
@@ -257,15 +257,15 @@ func (o *ModelsSSLScanJobPart) HasStatTotalEndpointCount() bool {
 	return false
 }
 
-// SetStatTotalEndpointCount gets a reference to the given int32 and assigns it to the StatTotalEndpointCount field.
-func (o *ModelsSSLScanJobPart) SetStatTotalEndpointCount(v int32) {
+// SetStatTotalEndpointCount gets a reference to the given int64 and assigns it to the StatTotalEndpointCount field.
+func (o *ModelsSSLScanJobPart) SetStatTotalEndpointCount(v int64) {
 	o.StatTotalEndpointCount = &v
 }
 
 // GetStatTimedOutConnectingCount returns the StatTimedOutConnectingCount field value if set, zero value otherwise.
-func (o *ModelsSSLScanJobPart) GetStatTimedOutConnectingCount() int32 {
+func (o *ModelsSSLScanJobPart) GetStatTimedOutConnectingCount() int64 {
 	if o == nil || isNil(o.StatTimedOutConnectingCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.StatTimedOutConnectingCount
@@ -273,7 +273,7 @@ func (o *ModelsSSLScanJobPart) GetStatTimedOutConnectingCount() int32 {
 
 // GetStatTimedOutConnectingCountOk returns a tuple with the StatTimedOutConnectingCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSLScanJobPart) GetStatTimedOutConnectingCountOk() (*int32, bool) {
+func (o *ModelsSSLScanJobPart) GetStatTimedOutConnectingCountOk() (*int64, bool) {
 	if o == nil || isNil(o.StatTimedOutConnectingCount) {
 		return nil, false
 	}
@@ -289,15 +289,15 @@ func (o *ModelsSSLScanJobPart) HasStatTimedOutConnectingCount() bool {
 	return false
 }
 
-// SetStatTimedOutConnectingCount gets a reference to the given int32 and assigns it to the StatTimedOutConnectingCount field.
-func (o *ModelsSSLScanJobPart) SetStatTimedOutConnectingCount(v int32) {
+// SetStatTimedOutConnectingCount gets a reference to the given int64 and assigns it to the StatTimedOutConnectingCount field.
+func (o *ModelsSSLScanJobPart) SetStatTimedOutConnectingCount(v int64) {
 	o.StatTimedOutConnectingCount = &v
 }
 
 // GetStatConnectionRefusedCount returns the StatConnectionRefusedCount field value if set, zero value otherwise.
-func (o *ModelsSSLScanJobPart) GetStatConnectionRefusedCount() int32 {
+func (o *ModelsSSLScanJobPart) GetStatConnectionRefusedCount() int64 {
 	if o == nil || isNil(o.StatConnectionRefusedCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.StatConnectionRefusedCount
@@ -305,7 +305,7 @@ func (o *ModelsSSLScanJobPart) GetStatConnectionRefusedCount() int32 {
 
 // GetStatConnectionRefusedCountOk returns a tuple with the StatConnectionRefusedCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSLScanJobPart) GetStatConnectionRefusedCountOk() (*int32, bool) {
+func (o *ModelsSSLScanJobPart) GetStatConnectionRefusedCountOk() (*int64, bool) {
 	if o == nil || isNil(o.StatConnectionRefusedCount) {
 		return nil, false
 	}
@@ -321,15 +321,15 @@ func (o *ModelsSSLScanJobPart) HasStatConnectionRefusedCount() bool {
 	return false
 }
 
-// SetStatConnectionRefusedCount gets a reference to the given int32 and assigns it to the StatConnectionRefusedCount field.
-func (o *ModelsSSLScanJobPart) SetStatConnectionRefusedCount(v int32) {
+// SetStatConnectionRefusedCount gets a reference to the given int64 and assigns it to the StatConnectionRefusedCount field.
+func (o *ModelsSSLScanJobPart) SetStatConnectionRefusedCount(v int64) {
 	o.StatConnectionRefusedCount = &v
 }
 
 // GetStatTimedOutDownloadingCount returns the StatTimedOutDownloadingCount field value if set, zero value otherwise.
-func (o *ModelsSSLScanJobPart) GetStatTimedOutDownloadingCount() int32 {
+func (o *ModelsSSLScanJobPart) GetStatTimedOutDownloadingCount() int64 {
 	if o == nil || isNil(o.StatTimedOutDownloadingCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.StatTimedOutDownloadingCount
@@ -337,7 +337,7 @@ func (o *ModelsSSLScanJobPart) GetStatTimedOutDownloadingCount() int32 {
 
 // GetStatTimedOutDownloadingCountOk returns a tuple with the StatTimedOutDownloadingCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSLScanJobPart) GetStatTimedOutDownloadingCountOk() (*int32, bool) {
+func (o *ModelsSSLScanJobPart) GetStatTimedOutDownloadingCountOk() (*int64, bool) {
 	if o == nil || isNil(o.StatTimedOutDownloadingCount) {
 		return nil, false
 	}
@@ -353,15 +353,15 @@ func (o *ModelsSSLScanJobPart) HasStatTimedOutDownloadingCount() bool {
 	return false
 }
 
-// SetStatTimedOutDownloadingCount gets a reference to the given int32 and assigns it to the StatTimedOutDownloadingCount field.
-func (o *ModelsSSLScanJobPart) SetStatTimedOutDownloadingCount(v int32) {
+// SetStatTimedOutDownloadingCount gets a reference to the given int64 and assigns it to the StatTimedOutDownloadingCount field.
+func (o *ModelsSSLScanJobPart) SetStatTimedOutDownloadingCount(v int64) {
 	o.StatTimedOutDownloadingCount = &v
 }
 
 // GetStatExceptionDownloadingCount returns the StatExceptionDownloadingCount field value if set, zero value otherwise.
-func (o *ModelsSSLScanJobPart) GetStatExceptionDownloadingCount() int32 {
+func (o *ModelsSSLScanJobPart) GetStatExceptionDownloadingCount() int64 {
 	if o == nil || isNil(o.StatExceptionDownloadingCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.StatExceptionDownloadingCount
@@ -369,7 +369,7 @@ func (o *ModelsSSLScanJobPart) GetStatExceptionDownloadingCount() int32 {
 
 // GetStatExceptionDownloadingCountOk returns a tuple with the StatExceptionDownloadingCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSLScanJobPart) GetStatExceptionDownloadingCountOk() (*int32, bool) {
+func (o *ModelsSSLScanJobPart) GetStatExceptionDownloadingCountOk() (*int64, bool) {
 	if o == nil || isNil(o.StatExceptionDownloadingCount) {
 		return nil, false
 	}
@@ -385,15 +385,15 @@ func (o *ModelsSSLScanJobPart) HasStatExceptionDownloadingCount() bool {
 	return false
 }
 
-// SetStatExceptionDownloadingCount gets a reference to the given int32 and assigns it to the StatExceptionDownloadingCount field.
-func (o *ModelsSSLScanJobPart) SetStatExceptionDownloadingCount(v int32) {
+// SetStatExceptionDownloadingCount gets a reference to the given int64 and assigns it to the StatExceptionDownloadingCount field.
+func (o *ModelsSSLScanJobPart) SetStatExceptionDownloadingCount(v int64) {
 	o.StatExceptionDownloadingCount = &v
 }
 
 // GetStatNotSslCount returns the StatNotSslCount field value if set, zero value otherwise.
-func (o *ModelsSSLScanJobPart) GetStatNotSslCount() int32 {
+func (o *ModelsSSLScanJobPart) GetStatNotSslCount() int64 {
 	if o == nil || isNil(o.StatNotSslCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.StatNotSslCount
@@ -401,7 +401,7 @@ func (o *ModelsSSLScanJobPart) GetStatNotSslCount() int32 {
 
 // GetStatNotSslCountOk returns a tuple with the StatNotSslCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSLScanJobPart) GetStatNotSslCountOk() (*int32, bool) {
+func (o *ModelsSSLScanJobPart) GetStatNotSslCountOk() (*int64, bool) {
 	if o == nil || isNil(o.StatNotSslCount) {
 		return nil, false
 	}
@@ -417,15 +417,15 @@ func (o *ModelsSSLScanJobPart) HasStatNotSslCount() bool {
 	return false
 }
 
-// SetStatNotSslCount gets a reference to the given int32 and assigns it to the StatNotSslCount field.
-func (o *ModelsSSLScanJobPart) SetStatNotSslCount(v int32) {
+// SetStatNotSslCount gets a reference to the given int64 and assigns it to the StatNotSslCount field.
+func (o *ModelsSSLScanJobPart) SetStatNotSslCount(v int64) {
 	o.StatNotSslCount = &v
 }
 
 // GetStatBadSslHandshakeCount returns the StatBadSslHandshakeCount field value if set, zero value otherwise.
-func (o *ModelsSSLScanJobPart) GetStatBadSslHandshakeCount() int32 {
+func (o *ModelsSSLScanJobPart) GetStatBadSslHandshakeCount() int64 {
 	if o == nil || isNil(o.StatBadSslHandshakeCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.StatBadSslHandshakeCount
@@ -433,7 +433,7 @@ func (o *ModelsSSLScanJobPart) GetStatBadSslHandshakeCount() int32 {
 
 // GetStatBadSslHandshakeCountOk returns a tuple with the StatBadSslHandshakeCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSLScanJobPart) GetStatBadSslHandshakeCountOk() (*int32, bool) {
+func (o *ModelsSSLScanJobPart) GetStatBadSslHandshakeCountOk() (*int64, bool) {
 	if o == nil || isNil(o.StatBadSslHandshakeCount) {
 		return nil, false
 	}
@@ -449,15 +449,15 @@ func (o *ModelsSSLScanJobPart) HasStatBadSslHandshakeCount() bool {
 	return false
 }
 
-// SetStatBadSslHandshakeCount gets a reference to the given int32 and assigns it to the StatBadSslHandshakeCount field.
-func (o *ModelsSSLScanJobPart) SetStatBadSslHandshakeCount(v int32) {
+// SetStatBadSslHandshakeCount gets a reference to the given int64 and assigns it to the StatBadSslHandshakeCount field.
+func (o *ModelsSSLScanJobPart) SetStatBadSslHandshakeCount(v int64) {
 	o.StatBadSslHandshakeCount = &v
 }
 
 // GetStatCertificateFoundCount returns the StatCertificateFoundCount field value if set, zero value otherwise.
-func (o *ModelsSSLScanJobPart) GetStatCertificateFoundCount() int32 {
+func (o *ModelsSSLScanJobPart) GetStatCertificateFoundCount() int64 {
 	if o == nil || isNil(o.StatCertificateFoundCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.StatCertificateFoundCount
@@ -465,7 +465,7 @@ func (o *ModelsSSLScanJobPart) GetStatCertificateFoundCount() int32 {
 
 // GetStatCertificateFoundCountOk returns a tuple with the StatCertificateFoundCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSLScanJobPart) GetStatCertificateFoundCountOk() (*int32, bool) {
+func (o *ModelsSSLScanJobPart) GetStatCertificateFoundCountOk() (*int64, bool) {
 	if o == nil || isNil(o.StatCertificateFoundCount) {
 		return nil, false
 	}
@@ -481,15 +481,15 @@ func (o *ModelsSSLScanJobPart) HasStatCertificateFoundCount() bool {
 	return false
 }
 
-// SetStatCertificateFoundCount gets a reference to the given int32 and assigns it to the StatCertificateFoundCount field.
-func (o *ModelsSSLScanJobPart) SetStatCertificateFoundCount(v int32) {
+// SetStatCertificateFoundCount gets a reference to the given int64 and assigns it to the StatCertificateFoundCount field.
+func (o *ModelsSSLScanJobPart) SetStatCertificateFoundCount(v int64) {
 	o.StatCertificateFoundCount = &v
 }
 
 // GetStatNoCertificateCount returns the StatNoCertificateCount field value if set, zero value otherwise.
-func (o *ModelsSSLScanJobPart) GetStatNoCertificateCount() int32 {
+func (o *ModelsSSLScanJobPart) GetStatNoCertificateCount() int64 {
 	if o == nil || isNil(o.StatNoCertificateCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.StatNoCertificateCount
@@ -497,7 +497,7 @@ func (o *ModelsSSLScanJobPart) GetStatNoCertificateCount() int32 {
 
 // GetStatNoCertificateCountOk returns a tuple with the StatNoCertificateCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSLScanJobPart) GetStatNoCertificateCountOk() (*int32, bool) {
+func (o *ModelsSSLScanJobPart) GetStatNoCertificateCountOk() (*int64, bool) {
 	if o == nil || isNil(o.StatNoCertificateCount) {
 		return nil, false
 	}
@@ -513,8 +513,8 @@ func (o *ModelsSSLScanJobPart) HasStatNoCertificateCount() bool {
 	return false
 }
 
-// SetStatNoCertificateCount gets a reference to the given int32 and assigns it to the StatNoCertificateCount field.
-func (o *ModelsSSLScanJobPart) SetStatNoCertificateCount(v int32) {
+// SetStatNoCertificateCount gets a reference to the given int64 and assigns it to the StatNoCertificateCount field.
+func (o *ModelsSSLScanJobPart) SetStatNoCertificateCount(v int64) {
 	o.StatNoCertificateCount = &v
 }
 

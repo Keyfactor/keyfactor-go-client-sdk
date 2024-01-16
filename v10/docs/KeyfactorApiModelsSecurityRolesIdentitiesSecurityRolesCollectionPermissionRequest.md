@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CollectionId** | Pointer to **int32** |  | [optional] 
+**CollectionId** | Pointer to **int64** |  | [optional] 
 **Permission** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCollectionId
 
-`func (o *KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest) GetCollectionId() int32`
+`func (o *KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest) GetCollectionId() int64`
 
 GetCollectionId returns the CollectionId field if non-nil, zero value otherwise.
 
 ### GetCollectionIdOk
 
-`func (o *KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest) GetCollectionIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest) GetCollectionIdOk() (*int64, bool)`
 
 GetCollectionIdOk returns a tuple with the CollectionId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCollectionId
 
-`func (o *KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest) SetCollectionId(v int32)`
+`func (o *KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest) SetCollectionId(v int64)`
 
 SetCollectionId sets CollectionId field to given value.
 

@@ -31,7 +31,7 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsExpirationExpirationAlertTestReq
 
 // KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest struct for KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest
 type KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest struct {
-	AlertId                *int32     `json:"AlertId,omitempty"`
+	AlertId                *int64     `json:"AlertId,omitempty"`
 	EvaluationDate         *time.Time `json:"EvaluationDate,omitempty"`
 	PreviousEvaluationDate *time.Time `json:"PreviousEvaluationDate,omitempty"`
 	SendAlerts             *bool      `json:"SendAlerts,omitempty"`
@@ -58,9 +58,9 @@ func NewKeyfactorApiModelsAlertsExpirationExpirationAlertTestRequestWithDefaults
 }
 
 // GetAlertId returns the AlertId field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest) GetAlertId() int32 {
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest) GetAlertId() int64 {
 	if o == nil || isNil(o.AlertId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AlertId
@@ -68,7 +68,7 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest) GetAlertI
 
 // GetAlertIdOk returns a tuple with the AlertId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest) GetAlertIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest) GetAlertIdOk() (*int64, bool) {
 	if o == nil || isNil(o.AlertId) {
 		return nil, false
 	}
@@ -84,8 +84,8 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest) HasAlertI
 	return false
 }
 
-// SetAlertId gets a reference to the given int32 and assigns it to the AlertId field.
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest) SetAlertId(v int32) {
+// SetAlertId gets a reference to the given int64 and assigns it to the AlertId field.
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertTestRequest) SetAlertId(v int64) {
 	o.AlertId = &v
 }
 

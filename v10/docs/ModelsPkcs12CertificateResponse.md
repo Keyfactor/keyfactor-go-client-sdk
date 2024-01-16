@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **SerialNumber** | Pointer to **string** |  | [optional] 
 **IssuerDN** | Pointer to **NullableString** |  | [optional] 
 **Thumbprint** | Pointer to **string** |  | [optional] 
-**KeyfactorId** | Pointer to **int32** |  | [optional] 
+**KeyfactorId** | Pointer to **int64** |  | [optional] 
 **Pkcs12Blob** | Pointer to **string** |  | [optional] 
 **Password** | Pointer to **string** |  | [optional] 
-**KeyfactorRequestId** | Pointer to **int32** | The integer id of the certificate request in the Keyfactor database, if one exists. | [optional] 
+**KeyfactorRequestId** | Pointer to **int64** | The integer id of the certificate request in the Keyfactor database, if one exists. | [optional] 
 **RequestDisposition** | Pointer to **string** |  | [optional] 
 **DispositionMessage** | Pointer to **string** |  | [optional] 
 **EnrollmentContext** | Pointer to **map[string]string** |  | [optional] 
@@ -121,20 +121,20 @@ HasThumbprint returns a boolean if a field has been set.
 
 ### GetKeyfactorId
 
-`func (o *ModelsPkcs12CertificateResponse) GetKeyfactorId() int32`
+`func (o *ModelsPkcs12CertificateResponse) GetKeyfactorId() int64`
 
 GetKeyfactorId returns the KeyfactorId field if non-nil, zero value otherwise.
 
 ### GetKeyfactorIdOk
 
-`func (o *ModelsPkcs12CertificateResponse) GetKeyfactorIdOk() (*int32, bool)`
+`func (o *ModelsPkcs12CertificateResponse) GetKeyfactorIdOk() (*int64, bool)`
 
 GetKeyfactorIdOk returns a tuple with the KeyfactorId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyfactorId
 
-`func (o *ModelsPkcs12CertificateResponse) SetKeyfactorId(v int32)`
+`func (o *ModelsPkcs12CertificateResponse) SetKeyfactorId(v int64)`
 
 SetKeyfactorId sets KeyfactorId field to given value.
 
@@ -196,20 +196,20 @@ HasPassword returns a boolean if a field has been set.
 
 ### GetKeyfactorRequestId
 
-`func (o *ModelsPkcs12CertificateResponse) GetKeyfactorRequestId() int32`
+`func (o *ModelsPkcs12CertificateResponse) GetKeyfactorRequestId() int64`
 
 GetKeyfactorRequestId returns the KeyfactorRequestId field if non-nil, zero value otherwise.
 
 ### GetKeyfactorRequestIdOk
 
-`func (o *ModelsPkcs12CertificateResponse) GetKeyfactorRequestIdOk() (*int32, bool)`
+`func (o *ModelsPkcs12CertificateResponse) GetKeyfactorRequestIdOk() (*int64, bool)`
 
 GetKeyfactorRequestIdOk returns a tuple with the KeyfactorRequestId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyfactorRequestId
 
-`func (o *ModelsPkcs12CertificateResponse) SetKeyfactorRequestId(v int32)`
+`func (o *ModelsPkcs12CertificateResponse) SetKeyfactorRequestId(v int64)`
 
 SetKeyfactorRequestId sets KeyfactorRequestId field to given value.
 

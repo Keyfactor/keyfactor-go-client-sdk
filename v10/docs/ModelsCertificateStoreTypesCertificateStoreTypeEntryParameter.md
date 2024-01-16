@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StoreTypeId** | Pointer to **int32** |  | [optional] 
+**StoreTypeId** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetStoreTypeId
 
-`func (o *ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) GetStoreTypeId() int32`
+`func (o *ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) GetStoreTypeId() int64`
 
 GetStoreTypeId returns the StoreTypeId field if non-nil, zero value otherwise.
 
 ### GetStoreTypeIdOk
 
-`func (o *ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) GetStoreTypeIdOk() (*int32, bool)`
+`func (o *ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) GetStoreTypeIdOk() (*int64, bool)`
 
 GetStoreTypeIdOk returns a tuple with the StoreTypeId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStoreTypeId
 
-`func (o *ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) SetStoreTypeId(v int32)`
+`func (o *ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) SetStoreTypeId(v int64)`
 
 SetStoreTypeId sets StoreTypeId field to given value.
 

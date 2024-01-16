@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **StoreType** | Pointer to **string** |  | [optional] [readonly] 
-**StoreTypeId** | Pointer to **int32** |  | [optional] [readonly] 
-**StoreCount** | Pointer to **int32** |  | [optional] [readonly] 
+**StoreTypeId** | Pointer to **int64** |  | [optional] [readonly] 
+**StoreCount** | Pointer to **int64** |  | [optional] [readonly] 
 **Locations** | Pointer to [**[]ModelsCertStoreLocationsCertificateStoreLocationsDetail**](ModelsCertStoreLocationsCertificateStoreLocationsDetail.md) |  | [optional] 
 
 ## Methods
@@ -55,20 +55,20 @@ HasStoreType returns a boolean if a field has been set.
 
 ### GetStoreTypeId
 
-`func (o *ModelsCertStoreLocationsCertificateLocationsGroup) GetStoreTypeId() int32`
+`func (o *ModelsCertStoreLocationsCertificateLocationsGroup) GetStoreTypeId() int64`
 
 GetStoreTypeId returns the StoreTypeId field if non-nil, zero value otherwise.
 
 ### GetStoreTypeIdOk
 
-`func (o *ModelsCertStoreLocationsCertificateLocationsGroup) GetStoreTypeIdOk() (*int32, bool)`
+`func (o *ModelsCertStoreLocationsCertificateLocationsGroup) GetStoreTypeIdOk() (*int64, bool)`
 
 GetStoreTypeIdOk returns a tuple with the StoreTypeId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStoreTypeId
 
-`func (o *ModelsCertStoreLocationsCertificateLocationsGroup) SetStoreTypeId(v int32)`
+`func (o *ModelsCertStoreLocationsCertificateLocationsGroup) SetStoreTypeId(v int64)`
 
 SetStoreTypeId sets StoreTypeId field to given value.
 
@@ -80,20 +80,20 @@ HasStoreTypeId returns a boolean if a field has been set.
 
 ### GetStoreCount
 
-`func (o *ModelsCertStoreLocationsCertificateLocationsGroup) GetStoreCount() int32`
+`func (o *ModelsCertStoreLocationsCertificateLocationsGroup) GetStoreCount() int64`
 
 GetStoreCount returns the StoreCount field if non-nil, zero value otherwise.
 
 ### GetStoreCountOk
 
-`func (o *ModelsCertStoreLocationsCertificateLocationsGroup) GetStoreCountOk() (*int32, bool)`
+`func (o *ModelsCertStoreLocationsCertificateLocationsGroup) GetStoreCountOk() (*int64, bool)`
 
 GetStoreCountOk returns a tuple with the StoreCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStoreCount
 
-`func (o *ModelsCertStoreLocationsCertificateLocationsGroup) SetStoreCount(v int32)`
+`func (o *ModelsCertStoreLocationsCertificateLocationsGroup) SetStoreCount(v int64)`
 
 SetStoreCount sets StoreCount field to given value.
 

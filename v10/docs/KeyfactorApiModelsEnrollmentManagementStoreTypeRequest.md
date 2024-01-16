@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StoreTypeId** | Pointer to **int32** |  | [optional] 
+**StoreTypeId** | Pointer to **int64** |  | [optional] 
 **Alias** | Pointer to **string** |  | [optional] 
 **Overwrite** | Pointer to **bool** |  | [optional] 
 **Properties** | Pointer to **[]map[string]interface{}** |  | [optional] 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetStoreTypeId
 
-`func (o *KeyfactorApiModelsEnrollmentManagementStoreTypeRequest) GetStoreTypeId() int32`
+`func (o *KeyfactorApiModelsEnrollmentManagementStoreTypeRequest) GetStoreTypeId() int64`
 
 GetStoreTypeId returns the StoreTypeId field if non-nil, zero value otherwise.
 
 ### GetStoreTypeIdOk
 
-`func (o *KeyfactorApiModelsEnrollmentManagementStoreTypeRequest) GetStoreTypeIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsEnrollmentManagementStoreTypeRequest) GetStoreTypeIdOk() (*int64, bool)`
 
 GetStoreTypeIdOk returns a tuple with the StoreTypeId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStoreTypeId
 
-`func (o *KeyfactorApiModelsEnrollmentManagementStoreTypeRequest) SetStoreTypeId(v int32)`
+`func (o *KeyfactorApiModelsEnrollmentManagementStoreTypeRequest) SetStoreTypeId(v int64)`
 
 SetStoreTypeId sets StoreTypeId field to given value.
 

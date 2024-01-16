@@ -53,11 +53,11 @@ func Test_command_MonitoringApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("MonitoringApi_MonitoringDeleteRevocationMonitoring_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("MonitoringApi_MonitoringDeleteRevocationMonitoring_id: %v", id)
 
 		t.Log("MonitoringApi_MonitoringDeleteRevocationMonitoring_payload: <none>")
-		httpRes, err := apiClient.MonitoringApi.MonitoringDeleteRevocationMonitoring(context.Background(), id.(int32)).Execute()
+		httpRes, err := apiClient.MonitoringApi.MonitoringDeleteRevocationMonitoring(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
@@ -76,11 +76,11 @@ func Test_command_MonitoringApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("MonitoringApi_MonitoringGetRevocationMonitoring_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("MonitoringApi_MonitoringGetRevocationMonitoring_id: %v", id)
 
 		t.Log("MonitoringApi_MonitoringGetRevocationMonitoring_payload: <none>")
-		resp, httpRes, err := apiClient.MonitoringApi.MonitoringGetRevocationMonitoring(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.MonitoringApi.MonitoringGetRevocationMonitoring(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **MonitorSchedule** | Pointer to [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | [optional] 
 **DiscoverPercentComplete** | Pointer to **float64** |  | [optional] 
 **MonitorPercentComplete** | Pointer to **float64** |  | [optional] 
-**DiscoverStatus** | Pointer to **int32** |  | [optional] 
-**MonitorStatus** | Pointer to **int32** |  | [optional] 
+**DiscoverStatus** | Pointer to **int64** |  | [optional] 
+**MonitorStatus** | Pointer to **int64** |  | [optional] 
 **DiscoverLastScanned** | Pointer to **time.Time** |  | [optional] 
 **MonitorLastScanned** | Pointer to **time.Time** |  | [optional] 
 **SslAlertRecipients** | Pointer to **[]string** |  | [optional] 
@@ -24,8 +24,8 @@ Name | Type | Description | Notes
 **DiscoverTimeoutMs** | Pointer to **float64** |  | [optional] 
 **MonitorTimeoutMs** | Pointer to **float64** |  | [optional] 
 **ExpirationAlertDays** | Pointer to **float64** |  | [optional] 
-**DiscoverJobParts** | Pointer to **int32** |  | [optional] 
-**MonitorJobParts** | Pointer to **int32** |  | [optional] 
+**DiscoverJobParts** | Pointer to **int64** |  | [optional] 
+**MonitorJobParts** | Pointer to **int64** |  | [optional] 
 **QuietHours** | Pointer to [**[]KeyfactorApiModelsSslQuietHourResponse**](KeyfactorApiModelsSslQuietHourResponse.md) |  | [optional] 
 
 ## Methods
@@ -299,20 +299,20 @@ HasMonitorPercentComplete returns a boolean if a field has been set.
 
 ### GetDiscoverStatus
 
-`func (o *KeyfactorApiModelsSslNetworkResponse) GetDiscoverStatus() int32`
+`func (o *KeyfactorApiModelsSslNetworkResponse) GetDiscoverStatus() int64`
 
 GetDiscoverStatus returns the DiscoverStatus field if non-nil, zero value otherwise.
 
 ### GetDiscoverStatusOk
 
-`func (o *KeyfactorApiModelsSslNetworkResponse) GetDiscoverStatusOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsSslNetworkResponse) GetDiscoverStatusOk() (*int64, bool)`
 
 GetDiscoverStatusOk returns a tuple with the DiscoverStatus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDiscoverStatus
 
-`func (o *KeyfactorApiModelsSslNetworkResponse) SetDiscoverStatus(v int32)`
+`func (o *KeyfactorApiModelsSslNetworkResponse) SetDiscoverStatus(v int64)`
 
 SetDiscoverStatus sets DiscoverStatus field to given value.
 
@@ -324,20 +324,20 @@ HasDiscoverStatus returns a boolean if a field has been set.
 
 ### GetMonitorStatus
 
-`func (o *KeyfactorApiModelsSslNetworkResponse) GetMonitorStatus() int32`
+`func (o *KeyfactorApiModelsSslNetworkResponse) GetMonitorStatus() int64`
 
 GetMonitorStatus returns the MonitorStatus field if non-nil, zero value otherwise.
 
 ### GetMonitorStatusOk
 
-`func (o *KeyfactorApiModelsSslNetworkResponse) GetMonitorStatusOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsSslNetworkResponse) GetMonitorStatusOk() (*int64, bool)`
 
 GetMonitorStatusOk returns a tuple with the MonitorStatus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMonitorStatus
 
-`func (o *KeyfactorApiModelsSslNetworkResponse) SetMonitorStatus(v int32)`
+`func (o *KeyfactorApiModelsSslNetworkResponse) SetMonitorStatus(v int64)`
 
 SetMonitorStatus sets MonitorStatus field to given value.
 
@@ -549,20 +549,20 @@ HasExpirationAlertDays returns a boolean if a field has been set.
 
 ### GetDiscoverJobParts
 
-`func (o *KeyfactorApiModelsSslNetworkResponse) GetDiscoverJobParts() int32`
+`func (o *KeyfactorApiModelsSslNetworkResponse) GetDiscoverJobParts() int64`
 
 GetDiscoverJobParts returns the DiscoverJobParts field if non-nil, zero value otherwise.
 
 ### GetDiscoverJobPartsOk
 
-`func (o *KeyfactorApiModelsSslNetworkResponse) GetDiscoverJobPartsOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsSslNetworkResponse) GetDiscoverJobPartsOk() (*int64, bool)`
 
 GetDiscoverJobPartsOk returns a tuple with the DiscoverJobParts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDiscoverJobParts
 
-`func (o *KeyfactorApiModelsSslNetworkResponse) SetDiscoverJobParts(v int32)`
+`func (o *KeyfactorApiModelsSslNetworkResponse) SetDiscoverJobParts(v int64)`
 
 SetDiscoverJobParts sets DiscoverJobParts field to given value.
 
@@ -574,20 +574,20 @@ HasDiscoverJobParts returns a boolean if a field has been set.
 
 ### GetMonitorJobParts
 
-`func (o *KeyfactorApiModelsSslNetworkResponse) GetMonitorJobParts() int32`
+`func (o *KeyfactorApiModelsSslNetworkResponse) GetMonitorJobParts() int64`
 
 GetMonitorJobParts returns the MonitorJobParts field if non-nil, zero value otherwise.
 
 ### GetMonitorJobPartsOk
 
-`func (o *KeyfactorApiModelsSslNetworkResponse) GetMonitorJobPartsOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsSslNetworkResponse) GetMonitorJobPartsOk() (*int64, bool)`
 
 GetMonitorJobPartsOk returns a tuple with the MonitorJobParts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMonitorJobParts
 
-`func (o *KeyfactorApiModelsSslNetworkResponse) SetMonitorJobParts(v int32)`
+`func (o *KeyfactorApiModelsSslNetworkResponse) SetMonitorJobParts(v int64)`
 
 SetMonitorJobParts sets MonitorJobParts field to given value.
 

@@ -30,12 +30,12 @@ var _ MappedNullable = &ModelsCertificateStoreContainerListResponse{}
 
 // ModelsCertificateStoreContainerListResponse struct for ModelsCertificateStoreContainerListResponse
 type ModelsCertificateStoreContainerListResponse struct {
-	Id                   *int32  `json:"Id,omitempty"`
+	Id                   *int64  `json:"Id,omitempty"`
 	Name                 *string `json:"Name,omitempty"`
 	OverwriteSchedules   *bool   `json:"OverwriteSchedules,omitempty"`
 	Schedule             *string `json:"Schedule,omitempty"`
-	CertStoreType        *int32  `json:"CertStoreType,omitempty"`
-	StoreCount           *int32  `json:"StoreCount,omitempty"`
+	CertStoreType        *int64  `json:"CertStoreType,omitempty"`
+	StoreCount           *int64  `json:"StoreCount,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -59,9 +59,9 @@ func NewModelsCertificateStoreContainerListResponseWithDefaults() *ModelsCertifi
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsCertificateStoreContainerListResponse) GetId() int32 {
+func (o *ModelsCertificateStoreContainerListResponse) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -69,7 +69,7 @@ func (o *ModelsCertificateStoreContainerListResponse) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateStoreContainerListResponse) GetIdOk() (*int32, bool) {
+func (o *ModelsCertificateStoreContainerListResponse) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -85,8 +85,8 @@ func (o *ModelsCertificateStoreContainerListResponse) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsCertificateStoreContainerListResponse) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsCertificateStoreContainerListResponse) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -187,9 +187,9 @@ func (o *ModelsCertificateStoreContainerListResponse) SetSchedule(v string) {
 }
 
 // GetCertStoreType returns the CertStoreType field value if set, zero value otherwise.
-func (o *ModelsCertificateStoreContainerListResponse) GetCertStoreType() int32 {
+func (o *ModelsCertificateStoreContainerListResponse) GetCertStoreType() int64 {
 	if o == nil || isNil(o.CertStoreType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CertStoreType
@@ -197,7 +197,7 @@ func (o *ModelsCertificateStoreContainerListResponse) GetCertStoreType() int32 {
 
 // GetCertStoreTypeOk returns a tuple with the CertStoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateStoreContainerListResponse) GetCertStoreTypeOk() (*int32, bool) {
+func (o *ModelsCertificateStoreContainerListResponse) GetCertStoreTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.CertStoreType) {
 		return nil, false
 	}
@@ -213,15 +213,15 @@ func (o *ModelsCertificateStoreContainerListResponse) HasCertStoreType() bool {
 	return false
 }
 
-// SetCertStoreType gets a reference to the given int32 and assigns it to the CertStoreType field.
-func (o *ModelsCertificateStoreContainerListResponse) SetCertStoreType(v int32) {
+// SetCertStoreType gets a reference to the given int64 and assigns it to the CertStoreType field.
+func (o *ModelsCertificateStoreContainerListResponse) SetCertStoreType(v int64) {
 	o.CertStoreType = &v
 }
 
 // GetStoreCount returns the StoreCount field value if set, zero value otherwise.
-func (o *ModelsCertificateStoreContainerListResponse) GetStoreCount() int32 {
+func (o *ModelsCertificateStoreContainerListResponse) GetStoreCount() int64 {
 	if o == nil || isNil(o.StoreCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.StoreCount
@@ -229,7 +229,7 @@ func (o *ModelsCertificateStoreContainerListResponse) GetStoreCount() int32 {
 
 // GetStoreCountOk returns a tuple with the StoreCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateStoreContainerListResponse) GetStoreCountOk() (*int32, bool) {
+func (o *ModelsCertificateStoreContainerListResponse) GetStoreCountOk() (*int64, bool) {
 	if o == nil || isNil(o.StoreCount) {
 		return nil, false
 	}
@@ -245,8 +245,8 @@ func (o *ModelsCertificateStoreContainerListResponse) HasStoreCount() bool {
 	return false
 }
 
-// SetStoreCount gets a reference to the given int32 and assigns it to the StoreCount field.
-func (o *ModelsCertificateStoreContainerListResponse) SetStoreCount(v int32) {
+// SetStoreCount gets a reference to the given int64 and assigns it to the StoreCount field.
+func (o *ModelsCertificateStoreContainerListResponse) SetStoreCount(v int64) {
 	o.StoreCount = &v
 }
 

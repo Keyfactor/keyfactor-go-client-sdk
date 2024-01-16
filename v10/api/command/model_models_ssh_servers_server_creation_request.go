@@ -34,7 +34,7 @@ type ModelsSSHServersServerCreationRequest struct {
 	Hostname             string `json:"Hostname"`
 	ServerGroupId        string `json:"ServerGroupId"`
 	UnderManagement      *bool  `json:"UnderManagement,omitempty"`
-	Port                 *int32 `json:"Port,omitempty"`
+	Port                 *int64 `json:"Port,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -165,9 +165,9 @@ func (o *ModelsSSHServersServerCreationRequest) SetUnderManagement(v bool) {
 }
 
 // GetPort returns the Port field value if set, zero value otherwise.
-func (o *ModelsSSHServersServerCreationRequest) GetPort() int32 {
+func (o *ModelsSSHServersServerCreationRequest) GetPort() int64 {
 	if o == nil || isNil(o.Port) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Port
@@ -175,7 +175,7 @@ func (o *ModelsSSHServersServerCreationRequest) GetPort() int32 {
 
 // GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSHServersServerCreationRequest) GetPortOk() (*int32, bool) {
+func (o *ModelsSSHServersServerCreationRequest) GetPortOk() (*int64, bool) {
 	if o == nil || isNil(o.Port) {
 		return nil, false
 	}
@@ -191,8 +191,8 @@ func (o *ModelsSSHServersServerCreationRequest) HasPort() bool {
 	return false
 }
 
-// SetPort gets a reference to the given int32 and assigns it to the Port field.
-func (o *ModelsSSHServersServerCreationRequest) SetPort(v int32) {
+// SetPort gets a reference to the given int64 and assigns it to the Port field.
+func (o *ModelsSSHServersServerCreationRequest) SetPort(v int64) {
 	o.Port = &v
 }
 

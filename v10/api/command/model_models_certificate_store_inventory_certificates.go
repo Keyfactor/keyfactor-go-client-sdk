@@ -31,7 +31,7 @@ var _ MappedNullable = &ModelsCertificateStoreInventoryCertificates{}
 
 // ModelsCertificateStoreInventoryCertificates struct for ModelsCertificateStoreInventoryCertificates
 type ModelsCertificateStoreInventoryCertificates struct {
-	Id                       *int32                            `json:"Id,omitempty"`
+	Id                       *int64                            `json:"Id,omitempty"`
 	IssuedDN                 NullableString                    `json:"IssuedDN,omitempty"`
 	SerialNumber             *string                           `json:"SerialNumber,omitempty"`
 	NotBefore                *time.Time                        `json:"NotBefore,omitempty"`
@@ -39,7 +39,7 @@ type ModelsCertificateStoreInventoryCertificates struct {
 	SigningAlgorithm         *string                           `json:"SigningAlgorithm,omitempty"`
 	IssuerDN                 NullableString                    `json:"IssuerDN,omitempty"`
 	Thumbprint               *string                           `json:"Thumbprint,omitempty"`
-	CertStoreInventoryItemId *int32                            `json:"CertStoreInventoryItemId,omitempty"`
+	CertStoreInventoryItemId *int64                            `json:"CertStoreInventoryItemId,omitempty"`
 	Metadata                 map[string]map[string]interface{} `json:"Metadata,omitempty"`
 	AdditionalProperties     map[string]interface{}
 }
@@ -64,9 +64,9 @@ func NewModelsCertificateStoreInventoryCertificatesWithDefaults() *ModelsCertifi
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsCertificateStoreInventoryCertificates) GetId() int32 {
+func (o *ModelsCertificateStoreInventoryCertificates) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -74,7 +74,7 @@ func (o *ModelsCertificateStoreInventoryCertificates) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateStoreInventoryCertificates) GetIdOk() (*int32, bool) {
+func (o *ModelsCertificateStoreInventoryCertificates) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -90,8 +90,8 @@ func (o *ModelsCertificateStoreInventoryCertificates) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsCertificateStoreInventoryCertificates) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsCertificateStoreInventoryCertificates) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -342,9 +342,9 @@ func (o *ModelsCertificateStoreInventoryCertificates) SetThumbprint(v string) {
 }
 
 // GetCertStoreInventoryItemId returns the CertStoreInventoryItemId field value if set, zero value otherwise.
-func (o *ModelsCertificateStoreInventoryCertificates) GetCertStoreInventoryItemId() int32 {
+func (o *ModelsCertificateStoreInventoryCertificates) GetCertStoreInventoryItemId() int64 {
 	if o == nil || isNil(o.CertStoreInventoryItemId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CertStoreInventoryItemId
@@ -352,7 +352,7 @@ func (o *ModelsCertificateStoreInventoryCertificates) GetCertStoreInventoryItemI
 
 // GetCertStoreInventoryItemIdOk returns a tuple with the CertStoreInventoryItemId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateStoreInventoryCertificates) GetCertStoreInventoryItemIdOk() (*int32, bool) {
+func (o *ModelsCertificateStoreInventoryCertificates) GetCertStoreInventoryItemIdOk() (*int64, bool) {
 	if o == nil || isNil(o.CertStoreInventoryItemId) {
 		return nil, false
 	}
@@ -368,8 +368,8 @@ func (o *ModelsCertificateStoreInventoryCertificates) HasCertStoreInventoryItemI
 	return false
 }
 
-// SetCertStoreInventoryItemId gets a reference to the given int32 and assigns it to the CertStoreInventoryItemId field.
-func (o *ModelsCertificateStoreInventoryCertificates) SetCertStoreInventoryItemId(v int32) {
+// SetCertStoreInventoryItemId gets a reference to the given int64 and assigns it to the CertStoreInventoryItemId field.
+func (o *ModelsCertificateStoreInventoryCertificates) SetCertStoreInventoryItemId(v int64) {
 	o.CertStoreInventoryItemId = &v
 }
 

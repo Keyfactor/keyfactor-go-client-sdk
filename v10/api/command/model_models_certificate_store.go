@@ -32,11 +32,11 @@ var _ MappedNullable = &ModelsCertificateStore{}
 type ModelsCertificateStore struct {
 	Id                      *string                                     `json:"Id,omitempty"`
 	DisplayName             *string                                     `json:"DisplayName,omitempty"`
-	ContainerId             *int32                                      `json:"ContainerId,omitempty"`
+	ContainerId             *int64                                      `json:"ContainerId,omitempty"`
 	ClientMachine           *string                                     `json:"ClientMachine,omitempty"`
 	Storepath               *string                                     `json:"Storepath,omitempty"`
 	CertStoreInventoryJobId *string                                     `json:"CertStoreInventoryJobId,omitempty"`
-	CertStoreType           *int32                                      `json:"CertStoreType,omitempty"`
+	CertStoreType           *int64                                      `json:"CertStoreType,omitempty"`
 	Approved                *bool                                       `json:"Approved,omitempty"`
 	CreateIfMissing         *bool                                       `json:"CreateIfMissing,omitempty"`
 	Properties              *string                                     `json:"Properties,omitempty"`
@@ -134,9 +134,9 @@ func (o *ModelsCertificateStore) SetDisplayName(v string) {
 }
 
 // GetContainerId returns the ContainerId field value if set, zero value otherwise.
-func (o *ModelsCertificateStore) GetContainerId() int32 {
+func (o *ModelsCertificateStore) GetContainerId() int64 {
 	if o == nil || isNil(o.ContainerId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ContainerId
@@ -144,7 +144,7 @@ func (o *ModelsCertificateStore) GetContainerId() int32 {
 
 // GetContainerIdOk returns a tuple with the ContainerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateStore) GetContainerIdOk() (*int32, bool) {
+func (o *ModelsCertificateStore) GetContainerIdOk() (*int64, bool) {
 	if o == nil || isNil(o.ContainerId) {
 		return nil, false
 	}
@@ -160,8 +160,8 @@ func (o *ModelsCertificateStore) HasContainerId() bool {
 	return false
 }
 
-// SetContainerId gets a reference to the given int32 and assigns it to the ContainerId field.
-func (o *ModelsCertificateStore) SetContainerId(v int32) {
+// SetContainerId gets a reference to the given int64 and assigns it to the ContainerId field.
+func (o *ModelsCertificateStore) SetContainerId(v int64) {
 	o.ContainerId = &v
 }
 
@@ -262,9 +262,9 @@ func (o *ModelsCertificateStore) SetCertStoreInventoryJobId(v string) {
 }
 
 // GetCertStoreType returns the CertStoreType field value if set, zero value otherwise.
-func (o *ModelsCertificateStore) GetCertStoreType() int32 {
+func (o *ModelsCertificateStore) GetCertStoreType() int64 {
 	if o == nil || isNil(o.CertStoreType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CertStoreType
@@ -272,7 +272,7 @@ func (o *ModelsCertificateStore) GetCertStoreType() int32 {
 
 // GetCertStoreTypeOk returns a tuple with the CertStoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateStore) GetCertStoreTypeOk() (*int32, bool) {
+func (o *ModelsCertificateStore) GetCertStoreTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.CertStoreType) {
 		return nil, false
 	}
@@ -288,8 +288,8 @@ func (o *ModelsCertificateStore) HasCertStoreType() bool {
 	return false
 }
 
-// SetCertStoreType gets a reference to the given int32 and assigns it to the CertStoreType field.
-func (o *ModelsCertificateStore) SetCertStoreType(v int32) {
+// SetCertStoreType gets a reference to the given int64 and assigns it to the CertStoreType field.
+func (o *ModelsCertificateStore) SetCertStoreType(v int64) {
 	o.CertStoreType = &v
 }
 

@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] 
-**ContainerId** | Pointer to **int32** |  | [optional] 
-**CertStoreType** | Pointer to **int32** |  | [optional] 
+**ContainerId** | Pointer to **int64** |  | [optional] 
+**CertStoreType** | Pointer to **int64** |  | [optional] 
 **Properties** | Pointer to **string** |  | [optional] 
 **Password** | Pointer to [**ModelsKeyfactorAPISecret**](ModelsKeyfactorAPISecret.md) |  | [optional] 
 
@@ -56,20 +56,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetContainerId
 
-`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetContainerId() int32`
+`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetContainerId() int64`
 
 GetContainerId returns the ContainerId field if non-nil, zero value otherwise.
 
 ### GetContainerIdOk
 
-`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetContainerIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetContainerIdOk() (*int64, bool)`
 
 GetContainerIdOk returns a tuple with the ContainerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContainerId
 
-`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) SetContainerId(v int32)`
+`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) SetContainerId(v int64)`
 
 SetContainerId sets ContainerId field to given value.
 
@@ -81,20 +81,20 @@ HasContainerId returns a boolean if a field has been set.
 
 ### GetCertStoreType
 
-`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetCertStoreType() int32`
+`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetCertStoreType() int64`
 
 GetCertStoreType returns the CertStoreType field if non-nil, zero value otherwise.
 
 ### GetCertStoreTypeOk
 
-`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetCertStoreTypeOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) GetCertStoreTypeOk() (*int64, bool)`
 
 GetCertStoreTypeOk returns a tuple with the CertStoreType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertStoreType
 
-`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) SetCertStoreType(v int32)`
+`func (o *KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest) SetCertStoreType(v int64)`
 
 SetCertStoreType sets CertStoreType field to given value.
 

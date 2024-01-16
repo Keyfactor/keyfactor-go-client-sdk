@@ -34,7 +34,7 @@ type ModelsInvalidKeystore struct {
 	ClientMachine        *string `json:"ClientMachine,omitempty"`
 	StorePath            *string `json:"StorePath,omitempty"`
 	Alias                *string `json:"Alias,omitempty"`
-	Reason               *int32  `json:"Reason,omitempty"`
+	Reason               *int64  `json:"Reason,omitempty"`
 	Explanation          *string `json:"Explanation,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -187,9 +187,9 @@ func (o *ModelsInvalidKeystore) SetAlias(v string) {
 }
 
 // GetReason returns the Reason field value if set, zero value otherwise.
-func (o *ModelsInvalidKeystore) GetReason() int32 {
+func (o *ModelsInvalidKeystore) GetReason() int64 {
 	if o == nil || isNil(o.Reason) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Reason
@@ -197,7 +197,7 @@ func (o *ModelsInvalidKeystore) GetReason() int32 {
 
 // GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsInvalidKeystore) GetReasonOk() (*int32, bool) {
+func (o *ModelsInvalidKeystore) GetReasonOk() (*int64, bool) {
 	if o == nil || isNil(o.Reason) {
 		return nil, false
 	}
@@ -213,8 +213,8 @@ func (o *ModelsInvalidKeystore) HasReason() bool {
 	return false
 }
 
-// SetReason gets a reference to the given int32 and assigns it to the Reason field.
-func (o *ModelsInvalidKeystore) SetReason(v int32) {
+// SetReason gets a reference to the given int64 and assigns it to the Reason field.
+func (o *ModelsInvalidKeystore) SetReason(v int64) {
 	o.Reason = &v
 }
 

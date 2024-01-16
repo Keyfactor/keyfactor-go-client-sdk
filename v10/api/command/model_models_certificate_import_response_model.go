@@ -30,8 +30,8 @@ var _ MappedNullable = &ModelsCertificateImportResponseModel{}
 
 // ModelsCertificateImportResponseModel struct for ModelsCertificateImportResponseModel
 type ModelsCertificateImportResponseModel struct {
-	ImportStatus         *int32                  `json:"ImportStatus,omitempty"`
-	JobStatus            *int32                  `json:"JobStatus,omitempty"`
+	ImportStatus         *int64                  `json:"ImportStatus,omitempty"`
+	JobStatus            *int64                  `json:"JobStatus,omitempty"`
 	InvalidKeystores     []ModelsInvalidKeystore `json:"InvalidKeystores,omitempty"`
 	Thumbprint           *string                 `json:"Thumbprint,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -57,9 +57,9 @@ func NewModelsCertificateImportResponseModelWithDefaults() *ModelsCertificateImp
 }
 
 // GetImportStatus returns the ImportStatus field value if set, zero value otherwise.
-func (o *ModelsCertificateImportResponseModel) GetImportStatus() int32 {
+func (o *ModelsCertificateImportResponseModel) GetImportStatus() int64 {
 	if o == nil || isNil(o.ImportStatus) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ImportStatus
@@ -67,7 +67,7 @@ func (o *ModelsCertificateImportResponseModel) GetImportStatus() int32 {
 
 // GetImportStatusOk returns a tuple with the ImportStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateImportResponseModel) GetImportStatusOk() (*int32, bool) {
+func (o *ModelsCertificateImportResponseModel) GetImportStatusOk() (*int64, bool) {
 	if o == nil || isNil(o.ImportStatus) {
 		return nil, false
 	}
@@ -83,15 +83,15 @@ func (o *ModelsCertificateImportResponseModel) HasImportStatus() bool {
 	return false
 }
 
-// SetImportStatus gets a reference to the given int32 and assigns it to the ImportStatus field.
-func (o *ModelsCertificateImportResponseModel) SetImportStatus(v int32) {
+// SetImportStatus gets a reference to the given int64 and assigns it to the ImportStatus field.
+func (o *ModelsCertificateImportResponseModel) SetImportStatus(v int64) {
 	o.ImportStatus = &v
 }
 
 // GetJobStatus returns the JobStatus field value if set, zero value otherwise.
-func (o *ModelsCertificateImportResponseModel) GetJobStatus() int32 {
+func (o *ModelsCertificateImportResponseModel) GetJobStatus() int64 {
 	if o == nil || isNil(o.JobStatus) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.JobStatus
@@ -99,7 +99,7 @@ func (o *ModelsCertificateImportResponseModel) GetJobStatus() int32 {
 
 // GetJobStatusOk returns a tuple with the JobStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateImportResponseModel) GetJobStatusOk() (*int32, bool) {
+func (o *ModelsCertificateImportResponseModel) GetJobStatusOk() (*int64, bool) {
 	if o == nil || isNil(o.JobStatus) {
 		return nil, false
 	}
@@ -115,8 +115,8 @@ func (o *ModelsCertificateImportResponseModel) HasJobStatus() bool {
 	return false
 }
 
-// SetJobStatus gets a reference to the given int32 and assigns it to the JobStatus field.
-func (o *ModelsCertificateImportResponseModel) SetJobStatus(v int32) {
+// SetJobStatus gets a reference to the given int64 and assigns it to the JobStatus field.
+func (o *ModelsCertificateImportResponseModel) SetJobStatus(v int64) {
 	o.JobStatus = &v
 }
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **ClientMachine** | Pointer to **string** |  | [optional] 
 **StorePath** | Pointer to **string** |  | [optional] 
 **Alias** | Pointer to **string** |  | [optional] 
-**Reason** | Pointer to **int32** |  | [optional] 
+**Reason** | Pointer to **int64** |  | [optional] 
 **Explanation** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -132,20 +132,20 @@ HasAlias returns a boolean if a field has been set.
 
 ### GetReason
 
-`func (o *ModelsInvalidKeystore) GetReason() int32`
+`func (o *ModelsInvalidKeystore) GetReason() int64`
 
 GetReason returns the Reason field if non-nil, zero value otherwise.
 
 ### GetReasonOk
 
-`func (o *ModelsInvalidKeystore) GetReasonOk() (*int32, bool)`
+`func (o *ModelsInvalidKeystore) GetReasonOk() (*int64, bool)`
 
 GetReasonOk returns a tuple with the Reason field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReason
 
-`func (o *ModelsInvalidKeystore) SetReason(v int32)`
+`func (o *ModelsInvalidKeystore) SetReason(v int64)`
 
 SetReason sets Reason field to given value.
 

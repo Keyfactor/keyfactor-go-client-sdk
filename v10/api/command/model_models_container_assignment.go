@@ -30,9 +30,9 @@ var _ MappedNullable = &ModelsContainerAssignment{}
 
 // ModelsContainerAssignment struct for ModelsContainerAssignment
 type ModelsContainerAssignment struct {
-	CertStoreContainerId *int32   `json:"CertStoreContainerId,omitempty"`
+	CertStoreContainerId *int64   `json:"CertStoreContainerId,omitempty"`
 	NewContainerName     *string  `json:"NewContainerName,omitempty"`
-	NewContainerType     *int32   `json:"NewContainerType,omitempty"`
+	NewContainerType     *int64   `json:"NewContainerType,omitempty"`
 	KeystoreIds          []string `json:"KeystoreIds"`
 	AdditionalProperties map[string]interface{}
 }
@@ -58,9 +58,9 @@ func NewModelsContainerAssignmentWithDefaults() *ModelsContainerAssignment {
 }
 
 // GetCertStoreContainerId returns the CertStoreContainerId field value if set, zero value otherwise.
-func (o *ModelsContainerAssignment) GetCertStoreContainerId() int32 {
+func (o *ModelsContainerAssignment) GetCertStoreContainerId() int64 {
 	if o == nil || isNil(o.CertStoreContainerId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CertStoreContainerId
@@ -68,7 +68,7 @@ func (o *ModelsContainerAssignment) GetCertStoreContainerId() int32 {
 
 // GetCertStoreContainerIdOk returns a tuple with the CertStoreContainerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsContainerAssignment) GetCertStoreContainerIdOk() (*int32, bool) {
+func (o *ModelsContainerAssignment) GetCertStoreContainerIdOk() (*int64, bool) {
 	if o == nil || isNil(o.CertStoreContainerId) {
 		return nil, false
 	}
@@ -84,8 +84,8 @@ func (o *ModelsContainerAssignment) HasCertStoreContainerId() bool {
 	return false
 }
 
-// SetCertStoreContainerId gets a reference to the given int32 and assigns it to the CertStoreContainerId field.
-func (o *ModelsContainerAssignment) SetCertStoreContainerId(v int32) {
+// SetCertStoreContainerId gets a reference to the given int64 and assigns it to the CertStoreContainerId field.
+func (o *ModelsContainerAssignment) SetCertStoreContainerId(v int64) {
 	o.CertStoreContainerId = &v
 }
 
@@ -122,9 +122,9 @@ func (o *ModelsContainerAssignment) SetNewContainerName(v string) {
 }
 
 // GetNewContainerType returns the NewContainerType field value if set, zero value otherwise.
-func (o *ModelsContainerAssignment) GetNewContainerType() int32 {
+func (o *ModelsContainerAssignment) GetNewContainerType() int64 {
 	if o == nil || isNil(o.NewContainerType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.NewContainerType
@@ -132,7 +132,7 @@ func (o *ModelsContainerAssignment) GetNewContainerType() int32 {
 
 // GetNewContainerTypeOk returns a tuple with the NewContainerType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsContainerAssignment) GetNewContainerTypeOk() (*int32, bool) {
+func (o *ModelsContainerAssignment) GetNewContainerTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.NewContainerType) {
 		return nil, false
 	}
@@ -148,8 +148,8 @@ func (o *ModelsContainerAssignment) HasNewContainerType() bool {
 	return false
 }
 
-// SetNewContainerType gets a reference to the given int32 and assigns it to the NewContainerType field.
-func (o *ModelsContainerAssignment) SetNewContainerType(v int32) {
+// SetNewContainerType gets a reference to the given int64 and assigns it to the NewContainerType field.
+func (o *ModelsContainerAssignment) SetNewContainerType(v int64) {
 	o.NewContainerType = &v
 }
 

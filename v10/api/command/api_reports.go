@@ -172,7 +172,7 @@ func (a *ReportsApiService) ReportsCreateCustomReportExecute(r ApiReportsCreateC
 type ApiReportsCreateReportScheduleRequest struct {
 	ctx                     context.Context
 	ApiService              *ReportsApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	schedule                *ModelsReportSchedule
 	xKeyfactorApiVersion    *string
@@ -207,7 +207,7 @@ ReportsCreateReportSchedule Create a built-in report's schedule that matches the
 	@param id Report identifier
 	@return ApiReportsCreateReportScheduleRequest
 */
-func (a *ReportsApiService) ReportsCreateReportSchedule(ctx context.Context, id int32) ApiReportsCreateReportScheduleRequest {
+func (a *ReportsApiService) ReportsCreateReportSchedule(ctx context.Context, id int64) ApiReportsCreateReportScheduleRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -312,7 +312,7 @@ func (a *ReportsApiService) ReportsCreateReportScheduleExecute(r ApiReportsCreat
 type ApiReportsDeleteReportRequest struct {
 	ctx                     context.Context
 	ApiService              *ReportsApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -340,7 +340,7 @@ ReportsDeleteReport Delete custom report that matches the id
 	@param id Report identifier
 	@return ApiReportsDeleteReportRequest
 */
-func (a *ReportsApiService) ReportsDeleteReport(ctx context.Context, id int32) ApiReportsDeleteReportRequest {
+func (a *ReportsApiService) ReportsDeleteReport(ctx context.Context, id int64) ApiReportsDeleteReportRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -428,7 +428,7 @@ func (a *ReportsApiService) ReportsDeleteReportExecute(r ApiReportsDeleteReportR
 type ApiReportsDeleteReportScheduleRequest struct {
 	ctx                     context.Context
 	ApiService              *ReportsApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -456,7 +456,7 @@ ReportsDeleteReportSchedule Delete a built-in report's schedule that matches the
 	@param id Report Schedule identifier
 	@return ApiReportsDeleteReportScheduleRequest
 */
-func (a *ReportsApiService) ReportsDeleteReportSchedule(ctx context.Context, id int32) ApiReportsDeleteReportScheduleRequest {
+func (a *ReportsApiService) ReportsDeleteReportSchedule(ctx context.Context, id int64) ApiReportsDeleteReportScheduleRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -544,7 +544,7 @@ func (a *ReportsApiService) ReportsDeleteReportScheduleExecute(r ApiReportsDelet
 type ApiReportsGetCustomReportRequest struct {
 	ctx                     context.Context
 	ApiService              *ReportsApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -572,7 +572,7 @@ ReportsGetCustomReport Returns a single custom report that matches the id
 	@param id Report identifier
 	@return ApiReportsGetCustomReportRequest
 */
-func (a *ReportsApiService) ReportsGetCustomReport(ctx context.Context, id int32) ApiReportsGetCustomReportRequest {
+func (a *ReportsApiService) ReportsGetCustomReport(ctx context.Context, id int64) ApiReportsGetCustomReportRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -672,7 +672,7 @@ func (a *ReportsApiService) ReportsGetCustomReportExecute(r ApiReportsGetCustomR
 type ApiReportsGetReportRequest struct {
 	ctx                     context.Context
 	ApiService              *ReportsApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -700,7 +700,7 @@ ReportsGetReport Returns a single built-in report that matches the id
 	@param id Report identifier
 	@return ApiReportsGetReportRequest
 */
-func (a *ReportsApiService) ReportsGetReport(ctx context.Context, id int32) ApiReportsGetReportRequest {
+func (a *ReportsApiService) ReportsGetReport(ctx context.Context, id int64) ApiReportsGetReportRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -800,7 +800,7 @@ func (a *ReportsApiService) ReportsGetReportExecute(r ApiReportsGetReportRequest
 type ApiReportsGetReportParametersRequest struct {
 	ctx                     context.Context
 	ApiService              *ReportsApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -828,7 +828,7 @@ ReportsGetReportParameters Get a built-in report's parameters that matches the i
 	@param id Report identifier
 	@return ApiReportsGetReportParametersRequest
 */
-func (a *ReportsApiService) ReportsGetReportParameters(ctx context.Context, id int32) ApiReportsGetReportParametersRequest {
+func (a *ReportsApiService) ReportsGetReportParameters(ctx context.Context, id int64) ApiReportsGetReportParametersRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -928,7 +928,7 @@ func (a *ReportsApiService) ReportsGetReportParametersExecute(r ApiReportsGetRep
 type ApiReportsGetReportScheduleRequest struct {
 	ctx                     context.Context
 	ApiService              *ReportsApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -956,7 +956,7 @@ ReportsGetReportSchedule Get a built-in report's schedule that matches the id of
 	@param id Report Schedule identifier
 	@return ApiReportsGetReportScheduleRequest
 */
-func (a *ReportsApiService) ReportsGetReportSchedule(ctx context.Context, id int32) ApiReportsGetReportScheduleRequest {
+func (a *ReportsApiService) ReportsGetReportSchedule(ctx context.Context, id int64) ApiReportsGetReportScheduleRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -1056,14 +1056,14 @@ func (a *ReportsApiService) ReportsGetReportScheduleExecute(r ApiReportsGetRepor
 type ApiReportsGetReportSchedulesRequest struct {
 	ctx                     context.Context
 	ApiService              *ReportsApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1085,13 +1085,13 @@ func (r ApiReportsGetReportSchedulesRequest) PqQueryString(pqQueryString string)
 }
 
 // The current page within the result set to be returned
-func (r ApiReportsGetReportSchedulesRequest) PqPageReturned(pqPageReturned int32) ApiReportsGetReportSchedulesRequest {
+func (r ApiReportsGetReportSchedulesRequest) PqPageReturned(pqPageReturned int64) ApiReportsGetReportSchedulesRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiReportsGetReportSchedulesRequest) PqReturnLimit(pqReturnLimit int32) ApiReportsGetReportSchedulesRequest {
+func (r ApiReportsGetReportSchedulesRequest) PqReturnLimit(pqReturnLimit int64) ApiReportsGetReportSchedulesRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -1103,7 +1103,7 @@ func (r ApiReportsGetReportSchedulesRequest) PqSortField(pqSortField string) Api
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiReportsGetReportSchedulesRequest) PqSortAscending(pqSortAscending int32) ApiReportsGetReportSchedulesRequest {
+func (r ApiReportsGetReportSchedulesRequest) PqSortAscending(pqSortAscending int64) ApiReportsGetReportSchedulesRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }
@@ -1119,7 +1119,7 @@ ReportsGetReportSchedules Get a built-in report's schedules that matches the id 
 	@param id Report identifier
 	@return ApiReportsGetReportSchedulesRequest
 */
-func (a *ReportsApiService) ReportsGetReportSchedules(ctx context.Context, id int32) ApiReportsGetReportSchedulesRequest {
+func (a *ReportsApiService) ReportsGetReportSchedules(ctx context.Context, id int64) ApiReportsGetReportSchedulesRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -1237,10 +1237,10 @@ type ApiReportsQueryCustomReportsRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	queryQueryString        *string
-	queryPageReturned       *int32
-	queryReturnLimit        *int32
+	queryPageReturned       *int64
+	queryReturnLimit        *int64
 	querySortField          *string
-	querySortAscending      *int32
+	querySortAscending      *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1262,13 +1262,13 @@ func (r ApiReportsQueryCustomReportsRequest) QueryQueryString(queryQueryString s
 }
 
 // The current page within the result set to be returned
-func (r ApiReportsQueryCustomReportsRequest) QueryPageReturned(queryPageReturned int32) ApiReportsQueryCustomReportsRequest {
+func (r ApiReportsQueryCustomReportsRequest) QueryPageReturned(queryPageReturned int64) ApiReportsQueryCustomReportsRequest {
 	r.queryPageReturned = &queryPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiReportsQueryCustomReportsRequest) QueryReturnLimit(queryReturnLimit int32) ApiReportsQueryCustomReportsRequest {
+func (r ApiReportsQueryCustomReportsRequest) QueryReturnLimit(queryReturnLimit int64) ApiReportsQueryCustomReportsRequest {
 	r.queryReturnLimit = &queryReturnLimit
 	return r
 }
@@ -1280,7 +1280,7 @@ func (r ApiReportsQueryCustomReportsRequest) QuerySortField(querySortField strin
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiReportsQueryCustomReportsRequest) QuerySortAscending(querySortAscending int32) ApiReportsQueryCustomReportsRequest {
+func (r ApiReportsQueryCustomReportsRequest) QuerySortAscending(querySortAscending int64) ApiReportsQueryCustomReportsRequest {
 	r.querySortAscending = &querySortAscending
 	return r
 }
@@ -1411,10 +1411,10 @@ type ApiReportsQueryReportsRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	queryQueryString        *string
-	queryPageReturned       *int32
-	queryReturnLimit        *int32
+	queryPageReturned       *int64
+	queryReturnLimit        *int64
 	querySortField          *string
-	querySortAscending      *int32
+	querySortAscending      *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1436,13 +1436,13 @@ func (r ApiReportsQueryReportsRequest) QueryQueryString(queryQueryString string)
 }
 
 // The current page within the result set to be returned
-func (r ApiReportsQueryReportsRequest) QueryPageReturned(queryPageReturned int32) ApiReportsQueryReportsRequest {
+func (r ApiReportsQueryReportsRequest) QueryPageReturned(queryPageReturned int64) ApiReportsQueryReportsRequest {
 	r.queryPageReturned = &queryPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiReportsQueryReportsRequest) QueryReturnLimit(queryReturnLimit int32) ApiReportsQueryReportsRequest {
+func (r ApiReportsQueryReportsRequest) QueryReturnLimit(queryReturnLimit int64) ApiReportsQueryReportsRequest {
 	r.queryReturnLimit = &queryReturnLimit
 	return r
 }
@@ -1454,7 +1454,7 @@ func (r ApiReportsQueryReportsRequest) QuerySortField(querySortField string) Api
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiReportsQueryReportsRequest) QuerySortAscending(querySortAscending int32) ApiReportsQueryReportsRequest {
+func (r ApiReportsQueryReportsRequest) QuerySortAscending(querySortAscending int64) ApiReportsQueryReportsRequest {
 	r.querySortAscending = &querySortAscending
 	return r
 }
@@ -1854,7 +1854,7 @@ func (a *ReportsApiService) ReportsUpdateReportExecute(r ApiReportsUpdateReportR
 type ApiReportsUpdateReportParametersRequest struct {
 	ctx                     context.Context
 	ApiService              *ReportsApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	request                 *[]ModelsReportParametersRequest
 	xKeyfactorApiVersion    *string
@@ -1889,7 +1889,7 @@ ReportsUpdateReportParameters Update a built-in report's parameters that matches
 	@param id Report identifier
 	@return ApiReportsUpdateReportParametersRequest
 */
-func (a *ReportsApiService) ReportsUpdateReportParameters(ctx context.Context, id int32) ApiReportsUpdateReportParametersRequest {
+func (a *ReportsApiService) ReportsUpdateReportParameters(ctx context.Context, id int64) ApiReportsUpdateReportParametersRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -1994,7 +1994,7 @@ func (a *ReportsApiService) ReportsUpdateReportParametersExecute(r ApiReportsUpd
 type ApiReportsUpdateReportScheduleRequest struct {
 	ctx                     context.Context
 	ApiService              *ReportsApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	schedule                *ModelsReportSchedule
 	xKeyfactorApiVersion    *string
@@ -2029,7 +2029,7 @@ ReportsUpdateReportSchedule Update a built-in report's schedule that matches the
 	@param id Report identifier
 	@return ApiReportsUpdateReportScheduleRequest
 */
-func (a *ReportsApiService) ReportsUpdateReportSchedule(ctx context.Context, id int32) ApiReportsUpdateReportScheduleRequest {
+func (a *ReportsApiService) ReportsUpdateReportSchedule(ctx context.Context, id int64) ApiReportsUpdateReportScheduleRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 

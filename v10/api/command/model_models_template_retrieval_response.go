@@ -30,7 +30,7 @@ var _ MappedNullable = &ModelsTemplateRetrievalResponse{}
 
 // ModelsTemplateRetrievalResponse struct for ModelsTemplateRetrievalResponse
 type ModelsTemplateRetrievalResponse struct {
-	Id                     int32                                                         `json:"Id"`
+	Id                     int64                                                         `json:"Id"`
 	CommonName             *string                                                       `json:"CommonName,omitempty"`
 	TemplateName           *string                                                       `json:"TemplateName,omitempty"`
 	Oid                    *string                                                       `json:"Oid,omitempty"`
@@ -39,12 +39,12 @@ type ModelsTemplateRetrievalResponse struct {
 	ForestRoot             *string                                                       `json:"ForestRoot,omitempty"`
 	ConfigurationTenant    *string                                                       `json:"ConfigurationTenant,omitempty"`
 	FriendlyName           *string                                                       `json:"FriendlyName,omitempty"`
-	KeyRetention           *int32                                                        `json:"KeyRetention,omitempty"`
-	KeyRetentionDays       *int32                                                        `json:"KeyRetentionDays,omitempty"`
+	KeyRetention           *int64                                                        `json:"KeyRetention,omitempty"`
+	KeyRetentionDays       *int64                                                        `json:"KeyRetentionDays,omitempty"`
 	KeyArchival            *bool                                                         `json:"KeyArchival,omitempty"`
 	EnrollmentFields       []ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel `json:"EnrollmentFields,omitempty"`
 	MetadataFields         []ModelsTemplateRetrievalResponseTemplateMetadataFieldModel   `json:"MetadataFields,omitempty"`
-	AllowedEnrollmentTypes *int32                                                        `json:"AllowedEnrollmentTypes,omitempty"`
+	AllowedEnrollmentTypes *int64                                                        `json:"AllowedEnrollmentTypes,omitempty"`
 	TemplateRegexes        []ModelsTemplateRetrievalResponseTemplateRegexModel           `json:"TemplateRegexes,omitempty"`
 	TemplateDefaults       []ModelsTemplateRetrievalResponseTemplateDefaultModel         `json:"TemplateDefaults,omitempty"`
 	TemplatePolicy         *ModelsTemplateRetrievalResponseTemplatePolicyModel           `json:"TemplatePolicy,omitempty"`
@@ -53,7 +53,7 @@ type ModelsTemplateRetrievalResponse struct {
 	DisplayName            *string                                                       `json:"DisplayName,omitempty"`
 	RFCEnforcement         *bool                                                         `json:"RFCEnforcement,omitempty"`
 	RequiresApproval       *bool                                                         `json:"RequiresApproval,omitempty"`
-	KeyUsage               *int32                                                        `json:"KeyUsage,omitempty"`
+	KeyUsage               *int64                                                        `json:"KeyUsage,omitempty"`
 	ExtendedKeyUsages      []ModelsTemplateRetrievalResponseExtendedKeyUsageModel        `json:"ExtendedKeyUsages,omitempty"`
 	Curve                  NullableString                                                `json:"Curve,omitempty"`
 	AdditionalProperties   map[string]interface{}
@@ -65,7 +65,7 @@ type _ModelsTemplateRetrievalResponse ModelsTemplateRetrievalResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsTemplateRetrievalResponse(id int32) *ModelsTemplateRetrievalResponse {
+func NewModelsTemplateRetrievalResponse(id int64) *ModelsTemplateRetrievalResponse {
 	this := ModelsTemplateRetrievalResponse{}
 	this.Id = id
 	return &this
@@ -80,9 +80,9 @@ func NewModelsTemplateRetrievalResponseWithDefaults() *ModelsTemplateRetrievalRe
 }
 
 // GetId returns the Id field value
-func (o *ModelsTemplateRetrievalResponse) GetId() int32 {
+func (o *ModelsTemplateRetrievalResponse) GetId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -91,7 +91,7 @@ func (o *ModelsTemplateRetrievalResponse) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *ModelsTemplateRetrievalResponse) GetIdOk() (*int32, bool) {
+func (o *ModelsTemplateRetrievalResponse) GetIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -99,7 +99,7 @@ func (o *ModelsTemplateRetrievalResponse) GetIdOk() (*int32, bool) {
 }
 
 // SetId sets field value
-func (o *ModelsTemplateRetrievalResponse) SetId(v int32) {
+func (o *ModelsTemplateRetrievalResponse) SetId(v int64) {
 	o.Id = v
 }
 
@@ -360,9 +360,9 @@ func (o *ModelsTemplateRetrievalResponse) SetFriendlyName(v string) {
 }
 
 // GetKeyRetention returns the KeyRetention field value if set, zero value otherwise.
-func (o *ModelsTemplateRetrievalResponse) GetKeyRetention() int32 {
+func (o *ModelsTemplateRetrievalResponse) GetKeyRetention() int64 {
 	if o == nil || isNil(o.KeyRetention) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KeyRetention
@@ -370,7 +370,7 @@ func (o *ModelsTemplateRetrievalResponse) GetKeyRetention() int32 {
 
 // GetKeyRetentionOk returns a tuple with the KeyRetention field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsTemplateRetrievalResponse) GetKeyRetentionOk() (*int32, bool) {
+func (o *ModelsTemplateRetrievalResponse) GetKeyRetentionOk() (*int64, bool) {
 	if o == nil || isNil(o.KeyRetention) {
 		return nil, false
 	}
@@ -386,15 +386,15 @@ func (o *ModelsTemplateRetrievalResponse) HasKeyRetention() bool {
 	return false
 }
 
-// SetKeyRetention gets a reference to the given int32 and assigns it to the KeyRetention field.
-func (o *ModelsTemplateRetrievalResponse) SetKeyRetention(v int32) {
+// SetKeyRetention gets a reference to the given int64 and assigns it to the KeyRetention field.
+func (o *ModelsTemplateRetrievalResponse) SetKeyRetention(v int64) {
 	o.KeyRetention = &v
 }
 
 // GetKeyRetentionDays returns the KeyRetentionDays field value if set, zero value otherwise.
-func (o *ModelsTemplateRetrievalResponse) GetKeyRetentionDays() int32 {
+func (o *ModelsTemplateRetrievalResponse) GetKeyRetentionDays() int64 {
 	if o == nil || isNil(o.KeyRetentionDays) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KeyRetentionDays
@@ -402,7 +402,7 @@ func (o *ModelsTemplateRetrievalResponse) GetKeyRetentionDays() int32 {
 
 // GetKeyRetentionDaysOk returns a tuple with the KeyRetentionDays field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsTemplateRetrievalResponse) GetKeyRetentionDaysOk() (*int32, bool) {
+func (o *ModelsTemplateRetrievalResponse) GetKeyRetentionDaysOk() (*int64, bool) {
 	if o == nil || isNil(o.KeyRetentionDays) {
 		return nil, false
 	}
@@ -418,8 +418,8 @@ func (o *ModelsTemplateRetrievalResponse) HasKeyRetentionDays() bool {
 	return false
 }
 
-// SetKeyRetentionDays gets a reference to the given int32 and assigns it to the KeyRetentionDays field.
-func (o *ModelsTemplateRetrievalResponse) SetKeyRetentionDays(v int32) {
+// SetKeyRetentionDays gets a reference to the given int64 and assigns it to the KeyRetentionDays field.
+func (o *ModelsTemplateRetrievalResponse) SetKeyRetentionDays(v int64) {
 	o.KeyRetentionDays = &v
 }
 
@@ -520,9 +520,9 @@ func (o *ModelsTemplateRetrievalResponse) SetMetadataFields(v []ModelsTemplateRe
 }
 
 // GetAllowedEnrollmentTypes returns the AllowedEnrollmentTypes field value if set, zero value otherwise.
-func (o *ModelsTemplateRetrievalResponse) GetAllowedEnrollmentTypes() int32 {
+func (o *ModelsTemplateRetrievalResponse) GetAllowedEnrollmentTypes() int64 {
 	if o == nil || isNil(o.AllowedEnrollmentTypes) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllowedEnrollmentTypes
@@ -530,7 +530,7 @@ func (o *ModelsTemplateRetrievalResponse) GetAllowedEnrollmentTypes() int32 {
 
 // GetAllowedEnrollmentTypesOk returns a tuple with the AllowedEnrollmentTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsTemplateRetrievalResponse) GetAllowedEnrollmentTypesOk() (*int32, bool) {
+func (o *ModelsTemplateRetrievalResponse) GetAllowedEnrollmentTypesOk() (*int64, bool) {
 	if o == nil || isNil(o.AllowedEnrollmentTypes) {
 		return nil, false
 	}
@@ -546,8 +546,8 @@ func (o *ModelsTemplateRetrievalResponse) HasAllowedEnrollmentTypes() bool {
 	return false
 }
 
-// SetAllowedEnrollmentTypes gets a reference to the given int32 and assigns it to the AllowedEnrollmentTypes field.
-func (o *ModelsTemplateRetrievalResponse) SetAllowedEnrollmentTypes(v int32) {
+// SetAllowedEnrollmentTypes gets a reference to the given int64 and assigns it to the AllowedEnrollmentTypes field.
+func (o *ModelsTemplateRetrievalResponse) SetAllowedEnrollmentTypes(v int64) {
 	o.AllowedEnrollmentTypes = &v
 }
 
@@ -808,9 +808,9 @@ func (o *ModelsTemplateRetrievalResponse) SetRequiresApproval(v bool) {
 }
 
 // GetKeyUsage returns the KeyUsage field value if set, zero value otherwise.
-func (o *ModelsTemplateRetrievalResponse) GetKeyUsage() int32 {
+func (o *ModelsTemplateRetrievalResponse) GetKeyUsage() int64 {
 	if o == nil || isNil(o.KeyUsage) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KeyUsage
@@ -818,7 +818,7 @@ func (o *ModelsTemplateRetrievalResponse) GetKeyUsage() int32 {
 
 // GetKeyUsageOk returns a tuple with the KeyUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsTemplateRetrievalResponse) GetKeyUsageOk() (*int32, bool) {
+func (o *ModelsTemplateRetrievalResponse) GetKeyUsageOk() (*int64, bool) {
 	if o == nil || isNil(o.KeyUsage) {
 		return nil, false
 	}
@@ -834,8 +834,8 @@ func (o *ModelsTemplateRetrievalResponse) HasKeyUsage() bool {
 	return false
 }
 
-// SetKeyUsage gets a reference to the given int32 and assigns it to the KeyUsage field.
-func (o *ModelsTemplateRetrievalResponse) SetKeyUsage(v int32) {
+// SetKeyUsage gets a reference to the given int64 and assigns it to the KeyUsage field.
+func (o *ModelsTemplateRetrievalResponse) SetKeyUsage(v int64) {
 	o.KeyUsage = &v
 }
 

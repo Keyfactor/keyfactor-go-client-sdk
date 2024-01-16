@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **RevocationMonitoringAlerts** | Pointer to [**[]ModelsMonitoringRevocationMonitoringAlertResponse**](ModelsMonitoringRevocationMonitoringAlertResponse.md) |  | [optional] 
-**AlertBuildResult** | Pointer to **int32** |  | [optional] 
+**AlertBuildResult** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasRevocationMonitoringAlerts returns a boolean if a field has been set.
 
 ### GetAlertBuildResult
 
-`func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetAlertBuildResult() int32`
+`func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetAlertBuildResult() int64`
 
 GetAlertBuildResult returns the AlertBuildResult field if non-nil, zero value otherwise.
 
 ### GetAlertBuildResultOk
 
-`func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetAlertBuildResultOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) GetAlertBuildResultOk() (*int64, bool)`
 
 GetAlertBuildResultOk returns a tuple with the AlertBuildResult field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAlertBuildResult
 
-`func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) SetAlertBuildResult(v int32)`
+`func (o *KeyfactorApiModelsMonitoringRevocationMonitoringAlertTestResponse) SetAlertBuildResult(v int64)`
 
 SetAlertBuildResult sets AlertBuildResult field to given value.
 

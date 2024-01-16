@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **Timestamp** | Pointer to **time.Time** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 **Signature** | Pointer to **string** |  | [optional] 
-**Category** | Pointer to **int32** |  | [optional] 
-**Operation** | Pointer to **int32** |  | [optional] 
-**Level** | Pointer to **int32** |  | [optional] 
+**Category** | Pointer to **int64** |  | [optional] 
+**Operation** | Pointer to **int64** |  | [optional] 
+**Level** | Pointer to **int64** |  | [optional] 
 **User** | Pointer to **string** |  | [optional] 
 **EntityType** | Pointer to **string** |  | [optional] 
 **AuditIdentifier** | Pointer to **string** |  | [optional] 
@@ -37,20 +37,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetId() int32`
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetIdOk() (*int32, bool)`
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *KeyfactorAuditingQueryingAuditLogEntry) SetId(v int32)`
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -137,20 +137,20 @@ HasSignature returns a boolean if a field has been set.
 
 ### GetCategory
 
-`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetCategory() int32`
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetCategory() int64`
 
 GetCategory returns the Category field if non-nil, zero value otherwise.
 
 ### GetCategoryOk
 
-`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetCategoryOk() (*int32, bool)`
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetCategoryOk() (*int64, bool)`
 
 GetCategoryOk returns a tuple with the Category field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCategory
 
-`func (o *KeyfactorAuditingQueryingAuditLogEntry) SetCategory(v int32)`
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) SetCategory(v int64)`
 
 SetCategory sets Category field to given value.
 
@@ -162,20 +162,20 @@ HasCategory returns a boolean if a field has been set.
 
 ### GetOperation
 
-`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetOperation() int32`
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetOperation() int64`
 
 GetOperation returns the Operation field if non-nil, zero value otherwise.
 
 ### GetOperationOk
 
-`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetOperationOk() (*int32, bool)`
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetOperationOk() (*int64, bool)`
 
 GetOperationOk returns a tuple with the Operation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOperation
 
-`func (o *KeyfactorAuditingQueryingAuditLogEntry) SetOperation(v int32)`
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) SetOperation(v int64)`
 
 SetOperation sets Operation field to given value.
 
@@ -187,20 +187,20 @@ HasOperation returns a boolean if a field has been set.
 
 ### GetLevel
 
-`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevel() int32`
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevel() int64`
 
 GetLevel returns the Level field if non-nil, zero value otherwise.
 
 ### GetLevelOk
 
-`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevelOk() (*int32, bool)`
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) GetLevelOk() (*int64, bool)`
 
 GetLevelOk returns a tuple with the Level field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLevel
 
-`func (o *KeyfactorAuditingQueryingAuditLogEntry) SetLevel(v int32)`
+`func (o *KeyfactorAuditingQueryingAuditLogEntry) SetLevel(v int64)`
 
 SetLevel sets Level field to given value.
 

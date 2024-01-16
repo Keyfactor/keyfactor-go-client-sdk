@@ -53,11 +53,11 @@ func Test_command_CertificateAuthorityApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("CertificateAuthorityApi_CertificateAuthorityDeleteCA_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("CertificateAuthorityApi_CertificateAuthorityDeleteCA_id: %v", id)
 
 		t.Log("CertificateAuthorityApi_CertificateAuthorityDeleteCA_payload: <none>")
-		httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityDeleteCA(context.Background(), id.(int32)).Execute()
+		httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityDeleteCA(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
@@ -67,11 +67,11 @@ func Test_command_CertificateAuthorityApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("CertificateAuthorityApi_CertificateAuthorityGetCa_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("CertificateAuthorityApi_CertificateAuthorityGetCa_id: %v", id)
 
 		t.Log("CertificateAuthorityApi_CertificateAuthorityGetCa_payload: <none>")
-		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityGetCa(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.CertificateAuthorityApi.CertificateAuthorityGetCa(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

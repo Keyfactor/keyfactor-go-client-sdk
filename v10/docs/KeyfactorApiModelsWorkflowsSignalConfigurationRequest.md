@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SignalName** | Pointer to **string** | The name of the signal. | [optional] 
-**RoleIds** | Pointer to **[]int32** | The roles that are allowed to send the signal. | [optional] 
+**RoleIds** | Pointer to **[]int64** | The roles that are allowed to send the signal. | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasSignalName returns a boolean if a field has been set.
 
 ### GetRoleIds
 
-`func (o *KeyfactorApiModelsWorkflowsSignalConfigurationRequest) GetRoleIds() []int32`
+`func (o *KeyfactorApiModelsWorkflowsSignalConfigurationRequest) GetRoleIds() []int64`
 
 GetRoleIds returns the RoleIds field if non-nil, zero value otherwise.
 
 ### GetRoleIdsOk
 
-`func (o *KeyfactorApiModelsWorkflowsSignalConfigurationRequest) GetRoleIdsOk() (*[]int32, bool)`
+`func (o *KeyfactorApiModelsWorkflowsSignalConfigurationRequest) GetRoleIdsOk() (*[]int64, bool)`
 
 GetRoleIdsOk returns a tuple with the RoleIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRoleIds
 
-`func (o *KeyfactorApiModelsWorkflowsSignalConfigurationRequest) SetRoleIds(v []int32)`
+`func (o *KeyfactorApiModelsWorkflowsSignalConfigurationRequest) SetRoleIds(v []int64)`
 
 SetRoleIds sets RoleIds field to given value.
 

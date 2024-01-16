@@ -30,11 +30,11 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsExpirationExpirationAlertDefinit
 
 // KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse struct for KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse
 type KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse struct {
-	Id                     *int32                                                                      `json:"Id,omitempty"`
+	Id                     *int64                                                                      `json:"Id,omitempty"`
 	DisplayName            *string                                                                     `json:"DisplayName,omitempty"`
 	Subject                *string                                                                     `json:"Subject,omitempty"`
 	Message                *string                                                                     `json:"Message,omitempty"`
-	ExpirationWarningDays  *int32                                                                      `json:"ExpirationWarningDays,omitempty"`
+	ExpirationWarningDays  *int64                                                                      `json:"ExpirationWarningDays,omitempty"`
 	Recipients             []string                                                                    `json:"Recipients,omitempty"`
 	CertificateQuery       *KeyfactorApiModelsAlertsAlertCertificateQueryAlertCertificateQueryResponse `json:"CertificateQuery,omitempty"`
 	RegisteredEventHandler *KeyfactorApiModelsEventHandlerRegisteredEventHandlerResponse               `json:"RegisteredEventHandler,omitempty"`
@@ -62,9 +62,9 @@ func NewKeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponseWithD
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) GetId() int32 {
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -72,7 +72,7 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) Ge
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) GetIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -88,8 +88,8 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) Ha
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -190,9 +190,9 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) Se
 }
 
 // GetExpirationWarningDays returns the ExpirationWarningDays field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) GetExpirationWarningDays() int32 {
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) GetExpirationWarningDays() int64 {
 	if o == nil || isNil(o.ExpirationWarningDays) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ExpirationWarningDays
@@ -200,7 +200,7 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) Ge
 
 // GetExpirationWarningDaysOk returns a tuple with the ExpirationWarningDays field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) GetExpirationWarningDaysOk() (*int32, bool) {
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) GetExpirationWarningDaysOk() (*int64, bool) {
 	if o == nil || isNil(o.ExpirationWarningDays) {
 		return nil, false
 	}
@@ -216,8 +216,8 @@ func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) Ha
 	return false
 }
 
-// SetExpirationWarningDays gets a reference to the given int32 and assigns it to the ExpirationWarningDays field.
-func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) SetExpirationWarningDays(v int32) {
+// SetExpirationWarningDays gets a reference to the given int64 and assigns it to the ExpirationWarningDays field.
+func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) SetExpirationWarningDays(v int64) {
 	o.ExpirationWarningDays = &v
 }
 

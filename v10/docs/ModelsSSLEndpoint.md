@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **NetworkId** | Pointer to **string** |  | [optional] 
 **LastHistoryId** | Pointer to **string** |  | [optional] 
 **IpAddressBytes** | Pointer to **string** |  | [optional] 
-**Port** | Pointer to **int32** |  | [optional] 
+**Port** | Pointer to **int64** |  | [optional] 
 **SNIName** | Pointer to **string** |  | [optional] 
 **EnableMonitor** | Pointer to **bool** |  | [optional] 
 **Reviewed** | Pointer to **bool** |  | [optional] 
@@ -134,20 +134,20 @@ HasIpAddressBytes returns a boolean if a field has been set.
 
 ### GetPort
 
-`func (o *ModelsSSLEndpoint) GetPort() int32`
+`func (o *ModelsSSLEndpoint) GetPort() int64`
 
 GetPort returns the Port field if non-nil, zero value otherwise.
 
 ### GetPortOk
 
-`func (o *ModelsSSLEndpoint) GetPortOk() (*int32, bool)`
+`func (o *ModelsSSLEndpoint) GetPortOk() (*int64, bool)`
 
 GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPort
 
-`func (o *ModelsSSLEndpoint) SetPort(v int32)`
+`func (o *ModelsSSLEndpoint) SetPort(v int64)`
 
 SetPort sets Port field to given value.
 

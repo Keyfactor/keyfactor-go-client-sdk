@@ -44,7 +44,7 @@ type KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeCreationRequest
 	PowerShell           *bool                                                           `json:"PowerShell,omitempty"`
 	BlueprintAllowed     *bool                                                           `json:"BlueprintAllowed,omitempty"`
 	CustomAliasAllowed   *string                                                         `json:"CustomAliasAllowed,omitempty"`
-	ServerRegistration   *int32                                                          `json:"ServerRegistration,omitempty"`
+	ServerRegistration   *int64                                                          `json:"ServerRegistration,omitempty"`
 	InventoryEndpoint    *string                                                         `json:"InventoryEndpoint,omitempty"`
 	InventoryJobTypeId   *string                                                         `json:"InventoryJobTypeId,omitempty"`
 	ManagementJobTypeId  *string                                                         `json:"ManagementJobTypeId,omitempty"`
@@ -508,9 +508,9 @@ func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeCreationReq
 }
 
 // GetServerRegistration returns the ServerRegistration field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeCreationRequest) GetServerRegistration() int32 {
+func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeCreationRequest) GetServerRegistration() int64 {
 	if o == nil || isNil(o.ServerRegistration) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ServerRegistration
@@ -518,7 +518,7 @@ func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeCreationReq
 
 // GetServerRegistrationOk returns a tuple with the ServerRegistration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeCreationRequest) GetServerRegistrationOk() (*int32, bool) {
+func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeCreationRequest) GetServerRegistrationOk() (*int64, bool) {
 	if o == nil || isNil(o.ServerRegistration) {
 		return nil, false
 	}
@@ -534,8 +534,8 @@ func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeCreationReq
 	return false
 }
 
-// SetServerRegistration gets a reference to the given int32 and assigns it to the ServerRegistration field.
-func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeCreationRequest) SetServerRegistration(v int32) {
+// SetServerRegistration gets a reference to the given int64 and assigns it to the ServerRegistration field.
+func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeCreationRequest) SetServerRegistration(v int64) {
 	o.ServerRegistration = &v
 }
 

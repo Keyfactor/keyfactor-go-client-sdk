@@ -172,7 +172,7 @@ func (a *PendingAlertApiService) PendingAlertAddPendingAlertExecute(r ApiPending
 type ApiPendingAlertDeletePendingAlertRequest struct {
 	ctx                     context.Context
 	ApiService              *PendingAlertApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -200,7 +200,7 @@ PendingAlertDeletePendingAlert Delete a pending alert
 	@param id Id for the pending alert
 	@return ApiPendingAlertDeletePendingAlertRequest
 */
-func (a *PendingAlertApiService) PendingAlertDeletePendingAlert(ctx context.Context, id int32) ApiPendingAlertDeletePendingAlertRequest {
+func (a *PendingAlertApiService) PendingAlertDeletePendingAlert(ctx context.Context, id int64) ApiPendingAlertDeletePendingAlertRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -559,7 +559,7 @@ func (a *PendingAlertApiService) PendingAlertEditScheduleExecute(r ApiPendingAle
 type ApiPendingAlertGetPendingAlertRequest struct {
 	ctx                     context.Context
 	ApiService              *PendingAlertApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -587,7 +587,7 @@ PendingAlertGetPendingAlert Get a pending alert
 	@param id Id for the pending alert to get
 	@return ApiPendingAlertGetPendingAlertRequest
 */
-func (a *PendingAlertApiService) PendingAlertGetPendingAlert(ctx context.Context, id int32) ApiPendingAlertGetPendingAlertRequest {
+func (a *PendingAlertApiService) PendingAlertGetPendingAlert(ctx context.Context, id int64) ApiPendingAlertGetPendingAlertRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -690,10 +690,10 @@ type ApiPendingAlertGetPendingAlertsRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pagedQueryQueryString   *string
-	pagedQueryPageReturned  *int32
-	pagedQueryReturnLimit   *int32
+	pagedQueryPageReturned  *int64
+	pagedQueryReturnLimit   *int64
 	pagedQuerySortField     *string
-	pagedQuerySortAscending *int32
+	pagedQuerySortAscending *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -715,13 +715,13 @@ func (r ApiPendingAlertGetPendingAlertsRequest) PagedQueryQueryString(pagedQuery
 }
 
 // The current page within the result set to be returned
-func (r ApiPendingAlertGetPendingAlertsRequest) PagedQueryPageReturned(pagedQueryPageReturned int32) ApiPendingAlertGetPendingAlertsRequest {
+func (r ApiPendingAlertGetPendingAlertsRequest) PagedQueryPageReturned(pagedQueryPageReturned int64) ApiPendingAlertGetPendingAlertsRequest {
 	r.pagedQueryPageReturned = &pagedQueryPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiPendingAlertGetPendingAlertsRequest) PagedQueryReturnLimit(pagedQueryReturnLimit int32) ApiPendingAlertGetPendingAlertsRequest {
+func (r ApiPendingAlertGetPendingAlertsRequest) PagedQueryReturnLimit(pagedQueryReturnLimit int64) ApiPendingAlertGetPendingAlertsRequest {
 	r.pagedQueryReturnLimit = &pagedQueryReturnLimit
 	return r
 }
@@ -733,7 +733,7 @@ func (r ApiPendingAlertGetPendingAlertsRequest) PagedQuerySortField(pagedQuerySo
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiPendingAlertGetPendingAlertsRequest) PagedQuerySortAscending(pagedQuerySortAscending int32) ApiPendingAlertGetPendingAlertsRequest {
+func (r ApiPendingAlertGetPendingAlertsRequest) PagedQuerySortAscending(pagedQuerySortAscending int64) ApiPendingAlertGetPendingAlertsRequest {
 	r.pagedQuerySortAscending = &pagedQuerySortAscending
 	return r
 }

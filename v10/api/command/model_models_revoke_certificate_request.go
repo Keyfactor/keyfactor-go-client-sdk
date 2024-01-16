@@ -31,11 +31,11 @@ var _ MappedNullable = &ModelsRevokeCertificateRequest{}
 
 // ModelsRevokeCertificateRequest struct for ModelsRevokeCertificateRequest
 type ModelsRevokeCertificateRequest struct {
-	CertificateIds       []int32    `json:"CertificateIds,omitempty"`
-	Reason               *int32     `json:"Reason,omitempty"`
+	CertificateIds       []int64    `json:"CertificateIds,omitempty"`
+	Reason               *int64     `json:"Reason,omitempty"`
 	Comment              *string    `json:"Comment,omitempty"`
 	EffectiveDate        *time.Time `json:"EffectiveDate,omitempty"`
-	CollectionId         *int32     `json:"CollectionId,omitempty"`
+	CollectionId         *int64     `json:"CollectionId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -59,9 +59,9 @@ func NewModelsRevokeCertificateRequestWithDefaults() *ModelsRevokeCertificateReq
 }
 
 // GetCertificateIds returns the CertificateIds field value if set, zero value otherwise.
-func (o *ModelsRevokeCertificateRequest) GetCertificateIds() []int32 {
+func (o *ModelsRevokeCertificateRequest) GetCertificateIds() []int64 {
 	if o == nil || isNil(o.CertificateIds) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.CertificateIds
@@ -69,7 +69,7 @@ func (o *ModelsRevokeCertificateRequest) GetCertificateIds() []int32 {
 
 // GetCertificateIdsOk returns a tuple with the CertificateIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsRevokeCertificateRequest) GetCertificateIdsOk() ([]int32, bool) {
+func (o *ModelsRevokeCertificateRequest) GetCertificateIdsOk() ([]int64, bool) {
 	if o == nil || isNil(o.CertificateIds) {
 		return nil, false
 	}
@@ -85,15 +85,15 @@ func (o *ModelsRevokeCertificateRequest) HasCertificateIds() bool {
 	return false
 }
 
-// SetCertificateIds gets a reference to the given []int32 and assigns it to the CertificateIds field.
-func (o *ModelsRevokeCertificateRequest) SetCertificateIds(v []int32) {
+// SetCertificateIds gets a reference to the given []int64 and assigns it to the CertificateIds field.
+func (o *ModelsRevokeCertificateRequest) SetCertificateIds(v []int64) {
 	o.CertificateIds = v
 }
 
 // GetReason returns the Reason field value if set, zero value otherwise.
-func (o *ModelsRevokeCertificateRequest) GetReason() int32 {
+func (o *ModelsRevokeCertificateRequest) GetReason() int64 {
 	if o == nil || isNil(o.Reason) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Reason
@@ -101,7 +101,7 @@ func (o *ModelsRevokeCertificateRequest) GetReason() int32 {
 
 // GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsRevokeCertificateRequest) GetReasonOk() (*int32, bool) {
+func (o *ModelsRevokeCertificateRequest) GetReasonOk() (*int64, bool) {
 	if o == nil || isNil(o.Reason) {
 		return nil, false
 	}
@@ -117,8 +117,8 @@ func (o *ModelsRevokeCertificateRequest) HasReason() bool {
 	return false
 }
 
-// SetReason gets a reference to the given int32 and assigns it to the Reason field.
-func (o *ModelsRevokeCertificateRequest) SetReason(v int32) {
+// SetReason gets a reference to the given int64 and assigns it to the Reason field.
+func (o *ModelsRevokeCertificateRequest) SetReason(v int64) {
 	o.Reason = &v
 }
 
@@ -187,9 +187,9 @@ func (o *ModelsRevokeCertificateRequest) SetEffectiveDate(v time.Time) {
 }
 
 // GetCollectionId returns the CollectionId field value if set, zero value otherwise.
-func (o *ModelsRevokeCertificateRequest) GetCollectionId() int32 {
+func (o *ModelsRevokeCertificateRequest) GetCollectionId() int64 {
 	if o == nil || isNil(o.CollectionId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CollectionId
@@ -197,7 +197,7 @@ func (o *ModelsRevokeCertificateRequest) GetCollectionId() int32 {
 
 // GetCollectionIdOk returns a tuple with the CollectionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsRevokeCertificateRequest) GetCollectionIdOk() (*int32, bool) {
+func (o *ModelsRevokeCertificateRequest) GetCollectionIdOk() (*int64, bool) {
 	if o == nil || isNil(o.CollectionId) {
 		return nil, false
 	}
@@ -213,8 +213,8 @@ func (o *ModelsRevokeCertificateRequest) HasCollectionId() bool {
 	return false
 }
 
-// SetCollectionId gets a reference to the given int32 and assigns it to the CollectionId field.
-func (o *ModelsRevokeCertificateRequest) SetCollectionId(v int32) {
+// SetCollectionId gets a reference to the given int64 and assigns it to the CollectionId field.
+func (o *ModelsRevokeCertificateRequest) SetCollectionId(v int64) {
 	o.CollectionId = &v
 }
 

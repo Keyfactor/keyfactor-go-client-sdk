@@ -172,7 +172,7 @@ func (a *UserApiService) UserCreateUserExecute(r ApiUserCreateUserRequest) (*Mod
 type ApiUserDeleteUserRequest struct {
 	ctx                     context.Context
 	ApiService              *UserApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -200,7 +200,7 @@ UserDeleteUser Deletes an SSH user.
 	@param id The Id of the user to delete.
 	@return ApiUserDeleteUserRequest
 */
-func (a *UserApiService) UserDeleteUser(ctx context.Context, id int32) ApiUserDeleteUserRequest {
+func (a *UserApiService) UserDeleteUser(ctx context.Context, id int64) ApiUserDeleteUserRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -288,7 +288,7 @@ func (a *UserApiService) UserDeleteUserExecute(r ApiUserDeleteUserRequest) (*htt
 type ApiUserGetUserRequest struct {
 	ctx                     context.Context
 	ApiService              *UserApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -316,7 +316,7 @@ UserGetUser Looks up information about an existing SSH user.
 	@param id The Id of the SSH user to retrieve.
 	@return ApiUserGetUserRequest
 */
-func (a *UserApiService) UserGetUser(ctx context.Context, id int32) ApiUserGetUserRequest {
+func (a *UserApiService) UserGetUser(ctx context.Context, id int64) ApiUserGetUserRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -420,10 +420,10 @@ type ApiUserQueryUsersRequest struct {
 	showOwnedAccess         *bool
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -451,13 +451,13 @@ func (r ApiUserQueryUsersRequest) PqQueryString(pqQueryString string) ApiUserQue
 }
 
 // The current page within the result set to be returned
-func (r ApiUserQueryUsersRequest) PqPageReturned(pqPageReturned int32) ApiUserQueryUsersRequest {
+func (r ApiUserQueryUsersRequest) PqPageReturned(pqPageReturned int64) ApiUserQueryUsersRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiUserQueryUsersRequest) PqReturnLimit(pqReturnLimit int32) ApiUserQueryUsersRequest {
+func (r ApiUserQueryUsersRequest) PqReturnLimit(pqReturnLimit int64) ApiUserQueryUsersRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -469,7 +469,7 @@ func (r ApiUserQueryUsersRequest) PqSortField(pqSortField string) ApiUserQueryUs
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiUserQueryUsersRequest) PqSortAscending(pqSortAscending int32) ApiUserQueryUsersRequest {
+func (r ApiUserQueryUsersRequest) PqSortAscending(pqSortAscending int64) ApiUserQueryUsersRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }

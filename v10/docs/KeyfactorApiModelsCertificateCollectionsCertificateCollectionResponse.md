@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Content** | Pointer to **string** |  | [optional] [readonly] 
 **Query** | Pointer to **string** |  | [optional] 
-**DuplicationField** | Pointer to **int32** |  | [optional] 
+**DuplicationField** | Pointer to **int64** |  | [optional] 
 **ShowOnDashboard** | Pointer to **bool** |  | [optional] 
 **Favorite** | Pointer to **bool** |  | [optional] 
 
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) GetId() int32`
+`func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) GetIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) SetId(v int32)`
+`func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -159,20 +159,20 @@ HasQuery returns a boolean if a field has been set.
 
 ### GetDuplicationField
 
-`func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) GetDuplicationField() int32`
+`func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) GetDuplicationField() int64`
 
 GetDuplicationField returns the DuplicationField field if non-nil, zero value otherwise.
 
 ### GetDuplicationFieldOk
 
-`func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) GetDuplicationFieldOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) GetDuplicationFieldOk() (*int64, bool)`
 
 GetDuplicationFieldOk returns a tuple with the DuplicationField field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDuplicationField
 
-`func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) SetDuplicationField(v int32)`
+`func (o *KeyfactorApiModelsCertificateCollectionsCertificateCollectionResponse) SetDuplicationField(v int64)`
 
 SetDuplicationField sets DuplicationField field to given value.
 

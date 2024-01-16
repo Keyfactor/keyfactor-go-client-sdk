@@ -31,17 +31,17 @@ var _ MappedNullable = &ModelsSSHKeysUnmanagedKeyResponse{}
 
 // ModelsSSHKeysUnmanagedKeyResponse struct for ModelsSSHKeysUnmanagedKeyResponse
 type ModelsSSHKeysUnmanagedKeyResponse struct {
-	Id                   *int32     `json:"Id,omitempty"`
+	Id                   *int64     `json:"Id,omitempty"`
 	Fingerprint          *string    `json:"Fingerprint,omitempty"`
 	PublicKey            *string    `json:"PublicKey,omitempty"`
 	PrivateKey           *string    `json:"PrivateKey,omitempty"`
 	KeyType              *string    `json:"KeyType,omitempty"`
-	KeyLength            *int32     `json:"KeyLength,omitempty"`
+	KeyLength            *int64     `json:"KeyLength,omitempty"`
 	DiscoveredDate       *time.Time `json:"DiscoveredDate,omitempty"`
 	Email                *string    `json:"Email,omitempty"`
 	Comments             []string   `json:"Comments,omitempty"`
 	Username             *string    `json:"Username,omitempty"`
-	LogonCount           *int32     `json:"LogonCount,omitempty"`
+	LogonCount           *int64     `json:"LogonCount,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -65,9 +65,9 @@ func NewModelsSSHKeysUnmanagedKeyResponseWithDefaults() *ModelsSSHKeysUnmanagedK
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsSSHKeysUnmanagedKeyResponse) GetId() int32 {
+func (o *ModelsSSHKeysUnmanagedKeyResponse) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -75,7 +75,7 @@ func (o *ModelsSSHKeysUnmanagedKeyResponse) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSHKeysUnmanagedKeyResponse) GetIdOk() (*int32, bool) {
+func (o *ModelsSSHKeysUnmanagedKeyResponse) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -91,8 +91,8 @@ func (o *ModelsSSHKeysUnmanagedKeyResponse) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsSSHKeysUnmanagedKeyResponse) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsSSHKeysUnmanagedKeyResponse) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -225,9 +225,9 @@ func (o *ModelsSSHKeysUnmanagedKeyResponse) SetKeyType(v string) {
 }
 
 // GetKeyLength returns the KeyLength field value if set, zero value otherwise.
-func (o *ModelsSSHKeysUnmanagedKeyResponse) GetKeyLength() int32 {
+func (o *ModelsSSHKeysUnmanagedKeyResponse) GetKeyLength() int64 {
 	if o == nil || isNil(o.KeyLength) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KeyLength
@@ -235,7 +235,7 @@ func (o *ModelsSSHKeysUnmanagedKeyResponse) GetKeyLength() int32 {
 
 // GetKeyLengthOk returns a tuple with the KeyLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSHKeysUnmanagedKeyResponse) GetKeyLengthOk() (*int32, bool) {
+func (o *ModelsSSHKeysUnmanagedKeyResponse) GetKeyLengthOk() (*int64, bool) {
 	if o == nil || isNil(o.KeyLength) {
 		return nil, false
 	}
@@ -251,8 +251,8 @@ func (o *ModelsSSHKeysUnmanagedKeyResponse) HasKeyLength() bool {
 	return false
 }
 
-// SetKeyLength gets a reference to the given int32 and assigns it to the KeyLength field.
-func (o *ModelsSSHKeysUnmanagedKeyResponse) SetKeyLength(v int32) {
+// SetKeyLength gets a reference to the given int64 and assigns it to the KeyLength field.
+func (o *ModelsSSHKeysUnmanagedKeyResponse) SetKeyLength(v int64) {
 	o.KeyLength = &v
 }
 
@@ -385,9 +385,9 @@ func (o *ModelsSSHKeysUnmanagedKeyResponse) SetUsername(v string) {
 }
 
 // GetLogonCount returns the LogonCount field value if set, zero value otherwise.
-func (o *ModelsSSHKeysUnmanagedKeyResponse) GetLogonCount() int32 {
+func (o *ModelsSSHKeysUnmanagedKeyResponse) GetLogonCount() int64 {
 	if o == nil || isNil(o.LogonCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.LogonCount
@@ -395,7 +395,7 @@ func (o *ModelsSSHKeysUnmanagedKeyResponse) GetLogonCount() int32 {
 
 // GetLogonCountOk returns a tuple with the LogonCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSHKeysUnmanagedKeyResponse) GetLogonCountOk() (*int32, bool) {
+func (o *ModelsSSHKeysUnmanagedKeyResponse) GetLogonCountOk() (*int64, bool) {
 	if o == nil || isNil(o.LogonCount) {
 		return nil, false
 	}
@@ -411,8 +411,8 @@ func (o *ModelsSSHKeysUnmanagedKeyResponse) HasLogonCount() bool {
 	return false
 }
 
-// SetLogonCount gets a reference to the given int32 and assigns it to the LogonCount field.
-func (o *ModelsSSHKeysUnmanagedKeyResponse) SetLogonCount(v int32) {
+// SetLogonCount gets a reference to the given int64 and assigns it to the LogonCount field.
+func (o *ModelsSSHKeysUnmanagedKeyResponse) SetLogonCount(v int64) {
 	o.LogonCount = &v
 }
 

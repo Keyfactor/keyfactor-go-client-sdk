@@ -34,7 +34,7 @@ type ModelsReenrollmentStatus struct {
 	AgentId              *string                                                         `json:"AgentId,omitempty"`
 	Message              *string                                                         `json:"Message,omitempty"`
 	JobProperties        *string                                                         `json:"JobProperties,omitempty"`
-	CustomAliasAllowed   *int32                                                          `json:"CustomAliasAllowed,omitempty"`
+	CustomAliasAllowed   *int64                                                          `json:"CustomAliasAllowed,omitempty"`
 	EntryParameters      []ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter `json:"EntryParameters,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -187,9 +187,9 @@ func (o *ModelsReenrollmentStatus) SetJobProperties(v string) {
 }
 
 // GetCustomAliasAllowed returns the CustomAliasAllowed field value if set, zero value otherwise.
-func (o *ModelsReenrollmentStatus) GetCustomAliasAllowed() int32 {
+func (o *ModelsReenrollmentStatus) GetCustomAliasAllowed() int64 {
 	if o == nil || isNil(o.CustomAliasAllowed) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CustomAliasAllowed
@@ -197,7 +197,7 @@ func (o *ModelsReenrollmentStatus) GetCustomAliasAllowed() int32 {
 
 // GetCustomAliasAllowedOk returns a tuple with the CustomAliasAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsReenrollmentStatus) GetCustomAliasAllowedOk() (*int32, bool) {
+func (o *ModelsReenrollmentStatus) GetCustomAliasAllowedOk() (*int64, bool) {
 	if o == nil || isNil(o.CustomAliasAllowed) {
 		return nil, false
 	}
@@ -213,8 +213,8 @@ func (o *ModelsReenrollmentStatus) HasCustomAliasAllowed() bool {
 	return false
 }
 
-// SetCustomAliasAllowed gets a reference to the given int32 and assigns it to the CustomAliasAllowed field.
-func (o *ModelsReenrollmentStatus) SetCustomAliasAllowed(v int32) {
+// SetCustomAliasAllowed gets a reference to the given int64 and assigns it to the CustomAliasAllowed field.
+func (o *ModelsReenrollmentStatus) SetCustomAliasAllowed(v int64) {
 	o.CustomAliasAllowed = &v
 }
 

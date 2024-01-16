@@ -1069,10 +1069,10 @@ type ApiCertificateStoreGetCertificateStoreInventoryRequest struct {
 	id                      string
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
-	queryPageReturned       *int32
-	queryReturnLimit        *int32
+	queryPageReturned       *int64
+	queryReturnLimit        *int64
 	querySortField          *string
-	querySortAscending      *int32
+	querySortAscending      *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1088,13 +1088,13 @@ func (r ApiCertificateStoreGetCertificateStoreInventoryRequest) XKeyfactorApiVer
 }
 
 // The current page within the result set to be returned
-func (r ApiCertificateStoreGetCertificateStoreInventoryRequest) QueryPageReturned(queryPageReturned int32) ApiCertificateStoreGetCertificateStoreInventoryRequest {
+func (r ApiCertificateStoreGetCertificateStoreInventoryRequest) QueryPageReturned(queryPageReturned int64) ApiCertificateStoreGetCertificateStoreInventoryRequest {
 	r.queryPageReturned = &queryPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiCertificateStoreGetCertificateStoreInventoryRequest) QueryReturnLimit(queryReturnLimit int32) ApiCertificateStoreGetCertificateStoreInventoryRequest {
+func (r ApiCertificateStoreGetCertificateStoreInventoryRequest) QueryReturnLimit(queryReturnLimit int64) ApiCertificateStoreGetCertificateStoreInventoryRequest {
 	r.queryReturnLimit = &queryReturnLimit
 	return r
 }
@@ -1106,7 +1106,7 @@ func (r ApiCertificateStoreGetCertificateStoreInventoryRequest) QuerySortField(q
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiCertificateStoreGetCertificateStoreInventoryRequest) QuerySortAscending(querySortAscending int32) ApiCertificateStoreGetCertificateStoreInventoryRequest {
+func (r ApiCertificateStoreGetCertificateStoreInventoryRequest) QuerySortAscending(querySortAscending int64) ApiCertificateStoreGetCertificateStoreInventoryRequest {
 	r.querySortAscending = &querySortAscending
 	return r
 }
@@ -1237,10 +1237,10 @@ type ApiCertificateStoreQueryCertificateStoresRequest struct {
 	xKeyfactorRequestedWith            *string
 	xKeyfactorApiVersion               *string
 	certificateStoreQueryQueryString   *string
-	certificateStoreQueryPageReturned  *int32
-	certificateStoreQueryReturnLimit   *int32
+	certificateStoreQueryPageReturned  *int64
+	certificateStoreQueryReturnLimit   *int64
 	certificateStoreQuerySortField     *string
-	certificateStoreQuerySortAscending *int32
+	certificateStoreQuerySortAscending *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1262,13 +1262,13 @@ func (r ApiCertificateStoreQueryCertificateStoresRequest) CertificateStoreQueryQ
 }
 
 // The current page within the result set to be returned
-func (r ApiCertificateStoreQueryCertificateStoresRequest) CertificateStoreQueryPageReturned(certificateStoreQueryPageReturned int32) ApiCertificateStoreQueryCertificateStoresRequest {
+func (r ApiCertificateStoreQueryCertificateStoresRequest) CertificateStoreQueryPageReturned(certificateStoreQueryPageReturned int64) ApiCertificateStoreQueryCertificateStoresRequest {
 	r.certificateStoreQueryPageReturned = &certificateStoreQueryPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiCertificateStoreQueryCertificateStoresRequest) CertificateStoreQueryReturnLimit(certificateStoreQueryReturnLimit int32) ApiCertificateStoreQueryCertificateStoresRequest {
+func (r ApiCertificateStoreQueryCertificateStoresRequest) CertificateStoreQueryReturnLimit(certificateStoreQueryReturnLimit int64) ApiCertificateStoreQueryCertificateStoresRequest {
 	r.certificateStoreQueryReturnLimit = &certificateStoreQueryReturnLimit
 	return r
 }
@@ -1280,7 +1280,7 @@ func (r ApiCertificateStoreQueryCertificateStoresRequest) CertificateStoreQueryS
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiCertificateStoreQueryCertificateStoresRequest) CertificateStoreQuerySortAscending(certificateStoreQuerySortAscending int32) ApiCertificateStoreQueryCertificateStoresRequest {
+func (r ApiCertificateStoreQueryCertificateStoresRequest) CertificateStoreQuerySortAscending(certificateStoreQuerySortAscending int64) ApiCertificateStoreQueryCertificateStoresRequest {
 	r.certificateStoreQuerySortAscending = &certificateStoreQuerySortAscending
 	return r
 }

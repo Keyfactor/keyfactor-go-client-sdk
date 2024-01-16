@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StartDay** | Pointer to **int32** |  | [optional] 
+**StartDay** | Pointer to **int64** |  | [optional] 
 **StartTime** | Pointer to **time.Time** |  | [optional] 
-**EndDay** | Pointer to **int32** |  | [optional] 
+**EndDay** | Pointer to **int64** |  | [optional] 
 **EndTime** | Pointer to **time.Time** |  | [optional] 
 
 ## Methods
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetStartDay
 
-`func (o *KeyfactorApiModelsSslQuietHourRequest) GetStartDay() int32`
+`func (o *KeyfactorApiModelsSslQuietHourRequest) GetStartDay() int64`
 
 GetStartDay returns the StartDay field if non-nil, zero value otherwise.
 
 ### GetStartDayOk
 
-`func (o *KeyfactorApiModelsSslQuietHourRequest) GetStartDayOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsSslQuietHourRequest) GetStartDayOk() (*int64, bool)`
 
 GetStartDayOk returns a tuple with the StartDay field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStartDay
 
-`func (o *KeyfactorApiModelsSslQuietHourRequest) SetStartDay(v int32)`
+`func (o *KeyfactorApiModelsSslQuietHourRequest) SetStartDay(v int64)`
 
 SetStartDay sets StartDay field to given value.
 
@@ -80,20 +80,20 @@ HasStartTime returns a boolean if a field has been set.
 
 ### GetEndDay
 
-`func (o *KeyfactorApiModelsSslQuietHourRequest) GetEndDay() int32`
+`func (o *KeyfactorApiModelsSslQuietHourRequest) GetEndDay() int64`
 
 GetEndDay returns the EndDay field if non-nil, zero value otherwise.
 
 ### GetEndDayOk
 
-`func (o *KeyfactorApiModelsSslQuietHourRequest) GetEndDayOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsSslQuietHourRequest) GetEndDayOk() (*int64, bool)`
 
 GetEndDayOk returns a tuple with the EndDay field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEndDay
 
-`func (o *KeyfactorApiModelsSslQuietHourRequest) SetEndDay(v int32)`
+`func (o *KeyfactorApiModelsSslQuietHourRequest) SetEndDay(v int64)`
 
 SetEndDay sets EndDay field to given value.
 

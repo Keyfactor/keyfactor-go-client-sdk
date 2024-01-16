@@ -30,10 +30,10 @@ var _ MappedNullable = &ModelsCertificateStoresCertificateStoreCreateRequest{}
 
 // ModelsCertificateStoresCertificateStoreCreateRequest struct for ModelsCertificateStoresCertificateStoreCreateRequest
 type ModelsCertificateStoresCertificateStoreCreateRequest struct {
-	ContainerId          *int32                                      `json:"ContainerId,omitempty"`
+	ContainerId          *int64                                      `json:"ContainerId,omitempty"`
 	ClientMachine        *string                                     `json:"ClientMachine,omitempty"`
 	Storepath            *string                                     `json:"Storepath,omitempty"`
-	CertStoreType        *int32                                      `json:"CertStoreType,omitempty"`
+	CertStoreType        *int64                                      `json:"CertStoreType,omitempty"`
 	CreateIfMissing      *bool                                       `json:"CreateIfMissing,omitempty"`
 	Properties           *string                                     `json:"Properties,omitempty"`
 	AgentId              *string                                     `json:"AgentId,omitempty"`
@@ -63,9 +63,9 @@ func NewModelsCertificateStoresCertificateStoreCreateRequestWithDefaults() *Mode
 }
 
 // GetContainerId returns the ContainerId field value if set, zero value otherwise.
-func (o *ModelsCertificateStoresCertificateStoreCreateRequest) GetContainerId() int32 {
+func (o *ModelsCertificateStoresCertificateStoreCreateRequest) GetContainerId() int64 {
 	if o == nil || isNil(o.ContainerId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ContainerId
@@ -73,7 +73,7 @@ func (o *ModelsCertificateStoresCertificateStoreCreateRequest) GetContainerId() 
 
 // GetContainerIdOk returns a tuple with the ContainerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateStoresCertificateStoreCreateRequest) GetContainerIdOk() (*int32, bool) {
+func (o *ModelsCertificateStoresCertificateStoreCreateRequest) GetContainerIdOk() (*int64, bool) {
 	if o == nil || isNil(o.ContainerId) {
 		return nil, false
 	}
@@ -89,8 +89,8 @@ func (o *ModelsCertificateStoresCertificateStoreCreateRequest) HasContainerId() 
 	return false
 }
 
-// SetContainerId gets a reference to the given int32 and assigns it to the ContainerId field.
-func (o *ModelsCertificateStoresCertificateStoreCreateRequest) SetContainerId(v int32) {
+// SetContainerId gets a reference to the given int64 and assigns it to the ContainerId field.
+func (o *ModelsCertificateStoresCertificateStoreCreateRequest) SetContainerId(v int64) {
 	o.ContainerId = &v
 }
 
@@ -159,9 +159,9 @@ func (o *ModelsCertificateStoresCertificateStoreCreateRequest) SetStorepath(v st
 }
 
 // GetCertStoreType returns the CertStoreType field value if set, zero value otherwise.
-func (o *ModelsCertificateStoresCertificateStoreCreateRequest) GetCertStoreType() int32 {
+func (o *ModelsCertificateStoresCertificateStoreCreateRequest) GetCertStoreType() int64 {
 	if o == nil || isNil(o.CertStoreType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CertStoreType
@@ -169,7 +169,7 @@ func (o *ModelsCertificateStoresCertificateStoreCreateRequest) GetCertStoreType(
 
 // GetCertStoreTypeOk returns a tuple with the CertStoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateStoresCertificateStoreCreateRequest) GetCertStoreTypeOk() (*int32, bool) {
+func (o *ModelsCertificateStoresCertificateStoreCreateRequest) GetCertStoreTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.CertStoreType) {
 		return nil, false
 	}
@@ -185,8 +185,8 @@ func (o *ModelsCertificateStoresCertificateStoreCreateRequest) HasCertStoreType(
 	return false
 }
 
-// SetCertStoreType gets a reference to the given int32 and assigns it to the CertStoreType field.
-func (o *ModelsCertificateStoresCertificateStoreCreateRequest) SetCertStoreType(v int32) {
+// SetCertStoreType gets a reference to the given int64 and assigns it to the CertStoreType field.
+func (o *ModelsCertificateStoresCertificateStoreCreateRequest) SetCertStoreType(v int64) {
 	o.CertStoreType = &v
 }
 

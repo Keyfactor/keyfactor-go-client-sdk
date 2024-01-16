@@ -30,13 +30,13 @@ var _ MappedNullable = &ModelsReportSchedule{}
 
 // ModelsReportSchedule struct for ModelsReportSchedule
 type ModelsReportSchedule struct {
-	Id                      *int32                                      `json:"Id,omitempty"`
+	Id                      *int64                                      `json:"Id,omitempty"`
 	SendReport              *bool                                       `json:"SendReport,omitempty"`
 	SaveReport              *bool                                       `json:"SaveReport,omitempty"`
 	SaveReportPath          *string                                     `json:"SaveReportPath,omitempty"`
 	ReportFormat            *string                                     `json:"ReportFormat,omitempty"`
 	KeyfactorSchedule       *KeyfactorCommonSchedulingKeyfactorSchedule `json:"KeyfactorSchedule,omitempty"`
-	CertificateCollectionId *int32                                      `json:"CertificateCollectionId,omitempty"`
+	CertificateCollectionId *int64                                      `json:"CertificateCollectionId,omitempty"`
 	EmailRecipients         []string                                    `json:"EmailRecipients,omitempty"`
 	RuntimeParameters       *map[string]string                          `json:"RuntimeParameters,omitempty"`
 	AdditionalProperties    map[string]interface{}
@@ -62,9 +62,9 @@ func NewModelsReportScheduleWithDefaults() *ModelsReportSchedule {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsReportSchedule) GetId() int32 {
+func (o *ModelsReportSchedule) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -72,7 +72,7 @@ func (o *ModelsReportSchedule) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsReportSchedule) GetIdOk() (*int32, bool) {
+func (o *ModelsReportSchedule) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -88,8 +88,8 @@ func (o *ModelsReportSchedule) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsReportSchedule) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsReportSchedule) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -254,9 +254,9 @@ func (o *ModelsReportSchedule) SetKeyfactorSchedule(v KeyfactorCommonSchedulingK
 }
 
 // GetCertificateCollectionId returns the CertificateCollectionId field value if set, zero value otherwise.
-func (o *ModelsReportSchedule) GetCertificateCollectionId() int32 {
+func (o *ModelsReportSchedule) GetCertificateCollectionId() int64 {
 	if o == nil || isNil(o.CertificateCollectionId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CertificateCollectionId
@@ -264,7 +264,7 @@ func (o *ModelsReportSchedule) GetCertificateCollectionId() int32 {
 
 // GetCertificateCollectionIdOk returns a tuple with the CertificateCollectionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsReportSchedule) GetCertificateCollectionIdOk() (*int32, bool) {
+func (o *ModelsReportSchedule) GetCertificateCollectionIdOk() (*int64, bool) {
 	if o == nil || isNil(o.CertificateCollectionId) {
 		return nil, false
 	}
@@ -280,8 +280,8 @@ func (o *ModelsReportSchedule) HasCertificateCollectionId() bool {
 	return false
 }
 
-// SetCertificateCollectionId gets a reference to the given int32 and assigns it to the CertificateCollectionId field.
-func (o *ModelsReportSchedule) SetCertificateCollectionId(v int32) {
+// SetCertificateCollectionId gets a reference to the given int64 and assigns it to the CertificateCollectionId field.
+func (o *ModelsReportSchedule) SetCertificateCollectionId(v int64) {
 	o.CertificateCollectionId = &v
 }
 

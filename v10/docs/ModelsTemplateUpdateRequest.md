@@ -4,23 +4,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **KeySize** | Pointer to **string** |  | [optional] 
 **KeyType** | Pointer to **string** |  | [optional] 
 **FriendlyName** | Pointer to **string** |  | [optional] 
-**KeyRetention** | Pointer to **int32** |  | [optional] 
-**KeyRetentionDays** | Pointer to **int32** |  | [optional] 
+**KeyRetention** | Pointer to **int64** |  | [optional] 
+**KeyRetentionDays** | Pointer to **int64** |  | [optional] 
 **KeyArchival** | Pointer to **bool** |  | [optional] 
 **EnrollmentFields** | Pointer to [**[]ModelsTemplateUpdateRequestTemplateEnrollmentFieldModel**](ModelsTemplateUpdateRequestTemplateEnrollmentFieldModel.md) |  | [optional] 
 **MetadataFields** | Pointer to [**[]ModelsTemplateUpdateRequestTemplateMetadataFieldModel**](ModelsTemplateUpdateRequestTemplateMetadataFieldModel.md) |  | [optional] 
-**AllowedEnrollmentTypes** | Pointer to **int32** |  | [optional] 
+**AllowedEnrollmentTypes** | Pointer to **int64** |  | [optional] 
 **TemplateRegexes** | Pointer to [**[]ModelsTemplateUpdateRequestTemplateRegexModel**](ModelsTemplateUpdateRequestTemplateRegexModel.md) |  | [optional] 
 **TemplateDefaults** | Pointer to [**[]ModelsTemplateUpdateRequestTemplateDefaultModel**](ModelsTemplateUpdateRequestTemplateDefaultModel.md) |  | [optional] 
 **TemplatePolicy** | Pointer to [**ModelsTemplateUpdateRequestTemplatePolicyModel**](ModelsTemplateUpdateRequestTemplatePolicyModel.md) |  | [optional] 
 **UseAllowedRequesters** | Pointer to **bool** |  | [optional] 
 **AllowedRequesters** | Pointer to **[]string** |  | [optional] 
 **RequiresApproval** | Pointer to **bool** |  | [optional] 
-**KeyUsage** | Pointer to **int32** |  | [optional] 
+**KeyUsage** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -43,20 +43,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ModelsTemplateUpdateRequest) GetId() int32`
+`func (o *ModelsTemplateUpdateRequest) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsTemplateUpdateRequest) GetIdOk() (*int32, bool)`
+`func (o *ModelsTemplateUpdateRequest) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsTemplateUpdateRequest) SetId(v int32)`
+`func (o *ModelsTemplateUpdateRequest) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -143,20 +143,20 @@ HasFriendlyName returns a boolean if a field has been set.
 
 ### GetKeyRetention
 
-`func (o *ModelsTemplateUpdateRequest) GetKeyRetention() int32`
+`func (o *ModelsTemplateUpdateRequest) GetKeyRetention() int64`
 
 GetKeyRetention returns the KeyRetention field if non-nil, zero value otherwise.
 
 ### GetKeyRetentionOk
 
-`func (o *ModelsTemplateUpdateRequest) GetKeyRetentionOk() (*int32, bool)`
+`func (o *ModelsTemplateUpdateRequest) GetKeyRetentionOk() (*int64, bool)`
 
 GetKeyRetentionOk returns a tuple with the KeyRetention field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyRetention
 
-`func (o *ModelsTemplateUpdateRequest) SetKeyRetention(v int32)`
+`func (o *ModelsTemplateUpdateRequest) SetKeyRetention(v int64)`
 
 SetKeyRetention sets KeyRetention field to given value.
 
@@ -168,20 +168,20 @@ HasKeyRetention returns a boolean if a field has been set.
 
 ### GetKeyRetentionDays
 
-`func (o *ModelsTemplateUpdateRequest) GetKeyRetentionDays() int32`
+`func (o *ModelsTemplateUpdateRequest) GetKeyRetentionDays() int64`
 
 GetKeyRetentionDays returns the KeyRetentionDays field if non-nil, zero value otherwise.
 
 ### GetKeyRetentionDaysOk
 
-`func (o *ModelsTemplateUpdateRequest) GetKeyRetentionDaysOk() (*int32, bool)`
+`func (o *ModelsTemplateUpdateRequest) GetKeyRetentionDaysOk() (*int64, bool)`
 
 GetKeyRetentionDaysOk returns a tuple with the KeyRetentionDays field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyRetentionDays
 
-`func (o *ModelsTemplateUpdateRequest) SetKeyRetentionDays(v int32)`
+`func (o *ModelsTemplateUpdateRequest) SetKeyRetentionDays(v int64)`
 
 SetKeyRetentionDays sets KeyRetentionDays field to given value.
 
@@ -268,20 +268,20 @@ HasMetadataFields returns a boolean if a field has been set.
 
 ### GetAllowedEnrollmentTypes
 
-`func (o *ModelsTemplateUpdateRequest) GetAllowedEnrollmentTypes() int32`
+`func (o *ModelsTemplateUpdateRequest) GetAllowedEnrollmentTypes() int64`
 
 GetAllowedEnrollmentTypes returns the AllowedEnrollmentTypes field if non-nil, zero value otherwise.
 
 ### GetAllowedEnrollmentTypesOk
 
-`func (o *ModelsTemplateUpdateRequest) GetAllowedEnrollmentTypesOk() (*int32, bool)`
+`func (o *ModelsTemplateUpdateRequest) GetAllowedEnrollmentTypesOk() (*int64, bool)`
 
 GetAllowedEnrollmentTypesOk returns a tuple with the AllowedEnrollmentTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowedEnrollmentTypes
 
-`func (o *ModelsTemplateUpdateRequest) SetAllowedEnrollmentTypes(v int32)`
+`func (o *ModelsTemplateUpdateRequest) SetAllowedEnrollmentTypes(v int64)`
 
 SetAllowedEnrollmentTypes sets AllowedEnrollmentTypes field to given value.
 
@@ -443,20 +443,20 @@ HasRequiresApproval returns a boolean if a field has been set.
 
 ### GetKeyUsage
 
-`func (o *ModelsTemplateUpdateRequest) GetKeyUsage() int32`
+`func (o *ModelsTemplateUpdateRequest) GetKeyUsage() int64`
 
 GetKeyUsage returns the KeyUsage field if non-nil, zero value otherwise.
 
 ### GetKeyUsageOk
 
-`func (o *ModelsTemplateUpdateRequest) GetKeyUsageOk() (*int32, bool)`
+`func (o *ModelsTemplateUpdateRequest) GetKeyUsageOk() (*int64, bool)`
 
 GetKeyUsageOk returns a tuple with the KeyUsage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyUsage
 
-`func (o *ModelsTemplateUpdateRequest) SetKeyUsage(v int32)`
+`func (o *ModelsTemplateUpdateRequest) SetKeyUsage(v int64)`
 
 SetKeyUsage sets KeyUsage field to given value.
 

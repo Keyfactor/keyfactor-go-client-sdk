@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to **int32** |  | [optional] 
+**Type** | Pointer to **int64** |  | [optional] 
 **DefaultValue** | Pointer to **string** |  | [optional] 
 **Required** | Pointer to **bool** |  | [optional] 
 
@@ -55,20 +55,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *KeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) GetType() int32`
+`func (o *KeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) GetType() int64`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *KeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) GetTypeOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) GetTypeOk() (*int64, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *KeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) SetType(v int32)`
+`func (o *KeyfactorApiModelsOrchestratorJobsJobTypeFieldResponse) SetType(v int64)`
 
 SetType sets Type field to given value.
 

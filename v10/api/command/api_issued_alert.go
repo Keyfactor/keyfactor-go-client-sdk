@@ -172,7 +172,7 @@ func (a *IssuedAlertApiService) IssuedAlertAddIssuedAlertExecute(r ApiIssuedAler
 type ApiIssuedAlertDeleteIssuedAlertRequest struct {
 	ctx                     context.Context
 	ApiService              *IssuedAlertApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -200,7 +200,7 @@ IssuedAlertDeleteIssuedAlert Delete a issued alert
 	@param id Id for the issued alert
 	@return ApiIssuedAlertDeleteIssuedAlertRequest
 */
-func (a *IssuedAlertApiService) IssuedAlertDeleteIssuedAlert(ctx context.Context, id int32) ApiIssuedAlertDeleteIssuedAlertRequest {
+func (a *IssuedAlertApiService) IssuedAlertDeleteIssuedAlert(ctx context.Context, id int64) ApiIssuedAlertDeleteIssuedAlertRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -559,7 +559,7 @@ func (a *IssuedAlertApiService) IssuedAlertEditScheduleExecute(r ApiIssuedAlertE
 type ApiIssuedAlertGetIssuedAlertRequest struct {
 	ctx                     context.Context
 	ApiService              *IssuedAlertApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -587,7 +587,7 @@ IssuedAlertGetIssuedAlert Get a issued alert
 	@param id Id for the issued alert to get
 	@return ApiIssuedAlertGetIssuedAlertRequest
 */
-func (a *IssuedAlertApiService) IssuedAlertGetIssuedAlert(ctx context.Context, id int32) ApiIssuedAlertGetIssuedAlertRequest {
+func (a *IssuedAlertApiService) IssuedAlertGetIssuedAlert(ctx context.Context, id int64) ApiIssuedAlertGetIssuedAlertRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -690,10 +690,10 @@ type ApiIssuedAlertGetIssuedAlertsRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pagedQueryQueryString   *string
-	pagedQueryPageReturned  *int32
-	pagedQueryReturnLimit   *int32
+	pagedQueryPageReturned  *int64
+	pagedQueryReturnLimit   *int64
 	pagedQuerySortField     *string
-	pagedQuerySortAscending *int32
+	pagedQuerySortAscending *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -715,13 +715,13 @@ func (r ApiIssuedAlertGetIssuedAlertsRequest) PagedQueryQueryString(pagedQueryQu
 }
 
 // The current page within the result set to be returned
-func (r ApiIssuedAlertGetIssuedAlertsRequest) PagedQueryPageReturned(pagedQueryPageReturned int32) ApiIssuedAlertGetIssuedAlertsRequest {
+func (r ApiIssuedAlertGetIssuedAlertsRequest) PagedQueryPageReturned(pagedQueryPageReturned int64) ApiIssuedAlertGetIssuedAlertsRequest {
 	r.pagedQueryPageReturned = &pagedQueryPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiIssuedAlertGetIssuedAlertsRequest) PagedQueryReturnLimit(pagedQueryReturnLimit int32) ApiIssuedAlertGetIssuedAlertsRequest {
+func (r ApiIssuedAlertGetIssuedAlertsRequest) PagedQueryReturnLimit(pagedQueryReturnLimit int64) ApiIssuedAlertGetIssuedAlertsRequest {
 	r.pagedQueryReturnLimit = &pagedQueryReturnLimit
 	return r
 }
@@ -733,7 +733,7 @@ func (r ApiIssuedAlertGetIssuedAlertsRequest) PagedQuerySortField(pagedQuerySort
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiIssuedAlertGetIssuedAlertsRequest) PagedQuerySortAscending(pagedQuerySortAscending int32) ApiIssuedAlertGetIssuedAlertsRequest {
+func (r ApiIssuedAlertGetIssuedAlertsRequest) PagedQuerySortAscending(pagedQuerySortAscending int64) ApiIssuedAlertGetIssuedAlertsRequest {
 	r.pagedQuerySortAscending = &pagedQuerySortAscending
 	return r
 }

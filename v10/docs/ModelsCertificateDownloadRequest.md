@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CertID** | Pointer to **int32** |  | [optional] 
+**CertID** | Pointer to **int64** |  | [optional] 
 **SerialNumber** | Pointer to **string** |  | [optional] 
 **IssuerDN** | Pointer to **NullableString** |  | [optional] 
 **Thumbprint** | Pointer to **string** |  | [optional] 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCertID
 
-`func (o *ModelsCertificateDownloadRequest) GetCertID() int32`
+`func (o *ModelsCertificateDownloadRequest) GetCertID() int64`
 
 GetCertID returns the CertID field if non-nil, zero value otherwise.
 
 ### GetCertIDOk
 
-`func (o *ModelsCertificateDownloadRequest) GetCertIDOk() (*int32, bool)`
+`func (o *ModelsCertificateDownloadRequest) GetCertIDOk() (*int64, bool)`
 
 GetCertIDOk returns a tuple with the CertID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertID
 
-`func (o *ModelsCertificateDownloadRequest) SetCertID(v int32)`
+`func (o *ModelsCertificateDownloadRequest) SetCertID(v int64)`
 
 SetCertID sets CertID field to given value.
 

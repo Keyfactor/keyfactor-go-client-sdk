@@ -44,11 +44,11 @@ func Test_command_CSRGenerationApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("CSRGenerationApi_CSRGenerationDeleteCSR_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("CSRGenerationApi_CSRGenerationDeleteCSR_id: %v", id)
 
 		t.Log("CSRGenerationApi_CSRGenerationDeleteCSR_payload: <none>")
-		httpRes, err := apiClient.CSRGenerationApi.CSRGenerationDeleteCSR(context.Background(), id.(int32)).Execute()
+		httpRes, err := apiClient.CSRGenerationApi.CSRGenerationDeleteCSR(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
@@ -66,11 +66,11 @@ func Test_command_CSRGenerationApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("CSRGenerationApi_CSRGenerationDownload_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("CSRGenerationApi_CSRGenerationDownload_id: %v", id)
 
 		t.Log("CSRGenerationApi_CSRGenerationDownload_payload: <none>")
-		resp, httpRes, err := apiClient.CSRGenerationApi.CSRGenerationDownload(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.CSRGenerationApi.CSRGenerationDownload(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

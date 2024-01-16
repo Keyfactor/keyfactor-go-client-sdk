@@ -30,7 +30,7 @@ var _ MappedNullable = &ModelsSSHKeysKeyUpdateRequest{}
 
 // ModelsSSHKeysKeyUpdateRequest struct for ModelsSSHKeysKeyUpdateRequest
 type ModelsSSHKeysKeyUpdateRequest struct {
-	Id                   int32   `json:"Id"`
+	Id                   int64   `json:"Id"`
 	Email                string  `json:"Email"`
 	Comment              *string `json:"Comment,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -42,7 +42,7 @@ type _ModelsSSHKeysKeyUpdateRequest ModelsSSHKeysKeyUpdateRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsSSHKeysKeyUpdateRequest(id int32, email string) *ModelsSSHKeysKeyUpdateRequest {
+func NewModelsSSHKeysKeyUpdateRequest(id int64, email string) *ModelsSSHKeysKeyUpdateRequest {
 	this := ModelsSSHKeysKeyUpdateRequest{}
 	this.Id = id
 	this.Email = email
@@ -58,9 +58,9 @@ func NewModelsSSHKeysKeyUpdateRequestWithDefaults() *ModelsSSHKeysKeyUpdateReque
 }
 
 // GetId returns the Id field value
-func (o *ModelsSSHKeysKeyUpdateRequest) GetId() int32 {
+func (o *ModelsSSHKeysKeyUpdateRequest) GetId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -69,7 +69,7 @@ func (o *ModelsSSHKeysKeyUpdateRequest) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *ModelsSSHKeysKeyUpdateRequest) GetIdOk() (*int32, bool) {
+func (o *ModelsSSHKeysKeyUpdateRequest) GetIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -77,7 +77,7 @@ func (o *ModelsSSHKeysKeyUpdateRequest) GetIdOk() (*int32, bool) {
 }
 
 // SetId sets field value
-func (o *ModelsSSHKeysKeyUpdateRequest) SetId(v int32) {
+func (o *ModelsSSHKeysKeyUpdateRequest) SetId(v int64) {
 	o.Id = v
 }
 

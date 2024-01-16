@@ -320,7 +320,7 @@ func (a *PAMProviderApiService) PAMProviderCreatePamProviderTypeExecute(r ApiPAM
 type ApiPAMProviderDeletePamProviderRequest struct {
 	ctx                     context.Context
 	ApiService              *PAMProviderApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -348,7 +348,7 @@ PAMProviderDeletePamProvider Deletes a PAM Provider
 	@param id Keyfactor identifier of the PAM provider to be deleted
 	@return ApiPAMProviderDeletePamProviderRequest
 */
-func (a *PAMProviderApiService) PAMProviderDeletePamProvider(ctx context.Context, id int32) ApiPAMProviderDeletePamProviderRequest {
+func (a *PAMProviderApiService) PAMProviderDeletePamProvider(ctx context.Context, id int64) ApiPAMProviderDeletePamProviderRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -436,7 +436,7 @@ func (a *PAMProviderApiService) PAMProviderDeletePamProviderExecute(r ApiPAMProv
 type ApiPAMProviderGetPamProviderRequest struct {
 	ctx                     context.Context
 	ApiService              *PAMProviderApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -470,7 +470,7 @@ PAMProviderGetPamProvider Returns a single PAM Provider that matches the associa
 	@param id Keyfactor identifier of the PAM provider
 	@return ApiPAMProviderGetPamProviderRequest
 */
-func (a *PAMProviderApiService) PAMProviderGetPamProvider(ctx context.Context, id int32) ApiPAMProviderGetPamProviderRequest {
+func (a *PAMProviderApiService) PAMProviderGetPamProvider(ctx context.Context, id int64) ApiPAMProviderGetPamProviderRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -703,10 +703,10 @@ type ApiPAMProviderGetPamProvidersRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -728,13 +728,13 @@ func (r ApiPAMProviderGetPamProvidersRequest) PqQueryString(pqQueryString string
 }
 
 // The current page within the result set to be returned
-func (r ApiPAMProviderGetPamProvidersRequest) PqPageReturned(pqPageReturned int32) ApiPAMProviderGetPamProvidersRequest {
+func (r ApiPAMProviderGetPamProvidersRequest) PqPageReturned(pqPageReturned int64) ApiPAMProviderGetPamProvidersRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiPAMProviderGetPamProvidersRequest) PqReturnLimit(pqReturnLimit int32) ApiPAMProviderGetPamProvidersRequest {
+func (r ApiPAMProviderGetPamProvidersRequest) PqReturnLimit(pqReturnLimit int64) ApiPAMProviderGetPamProvidersRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -746,7 +746,7 @@ func (r ApiPAMProviderGetPamProvidersRequest) PqSortField(pqSortField string) Ap
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiPAMProviderGetPamProvidersRequest) PqSortAscending(pqSortAscending int32) ApiPAMProviderGetPamProvidersRequest {
+func (r ApiPAMProviderGetPamProvidersRequest) PqSortAscending(pqSortAscending int64) ApiPAMProviderGetPamProvidersRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }

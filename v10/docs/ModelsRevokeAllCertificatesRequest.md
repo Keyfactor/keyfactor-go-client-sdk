@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Query** | Pointer to **string** | The query string of the certificates to revoke | [optional] 
-**Reason** | **int32** | The Reason for revocation | 
+**Reason** | **int64** | The Reason for revocation | 
 **Comment** | **string** | A comment for auditing purposes | 
 **EffectiveDate** | Pointer to **time.Time** | The date when the certificates are to appear on the revocation list | [optional] 
 **IncludeRevoked** | Pointer to **bool** | A flag telling the query to include revoked certificates | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewModelsRevokeAllCertificatesRequest
 
-`func NewModelsRevokeAllCertificatesRequest(reason int32, comment string, ) *ModelsRevokeAllCertificatesRequest`
+`func NewModelsRevokeAllCertificatesRequest(reason int64, comment string, ) *ModelsRevokeAllCertificatesRequest`
 
 NewModelsRevokeAllCertificatesRequest instantiates a new ModelsRevokeAllCertificatesRequest object
 This constructor will assign default values to properties that have it defined,
@@ -57,20 +57,20 @@ HasQuery returns a boolean if a field has been set.
 
 ### GetReason
 
-`func (o *ModelsRevokeAllCertificatesRequest) GetReason() int32`
+`func (o *ModelsRevokeAllCertificatesRequest) GetReason() int64`
 
 GetReason returns the Reason field if non-nil, zero value otherwise.
 
 ### GetReasonOk
 
-`func (o *ModelsRevokeAllCertificatesRequest) GetReasonOk() (*int32, bool)`
+`func (o *ModelsRevokeAllCertificatesRequest) GetReasonOk() (*int64, bool)`
 
 GetReasonOk returns a tuple with the Reason field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReason
 
-`func (o *ModelsRevokeAllCertificatesRequest) SetReason(v int32)`
+`func (o *ModelsRevokeAllCertificatesRequest) SetReason(v int64)`
 
 SetReason sets Reason field to given value.
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CertificateStores** | [**[]ModelsCertificateLocationSpecifier**](ModelsCertificateLocationSpecifier.md) |  | 
 **Schedule** | [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | 
-**CollectionId** | Pointer to **int32** |  | [optional] 
+**CollectionId** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetSchedule sets Schedule field to given value.
 
 ### GetCollectionId
 
-`func (o *KeyfactorApiModelsCertificateStoresRemoveCertificateRequest) GetCollectionId() int32`
+`func (o *KeyfactorApiModelsCertificateStoresRemoveCertificateRequest) GetCollectionId() int64`
 
 GetCollectionId returns the CollectionId field if non-nil, zero value otherwise.
 
 ### GetCollectionIdOk
 
-`func (o *KeyfactorApiModelsCertificateStoresRemoveCertificateRequest) GetCollectionIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsCertificateStoresRemoveCertificateRequest) GetCollectionIdOk() (*int64, bool)`
 
 GetCollectionIdOk returns a tuple with the CollectionId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCollectionId
 
-`func (o *KeyfactorApiModelsCertificateStoresRemoveCertificateRequest) SetCollectionId(v int32)`
+`func (o *KeyfactorApiModelsCertificateStoresRemoveCertificateRequest) SetCollectionId(v int64)`
 
 SetCollectionId sets CollectionId field to given value.
 

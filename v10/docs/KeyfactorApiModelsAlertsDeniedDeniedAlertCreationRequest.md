@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **DisplayName** | **string** |  | 
 **Subject** | **string** |  | 
 **Message** | **string** |  | 
-**TemplateId** | Pointer to **NullableInt32** |  | [optional] 
+**TemplateId** | Pointer to **NullableInt64** |  | [optional] 
 **RegisteredEventHandler** | Pointer to [**KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest**](KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest.md) |  | [optional] 
 **Recipients** | Pointer to **[]string** |  | [optional] 
 **EventHandlerParameters** | Pointer to [**[]KeyfactorApiModelsEventHandlerEventHandlerParameterRequest**](KeyfactorApiModelsEventHandlerEventHandlerParameterRequest.md) |  | [optional] 
@@ -93,20 +93,20 @@ SetMessage sets Message field to given value.
 
 ### GetTemplateId
 
-`func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertCreationRequest) GetTemplateId() int32`
+`func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertCreationRequest) GetTemplateId() int64`
 
 GetTemplateId returns the TemplateId field if non-nil, zero value otherwise.
 
 ### GetTemplateIdOk
 
-`func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertCreationRequest) GetTemplateIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertCreationRequest) GetTemplateIdOk() (*int64, bool)`
 
 GetTemplateIdOk returns a tuple with the TemplateId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTemplateId
 
-`func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertCreationRequest) SetTemplateId(v int32)`
+`func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertCreationRequest) SetTemplateId(v int64)`
 
 SetTemplateId sets TemplateId field to given value.
 

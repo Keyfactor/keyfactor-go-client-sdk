@@ -33,8 +33,8 @@ type KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse struct
 	Name                 *string                                                         `json:"Name,omitempty"`
 	ShortName            *string                                                         `json:"ShortName,omitempty"`
 	Capability           *string                                                         `json:"Capability,omitempty"`
-	StoreType            *int32                                                          `json:"StoreType,omitempty"`
-	ImportType           *int32                                                          `json:"ImportType,omitempty"`
+	StoreType            *int64                                                          `json:"StoreType,omitempty"`
+	ImportType           *int64                                                          `json:"ImportType,omitempty"`
 	LocalStore           *bool                                                           `json:"LocalStore,omitempty"`
 	SupportedOperations  *ModelsCertStoreTypeSupportedOperations                         `json:"SupportedOperations,omitempty"`
 	Properties           []ModelsCertificateStoreTypeProperty                            `json:"Properties,omitempty"`
@@ -48,7 +48,7 @@ type KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse struct
 	PowerShell           *bool                                                           `json:"PowerShell,omitempty"`
 	BlueprintAllowed     *bool                                                           `json:"BlueprintAllowed,omitempty"`
 	CustomAliasAllowed   *string                                                         `json:"CustomAliasAllowed,omitempty"`
-	ServerRegistration   *int32                                                          `json:"ServerRegistration,omitempty"`
+	ServerRegistration   *int64                                                          `json:"ServerRegistration,omitempty"`
 	InventoryEndpoint    *string                                                         `json:"InventoryEndpoint,omitempty"`
 	InventoryJobType     *string                                                         `json:"InventoryJobType,omitempty"`
 	ManagementJobType    *string                                                         `json:"ManagementJobType,omitempty"`
@@ -173,9 +173,9 @@ func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) S
 }
 
 // GetStoreType returns the StoreType field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetStoreType() int32 {
+func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetStoreType() int64 {
 	if o == nil || isNil(o.StoreType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.StoreType
@@ -183,7 +183,7 @@ func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) G
 
 // GetStoreTypeOk returns a tuple with the StoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetStoreTypeOk() (*int32, bool) {
+func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetStoreTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.StoreType) {
 		return nil, false
 	}
@@ -199,15 +199,15 @@ func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) H
 	return false
 }
 
-// SetStoreType gets a reference to the given int32 and assigns it to the StoreType field.
-func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetStoreType(v int32) {
+// SetStoreType gets a reference to the given int64 and assigns it to the StoreType field.
+func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetStoreType(v int64) {
 	o.StoreType = &v
 }
 
 // GetImportType returns the ImportType field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetImportType() int32 {
+func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetImportType() int64 {
 	if o == nil || isNil(o.ImportType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ImportType
@@ -215,7 +215,7 @@ func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) G
 
 // GetImportTypeOk returns a tuple with the ImportType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetImportTypeOk() (*int32, bool) {
+func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetImportTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.ImportType) {
 		return nil, false
 	}
@@ -231,8 +231,8 @@ func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) H
 	return false
 }
 
-// SetImportType gets a reference to the given int32 and assigns it to the ImportType field.
-func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetImportType(v int32) {
+// SetImportType gets a reference to the given int64 and assigns it to the ImportType field.
+func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetImportType(v int64) {
 	o.ImportType = &v
 }
 
@@ -653,9 +653,9 @@ func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) S
 }
 
 // GetServerRegistration returns the ServerRegistration field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetServerRegistration() int32 {
+func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetServerRegistration() int64 {
 	if o == nil || isNil(o.ServerRegistration) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ServerRegistration
@@ -663,7 +663,7 @@ func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) G
 
 // GetServerRegistrationOk returns a tuple with the ServerRegistration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetServerRegistrationOk() (*int32, bool) {
+func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) GetServerRegistrationOk() (*int64, bool) {
 	if o == nil || isNil(o.ServerRegistration) {
 		return nil, false
 	}
@@ -679,8 +679,8 @@ func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) H
 	return false
 }
 
-// SetServerRegistration gets a reference to the given int32 and assigns it to the ServerRegistration field.
-func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetServerRegistration(v int32) {
+// SetServerRegistration gets a reference to the given int64 and assigns it to the ServerRegistration field.
+func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeResponse) SetServerRegistration(v int64) {
 	o.ServerRegistration = &v
 }
 

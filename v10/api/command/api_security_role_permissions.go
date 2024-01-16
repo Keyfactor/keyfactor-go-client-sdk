@@ -36,7 +36,7 @@ type SecurityRolePermissionsApiService service
 type ApiSecurityRolePermissionsAddCollectionPermissionsRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolePermissionsApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	collectionPermissions   *[]KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest
 	xKeyfactorApiVersion    *string
@@ -80,7 +80,7 @@ SecurityRolePermissionsAddCollectionPermissions Adds collection permissions to t
 	@param id Security role identifier
 	@return ApiSecurityRolePermissionsAddCollectionPermissionsRequest
 */
-func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddCollectionPermissions(ctx context.Context, id int32) ApiSecurityRolePermissionsAddCollectionPermissionsRequest {
+func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddCollectionPermissions(ctx context.Context, id int64) ApiSecurityRolePermissionsAddCollectionPermissionsRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -185,7 +185,7 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddCollection
 type ApiSecurityRolePermissionsAddContainerPermissionsRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolePermissionsApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	containerPermissions    *[]KeyfactorApiModelsSecurityRolesContainerPermissionRequest
 	xKeyfactorApiVersion    *string
@@ -227,7 +227,7 @@ SecurityRolePermissionsAddContainerPermissions Adds container permissions to the
 	@param id Security role identifier
 	@return ApiSecurityRolePermissionsAddContainerPermissionsRequest
 */
-func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddContainerPermissions(ctx context.Context, id int32) ApiSecurityRolePermissionsAddContainerPermissionsRequest {
+func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddContainerPermissions(ctx context.Context, id int64) ApiSecurityRolePermissionsAddContainerPermissionsRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -332,7 +332,7 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddContainerP
 type ApiSecurityRolePermissionsAddGlobalPermissionsRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolePermissionsApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	globalPermissions       *[]KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionRequest
 	xKeyfactorApiVersion    *string
@@ -432,7 +432,7 @@ SecurityRolePermissionsAddGlobalPermissions Adds global permissions to the secur
 	@param id Security role identifier
 	@return ApiSecurityRolePermissionsAddGlobalPermissionsRequest
 */
-func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddGlobalPermissions(ctx context.Context, id int32) ApiSecurityRolePermissionsAddGlobalPermissionsRequest {
+func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddGlobalPermissions(ctx context.Context, id int64) ApiSecurityRolePermissionsAddGlobalPermissionsRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -537,7 +537,7 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsAddGlobalPerm
 type ApiSecurityRolePermissionsGetCollectionPermissionsForRoleRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolePermissionsApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -565,7 +565,7 @@ SecurityRolePermissionsGetCollectionPermissionsForRole Returns all collection pe
 	@param id Security role identifier
 	@return ApiSecurityRolePermissionsGetCollectionPermissionsForRoleRequest
 */
-func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetCollectionPermissionsForRole(ctx context.Context, id int32) ApiSecurityRolePermissionsGetCollectionPermissionsForRoleRequest {
+func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetCollectionPermissionsForRole(ctx context.Context, id int64) ApiSecurityRolePermissionsGetCollectionPermissionsForRoleRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -665,7 +665,7 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetCollection
 type ApiSecurityRolePermissionsGetContainerPermissionsForRoleRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolePermissionsApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -693,7 +693,7 @@ SecurityRolePermissionsGetContainerPermissionsForRole Returns all container perm
 	@param id Security role identifier
 	@return ApiSecurityRolePermissionsGetContainerPermissionsForRoleRequest
 */
-func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetContainerPermissionsForRole(ctx context.Context, id int32) ApiSecurityRolePermissionsGetContainerPermissionsForRoleRequest {
+func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetContainerPermissionsForRole(ctx context.Context, id int64) ApiSecurityRolePermissionsGetContainerPermissionsForRoleRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -793,7 +793,7 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetContainerP
 type ApiSecurityRolePermissionsGetGlobalPermissionsForRoleRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolePermissionsApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -821,7 +821,7 @@ SecurityRolePermissionsGetGlobalPermissionsForRole Returns all global permission
 	@param id Security role identifier
 	@return ApiSecurityRolePermissionsGetGlobalPermissionsForRoleRequest
 */
-func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetGlobalPermissionsForRole(ctx context.Context, id int32) ApiSecurityRolePermissionsGetGlobalPermissionsForRoleRequest {
+func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetGlobalPermissionsForRole(ctx context.Context, id int64) ApiSecurityRolePermissionsGetGlobalPermissionsForRoleRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -921,7 +921,7 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetGlobalPerm
 type ApiSecurityRolePermissionsGetPermissionsForRoleRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolePermissionsApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -949,7 +949,7 @@ SecurityRolePermissionsGetPermissionsForRole Returns all permissions associated 
 	@param id Security role identifier
 	@return ApiSecurityRolePermissionsGetPermissionsForRoleRequest
 */
-func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetPermissionsForRole(ctx context.Context, id int32) ApiSecurityRolePermissionsGetPermissionsForRoleRequest {
+func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetPermissionsForRole(ctx context.Context, id int64) ApiSecurityRolePermissionsGetPermissionsForRoleRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -1049,7 +1049,7 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsGetPermission
 type ApiSecurityRolePermissionsSetCollectionPermissionsRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolePermissionsApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	collectionPermissions   *[]KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesCollectionPermissionRequest
 	xKeyfactorApiVersion    *string
@@ -1093,7 +1093,7 @@ SecurityRolePermissionsSetCollectionPermissions Sets collection permissions to t
 	@param id Security role identifier
 	@return ApiSecurityRolePermissionsSetCollectionPermissionsRequest
 */
-func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetCollectionPermissions(ctx context.Context, id int32) ApiSecurityRolePermissionsSetCollectionPermissionsRequest {
+func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetCollectionPermissions(ctx context.Context, id int64) ApiSecurityRolePermissionsSetCollectionPermissionsRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -1198,7 +1198,7 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetCollection
 type ApiSecurityRolePermissionsSetContainerPermissionsRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolePermissionsApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	containerPermissions    *[]KeyfactorApiModelsSecurityRolesContainerPermissionRequest
 	xKeyfactorApiVersion    *string
@@ -1240,7 +1240,7 @@ SecurityRolePermissionsSetContainerPermissions Sets container permissions to the
 	@param id Security role identifier
 	@return ApiSecurityRolePermissionsSetContainerPermissionsRequest
 */
-func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetContainerPermissions(ctx context.Context, id int32) ApiSecurityRolePermissionsSetContainerPermissionsRequest {
+func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetContainerPermissions(ctx context.Context, id int64) ApiSecurityRolePermissionsSetContainerPermissionsRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -1345,7 +1345,7 @@ func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetContainerP
 type ApiSecurityRolePermissionsSetGlobalPermissionsRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolePermissionsApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	globalPermissions       *[]KeyfactorApiModelsSecurityRolesIdentitiesSecurityRolesGlobalPermissionRequest
 	xKeyfactorApiVersion    *string
@@ -1445,7 +1445,7 @@ SecurityRolePermissionsSetGlobalPermissions Adds global permissions to the secur
 	@param id Security role identifier
 	@return ApiSecurityRolePermissionsSetGlobalPermissionsRequest
 */
-func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetGlobalPermissions(ctx context.Context, id int32) ApiSecurityRolePermissionsSetGlobalPermissionsRequest {
+func (a *SecurityRolePermissionsApiService) SecurityRolePermissionsSetGlobalPermissions(ctx context.Context, id int64) ApiSecurityRolePermissionsSetGlobalPermissionsRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 

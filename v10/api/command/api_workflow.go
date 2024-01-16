@@ -37,7 +37,7 @@ type ApiWorkflowApprovePendingRequestsRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowApiService
 	xKeyfactorRequestedWith *string
-	requestIds              *[]int32
+	requestIds              *[]int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -48,7 +48,7 @@ func (r ApiWorkflowApprovePendingRequestsRequest) XKeyfactorRequestedWith(xKeyfa
 }
 
 // Array of Keyfactor identifiers of the certificate requests
-func (r ApiWorkflowApprovePendingRequestsRequest) RequestIds(requestIds []int32) ApiWorkflowApprovePendingRequestsRequest {
+func (r ApiWorkflowApprovePendingRequestsRequest) RequestIds(requestIds []int64) ApiWorkflowApprovePendingRequestsRequest {
 	r.requestIds = &requestIds
 	return r
 }
@@ -311,10 +311,10 @@ type ApiWorkflowGetRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pagedQueryQueryString   *string
-	pagedQueryPageReturned  *int32
-	pagedQueryReturnLimit   *int32
+	pagedQueryPageReturned  *int64
+	pagedQueryReturnLimit   *int64
 	pagedQuerySortField     *string
-	pagedQuerySortAscending *int32
+	pagedQuerySortAscending *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -336,13 +336,13 @@ func (r ApiWorkflowGetRequest) PagedQueryQueryString(pagedQueryQueryString strin
 }
 
 // The current page within the result set to be returned
-func (r ApiWorkflowGetRequest) PagedQueryPageReturned(pagedQueryPageReturned int32) ApiWorkflowGetRequest {
+func (r ApiWorkflowGetRequest) PagedQueryPageReturned(pagedQueryPageReturned int64) ApiWorkflowGetRequest {
 	r.pagedQueryPageReturned = &pagedQueryPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiWorkflowGetRequest) PagedQueryReturnLimit(pagedQueryReturnLimit int32) ApiWorkflowGetRequest {
+func (r ApiWorkflowGetRequest) PagedQueryReturnLimit(pagedQueryReturnLimit int64) ApiWorkflowGetRequest {
 	r.pagedQueryReturnLimit = &pagedQueryReturnLimit
 	return r
 }
@@ -354,7 +354,7 @@ func (r ApiWorkflowGetRequest) PagedQuerySortField(pagedQuerySortField string) A
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiWorkflowGetRequest) PagedQuerySortAscending(pagedQuerySortAscending int32) ApiWorkflowGetRequest {
+func (r ApiWorkflowGetRequest) PagedQuerySortAscending(pagedQuerySortAscending int64) ApiWorkflowGetRequest {
 	r.pagedQuerySortAscending = &pagedQuerySortAscending
 	return r
 }
@@ -482,7 +482,7 @@ func (a *WorkflowApiService) WorkflowGetExecute(r ApiWorkflowGetRequest) ([]Mode
 type ApiWorkflowGetCertificateRequestDetailsRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -510,7 +510,7 @@ WorkflowGetCertificateRequestDetails Returns certificate request details based o
 	@param id The ID of the certificate request.
 	@return ApiWorkflowGetCertificateRequestDetailsRequest
 */
-func (a *WorkflowApiService) WorkflowGetCertificateRequestDetails(ctx context.Context, id int32) ApiWorkflowGetCertificateRequestDetailsRequest {
+func (a *WorkflowApiService) WorkflowGetCertificateRequestDetails(ctx context.Context, id int64) ApiWorkflowGetCertificateRequestDetailsRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -613,10 +613,10 @@ type ApiWorkflowGetDeniedRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pagedQueryQueryString   *string
-	pagedQueryPageReturned  *int32
-	pagedQueryReturnLimit   *int32
+	pagedQueryPageReturned  *int64
+	pagedQueryReturnLimit   *int64
 	pagedQuerySortField     *string
-	pagedQuerySortAscending *int32
+	pagedQuerySortAscending *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -638,13 +638,13 @@ func (r ApiWorkflowGetDeniedRequest) PagedQueryQueryString(pagedQueryQueryString
 }
 
 // The current page within the result set to be returned
-func (r ApiWorkflowGetDeniedRequest) PagedQueryPageReturned(pagedQueryPageReturned int32) ApiWorkflowGetDeniedRequest {
+func (r ApiWorkflowGetDeniedRequest) PagedQueryPageReturned(pagedQueryPageReturned int64) ApiWorkflowGetDeniedRequest {
 	r.pagedQueryPageReturned = &pagedQueryPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiWorkflowGetDeniedRequest) PagedQueryReturnLimit(pagedQueryReturnLimit int32) ApiWorkflowGetDeniedRequest {
+func (r ApiWorkflowGetDeniedRequest) PagedQueryReturnLimit(pagedQueryReturnLimit int64) ApiWorkflowGetDeniedRequest {
 	r.pagedQueryReturnLimit = &pagedQueryReturnLimit
 	return r
 }
@@ -656,7 +656,7 @@ func (r ApiWorkflowGetDeniedRequest) PagedQuerySortField(pagedQuerySortField str
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiWorkflowGetDeniedRequest) PagedQuerySortAscending(pagedQuerySortAscending int32) ApiWorkflowGetDeniedRequest {
+func (r ApiWorkflowGetDeniedRequest) PagedQuerySortAscending(pagedQuerySortAscending int64) ApiWorkflowGetDeniedRequest {
 	r.pagedQuerySortAscending = &pagedQuerySortAscending
 	return r
 }

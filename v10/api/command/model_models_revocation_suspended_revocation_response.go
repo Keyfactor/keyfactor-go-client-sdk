@@ -30,7 +30,7 @@ var _ MappedNullable = &ModelsRevocationSuspendedRevocationResponse{}
 
 // ModelsRevocationSuspendedRevocationResponse struct for ModelsRevocationSuspendedRevocationResponse
 type ModelsRevocationSuspendedRevocationResponse struct {
-	CertId               *int32  `json:"CertId,omitempty"`
+	CertId               *int64  `json:"CertId,omitempty"`
 	WorkflowId           *string `json:"WorkflowId,omitempty"`
 	Message              *string `json:"Message,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -56,9 +56,9 @@ func NewModelsRevocationSuspendedRevocationResponseWithDefaults() *ModelsRevocat
 }
 
 // GetCertId returns the CertId field value if set, zero value otherwise.
-func (o *ModelsRevocationSuspendedRevocationResponse) GetCertId() int32 {
+func (o *ModelsRevocationSuspendedRevocationResponse) GetCertId() int64 {
 	if o == nil || isNil(o.CertId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CertId
@@ -66,7 +66,7 @@ func (o *ModelsRevocationSuspendedRevocationResponse) GetCertId() int32 {
 
 // GetCertIdOk returns a tuple with the CertId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsRevocationSuspendedRevocationResponse) GetCertIdOk() (*int32, bool) {
+func (o *ModelsRevocationSuspendedRevocationResponse) GetCertIdOk() (*int64, bool) {
 	if o == nil || isNil(o.CertId) {
 		return nil, false
 	}
@@ -82,8 +82,8 @@ func (o *ModelsRevocationSuspendedRevocationResponse) HasCertId() bool {
 	return false
 }
 
-// SetCertId gets a reference to the given int32 and assigns it to the CertId field.
-func (o *ModelsRevocationSuspendedRevocationResponse) SetCertId(v int32) {
+// SetCertId gets a reference to the given int64 and assigns it to the CertId field.
+func (o *ModelsRevocationSuspendedRevocationResponse) SetCertId(v int64) {
 	o.CertId = &v
 }
 

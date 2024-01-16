@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Subject** | Pointer to **string** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 **Recipients** | Pointer to **[]string** |  | [optional] 
-**CARequestId** | Pointer to **int32** |  | [optional] 
+**CARequestId** | Pointer to **int64** |  | [optional] 
 **CommonName** | Pointer to **string** |  | [optional] 
 **LogicalName** | Pointer to **string** |  | [optional] 
 
@@ -107,20 +107,20 @@ HasRecipients returns a boolean if a field has been set.
 
 ### GetCARequestId
 
-`func (o *KeyfactorApiModelsAlertsPendingPendingAlertResponse) GetCARequestId() int32`
+`func (o *KeyfactorApiModelsAlertsPendingPendingAlertResponse) GetCARequestId() int64`
 
 GetCARequestId returns the CARequestId field if non-nil, zero value otherwise.
 
 ### GetCARequestIdOk
 
-`func (o *KeyfactorApiModelsAlertsPendingPendingAlertResponse) GetCARequestIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsAlertsPendingPendingAlertResponse) GetCARequestIdOk() (*int64, bool)`
 
 GetCARequestIdOk returns a tuple with the CARequestId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCARequestId
 
-`func (o *KeyfactorApiModelsAlertsPendingPendingAlertResponse) SetCARequestId(v int32)`
+`func (o *KeyfactorApiModelsAlertsPendingPendingAlertResponse) SetCARequestId(v int64)`
 
 SetCARequestId sets CARequestId field to given value.
 

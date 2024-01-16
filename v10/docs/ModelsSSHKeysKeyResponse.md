@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **Fingerprint** | Pointer to **string** |  | [optional] 
 **PublicKey** | Pointer to **string** |  | [optional] 
 **PrivateKey** | Pointer to **string** |  | [optional] 
 **KeyType** | Pointer to **string** |  | [optional] 
-**KeyLength** | Pointer to **int32** |  | [optional] 
+**KeyLength** | Pointer to **int64** |  | [optional] 
 **CreationDate** | Pointer to **time.Time** |  | [optional] 
 **StaleDate** | Pointer to **time.Time** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **[]string** |  | [optional] 
-**LogonCount** | Pointer to **int32** |  | [optional] 
+**LogonCount** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -37,20 +37,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ModelsSSHKeysKeyResponse) GetId() int32`
+`func (o *ModelsSSHKeysKeyResponse) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsSSHKeysKeyResponse) GetIdOk() (*int32, bool)`
+`func (o *ModelsSSHKeysKeyResponse) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsSSHKeysKeyResponse) SetId(v int32)`
+`func (o *ModelsSSHKeysKeyResponse) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -162,20 +162,20 @@ HasKeyType returns a boolean if a field has been set.
 
 ### GetKeyLength
 
-`func (o *ModelsSSHKeysKeyResponse) GetKeyLength() int32`
+`func (o *ModelsSSHKeysKeyResponse) GetKeyLength() int64`
 
 GetKeyLength returns the KeyLength field if non-nil, zero value otherwise.
 
 ### GetKeyLengthOk
 
-`func (o *ModelsSSHKeysKeyResponse) GetKeyLengthOk() (*int32, bool)`
+`func (o *ModelsSSHKeysKeyResponse) GetKeyLengthOk() (*int64, bool)`
 
 GetKeyLengthOk returns a tuple with the KeyLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyLength
 
-`func (o *ModelsSSHKeysKeyResponse) SetKeyLength(v int32)`
+`func (o *ModelsSSHKeysKeyResponse) SetKeyLength(v int64)`
 
 SetKeyLength sets KeyLength field to given value.
 
@@ -287,20 +287,20 @@ HasComments returns a boolean if a field has been set.
 
 ### GetLogonCount
 
-`func (o *ModelsSSHKeysKeyResponse) GetLogonCount() int32`
+`func (o *ModelsSSHKeysKeyResponse) GetLogonCount() int64`
 
 GetLogonCount returns the LogonCount field if non-nil, zero value otherwise.
 
 ### GetLogonCountOk
 
-`func (o *ModelsSSHKeysKeyResponse) GetLogonCountOk() (*int32, bool)`
+`func (o *ModelsSSHKeysKeyResponse) GetLogonCountOk() (*int64, bool)`
 
 GetLogonCountOk returns a tuple with the LogonCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLogonCount
 
-`func (o *ModelsSSHKeysKeyResponse) SetLogonCount(v int32)`
+`func (o *ModelsSSHKeysKeyResponse) SetLogonCount(v int64)`
 
 SetLogonCount sets LogonCount field to given value.
 

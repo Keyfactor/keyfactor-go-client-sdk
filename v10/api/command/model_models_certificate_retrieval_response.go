@@ -31,7 +31,7 @@ var _ MappedNullable = &ModelsCertificateRetrievalResponse{}
 
 // ModelsCertificateRetrievalResponse struct for ModelsCertificateRetrievalResponse
 type ModelsCertificateRetrievalResponse struct {
-	Id                       *int32         `json:"Id,omitempty"`
+	Id                       *int64         `json:"Id,omitempty"`
 	Thumbprint               *string        `json:"Thumbprint,omitempty"`
 	SerialNumber             *string        `json:"SerialNumber,omitempty"`
 	IssuedDN                 NullableString `json:"IssuedDN,omitempty"`
@@ -40,29 +40,29 @@ type ModelsCertificateRetrievalResponse struct {
 	NotBefore                *time.Time     `json:"NotBefore,omitempty"`
 	NotAfter                 *time.Time     `json:"NotAfter,omitempty"`
 	IssuerDN                 NullableString `json:"IssuerDN,omitempty"`
-	PrincipalId              NullableInt32  `json:"PrincipalId,omitempty"`
-	TemplateId               NullableInt32  `json:"TemplateId,omitempty"`
-	CertState                *int32         `json:"CertState,omitempty"`
-	KeySizeInBits            *int32         `json:"KeySizeInBits,omitempty"`
-	KeyType                  *int32         `json:"KeyType,omitempty"`
-	RequesterId              *int32         `json:"RequesterId,omitempty"`
+	PrincipalId              NullableInt64  `json:"PrincipalId,omitempty"`
+	TemplateId               NullableInt64  `json:"TemplateId,omitempty"`
+	CertState                *int64         `json:"CertState,omitempty"`
+	KeySizeInBits            *int64         `json:"KeySizeInBits,omitempty"`
+	KeyType                  *int64         `json:"KeyType,omitempty"`
+	RequesterId              *int64         `json:"RequesterId,omitempty"`
 	IssuedOU                 NullableString `json:"IssuedOU,omitempty"`
 	IssuedEmail              NullableString `json:"IssuedEmail,omitempty"`
-	KeyUsage                 *int32         `json:"KeyUsage,omitempty"`
+	KeyUsage                 *int64         `json:"KeyUsage,omitempty"`
 	SigningAlgorithm         *string        `json:"SigningAlgorithm,omitempty"`
 	CertStateString          *string        `json:"CertStateString,omitempty"`
 	KeyTypeString            *string        `json:"KeyTypeString,omitempty"`
 	RevocationEffDate        NullableTime   `json:"RevocationEffDate,omitempty"`
-	RevocationReason         NullableInt32  `json:"RevocationReason,omitempty"`
+	RevocationReason         NullableInt64  `json:"RevocationReason,omitempty"`
 	RevocationComment        NullableString `json:"RevocationComment,omitempty"`
-	CertificateAuthorityId   *int32         `json:"CertificateAuthorityId,omitempty"`
+	CertificateAuthorityId   *int64         `json:"CertificateAuthorityId,omitempty"`
 	CertificateAuthorityName *string        `json:"CertificateAuthorityName,omitempty"`
 	// Full template display name.
 	TemplateName           *string                                                                 `json:"TemplateName,omitempty"`
 	ArchivedKey            *bool                                                                   `json:"ArchivedKey,omitempty"`
 	HasPrivateKey          *bool                                                                   `json:"HasPrivateKey,omitempty"`
 	PrincipalName          NullableString                                                          `json:"PrincipalName,omitempty"`
-	CertRequestId          *int32                                                                  `json:"CertRequestId,omitempty"`
+	CertRequestId          *int64                                                                  `json:"CertRequestId,omitempty"`
 	RequesterName          *string                                                                 `json:"RequesterName,omitempty"`
 	ContentBytes           *string                                                                 `json:"ContentBytes,omitempty"`
 	ExtendedKeyUsages      []ModelsCertificateRetrievalResponseExtendedKeyUsageModel               `json:"ExtendedKeyUsages,omitempty"`
@@ -72,7 +72,7 @@ type ModelsCertificateRetrievalResponse struct {
 	SSLLocations           []ModelsCertificateRetrievalResponseCertificateStoreLocationDetailModel `json:"SSLLocations,omitempty"`
 	Locations              []ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel  `json:"Locations,omitempty"`
 	Metadata               *map[string]string                                                      `json:"Metadata,omitempty"`
-	CertificateKeyId       *int32                                                                  `json:"CertificateKeyId,omitempty"`
+	CertificateKeyId       *int64                                                                  `json:"CertificateKeyId,omitempty"`
 	CARowIndex             *int64                                                                  `json:"CARowIndex,omitempty"`
 	CARecordId             *string                                                                 `json:"CARecordId,omitempty"`
 	DetailedKeyUsage       *ModelsCertificateRetrievalResponseDetailedKeyUsageModel                `json:"DetailedKeyUsage,omitempty"`
@@ -101,9 +101,9 @@ func NewModelsCertificateRetrievalResponseWithDefaults() *ModelsCertificateRetri
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsCertificateRetrievalResponse) GetId() int32 {
+func (o *ModelsCertificateRetrievalResponse) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -111,7 +111,7 @@ func (o *ModelsCertificateRetrievalResponse) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRetrievalResponse) GetIdOk() (*int32, bool) {
+func (o *ModelsCertificateRetrievalResponse) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -127,8 +127,8 @@ func (o *ModelsCertificateRetrievalResponse) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsCertificateRetrievalResponse) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsCertificateRetrievalResponse) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -422,9 +422,9 @@ func (o *ModelsCertificateRetrievalResponse) UnsetIssuerDN() {
 }
 
 // GetPrincipalId returns the PrincipalId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ModelsCertificateRetrievalResponse) GetPrincipalId() int32 {
+func (o *ModelsCertificateRetrievalResponse) GetPrincipalId() int64 {
 	if o == nil || isNil(o.PrincipalId.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PrincipalId.Get()
@@ -433,7 +433,7 @@ func (o *ModelsCertificateRetrievalResponse) GetPrincipalId() int32 {
 // GetPrincipalIdOk returns a tuple with the PrincipalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ModelsCertificateRetrievalResponse) GetPrincipalIdOk() (*int32, bool) {
+func (o *ModelsCertificateRetrievalResponse) GetPrincipalIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -449,8 +449,8 @@ func (o *ModelsCertificateRetrievalResponse) HasPrincipalId() bool {
 	return false
 }
 
-// SetPrincipalId gets a reference to the given NullableInt32 and assigns it to the PrincipalId field.
-func (o *ModelsCertificateRetrievalResponse) SetPrincipalId(v int32) {
+// SetPrincipalId gets a reference to the given NullableInt64 and assigns it to the PrincipalId field.
+func (o *ModelsCertificateRetrievalResponse) SetPrincipalId(v int64) {
 	o.PrincipalId.Set(&v)
 }
 
@@ -465,9 +465,9 @@ func (o *ModelsCertificateRetrievalResponse) UnsetPrincipalId() {
 }
 
 // GetTemplateId returns the TemplateId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ModelsCertificateRetrievalResponse) GetTemplateId() int32 {
+func (o *ModelsCertificateRetrievalResponse) GetTemplateId() int64 {
 	if o == nil || isNil(o.TemplateId.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TemplateId.Get()
@@ -476,7 +476,7 @@ func (o *ModelsCertificateRetrievalResponse) GetTemplateId() int32 {
 // GetTemplateIdOk returns a tuple with the TemplateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ModelsCertificateRetrievalResponse) GetTemplateIdOk() (*int32, bool) {
+func (o *ModelsCertificateRetrievalResponse) GetTemplateIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -492,8 +492,8 @@ func (o *ModelsCertificateRetrievalResponse) HasTemplateId() bool {
 	return false
 }
 
-// SetTemplateId gets a reference to the given NullableInt32 and assigns it to the TemplateId field.
-func (o *ModelsCertificateRetrievalResponse) SetTemplateId(v int32) {
+// SetTemplateId gets a reference to the given NullableInt64 and assigns it to the TemplateId field.
+func (o *ModelsCertificateRetrievalResponse) SetTemplateId(v int64) {
 	o.TemplateId.Set(&v)
 }
 
@@ -508,9 +508,9 @@ func (o *ModelsCertificateRetrievalResponse) UnsetTemplateId() {
 }
 
 // GetCertState returns the CertState field value if set, zero value otherwise.
-func (o *ModelsCertificateRetrievalResponse) GetCertState() int32 {
+func (o *ModelsCertificateRetrievalResponse) GetCertState() int64 {
 	if o == nil || isNil(o.CertState) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CertState
@@ -518,7 +518,7 @@ func (o *ModelsCertificateRetrievalResponse) GetCertState() int32 {
 
 // GetCertStateOk returns a tuple with the CertState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRetrievalResponse) GetCertStateOk() (*int32, bool) {
+func (o *ModelsCertificateRetrievalResponse) GetCertStateOk() (*int64, bool) {
 	if o == nil || isNil(o.CertState) {
 		return nil, false
 	}
@@ -534,15 +534,15 @@ func (o *ModelsCertificateRetrievalResponse) HasCertState() bool {
 	return false
 }
 
-// SetCertState gets a reference to the given int32 and assigns it to the CertState field.
-func (o *ModelsCertificateRetrievalResponse) SetCertState(v int32) {
+// SetCertState gets a reference to the given int64 and assigns it to the CertState field.
+func (o *ModelsCertificateRetrievalResponse) SetCertState(v int64) {
 	o.CertState = &v
 }
 
 // GetKeySizeInBits returns the KeySizeInBits field value if set, zero value otherwise.
-func (o *ModelsCertificateRetrievalResponse) GetKeySizeInBits() int32 {
+func (o *ModelsCertificateRetrievalResponse) GetKeySizeInBits() int64 {
 	if o == nil || isNil(o.KeySizeInBits) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KeySizeInBits
@@ -550,7 +550,7 @@ func (o *ModelsCertificateRetrievalResponse) GetKeySizeInBits() int32 {
 
 // GetKeySizeInBitsOk returns a tuple with the KeySizeInBits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRetrievalResponse) GetKeySizeInBitsOk() (*int32, bool) {
+func (o *ModelsCertificateRetrievalResponse) GetKeySizeInBitsOk() (*int64, bool) {
 	if o == nil || isNil(o.KeySizeInBits) {
 		return nil, false
 	}
@@ -566,15 +566,15 @@ func (o *ModelsCertificateRetrievalResponse) HasKeySizeInBits() bool {
 	return false
 }
 
-// SetKeySizeInBits gets a reference to the given int32 and assigns it to the KeySizeInBits field.
-func (o *ModelsCertificateRetrievalResponse) SetKeySizeInBits(v int32) {
+// SetKeySizeInBits gets a reference to the given int64 and assigns it to the KeySizeInBits field.
+func (o *ModelsCertificateRetrievalResponse) SetKeySizeInBits(v int64) {
 	o.KeySizeInBits = &v
 }
 
 // GetKeyType returns the KeyType field value if set, zero value otherwise.
-func (o *ModelsCertificateRetrievalResponse) GetKeyType() int32 {
+func (o *ModelsCertificateRetrievalResponse) GetKeyType() int64 {
 	if o == nil || isNil(o.KeyType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KeyType
@@ -582,7 +582,7 @@ func (o *ModelsCertificateRetrievalResponse) GetKeyType() int32 {
 
 // GetKeyTypeOk returns a tuple with the KeyType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRetrievalResponse) GetKeyTypeOk() (*int32, bool) {
+func (o *ModelsCertificateRetrievalResponse) GetKeyTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.KeyType) {
 		return nil, false
 	}
@@ -598,15 +598,15 @@ func (o *ModelsCertificateRetrievalResponse) HasKeyType() bool {
 	return false
 }
 
-// SetKeyType gets a reference to the given int32 and assigns it to the KeyType field.
-func (o *ModelsCertificateRetrievalResponse) SetKeyType(v int32) {
+// SetKeyType gets a reference to the given int64 and assigns it to the KeyType field.
+func (o *ModelsCertificateRetrievalResponse) SetKeyType(v int64) {
 	o.KeyType = &v
 }
 
 // GetRequesterId returns the RequesterId field value if set, zero value otherwise.
-func (o *ModelsCertificateRetrievalResponse) GetRequesterId() int32 {
+func (o *ModelsCertificateRetrievalResponse) GetRequesterId() int64 {
 	if o == nil || isNil(o.RequesterId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RequesterId
@@ -614,7 +614,7 @@ func (o *ModelsCertificateRetrievalResponse) GetRequesterId() int32 {
 
 // GetRequesterIdOk returns a tuple with the RequesterId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRetrievalResponse) GetRequesterIdOk() (*int32, bool) {
+func (o *ModelsCertificateRetrievalResponse) GetRequesterIdOk() (*int64, bool) {
 	if o == nil || isNil(o.RequesterId) {
 		return nil, false
 	}
@@ -630,8 +630,8 @@ func (o *ModelsCertificateRetrievalResponse) HasRequesterId() bool {
 	return false
 }
 
-// SetRequesterId gets a reference to the given int32 and assigns it to the RequesterId field.
-func (o *ModelsCertificateRetrievalResponse) SetRequesterId(v int32) {
+// SetRequesterId gets a reference to the given int64 and assigns it to the RequesterId field.
+func (o *ModelsCertificateRetrievalResponse) SetRequesterId(v int64) {
 	o.RequesterId = &v
 }
 
@@ -722,9 +722,9 @@ func (o *ModelsCertificateRetrievalResponse) UnsetIssuedEmail() {
 }
 
 // GetKeyUsage returns the KeyUsage field value if set, zero value otherwise.
-func (o *ModelsCertificateRetrievalResponse) GetKeyUsage() int32 {
+func (o *ModelsCertificateRetrievalResponse) GetKeyUsage() int64 {
 	if o == nil || isNil(o.KeyUsage) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KeyUsage
@@ -732,7 +732,7 @@ func (o *ModelsCertificateRetrievalResponse) GetKeyUsage() int32 {
 
 // GetKeyUsageOk returns a tuple with the KeyUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRetrievalResponse) GetKeyUsageOk() (*int32, bool) {
+func (o *ModelsCertificateRetrievalResponse) GetKeyUsageOk() (*int64, bool) {
 	if o == nil || isNil(o.KeyUsage) {
 		return nil, false
 	}
@@ -748,8 +748,8 @@ func (o *ModelsCertificateRetrievalResponse) HasKeyUsage() bool {
 	return false
 }
 
-// SetKeyUsage gets a reference to the given int32 and assigns it to the KeyUsage field.
-func (o *ModelsCertificateRetrievalResponse) SetKeyUsage(v int32) {
+// SetKeyUsage gets a reference to the given int64 and assigns it to the KeyUsage field.
+func (o *ModelsCertificateRetrievalResponse) SetKeyUsage(v int64) {
 	o.KeyUsage = &v
 }
 
@@ -893,9 +893,9 @@ func (o *ModelsCertificateRetrievalResponse) UnsetRevocationEffDate() {
 }
 
 // GetRevocationReason returns the RevocationReason field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ModelsCertificateRetrievalResponse) GetRevocationReason() int32 {
+func (o *ModelsCertificateRetrievalResponse) GetRevocationReason() int64 {
 	if o == nil || isNil(o.RevocationReason.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RevocationReason.Get()
@@ -904,7 +904,7 @@ func (o *ModelsCertificateRetrievalResponse) GetRevocationReason() int32 {
 // GetRevocationReasonOk returns a tuple with the RevocationReason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ModelsCertificateRetrievalResponse) GetRevocationReasonOk() (*int32, bool) {
+func (o *ModelsCertificateRetrievalResponse) GetRevocationReasonOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -920,8 +920,8 @@ func (o *ModelsCertificateRetrievalResponse) HasRevocationReason() bool {
 	return false
 }
 
-// SetRevocationReason gets a reference to the given NullableInt32 and assigns it to the RevocationReason field.
-func (o *ModelsCertificateRetrievalResponse) SetRevocationReason(v int32) {
+// SetRevocationReason gets a reference to the given NullableInt64 and assigns it to the RevocationReason field.
+func (o *ModelsCertificateRetrievalResponse) SetRevocationReason(v int64) {
 	o.RevocationReason.Set(&v)
 }
 
@@ -979,9 +979,9 @@ func (o *ModelsCertificateRetrievalResponse) UnsetRevocationComment() {
 }
 
 // GetCertificateAuthorityId returns the CertificateAuthorityId field value if set, zero value otherwise.
-func (o *ModelsCertificateRetrievalResponse) GetCertificateAuthorityId() int32 {
+func (o *ModelsCertificateRetrievalResponse) GetCertificateAuthorityId() int64 {
 	if o == nil || isNil(o.CertificateAuthorityId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CertificateAuthorityId
@@ -989,7 +989,7 @@ func (o *ModelsCertificateRetrievalResponse) GetCertificateAuthorityId() int32 {
 
 // GetCertificateAuthorityIdOk returns a tuple with the CertificateAuthorityId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRetrievalResponse) GetCertificateAuthorityIdOk() (*int32, bool) {
+func (o *ModelsCertificateRetrievalResponse) GetCertificateAuthorityIdOk() (*int64, bool) {
 	if o == nil || isNil(o.CertificateAuthorityId) {
 		return nil, false
 	}
@@ -1005,8 +1005,8 @@ func (o *ModelsCertificateRetrievalResponse) HasCertificateAuthorityId() bool {
 	return false
 }
 
-// SetCertificateAuthorityId gets a reference to the given int32 and assigns it to the CertificateAuthorityId field.
-func (o *ModelsCertificateRetrievalResponse) SetCertificateAuthorityId(v int32) {
+// SetCertificateAuthorityId gets a reference to the given int64 and assigns it to the CertificateAuthorityId field.
+func (o *ModelsCertificateRetrievalResponse) SetCertificateAuthorityId(v int64) {
 	o.CertificateAuthorityId = &v
 }
 
@@ -1182,9 +1182,9 @@ func (o *ModelsCertificateRetrievalResponse) UnsetPrincipalName() {
 }
 
 // GetCertRequestId returns the CertRequestId field value if set, zero value otherwise.
-func (o *ModelsCertificateRetrievalResponse) GetCertRequestId() int32 {
+func (o *ModelsCertificateRetrievalResponse) GetCertRequestId() int64 {
 	if o == nil || isNil(o.CertRequestId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CertRequestId
@@ -1192,7 +1192,7 @@ func (o *ModelsCertificateRetrievalResponse) GetCertRequestId() int32 {
 
 // GetCertRequestIdOk returns a tuple with the CertRequestId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRetrievalResponse) GetCertRequestIdOk() (*int32, bool) {
+func (o *ModelsCertificateRetrievalResponse) GetCertRequestIdOk() (*int64, bool) {
 	if o == nil || isNil(o.CertRequestId) {
 		return nil, false
 	}
@@ -1208,8 +1208,8 @@ func (o *ModelsCertificateRetrievalResponse) HasCertRequestId() bool {
 	return false
 }
 
-// SetCertRequestId gets a reference to the given int32 and assigns it to the CertRequestId field.
-func (o *ModelsCertificateRetrievalResponse) SetCertRequestId(v int32) {
+// SetCertRequestId gets a reference to the given int64 and assigns it to the CertRequestId field.
+func (o *ModelsCertificateRetrievalResponse) SetCertRequestId(v int64) {
 	o.CertRequestId = &v
 }
 
@@ -1502,9 +1502,9 @@ func (o *ModelsCertificateRetrievalResponse) SetMetadata(v map[string]string) {
 }
 
 // GetCertificateKeyId returns the CertificateKeyId field value if set, zero value otherwise.
-func (o *ModelsCertificateRetrievalResponse) GetCertificateKeyId() int32 {
+func (o *ModelsCertificateRetrievalResponse) GetCertificateKeyId() int64 {
 	if o == nil || isNil(o.CertificateKeyId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CertificateKeyId
@@ -1512,7 +1512,7 @@ func (o *ModelsCertificateRetrievalResponse) GetCertificateKeyId() int32 {
 
 // GetCertificateKeyIdOk returns a tuple with the CertificateKeyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRetrievalResponse) GetCertificateKeyIdOk() (*int32, bool) {
+func (o *ModelsCertificateRetrievalResponse) GetCertificateKeyIdOk() (*int64, bool) {
 	if o == nil || isNil(o.CertificateKeyId) {
 		return nil, false
 	}
@@ -1528,8 +1528,8 @@ func (o *ModelsCertificateRetrievalResponse) HasCertificateKeyId() bool {
 	return false
 }
 
-// SetCertificateKeyId gets a reference to the given int32 and assigns it to the CertificateKeyId field.
-func (o *ModelsCertificateRetrievalResponse) SetCertificateKeyId(v int32) {
+// SetCertificateKeyId gets a reference to the given int64 and assigns it to the CertificateKeyId field.
+func (o *ModelsCertificateRetrievalResponse) SetCertificateKeyId(v int64) {
 	o.CertificateKeyId = &v
 }
 

@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **DisplayName** | **string** |  | 
 **Subject** | **string** |  | 
 **Message** | **string** |  | 
-**TemplateId** | Pointer to **NullableInt32** |  | [optional] 
+**TemplateId** | Pointer to **NullableInt64** |  | [optional] 
 **RegisteredEventHandler** | Pointer to [**KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest**](KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest.md) |  | [optional] 
 **Recipients** | Pointer to **[]string** |  | [optional] 
 **EventHandlerParameters** | Pointer to [**[]KeyfactorApiModelsEventHandlerEventHandlerParameterRequest**](KeyfactorApiModelsEventHandlerEventHandlerParameterRequest.md) |  | [optional] 
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) GetId() int32`
+`func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) GetIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) SetId(v int32)`
+`func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -119,20 +119,20 @@ SetMessage sets Message field to given value.
 
 ### GetTemplateId
 
-`func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) GetTemplateId() int32`
+`func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) GetTemplateId() int64`
 
 GetTemplateId returns the TemplateId field if non-nil, zero value otherwise.
 
 ### GetTemplateIdOk
 
-`func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) GetTemplateIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) GetTemplateIdOk() (*int64, bool)`
 
 GetTemplateIdOk returns a tuple with the TemplateId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTemplateId
 
-`func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) SetTemplateId(v int32)`
+`func (o *KeyfactorApiModelsAlertsDeniedDeniedAlertUpdateRequest) SetTemplateId(v int64)`
 
 SetTemplateId sets TemplateId field to given value.
 

@@ -53,11 +53,11 @@ func Test_command_UserApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("UserApi_UserDeleteUser_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("UserApi_UserDeleteUser_id: %v", id)
 
 		t.Log("UserApi_UserDeleteUser_payload: <none>")
-		httpRes, err := apiClient.UserApi.UserDeleteUser(context.Background(), id.(int32)).Execute()
+		httpRes, err := apiClient.UserApi.UserDeleteUser(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
@@ -67,11 +67,11 @@ func Test_command_UserApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("UserApi_UserGetUser_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("UserApi_UserGetUser_id: %v", id)
 
 		t.Log("UserApi_UserGetUser_payload: <none>")
-		resp, httpRes, err := apiClient.UserApi.UserGetUser(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.UserApi.UserGetUser(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

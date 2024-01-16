@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
-**Version** | Pointer to **int32** |  | [optional] 
+**Version** | Pointer to **int64** |  | [optional] 
 **WorkflowType** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -80,20 +80,20 @@ HasDisplayName returns a boolean if a field has been set.
 
 ### GetVersion
 
-`func (o *KeyfactorApiModelsWorkflowsInstanceDefinitionResponse) GetVersion() int32`
+`func (o *KeyfactorApiModelsWorkflowsInstanceDefinitionResponse) GetVersion() int64`
 
 GetVersion returns the Version field if non-nil, zero value otherwise.
 
 ### GetVersionOk
 
-`func (o *KeyfactorApiModelsWorkflowsInstanceDefinitionResponse) GetVersionOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsWorkflowsInstanceDefinitionResponse) GetVersionOk() (*int64, bool)`
 
 GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVersion
 
-`func (o *KeyfactorApiModelsWorkflowsInstanceDefinitionResponse) SetVersion(v int32)`
+`func (o *KeyfactorApiModelsWorkflowsInstanceDefinitionResponse) SetVersion(v int64)`
 
 SetVersion sets Version field to given value.
 

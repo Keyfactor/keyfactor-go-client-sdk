@@ -31,9 +31,9 @@ var _ MappedNullable = &KeyfactorAPIModelsSMTPSMTPResponse{}
 // KeyfactorAPIModelsSMTPSMTPResponse struct for KeyfactorAPIModelsSMTPSMTPResponse
 type KeyfactorAPIModelsSMTPSMTPResponse struct {
 	Host                    *string `json:"Host,omitempty"`
-	Id                      *int32  `json:"Id,omitempty"`
-	Port                    *int32  `json:"Port,omitempty"`
-	RelayAuthenticationType *int32  `json:"RelayAuthenticationType,omitempty"`
+	Id                      *int64  `json:"Id,omitempty"`
+	Port                    *int64  `json:"Port,omitempty"`
+	RelayAuthenticationType *int64  `json:"RelayAuthenticationType,omitempty"`
 	RelayUsername           *string `json:"RelayUsername,omitempty"`
 	SenderAccount           *string `json:"SenderAccount,omitempty"`
 	SenderName              *string `json:"SenderName,omitempty"`
@@ -93,9 +93,9 @@ func (o *KeyfactorAPIModelsSMTPSMTPResponse) SetHost(v string) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetId() int32 {
+func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -103,7 +103,7 @@ func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetIdOk() (*int32, bool) {
+func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -119,15 +119,15 @@ func (o *KeyfactorAPIModelsSMTPSMTPResponse) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *KeyfactorAPIModelsSMTPSMTPResponse) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *KeyfactorAPIModelsSMTPSMTPResponse) SetId(v int64) {
 	o.Id = &v
 }
 
 // GetPort returns the Port field value if set, zero value otherwise.
-func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetPort() int32 {
+func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetPort() int64 {
 	if o == nil || isNil(o.Port) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Port
@@ -135,7 +135,7 @@ func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetPort() int32 {
 
 // GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetPortOk() (*int32, bool) {
+func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetPortOk() (*int64, bool) {
 	if o == nil || isNil(o.Port) {
 		return nil, false
 	}
@@ -151,15 +151,15 @@ func (o *KeyfactorAPIModelsSMTPSMTPResponse) HasPort() bool {
 	return false
 }
 
-// SetPort gets a reference to the given int32 and assigns it to the Port field.
-func (o *KeyfactorAPIModelsSMTPSMTPResponse) SetPort(v int32) {
+// SetPort gets a reference to the given int64 and assigns it to the Port field.
+func (o *KeyfactorAPIModelsSMTPSMTPResponse) SetPort(v int64) {
 	o.Port = &v
 }
 
 // GetRelayAuthenticationType returns the RelayAuthenticationType field value if set, zero value otherwise.
-func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetRelayAuthenticationType() int32 {
+func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetRelayAuthenticationType() int64 {
 	if o == nil || isNil(o.RelayAuthenticationType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RelayAuthenticationType
@@ -167,7 +167,7 @@ func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetRelayAuthenticationType() int32 
 
 // GetRelayAuthenticationTypeOk returns a tuple with the RelayAuthenticationType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetRelayAuthenticationTypeOk() (*int32, bool) {
+func (o *KeyfactorAPIModelsSMTPSMTPResponse) GetRelayAuthenticationTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.RelayAuthenticationType) {
 		return nil, false
 	}
@@ -183,8 +183,8 @@ func (o *KeyfactorAPIModelsSMTPSMTPResponse) HasRelayAuthenticationType() bool {
 	return false
 }
 
-// SetRelayAuthenticationType gets a reference to the given int32 and assigns it to the RelayAuthenticationType field.
-func (o *KeyfactorAPIModelsSMTPSMTPResponse) SetRelayAuthenticationType(v int32) {
+// SetRelayAuthenticationType gets a reference to the given int64 and assigns it to the RelayAuthenticationType field.
+func (o *KeyfactorAPIModelsSMTPSMTPResponse) SetRelayAuthenticationType(v int64) {
 	o.RelayAuthenticationType = &v
 }
 

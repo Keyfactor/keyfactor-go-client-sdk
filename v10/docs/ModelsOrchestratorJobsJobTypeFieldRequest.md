@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
-**Type** | **int32** |  | 
+**Type** | **int64** |  | 
 **DefaultValue** | Pointer to **string** |  | [optional] 
 **Required** | Pointer to **bool** |  | [optional] 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewModelsOrchestratorJobsJobTypeFieldRequest
 
-`func NewModelsOrchestratorJobsJobTypeFieldRequest(name string, type_ int32, ) *ModelsOrchestratorJobsJobTypeFieldRequest`
+`func NewModelsOrchestratorJobsJobTypeFieldRequest(name string, type_ int64, ) *ModelsOrchestratorJobsJobTypeFieldRequest`
 
 NewModelsOrchestratorJobsJobTypeFieldRequest instantiates a new ModelsOrchestratorJobsJobTypeFieldRequest object
 This constructor will assign default values to properties that have it defined,
@@ -50,20 +50,20 @@ SetName sets Name field to given value.
 
 ### GetType
 
-`func (o *ModelsOrchestratorJobsJobTypeFieldRequest) GetType() int32`
+`func (o *ModelsOrchestratorJobsJobTypeFieldRequest) GetType() int64`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ModelsOrchestratorJobsJobTypeFieldRequest) GetTypeOk() (*int32, bool)`
+`func (o *ModelsOrchestratorJobsJobTypeFieldRequest) GetTypeOk() (*int64, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ModelsOrchestratorJobsJobTypeFieldRequest) SetType(v int32)`
+`func (o *ModelsOrchestratorJobsJobTypeFieldRequest) SetType(v int64)`
 
 SetType sets Type field to given value.
 

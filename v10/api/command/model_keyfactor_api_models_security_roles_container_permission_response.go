@@ -30,7 +30,7 @@ var _ MappedNullable = &KeyfactorApiModelsSecurityRolesContainerPermissionRespon
 
 // KeyfactorApiModelsSecurityRolesContainerPermissionResponse struct for KeyfactorApiModelsSecurityRolesContainerPermissionResponse
 type KeyfactorApiModelsSecurityRolesContainerPermissionResponse struct {
-	ContainerId          *int32  `json:"ContainerId,omitempty"`
+	ContainerId          *int64  `json:"ContainerId,omitempty"`
 	Name                 *string `json:"Name,omitempty"`
 	Permission           *string `json:"Permission,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -56,9 +56,9 @@ func NewKeyfactorApiModelsSecurityRolesContainerPermissionResponseWithDefaults()
 }
 
 // GetContainerId returns the ContainerId field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsSecurityRolesContainerPermissionResponse) GetContainerId() int32 {
+func (o *KeyfactorApiModelsSecurityRolesContainerPermissionResponse) GetContainerId() int64 {
 	if o == nil || isNil(o.ContainerId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ContainerId
@@ -66,7 +66,7 @@ func (o *KeyfactorApiModelsSecurityRolesContainerPermissionResponse) GetContaine
 
 // GetContainerIdOk returns a tuple with the ContainerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsSecurityRolesContainerPermissionResponse) GetContainerIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsSecurityRolesContainerPermissionResponse) GetContainerIdOk() (*int64, bool) {
 	if o == nil || isNil(o.ContainerId) {
 		return nil, false
 	}
@@ -82,8 +82,8 @@ func (o *KeyfactorApiModelsSecurityRolesContainerPermissionResponse) HasContaine
 	return false
 }
 
-// SetContainerId gets a reference to the given int32 and assigns it to the ContainerId field.
-func (o *KeyfactorApiModelsSecurityRolesContainerPermissionResponse) SetContainerId(v int32) {
+// SetContainerId gets a reference to the given int64 and assigns it to the ContainerId field.
+func (o *KeyfactorApiModelsSecurityRolesContainerPermissionResponse) SetContainerId(v int64) {
 	o.ContainerId = &v
 }
 

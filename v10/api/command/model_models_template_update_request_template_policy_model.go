@@ -30,8 +30,8 @@ var _ MappedNullable = &ModelsTemplateUpdateRequestTemplatePolicyModel{}
 
 // ModelsTemplateUpdateRequestTemplatePolicyModel struct for ModelsTemplateUpdateRequestTemplatePolicyModel
 type ModelsTemplateUpdateRequestTemplatePolicyModel struct {
-	TemplateId           NullableInt32 `json:"TemplateId,omitempty"`
-	RSAValidKeySizes     []int32       `json:"RSAValidKeySizes,omitempty"`
+	TemplateId           NullableInt64 `json:"TemplateId,omitempty"`
+	RSAValidKeySizes     []int64       `json:"RSAValidKeySizes,omitempty"`
 	ECCValidCurves       []string      `json:"ECCValidCurves,omitempty"`
 	AllowKeyReuse        *bool         `json:"AllowKeyReuse,omitempty"`
 	AllowWildcards       *bool         `json:"AllowWildcards,omitempty"`
@@ -59,9 +59,9 @@ func NewModelsTemplateUpdateRequestTemplatePolicyModelWithDefaults() *ModelsTemp
 }
 
 // GetTemplateId returns the TemplateId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) GetTemplateId() int32 {
+func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) GetTemplateId() int64 {
 	if o == nil || isNil(o.TemplateId.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TemplateId.Get()
@@ -70,7 +70,7 @@ func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) GetTemplateId() int32 {
 // GetTemplateIdOk returns a tuple with the TemplateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) GetTemplateIdOk() (*int32, bool) {
+func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) GetTemplateIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,8 +86,8 @@ func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) HasTemplateId() bool {
 	return false
 }
 
-// SetTemplateId gets a reference to the given NullableInt32 and assigns it to the TemplateId field.
-func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) SetTemplateId(v int32) {
+// SetTemplateId gets a reference to the given NullableInt64 and assigns it to the TemplateId field.
+func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) SetTemplateId(v int64) {
 	o.TemplateId.Set(&v)
 }
 
@@ -102,9 +102,9 @@ func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) UnsetTemplateId() {
 }
 
 // GetRSAValidKeySizes returns the RSAValidKeySizes field value if set, zero value otherwise.
-func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) GetRSAValidKeySizes() []int32 {
+func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) GetRSAValidKeySizes() []int64 {
 	if o == nil || isNil(o.RSAValidKeySizes) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.RSAValidKeySizes
@@ -112,7 +112,7 @@ func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) GetRSAValidKeySizes() [
 
 // GetRSAValidKeySizesOk returns a tuple with the RSAValidKeySizes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) GetRSAValidKeySizesOk() ([]int32, bool) {
+func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) GetRSAValidKeySizesOk() ([]int64, bool) {
 	if o == nil || isNil(o.RSAValidKeySizes) {
 		return nil, false
 	}
@@ -128,8 +128,8 @@ func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) HasRSAValidKeySizes() b
 	return false
 }
 
-// SetRSAValidKeySizes gets a reference to the given []int32 and assigns it to the RSAValidKeySizes field.
-func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) SetRSAValidKeySizes(v []int32) {
+// SetRSAValidKeySizes gets a reference to the given []int64 and assigns it to the RSAValidKeySizes field.
+func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) SetRSAValidKeySizes(v []int64) {
 	o.RSAValidKeySizes = v
 }
 

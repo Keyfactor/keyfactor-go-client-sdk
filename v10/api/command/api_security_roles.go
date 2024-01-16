@@ -36,7 +36,7 @@ type SecurityRolesApiService service
 type ApiSecurityRolesDeleteSecurityRoleRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolesApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -64,7 +64,7 @@ SecurityRolesDeleteSecurityRole Deletes the security role whose ID is provided.
 	@param id Security role identifier
 	@return ApiSecurityRolesDeleteSecurityRoleRequest
 */
-func (a *SecurityRolesApiService) SecurityRolesDeleteSecurityRole(ctx context.Context, id int32) ApiSecurityRolesDeleteSecurityRoleRequest {
+func (a *SecurityRolesApiService) SecurityRolesDeleteSecurityRole(ctx context.Context, id int64) ApiSecurityRolesDeleteSecurityRoleRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -152,7 +152,7 @@ func (a *SecurityRolesApiService) SecurityRolesDeleteSecurityRoleExecute(r ApiSe
 type ApiSecurityRolesGetIdentitiesWithRoleRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolesApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -180,7 +180,7 @@ SecurityRolesGetIdentitiesWithRole Returns all identities which have the securit
 	@param id Security role identifier
 	@return ApiSecurityRolesGetIdentitiesWithRoleRequest
 */
-func (a *SecurityRolesApiService) SecurityRolesGetIdentitiesWithRole(ctx context.Context, id int32) ApiSecurityRolesGetIdentitiesWithRoleRequest {
+func (a *SecurityRolesApiService) SecurityRolesGetIdentitiesWithRole(ctx context.Context, id int64) ApiSecurityRolesGetIdentitiesWithRoleRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -280,7 +280,7 @@ func (a *SecurityRolesApiService) SecurityRolesGetIdentitiesWithRoleExecute(r Ap
 type ApiSecurityRolesGetSecurityRoleRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolesApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -308,7 +308,7 @@ SecurityRolesGetSecurityRole Returns a single security role that matches the id.
 	@param id Security role identifier
 	@return ApiSecurityRolesGetSecurityRoleRequest
 */
-func (a *SecurityRolesApiService) SecurityRolesGetSecurityRole(ctx context.Context, id int32) ApiSecurityRolesGetSecurityRoleRequest {
+func (a *SecurityRolesApiService) SecurityRolesGetSecurityRole(ctx context.Context, id int64) ApiSecurityRolesGetSecurityRoleRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -408,7 +408,7 @@ func (a *SecurityRolesApiService) SecurityRolesGetSecurityRoleExecute(r ApiSecur
 type ApiSecurityRolesUpdateIdentitiesWithRoleRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolesApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	identities              *KeyfactorApiModelsSecurityRolesRoleIdentitiesRequest
 	xKeyfactorApiVersion    *string
@@ -443,7 +443,7 @@ SecurityRolesUpdateIdentitiesWithRole Updates the identities which have the secu
 	@param id Security role identifier
 	@return ApiSecurityRolesUpdateIdentitiesWithRoleRequest
 */
-func (a *SecurityRolesApiService) SecurityRolesUpdateIdentitiesWithRole(ctx context.Context, id int32) ApiSecurityRolesUpdateIdentitiesWithRoleRequest {
+func (a *SecurityRolesApiService) SecurityRolesUpdateIdentitiesWithRole(ctx context.Context, id int64) ApiSecurityRolesUpdateIdentitiesWithRoleRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 

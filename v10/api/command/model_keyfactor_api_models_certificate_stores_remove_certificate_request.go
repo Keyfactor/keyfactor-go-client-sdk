@@ -32,7 +32,7 @@ var _ MappedNullable = &KeyfactorApiModelsCertificateStoresRemoveCertificateRequ
 type KeyfactorApiModelsCertificateStoresRemoveCertificateRequest struct {
 	CertificateStores    []ModelsCertificateLocationSpecifier       `json:"CertificateStores"`
 	Schedule             KeyfactorCommonSchedulingKeyfactorSchedule `json:"Schedule"`
-	CollectionId         *int32                                     `json:"CollectionId,omitempty"`
+	CollectionId         *int64                                     `json:"CollectionId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -106,9 +106,9 @@ func (o *KeyfactorApiModelsCertificateStoresRemoveCertificateRequest) SetSchedul
 }
 
 // GetCollectionId returns the CollectionId field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsCertificateStoresRemoveCertificateRequest) GetCollectionId() int32 {
+func (o *KeyfactorApiModelsCertificateStoresRemoveCertificateRequest) GetCollectionId() int64 {
 	if o == nil || isNil(o.CollectionId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CollectionId
@@ -116,7 +116,7 @@ func (o *KeyfactorApiModelsCertificateStoresRemoveCertificateRequest) GetCollect
 
 // GetCollectionIdOk returns a tuple with the CollectionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsCertificateStoresRemoveCertificateRequest) GetCollectionIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsCertificateStoresRemoveCertificateRequest) GetCollectionIdOk() (*int64, bool) {
 	if o == nil || isNil(o.CollectionId) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *KeyfactorApiModelsCertificateStoresRemoveCertificateRequest) HasCollect
 	return false
 }
 
-// SetCollectionId gets a reference to the given int32 and assigns it to the CollectionId field.
-func (o *KeyfactorApiModelsCertificateStoresRemoveCertificateRequest) SetCollectionId(v int32) {
+// SetCollectionId gets a reference to the given int64 and assigns it to the CollectionId field.
+func (o *KeyfactorApiModelsCertificateStoresRemoveCertificateRequest) SetCollectionId(v int64) {
 	o.CollectionId = &v
 }
 

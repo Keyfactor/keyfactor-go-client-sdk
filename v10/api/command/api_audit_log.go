@@ -39,10 +39,10 @@ type ApiAuditLogDownloadCSVRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -64,13 +64,13 @@ func (r ApiAuditLogDownloadCSVRequest) PqQueryString(pqQueryString string) ApiAu
 }
 
 // The current page within the result set to be returned
-func (r ApiAuditLogDownloadCSVRequest) PqPageReturned(pqPageReturned int32) ApiAuditLogDownloadCSVRequest {
+func (r ApiAuditLogDownloadCSVRequest) PqPageReturned(pqPageReturned int64) ApiAuditLogDownloadCSVRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiAuditLogDownloadCSVRequest) PqReturnLimit(pqReturnLimit int32) ApiAuditLogDownloadCSVRequest {
+func (r ApiAuditLogDownloadCSVRequest) PqReturnLimit(pqReturnLimit int64) ApiAuditLogDownloadCSVRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -82,7 +82,7 @@ func (r ApiAuditLogDownloadCSVRequest) PqSortField(pqSortField string) ApiAuditL
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiAuditLogDownloadCSVRequest) PqSortAscending(pqSortAscending int32) ApiAuditLogDownloadCSVRequest {
+func (r ApiAuditLogDownloadCSVRequest) PqSortAscending(pqSortAscending int64) ApiAuditLogDownloadCSVRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }
@@ -210,7 +210,7 @@ func (a *AuditLogApiService) AuditLogDownloadCSVExecute(r ApiAuditLogDownloadCSV
 type ApiAuditLogGetAuditLogRequest struct {
 	ctx                     context.Context
 	ApiService              *AuditLogApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -238,7 +238,7 @@ AuditLogGetAuditLog Returns the audit log entry associated with the provided ide
 	@param id Keyfactor identifer of the audit entry to be returned
 	@return ApiAuditLogGetAuditLogRequest
 */
-func (a *AuditLogApiService) AuditLogGetAuditLog(ctx context.Context, id int32) ApiAuditLogGetAuditLogRequest {
+func (a *AuditLogApiService) AuditLogGetAuditLog(ctx context.Context, id int64) ApiAuditLogGetAuditLogRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -341,10 +341,10 @@ type ApiAuditLogGetAuditLogsRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -366,13 +366,13 @@ func (r ApiAuditLogGetAuditLogsRequest) PqQueryString(pqQueryString string) ApiA
 }
 
 // The current page within the result set to be returned
-func (r ApiAuditLogGetAuditLogsRequest) PqPageReturned(pqPageReturned int32) ApiAuditLogGetAuditLogsRequest {
+func (r ApiAuditLogGetAuditLogsRequest) PqPageReturned(pqPageReturned int64) ApiAuditLogGetAuditLogsRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiAuditLogGetAuditLogsRequest) PqReturnLimit(pqReturnLimit int32) ApiAuditLogGetAuditLogsRequest {
+func (r ApiAuditLogGetAuditLogsRequest) PqReturnLimit(pqReturnLimit int64) ApiAuditLogGetAuditLogsRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -384,7 +384,7 @@ func (r ApiAuditLogGetAuditLogsRequest) PqSortField(pqSortField string) ApiAudit
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiAuditLogGetAuditLogsRequest) PqSortAscending(pqSortAscending int32) ApiAuditLogGetAuditLogsRequest {
+func (r ApiAuditLogGetAuditLogsRequest) PqSortAscending(pqSortAscending int64) ApiAuditLogGetAuditLogsRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }
@@ -515,10 +515,10 @@ type ApiAuditLogGetRelatedEntitiesRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -540,13 +540,13 @@ func (r ApiAuditLogGetRelatedEntitiesRequest) PqQueryString(pqQueryString string
 }
 
 // The current page within the result set to be returned
-func (r ApiAuditLogGetRelatedEntitiesRequest) PqPageReturned(pqPageReturned int32) ApiAuditLogGetRelatedEntitiesRequest {
+func (r ApiAuditLogGetRelatedEntitiesRequest) PqPageReturned(pqPageReturned int64) ApiAuditLogGetRelatedEntitiesRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiAuditLogGetRelatedEntitiesRequest) PqReturnLimit(pqReturnLimit int32) ApiAuditLogGetRelatedEntitiesRequest {
+func (r ApiAuditLogGetRelatedEntitiesRequest) PqReturnLimit(pqReturnLimit int64) ApiAuditLogGetRelatedEntitiesRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -558,7 +558,7 @@ func (r ApiAuditLogGetRelatedEntitiesRequest) PqSortField(pqSortField string) Ap
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiAuditLogGetRelatedEntitiesRequest) PqSortAscending(pqSortAscending int32) ApiAuditLogGetRelatedEntitiesRequest {
+func (r ApiAuditLogGetRelatedEntitiesRequest) PqSortAscending(pqSortAscending int64) ApiAuditLogGetRelatedEntitiesRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }
@@ -686,7 +686,7 @@ func (a *AuditLogApiService) AuditLogGetRelatedEntitiesExecute(r ApiAuditLogGetR
 type ApiAuditLogValidateAuditLogRequest struct {
 	ctx                     context.Context
 	ApiService              *AuditLogApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -716,7 +716,7 @@ The validation performs a signing operation and checks the signature against the
 	@param id Keyfactor identifier of the audit log entry
 	@return ApiAuditLogValidateAuditLogRequest
 */
-func (a *AuditLogApiService) AuditLogValidateAuditLog(ctx context.Context, id int32) ApiAuditLogValidateAuditLogRequest {
+func (a *AuditLogApiService) AuditLogValidateAuditLog(ctx context.Context, id int64) ApiAuditLogValidateAuditLogRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 

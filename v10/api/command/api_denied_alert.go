@@ -172,7 +172,7 @@ func (a *DeniedAlertApiService) DeniedAlertAddDeniedAlertExecute(r ApiDeniedAler
 type ApiDeniedAlertDeleteDeniedAlertRequest struct {
 	ctx                     context.Context
 	ApiService              *DeniedAlertApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -200,7 +200,7 @@ DeniedAlertDeleteDeniedAlert Delete a denied alert
 	@param id Id for the denied alert
 	@return ApiDeniedAlertDeleteDeniedAlertRequest
 */
-func (a *DeniedAlertApiService) DeniedAlertDeleteDeniedAlert(ctx context.Context, id int32) ApiDeniedAlertDeleteDeniedAlertRequest {
+func (a *DeniedAlertApiService) DeniedAlertDeleteDeniedAlert(ctx context.Context, id int64) ApiDeniedAlertDeleteDeniedAlertRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -424,7 +424,7 @@ func (a *DeniedAlertApiService) DeniedAlertEditDeniedAlertExecute(r ApiDeniedAle
 type ApiDeniedAlertGetDeniedAlertRequest struct {
 	ctx                     context.Context
 	ApiService              *DeniedAlertApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -452,7 +452,7 @@ DeniedAlertGetDeniedAlert Get a denied alert
 	@param id Id for the denied alert to get
 	@return ApiDeniedAlertGetDeniedAlertRequest
 */
-func (a *DeniedAlertApiService) DeniedAlertGetDeniedAlert(ctx context.Context, id int32) ApiDeniedAlertGetDeniedAlertRequest {
+func (a *DeniedAlertApiService) DeniedAlertGetDeniedAlert(ctx context.Context, id int64) ApiDeniedAlertGetDeniedAlertRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -555,10 +555,10 @@ type ApiDeniedAlertGetDeniedAlertsRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pagedQueryQueryString   *string
-	pagedQueryPageReturned  *int32
-	pagedQueryReturnLimit   *int32
+	pagedQueryPageReturned  *int64
+	pagedQueryReturnLimit   *int64
 	pagedQuerySortField     *string
-	pagedQuerySortAscending *int32
+	pagedQuerySortAscending *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -580,13 +580,13 @@ func (r ApiDeniedAlertGetDeniedAlertsRequest) PagedQueryQueryString(pagedQueryQu
 }
 
 // The current page within the result set to be returned
-func (r ApiDeniedAlertGetDeniedAlertsRequest) PagedQueryPageReturned(pagedQueryPageReturned int32) ApiDeniedAlertGetDeniedAlertsRequest {
+func (r ApiDeniedAlertGetDeniedAlertsRequest) PagedQueryPageReturned(pagedQueryPageReturned int64) ApiDeniedAlertGetDeniedAlertsRequest {
 	r.pagedQueryPageReturned = &pagedQueryPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiDeniedAlertGetDeniedAlertsRequest) PagedQueryReturnLimit(pagedQueryReturnLimit int32) ApiDeniedAlertGetDeniedAlertsRequest {
+func (r ApiDeniedAlertGetDeniedAlertsRequest) PagedQueryReturnLimit(pagedQueryReturnLimit int64) ApiDeniedAlertGetDeniedAlertsRequest {
 	r.pagedQueryReturnLimit = &pagedQueryReturnLimit
 	return r
 }
@@ -598,7 +598,7 @@ func (r ApiDeniedAlertGetDeniedAlertsRequest) PagedQuerySortField(pagedQuerySort
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiDeniedAlertGetDeniedAlertsRequest) PagedQuerySortAscending(pagedQuerySortAscending int32) ApiDeniedAlertGetDeniedAlertsRequest {
+func (r ApiDeniedAlertGetDeniedAlertsRequest) PagedQuerySortAscending(pagedQuerySortAscending int64) ApiDeniedAlertGetDeniedAlertsRequest {
 	r.pagedQuerySortAscending = &pagedQuerySortAscending
 	return r
 }

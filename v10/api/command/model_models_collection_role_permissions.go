@@ -30,7 +30,7 @@ var _ MappedNullable = &ModelsCollectionRolePermissions{}
 
 // ModelsCollectionRolePermissions struct for ModelsCollectionRolePermissions
 type ModelsCollectionRolePermissions struct {
-	RoleId               *int32   `json:"RoleId,omitempty"`
+	RoleId               *int64   `json:"RoleId,omitempty"`
 	Permissions          []string `json:"Permissions,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -55,9 +55,9 @@ func NewModelsCollectionRolePermissionsWithDefaults() *ModelsCollectionRolePermi
 }
 
 // GetRoleId returns the RoleId field value if set, zero value otherwise.
-func (o *ModelsCollectionRolePermissions) GetRoleId() int32 {
+func (o *ModelsCollectionRolePermissions) GetRoleId() int64 {
 	if o == nil || isNil(o.RoleId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RoleId
@@ -65,7 +65,7 @@ func (o *ModelsCollectionRolePermissions) GetRoleId() int32 {
 
 // GetRoleIdOk returns a tuple with the RoleId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCollectionRolePermissions) GetRoleIdOk() (*int32, bool) {
+func (o *ModelsCollectionRolePermissions) GetRoleIdOk() (*int64, bool) {
 	if o == nil || isNil(o.RoleId) {
 		return nil, false
 	}
@@ -81,8 +81,8 @@ func (o *ModelsCollectionRolePermissions) HasRoleId() bool {
 	return false
 }
 
-// SetRoleId gets a reference to the given int32 and assigns it to the RoleId field.
-func (o *ModelsCollectionRolePermissions) SetRoleId(v int32) {
+// SetRoleId gets a reference to the given int64 and assigns it to the RoleId field.
+func (o *ModelsCollectionRolePermissions) SetRoleId(v int64) {
 	o.RoleId = &v
 }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RSAValidKeySizes** | **[]int32** | The allowed RSA key sizes. | 
+**RSAValidKeySizes** | **[]int64** | The allowed RSA key sizes. | 
 **ECCValidCurves** | **[]string** | The allowed ECC curves. | 
 **AllowKeyReuse** | **bool** | Whether or not keys can be reused. | 
 **AllowWildcards** | **bool** | Whether or not wildcards can be used. | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewKeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest
 
-`func NewKeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest(rSAValidKeySizes []int32, eCCValidCurves []string, allowKeyReuse bool, allowWildcards bool, rFCEnforcement bool, ) *KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest`
+`func NewKeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest(rSAValidKeySizes []int64, eCCValidCurves []string, allowKeyReuse bool, allowWildcards bool, rFCEnforcement bool, ) *KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest`
 
 NewKeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest instantiates a new KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRSAValidKeySizes
 
-`func (o *KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest) GetRSAValidKeySizes() []int32`
+`func (o *KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest) GetRSAValidKeySizes() []int64`
 
 GetRSAValidKeySizes returns the RSAValidKeySizes field if non-nil, zero value otherwise.
 
 ### GetRSAValidKeySizesOk
 
-`func (o *KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest) GetRSAValidKeySizesOk() (*[]int32, bool)`
+`func (o *KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest) GetRSAValidKeySizesOk() (*[]int64, bool)`
 
 GetRSAValidKeySizesOk returns a tuple with the RSAValidKeySizes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRSAValidKeySizes
 
-`func (o *KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest) SetRSAValidKeySizes(v []int32)`
+`func (o *KeyfactorApiModelsTemplatesGlobalTemplatePolicyRequest) SetRSAValidKeySizes(v []int64)`
 
 SetRSAValidKeySizes sets RSAValidKeySizes field to given value.
 

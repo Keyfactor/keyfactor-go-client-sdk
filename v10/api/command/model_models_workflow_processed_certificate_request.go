@@ -30,11 +30,11 @@ var _ MappedNullable = &ModelsWorkflowProcessedCertificateRequest{}
 
 // ModelsWorkflowProcessedCertificateRequest struct for ModelsWorkflowProcessedCertificateRequest
 type ModelsWorkflowProcessedCertificateRequest struct {
-	CARowId              *int32  `json:"CARowId,omitempty"`
+	CARowId              *int64  `json:"CARowId,omitempty"`
 	CARequestId          *string `json:"CARequestId,omitempty"`
 	CAHost               *string `json:"CAHost,omitempty"`
 	CALogicalName        *string `json:"CALogicalName,omitempty"`
-	KeyfactorRequestId   *int32  `json:"KeyfactorRequestId,omitempty"`
+	KeyfactorRequestId   *int64  `json:"KeyfactorRequestId,omitempty"`
 	Comment              *string `json:"Comment,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -59,9 +59,9 @@ func NewModelsWorkflowProcessedCertificateRequestWithDefaults() *ModelsWorkflowP
 }
 
 // GetCARowId returns the CARowId field value if set, zero value otherwise.
-func (o *ModelsWorkflowProcessedCertificateRequest) GetCARowId() int32 {
+func (o *ModelsWorkflowProcessedCertificateRequest) GetCARowId() int64 {
 	if o == nil || isNil(o.CARowId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CARowId
@@ -69,7 +69,7 @@ func (o *ModelsWorkflowProcessedCertificateRequest) GetCARowId() int32 {
 
 // GetCARowIdOk returns a tuple with the CARowId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsWorkflowProcessedCertificateRequest) GetCARowIdOk() (*int32, bool) {
+func (o *ModelsWorkflowProcessedCertificateRequest) GetCARowIdOk() (*int64, bool) {
 	if o == nil || isNil(o.CARowId) {
 		return nil, false
 	}
@@ -85,8 +85,8 @@ func (o *ModelsWorkflowProcessedCertificateRequest) HasCARowId() bool {
 	return false
 }
 
-// SetCARowId gets a reference to the given int32 and assigns it to the CARowId field.
-func (o *ModelsWorkflowProcessedCertificateRequest) SetCARowId(v int32) {
+// SetCARowId gets a reference to the given int64 and assigns it to the CARowId field.
+func (o *ModelsWorkflowProcessedCertificateRequest) SetCARowId(v int64) {
 	o.CARowId = &v
 }
 
@@ -187,9 +187,9 @@ func (o *ModelsWorkflowProcessedCertificateRequest) SetCALogicalName(v string) {
 }
 
 // GetKeyfactorRequestId returns the KeyfactorRequestId field value if set, zero value otherwise.
-func (o *ModelsWorkflowProcessedCertificateRequest) GetKeyfactorRequestId() int32 {
+func (o *ModelsWorkflowProcessedCertificateRequest) GetKeyfactorRequestId() int64 {
 	if o == nil || isNil(o.KeyfactorRequestId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KeyfactorRequestId
@@ -197,7 +197,7 @@ func (o *ModelsWorkflowProcessedCertificateRequest) GetKeyfactorRequestId() int3
 
 // GetKeyfactorRequestIdOk returns a tuple with the KeyfactorRequestId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsWorkflowProcessedCertificateRequest) GetKeyfactorRequestIdOk() (*int32, bool) {
+func (o *ModelsWorkflowProcessedCertificateRequest) GetKeyfactorRequestIdOk() (*int64, bool) {
 	if o == nil || isNil(o.KeyfactorRequestId) {
 		return nil, false
 	}
@@ -213,8 +213,8 @@ func (o *ModelsWorkflowProcessedCertificateRequest) HasKeyfactorRequestId() bool
 	return false
 }
 
-// SetKeyfactorRequestId gets a reference to the given int32 and assigns it to the KeyfactorRequestId field.
-func (o *ModelsWorkflowProcessedCertificateRequest) SetKeyfactorRequestId(v int32) {
+// SetKeyfactorRequestId gets a reference to the given int64 and assigns it to the KeyfactorRequestId field.
+func (o *ModelsWorkflowProcessedCertificateRequest) SetKeyfactorRequestId(v int64) {
 	o.KeyfactorRequestId = &v
 }
 

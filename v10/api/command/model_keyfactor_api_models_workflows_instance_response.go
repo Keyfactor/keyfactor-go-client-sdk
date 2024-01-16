@@ -32,7 +32,7 @@ var _ MappedNullable = &KeyfactorApiModelsWorkflowsInstanceResponse{}
 // KeyfactorApiModelsWorkflowsInstanceResponse struct for KeyfactorApiModelsWorkflowsInstanceResponse
 type KeyfactorApiModelsWorkflowsInstanceResponse struct {
 	Id                     *string                                                `json:"Id,omitempty"`
-	Status                 *int32                                                 `json:"Status,omitempty"`
+	Status                 *int64                                                 `json:"Status,omitempty"`
 	CurrentStepId          *string                                                `json:"CurrentStepId,omitempty"`
 	StatusMessage          *string                                                `json:"StatusMessage,omitempty"`
 	Signals                []KeyfactorApiModelsWorkflowsAvailableSignalResponse   `json:"Signals,omitempty"`
@@ -100,9 +100,9 @@ func (o *KeyfactorApiModelsWorkflowsInstanceResponse) SetId(v string) {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsWorkflowsInstanceResponse) GetStatus() int32 {
+func (o *KeyfactorApiModelsWorkflowsInstanceResponse) GetStatus() int64 {
 	if o == nil || isNil(o.Status) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status
@@ -110,7 +110,7 @@ func (o *KeyfactorApiModelsWorkflowsInstanceResponse) GetStatus() int32 {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsWorkflowsInstanceResponse) GetStatusOk() (*int32, bool) {
+func (o *KeyfactorApiModelsWorkflowsInstanceResponse) GetStatusOk() (*int64, bool) {
 	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
@@ -126,8 +126,8 @@ func (o *KeyfactorApiModelsWorkflowsInstanceResponse) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given int32 and assigns it to the Status field.
-func (o *KeyfactorApiModelsWorkflowsInstanceResponse) SetStatus(v int32) {
+// SetStatus gets a reference to the given int64 and assigns it to the Status field.
+func (o *KeyfactorApiModelsWorkflowsInstanceResponse) SetStatus(v int64) {
 	o.Status = &v
 }
 

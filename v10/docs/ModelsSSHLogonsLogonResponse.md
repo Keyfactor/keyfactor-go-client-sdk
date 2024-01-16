@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **Username** | Pointer to **string** |  | [optional] 
 **LastLogon** | Pointer to **time.Time** |  | [optional] 
 **Server** | Pointer to [**ModelsSSHServersServerResponse**](ModelsSSHServersServerResponse.md) |  | [optional] 
-**KeyCount** | Pointer to **int32** |  | [optional] 
+**KeyCount** | Pointer to **int64** |  | [optional] 
 **Access** | Pointer to [**[]ModelsSSHUsersSshUserResponse**](ModelsSSHUsersSshUserResponse.md) |  | [optional] 
 
 ## Methods
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ModelsSSHLogonsLogonResponse) GetId() int32`
+`func (o *ModelsSSHLogonsLogonResponse) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsSSHLogonsLogonResponse) GetIdOk() (*int32, bool)`
+`func (o *ModelsSSHLogonsLogonResponse) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsSSHLogonsLogonResponse) SetId(v int32)`
+`func (o *ModelsSSHLogonsLogonResponse) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -132,20 +132,20 @@ HasServer returns a boolean if a field has been set.
 
 ### GetKeyCount
 
-`func (o *ModelsSSHLogonsLogonResponse) GetKeyCount() int32`
+`func (o *ModelsSSHLogonsLogonResponse) GetKeyCount() int64`
 
 GetKeyCount returns the KeyCount field if non-nil, zero value otherwise.
 
 ### GetKeyCountOk
 
-`func (o *ModelsSSHLogonsLogonResponse) GetKeyCountOk() (*int32, bool)`
+`func (o *ModelsSSHLogonsLogonResponse) GetKeyCountOk() (*int64, bool)`
 
 GetKeyCountOk returns a tuple with the KeyCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyCount
 
-`func (o *ModelsSSHLogonsLogonResponse) SetKeyCount(v int32)`
+`func (o *ModelsSSHLogonsLogonResponse) SetKeyCount(v int64)`
 
 SetKeyCount sets KeyCount field to given value.
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **KeyRotationAlerts** | Pointer to [**[]KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertResponse**](KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertResponse.md) |  | [optional] 
-**AlertBuildResult** | Pointer to **int32** |  | [optional] 
+**AlertBuildResult** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasKeyRotationAlerts returns a boolean if a field has been set.
 
 ### GetAlertBuildResult
 
-`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse) GetAlertBuildResult() int32`
+`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse) GetAlertBuildResult() int64`
 
 GetAlertBuildResult returns the AlertBuildResult field if non-nil, zero value otherwise.
 
 ### GetAlertBuildResultOk
 
-`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse) GetAlertBuildResultOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse) GetAlertBuildResultOk() (*int64, bool)`
 
 GetAlertBuildResultOk returns a tuple with the AlertBuildResult field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAlertBuildResult
 
-`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse) SetAlertBuildResult(v int32)`
+`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertTestResponse) SetAlertBuildResult(v int64)`
 
 SetAlertBuildResult sets AlertBuildResult field to given value.
 

@@ -36,7 +36,7 @@ type KeyApiService service
 type ApiKeyDeleteUnmanagedKeyRequest struct {
 	ctx                     context.Context
 	ApiService              *KeyApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -64,7 +64,7 @@ KeyDeleteUnmanagedKey Deletes Unmanaged Key associated with the provided identif
 	@param id Keyfactor identifer of the Key to be deleted
 	@return ApiKeyDeleteUnmanagedKeyRequest
 */
-func (a *KeyApiService) KeyDeleteUnmanagedKey(ctx context.Context, id int32) ApiKeyDeleteUnmanagedKeyRequest {
+func (a *KeyApiService) KeyDeleteUnmanagedKey(ctx context.Context, id int64) ApiKeyDeleteUnmanagedKeyRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -153,7 +153,7 @@ type ApiKeyDeleteUnmanagedKeysRequest struct {
 	ctx                     context.Context
 	ApiService              *KeyApiService
 	xKeyfactorRequestedWith *string
-	ids                     *[]int32
+	ids                     *[]int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -164,7 +164,7 @@ func (r ApiKeyDeleteUnmanagedKeysRequest) XKeyfactorRequestedWith(xKeyfactorRequ
 }
 
 // Keyfactor identifers of the Keys to be deleted
-func (r ApiKeyDeleteUnmanagedKeysRequest) Ids(ids []int32) ApiKeyDeleteUnmanagedKeysRequest {
+func (r ApiKeyDeleteUnmanagedKeysRequest) Ids(ids []int64) ApiKeyDeleteUnmanagedKeysRequest {
 	r.ids = &ids
 	return r
 }
@@ -572,7 +572,7 @@ func (a *KeyApiService) KeyGetMyKeyExecute(r ApiKeyGetMyKeyRequest) (*ModelsSSHK
 type ApiKeyGetUnmanagedKeyRequest struct {
 	ctx                     context.Context
 	ApiService              *KeyApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -600,7 +600,7 @@ KeyGetUnmanagedKey Returns an unmanaged SSH key with provided id.
 	@param id The id of the key to get
 	@return ApiKeyGetUnmanagedKeyRequest
 */
-func (a *KeyApiService) KeyGetUnmanagedKey(ctx context.Context, id int32) ApiKeyGetUnmanagedKeyRequest {
+func (a *KeyApiService) KeyGetUnmanagedKey(ctx context.Context, id int64) ApiKeyGetUnmanagedKeyRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -703,10 +703,10 @@ type ApiKeyGetUnmanagedKeysRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -728,13 +728,13 @@ func (r ApiKeyGetUnmanagedKeysRequest) PqQueryString(pqQueryString string) ApiKe
 }
 
 // The current page within the result set to be returned
-func (r ApiKeyGetUnmanagedKeysRequest) PqPageReturned(pqPageReturned int32) ApiKeyGetUnmanagedKeysRequest {
+func (r ApiKeyGetUnmanagedKeysRequest) PqPageReturned(pqPageReturned int64) ApiKeyGetUnmanagedKeysRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiKeyGetUnmanagedKeysRequest) PqReturnLimit(pqReturnLimit int32) ApiKeyGetUnmanagedKeysRequest {
+func (r ApiKeyGetUnmanagedKeysRequest) PqReturnLimit(pqReturnLimit int64) ApiKeyGetUnmanagedKeysRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -746,7 +746,7 @@ func (r ApiKeyGetUnmanagedKeysRequest) PqSortField(pqSortField string) ApiKeyGet
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiKeyGetUnmanagedKeysRequest) PqSortAscending(pqSortAscending int32) ApiKeyGetUnmanagedKeysRequest {
+func (r ApiKeyGetUnmanagedKeysRequest) PqSortAscending(pqSortAscending int64) ApiKeyGetUnmanagedKeysRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }

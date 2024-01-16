@@ -30,11 +30,11 @@ var _ MappedNullable = &ModelsTemplateRetrievalResponseTemplateMetadataFieldMode
 
 // ModelsTemplateRetrievalResponseTemplateMetadataFieldModel struct for ModelsTemplateRetrievalResponseTemplateMetadataFieldModel
 type ModelsTemplateRetrievalResponseTemplateMetadataFieldModel struct {
-	Id                   *int32  `json:"Id,omitempty"`
+	Id                   *int64  `json:"Id,omitempty"`
 	DefaultValue         *string `json:"DefaultValue,omitempty"`
-	MetadataId           *int32  `json:"MetadataId,omitempty"`
+	MetadataId           *int64  `json:"MetadataId,omitempty"`
 	Validation           *string `json:"Validation,omitempty"`
-	Enrollment           *int32  `json:"Enrollment,omitempty"`
+	Enrollment           *int64  `json:"Enrollment,omitempty"`
 	Message              *string `json:"Message,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -59,9 +59,9 @@ func NewModelsTemplateRetrievalResponseTemplateMetadataFieldModelWithDefaults() 
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetId() int32 {
+func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -69,7 +69,7 @@ func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetId() int3
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetIdOk() (*int32, bool) {
+func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -85,8 +85,8 @@ func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) HasId() bool
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -123,9 +123,9 @@ func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) SetDefaultVa
 }
 
 // GetMetadataId returns the MetadataId field value if set, zero value otherwise.
-func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetMetadataId() int32 {
+func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetMetadataId() int64 {
 	if o == nil || isNil(o.MetadataId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MetadataId
@@ -133,7 +133,7 @@ func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetMetadataI
 
 // GetMetadataIdOk returns a tuple with the MetadataId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetMetadataIdOk() (*int32, bool) {
+func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetMetadataIdOk() (*int64, bool) {
 	if o == nil || isNil(o.MetadataId) {
 		return nil, false
 	}
@@ -149,8 +149,8 @@ func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) HasMetadataI
 	return false
 }
 
-// SetMetadataId gets a reference to the given int32 and assigns it to the MetadataId field.
-func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) SetMetadataId(v int32) {
+// SetMetadataId gets a reference to the given int64 and assigns it to the MetadataId field.
+func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) SetMetadataId(v int64) {
 	o.MetadataId = &v
 }
 
@@ -187,9 +187,9 @@ func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) SetValidatio
 }
 
 // GetEnrollment returns the Enrollment field value if set, zero value otherwise.
-func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetEnrollment() int32 {
+func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetEnrollment() int64 {
 	if o == nil || isNil(o.Enrollment) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Enrollment
@@ -197,7 +197,7 @@ func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetEnrollmen
 
 // GetEnrollmentOk returns a tuple with the Enrollment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetEnrollmentOk() (*int32, bool) {
+func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) GetEnrollmentOk() (*int64, bool) {
 	if o == nil || isNil(o.Enrollment) {
 		return nil, false
 	}
@@ -213,8 +213,8 @@ func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) HasEnrollmen
 	return false
 }
 
-// SetEnrollment gets a reference to the given int32 and assigns it to the Enrollment field.
-func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) SetEnrollment(v int32) {
+// SetEnrollment gets a reference to the given int64 and assigns it to the Enrollment field.
+func (o *ModelsTemplateRetrievalResponseTemplateMetadataFieldModel) SetEnrollment(v int64) {
 	o.Enrollment = &v
 }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **IssuedDN** | Pointer to **NullableString** |  | [optional] 
 **SerialNumber** | Pointer to **string** |  | [optional] 
 **NotBefore** | Pointer to **time.Time** |  | [optional] 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **SigningAlgorithm** | Pointer to **string** |  | [optional] 
 **IssuerDN** | Pointer to **NullableString** |  | [optional] 
 **Thumbprint** | Pointer to **string** |  | [optional] 
-**CertStoreInventoryItemId** | Pointer to **int32** |  | [optional] 
+**CertStoreInventoryItemId** | Pointer to **int64** |  | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 
 ## Methods
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ModelsCertificateStoreInventoryCertificates) GetId() int32`
+`func (o *ModelsCertificateStoreInventoryCertificates) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsCertificateStoreInventoryCertificates) GetIdOk() (*int32, bool)`
+`func (o *ModelsCertificateStoreInventoryCertificates) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsCertificateStoreInventoryCertificates) SetId(v int32)`
+`func (o *ModelsCertificateStoreInventoryCertificates) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -256,20 +256,20 @@ HasThumbprint returns a boolean if a field has been set.
 
 ### GetCertStoreInventoryItemId
 
-`func (o *ModelsCertificateStoreInventoryCertificates) GetCertStoreInventoryItemId() int32`
+`func (o *ModelsCertificateStoreInventoryCertificates) GetCertStoreInventoryItemId() int64`
 
 GetCertStoreInventoryItemId returns the CertStoreInventoryItemId field if non-nil, zero value otherwise.
 
 ### GetCertStoreInventoryItemIdOk
 
-`func (o *ModelsCertificateStoreInventoryCertificates) GetCertStoreInventoryItemIdOk() (*int32, bool)`
+`func (o *ModelsCertificateStoreInventoryCertificates) GetCertStoreInventoryItemIdOk() (*int64, bool)`
 
 GetCertStoreInventoryItemIdOk returns a tuple with the CertStoreInventoryItemId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertStoreInventoryItemId
 
-`func (o *ModelsCertificateStoreInventoryCertificates) SetCertStoreInventoryItemId(v int32)`
+`func (o *ModelsCertificateStoreInventoryCertificates) SetCertStoreInventoryItemId(v int64)`
 
 SetCertStoreInventoryItemId sets CertStoreInventoryItemId field to given value.
 

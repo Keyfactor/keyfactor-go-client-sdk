@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **DisplayName** | **string** |  | 
 **Subject** | **string** |  | 
 **Message** | **string** |  | 
-**RotationWarningDays** | **int32** |  | 
+**RotationWarningDays** | **int64** |  | 
 **RegisteredEventHandler** | Pointer to [**KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest**](KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest.md) |  | [optional] 
 **EventHandlerParameters** | Pointer to [**[]KeyfactorApiModelsEventHandlerEventHandlerParameterRequest**](KeyfactorApiModelsEventHandlerEventHandlerParameterRequest.md) |  | [optional] 
 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest
 
-`func NewKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest(displayName string, subject string, message string, rotationWarningDays int32, ) *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest`
+`func NewKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest(displayName string, subject string, message string, rotationWarningDays int64, ) *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest`
 
 NewKeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest instantiates a new KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -92,20 +92,20 @@ SetMessage sets Message field to given value.
 
 ### GetRotationWarningDays
 
-`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest) GetRotationWarningDays() int32`
+`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest) GetRotationWarningDays() int64`
 
 GetRotationWarningDays returns the RotationWarningDays field if non-nil, zero value otherwise.
 
 ### GetRotationWarningDaysOk
 
-`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest) GetRotationWarningDaysOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest) GetRotationWarningDaysOk() (*int64, bool)`
 
 GetRotationWarningDaysOk returns a tuple with the RotationWarningDays field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRotationWarningDays
 
-`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest) SetRotationWarningDays(v int32)`
+`func (o *KeyfactorApiModelsAlertsKeyRotationKeyRotationAlertCreationRequest) SetRotationWarningDays(v int64)`
 
 SetRotationWarningDays sets RotationWarningDays field to given value.
 

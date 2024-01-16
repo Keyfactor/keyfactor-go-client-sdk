@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Automated** | Pointer to **bool** |  | [optional] 
 **Content** | Pointer to **string** |  | [optional] 
-**DuplicationField** | Pointer to **int32** |  | [optional] 
+**DuplicationField** | Pointer to **int64** |  | [optional] 
 **ShowOnDashboard** | Pointer to **bool** |  | [optional] 
 **Favorite** | Pointer to **bool** |  | [optional] 
 
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ModelsCertificateQuery) GetId() int32`
+`func (o *ModelsCertificateQuery) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsCertificateQuery) GetIdOk() (*int32, bool)`
+`func (o *ModelsCertificateQuery) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsCertificateQuery) SetId(v int32)`
+`func (o *ModelsCertificateQuery) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -159,20 +159,20 @@ HasContent returns a boolean if a field has been set.
 
 ### GetDuplicationField
 
-`func (o *ModelsCertificateQuery) GetDuplicationField() int32`
+`func (o *ModelsCertificateQuery) GetDuplicationField() int64`
 
 GetDuplicationField returns the DuplicationField field if non-nil, zero value otherwise.
 
 ### GetDuplicationFieldOk
 
-`func (o *ModelsCertificateQuery) GetDuplicationFieldOk() (*int32, bool)`
+`func (o *ModelsCertificateQuery) GetDuplicationFieldOk() (*int64, bool)`
 
 GetDuplicationFieldOk returns a tuple with the DuplicationField field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDuplicationField
 
-`func (o *ModelsCertificateQuery) SetDuplicationField(v int32)`
+`func (o *ModelsCertificateQuery) SetDuplicationField(v int64)`
 
 SetDuplicationField sets DuplicationField field to given value.
 

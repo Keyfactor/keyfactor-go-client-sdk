@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CertificateId** | **int32** |  | 
+**CertificateId** | **int64** |  | 
 **CertificateStores** | [**[]ModelsCertificateStoreEntry**](ModelsCertificateStoreEntry.md) |  | 
 **Schedule** | [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | 
-**CollectionId** | Pointer to **int32** |  | [optional] 
+**CollectionId** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
 ### NewKeyfactorApiModelsCertificateStoresAddCertificateRequest
 
-`func NewKeyfactorApiModelsCertificateStoresAddCertificateRequest(certificateId int32, certificateStores []ModelsCertificateStoreEntry, schedule KeyfactorCommonSchedulingKeyfactorSchedule, ) *KeyfactorApiModelsCertificateStoresAddCertificateRequest`
+`func NewKeyfactorApiModelsCertificateStoresAddCertificateRequest(certificateId int64, certificateStores []ModelsCertificateStoreEntry, schedule KeyfactorCommonSchedulingKeyfactorSchedule, ) *KeyfactorApiModelsCertificateStoresAddCertificateRequest`
 
 NewKeyfactorApiModelsCertificateStoresAddCertificateRequest instantiates a new KeyfactorApiModelsCertificateStoresAddCertificateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCertificateId
 
-`func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCertificateId() int32`
+`func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCertificateId() int64`
 
 GetCertificateId returns the CertificateId field if non-nil, zero value otherwise.
 
 ### GetCertificateIdOk
 
-`func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCertificateIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCertificateIdOk() (*int64, bool)`
 
 GetCertificateIdOk returns a tuple with the CertificateId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertificateId
 
-`func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) SetCertificateId(v int32)`
+`func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) SetCertificateId(v int64)`
 
 SetCertificateId sets CertificateId field to given value.
 
@@ -90,20 +90,20 @@ SetSchedule sets Schedule field to given value.
 
 ### GetCollectionId
 
-`func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCollectionId() int32`
+`func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCollectionId() int64`
 
 GetCollectionId returns the CollectionId field if non-nil, zero value otherwise.
 
 ### GetCollectionIdOk
 
-`func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCollectionIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) GetCollectionIdOk() (*int64, bool)`
 
 GetCollectionIdOk returns a tuple with the CollectionId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCollectionId
 
-`func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) SetCollectionId(v int32)`
+`func (o *KeyfactorApiModelsCertificateStoresAddCertificateRequest) SetCollectionId(v int64)`
 
 SetCollectionId sets CollectionId field to given value.
 

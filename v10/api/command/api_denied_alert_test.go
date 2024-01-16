@@ -53,11 +53,11 @@ func Test_command_DeniedAlertApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("DeniedAlertApi_DeniedAlertDeleteDeniedAlert_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("DeniedAlertApi_DeniedAlertDeleteDeniedAlert_id: %v", id)
 
 		t.Log("DeniedAlertApi_DeniedAlertDeleteDeniedAlert_payload: <none>")
-		httpRes, err := apiClient.DeniedAlertApi.DeniedAlertDeleteDeniedAlert(context.Background(), id.(int32)).Execute()
+		httpRes, err := apiClient.DeniedAlertApi.DeniedAlertDeleteDeniedAlert(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
@@ -76,11 +76,11 @@ func Test_command_DeniedAlertApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("DeniedAlertApi_DeniedAlertGetDeniedAlert_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("DeniedAlertApi_DeniedAlertGetDeniedAlert_id: %v", id)
 
 		t.Log("DeniedAlertApi_DeniedAlertGetDeniedAlert_payload: <none>")
-		resp, httpRes, err := apiClient.DeniedAlertApi.DeniedAlertGetDeniedAlert(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.DeniedAlertApi.DeniedAlertGetDeniedAlert(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

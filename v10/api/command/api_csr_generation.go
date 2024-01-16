@@ -36,7 +36,7 @@ type CSRGenerationApiService service
 type ApiCSRGenerationDeleteCSRRequest struct {
 	ctx                     context.Context
 	ApiService              *CSRGenerationApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -64,7 +64,7 @@ CSRGenerationDeleteCSR Deletes a CSR associated with the provided identifier
 	@param id Keyfactor identifer of the CSR to be deleted
 	@return ApiCSRGenerationDeleteCSRRequest
 */
-func (a *CSRGenerationApiService) CSRGenerationDeleteCSR(ctx context.Context, id int32) ApiCSRGenerationDeleteCSRRequest {
+func (a *CSRGenerationApiService) CSRGenerationDeleteCSR(ctx context.Context, id int64) ApiCSRGenerationDeleteCSRRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -153,7 +153,7 @@ type ApiCSRGenerationDeleteCSRsRequest struct {
 	ctx                     context.Context
 	ApiService              *CSRGenerationApiService
 	xKeyfactorRequestedWith *string
-	ids                     *[]int32
+	ids                     *[]int64
 	xKeyfactorApiVersion    *string
 }
 
@@ -164,7 +164,7 @@ func (r ApiCSRGenerationDeleteCSRsRequest) XKeyfactorRequestedWith(xKeyfactorReq
 }
 
 // Array of Keyfactor identifiers for the CSRs to be deleted
-func (r ApiCSRGenerationDeleteCSRsRequest) Ids(ids []int32) ApiCSRGenerationDeleteCSRsRequest {
+func (r ApiCSRGenerationDeleteCSRsRequest) Ids(ids []int64) ApiCSRGenerationDeleteCSRsRequest {
 	r.ids = &ids
 	return r
 }
@@ -276,7 +276,7 @@ func (a *CSRGenerationApiService) CSRGenerationDeleteCSRsExecute(r ApiCSRGenerat
 type ApiCSRGenerationDownloadRequest struct {
 	ctx                     context.Context
 	ApiService              *CSRGenerationApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -304,7 +304,7 @@ CSRGenerationDownload Returns a previously generated CSR associated with the pro
 	@param id Keyfactor identifier of the CSR
 	@return ApiCSRGenerationDownloadRequest
 */
-func (a *CSRGenerationApiService) CSRGenerationDownload(ctx context.Context, id int32) ApiCSRGenerationDownloadRequest {
+func (a *CSRGenerationApiService) CSRGenerationDownload(ctx context.Context, id int64) ApiCSRGenerationDownloadRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -407,10 +407,10 @@ type ApiCSRGenerationGetPendingCSRsRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	sqQueryString           *string
-	sqPageReturned          *int32
-	sqReturnLimit           *int32
+	sqPageReturned          *int64
+	sqReturnLimit           *int64
 	sqSortField             *string
-	sqSortAscending         *int32
+	sqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -432,13 +432,13 @@ func (r ApiCSRGenerationGetPendingCSRsRequest) SqQueryString(sqQueryString strin
 }
 
 // The current page within the result set to be returned
-func (r ApiCSRGenerationGetPendingCSRsRequest) SqPageReturned(sqPageReturned int32) ApiCSRGenerationGetPendingCSRsRequest {
+func (r ApiCSRGenerationGetPendingCSRsRequest) SqPageReturned(sqPageReturned int64) ApiCSRGenerationGetPendingCSRsRequest {
 	r.sqPageReturned = &sqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiCSRGenerationGetPendingCSRsRequest) SqReturnLimit(sqReturnLimit int32) ApiCSRGenerationGetPendingCSRsRequest {
+func (r ApiCSRGenerationGetPendingCSRsRequest) SqReturnLimit(sqReturnLimit int64) ApiCSRGenerationGetPendingCSRsRequest {
 	r.sqReturnLimit = &sqReturnLimit
 	return r
 }
@@ -450,7 +450,7 @@ func (r ApiCSRGenerationGetPendingCSRsRequest) SqSortField(sqSortField string) A
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiCSRGenerationGetPendingCSRsRequest) SqSortAscending(sqSortAscending int32) ApiCSRGenerationGetPendingCSRsRequest {
+func (r ApiCSRGenerationGetPendingCSRsRequest) SqSortAscending(sqSortAscending int64) ApiCSRGenerationGetPendingCSRsRequest {
 	r.sqSortAscending = &sqSortAscending
 	return r
 }

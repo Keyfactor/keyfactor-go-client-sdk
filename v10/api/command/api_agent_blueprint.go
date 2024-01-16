@@ -563,10 +563,10 @@ type ApiAgentBlueprintGetAgentBlueprintsRequest struct {
 	ApiService              *AgentBlueprintApiService
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -582,13 +582,13 @@ func (r ApiAgentBlueprintGetAgentBlueprintsRequest) XKeyfactorApiVersion(xKeyfac
 }
 
 // The current page within the result set to be returned
-func (r ApiAgentBlueprintGetAgentBlueprintsRequest) PqPageReturned(pqPageReturned int32) ApiAgentBlueprintGetAgentBlueprintsRequest {
+func (r ApiAgentBlueprintGetAgentBlueprintsRequest) PqPageReturned(pqPageReturned int64) ApiAgentBlueprintGetAgentBlueprintsRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiAgentBlueprintGetAgentBlueprintsRequest) PqReturnLimit(pqReturnLimit int32) ApiAgentBlueprintGetAgentBlueprintsRequest {
+func (r ApiAgentBlueprintGetAgentBlueprintsRequest) PqReturnLimit(pqReturnLimit int64) ApiAgentBlueprintGetAgentBlueprintsRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -600,7 +600,7 @@ func (r ApiAgentBlueprintGetAgentBlueprintsRequest) PqSortField(pqSortField stri
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiAgentBlueprintGetAgentBlueprintsRequest) PqSortAscending(pqSortAscending int32) ApiAgentBlueprintGetAgentBlueprintsRequest {
+func (r ApiAgentBlueprintGetAgentBlueprintsRequest) PqSortAscending(pqSortAscending int64) ApiAgentBlueprintGetAgentBlueprintsRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }
@@ -728,10 +728,10 @@ type ApiAgentBlueprintGetBlueprintJobsRequest struct {
 	id                      string
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -747,13 +747,13 @@ func (r ApiAgentBlueprintGetBlueprintJobsRequest) XKeyfactorApiVersion(xKeyfacto
 }
 
 // The current page within the result set to be returned
-func (r ApiAgentBlueprintGetBlueprintJobsRequest) PqPageReturned(pqPageReturned int32) ApiAgentBlueprintGetBlueprintJobsRequest {
+func (r ApiAgentBlueprintGetBlueprintJobsRequest) PqPageReturned(pqPageReturned int64) ApiAgentBlueprintGetBlueprintJobsRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiAgentBlueprintGetBlueprintJobsRequest) PqReturnLimit(pqReturnLimit int32) ApiAgentBlueprintGetBlueprintJobsRequest {
+func (r ApiAgentBlueprintGetBlueprintJobsRequest) PqReturnLimit(pqReturnLimit int64) ApiAgentBlueprintGetBlueprintJobsRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -765,7 +765,7 @@ func (r ApiAgentBlueprintGetBlueprintJobsRequest) PqSortField(pqSortField string
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiAgentBlueprintGetBlueprintJobsRequest) PqSortAscending(pqSortAscending int32) ApiAgentBlueprintGetBlueprintJobsRequest {
+func (r ApiAgentBlueprintGetBlueprintJobsRequest) PqSortAscending(pqSortAscending int64) ApiAgentBlueprintGetBlueprintJobsRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }
@@ -896,10 +896,10 @@ type ApiAgentBlueprintGetBlueprintStoresRequest struct {
 	id                      string
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -915,13 +915,13 @@ func (r ApiAgentBlueprintGetBlueprintStoresRequest) XKeyfactorApiVersion(xKeyfac
 }
 
 // The current page within the result set to be returned
-func (r ApiAgentBlueprintGetBlueprintStoresRequest) PqPageReturned(pqPageReturned int32) ApiAgentBlueprintGetBlueprintStoresRequest {
+func (r ApiAgentBlueprintGetBlueprintStoresRequest) PqPageReturned(pqPageReturned int64) ApiAgentBlueprintGetBlueprintStoresRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiAgentBlueprintGetBlueprintStoresRequest) PqReturnLimit(pqReturnLimit int32) ApiAgentBlueprintGetBlueprintStoresRequest {
+func (r ApiAgentBlueprintGetBlueprintStoresRequest) PqReturnLimit(pqReturnLimit int64) ApiAgentBlueprintGetBlueprintStoresRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -933,7 +933,7 @@ func (r ApiAgentBlueprintGetBlueprintStoresRequest) PqSortField(pqSortField stri
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiAgentBlueprintGetBlueprintStoresRequest) PqSortAscending(pqSortAscending int32) ApiAgentBlueprintGetBlueprintStoresRequest {
+func (r ApiAgentBlueprintGetBlueprintStoresRequest) PqSortAscending(pqSortAscending int64) ApiAgentBlueprintGetBlueprintStoresRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }

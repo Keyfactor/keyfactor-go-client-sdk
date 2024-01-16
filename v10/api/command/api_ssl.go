@@ -428,10 +428,10 @@ type ApiSslEndpointHistoryRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -453,13 +453,13 @@ func (r ApiSslEndpointHistoryRequest) PqQueryString(pqQueryString string) ApiSsl
 }
 
 // The current page within the result set to be returned
-func (r ApiSslEndpointHistoryRequest) PqPageReturned(pqPageReturned int32) ApiSslEndpointHistoryRequest {
+func (r ApiSslEndpointHistoryRequest) PqPageReturned(pqPageReturned int64) ApiSslEndpointHistoryRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiSslEndpointHistoryRequest) PqReturnLimit(pqReturnLimit int32) ApiSslEndpointHistoryRequest {
+func (r ApiSslEndpointHistoryRequest) PqReturnLimit(pqReturnLimit int64) ApiSslEndpointHistoryRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -471,7 +471,7 @@ func (r ApiSslEndpointHistoryRequest) PqSortField(pqSortField string) ApiSslEndp
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiSslEndpointHistoryRequest) PqSortAscending(pqSortAscending int32) ApiSslEndpointHistoryRequest {
+func (r ApiSslEndpointHistoryRequest) PqSortAscending(pqSortAscending int64) ApiSslEndpointHistoryRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }
@@ -861,10 +861,10 @@ type ApiSslGetNetworksRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	sqQueryString           *string
-	sqPageReturned          *int32
-	sqReturnLimit           *int32
+	sqPageReturned          *int64
+	sqReturnLimit           *int64
 	sqSortField             *string
-	sqSortAscending         *int32
+	sqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -886,13 +886,13 @@ func (r ApiSslGetNetworksRequest) SqQueryString(sqQueryString string) ApiSslGetN
 }
 
 // The current page within the result set to be returned
-func (r ApiSslGetNetworksRequest) SqPageReturned(sqPageReturned int32) ApiSslGetNetworksRequest {
+func (r ApiSslGetNetworksRequest) SqPageReturned(sqPageReturned int64) ApiSslGetNetworksRequest {
 	r.sqPageReturned = &sqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiSslGetNetworksRequest) SqReturnLimit(sqReturnLimit int32) ApiSslGetNetworksRequest {
+func (r ApiSslGetNetworksRequest) SqReturnLimit(sqReturnLimit int64) ApiSslGetNetworksRequest {
 	r.sqReturnLimit = &sqReturnLimit
 	return r
 }
@@ -904,7 +904,7 @@ func (r ApiSslGetNetworksRequest) SqSortField(sqSortField string) ApiSslGetNetwo
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiSslGetNetworksRequest) SqSortAscending(sqSortAscending int32) ApiSslGetNetworksRequest {
+func (r ApiSslGetNetworksRequest) SqSortAscending(sqSortAscending int64) ApiSslGetNetworksRequest {
 	r.sqSortAscending = &sqSortAscending
 	return r
 }
@@ -1409,12 +1409,12 @@ type ApiSslNetworkScanPartsRequest struct {
 	id                      string
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
-	pagedQueryJobType       *int32
+	pagedQueryJobType       *int64
 	pagedQueryQueryString   *string
-	pagedQueryPageReturned  *int32
-	pagedQueryReturnLimit   *int32
+	pagedQueryPageReturned  *int64
+	pagedQueryReturnLimit   *int64
 	pagedQuerySortField     *string
-	pagedQuerySortAscending *int32
+	pagedQuerySortAscending *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1429,7 +1429,7 @@ func (r ApiSslNetworkScanPartsRequest) XKeyfactorApiVersion(xKeyfactorApiVersion
 	return r
 }
 
-func (r ApiSslNetworkScanPartsRequest) PagedQueryJobType(pagedQueryJobType int32) ApiSslNetworkScanPartsRequest {
+func (r ApiSslNetworkScanPartsRequest) PagedQueryJobType(pagedQueryJobType int64) ApiSslNetworkScanPartsRequest {
 	r.pagedQueryJobType = &pagedQueryJobType
 	return r
 }
@@ -1441,13 +1441,13 @@ func (r ApiSslNetworkScanPartsRequest) PagedQueryQueryString(pagedQueryQueryStri
 }
 
 // The current page within the result set to be returned
-func (r ApiSslNetworkScanPartsRequest) PagedQueryPageReturned(pagedQueryPageReturned int32) ApiSslNetworkScanPartsRequest {
+func (r ApiSslNetworkScanPartsRequest) PagedQueryPageReturned(pagedQueryPageReturned int64) ApiSslNetworkScanPartsRequest {
 	r.pagedQueryPageReturned = &pagedQueryPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiSslNetworkScanPartsRequest) PagedQueryReturnLimit(pagedQueryReturnLimit int32) ApiSslNetworkScanPartsRequest {
+func (r ApiSslNetworkScanPartsRequest) PagedQueryReturnLimit(pagedQueryReturnLimit int64) ApiSslNetworkScanPartsRequest {
 	r.pagedQueryReturnLimit = &pagedQueryReturnLimit
 	return r
 }
@@ -1459,7 +1459,7 @@ func (r ApiSslNetworkScanPartsRequest) PagedQuerySortField(pagedQuerySortField s
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiSslNetworkScanPartsRequest) PagedQuerySortAscending(pagedQuerySortAscending int32) ApiSslNetworkScanPartsRequest {
+func (r ApiSslNetworkScanPartsRequest) PagedQuerySortAscending(pagedQuerySortAscending int64) ApiSslNetworkScanPartsRequest {
 	r.pagedQuerySortAscending = &pagedQuerySortAscending
 	return r
 }
@@ -1828,10 +1828,10 @@ type ApiSslResultsRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1853,13 +1853,13 @@ func (r ApiSslResultsRequest) PqQueryString(pqQueryString string) ApiSslResultsR
 }
 
 // The current page within the result set to be returned
-func (r ApiSslResultsRequest) PqPageReturned(pqPageReturned int32) ApiSslResultsRequest {
+func (r ApiSslResultsRequest) PqPageReturned(pqPageReturned int64) ApiSslResultsRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiSslResultsRequest) PqReturnLimit(pqReturnLimit int32) ApiSslResultsRequest {
+func (r ApiSslResultsRequest) PqReturnLimit(pqReturnLimit int64) ApiSslResultsRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -1871,7 +1871,7 @@ func (r ApiSslResultsRequest) PqSortField(pqSortField string) ApiSslResultsReque
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiSslResultsRequest) PqSortAscending(pqSortAscending int32) ApiSslResultsRequest {
+func (r ApiSslResultsRequest) PqSortAscending(pqSortAscending int64) ApiSslResultsRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }

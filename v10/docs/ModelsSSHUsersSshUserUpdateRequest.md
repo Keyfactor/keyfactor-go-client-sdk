@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **int32** |  | 
-**LogonIds** | Pointer to **[]int32** |  | [optional] 
+**Id** | **int64** |  | 
+**LogonIds** | Pointer to **[]int64** |  | [optional] 
 
 ## Methods
 
 ### NewModelsSSHUsersSshUserUpdateRequest
 
-`func NewModelsSSHUsersSshUserUpdateRequest(id int32, ) *ModelsSSHUsersSshUserUpdateRequest`
+`func NewModelsSSHUsersSshUserUpdateRequest(id int64, ) *ModelsSSHUsersSshUserUpdateRequest`
 
 NewModelsSSHUsersSshUserUpdateRequest instantiates a new ModelsSSHUsersSshUserUpdateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,40 +28,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ModelsSSHUsersSshUserUpdateRequest) GetId() int32`
+`func (o *ModelsSSHUsersSshUserUpdateRequest) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsSSHUsersSshUserUpdateRequest) GetIdOk() (*int32, bool)`
+`func (o *ModelsSSHUsersSshUserUpdateRequest) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsSSHUsersSshUserUpdateRequest) SetId(v int32)`
+`func (o *ModelsSSHUsersSshUserUpdateRequest) SetId(v int64)`
 
 SetId sets Id field to given value.
 
 
 ### GetLogonIds
 
-`func (o *ModelsSSHUsersSshUserUpdateRequest) GetLogonIds() []int32`
+`func (o *ModelsSSHUsersSshUserUpdateRequest) GetLogonIds() []int64`
 
 GetLogonIds returns the LogonIds field if non-nil, zero value otherwise.
 
 ### GetLogonIdsOk
 
-`func (o *ModelsSSHUsersSshUserUpdateRequest) GetLogonIdsOk() (*[]int32, bool)`
+`func (o *ModelsSSHUsersSshUserUpdateRequest) GetLogonIdsOk() (*[]int64, bool)`
 
 GetLogonIdsOk returns a tuple with the LogonIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLogonIds
 
-`func (o *ModelsSSHUsersSshUserUpdateRequest) SetLogonIds(v []int32)`
+`func (o *ModelsSSHUsersSshUserUpdateRequest) SetLogonIds(v []int64)`
 
 SetLogonIds sets LogonIds field to given value.
 

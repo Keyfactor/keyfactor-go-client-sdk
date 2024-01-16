@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **Username** | Pointer to **string** |  | [optional] 
 **LastLogon** | Pointer to **time.Time** |  | [optional] 
-**ServerId** | Pointer to **int32** |  | [optional] 
+**ServerId** | Pointer to **int64** |  | [optional] 
 **ServerName** | Pointer to **string** |  | [optional] 
 **GroupName** | Pointer to **string** |  | [optional] 
-**KeyCount** | Pointer to **int32** |  | [optional] 
+**KeyCount** | Pointer to **int64** |  | [optional] 
 **ServerUnderManagement** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ModelsSSHLogonsLogonQueryResponse) GetId() int32`
+`func (o *ModelsSSHLogonsLogonQueryResponse) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsSSHLogonsLogonQueryResponse) GetIdOk() (*int32, bool)`
+`func (o *ModelsSSHLogonsLogonQueryResponse) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsSSHLogonsLogonQueryResponse) SetId(v int32)`
+`func (o *ModelsSSHLogonsLogonQueryResponse) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -109,20 +109,20 @@ HasLastLogon returns a boolean if a field has been set.
 
 ### GetServerId
 
-`func (o *ModelsSSHLogonsLogonQueryResponse) GetServerId() int32`
+`func (o *ModelsSSHLogonsLogonQueryResponse) GetServerId() int64`
 
 GetServerId returns the ServerId field if non-nil, zero value otherwise.
 
 ### GetServerIdOk
 
-`func (o *ModelsSSHLogonsLogonQueryResponse) GetServerIdOk() (*int32, bool)`
+`func (o *ModelsSSHLogonsLogonQueryResponse) GetServerIdOk() (*int64, bool)`
 
 GetServerIdOk returns a tuple with the ServerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerId
 
-`func (o *ModelsSSHLogonsLogonQueryResponse) SetServerId(v int32)`
+`func (o *ModelsSSHLogonsLogonQueryResponse) SetServerId(v int64)`
 
 SetServerId sets ServerId field to given value.
 
@@ -184,20 +184,20 @@ HasGroupName returns a boolean if a field has been set.
 
 ### GetKeyCount
 
-`func (o *ModelsSSHLogonsLogonQueryResponse) GetKeyCount() int32`
+`func (o *ModelsSSHLogonsLogonQueryResponse) GetKeyCount() int64`
 
 GetKeyCount returns the KeyCount field if non-nil, zero value otherwise.
 
 ### GetKeyCountOk
 
-`func (o *ModelsSSHLogonsLogonQueryResponse) GetKeyCountOk() (*int32, bool)`
+`func (o *ModelsSSHLogonsLogonQueryResponse) GetKeyCountOk() (*int64, bool)`
 
 GetKeyCountOk returns a tuple with the KeyCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyCount
 
-`func (o *ModelsSSHLogonsLogonQueryResponse) SetKeyCount(v int32)`
+`func (o *ModelsSSHLogonsLogonQueryResponse) SetKeyCount(v int64)`
 
 SetKeyCount sets KeyCount field to given value.
 

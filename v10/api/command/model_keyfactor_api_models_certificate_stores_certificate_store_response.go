@@ -33,7 +33,7 @@ type KeyfactorApiModelsCertificateStoresCertificateStoreResponse struct {
 	// A string indicating the GUID of the certificate store within Keyfactor Command. This ID is automatically set by Keyfactor Command.
 	Id *string `json:"Id,omitempty"`
 	// An integer indicating the ID of the certificate store's associated certificate store container, if applicable (see GET Certificate Store Containers).
-	ContainerId *int32 `json:"ContainerId,omitempty"`
+	ContainerId *int64 `json:"ContainerId,omitempty"`
 	// A string indicating the display name of the certificate store.
 	DisplayName *string `json:"DisplayName,omitempty"`
 	// The string value of the client machine. The value for this will vary depending on the certificate store type. For example, for a Java keystore or an F5 device, it is the hostname of the machine on which the store is located, but for an Amazon Web Services store, it is the FQDN of the Keyfactor Command Windows Orchestrator. See Adding or Modifying a Certificate Store in the Keyfactor Command Reference Guide for more information.
@@ -43,7 +43,7 @@ type KeyfactorApiModelsCertificateStoresCertificateStoreResponse struct {
 	// A string indicating the GUID that identifies the inventory job for the certificate store in the Keyfactor Command database. This will be null if an inventory schedule is not set for the certificate store.
 	CertStoreInventoryJobId *string `json:"CertStoreInventoryJobId,omitempty"`
 	// An integer indicating the ID of the certificate store type, as defined in Keyfactor Command, for this certificate store. (0-Javakeystore,2-PEMFile, 3-F5SSLProfiles,4-IISRoots, 5-NetScaler, 6-IISPersonal, 7-F5WebServer, 8-IISRevoked, 9-F5WebServerREST, 10-F5SSLProfilesREST, 11-F5CABundlesREST, 100-AmazonWebServices, 101-FileTransferProtocol)
-	CertStoreType *int32 `json:"CertStoreType,omitempty"`
+	CertStoreType *int64 `json:"CertStoreType,omitempty"`
 	// A Boolean that indicates whether a certificate store is approved (true) or not (false). If a certificate store is approved, it can be used and updated. A certificate store that has been discovered using the discover feature but not yet marked as approved will be false here.
 	Approved *bool `json:"Approved,omitempty"`
 	// A Boolean that indicates whether a new certificate store should be created with the information provided (true) or not (false). This option is only valid for Java keystores and any custom certificate store types you have defined to support this functionality.
@@ -115,9 +115,9 @@ func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) SetId(v st
 }
 
 // GetContainerId returns the ContainerId field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetContainerId() int32 {
+func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetContainerId() int64 {
 	if o == nil || isNil(o.ContainerId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ContainerId
@@ -125,7 +125,7 @@ func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetContain
 
 // GetContainerIdOk returns a tuple with the ContainerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetContainerIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetContainerIdOk() (*int64, bool) {
 	if o == nil || isNil(o.ContainerId) {
 		return nil, false
 	}
@@ -141,8 +141,8 @@ func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) HasContain
 	return false
 }
 
-// SetContainerId gets a reference to the given int32 and assigns it to the ContainerId field.
-func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) SetContainerId(v int32) {
+// SetContainerId gets a reference to the given int64 and assigns it to the ContainerId field.
+func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) SetContainerId(v int64) {
 	o.ContainerId = &v
 }
 
@@ -275,9 +275,9 @@ func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) SetCertSto
 }
 
 // GetCertStoreType returns the CertStoreType field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetCertStoreType() int32 {
+func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetCertStoreType() int64 {
 	if o == nil || isNil(o.CertStoreType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CertStoreType
@@ -285,7 +285,7 @@ func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetCertSto
 
 // GetCertStoreTypeOk returns a tuple with the CertStoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetCertStoreTypeOk() (*int32, bool) {
+func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) GetCertStoreTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.CertStoreType) {
 		return nil, false
 	}
@@ -301,8 +301,8 @@ func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) HasCertSto
 	return false
 }
 
-// SetCertStoreType gets a reference to the given int32 and assigns it to the CertStoreType field.
-func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) SetCertStoreType(v int32) {
+// SetCertStoreType gets a reference to the given int64 and assigns it to the CertStoreType field.
+func (o *KeyfactorApiModelsCertificateStoresCertificateStoreResponse) SetCertStoreType(v int64) {
 	o.CertStoreType = &v
 }
 

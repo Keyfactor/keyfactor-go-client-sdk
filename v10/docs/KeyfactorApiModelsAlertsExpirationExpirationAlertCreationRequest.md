@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **DisplayName** | **string** |  | 
 **Subject** | **string** |  | 
 **Message** | **string** |  | 
-**ExpirationWarningDays** | **int32** |  | 
-**CertificateQueryId** | Pointer to **int32** |  | [optional] 
+**ExpirationWarningDays** | **int64** |  | 
+**CertificateQueryId** | Pointer to **int64** |  | [optional] 
 **RegisteredEventHandler** | Pointer to [**KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest**](KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest.md) |  | [optional] 
 **Recipients** | Pointer to **[]string** |  | [optional] 
 **EventHandlerParameters** | Pointer to [**[]KeyfactorApiModelsEventHandlerEventHandlerParameterRequest**](KeyfactorApiModelsEventHandlerEventHandlerParameterRequest.md) |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewKeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest
 
-`func NewKeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest(displayName string, subject string, message string, expirationWarningDays int32, ) *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest`
+`func NewKeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest(displayName string, subject string, message string, expirationWarningDays int64, ) *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest`
 
 NewKeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest instantiates a new KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -94,40 +94,40 @@ SetMessage sets Message field to given value.
 
 ### GetExpirationWarningDays
 
-`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) GetExpirationWarningDays() int32`
+`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) GetExpirationWarningDays() int64`
 
 GetExpirationWarningDays returns the ExpirationWarningDays field if non-nil, zero value otherwise.
 
 ### GetExpirationWarningDaysOk
 
-`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) GetExpirationWarningDaysOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) GetExpirationWarningDaysOk() (*int64, bool)`
 
 GetExpirationWarningDaysOk returns a tuple with the ExpirationWarningDays field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExpirationWarningDays
 
-`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) SetExpirationWarningDays(v int32)`
+`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) SetExpirationWarningDays(v int64)`
 
 SetExpirationWarningDays sets ExpirationWarningDays field to given value.
 
 
 ### GetCertificateQueryId
 
-`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) GetCertificateQueryId() int32`
+`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) GetCertificateQueryId() int64`
 
 GetCertificateQueryId returns the CertificateQueryId field if non-nil, zero value otherwise.
 
 ### GetCertificateQueryIdOk
 
-`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) GetCertificateQueryIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) GetCertificateQueryIdOk() (*int64, bool)`
 
 GetCertificateQueryIdOk returns a tuple with the CertificateQueryId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertificateQueryId
 
-`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) SetCertificateQueryId(v int32)`
+`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertCreationRequest) SetCertificateQueryId(v int64)`
 
 SetCertificateQueryId sets CertificateQueryId field to given value.
 

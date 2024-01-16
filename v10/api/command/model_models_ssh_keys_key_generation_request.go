@@ -32,7 +32,7 @@ var _ MappedNullable = &ModelsSSHKeysKeyGenerationRequest{}
 type ModelsSSHKeysKeyGenerationRequest struct {
 	KeyType              string  `json:"KeyType"`
 	PrivateKeyFormat     string  `json:"PrivateKeyFormat"`
-	KeyLength            int32   `json:"KeyLength"`
+	KeyLength            int64   `json:"KeyLength"`
 	Email                string  `json:"Email"`
 	Password             string  `json:"Password"`
 	Comment              *string `json:"Comment,omitempty"`
@@ -45,7 +45,7 @@ type _ModelsSSHKeysKeyGenerationRequest ModelsSSHKeysKeyGenerationRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsSSHKeysKeyGenerationRequest(keyType string, privateKeyFormat string, keyLength int32, email string, password string) *ModelsSSHKeysKeyGenerationRequest {
+func NewModelsSSHKeysKeyGenerationRequest(keyType string, privateKeyFormat string, keyLength int64, email string, password string) *ModelsSSHKeysKeyGenerationRequest {
 	this := ModelsSSHKeysKeyGenerationRequest{}
 	this.KeyType = keyType
 	this.PrivateKeyFormat = privateKeyFormat
@@ -112,9 +112,9 @@ func (o *ModelsSSHKeysKeyGenerationRequest) SetPrivateKeyFormat(v string) {
 }
 
 // GetKeyLength returns the KeyLength field value
-func (o *ModelsSSHKeysKeyGenerationRequest) GetKeyLength() int32 {
+func (o *ModelsSSHKeysKeyGenerationRequest) GetKeyLength() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -123,7 +123,7 @@ func (o *ModelsSSHKeysKeyGenerationRequest) GetKeyLength() int32 {
 
 // GetKeyLengthOk returns a tuple with the KeyLength field value
 // and a boolean to check if the value has been set.
-func (o *ModelsSSHKeysKeyGenerationRequest) GetKeyLengthOk() (*int32, bool) {
+func (o *ModelsSSHKeysKeyGenerationRequest) GetKeyLengthOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -131,7 +131,7 @@ func (o *ModelsSSHKeysKeyGenerationRequest) GetKeyLengthOk() (*int32, bool) {
 }
 
 // SetKeyLength sets field value
-func (o *ModelsSSHKeysKeyGenerationRequest) SetKeyLength(v int32) {
+func (o *ModelsSSHKeysKeyGenerationRequest) SetKeyLength(v int64) {
 	o.KeyLength = v
 }
 

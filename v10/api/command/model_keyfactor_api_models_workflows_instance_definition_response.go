@@ -32,7 +32,7 @@ var _ MappedNullable = &KeyfactorApiModelsWorkflowsInstanceDefinitionResponse{}
 type KeyfactorApiModelsWorkflowsInstanceDefinitionResponse struct {
 	Id                   *string `json:"Id,omitempty"`
 	DisplayName          *string `json:"DisplayName,omitempty"`
-	Version              *int32  `json:"Version,omitempty"`
+	Version              *int64  `json:"Version,omitempty"`
 	WorkflowType         *string `json:"WorkflowType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -121,9 +121,9 @@ func (o *KeyfactorApiModelsWorkflowsInstanceDefinitionResponse) SetDisplayName(v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsWorkflowsInstanceDefinitionResponse) GetVersion() int32 {
+func (o *KeyfactorApiModelsWorkflowsInstanceDefinitionResponse) GetVersion() int64 {
 	if o == nil || isNil(o.Version) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Version
@@ -131,7 +131,7 @@ func (o *KeyfactorApiModelsWorkflowsInstanceDefinitionResponse) GetVersion() int
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsWorkflowsInstanceDefinitionResponse) GetVersionOk() (*int32, bool) {
+func (o *KeyfactorApiModelsWorkflowsInstanceDefinitionResponse) GetVersionOk() (*int64, bool) {
 	if o == nil || isNil(o.Version) {
 		return nil, false
 	}
@@ -147,8 +147,8 @@ func (o *KeyfactorApiModelsWorkflowsInstanceDefinitionResponse) HasVersion() boo
 	return false
 }
 
-// SetVersion gets a reference to the given int32 and assigns it to the Version field.
-func (o *KeyfactorApiModelsWorkflowsInstanceDefinitionResponse) SetVersion(v int32) {
+// SetVersion gets a reference to the given int64 and assigns it to the Version field.
+func (o *KeyfactorApiModelsWorkflowsInstanceDefinitionResponse) SetVersion(v int64) {
 	o.Version = &v
 }
 

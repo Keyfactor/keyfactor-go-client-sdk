@@ -172,7 +172,7 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertAddKeyRotationAlertExecute(
 type ApiKeyRotationAlertDeleteKeyRotationAlertRequest struct {
 	ctx                     context.Context
 	ApiService              *KeyRotationAlertApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -200,7 +200,7 @@ KeyRotationAlertDeleteKeyRotationAlert Delete a key rotation alert
 	@param id Id for the key rotation alert
 	@return ApiKeyRotationAlertDeleteKeyRotationAlertRequest
 */
-func (a *KeyRotationAlertApiService) KeyRotationAlertDeleteKeyRotationAlert(ctx context.Context, id int32) ApiKeyRotationAlertDeleteKeyRotationAlertRequest {
+func (a *KeyRotationAlertApiService) KeyRotationAlertDeleteKeyRotationAlert(ctx context.Context, id int64) ApiKeyRotationAlertDeleteKeyRotationAlertRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -559,7 +559,7 @@ func (a *KeyRotationAlertApiService) KeyRotationAlertEditScheduleExecute(r ApiKe
 type ApiKeyRotationAlertGetKeyRotationAlertRequest struct {
 	ctx                     context.Context
 	ApiService              *KeyRotationAlertApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -587,7 +587,7 @@ KeyRotationAlertGetKeyRotationAlert Get a key rotation alert
 	@param id Id for the key rotation alert to get
 	@return ApiKeyRotationAlertGetKeyRotationAlertRequest
 */
-func (a *KeyRotationAlertApiService) KeyRotationAlertGetKeyRotationAlert(ctx context.Context, id int32) ApiKeyRotationAlertGetKeyRotationAlertRequest {
+func (a *KeyRotationAlertApiService) KeyRotationAlertGetKeyRotationAlert(ctx context.Context, id int64) ApiKeyRotationAlertGetKeyRotationAlertRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -690,10 +690,10 @@ type ApiKeyRotationAlertGetKeyRotationAlertsRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pagedQueryQueryString   *string
-	pagedQueryPageReturned  *int32
-	pagedQueryReturnLimit   *int32
+	pagedQueryPageReturned  *int64
+	pagedQueryReturnLimit   *int64
 	pagedQuerySortField     *string
-	pagedQuerySortAscending *int32
+	pagedQuerySortAscending *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -715,13 +715,13 @@ func (r ApiKeyRotationAlertGetKeyRotationAlertsRequest) PagedQueryQueryString(pa
 }
 
 // The current page within the result set to be returned
-func (r ApiKeyRotationAlertGetKeyRotationAlertsRequest) PagedQueryPageReturned(pagedQueryPageReturned int32) ApiKeyRotationAlertGetKeyRotationAlertsRequest {
+func (r ApiKeyRotationAlertGetKeyRotationAlertsRequest) PagedQueryPageReturned(pagedQueryPageReturned int64) ApiKeyRotationAlertGetKeyRotationAlertsRequest {
 	r.pagedQueryPageReturned = &pagedQueryPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiKeyRotationAlertGetKeyRotationAlertsRequest) PagedQueryReturnLimit(pagedQueryReturnLimit int32) ApiKeyRotationAlertGetKeyRotationAlertsRequest {
+func (r ApiKeyRotationAlertGetKeyRotationAlertsRequest) PagedQueryReturnLimit(pagedQueryReturnLimit int64) ApiKeyRotationAlertGetKeyRotationAlertsRequest {
 	r.pagedQueryReturnLimit = &pagedQueryReturnLimit
 	return r
 }
@@ -733,7 +733,7 @@ func (r ApiKeyRotationAlertGetKeyRotationAlertsRequest) PagedQuerySortField(page
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiKeyRotationAlertGetKeyRotationAlertsRequest) PagedQuerySortAscending(pagedQuerySortAscending int32) ApiKeyRotationAlertGetKeyRotationAlertsRequest {
+func (r ApiKeyRotationAlertGetKeyRotationAlertsRequest) PagedQuerySortAscending(pagedQuerySortAscending int64) ApiKeyRotationAlertGetKeyRotationAlertsRequest {
 	r.pagedQuerySortAscending = &pagedQuerySortAscending
 	return r
 }

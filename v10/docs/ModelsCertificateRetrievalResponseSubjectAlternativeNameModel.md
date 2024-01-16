@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **Value** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to **int32** |  | [optional] 
+**Type** | Pointer to **int64** |  | [optional] 
 **ValueHash** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) GetId() int32`
+`func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) GetIdOk() (*int32, bool)`
+`func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) SetId(v int32)`
+`func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -80,20 +80,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) GetType() int32`
+`func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) GetType() int64`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) GetTypeOk() (*int32, bool)`
+`func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) GetTypeOk() (*int64, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) SetType(v int32)`
+`func (o *ModelsCertificateRetrievalResponseSubjectAlternativeNameModel) SetType(v int64)`
 
 SetType sets Type field to given value.
 

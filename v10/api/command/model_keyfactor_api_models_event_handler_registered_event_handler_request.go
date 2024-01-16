@@ -30,7 +30,7 @@ var _ MappedNullable = &KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequ
 
 // KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest struct for KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest
 type KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest struct {
-	Id                   int32 `json:"Id"`
+	Id                   int64 `json:"Id"`
 	UseHandler           bool  `json:"UseHandler"`
 	AdditionalProperties map[string]interface{}
 }
@@ -41,7 +41,7 @@ type _KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest KeyfactorApiMo
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest(id int32, useHandler bool) *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest {
+func NewKeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest(id int64, useHandler bool) *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest {
 	this := KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest{}
 	this.Id = id
 	this.UseHandler = useHandler
@@ -57,9 +57,9 @@ func NewKeyfactorApiModelsEventHandlerRegisteredEventHandlerRequestWithDefaults(
 }
 
 // GetId returns the Id field value
-func (o *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest) GetId() int32 {
+func (o *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest) GetId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -68,7 +68,7 @@ func (o *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest) GetId() in
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest) GetIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest) GetIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -76,7 +76,7 @@ func (o *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest) GetIdOk() 
 }
 
 // SetId sets field value
-func (o *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest) SetId(v int32) {
+func (o *KeyfactorApiModelsEventHandlerRegisteredEventHandlerRequest) SetId(v int64) {
 	o.Id = v
 }
 

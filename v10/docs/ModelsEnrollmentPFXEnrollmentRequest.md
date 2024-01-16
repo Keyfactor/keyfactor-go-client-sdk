@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **PopulateMissingValuesFromAD** | Pointer to **bool** |  | [optional] 
 **Subject** | Pointer to **string** |  | [optional] 
 **IncludeChain** | Pointer to **bool** |  | [optional] 
-**RenewalCertificateId** | Pointer to **int32** |  | [optional] 
+**RenewalCertificateId** | Pointer to **int64** |  | [optional] 
 **CertificateAuthority** | Pointer to **string** |  | [optional] 
 **Metadata** | Pointer to **map[string]interface{}** |  | [optional] 
 **AdditionalEnrollmentFields** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
@@ -163,20 +163,20 @@ HasIncludeChain returns a boolean if a field has been set.
 
 ### GetRenewalCertificateId
 
-`func (o *ModelsEnrollmentPFXEnrollmentRequest) GetRenewalCertificateId() int32`
+`func (o *ModelsEnrollmentPFXEnrollmentRequest) GetRenewalCertificateId() int64`
 
 GetRenewalCertificateId returns the RenewalCertificateId field if non-nil, zero value otherwise.
 
 ### GetRenewalCertificateIdOk
 
-`func (o *ModelsEnrollmentPFXEnrollmentRequest) GetRenewalCertificateIdOk() (*int32, bool)`
+`func (o *ModelsEnrollmentPFXEnrollmentRequest) GetRenewalCertificateIdOk() (*int64, bool)`
 
 GetRenewalCertificateIdOk returns a tuple with the RenewalCertificateId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRenewalCertificateId
 
-`func (o *ModelsEnrollmentPFXEnrollmentRequest) SetRenewalCertificateId(v int32)`
+`func (o *ModelsEnrollmentPFXEnrollmentRequest) SetRenewalCertificateId(v int64)`
 
 SetRenewalCertificateId sets RenewalCertificateId field to given value.
 

@@ -103,7 +103,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Keyfactor identifier of the certificate store type to be deleted
+    id := int64(789) // int64 | Keyfactor identifier of the certificate store type to be deleted
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
@@ -123,7 +123,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Keyfactor identifier of the certificate store type to be deleted | 
+**id** | **int64** | Keyfactor identifier of the certificate store type to be deleted | 
 
 ### Other Parameters
 
@@ -176,7 +176,7 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    ids := []int32{int32(123)} // []int32 | Array of Keyfactor identifiers of the certificate store types to be deleted
+    ids := []int64{int64(123)} // []int64 | Array of Keyfactor identifiers of the certificate store types to be deleted
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -201,7 +201,7 @@ Other parameters are passed through a pointer to a apiCertificateStoreTypeDelete
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **ids** | **[]int32** | Array of Keyfactor identifiers of the certificate store types to be deleted | 
+ **ids** | **[]int64** | Array of Keyfactor identifiers of the certificate store types to be deleted | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
@@ -241,7 +241,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Keyfactor identifier of the certificate store type
+    id := int64(789) // int64 | Keyfactor identifier of the certificate store type
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
@@ -263,7 +263,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Keyfactor identifier of the certificate store type | 
+**id** | **int64** | Keyfactor identifier of the certificate store type | 
 
 ### Other Parameters
 
@@ -388,10 +388,10 @@ func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
     cstqueryQueryString := "cstqueryQueryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
-    cstqueryPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    cstqueryReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
+    cstqueryPageReturned := int64(789) // int64 | The current page within the result set to be returned (optional)
+    cstqueryReturnLimit := int64(789) // int64 | Maximum number of records to be returned in a single call (optional)
     cstquerySortField := "cstquerySortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    cstquerySortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    cstquerySortAscending := int64(789) // int64 | Field sort direction [0=ascending, 1=descending] (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -419,10 +419,10 @@ Name | Type | Description  | Notes
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
  **cstqueryQueryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
- **cstqueryPageReturned** | **int32** | The current page within the result set to be returned | 
- **cstqueryReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
+ **cstqueryPageReturned** | **int64** | The current page within the result set to be returned | 
+ **cstqueryReturnLimit** | **int64** | Maximum number of records to be returned in a single call | 
  **cstquerySortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **cstquerySortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **cstquerySortAscending** | **int64** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
 
 ### Return type
 
@@ -462,7 +462,7 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    certStoreType := *openapiclient.NewKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest(int32(123), "Name_example", "ShortName_example") // KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest | Certificate store type properties to be updated
+    certStoreType := *openapiclient.NewKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest(int64(123), "Name_example", "ShortName_example") // KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest | Certificate store type properties to be updated
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))

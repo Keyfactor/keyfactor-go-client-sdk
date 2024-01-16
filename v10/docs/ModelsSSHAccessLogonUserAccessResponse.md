@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LogonId** | Pointer to **int32** |  | [optional] 
+**LogonId** | Pointer to **int64** |  | [optional] 
 **LogonName** | Pointer to **string** |  | [optional] 
 **Users** | Pointer to [**[]ModelsSSHUsersSshUserResponse**](ModelsSSHUsersSshUserResponse.md) |  | [optional] 
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetLogonId
 
-`func (o *ModelsSSHAccessLogonUserAccessResponse) GetLogonId() int32`
+`func (o *ModelsSSHAccessLogonUserAccessResponse) GetLogonId() int64`
 
 GetLogonId returns the LogonId field if non-nil, zero value otherwise.
 
 ### GetLogonIdOk
 
-`func (o *ModelsSSHAccessLogonUserAccessResponse) GetLogonIdOk() (*int32, bool)`
+`func (o *ModelsSSHAccessLogonUserAccessResponse) GetLogonIdOk() (*int64, bool)`
 
 GetLogonIdOk returns a tuple with the LogonId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLogonId
 
-`func (o *ModelsSSHAccessLogonUserAccessResponse) SetLogonId(v int32)`
+`func (o *ModelsSSHAccessLogonUserAccessResponse) SetLogonId(v int64)`
 
 SetLogonId sets LogonId field to given value.
 

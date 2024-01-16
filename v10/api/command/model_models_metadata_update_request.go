@@ -30,7 +30,7 @@ var _ MappedNullable = &ModelsMetadataUpdateRequest{}
 
 // ModelsMetadataUpdateRequest struct for ModelsMetadataUpdateRequest
 type ModelsMetadataUpdateRequest struct {
-	Id                   *int32            `json:"Id,omitempty"`
+	Id                   *int64            `json:"Id,omitempty"`
 	Metadata             map[string]string `json:"Metadata"`
 	AdditionalProperties map[string]interface{}
 }
@@ -56,9 +56,9 @@ func NewModelsMetadataUpdateRequestWithDefaults() *ModelsMetadataUpdateRequest {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsMetadataUpdateRequest) GetId() int32 {
+func (o *ModelsMetadataUpdateRequest) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -66,7 +66,7 @@ func (o *ModelsMetadataUpdateRequest) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsMetadataUpdateRequest) GetIdOk() (*int32, bool) {
+func (o *ModelsMetadataUpdateRequest) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -82,8 +82,8 @@ func (o *ModelsMetadataUpdateRequest) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsMetadataUpdateRequest) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsMetadataUpdateRequest) SetId(v int64) {
 	o.Id = &v
 }
 

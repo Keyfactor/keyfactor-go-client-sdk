@@ -33,10 +33,10 @@ var _ MappedNullable = &ModelsSSLDisplayScanJobPart{}
 type ModelsSSLDisplayScanJobPart struct {
 	ScanJobPartId        *string    `json:"ScanJobPartId,omitempty"`
 	Agent                *string    `json:"Agent,omitempty"`
-	Status               *int32     `json:"Status,omitempty"`
+	Status               *int64     `json:"Status,omitempty"`
 	StartTime            *time.Time `json:"StartTime,omitempty"`
 	EndTime              *time.Time `json:"EndTime,omitempty"`
-	EndpointCount        *int32     `json:"EndpointCount,omitempty"`
+	EndpointCount        *int64     `json:"EndpointCount,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -124,9 +124,9 @@ func (o *ModelsSSLDisplayScanJobPart) SetAgent(v string) {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *ModelsSSLDisplayScanJobPart) GetStatus() int32 {
+func (o *ModelsSSLDisplayScanJobPart) GetStatus() int64 {
 	if o == nil || isNil(o.Status) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status
@@ -134,7 +134,7 @@ func (o *ModelsSSLDisplayScanJobPart) GetStatus() int32 {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSLDisplayScanJobPart) GetStatusOk() (*int32, bool) {
+func (o *ModelsSSLDisplayScanJobPart) GetStatusOk() (*int64, bool) {
 	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
@@ -150,8 +150,8 @@ func (o *ModelsSSLDisplayScanJobPart) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given int32 and assigns it to the Status field.
-func (o *ModelsSSLDisplayScanJobPart) SetStatus(v int32) {
+// SetStatus gets a reference to the given int64 and assigns it to the Status field.
+func (o *ModelsSSLDisplayScanJobPart) SetStatus(v int64) {
 	o.Status = &v
 }
 
@@ -220,9 +220,9 @@ func (o *ModelsSSLDisplayScanJobPart) SetEndTime(v time.Time) {
 }
 
 // GetEndpointCount returns the EndpointCount field value if set, zero value otherwise.
-func (o *ModelsSSLDisplayScanJobPart) GetEndpointCount() int32 {
+func (o *ModelsSSLDisplayScanJobPart) GetEndpointCount() int64 {
 	if o == nil || isNil(o.EndpointCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.EndpointCount
@@ -230,7 +230,7 @@ func (o *ModelsSSLDisplayScanJobPart) GetEndpointCount() int32 {
 
 // GetEndpointCountOk returns a tuple with the EndpointCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSLDisplayScanJobPart) GetEndpointCountOk() (*int32, bool) {
+func (o *ModelsSSLDisplayScanJobPart) GetEndpointCountOk() (*int64, bool) {
 	if o == nil || isNil(o.EndpointCount) {
 		return nil, false
 	}
@@ -246,8 +246,8 @@ func (o *ModelsSSLDisplayScanJobPart) HasEndpointCount() bool {
 	return false
 }
 
-// SetEndpointCount gets a reference to the given int32 and assigns it to the EndpointCount field.
-func (o *ModelsSSLDisplayScanJobPart) SetEndpointCount(v int32) {
+// SetEndpointCount gets a reference to the given int64 and assigns it to the EndpointCount field.
+func (o *ModelsSSLDisplayScanJobPart) SetEndpointCount(v int64) {
 	o.EndpointCount = &v
 }
 

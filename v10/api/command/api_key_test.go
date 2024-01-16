@@ -44,11 +44,11 @@ func Test_command_KeyApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("KeyApi_KeyDeleteUnmanagedKey_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("KeyApi_KeyDeleteUnmanagedKey_id: %v", id)
 
 		t.Log("KeyApi_KeyDeleteUnmanagedKey_payload: <none>")
-		httpRes, err := apiClient.KeyApi.KeyDeleteUnmanagedKey(context.Background(), id.(int32)).Execute()
+		httpRes, err := apiClient.KeyApi.KeyDeleteUnmanagedKey(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
@@ -84,11 +84,11 @@ func Test_command_KeyApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("KeyApi_KeyGetUnmanagedKey_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("KeyApi_KeyGetUnmanagedKey_id: %v", id)
 
 		t.Log("KeyApi_KeyGetUnmanagedKey_payload: <none>")
-		resp, httpRes, err := apiClient.KeyApi.KeyGetUnmanagedKey(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.KeyApi.KeyGetUnmanagedKey(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

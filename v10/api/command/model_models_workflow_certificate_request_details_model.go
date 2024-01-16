@@ -36,7 +36,7 @@ type ModelsWorkflowCertificateRequestDetailsModel struct {
 	SANs                 []string                                         `json:"SANs,omitempty"`
 	CertStores           []ModelsWorkflowCertificateRequestCertStoreModel `json:"CertStores,omitempty"`
 	Curve                NullableString                                   `json:"Curve,omitempty"`
-	Id                   *int32                                           `json:"Id,omitempty"`
+	Id                   *int64                                           `json:"Id,omitempty"`
 	CARequestId          *string                                          `json:"CARequestId,omitempty"`
 	CommonName           *string                                          `json:"CommonName,omitempty"`
 	DistinguishedName    *string                                          `json:"DistinguishedName,omitempty"`
@@ -44,7 +44,7 @@ type ModelsWorkflowCertificateRequestDetailsModel struct {
 	CertificateAuthority *string                                          `json:"CertificateAuthority,omitempty"`
 	Template             *string                                          `json:"Template,omitempty"`
 	Requester            *string                                          `json:"Requester,omitempty"`
-	State                *int32                                           `json:"State,omitempty"`
+	State                *int64                                           `json:"State,omitempty"`
 	StateString          *string                                          `json:"StateString,omitempty"`
 	Metadata             *map[string]string                               `json:"Metadata,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -241,9 +241,9 @@ func (o *ModelsWorkflowCertificateRequestDetailsModel) UnsetCurve() {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsWorkflowCertificateRequestDetailsModel) GetId() int32 {
+func (o *ModelsWorkflowCertificateRequestDetailsModel) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -251,7 +251,7 @@ func (o *ModelsWorkflowCertificateRequestDetailsModel) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsWorkflowCertificateRequestDetailsModel) GetIdOk() (*int32, bool) {
+func (o *ModelsWorkflowCertificateRequestDetailsModel) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -267,8 +267,8 @@ func (o *ModelsWorkflowCertificateRequestDetailsModel) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsWorkflowCertificateRequestDetailsModel) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsWorkflowCertificateRequestDetailsModel) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -497,9 +497,9 @@ func (o *ModelsWorkflowCertificateRequestDetailsModel) SetRequester(v string) {
 }
 
 // GetState returns the State field value if set, zero value otherwise.
-func (o *ModelsWorkflowCertificateRequestDetailsModel) GetState() int32 {
+func (o *ModelsWorkflowCertificateRequestDetailsModel) GetState() int64 {
 	if o == nil || isNil(o.State) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.State
@@ -507,7 +507,7 @@ func (o *ModelsWorkflowCertificateRequestDetailsModel) GetState() int32 {
 
 // GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsWorkflowCertificateRequestDetailsModel) GetStateOk() (*int32, bool) {
+func (o *ModelsWorkflowCertificateRequestDetailsModel) GetStateOk() (*int64, bool) {
 	if o == nil || isNil(o.State) {
 		return nil, false
 	}
@@ -523,8 +523,8 @@ func (o *ModelsWorkflowCertificateRequestDetailsModel) HasState() bool {
 	return false
 }
 
-// SetState gets a reference to the given int32 and assigns it to the State field.
-func (o *ModelsWorkflowCertificateRequestDetailsModel) SetState(v int32) {
+// SetState gets a reference to the given int64 and assigns it to the State field.
+func (o *ModelsWorkflowCertificateRequestDetailsModel) SetState(v int64) {
 	o.State = &v
 }
 

@@ -30,7 +30,7 @@ var _ MappedNullable = &ModelsTemplateCollectionRetrievalResponseTemplateRegexMo
 
 // ModelsTemplateCollectionRetrievalResponseTemplateRegexModel struct for ModelsTemplateCollectionRetrievalResponseTemplateRegexModel
 type ModelsTemplateCollectionRetrievalResponseTemplateRegexModel struct {
-	TemplateId           NullableInt32 `json:"TemplateId,omitempty"`
+	TemplateId           NullableInt64 `json:"TemplateId,omitempty"`
 	SubjectPart          *string       `json:"SubjectPart,omitempty"`
 	Regex                *string       `json:"Regex,omitempty"`
 	Error                *string       `json:"Error,omitempty"`
@@ -57,9 +57,9 @@ func NewModelsTemplateCollectionRetrievalResponseTemplateRegexModelWithDefaults(
 }
 
 // GetTemplateId returns the TemplateId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ModelsTemplateCollectionRetrievalResponseTemplateRegexModel) GetTemplateId() int32 {
+func (o *ModelsTemplateCollectionRetrievalResponseTemplateRegexModel) GetTemplateId() int64 {
 	if o == nil || isNil(o.TemplateId.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TemplateId.Get()
@@ -68,7 +68,7 @@ func (o *ModelsTemplateCollectionRetrievalResponseTemplateRegexModel) GetTemplat
 // GetTemplateIdOk returns a tuple with the TemplateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ModelsTemplateCollectionRetrievalResponseTemplateRegexModel) GetTemplateIdOk() (*int32, bool) {
+func (o *ModelsTemplateCollectionRetrievalResponseTemplateRegexModel) GetTemplateIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -84,8 +84,8 @@ func (o *ModelsTemplateCollectionRetrievalResponseTemplateRegexModel) HasTemplat
 	return false
 }
 
-// SetTemplateId gets a reference to the given NullableInt32 and assigns it to the TemplateId field.
-func (o *ModelsTemplateCollectionRetrievalResponseTemplateRegexModel) SetTemplateId(v int32) {
+// SetTemplateId gets a reference to the given NullableInt64 and assigns it to the TemplateId field.
+func (o *ModelsTemplateCollectionRetrievalResponseTemplateRegexModel) SetTemplateId(v int64) {
 	o.TemplateId.Set(&v)
 }
 

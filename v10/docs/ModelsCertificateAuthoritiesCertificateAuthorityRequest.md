@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **LogicalName** | Pointer to **string** |  | [optional] 
 **HostName** | Pointer to **string** |  | [optional] 
 **Delegate** | Pointer to **bool** |  | [optional] 
@@ -15,14 +15,14 @@ Name | Type | Description | Notes
 **Agent** | Pointer to **string** |  | [optional] 
 **Standalone** | Pointer to **bool** |  | [optional] 
 **MonitorThresholds** | Pointer to **bool** |  | [optional] 
-**IssuanceMax** | Pointer to **int32** |  | [optional] 
-**IssuanceMin** | Pointer to **int32** |  | [optional] 
-**FailureMax** | Pointer to **int32** |  | [optional] 
+**IssuanceMax** | Pointer to **int64** |  | [optional] 
+**IssuanceMin** | Pointer to **int64** |  | [optional] 
+**FailureMax** | Pointer to **int64** |  | [optional] 
 **RFCEnforcement** | Pointer to **bool** |  | [optional] 
 **Properties** | Pointer to **string** |  | [optional] 
-**AllowedEnrollmentTypes** | Pointer to **int32** |  | [optional] 
-**KeyRetention** | Pointer to **int32** |  | [optional] 
-**KeyRetentionDays** | Pointer to **int32** |  | [optional] 
+**AllowedEnrollmentTypes** | Pointer to **int64** |  | [optional] 
+**KeyRetention** | Pointer to **int64** |  | [optional] 
+**KeyRetentionDays** | Pointer to **int64** |  | [optional] 
 **ExplicitCredentials** | Pointer to **bool** |  | [optional] 
 **SubscriberTerms** | Pointer to **bool** |  | [optional] 
 **ExplicitUser** | Pointer to **string** |  | [optional] 
@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **ThresholdCheck** | Pointer to [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | [optional] 
 **AuthCertificatePassword** | Pointer to [**ModelsKeyfactorAPISecret**](ModelsKeyfactorAPISecret.md) |  | [optional] 
 **AuthCertificate** | Pointer to [**ModelsKeyfactorAPISecret**](ModelsKeyfactorAPISecret.md) |  | [optional] 
-**CAType** | Pointer to **int32** |  | [optional] 
+**CAType** | Pointer to **int64** |  | [optional] 
 **EnforceUniqueDN** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -58,20 +58,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetId() int32`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetIdOk() (*int32, bool)`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) SetId(v int32)`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -333,20 +333,20 @@ HasMonitorThresholds returns a boolean if a field has been set.
 
 ### GetIssuanceMax
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetIssuanceMax() int32`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetIssuanceMax() int64`
 
 GetIssuanceMax returns the IssuanceMax field if non-nil, zero value otherwise.
 
 ### GetIssuanceMaxOk
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetIssuanceMaxOk() (*int32, bool)`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetIssuanceMaxOk() (*int64, bool)`
 
 GetIssuanceMaxOk returns a tuple with the IssuanceMax field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIssuanceMax
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) SetIssuanceMax(v int32)`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) SetIssuanceMax(v int64)`
 
 SetIssuanceMax sets IssuanceMax field to given value.
 
@@ -358,20 +358,20 @@ HasIssuanceMax returns a boolean if a field has been set.
 
 ### GetIssuanceMin
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetIssuanceMin() int32`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetIssuanceMin() int64`
 
 GetIssuanceMin returns the IssuanceMin field if non-nil, zero value otherwise.
 
 ### GetIssuanceMinOk
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetIssuanceMinOk() (*int32, bool)`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetIssuanceMinOk() (*int64, bool)`
 
 GetIssuanceMinOk returns a tuple with the IssuanceMin field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIssuanceMin
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) SetIssuanceMin(v int32)`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) SetIssuanceMin(v int64)`
 
 SetIssuanceMin sets IssuanceMin field to given value.
 
@@ -383,20 +383,20 @@ HasIssuanceMin returns a boolean if a field has been set.
 
 ### GetFailureMax
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetFailureMax() int32`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetFailureMax() int64`
 
 GetFailureMax returns the FailureMax field if non-nil, zero value otherwise.
 
 ### GetFailureMaxOk
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetFailureMaxOk() (*int32, bool)`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetFailureMaxOk() (*int64, bool)`
 
 GetFailureMaxOk returns a tuple with the FailureMax field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFailureMax
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) SetFailureMax(v int32)`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) SetFailureMax(v int64)`
 
 SetFailureMax sets FailureMax field to given value.
 
@@ -458,20 +458,20 @@ HasProperties returns a boolean if a field has been set.
 
 ### GetAllowedEnrollmentTypes
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAllowedEnrollmentTypes() int32`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAllowedEnrollmentTypes() int64`
 
 GetAllowedEnrollmentTypes returns the AllowedEnrollmentTypes field if non-nil, zero value otherwise.
 
 ### GetAllowedEnrollmentTypesOk
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAllowedEnrollmentTypesOk() (*int32, bool)`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetAllowedEnrollmentTypesOk() (*int64, bool)`
 
 GetAllowedEnrollmentTypesOk returns a tuple with the AllowedEnrollmentTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowedEnrollmentTypes
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) SetAllowedEnrollmentTypes(v int32)`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) SetAllowedEnrollmentTypes(v int64)`
 
 SetAllowedEnrollmentTypes sets AllowedEnrollmentTypes field to given value.
 
@@ -483,20 +483,20 @@ HasAllowedEnrollmentTypes returns a boolean if a field has been set.
 
 ### GetKeyRetention
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetKeyRetention() int32`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetKeyRetention() int64`
 
 GetKeyRetention returns the KeyRetention field if non-nil, zero value otherwise.
 
 ### GetKeyRetentionOk
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetKeyRetentionOk() (*int32, bool)`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetKeyRetentionOk() (*int64, bool)`
 
 GetKeyRetentionOk returns a tuple with the KeyRetention field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyRetention
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) SetKeyRetention(v int32)`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) SetKeyRetention(v int64)`
 
 SetKeyRetention sets KeyRetention field to given value.
 
@@ -508,20 +508,20 @@ HasKeyRetention returns a boolean if a field has been set.
 
 ### GetKeyRetentionDays
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetKeyRetentionDays() int32`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetKeyRetentionDays() int64`
 
 GetKeyRetentionDays returns the KeyRetentionDays field if non-nil, zero value otherwise.
 
 ### GetKeyRetentionDaysOk
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetKeyRetentionDaysOk() (*int32, bool)`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetKeyRetentionDaysOk() (*int64, bool)`
 
 GetKeyRetentionDaysOk returns a tuple with the KeyRetentionDays field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyRetentionDays
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) SetKeyRetentionDays(v int32)`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) SetKeyRetentionDays(v int64)`
 
 SetKeyRetentionDays sets KeyRetentionDays field to given value.
 
@@ -808,20 +808,20 @@ HasAuthCertificate returns a boolean if a field has been set.
 
 ### GetCAType
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetCAType() int32`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetCAType() int64`
 
 GetCAType returns the CAType field if non-nil, zero value otherwise.
 
 ### GetCATypeOk
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetCATypeOk() (*int32, bool)`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) GetCATypeOk() (*int64, bool)`
 
 GetCATypeOk returns a tuple with the CAType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCAType
 
-`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) SetCAType(v int32)`
+`func (o *ModelsCertificateAuthoritiesCertificateAuthorityRequest) SetCAType(v int64)`
 
 SetCAType sets CAType field to given value.
 

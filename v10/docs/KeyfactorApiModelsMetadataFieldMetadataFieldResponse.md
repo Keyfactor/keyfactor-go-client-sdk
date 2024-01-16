@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**DataType** | Pointer to **int32** |  | [optional] 
+**DataType** | Pointer to **int64** |  | [optional] 
 **Hint** | Pointer to **string** |  | [optional] 
 **Validation** | Pointer to **string** |  | [optional] 
-**Enrollment** | Pointer to **int32** |  | [optional] 
+**Enrollment** | Pointer to **int64** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 **Options** | Pointer to **string** |  | [optional] 
 **DefaultValue** | Pointer to **string** |  | [optional] 
-**DisplayOrder** | Pointer to **int32** |  | [optional] 
+**DisplayOrder** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -37,20 +37,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetId() int32`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) SetId(v int32)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -112,20 +112,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetDataType
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetDataType() int32`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetDataType() int64`
 
 GetDataType returns the DataType field if non-nil, zero value otherwise.
 
 ### GetDataTypeOk
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetDataTypeOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetDataTypeOk() (*int64, bool)`
 
 GetDataTypeOk returns a tuple with the DataType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataType
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) SetDataType(v int32)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) SetDataType(v int64)`
 
 SetDataType sets DataType field to given value.
 
@@ -187,20 +187,20 @@ HasValidation returns a boolean if a field has been set.
 
 ### GetEnrollment
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetEnrollment() int32`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetEnrollment() int64`
 
 GetEnrollment returns the Enrollment field if non-nil, zero value otherwise.
 
 ### GetEnrollmentOk
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetEnrollmentOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetEnrollmentOk() (*int64, bool)`
 
 GetEnrollmentOk returns a tuple with the Enrollment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnrollment
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) SetEnrollment(v int32)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) SetEnrollment(v int64)`
 
 SetEnrollment sets Enrollment field to given value.
 
@@ -287,20 +287,20 @@ HasDefaultValue returns a boolean if a field has been set.
 
 ### GetDisplayOrder
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetDisplayOrder() int32`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetDisplayOrder() int64`
 
 GetDisplayOrder returns the DisplayOrder field if non-nil, zero value otherwise.
 
 ### GetDisplayOrderOk
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetDisplayOrderOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) GetDisplayOrderOk() (*int64, bool)`
 
 GetDisplayOrderOk returns a tuple with the DisplayOrder field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDisplayOrder
 
-`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) SetDisplayOrder(v int32)`
+`func (o *KeyfactorApiModelsMetadataFieldMetadataFieldResponse) SetDisplayOrder(v int64)`
 
 SetDisplayOrder sets DisplayOrder field to given value.
 

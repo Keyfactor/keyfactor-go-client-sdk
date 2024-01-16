@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AvailableRenewalType** | Pointer to **int32** |  | [optional] 
+**AvailableRenewalType** | Pointer to **int64** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAvailableRenewalType
 
-`func (o *ModelsEnrollmentAvailableRenewal) GetAvailableRenewalType() int32`
+`func (o *ModelsEnrollmentAvailableRenewal) GetAvailableRenewalType() int64`
 
 GetAvailableRenewalType returns the AvailableRenewalType field if non-nil, zero value otherwise.
 
 ### GetAvailableRenewalTypeOk
 
-`func (o *ModelsEnrollmentAvailableRenewal) GetAvailableRenewalTypeOk() (*int32, bool)`
+`func (o *ModelsEnrollmentAvailableRenewal) GetAvailableRenewalTypeOk() (*int64, bool)`
 
 GetAvailableRenewalTypeOk returns a tuple with the AvailableRenewalType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAvailableRenewalType
 
-`func (o *ModelsEnrollmentAvailableRenewal) SetAvailableRenewalType(v int32)`
+`func (o *ModelsEnrollmentAvailableRenewal) SetAvailableRenewalType(v int64)`
 
 SetAvailableRenewalType sets AvailableRenewalType field to given value.
 

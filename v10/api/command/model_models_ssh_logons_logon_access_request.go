@@ -30,8 +30,8 @@ var _ MappedNullable = &ModelsSSHLogonsLogonAccessRequest{}
 
 // ModelsSSHLogonsLogonAccessRequest struct for ModelsSSHLogonsLogonAccessRequest
 type ModelsSSHLogonsLogonAccessRequest struct {
-	LogonId              int32   `json:"LogonId"`
-	UserIds              []int32 `json:"UserIds,omitempty"`
+	LogonId              int64   `json:"LogonId"`
+	UserIds              []int64 `json:"UserIds,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -41,7 +41,7 @@ type _ModelsSSHLogonsLogonAccessRequest ModelsSSHLogonsLogonAccessRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsSSHLogonsLogonAccessRequest(logonId int32) *ModelsSSHLogonsLogonAccessRequest {
+func NewModelsSSHLogonsLogonAccessRequest(logonId int64) *ModelsSSHLogonsLogonAccessRequest {
 	this := ModelsSSHLogonsLogonAccessRequest{}
 	this.LogonId = logonId
 	return &this
@@ -56,9 +56,9 @@ func NewModelsSSHLogonsLogonAccessRequestWithDefaults() *ModelsSSHLogonsLogonAcc
 }
 
 // GetLogonId returns the LogonId field value
-func (o *ModelsSSHLogonsLogonAccessRequest) GetLogonId() int32 {
+func (o *ModelsSSHLogonsLogonAccessRequest) GetLogonId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -67,7 +67,7 @@ func (o *ModelsSSHLogonsLogonAccessRequest) GetLogonId() int32 {
 
 // GetLogonIdOk returns a tuple with the LogonId field value
 // and a boolean to check if the value has been set.
-func (o *ModelsSSHLogonsLogonAccessRequest) GetLogonIdOk() (*int32, bool) {
+func (o *ModelsSSHLogonsLogonAccessRequest) GetLogonIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -75,14 +75,14 @@ func (o *ModelsSSHLogonsLogonAccessRequest) GetLogonIdOk() (*int32, bool) {
 }
 
 // SetLogonId sets field value
-func (o *ModelsSSHLogonsLogonAccessRequest) SetLogonId(v int32) {
+func (o *ModelsSSHLogonsLogonAccessRequest) SetLogonId(v int64) {
 	o.LogonId = v
 }
 
 // GetUserIds returns the UserIds field value if set, zero value otherwise.
-func (o *ModelsSSHLogonsLogonAccessRequest) GetUserIds() []int32 {
+func (o *ModelsSSHLogonsLogonAccessRequest) GetUserIds() []int64 {
 	if o == nil || isNil(o.UserIds) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.UserIds
@@ -90,7 +90,7 @@ func (o *ModelsSSHLogonsLogonAccessRequest) GetUserIds() []int32 {
 
 // GetUserIdsOk returns a tuple with the UserIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSHLogonsLogonAccessRequest) GetUserIdsOk() ([]int32, bool) {
+func (o *ModelsSSHLogonsLogonAccessRequest) GetUserIdsOk() ([]int64, bool) {
 	if o == nil || isNil(o.UserIds) {
 		return nil, false
 	}
@@ -106,8 +106,8 @@ func (o *ModelsSSHLogonsLogonAccessRequest) HasUserIds() bool {
 	return false
 }
 
-// SetUserIds gets a reference to the given []int32 and assigns it to the UserIds field.
-func (o *ModelsSSHLogonsLogonAccessRequest) SetUserIds(v []int32) {
+// SetUserIds gets a reference to the given []int64 and assigns it to the UserIds field.
+func (o *ModelsSSHLogonsLogonAccessRequest) SetUserIds(v []int64) {
 	o.UserIds = v
 }
 

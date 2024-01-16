@@ -115,14 +115,14 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | The Id of the certificate
+    id := int64(789) // int64 | The Id of the certificate
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | The collection the certificate could be in.  Defaults to no collection. (optional)
+    collectionId := int64(789) // int64 | The collection the certificate could be in.  Defaults to no collection. (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
-    queryPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    queryReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
+    queryPageReturned := int64(789) // int64 | The current page within the result set to be returned (optional)
+    queryReturnLimit := int64(789) // int64 | Maximum number of records to be returned in a single call (optional)
     querySortField := "querySortField_example" // string | Field by which the results should be sorted (OperationStart, OperationEnd, UserName) (optional)
-    querySortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    querySortAscending := int64(789) // int64 | Field sort direction [0=ascending, 1=descending] (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -142,7 +142,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | The Id of the certificate | 
+**id** | **int64** | The Id of the certificate | 
 
 ### Other Parameters
 
@@ -153,12 +153,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | The collection the certificate could be in.  Defaults to no collection. | 
+ **collectionId** | **int64** | The collection the certificate could be in.  Defaults to no collection. | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
- **queryPageReturned** | **int32** | The current page within the result set to be returned | 
- **queryReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
+ **queryPageReturned** | **int64** | The current page within the result set to be returned | 
+ **queryReturnLimit** | **int64** | Maximum number of records to be returned in a single call | 
  **querySortField** | **string** | Field by which the results should be sorted (OperationStart, OperationEnd, UserName) | 
- **querySortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **querySortAscending** | **int64** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
 
 ### Return type
 
@@ -197,11 +197,11 @@ import (
 )
 
 func main() {
-    certificateId := int32(56) // int32 | Certificate identifier
+    certificateId := int64(789) // int64 | Certificate identifier
     metadataFieldName := "metadataFieldName_example" // string | Metadata field being compared
     value := "value_example" // string | Value to compare against
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
+    collectionId := int64(789) // int64 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -227,11 +227,11 @@ Other parameters are passed through a pointer to a apiCertificateCompareMetadata
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **certificateId** | **int32** | Certificate identifier | 
+ **certificateId** | **int64** | Certificate identifier | 
  **metadataFieldName** | **string** | Metadata field being compared | 
  **value** | **string** | Value to compare against | 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
+ **collectionId** | **int64** | Optional certificate collection identifier used to ensure user access to the certificate | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
@@ -275,7 +275,7 @@ import (
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     sq := "sq_example" // string | Query by which certificates should be filtered for deletion
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
+    collectionId := int64(789) // int64 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **sq** | **string** | Query by which certificates should be filtered for deletion | 
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
+ **collectionId** | **int64** | Optional certificate collection identifier used to ensure user access to the certificate | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
@@ -341,9 +341,9 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Keyfactor identifier of the certificate record
+    id := int64(789) // int64 | Keyfactor identifier of the certificate record
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
+    collectionId := int64(789) // int64 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -362,7 +362,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Keyfactor identifier of the certificate record | 
+**id** | **int64** | Keyfactor identifier of the certificate record | 
 
 ### Other Parameters
 
@@ -373,7 +373,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
+ **collectionId** | **int64** | Optional certificate collection identifier used to ensure user access to the certificate | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
@@ -416,8 +416,8 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    ids := []int32{int32(123)} // []int32 | The array of ids for certificate that are to be deleted
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
+    ids := []int64{int64(123)} // []int64 | The array of ids for certificate that are to be deleted
+    collectionId := int64(789) // int64 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -442,8 +442,8 @@ Other parameters are passed through a pointer to a apiCertificateDeleteCertifica
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **ids** | **[]int32** | The array of ids for certificate that are to be deleted | 
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
+ **ids** | **[]int64** | The array of ids for certificate that are to be deleted | 
+ **collectionId** | **int64** | Optional certificate collection identifier used to ensure user access to the certificate | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
@@ -484,8 +484,8 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    ids := []int32{int32(123)} // []int32 | Keyfactor identifiers of the cetficiates for which the associated private keys should be deleted
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
+    ids := []int64{int64(123)} // []int64 | Keyfactor identifiers of the cetficiates for which the associated private keys should be deleted
+    collectionId := int64(789) // int64 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -510,8 +510,8 @@ Other parameters are passed through a pointer to a apiCertificateDeletePrivateKe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **ids** | **[]int32** | Keyfactor identifiers of the cetficiates for which the associated private keys should be deleted | 
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
+ **ids** | **[]int64** | Keyfactor identifiers of the cetficiates for which the associated private keys should be deleted | 
+ **collectionId** | **int64** | Optional certificate collection identifier used to ensure user access to the certificate | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
@@ -551,9 +551,9 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Keyfactor identifier of the certificate for which the associated private key should be deleted
+    id := int64(789) // int64 | Keyfactor identifier of the certificate for which the associated private key should be deleted
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
+    collectionId := int64(789) // int64 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -572,7 +572,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Keyfactor identifier of the certificate for which the associated private key should be deleted | 
+**id** | **int64** | Keyfactor identifier of the certificate for which the associated private key should be deleted | 
 
 ### Other Parameters
 
@@ -583,7 +583,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
+ **collectionId** | **int64** | Optional certificate collection identifier used to ensure user access to the certificate | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
@@ -627,7 +627,7 @@ import (
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     rq := *openapiclient.NewModelsCertificateDownloadRequest() // ModelsCertificateDownloadRequest | Query to filter the certificate to be recovered
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
+    collectionId := int64(789) // int64 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -655,7 +655,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **rq** | [**ModelsCertificateDownloadRequest**](ModelsCertificateDownloadRequest.md) | Query to filter the certificate to be recovered | 
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
+ **collectionId** | **int64** | Optional certificate collection identifier used to ensure user access to the certificate | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
@@ -695,12 +695,12 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Keyfactor certificate identifier
+    id := int64(789) // int64 | Keyfactor certificate identifier
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     includeLocations := true // bool | Include locations data for the certificate to be returned (optional)
     includeMetadata := true // bool | Include metadata for the certificate to be returned (optional)
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
-    verbose := int32(56) // int32 |  (optional)
+    collectionId := int64(789) // int64 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
+    verbose := int64(789) // int64 |  (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -721,7 +721,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Keyfactor certificate identifier | 
+**id** | **int64** | Keyfactor certificate identifier | 
 
 ### Other Parameters
 
@@ -734,8 +734,8 @@ Name | Type | Description  | Notes
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **includeLocations** | **bool** | Include locations data for the certificate to be returned | 
  **includeMetadata** | **bool** | Include metadata for the certificate to be returned | 
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
- **verbose** | **int32** |  | 
+ **collectionId** | **int64** | Optional certificate collection identifier used to ensure user access to the certificate | 
+ **verbose** | **int64** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
@@ -775,9 +775,9 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | Keyfactor certificate identifier
+    id := int64(789) // int64 | Keyfactor certificate identifier
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
+    collectionId := int64(789) // int64 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -798,7 +798,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | Keyfactor certificate identifier | 
+**id** | **int64** | Keyfactor certificate identifier | 
 
 ### Other Parameters
 
@@ -809,7 +809,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
+ **collectionId** | **int64** | Optional certificate collection identifier used to ensure user access to the certificate | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
@@ -849,9 +849,9 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | The Id of the certificate permissions are being checked on
+    id := int64(789) // int64 | The Id of the certificate permissions are being checked on
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | The Id of the collection the certificate belongs in. Defaults to no collection (optional)
+    collectionId := int64(789) // int64 | The Id of the collection the certificate belongs in. Defaults to no collection (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -872,7 +872,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | The Id of the certificate permissions are being checked on | 
+**id** | **int64** | The Id of the certificate permissions are being checked on | 
 
 ### Other Parameters
 
@@ -883,7 +883,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | The Id of the collection the certificate belongs in. Defaults to no collection | 
+ **collectionId** | **int64** | The Id of the collection the certificate belongs in. Defaults to no collection | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
@@ -923,9 +923,9 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | The Id of the certificate being checked
+    id := int64(789) // int64 | The Id of the certificate being checked
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | An optional parameter for the collectin Id the certificate is in.  Defaults to no collection (optional)
+    collectionId := int64(789) // int64 | An optional parameter for the collectin Id the certificate is in.  Defaults to no collection (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -946,7 +946,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | The Id of the certificate being checked | 
+**id** | **int64** | The Id of the certificate being checked | 
 
 ### Other Parameters
 
@@ -957,7 +957,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | An optional parameter for the collectin Id the certificate is in.  Defaults to no collection | 
+ **collectionId** | **int64** | An optional parameter for the collectin Id the certificate is in.  Defaults to no collection | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
@@ -1066,17 +1066,17 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
+    collectionId := int64(789) // int64 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     includeLocations := true // bool | Include locations data for the certificates to be returned (optional)
     includeMetadata := true // bool | Include metadata for the certificates to be returned (optional)
     includeHasPrivateKey := true // bool | Include whether the certificates to be returned have private keys stored in the Keyfactor database (optional)
-    verbose := int32(56) // int32 |  (optional)
+    verbose := int64(789) // int64 |  (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
     pqQueryString := "pqQueryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
-    pqPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    pqReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
+    pqPageReturned := int64(789) // int64 | The current page within the result set to be returned (optional)
+    pqReturnLimit := int64(789) // int64 | Maximum number of records to be returned in a single call (optional)
     pqSortField := "pqSortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    pqSortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+    pqSortAscending := int64(789) // int64 | Field sort direction [0=ascending, 1=descending] (optional)
     pqIncludeRevoked := true // bool | Select 'true' to include revoked certificates in the results (optional)
     pqIncludeExpired := true // bool | Select 'true' to include expired certificates in the results (optional)
 
@@ -1104,17 +1104,17 @@ Other parameters are passed through a pointer to a apiCertificateQueryCertificat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
+ **collectionId** | **int64** | Optional certificate collection identifier used to ensure user access to the certificate | 
  **includeLocations** | **bool** | Include locations data for the certificates to be returned | 
  **includeMetadata** | **bool** | Include metadata for the certificates to be returned | 
  **includeHasPrivateKey** | **bool** | Include whether the certificates to be returned have private keys stored in the Keyfactor database | 
- **verbose** | **int32** |  | 
+ **verbose** | **int64** |  | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
  **pqQueryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
- **pqPageReturned** | **int32** | The current page within the result set to be returned | 
- **pqReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
+ **pqPageReturned** | **int64** | The current page within the result set to be returned | 
+ **pqReturnLimit** | **int64** | Maximum number of records to be returned in a single call | 
  **pqSortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **pqSortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+ **pqSortAscending** | **int64** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
  **pqIncludeRevoked** | **bool** | Select &#39;true&#39; to include revoked certificates in the results | 
  **pqIncludeExpired** | **bool** | Select &#39;true&#39; to include expired certificates in the results | 
 
@@ -1160,7 +1160,7 @@ func main() {
     xCertificateformat := "xCertificateformat_example" // string | Desired format [PFX, PEM] (default to "PEM")
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     rq := *openapiclient.NewModelsCertificateRecoveryRequest("Password_example") // ModelsCertificateRecoveryRequest | Query to filter the certificate to be recovered
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
+    collectionId := int64(789) // int64 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -1189,7 +1189,7 @@ Name | Type | Description  | Notes
  **xCertificateformat** | **string** | Desired format [PFX, PEM] | [default to &quot;PEM&quot;]
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **rq** | [**ModelsCertificateRecoveryRequest**](ModelsCertificateRecoveryRequest.md) | Query to filter the certificate to be recovered | 
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
+ **collectionId** | **int64** | Optional certificate collection identifier used to ensure user access to the certificate | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
@@ -1302,8 +1302,8 @@ import (
 
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    request := *openapiclient.NewModelsRevokeAllCertificatesRequest(int32(123), "Comment_example") // ModelsRevokeAllCertificatesRequest | Contains the Keyfactor Query and revocation data
-    collectionId := int32(56) // int32 | A collection Id to be used for permissions and part of the query to revoke certificates (optional)
+    request := *openapiclient.NewModelsRevokeAllCertificatesRequest(int64(123), "Comment_example") // ModelsRevokeAllCertificatesRequest | Contains the Keyfactor Query and revocation data
+    collectionId := int64(789) // int64 | A collection Id to be used for permissions and part of the query to revoke certificates (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -1331,7 +1331,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **request** | [**ModelsRevokeAllCertificatesRequest**](ModelsRevokeAllCertificatesRequest.md) | Contains the Keyfactor Query and revocation data | 
- **collectionId** | **int32** | A collection Id to be used for permissions and part of the query to revoke certificates | 
+ **collectionId** | **int64** | A collection Id to be used for permissions and part of the query to revoke certificates | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
@@ -1373,7 +1373,7 @@ import (
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     metadataUpdate := *openapiclient.NewModelsMetadataAllUpdateRequest([]openapiclient.ModelsMetadataSingleUpdateRequest{*openapiclient.NewModelsMetadataSingleUpdateRequest()}) // ModelsMetadataAllUpdateRequest | Contains the Keyfactor certificate identifier and the metadata to be updated
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
+    collectionId := int64(789) // int64 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -1399,7 +1399,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **metadataUpdate** | [**ModelsMetadataAllUpdateRequest**](ModelsMetadataAllUpdateRequest.md) | Contains the Keyfactor certificate identifier and the metadata to be updated | 
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
+ **collectionId** | **int64** | Optional certificate collection identifier used to ensure user access to the certificate | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
@@ -1441,7 +1441,7 @@ import (
 func main() {
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     metadataUpdate := *openapiclient.NewModelsMetadataUpdateRequest(map[string]string{"key": "Inner_example"}) // ModelsMetadataUpdateRequest | Contains the Keyfactor certificate identifier and the metadata to be updated
-    collectionId := int32(56) // int32 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
+    collectionId := int64(789) // int64 | Optional certificate collection identifier used to ensure user access to the certificate (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -1467,7 +1467,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
  **metadataUpdate** | [**ModelsMetadataUpdateRequest**](ModelsMetadataUpdateRequest.md) | Contains the Keyfactor certificate identifier and the metadata to be updated | 
- **collectionId** | **int32** | Optional certificate collection identifier used to ensure user access to the certificate | 
+ **collectionId** | **int64** | Optional certificate collection identifier used to ensure user access to the certificate | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type
@@ -1507,9 +1507,9 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | The Id of the certificate being checked
+    id := int64(789) // int64 | The Id of the certificate being checked
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
-    collectionId := int32(56) // int32 | An optional parameter for the collectin Id the certificate is in.  Defaults to no collection (optional)
+    collectionId := int64(789) // int64 | An optional parameter for the collectin Id the certificate is in.  Defaults to no collection (optional)
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
@@ -1530,7 +1530,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | The Id of the certificate being checked | 
+**id** | **int64** | The Id of the certificate being checked | 
 
 ### Other Parameters
 
@@ -1541,7 +1541,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
- **collectionId** | **int32** | An optional parameter for the collectin Id the certificate is in.  Defaults to no collection | 
+ **collectionId** | **int64** | An optional parameter for the collectin Id the certificate is in.  Defaults to no collection | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
 
 ### Return type

@@ -31,15 +31,15 @@ var _ MappedNullable = &ModelsQueryModelsPagedAgentBlueprintQuery{}
 // ModelsQueryModelsPagedAgentBlueprintQuery struct for ModelsQueryModelsPagedAgentBlueprintQuery
 type ModelsQueryModelsPagedAgentBlueprintQuery struct {
 	// The current page within the result set to be returned
-	PageReturned *int32 `json:"PageReturned,omitempty"`
+	PageReturned *int64 `json:"PageReturned,omitempty"`
 	// Number of records to be skipped before inclusion in the result set
-	SkipCount *int32 `json:"SkipCount,omitempty"`
+	SkipCount *int64 `json:"SkipCount,omitempty"`
 	// Maximum number of records to be returned in a single call
-	ReturnLimit *int32 `json:"ReturnLimit,omitempty"`
+	ReturnLimit *int64 `json:"ReturnLimit,omitempty"`
 	// Field by which the results should be sorted (OperationStart, OperationEnd, UserName)
 	SortField *string `json:"SortField,omitempty"`
 	// Field sort direction [0=ascending, 1=descending]
-	SortAscending        *int32 `json:"SortAscending,omitempty"`
+	SortAscending        *int64 `json:"SortAscending,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -63,9 +63,9 @@ func NewModelsQueryModelsPagedAgentBlueprintQueryWithDefaults() *ModelsQueryMode
 }
 
 // GetPageReturned returns the PageReturned field value if set, zero value otherwise.
-func (o *ModelsQueryModelsPagedAgentBlueprintQuery) GetPageReturned() int32 {
+func (o *ModelsQueryModelsPagedAgentBlueprintQuery) GetPageReturned() int64 {
 	if o == nil || isNil(o.PageReturned) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PageReturned
@@ -73,7 +73,7 @@ func (o *ModelsQueryModelsPagedAgentBlueprintQuery) GetPageReturned() int32 {
 
 // GetPageReturnedOk returns a tuple with the PageReturned field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsQueryModelsPagedAgentBlueprintQuery) GetPageReturnedOk() (*int32, bool) {
+func (o *ModelsQueryModelsPagedAgentBlueprintQuery) GetPageReturnedOk() (*int64, bool) {
 	if o == nil || isNil(o.PageReturned) {
 		return nil, false
 	}
@@ -89,15 +89,15 @@ func (o *ModelsQueryModelsPagedAgentBlueprintQuery) HasPageReturned() bool {
 	return false
 }
 
-// SetPageReturned gets a reference to the given int32 and assigns it to the PageReturned field.
-func (o *ModelsQueryModelsPagedAgentBlueprintQuery) SetPageReturned(v int32) {
+// SetPageReturned gets a reference to the given int64 and assigns it to the PageReturned field.
+func (o *ModelsQueryModelsPagedAgentBlueprintQuery) SetPageReturned(v int64) {
 	o.PageReturned = &v
 }
 
 // GetSkipCount returns the SkipCount field value if set, zero value otherwise.
-func (o *ModelsQueryModelsPagedAgentBlueprintQuery) GetSkipCount() int32 {
+func (o *ModelsQueryModelsPagedAgentBlueprintQuery) GetSkipCount() int64 {
 	if o == nil || isNil(o.SkipCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SkipCount
@@ -105,7 +105,7 @@ func (o *ModelsQueryModelsPagedAgentBlueprintQuery) GetSkipCount() int32 {
 
 // GetSkipCountOk returns a tuple with the SkipCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsQueryModelsPagedAgentBlueprintQuery) GetSkipCountOk() (*int32, bool) {
+func (o *ModelsQueryModelsPagedAgentBlueprintQuery) GetSkipCountOk() (*int64, bool) {
 	if o == nil || isNil(o.SkipCount) {
 		return nil, false
 	}
@@ -121,15 +121,15 @@ func (o *ModelsQueryModelsPagedAgentBlueprintQuery) HasSkipCount() bool {
 	return false
 }
 
-// SetSkipCount gets a reference to the given int32 and assigns it to the SkipCount field.
-func (o *ModelsQueryModelsPagedAgentBlueprintQuery) SetSkipCount(v int32) {
+// SetSkipCount gets a reference to the given int64 and assigns it to the SkipCount field.
+func (o *ModelsQueryModelsPagedAgentBlueprintQuery) SetSkipCount(v int64) {
 	o.SkipCount = &v
 }
 
 // GetReturnLimit returns the ReturnLimit field value if set, zero value otherwise.
-func (o *ModelsQueryModelsPagedAgentBlueprintQuery) GetReturnLimit() int32 {
+func (o *ModelsQueryModelsPagedAgentBlueprintQuery) GetReturnLimit() int64 {
 	if o == nil || isNil(o.ReturnLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ReturnLimit
@@ -137,7 +137,7 @@ func (o *ModelsQueryModelsPagedAgentBlueprintQuery) GetReturnLimit() int32 {
 
 // GetReturnLimitOk returns a tuple with the ReturnLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsQueryModelsPagedAgentBlueprintQuery) GetReturnLimitOk() (*int32, bool) {
+func (o *ModelsQueryModelsPagedAgentBlueprintQuery) GetReturnLimitOk() (*int64, bool) {
 	if o == nil || isNil(o.ReturnLimit) {
 		return nil, false
 	}
@@ -153,8 +153,8 @@ func (o *ModelsQueryModelsPagedAgentBlueprintQuery) HasReturnLimit() bool {
 	return false
 }
 
-// SetReturnLimit gets a reference to the given int32 and assigns it to the ReturnLimit field.
-func (o *ModelsQueryModelsPagedAgentBlueprintQuery) SetReturnLimit(v int32) {
+// SetReturnLimit gets a reference to the given int64 and assigns it to the ReturnLimit field.
+func (o *ModelsQueryModelsPagedAgentBlueprintQuery) SetReturnLimit(v int64) {
 	o.ReturnLimit = &v
 }
 
@@ -191,9 +191,9 @@ func (o *ModelsQueryModelsPagedAgentBlueprintQuery) SetSortField(v string) {
 }
 
 // GetSortAscending returns the SortAscending field value if set, zero value otherwise.
-func (o *ModelsQueryModelsPagedAgentBlueprintQuery) GetSortAscending() int32 {
+func (o *ModelsQueryModelsPagedAgentBlueprintQuery) GetSortAscending() int64 {
 	if o == nil || isNil(o.SortAscending) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SortAscending
@@ -201,7 +201,7 @@ func (o *ModelsQueryModelsPagedAgentBlueprintQuery) GetSortAscending() int32 {
 
 // GetSortAscendingOk returns a tuple with the SortAscending field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsQueryModelsPagedAgentBlueprintQuery) GetSortAscendingOk() (*int32, bool) {
+func (o *ModelsQueryModelsPagedAgentBlueprintQuery) GetSortAscendingOk() (*int64, bool) {
 	if o == nil || isNil(o.SortAscending) {
 		return nil, false
 	}
@@ -217,8 +217,8 @@ func (o *ModelsQueryModelsPagedAgentBlueprintQuery) HasSortAscending() bool {
 	return false
 }
 
-// SetSortAscending gets a reference to the given int32 and assigns it to the SortAscending field.
-func (o *ModelsQueryModelsPagedAgentBlueprintQuery) SetSortAscending(v int32) {
+// SetSortAscending gets a reference to the given int64 and assigns it to the SortAscending field.
+func (o *ModelsQueryModelsPagedAgentBlueprintQuery) SetSortAscending(v int64) {
 	o.SortAscending = &v
 }
 

@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
 **Subject** | Pointer to **string** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
-**ExpirationWarningDays** | Pointer to **int32** |  | [optional] 
+**ExpirationWarningDays** | Pointer to **int64** |  | [optional] 
 **Recipients** | Pointer to **[]string** |  | [optional] 
 **CertificateQuery** | Pointer to [**KeyfactorApiModelsAlertsAlertCertificateQueryAlertCertificateQueryResponse**](KeyfactorApiModelsAlertsAlertCertificateQueryAlertCertificateQueryResponse.md) |  | [optional] 
 **RegisteredEventHandler** | Pointer to [**KeyfactorApiModelsEventHandlerRegisteredEventHandlerResponse**](KeyfactorApiModelsEventHandlerRegisteredEventHandlerResponse.md) |  | [optional] 
@@ -35,20 +35,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) GetId() int32`
+`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) GetIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) SetId(v int32)`
+`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -135,20 +135,20 @@ HasMessage returns a boolean if a field has been set.
 
 ### GetExpirationWarningDays
 
-`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) GetExpirationWarningDays() int32`
+`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) GetExpirationWarningDays() int64`
 
 GetExpirationWarningDays returns the ExpirationWarningDays field if non-nil, zero value otherwise.
 
 ### GetExpirationWarningDaysOk
 
-`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) GetExpirationWarningDaysOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) GetExpirationWarningDaysOk() (*int64, bool)`
 
 GetExpirationWarningDaysOk returns a tuple with the ExpirationWarningDays field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExpirationWarningDays
 
-`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) SetExpirationWarningDays(v int32)`
+`func (o *KeyfactorApiModelsAlertsExpirationExpirationAlertDefinitionResponse) SetExpirationWarningDays(v int64)`
 
 SetExpirationWarningDays sets ExpirationWarningDays field to given value.
 

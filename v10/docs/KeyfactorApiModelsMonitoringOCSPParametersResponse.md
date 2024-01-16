@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CertificateAuthorityId** | Pointer to **int32** |  | [optional] 
+**CertificateAuthorityId** | Pointer to **int64** |  | [optional] 
 **AuthorityName** | Pointer to **string** |  | [optional] 
 **AuthorityNameId** | Pointer to **string** |  | [optional] 
 **AuthorityKeyId** | Pointer to **string** |  | [optional] 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCertificateAuthorityId
 
-`func (o *KeyfactorApiModelsMonitoringOCSPParametersResponse) GetCertificateAuthorityId() int32`
+`func (o *KeyfactorApiModelsMonitoringOCSPParametersResponse) GetCertificateAuthorityId() int64`
 
 GetCertificateAuthorityId returns the CertificateAuthorityId field if non-nil, zero value otherwise.
 
 ### GetCertificateAuthorityIdOk
 
-`func (o *KeyfactorApiModelsMonitoringOCSPParametersResponse) GetCertificateAuthorityIdOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsMonitoringOCSPParametersResponse) GetCertificateAuthorityIdOk() (*int64, bool)`
 
 GetCertificateAuthorityIdOk returns a tuple with the CertificateAuthorityId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertificateAuthorityId
 
-`func (o *KeyfactorApiModelsMonitoringOCSPParametersResponse) SetCertificateAuthorityId(v int32)`
+`func (o *KeyfactorApiModelsMonitoringOCSPParametersResponse) SetCertificateAuthorityId(v int64)`
 
 SetCertificateAuthorityId sets CertificateAuthorityId field to given value.
 

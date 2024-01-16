@@ -31,7 +31,7 @@ var _ MappedNullable = &KeyfactorCommonSchedulingModelsWeeklyModel{}
 
 // KeyfactorCommonSchedulingModelsWeeklyModel struct for KeyfactorCommonSchedulingModelsWeeklyModel
 type KeyfactorCommonSchedulingModelsWeeklyModel struct {
-	Days                 []int32    `json:"Days,omitempty"`
+	Days                 []int64    `json:"Days,omitempty"`
 	Time                 *time.Time `json:"Time,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -56,9 +56,9 @@ func NewKeyfactorCommonSchedulingModelsWeeklyModelWithDefaults() *KeyfactorCommo
 }
 
 // GetDays returns the Days field value if set, zero value otherwise.
-func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDays() []int32 {
+func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDays() []int64 {
 	if o == nil || isNil(o.Days) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.Days
@@ -66,7 +66,7 @@ func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDays() []int32 {
 
 // GetDaysOk returns a tuple with the Days field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDaysOk() ([]int32, bool) {
+func (o *KeyfactorCommonSchedulingModelsWeeklyModel) GetDaysOk() ([]int64, bool) {
 	if o == nil || isNil(o.Days) {
 		return nil, false
 	}
@@ -82,8 +82,8 @@ func (o *KeyfactorCommonSchedulingModelsWeeklyModel) HasDays() bool {
 	return false
 }
 
-// SetDays gets a reference to the given []int32 and assigns it to the Days field.
-func (o *KeyfactorCommonSchedulingModelsWeeklyModel) SetDays(v []int32) {
+// SetDays gets a reference to the given []int64 and assigns it to the Days field.
+func (o *KeyfactorCommonSchedulingModelsWeeklyModel) SetDays(v []int64) {
 	o.Days = v
 }
 

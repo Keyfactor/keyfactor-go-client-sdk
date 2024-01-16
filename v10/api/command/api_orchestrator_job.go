@@ -297,10 +297,10 @@ type ApiOrchestratorJobGetJobHistoryRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -322,13 +322,13 @@ func (r ApiOrchestratorJobGetJobHistoryRequest) PqQueryString(pqQueryString stri
 }
 
 // The current page within the result set to be returned
-func (r ApiOrchestratorJobGetJobHistoryRequest) PqPageReturned(pqPageReturned int32) ApiOrchestratorJobGetJobHistoryRequest {
+func (r ApiOrchestratorJobGetJobHistoryRequest) PqPageReturned(pqPageReturned int64) ApiOrchestratorJobGetJobHistoryRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiOrchestratorJobGetJobHistoryRequest) PqReturnLimit(pqReturnLimit int32) ApiOrchestratorJobGetJobHistoryRequest {
+func (r ApiOrchestratorJobGetJobHistoryRequest) PqReturnLimit(pqReturnLimit int64) ApiOrchestratorJobGetJobHistoryRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -340,7 +340,7 @@ func (r ApiOrchestratorJobGetJobHistoryRequest) PqSortField(pqSortField string) 
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiOrchestratorJobGetJobHistoryRequest) PqSortAscending(pqSortAscending int32) ApiOrchestratorJobGetJobHistoryRequest {
+func (r ApiOrchestratorJobGetJobHistoryRequest) PqSortAscending(pqSortAscending int64) ApiOrchestratorJobGetJobHistoryRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }
@@ -471,10 +471,10 @@ type ApiOrchestratorJobGetScheduledJobsRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -496,13 +496,13 @@ func (r ApiOrchestratorJobGetScheduledJobsRequest) PqQueryString(pqQueryString s
 }
 
 // The current page within the result set to be returned
-func (r ApiOrchestratorJobGetScheduledJobsRequest) PqPageReturned(pqPageReturned int32) ApiOrchestratorJobGetScheduledJobsRequest {
+func (r ApiOrchestratorJobGetScheduledJobsRequest) PqPageReturned(pqPageReturned int64) ApiOrchestratorJobGetScheduledJobsRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiOrchestratorJobGetScheduledJobsRequest) PqReturnLimit(pqReturnLimit int32) ApiOrchestratorJobGetScheduledJobsRequest {
+func (r ApiOrchestratorJobGetScheduledJobsRequest) PqReturnLimit(pqReturnLimit int64) ApiOrchestratorJobGetScheduledJobsRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -514,7 +514,7 @@ func (r ApiOrchestratorJobGetScheduledJobsRequest) PqSortField(pqSortField strin
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiOrchestratorJobGetScheduledJobsRequest) PqSortAscending(pqSortAscending int32) ApiOrchestratorJobGetScheduledJobsRequest {
+func (r ApiOrchestratorJobGetScheduledJobsRequest) PqSortAscending(pqSortAscending int64) ApiOrchestratorJobGetScheduledJobsRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }

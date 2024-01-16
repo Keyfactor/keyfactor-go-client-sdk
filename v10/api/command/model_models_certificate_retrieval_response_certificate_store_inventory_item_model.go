@@ -32,9 +32,9 @@ var _ MappedNullable = &ModelsCertificateRetrievalResponseCertificateStoreInvent
 type ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel struct {
 	StoreMachine         *string `json:"StoreMachine,omitempty"`
 	StorePath            *string `json:"StorePath,omitempty"`
-	StoreType            *int32  `json:"StoreType,omitempty"`
+	StoreType            *int64  `json:"StoreType,omitempty"`
 	Alias                *string `json:"Alias,omitempty"`
-	ChainLevel           *int32  `json:"ChainLevel,omitempty"`
+	ChainLevel           *int64  `json:"ChainLevel,omitempty"`
 	CertStoreId          *string `json:"CertStoreId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -123,9 +123,9 @@ func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) S
 }
 
 // GetStoreType returns the StoreType field value if set, zero value otherwise.
-func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) GetStoreType() int32 {
+func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) GetStoreType() int64 {
 	if o == nil || isNil(o.StoreType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.StoreType
@@ -133,7 +133,7 @@ func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) G
 
 // GetStoreTypeOk returns a tuple with the StoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) GetStoreTypeOk() (*int32, bool) {
+func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) GetStoreTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.StoreType) {
 		return nil, false
 	}
@@ -149,8 +149,8 @@ func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) H
 	return false
 }
 
-// SetStoreType gets a reference to the given int32 and assigns it to the StoreType field.
-func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) SetStoreType(v int32) {
+// SetStoreType gets a reference to the given int64 and assigns it to the StoreType field.
+func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) SetStoreType(v int64) {
 	o.StoreType = &v
 }
 
@@ -187,9 +187,9 @@ func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) S
 }
 
 // GetChainLevel returns the ChainLevel field value if set, zero value otherwise.
-func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) GetChainLevel() int32 {
+func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) GetChainLevel() int64 {
 	if o == nil || isNil(o.ChainLevel) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ChainLevel
@@ -197,7 +197,7 @@ func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) G
 
 // GetChainLevelOk returns a tuple with the ChainLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) GetChainLevelOk() (*int32, bool) {
+func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) GetChainLevelOk() (*int64, bool) {
 	if o == nil || isNil(o.ChainLevel) {
 		return nil, false
 	}
@@ -213,8 +213,8 @@ func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) H
 	return false
 }
 
-// SetChainLevel gets a reference to the given int32 and assigns it to the ChainLevel field.
-func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) SetChainLevel(v int32) {
+// SetChainLevel gets a reference to the given int64 and assigns it to the ChainLevel field.
+func (o *ModelsCertificateRetrievalResponseCertificateStoreInventoryItemModel) SetChainLevel(v int64) {
 	o.ChainLevel = &v
 }
 

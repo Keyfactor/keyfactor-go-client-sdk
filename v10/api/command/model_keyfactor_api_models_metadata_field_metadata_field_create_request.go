@@ -32,14 +32,14 @@ var _ MappedNullable = &KeyfactorApiModelsMetadataFieldMetadataFieldCreateReques
 type KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest struct {
 	Name                 string  `json:"Name"`
 	Description          string  `json:"Description"`
-	DataType             int32   `json:"DataType"`
+	DataType             int64   `json:"DataType"`
 	Hint                 *string `json:"Hint,omitempty"`
 	Validation           *string `json:"Validation,omitempty"`
-	Enrollment           *int32  `json:"Enrollment,omitempty"`
+	Enrollment           *int64  `json:"Enrollment,omitempty"`
 	Message              *string `json:"Message,omitempty"`
 	Options              *string `json:"Options,omitempty"`
 	DefaultValue         *string `json:"DefaultValue,omitempty"`
-	DisplayOrder         *int32  `json:"DisplayOrder,omitempty"`
+	DisplayOrder         *int64  `json:"DisplayOrder,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -49,7 +49,7 @@ type _KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest KeyfactorApiMode
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest(name string, description string, dataType int32) *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest {
+func NewKeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest(name string, description string, dataType int64) *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest {
 	this := KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest{}
 	this.Name = name
 	this.Description = description
@@ -114,9 +114,9 @@ func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) SetDescripti
 }
 
 // GetDataType returns the DataType field value
-func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetDataType() int32 {
+func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetDataType() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -125,7 +125,7 @@ func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetDataType(
 
 // GetDataTypeOk returns a tuple with the DataType field value
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetDataTypeOk() (*int32, bool) {
+func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetDataTypeOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -133,7 +133,7 @@ func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetDataTypeO
 }
 
 // SetDataType sets field value
-func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) SetDataType(v int32) {
+func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) SetDataType(v int64) {
 	o.DataType = v
 }
 
@@ -202,9 +202,9 @@ func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) SetValidatio
 }
 
 // GetEnrollment returns the Enrollment field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetEnrollment() int32 {
+func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetEnrollment() int64 {
 	if o == nil || isNil(o.Enrollment) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Enrollment
@@ -212,7 +212,7 @@ func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetEnrollmen
 
 // GetEnrollmentOk returns a tuple with the Enrollment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetEnrollmentOk() (*int32, bool) {
+func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetEnrollmentOk() (*int64, bool) {
 	if o == nil || isNil(o.Enrollment) {
 		return nil, false
 	}
@@ -228,8 +228,8 @@ func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) HasEnrollmen
 	return false
 }
 
-// SetEnrollment gets a reference to the given int32 and assigns it to the Enrollment field.
-func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) SetEnrollment(v int32) {
+// SetEnrollment gets a reference to the given int64 and assigns it to the Enrollment field.
+func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) SetEnrollment(v int64) {
 	o.Enrollment = &v
 }
 
@@ -330,9 +330,9 @@ func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) SetDefaultVa
 }
 
 // GetDisplayOrder returns the DisplayOrder field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetDisplayOrder() int32 {
+func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetDisplayOrder() int64 {
 	if o == nil || isNil(o.DisplayOrder) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DisplayOrder
@@ -340,7 +340,7 @@ func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetDisplayOr
 
 // GetDisplayOrderOk returns a tuple with the DisplayOrder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetDisplayOrderOk() (*int32, bool) {
+func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) GetDisplayOrderOk() (*int64, bool) {
 	if o == nil || isNil(o.DisplayOrder) {
 		return nil, false
 	}
@@ -356,8 +356,8 @@ func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) HasDisplayOr
 	return false
 }
 
-// SetDisplayOrder gets a reference to the given int32 and assigns it to the DisplayOrder field.
-func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) SetDisplayOrder(v int32) {
+// SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
+func (o *KeyfactorApiModelsMetadataFieldMetadataFieldCreateRequest) SetDisplayOrder(v int64) {
 	o.DisplayOrder = &v
 }
 

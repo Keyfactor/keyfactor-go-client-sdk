@@ -30,7 +30,7 @@ var _ MappedNullable = &KeyfactorApiModelsMonitoringRevocationMonitoringUpdateRe
 
 // KeyfactorApiModelsMonitoringRevocationMonitoringUpdateRequest struct for KeyfactorApiModelsMonitoringRevocationMonitoringUpdateRequest
 type KeyfactorApiModelsMonitoringRevocationMonitoringUpdateRequest struct {
-	Id                   *int32                                             `json:"Id,omitempty"`
+	Id                   *int64                                             `json:"Id,omitempty"`
 	Name                 string                                             `json:"Name"`
 	EndpointType         string                                             `json:"EndpointType"`
 	Location             string                                             `json:"Location"`
@@ -65,9 +65,9 @@ func NewKeyfactorApiModelsMonitoringRevocationMonitoringUpdateRequestWithDefault
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsMonitoringRevocationMonitoringUpdateRequest) GetId() int32 {
+func (o *KeyfactorApiModelsMonitoringRevocationMonitoringUpdateRequest) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -75,7 +75,7 @@ func (o *KeyfactorApiModelsMonitoringRevocationMonitoringUpdateRequest) GetId() 
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsMonitoringRevocationMonitoringUpdateRequest) GetIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsMonitoringRevocationMonitoringUpdateRequest) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -91,8 +91,8 @@ func (o *KeyfactorApiModelsMonitoringRevocationMonitoringUpdateRequest) HasId() 
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *KeyfactorApiModelsMonitoringRevocationMonitoringUpdateRequest) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *KeyfactorApiModelsMonitoringRevocationMonitoringUpdateRequest) SetId(v int64) {
 	o.Id = &v
 }
 

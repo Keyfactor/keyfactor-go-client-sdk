@@ -30,7 +30,7 @@ var _ MappedNullable = &KeyfactorApiModelsCertificateStoresTypesCertificateStore
 
 // KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest struct for KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest
 type KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest struct {
-	StoreType            int32                                                           `json:"StoreType"`
+	StoreType            int64                                                           `json:"StoreType"`
 	Name                 string                                                          `json:"Name"`
 	ShortName            string                                                          `json:"ShortName"`
 	Capability           *string                                                         `json:"Capability,omitempty"`
@@ -55,7 +55,7 @@ type _KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest 
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest(storeType int32, name string, shortName string) *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest {
+func NewKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest(storeType int64, name string, shortName string) *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest {
 	this := KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest{}
 	this.StoreType = storeType
 	this.Name = name
@@ -72,9 +72,9 @@ func NewKeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateReques
 }
 
 // GetStoreType returns the StoreType field value
-func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest) GetStoreType() int32 {
+func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest) GetStoreType() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -83,7 +83,7 @@ func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateReque
 
 // GetStoreTypeOk returns a tuple with the StoreType field value
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest) GetStoreTypeOk() (*int32, bool) {
+func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest) GetStoreTypeOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,7 +91,7 @@ func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateReque
 }
 
 // SetStoreType sets field value
-func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest) SetStoreType(v int32) {
+func (o *KeyfactorApiModelsCertificateStoresTypesCertificateStoreTypeUpdateRequest) SetStoreType(v int64) {
 	o.StoreType = v
 }
 

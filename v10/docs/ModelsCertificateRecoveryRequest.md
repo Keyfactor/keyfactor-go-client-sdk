@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Password** | **string** |  | 
-**CertID** | Pointer to **int32** |  | [optional] 
+**CertID** | Pointer to **int64** |  | [optional] 
 **SerialNumber** | Pointer to **string** |  | [optional] 
 **IssuerDN** | Pointer to **NullableString** |  | [optional] 
 **Thumbprint** | Pointer to **string** |  | [optional] 
@@ -52,20 +52,20 @@ SetPassword sets Password field to given value.
 
 ### GetCertID
 
-`func (o *ModelsCertificateRecoveryRequest) GetCertID() int32`
+`func (o *ModelsCertificateRecoveryRequest) GetCertID() int64`
 
 GetCertID returns the CertID field if non-nil, zero value otherwise.
 
 ### GetCertIDOk
 
-`func (o *ModelsCertificateRecoveryRequest) GetCertIDOk() (*int32, bool)`
+`func (o *ModelsCertificateRecoveryRequest) GetCertIDOk() (*int64, bool)`
 
 GetCertIDOk returns a tuple with the CertID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertID
 
-`func (o *ModelsCertificateRecoveryRequest) SetCertID(v int32)`
+`func (o *ModelsCertificateRecoveryRequest) SetCertID(v int64)`
 
 SetCertID sets CertID field to given value.
 

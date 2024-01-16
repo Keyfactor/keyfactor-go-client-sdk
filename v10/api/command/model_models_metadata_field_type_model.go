@@ -30,17 +30,17 @@ var _ MappedNullable = &ModelsMetadataFieldTypeModel{}
 
 // ModelsMetadataFieldTypeModel struct for ModelsMetadataFieldTypeModel
 type ModelsMetadataFieldTypeModel struct {
-	Id                   *int32  `json:"Id,omitempty"`
+	Id                   *int64  `json:"Id,omitempty"`
 	Name                 *string `json:"Name,omitempty"`
 	Description          *string `json:"Description,omitempty"`
-	DataType             *int32  `json:"DataType,omitempty"`
+	DataType             *int64  `json:"DataType,omitempty"`
 	Hint                 *string `json:"Hint,omitempty"`
 	Validation           *string `json:"Validation,omitempty"`
-	Enrollment           *int32  `json:"Enrollment,omitempty"`
+	Enrollment           *int64  `json:"Enrollment,omitempty"`
 	Message              *string `json:"Message,omitempty"`
 	Options              *string `json:"Options,omitempty"`
 	DefaultValue         *string `json:"DefaultValue,omitempty"`
-	DisplayOrder         *int32  `json:"DisplayOrder,omitempty"`
+	DisplayOrder         *int64  `json:"DisplayOrder,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -64,9 +64,9 @@ func NewModelsMetadataFieldTypeModelWithDefaults() *ModelsMetadataFieldTypeModel
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsMetadataFieldTypeModel) GetId() int32 {
+func (o *ModelsMetadataFieldTypeModel) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -74,7 +74,7 @@ func (o *ModelsMetadataFieldTypeModel) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsMetadataFieldTypeModel) GetIdOk() (*int32, bool) {
+func (o *ModelsMetadataFieldTypeModel) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -90,8 +90,8 @@ func (o *ModelsMetadataFieldTypeModel) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsMetadataFieldTypeModel) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsMetadataFieldTypeModel) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -160,9 +160,9 @@ func (o *ModelsMetadataFieldTypeModel) SetDescription(v string) {
 }
 
 // GetDataType returns the DataType field value if set, zero value otherwise.
-func (o *ModelsMetadataFieldTypeModel) GetDataType() int32 {
+func (o *ModelsMetadataFieldTypeModel) GetDataType() int64 {
 	if o == nil || isNil(o.DataType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DataType
@@ -170,7 +170,7 @@ func (o *ModelsMetadataFieldTypeModel) GetDataType() int32 {
 
 // GetDataTypeOk returns a tuple with the DataType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsMetadataFieldTypeModel) GetDataTypeOk() (*int32, bool) {
+func (o *ModelsMetadataFieldTypeModel) GetDataTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.DataType) {
 		return nil, false
 	}
@@ -186,8 +186,8 @@ func (o *ModelsMetadataFieldTypeModel) HasDataType() bool {
 	return false
 }
 
-// SetDataType gets a reference to the given int32 and assigns it to the DataType field.
-func (o *ModelsMetadataFieldTypeModel) SetDataType(v int32) {
+// SetDataType gets a reference to the given int64 and assigns it to the DataType field.
+func (o *ModelsMetadataFieldTypeModel) SetDataType(v int64) {
 	o.DataType = &v
 }
 
@@ -256,9 +256,9 @@ func (o *ModelsMetadataFieldTypeModel) SetValidation(v string) {
 }
 
 // GetEnrollment returns the Enrollment field value if set, zero value otherwise.
-func (o *ModelsMetadataFieldTypeModel) GetEnrollment() int32 {
+func (o *ModelsMetadataFieldTypeModel) GetEnrollment() int64 {
 	if o == nil || isNil(o.Enrollment) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Enrollment
@@ -266,7 +266,7 @@ func (o *ModelsMetadataFieldTypeModel) GetEnrollment() int32 {
 
 // GetEnrollmentOk returns a tuple with the Enrollment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsMetadataFieldTypeModel) GetEnrollmentOk() (*int32, bool) {
+func (o *ModelsMetadataFieldTypeModel) GetEnrollmentOk() (*int64, bool) {
 	if o == nil || isNil(o.Enrollment) {
 		return nil, false
 	}
@@ -282,8 +282,8 @@ func (o *ModelsMetadataFieldTypeModel) HasEnrollment() bool {
 	return false
 }
 
-// SetEnrollment gets a reference to the given int32 and assigns it to the Enrollment field.
-func (o *ModelsMetadataFieldTypeModel) SetEnrollment(v int32) {
+// SetEnrollment gets a reference to the given int64 and assigns it to the Enrollment field.
+func (o *ModelsMetadataFieldTypeModel) SetEnrollment(v int64) {
 	o.Enrollment = &v
 }
 
@@ -384,9 +384,9 @@ func (o *ModelsMetadataFieldTypeModel) SetDefaultValue(v string) {
 }
 
 // GetDisplayOrder returns the DisplayOrder field value if set, zero value otherwise.
-func (o *ModelsMetadataFieldTypeModel) GetDisplayOrder() int32 {
+func (o *ModelsMetadataFieldTypeModel) GetDisplayOrder() int64 {
 	if o == nil || isNil(o.DisplayOrder) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DisplayOrder
@@ -394,7 +394,7 @@ func (o *ModelsMetadataFieldTypeModel) GetDisplayOrder() int32 {
 
 // GetDisplayOrderOk returns a tuple with the DisplayOrder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsMetadataFieldTypeModel) GetDisplayOrderOk() (*int32, bool) {
+func (o *ModelsMetadataFieldTypeModel) GetDisplayOrderOk() (*int64, bool) {
 	if o == nil || isNil(o.DisplayOrder) {
 		return nil, false
 	}
@@ -410,8 +410,8 @@ func (o *ModelsMetadataFieldTypeModel) HasDisplayOrder() bool {
 	return false
 }
 
-// SetDisplayOrder gets a reference to the given int32 and assigns it to the DisplayOrder field.
-func (o *ModelsMetadataFieldTypeModel) SetDisplayOrder(v int32) {
+// SetDisplayOrder gets a reference to the given int64 and assigns it to the DisplayOrder field.
+func (o *ModelsMetadataFieldTypeModel) SetDisplayOrder(v int64) {
 	o.DisplayOrder = &v
 }
 

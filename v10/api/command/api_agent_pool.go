@@ -422,10 +422,10 @@ type ApiAgentPoolGetAgentPoolsRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -447,13 +447,13 @@ func (r ApiAgentPoolGetAgentPoolsRequest) PqQueryString(pqQueryString string) Ap
 }
 
 // The current page within the result set to be returned
-func (r ApiAgentPoolGetAgentPoolsRequest) PqPageReturned(pqPageReturned int32) ApiAgentPoolGetAgentPoolsRequest {
+func (r ApiAgentPoolGetAgentPoolsRequest) PqPageReturned(pqPageReturned int64) ApiAgentPoolGetAgentPoolsRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiAgentPoolGetAgentPoolsRequest) PqReturnLimit(pqReturnLimit int32) ApiAgentPoolGetAgentPoolsRequest {
+func (r ApiAgentPoolGetAgentPoolsRequest) PqReturnLimit(pqReturnLimit int64) ApiAgentPoolGetAgentPoolsRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -465,7 +465,7 @@ func (r ApiAgentPoolGetAgentPoolsRequest) PqSortField(pqSortField string) ApiAge
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiAgentPoolGetAgentPoolsRequest) PqSortAscending(pqSortAscending int32) ApiAgentPoolGetAgentPoolsRequest {
+func (r ApiAgentPoolGetAgentPoolsRequest) PqSortAscending(pqSortAscending int64) ApiAgentPoolGetAgentPoolsRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }
@@ -596,10 +596,10 @@ type ApiAgentPoolGetDefaultAgentPoolAgentsRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -621,13 +621,13 @@ func (r ApiAgentPoolGetDefaultAgentPoolAgentsRequest) PqQueryString(pqQueryStrin
 }
 
 // The current page within the result set to be returned
-func (r ApiAgentPoolGetDefaultAgentPoolAgentsRequest) PqPageReturned(pqPageReturned int32) ApiAgentPoolGetDefaultAgentPoolAgentsRequest {
+func (r ApiAgentPoolGetDefaultAgentPoolAgentsRequest) PqPageReturned(pqPageReturned int64) ApiAgentPoolGetDefaultAgentPoolAgentsRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiAgentPoolGetDefaultAgentPoolAgentsRequest) PqReturnLimit(pqReturnLimit int32) ApiAgentPoolGetDefaultAgentPoolAgentsRequest {
+func (r ApiAgentPoolGetDefaultAgentPoolAgentsRequest) PqReturnLimit(pqReturnLimit int64) ApiAgentPoolGetDefaultAgentPoolAgentsRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -639,7 +639,7 @@ func (r ApiAgentPoolGetDefaultAgentPoolAgentsRequest) PqSortField(pqSortField st
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiAgentPoolGetDefaultAgentPoolAgentsRequest) PqSortAscending(pqSortAscending int32) ApiAgentPoolGetDefaultAgentPoolAgentsRequest {
+func (r ApiAgentPoolGetDefaultAgentPoolAgentsRequest) PqSortAscending(pqSortAscending int64) ApiAgentPoolGetDefaultAgentPoolAgentsRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }

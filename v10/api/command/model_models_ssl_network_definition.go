@@ -30,7 +30,7 @@ var _ MappedNullable = &ModelsSSLNetworkDefinition{}
 
 // ModelsSSLNetworkDefinition struct for ModelsSSLNetworkDefinition
 type ModelsSSLNetworkDefinition struct {
-	ItemType             *int32  `json:"ItemType,omitempty"`
+	ItemType             *int64  `json:"ItemType,omitempty"`
 	Value                *string `json:"Value,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -55,9 +55,9 @@ func NewModelsSSLNetworkDefinitionWithDefaults() *ModelsSSLNetworkDefinition {
 }
 
 // GetItemType returns the ItemType field value if set, zero value otherwise.
-func (o *ModelsSSLNetworkDefinition) GetItemType() int32 {
+func (o *ModelsSSLNetworkDefinition) GetItemType() int64 {
 	if o == nil || isNil(o.ItemType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ItemType
@@ -65,7 +65,7 @@ func (o *ModelsSSLNetworkDefinition) GetItemType() int32 {
 
 // GetItemTypeOk returns a tuple with the ItemType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSLNetworkDefinition) GetItemTypeOk() (*int32, bool) {
+func (o *ModelsSSLNetworkDefinition) GetItemTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.ItemType) {
 		return nil, false
 	}
@@ -81,8 +81,8 @@ func (o *ModelsSSLNetworkDefinition) HasItemType() bool {
 	return false
 }
 
-// SetItemType gets a reference to the given int32 and assigns it to the ItemType field.
-func (o *ModelsSSLNetworkDefinition) SetItemType(v int32) {
+// SetItemType gets a reference to the given int64 and assigns it to the ItemType field.
+func (o *ModelsSSLNetworkDefinition) SetItemType(v int64) {
 	o.ItemType = &v
 }
 

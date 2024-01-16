@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **AgentId** | Pointer to **string** | A string indicating the GUID of the orchestrator. | [optional] 
 **ClientMachine** | Pointer to **string** | A string indicating the client machine on which the orchestrator is installed. | [optional] 
 **Username** | Pointer to **string** | A string indicating the Active Directory user or service account the orchestrator is using to connect to Keyfactor Command. | [optional] 
-**AgentPlatform** | Pointer to **int32** | An integer indicating the platform for the orchestrator. - 0 &#x3D; Unknown - 1 &#x3D; Keyfactor Windows Orchestrator - 2 &#x3D; Keyfactor Java Agent - 3 &#x3D; Keyfactor Mac Auto-Enrollment Agent - 4 &#x3D; Keyfactor Android Agent - 5 &#x3D; Keyfactor Native Agent - 6 &#x3D; Keyfactor Bash Orchestrator - 7 &#x3D; Keyfactor Universal Orchestrator  | [optional] 
+**AgentPlatform** | Pointer to **int64** | An integer indicating the platform for the orchestrator. - 0 &#x3D; Unknown - 1 &#x3D; Keyfactor Windows Orchestrator - 2 &#x3D; Keyfactor Java Agent - 3 &#x3D; Keyfactor Mac Auto-Enrollment Agent - 4 &#x3D; Keyfactor Android Agent - 5 &#x3D; Keyfactor Native Agent - 6 &#x3D; Keyfactor Bash Orchestrator - 7 &#x3D; Keyfactor Universal Orchestrator  | [optional] 
 **Version** | Pointer to **string** | A string indicating the version of the orchestrator. | [optional] 
-**Status** | Pointer to **int32** | An integer indicating the orchestrator status: - 1 &#x3D; New - 2 &#x3D; Approved - 3 &#x3D; Disapproved  | [optional] 
+**Status** | Pointer to **int64** | An integer indicating the orchestrator status: - 1 &#x3D; New - 2 &#x3D; Approved - 3 &#x3D; Disapproved  | [optional] 
 **LastSeen** | Pointer to **time.Time** | The time, in UTC, at which the orchestrator last contacted Keyfactor Command. | [optional] 
 **Capabilities** | Pointer to **[]string** | An array of strings indicating the capabilities reported by the orchestrator. These may be built-in or custom capabilities. | [optional] 
 **Blueprint** | Pointer to **string** | A string indicating the name of the blueprint associated with the orchestrator. | [optional] 
@@ -116,20 +116,20 @@ HasUsername returns a boolean if a field has been set.
 
 ### GetAgentPlatform
 
-`func (o *KeyfactorApiModelsOrchestratorsAgentResponse) GetAgentPlatform() int32`
+`func (o *KeyfactorApiModelsOrchestratorsAgentResponse) GetAgentPlatform() int64`
 
 GetAgentPlatform returns the AgentPlatform field if non-nil, zero value otherwise.
 
 ### GetAgentPlatformOk
 
-`func (o *KeyfactorApiModelsOrchestratorsAgentResponse) GetAgentPlatformOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsOrchestratorsAgentResponse) GetAgentPlatformOk() (*int64, bool)`
 
 GetAgentPlatformOk returns a tuple with the AgentPlatform field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAgentPlatform
 
-`func (o *KeyfactorApiModelsOrchestratorsAgentResponse) SetAgentPlatform(v int32)`
+`func (o *KeyfactorApiModelsOrchestratorsAgentResponse) SetAgentPlatform(v int64)`
 
 SetAgentPlatform sets AgentPlatform field to given value.
 
@@ -166,20 +166,20 @@ HasVersion returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *KeyfactorApiModelsOrchestratorsAgentResponse) GetStatus() int32`
+`func (o *KeyfactorApiModelsOrchestratorsAgentResponse) GetStatus() int64`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *KeyfactorApiModelsOrchestratorsAgentResponse) GetStatusOk() (*int32, bool)`
+`func (o *KeyfactorApiModelsOrchestratorsAgentResponse) GetStatusOk() (*int64, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *KeyfactorApiModelsOrchestratorsAgentResponse) SetStatus(v int32)`
+`func (o *KeyfactorApiModelsOrchestratorsAgentResponse) SetStatus(v int64)`
 
 SetStatus sets Status field to given value.
 

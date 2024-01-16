@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **SendReport** | Pointer to **bool** |  | [optional] 
 **SaveReport** | Pointer to **bool** |  | [optional] 
 **SaveReportPath** | Pointer to **string** |  | [optional] 
 **ReportFormat** | Pointer to **string** |  | [optional] 
 **KeyfactorSchedule** | Pointer to [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | [optional] 
-**CertificateCollectionId** | Pointer to **int32** |  | [optional] 
+**CertificateCollectionId** | Pointer to **int64** |  | [optional] 
 **EmailRecipients** | Pointer to **[]string** |  | [optional] 
 **RuntimeParameters** | Pointer to **map[string]string** |  | [optional] 
 
@@ -35,20 +35,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ModelsReportSchedule) GetId() int32`
+`func (o *ModelsReportSchedule) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsReportSchedule) GetIdOk() (*int32, bool)`
+`func (o *ModelsReportSchedule) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsReportSchedule) SetId(v int32)`
+`func (o *ModelsReportSchedule) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -185,20 +185,20 @@ HasKeyfactorSchedule returns a boolean if a field has been set.
 
 ### GetCertificateCollectionId
 
-`func (o *ModelsReportSchedule) GetCertificateCollectionId() int32`
+`func (o *ModelsReportSchedule) GetCertificateCollectionId() int64`
 
 GetCertificateCollectionId returns the CertificateCollectionId field if non-nil, zero value otherwise.
 
 ### GetCertificateCollectionIdOk
 
-`func (o *ModelsReportSchedule) GetCertificateCollectionIdOk() (*int32, bool)`
+`func (o *ModelsReportSchedule) GetCertificateCollectionIdOk() (*int64, bool)`
 
 GetCertificateCollectionIdOk returns a tuple with the CertificateCollectionId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertificateCollectionId
 
-`func (o *ModelsReportSchedule) SetCertificateCollectionId(v int32)`
+`func (o *ModelsReportSchedule) SetCertificateCollectionId(v int64)`
 
 SetCertificateCollectionId sets CertificateCollectionId field to given value.
 

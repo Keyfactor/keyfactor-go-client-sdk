@@ -30,23 +30,23 @@ var _ MappedNullable = &ModelsTemplateUpdateRequest{}
 
 // ModelsTemplateUpdateRequest struct for ModelsTemplateUpdateRequest
 type ModelsTemplateUpdateRequest struct {
-	Id                     *int32                                                    `json:"Id,omitempty"`
+	Id                     *int64                                                    `json:"Id,omitempty"`
 	KeySize                *string                                                   `json:"KeySize,omitempty"`
 	KeyType                *string                                                   `json:"KeyType,omitempty"`
 	FriendlyName           *string                                                   `json:"FriendlyName,omitempty"`
-	KeyRetention           *int32                                                    `json:"KeyRetention,omitempty"`
-	KeyRetentionDays       *int32                                                    `json:"KeyRetentionDays,omitempty"`
+	KeyRetention           *int64                                                    `json:"KeyRetention,omitempty"`
+	KeyRetentionDays       *int64                                                    `json:"KeyRetentionDays,omitempty"`
 	KeyArchival            *bool                                                     `json:"KeyArchival,omitempty"`
 	EnrollmentFields       []ModelsTemplateUpdateRequestTemplateEnrollmentFieldModel `json:"EnrollmentFields,omitempty"`
 	MetadataFields         []ModelsTemplateUpdateRequestTemplateMetadataFieldModel   `json:"MetadataFields,omitempty"`
-	AllowedEnrollmentTypes *int32                                                    `json:"AllowedEnrollmentTypes,omitempty"`
+	AllowedEnrollmentTypes *int64                                                    `json:"AllowedEnrollmentTypes,omitempty"`
 	TemplateRegexes        []ModelsTemplateUpdateRequestTemplateRegexModel           `json:"TemplateRegexes,omitempty"`
 	TemplateDefaults       []ModelsTemplateUpdateRequestTemplateDefaultModel         `json:"TemplateDefaults,omitempty"`
 	TemplatePolicy         *ModelsTemplateUpdateRequestTemplatePolicyModel           `json:"TemplatePolicy,omitempty"`
 	UseAllowedRequesters   *bool                                                     `json:"UseAllowedRequesters,omitempty"`
 	AllowedRequesters      []string                                                  `json:"AllowedRequesters,omitempty"`
 	RequiresApproval       *bool                                                     `json:"RequiresApproval,omitempty"`
-	KeyUsage               *int32                                                    `json:"KeyUsage,omitempty"`
+	KeyUsage               *int64                                                    `json:"KeyUsage,omitempty"`
 	AdditionalProperties   map[string]interface{}
 }
 
@@ -70,9 +70,9 @@ func NewModelsTemplateUpdateRequestWithDefaults() *ModelsTemplateUpdateRequest {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsTemplateUpdateRequest) GetId() int32 {
+func (o *ModelsTemplateUpdateRequest) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -80,7 +80,7 @@ func (o *ModelsTemplateUpdateRequest) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsTemplateUpdateRequest) GetIdOk() (*int32, bool) {
+func (o *ModelsTemplateUpdateRequest) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -96,8 +96,8 @@ func (o *ModelsTemplateUpdateRequest) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsTemplateUpdateRequest) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsTemplateUpdateRequest) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -198,9 +198,9 @@ func (o *ModelsTemplateUpdateRequest) SetFriendlyName(v string) {
 }
 
 // GetKeyRetention returns the KeyRetention field value if set, zero value otherwise.
-func (o *ModelsTemplateUpdateRequest) GetKeyRetention() int32 {
+func (o *ModelsTemplateUpdateRequest) GetKeyRetention() int64 {
 	if o == nil || isNil(o.KeyRetention) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KeyRetention
@@ -208,7 +208,7 @@ func (o *ModelsTemplateUpdateRequest) GetKeyRetention() int32 {
 
 // GetKeyRetentionOk returns a tuple with the KeyRetention field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsTemplateUpdateRequest) GetKeyRetentionOk() (*int32, bool) {
+func (o *ModelsTemplateUpdateRequest) GetKeyRetentionOk() (*int64, bool) {
 	if o == nil || isNil(o.KeyRetention) {
 		return nil, false
 	}
@@ -224,15 +224,15 @@ func (o *ModelsTemplateUpdateRequest) HasKeyRetention() bool {
 	return false
 }
 
-// SetKeyRetention gets a reference to the given int32 and assigns it to the KeyRetention field.
-func (o *ModelsTemplateUpdateRequest) SetKeyRetention(v int32) {
+// SetKeyRetention gets a reference to the given int64 and assigns it to the KeyRetention field.
+func (o *ModelsTemplateUpdateRequest) SetKeyRetention(v int64) {
 	o.KeyRetention = &v
 }
 
 // GetKeyRetentionDays returns the KeyRetentionDays field value if set, zero value otherwise.
-func (o *ModelsTemplateUpdateRequest) GetKeyRetentionDays() int32 {
+func (o *ModelsTemplateUpdateRequest) GetKeyRetentionDays() int64 {
 	if o == nil || isNil(o.KeyRetentionDays) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KeyRetentionDays
@@ -240,7 +240,7 @@ func (o *ModelsTemplateUpdateRequest) GetKeyRetentionDays() int32 {
 
 // GetKeyRetentionDaysOk returns a tuple with the KeyRetentionDays field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsTemplateUpdateRequest) GetKeyRetentionDaysOk() (*int32, bool) {
+func (o *ModelsTemplateUpdateRequest) GetKeyRetentionDaysOk() (*int64, bool) {
 	if o == nil || isNil(o.KeyRetentionDays) {
 		return nil, false
 	}
@@ -256,8 +256,8 @@ func (o *ModelsTemplateUpdateRequest) HasKeyRetentionDays() bool {
 	return false
 }
 
-// SetKeyRetentionDays gets a reference to the given int32 and assigns it to the KeyRetentionDays field.
-func (o *ModelsTemplateUpdateRequest) SetKeyRetentionDays(v int32) {
+// SetKeyRetentionDays gets a reference to the given int64 and assigns it to the KeyRetentionDays field.
+func (o *ModelsTemplateUpdateRequest) SetKeyRetentionDays(v int64) {
 	o.KeyRetentionDays = &v
 }
 
@@ -358,9 +358,9 @@ func (o *ModelsTemplateUpdateRequest) SetMetadataFields(v []ModelsTemplateUpdate
 }
 
 // GetAllowedEnrollmentTypes returns the AllowedEnrollmentTypes field value if set, zero value otherwise.
-func (o *ModelsTemplateUpdateRequest) GetAllowedEnrollmentTypes() int32 {
+func (o *ModelsTemplateUpdateRequest) GetAllowedEnrollmentTypes() int64 {
 	if o == nil || isNil(o.AllowedEnrollmentTypes) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllowedEnrollmentTypes
@@ -368,7 +368,7 @@ func (o *ModelsTemplateUpdateRequest) GetAllowedEnrollmentTypes() int32 {
 
 // GetAllowedEnrollmentTypesOk returns a tuple with the AllowedEnrollmentTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsTemplateUpdateRequest) GetAllowedEnrollmentTypesOk() (*int32, bool) {
+func (o *ModelsTemplateUpdateRequest) GetAllowedEnrollmentTypesOk() (*int64, bool) {
 	if o == nil || isNil(o.AllowedEnrollmentTypes) {
 		return nil, false
 	}
@@ -384,8 +384,8 @@ func (o *ModelsTemplateUpdateRequest) HasAllowedEnrollmentTypes() bool {
 	return false
 }
 
-// SetAllowedEnrollmentTypes gets a reference to the given int32 and assigns it to the AllowedEnrollmentTypes field.
-func (o *ModelsTemplateUpdateRequest) SetAllowedEnrollmentTypes(v int32) {
+// SetAllowedEnrollmentTypes gets a reference to the given int64 and assigns it to the AllowedEnrollmentTypes field.
+func (o *ModelsTemplateUpdateRequest) SetAllowedEnrollmentTypes(v int64) {
 	o.AllowedEnrollmentTypes = &v
 }
 
@@ -582,9 +582,9 @@ func (o *ModelsTemplateUpdateRequest) SetRequiresApproval(v bool) {
 }
 
 // GetKeyUsage returns the KeyUsage field value if set, zero value otherwise.
-func (o *ModelsTemplateUpdateRequest) GetKeyUsage() int32 {
+func (o *ModelsTemplateUpdateRequest) GetKeyUsage() int64 {
 	if o == nil || isNil(o.KeyUsage) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KeyUsage
@@ -592,7 +592,7 @@ func (o *ModelsTemplateUpdateRequest) GetKeyUsage() int32 {
 
 // GetKeyUsageOk returns a tuple with the KeyUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsTemplateUpdateRequest) GetKeyUsageOk() (*int32, bool) {
+func (o *ModelsTemplateUpdateRequest) GetKeyUsageOk() (*int64, bool) {
 	if o == nil || isNil(o.KeyUsage) {
 		return nil, false
 	}
@@ -608,8 +608,8 @@ func (o *ModelsTemplateUpdateRequest) HasKeyUsage() bool {
 	return false
 }
 
-// SetKeyUsage gets a reference to the given int32 and assigns it to the KeyUsage field.
-func (o *ModelsTemplateUpdateRequest) SetKeyUsage(v int32) {
+// SetKeyUsage gets a reference to the given int64 and assigns it to the KeyUsage field.
+func (o *ModelsTemplateUpdateRequest) SetKeyUsage(v int64) {
 	o.KeyUsage = &v
 }
 

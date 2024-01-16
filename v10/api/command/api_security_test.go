@@ -44,11 +44,11 @@ func Test_command_SecurityApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("SecurityApi_SecurityDeleteSecurityIdentity_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("SecurityApi_SecurityDeleteSecurityIdentity_id: %v", id)
 
 		t.Log("SecurityApi_SecurityDeleteSecurityIdentity_payload: <none>")
-		httpRes, err := apiClient.SecurityApi.SecurityDeleteSecurityIdentity(context.Background(), id.(int32)).Execute()
+		httpRes, err := apiClient.SecurityApi.SecurityDeleteSecurityIdentity(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})
@@ -58,11 +58,11 @@ func Test_command_SecurityApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("SecurityApi_SecurityIdentityPermissions_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("SecurityApi_SecurityIdentityPermissions_id: %v", id)
 
 		t.Log("SecurityApi_SecurityIdentityPermissions_payload: <none>")
-		resp, httpRes, err := apiClient.SecurityApi.SecurityIdentityPermissions(context.Background(), id.(int32)).Execute()
+		resp, httpRes, err := apiClient.SecurityApi.SecurityIdentityPermissions(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

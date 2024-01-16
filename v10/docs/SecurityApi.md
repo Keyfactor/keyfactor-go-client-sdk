@@ -29,7 +29,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | The ID of the security identity to be deleted.
+    id := int64(789) // int64 | The ID of the security identity to be deleted.
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
@@ -49,7 +49,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | The ID of the security identity to be deleted. | 
+**id** | **int64** | The ID of the security identity to be deleted. | 
 
 ### Other Parameters
 
@@ -99,7 +99,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | The identifier of the security identity
+    id := int64(789) // int64 | The identifier of the security identity
     xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
     xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
 
@@ -121,7 +121,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | The identifier of the security identity | 
+**id** | **int64** | The identifier of the security identity | 
 
 ### Other Parameters
 

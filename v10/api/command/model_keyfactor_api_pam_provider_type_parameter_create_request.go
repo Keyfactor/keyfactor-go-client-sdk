@@ -32,7 +32,7 @@ var _ MappedNullable = &KeyfactorApiPAMProviderTypeParameterCreateRequest{}
 type KeyfactorApiPAMProviderTypeParameterCreateRequest struct {
 	Name                 string  `json:"Name"`
 	DisplayName          *string `json:"DisplayName,omitempty"`
-	DataType             *int32  `json:"DataType,omitempty"`
+	DataType             *int64  `json:"DataType,omitempty"`
 	InstanceLevel        *bool   `json:"InstanceLevel,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -114,9 +114,9 @@ func (o *KeyfactorApiPAMProviderTypeParameterCreateRequest) SetDisplayName(v str
 }
 
 // GetDataType returns the DataType field value if set, zero value otherwise.
-func (o *KeyfactorApiPAMProviderTypeParameterCreateRequest) GetDataType() int32 {
+func (o *KeyfactorApiPAMProviderTypeParameterCreateRequest) GetDataType() int64 {
 	if o == nil || isNil(o.DataType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DataType
@@ -124,7 +124,7 @@ func (o *KeyfactorApiPAMProviderTypeParameterCreateRequest) GetDataType() int32 
 
 // GetDataTypeOk returns a tuple with the DataType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiPAMProviderTypeParameterCreateRequest) GetDataTypeOk() (*int32, bool) {
+func (o *KeyfactorApiPAMProviderTypeParameterCreateRequest) GetDataTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.DataType) {
 		return nil, false
 	}
@@ -140,8 +140,8 @@ func (o *KeyfactorApiPAMProviderTypeParameterCreateRequest) HasDataType() bool {
 	return false
 }
 
-// SetDataType gets a reference to the given int32 and assigns it to the DataType field.
-func (o *KeyfactorApiPAMProviderTypeParameterCreateRequest) SetDataType(v int32) {
+// SetDataType gets a reference to the given int64 and assigns it to the DataType field.
+func (o *KeyfactorApiPAMProviderTypeParameterCreateRequest) SetDataType(v int64) {
 	o.DataType = &v
 }
 

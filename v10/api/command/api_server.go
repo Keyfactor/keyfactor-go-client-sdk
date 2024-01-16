@@ -308,7 +308,7 @@ func (a *ServerApiService) ServerCreateServerExecute(r ApiServerCreateServerRequ
 type ApiServerDeleteRequest struct {
 	ctx                     context.Context
 	ApiService              *ServerApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -336,7 +336,7 @@ ServerDelete Deletes a Server associated with the provided identifier
 	@param id Keyfactor identifer of the Server to be deleted
 	@return ApiServerDeleteRequest
 */
-func (a *ServerApiService) ServerDelete(ctx context.Context, id int32) ApiServerDeleteRequest {
+func (a *ServerApiService) ServerDelete(ctx context.Context, id int64) ApiServerDeleteRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -424,7 +424,7 @@ func (a *ServerApiService) ServerDeleteExecute(r ApiServerDeleteRequest) (*http.
 type ApiServerGetRequest struct {
 	ctx                     context.Context
 	ApiService              *ServerApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -452,7 +452,7 @@ ServerGet Returns a Server associated with the provided identifier
 	@param id Keyfactor identifier of the Server
 	@return ApiServerGetRequest
 */
-func (a *ServerApiService) ServerGet(ctx context.Context, id int32) ApiServerGetRequest {
+func (a *ServerApiService) ServerGet(ctx context.Context, id int64) ApiServerGetRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -552,7 +552,7 @@ func (a *ServerApiService) ServerGetExecute(r ApiServerGetRequest) (*ModelsSSHSe
 type ApiServerGetAccessRequest struct {
 	ctx                     context.Context
 	ApiService              *ServerApiService
-	id                      int32
+	id                      int64
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 }
@@ -580,7 +580,7 @@ ServerGetAccess Retrieves logons and users with access to those logons for an ex
 	@param id Id of the existing server
 	@return ApiServerGetAccessRequest
 */
-func (a *ServerApiService) ServerGetAccess(ctx context.Context, id int32) ApiServerGetAccessRequest {
+func (a *ServerApiService) ServerGetAccess(ctx context.Context, id int64) ApiServerGetAccessRequest {
 	xKeyfactorApiVersion := "1"
 	xKeyfactorRequestedWith := "APIClient"
 
@@ -683,10 +683,10 @@ type ApiServerQueryServersRequest struct {
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
 	pqQueryString           *string
-	pqPageReturned          *int32
-	pqReturnLimit           *int32
+	pqPageReturned          *int64
+	pqReturnLimit           *int64
 	pqSortField             *string
-	pqSortAscending         *int32
+	pqSortAscending         *int64
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -708,13 +708,13 @@ func (r ApiServerQueryServersRequest) PqQueryString(pqQueryString string) ApiSer
 }
 
 // The current page within the result set to be returned
-func (r ApiServerQueryServersRequest) PqPageReturned(pqPageReturned int32) ApiServerQueryServersRequest {
+func (r ApiServerQueryServersRequest) PqPageReturned(pqPageReturned int64) ApiServerQueryServersRequest {
 	r.pqPageReturned = &pqPageReturned
 	return r
 }
 
 // Maximum number of records to be returned in a single call
-func (r ApiServerQueryServersRequest) PqReturnLimit(pqReturnLimit int32) ApiServerQueryServersRequest {
+func (r ApiServerQueryServersRequest) PqReturnLimit(pqReturnLimit int64) ApiServerQueryServersRequest {
 	r.pqReturnLimit = &pqReturnLimit
 	return r
 }
@@ -726,7 +726,7 @@ func (r ApiServerQueryServersRequest) PqSortField(pqSortField string) ApiServerQ
 }
 
 // Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiServerQueryServersRequest) PqSortAscending(pqSortAscending int32) ApiServerQueryServersRequest {
+func (r ApiServerQueryServersRequest) PqSortAscending(pqSortAscending int64) ApiServerQueryServersRequest {
 	r.pqSortAscending = &pqSortAscending
 	return r
 }

@@ -30,7 +30,7 @@ var _ MappedNullable = &KeyfactorApiModelsAlertsPendingPendingAlertTestRequest{}
 
 // KeyfactorApiModelsAlertsPendingPendingAlertTestRequest struct for KeyfactorApiModelsAlertsPendingPendingAlertTestRequest
 type KeyfactorApiModelsAlertsPendingPendingAlertTestRequest struct {
-	AlertId              *int32 `json:"AlertId,omitempty"`
+	AlertId              *int64 `json:"AlertId,omitempty"`
 	SendAlerts           *bool  `json:"SendAlerts,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -55,9 +55,9 @@ func NewKeyfactorApiModelsAlertsPendingPendingAlertTestRequestWithDefaults() *Ke
 }
 
 // GetAlertId returns the AlertId field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestRequest) GetAlertId() int32 {
+func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestRequest) GetAlertId() int64 {
 	if o == nil || isNil(o.AlertId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AlertId
@@ -65,7 +65,7 @@ func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestRequest) GetAlertId() in
 
 // GetAlertIdOk returns a tuple with the AlertId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestRequest) GetAlertIdOk() (*int32, bool) {
+func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestRequest) GetAlertIdOk() (*int64, bool) {
 	if o == nil || isNil(o.AlertId) {
 		return nil, false
 	}
@@ -81,8 +81,8 @@ func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestRequest) HasAlertId() bo
 	return false
 }
 
-// SetAlertId gets a reference to the given int32 and assigns it to the AlertId field.
-func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestRequest) SetAlertId(v int32) {
+// SetAlertId gets a reference to the given int64 and assigns it to the AlertId field.
+func (o *KeyfactorApiModelsAlertsPendingPendingAlertTestRequest) SetAlertId(v int64) {
 	o.AlertId = &v
 }
 

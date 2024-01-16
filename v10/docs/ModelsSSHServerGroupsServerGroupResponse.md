@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **GroupName** | Pointer to **string** |  | [optional] 
 **SyncSchedule** | Pointer to [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | [optional] 
 **UnderManagement** | Pointer to **bool** |  | [optional] 
-**ServerCount** | Pointer to **int32** |  | [optional] 
+**ServerCount** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -157,20 +157,20 @@ HasUnderManagement returns a boolean if a field has been set.
 
 ### GetServerCount
 
-`func (o *ModelsSSHServerGroupsServerGroupResponse) GetServerCount() int32`
+`func (o *ModelsSSHServerGroupsServerGroupResponse) GetServerCount() int64`
 
 GetServerCount returns the ServerCount field if non-nil, zero value otherwise.
 
 ### GetServerCountOk
 
-`func (o *ModelsSSHServerGroupsServerGroupResponse) GetServerCountOk() (*int32, bool)`
+`func (o *ModelsSSHServerGroupsServerGroupResponse) GetServerCountOk() (*int64, bool)`
 
 GetServerCountOk returns a tuple with the ServerCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerCount
 
-`func (o *ModelsSSHServerGroupsServerGroupResponse) SetServerCount(v int32)`
+`func (o *ModelsSSHServerGroupsServerGroupResponse) SetServerCount(v int64)`
 
 SetServerCount sets ServerCount field to given value.
 

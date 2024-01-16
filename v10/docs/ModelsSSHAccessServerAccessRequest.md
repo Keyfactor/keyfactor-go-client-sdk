@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServerId** | **int32** |  | 
+**ServerId** | **int64** |  | 
 **LogonUsers** | [**[]ModelsSSHAccessLogonUserAccessRequest**](ModelsSSHAccessLogonUserAccessRequest.md) |  | 
 
 ## Methods
 
 ### NewModelsSSHAccessServerAccessRequest
 
-`func NewModelsSSHAccessServerAccessRequest(serverId int32, logonUsers []ModelsSSHAccessLogonUserAccessRequest, ) *ModelsSSHAccessServerAccessRequest`
+`func NewModelsSSHAccessServerAccessRequest(serverId int64, logonUsers []ModelsSSHAccessLogonUserAccessRequest, ) *ModelsSSHAccessServerAccessRequest`
 
 NewModelsSSHAccessServerAccessRequest instantiates a new ModelsSSHAccessServerAccessRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetServerId
 
-`func (o *ModelsSSHAccessServerAccessRequest) GetServerId() int32`
+`func (o *ModelsSSHAccessServerAccessRequest) GetServerId() int64`
 
 GetServerId returns the ServerId field if non-nil, zero value otherwise.
 
 ### GetServerIdOk
 
-`func (o *ModelsSSHAccessServerAccessRequest) GetServerIdOk() (*int32, bool)`
+`func (o *ModelsSSHAccessServerAccessRequest) GetServerIdOk() (*int64, bool)`
 
 GetServerIdOk returns a tuple with the ServerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerId
 
-`func (o *ModelsSSHAccessServerAccessRequest) SetServerId(v int32)`
+`func (o *ModelsSSHAccessServerAccessRequest) SetServerId(v int64)`
 
 SetServerId sets ServerId field to given value.
 

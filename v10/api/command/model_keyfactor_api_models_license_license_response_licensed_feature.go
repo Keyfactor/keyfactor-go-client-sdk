@@ -34,7 +34,7 @@ type KeyfactorApiModelsLicenseLicenseResponseLicensedFeature struct {
 	FeatureID            *string    `json:"FeatureID,omitempty"`
 	DisplayName          *string    `json:"DisplayName,omitempty"`
 	Enabled              *bool      `json:"Enabled,omitempty"`
-	Quantity             *int32     `json:"Quantity,omitempty"`
+	Quantity             *int64     `json:"Quantity,omitempty"`
 	ExpirationDate       *time.Time `json:"ExpirationDate,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -155,9 +155,9 @@ func (o *KeyfactorApiModelsLicenseLicenseResponseLicensedFeature) SetEnabled(v b
 }
 
 // GetQuantity returns the Quantity field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsLicenseLicenseResponseLicensedFeature) GetQuantity() int32 {
+func (o *KeyfactorApiModelsLicenseLicenseResponseLicensedFeature) GetQuantity() int64 {
 	if o == nil || isNil(o.Quantity) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Quantity
@@ -165,7 +165,7 @@ func (o *KeyfactorApiModelsLicenseLicenseResponseLicensedFeature) GetQuantity() 
 
 // GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsLicenseLicenseResponseLicensedFeature) GetQuantityOk() (*int32, bool) {
+func (o *KeyfactorApiModelsLicenseLicenseResponseLicensedFeature) GetQuantityOk() (*int64, bool) {
 	if o == nil || isNil(o.Quantity) {
 		return nil, false
 	}
@@ -181,8 +181,8 @@ func (o *KeyfactorApiModelsLicenseLicenseResponseLicensedFeature) HasQuantity() 
 	return false
 }
 
-// SetQuantity gets a reference to the given int32 and assigns it to the Quantity field.
-func (o *KeyfactorApiModelsLicenseLicenseResponseLicensedFeature) SetQuantity(v int32) {
+// SetQuantity gets a reference to the given int64 and assigns it to the Quantity field.
+func (o *KeyfactorApiModelsLicenseLicenseResponseLicensedFeature) SetQuantity(v int64) {
 	o.Quantity = &v
 }
 

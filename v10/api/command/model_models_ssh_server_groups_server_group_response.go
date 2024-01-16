@@ -35,7 +35,7 @@ type ModelsSSHServerGroupsServerGroupResponse struct {
 	GroupName            *string                                     `json:"GroupName,omitempty"`
 	SyncSchedule         *KeyfactorCommonSchedulingKeyfactorSchedule `json:"SyncSchedule,omitempty"`
 	UnderManagement      *bool                                       `json:"UnderManagement,omitempty"`
-	ServerCount          *int32                                      `json:"ServerCount,omitempty"`
+	ServerCount          *int64                                      `json:"ServerCount,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -219,9 +219,9 @@ func (o *ModelsSSHServerGroupsServerGroupResponse) SetUnderManagement(v bool) {
 }
 
 // GetServerCount returns the ServerCount field value if set, zero value otherwise.
-func (o *ModelsSSHServerGroupsServerGroupResponse) GetServerCount() int32 {
+func (o *ModelsSSHServerGroupsServerGroupResponse) GetServerCount() int64 {
 	if o == nil || isNil(o.ServerCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ServerCount
@@ -229,7 +229,7 @@ func (o *ModelsSSHServerGroupsServerGroupResponse) GetServerCount() int32 {
 
 // GetServerCountOk returns a tuple with the ServerCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSHServerGroupsServerGroupResponse) GetServerCountOk() (*int32, bool) {
+func (o *ModelsSSHServerGroupsServerGroupResponse) GetServerCountOk() (*int64, bool) {
 	if o == nil || isNil(o.ServerCount) {
 		return nil, false
 	}
@@ -245,8 +245,8 @@ func (o *ModelsSSHServerGroupsServerGroupResponse) HasServerCount() bool {
 	return false
 }
 
-// SetServerCount gets a reference to the given int32 and assigns it to the ServerCount field.
-func (o *ModelsSSHServerGroupsServerGroupResponse) SetServerCount(v int32) {
+// SetServerCount gets a reference to the given int64 and assigns it to the ServerCount field.
+func (o *ModelsSSHServerGroupsServerGroupResponse) SetServerCount(v int64) {
 	o.ServerCount = &v
 }
 

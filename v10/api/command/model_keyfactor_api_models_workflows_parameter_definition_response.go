@@ -31,10 +31,10 @@ var _ MappedNullable = &KeyfactorApiModelsWorkflowsParameterDefinitionResponse{}
 // KeyfactorApiModelsWorkflowsParameterDefinitionResponse struct for KeyfactorApiModelsWorkflowsParameterDefinitionResponse
 type KeyfactorApiModelsWorkflowsParameterDefinitionResponse struct {
 	DisplayName             *string            `json:"DisplayName,omitempty"`
-	ParameterType           *int32             `json:"ParameterType,omitempty"`
+	ParameterType           *int64             `json:"ParameterType,omitempty"`
 	Required                *bool              `json:"Required,omitempty"`
 	DefaultValue            *string            `json:"DefaultValue,omitempty"`
-	ControlType             *int32             `json:"ControlType,omitempty"`
+	ControlType             *int64             `json:"ControlType,omitempty"`
 	PotentialValues         *map[string]string `json:"PotentialValues,omitempty"`
 	SupportTokenReplacement *bool              `json:"SupportTokenReplacement,omitempty"`
 	DependsOn               *map[string]string `json:"DependsOn,omitempty"`
@@ -93,9 +93,9 @@ func (o *KeyfactorApiModelsWorkflowsParameterDefinitionResponse) SetDisplayName(
 }
 
 // GetParameterType returns the ParameterType field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetParameterType() int32 {
+func (o *KeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetParameterType() int64 {
 	if o == nil || isNil(o.ParameterType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ParameterType
@@ -103,7 +103,7 @@ func (o *KeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetParameterTyp
 
 // GetParameterTypeOk returns a tuple with the ParameterType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetParameterTypeOk() (*int32, bool) {
+func (o *KeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetParameterTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.ParameterType) {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *KeyfactorApiModelsWorkflowsParameterDefinitionResponse) HasParameterTyp
 	return false
 }
 
-// SetParameterType gets a reference to the given int32 and assigns it to the ParameterType field.
-func (o *KeyfactorApiModelsWorkflowsParameterDefinitionResponse) SetParameterType(v int32) {
+// SetParameterType gets a reference to the given int64 and assigns it to the ParameterType field.
+func (o *KeyfactorApiModelsWorkflowsParameterDefinitionResponse) SetParameterType(v int64) {
 	o.ParameterType = &v
 }
 
@@ -189,9 +189,9 @@ func (o *KeyfactorApiModelsWorkflowsParameterDefinitionResponse) SetDefaultValue
 }
 
 // GetControlType returns the ControlType field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetControlType() int32 {
+func (o *KeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetControlType() int64 {
 	if o == nil || isNil(o.ControlType) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ControlType
@@ -199,7 +199,7 @@ func (o *KeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetControlType(
 
 // GetControlTypeOk returns a tuple with the ControlType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetControlTypeOk() (*int32, bool) {
+func (o *KeyfactorApiModelsWorkflowsParameterDefinitionResponse) GetControlTypeOk() (*int64, bool) {
 	if o == nil || isNil(o.ControlType) {
 		return nil, false
 	}
@@ -215,8 +215,8 @@ func (o *KeyfactorApiModelsWorkflowsParameterDefinitionResponse) HasControlType(
 	return false
 }
 
-// SetControlType gets a reference to the given int32 and assigns it to the ControlType field.
-func (o *KeyfactorApiModelsWorkflowsParameterDefinitionResponse) SetControlType(v int32) {
+// SetControlType gets a reference to the given int64 and assigns it to the ControlType field.
+func (o *KeyfactorApiModelsWorkflowsParameterDefinitionResponse) SetControlType(v int64) {
 	o.ControlType = &v
 }
 

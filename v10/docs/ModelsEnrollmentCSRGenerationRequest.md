@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Subject** | **string** | Subject for the requested certificate | 
 **KeyType** | **string** | Certificate key type [RSA, ECC] | 
-**KeyLength** | **int32** | Size of the certificate key (ex: RSA 1024, 2048, 4096/ECC 256, 384, 521) | 
+**KeyLength** | **int64** | Size of the certificate key (ex: RSA 1024, 2048, 4096/ECC 256, 384, 521) | 
 **Template** | Pointer to **string** |  | [optional] 
 **SANs** | Pointer to **map[string][]string** |  | [optional] 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewModelsEnrollmentCSRGenerationRequest
 
-`func NewModelsEnrollmentCSRGenerationRequest(subject string, keyType string, keyLength int32, ) *ModelsEnrollmentCSRGenerationRequest`
+`func NewModelsEnrollmentCSRGenerationRequest(subject string, keyType string, keyLength int64, ) *ModelsEnrollmentCSRGenerationRequest`
 
 NewModelsEnrollmentCSRGenerationRequest instantiates a new ModelsEnrollmentCSRGenerationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -71,20 +71,20 @@ SetKeyType sets KeyType field to given value.
 
 ### GetKeyLength
 
-`func (o *ModelsEnrollmentCSRGenerationRequest) GetKeyLength() int32`
+`func (o *ModelsEnrollmentCSRGenerationRequest) GetKeyLength() int64`
 
 GetKeyLength returns the KeyLength field if non-nil, zero value otherwise.
 
 ### GetKeyLengthOk
 
-`func (o *ModelsEnrollmentCSRGenerationRequest) GetKeyLengthOk() (*int32, bool)`
+`func (o *ModelsEnrollmentCSRGenerationRequest) GetKeyLengthOk() (*int64, bool)`
 
 GetKeyLengthOk returns a tuple with the KeyLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyLength
 
-`func (o *ModelsEnrollmentCSRGenerationRequest) SetKeyLength(v int32)`
+`func (o *ModelsEnrollmentCSRGenerationRequest) SetKeyLength(v int64)`
 
 SetKeyLength sets KeyLength field to given value.
 

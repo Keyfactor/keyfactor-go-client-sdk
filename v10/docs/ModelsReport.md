@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** |  | [optional] 
-**Scheduled** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
+**Scheduled** | Pointer to **int64** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **ReportPath** | Pointer to **string** |  | [optional] 
@@ -41,20 +41,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ModelsReport) GetId() int32`
+`func (o *ModelsReport) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ModelsReport) GetIdOk() (*int32, bool)`
+`func (o *ModelsReport) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ModelsReport) SetId(v int32)`
+`func (o *ModelsReport) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -66,20 +66,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetScheduled
 
-`func (o *ModelsReport) GetScheduled() int32`
+`func (o *ModelsReport) GetScheduled() int64`
 
 GetScheduled returns the Scheduled field if non-nil, zero value otherwise.
 
 ### GetScheduledOk
 
-`func (o *ModelsReport) GetScheduledOk() (*int32, bool)`
+`func (o *ModelsReport) GetScheduledOk() (*int64, bool)`
 
 GetScheduledOk returns a tuple with the Scheduled field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScheduled
 
-`func (o *ModelsReport) SetScheduled(v int32)`
+`func (o *ModelsReport) SetScheduled(v int64)`
 
 SetScheduled sets Scheduled field to given value.
 

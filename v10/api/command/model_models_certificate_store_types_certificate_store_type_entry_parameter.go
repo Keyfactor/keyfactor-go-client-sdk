@@ -30,7 +30,7 @@ var _ MappedNullable = &ModelsCertificateStoreTypesCertificateStoreTypeEntryPara
 
 // ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter struct for ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter
 type ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter struct {
-	StoreTypeId          *int32           `json:"StoreTypeId,omitempty"`
+	StoreTypeId          *int64           `json:"StoreTypeId,omitempty"`
 	Name                 *string          `json:"Name,omitempty"`
 	DisplayName          *string          `json:"DisplayName,omitempty"`
 	Type                 *string          `json:"Type,omitempty"`
@@ -61,9 +61,9 @@ func NewModelsCertificateStoreTypesCertificateStoreTypeEntryParameterWithDefault
 }
 
 // GetStoreTypeId returns the StoreTypeId field value if set, zero value otherwise.
-func (o *ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) GetStoreTypeId() int32 {
+func (o *ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) GetStoreTypeId() int64 {
 	if o == nil || isNil(o.StoreTypeId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.StoreTypeId
@@ -71,7 +71,7 @@ func (o *ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) GetStore
 
 // GetStoreTypeIdOk returns a tuple with the StoreTypeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) GetStoreTypeIdOk() (*int32, bool) {
+func (o *ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) GetStoreTypeIdOk() (*int64, bool) {
 	if o == nil || isNil(o.StoreTypeId) {
 		return nil, false
 	}
@@ -87,8 +87,8 @@ func (o *ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) HasStore
 	return false
 }
 
-// SetStoreTypeId gets a reference to the given int32 and assigns it to the StoreTypeId field.
-func (o *ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) SetStoreTypeId(v int32) {
+// SetStoreTypeId gets a reference to the given int64 and assigns it to the StoreTypeId field.
+func (o *ModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) SetStoreTypeId(v int64) {
 	o.StoreTypeId = &v
 }
 

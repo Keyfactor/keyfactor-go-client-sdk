@@ -35,7 +35,7 @@ type ModelsEnrollmentCSRGenerationRequest struct {
 	// Certificate key type [RSA, ECC]
 	KeyType string `json:"KeyType"`
 	// Size of the certificate key (ex: RSA 1024, 2048, 4096/ECC 256, 384, 521)
-	KeyLength            int32                `json:"KeyLength"`
+	KeyLength            int64                `json:"KeyLength"`
 	Template             *string              `json:"Template,omitempty"`
 	SANs                 *map[string][]string `json:"SANs,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -47,7 +47,7 @@ type _ModelsEnrollmentCSRGenerationRequest ModelsEnrollmentCSRGenerationRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsEnrollmentCSRGenerationRequest(subject string, keyType string, keyLength int32) *ModelsEnrollmentCSRGenerationRequest {
+func NewModelsEnrollmentCSRGenerationRequest(subject string, keyType string, keyLength int64) *ModelsEnrollmentCSRGenerationRequest {
 	this := ModelsEnrollmentCSRGenerationRequest{}
 	this.Subject = subject
 	this.KeyType = keyType
@@ -112,9 +112,9 @@ func (o *ModelsEnrollmentCSRGenerationRequest) SetKeyType(v string) {
 }
 
 // GetKeyLength returns the KeyLength field value
-func (o *ModelsEnrollmentCSRGenerationRequest) GetKeyLength() int32 {
+func (o *ModelsEnrollmentCSRGenerationRequest) GetKeyLength() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -123,7 +123,7 @@ func (o *ModelsEnrollmentCSRGenerationRequest) GetKeyLength() int32 {
 
 // GetKeyLengthOk returns a tuple with the KeyLength field value
 // and a boolean to check if the value has been set.
-func (o *ModelsEnrollmentCSRGenerationRequest) GetKeyLengthOk() (*int32, bool) {
+func (o *ModelsEnrollmentCSRGenerationRequest) GetKeyLengthOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -131,7 +131,7 @@ func (o *ModelsEnrollmentCSRGenerationRequest) GetKeyLengthOk() (*int32, bool) {
 }
 
 // SetKeyLength sets field value
-func (o *ModelsEnrollmentCSRGenerationRequest) SetKeyLength(v int32) {
+func (o *ModelsEnrollmentCSRGenerationRequest) SetKeyLength(v int64) {
 	o.KeyLength = v
 }
 

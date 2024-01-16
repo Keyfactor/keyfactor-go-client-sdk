@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**KeyfactorId** | Pointer to **int32** |  | [optional] 
-**KeyfactorRequestId** | Pointer to **int32** |  | [optional] 
+**KeyfactorId** | Pointer to **int64** |  | [optional] 
+**KeyfactorRequestId** | Pointer to **int64** |  | [optional] 
 **Thumbprint** | Pointer to **string** |  | [optional] 
 **SerialNumber** | Pointer to **string** |  | [optional] 
 **IssuerDN** | Pointer to **NullableString** |  | [optional] 
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetKeyfactorId
 
-`func (o *ModelsEnrollmentRenewalResponse) GetKeyfactorId() int32`
+`func (o *ModelsEnrollmentRenewalResponse) GetKeyfactorId() int64`
 
 GetKeyfactorId returns the KeyfactorId field if non-nil, zero value otherwise.
 
 ### GetKeyfactorIdOk
 
-`func (o *ModelsEnrollmentRenewalResponse) GetKeyfactorIdOk() (*int32, bool)`
+`func (o *ModelsEnrollmentRenewalResponse) GetKeyfactorIdOk() (*int64, bool)`
 
 GetKeyfactorIdOk returns a tuple with the KeyfactorId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyfactorId
 
-`func (o *ModelsEnrollmentRenewalResponse) SetKeyfactorId(v int32)`
+`func (o *ModelsEnrollmentRenewalResponse) SetKeyfactorId(v int64)`
 
 SetKeyfactorId sets KeyfactorId field to given value.
 
@@ -59,20 +59,20 @@ HasKeyfactorId returns a boolean if a field has been set.
 
 ### GetKeyfactorRequestId
 
-`func (o *ModelsEnrollmentRenewalResponse) GetKeyfactorRequestId() int32`
+`func (o *ModelsEnrollmentRenewalResponse) GetKeyfactorRequestId() int64`
 
 GetKeyfactorRequestId returns the KeyfactorRequestId field if non-nil, zero value otherwise.
 
 ### GetKeyfactorRequestIdOk
 
-`func (o *ModelsEnrollmentRenewalResponse) GetKeyfactorRequestIdOk() (*int32, bool)`
+`func (o *ModelsEnrollmentRenewalResponse) GetKeyfactorRequestIdOk() (*int64, bool)`
 
 GetKeyfactorRequestIdOk returns a tuple with the KeyfactorRequestId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyfactorRequestId
 
-`func (o *ModelsEnrollmentRenewalResponse) SetKeyfactorRequestId(v int32)`
+`func (o *ModelsEnrollmentRenewalResponse) SetKeyfactorRequestId(v int64)`
 
 SetKeyfactorRequestId sets KeyfactorRequestId field to given value.
 

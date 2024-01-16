@@ -34,7 +34,7 @@ type ModelsSSLEndpoint struct {
 	NetworkId            *string `json:"NetworkId,omitempty"`
 	LastHistoryId        *string `json:"LastHistoryId,omitempty"`
 	IpAddressBytes       *string `json:"IpAddressBytes,omitempty"`
-	Port                 *int32  `json:"Port,omitempty"`
+	Port                 *int64  `json:"Port,omitempty"`
 	SNIName              *string `json:"SNIName,omitempty"`
 	EnableMonitor        *bool   `json:"EnableMonitor,omitempty"`
 	Reviewed             *bool   `json:"Reviewed,omitempty"`
@@ -189,9 +189,9 @@ func (o *ModelsSSLEndpoint) SetIpAddressBytes(v string) {
 }
 
 // GetPort returns the Port field value if set, zero value otherwise.
-func (o *ModelsSSLEndpoint) GetPort() int32 {
+func (o *ModelsSSLEndpoint) GetPort() int64 {
 	if o == nil || isNil(o.Port) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Port
@@ -199,7 +199,7 @@ func (o *ModelsSSLEndpoint) GetPort() int32 {
 
 // GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSLEndpoint) GetPortOk() (*int32, bool) {
+func (o *ModelsSSLEndpoint) GetPortOk() (*int64, bool) {
 	if o == nil || isNil(o.Port) {
 		return nil, false
 	}
@@ -215,8 +215,8 @@ func (o *ModelsSSLEndpoint) HasPort() bool {
 	return false
 }
 
-// SetPort gets a reference to the given int32 and assigns it to the Port field.
-func (o *ModelsSSLEndpoint) SetPort(v int32) {
+// SetPort gets a reference to the given int64 and assigns it to the Port field.
+func (o *ModelsSSLEndpoint) SetPort(v int64) {
 	o.Port = &v
 }
 

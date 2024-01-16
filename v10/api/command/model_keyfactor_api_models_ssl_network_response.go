@@ -41,8 +41,8 @@ type KeyfactorApiModelsSslNetworkResponse struct {
 	MonitorSchedule         *KeyfactorCommonSchedulingKeyfactorSchedule `json:"MonitorSchedule,omitempty"`
 	DiscoverPercentComplete *float64                                    `json:"DiscoverPercentComplete,omitempty"`
 	MonitorPercentComplete  *float64                                    `json:"MonitorPercentComplete,omitempty"`
-	DiscoverStatus          *int32                                      `json:"DiscoverStatus,omitempty"`
-	MonitorStatus           *int32                                      `json:"MonitorStatus,omitempty"`
+	DiscoverStatus          *int64                                      `json:"DiscoverStatus,omitempty"`
+	MonitorStatus           *int64                                      `json:"MonitorStatus,omitempty"`
 	DiscoverLastScanned     *time.Time                                  `json:"DiscoverLastScanned,omitempty"`
 	MonitorLastScanned      *time.Time                                  `json:"MonitorLastScanned,omitempty"`
 	SslAlertRecipients      []string                                    `json:"SslAlertRecipients,omitempty"`
@@ -51,8 +51,8 @@ type KeyfactorApiModelsSslNetworkResponse struct {
 	DiscoverTimeoutMs       *float64                                    `json:"DiscoverTimeoutMs,omitempty"`
 	MonitorTimeoutMs        *float64                                    `json:"MonitorTimeoutMs,omitempty"`
 	ExpirationAlertDays     *float64                                    `json:"ExpirationAlertDays,omitempty"`
-	DiscoverJobParts        *int32                                      `json:"DiscoverJobParts,omitempty"`
-	MonitorJobParts         *int32                                      `json:"MonitorJobParts,omitempty"`
+	DiscoverJobParts        *int64                                      `json:"DiscoverJobParts,omitempty"`
+	MonitorJobParts         *int64                                      `json:"MonitorJobParts,omitempty"`
 	QuietHours              []KeyfactorApiModelsSslQuietHourResponse    `json:"QuietHours,omitempty"`
 	AdditionalProperties    map[string]interface{}
 }
@@ -397,9 +397,9 @@ func (o *KeyfactorApiModelsSslNetworkResponse) SetMonitorPercentComplete(v float
 }
 
 // GetDiscoverStatus returns the DiscoverStatus field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsSslNetworkResponse) GetDiscoverStatus() int32 {
+func (o *KeyfactorApiModelsSslNetworkResponse) GetDiscoverStatus() int64 {
 	if o == nil || isNil(o.DiscoverStatus) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DiscoverStatus
@@ -407,7 +407,7 @@ func (o *KeyfactorApiModelsSslNetworkResponse) GetDiscoverStatus() int32 {
 
 // GetDiscoverStatusOk returns a tuple with the DiscoverStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsSslNetworkResponse) GetDiscoverStatusOk() (*int32, bool) {
+func (o *KeyfactorApiModelsSslNetworkResponse) GetDiscoverStatusOk() (*int64, bool) {
 	if o == nil || isNil(o.DiscoverStatus) {
 		return nil, false
 	}
@@ -423,15 +423,15 @@ func (o *KeyfactorApiModelsSslNetworkResponse) HasDiscoverStatus() bool {
 	return false
 }
 
-// SetDiscoverStatus gets a reference to the given int32 and assigns it to the DiscoverStatus field.
-func (o *KeyfactorApiModelsSslNetworkResponse) SetDiscoverStatus(v int32) {
+// SetDiscoverStatus gets a reference to the given int64 and assigns it to the DiscoverStatus field.
+func (o *KeyfactorApiModelsSslNetworkResponse) SetDiscoverStatus(v int64) {
 	o.DiscoverStatus = &v
 }
 
 // GetMonitorStatus returns the MonitorStatus field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsSslNetworkResponse) GetMonitorStatus() int32 {
+func (o *KeyfactorApiModelsSslNetworkResponse) GetMonitorStatus() int64 {
 	if o == nil || isNil(o.MonitorStatus) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MonitorStatus
@@ -439,7 +439,7 @@ func (o *KeyfactorApiModelsSslNetworkResponse) GetMonitorStatus() int32 {
 
 // GetMonitorStatusOk returns a tuple with the MonitorStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsSslNetworkResponse) GetMonitorStatusOk() (*int32, bool) {
+func (o *KeyfactorApiModelsSslNetworkResponse) GetMonitorStatusOk() (*int64, bool) {
 	if o == nil || isNil(o.MonitorStatus) {
 		return nil, false
 	}
@@ -455,8 +455,8 @@ func (o *KeyfactorApiModelsSslNetworkResponse) HasMonitorStatus() bool {
 	return false
 }
 
-// SetMonitorStatus gets a reference to the given int32 and assigns it to the MonitorStatus field.
-func (o *KeyfactorApiModelsSslNetworkResponse) SetMonitorStatus(v int32) {
+// SetMonitorStatus gets a reference to the given int64 and assigns it to the MonitorStatus field.
+func (o *KeyfactorApiModelsSslNetworkResponse) SetMonitorStatus(v int64) {
 	o.MonitorStatus = &v
 }
 
@@ -717,9 +717,9 @@ func (o *KeyfactorApiModelsSslNetworkResponse) SetExpirationAlertDays(v float64)
 }
 
 // GetDiscoverJobParts returns the DiscoverJobParts field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsSslNetworkResponse) GetDiscoverJobParts() int32 {
+func (o *KeyfactorApiModelsSslNetworkResponse) GetDiscoverJobParts() int64 {
 	if o == nil || isNil(o.DiscoverJobParts) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DiscoverJobParts
@@ -727,7 +727,7 @@ func (o *KeyfactorApiModelsSslNetworkResponse) GetDiscoverJobParts() int32 {
 
 // GetDiscoverJobPartsOk returns a tuple with the DiscoverJobParts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsSslNetworkResponse) GetDiscoverJobPartsOk() (*int32, bool) {
+func (o *KeyfactorApiModelsSslNetworkResponse) GetDiscoverJobPartsOk() (*int64, bool) {
 	if o == nil || isNil(o.DiscoverJobParts) {
 		return nil, false
 	}
@@ -743,15 +743,15 @@ func (o *KeyfactorApiModelsSslNetworkResponse) HasDiscoverJobParts() bool {
 	return false
 }
 
-// SetDiscoverJobParts gets a reference to the given int32 and assigns it to the DiscoverJobParts field.
-func (o *KeyfactorApiModelsSslNetworkResponse) SetDiscoverJobParts(v int32) {
+// SetDiscoverJobParts gets a reference to the given int64 and assigns it to the DiscoverJobParts field.
+func (o *KeyfactorApiModelsSslNetworkResponse) SetDiscoverJobParts(v int64) {
 	o.DiscoverJobParts = &v
 }
 
 // GetMonitorJobParts returns the MonitorJobParts field value if set, zero value otherwise.
-func (o *KeyfactorApiModelsSslNetworkResponse) GetMonitorJobParts() int32 {
+func (o *KeyfactorApiModelsSslNetworkResponse) GetMonitorJobParts() int64 {
 	if o == nil || isNil(o.MonitorJobParts) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MonitorJobParts
@@ -759,7 +759,7 @@ func (o *KeyfactorApiModelsSslNetworkResponse) GetMonitorJobParts() int32 {
 
 // GetMonitorJobPartsOk returns a tuple with the MonitorJobParts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorApiModelsSslNetworkResponse) GetMonitorJobPartsOk() (*int32, bool) {
+func (o *KeyfactorApiModelsSslNetworkResponse) GetMonitorJobPartsOk() (*int64, bool) {
 	if o == nil || isNil(o.MonitorJobParts) {
 		return nil, false
 	}
@@ -775,8 +775,8 @@ func (o *KeyfactorApiModelsSslNetworkResponse) HasMonitorJobParts() bool {
 	return false
 }
 
-// SetMonitorJobParts gets a reference to the given int32 and assigns it to the MonitorJobParts field.
-func (o *KeyfactorApiModelsSslNetworkResponse) SetMonitorJobParts(v int32) {
+// SetMonitorJobParts gets a reference to the given int64 and assigns it to the MonitorJobParts field.
+func (o *KeyfactorApiModelsSslNetworkResponse) SetMonitorJobParts(v int64) {
 	o.MonitorJobParts = &v
 }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CertId** | Pointer to **int32** |  | [optional] 
+**CertId** | Pointer to **int64** |  | [optional] 
 **WorkflowId** | Pointer to **string** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCertId
 
-`func (o *ModelsRevocationSuspendedRevocationResponse) GetCertId() int32`
+`func (o *ModelsRevocationSuspendedRevocationResponse) GetCertId() int64`
 
 GetCertId returns the CertId field if non-nil, zero value otherwise.
 
 ### GetCertIdOk
 
-`func (o *ModelsRevocationSuspendedRevocationResponse) GetCertIdOk() (*int32, bool)`
+`func (o *ModelsRevocationSuspendedRevocationResponse) GetCertIdOk() (*int64, bool)`
 
 GetCertIdOk returns a tuple with the CertId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertId
 
-`func (o *ModelsRevocationSuspendedRevocationResponse) SetCertId(v int32)`
+`func (o *ModelsRevocationSuspendedRevocationResponse) SetCertId(v int64)`
 
 SetCertId sets CertId field to given value.
 

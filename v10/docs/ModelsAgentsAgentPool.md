@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AgentPoolId** | Pointer to **string** | GUID identifier of the agent pool | [optional] 
 **Name** | **string** | Name of the agent pool | 
-**DiscoverAgentsCount** | Pointer to **int32** | Number of agents that can perform discovery jobs | [optional] 
-**MonitorAgentsCount** | Pointer to **int32** | Number of agents that can perform monitoring jobs | [optional] 
+**DiscoverAgentsCount** | Pointer to **int64** | Number of agents that can perform discovery jobs | [optional] 
+**MonitorAgentsCount** | Pointer to **int64** | Number of agents that can perform monitoring jobs | [optional] 
 **Agents** | Pointer to [**[]ModelsAgentsAgentPoolAgent**](ModelsAgentsAgentPoolAgent.md) | List of the agents assigned to the pool | [optional] 
 
 ## Methods
@@ -76,20 +76,20 @@ SetName sets Name field to given value.
 
 ### GetDiscoverAgentsCount
 
-`func (o *ModelsAgentsAgentPool) GetDiscoverAgentsCount() int32`
+`func (o *ModelsAgentsAgentPool) GetDiscoverAgentsCount() int64`
 
 GetDiscoverAgentsCount returns the DiscoverAgentsCount field if non-nil, zero value otherwise.
 
 ### GetDiscoverAgentsCountOk
 
-`func (o *ModelsAgentsAgentPool) GetDiscoverAgentsCountOk() (*int32, bool)`
+`func (o *ModelsAgentsAgentPool) GetDiscoverAgentsCountOk() (*int64, bool)`
 
 GetDiscoverAgentsCountOk returns a tuple with the DiscoverAgentsCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDiscoverAgentsCount
 
-`func (o *ModelsAgentsAgentPool) SetDiscoverAgentsCount(v int32)`
+`func (o *ModelsAgentsAgentPool) SetDiscoverAgentsCount(v int64)`
 
 SetDiscoverAgentsCount sets DiscoverAgentsCount field to given value.
 
@@ -101,20 +101,20 @@ HasDiscoverAgentsCount returns a boolean if a field has been set.
 
 ### GetMonitorAgentsCount
 
-`func (o *ModelsAgentsAgentPool) GetMonitorAgentsCount() int32`
+`func (o *ModelsAgentsAgentPool) GetMonitorAgentsCount() int64`
 
 GetMonitorAgentsCount returns the MonitorAgentsCount field if non-nil, zero value otherwise.
 
 ### GetMonitorAgentsCountOk
 
-`func (o *ModelsAgentsAgentPool) GetMonitorAgentsCountOk() (*int32, bool)`
+`func (o *ModelsAgentsAgentPool) GetMonitorAgentsCountOk() (*int64, bool)`
 
 GetMonitorAgentsCountOk returns a tuple with the MonitorAgentsCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMonitorAgentsCount
 
-`func (o *ModelsAgentsAgentPool) SetMonitorAgentsCount(v int32)`
+`func (o *ModelsAgentsAgentPool) SetMonitorAgentsCount(v int64)`
 
 SetMonitorAgentsCount sets MonitorAgentsCount field to given value.
 

@@ -44,11 +44,11 @@ func Test_command_CertificateStoreContainerApiService(t *testing.T) {
 		var id interface{}
 
 		id = os.Getenv("CertificateStoreContainerApi_CertificateStoreContainerDeleteCertificateStoreContainers_id")
-		id, _ = convertParamInterface(id, "int32")
+		id, _ = convertParamInterface(id, "int64")
 		t.Logf("CertificateStoreContainerApi_CertificateStoreContainerDeleteCertificateStoreContainers_id: %v", id)
 
 		t.Log("CertificateStoreContainerApi_CertificateStoreContainerDeleteCertificateStoreContainers_payload: <none>")
-		httpRes, err := apiClient.CertificateStoreContainerApi.CertificateStoreContainerDeleteCertificateStoreContainers(context.Background(), id.(int32)).Execute()
+		httpRes, err := apiClient.CertificateStoreContainerApi.CertificateStoreContainerDeleteCertificateStoreContainers(context.Background(), id.(int64)).Execute()
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 	})

@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **StoreId** | Pointer to **string** |  | [optional] 
-**StoreTypeId** | Pointer to **int32** |  | [optional] 
+**StoreTypeId** | Pointer to **int64** |  | [optional] 
 **ClientMachine** | Pointer to **string** |  | [optional] 
 **StorePath** | Pointer to **string** |  | [optional] 
 **AgentPool** | Pointer to **string** |  | [optional] 
 **Alias** | Pointer to **string** |  | [optional] 
 **IPAddress** | Pointer to **string** |  | [optional] 
-**Port** | Pointer to **int32** |  | [optional] 
+**Port** | Pointer to **int64** |  | [optional] 
 **NetworkName** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -60,20 +60,20 @@ HasStoreId returns a boolean if a field has been set.
 
 ### GetStoreTypeId
 
-`func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) GetStoreTypeId() int32`
+`func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) GetStoreTypeId() int64`
 
 GetStoreTypeId returns the StoreTypeId field if non-nil, zero value otherwise.
 
 ### GetStoreTypeIdOk
 
-`func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) GetStoreTypeIdOk() (*int32, bool)`
+`func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) GetStoreTypeIdOk() (*int64, bool)`
 
 GetStoreTypeIdOk returns a tuple with the StoreTypeId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStoreTypeId
 
-`func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) SetStoreTypeId(v int32)`
+`func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) SetStoreTypeId(v int64)`
 
 SetStoreTypeId sets StoreTypeId field to given value.
 
@@ -210,20 +210,20 @@ HasIPAddress returns a boolean if a field has been set.
 
 ### GetPort
 
-`func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) GetPort() int32`
+`func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) GetPort() int64`
 
 GetPort returns the Port field if non-nil, zero value otherwise.
 
 ### GetPortOk
 
-`func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) GetPortOk() (*int32, bool)`
+`func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) GetPortOk() (*int64, bool)`
 
 GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPort
 
-`func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) SetPort(v int32)`
+`func (o *ModelsCertStoreLocationsCertificateStoreLocationsDetail) SetPort(v int64)`
 
 SetPort sets Port field to given value.
 

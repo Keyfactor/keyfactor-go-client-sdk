@@ -31,7 +31,7 @@ var _ MappedNullable = &ModelsSSLEndpointHistoryResponseCertificateModel{}
 
 // ModelsSSLEndpointHistoryResponseCertificateModel struct for ModelsSSLEndpointHistoryResponseCertificateModel
 type ModelsSSLEndpointHistoryResponseCertificateModel struct {
-	Id                     *int32                         `json:"Id,omitempty"`
+	Id                     *int64                         `json:"Id,omitempty"`
 	IssuedDN               NullableString                 `json:"IssuedDN,omitempty"`
 	SerialNumber           *string                        `json:"SerialNumber,omitempty"`
 	NotBefore              *time.Time                     `json:"NotBefore,omitempty"`
@@ -64,9 +64,9 @@ func NewModelsSSLEndpointHistoryResponseCertificateModelWithDefaults() *ModelsSS
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ModelsSSLEndpointHistoryResponseCertificateModel) GetId() int32 {
+func (o *ModelsSSLEndpointHistoryResponseCertificateModel) GetId() int64 {
 	if o == nil || isNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -74,7 +74,7 @@ func (o *ModelsSSLEndpointHistoryResponseCertificateModel) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModelsSSLEndpointHistoryResponseCertificateModel) GetIdOk() (*int32, bool) {
+func (o *ModelsSSLEndpointHistoryResponseCertificateModel) GetIdOk() (*int64, bool) {
 	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
@@ -90,8 +90,8 @@ func (o *ModelsSSLEndpointHistoryResponseCertificateModel) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ModelsSSLEndpointHistoryResponseCertificateModel) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ModelsSSLEndpointHistoryResponseCertificateModel) SetId(v int64) {
 	o.Id = &v
 }
 
