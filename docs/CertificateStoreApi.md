@@ -7,14 +7,18 @@ Method | HTTP request | Description
 [**CertificateStoreAddCertificate**](CertificateStoreApi.md#CertificateStoreAddCertificate) | **Post** /CertificateStores/Certificates/Add | Configures a management job to add a certificate to one or more stores with the provided schedule
 [**CertificateStoreApprovePending**](CertificateStoreApi.md#CertificateStoreApprovePending) | **Post** /CertificateStores/Approve | Approves the provided certificate stores to make them available for management
 [**CertificateStoreConfigureDiscoveryJob**](CertificateStoreApi.md#CertificateStoreConfigureDiscoveryJob) | **Put** /CertificateStores/DiscoveryJob | Configures a discovery job to locate currently unmanaged certificate stores
+[**CertificateStoreCreateCertificateStore**](CertificateStoreApi.md#CertificateStoreCreateCertificateStore) | **Post** /CertificateStores | Creates a new certificate store with the provided properties
 [**CertificateStoreCreateCertificateStoreServer**](CertificateStoreApi.md#CertificateStoreCreateCertificateStoreServer) | **Post** /CertificateStores/Server | Creates a new certificate store server with the provided properties
 [**CertificateStoreDeleteCertificateStore**](CertificateStoreApi.md#CertificateStoreDeleteCertificateStore) | **Delete** /CertificateStores/{id} | Deletes a persisted certificate store by its Keyfactor identifier
 [**CertificateStoreDeleteCertificateStores**](CertificateStoreApi.md#CertificateStoreDeleteCertificateStores) | **Delete** /CertificateStores | Deletes multiple persisted certificate store entities by their identifiers
+[**CertificateStoreGetCertificateStore**](CertificateStoreApi.md#CertificateStoreGetCertificateStore) | **Get** /CertificateStores/{id} | Returns a single certificate store associated with the provided id
 [**CertificateStoreGetCertificateStoreInventory**](CertificateStoreApi.md#CertificateStoreGetCertificateStoreInventory) | **Get** /CertificateStores/{id}/Inventory | Returns a single certificate store&#39;s inventory associated with the provided id
+[**CertificateStoreQueryCertificateStores**](CertificateStoreApi.md#CertificateStoreQueryCertificateStores) | **Get** /CertificateStores | Returns all certificate stores according to the provided filter and output parameters
 [**CertificateStoreRemoveCertificate**](CertificateStoreApi.md#CertificateStoreRemoveCertificate) | **Post** /CertificateStores/Certificates/Remove | Configures a management job to remove a certificate from one or more stores with the provided schedule
 [**CertificateStoreSchedule**](CertificateStoreApi.md#CertificateStoreSchedule) | **Post** /CertificateStores/Schedule | Creates an inventory schedule for the provided certificate stores
 [**CertificateStoreScheduleForReenrollment**](CertificateStoreApi.md#CertificateStoreScheduleForReenrollment) | **Post** /CertificateStores/Reenrollment | Schedules a certificate store for reenrollment
 [**CertificateStoreSetPassword**](CertificateStoreApi.md#CertificateStoreSetPassword) | **Put** /CertificateStores/Password | Sets a password for the requested certificate store
+[**CertificateStoreUpdateCertStore**](CertificateStoreApi.md#CertificateStoreUpdateCertStore) | **Put** /CertificateStores | Updates a given certificate store with the properties of the provided instance
 [**CertificateStoreUpdateCertificateStoreServer**](CertificateStoreApi.md#CertificateStoreUpdateCertificateStoreServer) | **Put** /CertificateStores/Server | Updates a given certificate store server with the properties of the provided instance
 
 
@@ -213,6 +217,74 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
 - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CertificateStoreCreateCertificateStore
+
+> KeyfactorApiModelsCertificateStoresCertificateStoreResponse CertificateStoreCreateCertificateStore(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Store(store).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Creates a new certificate store with the provided properties
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    store := *openapiclient.NewModelsCertificateStoresCertificateStoreCreateRequest() // ModelsCertificateStoresCertificateStoreCreateRequest | Certificate store to be created with the provided properties
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CertificateStoreApi.CertificateStoreCreateCertificateStore(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Store(store).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.CertificateStoreCreateCertificateStore``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CertificateStoreCreateCertificateStore`: KeyfactorApiModelsCertificateStoresCertificateStoreResponse
+    fmt.Fprintf(os.Stdout, "Response from `CertificateStoreApi.CertificateStoreCreateCertificateStore`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCertificateStoreCreateCertificateStoreRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **store** | [**ModelsCertificateStoresCertificateStoreCreateRequest**](ModelsCertificateStoresCertificateStoreCreateRequest.md) | Certificate store to be created with the provided properties | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+
+### Return type
+
+[**KeyfactorApiModelsCertificateStoresCertificateStoreResponse**](KeyfactorApiModelsCertificateStoresCertificateStoreResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -425,6 +497,78 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## CertificateStoreGetCertificateStore
+
+> KeyfactorApiModelsCertificateStoresCertificateStoreResponse CertificateStoreGetCertificateStore(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Returns a single certificate store associated with the provided id
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Keyfactor identifier (GUID) of the certificate store
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CertificateStoreApi.CertificateStoreGetCertificateStore(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.CertificateStoreGetCertificateStore``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CertificateStoreGetCertificateStore`: KeyfactorApiModelsCertificateStoresCertificateStoreResponse
+    fmt.Fprintf(os.Stdout, "Response from `CertificateStoreApi.CertificateStoreGetCertificateStore`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | Keyfactor identifier (GUID) of the certificate store | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCertificateStoreGetCertificateStoreRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+
+### Return type
+
+[**KeyfactorApiModelsCertificateStoresCertificateStoreResponse**](KeyfactorApiModelsCertificateStoresCertificateStoreResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## CertificateStoreGetCertificateStoreInventory
 
 > []ModelsCertificateStoreInventory CertificateStoreGetCertificateStoreInventory(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).QueryPageReturned(queryPageReturned).QueryReturnLimit(queryReturnLimit).QuerySortField(querySortField).QuerySortAscending(querySortAscending).Execute()
@@ -490,6 +634,82 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]ModelsCertificateStoreInventory**](ModelsCertificateStoreInventory.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CertificateStoreQueryCertificateStores
+
+> []KeyfactorApiModelsCertificateStoresCertificateStoreResponse CertificateStoreQueryCertificateStores(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoreQueryQueryString(certificateStoreQueryQueryString).CertificateStoreQueryPageReturned(certificateStoreQueryPageReturned).CertificateStoreQueryReturnLimit(certificateStoreQueryReturnLimit).CertificateStoreQuerySortField(certificateStoreQuerySortField).CertificateStoreQuerySortAscending(certificateStoreQuerySortAscending).Execute()
+
+Returns all certificate stores according to the provided filter and output parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+    certificateStoreQueryQueryString := "certificateStoreQueryQueryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
+    certificateStoreQueryPageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
+    certificateStoreQueryReturnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
+    certificateStoreQuerySortField := "certificateStoreQuerySortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
+    certificateStoreQuerySortAscending := int32(56) // int32 | Field sort direction [0=ascending, 1=descending] (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CertificateStoreApi.CertificateStoreQueryCertificateStores(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoreQueryQueryString(certificateStoreQueryQueryString).CertificateStoreQueryPageReturned(certificateStoreQueryPageReturned).CertificateStoreQueryReturnLimit(certificateStoreQueryReturnLimit).CertificateStoreQuerySortField(certificateStoreQuerySortField).CertificateStoreQuerySortAscending(certificateStoreQuerySortAscending).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.CertificateStoreQueryCertificateStores``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CertificateStoreQueryCertificateStores`: []KeyfactorApiModelsCertificateStoresCertificateStoreResponse
+    fmt.Fprintf(os.Stdout, "Response from `CertificateStoreApi.CertificateStoreQueryCertificateStores`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCertificateStoreQueryCertificateStoresRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+ **certificateStoreQueryQueryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
+ **certificateStoreQueryPageReturned** | **int32** | The current page within the result set to be returned | 
+ **certificateStoreQueryReturnLimit** | **int32** | Maximum number of records to be returned in a single call | 
+ **certificateStoreQuerySortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
+ **certificateStoreQuerySortAscending** | **int32** | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
+
+### Return type
+
+[**[]KeyfactorApiModelsCertificateStoresCertificateStoreResponse**](KeyfactorApiModelsCertificateStoresCertificateStoreResponse.md)
 
 ### Authorization
 
@@ -765,6 +985,74 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
 - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CertificateStoreUpdateCertStore
+
+> KeyfactorApiModelsCertificateStoresCertificateStoreResponse CertificateStoreUpdateCertStore(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CertStore(certStore).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Updates a given certificate store with the properties of the provided instance
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "xKeyfactorRequestedWith_example" // string | Type of the request [XMLHttpRequest, APIClient] (default to "APIClient")
+    certStore := *openapiclient.NewModelsCertificateStoresCertificateStoreUpdateRequest() // ModelsCertificateStoresCertificateStoreUpdateRequest | Certificate store to be updated with the provided properties
+    xKeyfactorApiVersion := "xKeyfactorApiVersion_example" // string | Desired version of the api, if not provided defaults to v1 (optional) (default to "1")
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CertificateStoreApi.CertificateStoreUpdateCertStore(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CertStore(certStore).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.CertificateStoreUpdateCertStore``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CertificateStoreUpdateCertStore`: KeyfactorApiModelsCertificateStoresCertificateStoreResponse
+    fmt.Fprintf(os.Stdout, "Response from `CertificateStoreApi.CertificateStoreUpdateCertStore`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCertificateStoreUpdateCertStoreRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | [default to &quot;APIClient&quot;]
+ **certStore** | [**ModelsCertificateStoresCertificateStoreUpdateRequest**](ModelsCertificateStoresCertificateStoreUpdateRequest.md) | Certificate store to be updated with the provided properties | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | [default to &quot;1&quot;]
+
+### Return type
+
+[**KeyfactorApiModelsCertificateStoresCertificateStoreResponse**](KeyfactorApiModelsCertificateStoresCertificateStoreResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+- **Accept**: application/json, text/json, application/xml, text/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
