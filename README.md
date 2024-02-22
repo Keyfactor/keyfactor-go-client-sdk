@@ -1,4 +1,4 @@
-# Go API client for keyfactor
+# Go API client for command
 
 This reference serves to document REST-based methods to manage and integrate with Keyfactor. In addition, an embedded interface allows for the execution of calls against the current Keyfactor API instance.
 
@@ -20,12 +20,12 @@ go get "github.com/Keyfactor/keyfactor-go-client-sdk"
 Put the package under your project folder and add the following in import:
 
 ```golang
-import "github.com/Keyfactor/keyfactor-go-client-sdk/api/keyfactor"
+import "github.com/Keyfactor/keyfactor-go-client-sdk/api/command"
 ```
 
 ## Configuration
 
-The `keyfactor.NewConfiguration()` method is used to configure the Keyfactor Go Client SDK. The client can be configured
+The `command.NewConfiguration()` method is used to configure the Keyfactor Go Client SDK. The client can be configured
 by passing a map of configuration options to the `NewConfiguration()` method, or by passing a blank map and setting
 the configuration options individually on the returned `Configuration` object.
 
@@ -40,8 +40,8 @@ config["domain"] = "example.com" // optional
 config["caCertificatePath"] = "/path/to/local/certificate" // optional
 
 // Create a configuration object
-ejbcaConfiguration := keyfactor.NewConfiguration(config)
-if ejbcaConfiguration == nil {
+kfcmdConfiguration := command.NewConfiguration(config)
+if kfcmdConfiguration == nil {
     // handle error
 }
 
@@ -56,31 +56,31 @@ or
 
 ```go
 // Create a configuration object
-ejbcaConfiguration := keyfactor.NewConfiguration(make(map[string]string))
+kfcmdConfiguration := command.NewConfiguration(make(map[string]string))
 
 // Set configuration options individually
-ejbcaConfiguration.Host = "keyfactor.example.com"
-ejbcaConfiguration.BasicAuth.UserName = "admin"
-ejbcaConfiguration.BasicAuth.Password = "password"
-ejbcaConfiguration.CaCertificatePath = "/path/to/local/certificate" // optional
+kfcmdConfiguration.Host = "keyfactor.example.com"
+kfcmdConfiguration.BasicAuth.Username = "admin"
+kfcmdConfiguration.BasicAuth.Password = "password"
+kfcmdConfiguration.CaCertificatePath = "/path/to/local/certificate" // optional
 
 // Create a client
-client := keyfactor.NewAPIClient(ejbcaConfiguration)
+client := keyfactor.NewAPIClient(kfcmdConfiguration)
 if client == nil {
     // handle error
 }
 ```
 
-The root CA certificate can also be configured by passing a slice of `*x509.Certificate` objects to the `ejbca.Configuration.SetCaCertificates()` method.
+The root CA certificate can also be configured by passing a slice of `*x509.Certificate` objects to the `kfcmd.Configuration.SetCaCertificates()` method.
 ```go
 // Create a configuration object
-ejbcaConfiguration := keyfactor.NewConfiguration(make(map[string]string))
+kfcmdConfiguration := command.NewConfiguration(make(map[string]string))
 
 // Set the root CA certificate
-ejbcaConfiguration.SetCaCertificates([]*x509.Certificate{caCertificate})
+kfcmdConfiguration.SetCaCertificates([]*x509.Certificate{caCertificate})
 
 // Create a client
-client := keyfactor.NewAPIClient(ejbcaConfiguration)
+client := keyfactor.NewAPIClient(kfcmdConfiguration)
 ```
 
 ## Documentation for API Endpoints
@@ -94,9 +94,9 @@ Class | Method | HTTP request | Description
 *AgentApi* | [**AgentFetchLogs**](docs/AgentApi.md#agentfetchlogs) | **Post** /Agents/{id}/FetchLogs | Schedules a job on the agent to retrieve log files
 *AgentApi* | [**AgentGetAgentDetail**](docs/AgentApi.md#agentgetagentdetail) | **Get** /Agents/{id} | Returns details for a single agent, specified by ID
 *AgentApi* | [**AgentGetAgents**](docs/AgentApi.md#agentgetagents) | **Get** /Agents | Returns all agents according to the provided filter and output parameters
-*AgentApi* | [**AgentReset0**](docs/AgentApi.md#agentreset0) | **Post** /Agents/Reset | Reset a list of agents
-*AgentApi* | [**AgentReset1**](docs/AgentApi.md#agentreset1) | **Post** /Agents/{id}/Reset | Reset an agent to a new state
+*AgentApi* | [**AgentReset**](docs/AgentApi.md#agentreset) | **Post** /Agents/{id}/Reset | Reset an agent to a new state
 *AgentApi* | [**AgentSetAuthCertificateReenrollment**](docs/AgentApi.md#agentsetauthcertificatereenrollment) | **Post** /Agents/SetAuthCertificateReenrollment | Update the AuthCertificateReenrollment value for an agent to request or require (or unset the request) the agent   to enroll for a new client authentication certificate on its next registration.
+*AgentApi* | [**AgentsReset**](docs/AgentApi.md#agentsreset) | **Post** /Agents/Reset | Reset a list of agents
 *AgentBlueprintApi* | [**AgentBlueprintApplyBlueprint**](docs/AgentBlueprintApi.md#agentblueprintapplyblueprint) | **Post** /AgentBluePrint/ApplyBlueprint | Applies the selected agent blueprint to the provided agents
 *AgentBlueprintApi* | [**AgentBlueprintDeleteBlueprint**](docs/AgentBlueprintApi.md#agentblueprintdeleteblueprint) | **Delete** /AgentBluePrint/{id} | Deletes an agent blueprint by its Keyfactor identifier
 *AgentBlueprintApi* | [**AgentBlueprintGenerateBlueprint**](docs/AgentBlueprintApi.md#agentblueprintgenerateblueprint) | **Post** /AgentBluePrint/GenerateBluePrint | Generates an agent blueprint from the provided agents
@@ -158,14 +158,18 @@ Class | Method | HTTP request | Description
 *CertificateStoreApi* | [**CertificateStoreAddCertificate**](docs/CertificateStoreApi.md#certificatestoreaddcertificate) | **Post** /CertificateStores/Certificates/Add | Configures a management job to add a certificate to one or more stores with the provided schedule
 *CertificateStoreApi* | [**CertificateStoreApprovePending**](docs/CertificateStoreApi.md#certificatestoreapprovepending) | **Post** /CertificateStores/Approve | Approves the provided certificate stores to make them available for management
 *CertificateStoreApi* | [**CertificateStoreConfigureDiscoveryJob**](docs/CertificateStoreApi.md#certificatestoreconfigurediscoveryjob) | **Put** /CertificateStores/DiscoveryJob | Configures a discovery job to locate currently unmanaged certificate stores
+*CertificateStoreApi* | [**CertificateStoreCreateCertificateStore**](docs/CertificateStoreApi.md#certificatestorecreatecertificatestore) | **Post** /CertificateStores | Creates a new certificate store with the provided properties
 *CertificateStoreApi* | [**CertificateStoreCreateCertificateStoreServer**](docs/CertificateStoreApi.md#certificatestorecreatecertificatestoreserver) | **Post** /CertificateStores/Server | Creates a new certificate store server with the provided properties
 *CertificateStoreApi* | [**CertificateStoreDeleteCertificateStore**](docs/CertificateStoreApi.md#certificatestoredeletecertificatestore) | **Delete** /CertificateStores/{id} | Deletes a persisted certificate store by its Keyfactor identifier
 *CertificateStoreApi* | [**CertificateStoreDeleteCertificateStores**](docs/CertificateStoreApi.md#certificatestoredeletecertificatestores) | **Delete** /CertificateStores | Deletes multiple persisted certificate store entities by their identifiers
+*CertificateStoreApi* | [**CertificateStoreGetCertificateStore**](docs/CertificateStoreApi.md#certificatestoregetcertificatestore) | **Get** /CertificateStores/{id} | Returns a single certificate store associated with the provided id
 *CertificateStoreApi* | [**CertificateStoreGetCertificateStoreInventory**](docs/CertificateStoreApi.md#certificatestoregetcertificatestoreinventory) | **Get** /CertificateStores/{id}/Inventory | Returns a single certificate store&#39;s inventory associated with the provided id
+*CertificateStoreApi* | [**CertificateStoreQueryCertificateStores**](docs/CertificateStoreApi.md#certificatestorequerycertificatestores) | **Get** /CertificateStores | Returns all certificate stores according to the provided filter and output parameters
 *CertificateStoreApi* | [**CertificateStoreRemoveCertificate**](docs/CertificateStoreApi.md#certificatestoreremovecertificate) | **Post** /CertificateStores/Certificates/Remove | Configures a management job to remove a certificate from one or more stores with the provided schedule
 *CertificateStoreApi* | [**CertificateStoreSchedule**](docs/CertificateStoreApi.md#certificatestoreschedule) | **Post** /CertificateStores/Schedule | Creates an inventory schedule for the provided certificate stores
 *CertificateStoreApi* | [**CertificateStoreScheduleForReenrollment**](docs/CertificateStoreApi.md#certificatestorescheduleforreenrollment) | **Post** /CertificateStores/Reenrollment | Schedules a certificate store for reenrollment
 *CertificateStoreApi* | [**CertificateStoreSetPassword**](docs/CertificateStoreApi.md#certificatestoresetpassword) | **Put** /CertificateStores/Password | Sets a password for the requested certificate store
+*CertificateStoreApi* | [**CertificateStoreUpdateCertStore**](docs/CertificateStoreApi.md#certificatestoreupdatecertstore) | **Put** /CertificateStores | Updates a given certificate store with the properties of the provided instance
 *CertificateStoreApi* | [**CertificateStoreUpdateCertificateStoreServer**](docs/CertificateStoreApi.md#certificatestoreupdatecertificatestoreserver) | **Put** /CertificateStores/Server | Updates a given certificate store server with the properties of the provided instance
 *CertificateStoreContainerApi* | [**CertificateStoreContainerDeleteCertificateStoreContainers**](docs/CertificateStoreContainerApi.md#certificatestorecontainerdeletecertificatestorecontainers) | **Delete** /CertificateStoreContainers/{id} | Delete a certificate store container
 *CertificateStoreContainerApi* | [**CertificateStoreContainerGetAllCertificateStoreContainers**](docs/CertificateStoreContainerApi.md#certificatestorecontainergetallcertificatestorecontainers) | **Get** /CertificateStoreContainers | Returns all certificate store container according to the provided filter and output parameters
@@ -447,6 +451,7 @@ Class | Method | HTTP request | Description
  - [KeyfactorApiModelsCertificateCollectionsCertificateCollectionUpdateRequest](docs/KeyfactorApiModelsCertificateCollectionsCertificateCollectionUpdateRequest.md)
  - [KeyfactorApiModelsCertificateStoresAddCertificateRequest](docs/KeyfactorApiModelsCertificateStoresAddCertificateRequest.md)
  - [KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest](docs/KeyfactorApiModelsCertificateStoresCertificateStoreApproveRequest.md)
+ - [KeyfactorApiModelsCertificateStoresCertificateStoreResponse](docs/KeyfactorApiModelsCertificateStoresCertificateStoreResponse.md)
  - [KeyfactorApiModelsCertificateStoresJobHistoryResponse](docs/KeyfactorApiModelsCertificateStoresJobHistoryResponse.md)
  - [KeyfactorApiModelsCertificateStoresReenrollmentRequest](docs/KeyfactorApiModelsCertificateStoresReenrollmentRequest.md)
  - [KeyfactorApiModelsCertificateStoresRemoveCertificateRequest](docs/KeyfactorApiModelsCertificateStoresRemoveCertificateRequest.md)
