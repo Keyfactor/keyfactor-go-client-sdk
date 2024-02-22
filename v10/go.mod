@@ -1,4 +1,4 @@
-module github.com/Keyfactor/keyfactor-go-client-sdk
+module github.com/Keyfactor/keyfactor-go-client-sdk/v10
 
 go 1.20
 
