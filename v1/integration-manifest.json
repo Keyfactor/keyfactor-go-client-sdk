@@ -1,8 +1,0 @@
-{
-  "$schema": "https://keyfactor.github.io/integration-manifest-schema.json",
-  "integration_type": "api-client",
-  "name": "keyfactor-go-client-sdk",
-  "status": "pilot",
-  "link_github": false,
-  "description": "Keyfactor Command API client library SDK for Go applications"
-}
