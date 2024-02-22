@@ -30,12 +30,12 @@ var _ MappedNullable = &ModelsTemplateRetrievalResponseTemplatePolicyModel{}
 
 // ModelsTemplateRetrievalResponseTemplatePolicyModel struct for ModelsTemplateRetrievalResponseTemplatePolicyModel
 type ModelsTemplateRetrievalResponseTemplatePolicyModel struct {
-	TemplateId           NullableInt64 `json:"TemplateId,omitempty"`
-	RSAValidKeySizes     []int64       `json:"RSAValidKeySizes,omitempty"`
-	ECCValidCurves       []string      `json:"ECCValidCurves,omitempty"`
-	AllowKeyReuse        *bool         `json:"AllowKeyReuse,omitempty"`
-	AllowWildcards       *bool         `json:"AllowWildcards,omitempty"`
-	RFCEnforcement       *bool         `json:"RFCEnforcement,omitempty"`
+	TemplateId           int64    `json:"TemplateId"`
+	RSAValidKeySizes     []int64  `json:"RSAValidKeySizes,omitempty"`
+	ECCValidCurves       []string `json:"ECCValidCurves,omitempty"`
+	AllowKeyReuse        *bool    `json:"AllowKeyReuse,omitempty"`
+	AllowWildcards       *bool    `json:"AllowWildcards,omitempty"`
+	RFCEnforcement       *bool    `json:"RFCEnforcement,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,8 +45,9 @@ type _ModelsTemplateRetrievalResponseTemplatePolicyModel ModelsTemplateRetrieval
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsTemplateRetrievalResponseTemplatePolicyModel() *ModelsTemplateRetrievalResponseTemplatePolicyModel {
+func NewModelsTemplateRetrievalResponseTemplatePolicyModel(templateId int64) *ModelsTemplateRetrievalResponseTemplatePolicyModel {
 	this := ModelsTemplateRetrievalResponseTemplatePolicyModel{}
+	this.TemplateId = templateId
 	return &this
 }
 
@@ -58,47 +59,28 @@ func NewModelsTemplateRetrievalResponseTemplatePolicyModelWithDefaults() *Models
 	return &this
 }
 
-// GetTemplateId returns the TemplateId field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetTemplateId returns the TemplateId field value
 func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) GetTemplateId() int64 {
-	if o == nil || isNil(o.TemplateId.Get()) {
+	if o == nil {
 		var ret int64
 		return ret
 	}
-	return *o.TemplateId.Get()
+
+	return o.TemplateId
 }
 
-// GetTemplateIdOk returns a tuple with the TemplateId field value if set, nil otherwise
+// GetTemplateIdOk returns a tuple with the TemplateId field value
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) GetTemplateIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TemplateId.Get(), o.TemplateId.IsSet()
+	return &o.TemplateId, true
 }
 
-// HasTemplateId returns a boolean if a field has been set.
-func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) HasTemplateId() bool {
-	if o != nil && o.TemplateId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetTemplateId gets a reference to the given NullableInt64 and assigns it to the TemplateId field.
+// SetTemplateId sets field value
 func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) SetTemplateId(v int64) {
-	o.TemplateId.Set(&v)
-}
-
-// SetTemplateIdNil sets the value for TemplateId to be an explicit nil
-func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) SetTemplateIdNil() {
-	o.TemplateId.Set(nil)
-}
-
-// UnsetTemplateId ensures that no value is present for TemplateId, not even an explicit nil
-func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) UnsetTemplateId() {
-	o.TemplateId.Unset()
+	o.TemplateId = v
 }
 
 // GetRSAValidKeySizes returns the RSAValidKeySizes field value if set, zero value otherwise.
@@ -271,9 +253,7 @@ func (o ModelsTemplateRetrievalResponseTemplatePolicyModel) MarshalJSON() ([]byt
 
 func (o ModelsTemplateRetrievalResponseTemplatePolicyModel) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.TemplateId.IsSet() {
-		toSerialize["TemplateId"] = o.TemplateId.Get()
-	}
+	toSerialize["TemplateId"] = o.TemplateId
 	if !isNil(o.RSAValidKeySizes) {
 		toSerialize["RSAValidKeySizes"] = o.RSAValidKeySizes
 	}

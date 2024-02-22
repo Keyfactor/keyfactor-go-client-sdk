@@ -31,25 +31,25 @@ var _ MappedNullable = &ModelsTemplateCollectionRetrievalResponse{}
 // ModelsTemplateCollectionRetrievalResponse struct for ModelsTemplateCollectionRetrievalResponse
 type ModelsTemplateCollectionRetrievalResponse struct {
 	Id                     int64                                                                   `json:"Id"`
-	CommonName             *string                                                                 `json:"CommonName,omitempty"`
-	TemplateName           *string                                                                 `json:"TemplateName,omitempty"`
-	Oid                    *string                                                                 `json:"Oid,omitempty"`
-	KeySize                *string                                                                 `json:"KeySize,omitempty"`
-	KeyType                *string                                                                 `json:"KeyType,omitempty"`
+	CommonName             string                                                                  `json:"CommonName"`
+	TemplateName           string                                                                  `json:"TemplateName"`
+	Oid                    string                                                                  `json:"Oid"`
+	KeySize                string                                                                  `json:"KeySize"`
+	KeyType                string                                                                  `json:"KeyType"`
 	ForestRoot             *string                                                                 `json:"ForestRoot,omitempty"`
-	ConfigurationTenant    *string                                                                 `json:"ConfigurationTenant,omitempty"`
+	ConfigurationTenant    string                                                                  `json:"ConfigurationTenant"`
 	FriendlyName           *string                                                                 `json:"FriendlyName,omitempty"`
-	KeyRetention           *int64                                                                  `json:"KeyRetention,omitempty"`
+	KeyRetention           string                                                                  `json:"KeyRetention"`
 	KeyRetentionDays       *int64                                                                  `json:"KeyRetentionDays,omitempty"`
-	KeyArchival            *bool                                                                   `json:"KeyArchival,omitempty"`
+	KeyArchival            bool                                                                    `json:"KeyArchival"`
 	EnrollmentFields       []ModelsTemplateCollectionRetrievalResponseTemplateEnrollmentFieldModel `json:"EnrollmentFields,omitempty"`
-	AllowedEnrollmentTypes *int64                                                                  `json:"AllowedEnrollmentTypes,omitempty"`
+	AllowedEnrollmentTypes int64                                                                   `json:"AllowedEnrollmentTypes"`
 	TemplateRegexes        []ModelsTemplateCollectionRetrievalResponseTemplateRegexModel           `json:"TemplateRegexes,omitempty"`
-	UseAllowedRequesters   *bool                                                                   `json:"UseAllowedRequesters,omitempty"`
+	UseAllowedRequesters   bool                                                                    `json:"UseAllowedRequesters"`
 	AllowedRequesters      []string                                                                `json:"AllowedRequesters,omitempty"`
-	DisplayName            *string                                                                 `json:"DisplayName,omitempty"`
-	RequiresApproval       *bool                                                                   `json:"RequiresApproval,omitempty"`
-	KeyUsage               *int64                                                                  `json:"KeyUsage,omitempty"`
+	DisplayName            string                                                                  `json:"DisplayName"`
+	RequiresApproval       bool                                                                    `json:"RequiresApproval"`
+	KeyUsage               int64                                                                   `json:"KeyUsage"`
 	ExtendedKeyUsages      []ModelsTemplateCollectionRetrievalResponseExtendedKeyUsageModel        `json:"ExtendedKeyUsages,omitempty"`
 	AdditionalProperties   map[string]interface{}
 }
@@ -60,9 +60,22 @@ type _ModelsTemplateCollectionRetrievalResponse ModelsTemplateCollectionRetrieva
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewModelsTemplateCollectionRetrievalResponse(id int64) *ModelsTemplateCollectionRetrievalResponse {
+func NewModelsTemplateCollectionRetrievalResponse(id int64, commonName string, templateName string, oid string, keySize string, keyType string, configurationTenant string, keyRetention string, keyArchival bool, allowedEnrollmentTypes int64, useAllowedRequesters bool, displayName string, requiresApproval bool, keyUsage int64) *ModelsTemplateCollectionRetrievalResponse {
 	this := ModelsTemplateCollectionRetrievalResponse{}
 	this.Id = id
+	this.CommonName = commonName
+	this.TemplateName = templateName
+	this.Oid = oid
+	this.KeySize = keySize
+	this.KeyType = keyType
+	this.ConfigurationTenant = configurationTenant
+	this.KeyRetention = keyRetention
+	this.KeyArchival = keyArchival
+	this.AllowedEnrollmentTypes = allowedEnrollmentTypes
+	this.UseAllowedRequesters = useAllowedRequesters
+	this.DisplayName = displayName
+	this.RequiresApproval = requiresApproval
+	this.KeyUsage = keyUsage
 	return &this
 }
 
@@ -98,164 +111,124 @@ func (o *ModelsTemplateCollectionRetrievalResponse) SetId(v int64) {
 	o.Id = v
 }
 
-// GetCommonName returns the CommonName field value if set, zero value otherwise.
+// GetCommonName returns the CommonName field value
 func (o *ModelsTemplateCollectionRetrievalResponse) GetCommonName() string {
-	if o == nil || isNil(o.CommonName) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.CommonName
+
+	return o.CommonName
 }
 
-// GetCommonNameOk returns a tuple with the CommonName field value if set, nil otherwise
+// GetCommonNameOk returns a tuple with the CommonName field value
 // and a boolean to check if the value has been set.
 func (o *ModelsTemplateCollectionRetrievalResponse) GetCommonNameOk() (*string, bool) {
-	if o == nil || isNil(o.CommonName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CommonName, true
+	return &o.CommonName, true
 }
 
-// HasCommonName returns a boolean if a field has been set.
-func (o *ModelsTemplateCollectionRetrievalResponse) HasCommonName() bool {
-	if o != nil && !isNil(o.CommonName) {
-		return true
-	}
-
-	return false
-}
-
-// SetCommonName gets a reference to the given string and assigns it to the CommonName field.
+// SetCommonName sets field value
 func (o *ModelsTemplateCollectionRetrievalResponse) SetCommonName(v string) {
-	o.CommonName = &v
+	o.CommonName = v
 }
 
-// GetTemplateName returns the TemplateName field value if set, zero value otherwise.
+// GetTemplateName returns the TemplateName field value
 func (o *ModelsTemplateCollectionRetrievalResponse) GetTemplateName() string {
-	if o == nil || isNil(o.TemplateName) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.TemplateName
+
+	return o.TemplateName
 }
 
-// GetTemplateNameOk returns a tuple with the TemplateName field value if set, nil otherwise
+// GetTemplateNameOk returns a tuple with the TemplateName field value
 // and a boolean to check if the value has been set.
 func (o *ModelsTemplateCollectionRetrievalResponse) GetTemplateNameOk() (*string, bool) {
-	if o == nil || isNil(o.TemplateName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TemplateName, true
+	return &o.TemplateName, true
 }
 
-// HasTemplateName returns a boolean if a field has been set.
-func (o *ModelsTemplateCollectionRetrievalResponse) HasTemplateName() bool {
-	if o != nil && !isNil(o.TemplateName) {
-		return true
-	}
-
-	return false
-}
-
-// SetTemplateName gets a reference to the given string and assigns it to the TemplateName field.
+// SetTemplateName sets field value
 func (o *ModelsTemplateCollectionRetrievalResponse) SetTemplateName(v string) {
-	o.TemplateName = &v
+	o.TemplateName = v
 }
 
-// GetOid returns the Oid field value if set, zero value otherwise.
+// GetOid returns the Oid field value
 func (o *ModelsTemplateCollectionRetrievalResponse) GetOid() string {
-	if o == nil || isNil(o.Oid) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Oid
+
+	return o.Oid
 }
 
-// GetOidOk returns a tuple with the Oid field value if set, nil otherwise
+// GetOidOk returns a tuple with the Oid field value
 // and a boolean to check if the value has been set.
 func (o *ModelsTemplateCollectionRetrievalResponse) GetOidOk() (*string, bool) {
-	if o == nil || isNil(o.Oid) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Oid, true
+	return &o.Oid, true
 }
 
-// HasOid returns a boolean if a field has been set.
-func (o *ModelsTemplateCollectionRetrievalResponse) HasOid() bool {
-	if o != nil && !isNil(o.Oid) {
-		return true
-	}
-
-	return false
-}
-
-// SetOid gets a reference to the given string and assigns it to the Oid field.
+// SetOid sets field value
 func (o *ModelsTemplateCollectionRetrievalResponse) SetOid(v string) {
-	o.Oid = &v
+	o.Oid = v
 }
 
-// GetKeySize returns the KeySize field value if set, zero value otherwise.
+// GetKeySize returns the KeySize field value
 func (o *ModelsTemplateCollectionRetrievalResponse) GetKeySize() string {
-	if o == nil || isNil(o.KeySize) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.KeySize
+
+	return o.KeySize
 }
 
-// GetKeySizeOk returns a tuple with the KeySize field value if set, nil otherwise
+// GetKeySizeOk returns a tuple with the KeySize field value
 // and a boolean to check if the value has been set.
 func (o *ModelsTemplateCollectionRetrievalResponse) GetKeySizeOk() (*string, bool) {
-	if o == nil || isNil(o.KeySize) {
+	if o == nil {
 		return nil, false
 	}
-	return o.KeySize, true
+	return &o.KeySize, true
 }
 
-// HasKeySize returns a boolean if a field has been set.
-func (o *ModelsTemplateCollectionRetrievalResponse) HasKeySize() bool {
-	if o != nil && !isNil(o.KeySize) {
-		return true
-	}
-
-	return false
-}
-
-// SetKeySize gets a reference to the given string and assigns it to the KeySize field.
+// SetKeySize sets field value
 func (o *ModelsTemplateCollectionRetrievalResponse) SetKeySize(v string) {
-	o.KeySize = &v
+	o.KeySize = v
 }
 
-// GetKeyType returns the KeyType field value if set, zero value otherwise.
+// GetKeyType returns the KeyType field value
 func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyType() string {
-	if o == nil || isNil(o.KeyType) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.KeyType
+
+	return o.KeyType
 }
 
-// GetKeyTypeOk returns a tuple with the KeyType field value if set, nil otherwise
+// GetKeyTypeOk returns a tuple with the KeyType field value
 // and a boolean to check if the value has been set.
 func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyTypeOk() (*string, bool) {
-	if o == nil || isNil(o.KeyType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.KeyType, true
+	return &o.KeyType, true
 }
 
-// HasKeyType returns a boolean if a field has been set.
-func (o *ModelsTemplateCollectionRetrievalResponse) HasKeyType() bool {
-	if o != nil && !isNil(o.KeyType) {
-		return true
-	}
-
-	return false
-}
-
-// SetKeyType gets a reference to the given string and assigns it to the KeyType field.
+// SetKeyType sets field value
 func (o *ModelsTemplateCollectionRetrievalResponse) SetKeyType(v string) {
-	o.KeyType = &v
+	o.KeyType = v
 }
 
 // GetForestRoot returns the ForestRoot field value if set, zero value otherwise.
@@ -290,36 +263,28 @@ func (o *ModelsTemplateCollectionRetrievalResponse) SetForestRoot(v string) {
 	o.ForestRoot = &v
 }
 
-// GetConfigurationTenant returns the ConfigurationTenant field value if set, zero value otherwise.
+// GetConfigurationTenant returns the ConfigurationTenant field value
 func (o *ModelsTemplateCollectionRetrievalResponse) GetConfigurationTenant() string {
-	if o == nil || isNil(o.ConfigurationTenant) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.ConfigurationTenant
+
+	return o.ConfigurationTenant
 }
 
-// GetConfigurationTenantOk returns a tuple with the ConfigurationTenant field value if set, nil otherwise
+// GetConfigurationTenantOk returns a tuple with the ConfigurationTenant field value
 // and a boolean to check if the value has been set.
 func (o *ModelsTemplateCollectionRetrievalResponse) GetConfigurationTenantOk() (*string, bool) {
-	if o == nil || isNil(o.ConfigurationTenant) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ConfigurationTenant, true
+	return &o.ConfigurationTenant, true
 }
 
-// HasConfigurationTenant returns a boolean if a field has been set.
-func (o *ModelsTemplateCollectionRetrievalResponse) HasConfigurationTenant() bool {
-	if o != nil && !isNil(o.ConfigurationTenant) {
-		return true
-	}
-
-	return false
-}
-
-// SetConfigurationTenant gets a reference to the given string and assigns it to the ConfigurationTenant field.
+// SetConfigurationTenant sets field value
 func (o *ModelsTemplateCollectionRetrievalResponse) SetConfigurationTenant(v string) {
-	o.ConfigurationTenant = &v
+	o.ConfigurationTenant = v
 }
 
 // GetFriendlyName returns the FriendlyName field value if set, zero value otherwise.
@@ -354,36 +319,28 @@ func (o *ModelsTemplateCollectionRetrievalResponse) SetFriendlyName(v string) {
 	o.FriendlyName = &v
 }
 
-// GetKeyRetention returns the KeyRetention field value if set, zero value otherwise.
-func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyRetention() int64 {
-	if o == nil || isNil(o.KeyRetention) {
-		var ret int64
+// GetKeyRetention returns the KeyRetention field value
+func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyRetention() string {
+	if o == nil {
+		var ret string
 		return ret
 	}
-	return *o.KeyRetention
+
+	return o.KeyRetention
 }
 
-// GetKeyRetentionOk returns a tuple with the KeyRetention field value if set, nil otherwise
+// GetKeyRetentionOk returns a tuple with the KeyRetention field value
 // and a boolean to check if the value has been set.
-func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyRetentionOk() (*int64, bool) {
-	if o == nil || isNil(o.KeyRetention) {
+func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyRetentionOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.KeyRetention, true
+	return &o.KeyRetention, true
 }
 
-// HasKeyRetention returns a boolean if a field has been set.
-func (o *ModelsTemplateCollectionRetrievalResponse) HasKeyRetention() bool {
-	if o != nil && !isNil(o.KeyRetention) {
-		return true
-	}
-
-	return false
-}
-
-// SetKeyRetention gets a reference to the given int64 and assigns it to the KeyRetention field.
-func (o *ModelsTemplateCollectionRetrievalResponse) SetKeyRetention(v int64) {
-	o.KeyRetention = &v
+// SetKeyRetention sets field value
+func (o *ModelsTemplateCollectionRetrievalResponse) SetKeyRetention(v string) {
+	o.KeyRetention = v
 }
 
 // GetKeyRetentionDays returns the KeyRetentionDays field value if set, zero value otherwise.
@@ -418,36 +375,28 @@ func (o *ModelsTemplateCollectionRetrievalResponse) SetKeyRetentionDays(v int64)
 	o.KeyRetentionDays = &v
 }
 
-// GetKeyArchival returns the KeyArchival field value if set, zero value otherwise.
+// GetKeyArchival returns the KeyArchival field value
 func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyArchival() bool {
-	if o == nil || isNil(o.KeyArchival) {
+	if o == nil {
 		var ret bool
 		return ret
 	}
-	return *o.KeyArchival
+
+	return o.KeyArchival
 }
 
-// GetKeyArchivalOk returns a tuple with the KeyArchival field value if set, nil otherwise
+// GetKeyArchivalOk returns a tuple with the KeyArchival field value
 // and a boolean to check if the value has been set.
 func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyArchivalOk() (*bool, bool) {
-	if o == nil || isNil(o.KeyArchival) {
+	if o == nil {
 		return nil, false
 	}
-	return o.KeyArchival, true
+	return &o.KeyArchival, true
 }
 
-// HasKeyArchival returns a boolean if a field has been set.
-func (o *ModelsTemplateCollectionRetrievalResponse) HasKeyArchival() bool {
-	if o != nil && !isNil(o.KeyArchival) {
-		return true
-	}
-
-	return false
-}
-
-// SetKeyArchival gets a reference to the given bool and assigns it to the KeyArchival field.
+// SetKeyArchival sets field value
 func (o *ModelsTemplateCollectionRetrievalResponse) SetKeyArchival(v bool) {
-	o.KeyArchival = &v
+	o.KeyArchival = v
 }
 
 // GetEnrollmentFields returns the EnrollmentFields field value if set, zero value otherwise.
@@ -482,36 +431,28 @@ func (o *ModelsTemplateCollectionRetrievalResponse) SetEnrollmentFields(v []Mode
 	o.EnrollmentFields = v
 }
 
-// GetAllowedEnrollmentTypes returns the AllowedEnrollmentTypes field value if set, zero value otherwise.
+// GetAllowedEnrollmentTypes returns the AllowedEnrollmentTypes field value
 func (o *ModelsTemplateCollectionRetrievalResponse) GetAllowedEnrollmentTypes() int64 {
-	if o == nil || isNil(o.AllowedEnrollmentTypes) {
+	if o == nil {
 		var ret int64
 		return ret
 	}
-	return *o.AllowedEnrollmentTypes
+
+	return o.AllowedEnrollmentTypes
 }
 
-// GetAllowedEnrollmentTypesOk returns a tuple with the AllowedEnrollmentTypes field value if set, nil otherwise
+// GetAllowedEnrollmentTypesOk returns a tuple with the AllowedEnrollmentTypes field value
 // and a boolean to check if the value has been set.
 func (o *ModelsTemplateCollectionRetrievalResponse) GetAllowedEnrollmentTypesOk() (*int64, bool) {
-	if o == nil || isNil(o.AllowedEnrollmentTypes) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AllowedEnrollmentTypes, true
+	return &o.AllowedEnrollmentTypes, true
 }
 
-// HasAllowedEnrollmentTypes returns a boolean if a field has been set.
-func (o *ModelsTemplateCollectionRetrievalResponse) HasAllowedEnrollmentTypes() bool {
-	if o != nil && !isNil(o.AllowedEnrollmentTypes) {
-		return true
-	}
-
-	return false
-}
-
-// SetAllowedEnrollmentTypes gets a reference to the given int64 and assigns it to the AllowedEnrollmentTypes field.
+// SetAllowedEnrollmentTypes sets field value
 func (o *ModelsTemplateCollectionRetrievalResponse) SetAllowedEnrollmentTypes(v int64) {
-	o.AllowedEnrollmentTypes = &v
+	o.AllowedEnrollmentTypes = v
 }
 
 // GetTemplateRegexes returns the TemplateRegexes field value if set, zero value otherwise.
@@ -546,36 +487,28 @@ func (o *ModelsTemplateCollectionRetrievalResponse) SetTemplateRegexes(v []Model
 	o.TemplateRegexes = v
 }
 
-// GetUseAllowedRequesters returns the UseAllowedRequesters field value if set, zero value otherwise.
+// GetUseAllowedRequesters returns the UseAllowedRequesters field value
 func (o *ModelsTemplateCollectionRetrievalResponse) GetUseAllowedRequesters() bool {
-	if o == nil || isNil(o.UseAllowedRequesters) {
+	if o == nil {
 		var ret bool
 		return ret
 	}
-	return *o.UseAllowedRequesters
+
+	return o.UseAllowedRequesters
 }
 
-// GetUseAllowedRequestersOk returns a tuple with the UseAllowedRequesters field value if set, nil otherwise
+// GetUseAllowedRequestersOk returns a tuple with the UseAllowedRequesters field value
 // and a boolean to check if the value has been set.
 func (o *ModelsTemplateCollectionRetrievalResponse) GetUseAllowedRequestersOk() (*bool, bool) {
-	if o == nil || isNil(o.UseAllowedRequesters) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UseAllowedRequesters, true
+	return &o.UseAllowedRequesters, true
 }
 
-// HasUseAllowedRequesters returns a boolean if a field has been set.
-func (o *ModelsTemplateCollectionRetrievalResponse) HasUseAllowedRequesters() bool {
-	if o != nil && !isNil(o.UseAllowedRequesters) {
-		return true
-	}
-
-	return false
-}
-
-// SetUseAllowedRequesters gets a reference to the given bool and assigns it to the UseAllowedRequesters field.
+// SetUseAllowedRequesters sets field value
 func (o *ModelsTemplateCollectionRetrievalResponse) SetUseAllowedRequesters(v bool) {
-	o.UseAllowedRequesters = &v
+	o.UseAllowedRequesters = v
 }
 
 // GetAllowedRequesters returns the AllowedRequesters field value if set, zero value otherwise.
@@ -610,100 +543,76 @@ func (o *ModelsTemplateCollectionRetrievalResponse) SetAllowedRequesters(v []str
 	o.AllowedRequesters = v
 }
 
-// GetDisplayName returns the DisplayName field value if set, zero value otherwise.
+// GetDisplayName returns the DisplayName field value
 func (o *ModelsTemplateCollectionRetrievalResponse) GetDisplayName() string {
-	if o == nil || isNil(o.DisplayName) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.DisplayName
+
+	return o.DisplayName
 }
 
-// GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
+// GetDisplayNameOk returns a tuple with the DisplayName field value
 // and a boolean to check if the value has been set.
 func (o *ModelsTemplateCollectionRetrievalResponse) GetDisplayNameOk() (*string, bool) {
-	if o == nil || isNil(o.DisplayName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DisplayName, true
+	return &o.DisplayName, true
 }
 
-// HasDisplayName returns a boolean if a field has been set.
-func (o *ModelsTemplateCollectionRetrievalResponse) HasDisplayName() bool {
-	if o != nil && !isNil(o.DisplayName) {
-		return true
-	}
-
-	return false
-}
-
-// SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
+// SetDisplayName sets field value
 func (o *ModelsTemplateCollectionRetrievalResponse) SetDisplayName(v string) {
-	o.DisplayName = &v
+	o.DisplayName = v
 }
 
-// GetRequiresApproval returns the RequiresApproval field value if set, zero value otherwise.
+// GetRequiresApproval returns the RequiresApproval field value
 func (o *ModelsTemplateCollectionRetrievalResponse) GetRequiresApproval() bool {
-	if o == nil || isNil(o.RequiresApproval) {
+	if o == nil {
 		var ret bool
 		return ret
 	}
-	return *o.RequiresApproval
+
+	return o.RequiresApproval
 }
 
-// GetRequiresApprovalOk returns a tuple with the RequiresApproval field value if set, nil otherwise
+// GetRequiresApprovalOk returns a tuple with the RequiresApproval field value
 // and a boolean to check if the value has been set.
 func (o *ModelsTemplateCollectionRetrievalResponse) GetRequiresApprovalOk() (*bool, bool) {
-	if o == nil || isNil(o.RequiresApproval) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RequiresApproval, true
+	return &o.RequiresApproval, true
 }
 
-// HasRequiresApproval returns a boolean if a field has been set.
-func (o *ModelsTemplateCollectionRetrievalResponse) HasRequiresApproval() bool {
-	if o != nil && !isNil(o.RequiresApproval) {
-		return true
-	}
-
-	return false
-}
-
-// SetRequiresApproval gets a reference to the given bool and assigns it to the RequiresApproval field.
+// SetRequiresApproval sets field value
 func (o *ModelsTemplateCollectionRetrievalResponse) SetRequiresApproval(v bool) {
-	o.RequiresApproval = &v
+	o.RequiresApproval = v
 }
 
-// GetKeyUsage returns the KeyUsage field value if set, zero value otherwise.
+// GetKeyUsage returns the KeyUsage field value
 func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyUsage() int64 {
-	if o == nil || isNil(o.KeyUsage) {
+	if o == nil {
 		var ret int64
 		return ret
 	}
-	return *o.KeyUsage
+
+	return o.KeyUsage
 }
 
-// GetKeyUsageOk returns a tuple with the KeyUsage field value if set, nil otherwise
+// GetKeyUsageOk returns a tuple with the KeyUsage field value
 // and a boolean to check if the value has been set.
 func (o *ModelsTemplateCollectionRetrievalResponse) GetKeyUsageOk() (*int64, bool) {
-	if o == nil || isNil(o.KeyUsage) {
+	if o == nil {
 		return nil, false
 	}
-	return o.KeyUsage, true
+	return &o.KeyUsage, true
 }
 
-// HasKeyUsage returns a boolean if a field has been set.
-func (o *ModelsTemplateCollectionRetrievalResponse) HasKeyUsage() bool {
-	if o != nil && !isNil(o.KeyUsage) {
-		return true
-	}
-
-	return false
-}
-
-// SetKeyUsage gets a reference to the given int64 and assigns it to the KeyUsage field.
+// SetKeyUsage sets field value
 func (o *ModelsTemplateCollectionRetrievalResponse) SetKeyUsage(v int64) {
-	o.KeyUsage = &v
+	o.KeyUsage = v
 }
 
 // GetExtendedKeyUsages returns the ExtendedKeyUsages field value if set, zero value otherwise.
@@ -749,61 +658,35 @@ func (o ModelsTemplateCollectionRetrievalResponse) MarshalJSON() ([]byte, error)
 func (o ModelsTemplateCollectionRetrievalResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["Id"] = o.Id
-	if !isNil(o.CommonName) {
-		toSerialize["CommonName"] = o.CommonName
-	}
-	if !isNil(o.TemplateName) {
-		toSerialize["TemplateName"] = o.TemplateName
-	}
-	if !isNil(o.Oid) {
-		toSerialize["Oid"] = o.Oid
-	}
-	if !isNil(o.KeySize) {
-		toSerialize["KeySize"] = o.KeySize
-	}
-	if !isNil(o.KeyType) {
-		toSerialize["KeyType"] = o.KeyType
-	}
+	toSerialize["CommonName"] = o.CommonName
+	toSerialize["TemplateName"] = o.TemplateName
+	toSerialize["Oid"] = o.Oid
+	toSerialize["KeySize"] = o.KeySize
+	toSerialize["KeyType"] = o.KeyType
 	// skip: ForestRoot is readOnly
-	if !isNil(o.ConfigurationTenant) {
-		toSerialize["ConfigurationTenant"] = o.ConfigurationTenant
-	}
+	toSerialize["ConfigurationTenant"] = o.ConfigurationTenant
 	if !isNil(o.FriendlyName) {
 		toSerialize["FriendlyName"] = o.FriendlyName
 	}
-	if !isNil(o.KeyRetention) {
-		toSerialize["KeyRetention"] = o.KeyRetention
-	}
+	toSerialize["KeyRetention"] = o.KeyRetention
 	if !isNil(o.KeyRetentionDays) {
 		toSerialize["KeyRetentionDays"] = o.KeyRetentionDays
 	}
-	if !isNil(o.KeyArchival) {
-		toSerialize["KeyArchival"] = o.KeyArchival
-	}
+	toSerialize["KeyArchival"] = o.KeyArchival
 	if !isNil(o.EnrollmentFields) {
 		toSerialize["EnrollmentFields"] = o.EnrollmentFields
 	}
-	if !isNil(o.AllowedEnrollmentTypes) {
-		toSerialize["AllowedEnrollmentTypes"] = o.AllowedEnrollmentTypes
-	}
+	toSerialize["AllowedEnrollmentTypes"] = o.AllowedEnrollmentTypes
 	if !isNil(o.TemplateRegexes) {
 		toSerialize["TemplateRegexes"] = o.TemplateRegexes
 	}
-	if !isNil(o.UseAllowedRequesters) {
-		toSerialize["UseAllowedRequesters"] = o.UseAllowedRequesters
-	}
+	toSerialize["UseAllowedRequesters"] = o.UseAllowedRequesters
 	if !isNil(o.AllowedRequesters) {
 		toSerialize["AllowedRequesters"] = o.AllowedRequesters
 	}
-	if !isNil(o.DisplayName) {
-		toSerialize["DisplayName"] = o.DisplayName
-	}
-	if !isNil(o.RequiresApproval) {
-		toSerialize["RequiresApproval"] = o.RequiresApproval
-	}
-	if !isNil(o.KeyUsage) {
-		toSerialize["KeyUsage"] = o.KeyUsage
-	}
+	toSerialize["DisplayName"] = o.DisplayName
+	toSerialize["RequiresApproval"] = o.RequiresApproval
+	toSerialize["KeyUsage"] = o.KeyUsage
 	if !isNil(o.ExtendedKeyUsages) {
 		toSerialize["ExtendedKeyUsages"] = o.ExtendedKeyUsages
 	}

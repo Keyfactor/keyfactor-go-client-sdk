@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TemplateId** | Pointer to **NullableInt64** |  | [optional] 
+**TemplateId** | **int64** |  | 
 **RSAValidKeySizes** | Pointer to **[]int64** |  | [optional] 
 **ECCValidCurves** | Pointer to **[]string** |  | [optional] 
 **AllowKeyReuse** | Pointer to **bool** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewModelsTemplateRetrievalResponseTemplatePolicyModel
 
-`func NewModelsTemplateRetrievalResponseTemplatePolicyModel() *ModelsTemplateRetrievalResponseTemplatePolicyModel`
+`func NewModelsTemplateRetrievalResponseTemplatePolicyModel(templateId int64, ) *ModelsTemplateRetrievalResponseTemplatePolicyModel`
 
 NewModelsTemplateRetrievalResponseTemplatePolicyModel instantiates a new ModelsTemplateRetrievalResponseTemplatePolicyModel object
 This constructor will assign default values to properties that have it defined,
@@ -49,22 +49,7 @@ and a boolean to check if the value has been set.
 
 SetTemplateId sets TemplateId field to given value.
 
-### HasTemplateId
 
-`func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) HasTemplateId() bool`
-
-HasTemplateId returns a boolean if a field has been set.
-
-### SetTemplateIdNil
-
-`func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) SetTemplateIdNil(b bool)`
-
- SetTemplateIdNil sets the value for TemplateId to be an explicit nil
-
-### UnsetTemplateId
-`func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) UnsetTemplateId()`
-
-UnsetTemplateId ensures that no value is present for TemplateId, not even an explicit nil
 ### GetRSAValidKeySizes
 
 `func (o *ModelsTemplateRetrievalResponseTemplatePolicyModel) GetRSAValidKeySizes() []int64`

@@ -5,29 +5,29 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int64** |  | 
-**CommonName** | Pointer to **string** |  | [optional] 
-**TemplateName** | Pointer to **string** |  | [optional] 
-**Oid** | Pointer to **string** |  | [optional] 
-**KeySize** | Pointer to **string** |  | [optional] 
-**KeyType** | Pointer to **string** |  | [optional] 
+**CommonName** | **string** |  | 
+**TemplateName** | **string** |  | 
+**Oid** | **string** |  | 
+**KeySize** | **string** |  | 
+**KeyType** | **string** |  | 
 **ForestRoot** | Pointer to **string** |  | [optional] [readonly] 
-**ConfigurationTenant** | Pointer to **string** |  | [optional] 
+**ConfigurationTenant** | **string** |  | 
 **FriendlyName** | Pointer to **string** |  | [optional] 
-**KeyRetention** | Pointer to **int64** |  | [optional] 
+**KeyRetention** | **string** |  | 
 **KeyRetentionDays** | Pointer to **int64** |  | [optional] 
-**KeyArchival** | Pointer to **bool** |  | [optional] 
+**KeyArchival** | **bool** |  | 
 **EnrollmentFields** | Pointer to [**[]ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel**](ModelsTemplateRetrievalResponseTemplateEnrollmentFieldModel.md) |  | [optional] 
 **MetadataFields** | Pointer to [**[]ModelsTemplateRetrievalResponseTemplateMetadataFieldModel**](ModelsTemplateRetrievalResponseTemplateMetadataFieldModel.md) |  | [optional] 
-**AllowedEnrollmentTypes** | Pointer to **int64** |  | [optional] 
+**AllowedEnrollmentTypes** | **int64** |  | 
 **TemplateRegexes** | Pointer to [**[]ModelsTemplateRetrievalResponseTemplateRegexModel**](ModelsTemplateRetrievalResponseTemplateRegexModel.md) |  | [optional] 
 **TemplateDefaults** | Pointer to [**[]ModelsTemplateRetrievalResponseTemplateDefaultModel**](ModelsTemplateRetrievalResponseTemplateDefaultModel.md) |  | [optional] 
 **TemplatePolicy** | Pointer to [**ModelsTemplateRetrievalResponseTemplatePolicyModel**](ModelsTemplateRetrievalResponseTemplatePolicyModel.md) |  | [optional] 
-**UseAllowedRequesters** | Pointer to **bool** |  | [optional] 
+**UseAllowedRequesters** | **bool** |  | 
 **AllowedRequesters** | Pointer to **[]string** |  | [optional] 
-**DisplayName** | Pointer to **string** |  | [optional] 
+**DisplayName** | **string** |  | 
 **RFCEnforcement** | Pointer to **bool** |  | [optional] 
-**RequiresApproval** | Pointer to **bool** |  | [optional] 
-**KeyUsage** | Pointer to **int64** |  | [optional] 
+**RequiresApproval** | **bool** |  | 
+**KeyUsage** | **int64** |  | 
 **ExtendedKeyUsages** | Pointer to [**[]ModelsTemplateRetrievalResponseExtendedKeyUsageModel**](ModelsTemplateRetrievalResponseExtendedKeyUsageModel.md) |  | [optional] 
 **Curve** | Pointer to **NullableString** |  | [optional] 
 
@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 
 ### NewModelsTemplateRetrievalResponse
 
-`func NewModelsTemplateRetrievalResponse(id int64, ) *ModelsTemplateRetrievalResponse`
+`func NewModelsTemplateRetrievalResponse(id int64, commonName string, templateName string, oid string, keySize string, keyType string, configurationTenant string, keyRetention string, keyArchival bool, allowedEnrollmentTypes int64, useAllowedRequesters bool, displayName string, requiresApproval bool, keyUsage int64, ) *ModelsTemplateRetrievalResponse`
 
 NewModelsTemplateRetrievalResponse instantiates a new ModelsTemplateRetrievalResponse object
 This constructor will assign default values to properties that have it defined,
@@ -89,11 +89,6 @@ and a boolean to check if the value has been set.
 
 SetCommonName sets CommonName field to given value.
 
-### HasCommonName
-
-`func (o *ModelsTemplateRetrievalResponse) HasCommonName() bool`
-
-HasCommonName returns a boolean if a field has been set.
 
 ### GetTemplateName
 
@@ -114,11 +109,6 @@ and a boolean to check if the value has been set.
 
 SetTemplateName sets TemplateName field to given value.
 
-### HasTemplateName
-
-`func (o *ModelsTemplateRetrievalResponse) HasTemplateName() bool`
-
-HasTemplateName returns a boolean if a field has been set.
 
 ### GetOid
 
@@ -139,11 +129,6 @@ and a boolean to check if the value has been set.
 
 SetOid sets Oid field to given value.
 
-### HasOid
-
-`func (o *ModelsTemplateRetrievalResponse) HasOid() bool`
-
-HasOid returns a boolean if a field has been set.
 
 ### GetKeySize
 
@@ -164,11 +149,6 @@ and a boolean to check if the value has been set.
 
 SetKeySize sets KeySize field to given value.
 
-### HasKeySize
-
-`func (o *ModelsTemplateRetrievalResponse) HasKeySize() bool`
-
-HasKeySize returns a boolean if a field has been set.
 
 ### GetKeyType
 
@@ -189,11 +169,6 @@ and a boolean to check if the value has been set.
 
 SetKeyType sets KeyType field to given value.
 
-### HasKeyType
-
-`func (o *ModelsTemplateRetrievalResponse) HasKeyType() bool`
-
-HasKeyType returns a boolean if a field has been set.
 
 ### GetForestRoot
 
@@ -239,11 +214,6 @@ and a boolean to check if the value has been set.
 
 SetConfigurationTenant sets ConfigurationTenant field to given value.
 
-### HasConfigurationTenant
-
-`func (o *ModelsTemplateRetrievalResponse) HasConfigurationTenant() bool`
-
-HasConfigurationTenant returns a boolean if a field has been set.
 
 ### GetFriendlyName
 
@@ -272,28 +242,23 @@ HasFriendlyName returns a boolean if a field has been set.
 
 ### GetKeyRetention
 
-`func (o *ModelsTemplateRetrievalResponse) GetKeyRetention() int64`
+`func (o *ModelsTemplateRetrievalResponse) GetKeyRetention() string`
 
 GetKeyRetention returns the KeyRetention field if non-nil, zero value otherwise.
 
 ### GetKeyRetentionOk
 
-`func (o *ModelsTemplateRetrievalResponse) GetKeyRetentionOk() (*int64, bool)`
+`func (o *ModelsTemplateRetrievalResponse) GetKeyRetentionOk() (*string, bool)`
 
 GetKeyRetentionOk returns a tuple with the KeyRetention field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyRetention
 
-`func (o *ModelsTemplateRetrievalResponse) SetKeyRetention(v int64)`
+`func (o *ModelsTemplateRetrievalResponse) SetKeyRetention(v string)`
 
 SetKeyRetention sets KeyRetention field to given value.
 
-### HasKeyRetention
-
-`func (o *ModelsTemplateRetrievalResponse) HasKeyRetention() bool`
-
-HasKeyRetention returns a boolean if a field has been set.
 
 ### GetKeyRetentionDays
 
@@ -339,11 +304,6 @@ and a boolean to check if the value has been set.
 
 SetKeyArchival sets KeyArchival field to given value.
 
-### HasKeyArchival
-
-`func (o *ModelsTemplateRetrievalResponse) HasKeyArchival() bool`
-
-HasKeyArchival returns a boolean if a field has been set.
 
 ### GetEnrollmentFields
 
@@ -414,11 +374,6 @@ and a boolean to check if the value has been set.
 
 SetAllowedEnrollmentTypes sets AllowedEnrollmentTypes field to given value.
 
-### HasAllowedEnrollmentTypes
-
-`func (o *ModelsTemplateRetrievalResponse) HasAllowedEnrollmentTypes() bool`
-
-HasAllowedEnrollmentTypes returns a boolean if a field has been set.
 
 ### GetTemplateRegexes
 
@@ -514,11 +469,6 @@ and a boolean to check if the value has been set.
 
 SetUseAllowedRequesters sets UseAllowedRequesters field to given value.
 
-### HasUseAllowedRequesters
-
-`func (o *ModelsTemplateRetrievalResponse) HasUseAllowedRequesters() bool`
-
-HasUseAllowedRequesters returns a boolean if a field has been set.
 
 ### GetAllowedRequesters
 
@@ -564,11 +514,6 @@ and a boolean to check if the value has been set.
 
 SetDisplayName sets DisplayName field to given value.
 
-### HasDisplayName
-
-`func (o *ModelsTemplateRetrievalResponse) HasDisplayName() bool`
-
-HasDisplayName returns a boolean if a field has been set.
 
 ### GetRFCEnforcement
 
@@ -614,11 +559,6 @@ and a boolean to check if the value has been set.
 
 SetRequiresApproval sets RequiresApproval field to given value.
 
-### HasRequiresApproval
-
-`func (o *ModelsTemplateRetrievalResponse) HasRequiresApproval() bool`
-
-HasRequiresApproval returns a boolean if a field has been set.
 
 ### GetKeyUsage
 
@@ -639,11 +579,6 @@ and a boolean to check if the value has been set.
 
 SetKeyUsage sets KeyUsage field to given value.
 
-### HasKeyUsage
-
-`func (o *ModelsTemplateRetrievalResponse) HasKeyUsage() bool`
-
-HasKeyUsage returns a boolean if a field has been set.
 
 ### GetExtendedKeyUsages
 
