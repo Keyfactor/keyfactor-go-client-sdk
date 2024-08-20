@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TemplateId** | Pointer to **int32** |  | [optional] 
+**TemplateId** | Pointer to **NullableInt32** |  | [optional] 
 **SubjectPart** | Pointer to **string** |  | [optional] 
 **Regex** | Pointer to **string** |  | [optional] 
 **Error** | Pointer to **string** |  | [optional] 
@@ -53,6 +53,16 @@ SetTemplateId sets TemplateId field to given value.
 
 HasTemplateId returns a boolean if a field has been set.
 
+### SetTemplateIdNil
+
+`func (o *ModelsTemplateUpdateRequestTemplateRegexModel) SetTemplateIdNil(b bool)`
+
+ SetTemplateIdNil sets the value for TemplateId to be an explicit nil
+
+### UnsetTemplateId
+`func (o *ModelsTemplateUpdateRequestTemplateRegexModel) UnsetTemplateId()`
+
+UnsetTemplateId ensures that no value is present for TemplateId, not even an explicit nil
 ### GetSubjectPart
 
 `func (o *ModelsTemplateUpdateRequestTemplateRegexModel) GetSubjectPart() string`

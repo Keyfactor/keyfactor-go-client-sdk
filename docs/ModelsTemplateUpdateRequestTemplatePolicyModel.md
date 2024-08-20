@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TemplateId** | Pointer to **int32** |  | [optional] 
+**TemplateId** | Pointer to **NullableInt32** |  | [optional] 
 **RSAValidKeySizes** | Pointer to **[]int32** |  | [optional] 
 **ECCValidCurves** | Pointer to **[]string** |  | [optional] 
 **AllowKeyReuse** | Pointer to **bool** |  | [optional] 
@@ -55,6 +55,16 @@ SetTemplateId sets TemplateId field to given value.
 
 HasTemplateId returns a boolean if a field has been set.
 
+### SetTemplateIdNil
+
+`func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) SetTemplateIdNil(b bool)`
+
+ SetTemplateIdNil sets the value for TemplateId to be an explicit nil
+
+### UnsetTemplateId
+`func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) UnsetTemplateId()`
+
+UnsetTemplateId ensures that no value is present for TemplateId, not even an explicit nil
 ### GetRSAValidKeySizes
 
 `func (o *ModelsTemplateUpdateRequestTemplatePolicyModel) GetRSAValidKeySizes() []int32`

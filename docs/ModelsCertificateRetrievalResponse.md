@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **NotAfter** | Pointer to **time.Time** |  | [optional] 
 **IssuerDN** | Pointer to **NullableString** |  | [optional] 
 **PrincipalId** | Pointer to **NullableInt32** |  | [optional] 
-**TemplateId** | Pointer to **int32** |  | [optional] 
+**TemplateId** | Pointer to **NullableInt32** |  | [optional] 
 **CertState** | Pointer to **int32** |  | [optional] 
 **KeySizeInBits** | Pointer to **int32** |  | [optional] 
 **KeyType** | Pointer to **int32** |  | [optional] 
@@ -385,6 +385,16 @@ SetTemplateId sets TemplateId field to given value.
 
 HasTemplateId returns a boolean if a field has been set.
 
+### SetTemplateIdNil
+
+`func (o *ModelsCertificateRetrievalResponse) SetTemplateIdNil(b bool)`
+
+ SetTemplateIdNil sets the value for TemplateId to be an explicit nil
+
+### UnsetTemplateId
+`func (o *ModelsCertificateRetrievalResponse) UnsetTemplateId()`
+
+UnsetTemplateId ensures that no value is present for TemplateId, not even an explicit nil
 ### GetCertState
 
 `func (o *ModelsCertificateRetrievalResponse) GetCertState() int32`
