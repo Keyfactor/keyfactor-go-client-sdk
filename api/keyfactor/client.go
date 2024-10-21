@@ -677,9 +677,14 @@ func (c *APIClient) prepareRequest(
 	}
 
 	// Override request host, if applicable
-	//if c.cfg.Host != "" {
-	//	url.Host = c.cfg.Host
-	//}
+	serverConfig := c.GetConfig()
+	if serverConfig.Host != "" {
+		if serverConfig.Port > 0 && serverConfig.Port <= 65535 {
+			url.Host = fmt.Sprintf("%s:%d", serverConfig.Host, serverConfig.Port)
+		} else {
+			url.Host = serverConfig.Host
+		}
+	}
 
 	// Override request scheme
 	url.Scheme = "https"
