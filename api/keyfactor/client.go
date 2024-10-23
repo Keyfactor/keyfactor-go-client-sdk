@@ -253,7 +253,6 @@ func buildHttpClientV2(cfg *kfauthcfg.Server) (AuthConfig, error) {
 	} else {
 		return nil, fmt.Errorf("unsupported auth type or authentication cfg: '%s'", clientAuthType)
 	}
-	return nil, nil
 }
 
 func buildHttpClient(config *Configuration) (*http.Client, error) {
