@@ -59,8 +59,8 @@ var (
 // APIClient manages communication with the Keyfactor-v1 API vv1
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
-	cfg    AuthConfig
-	common service // Reuse a single struct instead of allocating one for each service on the heap.
+	AuthClient AuthConfig
+	common     service // Reuse a single struct instead of allocating one for each service on the heap.
 
 	// API Services
 
@@ -162,7 +162,7 @@ func NewAPIClient(cfg *kfauthcfg.Server) *APIClient {
 	}
 
 	c := &APIClient{}
-	c.cfg = authConfig
+	c.AuthClient = authConfig
 	c.common.client = c
 
 	// API Services
@@ -251,7 +251,7 @@ func buildHttpClientV2(cfg *kfauthcfg.Server) (AuthConfig, error) {
 		}
 		return &oauthCfg, nil
 	} else {
-		return nil, fmt.Errorf("unsupported auth type or authentication cfg: '%s'", clientAuthType)
+		return nil, fmt.Errorf("unsupported auth type or authentication AuthClient: '%s'", clientAuthType)
 	}
 }
 
@@ -539,16 +539,16 @@ func parameterToJson(obj interface{}) (string, error) {
 // callAPI do the request.
 func (c *APIClient) callAPI(request *http.Request) (*http.Response, error) {
 
-	if c.cfg == nil {
+	if c.AuthClient == nil {
 		return nil, errors.New("invalid or missing client configuration")
 	}
 
 	var httpClient *http.Client
 	var err error
 
-	httpClient, err = c.cfg.GetHttpClient()
+	httpClient, err = c.AuthClient.GetHttpClient()
 
-	//if c.cfg. {
+	//if c.AuthClient. {
 	//	dump, err := httputil.DumpRequestOut(request, true)
 	//	if err != nil {
 	//		return nil, err
@@ -561,7 +561,7 @@ func (c *APIClient) callAPI(request *http.Request) (*http.Response, error) {
 		return resp, err
 	}
 
-	//if c.cfg.Debug {
+	//if c.AuthClient.Debug {
 	//	dump, err := httputil.DumpResponse(resp, true)
 	//	if err != nil {
 	//		return resp, err
@@ -574,10 +574,10 @@ func (c *APIClient) callAPI(request *http.Request) (*http.Response, error) {
 // Allow modification of underlying config for alternate implementations and testing
 // Caution: modifying the configuration while live can cause data races and potentially unwanted behavior
 func (c *APIClient) GetConfig() *kfauthcfg.Server {
-	if c.cfg == nil {
+	if c.AuthClient == nil {
 		return nil
 	}
-	return c.cfg.GetServerConfig()
+	return c.AuthClient.GetServerConfig()
 
 }
 
@@ -725,7 +725,7 @@ func (c *APIClient) prepareRequest(
 	}
 
 	// Add the user agent to the request.
-	//localVarRequest.Header.Add("User-Agent", c.cfg.U)
+	//localVarRequest.Header.Add("User-Agent", c.AuthClient.U)
 	localVarRequest.Header.Add("User-Agent", "OpenAPI-Generator/1.0.0/go")
 	if ctx != nil {
 		// add context to the request
@@ -733,9 +733,9 @@ func (c *APIClient) prepareRequest(
 
 	}
 
-	//localVarRequest.SetBasicAuth(c.cfg.BasicAuth.UserName, c.cfg.BasicAuth.Password)
+	//localVarRequest.SetBasicAuth(c.AuthClient.BasicAuth.UserName, c.AuthClient.BasicAuth.Password)
 	//
-	//for header, value := range c.cfg.DefaultHeader {
+	//for header, value := range c.AuthClient.DefaultHeader {
 	//	localVarRequest.Header.Add(header, value)
 	//}
 	return localVarRequest, nil
