@@ -45,8 +45,7 @@ import (
 	"time"
 	"unicode/utf8"
 
-	kfauthcfg "github.com/Keyfactor/keyfactor-auth-client-go/auth_config"
-	kfcauthprovider "github.com/Keyfactor/keyfactor-auth-client-go/auth_providers"
+	"github.com/Keyfactor/keyfactor-auth-client-go/auth_providers"
 )
 
 var (
@@ -153,7 +152,7 @@ type service struct {
 
 // NewAPIClient creates a new API client. Requires a userAgent string describing your application.
 // optionally a custom http.Client to allow for advanced features such as caching.
-func NewAPIClient(cfg *kfauthcfg.Server) *APIClient {
+func NewAPIClient(cfg *auth_providers.Server) *APIClient {
 	var err error
 
 	authConfig, err := buildHttpClientV2(cfg)
@@ -215,13 +214,13 @@ func NewAPIClient(cfg *kfauthcfg.Server) *APIClient {
 type AuthConfig interface {
 	Authenticate() error
 	GetHttpClient() (*http.Client, error)
-	GetServerConfig() *kfauthcfg.Server
+	GetServerConfig() *auth_providers.Server
 }
 
-func buildHttpClientV2(cfg *kfauthcfg.Server) (AuthConfig, error) {
+func buildHttpClientV2(cfg *auth_providers.Server) (AuthConfig, error) {
 	clientAuthType := cfg.GetAuthType()
 	if clientAuthType == "basic" {
-		basicCfg := kfcauthprovider.CommandAuthConfigBasic{
+		basicCfg := auth_providers.CommandAuthConfigBasic{
 			Username: cfg.Username,
 			Password: cfg.Password,
 			Domain:   cfg.Domain,
@@ -236,7 +235,7 @@ func buildHttpClientV2(cfg *kfauthcfg.Server) (AuthConfig, error) {
 		}
 		return &basicCfg, nil
 	} else if clientAuthType == "oauth" {
-		oauthCfg := kfcauthprovider.CommandConfigOauth{
+		oauthCfg := auth_providers.CommandConfigOauth{
 			ClientID:     cfg.ClientID,
 			ClientSecret: cfg.ClientSecret,
 			TokenURL:     cfg.OAuthTokenUrl,
@@ -573,7 +572,7 @@ func (c *APIClient) callAPI(request *http.Request) (*http.Response, error) {
 
 // Allow modification of underlying config for alternate implementations and testing
 // Caution: modifying the configuration while live can cause data races and potentially unwanted behavior
-func (c *APIClient) GetConfig() *kfauthcfg.Server {
+func (c *APIClient) GetConfig() *auth_providers.Server {
 	if c.AuthClient == nil {
 		return nil
 	}
