@@ -219,11 +219,21 @@ type AuthConfig interface {
 
 func buildHttpClientV2(cfg *auth_providers.Server) (AuthConfig, error) {
 	clientAuthType := cfg.GetAuthType()
+
+	baseConfig := auth_providers.CommandAuthConfig{
+		CommandHostName: cfg.Host,
+		CommandPort:     cfg.Port,
+		CommandAPIPath:  cfg.APIPath,
+		CommandCACert:   cfg.CACertPath,
+		SkipVerify:      cfg.SkipTLSVerify,
+	}
+
 	if clientAuthType == "basic" {
 		basicCfg := auth_providers.CommandAuthConfigBasic{
-			Username: cfg.Username,
-			Password: cfg.Password,
-			Domain:   cfg.Domain,
+			CommandAuthConfig: baseConfig,
+			Username:          cfg.Username,
+			Password:          cfg.Password,
+			Domain:            cfg.Domain,
 		}
 		aErr := basicCfg.Authenticate()
 		if aErr != nil {
@@ -236,9 +246,10 @@ func buildHttpClientV2(cfg *auth_providers.Server) (AuthConfig, error) {
 		return &basicCfg, nil
 	} else if clientAuthType == "oauth" {
 		oauthCfg := auth_providers.CommandConfigOauth{
-			ClientID:     cfg.ClientID,
-			ClientSecret: cfg.ClientSecret,
-			TokenURL:     cfg.OAuthTokenUrl,
+			CommandAuthConfig: baseConfig,
+			ClientID:          cfg.ClientID,
+			ClientSecret:      cfg.ClientSecret,
+			TokenURL:          cfg.OAuthTokenUrl,
 		}
 		aErr := oauthCfg.Authenticate()
 		if aErr != nil {
