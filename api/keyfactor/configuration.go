@@ -25,6 +25,8 @@ import (
 	"net/http"
 	"os"
 	"strings"
+
+	kfauth "github.com/Keyfactor/keyfactor-auth-client-go/auth_providers"
 )
 
 // contextKeys are used to identify the type of value in the context.
@@ -53,11 +55,13 @@ var (
 	// ContextOperationServerVariables overrides a server configuration variables using operation specific values.
 	ContextOperationServerVariables = contextKey("serverOperationVariables")
 
-	envCommandHostname = "KEYFACTOR_HOSTNAME"
-	
-	EnvCommandUsername = "KEYFACTOR_USERNAME"
+	EnvCommandHostname = kfauth.EnvKeyfactorHostName
+	EnvCommandUsername = kfauth.EnvKeyfactorUsername
+	EnvCommandPassword = kfauth.EnvKeyfactorPassword
+	EnvCommandDomain = kfauth.EnvKeyfactorDomain
 
-	EnvCommandPassword = "KEYFACTOR_PASSWORD"
+
+
 )
 
 // BasicAuth provides basic http authentication to a request passed via context using ContextBasicAuth
@@ -110,7 +114,7 @@ func NewConfiguration(config map[string]string) *Configuration {
 
 	// Get hostname from environment variable
 	if confHost == "" {
-		hostname = os.Getenv(envCommandHostname)
+		hostname = os.Getenv(EnvCommandHostname)
 	} else {
 		hostname = confHost
 	}
