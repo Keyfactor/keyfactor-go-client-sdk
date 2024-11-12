@@ -34,7 +34,7 @@ import (
 	"log"
 	"mime/multipart"
 	"net/http"
-	"net/http/httputil"
+	//"net/http/httputil"
 	"net/url"
 	"os"
 	"path/filepath"
@@ -45,20 +45,21 @@ import (
 	"time"
 	"unicode/utf8"
 
+	"github.com/Keyfactor/keyfactor-auth-client-go/auth_providers"
 )
 
 var (
-	jsonCheck = regexp.MustCompile(`(?i:(?:application|text)/(?:vnd\.[^;]+\+)?json)`)
-	xmlCheck  = regexp.MustCompile(`(?i:(?:application|text)/xml)`)
+	jsonCheck       = regexp.MustCompile(`(?i:(?:application|text)/(?:vnd\.[^;]+\+)?json)`)
+	xmlCheck        = regexp.MustCompile(`(?i:(?:application|text)/xml)`)
 	queryParamSplit = regexp.MustCompile(`(^|&)([^&]+)`)
-	queryDescape    = strings.NewReplacer( "%5B", "[", "%5D", "]" )
+	queryDescape    = strings.NewReplacer("%5B", "[", "%5D", "]")
 )
 
 // APIClient manages communication with the Keyfactor-v1 API vv1
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
-	cfg    *Configuration
-	common service // Reuse a single struct instead of allocating one for each service on the heap.
+	AuthClient AuthConfig
+	common     service // Reuse a single struct instead of allocating one for each service on the heap.
 
 	// API Services
 
@@ -151,18 +152,16 @@ type service struct {
 
 // NewAPIClient creates a new API client. Requires a userAgent string describing your application.
 // optionally a custom http.Client to allow for advanced features such as caching.
-func NewAPIClient(cfg *Configuration) *APIClient {
-    var err error
+func NewAPIClient(cfg *auth_providers.Server) (*APIClient, error) {
+	var err error
 
-	if cfg.HTTPClient == nil {
-        if cfg.HTTPClient, err = buildHttpClient(cfg); err != nil {
-            debugMessage(cfg.Debug, "Failed to build HTTP client: %s", err.Error())
-            return nil
-        }
-    }
+	authConfig, err := buildHttpClientV2(cfg)
+	if err != nil {
+		return nil, err
+	}
 
 	c := &APIClient{}
-	c.cfg = cfg
+	c.AuthClient = authConfig
 	c.common.client = c
 
 	// API Services
@@ -208,7 +207,62 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.WorkflowDefinitionApi = (*WorkflowDefinitionApiService)(&c.common)
 	c.WorkflowInstanceApi = (*WorkflowInstanceApiService)(&c.common)
 
-	return c
+	return c, nil
+}
+
+// Define an interface that both CommandConfigOauth and CommandAuthConfigBasic implement
+type AuthConfig interface {
+	Authenticate() error
+	GetHttpClient() (*http.Client, error)
+	GetServerConfig() *auth_providers.Server
+}
+
+func buildHttpClientV2(cfg *auth_providers.Server) (AuthConfig, error) {
+	clientAuthType := cfg.GetAuthType()
+
+	baseConfig := auth_providers.CommandAuthConfig{
+		CommandHostName: cfg.Host,
+		CommandPort:     cfg.Port,
+		CommandAPIPath:  cfg.APIPath,
+		CommandCACert:   cfg.CACertPath,
+		SkipVerify:      cfg.SkipTLSVerify,
+	}
+
+	if clientAuthType == "basic" {
+		basicCfg := auth_providers.CommandAuthConfigBasic{
+			CommandAuthConfig: baseConfig,
+			Username:          cfg.Username,
+			Password:          cfg.Password,
+			Domain:            cfg.Domain,
+		}
+		aErr := basicCfg.Authenticate()
+		if aErr != nil {
+			return nil, aErr
+		}
+		_, cErr := basicCfg.GetHttpClient()
+		if cErr != nil {
+			return nil, cErr
+		}
+		return &basicCfg, nil
+	} else if clientAuthType == "oauth" {
+		oauthCfg := auth_providers.CommandConfigOauth{
+			CommandAuthConfig: baseConfig,
+			ClientID:          cfg.ClientID,
+			ClientSecret:      cfg.ClientSecret,
+			TokenURL:          cfg.OAuthTokenUrl,
+		}
+		aErr := oauthCfg.Authenticate()
+		if aErr != nil {
+			return nil, aErr
+		}
+		_, cErr := oauthCfg.GetHttpClient()
+		if cErr != nil {
+			return nil, cErr
+		}
+		return &oauthCfg, nil
+	} else {
+		return nil, fmt.Errorf("unsupported auth type or authentication AuthClient: '%s'", clientAuthType)
+	}
 }
 
 func buildHttpClient(config *Configuration) (*http.Client, error) {
@@ -266,7 +320,7 @@ func cleanHostname(hostname string) (string, error) {
 	if u, err := url.Parse(hostname); err == nil {
 		return u.Host, nil
 	} else {
-		fmt.Errorf("%s is not a valid URL: %s", envCommandHostname, err)
+		fmt.Errorf("%s is not a valid URL: %s", EnvCommandHostname, err)
 		return "", err
 	}
 }
@@ -381,15 +435,15 @@ func typeCheckParameter(obj interface{}, expected string, name string) error {
 	return nil
 }
 
-func parameterValueToString( obj interface{}, key string ) string {
+func parameterValueToString(obj interface{}, key string) string {
 	if reflect.TypeOf(obj).Kind() != reflect.Ptr {
 		return fmt.Sprintf("%v", obj)
 	}
-	var param,ok = obj.(MappedNullable)
+	var param, ok = obj.(MappedNullable)
 	if !ok {
 		return ""
 	}
-	dataMap,err := param.ToMap()
+	dataMap, err := param.ToMap()
 	if err != nil {
 		return ""
 	}
@@ -404,77 +458,82 @@ func parameterAddToQuery(queryParams interface{}, keyPrefix string, obj interfac
 		value = "null"
 	} else {
 		switch v.Kind() {
-			case reflect.Invalid:
-				value = "invalid"
+		case reflect.Invalid:
+			value = "invalid"
 
-			case reflect.Struct:
-				if t,ok := obj.(MappedNullable); ok {
-					dataMap,err := t.ToMap()
-					if err != nil {
-						return
-					}
-					parameterAddToQuery(queryParams, keyPrefix, dataMap, collectionType)
+		case reflect.Struct:
+			if t, ok := obj.(MappedNullable); ok {
+				dataMap, err := t.ToMap()
+				if err != nil {
 					return
 				}
-				if t, ok := obj.(time.Time); ok {
-					parameterAddToQuery(queryParams, keyPrefix, t.Format(time.RFC3339), collectionType)
-					return
-				}
-				value = v.Type().String() + " value"
-			case reflect.Slice:
-				var indValue = reflect.ValueOf(obj)
-				if indValue == reflect.ValueOf(nil) {
-					return
-				}
-				var lenIndValue = indValue.Len()
-				for i:=0;i<lenIndValue;i++ {
-					var arrayValue = indValue.Index(i)
-					parameterAddToQuery(queryParams, keyPrefix, arrayValue.Interface(), collectionType)
-				}
+				parameterAddToQuery(queryParams, keyPrefix, dataMap, collectionType)
 				return
-
-			case reflect.Map:
-				var indValue = reflect.ValueOf(obj)
-				if indValue == reflect.ValueOf(nil) {
-					return
-				}
-				iter := indValue.MapRange()
-				for iter.Next() {
-					k,v := iter.Key(), iter.Value()
-					parameterAddToQuery(queryParams, fmt.Sprintf("%s[%s]", keyPrefix, k.String()), v.Interface(), collectionType)
-				}
+			}
+			if t, ok := obj.(time.Time); ok {
+				parameterAddToQuery(queryParams, keyPrefix, t.Format(time.RFC3339), collectionType)
 				return
-
-			case reflect.Interface:
-				fallthrough
-			case reflect.Ptr:
-				parameterAddToQuery(queryParams, keyPrefix, v.Elem().Interface(), collectionType)
+			}
+			value = v.Type().String() + " value"
+		case reflect.Slice:
+			var indValue = reflect.ValueOf(obj)
+			if indValue == reflect.ValueOf(nil) {
 				return
+			}
+			var lenIndValue = indValue.Len()
+			for i := 0; i < lenIndValue; i++ {
+				var arrayValue = indValue.Index(i)
+				parameterAddToQuery(queryParams, keyPrefix, arrayValue.Interface(), collectionType)
+			}
+			return
 
-			case reflect.Int, reflect.Int8, reflect.Int16,
-				reflect.Int32, reflect.Int64:
-				value = strconv.FormatInt(v.Int(), 10)
-			case reflect.Uint, reflect.Uint8, reflect.Uint16,
-				reflect.Uint32, reflect.Uint64, reflect.Uintptr:
-				value = strconv.FormatUint(v.Uint(), 10)
-			case reflect.Float32, reflect.Float64:
-				value = strconv.FormatFloat(v.Float(), 'g', -1, 32)
-			case reflect.Bool:
-				value = strconv.FormatBool(v.Bool())
-			case reflect.String:
-				value = v.String()
-			default:
-				value = v.Type().String() + " value"
+		case reflect.Map:
+			var indValue = reflect.ValueOf(obj)
+			if indValue == reflect.ValueOf(nil) {
+				return
+			}
+			iter := indValue.MapRange()
+			for iter.Next() {
+				k, v := iter.Key(), iter.Value()
+				parameterAddToQuery(
+					queryParams,
+					fmt.Sprintf("%s[%s]", keyPrefix, k.String()),
+					v.Interface(),
+					collectionType,
+				)
+			}
+			return
+
+		case reflect.Interface:
+			fallthrough
+		case reflect.Ptr:
+			parameterAddToQuery(queryParams, keyPrefix, v.Elem().Interface(), collectionType)
+			return
+
+		case reflect.Int, reflect.Int8, reflect.Int16,
+			reflect.Int32, reflect.Int64:
+			value = strconv.FormatInt(v.Int(), 10)
+		case reflect.Uint, reflect.Uint8, reflect.Uint16,
+			reflect.Uint32, reflect.Uint64, reflect.Uintptr:
+			value = strconv.FormatUint(v.Uint(), 10)
+		case reflect.Float32, reflect.Float64:
+			value = strconv.FormatFloat(v.Float(), 'g', -1, 32)
+		case reflect.Bool:
+			value = strconv.FormatBool(v.Bool())
+		case reflect.String:
+			value = v.String()
+		default:
+			value = v.Type().String() + " value"
 		}
 	}
 
 	switch valuesMap := queryParams.(type) {
-		case url.Values:
-			valuesMap.Add( keyPrefix, value )
-			break
-		case map[string]string:
-			valuesMap[keyPrefix] = value
-			break
+	case url.Values:
+		valuesMap.Add(keyPrefix, value)
+		break
+	case map[string]string:
+		valuesMap[keyPrefix] = value
+		break
 	}
 }
 
@@ -489,39 +548,53 @@ func parameterToJson(obj interface{}) (string, error) {
 
 // callAPI do the request.
 func (c *APIClient) callAPI(request *http.Request) (*http.Response, error) {
-	if c.cfg.Debug {
-		dump, err := httputil.DumpRequestOut(request, true)
-		if err != nil {
-			return nil, err
-		}
-		log.Printf("\n%s\n", string(dump))
+
+	if c.AuthClient == nil {
+		return nil, errors.New("invalid or missing client configuration")
 	}
 
-	resp, err := c.cfg.HTTPClient.Do(request)
+	var httpClient *http.Client
+	var err error
+
+	httpClient, err = c.AuthClient.GetHttpClient()
+
+	//if c.AuthClient. {
+	//	dump, err := httputil.DumpRequestOut(request, true)
+	//	if err != nil {
+	//		return nil, err
+	//	}
+	//	log.Printf("\n%s\n", string(dump))
+	//}
+
+	resp, err := httpClient.Do(request)
 	if err != nil {
 		return resp, err
 	}
 
-	if c.cfg.Debug {
-		dump, err := httputil.DumpResponse(resp, true)
-		if err != nil {
-			return resp, err
-		}
-		log.Printf("\n%s\n", string(dump))
-	}
+	//if c.AuthClient.Debug {
+	//	dump, err := httputil.DumpResponse(resp, true)
+	//	if err != nil {
+	//		return resp, err
+	//	}
+	//	log.Printf("\n%s\n", string(dump))
+	//}
 	return resp, err
 }
 
 // Allow modification of underlying config for alternate implementations and testing
 // Caution: modifying the configuration while live can cause data races and potentially unwanted behavior
-func (c *APIClient) GetConfig() *Configuration {
-	return c.cfg
+func (c *APIClient) GetConfig() *auth_providers.Server {
+	if c.AuthClient == nil {
+		return nil
+	}
+	return c.AuthClient.GetServerConfig()
+
 }
 
 type formFile struct {
-		fileBytes []byte
-		fileName string
-		formFileName string
+	fileBytes    []byte
+	fileName     string
+	formFileName string
 }
 
 // prepareRequest build the request
@@ -532,7 +605,8 @@ func (c *APIClient) prepareRequest(
 	headerParams map[string]string,
 	queryParams url.Values,
 	formParams url.Values,
-	formFiles []formFile) (localVarRequest *http.Request, err error) {
+	formFiles []formFile,
+) (localVarRequest *http.Request, err error) {
 
 	var body *bytes.Buffer
 
@@ -551,7 +625,10 @@ func (c *APIClient) prepareRequest(
 	}
 
 	// add form parameters and file if available.
-	if strings.HasPrefix(headerParams["Content-Type"], "multipart/form-data") && len(formParams) > 0 || (len(formFiles) > 0) {
+	if strings.HasPrefix(
+		headerParams["Content-Type"],
+		"multipart/form-data",
+	) && len(formParams) > 0 || (len(formFiles) > 0) {
 		if body != nil {
 			return nil, errors.New("Cannot specify postBody and multipart form at the same time.")
 		}
@@ -575,11 +652,11 @@ func (c *APIClient) prepareRequest(
 				w.Boundary()
 				part, err := w.CreateFormFile(formFile.formFileName, filepath.Base(formFile.fileName))
 				if err != nil {
-						return nil, err
+					return nil, err
 				}
 				_, err = part.Write(formFile.fileBytes)
 				if err != nil {
-						return nil, err
+					return nil, err
 				}
 			}
 		}
@@ -609,8 +686,13 @@ func (c *APIClient) prepareRequest(
 	}
 
 	// Override request host, if applicable
-	if c.cfg.Host != "" {
-		url.Host = c.cfg.Host
+	serverConfig := c.GetConfig()
+	if serverConfig.Host != "" {
+		if serverConfig.Port > 0 && serverConfig.Port <= 65535 {
+			url.Host = fmt.Sprintf("%s:%d", serverConfig.Host, serverConfig.Port)
+		} else {
+			url.Host = serverConfig.Host
+		}
 	}
 
 	// Override request scheme
@@ -625,11 +707,13 @@ func (c *APIClient) prepareRequest(
 	}
 
 	// Encode the parameters.
-	url.RawQuery = queryParamSplit.ReplaceAllStringFunc(query.Encode(), func(s string) string {
-		pieces := strings.Split(s, "=")
-		pieces[0] = queryDescape.Replace(pieces[0])
-		return strings.Join(pieces, "=")
-	})
+	url.RawQuery = queryParamSplit.ReplaceAllStringFunc(
+		query.Encode(), func(s string) string {
+			pieces := strings.Split(s, "=")
+			pieces[0] = queryDescape.Replace(pieces[0])
+			return strings.Join(pieces, "=")
+		},
+	)
 
 	// Generate a new request
 	if body != nil {
@@ -651,20 +735,19 @@ func (c *APIClient) prepareRequest(
 	}
 
 	// Add the user agent to the request.
-	localVarRequest.Header.Add("User-Agent", c.cfg.UserAgent)
-
+	//localVarRequest.Header.Add("User-Agent", c.AuthClient.U)
+	localVarRequest.Header.Add("User-Agent", "OpenAPI-Generator/1.0.0/go")
 	if ctx != nil {
 		// add context to the request
 		localVarRequest = localVarRequest.WithContext(ctx)
 
-
 	}
 
-	localVarRequest.SetBasicAuth(c.cfg.BasicAuth.UserName, c.cfg.BasicAuth.Password)
-
-	for header, value := range c.cfg.DefaultHeader {
-		localVarRequest.Header.Add(header, value)
-	}
+	//localVarRequest.SetBasicAuth(c.AuthClient.BasicAuth.UserName, c.AuthClient.BasicAuth.Password)
+	//
+	//for header, value := range c.AuthClient.DefaultHeader {
+	//	localVarRequest.Header.Add(header, value)
+	//}
 	return localVarRequest, nil
 }
 
