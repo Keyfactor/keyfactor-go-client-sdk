@@ -157,7 +157,7 @@ func NewAPIClient(cfg *auth_providers.Server) *APIClient {
 
 	authConfig, err := buildHttpClientV2(cfg)
 	if err != nil {
-		log.Fatalf("Error creating HTTP client: %s", err)
+		return nil
 	}
 
 	c := &APIClient{}
