@@ -152,12 +152,12 @@ type service struct {
 
 // NewAPIClient creates a new API client. Requires a userAgent string describing your application.
 // optionally a custom http.Client to allow for advanced features such as caching.
-func NewAPIClient(cfg *auth_providers.Server) *APIClient {
+func NewAPIClient(cfg *auth_providers.Server) (*APIClient, error) {
 	var err error
 
 	authConfig, err := buildHttpClientV2(cfg)
 	if err != nil {
-		log.Fatalf("Error creating HTTP client: %s", err)
+		return nil, err
 	}
 
 	c := &APIClient{}
@@ -207,7 +207,7 @@ func NewAPIClient(cfg *auth_providers.Server) *APIClient {
 	c.WorkflowDefinitionApi = (*WorkflowDefinitionApiService)(&c.common)
 	c.WorkflowInstanceApi = (*WorkflowInstanceApiService)(&c.common)
 
-	return c
+	return c, nil
 }
 
 // Define an interface that both CommandConfigOauth and CommandAuthConfigBasic implement
