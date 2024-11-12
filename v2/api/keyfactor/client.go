@@ -261,7 +261,10 @@ func buildHttpClientV2(cfg *auth_providers.Server) (AuthConfig, error) {
 		}
 		return &oauthCfg, nil
 	} else {
-		return nil, fmt.Errorf("unsupported auth type or authentication AuthClient: '%s'", clientAuthType)
+		if clientAuthType == "" {
+			return nil, fmt.Errorf("invalid or missing authentication configuration")
+		}
+		return nil, fmt.Errorf("unsupported auth type '%s'", clientAuthType)
 	}
 }
 
