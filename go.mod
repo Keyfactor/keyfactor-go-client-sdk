@@ -4,7 +4,7 @@ go 1.23
 
 toolchain go1.23.2
 
-require github.com/Keyfactor/keyfactor-auth-client-go v1.1.0-rc.8
+require github.com/Keyfactor/keyfactor-auth-client-go v1.1.0
 
 require (
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.16.0 // indirect
