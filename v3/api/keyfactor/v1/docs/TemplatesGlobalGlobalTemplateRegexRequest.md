@@ -1,0 +1,149 @@
+# TemplatesGlobalGlobalTemplateRegexRequest
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**SubjectPart** | **string** | The subject part to apply the regular expression to. | 
+**Regex** | Pointer to **NullableString** | The regular expression to apply to the subject part. | [optional] 
+**Error** | Pointer to **NullableString** | The error message to show when the regex validation fails. | [optional] 
+**CaseSensitive** | Pointer to **bool** | Whether or not the regex should be evaluated case-sensitively. | [optional] 
+
+## Methods
+
+### NewTemplatesGlobalGlobalTemplateRegexRequest
+
+`func NewTemplatesGlobalGlobalTemplateRegexRequest(subjectPart string, ) *TemplatesGlobalGlobalTemplateRegexRequest`
+
+NewTemplatesGlobalGlobalTemplateRegexRequest instantiates a new TemplatesGlobalGlobalTemplateRegexRequest object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewTemplatesGlobalGlobalTemplateRegexRequestWithDefaults
+
+`func NewTemplatesGlobalGlobalTemplateRegexRequestWithDefaults() *TemplatesGlobalGlobalTemplateRegexRequest`
+
+NewTemplatesGlobalGlobalTemplateRegexRequestWithDefaults instantiates a new TemplatesGlobalGlobalTemplateRegexRequest object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetSubjectPart
+
+`func (o *TemplatesGlobalGlobalTemplateRegexRequest) GetSubjectPart() string`
+
+GetSubjectPart returns the SubjectPart field if non-nil, zero value otherwise.
+
+### GetSubjectPartOk
+
+`func (o *TemplatesGlobalGlobalTemplateRegexRequest) GetSubjectPartOk() (*string, bool)`
+
+GetSubjectPartOk returns a tuple with the SubjectPart field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubjectPart
+
+`func (o *TemplatesGlobalGlobalTemplateRegexRequest) SetSubjectPart(v string)`
+
+SetSubjectPart sets SubjectPart field to given value.
+
+
+### GetRegex
+
+`func (o *TemplatesGlobalGlobalTemplateRegexRequest) GetRegex() string`
+
+GetRegex returns the Regex field if non-nil, zero value otherwise.
+
+### GetRegexOk
+
+`func (o *TemplatesGlobalGlobalTemplateRegexRequest) GetRegexOk() (*string, bool)`
+
+GetRegexOk returns a tuple with the Regex field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRegex
+
+`func (o *TemplatesGlobalGlobalTemplateRegexRequest) SetRegex(v string)`
+
+SetRegex sets Regex field to given value.
+
+### HasRegex
+
+`func (o *TemplatesGlobalGlobalTemplateRegexRequest) HasRegex() bool`
+
+HasRegex returns a boolean if a field has been set.
+
+### SetRegexNil
+
+`func (o *TemplatesGlobalGlobalTemplateRegexRequest) SetRegexNil(b bool)`
+
+ SetRegexNil sets the value for Regex to be an explicit nil
+
+### UnsetRegex
+`func (o *TemplatesGlobalGlobalTemplateRegexRequest) UnsetRegex()`
+
+UnsetRegex ensures that no value is present for Regex, not even an explicit nil
+### GetError
+
+`func (o *TemplatesGlobalGlobalTemplateRegexRequest) GetError() string`
+
+GetError returns the Error field if non-nil, zero value otherwise.
+
+### GetErrorOk
+
+`func (o *TemplatesGlobalGlobalTemplateRegexRequest) GetErrorOk() (*string, bool)`
+
+GetErrorOk returns a tuple with the Error field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetError
+
+`func (o *TemplatesGlobalGlobalTemplateRegexRequest) SetError(v string)`
+
+SetError sets Error field to given value.
+
+### HasError
+
+`func (o *TemplatesGlobalGlobalTemplateRegexRequest) HasError() bool`
+
+HasError returns a boolean if a field has been set.
+
+### SetErrorNil
+
+`func (o *TemplatesGlobalGlobalTemplateRegexRequest) SetErrorNil(b bool)`
+
+ SetErrorNil sets the value for Error to be an explicit nil
+
+### UnsetError
+`func (o *TemplatesGlobalGlobalTemplateRegexRequest) UnsetError()`
+
+UnsetError ensures that no value is present for Error, not even an explicit nil
+### GetCaseSensitive
+
+`func (o *TemplatesGlobalGlobalTemplateRegexRequest) GetCaseSensitive() bool`
+
+GetCaseSensitive returns the CaseSensitive field if non-nil, zero value otherwise.
+
+### GetCaseSensitiveOk
+
+`func (o *TemplatesGlobalGlobalTemplateRegexRequest) GetCaseSensitiveOk() (*bool, bool)`
+
+GetCaseSensitiveOk returns a tuple with the CaseSensitive field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCaseSensitive
+
+`func (o *TemplatesGlobalGlobalTemplateRegexRequest) SetCaseSensitive(v bool)`
+
+SetCaseSensitive sets CaseSensitive field to given value.
+
+### HasCaseSensitive
+
+`func (o *TemplatesGlobalGlobalTemplateRegexRequest) HasCaseSensitive() bool`
+
+HasCaseSensitive returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
