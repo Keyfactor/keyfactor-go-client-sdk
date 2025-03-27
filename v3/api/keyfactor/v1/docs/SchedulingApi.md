@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## CreateScheduling
 
-> SchedulingScheduledTaskResponse CreateScheduling(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SchedulingScheduledTaskRequest(schedulingScheduledTaskRequest).Execute()
+> SchedulingScheduledTaskResponse BuildCreateSchedulingRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SchedulingScheduledTaskRequest(schedulingScheduledTaskRequest).Execute()
 
 
 
@@ -33,7 +33,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SchedulingApi.CreateScheduling(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SchedulingScheduledTaskRequest(schedulingScheduledTaskRequest).Execute()
+    resp, r, err := apiClient.SchedulingApi.BuildCreateSchedulingRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SchedulingScheduledTaskRequest(schedulingScheduledTaskRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SchedulingApi.CreateScheduling``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -69,7 +69,7 @@ CreateCertificatesAnalyze Returns the public information of the certificate
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificatesAnalyzeRequest
 */
-func (a *CertificateApiService) CreateCertificatesAnalyze(ctx context.Context) ApiCreateCertificatesAnalyzeRequest {
+func (a *CertificateApiService) BuildCreateCertificatesAnalyzeRequest(ctx context.Context) ApiCreateCertificatesAnalyzeRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -233,7 +233,7 @@ CreateCertificatesDownload Downloads the persisted certificate associated with t
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificatesDownloadRequest
 */
-func (a *CertificateApiService) CreateCertificatesDownload(ctx context.Context) ApiCreateCertificatesDownloadRequest {
+func (a *CertificateApiService) BuildCreateCertificatesDownloadRequest(ctx context.Context) ApiCreateCertificatesDownloadRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -385,7 +385,7 @@ CreateCertificatesImport Imports the provided certificate into the Keyfactor ins
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificatesImportRequest
 */
-func (a *CertificateApiService) CreateCertificatesImport(ctx context.Context) ApiCreateCertificatesImportRequest {
+func (a *CertificateApiService) BuildCreateCertificatesImportRequest(ctx context.Context) ApiCreateCertificatesImportRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -549,7 +549,7 @@ CreateCertificatesRecover Recovers the persisted certificate associated with the
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificatesRecoverRequest
 */
-func (a *CertificateApiService) CreateCertificatesRecover(ctx context.Context) ApiCreateCertificatesRecoverRequest {
+func (a *CertificateApiService) BuildCreateCertificatesRecoverRequest(ctx context.Context) ApiCreateCertificatesRecoverRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -715,7 +715,7 @@ CreateCertificatesRevoke Revokes the certificates associated with the provided i
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificatesRevokeRequest
 */
-func (a *CertificateApiService) CreateCertificatesRevoke(ctx context.Context) ApiCreateCertificatesRevokeRequest {
+func (a *CertificateApiService) BuildCreateCertificatesRevokeRequest(ctx context.Context) ApiCreateCertificatesRevokeRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -869,7 +869,7 @@ This will ignore individual delete failures, and continue processing the array
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiDeleteCertificatesRequest
 */
-func (a *CertificateApiService) DeleteCertificates(ctx context.Context) ApiDeleteCertificatesRequest {
+func (a *CertificateApiService) BuildDeleteCertificatesRequest(ctx context.Context) ApiDeleteCertificatesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1007,7 +1007,7 @@ DeleteCertificatesById Deletes a persisted certificate by its unique id as well 
 	@param id Keyfactor identifier of the certificate record
 	@return ApiDeleteCertificatesByIdRequest
 */
-func (a *CertificateApiService) DeleteCertificatesById(ctx context.Context, id int32) ApiDeleteCertificatesByIdRequest {
+func (a *CertificateApiService) BuildDeleteCertificatesByIdRequest(ctx context.Context, id int32) ApiDeleteCertificatesByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1157,7 +1157,7 @@ DeleteCertificatesPrivateKey Deletes the persisted private keys of multiple cert
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiDeleteCertificatesPrivateKeyRequest
 */
-func (a *CertificateApiService) DeleteCertificatesPrivateKey(ctx context.Context) ApiDeleteCertificatesPrivateKeyRequest {
+func (a *CertificateApiService) BuildDeleteCertificatesPrivateKeyRequest(ctx context.Context) ApiDeleteCertificatesPrivateKeyRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1295,7 +1295,7 @@ DeleteCertificatesPrivateKeyById Deletes the persisted private keys of the certi
 	@param id Keyfactor identifier of the certificate for which the associated private keys should be deleted
 	@return ApiDeleteCertificatesPrivateKeyByIdRequest
 */
-func (a *CertificateApiService) DeleteCertificatesPrivateKeyById(ctx context.Context, id int32) ApiDeleteCertificatesPrivateKeyByIdRequest {
+func (a *CertificateApiService) BuildDeleteCertificatesPrivateKeyByIdRequest(ctx context.Context, id int32) ApiDeleteCertificatesPrivateKeyByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1447,7 +1447,7 @@ This will ignore individual delete failures, and continue processing the array.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiDeleteCertificatesQueryRequest
 */
-func (a *CertificateApiService) DeleteCertificatesQuery(ctx context.Context) ApiDeleteCertificatesQueryRequest {
+func (a *CertificateApiService) BuildDeleteCertificatesQueryRequest(ctx context.Context) ApiDeleteCertificatesQueryRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1653,7 +1653,7 @@ GetCertificates Returns all certificates according to the provided filter and ou
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCertificatesRequest
 */
-func (a *CertificateApiService) GetCertificates(ctx context.Context) ApiGetCertificatesRequest {
+func (a *CertificateApiService) BuildGetCertificatesRequest(ctx context.Context) ApiGetCertificatesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1845,7 +1845,7 @@ GetCertificatesById Returns a single certificate that matches the id
 	@param id Keyfactor certificate identifier
 	@return ApiGetCertificatesByIdRequest
 */
-func (a *CertificateApiService) GetCertificatesById(ctx context.Context, id int32) ApiGetCertificatesByIdRequest {
+func (a *CertificateApiService) BuildGetCertificatesByIdRequest(ctx context.Context, id int32) ApiGetCertificatesByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2032,7 +2032,7 @@ GetCertificatesByIdHistory Gets the history of operations on a certificate
 	@param id The Id of the certificate
 	@return ApiGetCertificatesByIdHistoryRequest
 */
-func (a *CertificateApiService) GetCertificatesByIdHistory(ctx context.Context, id int32) ApiGetCertificatesByIdHistoryRequest {
+func (a *CertificateApiService) BuildGetCertificatesByIdHistoryRequest(ctx context.Context, id int32) ApiGetCertificatesByIdHistoryRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2201,7 +2201,7 @@ GetCertificatesByIdSecurity Gets the list of Security Identities and which permi
 	@param id The Id of the certificate permissions are being checked on
 	@return ApiGetCertificatesByIdSecurityRequest
 */
-func (a *CertificateApiService) GetCertificatesByIdSecurity(ctx context.Context, id int32) ApiGetCertificatesByIdSecurityRequest {
+func (a *CertificateApiService) BuildGetCertificatesByIdSecurityRequest(ctx context.Context, id int32) ApiGetCertificatesByIdSecurityRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2352,7 +2352,7 @@ GetCertificatesByIdValidate Validates the certificate chain can be built.
 	@param id The Id of the certificate being checked
 	@return ApiGetCertificatesByIdValidateRequest
 */
-func (a *CertificateApiService) GetCertificatesByIdValidate(ctx context.Context, id int32) ApiGetCertificatesByIdValidateRequest {
+func (a *CertificateApiService) BuildGetCertificatesByIdValidateRequest(ctx context.Context, id int32) ApiGetCertificatesByIdValidateRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2528,7 +2528,7 @@ GetCertificatesCSV Returns a comma-delimited CSV file containing all certificate
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCertificatesCSVRequest
 */
-func (a *CertificateApiService) GetCertificatesCSV(ctx context.Context) ApiGetCertificatesCSVRequest {
+func (a *CertificateApiService) BuildGetCertificatesCSVRequest(ctx context.Context) ApiGetCertificatesCSVRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2685,7 +2685,7 @@ GetCertificatesIdentityAuditById Audit identity permissions for certificate
 	@param id The Id of the certificate being checked
 	@return ApiGetCertificatesIdentityAuditByIdRequest
 */
-func (a *CertificateApiService) GetCertificatesIdentityAuditById(ctx context.Context, id int32) ApiGetCertificatesIdentityAuditByIdRequest {
+func (a *CertificateApiService) BuildGetCertificatesIdentityAuditByIdRequest(ctx context.Context, id int32) ApiGetCertificatesIdentityAuditByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2836,7 +2836,7 @@ GetCertificatesLocationsById Returns a list of locations the certificate is in
 	@param id Keyfactor certificate identifier
 	@return ApiGetCertificatesLocationsByIdRequest
 */
-func (a *CertificateApiService) GetCertificatesLocationsById(ctx context.Context, id int32) ApiGetCertificatesLocationsByIdRequest {
+func (a *CertificateApiService) BuildGetCertificatesLocationsByIdRequest(ctx context.Context, id int32) ApiGetCertificatesLocationsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -3006,7 +3006,7 @@ GetCertificatesMetadataCompare Compares the metadata value provided with the met
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCertificatesMetadataCompareRequest
 */
-func (a *CertificateApiService) GetCertificatesMetadataCompare(ctx context.Context) ApiGetCertificatesMetadataCompareRequest {
+func (a *CertificateApiService) BuildGetCertificatesMetadataCompareRequest(ctx context.Context) ApiGetCertificatesMetadataCompareRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -3172,7 +3172,7 @@ UpdateCertificatesByIdOwner Changes the certificate's owner. Users must be in th
 	@param id Id of the certificate
 	@return ApiUpdateCertificatesByIdOwnerRequest
 */
-func (a *CertificateApiService) UpdateCertificatesByIdOwner(ctx context.Context, id int32) ApiUpdateCertificatesByIdOwnerRequest {
+func (a *CertificateApiService) BuildUpdateCertificatesByIdOwnerRequest(ctx context.Context, id int32) ApiUpdateCertificatesByIdOwnerRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -3324,7 +3324,7 @@ UpdateCertificatesMetadata Updates the metadata for the certificate associated w
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateCertificatesMetadataRequest
 */
-func (a *CertificateApiService) UpdateCertificatesMetadata(ctx context.Context) ApiUpdateCertificatesMetadataRequest {
+func (a *CertificateApiService) BuildUpdateCertificatesMetadataRequest(ctx context.Context) ApiUpdateCertificatesMetadataRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -3467,7 +3467,7 @@ UpdateCertificatesMetadataAll Updates the metadata for certificates associated w
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateCertificatesMetadataAllRequest
 */
-func (a *CertificateApiService) UpdateCertificatesMetadataAll(ctx context.Context) ApiUpdateCertificatesMetadataAllRequest {
+func (a *CertificateApiService) BuildUpdateCertificatesMetadataAllRequest(ctx context.Context) ApiUpdateCertificatesMetadataAllRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

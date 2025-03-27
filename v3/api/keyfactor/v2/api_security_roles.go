@@ -69,7 +69,7 @@ CreateSecurityRoles Adds a new security role to the system.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSecurityRolesRequest
 */
-func (a *SecurityRolesApiService) CreateSecurityRoles(ctx context.Context) ApiCreateSecurityRolesRequest {
+func (a *SecurityRolesApiService) BuildCreateSecurityRolesRequest(ctx context.Context) ApiCreateSecurityRolesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "2"
@@ -237,7 +237,7 @@ GetSecurityRoles Returns all security roles according to the provided filter and
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSecurityRolesRequest
 */
-func (a *SecurityRolesApiService) GetSecurityRoles(ctx context.Context) ApiGetSecurityRolesRequest {
+func (a *SecurityRolesApiService) BuildGetSecurityRolesRequest(ctx context.Context) ApiGetSecurityRolesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "2"
@@ -390,7 +390,7 @@ GetSecurityRolesById Returns a single security role that matches the id.
 	@param id Security role identifier
 	@return ApiGetSecurityRolesByIdRequest
 */
-func (a *SecurityRolesApiService) GetSecurityRolesById(ctx context.Context, id int32) ApiGetSecurityRolesByIdRequest {
+func (a *SecurityRolesApiService) BuildGetSecurityRolesByIdRequest(ctx context.Context, id int32) ApiGetSecurityRolesByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "2"
@@ -536,7 +536,7 @@ UpdateSecurityRoles Updates an existing security role.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSecurityRolesRequest
 */
-func (a *SecurityRolesApiService) UpdateSecurityRoles(ctx context.Context) ApiUpdateSecurityRolesRequest {
+func (a *SecurityRolesApiService) BuildUpdateSecurityRolesRequest(ctx context.Context) ApiUpdateSecurityRolesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "2"

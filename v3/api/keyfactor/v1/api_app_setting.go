@@ -62,7 +62,7 @@ GetAppSetting Get available application settings
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAppSettingRequest
 */
-func (a *AppSettingApiService) GetAppSetting(ctx context.Context) ApiGetAppSettingRequest {
+func (a *AppSettingApiService) BuildGetAppSettingRequest(ctx context.Context) ApiGetAppSettingRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -200,7 +200,7 @@ GetAppSettingById Get application setting by id
 	@param id Id for the application setting
 	@return ApiGetAppSettingByIdRequest
 */
-func (a *AppSettingApiService) GetAppSettingById(ctx context.Context, id int32) ApiGetAppSettingByIdRequest {
+func (a *AppSettingApiService) BuildGetAppSettingByIdRequest(ctx context.Context, id int32) ApiGetAppSettingByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -352,7 +352,7 @@ UpdateAppSetting Bulk update available application settings
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateAppSettingRequest
 */
-func (a *AppSettingApiService) UpdateAppSetting(ctx context.Context) ApiUpdateAppSettingRequest {
+func (a *AppSettingApiService) BuildUpdateAppSettingRequest(ctx context.Context) ApiUpdateAppSettingRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -499,7 +499,7 @@ UpdateAppSettingByIdSet Update one application setting by id
 	@param id Id for the application setting
 	@return ApiUpdateAppSettingByIdSetRequest
 */
-func (a *AppSettingApiService) UpdateAppSettingByIdSet(ctx context.Context, id int32) ApiUpdateAppSettingByIdSetRequest {
+func (a *AppSettingApiService) BuildUpdateAppSettingByIdSetRequest(ctx context.Context, id int32) ApiUpdateAppSettingByIdSetRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -655,7 +655,7 @@ UpdateAppSettingNameSet Update one application setting by short name
 	@param name Short name for the application setting
 	@return ApiUpdateAppSettingNameSetRequest
 */
-func (a *AppSettingApiService) UpdateAppSettingNameSet(ctx context.Context, name string) ApiUpdateAppSettingNameSetRequest {
+func (a *AppSettingApiService) BuildUpdateAppSettingNameSetRequest(ctx context.Context, name string) ApiUpdateAppSettingNameSetRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

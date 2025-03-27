@@ -69,7 +69,7 @@ CreateSSHServerGroups Creates a server group with the provided properties
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSSHServerGroupsRequest
 */
-func (a *ServerGroupApiService) CreateSSHServerGroups(ctx context.Context) ApiCreateSSHServerGroupsRequest {
+func (a *ServerGroupApiService) BuildCreateSSHServerGroupsRequest(ctx context.Context) ApiCreateSSHServerGroupsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -213,7 +213,7 @@ CreateSSHServerGroupsAccess Add access rules to the server group
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSSHServerGroupsAccessRequest
 */
-func (a *ServerGroupApiService) CreateSSHServerGroupsAccess(ctx context.Context) ApiCreateSSHServerGroupsAccessRequest {
+func (a *ServerGroupApiService) BuildCreateSSHServerGroupsAccessRequest(ctx context.Context) ApiCreateSSHServerGroupsAccessRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -357,7 +357,7 @@ DeleteSSHServerGroupsAccess Removes access mappings for the specified server gro
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiDeleteSSHServerGroupsAccessRequest
 */
-func (a *ServerGroupApiService) DeleteSSHServerGroupsAccess(ctx context.Context) ApiDeleteSSHServerGroupsAccessRequest {
+func (a *ServerGroupApiService) BuildDeleteSSHServerGroupsAccessRequest(ctx context.Context) ApiDeleteSSHServerGroupsAccessRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -497,7 +497,7 @@ DeleteSSHServerGroupsById Deletes a ServerGroup associated with the provided ide
 	@param id Keyfactor identifer of the ServerGroup to be deleted
 	@return ApiDeleteSSHServerGroupsByIdRequest
 */
-func (a *ServerGroupApiService) DeleteSSHServerGroupsById(ctx context.Context, id string) ApiDeleteSSHServerGroupsByIdRequest {
+func (a *ServerGroupApiService) BuildDeleteSSHServerGroupsByIdRequest(ctx context.Context, id string) ApiDeleteSSHServerGroupsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -654,7 +654,7 @@ GetSSHServerGroups Returns all server groups according to the provided filter pa
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSSHServerGroupsRequest
 */
-func (a *ServerGroupApiService) GetSSHServerGroups(ctx context.Context) ApiGetSSHServerGroupsRequest {
+func (a *ServerGroupApiService) BuildGetSSHServerGroupsRequest(ctx context.Context) ApiGetSSHServerGroupsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -807,7 +807,7 @@ GetSSHServerGroupsAccessById Retrieves logons and users with access to those log
 	@param id Id of the existing server group
 	@return ApiGetSSHServerGroupsAccessByIdRequest
 */
-func (a *ServerGroupApiService) GetSSHServerGroupsAccessById(ctx context.Context, id string) ApiGetSSHServerGroupsAccessByIdRequest {
+func (a *ServerGroupApiService) BuildGetSSHServerGroupsAccessByIdRequest(ctx context.Context, id string) ApiGetSSHServerGroupsAccessByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -948,7 +948,7 @@ GetSSHServerGroupsById Returns a ServerGroup associated with the provided identi
 	@param id Keyfactor identifier of the ServerGroup
 	@return ApiGetSSHServerGroupsByIdRequest
 */
-func (a *ServerGroupApiService) GetSSHServerGroupsById(ctx context.Context, id string) ApiGetSSHServerGroupsByIdRequest {
+func (a *ServerGroupApiService) BuildGetSSHServerGroupsByIdRequest(ctx context.Context, id string) ApiGetSSHServerGroupsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1089,7 +1089,7 @@ GetSSHServerGroupsName Returns a ServerGroup associated with the provided identi
 	@param name name of the ServerGroup
 	@return ApiGetSSHServerGroupsNameRequest
 */
-func (a *ServerGroupApiService) GetSSHServerGroupsName(ctx context.Context, name string) ApiGetSSHServerGroupsNameRequest {
+func (a *ServerGroupApiService) BuildGetSSHServerGroupsNameRequest(ctx context.Context, name string) ApiGetSSHServerGroupsNameRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1235,7 +1235,7 @@ UpdateSSHServerGroups Updates an existing server group with the provided propert
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSSHServerGroupsRequest
 */
-func (a *ServerGroupApiService) UpdateSSHServerGroups(ctx context.Context) ApiUpdateSSHServerGroupsRequest {
+func (a *ServerGroupApiService) BuildUpdateSSHServerGroupsRequest(ctx context.Context) ApiUpdateSSHServerGroupsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

@@ -69,7 +69,7 @@ CreateMonitoringResolveOCSP Resolve the Certificate authority given
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateMonitoringResolveOCSPRequest
 */
-func (a *MonitoringApiService) CreateMonitoringResolveOCSP(ctx context.Context) ApiCreateMonitoringResolveOCSPRequest {
+func (a *MonitoringApiService) BuildCreateMonitoringResolveOCSPRequest(ctx context.Context) ApiCreateMonitoringResolveOCSPRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -221,7 +221,7 @@ CreateMonitoringRevocation Add a revocation monitoring endpoint
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateMonitoringRevocationRequest
 */
-func (a *MonitoringApiService) CreateMonitoringRevocation(ctx context.Context) ApiCreateMonitoringRevocationRequest {
+func (a *MonitoringApiService) BuildCreateMonitoringRevocationRequest(ctx context.Context) ApiCreateMonitoringRevocationRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -369,7 +369,7 @@ CreateMonitoringRevocationCRLTest Validates the connection info for the CRL prov
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateMonitoringRevocationCRLTestRequest
 */
-func (a *MonitoringApiService) CreateMonitoringRevocationCRLTest(ctx context.Context) ApiCreateMonitoringRevocationCRLTestRequest {
+func (a *MonitoringApiService) BuildCreateMonitoringRevocationCRLTestRequest(ctx context.Context) ApiCreateMonitoringRevocationCRLTestRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -514,7 +514,7 @@ CreateMonitoringRevocationOCSPTest Validates the connection info for the OCSP en
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateMonitoringRevocationOCSPTestRequest
 */
-func (a *MonitoringApiService) CreateMonitoringRevocationOCSPTest(ctx context.Context) ApiCreateMonitoringRevocationOCSPTestRequest {
+func (a *MonitoringApiService) BuildCreateMonitoringRevocationOCSPTestRequest(ctx context.Context) ApiCreateMonitoringRevocationOCSPTestRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -661,7 +661,7 @@ CreateMonitoringRevocationTest Test Alert
 
 Deprecated
 */
-func (a *MonitoringApiService) CreateMonitoringRevocationTest(ctx context.Context) ApiCreateMonitoringRevocationTestRequest {
+func (a *MonitoringApiService) BuildCreateMonitoringRevocationTestRequest(ctx context.Context) ApiCreateMonitoringRevocationTestRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -810,7 +810,7 @@ CreateMonitoringRevocationTestAll Test All Alerts
 
 Deprecated
 */
-func (a *MonitoringApiService) CreateMonitoringRevocationTestAll(ctx context.Context) ApiCreateMonitoringRevocationTestAllRequest {
+func (a *MonitoringApiService) BuildCreateMonitoringRevocationTestAllRequest(ctx context.Context) ApiCreateMonitoringRevocationTestAllRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -952,7 +952,7 @@ DeleteMonitoringRevocationById Delete a revocation monitoring endpoint
 	@param id Id for the revocation monitoring endpoint
 	@return ApiDeleteMonitoringRevocationByIdRequest
 */
-func (a *MonitoringApiService) DeleteMonitoringRevocationById(ctx context.Context, id int32) ApiDeleteMonitoringRevocationByIdRequest {
+func (a *MonitoringApiService) BuildDeleteMonitoringRevocationByIdRequest(ctx context.Context, id int32) ApiDeleteMonitoringRevocationByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1109,7 +1109,7 @@ GetMonitoringRevocation Gets all revocation monitoring endpoints according to th
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetMonitoringRevocationRequest
 */
-func (a *MonitoringApiService) GetMonitoringRevocation(ctx context.Context) ApiGetMonitoringRevocationRequest {
+func (a *MonitoringApiService) BuildGetMonitoringRevocationRequest(ctx context.Context) ApiGetMonitoringRevocationRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1262,7 +1262,7 @@ GetMonitoringRevocationById Get a revocation monitoring endpoint
 	@param id Id for the endpoint to get
 	@return ApiGetMonitoringRevocationByIdRequest
 */
-func (a *MonitoringApiService) GetMonitoringRevocationById(ctx context.Context, id int32) ApiGetMonitoringRevocationByIdRequest {
+func (a *MonitoringApiService) BuildGetMonitoringRevocationByIdRequest(ctx context.Context, id int32) ApiGetMonitoringRevocationByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1415,7 +1415,7 @@ UpdateMonitoringRevocation Edit a revocation monitoring endpoint
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateMonitoringRevocationRequest
 */
-func (a *MonitoringApiService) UpdateMonitoringRevocation(ctx context.Context) ApiUpdateMonitoringRevocationRequest {
+func (a *MonitoringApiService) BuildUpdateMonitoringRevocationRequest(ctx context.Context) ApiUpdateMonitoringRevocationRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1563,7 +1563,7 @@ UpdateMonitoringRevocationSchedule Edit a revocation monitoring's schedule.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateMonitoringRevocationScheduleRequest
 */
-func (a *MonitoringApiService) UpdateMonitoringRevocationSchedule(ctx context.Context) ApiUpdateMonitoringRevocationScheduleRequest {
+func (a *MonitoringApiService) BuildUpdateMonitoringRevocationScheduleRequest(ctx context.Context) ApiUpdateMonitoringRevocationScheduleRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

@@ -70,7 +70,7 @@ CreateCertificateStores Creates a new certificate store with the provided proper
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificateStoresRequest
 */
-func (a *CertificateStoreApiService) CreateCertificateStores(ctx context.Context) ApiCreateCertificateStoresRequest {
+func (a *CertificateStoreApiService) BuildCreateCertificateStoresRequest(ctx context.Context) ApiCreateCertificateStoresRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -215,7 +215,7 @@ CreateCertificateStoresApprove Approves the provided certificate stores to make 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificateStoresApproveRequest
 */
-func (a *CertificateStoreApiService) CreateCertificateStoresApprove(ctx context.Context) ApiCreateCertificateStoresApproveRequest {
+func (a *CertificateStoreApiService) BuildCreateCertificateStoresApproveRequest(ctx context.Context) ApiCreateCertificateStoresApproveRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -348,7 +348,7 @@ CreateCertificateStoresCertificatesAdd Configures a management job to add a cert
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificateStoresCertificatesAddRequest
 */
-func (a *CertificateStoreApiService) CreateCertificateStoresCertificatesAdd(ctx context.Context) ApiCreateCertificateStoresCertificatesAddRequest {
+func (a *CertificateStoreApiService) BuildCreateCertificateStoresCertificatesAddRequest(ctx context.Context) ApiCreateCertificateStoresCertificatesAddRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -493,7 +493,7 @@ CreateCertificateStoresCertificatesRemove Configures a management job to remove 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificateStoresCertificatesRemoveRequest
 */
-func (a *CertificateStoreApiService) CreateCertificateStoresCertificatesRemove(ctx context.Context) ApiCreateCertificateStoresCertificatesRemoveRequest {
+func (a *CertificateStoreApiService) BuildCreateCertificateStoresCertificatesRemoveRequest(ctx context.Context) ApiCreateCertificateStoresCertificatesRemoveRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -638,7 +638,7 @@ CreateCertificateStoresReenrollment Schedules a certificate store for reenrollme
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificateStoresReenrollmentRequest
 */
-func (a *CertificateStoreApiService) CreateCertificateStoresReenrollment(ctx context.Context) ApiCreateCertificateStoresReenrollmentRequest {
+func (a *CertificateStoreApiService) BuildCreateCertificateStoresReenrollmentRequest(ctx context.Context) ApiCreateCertificateStoresReenrollmentRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -771,7 +771,7 @@ CreateCertificateStoresSchedule Creates an inventory schedule for the provided c
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificateStoresScheduleRequest
 */
-func (a *CertificateStoreApiService) CreateCertificateStoresSchedule(ctx context.Context) ApiCreateCertificateStoresScheduleRequest {
+func (a *CertificateStoreApiService) BuildCreateCertificateStoresScheduleRequest(ctx context.Context) ApiCreateCertificateStoresScheduleRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -906,7 +906,7 @@ This will ignore individual delete failures, and continue processing the array.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiDeleteCertificateStoresRequest
 */
-func (a *CertificateStoreApiService) DeleteCertificateStores(ctx context.Context) ApiDeleteCertificateStoresRequest {
+func (a *CertificateStoreApiService) BuildDeleteCertificateStoresRequest(ctx context.Context) ApiDeleteCertificateStoresRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1034,7 +1034,7 @@ DeleteCertificateStoresById Deletes a persisted certificate store by its Keyfact
 	@param id Keyfactor certificate store identifier (GUID)
 	@return ApiDeleteCertificateStoresByIdRequest
 */
-func (a *CertificateStoreApiService) DeleteCertificateStoresById(ctx context.Context, id string) ApiDeleteCertificateStoresByIdRequest {
+func (a *CertificateStoreApiService) BuildDeleteCertificateStoresByIdRequest(ctx context.Context, id string) ApiDeleteCertificateStoresByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1210,7 +1210,7 @@ GetCertificateStores Returns all certificate stores according to the provided fi
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCertificateStoresRequest
 */
-func (a *CertificateStoreApiService) GetCertificateStores(ctx context.Context) ApiGetCertificateStoresRequest {
+func (a *CertificateStoreApiService) BuildGetCertificateStoresRequest(ctx context.Context) ApiGetCertificateStoresRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1377,7 +1377,7 @@ GetCertificateStoresById Returns a single certificate store associated with the 
 	@param id Keyfactor identifier (GUID) of the certificate store
 	@return ApiGetCertificateStoresByIdRequest
 */
-func (a *CertificateStoreApiService) GetCertificateStoresById(ctx context.Context, id string) ApiGetCertificateStoresByIdRequest {
+func (a *CertificateStoreApiService) BuildGetCertificateStoresByIdRequest(ctx context.Context, id string) ApiGetCertificateStoresByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1542,7 +1542,7 @@ GetCertificateStoresByIdInventory Returns a single certificate store's inventory
 	@param id Keyfactor identifier (GUID) of the certificate store
 	@return ApiGetCertificateStoresByIdInventoryRequest
 */
-func (a *CertificateStoreApiService) GetCertificateStoresByIdInventory(ctx context.Context, id string) ApiGetCertificateStoresByIdInventoryRequest {
+func (a *CertificateStoreApiService) BuildGetCertificateStoresByIdInventoryRequest(ctx context.Context, id string) ApiGetCertificateStoresByIdInventoryRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1700,7 +1700,7 @@ UpdateCertificateStores Updates a given certificate store with the properties of
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateCertificateStoresRequest
 */
-func (a *CertificateStoreApiService) UpdateCertificateStores(ctx context.Context) ApiUpdateCertificateStoresRequest {
+func (a *CertificateStoreApiService) BuildUpdateCertificateStoresRequest(ctx context.Context) ApiUpdateCertificateStoresRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1845,7 +1845,7 @@ UpdateCertificateStoresAssignContainer Assigns the provided certificate stores t
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateCertificateStoresAssignContainerRequest
 */
-func (a *CertificateStoreApiService) UpdateCertificateStoresAssignContainer(ctx context.Context) ApiUpdateCertificateStoresAssignContainerRequest {
+func (a *CertificateStoreApiService) BuildUpdateCertificateStoresAssignContainerRequest(ctx context.Context) ApiUpdateCertificateStoresAssignContainerRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1990,7 +1990,7 @@ UpdateCertificateStoresDiscoveryJob Configures a discovery job to locate current
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateCertificateStoresDiscoveryJobRequest
 */
-func (a *CertificateStoreApiService) UpdateCertificateStoresDiscoveryJob(ctx context.Context) ApiUpdateCertificateStoresDiscoveryJobRequest {
+func (a *CertificateStoreApiService) BuildUpdateCertificateStoresDiscoveryJobRequest(ctx context.Context) ApiUpdateCertificateStoresDiscoveryJobRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2123,7 +2123,7 @@ UpdateCertificateStoresPassword Sets a password for the requested certificate st
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateCertificateStoresPasswordRequest
 */
-func (a *CertificateStoreApiService) UpdateCertificateStoresPassword(ctx context.Context) ApiUpdateCertificateStoresPasswordRequest {
+func (a *CertificateStoreApiService) BuildUpdateCertificateStoresPasswordRequest(ctx context.Context) ApiUpdateCertificateStoresPasswordRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

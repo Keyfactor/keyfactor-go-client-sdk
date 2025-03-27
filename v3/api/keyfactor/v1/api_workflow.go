@@ -69,7 +69,7 @@ CreateWorkflowCertificatesApprove Approves pending certificate requests associat
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateWorkflowCertificatesApproveRequest
 */
-func (a *WorkflowApiService) CreateWorkflowCertificatesApprove(ctx context.Context) ApiCreateWorkflowCertificatesApproveRequest {
+func (a *WorkflowApiService) BuildCreateWorkflowCertificatesApproveRequest(ctx context.Context) ApiCreateWorkflowCertificatesApproveRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -214,7 +214,7 @@ CreateWorkflowCertificatesDeny Denies pending certificate requests associated wi
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateWorkflowCertificatesDenyRequest
 */
-func (a *WorkflowApiService) CreateWorkflowCertificatesDeny(ctx context.Context) ApiCreateWorkflowCertificatesDenyRequest {
+func (a *WorkflowApiService) BuildCreateWorkflowCertificatesDenyRequest(ctx context.Context) ApiCreateWorkflowCertificatesDenyRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -354,7 +354,7 @@ GetWorkflowCertificatesById Returns certificate request details based on the pro
 	@param id The ID of the certificate request.
 	@return ApiGetWorkflowCertificatesByIdRequest
 */
-func (a *WorkflowApiService) GetWorkflowCertificatesById(ctx context.Context, id int32) ApiGetWorkflowCertificatesByIdRequest {
+func (a *WorkflowApiService) BuildGetWorkflowCertificatesByIdRequest(ctx context.Context, id int32) ApiGetWorkflowCertificatesByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -523,7 +523,7 @@ GetWorkflowCertificatesDenied Gets a collection of denied certificate requests b
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetWorkflowCertificatesDeniedRequest
 */
-func (a *WorkflowApiService) GetWorkflowCertificatesDenied(ctx context.Context) ApiGetWorkflowCertificatesDeniedRequest {
+func (a *WorkflowApiService) BuildGetWorkflowCertificatesDeniedRequest(ctx context.Context) ApiGetWorkflowCertificatesDeniedRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -704,7 +704,7 @@ GetWorkflowCertificatesExternalValidation Gets a collection of external validati
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetWorkflowCertificatesExternalValidationRequest
 */
-func (a *WorkflowApiService) GetWorkflowCertificatesExternalValidation(ctx context.Context) ApiGetWorkflowCertificatesExternalValidationRequest {
+func (a *WorkflowApiService) BuildGetWorkflowCertificatesExternalValidationRequest(ctx context.Context) ApiGetWorkflowCertificatesExternalValidationRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -885,7 +885,7 @@ GetWorkflowCertificatesPending Gets a collection of pending certificate requests
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetWorkflowCertificatesPendingRequest
 */
-func (a *WorkflowApiService) GetWorkflowCertificatesPending(ctx context.Context) ApiGetWorkflowCertificatesPendingRequest {
+func (a *WorkflowApiService) BuildGetWorkflowCertificatesPendingRequest(ctx context.Context) ApiGetWorkflowCertificatesPendingRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

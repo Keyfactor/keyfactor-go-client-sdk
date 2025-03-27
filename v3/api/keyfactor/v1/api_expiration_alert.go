@@ -69,7 +69,7 @@ CreateAlertsExpiration Add an expiration alert
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateAlertsExpirationRequest
 */
-func (a *ExpirationAlertApiService) CreateAlertsExpiration(ctx context.Context) ApiCreateAlertsExpirationRequest {
+func (a *ExpirationAlertApiService) BuildCreateAlertsExpirationRequest(ctx context.Context) ApiCreateAlertsExpirationRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -216,7 +216,7 @@ CreateAlertsExpirationTest Test an Expiration Alert
 
 Deprecated
 */
-func (a *ExpirationAlertApiService) CreateAlertsExpirationTest(ctx context.Context) ApiCreateAlertsExpirationTestRequest {
+func (a *ExpirationAlertApiService) BuildCreateAlertsExpirationTestRequest(ctx context.Context) ApiCreateAlertsExpirationTestRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -365,7 +365,7 @@ CreateAlertsExpirationTestAll Test All Expiration Alerts
 
 Deprecated
 */
-func (a *ExpirationAlertApiService) CreateAlertsExpirationTestAll(ctx context.Context) ApiCreateAlertsExpirationTestAllRequest {
+func (a *ExpirationAlertApiService) BuildCreateAlertsExpirationTestAllRequest(ctx context.Context) ApiCreateAlertsExpirationTestAllRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -507,7 +507,7 @@ DeleteAlertsExpirationById Delete an expiration alert
 	@param id Id for the expiration alert
 	@return ApiDeleteAlertsExpirationByIdRequest
 */
-func (a *ExpirationAlertApiService) DeleteAlertsExpirationById(ctx context.Context, id int32) ApiDeleteAlertsExpirationByIdRequest {
+func (a *ExpirationAlertApiService) BuildDeleteAlertsExpirationByIdRequest(ctx context.Context, id int32) ApiDeleteAlertsExpirationByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -664,7 +664,7 @@ GetAlertsExpiration Gets all expiration alerts according to the provided filter 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAlertsExpirationRequest
 */
-func (a *ExpirationAlertApiService) GetAlertsExpiration(ctx context.Context) ApiGetAlertsExpirationRequest {
+func (a *ExpirationAlertApiService) BuildGetAlertsExpirationRequest(ctx context.Context) ApiGetAlertsExpirationRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -817,7 +817,7 @@ GetAlertsExpirationById Get an expiration alert
 	@param id Id for the expiration alert to get
 	@return ApiGetAlertsExpirationByIdRequest
 */
-func (a *ExpirationAlertApiService) GetAlertsExpirationById(ctx context.Context, id int32) ApiGetAlertsExpirationByIdRequest {
+func (a *ExpirationAlertApiService) BuildGetAlertsExpirationByIdRequest(ctx context.Context, id int32) ApiGetAlertsExpirationByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -956,7 +956,7 @@ GetAlertsExpirationSchedule Get the schedule for expiration alerts
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAlertsExpirationScheduleRequest
 */
-func (a *ExpirationAlertApiService) GetAlertsExpirationSchedule(ctx context.Context) ApiGetAlertsExpirationScheduleRequest {
+func (a *ExpirationAlertApiService) BuildGetAlertsExpirationScheduleRequest(ctx context.Context) ApiGetAlertsExpirationScheduleRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1099,7 +1099,7 @@ UpdateAlertsExpiration Edit an expiration alert
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateAlertsExpirationRequest
 */
-func (a *ExpirationAlertApiService) UpdateAlertsExpiration(ctx context.Context) ApiUpdateAlertsExpirationRequest {
+func (a *ExpirationAlertApiService) BuildUpdateAlertsExpirationRequest(ctx context.Context) ApiUpdateAlertsExpirationRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1243,7 +1243,7 @@ UpdateAlertsExpirationSchedule Edit schedule
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateAlertsExpirationScheduleRequest
 */
-func (a *ExpirationAlertApiService) UpdateAlertsExpirationSchedule(ctx context.Context) ApiUpdateAlertsExpirationScheduleRequest {
+func (a *ExpirationAlertApiService) BuildUpdateAlertsExpirationScheduleRequest(ctx context.Context) ApiUpdateAlertsExpirationScheduleRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

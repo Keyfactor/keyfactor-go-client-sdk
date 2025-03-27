@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## CreateCertificateStoreTypes
 
-> CertificateStoresTypesCertificateStoreTypeResponse CreateCertificateStoreTypes(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresTypesCertificateStoreTypeCreationRequest(certificateStoresTypesCertificateStoreTypeCreationRequest).Execute()
+> CertificateStoresTypesCertificateStoreTypeResponse BuildCreateCertificateStoreTypesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresTypesCertificateStoreTypeCreationRequest(certificateStoresTypesCertificateStoreTypeCreationRequest).Execute()
 
 Creates a new certificate store type with the provided properties
 
@@ -39,7 +39,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreTypeApi.CreateCertificateStoreTypes(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresTypesCertificateStoreTypeCreationRequest(certificateStoresTypesCertificateStoreTypeCreationRequest).Execute()
+    resp, r, err := apiClient.CertificateStoreTypeApi.BuildCreateCertificateStoreTypesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresTypesCertificateStoreTypeCreationRequest(certificateStoresTypesCertificateStoreTypeCreationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreTypeApi.CreateCertificateStoreTypes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## DeleteCertificateStoreTypes
 
-> DeleteCertificateStoreTypes(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
+> BuildDeleteCertificateStoreTypesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
 
 Deletes certificate store types according to the provided identifiers
 
@@ -109,7 +109,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreTypeApi.DeleteCertificateStoreTypes(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
+    resp, r, err := apiClient.CertificateStoreTypeApi.BuildDeleteCertificateStoreTypesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreTypeApi.DeleteCertificateStoreTypes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## DeleteCertificateStoreTypesById
 
-> DeleteCertificateStoreTypesById(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> BuildDeleteCertificateStoreTypesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes a certificate store type according to the provided identifier
 
@@ -177,7 +177,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreTypeApi.DeleteCertificateStoreTypesById(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateStoreTypeApi.BuildDeleteCertificateStoreTypesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreTypeApi.DeleteCertificateStoreTypesById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificateStoreTypes
 
-> []CertificateStoresTypesCertificateStoreTypeResponse GetCertificateStoreTypes(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CertificateStoresTypesCertificateStoreTypeResponse BuildGetCertificateStoreTypesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all certificate store types according to the provided filter and output parameters
 
@@ -251,7 +251,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreTypeApi.GetCertificateStoreTypes(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateStoreTypeApi.BuildGetCertificateStoreTypesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreTypeApi.GetCertificateStoreTypes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificateStoreTypesById
 
-> CertificateStoresTypesCertificateStoreTypeResponse GetCertificateStoreTypesById(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CertificateStoresTypesCertificateStoreTypeResponse BuildGetCertificateStoreTypesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a single certificate store type that matches id
 
@@ -323,7 +323,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreTypeApi.GetCertificateStoreTypesById(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateStoreTypeApi.BuildGetCertificateStoreTypesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreTypeApi.GetCertificateStoreTypesById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -372,7 +372,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificateStoreTypesNameName
 
-> []CertificateStoresTypesCertificateStoreTypeResponse GetCertificateStoreTypesNameName(ctx, name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CertificateStoresTypesCertificateStoreTypeResponse BuildGetCertificateStoreTypesNameNameRequest(ctx, name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a single certificate store type that matches the provided short name
 
@@ -395,7 +395,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreTypeApi.GetCertificateStoreTypesNameName(context.Background(), name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateStoreTypeApi.BuildGetCertificateStoreTypesNameNameRequest(context.Background(), name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreTypeApi.GetCertificateStoreTypesNameName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -444,7 +444,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCertificateStoreTypes
 
-> CertificateStoresTypesCertificateStoreTypeResponse UpdateCertificateStoreTypes(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresTypesCertificateStoreTypeUpdateRequest(certificateStoresTypesCertificateStoreTypeUpdateRequest).Execute()
+> CertificateStoresTypesCertificateStoreTypeResponse BuildUpdateCertificateStoreTypesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresTypesCertificateStoreTypeUpdateRequest(certificateStoresTypesCertificateStoreTypeUpdateRequest).Execute()
 
 Updates an existing certificate store type with the provided properties
 
@@ -467,7 +467,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreTypeApi.UpdateCertificateStoreTypes(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresTypesCertificateStoreTypeUpdateRequest(certificateStoresTypesCertificateStoreTypeUpdateRequest).Execute()
+    resp, r, err := apiClient.CertificateStoreTypeApi.BuildUpdateCertificateStoreTypesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresTypesCertificateStoreTypeUpdateRequest(certificateStoresTypesCertificateStoreTypeUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreTypeApi.UpdateCertificateStoreTypes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

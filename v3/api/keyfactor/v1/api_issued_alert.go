@@ -69,7 +69,7 @@ CreateAlertsIssued Add a issued alert
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateAlertsIssuedRequest
 */
-func (a *IssuedAlertApiService) CreateAlertsIssued(ctx context.Context) ApiCreateAlertsIssuedRequest {
+func (a *IssuedAlertApiService) BuildCreateAlertsIssuedRequest(ctx context.Context) ApiCreateAlertsIssuedRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -209,7 +209,7 @@ DeleteAlertsIssuedById Delete a issued alert
 	@param id Id for the issued alert
 	@return ApiDeleteAlertsIssuedByIdRequest
 */
-func (a *IssuedAlertApiService) DeleteAlertsIssuedById(ctx context.Context, id int32) ApiDeleteAlertsIssuedByIdRequest {
+func (a *IssuedAlertApiService) BuildDeleteAlertsIssuedByIdRequest(ctx context.Context, id int32) ApiDeleteAlertsIssuedByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -366,7 +366,7 @@ GetAlertsIssued Gets all issued alerts according to the provided filter and outp
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAlertsIssuedRequest
 */
-func (a *IssuedAlertApiService) GetAlertsIssued(ctx context.Context) ApiGetAlertsIssuedRequest {
+func (a *IssuedAlertApiService) BuildGetAlertsIssuedRequest(ctx context.Context) ApiGetAlertsIssuedRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -519,7 +519,7 @@ GetAlertsIssuedById Get a issued alert
 	@param id Id for the issued alert to get
 	@return ApiGetAlertsIssuedByIdRequest
 */
-func (a *IssuedAlertApiService) GetAlertsIssuedById(ctx context.Context, id int32) ApiGetAlertsIssuedByIdRequest {
+func (a *IssuedAlertApiService) BuildGetAlertsIssuedByIdRequest(ctx context.Context, id int32) ApiGetAlertsIssuedByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -658,7 +658,7 @@ GetAlertsIssuedSchedule Get the schedule for issued alerts
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAlertsIssuedScheduleRequest
 */
-func (a *IssuedAlertApiService) GetAlertsIssuedSchedule(ctx context.Context) ApiGetAlertsIssuedScheduleRequest {
+func (a *IssuedAlertApiService) BuildGetAlertsIssuedScheduleRequest(ctx context.Context) ApiGetAlertsIssuedScheduleRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -801,7 +801,7 @@ UpdateAlertsIssued Edit a issued alert
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateAlertsIssuedRequest
 */
-func (a *IssuedAlertApiService) UpdateAlertsIssued(ctx context.Context) ApiUpdateAlertsIssuedRequest {
+func (a *IssuedAlertApiService) BuildUpdateAlertsIssuedRequest(ctx context.Context) ApiUpdateAlertsIssuedRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -945,7 +945,7 @@ UpdateAlertsIssuedSchedule Edit schedule
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateAlertsIssuedScheduleRequest
 */
-func (a *IssuedAlertApiService) UpdateAlertsIssuedSchedule(ctx context.Context) ApiUpdateAlertsIssuedScheduleRequest {
+func (a *IssuedAlertApiService) BuildUpdateAlertsIssuedScheduleRequest(ctx context.Context) ApiUpdateAlertsIssuedScheduleRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

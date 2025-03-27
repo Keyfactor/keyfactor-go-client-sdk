@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 ## CreateCertificateStores
 
-> CertificateStoresCertificateStoreResponse CreateCertificateStores(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest(cSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest).Execute()
+> CertificateStoresCertificateStoreResponse BuildCreateCertificateStoresRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest(cSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest).Execute()
 
 Creates a new certificate store with the provided properties
 
@@ -47,7 +47,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.CreateCertificateStores(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest(cSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.BuildCreateCertificateStoresRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest(cSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.CreateCertificateStores``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ## CreateCertificateStoresApprove
 
-> CreateCertificateStoresApprove(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresCertificateStoreApproveRequest(certificateStoresCertificateStoreApproveRequest).Execute()
+> BuildCreateCertificateStoresApproveRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresCertificateStoreApproveRequest(certificateStoresCertificateStoreApproveRequest).Execute()
 
 Approves the provided certificate stores to make them available for management
 
@@ -115,7 +115,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.CreateCertificateStoresApprove(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresCertificateStoreApproveRequest(certificateStoresCertificateStoreApproveRequest).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.BuildCreateCertificateStoresApproveRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresCertificateStoreApproveRequest(certificateStoresCertificateStoreApproveRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.CreateCertificateStoresApprove``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ## CreateCertificateStoresCertificatesAdd
 
-> []string CreateCertificateStoresCertificatesAdd(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresAddCertificateRequest(certificateStoresAddCertificateRequest).Execute()
+> []string BuildCreateCertificateStoresCertificatesAddRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresAddCertificateRequest(certificateStoresAddCertificateRequest).Execute()
 
 Configures a management job to add a certificate to one or more stores with the provided schedule
 
@@ -181,7 +181,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.CreateCertificateStoresCertificatesAdd(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresAddCertificateRequest(certificateStoresAddCertificateRequest).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.BuildCreateCertificateStoresCertificatesAddRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresAddCertificateRequest(certificateStoresAddCertificateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.CreateCertificateStoresCertificatesAdd``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ## CreateCertificateStoresCertificatesRemove
 
-> []string CreateCertificateStoresCertificatesRemove(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresRemoveCertificateRequest(certificateStoresRemoveCertificateRequest).Execute()
+> []string BuildCreateCertificateStoresCertificatesRemoveRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresRemoveCertificateRequest(certificateStoresRemoveCertificateRequest).Execute()
 
 Configures a management job to remove a certificate from one or more stores with the provided schedule
 
@@ -249,7 +249,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.CreateCertificateStoresCertificatesRemove(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresRemoveCertificateRequest(certificateStoresRemoveCertificateRequest).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.BuildCreateCertificateStoresCertificatesRemoveRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresRemoveCertificateRequest(certificateStoresRemoveCertificateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.CreateCertificateStoresCertificatesRemove``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 ## CreateCertificateStoresReenrollment
 
-> CreateCertificateStoresReenrollment(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresReenrollmentRequest(certificateStoresReenrollmentRequest).Execute()
+> BuildCreateCertificateStoresReenrollmentRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresReenrollmentRequest(certificateStoresReenrollmentRequest).Execute()
 
 Schedules a certificate store for reenrollment
 
@@ -317,7 +317,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.CreateCertificateStoresReenrollment(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresReenrollmentRequest(certificateStoresReenrollmentRequest).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.BuildCreateCertificateStoresReenrollmentRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresReenrollmentRequest(certificateStoresReenrollmentRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.CreateCertificateStoresReenrollment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 
 ## CreateCertificateStoresSchedule
 
-> CreateCertificateStoresSchedule(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertStoresSchedule(cSSCMSDataModelModelsCertStoresSchedule).Execute()
+> BuildCreateCertificateStoresScheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertStoresSchedule(cSSCMSDataModelModelsCertStoresSchedule).Execute()
 
 Creates an inventory schedule for the provided certificate stores
 
@@ -383,7 +383,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.CreateCertificateStoresSchedule(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertStoresSchedule(cSSCMSDataModelModelsCertStoresSchedule).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.BuildCreateCertificateStoresScheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertStoresSchedule(cSSCMSDataModelModelsCertStoresSchedule).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.CreateCertificateStoresSchedule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -426,7 +426,7 @@ Name | Type | Description  | Notes
 
 ## DeleteCertificateStores
 
-> DeleteCertificateStores(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
+> BuildDeleteCertificateStoresRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
 
 Deletes multiple persisted certificate store entities by their identifiers
 
@@ -451,7 +451,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.DeleteCertificateStores(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.BuildDeleteCertificateStoresRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.DeleteCertificateStores``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -494,7 +494,7 @@ Name | Type | Description  | Notes
 
 ## DeleteCertificateStoresById
 
-> DeleteCertificateStoresById(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> BuildDeleteCertificateStoresByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes a persisted certificate store by its Keyfactor identifier
 
@@ -517,7 +517,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.DeleteCertificateStoresById(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.BuildDeleteCertificateStoresByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.DeleteCertificateStoresById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -564,7 +564,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificateStores
 
-> []CertificateStoresCertificateStoreResponse GetCertificateStores(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PerformRoleCheck(performRoleCheck).RoleIdList(roleIdList).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CertificateStoresCertificateStoreResponse BuildGetCertificateStoresRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PerformRoleCheck(performRoleCheck).RoleIdList(roleIdList).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all certificate stores according to the provided filter and output parameters
 
@@ -593,7 +593,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.GetCertificateStores(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PerformRoleCheck(performRoleCheck).RoleIdList(roleIdList).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.BuildGetCertificateStoresRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PerformRoleCheck(performRoleCheck).RoleIdList(roleIdList).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.GetCertificateStores``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -644,7 +644,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificateStoresById
 
-> CertificateStoresCertificateStoreResponse GetCertificateStoresById(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CertificateStoresCertificateStoreResponse BuildGetCertificateStoresByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a single certificate store associated with the provided id
 
@@ -667,7 +667,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.GetCertificateStoresById(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.BuildGetCertificateStoresByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.GetCertificateStoresById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -716,7 +716,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificateStoresByIdInventory
 
-> []CertificateStoresCertificateStoreInventoryResponse GetCertificateStoresByIdInventory(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CertificateStoresCertificateStoreInventoryResponse BuildGetCertificateStoresByIdInventoryRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a single certificate store's inventory associated with the provided id
 
@@ -743,7 +743,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.GetCertificateStoresByIdInventory(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.BuildGetCertificateStoresByIdInventoryRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.GetCertificateStoresByIdInventory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -796,7 +796,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCertificateStores
 
-> CertificateStoresCertificateStoreResponse UpdateCertificateStores(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest(cSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest).Execute()
+> CertificateStoresCertificateStoreResponse BuildUpdateCertificateStoresRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest(cSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest).Execute()
 
 Updates a given certificate store with the properties of the provided instance
 
@@ -819,7 +819,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.UpdateCertificateStores(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest(cSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.BuildUpdateCertificateStoresRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest(cSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.UpdateCertificateStores``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -864,7 +864,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCertificateStoresAssignContainer
 
-> []CertificateStoresCertificateStoreResponse UpdateCertificateStoresAssignContainer(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsContainerAssignment(cSSCMSDataModelModelsContainerAssignment).Execute()
+> []CertificateStoresCertificateStoreResponse BuildUpdateCertificateStoresAssignContainerRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsContainerAssignment(cSSCMSDataModelModelsContainerAssignment).Execute()
 
 Assigns the provided certificate stores to the provided container
 
@@ -887,7 +887,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.UpdateCertificateStoresAssignContainer(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsContainerAssignment(cSSCMSDataModelModelsContainerAssignment).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.BuildUpdateCertificateStoresAssignContainerRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsContainerAssignment(cSSCMSDataModelModelsContainerAssignment).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.UpdateCertificateStoresAssignContainer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -932,7 +932,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCertificateStoresDiscoveryJob
 
-> UpdateCertificateStoresDiscoveryJob(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsDiscoveryJobRequest(cSSCMSDataModelModelsDiscoveryJobRequest).Execute()
+> BuildUpdateCertificateStoresDiscoveryJobRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsDiscoveryJobRequest(cSSCMSDataModelModelsDiscoveryJobRequest).Execute()
 
 Configures a discovery job to locate currently unmanaged certificate stores
 
@@ -955,7 +955,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.UpdateCertificateStoresDiscoveryJob(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsDiscoveryJobRequest(cSSCMSDataModelModelsDiscoveryJobRequest).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.BuildUpdateCertificateStoresDiscoveryJobRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsDiscoveryJobRequest(cSSCMSDataModelModelsDiscoveryJobRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.UpdateCertificateStoresDiscoveryJob``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -998,7 +998,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCertificateStoresPassword
 
-> UpdateCertificateStoresPassword(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertStoreNewPasswordRequest(cSSCMSDataModelModelsCertStoreNewPasswordRequest).Execute()
+> BuildUpdateCertificateStoresPasswordRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertStoreNewPasswordRequest(cSSCMSDataModelModelsCertStoreNewPasswordRequest).Execute()
 
 Sets a password for the requested certificate store
 
@@ -1021,7 +1021,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.UpdateCertificateStoresPassword(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertStoreNewPasswordRequest(cSSCMSDataModelModelsCertStoreNewPasswordRequest).Execute()
+    resp, r, err := apiClient.CertificateStoreApi.BuildUpdateCertificateStoresPasswordRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertStoreNewPasswordRequest(cSSCMSDataModelModelsCertStoreNewPasswordRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.UpdateCertificateStoresPassword``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

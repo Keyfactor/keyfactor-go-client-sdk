@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## CreateEnrollmentPFX
 
-> EnrollmentPFXEnrollmentManagementResponse CreateEnrollmentPFX(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentPFXEnrollmentWithStoresRequest(enrollmentPFXEnrollmentWithStoresRequest).Execute()
+> EnrollmentPFXEnrollmentManagementResponse BuildCreateEnrollmentPFXRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentPFXEnrollmentWithStoresRequest(enrollmentPFXEnrollmentWithStoresRequest).Execute()
 
 Performs a PFX Enrollment based upon the provided request
 
@@ -36,7 +36,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.CreateEnrollmentPFX(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentPFXEnrollmentWithStoresRequest(enrollmentPFXEnrollmentWithStoresRequest).Execute()
+    resp, r, err := apiClient.EnrollmentApi.BuildCreateEnrollmentPFXRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentPFXEnrollmentWithStoresRequest(enrollmentPFXEnrollmentWithStoresRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.CreateEnrollmentPFX``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

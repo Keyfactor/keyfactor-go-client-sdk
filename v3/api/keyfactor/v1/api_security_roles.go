@@ -71,7 +71,7 @@ CreateSecurityRoles Adds a new security role to the system.  The v1 endpoints fo
 
 Deprecated
 */
-func (a *SecurityRolesApiService) CreateSecurityRoles(ctx context.Context) ApiCreateSecurityRolesRequest {
+func (a *SecurityRolesApiService) BuildCreateSecurityRolesRequest(ctx context.Context) ApiCreateSecurityRolesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -222,7 +222,7 @@ CreateSecurityRolesByIdCopy Makes a copy of an existing security role.  The v1 e
 
 Deprecated
 */
-func (a *SecurityRolesApiService) CreateSecurityRolesByIdCopy(ctx context.Context, id int32) ApiCreateSecurityRolesByIdCopyRequest {
+func (a *SecurityRolesApiService) BuildCreateSecurityRolesByIdCopyRequest(ctx context.Context, id int32) ApiCreateSecurityRolesByIdCopyRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -367,7 +367,7 @@ DeleteSecurityRolesById Deletes the security role whose ID is provided.
 	@param id Security role identifier
 	@return ApiDeleteSecurityRolesByIdRequest
 */
-func (a *SecurityRolesApiService) DeleteSecurityRolesById(ctx context.Context, id int32) ApiDeleteSecurityRolesByIdRequest {
+func (a *SecurityRolesApiService) BuildDeleteSecurityRolesByIdRequest(ctx context.Context, id int32) ApiDeleteSecurityRolesByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -532,7 +532,7 @@ GetSecurityRoles Returns all security roles according to the provided filter and
 
 Deprecated
 */
-func (a *SecurityRolesApiService) GetSecurityRoles(ctx context.Context) ApiGetSecurityRolesRequest {
+func (a *SecurityRolesApiService) BuildGetSecurityRolesRequest(ctx context.Context) ApiGetSecurityRolesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -692,7 +692,7 @@ GetSecurityRolesById Returns a single security role that matches the id.  The v1
 
 Deprecated
 */
-func (a *SecurityRolesApiService) GetSecurityRolesById(ctx context.Context, id int32) ApiGetSecurityRolesByIdRequest {
+func (a *SecurityRolesApiService) BuildGetSecurityRolesByIdRequest(ctx context.Context, id int32) ApiGetSecurityRolesByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -837,7 +837,7 @@ GetSecurityRolesByIdIdentities Returns all identities which have the security ro
 
 Deprecated
 */
-func (a *SecurityRolesApiService) GetSecurityRolesByIdIdentities(ctx context.Context, id int32) ApiGetSecurityRolesByIdIdentitiesRequest {
+func (a *SecurityRolesApiService) BuildGetSecurityRolesByIdIdentitiesRequest(ctx context.Context, id int32) ApiGetSecurityRolesByIdIdentitiesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -987,7 +987,7 @@ UpdateSecurityRoles Updates a security role that matches the id.  The v1 endpoin
 
 Deprecated
 */
-func (a *SecurityRolesApiService) UpdateSecurityRoles(ctx context.Context) ApiUpdateSecurityRolesRequest {
+func (a *SecurityRolesApiService) BuildUpdateSecurityRolesRequest(ctx context.Context) ApiUpdateSecurityRolesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1138,7 +1138,7 @@ UpdateSecurityRolesByIdIdentities Updates the identities which have the security
 
 Deprecated
 */
-func (a *SecurityRolesApiService) UpdateSecurityRolesByIdIdentities(ctx context.Context, id int32) ApiUpdateSecurityRolesByIdIdentitiesRequest {
+func (a *SecurityRolesApiService) BuildUpdateSecurityRolesByIdIdentitiesRequest(ctx context.Context, id int32) ApiUpdateSecurityRolesByIdIdentitiesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

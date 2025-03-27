@@ -31,7 +31,7 @@ Method | HTTP request | Description
 
 ## CreateCertificatesAnalyze
 
-> []CSSCMSDataModelModelsCertificateDetails CreateCertificatesAnalyze(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificatesAnalyzeCertificateRequest(certificatesAnalyzeCertificateRequest).Execute()
+> []CSSCMSDataModelModelsCertificateDetails BuildCreateCertificatesAnalyzeRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificatesAnalyzeCertificateRequest(certificatesAnalyzeCertificateRequest).Execute()
 
 Returns the public information of the certificate
 
@@ -54,7 +54,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CreateCertificatesAnalyze(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificatesAnalyzeCertificateRequest(certificatesAnalyzeCertificateRequest).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildCreateCertificatesAnalyzeRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificatesAnalyzeCertificateRequest(certificatesAnalyzeCertificateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CreateCertificatesAnalyze``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ## CreateCertificatesDownload
 
-> CSSCMSDataModelModelsCertificateDownloadResponse CreateCertificatesDownload(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificatesCertificateDownloadRequest(certificatesCertificateDownloadRequest).Execute()
+> CSSCMSDataModelModelsCertificateDownloadResponse BuildCreateCertificatesDownloadRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificatesCertificateDownloadRequest(certificatesCertificateDownloadRequest).Execute()
 
 Downloads the persisted certificate associated with the provided query
 
@@ -126,7 +126,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CreateCertificatesDownload(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificatesCertificateDownloadRequest(certificatesCertificateDownloadRequest).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildCreateCertificatesDownloadRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificatesCertificateDownloadRequest(certificatesCertificateDownloadRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CreateCertificatesDownload``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ## CreateCertificatesImport
 
-> CSSCMSDataModelModelsCertificateImportResponseModel CreateCertificatesImport(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateImportRequestModel(cSSCMSDataModelModelsCertificateImportRequestModel).Execute()
+> CSSCMSDataModelModelsCertificateImportResponseModel BuildCreateCertificatesImportRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateImportRequestModel(cSSCMSDataModelModelsCertificateImportRequestModel).Execute()
 
 Imports the provided certificate into the Keyfactor instance, including any provided associated data
 
@@ -196,7 +196,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CreateCertificatesImport(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateImportRequestModel(cSSCMSDataModelModelsCertificateImportRequestModel).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildCreateCertificatesImportRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateImportRequestModel(cSSCMSDataModelModelsCertificateImportRequestModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CreateCertificatesImport``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 ## CreateCertificatesRecover
 
-> CSSCMSDataModelModelsRecoveryResponse CreateCertificatesRecover(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificatesCertificateRecoveryRequest(certificatesCertificateRecoveryRequest).Execute()
+> CSSCMSDataModelModelsRecoveryResponse BuildCreateCertificatesRecoverRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificatesCertificateRecoveryRequest(certificatesCertificateRecoveryRequest).Execute()
 
 Recovers the persisted certificate associated with the provided query
 
@@ -268,7 +268,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CreateCertificatesRecover(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificatesCertificateRecoveryRequest(certificatesCertificateRecoveryRequest).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildCreateCertificatesRecoverRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificatesCertificateRecoveryRequest(certificatesCertificateRecoveryRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CreateCertificatesRecover``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 ## CreateCertificatesRevoke
 
-> CertificatesRevocationResponse CreateCertificatesRevoke(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificatesRevokeCertificateRequest(certificatesRevokeCertificateRequest).Execute()
+> CertificatesRevocationResponse BuildCreateCertificatesRevokeRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificatesRevokeCertificateRequest(certificatesRevokeCertificateRequest).Execute()
 
 Revokes the certificates associated with the provided identifiers and associates the provided data with the revocation
 
@@ -340,7 +340,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.CreateCertificatesRevoke(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificatesRevokeCertificateRequest(certificatesRevokeCertificateRequest).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildCreateCertificatesRevokeRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificatesRevokeCertificateRequest(certificatesRevokeCertificateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.CreateCertificatesRevoke``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 
 ## DeleteCertificates
 
-> DeleteCertificates(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
+> BuildDeleteCertificatesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
 
 Deletes multiple persisted certificates by their unique ids
 
@@ -411,7 +411,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.DeleteCertificates(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildDeleteCertificatesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.DeleteCertificates``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 
 ## DeleteCertificatesById
 
-> DeleteCertificatesById(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> BuildDeleteCertificatesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes a persisted certificate by its unique id as well as the stored private key (if present) associated with it
 
@@ -479,7 +479,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.DeleteCertificatesById(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildDeleteCertificatesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.DeleteCertificatesById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -527,7 +527,7 @@ Name | Type | Description  | Notes
 
 ## DeleteCertificatesPrivateKey
 
-> DeleteCertificatesPrivateKey(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
+> BuildDeleteCertificatesPrivateKeyRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
 
 Deletes the persisted private keys of multiple certificates by the unique ids of the Certificates
 
@@ -551,7 +551,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.DeleteCertificatesPrivateKey(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildDeleteCertificatesPrivateKeyRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.DeleteCertificatesPrivateKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -595,7 +595,7 @@ Name | Type | Description  | Notes
 
 ## DeleteCertificatesPrivateKeyById
 
-> DeleteCertificatesPrivateKeyById(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> BuildDeleteCertificatesPrivateKeyByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes the persisted private keys of the certificate associated with the provided identifier
 
@@ -619,7 +619,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.DeleteCertificatesPrivateKeyById(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildDeleteCertificatesPrivateKeyByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.DeleteCertificatesPrivateKeyById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -667,7 +667,7 @@ Name | Type | Description  | Notes
 
 ## DeleteCertificatesQuery
 
-> DeleteCertificatesQuery(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Body(body).Execute()
+> BuildDeleteCertificatesQueryRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Body(body).Execute()
 
 Deletes multiple persisted certificate entities selected by a given query
 
@@ -693,7 +693,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.DeleteCertificatesQuery(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Body(body).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildDeleteCertificatesQueryRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Body(body).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.DeleteCertificatesQuery``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -737,7 +737,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificates
 
-> []CertificatesCertificateRetrievalResponse GetCertificates(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludeRevoked(includeRevoked).IncludeExpired(includeExpired).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).CollectionId(collectionId).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).IncludeHasPrivateKey(includeHasPrivateKey).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CertificatesCertificateRetrievalResponse BuildGetCertificatesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludeRevoked(includeRevoked).IncludeExpired(includeExpired).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).CollectionId(collectionId).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).IncludeHasPrivateKey(includeHasPrivateKey).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all certificates according to the provided filter and output parameters
 
@@ -770,7 +770,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.GetCertificates(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludeRevoked(includeRevoked).IncludeExpired(includeExpired).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).CollectionId(collectionId).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).IncludeHasPrivateKey(includeHasPrivateKey).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildGetCertificatesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludeRevoked(includeRevoked).IncludeExpired(includeExpired).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).CollectionId(collectionId).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).IncludeHasPrivateKey(includeHasPrivateKey).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.GetCertificates``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -825,7 +825,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificatesById
 
-> CertificatesCertificateRetrievalResponse GetCertificatesById(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CertificatesCertificateRetrievalResponse BuildGetCertificatesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a single certificate that matches the id
 
@@ -851,7 +851,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.GetCertificatesById(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildGetCertificatesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludeLocations(includeLocations).IncludeMetadata(includeMetadata).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.GetCertificatesById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -903,7 +903,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificatesByIdHistory
 
-> []CSSCMSDataModelModelsPKICertificateOperation GetCertificatesByIdHistory(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CSSCMSDataModelModelsPKICertificateOperation BuildGetCertificatesByIdHistoryRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets the history of operations on a certificate
 
@@ -931,7 +931,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.GetCertificatesByIdHistory(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildGetCertificatesByIdHistoryRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.GetCertificatesByIdHistory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -985,7 +985,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificatesByIdSecurity
 
-> CSSCMSDataModelModelsSecurityCertificatePermissions GetCertificatesByIdSecurity(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsSecurityCertificatePermissions BuildGetCertificatesByIdSecurityRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets the list of Security Identities and which permissions they have on the given certificate.
 
@@ -1009,7 +1009,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.GetCertificatesByIdSecurity(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildGetCertificatesByIdSecurityRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.GetCertificatesByIdSecurity``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1059,7 +1059,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificatesByIdValidate
 
-> CSSCMSDataModelModelsCertificateValidationResponse GetCertificatesByIdValidate(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsCertificateValidationResponse BuildGetCertificatesByIdValidateRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Validates the certificate chain can be built.
 
@@ -1083,7 +1083,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.GetCertificatesByIdValidate(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildGetCertificatesByIdValidateRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.GetCertificatesByIdValidate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1133,7 +1133,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificatesCSV
 
-> string GetCertificatesCSV(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).SortName(sortName).SortOrder(sortOrder).Query(query).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> string BuildGetCertificatesCSVRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).SortName(sortName).SortOrder(sortOrder).Query(query).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a comma-delimited CSV file containing all certificates in the database
 
@@ -1159,7 +1159,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.GetCertificatesCSV(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).SortName(sortName).SortOrder(sortOrder).Query(query).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildGetCertificatesCSVRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).SortName(sortName).SortOrder(sortOrder).Query(query).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.GetCertificatesCSV``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1207,7 +1207,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificatesIdentityAuditById
 
-> []CertificatesCertificateIdentityAuditResponse GetCertificatesIdentityAuditById(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CertificatesCertificateIdentityAuditResponse BuildGetCertificatesIdentityAuditByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Audit identity permissions for certificate
 
@@ -1231,7 +1231,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.GetCertificatesIdentityAuditById(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildGetCertificatesIdentityAuditByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.GetCertificatesIdentityAuditById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1281,7 +1281,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificatesLocationsById
 
-> CertificatesCertificateLocationsResponse GetCertificatesLocationsById(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CertificatesCertificateLocationsResponse BuildGetCertificatesLocationsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a list of locations the certificate is in
 
@@ -1305,7 +1305,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.GetCertificatesLocationsById(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildGetCertificatesLocationsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.GetCertificatesLocationsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1355,7 +1355,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificatesMetadataCompare
 
-> bool GetCertificatesMetadataCompare(ctx).CertificateId(certificateId).MetadataFieldName(metadataFieldName).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Value(value).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> bool BuildGetCertificatesMetadataCompareRequest(ctx).CertificateId(certificateId).MetadataFieldName(metadataFieldName).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Value(value).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Compares the metadata value provided with the metadata value associated with the specified certificate
 
@@ -1381,7 +1381,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.GetCertificatesMetadataCompare(context.Background()).CertificateId(certificateId).MetadataFieldName(metadataFieldName).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Value(value).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildGetCertificatesMetadataCompareRequest(context.Background()).CertificateId(certificateId).MetadataFieldName(metadataFieldName).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Value(value).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.GetCertificatesMetadataCompare``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1429,7 +1429,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCertificatesByIdOwner
 
-> UpdateCertificatesByIdOwner(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificatesOwnerRequest(certificatesOwnerRequest).Execute()
+> BuildUpdateCertificatesByIdOwnerRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificatesOwnerRequest(certificatesOwnerRequest).Execute()
 
 Changes the certificate's owner. Users must be in the current owner's role and the new owner's role
 
@@ -1454,7 +1454,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.UpdateCertificatesByIdOwner(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificatesOwnerRequest(certificatesOwnerRequest).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildUpdateCertificatesByIdOwnerRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificatesOwnerRequest(certificatesOwnerRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.UpdateCertificatesByIdOwner``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1503,7 +1503,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCertificatesMetadata
 
-> UpdateCertificatesMetadata(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMetadataUpdateRequest(cSSCMSDataModelModelsMetadataUpdateRequest).Execute()
+> BuildUpdateCertificatesMetadataRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMetadataUpdateRequest(cSSCMSDataModelModelsMetadataUpdateRequest).Execute()
 
 Updates the metadata for the certificate associated with the identifier provided
 
@@ -1527,7 +1527,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.UpdateCertificatesMetadata(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMetadataUpdateRequest(cSSCMSDataModelModelsMetadataUpdateRequest).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildUpdateCertificatesMetadataRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMetadataUpdateRequest(cSSCMSDataModelModelsMetadataUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.UpdateCertificatesMetadata``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1571,7 +1571,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCertificatesMetadataAll
 
-> UpdateCertificatesMetadataAll(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMetadataAllUpdateRequest(cSSCMSDataModelModelsMetadataAllUpdateRequest).Execute()
+> BuildUpdateCertificatesMetadataAllRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMetadataAllUpdateRequest(cSSCMSDataModelModelsMetadataAllUpdateRequest).Execute()
 
 Updates the metadata for certificates associated with the certificate identifiers or query provided
 
@@ -1595,7 +1595,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.UpdateCertificatesMetadataAll(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMetadataAllUpdateRequest(cSSCMSDataModelModelsMetadataAllUpdateRequest).Execute()
+    resp, r, err := apiClient.CertificateApi.BuildUpdateCertificatesMetadataAllRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMetadataAllUpdateRequest(cSSCMSDataModelModelsMetadataAllUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.UpdateCertificatesMetadataAll``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

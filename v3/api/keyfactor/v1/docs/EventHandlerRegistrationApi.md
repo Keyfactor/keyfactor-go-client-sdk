@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## CreateEventHandlerRegistration
 
-> []EventHandlerRegistrationEventHandlerRegistrationResponse CreateEventHandlerRegistration(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).EventHandlerRegistrationEventHandlerRegistrationCreateRequest(eventHandlerRegistrationEventHandlerRegistrationCreateRequest).Execute()
+> []EventHandlerRegistrationEventHandlerRegistrationResponse BuildCreateEventHandlerRegistrationRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).EventHandlerRegistrationEventHandlerRegistrationCreateRequest(eventHandlerRegistrationEventHandlerRegistrationCreateRequest).Execute()
 
 Registers an event handler
 
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventHandlerRegistrationApi.CreateEventHandlerRegistration(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).EventHandlerRegistrationEventHandlerRegistrationCreateRequest(eventHandlerRegistrationEventHandlerRegistrationCreateRequest).Execute()
+    resp, r, err := apiClient.EventHandlerRegistrationApi.BuildCreateEventHandlerRegistrationRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).EventHandlerRegistrationEventHandlerRegistrationCreateRequest(eventHandlerRegistrationEventHandlerRegistrationCreateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EventHandlerRegistrationApi.CreateEventHandlerRegistration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## DeleteEventHandlerRegistrationById
 
-> DeleteEventHandlerRegistrationById(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> BuildDeleteEventHandlerRegistrationByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes an event handler
 
@@ -105,7 +105,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventHandlerRegistrationApi.DeleteEventHandlerRegistrationById(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.EventHandlerRegistrationApi.BuildDeleteEventHandlerRegistrationByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EventHandlerRegistrationApi.DeleteEventHandlerRegistrationById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## GetEventHandlerRegistration
 
-> []EventHandlerRegistrationEventHandlerRegistrationResponse GetEventHandlerRegistration(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []EventHandlerRegistrationEventHandlerRegistrationResponse BuildGetEventHandlerRegistrationRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all registered event handlers according to the provided filter and output parameters
 
@@ -179,7 +179,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventHandlerRegistrationApi.GetEventHandlerRegistration(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.EventHandlerRegistrationApi.BuildGetEventHandlerRegistrationRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EventHandlerRegistrationApi.GetEventHandlerRegistration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ## GetEventHandlerRegistrationById
 
-> EventHandlerRegistrationEventHandlerRegistrationResponse GetEventHandlerRegistrationById(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> EventHandlerRegistrationEventHandlerRegistrationResponse BuildGetEventHandlerRegistrationByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a registered event handler that matches the provided ID
 
@@ -251,7 +251,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventHandlerRegistrationApi.GetEventHandlerRegistrationById(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.EventHandlerRegistrationApi.BuildGetEventHandlerRegistrationByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EventHandlerRegistrationApi.GetEventHandlerRegistrationById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ## UpdateEventHandlerRegistrationById
 
-> EventHandlerRegistrationEventHandlerRegistrationResponse UpdateEventHandlerRegistrationById(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).EventHandlerRegistrationEventHandlerRegistrationUpdateRequest(eventHandlerRegistrationEventHandlerRegistrationUpdateRequest).Execute()
+> EventHandlerRegistrationEventHandlerRegistrationResponse BuildUpdateEventHandlerRegistrationByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).EventHandlerRegistrationEventHandlerRegistrationUpdateRequest(eventHandlerRegistrationEventHandlerRegistrationUpdateRequest).Execute()
 
 Updates a registered event handler's information
 
@@ -324,7 +324,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventHandlerRegistrationApi.UpdateEventHandlerRegistrationById(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).EventHandlerRegistrationEventHandlerRegistrationUpdateRequest(eventHandlerRegistrationEventHandlerRegistrationUpdateRequest).Execute()
+    resp, r, err := apiClient.EventHandlerRegistrationApi.BuildUpdateEventHandlerRegistrationByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).EventHandlerRegistrationEventHandlerRegistrationUpdateRequest(eventHandlerRegistrationEventHandlerRegistrationUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EventHandlerRegistrationApi.UpdateEventHandlerRegistrationById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

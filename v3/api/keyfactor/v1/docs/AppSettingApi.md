@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## GetAppSetting
 
-> []AppSettingsAppSettingResponse GetAppSetting(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []AppSettingsAppSettingResponse BuildGetAppSettingRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get available application settings
 
@@ -36,7 +36,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AppSettingApi.GetAppSetting(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.AppSettingApi.BuildGetAppSettingRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppSettingApi.GetAppSetting``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ## GetAppSettingById
 
-> AppSettingsAppSettingResponse GetAppSettingById(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> AppSettingsAppSettingResponse BuildGetAppSettingByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get application setting by id
 
@@ -103,7 +103,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AppSettingApi.GetAppSettingById(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.AppSettingApi.BuildGetAppSettingByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppSettingApi.GetAppSettingById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAppSetting
 
-> []AppSettingsAppSettingResponse UpdateAppSetting(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AppSettingsAppSettingUpdateBulkRequest(appSettingsAppSettingUpdateBulkRequest).Execute()
+> []AppSettingsAppSettingResponse BuildUpdateAppSettingRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AppSettingsAppSettingUpdateBulkRequest(appSettingsAppSettingUpdateBulkRequest).Execute()
 
 Bulk update available application settings
 
@@ -175,7 +175,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AppSettingApi.UpdateAppSetting(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AppSettingsAppSettingUpdateBulkRequest(appSettingsAppSettingUpdateBulkRequest).Execute()
+    resp, r, err := apiClient.AppSettingApi.BuildUpdateAppSettingRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AppSettingsAppSettingUpdateBulkRequest(appSettingsAppSettingUpdateBulkRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppSettingApi.UpdateAppSetting``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAppSettingByIdSet
 
-> AppSettingsAppSettingResponse UpdateAppSettingByIdSet(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AppSettingsAppSettingUpdateRequest(appSettingsAppSettingUpdateRequest).Execute()
+> AppSettingsAppSettingResponse BuildUpdateAppSettingByIdSetRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AppSettingsAppSettingUpdateRequest(appSettingsAppSettingUpdateRequest).Execute()
 
 Update one application setting by id
 
@@ -244,7 +244,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AppSettingApi.UpdateAppSettingByIdSet(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AppSettingsAppSettingUpdateRequest(appSettingsAppSettingUpdateRequest).Execute()
+    resp, r, err := apiClient.AppSettingApi.BuildUpdateAppSettingByIdSetRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AppSettingsAppSettingUpdateRequest(appSettingsAppSettingUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppSettingApi.UpdateAppSettingByIdSet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAppSettingNameSet
 
-> AppSettingsAppSettingResponse UpdateAppSettingNameSet(ctx, name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AppSettingsAppSettingUpdateRequest(appSettingsAppSettingUpdateRequest).Execute()
+> AppSettingsAppSettingResponse BuildUpdateAppSettingNameSetRequest(ctx, name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AppSettingsAppSettingUpdateRequest(appSettingsAppSettingUpdateRequest).Execute()
 
 Update one application setting by short name
 
@@ -318,7 +318,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AppSettingApi.UpdateAppSettingNameSet(context.Background(), name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AppSettingsAppSettingUpdateRequest(appSettingsAppSettingUpdateRequest).Execute()
+    resp, r, err := apiClient.AppSettingApi.BuildUpdateAppSettingNameSetRequest(context.Background(), name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AppSettingsAppSettingUpdateRequest(appSettingsAppSettingUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppSettingApi.UpdateAppSettingNameSet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

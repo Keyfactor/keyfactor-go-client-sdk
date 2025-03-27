@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetMacEnrollment
 
-> MacEnrollmentMacEnrollmentAPIModel GetMacEnrollment(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> MacEnrollmentMacEnrollmentAPIModel BuildGetMacEnrollmentRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets mac enrollment settings data
 
@@ -35,7 +35,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MacEnrollmentApi.GetMacEnrollment(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.MacEnrollmentApi.BuildGetMacEnrollmentRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MacEnrollmentApi.GetMacEnrollment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ## UpdateMacEnrollment
 
-> MacEnrollmentMacEnrollmentAPIModel UpdateMacEnrollment(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MacEnrollmentMacEnrollmentAPIModel(macEnrollmentMacEnrollmentAPIModel).Execute()
+> MacEnrollmentMacEnrollmentAPIModel BuildUpdateMacEnrollmentRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MacEnrollmentMacEnrollmentAPIModel(macEnrollmentMacEnrollmentAPIModel).Execute()
 
 Updates mac enrollment settings data
 
@@ -104,7 +104,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MacEnrollmentApi.UpdateMacEnrollment(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MacEnrollmentMacEnrollmentAPIModel(macEnrollmentMacEnrollmentAPIModel).Execute()
+    resp, r, err := apiClient.MacEnrollmentApi.BuildUpdateMacEnrollmentRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MacEnrollmentMacEnrollmentAPIModel(macEnrollmentMacEnrollmentAPIModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MacEnrollmentApi.UpdateMacEnrollment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -64,7 +64,7 @@ DeleteComponentInstallationById Deletes the Keyfactor component installation who
 	@param id Keyfactor component installation identifier
 	@return ApiDeleteComponentInstallationByIdRequest
 */
-func (a *ComponentInstallationApiService) DeleteComponentInstallationById(ctx context.Context, id int32) ApiDeleteComponentInstallationByIdRequest {
+func (a *ComponentInstallationApiService) BuildDeleteComponentInstallationByIdRequest(ctx context.Context, id int32) ApiDeleteComponentInstallationByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -227,7 +227,7 @@ GetComponentInstallation Returns all Keyfactor component installations.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetComponentInstallationRequest
 */
-func (a *ComponentInstallationApiService) GetComponentInstallation(ctx context.Context) ApiGetComponentInstallationRequest {
+func (a *ComponentInstallationApiService) BuildGetComponentInstallationRequest(ctx context.Context) ApiGetComponentInstallationRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

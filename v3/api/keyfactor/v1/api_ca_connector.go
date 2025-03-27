@@ -69,7 +69,7 @@ CreateCertificateAuthorityCAConnectors Creates a new CA Connector object
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificateAuthorityCAConnectorsRequest
 */
-func (a *CAConnectorApiService) CreateCertificateAuthorityCAConnectors(ctx context.Context) ApiCreateCertificateAuthorityCAConnectorsRequest {
+func (a *CAConnectorApiService) BuildCreateCertificateAuthorityCAConnectorsRequest(ctx context.Context) ApiCreateCertificateAuthorityCAConnectorsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -209,7 +209,7 @@ DeleteCertificateAuthorityCAConnectorsById Deletes a CA Connector with the speci
 	@param id The ID of the CA Connector
 	@return ApiDeleteCertificateAuthorityCAConnectorsByIdRequest
 */
-func (a *CAConnectorApiService) DeleteCertificateAuthorityCAConnectorsById(ctx context.Context, id int32) ApiDeleteCertificateAuthorityCAConnectorsByIdRequest {
+func (a *CAConnectorApiService) BuildDeleteCertificateAuthorityCAConnectorsByIdRequest(ctx context.Context, id int32) ApiDeleteCertificateAuthorityCAConnectorsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -336,7 +336,7 @@ GetCertificateAuthorityCAConnectors Returns all CA Connectors
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCertificateAuthorityCAConnectorsRequest
 */
-func (a *CAConnectorApiService) GetCertificateAuthorityCAConnectors(ctx context.Context) ApiGetCertificateAuthorityCAConnectorsRequest {
+func (a *CAConnectorApiService) BuildGetCertificateAuthorityCAConnectorsRequest(ctx context.Context) ApiGetCertificateAuthorityCAConnectorsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -474,7 +474,7 @@ GetCertificateAuthorityCAConnectorsById Returns a CA Connector with the specific
 	@param id The ID of the CA Connector
 	@return ApiGetCertificateAuthorityCAConnectorsByIdRequest
 */
-func (a *CAConnectorApiService) GetCertificateAuthorityCAConnectorsById(ctx context.Context, id int32) ApiGetCertificateAuthorityCAConnectorsByIdRequest {
+func (a *CAConnectorApiService) BuildGetCertificateAuthorityCAConnectorsByIdRequest(ctx context.Context, id int32) ApiGetCertificateAuthorityCAConnectorsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -622,7 +622,7 @@ UpdateCertificateAuthorityCAConnectorsById Updates an existing CA Connector
 	@param id The ID of the CA Connector we want to update
 	@return ApiUpdateCertificateAuthorityCAConnectorsByIdRequest
 */
-func (a *CAConnectorApiService) UpdateCertificateAuthorityCAConnectorsById(ctx context.Context, id int32) ApiUpdateCertificateAuthorityCAConnectorsByIdRequest {
+func (a *CAConnectorApiService) BuildUpdateCertificateAuthorityCAConnectorsByIdRequest(ctx context.Context, id int32) ApiUpdateCertificateAuthorityCAConnectorsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

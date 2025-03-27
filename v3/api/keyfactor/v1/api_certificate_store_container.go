@@ -69,7 +69,7 @@ CreateCertificateStoreContainers Add a certificate store container
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificateStoreContainersRequest
 */
-func (a *CertificateStoreContainerApiService) CreateCertificateStoreContainers(ctx context.Context) ApiCreateCertificateStoreContainersRequest {
+func (a *CertificateStoreContainerApiService) BuildCreateCertificateStoreContainersRequest(ctx context.Context) ApiCreateCertificateStoreContainersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -209,7 +209,7 @@ DeleteCertificateStoreContainersById Delete a certificate store container
 	@param id Id for the certificate store container
 	@return ApiDeleteCertificateStoreContainersByIdRequest
 */
-func (a *CertificateStoreContainerApiService) DeleteCertificateStoreContainersById(ctx context.Context, id int32) ApiDeleteCertificateStoreContainersByIdRequest {
+func (a *CertificateStoreContainerApiService) BuildDeleteCertificateStoreContainersByIdRequest(ctx context.Context, id int32) ApiDeleteCertificateStoreContainersByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -366,7 +366,7 @@ GetCertificateStoreContainers Returns all certificate store container according 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCertificateStoreContainersRequest
 */
-func (a *CertificateStoreContainerApiService) GetCertificateStoreContainers(ctx context.Context) ApiGetCertificateStoreContainersRequest {
+func (a *CertificateStoreContainerApiService) BuildGetCertificateStoreContainersRequest(ctx context.Context) ApiGetCertificateStoreContainersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -519,7 +519,7 @@ GetCertificateStoreContainersById Returns a single certificate store container t
 	@param id
 	@return ApiGetCertificateStoreContainersByIdRequest
 */
-func (a *CertificateStoreContainerApiService) GetCertificateStoreContainersById(ctx context.Context, id int32) ApiGetCertificateStoreContainersByIdRequest {
+func (a *CertificateStoreContainerApiService) BuildGetCertificateStoreContainersByIdRequest(ctx context.Context, id int32) ApiGetCertificateStoreContainersByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -671,7 +671,7 @@ UpdateCertificateStoreContainers Edit a certificate store container
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateCertificateStoreContainersRequest
 */
-func (a *CertificateStoreContainerApiService) UpdateCertificateStoreContainers(ctx context.Context) ApiUpdateCertificateStoreContainersRequest {
+func (a *CertificateStoreContainerApiService) BuildUpdateCertificateStoreContainersRequest(ctx context.Context) ApiUpdateCertificateStoreContainersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

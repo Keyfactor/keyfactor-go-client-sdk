@@ -76,7 +76,7 @@ CreateWorkflowDefinitions Creates a new base definition without any steps.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateWorkflowDefinitionsRequest
 */
-func (a *WorkflowDefinitionApiService) CreateWorkflowDefinitions(ctx context.Context) ApiCreateWorkflowDefinitionsRequest {
+func (a *WorkflowDefinitionApiService) BuildCreateWorkflowDefinitionsRequest(ctx context.Context) ApiCreateWorkflowDefinitionsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -219,7 +219,7 @@ CreateWorkflowDefinitionsDefinitionIdPublish Makes the most recent version of a 
 	@param definitionId The Workflow Definition Id.
 	@return ApiCreateWorkflowDefinitionsDefinitionIdPublishRequest
 */
-func (a *WorkflowDefinitionApiService) CreateWorkflowDefinitionsDefinitionIdPublish(ctx context.Context, definitionId string) ApiCreateWorkflowDefinitionsDefinitionIdPublishRequest {
+func (a *WorkflowDefinitionApiService) BuildCreateWorkflowDefinitionsDefinitionIdPublishRequest(ctx context.Context, definitionId string) ApiCreateWorkflowDefinitionsDefinitionIdPublishRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -362,7 +362,7 @@ CreateWorkflowDefinitionsDefinitionIdPublishVersion Makes the specified version 
 	@param version The Workflow Version Id.
 	@return ApiCreateWorkflowDefinitionsDefinitionIdPublishVersionRequest
 */
-func (a *WorkflowDefinitionApiService) CreateWorkflowDefinitionsDefinitionIdPublishVersion(ctx context.Context, definitionId string, version int32) ApiCreateWorkflowDefinitionsDefinitionIdPublishVersionRequest {
+func (a *WorkflowDefinitionApiService) BuildCreateWorkflowDefinitionsDefinitionIdPublishVersionRequest(ctx context.Context, definitionId string, version int32) ApiCreateWorkflowDefinitionsDefinitionIdPublishVersionRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -505,7 +505,7 @@ DeleteWorkflowDefinitionsDefinitionId Deletes the definition matching the given 
 	@param definitionId The Workflow Definition Id.
 	@return ApiDeleteWorkflowDefinitionsDefinitionIdRequest
 */
-func (a *WorkflowDefinitionApiService) DeleteWorkflowDefinitionsDefinitionId(ctx context.Context, definitionId string) ApiDeleteWorkflowDefinitionsDefinitionIdRequest {
+func (a *WorkflowDefinitionApiService) BuildDeleteWorkflowDefinitionsDefinitionIdRequest(ctx context.Context, definitionId string) ApiDeleteWorkflowDefinitionsDefinitionIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -662,7 +662,7 @@ GetWorkflowDefinitions Gets the Definitions matching the query specifications.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetWorkflowDefinitionsRequest
 */
-func (a *WorkflowDefinitionApiService) GetWorkflowDefinitions(ctx context.Context) ApiGetWorkflowDefinitionsRequest {
+func (a *WorkflowDefinitionApiService) BuildGetWorkflowDefinitionsRequest(ctx context.Context) ApiGetWorkflowDefinitionsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -829,7 +829,7 @@ GetWorkflowDefinitionsDefinitionId Gets a workflow definition.
 	@param definitionId The Id of the definition to retrieve.
 	@return ApiGetWorkflowDefinitionsDefinitionIdRequest
 */
-func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsDefinitionId(ctx context.Context, definitionId string) ApiGetWorkflowDefinitionsDefinitionIdRequest {
+func (a *WorkflowDefinitionApiService) BuildGetWorkflowDefinitionsDefinitionIdRequest(ctx context.Context, definitionId string) ApiGetWorkflowDefinitionsDefinitionIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1004,7 +1004,7 @@ GetWorkflowDefinitionsSteps Gets the result set of available steps for a given q
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetWorkflowDefinitionsStepsRequest
 */
-func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsSteps(ctx context.Context) ApiGetWorkflowDefinitionsStepsRequest {
+func (a *WorkflowDefinitionApiService) BuildGetWorkflowDefinitionsStepsRequest(ctx context.Context) ApiGetWorkflowDefinitionsStepsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1157,7 +1157,7 @@ GetWorkflowDefinitionsStepsExtensionName Gets the schema of a given step with th
 	@param extensionName The extension name of a specific step in the step schema.
 	@return ApiGetWorkflowDefinitionsStepsExtensionNameRequest
 */
-func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsStepsExtensionName(ctx context.Context, extensionName string) ApiGetWorkflowDefinitionsStepsExtensionNameRequest {
+func (a *WorkflowDefinitionApiService) BuildGetWorkflowDefinitionsStepsExtensionNameRequest(ctx context.Context, extensionName string) ApiGetWorkflowDefinitionsStepsExtensionNameRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1326,7 +1326,7 @@ GetWorkflowDefinitionsTypes Performs a query against the workflow types in the s
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetWorkflowDefinitionsTypesRequest
 */
-func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsTypes(ctx context.Context) ApiGetWorkflowDefinitionsTypesRequest {
+func (a *WorkflowDefinitionApiService) BuildGetWorkflowDefinitionsTypesRequest(ctx context.Context) ApiGetWorkflowDefinitionsTypesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1493,7 +1493,7 @@ UpdateWorkflowDefinitionsDefinitionId Updates the existing definition's DisplayN
 	@param definitionId The Id of the definition to update.
 	@return ApiUpdateWorkflowDefinitionsDefinitionIdRequest
 */
-func (a *WorkflowDefinitionApiService) UpdateWorkflowDefinitionsDefinitionId(ctx context.Context, definitionId string) ApiUpdateWorkflowDefinitionsDefinitionIdRequest {
+func (a *WorkflowDefinitionApiService) BuildUpdateWorkflowDefinitionsDefinitionIdRequest(ctx context.Context, definitionId string) ApiUpdateWorkflowDefinitionsDefinitionIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1653,7 +1653,7 @@ UpdateWorkflowDefinitionsDefinitionIdStatus Updates the definition status matchi
 	@param definitionId The Workflow Definition Id.
 	@return ApiUpdateWorkflowDefinitionsDefinitionIdStatusRequest
 */
-func (a *WorkflowDefinitionApiService) UpdateWorkflowDefinitionsDefinitionIdStatus(ctx context.Context, definitionId string) ApiUpdateWorkflowDefinitionsDefinitionIdStatusRequest {
+func (a *WorkflowDefinitionApiService) BuildUpdateWorkflowDefinitionsDefinitionIdStatusRequest(ctx context.Context, definitionId string) ApiUpdateWorkflowDefinitionsDefinitionIdStatusRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1796,7 +1796,7 @@ If the latest version is also the published version, a new version will be creat
 	@param definitionId The Id of the definition.
 	@return ApiUpdateWorkflowDefinitionsDefinitionIdStepsRequest
 */
-func (a *WorkflowDefinitionApiService) UpdateWorkflowDefinitionsDefinitionIdSteps(ctx context.Context, definitionId string) ApiUpdateWorkflowDefinitionsDefinitionIdStepsRequest {
+func (a *WorkflowDefinitionApiService) BuildUpdateWorkflowDefinitionsDefinitionIdStepsRequest(ctx context.Context, definitionId string) ApiUpdateWorkflowDefinitionsDefinitionIdStepsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

@@ -69,7 +69,7 @@ CreateSSLNetworkRanges Adds the provided network range definitions to the associ
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSSLNetworkRangesRequest
 */
-func (a *SslApiService) CreateSSLNetworkRanges(ctx context.Context) ApiCreateSSLNetworkRangesRequest {
+func (a *SslApiService) BuildCreateSSLNetworkRangesRequest(ctx context.Context) ApiCreateSSLNetworkRangesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -202,7 +202,7 @@ CreateSSLNetworkRangesValidate Validates the format (using regular expressions) 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSSLNetworkRangesValidateRequest
 */
-func (a *SslApiService) CreateSSLNetworkRangesValidate(ctx context.Context) ApiCreateSSLNetworkRangesValidateRequest {
+func (a *SslApiService) BuildCreateSSLNetworkRangesValidateRequest(ctx context.Context) ApiCreateSSLNetworkRangesValidateRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -335,7 +335,7 @@ CreateSSLNetworks Creates a network definition according to the provided propert
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSSLNetworksRequest
 */
-func (a *SslApiService) CreateSSLNetworks(ctx context.Context) ApiCreateSSLNetworksRequest {
+func (a *SslApiService) BuildCreateSSLNetworksRequest(ctx context.Context) ApiCreateSSLNetworksRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -475,7 +475,7 @@ CreateSSLNetworksByIdReset Resets all SSL scans associated with a network
 	@param id Keyfactor network identifier
 	@return ApiCreateSSLNetworksByIdResetRequest
 */
-func (a *SslApiService) CreateSSLNetworksByIdReset(ctx context.Context, id string) ApiCreateSSLNetworksByIdResetRequest {
+func (a *SslApiService) BuildCreateSSLNetworksByIdResetRequest(ctx context.Context, id string) ApiCreateSSLNetworksByIdResetRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -611,7 +611,7 @@ CreateSSLNetworksByIdScan Starts an SSL Scan for the network according to the as
 	@param id Keyfactor network identifier
 	@return ApiCreateSSLNetworksByIdScanRequest
 */
-func (a *SslApiService) CreateSSLNetworksByIdScan(ctx context.Context, id string) ApiCreateSSLNetworksByIdScanRequest {
+func (a *SslApiService) BuildCreateSSLNetworksByIdScanRequest(ctx context.Context, id string) ApiCreateSSLNetworksByIdScanRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -742,7 +742,7 @@ DeleteSSLNetworkRangesById Removes all network range definitions from the associ
 	@param id Keyfactor network definition identifier
 	@return ApiDeleteSSLNetworkRangesByIdRequest
 */
-func (a *SslApiService) DeleteSSLNetworkRangesById(ctx context.Context, id string) ApiDeleteSSLNetworkRangesByIdRequest {
+func (a *SslApiService) BuildDeleteSSLNetworkRangesByIdRequest(ctx context.Context, id string) ApiDeleteSSLNetworkRangesByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -871,7 +871,7 @@ DeleteSSLNetworksById Removes a network definition according to the provided ide
 	@param id Keyfactor network identifier
 	@return ApiDeleteSSLNetworksByIdRequest
 */
-func (a *SslApiService) DeleteSSLNetworksById(ctx context.Context, id string) ApiDeleteSSLNetworksByIdRequest {
+func (a *SslApiService) BuildDeleteSSLNetworksByIdRequest(ctx context.Context, id string) ApiDeleteSSLNetworksByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1028,7 +1028,7 @@ GetSSL Returns a list of the endpoint scan results according to the provided fil
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSSLRequest
 */
-func (a *SslApiService) GetSSL(ctx context.Context) ApiGetSSLRequest {
+func (a *SslApiService) BuildGetSSLRequest(ctx context.Context) ApiGetSSLRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1181,7 +1181,7 @@ GetSSLEndpointsById Returns the details of the associated scanning endpoint
 	@param id Keyfactor identifier of the endpoint
 	@return ApiGetSSLEndpointsByIdRequest
 */
-func (a *SslApiService) GetSSLEndpointsById(ctx context.Context, id string) ApiGetSSLEndpointsByIdRequest {
+func (a *SslApiService) BuildGetSSLEndpointsByIdRequest(ctx context.Context, id string) ApiGetSSLEndpointsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1352,7 +1352,7 @@ GetSSLEndpointsByIdHistory Returns a list of the scan results for the provided e
 	@param id Keyfactor identifier of the endpoint
 	@return ApiGetSSLEndpointsByIdHistoryRequest
 */
-func (a *SslApiService) GetSSLEndpointsByIdHistory(ctx context.Context, id string) ApiGetSSLEndpointsByIdHistoryRequest {
+func (a *SslApiService) BuildGetSSLEndpointsByIdHistoryRequest(ctx context.Context, id string) ApiGetSSLEndpointsByIdHistoryRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1508,7 +1508,7 @@ GetSSLNetworkRangesById Returns the network range definitions for the provided n
 	@param id Keyfactor network identifier
 	@return ApiGetSSLNetworkRangesByIdRequest
 */
-func (a *SslApiService) GetSSLNetworkRangesById(ctx context.Context, id string) ApiGetSSLNetworkRangesByIdRequest {
+func (a *SslApiService) BuildGetSSLNetworkRangesByIdRequest(ctx context.Context, id string) ApiGetSSLNetworkRangesByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1682,7 +1682,7 @@ GetSSLNetworks Returns all defined SSL networks according to the provided filter
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSSLNetworksRequest
 */
-func (a *SslApiService) GetSSLNetworks(ctx context.Context) ApiGetSSLNetworksRequest {
+func (a *SslApiService) BuildGetSSLNetworksRequest(ctx context.Context) ApiGetSSLNetworksRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1871,7 +1871,7 @@ GetSSLNetworksByIdParts Returns the scan job components comprising the entire sc
 	@param id Keyfactor network definition identifier
 	@return ApiGetSSLNetworksByIdPartsRequest
 */
-func (a *SslApiService) GetSSLNetworksByIdParts(ctx context.Context, id string) ApiGetSSLNetworksByIdPartsRequest {
+func (a *SslApiService) BuildGetSSLNetworksByIdPartsRequest(ctx context.Context, id string) ApiGetSSLNetworksByIdPartsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2030,7 +2030,7 @@ GetSSLNetworksIdentifier Returns a defined SSL network according to the provided
 	@param identifier Identifier (Guid or Name) of the defined network
 	@return ApiGetSSLNetworksIdentifierRequest
 */
-func (a *SslApiService) GetSSLNetworksIdentifier(ctx context.Context, identifier string) ApiGetSSLNetworksIdentifierRequest {
+func (a *SslApiService) BuildGetSSLNetworksIdentifierRequest(ctx context.Context, identifier string) ApiGetSSLNetworksIdentifierRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2171,7 +2171,7 @@ GetSSLPartsById Returns the execution details of the associated network scan job
 	@param id Keyfactor identifier of the scan job part
 	@return ApiGetSSLPartsByIdRequest
 */
-func (a *SslApiService) GetSSLPartsById(ctx context.Context, id string) ApiGetSSLPartsByIdRequest {
+func (a *SslApiService) BuildGetSSLPartsByIdRequest(ctx context.Context, id string) ApiGetSSLPartsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2317,7 +2317,7 @@ UpdateSSLEndpointsMonitorAll Sets all endpoints matching the provided query as '
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSSLEndpointsMonitorAllRequest
 */
-func (a *SslApiService) UpdateSSLEndpointsMonitorAll(ctx context.Context) ApiUpdateSSLEndpointsMonitorAllRequest {
+func (a *SslApiService) BuildUpdateSSLEndpointsMonitorAllRequest(ctx context.Context) ApiUpdateSSLEndpointsMonitorAllRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2451,7 +2451,7 @@ UpdateSSLEndpointsMonitorStatus Sets the monitored status according to the provi
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSSLEndpointsMonitorStatusRequest
 */
-func (a *SslApiService) UpdateSSLEndpointsMonitorStatus(ctx context.Context) ApiUpdateSSLEndpointsMonitorStatusRequest {
+func (a *SslApiService) BuildUpdateSSLEndpointsMonitorStatusRequest(ctx context.Context) ApiUpdateSSLEndpointsMonitorStatusRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2584,7 +2584,7 @@ UpdateSSLEndpointsReviewAll Sets all endpoints matching the provided query as 'r
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSSLEndpointsReviewAllRequest
 */
-func (a *SslApiService) UpdateSSLEndpointsReviewAll(ctx context.Context) ApiUpdateSSLEndpointsReviewAllRequest {
+func (a *SslApiService) BuildUpdateSSLEndpointsReviewAllRequest(ctx context.Context) ApiUpdateSSLEndpointsReviewAllRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2718,7 +2718,7 @@ UpdateSSLEndpointsReviewStatus Sets the reviewed status according to the provide
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSSLEndpointsReviewStatusRequest
 */
-func (a *SslApiService) UpdateSSLEndpointsReviewStatus(ctx context.Context) ApiUpdateSSLEndpointsReviewStatusRequest {
+func (a *SslApiService) BuildUpdateSSLEndpointsReviewStatusRequest(ctx context.Context) ApiUpdateSSLEndpointsReviewStatusRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2851,7 +2851,7 @@ UpdateSSLNetworkRanges Configures network range definitions for the provided net
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSSLNetworkRangesRequest
 */
-func (a *SslApiService) UpdateSSLNetworkRanges(ctx context.Context) ApiUpdateSSLNetworkRangesRequest {
+func (a *SslApiService) BuildUpdateSSLNetworkRangesRequest(ctx context.Context) ApiUpdateSSLNetworkRangesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2984,7 +2984,7 @@ UpdateSSLNetworks Updates an existing network definition according to the provid
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSSLNetworksRequest
 */
-func (a *SslApiService) UpdateSSLNetworks(ctx context.Context) ApiUpdateSSLNetworksRequest {
+func (a *SslApiService) BuildUpdateSSLNetworksRequest(ctx context.Context) ApiUpdateSSLNetworksRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

@@ -69,7 +69,7 @@ CreatePermissionSets Creates a new permission set.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreatePermissionSetsRequest
 */
-func (a *PermissionSetApiService) CreatePermissionSets(ctx context.Context) ApiCreatePermissionSetsRequest {
+func (a *PermissionSetApiService) BuildCreatePermissionSetsRequest(ctx context.Context) ApiCreatePermissionSetsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -209,7 +209,7 @@ DeletePermissionSetsById Deletes a permission set.
 	@param id The id of the permission set to delete.
 	@return ApiDeletePermissionSetsByIdRequest
 */
-func (a *PermissionSetApiService) DeletePermissionSetsById(ctx context.Context, id string) ApiDeletePermissionSetsByIdRequest {
+func (a *PermissionSetApiService) BuildDeletePermissionSetsByIdRequest(ctx context.Context, id string) ApiDeletePermissionSetsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -366,7 +366,7 @@ GetPermissionSets Gets all Permission Set(s) in the system if the user has a sec
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetPermissionSetsRequest
 */
-func (a *PermissionSetApiService) GetPermissionSets(ctx context.Context) ApiGetPermissionSetsRequest {
+func (a *PermissionSetApiService) BuildGetPermissionSetsRequest(ctx context.Context) ApiGetPermissionSetsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -519,7 +519,7 @@ GetPermissionSetsById Gets permission set data.
 	@param id
 	@return ApiGetPermissionSetsByIdRequest
 */
-func (a *PermissionSetApiService) GetPermissionSetsById(ctx context.Context, id string) ApiGetPermissionSetsByIdRequest {
+func (a *PermissionSetApiService) BuildGetPermissionSetsByIdRequest(ctx context.Context, id string) ApiGetPermissionSetsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -665,7 +665,7 @@ GetPermissionSetsMy Method for GetPermissionSetsMy
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetPermissionSetsMyRequest
 */
-func (a *PermissionSetApiService) GetPermissionSetsMy(ctx context.Context) ApiGetPermissionSetsMyRequest {
+func (a *PermissionSetApiService) BuildGetPermissionSetsMyRequest(ctx context.Context) ApiGetPermissionSetsMyRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -811,7 +811,7 @@ UpdatePermissionSets Method for UpdatePermissionSets
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdatePermissionSetsRequest
 */
-func (a *PermissionSetApiService) UpdatePermissionSets(ctx context.Context) ApiUpdatePermissionSetsRequest {
+func (a *PermissionSetApiService) BuildUpdatePermissionSetsRequest(ctx context.Context) ApiUpdatePermissionSetsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

@@ -69,7 +69,7 @@ CreateSSHServers Creates a server with the provided properties
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSSHServersRequest
 */
-func (a *ServerApiService) CreateSSHServers(ctx context.Context) ApiCreateSSHServersRequest {
+func (a *ServerApiService) BuildCreateSSHServersRequest(ctx context.Context) ApiCreateSSHServersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -214,7 +214,7 @@ CreateSSHServersAccess Updates logons and users with access to those logons for 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSSHServersAccessRequest
 */
-func (a *ServerApiService) CreateSSHServersAccess(ctx context.Context) ApiCreateSSHServersAccessRequest {
+func (a *ServerApiService) BuildCreateSSHServersAccessRequest(ctx context.Context) ApiCreateSSHServersAccessRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -359,7 +359,7 @@ DeleteSSHServersAccess Updates logons and users with access to those logons for 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiDeleteSSHServersAccessRequest
 */
-func (a *ServerApiService) DeleteSSHServersAccess(ctx context.Context) ApiDeleteSSHServersAccessRequest {
+func (a *ServerApiService) BuildDeleteSSHServersAccessRequest(ctx context.Context) ApiDeleteSSHServersAccessRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -499,7 +499,7 @@ DeleteSSHServersById Deletes a Server associated with the provided identifier
 	@param id Keyfactor identifer of the Server to be deleted
 	@return ApiDeleteSSHServersByIdRequest
 */
-func (a *ServerApiService) DeleteSSHServersById(ctx context.Context, id int32) ApiDeleteSSHServersByIdRequest {
+func (a *ServerApiService) BuildDeleteSSHServersByIdRequest(ctx context.Context, id int32) ApiDeleteSSHServersByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -662,7 +662,7 @@ GetSSHServers Returns all servers according to the provided filter parameters
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSSHServersRequest
 */
-func (a *ServerApiService) GetSSHServers(ctx context.Context) ApiGetSSHServersRequest {
+func (a *ServerApiService) BuildGetSSHServersRequest(ctx context.Context) ApiGetSSHServersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -815,7 +815,7 @@ GetSSHServersAccessById Retrieves logons and users with access to those logons f
 	@param id Id of the existing server
 	@return ApiGetSSHServersAccessByIdRequest
 */
-func (a *ServerApiService) GetSSHServersAccessById(ctx context.Context, id int32) ApiGetSSHServersAccessByIdRequest {
+func (a *ServerApiService) BuildGetSSHServersAccessByIdRequest(ctx context.Context, id int32) ApiGetSSHServersAccessByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -962,7 +962,7 @@ GetSSHServersById Returns a Server associated with the provided identifier
 	@param id Keyfactor identifier of the Server
 	@return ApiGetSSHServersByIdRequest
 */
-func (a *ServerApiService) GetSSHServersById(ctx context.Context, id int32) ApiGetSSHServersByIdRequest {
+func (a *ServerApiService) BuildGetSSHServersByIdRequest(ctx context.Context, id int32) ApiGetSSHServersByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1114,7 +1114,7 @@ UpdateSSHServers Updates an existing server with the provided properties
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSSHServersRequest
 */
-func (a *ServerApiService) UpdateSSHServers(ctx context.Context) ApiUpdateSSHServersRequest {
+func (a *ServerApiService) BuildUpdateSSHServersRequest(ctx context.Context) ApiUpdateSSHServersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

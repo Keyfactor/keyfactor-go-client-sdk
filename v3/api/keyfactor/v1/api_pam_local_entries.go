@@ -71,7 +71,7 @@ CreatePamProvidersLocalProviderIdEntries Creates a new local PAM entry with the 
 	@param providerId Keyfactor identifier of the PAM provider
 	@return ApiCreatePamProvidersLocalProviderIdEntriesRequest
 */
-func (a *PAMLocalEntriesApiService) CreatePamProvidersLocalProviderIdEntries(ctx context.Context, providerId int32) ApiCreatePamProvidersLocalProviderIdEntriesRequest {
+func (a *PAMLocalEntriesApiService) BuildCreatePamProvidersLocalProviderIdEntriesRequest(ctx context.Context, providerId int32) ApiCreatePamProvidersLocalProviderIdEntriesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -227,7 +227,7 @@ DeletePamProvidersLocalProviderIdEntries Deletes a local PAM entry
 	@param providerId Keyfactor identifier of the PAM provider
 	@return ApiDeletePamProvidersLocalProviderIdEntriesRequest
 */
-func (a *PAMLocalEntriesApiService) DeletePamProvidersLocalProviderIdEntries(ctx context.Context, providerId int32) ApiDeletePamProvidersLocalProviderIdEntriesRequest {
+func (a *PAMLocalEntriesApiService) BuildDeletePamProvidersLocalProviderIdEntriesRequest(ctx context.Context, providerId int32) ApiDeletePamProvidersLocalProviderIdEntriesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -401,7 +401,7 @@ GetPamProvidersLocalProviderIdEntries Returns local PAM entries for the given PA
 	@param providerId Keyfactor identifier of the PAM provider
 	@return ApiGetPamProvidersLocalProviderIdEntriesRequest
 */
-func (a *PAMLocalEntriesApiService) GetPamProvidersLocalProviderIdEntries(ctx context.Context, providerId int32) ApiGetPamProvidersLocalProviderIdEntriesRequest {
+func (a *PAMLocalEntriesApiService) BuildGetPamProvidersLocalProviderIdEntriesRequest(ctx context.Context, providerId int32) ApiGetPamProvidersLocalProviderIdEntriesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -570,7 +570,7 @@ UpdatePamProvidersLocalProviderIdEntries Updates local PAM entry with the associ
 	@param providerId Keyfactor identifier of the PAM provider
 	@return ApiUpdatePamProvidersLocalProviderIdEntriesRequest
 */
-func (a *PAMLocalEntriesApiService) UpdatePamProvidersLocalProviderIdEntries(ctx context.Context, providerId int32) ApiUpdatePamProvidersLocalProviderIdEntriesRequest {
+func (a *PAMLocalEntriesApiService) BuildUpdatePamProvidersLocalProviderIdEntriesRequest(ctx context.Context, providerId int32) ApiUpdatePamProvidersLocalProviderIdEntriesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

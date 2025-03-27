@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 ## CreateWorkflowDefinitions
 
-> WorkflowsDefinitionResponse CreateWorkflowDefinitions(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsDefinitionCreateRequest(workflowsDefinitionCreateRequest).Execute()
+> WorkflowsDefinitionResponse BuildCreateWorkflowDefinitionsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsDefinitionCreateRequest(workflowsDefinitionCreateRequest).Execute()
 
 Creates a new base definition without any steps.
 
@@ -45,7 +45,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowDefinitionApi.CreateWorkflowDefinitions(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsDefinitionCreateRequest(workflowsDefinitionCreateRequest).Execute()
+    resp, r, err := apiClient.WorkflowDefinitionApi.BuildCreateWorkflowDefinitionsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsDefinitionCreateRequest(workflowsDefinitionCreateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowDefinitionApi.CreateWorkflowDefinitions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ## CreateWorkflowDefinitionsDefinitionIdPublish
 
-> WorkflowsDefinitionResponse CreateWorkflowDefinitionsDefinitionIdPublish(ctx, definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> WorkflowsDefinitionResponse BuildCreateWorkflowDefinitionsDefinitionIdPublishRequest(ctx, definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Makes the most recent version of a Workflow Definition the published version.
 
@@ -114,7 +114,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowDefinitionApi.CreateWorkflowDefinitionsDefinitionIdPublish(context.Background(), definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.WorkflowDefinitionApi.BuildCreateWorkflowDefinitionsDefinitionIdPublishRequest(context.Background(), definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowDefinitionApi.CreateWorkflowDefinitionsDefinitionIdPublish``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ## CreateWorkflowDefinitionsDefinitionIdPublishVersion
 
-> WorkflowsDefinitionResponse CreateWorkflowDefinitionsDefinitionIdPublishVersion(ctx, definitionId, version).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> WorkflowsDefinitionResponse BuildCreateWorkflowDefinitionsDefinitionIdPublishVersionRequest(ctx, definitionId, version).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Makes the specified version of a Workflow Definition the published version.
 
@@ -187,7 +187,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowDefinitionApi.CreateWorkflowDefinitionsDefinitionIdPublishVersion(context.Background(), definitionId, version).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.WorkflowDefinitionApi.BuildCreateWorkflowDefinitionsDefinitionIdPublishVersionRequest(context.Background(), definitionId, version).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowDefinitionApi.CreateWorkflowDefinitionsDefinitionIdPublishVersion``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 ## DeleteWorkflowDefinitionsDefinitionId
 
-> DeleteWorkflowDefinitionsDefinitionId(ctx, definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> BuildDeleteWorkflowDefinitionsDefinitionIdRequest(ctx, definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes the definition matching the given Id.
 
@@ -261,7 +261,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowDefinitionApi.DeleteWorkflowDefinitionsDefinitionId(context.Background(), definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.WorkflowDefinitionApi.BuildDeleteWorkflowDefinitionsDefinitionIdRequest(context.Background(), definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowDefinitionApi.DeleteWorkflowDefinitionsDefinitionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 ## GetWorkflowDefinitions
 
-> []WorkflowsDefinitionQueryResponse GetWorkflowDefinitions(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []WorkflowsDefinitionQueryResponse BuildGetWorkflowDefinitionsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets the Definitions matching the query specifications.
 
@@ -335,7 +335,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowDefinitionApi.GetWorkflowDefinitions(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.WorkflowDefinitionApi.BuildGetWorkflowDefinitionsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowDefinitionApi.GetWorkflowDefinitions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ## GetWorkflowDefinitionsDefinitionId
 
-> WorkflowsDefinitionResponse GetWorkflowDefinitionsDefinitionId(ctx, definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).DefinitionVersion(definitionVersion).Exportable(exportable).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> WorkflowsDefinitionResponse BuildGetWorkflowDefinitionsDefinitionIdRequest(ctx, definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).DefinitionVersion(definitionVersion).Exportable(exportable).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets a workflow definition.
 
@@ -409,7 +409,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowDefinitionApi.GetWorkflowDefinitionsDefinitionId(context.Background(), definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).DefinitionVersion(definitionVersion).Exportable(exportable).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.WorkflowDefinitionApi.BuildGetWorkflowDefinitionsDefinitionIdRequest(context.Background(), definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).DefinitionVersion(definitionVersion).Exportable(exportable).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowDefinitionApi.GetWorkflowDefinitionsDefinitionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -460,7 +460,7 @@ Name | Type | Description  | Notes
 
 ## GetWorkflowDefinitionsSteps
 
-> []WorkflowsAvailableStepQueryResponse GetWorkflowDefinitionsSteps(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []WorkflowsAvailableStepQueryResponse BuildGetWorkflowDefinitionsStepsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets the result set of available steps for a given query.
 
@@ -487,7 +487,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowDefinitionApi.GetWorkflowDefinitionsSteps(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.WorkflowDefinitionApi.BuildGetWorkflowDefinitionsStepsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowDefinitionApi.GetWorkflowDefinitionsSteps``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -536,7 +536,7 @@ Name | Type | Description  | Notes
 
 ## GetWorkflowDefinitionsStepsExtensionName
 
-> WorkflowsAvailableStepResponse GetWorkflowDefinitionsStepsExtensionName(ctx, extensionName).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> WorkflowsAvailableStepResponse BuildGetWorkflowDefinitionsStepsExtensionNameRequest(ctx, extensionName).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets the schema of a given step with the specified extension name.
 
@@ -559,7 +559,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowDefinitionApi.GetWorkflowDefinitionsStepsExtensionName(context.Background(), extensionName).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.WorkflowDefinitionApi.BuildGetWorkflowDefinitionsStepsExtensionNameRequest(context.Background(), extensionName).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowDefinitionApi.GetWorkflowDefinitionsStepsExtensionName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -608,7 +608,7 @@ Name | Type | Description  | Notes
 
 ## GetWorkflowDefinitionsTypes
 
-> []WorkflowsWorkflowTypeQueryResponse GetWorkflowDefinitionsTypes(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []WorkflowsWorkflowTypeQueryResponse BuildGetWorkflowDefinitionsTypesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Performs a query against the workflow types in the system.
 
@@ -635,7 +635,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowDefinitionApi.GetWorkflowDefinitionsTypes(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.WorkflowDefinitionApi.BuildGetWorkflowDefinitionsTypesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowDefinitionApi.GetWorkflowDefinitionsTypes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -684,7 +684,7 @@ Name | Type | Description  | Notes
 
 ## UpdateWorkflowDefinitionsDefinitionId
 
-> WorkflowsDefinitionResponse UpdateWorkflowDefinitionsDefinitionId(ctx, definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsDefinitionUpdateRequest(workflowsDefinitionUpdateRequest).Execute()
+> WorkflowsDefinitionResponse BuildUpdateWorkflowDefinitionsDefinitionIdRequest(ctx, definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsDefinitionUpdateRequest(workflowsDefinitionUpdateRequest).Execute()
 
 Updates the existing definition's DisplayName and Description.
 
@@ -709,7 +709,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowDefinitionApi.UpdateWorkflowDefinitionsDefinitionId(context.Background(), definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsDefinitionUpdateRequest(workflowsDefinitionUpdateRequest).Execute()
+    resp, r, err := apiClient.WorkflowDefinitionApi.BuildUpdateWorkflowDefinitionsDefinitionIdRequest(context.Background(), definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsDefinitionUpdateRequest(workflowsDefinitionUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowDefinitionApi.UpdateWorkflowDefinitionsDefinitionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -760,7 +760,7 @@ Name | Type | Description  | Notes
 
 ## UpdateWorkflowDefinitionsDefinitionIdStatus
 
-> UpdateWorkflowDefinitionsDefinitionIdStatus(ctx, definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).Body(body).Execute()
+> BuildUpdateWorkflowDefinitionsDefinitionIdStatusRequest(ctx, definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).Body(body).Execute()
 
 Updates the definition status matching the given Id.
 
@@ -785,7 +785,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowDefinitionApi.UpdateWorkflowDefinitionsDefinitionIdStatus(context.Background(), definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).Body(body).Execute()
+    resp, r, err := apiClient.WorkflowDefinitionApi.BuildUpdateWorkflowDefinitionsDefinitionIdStatusRequest(context.Background(), definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).Body(body).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowDefinitionApi.UpdateWorkflowDefinitionsDefinitionIdStatus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -834,7 +834,7 @@ Name | Type | Description  | Notes
 
 ## UpdateWorkflowDefinitionsDefinitionIdSteps
 
-> WorkflowsDefinitionResponse UpdateWorkflowDefinitionsDefinitionIdSteps(ctx, definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsDefinitionStepRequest(workflowsDefinitionStepRequest).Execute()
+> WorkflowsDefinitionResponse BuildUpdateWorkflowDefinitionsDefinitionIdStepsRequest(ctx, definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsDefinitionStepRequest(workflowsDefinitionStepRequest).Execute()
 
 Sets the provided steps on the latest version of the definition.
 
@@ -860,7 +860,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowDefinitionApi.UpdateWorkflowDefinitionsDefinitionIdSteps(context.Background(), definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsDefinitionStepRequest(workflowsDefinitionStepRequest).Execute()
+    resp, r, err := apiClient.WorkflowDefinitionApi.BuildUpdateWorkflowDefinitionsDefinitionIdStepsRequest(context.Background(), definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsDefinitionStepRequest(workflowsDefinitionStepRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowDefinitionApi.UpdateWorkflowDefinitionsDefinitionIdSteps``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

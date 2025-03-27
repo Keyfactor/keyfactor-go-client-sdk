@@ -69,7 +69,7 @@ CreateTemplatesImport Imports templates from the provided configuration tenant
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateTemplatesImportRequest
 */
-func (a *TemplateApiService) CreateTemplatesImport(ctx context.Context) ApiCreateTemplatesImportRequest {
+func (a *TemplateApiService) BuildCreateTemplatesImportRequest(ctx context.Context) ApiCreateTemplatesImportRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -225,7 +225,7 @@ GetTemplates Returns all certificate templates according to the provided filter 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetTemplatesRequest
 */
-func (a *TemplateApiService) GetTemplates(ctx context.Context) ApiGetTemplatesRequest {
+func (a *TemplateApiService) BuildGetTemplatesRequest(ctx context.Context) ApiGetTemplatesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -378,7 +378,7 @@ GetTemplatesById Returns the certificate template associated with the provided i
 	@param id Keyfactor identifier of the certificate template
 	@return ApiGetTemplatesByIdRequest
 */
-func (a *TemplateApiService) GetTemplatesById(ctx context.Context, id int32) ApiGetTemplatesByIdRequest {
+func (a *TemplateApiService) BuildGetTemplatesByIdRequest(ctx context.Context, id int32) ApiGetTemplatesByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -517,7 +517,7 @@ GetTemplatesSettings Gets the global template settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetTemplatesSettingsRequest
 */
-func (a *TemplateApiService) GetTemplatesSettings(ctx context.Context) ApiGetTemplatesSettingsRequest {
+func (a *TemplateApiService) BuildGetTemplatesSettingsRequest(ctx context.Context) ApiGetTemplatesSettingsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -653,7 +653,7 @@ GetTemplatesSubjectParts Returns the valid subject parts possible for regular ex
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetTemplatesSubjectPartsRequest
 */
-func (a *TemplateApiService) GetTemplatesSubjectParts(ctx context.Context) ApiGetTemplatesSubjectPartsRequest {
+func (a *TemplateApiService) BuildGetTemplatesSubjectPartsRequest(ctx context.Context) ApiGetTemplatesSubjectPartsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -796,7 +796,7 @@ UpdateTemplates Updates a certificate template according to the provided propert
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateTemplatesRequest
 */
-func (a *TemplateApiService) UpdateTemplates(ctx context.Context) ApiUpdateTemplatesRequest {
+func (a *TemplateApiService) BuildUpdateTemplatesRequest(ctx context.Context) ApiUpdateTemplatesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -941,7 +941,7 @@ UpdateTemplatesSettings Replaces the existing global template settings.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateTemplatesSettingsRequest
 */
-func (a *TemplateApiService) UpdateTemplatesSettings(ctx context.Context) ApiUpdateTemplatesSettingsRequest {
+func (a *TemplateApiService) BuildUpdateTemplatesSettingsRequest(ctx context.Context) ApiUpdateTemplatesSettingsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

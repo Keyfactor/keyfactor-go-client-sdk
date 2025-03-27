@@ -92,7 +92,7 @@ GetAudit Returns all audit log entries according to the provided filter and outp
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAuditRequest
 */
-func (a *AuditLogApiService) GetAudit(ctx context.Context) ApiGetAuditRequest {
+func (a *AuditLogApiService) BuildGetAuditRequest(ctx context.Context) ApiGetAuditRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -245,7 +245,7 @@ GetAuditById Returns the audit log entry associated with the provided identifier
 	@param id Keyfactor identifer of the audit entry to be returned
 	@return ApiGetAuditByIdRequest
 */
-func (a *AuditLogApiService) GetAuditById(ctx context.Context, id int32) ApiGetAuditByIdRequest {
+func (a *AuditLogApiService) BuildGetAuditByIdRequest(ctx context.Context, id int32) ApiGetAuditByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -382,7 +382,7 @@ The validation performs a signing operation and checks the signature against the
 	@param id Keyfactor identifier of the audit log entry
 	@return ApiGetAuditByIdValidateRequest
 */
-func (a *AuditLogApiService) GetAuditByIdValidate(ctx context.Context, id int32) ApiGetAuditByIdValidateRequest {
+func (a *AuditLogApiService) BuildGetAuditByIdValidateRequest(ctx context.Context, id int32) ApiGetAuditByIdValidateRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -551,7 +551,7 @@ GetAuditDownload Returns a Comma Separated file containing the audit log entries
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAuditDownloadRequest
 */
-func (a *AuditLogApiService) GetAuditDownload(ctx context.Context) ApiGetAuditDownloadRequest {
+func (a *AuditLogApiService) BuildGetAuditDownloadRequest(ctx context.Context) ApiGetAuditDownloadRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -732,7 +732,7 @@ GetAuditRelatedEntities Returns the audit log entry associated with the provided
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAuditRelatedEntitiesRequest
 */
-func (a *AuditLogApiService) GetAuditRelatedEntities(ctx context.Context) ApiGetAuditRelatedEntitiesRequest {
+func (a *AuditLogApiService) BuildGetAuditRelatedEntitiesRequest(ctx context.Context) ApiGetAuditRelatedEntitiesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

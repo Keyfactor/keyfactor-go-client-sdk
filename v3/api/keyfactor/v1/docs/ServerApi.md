@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## CreateSSHServers
 
-> CSSCMSDataModelModelsSSHServersServerResponse CreateSSHServers(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServersServerCreationRequest(cSSCMSDataModelModelsSSHServersServerCreationRequest).Execute()
+> CSSCMSDataModelModelsSSHServersServerResponse BuildCreateSSHServersRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServersServerCreationRequest(cSSCMSDataModelModelsSSHServersServerCreationRequest).Execute()
 
 Creates a server with the provided properties
 
@@ -40,7 +40,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerApi.CreateSSHServers(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServersServerCreationRequest(cSSCMSDataModelModelsSSHServersServerCreationRequest).Execute()
+    resp, r, err := apiClient.ServerApi.BuildCreateSSHServersRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServersServerCreationRequest(cSSCMSDataModelModelsSSHServersServerCreationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerApi.CreateSSHServers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ## CreateSSHServersAccess
 
-> CSSCMSDataModelModelsSSHAccessServerAccessResponse CreateSSHServersAccess(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHAccessServerAccessRequest(cSSCMSDataModelModelsSSHAccessServerAccessRequest).Execute()
+> CSSCMSDataModelModelsSSHAccessServerAccessResponse BuildCreateSSHServersAccessRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHAccessServerAccessRequest(cSSCMSDataModelModelsSSHAccessServerAccessRequest).Execute()
 
 Updates logons and users with access to those logons for an existing server
 
@@ -108,7 +108,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerApi.CreateSSHServersAccess(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHAccessServerAccessRequest(cSSCMSDataModelModelsSSHAccessServerAccessRequest).Execute()
+    resp, r, err := apiClient.ServerApi.BuildCreateSSHServersAccessRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHAccessServerAccessRequest(cSSCMSDataModelModelsSSHAccessServerAccessRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerApi.CreateSSHServersAccess``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ## DeleteSSHServersAccess
 
-> CSSCMSDataModelModelsSSHAccessServerAccessResponse DeleteSSHServersAccess(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHAccessServerAccessRequest(cSSCMSDataModelModelsSSHAccessServerAccessRequest).Execute()
+> CSSCMSDataModelModelsSSHAccessServerAccessResponse BuildDeleteSSHServersAccessRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHAccessServerAccessRequest(cSSCMSDataModelModelsSSHAccessServerAccessRequest).Execute()
 
 Updates logons and users with access to those logons for an existing server
 
@@ -176,7 +176,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerApi.DeleteSSHServersAccess(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHAccessServerAccessRequest(cSSCMSDataModelModelsSSHAccessServerAccessRequest).Execute()
+    resp, r, err := apiClient.ServerApi.BuildDeleteSSHServersAccessRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHAccessServerAccessRequest(cSSCMSDataModelModelsSSHAccessServerAccessRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerApi.DeleteSSHServersAccess``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ## DeleteSSHServersById
 
-> DeleteSSHServersById(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> BuildDeleteSSHServersByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes a Server associated with the provided identifier
 
@@ -244,7 +244,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerApi.DeleteSSHServersById(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ServerApi.BuildDeleteSSHServersByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerApi.DeleteSSHServersById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 
 ## GetSSHServers
 
-> []CSSCMSDataModelModelsSSHServersServerResponse GetSSHServers(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CSSCMSDataModelModelsSSHServersServerResponse BuildGetSSHServersRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all servers according to the provided filter parameters
 
@@ -318,7 +318,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerApi.GetSSHServers(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ServerApi.BuildGetSSHServersRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerApi.GetSSHServers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ## GetSSHServersAccessById
 
-> CSSCMSDataModelModelsSSHAccessServerAccessResponse GetSSHServersAccessById(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsSSHAccessServerAccessResponse BuildGetSSHServersAccessByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Retrieves logons and users with access to those logons for an existing server
 
@@ -390,7 +390,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerApi.GetSSHServersAccessById(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ServerApi.BuildGetSSHServersAccessByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerApi.GetSSHServersAccessById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -439,7 +439,7 @@ Name | Type | Description  | Notes
 
 ## GetSSHServersById
 
-> CSSCMSDataModelModelsSSHServersServerResponse GetSSHServersById(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsSSHServersServerResponse BuildGetSSHServersByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a Server associated with the provided identifier
 
@@ -462,7 +462,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerApi.GetSSHServersById(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ServerApi.BuildGetSSHServersByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerApi.GetSSHServersById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -511,7 +511,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSSHServers
 
-> CSSCMSDataModelModelsSSHServersServerResponse UpdateSSHServers(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServersServerUpdateRequest(cSSCMSDataModelModelsSSHServersServerUpdateRequest).Execute()
+> CSSCMSDataModelModelsSSHServersServerResponse BuildUpdateSSHServersRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServersServerUpdateRequest(cSSCMSDataModelModelsSSHServersServerUpdateRequest).Execute()
 
 Updates an existing server with the provided properties
 
@@ -534,7 +534,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerApi.UpdateSSHServers(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServersServerUpdateRequest(cSSCMSDataModelModelsSSHServersServerUpdateRequest).Execute()
+    resp, r, err := apiClient.ServerApi.BuildUpdateSSHServersRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServersServerUpdateRequest(cSSCMSDataModelModelsSSHServersServerUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerApi.UpdateSSHServers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

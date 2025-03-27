@@ -69,7 +69,7 @@ CreateAlertsKeyRotation Add a key rotation alert
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateAlertsKeyRotationRequest
 */
-func (a *KeyRotationAlertApiService) CreateAlertsKeyRotation(ctx context.Context) ApiCreateAlertsKeyRotationRequest {
+func (a *KeyRotationAlertApiService) BuildCreateAlertsKeyRotationRequest(ctx context.Context) ApiCreateAlertsKeyRotationRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -216,7 +216,7 @@ CreateAlertsKeyRotationTest Test An Alert
 
 Deprecated
 */
-func (a *KeyRotationAlertApiService) CreateAlertsKeyRotationTest(ctx context.Context) ApiCreateAlertsKeyRotationTestRequest {
+func (a *KeyRotationAlertApiService) BuildCreateAlertsKeyRotationTestRequest(ctx context.Context) ApiCreateAlertsKeyRotationTestRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -365,7 +365,7 @@ CreateAlertsKeyRotationTestAll Test All Alerts
 
 Deprecated
 */
-func (a *KeyRotationAlertApiService) CreateAlertsKeyRotationTestAll(ctx context.Context) ApiCreateAlertsKeyRotationTestAllRequest {
+func (a *KeyRotationAlertApiService) BuildCreateAlertsKeyRotationTestAllRequest(ctx context.Context) ApiCreateAlertsKeyRotationTestAllRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -507,7 +507,7 @@ DeleteAlertsKeyRotationById Delete a key rotation alert
 	@param id Id for the key rotation alert
 	@return ApiDeleteAlertsKeyRotationByIdRequest
 */
-func (a *KeyRotationAlertApiService) DeleteAlertsKeyRotationById(ctx context.Context, id int32) ApiDeleteAlertsKeyRotationByIdRequest {
+func (a *KeyRotationAlertApiService) BuildDeleteAlertsKeyRotationByIdRequest(ctx context.Context, id int32) ApiDeleteAlertsKeyRotationByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -664,7 +664,7 @@ GetAlertsKeyRotation Gets all key rotation alerts according to the provided filt
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAlertsKeyRotationRequest
 */
-func (a *KeyRotationAlertApiService) GetAlertsKeyRotation(ctx context.Context) ApiGetAlertsKeyRotationRequest {
+func (a *KeyRotationAlertApiService) BuildGetAlertsKeyRotationRequest(ctx context.Context) ApiGetAlertsKeyRotationRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -817,7 +817,7 @@ GetAlertsKeyRotationById Get a key rotation alert
 	@param id Id for the key rotation alert to get
 	@return ApiGetAlertsKeyRotationByIdRequest
 */
-func (a *KeyRotationAlertApiService) GetAlertsKeyRotationById(ctx context.Context, id int32) ApiGetAlertsKeyRotationByIdRequest {
+func (a *KeyRotationAlertApiService) BuildGetAlertsKeyRotationByIdRequest(ctx context.Context, id int32) ApiGetAlertsKeyRotationByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -956,7 +956,7 @@ GetAlertsKeyRotationSchedule Get the schedule for key rotation alerts
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAlertsKeyRotationScheduleRequest
 */
-func (a *KeyRotationAlertApiService) GetAlertsKeyRotationSchedule(ctx context.Context) ApiGetAlertsKeyRotationScheduleRequest {
+func (a *KeyRotationAlertApiService) BuildGetAlertsKeyRotationScheduleRequest(ctx context.Context) ApiGetAlertsKeyRotationScheduleRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1099,7 +1099,7 @@ UpdateAlertsKeyRotation Edit a key rotation alert
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateAlertsKeyRotationRequest
 */
-func (a *KeyRotationAlertApiService) UpdateAlertsKeyRotation(ctx context.Context) ApiUpdateAlertsKeyRotationRequest {
+func (a *KeyRotationAlertApiService) BuildUpdateAlertsKeyRotationRequest(ctx context.Context) ApiUpdateAlertsKeyRotationRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1243,7 +1243,7 @@ UpdateAlertsKeyRotationSchedule Edit schedule
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateAlertsKeyRotationScheduleRequest
 */
-func (a *KeyRotationAlertApiService) UpdateAlertsKeyRotationSchedule(ctx context.Context) ApiUpdateAlertsKeyRotationScheduleRequest {
+func (a *KeyRotationAlertApiService) BuildUpdateAlertsKeyRotationScheduleRequest(ctx context.Context) ApiUpdateAlertsKeyRotationScheduleRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

@@ -69,7 +69,7 @@ CreateSSHServiceAccounts Creates a ServiceAccount with the provided properties
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSSHServiceAccountsRequest
 */
-func (a *ServiceAccountApiService) CreateSSHServiceAccounts(ctx context.Context) ApiCreateSSHServiceAccountsRequest {
+func (a *ServiceAccountApiService) BuildCreateSSHServiceAccountsRequest(ctx context.Context) ApiCreateSSHServiceAccountsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -215,7 +215,7 @@ CreateSSHServiceAccountsRotateById Rotate an SSH key for a specified service acc
 	@param id The id of the service account and the updated state of the SSH key.
 	@return ApiCreateSSHServiceAccountsRotateByIdRequest
 */
-func (a *ServiceAccountApiService) CreateSSHServiceAccountsRotateById(ctx context.Context, id int32) ApiCreateSSHServiceAccountsRotateByIdRequest {
+func (a *ServiceAccountApiService) BuildCreateSSHServiceAccountsRotateByIdRequest(ctx context.Context, id int32) ApiCreateSSHServiceAccountsRotateByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -363,7 +363,7 @@ DeleteSSHServiceAccounts Deletes Service Accounts associated with the provided i
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiDeleteSSHServiceAccountsRequest
 */
-func (a *ServiceAccountApiService) DeleteSSHServiceAccounts(ctx context.Context) ApiDeleteSSHServiceAccountsRequest {
+func (a *ServiceAccountApiService) BuildDeleteSSHServiceAccountsRequest(ctx context.Context) ApiDeleteSSHServiceAccountsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -491,7 +491,7 @@ DeleteSSHServiceAccountsById Deletes a ServiceAccount associated with the provid
 	@param id Keyfactor identifer of the ServiceAccount to be deleted
 	@return ApiDeleteSSHServiceAccountsByIdRequest
 */
-func (a *ServiceAccountApiService) DeleteSSHServiceAccountsById(ctx context.Context, id int32) ApiDeleteSSHServiceAccountsByIdRequest {
+func (a *ServiceAccountApiService) BuildDeleteSSHServiceAccountsByIdRequest(ctx context.Context, id int32) ApiDeleteSSHServiceAccountsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -654,7 +654,7 @@ GetSSHServiceAccounts Returns all ServiceAccounts according to the provided filt
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSSHServiceAccountsRequest
 */
-func (a *ServiceAccountApiService) GetSSHServiceAccounts(ctx context.Context) ApiGetSSHServiceAccountsRequest {
+func (a *ServiceAccountApiService) BuildGetSSHServiceAccountsRequest(ctx context.Context) ApiGetSSHServiceAccountsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -807,7 +807,7 @@ GetSSHServiceAccountsById Returns a ServiceAccount associated with the provided 
 	@param id Keyfactor identifier of the ServiceAccount
 	@return ApiGetSSHServiceAccountsByIdRequest
 */
-func (a *ServiceAccountApiService) GetSSHServiceAccountsById(ctx context.Context, id int32) ApiGetSSHServiceAccountsByIdRequest {
+func (a *ServiceAccountApiService) BuildGetSSHServiceAccountsByIdRequest(ctx context.Context, id int32) ApiGetSSHServiceAccountsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -961,7 +961,7 @@ GetSSHServiceAccountsKeyById Returns an SSH key with or without private key base
 	@param id The id of the service account to obtain information on
 	@return ApiGetSSHServiceAccountsKeyByIdRequest
 */
-func (a *ServiceAccountApiService) GetSSHServiceAccountsKeyById(ctx context.Context, id int32) ApiGetSSHServiceAccountsKeyByIdRequest {
+func (a *ServiceAccountApiService) BuildGetSSHServiceAccountsKeyByIdRequest(ctx context.Context, id int32) ApiGetSSHServiceAccountsKeyByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1110,7 +1110,7 @@ UpdateSSHServiceAccounts Updates an SSH key for a specified service account.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSSHServiceAccountsRequest
 */
-func (a *ServiceAccountApiService) UpdateSSHServiceAccounts(ctx context.Context) ApiUpdateSSHServiceAccountsRequest {
+func (a *ServiceAccountApiService) BuildUpdateSSHServiceAccountsRequest(ctx context.Context) ApiUpdateSSHServiceAccountsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

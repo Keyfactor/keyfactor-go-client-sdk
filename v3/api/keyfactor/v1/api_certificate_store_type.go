@@ -69,7 +69,7 @@ CreateCertificateStoreTypes Creates a new certificate store type with the provid
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificateStoreTypesRequest
 */
-func (a *CertificateStoreTypeApiService) CreateCertificateStoreTypes(ctx context.Context) ApiCreateCertificateStoreTypesRequest {
+func (a *CertificateStoreTypeApiService) BuildCreateCertificateStoreTypesRequest(ctx context.Context) ApiCreateCertificateStoreTypesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -216,7 +216,7 @@ This will ignore individual delete failures, and continue processing the array.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiDeleteCertificateStoreTypesRequest
 */
-func (a *CertificateStoreTypeApiService) DeleteCertificateStoreTypes(ctx context.Context) ApiDeleteCertificateStoreTypesRequest {
+func (a *CertificateStoreTypeApiService) BuildDeleteCertificateStoreTypesRequest(ctx context.Context) ApiDeleteCertificateStoreTypesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -346,7 +346,7 @@ This will ignore individual delete failures, and continue processing certificate
 	@param id Keyfactor identifier of the certificate store type to be deleted
 	@return ApiDeleteCertificateStoreTypesByIdRequest
 */
-func (a *CertificateStoreTypeApiService) DeleteCertificateStoreTypesById(ctx context.Context, id int32) ApiDeleteCertificateStoreTypesByIdRequest {
+func (a *CertificateStoreTypeApiService) BuildDeleteCertificateStoreTypesByIdRequest(ctx context.Context, id int32) ApiDeleteCertificateStoreTypesByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -509,7 +509,7 @@ GetCertificateStoreTypes Returns all certificate store types according to the pr
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCertificateStoreTypesRequest
 */
-func (a *CertificateStoreTypeApiService) GetCertificateStoreTypes(ctx context.Context) ApiGetCertificateStoreTypesRequest {
+func (a *CertificateStoreTypeApiService) BuildGetCertificateStoreTypesRequest(ctx context.Context) ApiGetCertificateStoreTypesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -662,7 +662,7 @@ GetCertificateStoreTypesById Returns a single certificate store type that matche
 	@param id Keyfactor identifier of the certificate store type
 	@return ApiGetCertificateStoreTypesByIdRequest
 */
-func (a *CertificateStoreTypeApiService) GetCertificateStoreTypesById(ctx context.Context, id int32) ApiGetCertificateStoreTypesByIdRequest {
+func (a *CertificateStoreTypeApiService) BuildGetCertificateStoreTypesByIdRequest(ctx context.Context, id int32) ApiGetCertificateStoreTypesByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -809,7 +809,7 @@ GetCertificateStoreTypesNameName Returns a single certificate store type that ma
 	@param name Short name of the certificate store type to return
 	@return ApiGetCertificateStoreTypesNameNameRequest
 */
-func (a *CertificateStoreTypeApiService) GetCertificateStoreTypesNameName(ctx context.Context, name string) ApiGetCertificateStoreTypesNameNameRequest {
+func (a *CertificateStoreTypeApiService) BuildGetCertificateStoreTypesNameNameRequest(ctx context.Context, name string) ApiGetCertificateStoreTypesNameNameRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -955,7 +955,7 @@ UpdateCertificateStoreTypes Updates an existing certificate store type with the 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateCertificateStoreTypesRequest
 */
-func (a *CertificateStoreTypeApiService) UpdateCertificateStoreTypes(ctx context.Context) ApiUpdateCertificateStoreTypesRequest {
+func (a *CertificateStoreTypeApiService) BuildUpdateCertificateStoreTypesRequest(ctx context.Context) ApiUpdateCertificateStoreTypesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

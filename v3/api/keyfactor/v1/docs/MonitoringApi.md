@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ## CreateMonitoringResolveOCSP
 
-> MonitoringOCSPParametersResponse CreateMonitoringResolveOCSP(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringOCSPParametersRequest(monitoringOCSPParametersRequest).Execute()
+> MonitoringOCSPParametersResponse BuildCreateMonitoringResolveOCSPRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringOCSPParametersRequest(monitoringOCSPParametersRequest).Execute()
 
 Resolve the Certificate authority given
 
@@ -43,7 +43,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MonitoringApi.CreateMonitoringResolveOCSP(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringOCSPParametersRequest(monitoringOCSPParametersRequest).Execute()
+    resp, r, err := apiClient.MonitoringApi.BuildCreateMonitoringResolveOCSPRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringOCSPParametersRequest(monitoringOCSPParametersRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitoringApi.CreateMonitoringResolveOCSP``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## CreateMonitoringRevocation
 
-> MonitoringRevocationMonitoringDefinitionResponse CreateMonitoringRevocation(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ForceSave(forceSave).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringRevocationMonitoringCreationRequest(monitoringRevocationMonitoringCreationRequest).Execute()
+> MonitoringRevocationMonitoringDefinitionResponse BuildCreateMonitoringRevocationRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ForceSave(forceSave).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringRevocationMonitoringCreationRequest(monitoringRevocationMonitoringCreationRequest).Execute()
 
 Add a revocation monitoring endpoint
 
@@ -112,7 +112,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MonitoringApi.CreateMonitoringRevocation(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ForceSave(forceSave).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringRevocationMonitoringCreationRequest(monitoringRevocationMonitoringCreationRequest).Execute()
+    resp, r, err := apiClient.MonitoringApi.BuildCreateMonitoringRevocationRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ForceSave(forceSave).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringRevocationMonitoringCreationRequest(monitoringRevocationMonitoringCreationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitoringApi.CreateMonitoringRevocation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ## CreateMonitoringRevocationCRLTest
 
-> CSSCMSDataModelModelsMonitoringCRLTestResponse CreateMonitoringRevocationCRLTest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMonitoringCRLTestRequest(cSSCMSDataModelModelsMonitoringCRLTestRequest).Execute()
+> CSSCMSDataModelModelsMonitoringCRLTestResponse BuildCreateMonitoringRevocationCRLTestRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMonitoringCRLTestRequest(cSSCMSDataModelModelsMonitoringCRLTestRequest).Execute()
 
 Validates the connection info for the CRL provided by the model.
 
@@ -181,7 +181,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MonitoringApi.CreateMonitoringRevocationCRLTest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMonitoringCRLTestRequest(cSSCMSDataModelModelsMonitoringCRLTestRequest).Execute()
+    resp, r, err := apiClient.MonitoringApi.BuildCreateMonitoringRevocationCRLTestRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMonitoringCRLTestRequest(cSSCMSDataModelModelsMonitoringCRLTestRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitoringApi.CreateMonitoringRevocationCRLTest``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ## CreateMonitoringRevocationOCSPTest
 
-> CSSCMSDataModelModelsMonitoringOCSPTestResponse CreateMonitoringRevocationOCSPTest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMonitoringOCSPTestRequest(cSSCMSDataModelModelsMonitoringOCSPTestRequest).Execute()
+> CSSCMSDataModelModelsMonitoringOCSPTestResponse BuildCreateMonitoringRevocationOCSPTestRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMonitoringOCSPTestRequest(cSSCMSDataModelModelsMonitoringOCSPTestRequest).Execute()
 
 Validates the connection info for the OCSP endpoint provided by the model.
 
@@ -249,7 +249,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MonitoringApi.CreateMonitoringRevocationOCSPTest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMonitoringOCSPTestRequest(cSSCMSDataModelModelsMonitoringOCSPTestRequest).Execute()
+    resp, r, err := apiClient.MonitoringApi.BuildCreateMonitoringRevocationOCSPTestRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsMonitoringOCSPTestRequest(cSSCMSDataModelModelsMonitoringOCSPTestRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitoringApi.CreateMonitoringRevocationOCSPTest``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 ## CreateMonitoringRevocationTest
 
-> MonitoringRevocationMonitoringAlertTestResponse CreateMonitoringRevocationTest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringRevocationMonitoringAlertTestRequest(monitoringRevocationMonitoringAlertTestRequest).Execute()
+> MonitoringRevocationMonitoringAlertTestResponse BuildCreateMonitoringRevocationTestRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringRevocationMonitoringAlertTestRequest(monitoringRevocationMonitoringAlertTestRequest).Execute()
 
 Test Alert
 
@@ -317,7 +317,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MonitoringApi.CreateMonitoringRevocationTest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringRevocationMonitoringAlertTestRequest(monitoringRevocationMonitoringAlertTestRequest).Execute()
+    resp, r, err := apiClient.MonitoringApi.BuildCreateMonitoringRevocationTestRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringRevocationMonitoringAlertTestRequest(monitoringRevocationMonitoringAlertTestRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitoringApi.CreateMonitoringRevocationTest``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -362,7 +362,7 @@ Name | Type | Description  | Notes
 
 ## CreateMonitoringRevocationTestAll
 
-> MonitoringRevocationMonitoringAlertTestResponse CreateMonitoringRevocationTestAll(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringRevocationMonitoringAlertTestAllRequest(monitoringRevocationMonitoringAlertTestAllRequest).Execute()
+> MonitoringRevocationMonitoringAlertTestResponse BuildCreateMonitoringRevocationTestAllRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringRevocationMonitoringAlertTestAllRequest(monitoringRevocationMonitoringAlertTestAllRequest).Execute()
 
 Test All Alerts
 
@@ -385,7 +385,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MonitoringApi.CreateMonitoringRevocationTestAll(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringRevocationMonitoringAlertTestAllRequest(monitoringRevocationMonitoringAlertTestAllRequest).Execute()
+    resp, r, err := apiClient.MonitoringApi.BuildCreateMonitoringRevocationTestAllRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringRevocationMonitoringAlertTestAllRequest(monitoringRevocationMonitoringAlertTestAllRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitoringApi.CreateMonitoringRevocationTestAll``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -430,7 +430,7 @@ Name | Type | Description  | Notes
 
 ## DeleteMonitoringRevocationById
 
-> DeleteMonitoringRevocationById(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> BuildDeleteMonitoringRevocationByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Delete a revocation monitoring endpoint
 
@@ -453,7 +453,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MonitoringApi.DeleteMonitoringRevocationById(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.MonitoringApi.BuildDeleteMonitoringRevocationByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitoringApi.DeleteMonitoringRevocationById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -500,7 +500,7 @@ Name | Type | Description  | Notes
 
 ## GetMonitoringRevocation
 
-> []MonitoringRevocationMonitoringDefinitionResponse GetMonitoringRevocation(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []MonitoringRevocationMonitoringDefinitionResponse BuildGetMonitoringRevocationRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets all revocation monitoring endpoints according to the provided filter and output parameters
 
@@ -527,7 +527,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MonitoringApi.GetMonitoringRevocation(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.MonitoringApi.BuildGetMonitoringRevocationRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitoringApi.GetMonitoringRevocation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -576,7 +576,7 @@ Name | Type | Description  | Notes
 
 ## GetMonitoringRevocationById
 
-> MonitoringRevocationMonitoringDefinitionResponse GetMonitoringRevocationById(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> MonitoringRevocationMonitoringDefinitionResponse BuildGetMonitoringRevocationByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get a revocation monitoring endpoint
 
@@ -599,7 +599,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MonitoringApi.GetMonitoringRevocationById(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.MonitoringApi.BuildGetMonitoringRevocationByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitoringApi.GetMonitoringRevocationById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -648,7 +648,7 @@ Name | Type | Description  | Notes
 
 ## UpdateMonitoringRevocation
 
-> MonitoringRevocationMonitoringDefinitionResponse UpdateMonitoringRevocation(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ForceSave(forceSave).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringRevocationMonitoringUpdateRequest(monitoringRevocationMonitoringUpdateRequest).Execute()
+> MonitoringRevocationMonitoringDefinitionResponse BuildUpdateMonitoringRevocationRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ForceSave(forceSave).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringRevocationMonitoringUpdateRequest(monitoringRevocationMonitoringUpdateRequest).Execute()
 
 Edit a revocation monitoring endpoint
 
@@ -672,7 +672,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MonitoringApi.UpdateMonitoringRevocation(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ForceSave(forceSave).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringRevocationMonitoringUpdateRequest(monitoringRevocationMonitoringUpdateRequest).Execute()
+    resp, r, err := apiClient.MonitoringApi.BuildUpdateMonitoringRevocationRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ForceSave(forceSave).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringRevocationMonitoringUpdateRequest(monitoringRevocationMonitoringUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitoringApi.UpdateMonitoringRevocation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -718,7 +718,7 @@ Name | Type | Description  | Notes
 
 ## UpdateMonitoringRevocationSchedule
 
-> MonitoringRevocationMonitoringDefinitionResponse UpdateMonitoringRevocationSchedule(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringRevocationMonitoringUpdateScheduleRequest(monitoringRevocationMonitoringUpdateScheduleRequest).Execute()
+> MonitoringRevocationMonitoringDefinitionResponse BuildUpdateMonitoringRevocationScheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringRevocationMonitoringUpdateScheduleRequest(monitoringRevocationMonitoringUpdateScheduleRequest).Execute()
 
 Edit a revocation monitoring's schedule.
 
@@ -741,7 +741,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MonitoringApi.UpdateMonitoringRevocationSchedule(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringRevocationMonitoringUpdateScheduleRequest(monitoringRevocationMonitoringUpdateScheduleRequest).Execute()
+    resp, r, err := apiClient.MonitoringApi.BuildUpdateMonitoringRevocationScheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MonitoringRevocationMonitoringUpdateScheduleRequest(monitoringRevocationMonitoringUpdateScheduleRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitoringApi.UpdateMonitoringRevocationSchedule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

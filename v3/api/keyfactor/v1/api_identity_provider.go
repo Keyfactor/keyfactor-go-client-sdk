@@ -69,7 +69,7 @@ CreateIdentityProviders Creates an OAuth identity provider and any provided para
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateIdentityProvidersRequest
 */
-func (a *IdentityProviderApiService) CreateIdentityProviders(ctx context.Context) ApiCreateIdentityProvidersRequest {
+func (a *IdentityProviderApiService) BuildCreateIdentityProvidersRequest(ctx context.Context) ApiCreateIdentityProvidersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -242,7 +242,7 @@ GetIdentityProviders Returns all OAuth identity providers according to the provi
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetIdentityProvidersRequest
 */
-func (a *IdentityProviderApiService) GetIdentityProviders(ctx context.Context) ApiGetIdentityProvidersRequest {
+func (a *IdentityProviderApiService) BuildGetIdentityProvidersRequest(ctx context.Context) ApiGetIdentityProvidersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -395,7 +395,7 @@ GetIdentityProvidersById Gets an OAuth identity provider and its parameters.
 	@param id The Id of the OAuth identity provider to retrieve.
 	@return ApiGetIdentityProvidersByIdRequest
 */
-func (a *IdentityProviderApiService) GetIdentityProvidersById(ctx context.Context, id string) ApiGetIdentityProvidersByIdRequest {
+func (a *IdentityProviderApiService) BuildGetIdentityProvidersByIdRequest(ctx context.Context, id string) ApiGetIdentityProvidersByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -534,7 +534,7 @@ GetIdentityProvidersTypes Returns a list of all available identity provider type
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetIdentityProvidersTypesRequest
 */
-func (a *IdentityProviderApiService) GetIdentityProvidersTypes(ctx context.Context) ApiGetIdentityProvidersTypesRequest {
+func (a *IdentityProviderApiService) BuildGetIdentityProvidersTypesRequest(ctx context.Context) ApiGetIdentityProvidersTypesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -679,7 +679,7 @@ UpdateIdentityProvidersById Updates an OAuth identity provider and any provided 
 	@param id The Id of the OAuth identity provider to update.
 	@return ApiUpdateIdentityProvidersByIdRequest
 */
-func (a *IdentityProviderApiService) UpdateIdentityProvidersById(ctx context.Context, id string) ApiUpdateIdentityProvidersByIdRequest {
+func (a *IdentityProviderApiService) BuildUpdateIdentityProvidersByIdRequest(ctx context.Context, id string) ApiUpdateIdentityProvidersByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

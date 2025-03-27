@@ -61,7 +61,7 @@ GetPermissions Gets all permissions in the system.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetPermissionsRequest
 */
-func (a *PermissionsApiService) GetPermissions(ctx context.Context) ApiGetPermissionsRequest {
+func (a *PermissionsApiService) BuildGetPermissionsRequest(ctx context.Context) ApiGetPermissionsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

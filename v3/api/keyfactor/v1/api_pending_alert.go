@@ -69,7 +69,7 @@ CreateAlertsPending Add a pending alert
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateAlertsPendingRequest
 */
-func (a *PendingAlertApiService) CreateAlertsPending(ctx context.Context) ApiCreateAlertsPendingRequest {
+func (a *PendingAlertApiService) BuildCreateAlertsPendingRequest(ctx context.Context) ApiCreateAlertsPendingRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -216,7 +216,7 @@ CreateAlertsPendingTest Test pending alert. Will send alert emails if SendAlerts
 
 Deprecated
 */
-func (a *PendingAlertApiService) CreateAlertsPendingTest(ctx context.Context) ApiCreateAlertsPendingTestRequest {
+func (a *PendingAlertApiService) BuildCreateAlertsPendingTestRequest(ctx context.Context) ApiCreateAlertsPendingTestRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -365,7 +365,7 @@ CreateAlertsPendingTestAll Test all pending alerts. Will send alert emails if Se
 
 Deprecated
 */
-func (a *PendingAlertApiService) CreateAlertsPendingTestAll(ctx context.Context) ApiCreateAlertsPendingTestAllRequest {
+func (a *PendingAlertApiService) BuildCreateAlertsPendingTestAllRequest(ctx context.Context) ApiCreateAlertsPendingTestAllRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -507,7 +507,7 @@ DeleteAlertsPendingById Delete a pending alert
 	@param id Id for the pending alert
 	@return ApiDeleteAlertsPendingByIdRequest
 */
-func (a *PendingAlertApiService) DeleteAlertsPendingById(ctx context.Context, id int32) ApiDeleteAlertsPendingByIdRequest {
+func (a *PendingAlertApiService) BuildDeleteAlertsPendingByIdRequest(ctx context.Context, id int32) ApiDeleteAlertsPendingByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -664,7 +664,7 @@ GetAlertsPending Gets all pending alerts according to the provided filter and ou
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAlertsPendingRequest
 */
-func (a *PendingAlertApiService) GetAlertsPending(ctx context.Context) ApiGetAlertsPendingRequest {
+func (a *PendingAlertApiService) BuildGetAlertsPendingRequest(ctx context.Context) ApiGetAlertsPendingRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -817,7 +817,7 @@ GetAlertsPendingById Get a pending alert
 	@param id Id for the pending alert to get
 	@return ApiGetAlertsPendingByIdRequest
 */
-func (a *PendingAlertApiService) GetAlertsPendingById(ctx context.Context, id int32) ApiGetAlertsPendingByIdRequest {
+func (a *PendingAlertApiService) BuildGetAlertsPendingByIdRequest(ctx context.Context, id int32) ApiGetAlertsPendingByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -956,7 +956,7 @@ GetAlertsPendingSchedule Get the schedule for pending alerts
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAlertsPendingScheduleRequest
 */
-func (a *PendingAlertApiService) GetAlertsPendingSchedule(ctx context.Context) ApiGetAlertsPendingScheduleRequest {
+func (a *PendingAlertApiService) BuildGetAlertsPendingScheduleRequest(ctx context.Context) ApiGetAlertsPendingScheduleRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1099,7 +1099,7 @@ UpdateAlertsPending Edit a pending alert
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateAlertsPendingRequest
 */
-func (a *PendingAlertApiService) UpdateAlertsPending(ctx context.Context) ApiUpdateAlertsPendingRequest {
+func (a *PendingAlertApiService) BuildUpdateAlertsPendingRequest(ctx context.Context) ApiUpdateAlertsPendingRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1243,7 +1243,7 @@ UpdateAlertsPendingSchedule Edit schedule
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateAlertsPendingScheduleRequest
 */
-func (a *PendingAlertApiService) UpdateAlertsPendingSchedule(ctx context.Context) ApiUpdateAlertsPendingScheduleRequest {
+func (a *PendingAlertApiService) BuildUpdateAlertsPendingScheduleRequest(ctx context.Context) ApiUpdateAlertsPendingScheduleRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

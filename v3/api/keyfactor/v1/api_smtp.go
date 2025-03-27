@@ -67,7 +67,7 @@ CreateSMTPTest Tests SMTP profile data
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSMTPTestRequest
 */
-func (a *SMTPApiService) CreateSMTPTest(ctx context.Context) ApiCreateSMTPTestRequest {
+func (a *SMTPApiService) BuildCreateSMTPTestRequest(ctx context.Context) ApiCreateSMTPTestRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -205,7 +205,7 @@ GetSMTP Gets SMTP profile data
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSMTPRequest
 */
-func (a *SMTPApiService) GetSMTP(ctx context.Context) ApiGetSMTPRequest {
+func (a *SMTPApiService) BuildGetSMTPRequest(ctx context.Context) ApiGetSMTPRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -347,7 +347,7 @@ UpdateSMTP Updates SMTP profile data
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSMTPRequest
 */
-func (a *SMTPApiService) UpdateSMTP(ctx context.Context) ApiUpdateSMTPRequest {
+func (a *SMTPApiService) BuildUpdateSMTPRequest(ctx context.Context) ApiUpdateSMTPRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

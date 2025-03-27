@@ -77,7 +77,7 @@ The field used to determine if a certificate is a duplicate of another.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificateCollectionsRequest
 */
-func (a *CertificateCollectionApiService) CreateCertificateCollections(ctx context.Context) ApiCreateCertificateCollectionsRequest {
+func (a *CertificateCollectionApiService) BuildCreateCertificateCollectionsRequest(ctx context.Context) ApiCreateCertificateCollectionsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -230,7 +230,7 @@ The field used to determine if a certificate is a duplicate of another.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificateCollectionsCopyRequest
 */
-func (a *CertificateCollectionApiService) CreateCertificateCollectionsCopy(ctx context.Context) ApiCreateCertificateCollectionsCopyRequest {
+func (a *CertificateCollectionApiService) BuildCreateCertificateCollectionsCopyRequest(ctx context.Context) ApiCreateCertificateCollectionsCopyRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -370,7 +370,7 @@ DeleteCertificateCollectionsById Delete one certificate collection
 	@param id The collection to delete
 	@return ApiDeleteCertificateCollectionsByIdRequest
 */
-func (a *CertificateCollectionApiService) DeleteCertificateCollectionsById(ctx context.Context, id int32) ApiDeleteCertificateCollectionsByIdRequest {
+func (a *CertificateCollectionApiService) BuildDeleteCertificateCollectionsByIdRequest(ctx context.Context, id int32) ApiDeleteCertificateCollectionsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -533,7 +533,7 @@ GetCertificateCollections Returns all certificate collections
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCertificateCollectionsRequest
 */
-func (a *CertificateCollectionApiService) GetCertificateCollections(ctx context.Context) ApiGetCertificateCollectionsRequest {
+func (a *CertificateCollectionApiService) BuildGetCertificateCollectionsRequest(ctx context.Context) ApiGetCertificateCollectionsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -686,7 +686,7 @@ GetCertificateCollectionsById Returns the certificate collection definition asso
 	@param id Identifier of the certificate collection
 	@return ApiGetCertificateCollectionsByIdRequest
 */
-func (a *CertificateCollectionApiService) GetCertificateCollectionsById(ctx context.Context, id int32) ApiGetCertificateCollectionsByIdRequest {
+func (a *CertificateCollectionApiService) BuildGetCertificateCollectionsByIdRequest(ctx context.Context, id int32) ApiGetCertificateCollectionsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -855,7 +855,7 @@ GetCertificateCollectionsCollectionList Get certificate collection list with dup
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCertificateCollectionsCollectionListRequest
 */
-func (a *CertificateCollectionApiService) GetCertificateCollectionsCollectionList(ctx context.Context) ApiGetCertificateCollectionsCollectionListRequest {
+func (a *CertificateCollectionApiService) BuildGetCertificateCollectionsCollectionListRequest(ctx context.Context) ApiGetCertificateCollectionsCollectionListRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1006,7 +1006,7 @@ GetCertificateCollectionsCollectionOrdering Returns an array of collection Id's 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCertificateCollectionsCollectionOrderingRequest
 */
-func (a *CertificateCollectionApiService) GetCertificateCollectionsCollectionOrdering(ctx context.Context) ApiGetCertificateCollectionsCollectionOrderingRequest {
+func (a *CertificateCollectionApiService) BuildGetCertificateCollectionsCollectionOrderingRequest(ctx context.Context) ApiGetCertificateCollectionsCollectionOrderingRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1142,7 +1142,7 @@ GetCertificateCollectionsLastEstimated Get the last time the timer service ran t
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCertificateCollectionsLastEstimatedRequest
 */
-func (a *CertificateCollectionApiService) GetCertificateCollectionsLastEstimated(ctx context.Context) ApiGetCertificateCollectionsLastEstimatedRequest {
+func (a *CertificateCollectionApiService) BuildGetCertificateCollectionsLastEstimatedRequest(ctx context.Context) ApiGetCertificateCollectionsLastEstimatedRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1280,7 +1280,7 @@ GetCertificateCollectionsName Returns the certificate collection associated with
 	@param name Name of the Collection
 	@return ApiGetCertificateCollectionsNameRequest
 */
-func (a *CertificateCollectionApiService) GetCertificateCollectionsName(ctx context.Context, name string) ApiGetCertificateCollectionsNameRequest {
+func (a *CertificateCollectionApiService) BuildGetCertificateCollectionsNameRequest(ctx context.Context, name string) ApiGetCertificateCollectionsNameRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1419,7 +1419,7 @@ GetCertificateCollectionsNavItems Get the list of navigation items for certifica
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCertificateCollectionsNavItemsRequest
 */
-func (a *CertificateCollectionApiService) GetCertificateCollectionsNavItems(ctx context.Context) ApiGetCertificateCollectionsNavItemsRequest {
+func (a *CertificateCollectionApiService) BuildGetCertificateCollectionsNavItemsRequest(ctx context.Context) ApiGetCertificateCollectionsNavItemsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1570,7 +1570,7 @@ The field used to determine if a certificate is a duplicate of another.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateCertificateCollectionsRequest
 */
-func (a *CertificateCollectionApiService) UpdateCertificateCollections(ctx context.Context) ApiUpdateCertificateCollectionsRequest {
+func (a *CertificateCollectionApiService) BuildUpdateCertificateCollectionsRequest(ctx context.Context) ApiUpdateCertificateCollectionsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1717,7 +1717,7 @@ UpdateCertificateCollectionsByIdFavorite Update favorite for one collection
 	@param id The collection to update favorite with
 	@return ApiUpdateCertificateCollectionsByIdFavoriteRequest
 */
-func (a *CertificateCollectionApiService) UpdateCertificateCollectionsByIdFavorite(ctx context.Context, id int32) ApiUpdateCertificateCollectionsByIdFavoriteRequest {
+func (a *CertificateCollectionApiService) BuildUpdateCertificateCollectionsByIdFavoriteRequest(ctx context.Context, id int32) ApiUpdateCertificateCollectionsByIdFavoriteRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
