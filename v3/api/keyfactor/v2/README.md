@@ -30,7 +30,7 @@ go get "github.com/Keyfactor/keyfactor-go-client-sdk/v3"
 Put the package under your project folder and add the following in import:
 
 ```golang
-import "github.com/Keyfactor/keyfactor-go-client-sdk/v3/v2"
+import "github.com/Keyfactor/keyfactor-go-client-sdk/v3/api/keyfactor/v2"
 ```
 
 ## Configuration
@@ -43,7 +43,7 @@ Here is an example of configuring your API client:
 import (
 	"os"
 	"github.com/Keyfactor/keyfactor-auth-client-go/auth_providers"
-	"github.com/Keyfactor/keyfactor-go-client-sdk/v3/v2"
+	"github.com/Keyfactor/keyfactor-go-client-sdk/v3/api/keyfactor/v2"
 )
 
 hostname := os.Getenv(auth_providers.EnvKeyfactorHostName)
