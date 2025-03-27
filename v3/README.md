@@ -77,6 +77,6 @@ client, err := kf.NewAPIClient(oAuthNoParamsConfig.GetServerConfig())
 
 All documentation for the APIs can be found in its respective API directory:
 
-- [v1 API Documentation](./v1/README.md)
-- [v2 API Documentation](./v2/README.md)
+- [v1 API Documentation](./api/keyfactor/v1/README.md)
+- [v2 API Documentation](./api/keyfactor/v2/README.md)
 
