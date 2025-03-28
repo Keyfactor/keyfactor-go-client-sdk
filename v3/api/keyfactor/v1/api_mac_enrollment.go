@@ -61,7 +61,7 @@ GetMacEnrollment Gets mac enrollment settings data
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetMacEnrollmentRequest
 */
-func (a *MacEnrollmentApiService) BuildGetMacEnrollmentRequest(ctx context.Context) ApiGetMacEnrollmentRequest {
+func (a *MacEnrollmentApiService) NewGetMacEnrollmentRequest(ctx context.Context) ApiGetMacEnrollmentRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -203,7 +203,7 @@ UpdateMacEnrollment Updates mac enrollment settings data
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateMacEnrollmentRequest
 */
-func (a *MacEnrollmentApiService) BuildUpdateMacEnrollmentRequest(ctx context.Context) ApiUpdateMacEnrollmentRequest {
+func (a *MacEnrollmentApiService) NewUpdateMacEnrollmentRequest(ctx context.Context) ApiUpdateMacEnrollmentRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

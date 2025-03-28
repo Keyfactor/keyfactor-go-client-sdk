@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## CreateAgentBluePrintApplyBlueprint
 
-> BuildCreateAgentBluePrintApplyBlueprintRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).TemplateId(templateId).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
+> NewCreateAgentBluePrintApplyBlueprintRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).TemplateId(templateId).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
 
 Applies the selected agent blueprint to the provided agents
 
@@ -40,7 +40,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentBlueprintApi.BuildCreateAgentBluePrintApplyBlueprintRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).TemplateId(templateId).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
+    resp, r, err := apiClient.AgentBlueprintApi.NewCreateAgentBluePrintApplyBlueprintRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).TemplateId(templateId).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AgentBlueprintApi.CreateAgentBluePrintApplyBlueprint``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## CreateAgentBluePrintGenerateBluePrint
 
-> OrchestratorsAgentBlueprintResponse BuildCreateAgentBluePrintGenerateBluePrintRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).AgentId(agentId).Name(name).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> OrchestratorsAgentBlueprintResponse NewCreateAgentBluePrintGenerateBluePrintRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).AgentId(agentId).Name(name).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Generates an agent blueprint from the provided agents
 
@@ -108,7 +108,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentBlueprintApi.BuildCreateAgentBluePrintGenerateBluePrintRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).AgentId(agentId).Name(name).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.AgentBlueprintApi.NewCreateAgentBluePrintGenerateBluePrintRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).AgentId(agentId).Name(name).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AgentBlueprintApi.CreateAgentBluePrintGenerateBluePrint``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ## DeleteAgentBluePrintById
 
-> BuildDeleteAgentBluePrintByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteAgentBluePrintByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes an agent blueprint by its Keyfactor identifier
 
@@ -177,7 +177,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentBlueprintApi.BuildDeleteAgentBluePrintByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.AgentBlueprintApi.NewDeleteAgentBluePrintByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AgentBlueprintApi.DeleteAgentBluePrintById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ## GetAgentBluePrint
 
-> []OrchestratorsAgentBlueprintResponse BuildGetAgentBluePrintRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []OrchestratorsAgentBlueprintResponse NewGetAgentBluePrintRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all agent blueprints according to the provided filter and output parameters
 
@@ -250,7 +250,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentBlueprintApi.BuildGetAgentBluePrintRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.AgentBlueprintApi.NewGetAgentBluePrintRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AgentBlueprintApi.GetAgentBluePrint``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 
 ## GetAgentBluePrintById
 
-> OrchestratorsAgentBlueprintResponse BuildGetAgentBluePrintByIdRequest(ctx, id2).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Id(id).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> OrchestratorsAgentBlueprintResponse NewGetAgentBluePrintByIdRequest(ctx, id2).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Id(id).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns an agent blueprint according to the provided filter and output parameters
 
@@ -322,7 +322,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentBlueprintApi.BuildGetAgentBluePrintByIdRequest(context.Background(), id2).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Id(id).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.AgentBlueprintApi.NewGetAgentBluePrintByIdRequest(context.Background(), id2).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Id(id).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AgentBlueprintApi.GetAgentBluePrintById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -372,7 +372,7 @@ Name | Type | Description  | Notes
 
 ## GetAgentBluePrintByIdJobs
 
-> []OrchestratorsAgentBlueprintJobsResponse BuildGetAgentBluePrintByIdJobsRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []OrchestratorsAgentBlueprintJobsResponse NewGetAgentBluePrintByIdJobsRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets the agent blueprint scheduled jobs
 
@@ -399,7 +399,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentBlueprintApi.BuildGetAgentBluePrintByIdJobsRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.AgentBlueprintApi.NewGetAgentBluePrintByIdJobsRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AgentBlueprintApi.GetAgentBluePrintByIdJobs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 
 ## GetAgentBluePrintByIdStores
 
-> []OrchestratorsAgentBlueprintStoresResponse BuildGetAgentBluePrintByIdStoresRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []OrchestratorsAgentBlueprintStoresResponse NewGetAgentBluePrintByIdStoresRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets the agent blueprint certificate stores
 
@@ -479,7 +479,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentBlueprintApi.BuildGetAgentBluePrintByIdStoresRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.AgentBlueprintApi.NewGetAgentBluePrintByIdStoresRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AgentBlueprintApi.GetAgentBluePrintByIdStores``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

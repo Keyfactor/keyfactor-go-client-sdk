@@ -99,7 +99,7 @@ GetSSHUsers Returns users matching the criteria from the provided query paramete
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSSHUsersRequest
 */
-func (a *UserApiService) BuildGetSSHUsersRequest(ctx context.Context) ApiGetSSHUsersRequest {
+func (a *UserApiService) NewGetSSHUsersRequest(ctx context.Context) ApiGetSSHUsersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "2"
@@ -255,7 +255,7 @@ GetSSHUsersById Looks up information about an existing SSH user.
 	@param id The Id of the SSH user to retrieve.
 	@return ApiGetSSHUsersByIdRequest
 */
-func (a *UserApiService) BuildGetSSHUsersByIdRequest(ctx context.Context, id int32) ApiGetSSHUsersByIdRequest {
+func (a *UserApiService) NewGetSSHUsersByIdRequest(ctx context.Context, id int32) ApiGetSSHUsersByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "2"

@@ -67,7 +67,7 @@ CreateScheduling Method for CreateScheduling
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSchedulingRequest
 */
-func (a *SchedulingApiService) BuildCreateSchedulingRequest(ctx context.Context) ApiCreateSchedulingRequest {
+func (a *SchedulingApiService) NewCreateSchedulingRequest(ctx context.Context) ApiCreateSchedulingRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

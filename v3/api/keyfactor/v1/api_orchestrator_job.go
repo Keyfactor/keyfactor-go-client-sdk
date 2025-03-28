@@ -68,7 +68,7 @@ CreateOrchestratorJobsAcknowledge Acknowledges orchestrator jobs based on the pr
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateOrchestratorJobsAcknowledgeRequest
 */
-func (a *OrchestratorJobApiService) BuildCreateOrchestratorJobsAcknowledgeRequest(ctx context.Context) ApiCreateOrchestratorJobsAcknowledgeRequest {
+func (a *OrchestratorJobApiService) NewCreateOrchestratorJobsAcknowledgeRequest(ctx context.Context) ApiCreateOrchestratorJobsAcknowledgeRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -201,7 +201,7 @@ CreateOrchestratorJobsCustom Schedules a job for a custom JobType on the agent u
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateOrchestratorJobsCustomRequest
 */
-func (a *OrchestratorJobApiService) BuildCreateOrchestratorJobsCustomRequest(ctx context.Context) ApiCreateOrchestratorJobsCustomRequest {
+func (a *OrchestratorJobApiService) NewCreateOrchestratorJobsCustomRequest(ctx context.Context) ApiCreateOrchestratorJobsCustomRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -346,7 +346,7 @@ CreateOrchestratorJobsCustomBulk Schedules the same job for a custom JobType on 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateOrchestratorJobsCustomBulkRequest
 */
-func (a *OrchestratorJobApiService) BuildCreateOrchestratorJobsCustomBulkRequest(ctx context.Context) ApiCreateOrchestratorJobsCustomBulkRequest {
+func (a *OrchestratorJobApiService) NewCreateOrchestratorJobsCustomBulkRequest(ctx context.Context) ApiCreateOrchestratorJobsCustomBulkRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -491,7 +491,7 @@ CreateOrchestratorJobsReschedule Reschedules orchestrator jobs based on the prov
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateOrchestratorJobsRescheduleRequest
 */
-func (a *OrchestratorJobApiService) BuildCreateOrchestratorJobsRescheduleRequest(ctx context.Context) ApiCreateOrchestratorJobsRescheduleRequest {
+func (a *OrchestratorJobApiService) NewCreateOrchestratorJobsRescheduleRequest(ctx context.Context) ApiCreateOrchestratorJobsRescheduleRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -624,7 +624,7 @@ CreateOrchestratorJobsUnschedule Unschedules orchestrator jobs based on the prov
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateOrchestratorJobsUnscheduleRequest
 */
-func (a *OrchestratorJobApiService) BuildCreateOrchestratorJobsUnscheduleRequest(ctx context.Context) ApiCreateOrchestratorJobsUnscheduleRequest {
+func (a *OrchestratorJobApiService) NewCreateOrchestratorJobsUnscheduleRequest(ctx context.Context) ApiCreateOrchestratorJobsUnscheduleRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -780,7 +780,7 @@ GetOrchestratorJobsJobHistory Returns all histories of an orchestrator job accor
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetOrchestratorJobsJobHistoryRequest
 */
-func (a *OrchestratorJobApiService) BuildGetOrchestratorJobsJobHistoryRequest(ctx context.Context) ApiGetOrchestratorJobsJobHistoryRequest {
+func (a *OrchestratorJobApiService) NewGetOrchestratorJobsJobHistoryRequest(ctx context.Context) ApiGetOrchestratorJobsJobHistoryRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -938,7 +938,7 @@ GetOrchestratorJobsJobStatusData Retrieves the results of a custom job using the
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetOrchestratorJobsJobStatusDataRequest
 */
-func (a *OrchestratorJobApiService) BuildGetOrchestratorJobsJobStatusDataRequest(ctx context.Context) ApiGetOrchestratorJobsJobStatusDataRequest {
+func (a *OrchestratorJobApiService) NewGetOrchestratorJobsJobStatusDataRequest(ctx context.Context) ApiGetOrchestratorJobsJobStatusDataRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1108,7 +1108,7 @@ GetOrchestratorJobsScheduledJobs Returns all scheduled orchestrator jobs accordi
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetOrchestratorJobsScheduledJobsRequest
 */
-func (a *OrchestratorJobApiService) BuildGetOrchestratorJobsScheduledJobsRequest(ctx context.Context) ApiGetOrchestratorJobsScheduledJobsRequest {
+func (a *OrchestratorJobApiService) NewGetOrchestratorJobsScheduledJobsRequest(ctx context.Context) ApiGetOrchestratorJobsScheduledJobsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

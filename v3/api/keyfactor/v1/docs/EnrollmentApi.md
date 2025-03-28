@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ## CreateEnrollmentCSR
 
-> CSSCMSDataModelModelsEnrollmentCSREnrollmentResponse BuildCreateEnrollmentCSRRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).ForceEnroll(forceEnroll).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentCSREnrollmentRequest(enrollmentCSREnrollmentRequest).Execute()
+> CSSCMSDataModelModelsEnrollmentCSREnrollmentResponse NewCreateEnrollmentCSRRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).ForceEnroll(forceEnroll).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentCSREnrollmentRequest(enrollmentCSREnrollmentRequest).Execute()
 
 Performs a CSR Enrollment based upon the provided request
 
@@ -47,7 +47,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.BuildCreateEnrollmentCSRRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).ForceEnroll(forceEnroll).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentCSREnrollmentRequest(enrollmentCSREnrollmentRequest).Execute()
+    resp, r, err := apiClient.EnrollmentApi.NewCreateEnrollmentCSRRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).ForceEnroll(forceEnroll).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentCSREnrollmentRequest(enrollmentCSREnrollmentRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.CreateEnrollmentCSR``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ## CreateEnrollmentCSRParse
 
-> []string BuildCreateEnrollmentCSRParseRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCSRContents(cSSCMSDataModelModelsCSRContents).Execute()
+> []string NewCreateEnrollmentCSRParseRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCSRContents(cSSCMSDataModelModelsCSRContents).Execute()
 
 Parses the provided CSR and returns the properties
 
@@ -119,7 +119,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.BuildCreateEnrollmentCSRParseRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCSRContents(cSSCMSDataModelModelsCSRContents).Execute()
+    resp, r, err := apiClient.EnrollmentApi.NewCreateEnrollmentCSRParseRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCSRContents(cSSCMSDataModelModelsCSRContents).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.CreateEnrollmentCSRParse``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ## CreateEnrollmentPFX
 
-> CSSCMSDataModelModelsEnrollmentPFXEnrollmentResponse BuildCreateEnrollmentPFXRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentPFXEnrollmentRequest(enrollmentPFXEnrollmentRequest).Execute()
+> CSSCMSDataModelModelsEnrollmentPFXEnrollmentResponse NewCreateEnrollmentPFXRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentPFXEnrollmentRequest(enrollmentPFXEnrollmentRequest).Execute()
 
 Performs a PFX Enrollment based upon the provided request
 
@@ -190,7 +190,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.BuildCreateEnrollmentPFXRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentPFXEnrollmentRequest(enrollmentPFXEnrollmentRequest).Execute()
+    resp, r, err := apiClient.EnrollmentApi.NewCreateEnrollmentPFXRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentPFXEnrollmentRequest(enrollmentPFXEnrollmentRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.CreateEnrollmentPFX``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 ## CreateEnrollmentPFXDeploy
 
-> EnrollmentEnrollmentManagementResponse BuildCreateEnrollmentPFXDeployRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentEnrollmentManagementRequest(enrollmentEnrollmentManagementRequest).Execute()
+> EnrollmentEnrollmentManagementResponse NewCreateEnrollmentPFXDeployRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentEnrollmentManagementRequest(enrollmentEnrollmentManagementRequest).Execute()
 
 Creates management jobs to install a newly enrolled pfx in to one or more certificate stores
 
@@ -259,7 +259,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.BuildCreateEnrollmentPFXDeployRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentEnrollmentManagementRequest(enrollmentEnrollmentManagementRequest).Execute()
+    resp, r, err := apiClient.EnrollmentApi.NewCreateEnrollmentPFXDeployRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentEnrollmentManagementRequest(enrollmentEnrollmentManagementRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.CreateEnrollmentPFXDeploy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 ## CreateEnrollmentPFXReplace
 
-> EnrollmentEnrollmentManagementResponse BuildCreateEnrollmentPFXReplaceRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest(cSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest).Execute()
+> EnrollmentEnrollmentManagementResponse NewCreateEnrollmentPFXReplaceRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest(cSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest).Execute()
 
 Creates management jobs to install a newly enrolled pfx into the same certificate stores as the previous certificate
 
@@ -327,7 +327,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.BuildCreateEnrollmentPFXReplaceRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest(cSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest).Execute()
+    resp, r, err := apiClient.EnrollmentApi.NewCreateEnrollmentPFXReplaceRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest(cSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.CreateEnrollmentPFXReplace``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -372,7 +372,7 @@ Name | Type | Description  | Notes
 
 ## CreateEnrollmentRenew
 
-> EnrollmentRenewalApiResponse BuildCreateEnrollmentRenewRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsEnrollmentRenewalRequest(cSSCMSDataModelModelsEnrollmentRenewalRequest).Execute()
+> EnrollmentRenewalApiResponse NewCreateEnrollmentRenewRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsEnrollmentRenewalRequest(cSSCMSDataModelModelsEnrollmentRenewalRequest).Execute()
 
 Performs a renewal based upon the passed in request
 
@@ -396,7 +396,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.BuildCreateEnrollmentRenewRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsEnrollmentRenewalRequest(cSSCMSDataModelModelsEnrollmentRenewalRequest).Execute()
+    resp, r, err := apiClient.EnrollmentApi.NewCreateEnrollmentRenewRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsEnrollmentRenewalRequest(cSSCMSDataModelModelsEnrollmentRenewalRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.CreateEnrollmentRenew``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -442,7 +442,7 @@ Name | Type | Description  | Notes
 
 ## GetEnrollmentAvailableRenewalIdById
 
-> CSSCMSDataModelModelsEnrollmentAvailableRenewal BuildGetEnrollmentAvailableRenewalIdByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsEnrollmentAvailableRenewal NewGetEnrollmentAvailableRenewalIdByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns the type of renewal available for a given certificate.
 
@@ -468,7 +468,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.BuildGetEnrollmentAvailableRenewalIdByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.EnrollmentApi.NewGetEnrollmentAvailableRenewalIdByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.GetEnrollmentAvailableRenewalIdById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -518,7 +518,7 @@ Name | Type | Description  | Notes
 
 ## GetEnrollmentAvailableRenewalThumbprintThumbprint
 
-> CSSCMSDataModelModelsEnrollmentAvailableRenewal BuildGetEnrollmentAvailableRenewalThumbprintThumbprintRequest(ctx, thumbprint).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsEnrollmentAvailableRenewal NewGetEnrollmentAvailableRenewalThumbprintThumbprintRequest(ctx, thumbprint).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns the type of renewal available for a given certificate.
 
@@ -542,7 +542,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.BuildGetEnrollmentAvailableRenewalThumbprintThumbprintRequest(context.Background(), thumbprint).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.EnrollmentApi.NewGetEnrollmentAvailableRenewalThumbprintThumbprintRequest(context.Background(), thumbprint).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.GetEnrollmentAvailableRenewalThumbprintThumbprint``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -592,7 +592,7 @@ Name | Type | Description  | Notes
 
 ## GetEnrollmentCSRContextMy
 
-> KeyfactorWebCoreModelsEnrollmentEnrollmentTemplateCAResponse BuildGetEnrollmentCSRContextMyRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> KeyfactorWebCoreModelsEnrollmentEnrollmentTemplateCAResponse NewGetEnrollmentCSRContextMyRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns the list of available CSR enrollment templates and their associated CA mappings that the calling user has permissions on
 
@@ -614,7 +614,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.BuildGetEnrollmentCSRContextMyRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.EnrollmentApi.NewGetEnrollmentCSRContextMyRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.GetEnrollmentCSRContextMy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -658,7 +658,7 @@ Name | Type | Description  | Notes
 
 ## GetEnrollmentPFXContextMy
 
-> KeyfactorWebCoreModelsEnrollmentEnrollmentTemplateCAResponse BuildGetEnrollmentPFXContextMyRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> KeyfactorWebCoreModelsEnrollmentEnrollmentTemplateCAResponse NewGetEnrollmentPFXContextMyRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns the list of available PFX enrollment templates and their associated CA mappings that the calling user has permissions on
 
@@ -680,7 +680,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.BuildGetEnrollmentPFXContextMyRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.EnrollmentApi.NewGetEnrollmentPFXContextMyRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.GetEnrollmentPFXContextMy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -724,7 +724,7 @@ Name | Type | Description  | Notes
 
 ## GetEnrollmentSettingsById
 
-> TemplatesEnrollmentTemplateEnrollmentSettingsResponse BuildGetEnrollmentSettingsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> TemplatesEnrollmentTemplateEnrollmentSettingsResponse NewGetEnrollmentSettingsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets the template settings to use during enrollment. The response will be the resolved values for the settings.  If there is a template specific setting, the template specific setting will be used in the response.  If there is not a template specific setting, the global setting will be used in the response.
 
@@ -747,7 +747,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.BuildGetEnrollmentSettingsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.EnrollmentApi.NewGetEnrollmentSettingsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.GetEnrollmentSettingsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

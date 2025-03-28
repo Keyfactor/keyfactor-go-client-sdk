@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## CreateTemplatesImport
 
-> BuildCreateTemplatesImportRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ConfigurationTenantConfigurationTenantRequest(configurationTenantConfigurationTenantRequest).Execute()
+> NewCreateTemplatesImportRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ConfigurationTenantConfigurationTenantRequest(configurationTenantConfigurationTenantRequest).Execute()
 
 Imports templates from the provided configuration tenant
 
@@ -39,7 +39,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TemplateApi.BuildCreateTemplatesImportRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ConfigurationTenantConfigurationTenantRequest(configurationTenantConfigurationTenantRequest).Execute()
+    resp, r, err := apiClient.TemplateApi.NewCreateTemplatesImportRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ConfigurationTenantConfigurationTenantRequest(configurationTenantConfigurationTenantRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TemplateApi.CreateTemplatesImport``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GetTemplates
 
-> []TemplatesTemplateCollectionRetrievalResponse BuildGetTemplatesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []TemplatesTemplateCollectionRetrievalResponse NewGetTemplatesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all certificate templates according to the provided filter and output parameters
 
@@ -109,7 +109,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TemplateApi.BuildGetTemplatesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.TemplateApi.NewGetTemplatesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TemplateApi.GetTemplates``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ## GetTemplatesById
 
-> TemplatesTemplateRetrievalResponse BuildGetTemplatesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> TemplatesTemplateRetrievalResponse NewGetTemplatesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns the certificate template associated with the provided id
 
@@ -181,7 +181,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TemplateApi.BuildGetTemplatesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.TemplateApi.NewGetTemplatesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TemplateApi.GetTemplatesById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ## GetTemplatesSettings
 
-> TemplatesGlobalGlobalTemplateSettingsResponse BuildGetTemplatesSettingsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> TemplatesGlobalGlobalTemplateSettingsResponse NewGetTemplatesSettingsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets the global template settings.
 
@@ -252,7 +252,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TemplateApi.BuildGetTemplatesSettingsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.TemplateApi.NewGetTemplatesSettingsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TemplateApi.GetTemplatesSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 ## GetTemplatesSubjectParts
 
-> []EnrollmentPatternsValidSubjectPartResponse BuildGetTemplatesSubjectPartsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []EnrollmentPatternsValidSubjectPartResponse NewGetTemplatesSubjectPartsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns the valid subject parts possible for regular expressions.
 
@@ -318,7 +318,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TemplateApi.BuildGetTemplatesSubjectPartsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.TemplateApi.NewGetTemplatesSubjectPartsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TemplateApi.GetTemplatesSubjectParts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -362,7 +362,7 @@ Name | Type | Description  | Notes
 
 ## UpdateTemplates
 
-> TemplatesTemplateRetrievalResponse BuildUpdateTemplatesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).TemplatesTemplateUpdateRequest(templatesTemplateUpdateRequest).Execute()
+> TemplatesTemplateRetrievalResponse NewUpdateTemplatesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).TemplatesTemplateUpdateRequest(templatesTemplateUpdateRequest).Execute()
 
 Updates a certificate template according to the provided properties
 
@@ -385,7 +385,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TemplateApi.BuildUpdateTemplatesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).TemplatesTemplateUpdateRequest(templatesTemplateUpdateRequest).Execute()
+    resp, r, err := apiClient.TemplateApi.NewUpdateTemplatesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).TemplatesTemplateUpdateRequest(templatesTemplateUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TemplateApi.UpdateTemplates``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -430,7 +430,7 @@ Name | Type | Description  | Notes
 
 ## UpdateTemplatesSettings
 
-> TemplatesGlobalGlobalTemplateSettingsResponse BuildUpdateTemplatesSettingsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).TemplatesGlobalGlobalTemplateSettingsRequest(templatesGlobalGlobalTemplateSettingsRequest).Execute()
+> TemplatesGlobalGlobalTemplateSettingsResponse NewUpdateTemplatesSettingsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).TemplatesGlobalGlobalTemplateSettingsRequest(templatesGlobalGlobalTemplateSettingsRequest).Execute()
 
 Replaces the existing global template settings.
 
@@ -453,7 +453,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TemplateApi.BuildUpdateTemplatesSettingsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).TemplatesGlobalGlobalTemplateSettingsRequest(templatesGlobalGlobalTemplateSettingsRequest).Execute()
+    resp, r, err := apiClient.TemplateApi.NewUpdateTemplatesSettingsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).TemplatesGlobalGlobalTemplateSettingsRequest(templatesGlobalGlobalTemplateSettingsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TemplateApi.UpdateTemplatesSettings``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

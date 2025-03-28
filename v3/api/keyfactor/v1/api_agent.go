@@ -69,7 +69,7 @@ CreateAgentsApprove Approve a list of agents
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateAgentsApproveRequest
 */
-func (a *AgentApiService) BuildCreateAgentsApproveRequest(ctx context.Context) ApiCreateAgentsApproveRequest {
+func (a *AgentApiService) NewCreateAgentsApproveRequest(ctx context.Context) ApiCreateAgentsApproveRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -197,7 +197,7 @@ CreateAgentsByIdFetchLogs Schedules a job on the agent to retrieve log files
 	@param id Guid Id of the agent to schedule the job for.
 	@return ApiCreateAgentsByIdFetchLogsRequest
 */
-func (a *AgentApiService) BuildCreateAgentsByIdFetchLogsRequest(ctx context.Context, id string) ApiCreateAgentsByIdFetchLogsRequest {
+func (a *AgentApiService) NewCreateAgentsByIdFetchLogsRequest(ctx context.Context, id string) ApiCreateAgentsByIdFetchLogsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -326,7 +326,7 @@ CreateAgentsByIdReset Reset an agent to a new state
 	@param id Guid Id of Agent to reset
 	@return ApiCreateAgentsByIdResetRequest
 */
-func (a *AgentApiService) BuildCreateAgentsByIdResetRequest(ctx context.Context, id string) ApiCreateAgentsByIdResetRequest {
+func (a *AgentApiService) NewCreateAgentsByIdResetRequest(ctx context.Context, id string) ApiCreateAgentsByIdResetRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -460,7 +460,7 @@ CreateAgentsDisapprove Disapprove a list of agents
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateAgentsDisapproveRequest
 */
-func (a *AgentApiService) BuildCreateAgentsDisapproveRequest(ctx context.Context) ApiCreateAgentsDisapproveRequest {
+func (a *AgentApiService) NewCreateAgentsDisapproveRequest(ctx context.Context) ApiCreateAgentsDisapproveRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -593,7 +593,7 @@ CreateAgentsReset Reset a list of agents
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateAgentsResetRequest
 */
-func (a *AgentApiService) BuildCreateAgentsResetRequest(ctx context.Context) ApiCreateAgentsResetRequest {
+func (a *AgentApiService) NewCreateAgentsResetRequest(ctx context.Context) ApiCreateAgentsResetRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -726,7 +726,7 @@ CreateAgentsSetAuthCertificateReenrollment Update the AuthCertificateReenrollmen
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateAgentsSetAuthCertificateReenrollmentRequest
 */
-func (a *AgentApiService) BuildCreateAgentsSetAuthCertificateReenrollmentRequest(ctx context.Context) ApiCreateAgentsSetAuthCertificateReenrollmentRequest {
+func (a *AgentApiService) NewCreateAgentsSetAuthCertificateReenrollmentRequest(ctx context.Context) ApiCreateAgentsSetAuthCertificateReenrollmentRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -873,7 +873,7 @@ DeleteAgentsById Delete a single agent, specified by ID
 	@param id Agent Id to delete
 	@return ApiDeleteAgentsByIdRequest
 */
-func (a *AgentApiService) BuildDeleteAgentsByIdRequest(ctx context.Context, id string) ApiDeleteAgentsByIdRequest {
+func (a *AgentApiService) NewDeleteAgentsByIdRequest(ctx context.Context, id string) ApiDeleteAgentsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1033,7 +1033,7 @@ GetAgents Returns all agents according to the provided filter and output paramet
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAgentsRequest
 */
-func (a *AgentApiService) BuildGetAgentsRequest(ctx context.Context) ApiGetAgentsRequest {
+func (a *AgentApiService) NewGetAgentsRequest(ctx context.Context) ApiGetAgentsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1186,7 +1186,7 @@ GetAgentsById Returns details for a single agent, specified by ID
 	@param id Agent Id to Search
 	@return ApiGetAgentsByIdRequest
 */
-func (a *AgentApiService) BuildGetAgentsByIdRequest(ctx context.Context, id string) ApiGetAgentsByIdRequest {
+func (a *AgentApiService) NewGetAgentsByIdRequest(ctx context.Context, id string) ApiGetAgentsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

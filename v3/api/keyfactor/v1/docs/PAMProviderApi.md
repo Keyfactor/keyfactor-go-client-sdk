@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## CreatePamProviders
 
-> PAMProviderResponseLegacy BuildCreatePamProvidersRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PAMProviderCreateRequest(pAMProviderCreateRequest).Execute()
+> PAMProviderResponseLegacy NewCreatePamProvidersRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PAMProviderCreateRequest(pAMProviderCreateRequest).Execute()
 
 Creates a new PAM provider with the associated properties
 
@@ -42,7 +42,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PAMProviderApi.BuildCreatePamProvidersRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PAMProviderCreateRequest(pAMProviderCreateRequest).Execute()
+    resp, r, err := apiClient.PAMProviderApi.NewCreatePamProvidersRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PAMProviderCreateRequest(pAMProviderCreateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PAMProviderApi.CreatePamProviders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ## CreatePamProvidersTypes
 
-> PAMProviderTypeResponse BuildCreatePamProvidersTypesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PAMProviderTypeCreateRequest(pAMProviderTypeCreateRequest).Execute()
+> PAMProviderTypeResponse NewCreatePamProvidersTypesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PAMProviderTypeCreateRequest(pAMProviderTypeCreateRequest).Execute()
 
 Creates a new PAM provider type with the associated properties
 
@@ -112,7 +112,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PAMProviderApi.BuildCreatePamProvidersTypesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PAMProviderTypeCreateRequest(pAMProviderTypeCreateRequest).Execute()
+    resp, r, err := apiClient.PAMProviderApi.NewCreatePamProvidersTypesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PAMProviderTypeCreateRequest(pAMProviderTypeCreateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PAMProviderApi.CreatePamProvidersTypes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ## DeletePamProvidersById
 
-> BuildDeletePamProvidersByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeletePamProvidersByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes a PAM Provider
 
@@ -180,7 +180,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PAMProviderApi.BuildDeletePamProvidersByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.PAMProviderApi.NewDeletePamProvidersByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PAMProviderApi.DeletePamProvidersById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ## DeletePamProvidersTypesById
 
-> BuildDeletePamProvidersTypesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeletePamProvidersTypesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes a PAM provider Type, as long as the PAM type is not currently in use.
 
@@ -252,7 +252,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PAMProviderApi.BuildDeletePamProvidersTypesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.PAMProviderApi.NewDeletePamProvidersTypesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PAMProviderApi.DeletePamProvidersTypesById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 ## GetPamProviders
 
-> []PAMProviderResponseLegacy BuildGetPamProvidersRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []PAMProviderResponseLegacy NewGetPamProvidersRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all PAM providers according to the provided filter and output parameters
 
@@ -328,7 +328,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PAMProviderApi.BuildGetPamProvidersRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.PAMProviderApi.NewGetPamProvidersRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PAMProviderApi.GetPamProviders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
 
 ## GetPamProvidersById
 
-> PAMProviderResponseLegacy BuildGetPamProvidersByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> PAMProviderResponseLegacy NewGetPamProvidersByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a single PAM Provider that matches the associated id
 
@@ -402,7 +402,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PAMProviderApi.BuildGetPamProvidersByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.PAMProviderApi.NewGetPamProvidersByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PAMProviderApi.GetPamProvidersById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -451,7 +451,7 @@ Name | Type | Description  | Notes
 
 ## GetPamProvidersTypes
 
-> []PAMProviderTypeResponse BuildGetPamProvidersTypesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []PAMProviderTypeResponse NewGetPamProvidersTypesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all PAM provider types in the Keyfactor instance
 
@@ -475,7 +475,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PAMProviderApi.BuildGetPamProvidersTypesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.PAMProviderApi.NewGetPamProvidersTypesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PAMProviderApi.GetPamProvidersTypes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -519,7 +519,7 @@ Name | Type | Description  | Notes
 
 ## UpdatePamProviders
 
-> PAMProviderResponseLegacy BuildUpdatePamProvidersRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PAMProviderUpdateRequestLegacy(pAMProviderUpdateRequestLegacy).Execute()
+> PAMProviderResponseLegacy NewUpdatePamProvidersRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PAMProviderUpdateRequestLegacy(pAMProviderUpdateRequestLegacy).Execute()
 
 Updates an existing PAM provider according to the provided properties
 
@@ -544,7 +544,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PAMProviderApi.BuildUpdatePamProvidersRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PAMProviderUpdateRequestLegacy(pAMProviderUpdateRequestLegacy).Execute()
+    resp, r, err := apiClient.PAMProviderApi.NewUpdatePamProvidersRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PAMProviderUpdateRequestLegacy(pAMProviderUpdateRequestLegacy).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PAMProviderApi.UpdatePamProviders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 ## CreateSecurityRolesByIdPermissionsCollections
 
-> []SecuritySecurityRolePermissionsCollectionPermissionResponse BuildCreateSecurityRolesByIdPermissionsCollectionsRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsCollectionPermissionRequest(securitySecurityRolePermissionsCollectionPermissionRequest).Execute()
+> []SecuritySecurityRolePermissionsCollectionPermissionResponse NewCreateSecurityRolesByIdPermissionsCollectionsRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsCollectionPermissionRequest(securitySecurityRolePermissionsCollectionPermissionRequest).Execute()
 
 Adds collection permissions to the security role that matches the id.
 
@@ -47,7 +47,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolePermissionsApi.BuildCreateSecurityRolesByIdPermissionsCollectionsRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsCollectionPermissionRequest(securitySecurityRolePermissionsCollectionPermissionRequest).Execute()
+    resp, r, err := apiClient.SecurityRolePermissionsApi.NewCreateSecurityRolesByIdPermissionsCollectionsRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsCollectionPermissionRequest(securitySecurityRolePermissionsCollectionPermissionRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolePermissionsApi.CreateSecurityRolesByIdPermissionsCollections``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ## CreateSecurityRolesByIdPermissionsContainers
 
-> []SecuritySecurityRolePermissionsContainerPermissionResponse BuildCreateSecurityRolesByIdPermissionsContainersRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsContainerPermissionRequest(securitySecurityRolePermissionsContainerPermissionRequest).Execute()
+> []SecuritySecurityRolePermissionsContainerPermissionResponse NewCreateSecurityRolesByIdPermissionsContainersRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsContainerPermissionRequest(securitySecurityRolePermissionsContainerPermissionRequest).Execute()
 
 Adds container permissions to the security role that matches the id.
 
@@ -123,7 +123,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolePermissionsApi.BuildCreateSecurityRolesByIdPermissionsContainersRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsContainerPermissionRequest(securitySecurityRolePermissionsContainerPermissionRequest).Execute()
+    resp, r, err := apiClient.SecurityRolePermissionsApi.NewCreateSecurityRolesByIdPermissionsContainersRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsContainerPermissionRequest(securitySecurityRolePermissionsContainerPermissionRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolePermissionsApi.CreateSecurityRolesByIdPermissionsContainers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ## CreateSecurityRolesByIdPermissionsGlobal
 
-> []SecuritySecurityRolePermissionsGlobalPermissionResponse BuildCreateSecurityRolesByIdPermissionsGlobalRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsGlobalPermissionRequest(securitySecurityRolePermissionsGlobalPermissionRequest).Execute()
+> []SecuritySecurityRolePermissionsGlobalPermissionResponse NewCreateSecurityRolesByIdPermissionsGlobalRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsGlobalPermissionRequest(securitySecurityRolePermissionsGlobalPermissionRequest).Execute()
 
 Adds global permissions to the security role that matches the id.
 
@@ -199,7 +199,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolePermissionsApi.BuildCreateSecurityRolesByIdPermissionsGlobalRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsGlobalPermissionRequest(securitySecurityRolePermissionsGlobalPermissionRequest).Execute()
+    resp, r, err := apiClient.SecurityRolePermissionsApi.NewCreateSecurityRolesByIdPermissionsGlobalRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsGlobalPermissionRequest(securitySecurityRolePermissionsGlobalPermissionRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolePermissionsApi.CreateSecurityRolesByIdPermissionsGlobal``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 ## GetSecurityRolesByIdPermissions
 
-> []SecuritySecurityRolePermissionsAreaPermissionResponse BuildGetSecurityRolesByIdPermissionsRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []SecuritySecurityRolePermissionsAreaPermissionResponse NewGetSecurityRolesByIdPermissionsRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all permissions associated with the security role that matches the id.
 
@@ -272,7 +272,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolePermissionsApi.BuildGetSecurityRolesByIdPermissionsRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityRolePermissionsApi.NewGetSecurityRolesByIdPermissionsRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolePermissionsApi.GetSecurityRolesByIdPermissions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 ## GetSecurityRolesByIdPermissionsCollections
 
-> []SecuritySecurityRolePermissionsCollectionPermissionResponse BuildGetSecurityRolesByIdPermissionsCollectionsRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []SecuritySecurityRolePermissionsCollectionPermissionResponse NewGetSecurityRolesByIdPermissionsCollectionsRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all collection permissions associated with the security role that matches the id.
 
@@ -344,7 +344,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolePermissionsApi.BuildGetSecurityRolesByIdPermissionsCollectionsRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityRolePermissionsApi.NewGetSecurityRolesByIdPermissionsCollectionsRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolePermissionsApi.GetSecurityRolesByIdPermissionsCollections``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 
 ## GetSecurityRolesByIdPermissionsContainers
 
-> []SecuritySecurityRolePermissionsContainerPermissionResponse BuildGetSecurityRolesByIdPermissionsContainersRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []SecuritySecurityRolePermissionsContainerPermissionResponse NewGetSecurityRolesByIdPermissionsContainersRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all container permissions associated with the security role that matches the id.
 
@@ -416,7 +416,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolePermissionsApi.BuildGetSecurityRolesByIdPermissionsContainersRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityRolePermissionsApi.NewGetSecurityRolesByIdPermissionsContainersRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolePermissionsApi.GetSecurityRolesByIdPermissionsContainers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
 
 ## GetSecurityRolesByIdPermissionsGlobal
 
-> []SecuritySecurityRolePermissionsGlobalPermissionResponse BuildGetSecurityRolesByIdPermissionsGlobalRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []SecuritySecurityRolePermissionsGlobalPermissionResponse NewGetSecurityRolesByIdPermissionsGlobalRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all global permissions associated with the security role that matches the id.
 
@@ -488,7 +488,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolePermissionsApi.BuildGetSecurityRolesByIdPermissionsGlobalRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityRolePermissionsApi.NewGetSecurityRolesByIdPermissionsGlobalRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolePermissionsApi.GetSecurityRolesByIdPermissionsGlobal``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -537,7 +537,7 @@ Name | Type | Description  | Notes
 
 ## GetSecurityRolesByIdPermissionsPamProviders
 
-> []SecuritySecurityRolePermissionsPamProviderPermissionResponse BuildGetSecurityRolesByIdPermissionsPamProvidersRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []SecuritySecurityRolePermissionsPamProviderPermissionResponse NewGetSecurityRolesByIdPermissionsPamProvidersRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all PAM provider permissions associated with the security role that matches the id.
 
@@ -560,7 +560,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolePermissionsApi.BuildGetSecurityRolesByIdPermissionsPamProvidersRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityRolePermissionsApi.NewGetSecurityRolesByIdPermissionsPamProvidersRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolePermissionsApi.GetSecurityRolesByIdPermissionsPamProviders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSecurityRolesByIdPermissionsCollections
 
-> []SecuritySecurityRolePermissionsCollectionPermissionResponse BuildUpdateSecurityRolesByIdPermissionsCollectionsRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsCollectionPermissionRequest(securitySecurityRolePermissionsCollectionPermissionRequest).Execute()
+> []SecuritySecurityRolePermissionsCollectionPermissionResponse NewUpdateSecurityRolesByIdPermissionsCollectionsRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsCollectionPermissionRequest(securitySecurityRolePermissionsCollectionPermissionRequest).Execute()
 
 Sets collection permissions to the security role that matches the id.
 
@@ -635,7 +635,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolePermissionsApi.BuildUpdateSecurityRolesByIdPermissionsCollectionsRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsCollectionPermissionRequest(securitySecurityRolePermissionsCollectionPermissionRequest).Execute()
+    resp, r, err := apiClient.SecurityRolePermissionsApi.NewUpdateSecurityRolesByIdPermissionsCollectionsRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsCollectionPermissionRequest(securitySecurityRolePermissionsCollectionPermissionRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolePermissionsApi.UpdateSecurityRolesByIdPermissionsCollections``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -685,7 +685,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSecurityRolesByIdPermissionsContainers
 
-> []SecuritySecurityRolePermissionsContainerPermissionResponse BuildUpdateSecurityRolesByIdPermissionsContainersRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsContainerPermissionRequest(securitySecurityRolePermissionsContainerPermissionRequest).Execute()
+> []SecuritySecurityRolePermissionsContainerPermissionResponse NewUpdateSecurityRolesByIdPermissionsContainersRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsContainerPermissionRequest(securitySecurityRolePermissionsContainerPermissionRequest).Execute()
 
 Sets container permissions to the security role that matches the id.
 
@@ -711,7 +711,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolePermissionsApi.BuildUpdateSecurityRolesByIdPermissionsContainersRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsContainerPermissionRequest(securitySecurityRolePermissionsContainerPermissionRequest).Execute()
+    resp, r, err := apiClient.SecurityRolePermissionsApi.NewUpdateSecurityRolesByIdPermissionsContainersRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsContainerPermissionRequest(securitySecurityRolePermissionsContainerPermissionRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolePermissionsApi.UpdateSecurityRolesByIdPermissionsContainers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -761,7 +761,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSecurityRolesByIdPermissionsGlobal
 
-> []SecuritySecurityRolePermissionsGlobalPermissionResponse BuildUpdateSecurityRolesByIdPermissionsGlobalRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsGlobalPermissionRequest(securitySecurityRolePermissionsGlobalPermissionRequest).Execute()
+> []SecuritySecurityRolePermissionsGlobalPermissionResponse NewUpdateSecurityRolesByIdPermissionsGlobalRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsGlobalPermissionRequest(securitySecurityRolePermissionsGlobalPermissionRequest).Execute()
 
 Adds global permissions to the security role that matches the id.
 
@@ -787,7 +787,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolePermissionsApi.BuildUpdateSecurityRolesByIdPermissionsGlobalRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsGlobalPermissionRequest(securitySecurityRolePermissionsGlobalPermissionRequest).Execute()
+    resp, r, err := apiClient.SecurityRolePermissionsApi.NewUpdateSecurityRolesByIdPermissionsGlobalRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsGlobalPermissionRequest(securitySecurityRolePermissionsGlobalPermissionRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolePermissionsApi.UpdateSecurityRolesByIdPermissionsGlobal``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -837,7 +837,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSecurityRolesByIdPermissionsPamProviders
 
-> []SecuritySecurityRolePermissionsPamProviderPermissionResponse BuildUpdateSecurityRolesByIdPermissionsPamProvidersRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsPamProviderPermissionRequest(securitySecurityRolePermissionsPamProviderPermissionRequest).Execute()
+> []SecuritySecurityRolePermissionsPamProviderPermissionResponse NewUpdateSecurityRolesByIdPermissionsPamProvidersRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsPamProviderPermissionRequest(securitySecurityRolePermissionsPamProviderPermissionRequest).Execute()
 
 Sets PAM provider permissions to the security role that matches the id.
 
@@ -863,7 +863,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolePermissionsApi.BuildUpdateSecurityRolesByIdPermissionsPamProvidersRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsPamProviderPermissionRequest(securitySecurityRolePermissionsPamProviderPermissionRequest).Execute()
+    resp, r, err := apiClient.SecurityRolePermissionsApi.NewUpdateSecurityRolesByIdPermissionsPamProvidersRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolePermissionsPamProviderPermissionRequest(securitySecurityRolePermissionsPamProviderPermissionRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolePermissionsApi.UpdateSecurityRolesByIdPermissionsPamProviders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

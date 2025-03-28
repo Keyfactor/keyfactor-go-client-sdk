@@ -95,7 +95,7 @@ CreateEnrollmentPFX Performs a PFX Enrollment based upon the provided request
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateEnrollmentPFXRequest
 */
-func (a *EnrollmentApiService) BuildCreateEnrollmentPFXRequest(ctx context.Context) ApiCreateEnrollmentPFXRequest {
+func (a *EnrollmentApiService) NewCreateEnrollmentPFXRequest(ctx context.Context) ApiCreateEnrollmentPFXRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "2"

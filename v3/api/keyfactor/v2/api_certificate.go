@@ -71,7 +71,7 @@ GetCertificatesIdentityAuditById Audit identity permissions for certificate
 	@param id The Id of the certificate being checked
 	@return ApiGetCertificatesIdentityAuditByIdRequest
 */
-func (a *CertificateApiService) BuildGetCertificatesIdentityAuditByIdRequest(ctx context.Context, id int32) ApiGetCertificatesIdentityAuditByIdRequest {
+func (a *CertificateApiService) NewGetCertificatesIdentityAuditByIdRequest(ctx context.Context, id int32) ApiGetCertificatesIdentityAuditByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "2"

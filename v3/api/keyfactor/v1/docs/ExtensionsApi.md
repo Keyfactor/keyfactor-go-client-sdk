@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## CreateExtensionsScripts
 
-> ScriptsScriptResponse BuildCreateExtensionsScriptsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ScriptsScriptCreateRequest(scriptsScriptCreateRequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ScriptsScriptResponse NewCreateExtensionsScriptsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ScriptsScriptCreateRequest(scriptsScriptCreateRequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Adds a new script
 
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExtensionsApi.BuildCreateExtensionsScriptsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ScriptsScriptCreateRequest(scriptsScriptCreateRequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ExtensionsApi.NewCreateExtensionsScriptsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ScriptsScriptCreateRequest(scriptsScriptCreateRequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExtensionsApi.CreateExtensionsScripts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## DeleteExtensionsScriptsById
 
-> BuildDeleteExtensionsScriptsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteExtensionsScriptsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes a script. Script cannot be configured to an alert or workflow.
 
@@ -105,7 +105,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExtensionsApi.BuildDeleteExtensionsScriptsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ExtensionsApi.NewDeleteExtensionsScriptsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExtensionsApi.DeleteExtensionsScriptsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## GetExtensionsScripts
 
-> []ScriptsScriptQueryResponse BuildGetExtensionsScriptsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ScriptsScriptQueryResponse NewGetExtensionsScriptsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all scripts according to the provided filter and output parameters
 
@@ -179,7 +179,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExtensionsApi.BuildGetExtensionsScriptsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ExtensionsApi.NewGetExtensionsScriptsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExtensionsApi.GetExtensionsScripts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ## GetExtensionsScriptsById
 
-> ScriptsScriptResponse BuildGetExtensionsScriptsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ScriptsScriptResponse NewGetExtensionsScriptsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a single script that matches the provided Id
 
@@ -251,7 +251,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExtensionsApi.BuildGetExtensionsScriptsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ExtensionsApi.NewGetExtensionsScriptsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExtensionsApi.GetExtensionsScriptsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ## UpdateExtensionsScripts
 
-> ScriptsScriptResponse BuildUpdateExtensionsScriptsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ScriptsScriptsUpdateRequest(scriptsScriptsUpdateRequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ScriptsScriptResponse NewUpdateExtensionsScriptsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ScriptsScriptsUpdateRequest(scriptsScriptsUpdateRequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Updates a script
 
@@ -323,7 +323,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExtensionsApi.BuildUpdateExtensionsScriptsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ScriptsScriptsUpdateRequest(scriptsScriptsUpdateRequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ExtensionsApi.NewUpdateExtensionsScriptsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ScriptsScriptsUpdateRequest(scriptsScriptsUpdateRequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExtensionsApi.UpdateExtensionsScripts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

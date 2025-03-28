@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## CreateCertificateAuthorityCAConnectors
 
-> CertificateAuthoritiesCAConnectorResponse BuildCreateCertificateAuthorityCAConnectorsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAConnectorRequest(certificateAuthoritiesCAConnectorRequest).Execute()
+> CertificateAuthoritiesCAConnectorResponse NewCreateCertificateAuthorityCAConnectorsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAConnectorRequest(certificateAuthoritiesCAConnectorRequest).Execute()
 
 Creates a new CA Connector object
 
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CAConnectorApi.BuildCreateCertificateAuthorityCAConnectorsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAConnectorRequest(certificateAuthoritiesCAConnectorRequest).Execute()
+    resp, r, err := apiClient.CAConnectorApi.NewCreateCertificateAuthorityCAConnectorsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAConnectorRequest(certificateAuthoritiesCAConnectorRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CAConnectorApi.CreateCertificateAuthorityCAConnectors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## DeleteCertificateAuthorityCAConnectorsById
 
-> BuildDeleteCertificateAuthorityCAConnectorsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteCertificateAuthorityCAConnectorsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes a CA Connector with the specific ID
 
@@ -105,7 +105,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CAConnectorApi.BuildDeleteCertificateAuthorityCAConnectorsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CAConnectorApi.NewDeleteCertificateAuthorityCAConnectorsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CAConnectorApi.DeleteCertificateAuthorityCAConnectorsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificateAuthorityCAConnectors
 
-> []CertificateAuthoritiesCAConnectorResponse BuildGetCertificateAuthorityCAConnectorsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CertificateAuthoritiesCAConnectorResponse NewGetCertificateAuthorityCAConnectorsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all CA Connectors
 
@@ -174,7 +174,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CAConnectorApi.BuildGetCertificateAuthorityCAConnectorsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CAConnectorApi.NewGetCertificateAuthorityCAConnectorsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CAConnectorApi.GetCertificateAuthorityCAConnectors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificateAuthorityCAConnectorsById
 
-> CertificateAuthoritiesCAConnectorResponse BuildGetCertificateAuthorityCAConnectorsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CertificateAuthoritiesCAConnectorResponse NewGetCertificateAuthorityCAConnectorsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a CA Connector with the specific ID
 
@@ -241,7 +241,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CAConnectorApi.BuildGetCertificateAuthorityCAConnectorsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CAConnectorApi.NewGetCertificateAuthorityCAConnectorsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CAConnectorApi.GetCertificateAuthorityCAConnectorsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -290,7 +290,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCertificateAuthorityCAConnectorsById
 
-> CertificateAuthoritiesCAConnectorResponse BuildUpdateCertificateAuthorityCAConnectorsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAConnectorRequest(certificateAuthoritiesCAConnectorRequest).Execute()
+> CertificateAuthoritiesCAConnectorResponse NewUpdateCertificateAuthorityCAConnectorsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAConnectorRequest(certificateAuthoritiesCAConnectorRequest).Execute()
 
 Updates an existing CA Connector
 
@@ -314,7 +314,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CAConnectorApi.BuildUpdateCertificateAuthorityCAConnectorsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAConnectorRequest(certificateAuthoritiesCAConnectorRequest).Execute()
+    resp, r, err := apiClient.CAConnectorApi.NewUpdateCertificateAuthorityCAConnectorsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAConnectorRequest(certificateAuthoritiesCAConnectorRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CAConnectorApi.UpdateCertificateAuthorityCAConnectorsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

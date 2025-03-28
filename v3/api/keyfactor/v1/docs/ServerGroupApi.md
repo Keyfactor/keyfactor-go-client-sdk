@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## CreateSSHServerGroups
 
-> CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse BuildCreateSSHServerGroupsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest(cSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest).Execute()
+> CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse NewCreateSSHServerGroupsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest(cSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest).Execute()
 
 Creates a server group with the provided properties
 
@@ -41,7 +41,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerGroupApi.BuildCreateSSHServerGroupsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest(cSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest).Execute()
+    resp, r, err := apiClient.ServerGroupApi.NewCreateSSHServerGroupsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest(cSSCMSDataModelModelsSSHServerGroupsServerGroupCreationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.CreateSSHServerGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ## CreateSSHServerGroupsAccess
 
-> CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse BuildCreateSSHServerGroupsAccessRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest(cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest).Execute()
+> CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse NewCreateSSHServerGroupsAccessRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest(cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest).Execute()
 
 Add access rules to the server group
 
@@ -109,7 +109,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerGroupApi.BuildCreateSSHServerGroupsAccessRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest(cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest).Execute()
+    resp, r, err := apiClient.ServerGroupApi.NewCreateSSHServerGroupsAccessRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest(cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.CreateSSHServerGroupsAccess``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ## DeleteSSHServerGroupsAccess
 
-> CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse BuildDeleteSSHServerGroupsAccessRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest(cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest).Execute()
+> CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse NewDeleteSSHServerGroupsAccessRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest(cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest).Execute()
 
 Removes access mappings for the specified server group
 
@@ -177,7 +177,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerGroupApi.BuildDeleteSSHServerGroupsAccessRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest(cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest).Execute()
+    resp, r, err := apiClient.ServerGroupApi.NewDeleteSSHServerGroupsAccessRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHAccessServerGroupAccessRequest(cSSCMSDataModelModelsSSHAccessServerGroupAccessRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.DeleteSSHServerGroupsAccess``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ## DeleteSSHServerGroupsById
 
-> BuildDeleteSSHServerGroupsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteSSHServerGroupsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes a ServerGroup associated with the provided identifier
 
@@ -245,7 +245,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerGroupApi.BuildDeleteSSHServerGroupsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ServerGroupApi.NewDeleteSSHServerGroupsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.DeleteSSHServerGroupsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 
 ## GetSSHServerGroups
 
-> []CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse BuildGetSSHServerGroupsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse NewGetSSHServerGroupsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all server groups according to the provided filter parameters
 
@@ -319,7 +319,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerGroupApi.BuildGetSSHServerGroupsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ServerGroupApi.NewGetSSHServerGroupsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.GetSSHServerGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
 
 ## GetSSHServerGroupsAccessById
 
-> CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse BuildGetSSHServerGroupsAccessByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse NewGetSSHServerGroupsAccessByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Retrieves logons and users with access to those logons for an existing server group
 
@@ -391,7 +391,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerGroupApi.BuildGetSSHServerGroupsAccessByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ServerGroupApi.NewGetSSHServerGroupsAccessByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.GetSSHServerGroupsAccessById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -440,7 +440,7 @@ Name | Type | Description  | Notes
 
 ## GetSSHServerGroupsById
 
-> CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse BuildGetSSHServerGroupsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse NewGetSSHServerGroupsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a ServerGroup associated with the provided identifier
 
@@ -463,7 +463,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerGroupApi.BuildGetSSHServerGroupsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ServerGroupApi.NewGetSSHServerGroupsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.GetSSHServerGroupsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -512,7 +512,7 @@ Name | Type | Description  | Notes
 
 ## GetSSHServerGroupsName
 
-> CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse BuildGetSSHServerGroupsNameRequest(ctx, name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse NewGetSSHServerGroupsNameRequest(ctx, name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a ServerGroup associated with the provided identifier
 
@@ -535,7 +535,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerGroupApi.BuildGetSSHServerGroupsNameRequest(context.Background(), name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ServerGroupApi.NewGetSSHServerGroupsNameRequest(context.Background(), name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.GetSSHServerGroupsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -584,7 +584,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSSHServerGroups
 
-> CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse BuildUpdateSSHServerGroupsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest(cSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest).Execute()
+> CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse NewUpdateSSHServerGroupsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest(cSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest).Execute()
 
 Updates an existing server group with the provided properties
 
@@ -607,7 +607,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServerGroupApi.BuildUpdateSSHServerGroupsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest(cSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest).Execute()
+    resp, r, err := apiClient.ServerGroupApi.NewUpdateSSHServerGroupsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest(cSSCMSDataModelModelsSSHServerGroupsServerGroupUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.UpdateSSHServerGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

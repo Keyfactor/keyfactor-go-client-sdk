@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## CreateSecurityRoles
 
-> SecuritySecurityRolesSecurityRoleResponse BuildCreateSecurityRolesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolesSecurityRoleCreationRequest(securitySecurityRolesSecurityRoleCreationRequest).Execute()
+> SecuritySecurityRolesSecurityRoleResponse NewCreateSecurityRolesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolesSecurityRoleCreationRequest(securitySecurityRolesSecurityRoleCreationRequest).Execute()
 
 Adds a new security role to the system.
 
@@ -36,7 +36,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolesApi.BuildCreateSecurityRolesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolesSecurityRoleCreationRequest(securitySecurityRolesSecurityRoleCreationRequest).Execute()
+    resp, r, err := apiClient.SecurityRolesApi.NewCreateSecurityRolesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolesSecurityRoleCreationRequest(securitySecurityRolesSecurityRoleCreationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolesApi.CreateSecurityRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ## GetSecurityRoles
 
-> []SecuritySecurityRolesSecurityRoleQueryResponse BuildGetSecurityRolesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []SecuritySecurityRolesSecurityRoleQueryResponse NewGetSecurityRolesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all security roles according to the provided filter and output parameters.
 
@@ -108,7 +108,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolesApi.BuildGetSecurityRolesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityRolesApi.NewGetSecurityRolesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolesApi.GetSecurityRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ## GetSecurityRolesById
 
-> SecuritySecurityRolesSecurityRoleResponse BuildGetSecurityRolesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> SecuritySecurityRolesSecurityRoleResponse NewGetSecurityRolesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a single security role that matches the id.
 
@@ -180,7 +180,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolesApi.BuildGetSecurityRolesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityRolesApi.NewGetSecurityRolesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolesApi.GetSecurityRolesById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSecurityRoles
 
-> SecuritySecurityRolesSecurityRoleResponse BuildUpdateSecurityRolesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolesSecurityRoleUpdateRequest(securitySecurityRolesSecurityRoleUpdateRequest).Execute()
+> SecuritySecurityRolesSecurityRoleResponse NewUpdateSecurityRolesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolesSecurityRoleUpdateRequest(securitySecurityRolesSecurityRoleUpdateRequest).Execute()
 
 Updates an existing security role.
 
@@ -252,7 +252,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolesApi.BuildUpdateSecurityRolesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolesSecurityRoleUpdateRequest(securitySecurityRolesSecurityRoleUpdateRequest).Execute()
+    resp, r, err := apiClient.SecurityRolesApi.NewUpdateSecurityRolesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityRolesSecurityRoleUpdateRequest(securitySecurityRolesSecurityRoleUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolesApi.UpdateSecurityRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

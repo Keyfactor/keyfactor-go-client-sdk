@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## CreateSecurityClaims
 
-> SecurityRoleClaimDefinitionsRoleClaimDefinitionResponse BuildCreateSecurityClaimsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest(securityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest).Execute()
+> SecurityRoleClaimDefinitionsRoleClaimDefinitionResponse NewCreateSecurityClaimsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest(securityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest).Execute()
 
 Adds a new claim definition to the system.
 
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityClaimsApi.BuildCreateSecurityClaimsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest(securityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest).Execute()
+    resp, r, err := apiClient.SecurityClaimsApi.NewCreateSecurityClaimsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest(securityRoleClaimDefinitionsRoleClaimDefinitionCreationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityClaimsApi.CreateSecurityClaims``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## DeleteSecurityClaimsById
 
-> BuildDeleteSecurityClaimsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteSecurityClaimsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Removes a claim definition from the system.
 
@@ -106,7 +106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityClaimsApi.BuildDeleteSecurityClaimsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityClaimsApi.NewDeleteSecurityClaimsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityClaimsApi.DeleteSecurityClaimsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ## GetSecurityClaims
 
-> []SecurityRoleClaimDefinitionsRoleClaimDefinitionQueryResponse BuildGetSecurityClaimsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []SecurityRoleClaimDefinitionsRoleClaimDefinitionQueryResponse NewGetSecurityClaimsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all claim definitions according to the provided filter and output parameters.
 
@@ -180,7 +180,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityClaimsApi.BuildGetSecurityClaimsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityClaimsApi.NewGetSecurityClaimsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityClaimsApi.GetSecurityClaims``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ## GetSecurityClaimsById
 
-> SecurityRoleClaimDefinitionsRoleClaimDefinitionResponse BuildGetSecurityClaimsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> SecurityRoleClaimDefinitionsRoleClaimDefinitionResponse NewGetSecurityClaimsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a single claim definition that matches the id.
 
@@ -252,7 +252,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityClaimsApi.BuildGetSecurityClaimsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityClaimsApi.NewGetSecurityClaimsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityClaimsApi.GetSecurityClaimsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ## GetSecurityClaimsRoles
 
-> []SecurityRoleClaimDefinitionsSecurityRoleForClaimResponse BuildGetSecurityClaimsRolesRequest(ctx).ClaimType(claimType).ClaimValue(claimValue).ProviderAuthenticationScheme(providerAuthenticationScheme).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []SecurityRoleClaimDefinitionsSecurityRoleForClaimResponse NewGetSecurityClaimsRolesRequest(ctx).ClaimType(claimType).ClaimValue(claimValue).ProviderAuthenticationScheme(providerAuthenticationScheme).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a list of roles granted by the claim with the provided id.
 
@@ -326,7 +326,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityClaimsApi.BuildGetSecurityClaimsRolesRequest(context.Background()).ClaimType(claimType).ClaimValue(claimValue).ProviderAuthenticationScheme(providerAuthenticationScheme).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityClaimsApi.NewGetSecurityClaimsRolesRequest(context.Background()).ClaimType(claimType).ClaimValue(claimValue).ProviderAuthenticationScheme(providerAuthenticationScheme).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityClaimsApi.GetSecurityClaimsRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -373,7 +373,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSecurityClaims
 
-> SecurityRoleClaimDefinitionsRoleClaimDefinitionResponse BuildUpdateSecurityClaimsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityRoleClaimDefinitionsRoleClaimDefinitionUpdateRequest(securityRoleClaimDefinitionsRoleClaimDefinitionUpdateRequest).Execute()
+> SecurityRoleClaimDefinitionsRoleClaimDefinitionResponse NewUpdateSecurityClaimsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityRoleClaimDefinitionsRoleClaimDefinitionUpdateRequest(securityRoleClaimDefinitionsRoleClaimDefinitionUpdateRequest).Execute()
 
 Updates an existing claim definition.
 
@@ -396,7 +396,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityClaimsApi.BuildUpdateSecurityClaimsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityRoleClaimDefinitionsRoleClaimDefinitionUpdateRequest(securityRoleClaimDefinitionsRoleClaimDefinitionUpdateRequest).Execute()
+    resp, r, err := apiClient.SecurityClaimsApi.NewUpdateSecurityClaimsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityRoleClaimDefinitionsRoleClaimDefinitionUpdateRequest(securityRoleClaimDefinitionsRoleClaimDefinitionUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityClaimsApi.UpdateSecurityClaims``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

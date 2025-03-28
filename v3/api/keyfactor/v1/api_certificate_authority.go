@@ -74,7 +74,7 @@ CreateCertificateAuthority Creates a new CertificateAuthority object
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificateAuthorityRequest
 */
-func (a *CertificateAuthorityApiService) BuildCreateCertificateAuthorityRequest(ctx context.Context) ApiCreateCertificateAuthorityRequest {
+func (a *CertificateAuthorityApiService) NewCreateCertificateAuthorityRequest(ctx context.Context) ApiCreateCertificateAuthorityRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -222,7 +222,7 @@ CreateCertificateAuthorityAlertRecipientsCAHealthRecipients Creates CA health mo
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest
 */
-func (a *CertificateAuthorityApiService) BuildCreateCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest(ctx context.Context) ApiCreateCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest {
+func (a *CertificateAuthorityApiService) NewCreateCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest(ctx context.Context) ApiCreateCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -367,7 +367,7 @@ CreateCertificateAuthorityAlertRecipientsCAThresholdRecipients Creates CA thresh
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest
 */
-func (a *CertificateAuthorityApiService) BuildCreateCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest(ctx context.Context) ApiCreateCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest {
+func (a *CertificateAuthorityApiService) NewCreateCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest(ctx context.Context) ApiCreateCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -512,7 +512,7 @@ CreateCertificateAuthorityImport Imports any certificate authorities from the pr
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificateAuthorityImportRequest
 */
-func (a *CertificateAuthorityApiService) BuildCreateCertificateAuthorityImportRequest(ctx context.Context) ApiCreateCertificateAuthorityImportRequest {
+func (a *CertificateAuthorityApiService) NewCreateCertificateAuthorityImportRequest(ctx context.Context) ApiCreateCertificateAuthorityImportRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -646,7 +646,7 @@ CreateCertificateAuthorityPublishCRL Publishes a CRL according to the provided r
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificateAuthorityPublishCRLRequest
 */
-func (a *CertificateAuthorityApiService) BuildCreateCertificateAuthorityPublishCRLRequest(ctx context.Context) ApiCreateCertificateAuthorityPublishCRLRequest {
+func (a *CertificateAuthorityApiService) NewCreateCertificateAuthorityPublishCRLRequest(ctx context.Context) ApiCreateCertificateAuthorityPublishCRLRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -779,7 +779,7 @@ CreateCertificateAuthorityTaskQueueTest Tests the connection info for the TaskQu
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificateAuthorityTaskQueueTestRequest
 */
-func (a *CertificateAuthorityApiService) BuildCreateCertificateAuthorityTaskQueueTestRequest(ctx context.Context) ApiCreateCertificateAuthorityTaskQueueTestRequest {
+func (a *CertificateAuthorityApiService) NewCreateCertificateAuthorityTaskQueueTestRequest(ctx context.Context) ApiCreateCertificateAuthorityTaskQueueTestRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -924,7 +924,7 @@ CreateCertificateAuthorityTest Validates the connection info for the CA provided
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificateAuthorityTestRequest
 */
-func (a *CertificateAuthorityApiService) BuildCreateCertificateAuthorityTestRequest(ctx context.Context) ApiCreateCertificateAuthorityTestRequest {
+func (a *CertificateAuthorityApiService) NewCreateCertificateAuthorityTestRequest(ctx context.Context) ApiCreateCertificateAuthorityTestRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1064,7 +1064,7 @@ DeleteCertificateAuthorityAlertRecipientsCAHealthRecipientsById Deletes a CA hea
 	@param id The ID of the health monitoring recipient to delete
 	@return ApiDeleteCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest
 */
-func (a *CertificateAuthorityApiService) BuildDeleteCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest(ctx context.Context, id int32) ApiDeleteCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest {
+func (a *CertificateAuthorityApiService) NewDeleteCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest(ctx context.Context, id int32) ApiDeleteCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1199,7 +1199,7 @@ DeleteCertificateAuthorityAlertRecipientsCAThresholdRecipientsById Deletes a CA 
 	@param id The ID of the threshold alert recipient to delete
 	@return ApiDeleteCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest
 */
-func (a *CertificateAuthorityApiService) BuildDeleteCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest(ctx context.Context, id int32) ApiDeleteCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest {
+func (a *CertificateAuthorityApiService) NewDeleteCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest(ctx context.Context, id int32) ApiDeleteCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1334,7 +1334,7 @@ DeleteCertificateAuthorityById Deletes a CertificateAuthority from the system, s
 	@param id
 	@return ApiDeleteCertificateAuthorityByIdRequest
 */
-func (a *CertificateAuthorityApiService) BuildDeleteCertificateAuthorityByIdRequest(ctx context.Context, id int32) ApiDeleteCertificateAuthorityByIdRequest {
+func (a *CertificateAuthorityApiService) NewDeleteCertificateAuthorityByIdRequest(ctx context.Context, id int32) ApiDeleteCertificateAuthorityByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1491,7 +1491,7 @@ GetCertificateAuthority Returns all certificate authorities according to the pro
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCertificateAuthorityRequest
 */
-func (a *CertificateAuthorityApiService) BuildGetCertificateAuthorityRequest(ctx context.Context) ApiGetCertificateAuthorityRequest {
+func (a *CertificateAuthorityApiService) NewGetCertificateAuthorityRequest(ctx context.Context) ApiGetCertificateAuthorityRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1642,7 +1642,7 @@ GetCertificateAuthorityAlertRecipientsCAHealthRecipients Returns a list of all C
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest
 */
-func (a *CertificateAuthorityApiService) BuildGetCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest(ctx context.Context) ApiGetCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest {
+func (a *CertificateAuthorityApiService) NewGetCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest(ctx context.Context) ApiGetCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1780,7 +1780,7 @@ GetCertificateAuthorityAlertRecipientsCAHealthRecipientsById Returns a CA health
 	@param id The ID of the health monitoring recipient to retrieve
 	@return ApiGetCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest
 */
-func (a *CertificateAuthorityApiService) BuildGetCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest(ctx context.Context, id int32) ApiGetCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest {
+func (a *CertificateAuthorityApiService) NewGetCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest(ctx context.Context, id int32) ApiGetCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1925,7 +1925,7 @@ GetCertificateAuthorityAlertRecipientsCAThresholdRecipients Returns a list of al
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest
 */
-func (a *CertificateAuthorityApiService) BuildGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest(ctx context.Context) ApiGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest {
+func (a *CertificateAuthorityApiService) NewGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest(ctx context.Context) ApiGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2063,7 +2063,7 @@ GetCertificateAuthorityAlertRecipientsCAThresholdRecipientsById Returns a CA thr
 	@param id The ID of the threshold alert recipient to retrieve
 	@return ApiGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest
 */
-func (a *CertificateAuthorityApiService) BuildGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest(ctx context.Context, id int32) ApiGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest {
+func (a *CertificateAuthorityApiService) NewGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest(ctx context.Context, id int32) ApiGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2208,7 +2208,7 @@ GetCertificateAuthorityAvailableForests Returns a list of available forests that
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCertificateAuthorityAvailableForestsRequest
 */
-func (a *CertificateAuthorityApiService) BuildGetCertificateAuthorityAvailableForestsRequest(ctx context.Context) ApiGetCertificateAuthorityAvailableForestsRequest {
+func (a *CertificateAuthorityApiService) NewGetCertificateAuthorityAvailableForestsRequest(ctx context.Context) ApiGetCertificateAuthorityAvailableForestsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2346,7 +2346,7 @@ GetCertificateAuthorityById Returns details for a single CA, specified by ID
 	@param id
 	@return ApiGetCertificateAuthorityByIdRequest
 */
-func (a *CertificateAuthorityApiService) BuildGetCertificateAuthorityByIdRequest(ctx context.Context, id int32) ApiGetCertificateAuthorityByIdRequest {
+func (a *CertificateAuthorityApiService) NewGetCertificateAuthorityByIdRequest(ctx context.Context, id int32) ApiGetCertificateAuthorityByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2485,7 +2485,7 @@ GetCertificateAuthorityHealthMonitoringSchedule Retrieves the execution schedule
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCertificateAuthorityHealthMonitoringScheduleRequest
 */
-func (a *CertificateAuthorityApiService) BuildGetCertificateAuthorityHealthMonitoringScheduleRequest(ctx context.Context) ApiGetCertificateAuthorityHealthMonitoringScheduleRequest {
+func (a *CertificateAuthorityApiService) NewGetCertificateAuthorityHealthMonitoringScheduleRequest(ctx context.Context) ApiGetCertificateAuthorityHealthMonitoringScheduleRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2621,7 +2621,7 @@ GetCertificateAuthoritySourceCount Returns a count of certificate authorities wi
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCertificateAuthoritySourceCountRequest
 */
-func (a *CertificateAuthorityApiService) BuildGetCertificateAuthoritySourceCountRequest(ctx context.Context) ApiGetCertificateAuthoritySourceCountRequest {
+func (a *CertificateAuthorityApiService) NewGetCertificateAuthoritySourceCountRequest(ctx context.Context) ApiGetCertificateAuthoritySourceCountRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2757,7 +2757,7 @@ GetCertificateAuthorityTaskQueue Retrieves credentials and connection informatio
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCertificateAuthorityTaskQueueRequest
 */
-func (a *CertificateAuthorityApiService) BuildGetCertificateAuthorityTaskQueueRequest(ctx context.Context) ApiGetCertificateAuthorityTaskQueueRequest {
+func (a *CertificateAuthorityApiService) NewGetCertificateAuthorityTaskQueueRequest(ctx context.Context) ApiGetCertificateAuthorityTaskQueueRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2905,7 +2905,7 @@ UpdateCertificateAuthority Updates a CertificateAuthority object
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateCertificateAuthorityRequest
 */
-func (a *CertificateAuthorityApiService) BuildUpdateCertificateAuthorityRequest(ctx context.Context) ApiUpdateCertificateAuthorityRequest {
+func (a *CertificateAuthorityApiService) NewUpdateCertificateAuthorityRequest(ctx context.Context) ApiUpdateCertificateAuthorityRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -3055,7 +3055,7 @@ UpdateCertificateAuthorityAlertRecipientsCAHealthRecipientsById Updates a CA hea
 	@param id The ID of the alert recipient to be updated
 	@return ApiUpdateCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest
 */
-func (a *CertificateAuthorityApiService) BuildUpdateCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest(ctx context.Context, id int32) ApiUpdateCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest {
+func (a *CertificateAuthorityApiService) NewUpdateCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest(ctx context.Context, id int32) ApiUpdateCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -3211,7 +3211,7 @@ UpdateCertificateAuthorityAlertRecipientsCAThresholdRecipientsById Updates a CA 
 	@param id The ID of the alert recipient to be updated.
 	@return ApiUpdateCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest
 */
-func (a *CertificateAuthorityApiService) BuildUpdateCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest(ctx context.Context, id int32) ApiUpdateCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest {
+func (a *CertificateAuthorityApiService) NewUpdateCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest(ctx context.Context, id int32) ApiUpdateCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -3365,7 +3365,7 @@ UpdateCertificateAuthorityTaskQueue Updates credentials and connection informati
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateCertificateAuthorityTaskQueueRequest
 */
-func (a *CertificateAuthorityApiService) BuildUpdateCertificateAuthorityTaskQueueRequest(ctx context.Context) ApiUpdateCertificateAuthorityTaskQueueRequest {
+func (a *CertificateAuthorityApiService) NewUpdateCertificateAuthorityTaskQueueRequest(ctx context.Context) ApiUpdateCertificateAuthorityTaskQueueRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

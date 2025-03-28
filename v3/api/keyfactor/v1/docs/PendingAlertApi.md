@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## CreateAlertsPending
 
-> AlertsPendingPendingAlertDefinitionResponse BuildCreateAlertsPendingRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsPendingPendingAlertCreationRequest(alertsPendingPendingAlertCreationRequest).Execute()
+> AlertsPendingPendingAlertDefinitionResponse NewCreateAlertsPendingRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsPendingPendingAlertCreationRequest(alertsPendingPendingAlertCreationRequest).Execute()
 
 Add a pending alert
 
@@ -41,7 +41,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PendingAlertApi.BuildCreateAlertsPendingRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsPendingPendingAlertCreationRequest(alertsPendingPendingAlertCreationRequest).Execute()
+    resp, r, err := apiClient.PendingAlertApi.NewCreateAlertsPendingRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsPendingPendingAlertCreationRequest(alertsPendingPendingAlertCreationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.CreateAlertsPending``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ## CreateAlertsPendingTest
 
-> AlertsPendingPendingAlertTestResponse BuildCreateAlertsPendingTestRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsPendingPendingAlertTestRequest(alertsPendingPendingAlertTestRequest).Execute()
+> AlertsPendingPendingAlertTestResponse NewCreateAlertsPendingTestRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsPendingPendingAlertTestRequest(alertsPendingPendingAlertTestRequest).Execute()
 
 Test pending alert. Will send alert emails if SendAlerts is true
 
@@ -109,7 +109,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PendingAlertApi.BuildCreateAlertsPendingTestRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsPendingPendingAlertTestRequest(alertsPendingPendingAlertTestRequest).Execute()
+    resp, r, err := apiClient.PendingAlertApi.NewCreateAlertsPendingTestRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsPendingPendingAlertTestRequest(alertsPendingPendingAlertTestRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.CreateAlertsPendingTest``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ## CreateAlertsPendingTestAll
 
-> AlertsPendingPendingAlertTestResponse BuildCreateAlertsPendingTestAllRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsPendingPendingAlertTestAllRequest(alertsPendingPendingAlertTestAllRequest).Execute()
+> AlertsPendingPendingAlertTestResponse NewCreateAlertsPendingTestAllRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsPendingPendingAlertTestAllRequest(alertsPendingPendingAlertTestAllRequest).Execute()
 
 Test all pending alerts. Will send alert emails if SendAlerts is true
 
@@ -177,7 +177,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PendingAlertApi.BuildCreateAlertsPendingTestAllRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsPendingPendingAlertTestAllRequest(alertsPendingPendingAlertTestAllRequest).Execute()
+    resp, r, err := apiClient.PendingAlertApi.NewCreateAlertsPendingTestAllRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsPendingPendingAlertTestAllRequest(alertsPendingPendingAlertTestAllRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.CreateAlertsPendingTestAll``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ## DeleteAlertsPendingById
 
-> BuildDeleteAlertsPendingByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteAlertsPendingByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Delete a pending alert
 
@@ -245,7 +245,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PendingAlertApi.BuildDeleteAlertsPendingByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.PendingAlertApi.NewDeleteAlertsPendingByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.DeleteAlertsPendingById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 
 ## GetAlertsPending
 
-> []AlertsPendingPendingAlertDefinitionResponse BuildGetAlertsPendingRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []AlertsPendingPendingAlertDefinitionResponse NewGetAlertsPendingRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets all pending alerts according to the provided filter and output parameters
 
@@ -319,7 +319,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PendingAlertApi.BuildGetAlertsPendingRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.PendingAlertApi.NewGetAlertsPendingRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.GetAlertsPending``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
 
 ## GetAlertsPendingById
 
-> AlertsPendingPendingAlertDefinitionResponse BuildGetAlertsPendingByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> AlertsPendingPendingAlertDefinitionResponse NewGetAlertsPendingByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get a pending alert
 
@@ -391,7 +391,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PendingAlertApi.BuildGetAlertsPendingByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.PendingAlertApi.NewGetAlertsPendingByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.GetAlertsPendingById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -440,7 +440,7 @@ Name | Type | Description  | Notes
 
 ## GetAlertsPendingSchedule
 
-> AlertsAlertScheduleAlertScheduleResponse BuildGetAlertsPendingScheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> AlertsAlertScheduleAlertScheduleResponse NewGetAlertsPendingScheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get the schedule for pending alerts
 
@@ -462,7 +462,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PendingAlertApi.BuildGetAlertsPendingScheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.PendingAlertApi.NewGetAlertsPendingScheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.GetAlertsPendingSchedule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -506,7 +506,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAlertsPending
 
-> AlertsPendingPendingAlertDefinitionResponse BuildUpdateAlertsPendingRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsPendingPendingAlertUpdateRequest(alertsPendingPendingAlertUpdateRequest).Execute()
+> AlertsPendingPendingAlertDefinitionResponse NewUpdateAlertsPendingRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsPendingPendingAlertUpdateRequest(alertsPendingPendingAlertUpdateRequest).Execute()
 
 Edit a pending alert
 
@@ -529,7 +529,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PendingAlertApi.BuildUpdateAlertsPendingRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsPendingPendingAlertUpdateRequest(alertsPendingPendingAlertUpdateRequest).Execute()
+    resp, r, err := apiClient.PendingAlertApi.NewUpdateAlertsPendingRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsPendingPendingAlertUpdateRequest(alertsPendingPendingAlertUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.UpdateAlertsPending``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -574,7 +574,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAlertsPendingSchedule
 
-> AlertsAlertScheduleAlertScheduleResponse BuildUpdateAlertsPendingScheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsAlertScheduleAlertScheduleRequest(alertsAlertScheduleAlertScheduleRequest).Execute()
+> AlertsAlertScheduleAlertScheduleResponse NewUpdateAlertsPendingScheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsAlertScheduleAlertScheduleRequest(alertsAlertScheduleAlertScheduleRequest).Execute()
 
 Edit schedule
 
@@ -597,7 +597,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PendingAlertApi.BuildUpdateAlertsPendingScheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsAlertScheduleAlertScheduleRequest(alertsAlertScheduleAlertScheduleRequest).Execute()
+    resp, r, err := apiClient.PendingAlertApi.NewUpdateAlertsPendingScheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsAlertScheduleAlertScheduleRequest(alertsAlertScheduleAlertScheduleRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PendingAlertApi.UpdateAlertsPendingSchedule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

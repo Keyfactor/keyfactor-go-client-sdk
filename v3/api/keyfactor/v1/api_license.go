@@ -61,7 +61,7 @@ GetLicense Gets the current license
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetLicenseRequest
 */
-func (a *LicenseApiService) BuildGetLicenseRequest(ctx context.Context) ApiGetLicenseRequest {
+func (a *LicenseApiService) NewGetLicenseRequest(ctx context.Context) ApiGetLicenseRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

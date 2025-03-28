@@ -71,7 +71,7 @@ CreateWorkflowInstancesInstanceIdRestart Restarts a failed instance against the 
 	@param instanceId The instance Id to restart.
 	@return ApiCreateWorkflowInstancesInstanceIdRestartRequest
 */
-func (a *WorkflowInstanceApiService) BuildCreateWorkflowInstancesInstanceIdRestartRequest(ctx context.Context, instanceId string) ApiCreateWorkflowInstancesInstanceIdRestartRequest {
+func (a *WorkflowInstanceApiService) NewCreateWorkflowInstancesInstanceIdRestartRequest(ctx context.Context, instanceId string) ApiCreateWorkflowInstancesInstanceIdRestartRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -210,7 +210,7 @@ CreateWorkflowInstancesInstanceIdSignals Receives the given signal for the given
 	@param instanceId The instance that is receiving the signal.
 	@return ApiCreateWorkflowInstancesInstanceIdSignalsRequest
 */
-func (a *WorkflowInstanceApiService) BuildCreateWorkflowInstancesInstanceIdSignalsRequest(ctx context.Context, instanceId string) ApiCreateWorkflowInstancesInstanceIdSignalsRequest {
+func (a *WorkflowInstanceApiService) NewCreateWorkflowInstancesInstanceIdSignalsRequest(ctx context.Context, instanceId string) ApiCreateWorkflowInstancesInstanceIdSignalsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -341,7 +341,7 @@ CreateWorkflowInstancesInstanceIdStop Rejects an instance, preventing it from co
 	@param instanceId The Id of the instance to reject.
 	@return ApiCreateWorkflowInstancesInstanceIdStopRequest
 */
-func (a *WorkflowInstanceApiService) BuildCreateWorkflowInstancesInstanceIdStopRequest(ctx context.Context, instanceId string) ApiCreateWorkflowInstancesInstanceIdStopRequest {
+func (a *WorkflowInstanceApiService) NewCreateWorkflowInstancesInstanceIdStopRequest(ctx context.Context, instanceId string) ApiCreateWorkflowInstancesInstanceIdStopRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -470,7 +470,7 @@ DeleteWorkflowInstancesInstanceId Deletes the specified instance.
 	@param instanceId The Id of the instance to be deleted.
 	@return ApiDeleteWorkflowInstancesInstanceIdRequest
 */
-func (a *WorkflowInstanceApiService) BuildDeleteWorkflowInstancesInstanceIdRequest(ctx context.Context, instanceId string) ApiDeleteWorkflowInstancesInstanceIdRequest {
+func (a *WorkflowInstanceApiService) NewDeleteWorkflowInstancesInstanceIdRequest(ctx context.Context, instanceId string) ApiDeleteWorkflowInstancesInstanceIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -627,7 +627,7 @@ GetWorkflowInstances Gets the workflow instances matching the query specificatio
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetWorkflowInstancesRequest
 */
-func (a *WorkflowInstanceApiService) BuildGetWorkflowInstancesRequest(ctx context.Context) ApiGetWorkflowInstancesRequest {
+func (a *WorkflowInstanceApiService) NewGetWorkflowInstancesRequest(ctx context.Context) ApiGetWorkflowInstancesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -808,7 +808,7 @@ GetWorkflowInstancesAssignedToMe Gets the workflow instances waiting on the user
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetWorkflowInstancesAssignedToMeRequest
 */
-func (a *WorkflowInstanceApiService) BuildGetWorkflowInstancesAssignedToMeRequest(ctx context.Context) ApiGetWorkflowInstancesAssignedToMeRequest {
+func (a *WorkflowInstanceApiService) NewGetWorkflowInstancesAssignedToMeRequest(ctx context.Context) ApiGetWorkflowInstancesAssignedToMeRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -961,7 +961,7 @@ GetWorkflowInstancesInstanceId Get information relevant for knowing where an ins
 	@param instanceId The System.Guid identifying the instance.
 	@return ApiGetWorkflowInstancesInstanceIdRequest
 */
-func (a *WorkflowInstanceApiService) BuildGetWorkflowInstancesInstanceIdRequest(ctx context.Context, instanceId string) ApiGetWorkflowInstancesInstanceIdRequest {
+func (a *WorkflowInstanceApiService) NewGetWorkflowInstancesInstanceIdRequest(ctx context.Context, instanceId string) ApiGetWorkflowInstancesInstanceIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1130,7 +1130,7 @@ GetWorkflowInstancesMy Gets the workflow instances started by the user.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetWorkflowInstancesMyRequest
 */
-func (a *WorkflowInstanceApiService) BuildGetWorkflowInstancesMyRequest(ctx context.Context) ApiGetWorkflowInstancesMyRequest {
+func (a *WorkflowInstanceApiService) NewGetWorkflowInstancesMyRequest(ctx context.Context) ApiGetWorkflowInstancesMyRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

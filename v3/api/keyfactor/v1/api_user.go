@@ -69,7 +69,7 @@ CreateSSHUsers Creates a new SSH User.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSSHUsersRequest
 */
-func (a *UserApiService) BuildCreateSSHUsersRequest(ctx context.Context) ApiCreateSSHUsersRequest {
+func (a *UserApiService) NewCreateSSHUsersRequest(ctx context.Context) ApiCreateSSHUsersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -214,7 +214,7 @@ CreateSSHUsersAccess Updates logon access for a user
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSSHUsersAccessRequest
 */
-func (a *UserApiService) BuildCreateSSHUsersAccessRequest(ctx context.Context) ApiCreateSSHUsersAccessRequest {
+func (a *UserApiService) NewCreateSSHUsersAccessRequest(ctx context.Context) ApiCreateSSHUsersAccessRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -354,7 +354,7 @@ DeleteSSHUsersById Deletes an SSH user.
 	@param id The Id of the user to delete.
 	@return ApiDeleteSSHUsersByIdRequest
 */
-func (a *UserApiService) BuildDeleteSSHUsersByIdRequest(ctx context.Context, id int32) ApiDeleteSSHUsersByIdRequest {
+func (a *UserApiService) NewDeleteSSHUsersByIdRequest(ctx context.Context, id int32) ApiDeleteSSHUsersByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -518,7 +518,7 @@ GetSSHUsers Returns users matching the criteria from the provided query paramete
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSSHUsersRequest
 */
-func (a *UserApiService) BuildGetSSHUsersRequest(ctx context.Context) ApiGetSSHUsersRequest {
+func (a *UserApiService) NewGetSSHUsersRequest(ctx context.Context) ApiGetSSHUsersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -674,7 +674,7 @@ GetSSHUsersById Looks up information about an existing SSH user.
 	@param id The Id of the SSH user to retrieve.
 	@return ApiGetSSHUsersByIdRequest
 */
-func (a *UserApiService) BuildGetSSHUsersByIdRequest(ctx context.Context, id int32) ApiGetSSHUsersByIdRequest {
+func (a *UserApiService) NewGetSSHUsersByIdRequest(ctx context.Context, id int32) ApiGetSSHUsersByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -820,7 +820,7 @@ UpdateSSHUsers Updates information about a given user.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSSHUsersRequest
 */
-func (a *UserApiService) BuildUpdateSSHUsersRequest(ctx context.Context) ApiUpdateSSHUsersRequest {
+func (a *UserApiService) NewUpdateSSHUsersRequest(ctx context.Context) ApiUpdateSSHUsersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

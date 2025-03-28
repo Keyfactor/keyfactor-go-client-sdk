@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## CreateOrchestratorJobsAcknowledge
 
-> BuildCreateOrchestratorJobsAcknowledgeRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).OrchestratorJobsAcknowledgeJobRequest(orchestratorJobsAcknowledgeJobRequest).Execute()
+> NewCreateOrchestratorJobsAcknowledgeRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).OrchestratorJobsAcknowledgeJobRequest(orchestratorJobsAcknowledgeJobRequest).Execute()
 
 Acknowledges orchestrator jobs based on the provided information
 
@@ -40,7 +40,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrchestratorJobApi.BuildCreateOrchestratorJobsAcknowledgeRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).OrchestratorJobsAcknowledgeJobRequest(orchestratorJobsAcknowledgeJobRequest).Execute()
+    resp, r, err := apiClient.OrchestratorJobApi.NewCreateOrchestratorJobsAcknowledgeRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).OrchestratorJobsAcknowledgeJobRequest(orchestratorJobsAcknowledgeJobRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrchestratorJobApi.CreateOrchestratorJobsAcknowledge``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## CreateOrchestratorJobsCustom
 
-> OrchestratorJobsJobResponse BuildCreateOrchestratorJobsCustomRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest(cSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest).Execute()
+> OrchestratorJobsJobResponse NewCreateOrchestratorJobsCustomRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest(cSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest).Execute()
 
 Schedules a job for a custom JobType on the agent using the provided information
 
@@ -106,7 +106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrchestratorJobApi.BuildCreateOrchestratorJobsCustomRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest(cSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest).Execute()
+    resp, r, err := apiClient.OrchestratorJobApi.NewCreateOrchestratorJobsCustomRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest(cSSCMSDataModelModelsOrchestratorJobsScheduleJobRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrchestratorJobApi.CreateOrchestratorJobsCustom``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## CreateOrchestratorJobsCustomBulk
 
-> OrchestratorJobsBulkJobResponse BuildCreateOrchestratorJobsCustomBulkRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest(cSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest).Execute()
+> OrchestratorJobsBulkJobResponse NewCreateOrchestratorJobsCustomBulkRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest(cSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest).Execute()
 
 Schedules the same job for a custom JobType on the specified agents using the provided information
 
@@ -174,7 +174,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrchestratorJobApi.BuildCreateOrchestratorJobsCustomBulkRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest(cSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest).Execute()
+    resp, r, err := apiClient.OrchestratorJobApi.NewCreateOrchestratorJobsCustomBulkRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest(cSSCMSDataModelModelsOrchestratorJobsScheduleBulkJobRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrchestratorJobApi.CreateOrchestratorJobsCustomBulk``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 ## CreateOrchestratorJobsReschedule
 
-> BuildCreateOrchestratorJobsRescheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).OrchestratorJobsRescheduleJobRequest(orchestratorJobsRescheduleJobRequest).Execute()
+> NewCreateOrchestratorJobsRescheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).OrchestratorJobsRescheduleJobRequest(orchestratorJobsRescheduleJobRequest).Execute()
 
 Reschedules orchestrator jobs based on the provided information
 
@@ -242,7 +242,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrchestratorJobApi.BuildCreateOrchestratorJobsRescheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).OrchestratorJobsRescheduleJobRequest(orchestratorJobsRescheduleJobRequest).Execute()
+    resp, r, err := apiClient.OrchestratorJobApi.NewCreateOrchestratorJobsRescheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).OrchestratorJobsRescheduleJobRequest(orchestratorJobsRescheduleJobRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrchestratorJobApi.CreateOrchestratorJobsReschedule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## CreateOrchestratorJobsUnschedule
 
-> BuildCreateOrchestratorJobsUnscheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).OrchestratorJobsUnscheduleJobRequest(orchestratorJobsUnscheduleJobRequest).Execute()
+> NewCreateOrchestratorJobsUnscheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).OrchestratorJobsUnscheduleJobRequest(orchestratorJobsUnscheduleJobRequest).Execute()
 
 Unschedules orchestrator jobs based on the provided information
 
@@ -308,7 +308,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrchestratorJobApi.BuildCreateOrchestratorJobsUnscheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).OrchestratorJobsUnscheduleJobRequest(orchestratorJobsUnscheduleJobRequest).Execute()
+    resp, r, err := apiClient.OrchestratorJobApi.NewCreateOrchestratorJobsUnscheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).OrchestratorJobsUnscheduleJobRequest(orchestratorJobsUnscheduleJobRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrchestratorJobApi.CreateOrchestratorJobsUnschedule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## GetOrchestratorJobsJobHistory
 
-> []CertificateStoresJobHistoryResponse BuildGetOrchestratorJobsJobHistoryRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CertificateStoresJobHistoryResponse NewGetOrchestratorJobsJobHistoryRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all histories of an orchestrator job according to the provided filter and output parameters
 
@@ -378,7 +378,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrchestratorJobApi.BuildGetOrchestratorJobsJobHistoryRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.OrchestratorJobApi.NewGetOrchestratorJobsJobHistoryRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrchestratorJobApi.GetOrchestratorJobsJobHistory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -427,7 +427,7 @@ Name | Type | Description  | Notes
 
 ## GetOrchestratorJobsJobStatusData
 
-> OrchestratorJobsCustomJobResultDataResponse BuildGetOrchestratorJobsJobStatusDataRequest(ctx).JobHistoryId(jobHistoryId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> OrchestratorJobsCustomJobResultDataResponse NewGetOrchestratorJobsJobStatusDataRequest(ctx).JobHistoryId(jobHistoryId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Retrieves the results of a custom job using the provided information
 
@@ -450,7 +450,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrchestratorJobApi.BuildGetOrchestratorJobsJobStatusDataRequest(context.Background()).JobHistoryId(jobHistoryId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.OrchestratorJobApi.NewGetOrchestratorJobsJobStatusDataRequest(context.Background()).JobHistoryId(jobHistoryId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrchestratorJobApi.GetOrchestratorJobsJobStatusData``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -495,7 +495,7 @@ Name | Type | Description  | Notes
 
 ## GetOrchestratorJobsScheduledJobs
 
-> []CSSCMSDataModelModelsOrchestratorJobsJob BuildGetOrchestratorJobsScheduledJobsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CSSCMSDataModelModelsOrchestratorJobsJob NewGetOrchestratorJobsScheduledJobsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all scheduled orchestrator jobs according to the provided filter and output parameters
 
@@ -522,7 +522,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrchestratorJobApi.BuildGetOrchestratorJobsScheduledJobsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.OrchestratorJobApi.NewGetOrchestratorJobsScheduledJobsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrchestratorJobApi.GetOrchestratorJobsScheduledJobs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -99,7 +99,7 @@ CreateEnrollmentCSR Performs a CSR Enrollment based upon the provided request
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateEnrollmentCSRRequest
 */
-func (a *EnrollmentApiService) BuildCreateEnrollmentCSRRequest(ctx context.Context) ApiCreateEnrollmentCSRRequest {
+func (a *EnrollmentApiService) NewCreateEnrollmentCSRRequest(ctx context.Context) ApiCreateEnrollmentCSRRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -253,7 +253,7 @@ This functionality is equivalent to the result of pasting a CSR into the field w
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateEnrollmentCSRParseRequest
 */
-func (a *EnrollmentApiService) BuildCreateEnrollmentCSRParseRequest(ctx context.Context) ApiCreateEnrollmentCSRParseRequest {
+func (a *EnrollmentApiService) NewCreateEnrollmentCSRParseRequest(ctx context.Context) ApiCreateEnrollmentCSRParseRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -425,7 +425,7 @@ CreateEnrollmentPFX Performs a PFX Enrollment based upon the provided request
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateEnrollmentPFXRequest
 */
-func (a *EnrollmentApiService) BuildCreateEnrollmentPFXRequest(ctx context.Context) ApiCreateEnrollmentPFXRequest {
+func (a *EnrollmentApiService) NewCreateEnrollmentPFXRequest(ctx context.Context) ApiCreateEnrollmentPFXRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -574,7 +574,7 @@ CreateEnrollmentPFXDeploy Creates management jobs to install a newly enrolled pf
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateEnrollmentPFXDeployRequest
 */
-func (a *EnrollmentApiService) BuildCreateEnrollmentPFXDeployRequest(ctx context.Context) ApiCreateEnrollmentPFXDeployRequest {
+func (a *EnrollmentApiService) NewCreateEnrollmentPFXDeployRequest(ctx context.Context) ApiCreateEnrollmentPFXDeployRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -719,7 +719,7 @@ CreateEnrollmentPFXReplace Creates management jobs to install a newly enrolled p
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateEnrollmentPFXReplaceRequest
 */
-func (a *EnrollmentApiService) BuildCreateEnrollmentPFXReplaceRequest(ctx context.Context) ApiCreateEnrollmentPFXReplaceRequest {
+func (a *EnrollmentApiService) NewCreateEnrollmentPFXReplaceRequest(ctx context.Context) ApiCreateEnrollmentPFXReplaceRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -871,7 +871,7 @@ CreateEnrollmentRenew Performs a renewal based upon the passed in request
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateEnrollmentRenewRequest
 */
-func (a *EnrollmentApiService) BuildCreateEnrollmentRenewRequest(ctx context.Context) ApiCreateEnrollmentRenewRequest {
+func (a *EnrollmentApiService) NewCreateEnrollmentRenewRequest(ctx context.Context) ApiCreateEnrollmentRenewRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1028,7 +1028,7 @@ GetEnrollmentAvailableRenewalIdById Returns the type of renewal available for a 
 	@param id The Keyfactor certificate Id
 	@return ApiGetEnrollmentAvailableRenewalIdByIdRequest
 */
-func (a *EnrollmentApiService) BuildGetEnrollmentAvailableRenewalIdByIdRequest(ctx context.Context, id int32) ApiGetEnrollmentAvailableRenewalIdByIdRequest {
+func (a *EnrollmentApiService) NewGetEnrollmentAvailableRenewalIdByIdRequest(ctx context.Context, id int32) ApiGetEnrollmentAvailableRenewalIdByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1185,7 +1185,7 @@ GetEnrollmentAvailableRenewalThumbprintThumbprint Returns the type of renewal av
 	@param thumbprint The certificate thumbprint
 	@return ApiGetEnrollmentAvailableRenewalThumbprintThumbprintRequest
 */
-func (a *EnrollmentApiService) BuildGetEnrollmentAvailableRenewalThumbprintThumbprintRequest(ctx context.Context, thumbprint string) ApiGetEnrollmentAvailableRenewalThumbprintThumbprintRequest {
+func (a *EnrollmentApiService) NewGetEnrollmentAvailableRenewalThumbprintThumbprintRequest(ctx context.Context, thumbprint string) ApiGetEnrollmentAvailableRenewalThumbprintThumbprintRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1327,7 +1327,7 @@ GetEnrollmentCSRContextMy Returns the list of available CSR enrollment templates
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetEnrollmentCSRContextMyRequest
 */
-func (a *EnrollmentApiService) BuildGetEnrollmentCSRContextMyRequest(ctx context.Context) ApiGetEnrollmentCSRContextMyRequest {
+func (a *EnrollmentApiService) NewGetEnrollmentCSRContextMyRequest(ctx context.Context) ApiGetEnrollmentCSRContextMyRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1463,7 +1463,7 @@ GetEnrollmentPFXContextMy Returns the list of available PFX enrollment templates
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetEnrollmentPFXContextMyRequest
 */
-func (a *EnrollmentApiService) BuildGetEnrollmentPFXContextMyRequest(ctx context.Context) ApiGetEnrollmentPFXContextMyRequest {
+func (a *EnrollmentApiService) NewGetEnrollmentPFXContextMyRequest(ctx context.Context) ApiGetEnrollmentPFXContextMyRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1601,7 +1601,7 @@ GetEnrollmentSettingsById Gets the template settings to use during enrollment. T
 	@param id
 	@return ApiGetEnrollmentSettingsByIdRequest
 */
-func (a *EnrollmentApiService) BuildGetEnrollmentSettingsByIdRequest(ctx context.Context, id int32) ApiGetEnrollmentSettingsByIdRequest {
+func (a *EnrollmentApiService) NewGetEnrollmentSettingsByIdRequest(ctx context.Context, id int32) ApiGetEnrollmentSettingsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

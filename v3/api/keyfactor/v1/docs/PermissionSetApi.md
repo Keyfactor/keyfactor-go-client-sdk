@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## CreatePermissionSets
 
-> PermissionSetsPermissionSetResponse BuildCreatePermissionSetsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PermissionSetsPermissionSetCreateRequest(permissionSetsPermissionSetCreateRequest).Execute()
+> PermissionSetsPermissionSetResponse NewCreatePermissionSetsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PermissionSetsPermissionSetCreateRequest(permissionSetsPermissionSetCreateRequest).Execute()
 
 Creates a new permission set.
 
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PermissionSetApi.BuildCreatePermissionSetsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PermissionSetsPermissionSetCreateRequest(permissionSetsPermissionSetCreateRequest).Execute()
+    resp, r, err := apiClient.PermissionSetApi.NewCreatePermissionSetsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PermissionSetsPermissionSetCreateRequest(permissionSetsPermissionSetCreateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PermissionSetApi.CreatePermissionSets``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## DeletePermissionSetsById
 
-> BuildDeletePermissionSetsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeletePermissionSetsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes a permission set.
 
@@ -106,7 +106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PermissionSetApi.BuildDeletePermissionSetsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.PermissionSetApi.NewDeletePermissionSetsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PermissionSetApi.DeletePermissionSetsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ## GetPermissionSets
 
-> []PermissionSetsPermissionSetResponse BuildGetPermissionSetsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []PermissionSetsPermissionSetResponse NewGetPermissionSetsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets all Permission Set(s) in the system if the user has a security role that is assigned to the Global Permission Set and the security role has the Global Security Read permission.   Otherwise, returns only the Permission Sets with the Security Modify permission that are assigned to the user's security role(s).
 
@@ -180,7 +180,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PermissionSetApi.BuildGetPermissionSetsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.PermissionSetApi.NewGetPermissionSetsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PermissionSetApi.GetPermissionSets``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ## GetPermissionSetsById
 
-> PermissionSetsPermissionSetResponse BuildGetPermissionSetsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> PermissionSetsPermissionSetResponse NewGetPermissionSetsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets permission set data.
 
@@ -254,7 +254,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PermissionSetApi.BuildGetPermissionSetsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.PermissionSetApi.NewGetPermissionSetsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PermissionSetApi.GetPermissionSetsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 ## GetPermissionSetsMy
 
-> []CSSCMSDataModelModelsSecurityPermissionSet BuildGetPermissionSetsMyRequest(ctx).AccessControlString(accessControlString).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CSSCMSDataModelModelsSecurityPermissionSet NewGetPermissionSetsMyRequest(ctx).AccessControlString(accessControlString).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 
 
@@ -326,7 +326,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PermissionSetApi.BuildGetPermissionSetsMyRequest(context.Background()).AccessControlString(accessControlString).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.PermissionSetApi.NewGetPermissionSetsMyRequest(context.Background()).AccessControlString(accessControlString).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PermissionSetApi.GetPermissionSetsMy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 
 ## UpdatePermissionSets
 
-> PermissionSetsPermissionSetResponse BuildUpdatePermissionSetsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PermissionSetsPermissionSetUpdateRequest(permissionSetsPermissionSetUpdateRequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> PermissionSetsPermissionSetResponse NewUpdatePermissionSetsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PermissionSetsPermissionSetUpdateRequest(permissionSetsPermissionSetUpdateRequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 
 
@@ -394,7 +394,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PermissionSetApi.BuildUpdatePermissionSetsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PermissionSetsPermissionSetUpdateRequest(permissionSetsPermissionSetUpdateRequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.PermissionSetApi.NewUpdatePermissionSetsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PermissionSetsPermissionSetUpdateRequest(permissionSetsPermissionSetUpdateRequest).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PermissionSetApi.UpdatePermissionSets``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

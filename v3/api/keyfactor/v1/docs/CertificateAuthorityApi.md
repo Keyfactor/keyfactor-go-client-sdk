@@ -33,7 +33,7 @@ Method | HTTP request | Description
 
 ## CreateCertificateAuthority
 
-> CertificateAuthoritiesCertificateAuthorityResponse BuildCreateCertificateAuthorityRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ForceSave(forceSave).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCertificateAuthorityRequest(certificateAuthoritiesCertificateAuthorityRequest).Execute()
+> CertificateAuthoritiesCertificateAuthorityResponse NewCreateCertificateAuthorityRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ForceSave(forceSave).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCertificateAuthorityRequest(certificateAuthoritiesCertificateAuthorityRequest).Execute()
 
 Creates a new CertificateAuthority object
 
@@ -57,7 +57,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildCreateCertificateAuthorityRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ForceSave(forceSave).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCertificateAuthorityRequest(certificateAuthoritiesCertificateAuthorityRequest).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewCreateCertificateAuthorityRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ForceSave(forceSave).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCertificateAuthorityRequest(certificateAuthoritiesCertificateAuthorityRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.CreateCertificateAuthority``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ## CreateCertificateAuthorityAlertRecipientsCAHealthRecipients
 
-> []CertificateAuthoritiesCAAlertRecipientResponse BuildCreateCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAAlertRecipientCreateRequest(certificateAuthoritiesCAAlertRecipientCreateRequest).Execute()
+> []CertificateAuthoritiesCAAlertRecipientResponse NewCreateCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAAlertRecipientCreateRequest(certificateAuthoritiesCAAlertRecipientCreateRequest).Execute()
 
 Creates CA health monitoring recipients for the provided list of email addresses\"
 
@@ -126,7 +126,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildCreateCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAAlertRecipientCreateRequest(certificateAuthoritiesCAAlertRecipientCreateRequest).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewCreateCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAAlertRecipientCreateRequest(certificateAuthoritiesCAAlertRecipientCreateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.CreateCertificateAuthorityAlertRecipientsCAHealthRecipients``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 
 ## CreateCertificateAuthorityAlertRecipientsCAThresholdRecipients
 
-> []CertificateAuthoritiesCAAlertRecipientResponse BuildCreateCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAAlertRecipientCreateRequest(certificateAuthoritiesCAAlertRecipientCreateRequest).Execute()
+> []CertificateAuthoritiesCAAlertRecipientResponse NewCreateCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAAlertRecipientCreateRequest(certificateAuthoritiesCAAlertRecipientCreateRequest).Execute()
 
 Creates CA threshold alert recipients for the provided list of emails
 
@@ -194,7 +194,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildCreateCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAAlertRecipientCreateRequest(certificateAuthoritiesCAAlertRecipientCreateRequest).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewCreateCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAAlertRecipientCreateRequest(certificateAuthoritiesCAAlertRecipientCreateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.CreateCertificateAuthorityAlertRecipientsCAThresholdRecipients``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ## CreateCertificateAuthorityImport
 
-> BuildCreateCertificateAuthorityImportRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Dns(dns).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewCreateCertificateAuthorityImportRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Dns(dns).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Imports any certificate authorities from the provided configuration tenant DNS
 
@@ -262,7 +262,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildCreateCertificateAuthorityImportRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Dns(dns).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewCreateCertificateAuthorityImportRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Dns(dns).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.CreateCertificateAuthorityImport``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ## CreateCertificateAuthorityPublishCRL
 
-> BuildCreateCertificateAuthorityPublishCRLRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCRLRequestModel(cSSCMSDataModelModelsCRLRequestModel).Execute()
+> NewCreateCertificateAuthorityPublishCRLRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCRLRequestModel(cSSCMSDataModelModelsCRLRequestModel).Execute()
 
 Publishes a CRL according to the provided request
 
@@ -328,7 +328,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildCreateCertificateAuthorityPublishCRLRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCRLRequestModel(cSSCMSDataModelModelsCRLRequestModel).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewCreateCertificateAuthorityPublishCRLRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCRLRequestModel(cSSCMSDataModelModelsCRLRequestModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.CreateCertificateAuthorityPublishCRL``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 
 ## CreateCertificateAuthorityTaskQueueTest
 
-> CertificateAuthoritiesCAJobQueueTestResponse BuildCreateCertificateAuthorityTaskQueueTestRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RabbitMQJobQueueRequest(rabbitMQJobQueueRequest).Execute()
+> CertificateAuthoritiesCAJobQueueTestResponse NewCreateCertificateAuthorityTaskQueueTestRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RabbitMQJobQueueRequest(rabbitMQJobQueueRequest).Execute()
 
 Tests the connection info for the TaskQueue Credentials.
 
@@ -394,7 +394,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildCreateCertificateAuthorityTaskQueueTestRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RabbitMQJobQueueRequest(rabbitMQJobQueueRequest).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewCreateCertificateAuthorityTaskQueueTestRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RabbitMQJobQueueRequest(rabbitMQJobQueueRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.CreateCertificateAuthorityTaskQueueTest``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -439,7 +439,7 @@ Name | Type | Description  | Notes
 
 ## CreateCertificateAuthorityTest
 
-> CertificateAuthoritiesCertificateAuthorityTestResponse BuildCreateCertificateAuthorityTestRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest(cSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest).Execute()
+> CertificateAuthoritiesCertificateAuthorityTestResponse NewCreateCertificateAuthorityTestRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest(cSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest).Execute()
 
 Validates the connection info for the CA provided by the model.
 
@@ -462,7 +462,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildCreateCertificateAuthorityTestRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest(cSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewCreateCertificateAuthorityTestRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest(cSSCMSDataModelModelsCertificateAuthoritiesCertificateAuthorityTestRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.CreateCertificateAuthorityTest``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -507,7 +507,7 @@ Name | Type | Description  | Notes
 
 ## DeleteCertificateAuthorityAlertRecipientsCAHealthRecipientsById
 
-> BuildDeleteCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes a CA health recipient for the provided ID
 
@@ -530,7 +530,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildDeleteCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewDeleteCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.DeleteCertificateAuthorityAlertRecipientsCAHealthRecipientsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -577,7 +577,7 @@ Name | Type | Description  | Notes
 
 ## DeleteCertificateAuthorityAlertRecipientsCAThresholdRecipientsById
 
-> BuildDeleteCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes a CA threshold recipient for the provided ID
 
@@ -600,7 +600,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildDeleteCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewDeleteCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.DeleteCertificateAuthorityAlertRecipientsCAThresholdRecipientsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -647,7 +647,7 @@ Name | Type | Description  | Notes
 
 ## DeleteCertificateAuthorityById
 
-> BuildDeleteCertificateAuthorityByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteCertificateAuthorityByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes a CertificateAuthority from the system, specified by ID
 
@@ -670,7 +670,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildDeleteCertificateAuthorityByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewDeleteCertificateAuthorityByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.DeleteCertificateAuthorityById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -717,7 +717,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificateAuthority
 
-> []CertificateAuthoritiesCertificateAuthorityResponse BuildGetCertificateAuthorityRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CertificateAuthoritiesCertificateAuthorityResponse NewGetCertificateAuthorityRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all certificate authorities according to the provided filter
 
@@ -744,7 +744,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildGetCertificateAuthorityRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewGetCertificateAuthorityRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.GetCertificateAuthority``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -793,7 +793,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificateAuthorityAlertRecipientsCAHealthRecipients
 
-> []CertificateAuthoritiesCAAlertRecipientResponse BuildGetCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CertificateAuthoritiesCAAlertRecipientResponse NewGetCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a list of all CA health recipients
 
@@ -815,7 +815,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildGetCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewGetCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.GetCertificateAuthorityAlertRecipientsCAHealthRecipients``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -859,7 +859,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificateAuthorityAlertRecipientsCAHealthRecipientsById
 
-> CertificateAuthoritiesCAAlertRecipientResponse BuildGetCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CertificateAuthoritiesCAAlertRecipientResponse NewGetCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a CA health recipient for the specified health recipient ID
 
@@ -882,7 +882,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildGetCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewGetCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.GetCertificateAuthorityAlertRecipientsCAHealthRecipientsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -931,7 +931,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificateAuthorityAlertRecipientsCAThresholdRecipients
 
-> []CertificateAuthoritiesCAAlertRecipientResponse BuildGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CertificateAuthoritiesCAAlertRecipientResponse NewGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a list of all CA threshold recipients
 
@@ -953,7 +953,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.GetCertificateAuthorityAlertRecipientsCAThresholdRecipients``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -997,7 +997,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificateAuthorityAlertRecipientsCAThresholdRecipientsById
 
-> CertificateAuthoritiesCAAlertRecipientResponse BuildGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CertificateAuthoritiesCAAlertRecipientResponse NewGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a CA threshold recipient for the specified threshold alert recipient ID
 
@@ -1020,7 +1020,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.GetCertificateAuthorityAlertRecipientsCAThresholdRecipientsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1069,7 +1069,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificateAuthorityAvailableForests
 
-> []string BuildGetCertificateAuthorityAvailableForestsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []string NewGetCertificateAuthorityAvailableForestsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a list of available forests that are in active directory
 
@@ -1091,7 +1091,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildGetCertificateAuthorityAvailableForestsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewGetCertificateAuthorityAvailableForestsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.GetCertificateAuthorityAvailableForests``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1135,7 +1135,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificateAuthorityById
 
-> CertificateAuthoritiesCertificateAuthorityResponse BuildGetCertificateAuthorityByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CertificateAuthoritiesCertificateAuthorityResponse NewGetCertificateAuthorityByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns details for a single CA, specified by ID
 
@@ -1158,7 +1158,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildGetCertificateAuthorityByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewGetCertificateAuthorityByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.GetCertificateAuthorityById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1207,7 +1207,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificateAuthorityHealthMonitoringSchedule
 
-> SchedulingScheduledTaskResponse BuildGetCertificateAuthorityHealthMonitoringScheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> SchedulingScheduledTaskResponse NewGetCertificateAuthorityHealthMonitoringScheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Retrieves the execution schedule for the CA health monitoring job
 
@@ -1229,7 +1229,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildGetCertificateAuthorityHealthMonitoringScheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewGetCertificateAuthorityHealthMonitoringScheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.GetCertificateAuthorityHealthMonitoringSchedule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1273,7 +1273,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificateAuthoritySourceCount
 
-> int32 BuildGetCertificateAuthoritySourceCountRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> int32 NewGetCertificateAuthoritySourceCountRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a count of certificate authorities with sync enabled
 
@@ -1295,7 +1295,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildGetCertificateAuthoritySourceCountRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewGetCertificateAuthoritySourceCountRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.GetCertificateAuthoritySourceCount``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1339,7 +1339,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificateAuthorityTaskQueue
 
-> RabbitMQJobQueueResponse BuildGetCertificateAuthorityTaskQueueRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> RabbitMQJobQueueResponse NewGetCertificateAuthorityTaskQueueRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Retrieves credentials and connection information
 
@@ -1361,7 +1361,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildGetCertificateAuthorityTaskQueueRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewGetCertificateAuthorityTaskQueueRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.GetCertificateAuthorityTaskQueue``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1405,7 +1405,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCertificateAuthority
 
-> CertificateAuthoritiesCertificateAuthorityResponse BuildUpdateCertificateAuthorityRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ForceSave(forceSave).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCertificateAuthorityRequest(certificateAuthoritiesCertificateAuthorityRequest).Execute()
+> CertificateAuthoritiesCertificateAuthorityResponse NewUpdateCertificateAuthorityRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ForceSave(forceSave).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCertificateAuthorityRequest(certificateAuthoritiesCertificateAuthorityRequest).Execute()
 
 Updates a CertificateAuthority object
 
@@ -1429,7 +1429,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildUpdateCertificateAuthorityRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ForceSave(forceSave).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCertificateAuthorityRequest(certificateAuthoritiesCertificateAuthorityRequest).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewUpdateCertificateAuthorityRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).ForceSave(forceSave).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCertificateAuthorityRequest(certificateAuthoritiesCertificateAuthorityRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.UpdateCertificateAuthority``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1475,7 +1475,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCertificateAuthorityAlertRecipientsCAHealthRecipientsById
 
-> CertificateAuthoritiesCAAlertRecipientResponse BuildUpdateCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAAlertRecipientUpdateRequest(certificateAuthoritiesCAAlertRecipientUpdateRequest).Execute()
+> CertificateAuthoritiesCAAlertRecipientResponse NewUpdateCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAAlertRecipientUpdateRequest(certificateAuthoritiesCAAlertRecipientUpdateRequest).Execute()
 
 Updates a CA health alert recipient for the provided request object
 
@@ -1499,7 +1499,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildUpdateCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAAlertRecipientUpdateRequest(certificateAuthoritiesCAAlertRecipientUpdateRequest).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewUpdateCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAAlertRecipientUpdateRequest(certificateAuthoritiesCAAlertRecipientUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.UpdateCertificateAuthorityAlertRecipientsCAHealthRecipientsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1549,7 +1549,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCertificateAuthorityAlertRecipientsCAThresholdRecipientsById
 
-> CertificateAuthoritiesCAAlertRecipientResponse BuildUpdateCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAAlertRecipientUpdateRequest(certificateAuthoritiesCAAlertRecipientUpdateRequest).Execute()
+> CertificateAuthoritiesCAAlertRecipientResponse NewUpdateCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAAlertRecipientUpdateRequest(certificateAuthoritiesCAAlertRecipientUpdateRequest).Execute()
 
 Updates a CA threshold alert recipient for the provided request object
 
@@ -1573,7 +1573,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildUpdateCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAAlertRecipientUpdateRequest(certificateAuthoritiesCAAlertRecipientUpdateRequest).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewUpdateCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateAuthoritiesCAAlertRecipientUpdateRequest(certificateAuthoritiesCAAlertRecipientUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.UpdateCertificateAuthorityAlertRecipientsCAThresholdRecipientsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1623,7 +1623,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCertificateAuthorityTaskQueue
 
-> RabbitMQJobQueueResponse BuildUpdateCertificateAuthorityTaskQueueRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RabbitMQJobQueueRequest(rabbitMQJobQueueRequest).Execute()
+> RabbitMQJobQueueResponse NewUpdateCertificateAuthorityTaskQueueRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RabbitMQJobQueueRequest(rabbitMQJobQueueRequest).Execute()
 
 Updates credentials and connection information
 
@@ -1646,7 +1646,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.BuildUpdateCertificateAuthorityTaskQueueRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RabbitMQJobQueueRequest(rabbitMQJobQueueRequest).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewUpdateCertificateAuthorityTaskQueueRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RabbitMQJobQueueRequest(rabbitMQJobQueueRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.UpdateCertificateAuthorityTaskQueue``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

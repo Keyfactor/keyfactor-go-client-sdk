@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## CreateWorkflowCertificatesApprove
 
-> CSSCMSDataModelModelsWorkflowApproveDenyResult BuildCreateWorkflowCertificatesApproveRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
+> CSSCMSDataModelModelsWorkflowApproveDenyResult NewCreateWorkflowCertificatesApproveRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
 
 Approves pending certificate requests associated with the provided ids
 
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowApi.BuildCreateWorkflowCertificatesApproveRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
+    resp, r, err := apiClient.WorkflowApi.NewCreateWorkflowCertificatesApproveRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowApi.CreateWorkflowCertificatesApprove``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## CreateWorkflowCertificatesDeny
 
-> CSSCMSDataModelModelsWorkflowApproveDenyResult BuildCreateWorkflowCertificatesDenyRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsWorkflowDenialRequest(cSSCMSDataModelModelsWorkflowDenialRequest).Execute()
+> CSSCMSDataModelModelsWorkflowApproveDenyResult NewCreateWorkflowCertificatesDenyRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsWorkflowDenialRequest(cSSCMSDataModelModelsWorkflowDenialRequest).Execute()
 
 Denies pending certificate requests associated with the provided ids
 
@@ -106,7 +106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowApi.BuildCreateWorkflowCertificatesDenyRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsWorkflowDenialRequest(cSSCMSDataModelModelsWorkflowDenialRequest).Execute()
+    resp, r, err := apiClient.WorkflowApi.NewCreateWorkflowCertificatesDenyRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsWorkflowDenialRequest(cSSCMSDataModelModelsWorkflowDenialRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowApi.CreateWorkflowCertificatesDeny``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GetWorkflowCertificatesById
 
-> CertificatesCertRequestResponseModel BuildGetWorkflowCertificatesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CertificatesCertRequestResponseModel NewGetWorkflowCertificatesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns certificate request details based on the provided ID.
 
@@ -174,7 +174,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowApi.BuildGetWorkflowCertificatesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.WorkflowApi.NewGetWorkflowCertificatesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowApi.GetWorkflowCertificatesById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ## GetWorkflowCertificatesDenied
 
-> []CSSCMSDataModelModelsWorkflowCertificateRequestModel BuildGetWorkflowCertificatesDeniedRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CSSCMSDataModelModelsWorkflowCertificateRequestModel NewGetWorkflowCertificatesDeniedRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets a collection of denied certificate requests based on the provided query.
 
@@ -250,7 +250,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowApi.BuildGetWorkflowCertificatesDeniedRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.WorkflowApi.NewGetWorkflowCertificatesDeniedRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowApi.GetWorkflowCertificatesDenied``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 ## GetWorkflowCertificatesExternalValidation
 
-> []CSSCMSDataModelModelsWorkflowCertificateRequestModel BuildGetWorkflowCertificatesExternalValidationRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CSSCMSDataModelModelsWorkflowCertificateRequestModel NewGetWorkflowCertificatesExternalValidationRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets a collection of external validation certificate requests based on the provided query.
 
@@ -326,7 +326,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowApi.BuildGetWorkflowCertificatesExternalValidationRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.WorkflowApi.NewGetWorkflowCertificatesExternalValidationRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowApi.GetWorkflowCertificatesExternalValidation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 
 ## GetWorkflowCertificatesPending
 
-> []CSSCMSDataModelModelsWorkflowCertificateRequestModel BuildGetWorkflowCertificatesPendingRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CSSCMSDataModelModelsWorkflowCertificateRequestModel NewGetWorkflowCertificatesPendingRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets a collection of pending certificate requests based on the provided query.
 
@@ -402,7 +402,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowApi.BuildGetWorkflowCertificatesPendingRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.WorkflowApi.NewGetWorkflowCertificatesPendingRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowApi.GetWorkflowCertificatesPending``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

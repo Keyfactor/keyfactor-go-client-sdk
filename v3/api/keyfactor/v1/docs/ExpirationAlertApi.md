@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## CreateAlertsExpiration
 
-> AlertsExpirationExpirationAlertDefinitionResponse BuildCreateAlertsExpirationRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsExpirationExpirationAlertCreationRequest(alertsExpirationExpirationAlertCreationRequest).Execute()
+> AlertsExpirationExpirationAlertDefinitionResponse NewCreateAlertsExpirationRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsExpirationExpirationAlertCreationRequest(alertsExpirationExpirationAlertCreationRequest).Execute()
 
 Add an expiration alert
 
@@ -41,7 +41,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExpirationAlertApi.BuildCreateAlertsExpirationRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsExpirationExpirationAlertCreationRequest(alertsExpirationExpirationAlertCreationRequest).Execute()
+    resp, r, err := apiClient.ExpirationAlertApi.NewCreateAlertsExpirationRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsExpirationExpirationAlertCreationRequest(alertsExpirationExpirationAlertCreationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.CreateAlertsExpiration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ## CreateAlertsExpirationTest
 
-> AlertsExpirationExpirationAlertTestResponse BuildCreateAlertsExpirationTestRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsExpirationExpirationAlertTestRequest(alertsExpirationExpirationAlertTestRequest).Execute()
+> AlertsExpirationExpirationAlertTestResponse NewCreateAlertsExpirationTestRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsExpirationExpirationAlertTestRequest(alertsExpirationExpirationAlertTestRequest).Execute()
 
 Test an Expiration Alert
 
@@ -109,7 +109,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExpirationAlertApi.BuildCreateAlertsExpirationTestRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsExpirationExpirationAlertTestRequest(alertsExpirationExpirationAlertTestRequest).Execute()
+    resp, r, err := apiClient.ExpirationAlertApi.NewCreateAlertsExpirationTestRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsExpirationExpirationAlertTestRequest(alertsExpirationExpirationAlertTestRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.CreateAlertsExpirationTest``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ## CreateAlertsExpirationTestAll
 
-> AlertsExpirationExpirationAlertTestResponse BuildCreateAlertsExpirationTestAllRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsExpirationExpirationAlertTestAllRequest(alertsExpirationExpirationAlertTestAllRequest).Execute()
+> AlertsExpirationExpirationAlertTestResponse NewCreateAlertsExpirationTestAllRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsExpirationExpirationAlertTestAllRequest(alertsExpirationExpirationAlertTestAllRequest).Execute()
 
 Test All Expiration Alerts
 
@@ -177,7 +177,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExpirationAlertApi.BuildCreateAlertsExpirationTestAllRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsExpirationExpirationAlertTestAllRequest(alertsExpirationExpirationAlertTestAllRequest).Execute()
+    resp, r, err := apiClient.ExpirationAlertApi.NewCreateAlertsExpirationTestAllRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsExpirationExpirationAlertTestAllRequest(alertsExpirationExpirationAlertTestAllRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.CreateAlertsExpirationTestAll``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ## DeleteAlertsExpirationById
 
-> BuildDeleteAlertsExpirationByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteAlertsExpirationByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Delete an expiration alert
 
@@ -245,7 +245,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExpirationAlertApi.BuildDeleteAlertsExpirationByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ExpirationAlertApi.NewDeleteAlertsExpirationByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.DeleteAlertsExpirationById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 
 ## GetAlertsExpiration
 
-> []AlertsExpirationExpirationAlertDefinitionResponse BuildGetAlertsExpirationRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []AlertsExpirationExpirationAlertDefinitionResponse NewGetAlertsExpirationRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets all expiration alerts according to the provided filter and output parameters
 
@@ -319,7 +319,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExpirationAlertApi.BuildGetAlertsExpirationRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ExpirationAlertApi.NewGetAlertsExpirationRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.GetAlertsExpiration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
 
 ## GetAlertsExpirationById
 
-> AlertsExpirationExpirationAlertDefinitionResponse BuildGetAlertsExpirationByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> AlertsExpirationExpirationAlertDefinitionResponse NewGetAlertsExpirationByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get an expiration alert
 
@@ -391,7 +391,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExpirationAlertApi.BuildGetAlertsExpirationByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ExpirationAlertApi.NewGetAlertsExpirationByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.GetAlertsExpirationById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -440,7 +440,7 @@ Name | Type | Description  | Notes
 
 ## GetAlertsExpirationSchedule
 
-> AlertsAlertScheduleAlertScheduleResponse BuildGetAlertsExpirationScheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> AlertsAlertScheduleAlertScheduleResponse NewGetAlertsExpirationScheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get the schedule for expiration alerts
 
@@ -462,7 +462,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExpirationAlertApi.BuildGetAlertsExpirationScheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ExpirationAlertApi.NewGetAlertsExpirationScheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.GetAlertsExpirationSchedule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -506,7 +506,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAlertsExpiration
 
-> AlertsExpirationExpirationAlertDefinitionResponse BuildUpdateAlertsExpirationRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsExpirationExpirationAlertUpdateRequest(alertsExpirationExpirationAlertUpdateRequest).Execute()
+> AlertsExpirationExpirationAlertDefinitionResponse NewUpdateAlertsExpirationRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsExpirationExpirationAlertUpdateRequest(alertsExpirationExpirationAlertUpdateRequest).Execute()
 
 Edit an expiration alert
 
@@ -529,7 +529,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExpirationAlertApi.BuildUpdateAlertsExpirationRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsExpirationExpirationAlertUpdateRequest(alertsExpirationExpirationAlertUpdateRequest).Execute()
+    resp, r, err := apiClient.ExpirationAlertApi.NewUpdateAlertsExpirationRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsExpirationExpirationAlertUpdateRequest(alertsExpirationExpirationAlertUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.UpdateAlertsExpiration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -574,7 +574,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAlertsExpirationSchedule
 
-> AlertsAlertScheduleAlertScheduleResponse BuildUpdateAlertsExpirationScheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsAlertScheduleAlertScheduleRequest(alertsAlertScheduleAlertScheduleRequest).Execute()
+> AlertsAlertScheduleAlertScheduleResponse NewUpdateAlertsExpirationScheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsAlertScheduleAlertScheduleRequest(alertsAlertScheduleAlertScheduleRequest).Execute()
 
 Edit schedule
 
@@ -597,7 +597,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExpirationAlertApi.BuildUpdateAlertsExpirationScheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsAlertScheduleAlertScheduleRequest(alertsAlertScheduleAlertScheduleRequest).Execute()
+    resp, r, err := apiClient.ExpirationAlertApi.NewUpdateAlertsExpirationScheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsAlertScheduleAlertScheduleRequest(alertsAlertScheduleAlertScheduleRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExpirationAlertApi.UpdateAlertsExpirationSchedule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

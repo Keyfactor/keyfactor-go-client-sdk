@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## CreateAlertsIssued
 
-> AlertsIssuedIssuedAlertDefinitionResponse BuildCreateAlertsIssuedRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsIssuedIssuedAlertCreationRequest(alertsIssuedIssuedAlertCreationRequest).Execute()
+> AlertsIssuedIssuedAlertDefinitionResponse NewCreateAlertsIssuedRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsIssuedIssuedAlertCreationRequest(alertsIssuedIssuedAlertCreationRequest).Execute()
 
 Add a issued alert
 
@@ -39,7 +39,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedAlertApi.BuildCreateAlertsIssuedRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsIssuedIssuedAlertCreationRequest(alertsIssuedIssuedAlertCreationRequest).Execute()
+    resp, r, err := apiClient.IssuedAlertApi.NewCreateAlertsIssuedRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsIssuedIssuedAlertCreationRequest(alertsIssuedIssuedAlertCreationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IssuedAlertApi.CreateAlertsIssued``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## DeleteAlertsIssuedById
 
-> BuildDeleteAlertsIssuedByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteAlertsIssuedByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Delete a issued alert
 
@@ -107,7 +107,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedAlertApi.BuildDeleteAlertsIssuedByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.IssuedAlertApi.NewDeleteAlertsIssuedByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IssuedAlertApi.DeleteAlertsIssuedById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ## GetAlertsIssued
 
-> []AlertsIssuedIssuedAlertDefinitionResponse BuildGetAlertsIssuedRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []AlertsIssuedIssuedAlertDefinitionResponse NewGetAlertsIssuedRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets all issued alerts according to the provided filter and output parameters
 
@@ -181,7 +181,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedAlertApi.BuildGetAlertsIssuedRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.IssuedAlertApi.NewGetAlertsIssuedRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IssuedAlertApi.GetAlertsIssued``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ## GetAlertsIssuedById
 
-> AlertsIssuedIssuedAlertDefinitionResponse BuildGetAlertsIssuedByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> AlertsIssuedIssuedAlertDefinitionResponse NewGetAlertsIssuedByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get a issued alert
 
@@ -253,7 +253,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedAlertApi.BuildGetAlertsIssuedByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.IssuedAlertApi.NewGetAlertsIssuedByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IssuedAlertApi.GetAlertsIssuedById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 
 ## GetAlertsIssuedSchedule
 
-> AlertsAlertScheduleAlertScheduleResponse BuildGetAlertsIssuedScheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> AlertsAlertScheduleAlertScheduleResponse NewGetAlertsIssuedScheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get the schedule for issued alerts
 
@@ -324,7 +324,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedAlertApi.BuildGetAlertsIssuedScheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.IssuedAlertApi.NewGetAlertsIssuedScheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IssuedAlertApi.GetAlertsIssuedSchedule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAlertsIssued
 
-> AlertsIssuedIssuedAlertDefinitionResponse BuildUpdateAlertsIssuedRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsIssuedIssuedAlertUpdateRequest(alertsIssuedIssuedAlertUpdateRequest).Execute()
+> AlertsIssuedIssuedAlertDefinitionResponse NewUpdateAlertsIssuedRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsIssuedIssuedAlertUpdateRequest(alertsIssuedIssuedAlertUpdateRequest).Execute()
 
 Edit a issued alert
 
@@ -391,7 +391,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedAlertApi.BuildUpdateAlertsIssuedRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsIssuedIssuedAlertUpdateRequest(alertsIssuedIssuedAlertUpdateRequest).Execute()
+    resp, r, err := apiClient.IssuedAlertApi.NewUpdateAlertsIssuedRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsIssuedIssuedAlertUpdateRequest(alertsIssuedIssuedAlertUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IssuedAlertApi.UpdateAlertsIssued``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -436,7 +436,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAlertsIssuedSchedule
 
-> AlertsAlertScheduleAlertScheduleResponse BuildUpdateAlertsIssuedScheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsAlertScheduleAlertScheduleRequest(alertsAlertScheduleAlertScheduleRequest).Execute()
+> AlertsAlertScheduleAlertScheduleResponse NewUpdateAlertsIssuedScheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsAlertScheduleAlertScheduleRequest(alertsAlertScheduleAlertScheduleRequest).Execute()
 
 Edit schedule
 
@@ -459,7 +459,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IssuedAlertApi.BuildUpdateAlertsIssuedScheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsAlertScheduleAlertScheduleRequest(alertsAlertScheduleAlertScheduleRequest).Execute()
+    resp, r, err := apiClient.IssuedAlertApi.NewUpdateAlertsIssuedScheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsAlertScheduleAlertScheduleRequest(alertsAlertScheduleAlertScheduleRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IssuedAlertApi.UpdateAlertsIssuedSchedule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

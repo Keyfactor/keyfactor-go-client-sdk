@@ -80,7 +80,7 @@ CreateSecurityRolesByIdPermissionsCollections Adds collection permissions to the
 	@param id Security role identifier
 	@return ApiCreateSecurityRolesByIdPermissionsCollectionsRequest
 */
-func (a *SecurityRolePermissionsApiService) BuildCreateSecurityRolesByIdPermissionsCollectionsRequest(ctx context.Context, id int32) ApiCreateSecurityRolesByIdPermissionsCollectionsRequest {
+func (a *SecurityRolePermissionsApiService) NewCreateSecurityRolesByIdPermissionsCollectionsRequest(ctx context.Context, id int32) ApiCreateSecurityRolesByIdPermissionsCollectionsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -237,7 +237,7 @@ CreateSecurityRolesByIdPermissionsContainers Adds container permissions to the s
 	@param id Security role identifier
 	@return ApiCreateSecurityRolesByIdPermissionsContainersRequest
 */
-func (a *SecurityRolePermissionsApiService) BuildCreateSecurityRolesByIdPermissionsContainersRequest(ctx context.Context, id int32) ApiCreateSecurityRolesByIdPermissionsContainersRequest {
+func (a *SecurityRolePermissionsApiService) NewCreateSecurityRolesByIdPermissionsContainersRequest(ctx context.Context, id int32) ApiCreateSecurityRolesByIdPermissionsContainersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -449,7 +449,7 @@ CreateSecurityRolesByIdPermissionsGlobal Adds global permissions to the security
 	@param id Security role identifier
 	@return ApiCreateSecurityRolesByIdPermissionsGlobalRequest
 */
-func (a *SecurityRolePermissionsApiService) BuildCreateSecurityRolesByIdPermissionsGlobalRequest(ctx context.Context, id int32) ApiCreateSecurityRolesByIdPermissionsGlobalRequest {
+func (a *SecurityRolePermissionsApiService) NewCreateSecurityRolesByIdPermissionsGlobalRequest(ctx context.Context, id int32) ApiCreateSecurityRolesByIdPermissionsGlobalRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -592,7 +592,7 @@ GetSecurityRolesByIdPermissions Returns all permissions associated with the secu
 	@param id Security role identifier
 	@return ApiGetSecurityRolesByIdPermissionsRequest
 */
-func (a *SecurityRolePermissionsApiService) BuildGetSecurityRolesByIdPermissionsRequest(ctx context.Context, id int32) ApiGetSecurityRolesByIdPermissionsRequest {
+func (a *SecurityRolePermissionsApiService) NewGetSecurityRolesByIdPermissionsRequest(ctx context.Context, id int32) ApiGetSecurityRolesByIdPermissionsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -733,7 +733,7 @@ GetSecurityRolesByIdPermissionsCollections Returns all collection permissions as
 	@param id Security role identifier
 	@return ApiGetSecurityRolesByIdPermissionsCollectionsRequest
 */
-func (a *SecurityRolePermissionsApiService) BuildGetSecurityRolesByIdPermissionsCollectionsRequest(ctx context.Context, id int32) ApiGetSecurityRolesByIdPermissionsCollectionsRequest {
+func (a *SecurityRolePermissionsApiService) NewGetSecurityRolesByIdPermissionsCollectionsRequest(ctx context.Context, id int32) ApiGetSecurityRolesByIdPermissionsCollectionsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -874,7 +874,7 @@ GetSecurityRolesByIdPermissionsContainers Returns all container permissions asso
 	@param id Security role identifier
 	@return ApiGetSecurityRolesByIdPermissionsContainersRequest
 */
-func (a *SecurityRolePermissionsApiService) BuildGetSecurityRolesByIdPermissionsContainersRequest(ctx context.Context, id int32) ApiGetSecurityRolesByIdPermissionsContainersRequest {
+func (a *SecurityRolePermissionsApiService) NewGetSecurityRolesByIdPermissionsContainersRequest(ctx context.Context, id int32) ApiGetSecurityRolesByIdPermissionsContainersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1015,7 +1015,7 @@ GetSecurityRolesByIdPermissionsGlobal Returns all global permissions associated 
 	@param id Security role identifier
 	@return ApiGetSecurityRolesByIdPermissionsGlobalRequest
 */
-func (a *SecurityRolePermissionsApiService) BuildGetSecurityRolesByIdPermissionsGlobalRequest(ctx context.Context, id int32) ApiGetSecurityRolesByIdPermissionsGlobalRequest {
+func (a *SecurityRolePermissionsApiService) NewGetSecurityRolesByIdPermissionsGlobalRequest(ctx context.Context, id int32) ApiGetSecurityRolesByIdPermissionsGlobalRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1156,7 +1156,7 @@ GetSecurityRolesByIdPermissionsPamProviders Returns all PAM provider permissions
 	@param id Security role identifier
 	@return ApiGetSecurityRolesByIdPermissionsPamProvidersRequest
 */
-func (a *SecurityRolePermissionsApiService) BuildGetSecurityRolesByIdPermissionsPamProvidersRequest(ctx context.Context, id int32) ApiGetSecurityRolesByIdPermissionsPamProvidersRequest {
+func (a *SecurityRolePermissionsApiService) NewGetSecurityRolesByIdPermissionsPamProvidersRequest(ctx context.Context, id int32) ApiGetSecurityRolesByIdPermissionsPamProvidersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1313,7 +1313,7 @@ UpdateSecurityRolesByIdPermissionsCollections Sets collection permissions to the
 	@param id Security role identifier
 	@return ApiUpdateSecurityRolesByIdPermissionsCollectionsRequest
 */
-func (a *SecurityRolePermissionsApiService) BuildUpdateSecurityRolesByIdPermissionsCollectionsRequest(ctx context.Context, id int32) ApiUpdateSecurityRolesByIdPermissionsCollectionsRequest {
+func (a *SecurityRolePermissionsApiService) NewUpdateSecurityRolesByIdPermissionsCollectionsRequest(ctx context.Context, id int32) ApiUpdateSecurityRolesByIdPermissionsCollectionsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1470,7 +1470,7 @@ UpdateSecurityRolesByIdPermissionsContainers Sets container permissions to the s
 	@param id Security role identifier
 	@return ApiUpdateSecurityRolesByIdPermissionsContainersRequest
 */
-func (a *SecurityRolePermissionsApiService) BuildUpdateSecurityRolesByIdPermissionsContainersRequest(ctx context.Context, id int32) ApiUpdateSecurityRolesByIdPermissionsContainersRequest {
+func (a *SecurityRolePermissionsApiService) NewUpdateSecurityRolesByIdPermissionsContainersRequest(ctx context.Context, id int32) ApiUpdateSecurityRolesByIdPermissionsContainersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1682,7 +1682,7 @@ UpdateSecurityRolesByIdPermissionsGlobal Adds global permissions to the security
 	@param id Security role identifier
 	@return ApiUpdateSecurityRolesByIdPermissionsGlobalRequest
 */
-func (a *SecurityRolePermissionsApiService) BuildUpdateSecurityRolesByIdPermissionsGlobalRequest(ctx context.Context, id int32) ApiUpdateSecurityRolesByIdPermissionsGlobalRequest {
+func (a *SecurityRolePermissionsApiService) NewUpdateSecurityRolesByIdPermissionsGlobalRequest(ctx context.Context, id int32) ApiUpdateSecurityRolesByIdPermissionsGlobalRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1838,7 +1838,7 @@ UpdateSecurityRolesByIdPermissionsPamProviders Sets PAM provider permissions to 
 	@param id Security role identifier
 	@return ApiUpdateSecurityRolesByIdPermissionsPamProvidersRequest
 */
-func (a *SecurityRolePermissionsApiService) BuildUpdateSecurityRolesByIdPermissionsPamProvidersRequest(ctx context.Context, id int32) ApiUpdateSecurityRolesByIdPermissionsPamProvidersRequest {
+func (a *SecurityRolePermissionsApiService) NewUpdateSecurityRolesByIdPermissionsPamProvidersRequest(ctx context.Context, id int32) ApiUpdateSecurityRolesByIdPermissionsPamProvidersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

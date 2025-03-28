@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 ## CreateReportsByIdSchedules
 
-> ReportsReportSchedulesReportScheduleResponse BuildCreateReportsByIdSchedulesRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ReportsReportSchedulesReportScheduleCreationRequest(reportsReportSchedulesReportScheduleCreationRequest).Execute()
+> ReportsReportSchedulesReportScheduleResponse NewCreateReportsByIdSchedulesRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ReportsReportSchedulesReportScheduleCreationRequest(reportsReportSchedulesReportScheduleCreationRequest).Execute()
 
 Create a built-in report's schedule that matches the id of the report.
 
@@ -48,7 +48,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReportsApi.BuildCreateReportsByIdSchedulesRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ReportsReportSchedulesReportScheduleCreationRequest(reportsReportSchedulesReportScheduleCreationRequest).Execute()
+    resp, r, err := apiClient.ReportsApi.NewCreateReportsByIdSchedulesRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ReportsReportSchedulesReportScheduleCreationRequest(reportsReportSchedulesReportScheduleCreationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReportsApi.CreateReportsByIdSchedules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ## CreateReportsCustom
 
-> ReportsCustomReportsCustomReportResponse BuildCreateReportsCustomRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ReportsCustomReportsCustomReportCreationRequest(reportsCustomReportsCustomReportCreationRequest).Execute()
+> ReportsCustomReportsCustomReportResponse NewCreateReportsCustomRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ReportsCustomReportsCustomReportCreationRequest(reportsCustomReportsCustomReportCreationRequest).Execute()
 
 Creates a custom report
 
@@ -121,7 +121,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReportsApi.BuildCreateReportsCustomRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ReportsCustomReportsCustomReportCreationRequest(reportsCustomReportsCustomReportCreationRequest).Execute()
+    resp, r, err := apiClient.ReportsApi.NewCreateReportsCustomRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ReportsCustomReportsCustomReportCreationRequest(reportsCustomReportsCustomReportCreationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReportsApi.CreateReportsCustom``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ## DeleteReportsCustomById
 
-> BuildDeleteReportsCustomByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteReportsCustomByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Delete custom report that matches the id
 
@@ -189,7 +189,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReportsApi.BuildDeleteReportsCustomByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ReportsApi.NewDeleteReportsCustomByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReportsApi.DeleteReportsCustomById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 ## DeleteReportsSchedulesById
 
-> BuildDeleteReportsSchedulesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteReportsSchedulesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Delete a built-in report's schedule that matches the id of the schedule.
 
@@ -259,7 +259,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReportsApi.BuildDeleteReportsSchedulesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ReportsApi.NewDeleteReportsSchedulesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReportsApi.DeleteReportsSchedulesById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 
 ## GetReports
 
-> []CSSCMSDataModelModelsReport BuildGetReportsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CSSCMSDataModelModelsReport NewGetReportsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all built-in reports according to the provided filter and output parameters
 
@@ -333,7 +333,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReportsApi.BuildGetReportsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ReportsApi.NewGetReportsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReportsApi.GetReports``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 
 ## GetReportsById
 
-> CSSCMSDataModelModelsReport BuildGetReportsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsReport NewGetReportsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a single built-in report that matches the id
 
@@ -405,7 +405,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReportsApi.BuildGetReportsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ReportsApi.NewGetReportsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReportsApi.GetReportsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 
 ## GetReportsByIdParameters
 
-> []CSSCMSDataModelModelsReportParameters BuildGetReportsByIdParametersRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CSSCMSDataModelModelsReportParameters NewGetReportsByIdParametersRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get a built-in report's parameters that matches the id of the report.
 
@@ -477,7 +477,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReportsApi.BuildGetReportsByIdParametersRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ReportsApi.NewGetReportsByIdParametersRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReportsApi.GetReportsByIdParameters``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -526,7 +526,7 @@ Name | Type | Description  | Notes
 
 ## GetReportsByIdSchedules
 
-> []ReportsReportSchedulesReportScheduleResponse BuildGetReportsByIdSchedulesRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ReportsReportSchedulesReportScheduleResponse NewGetReportsByIdSchedulesRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get a built-in report's schedules that matches the id of the report.
 
@@ -554,7 +554,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReportsApi.BuildGetReportsByIdSchedulesRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ReportsApi.NewGetReportsByIdSchedulesRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReportsApi.GetReportsByIdSchedules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -608,7 +608,7 @@ Name | Type | Description  | Notes
 
 ## GetReportsCustom
 
-> []ReportsCustomReportsCustomReportResponse BuildGetReportsCustomRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []ReportsCustomReportsCustomReportResponse NewGetReportsCustomRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all custom reports according to the provided filter and output parameters
 
@@ -635,7 +635,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReportsApi.BuildGetReportsCustomRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ReportsApi.NewGetReportsCustomRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReportsApi.GetReportsCustom``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -684,7 +684,7 @@ Name | Type | Description  | Notes
 
 ## GetReportsCustomById
 
-> ReportsCustomReportsCustomReportResponse BuildGetReportsCustomByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ReportsCustomReportsCustomReportResponse NewGetReportsCustomByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a single custom report that matches the id
 
@@ -707,7 +707,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReportsApi.BuildGetReportsCustomByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ReportsApi.NewGetReportsCustomByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReportsApi.GetReportsCustomById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -756,7 +756,7 @@ Name | Type | Description  | Notes
 
 ## GetReportsSchedulesById
 
-> ReportsReportSchedulesReportScheduleResponse BuildGetReportsSchedulesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> ReportsReportSchedulesReportScheduleResponse NewGetReportsSchedulesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get a built-in report's schedule that matches the id of the schedule.
 
@@ -779,7 +779,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReportsApi.BuildGetReportsSchedulesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ReportsApi.NewGetReportsSchedulesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReportsApi.GetReportsSchedulesById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -828,7 +828,7 @@ Name | Type | Description  | Notes
 
 ## UpdateReports
 
-> CSSCMSDataModelModelsReport BuildUpdateReportsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsReportRequestModel(cSSCMSDataModelModelsReportRequestModel).Execute()
+> CSSCMSDataModelModelsReport NewUpdateReportsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsReportRequestModel(cSSCMSDataModelModelsReportRequestModel).Execute()
 
 Updates a single built-in report that matches the id. Only some fields can be updated.
 
@@ -851,7 +851,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReportsApi.BuildUpdateReportsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsReportRequestModel(cSSCMSDataModelModelsReportRequestModel).Execute()
+    resp, r, err := apiClient.ReportsApi.NewUpdateReportsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsReportRequestModel(cSSCMSDataModelModelsReportRequestModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReportsApi.UpdateReports``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -896,7 +896,7 @@ Name | Type | Description  | Notes
 
 ## UpdateReportsByIdParameters
 
-> []CSSCMSDataModelModelsReportParameters BuildUpdateReportsByIdParametersRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsReportParametersRequest(cSSCMSDataModelModelsReportParametersRequest).Execute()
+> []CSSCMSDataModelModelsReportParameters NewUpdateReportsByIdParametersRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsReportParametersRequest(cSSCMSDataModelModelsReportParametersRequest).Execute()
 
 Update a built-in report's parameters that matches the id of the report.
 
@@ -920,7 +920,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReportsApi.BuildUpdateReportsByIdParametersRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsReportParametersRequest(cSSCMSDataModelModelsReportParametersRequest).Execute()
+    resp, r, err := apiClient.ReportsApi.NewUpdateReportsByIdParametersRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsReportParametersRequest(cSSCMSDataModelModelsReportParametersRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReportsApi.UpdateReportsByIdParameters``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -970,7 +970,7 @@ Name | Type | Description  | Notes
 
 ## UpdateReportsByIdSchedules
 
-> ReportsReportSchedulesReportScheduleResponse BuildUpdateReportsByIdSchedulesRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ReportsReportSchedulesReportScheduleUpdateRequest(reportsReportSchedulesReportScheduleUpdateRequest).Execute()
+> ReportsReportSchedulesReportScheduleResponse NewUpdateReportsByIdSchedulesRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ReportsReportSchedulesReportScheduleUpdateRequest(reportsReportSchedulesReportScheduleUpdateRequest).Execute()
 
 Update a built-in report's schedule that matches the id of the report.
 
@@ -994,7 +994,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReportsApi.BuildUpdateReportsByIdSchedulesRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ReportsReportSchedulesReportScheduleUpdateRequest(reportsReportSchedulesReportScheduleUpdateRequest).Execute()
+    resp, r, err := apiClient.ReportsApi.NewUpdateReportsByIdSchedulesRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ReportsReportSchedulesReportScheduleUpdateRequest(reportsReportSchedulesReportScheduleUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReportsApi.UpdateReportsByIdSchedules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1044,7 +1044,7 @@ Name | Type | Description  | Notes
 
 ## UpdateReportsCustom
 
-> ReportsCustomReportsCustomReportResponse BuildUpdateReportsCustomRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ReportsCustomReportsCustomReportUpdateRequest(reportsCustomReportsCustomReportUpdateRequest).Execute()
+> ReportsCustomReportsCustomReportResponse NewUpdateReportsCustomRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ReportsCustomReportsCustomReportUpdateRequest(reportsCustomReportsCustomReportUpdateRequest).Execute()
 
 Updates a custom report that matches the id
 
@@ -1067,7 +1067,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReportsApi.BuildUpdateReportsCustomRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ReportsCustomReportsCustomReportUpdateRequest(reportsCustomReportsCustomReportUpdateRequest).Execute()
+    resp, r, err := apiClient.ReportsApi.NewUpdateReportsCustomRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).ReportsCustomReportsCustomReportUpdateRequest(reportsCustomReportsCustomReportUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReportsApi.UpdateReportsCustom``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -69,7 +69,7 @@ CreateAgentPools Creates an agent pool with the provided properties
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateAgentPoolsRequest
 */
-func (a *AgentPoolApiService) BuildCreateAgentPoolsRequest(ctx context.Context) ApiCreateAgentPoolsRequest {
+func (a *AgentPoolApiService) NewCreateAgentPoolsRequest(ctx context.Context) ApiCreateAgentPoolsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -209,7 +209,7 @@ DeleteAgentPoolsById Deletes the agent pool associated with the provided id
 	@param id Keyfactor identifier (GUID) of the agent pool
 	@return ApiDeleteAgentPoolsByIdRequest
 */
-func (a *AgentPoolApiService) BuildDeleteAgentPoolsByIdRequest(ctx context.Context, id string) ApiDeleteAgentPoolsByIdRequest {
+func (a *AgentPoolApiService) NewDeleteAgentPoolsByIdRequest(ctx context.Context, id string) ApiDeleteAgentPoolsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -371,7 +371,7 @@ GetAgentPools Returns all agent pools according to the provided filter and outpu
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAgentPoolsRequest
 */
-func (a *AgentPoolApiService) BuildGetAgentPoolsRequest(ctx context.Context) ApiGetAgentPoolsRequest {
+func (a *AgentPoolApiService) NewGetAgentPoolsRequest(ctx context.Context) ApiGetAgentPoolsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -557,7 +557,7 @@ GetAgentPoolsAgents Returns all agents for the default agent pool
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAgentPoolsAgentsRequest
 */
-func (a *AgentPoolApiService) BuildGetAgentPoolsAgentsRequest(ctx context.Context) ApiGetAgentPoolsAgentsRequest {
+func (a *AgentPoolApiService) NewGetAgentPoolsAgentsRequest(ctx context.Context) ApiGetAgentPoolsAgentsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -710,7 +710,7 @@ GetAgentPoolsById Returns a single agent pool associated with the provided id
 	@param id Keyfactor (GUID) identifier of the agent pool
 	@return ApiGetAgentPoolsByIdRequest
 */
-func (a *AgentPoolApiService) BuildGetAgentPoolsByIdRequest(ctx context.Context, id string) ApiGetAgentPoolsByIdRequest {
+func (a *AgentPoolApiService) NewGetAgentPoolsByIdRequest(ctx context.Context, id string) ApiGetAgentPoolsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -856,7 +856,7 @@ UpdateAgentPools Updates an existing agent pool with the provided properties
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateAgentPoolsRequest
 */
-func (a *AgentPoolApiService) BuildUpdateAgentPoolsRequest(ctx context.Context) ApiUpdateAgentPoolsRequest {
+func (a *AgentPoolApiService) NewUpdateAgentPoolsRequest(ctx context.Context) ApiUpdateAgentPoolsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

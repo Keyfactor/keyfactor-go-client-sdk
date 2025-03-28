@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## CreateSMTPTest
 
-> SMTPSMTPTestResponse BuildCreateSMTPTestRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SMTPSMTPTestRequest(sMTPSMTPTestRequest).Execute()
+> SMTPSMTPTestResponse NewCreateSMTPTestRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SMTPSMTPTestRequest(sMTPSMTPTestRequest).Execute()
 
 Tests SMTP profile data
 
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SMTPApi.BuildCreateSMTPTestRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SMTPSMTPTestRequest(sMTPSMTPTestRequest).Execute()
+    resp, r, err := apiClient.SMTPApi.NewCreateSMTPTestRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SMTPSMTPTestRequest(sMTPSMTPTestRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SMTPApi.CreateSMTPTest``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GetSMTP
 
-> SMTPSMTPResponse BuildGetSMTPRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> SMTPSMTPResponse NewGetSMTPRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets SMTP profile data
 
@@ -106,7 +106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SMTPApi.BuildGetSMTPRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SMTPApi.NewGetSMTPRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SMTPApi.GetSMTP``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSMTP
 
-> SMTPSMTPResponse BuildUpdateSMTPRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SMTPSMTPRequest(sMTPSMTPRequest).Execute()
+> SMTPSMTPResponse NewUpdateSMTPRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SMTPSMTPRequest(sMTPSMTPRequest).Execute()
 
 Updates SMTP profile data
 
@@ -175,7 +175,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SMTPApi.BuildUpdateSMTPRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SMTPSMTPRequest(sMTPSMTPRequest).Execute()
+    resp, r, err := apiClient.SMTPApi.NewUpdateSMTPRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SMTPSMTPRequest(sMTPSMTPRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SMTPApi.UpdateSMTP``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

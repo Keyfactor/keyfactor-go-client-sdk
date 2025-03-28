@@ -69,7 +69,7 @@ CreateJobTypesCustom Creates a custom job type with the provided properties
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateJobTypesCustomRequest
 */
-func (a *CustomJobTypeApiService) BuildCreateJobTypesCustomRequest(ctx context.Context) ApiCreateJobTypesCustomRequest {
+func (a *CustomJobTypeApiService) NewCreateJobTypesCustomRequest(ctx context.Context) ApiCreateJobTypesCustomRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -209,7 +209,7 @@ DeleteJobTypesCustomById Deletes the custom job type associated with the provide
 	@param id Keyfactor identifier (GUID) of the job type
 	@return ApiDeleteJobTypesCustomByIdRequest
 */
-func (a *CustomJobTypeApiService) BuildDeleteJobTypesCustomByIdRequest(ctx context.Context, id string) ApiDeleteJobTypesCustomByIdRequest {
+func (a *CustomJobTypeApiService) NewDeleteJobTypesCustomByIdRequest(ctx context.Context, id string) ApiDeleteJobTypesCustomByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -366,7 +366,7 @@ GetJobTypesCustom Returns all custom job types according to the provided filter 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetJobTypesCustomRequest
 */
-func (a *CustomJobTypeApiService) BuildGetJobTypesCustomRequest(ctx context.Context) ApiGetJobTypesCustomRequest {
+func (a *CustomJobTypeApiService) NewGetJobTypesCustomRequest(ctx context.Context) ApiGetJobTypesCustomRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -519,7 +519,7 @@ GetJobTypesCustomById Returns a single custom job type associated with the provi
 	@param id Keyfactor (GUID) identifier of the job type
 	@return ApiGetJobTypesCustomByIdRequest
 */
-func (a *CustomJobTypeApiService) BuildGetJobTypesCustomByIdRequest(ctx context.Context, id string) ApiGetJobTypesCustomByIdRequest {
+func (a *CustomJobTypeApiService) NewGetJobTypesCustomByIdRequest(ctx context.Context, id string) ApiGetJobTypesCustomByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -665,7 +665,7 @@ UpdateJobTypesCustom Updates an existing custom job type with the provided prope
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateJobTypesCustomRequest
 */
-func (a *CustomJobTypeApiService) BuildUpdateJobTypesCustomRequest(ctx context.Context) ApiUpdateJobTypesCustomRequest {
+func (a *CustomJobTypeApiService) NewUpdateJobTypesCustomRequest(ctx context.Context) ApiUpdateJobTypesCustomRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

@@ -69,7 +69,7 @@ CreateExtensionsScripts Adds a new script
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateExtensionsScriptsRequest
 */
-func (a *ExtensionsApiService) BuildCreateExtensionsScriptsRequest(ctx context.Context) ApiCreateExtensionsScriptsRequest {
+func (a *ExtensionsApiService) NewCreateExtensionsScriptsRequest(ctx context.Context) ApiCreateExtensionsScriptsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -212,7 +212,7 @@ DeleteExtensionsScriptsById Deletes a script. Script cannot be configured to an 
 	@param id Id of the script to delete
 	@return ApiDeleteExtensionsScriptsByIdRequest
 */
-func (a *ExtensionsApiService) BuildDeleteExtensionsScriptsByIdRequest(ctx context.Context, id int32) ApiDeleteExtensionsScriptsByIdRequest {
+func (a *ExtensionsApiService) NewDeleteExtensionsScriptsByIdRequest(ctx context.Context, id int32) ApiDeleteExtensionsScriptsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -369,7 +369,7 @@ GetExtensionsScripts Returns all scripts according to the provided filter and ou
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetExtensionsScriptsRequest
 */
-func (a *ExtensionsApiService) BuildGetExtensionsScriptsRequest(ctx context.Context) ApiGetExtensionsScriptsRequest {
+func (a *ExtensionsApiService) NewGetExtensionsScriptsRequest(ctx context.Context) ApiGetExtensionsScriptsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -522,7 +522,7 @@ GetExtensionsScriptsById Returns a single script that matches the provided Id
 	@param id Id of the script
 	@return ApiGetExtensionsScriptsByIdRequest
 */
-func (a *ExtensionsApiService) BuildGetExtensionsScriptsByIdRequest(ctx context.Context, id int32) ApiGetExtensionsScriptsByIdRequest {
+func (a *ExtensionsApiService) NewGetExtensionsScriptsByIdRequest(ctx context.Context, id int32) ApiGetExtensionsScriptsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -674,7 +674,7 @@ UpdateExtensionsScripts Updates a script
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateExtensionsScriptsRequest
 */
-func (a *ExtensionsApiService) BuildUpdateExtensionsScriptsRequest(ctx context.Context) ApiUpdateExtensionsScriptsRequest {
+func (a *ExtensionsApiService) NewUpdateExtensionsScriptsRequest(ctx context.Context) ApiUpdateExtensionsScriptsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

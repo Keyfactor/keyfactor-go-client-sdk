@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## CreateAlertsDenied
 
-> AlertsDeniedDeniedAlertDefinitionResponse BuildCreateAlertsDeniedRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsDeniedDeniedAlertCreationRequest(alertsDeniedDeniedAlertCreationRequest).Execute()
+> AlertsDeniedDeniedAlertDefinitionResponse NewCreateAlertsDeniedRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsDeniedDeniedAlertCreationRequest(alertsDeniedDeniedAlertCreationRequest).Execute()
 
 Add a denied alert
 
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DeniedAlertApi.BuildCreateAlertsDeniedRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsDeniedDeniedAlertCreationRequest(alertsDeniedDeniedAlertCreationRequest).Execute()
+    resp, r, err := apiClient.DeniedAlertApi.NewCreateAlertsDeniedRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsDeniedDeniedAlertCreationRequest(alertsDeniedDeniedAlertCreationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DeniedAlertApi.CreateAlertsDenied``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## DeleteAlertsDeniedById
 
-> BuildDeleteAlertsDeniedByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteAlertsDeniedByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Delete a denied alert
 
@@ -105,7 +105,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DeniedAlertApi.BuildDeleteAlertsDeniedByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.DeniedAlertApi.NewDeleteAlertsDeniedByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DeniedAlertApi.DeleteAlertsDeniedById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## GetAlertsDenied
 
-> []AlertsDeniedDeniedAlertDefinitionResponse BuildGetAlertsDeniedRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []AlertsDeniedDeniedAlertDefinitionResponse NewGetAlertsDeniedRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets all denied alerts according to the provided filter and output parameters
 
@@ -179,7 +179,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DeniedAlertApi.BuildGetAlertsDeniedRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.DeniedAlertApi.NewGetAlertsDeniedRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DeniedAlertApi.GetAlertsDenied``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ## GetAlertsDeniedById
 
-> AlertsDeniedDeniedAlertDefinitionResponse BuildGetAlertsDeniedByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> AlertsDeniedDeniedAlertDefinitionResponse NewGetAlertsDeniedByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get a denied alert
 
@@ -251,7 +251,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DeniedAlertApi.BuildGetAlertsDeniedByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.DeniedAlertApi.NewGetAlertsDeniedByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DeniedAlertApi.GetAlertsDeniedById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAlertsDenied
 
-> AlertsDeniedDeniedAlertDefinitionResponse BuildUpdateAlertsDeniedRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsDeniedDeniedAlertUpdateRequest(alertsDeniedDeniedAlertUpdateRequest).Execute()
+> AlertsDeniedDeniedAlertDefinitionResponse NewUpdateAlertsDeniedRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsDeniedDeniedAlertUpdateRequest(alertsDeniedDeniedAlertUpdateRequest).Execute()
 
 Edit a denied alert
 
@@ -323,7 +323,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DeniedAlertApi.BuildUpdateAlertsDeniedRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsDeniedDeniedAlertUpdateRequest(alertsDeniedDeniedAlertUpdateRequest).Execute()
+    resp, r, err := apiClient.DeniedAlertApi.NewUpdateAlertsDeniedRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsDeniedDeniedAlertUpdateRequest(alertsDeniedDeniedAlertUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DeniedAlertApi.UpdateAlertsDenied``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

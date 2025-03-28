@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## CreateSecurityContainersByIdRoles
 
-> []CSSCMSDataModelModelsCertificateStoreContainerPermissions BuildCreateSecurityContainersByIdRolesRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoreContainerPermissions(cSSCMSDataModelModelsCertificateStoreContainerPermissions).Execute()
+> []CSSCMSDataModelModelsCertificateStoreContainerPermissions NewCreateSecurityContainersByIdRolesRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoreContainerPermissions(cSSCMSDataModelModelsCertificateStoreContainerPermissions).Execute()
 
 Edit a certificate store container's permissions. Reminder: Name field should be left blank.
 
@@ -42,7 +42,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityApi.BuildCreateSecurityContainersByIdRolesRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoreContainerPermissions(cSSCMSDataModelModelsCertificateStoreContainerPermissions).Execute()
+    resp, r, err := apiClient.SecurityApi.NewCreateSecurityContainersByIdRolesRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoreContainerPermissions(cSSCMSDataModelModelsCertificateStoreContainerPermissions).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityApi.CreateSecurityContainersByIdRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ## CreateSecurityIdentities
 
-> SecuritySecurityIdentitiesSecurityIdentityResponse BuildCreateSecurityIdentitiesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityIdentitiesSecurityIdentityRequest(securitySecurityIdentitiesSecurityIdentityRequest).Execute()
+> SecuritySecurityIdentitiesSecurityIdentityResponse NewCreateSecurityIdentitiesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityIdentitiesSecurityIdentityRequest(securitySecurityIdentitiesSecurityIdentityRequest).Execute()
 
 Adds a new security identity to the system.
 
@@ -115,7 +115,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityApi.BuildCreateSecurityIdentitiesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityIdentitiesSecurityIdentityRequest(securitySecurityIdentitiesSecurityIdentityRequest).Execute()
+    resp, r, err := apiClient.SecurityApi.NewCreateSecurityIdentitiesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecuritySecurityIdentitiesSecurityIdentityRequest(securitySecurityIdentitiesSecurityIdentityRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityApi.CreateSecurityIdentities``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ## DeleteSecurityIdentitiesById
 
-> BuildDeleteSecurityIdentitiesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteSecurityIdentitiesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes the security identity whose ID is provided.
 
@@ -183,7 +183,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityApi.BuildDeleteSecurityIdentitiesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityApi.NewDeleteSecurityIdentitiesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityApi.DeleteSecurityIdentitiesById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ## GetSecurityAuditCollectionsById
 
-> CertificateCollectionsCertificateCollectionPermissionsResponse BuildGetSecurityAuditCollectionsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CertificateCollectionsCertificateCollectionPermissionsResponse NewGetSecurityAuditCollectionsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets a list of applicable security permissions for certificate collection
 
@@ -253,7 +253,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityApi.BuildGetSecurityAuditCollectionsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityApi.NewGetSecurityAuditCollectionsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityApi.GetSecurityAuditCollectionsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 
 ## GetSecurityContainersByIdRoles
 
-> []CSSCMSDataModelModelsCertificateStoreContainerPermissions BuildGetSecurityContainersByIdRolesRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CSSCMSDataModelModelsCertificateStoreContainerPermissions NewGetSecurityContainersByIdRolesRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all the permissions of a certificate store container through the id
 
@@ -325,7 +325,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityApi.BuildGetSecurityContainersByIdRolesRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityApi.NewGetSecurityContainersByIdRolesRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityApi.GetSecurityContainersByIdRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -374,7 +374,7 @@ Name | Type | Description  | Notes
 
 ## GetSecurityIdentities
 
-> []SecuritySecurityIdentitiesSecurityIdentityResponse BuildGetSecurityIdentitiesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).Validate(validate).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []SecuritySecurityIdentitiesSecurityIdentityResponse NewGetSecurityIdentitiesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).Validate(validate).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all security identities according to the provided filter and output parameters.
 
@@ -401,7 +401,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityApi.BuildGetSecurityIdentitiesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).Validate(validate).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityApi.NewGetSecurityIdentitiesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).Validate(validate).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityApi.GetSecurityIdentities``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -450,7 +450,7 @@ Name | Type | Description  | Notes
 
 ## GetSecurityIdentitiesById
 
-> SecuritySecurityIdentityPermissionsSecurityIdentityPermissionsResponse BuildGetSecurityIdentitiesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> SecuritySecurityIdentityPermissionsSecurityIdentityPermissionsResponse NewGetSecurityIdentitiesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets an object representing the permissions of the identity associated with the provided identifier.
 
@@ -473,7 +473,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityApi.BuildGetSecurityIdentitiesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityApi.NewGetSecurityIdentitiesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityApi.GetSecurityIdentitiesById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -522,7 +522,7 @@ Name | Type | Description  | Notes
 
 ## GetSecurityIdentitiesLookup
 
-> SecuritySecurityIdentitiesSecurityIdentityLookupResponse BuildGetSecurityIdentitiesLookupRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).AccountName(accountName).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> SecuritySecurityIdentitiesSecurityIdentityLookupResponse NewGetSecurityIdentitiesLookupRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).AccountName(accountName).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Validates that the identity with the name given exists.
 
@@ -545,7 +545,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityApi.BuildGetSecurityIdentitiesLookupRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).AccountName(accountName).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityApi.NewGetSecurityIdentitiesLookupRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).AccountName(accountName).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityApi.GetSecurityIdentitiesLookup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -590,7 +590,7 @@ Name | Type | Description  | Notes
 
 ## GetSecurityMy
 
-> SecurityLegacySecurityRolesSecurityMyResponse BuildGetSecurityMyRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> SecurityLegacySecurityRolesSecurityMyResponse NewGetSecurityMyRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Looks at all the roles and global permissions for the user and returns them.
 
@@ -612,7 +612,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityApi.BuildGetSecurityMyRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityApi.NewGetSecurityMyRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityApi.GetSecurityMy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

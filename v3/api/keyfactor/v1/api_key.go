@@ -84,7 +84,7 @@ CreateSSHKeysMyKey Generates an SSH Key Pair for the requesting user.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSSHKeysMyKeyRequest
 */
-func (a *KeyApiService) BuildCreateSSHKeysMyKeyRequest(ctx context.Context) ApiCreateSSHKeysMyKeyRequest {
+func (a *KeyApiService) NewCreateSSHKeysMyKeyRequest(ctx context.Context) ApiCreateSSHKeysMyKeyRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -229,7 +229,7 @@ DeleteSSHKeysUnmanaged Deletes Unmanaged Keys associated with the provided ident
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiDeleteSSHKeysUnmanagedRequest
 */
-func (a *KeyApiService) BuildDeleteSSHKeysUnmanagedRequest(ctx context.Context) ApiDeleteSSHKeysUnmanagedRequest {
+func (a *KeyApiService) NewDeleteSSHKeysUnmanagedRequest(ctx context.Context) ApiDeleteSSHKeysUnmanagedRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -357,7 +357,7 @@ DeleteSSHKeysUnmanagedById Deletes Unmanaged Key associated with the provided id
 	@param id Keyfactor identifer of the Key to be deleted
 	@return ApiDeleteSSHKeysUnmanagedByIdRequest
 */
-func (a *KeyApiService) BuildDeleteSSHKeysUnmanagedByIdRequest(ctx context.Context, id int32) ApiDeleteSSHKeysUnmanagedByIdRequest {
+func (a *KeyApiService) NewDeleteSSHKeysUnmanagedByIdRequest(ctx context.Context, id int32) ApiDeleteSSHKeysUnmanagedByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -497,7 +497,7 @@ GetSSHKeysMyKey Returns the current key of the requesting user
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSSHKeysMyKeyRequest
 */
-func (a *KeyApiService) BuildGetSSHKeysMyKeyRequest(ctx context.Context) ApiGetSSHKeysMyKeyRequest {
+func (a *KeyApiService) NewGetSSHKeysMyKeyRequest(ctx context.Context) ApiGetSSHKeysMyKeyRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -666,7 +666,7 @@ GetSSHKeysUnmanaged Returns Unmanaged SSH keys
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSSHKeysUnmanagedRequest
 */
-func (a *KeyApiService) BuildGetSSHKeysUnmanagedRequest(ctx context.Context) ApiGetSSHKeysUnmanagedRequest {
+func (a *KeyApiService) NewGetSSHKeysUnmanagedRequest(ctx context.Context) ApiGetSSHKeysUnmanagedRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -819,7 +819,7 @@ GetSSHKeysUnmanagedById Returns an unmanaged SSH key with provided id.
 	@param id The id of the key to get
 	@return ApiGetSSHKeysUnmanagedByIdRequest
 */
-func (a *KeyApiService) BuildGetSSHKeysUnmanagedByIdRequest(ctx context.Context, id int32) ApiGetSSHKeysUnmanagedByIdRequest {
+func (a *KeyApiService) NewGetSSHKeysUnmanagedByIdRequest(ctx context.Context, id int32) ApiGetSSHKeysUnmanagedByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -971,7 +971,7 @@ UpdateSSHKeysMyKey Updates the requesting user's SSH key
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSSHKeysMyKeyRequest
 */
-func (a *KeyApiService) BuildUpdateSSHKeysMyKeyRequest(ctx context.Context) ApiUpdateSSHKeysMyKeyRequest {
+func (a *KeyApiService) NewUpdateSSHKeysMyKeyRequest(ctx context.Context) ApiUpdateSSHKeysMyKeyRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

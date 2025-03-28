@@ -69,7 +69,7 @@ CreateSecurityClaims Adds a new claim definition to the system.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSecurityClaimsRequest
 */
-func (a *SecurityClaimsApiService) BuildCreateSecurityClaimsRequest(ctx context.Context) ApiCreateSecurityClaimsRequest {
+func (a *SecurityClaimsApiService) NewCreateSecurityClaimsRequest(ctx context.Context) ApiCreateSecurityClaimsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -209,7 +209,7 @@ DeleteSecurityClaimsById Removes a claim definition from the system.
 	@param id the Keyfactor identifier of the claim definition to delete
 	@return ApiDeleteSecurityClaimsByIdRequest
 */
-func (a *SecurityClaimsApiService) BuildDeleteSecurityClaimsByIdRequest(ctx context.Context, id int32) ApiDeleteSecurityClaimsByIdRequest {
+func (a *SecurityClaimsApiService) NewDeleteSecurityClaimsByIdRequest(ctx context.Context, id int32) ApiDeleteSecurityClaimsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -366,7 +366,7 @@ GetSecurityClaims Returns all claim definitions according to the provided filter
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSecurityClaimsRequest
 */
-func (a *SecurityClaimsApiService) BuildGetSecurityClaimsRequest(ctx context.Context) ApiGetSecurityClaimsRequest {
+func (a *SecurityClaimsApiService) NewGetSecurityClaimsRequest(ctx context.Context) ApiGetSecurityClaimsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -519,7 +519,7 @@ GetSecurityClaimsById Returns a single claim definition that matches the id.
 	@param id claim definition identifier
 	@return ApiGetSecurityClaimsByIdRequest
 */
-func (a *SecurityClaimsApiService) BuildGetSecurityClaimsByIdRequest(ctx context.Context, id int32) ApiGetSecurityClaimsByIdRequest {
+func (a *SecurityClaimsApiService) NewGetSecurityClaimsByIdRequest(ctx context.Context, id int32) ApiGetSecurityClaimsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -676,7 +676,7 @@ GetSecurityClaimsRoles Returns a list of roles granted by the claim with the pro
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSecurityClaimsRolesRequest
 */
-func (a *SecurityClaimsApiService) BuildGetSecurityClaimsRolesRequest(ctx context.Context) ApiGetSecurityClaimsRolesRequest {
+func (a *SecurityClaimsApiService) NewGetSecurityClaimsRolesRequest(ctx context.Context) ApiGetSecurityClaimsRolesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -843,7 +843,7 @@ UpdateSecurityClaims Updates an existing claim definition.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSecurityClaimsRequest
 */
-func (a *SecurityClaimsApiService) BuildUpdateSecurityClaimsRequest(ctx context.Context) ApiUpdateSecurityClaimsRequest {
+func (a *SecurityClaimsApiService) NewUpdateSecurityClaimsRequest(ctx context.Context) ApiUpdateSecurityClaimsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

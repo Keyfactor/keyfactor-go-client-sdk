@@ -69,7 +69,7 @@ CreateAlertsDenied Add a denied alert
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateAlertsDeniedRequest
 */
-func (a *DeniedAlertApiService) BuildCreateAlertsDeniedRequest(ctx context.Context) ApiCreateAlertsDeniedRequest {
+func (a *DeniedAlertApiService) NewCreateAlertsDeniedRequest(ctx context.Context) ApiCreateAlertsDeniedRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -209,7 +209,7 @@ DeleteAlertsDeniedById Delete a denied alert
 	@param id Id for the denied alert
 	@return ApiDeleteAlertsDeniedByIdRequest
 */
-func (a *DeniedAlertApiService) BuildDeleteAlertsDeniedByIdRequest(ctx context.Context, id int32) ApiDeleteAlertsDeniedByIdRequest {
+func (a *DeniedAlertApiService) NewDeleteAlertsDeniedByIdRequest(ctx context.Context, id int32) ApiDeleteAlertsDeniedByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -366,7 +366,7 @@ GetAlertsDenied Gets all denied alerts according to the provided filter and outp
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAlertsDeniedRequest
 */
-func (a *DeniedAlertApiService) BuildGetAlertsDeniedRequest(ctx context.Context) ApiGetAlertsDeniedRequest {
+func (a *DeniedAlertApiService) NewGetAlertsDeniedRequest(ctx context.Context) ApiGetAlertsDeniedRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -519,7 +519,7 @@ GetAlertsDeniedById Get a denied alert
 	@param id Id for the denied alert to get
 	@return ApiGetAlertsDeniedByIdRequest
 */
-func (a *DeniedAlertApiService) BuildGetAlertsDeniedByIdRequest(ctx context.Context, id int32) ApiGetAlertsDeniedByIdRequest {
+func (a *DeniedAlertApiService) NewGetAlertsDeniedByIdRequest(ctx context.Context, id int32) ApiGetAlertsDeniedByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -665,7 +665,7 @@ UpdateAlertsDenied Edit a denied alert
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateAlertsDeniedRequest
 */
-func (a *DeniedAlertApiService) BuildUpdateAlertsDeniedRequest(ctx context.Context) ApiUpdateAlertsDeniedRequest {
+func (a *DeniedAlertApiService) NewUpdateAlertsDeniedRequest(ctx context.Context) ApiUpdateAlertsDeniedRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

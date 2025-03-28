@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## CreateSSHServiceAccounts
 
-> CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse BuildCreateSSHServiceAccountsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest(cSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest).Execute()
+> CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse NewCreateSSHServiceAccountsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest(cSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest).Execute()
 
 Creates a ServiceAccount with the provided properties
 
@@ -40,7 +40,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServiceAccountApi.BuildCreateSSHServiceAccountsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest(cSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest).Execute()
+    resp, r, err := apiClient.ServiceAccountApi.NewCreateSSHServiceAccountsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest(cSSCMSDataModelModelsSSHServiceAccountsServiceAccountCreationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAccountApi.CreateSSHServiceAccounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ## CreateSSHServiceAccountsRotateById
 
-> CSSCMSDataModelModelsSSHKeysKeyResponse BuildCreateSSHServiceAccountsRotateByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHKeysKeyGenerationRequest(cSSCMSDataModelModelsSSHKeysKeyGenerationRequest).Execute()
+> CSSCMSDataModelModelsSSHKeysKeyResponse NewCreateSSHServiceAccountsRotateByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHKeysKeyGenerationRequest(cSSCMSDataModelModelsSSHKeysKeyGenerationRequest).Execute()
 
 Rotate an SSH key for a specified service account.
 
@@ -109,7 +109,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServiceAccountApi.BuildCreateSSHServiceAccountsRotateByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHKeysKeyGenerationRequest(cSSCMSDataModelModelsSSHKeysKeyGenerationRequest).Execute()
+    resp, r, err := apiClient.ServiceAccountApi.NewCreateSSHServiceAccountsRotateByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHKeysKeyGenerationRequest(cSSCMSDataModelModelsSSHKeysKeyGenerationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAccountApi.CreateSSHServiceAccountsRotateById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ## DeleteSSHServiceAccounts
 
-> BuildDeleteSSHServiceAccountsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
+> NewDeleteSSHServiceAccountsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
 
 Deletes Service Accounts associated with the provided identifiers
 
@@ -182,7 +182,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServiceAccountApi.BuildDeleteSSHServiceAccountsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
+    resp, r, err := apiClient.ServiceAccountApi.NewDeleteSSHServiceAccountsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAccountApi.DeleteSSHServiceAccounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 ## DeleteSSHServiceAccountsById
 
-> BuildDeleteSSHServiceAccountsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteSSHServiceAccountsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes a ServiceAccount associated with the provided identifier
 
@@ -248,7 +248,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServiceAccountApi.BuildDeleteSSHServiceAccountsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ServiceAccountApi.NewDeleteSSHServiceAccountsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAccountApi.DeleteSSHServiceAccountsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -295,7 +295,7 @@ Name | Type | Description  | Notes
 
 ## GetSSHServiceAccounts
 
-> []CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse BuildGetSSHServiceAccountsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse NewGetSSHServiceAccountsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all ServiceAccounts according to the provided filter parameters
 
@@ -322,7 +322,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServiceAccountApi.BuildGetSSHServiceAccountsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ServiceAccountApi.NewGetSSHServiceAccountsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAccountApi.GetSSHServiceAccounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 
 ## GetSSHServiceAccountsById
 
-> CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse BuildGetSSHServiceAccountsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse NewGetSSHServiceAccountsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a ServiceAccount associated with the provided identifier
 
@@ -394,7 +394,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServiceAccountApi.BuildGetSSHServiceAccountsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ServiceAccountApi.NewGetSSHServiceAccountsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAccountApi.GetSSHServiceAccountsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -443,7 +443,7 @@ Name | Type | Description  | Notes
 
 ## GetSSHServiceAccountsKeyById
 
-> CSSCMSDataModelModelsSSHKeysKeyResponse BuildGetSSHServiceAccountsKeyByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludePrivateKey(includePrivateKey).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsSSHKeysKeyResponse NewGetSSHServiceAccountsKeyByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludePrivateKey(includePrivateKey).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns an SSH key with or without private key based on the provided parameters.
 
@@ -467,7 +467,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServiceAccountApi.BuildGetSSHServiceAccountsKeyByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludePrivateKey(includePrivateKey).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.ServiceAccountApi.NewGetSSHServiceAccountsKeyByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).IncludePrivateKey(includePrivateKey).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAccountApi.GetSSHServiceAccountsKeyById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -517,7 +517,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSSHServiceAccounts
 
-> CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse BuildUpdateSSHServiceAccountsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest(cSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest).Execute()
+> CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse NewUpdateSSHServiceAccountsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest(cSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest).Execute()
 
 Updates an SSH key for a specified service account.
 
@@ -540,7 +540,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ServiceAccountApi.BuildUpdateSSHServiceAccountsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest(cSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest).Execute()
+    resp, r, err := apiClient.ServiceAccountApi.NewUpdateSSHServiceAccountsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest(cSSCMSDataModelModelsSSHServiceAccountsServiceAccountUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAccountApi.UpdateSSHServiceAccounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

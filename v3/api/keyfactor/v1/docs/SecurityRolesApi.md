@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## CreateSecurityRoles
 
-> SecurityLegacySecurityRolesSecurityRoleResponse BuildCreateSecurityRolesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityLegacySecurityRolesSecurityRoleCreationRequest(securityLegacySecurityRolesSecurityRoleCreationRequest).Execute()
+> SecurityLegacySecurityRolesSecurityRoleResponse NewCreateSecurityRolesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityLegacySecurityRolesSecurityRoleCreationRequest(securityLegacySecurityRolesSecurityRoleCreationRequest).Execute()
 
 Adds a new security role to the system.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
@@ -40,7 +40,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolesApi.BuildCreateSecurityRolesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityLegacySecurityRolesSecurityRoleCreationRequest(securityLegacySecurityRolesSecurityRoleCreationRequest).Execute()
+    resp, r, err := apiClient.SecurityRolesApi.NewCreateSecurityRolesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityLegacySecurityRolesSecurityRoleCreationRequest(securityLegacySecurityRolesSecurityRoleCreationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolesApi.CreateSecurityRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ## CreateSecurityRolesByIdCopy
 
-> SecurityLegacySecurityRolesSecurityRoleResponse BuildCreateSecurityRolesByIdCopyRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityLegacySecurityRolesSecurityRoleCopyRequest(securityLegacySecurityRolesSecurityRoleCopyRequest).Execute()
+> SecurityLegacySecurityRolesSecurityRoleResponse NewCreateSecurityRolesByIdCopyRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityLegacySecurityRolesSecurityRoleCopyRequest(securityLegacySecurityRolesSecurityRoleCopyRequest).Execute()
 
 Makes a copy of an existing security role.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
@@ -109,7 +109,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolesApi.BuildCreateSecurityRolesByIdCopyRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityLegacySecurityRolesSecurityRoleCopyRequest(securityLegacySecurityRolesSecurityRoleCopyRequest).Execute()
+    resp, r, err := apiClient.SecurityRolesApi.NewCreateSecurityRolesByIdCopyRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityLegacySecurityRolesSecurityRoleCopyRequest(securityLegacySecurityRolesSecurityRoleCopyRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolesApi.CreateSecurityRolesByIdCopy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ## DeleteSecurityRolesById
 
-> BuildDeleteSecurityRolesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteSecurityRolesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes the security role whose ID is provided.
 
@@ -182,7 +182,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolesApi.BuildDeleteSecurityRolesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityRolesApi.NewDeleteSecurityRolesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolesApi.DeleteSecurityRolesById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ## GetSecurityRoles
 
-> []SecurityLegacySecurityRolesSecurityRoleResponse BuildGetSecurityRolesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Validate(validate).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []SecurityLegacySecurityRolesSecurityRoleResponse NewGetSecurityRolesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Validate(validate).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all security roles according to the provided filter and output parameters.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
@@ -257,7 +257,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolesApi.BuildGetSecurityRolesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Validate(validate).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityRolesApi.NewGetSecurityRolesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Validate(validate).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolesApi.GetSecurityRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ## GetSecurityRolesById
 
-> SecurityLegacySecurityRolesSecurityRoleResponse BuildGetSecurityRolesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> SecurityLegacySecurityRolesSecurityRoleResponse NewGetSecurityRolesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a single security role that matches the id.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
@@ -330,7 +330,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolesApi.BuildGetSecurityRolesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityRolesApi.NewGetSecurityRolesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolesApi.GetSecurityRolesById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 ## GetSecurityRolesByIdIdentities
 
-> []SecurityLegacySecurityRolesRoleIdentitiesResponse BuildGetSecurityRolesByIdIdentitiesRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []SecurityLegacySecurityRolesRoleIdentitiesResponse NewGetSecurityRolesByIdIdentitiesRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all identities which have the security role that matches the id.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
@@ -402,7 +402,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolesApi.BuildGetSecurityRolesByIdIdentitiesRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SecurityRolesApi.NewGetSecurityRolesByIdIdentitiesRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolesApi.GetSecurityRolesByIdIdentities``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -451,7 +451,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSecurityRoles
 
-> SecurityLegacySecurityRolesSecurityRoleResponse BuildUpdateSecurityRolesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityLegacySecurityRolesSecurityRoleUpdateRequest(securityLegacySecurityRolesSecurityRoleUpdateRequest).Execute()
+> SecurityLegacySecurityRolesSecurityRoleResponse NewUpdateSecurityRolesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityLegacySecurityRolesSecurityRoleUpdateRequest(securityLegacySecurityRolesSecurityRoleUpdateRequest).Execute()
 
 Updates a security role that matches the id.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
@@ -474,7 +474,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolesApi.BuildUpdateSecurityRolesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityLegacySecurityRolesSecurityRoleUpdateRequest(securityLegacySecurityRolesSecurityRoleUpdateRequest).Execute()
+    resp, r, err := apiClient.SecurityRolesApi.NewUpdateSecurityRolesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityLegacySecurityRolesSecurityRoleUpdateRequest(securityLegacySecurityRolesSecurityRoleUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolesApi.UpdateSecurityRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -519,7 +519,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSecurityRolesByIdIdentities
 
-> []SecurityLegacySecurityRolesRoleIdentitiesResponse BuildUpdateSecurityRolesByIdIdentitiesRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityLegacySecurityRolesRoleIdentitiesRequest(securityLegacySecurityRolesRoleIdentitiesRequest).Execute()
+> []SecurityLegacySecurityRolesRoleIdentitiesResponse NewUpdateSecurityRolesByIdIdentitiesRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityLegacySecurityRolesRoleIdentitiesRequest(securityLegacySecurityRolesRoleIdentitiesRequest).Execute()
 
 Updates the identities which have the security role that matches the id.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
@@ -543,7 +543,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SecurityRolesApi.BuildUpdateSecurityRolesByIdIdentitiesRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityLegacySecurityRolesRoleIdentitiesRequest(securityLegacySecurityRolesRoleIdentitiesRequest).Execute()
+    resp, r, err := apiClient.SecurityRolesApi.NewUpdateSecurityRolesByIdIdentitiesRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityLegacySecurityRolesRoleIdentitiesRequest(securityLegacySecurityRolesRoleIdentitiesRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecurityRolesApi.UpdateSecurityRolesByIdIdentities``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

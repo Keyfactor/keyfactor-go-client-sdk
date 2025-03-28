@@ -71,7 +71,7 @@ CreateMetadataFields Creates a new metadata field type with the given metadata f
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateMetadataFieldsRequest
 */
-func (a *MetadataFieldApiService) BuildCreateMetadataFieldsRequest(ctx context.Context) ApiCreateMetadataFieldsRequest {
+func (a *MetadataFieldApiService) NewCreateMetadataFieldsRequest(ctx context.Context) ApiCreateMetadataFieldsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -225,7 +225,7 @@ This will ignore individual delete failures, and continue processing the array.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiDeleteMetadataFieldsRequest
 */
-func (a *MetadataFieldApiService) BuildDeleteMetadataFieldsRequest(ctx context.Context) ApiDeleteMetadataFieldsRequest {
+func (a *MetadataFieldApiService) NewDeleteMetadataFieldsRequest(ctx context.Context) ApiDeleteMetadataFieldsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -363,7 +363,7 @@ DeleteMetadataFieldsById Deletes a persisted metadata field type by its unique i
 	@param id Keyfactor identifier of the metadata field type
 	@return ApiDeleteMetadataFieldsByIdRequest
 */
-func (a *MetadataFieldApiService) BuildDeleteMetadataFieldsByIdRequest(ctx context.Context, id int32) ApiDeleteMetadataFieldsByIdRequest {
+func (a *MetadataFieldApiService) NewDeleteMetadataFieldsByIdRequest(ctx context.Context, id int32) ApiDeleteMetadataFieldsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -529,7 +529,7 @@ GetMetadataFields Returns all metadata field types according to the provided fil
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetMetadataFieldsRequest
 */
-func (a *MetadataFieldApiService) BuildGetMetadataFieldsRequest(ctx context.Context) ApiGetMetadataFieldsRequest {
+func (a *MetadataFieldApiService) NewGetMetadataFieldsRequest(ctx context.Context) ApiGetMetadataFieldsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -682,7 +682,7 @@ GetMetadataFieldsById Gets a persisted metadata field type by its unique id
 	@param id The unique id of the metadata field type
 	@return ApiGetMetadataFieldsByIdRequest
 */
-func (a *MetadataFieldApiService) BuildGetMetadataFieldsByIdRequest(ctx context.Context, id int32) ApiGetMetadataFieldsByIdRequest {
+func (a *MetadataFieldApiService) NewGetMetadataFieldsByIdRequest(ctx context.Context, id int32) ApiGetMetadataFieldsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -829,7 +829,7 @@ GetMetadataFieldsByIdInUse Determines if a metadata field type associated with t
 	@param id Keyfactor identitifer of the metadata field
 	@return ApiGetMetadataFieldsByIdInUseRequest
 */
-func (a *MetadataFieldApiService) BuildGetMetadataFieldsByIdInUseRequest(ctx context.Context, id int32) ApiGetMetadataFieldsByIdInUseRequest {
+func (a *MetadataFieldApiService) NewGetMetadataFieldsByIdInUseRequest(ctx context.Context, id int32) ApiGetMetadataFieldsByIdInUseRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -970,7 +970,7 @@ GetMetadataFieldsName Gets a persisted metadata field type by its unique name
 	@param name The unique name of the metadata field.
 	@return ApiGetMetadataFieldsNameRequest
 */
-func (a *MetadataFieldApiService) BuildGetMetadataFieldsNameRequest(ctx context.Context, name string) ApiGetMetadataFieldsNameRequest {
+func (a *MetadataFieldApiService) NewGetMetadataFieldsNameRequest(ctx context.Context, name string) ApiGetMetadataFieldsNameRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1118,7 +1118,7 @@ UpdateMetadataFields Updates a persisted metadata field with the given metadata 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateMetadataFieldsRequest
 */
-func (a *MetadataFieldApiService) BuildUpdateMetadataFieldsRequest(ctx context.Context) ApiUpdateMetadataFieldsRequest {
+func (a *MetadataFieldApiService) NewUpdateMetadataFieldsRequest(ctx context.Context) ApiUpdateMetadataFieldsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

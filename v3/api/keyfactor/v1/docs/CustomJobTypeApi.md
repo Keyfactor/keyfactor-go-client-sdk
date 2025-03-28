@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## CreateJobTypesCustom
 
-> OrchestratorJobsJobTypeResponse BuildCreateJobTypesCustomRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest(cSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest).Execute()
+> OrchestratorJobsJobTypeResponse NewCreateJobTypesCustomRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest(cSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest).Execute()
 
 Creates a custom job type with the provided properties
 
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomJobTypeApi.BuildCreateJobTypesCustomRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest(cSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest).Execute()
+    resp, r, err := apiClient.CustomJobTypeApi.NewCreateJobTypesCustomRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest(cSSCMSDataModelModelsOrchestratorJobsJobTypeCreateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomJobTypeApi.CreateJobTypesCustom``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## DeleteJobTypesCustomById
 
-> BuildDeleteJobTypesCustomByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteJobTypesCustomByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes the custom job type associated with the provided id
 
@@ -105,7 +105,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomJobTypeApi.BuildDeleteJobTypesCustomByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CustomJobTypeApi.NewDeleteJobTypesCustomByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomJobTypeApi.DeleteJobTypesCustomById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## GetJobTypesCustom
 
-> []OrchestratorJobsJobTypeResponse BuildGetJobTypesCustomRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []OrchestratorJobsJobTypeResponse NewGetJobTypesCustomRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all custom job types according to the provided filter and output parameters
 
@@ -179,7 +179,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomJobTypeApi.BuildGetJobTypesCustomRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CustomJobTypeApi.NewGetJobTypesCustomRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomJobTypeApi.GetJobTypesCustom``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ## GetJobTypesCustomById
 
-> OrchestratorJobsJobTypeResponse BuildGetJobTypesCustomByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> OrchestratorJobsJobTypeResponse NewGetJobTypesCustomByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a single custom job type associated with the provided id
 
@@ -251,7 +251,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomJobTypeApi.BuildGetJobTypesCustomByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CustomJobTypeApi.NewGetJobTypesCustomByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomJobTypeApi.GetJobTypesCustomById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ## UpdateJobTypesCustom
 
-> OrchestratorJobsJobTypeResponse BuildUpdateJobTypesCustomRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest(cSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest).Execute()
+> OrchestratorJobsJobTypeResponse NewUpdateJobTypesCustomRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest(cSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest).Execute()
 
 Updates an existing custom job type with the provided properties
 
@@ -323,7 +323,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomJobTypeApi.BuildUpdateJobTypesCustomRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest(cSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest).Execute()
+    resp, r, err := apiClient.CustomJobTypeApi.NewUpdateJobTypesCustomRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest(cSSCMSDataModelModelsOrchestratorJobsJobTypeUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomJobTypeApi.UpdateJobTypesCustom``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

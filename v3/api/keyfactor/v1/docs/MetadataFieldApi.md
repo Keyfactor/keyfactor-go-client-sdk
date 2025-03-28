@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## CreateMetadataFields
 
-> MetadataFieldMetadataFieldResponse BuildCreateMetadataFieldsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MetadataFieldMetadataFieldCreateRequest(metadataFieldMetadataFieldCreateRequest).Execute()
+> MetadataFieldMetadataFieldResponse NewCreateMetadataFieldsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MetadataFieldMetadataFieldCreateRequest(metadataFieldMetadataFieldCreateRequest).Execute()
 
 Creates a new metadata field type with the given metadata field type properties
 
@@ -42,7 +42,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataFieldApi.BuildCreateMetadataFieldsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MetadataFieldMetadataFieldCreateRequest(metadataFieldMetadataFieldCreateRequest).Execute()
+    resp, r, err := apiClient.MetadataFieldApi.NewCreateMetadataFieldsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MetadataFieldMetadataFieldCreateRequest(metadataFieldMetadataFieldCreateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.CreateMetadataFields``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ## DeleteMetadataFields
 
-> BuildDeleteMetadataFieldsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
+> NewDeleteMetadataFieldsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
 
 Deletes multiple persisted metadata field types by their unique ids
 
@@ -113,7 +113,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataFieldApi.BuildDeleteMetadataFieldsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
+    resp, r, err := apiClient.MetadataFieldApi.NewDeleteMetadataFieldsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.DeleteMetadataFields``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ## DeleteMetadataFieldsById
 
-> BuildDeleteMetadataFieldsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteMetadataFieldsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes a persisted metadata field type by its unique id
 
@@ -181,7 +181,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataFieldApi.BuildDeleteMetadataFieldsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.MetadataFieldApi.NewDeleteMetadataFieldsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.DeleteMetadataFieldsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ## GetMetadataFields
 
-> []CSSCMSDataModelModelsMetadataType BuildGetMetadataFieldsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CSSCMSDataModelModelsMetadataType NewGetMetadataFieldsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all metadata field types according to the provided filter and output parameters
 
@@ -258,7 +258,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataFieldApi.BuildGetMetadataFieldsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.MetadataFieldApi.NewGetMetadataFieldsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.GetMetadataFields``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ## GetMetadataFieldsById
 
-> CSSCMSDataModelModelsMetadataType BuildGetMetadataFieldsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsMetadataType NewGetMetadataFieldsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets a persisted metadata field type by its unique id
 
@@ -332,7 +332,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataFieldApi.BuildGetMetadataFieldsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.MetadataFieldApi.NewGetMetadataFieldsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.GetMetadataFieldsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -381,7 +381,7 @@ Name | Type | Description  | Notes
 
 ## GetMetadataFieldsByIdInUse
 
-> bool BuildGetMetadataFieldsByIdInUseRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> bool NewGetMetadataFieldsByIdInUseRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Determines if a metadata field type associated with the provided identifier is currently in use
 
@@ -404,7 +404,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataFieldApi.BuildGetMetadataFieldsByIdInUseRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.MetadataFieldApi.NewGetMetadataFieldsByIdInUseRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.GetMetadataFieldsByIdInUse``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 ## GetMetadataFieldsName
 
-> CSSCMSDataModelModelsMetadataType BuildGetMetadataFieldsNameRequest(ctx, name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsMetadataType NewGetMetadataFieldsNameRequest(ctx, name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets a persisted metadata field type by its unique name
 
@@ -478,7 +478,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataFieldApi.BuildGetMetadataFieldsNameRequest(context.Background(), name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.MetadataFieldApi.NewGetMetadataFieldsNameRequest(context.Background(), name).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.GetMetadataFieldsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -527,7 +527,7 @@ Name | Type | Description  | Notes
 
 ## UpdateMetadataFields
 
-> MetadataFieldMetadataFieldResponse BuildUpdateMetadataFieldsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MetadataFieldMetadataFieldUpdateRequest(metadataFieldMetadataFieldUpdateRequest).Execute()
+> MetadataFieldMetadataFieldResponse NewUpdateMetadataFieldsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MetadataFieldMetadataFieldUpdateRequest(metadataFieldMetadataFieldUpdateRequest).Execute()
 
 Updates a persisted metadata field with the given metadata field type
 
@@ -552,7 +552,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataFieldApi.BuildUpdateMetadataFieldsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MetadataFieldMetadataFieldUpdateRequest(metadataFieldMetadataFieldUpdateRequest).Execute()
+    resp, r, err := apiClient.MetadataFieldApi.NewUpdateMetadataFieldsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).MetadataFieldMetadataFieldUpdateRequest(metadataFieldMetadataFieldUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataFieldApi.UpdateMetadataFields``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

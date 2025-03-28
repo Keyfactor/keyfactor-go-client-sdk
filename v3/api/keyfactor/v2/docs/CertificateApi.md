@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GetCertificatesIdentityAuditById
 
-> []CertificatesCertificateIdentityAuditResponse2 BuildGetCertificatesIdentityAuditByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CertificatesCertificateIdentityAuditResponse2 NewGetCertificatesIdentityAuditByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Audit identity permissions for certificate
 
@@ -34,7 +34,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateApi.BuildGetCertificatesIdentityAuditByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateApi.NewGetCertificatesIdentityAuditByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateApi.GetCertificatesIdentityAuditById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

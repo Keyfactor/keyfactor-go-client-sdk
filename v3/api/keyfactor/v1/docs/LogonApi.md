@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## CreateSSHLogons
 
-> CSSCMSDataModelModelsSSHLogonsLogonResponse BuildCreateSSHLogonsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHLogonsLogonCreationRequest(cSSCMSDataModelModelsSSHLogonsLogonCreationRequest).Execute()
+> CSSCMSDataModelModelsSSHLogonsLogonResponse NewCreateSSHLogonsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHLogonsLogonCreationRequest(cSSCMSDataModelModelsSSHLogonsLogonCreationRequest).Execute()
 
 Creates a logon with the provided properties
 
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogonApi.BuildCreateSSHLogonsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHLogonsLogonCreationRequest(cSSCMSDataModelModelsSSHLogonsLogonCreationRequest).Execute()
+    resp, r, err := apiClient.LogonApi.NewCreateSSHLogonsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHLogonsLogonCreationRequest(cSSCMSDataModelModelsSSHLogonsLogonCreationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LogonApi.CreateSSHLogons``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## CreateSSHLogonsAccess
 
-> CSSCMSDataModelModelsSSHAccessLogonUserAccessResponse BuildCreateSSHLogonsAccessRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHLogonsLogonAccessRequest(cSSCMSDataModelModelsSSHLogonsLogonAccessRequest).Execute()
+> CSSCMSDataModelModelsSSHAccessLogonUserAccessResponse NewCreateSSHLogonsAccessRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHLogonsLogonAccessRequest(cSSCMSDataModelModelsSSHLogonsLogonAccessRequest).Execute()
 
 Updates the users with access to an existing logon
 
@@ -105,7 +105,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogonApi.BuildCreateSSHLogonsAccessRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHLogonsLogonAccessRequest(cSSCMSDataModelModelsSSHLogonsLogonAccessRequest).Execute()
+    resp, r, err := apiClient.LogonApi.NewCreateSSHLogonsAccessRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSHLogonsLogonAccessRequest(cSSCMSDataModelModelsSSHLogonsLogonAccessRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LogonApi.CreateSSHLogonsAccess``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ## DeleteSSHLogonsById
 
-> BuildDeleteSSHLogonsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteSSHLogonsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes a Logon associated with the provided identifier
 
@@ -173,7 +173,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogonApi.BuildDeleteSSHLogonsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.LogonApi.NewDeleteSSHLogonsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LogonApi.DeleteSSHLogonsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ## GetSSHLogons
 
-> []CSSCMSDataModelModelsSSHLogonsLogonQueryResponse BuildGetSSHLogonsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CSSCMSDataModelModelsSSHLogonsLogonQueryResponse NewGetSSHLogonsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all Logons according to the provided filter parameters
 
@@ -247,7 +247,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogonApi.BuildGetSSHLogonsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.LogonApi.NewGetSSHLogonsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LogonApi.GetSSHLogons``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 ## GetSSHLogonsById
 
-> CSSCMSDataModelModelsSSHLogonsLogonResponse BuildGetSSHLogonsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsSSHLogonsLogonResponse NewGetSSHLogonsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Fetches a Logon associated with the provided identifier
 
@@ -319,7 +319,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogonApi.BuildGetSSHLogonsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.LogonApi.NewGetSSHLogonsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LogonApi.GetSSHLogonsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

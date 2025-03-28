@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## CreatePamProvidersLocalProviderIdEntries
 
-> PAMLocalLocalPAMEntryResponse BuildCreatePamProvidersLocalProviderIdEntriesRequest(ctx, providerId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PAMLocalLocalPAMEntryCreateRequest(pAMLocalLocalPAMEntryCreateRequest).Execute()
+> PAMLocalLocalPAMEntryResponse NewCreatePamProvidersLocalProviderIdEntriesRequest(ctx, providerId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PAMLocalLocalPAMEntryCreateRequest(pAMLocalLocalPAMEntryCreateRequest).Execute()
 
 Creates a new local PAM entry with the associated properties
 
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PAMLocalEntriesApi.BuildCreatePamProvidersLocalProviderIdEntriesRequest(context.Background(), providerId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PAMLocalLocalPAMEntryCreateRequest(pAMLocalLocalPAMEntryCreateRequest).Execute()
+    resp, r, err := apiClient.PAMLocalEntriesApi.NewCreatePamProvidersLocalProviderIdEntriesRequest(context.Background(), providerId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PAMLocalLocalPAMEntryCreateRequest(pAMLocalLocalPAMEntryCreateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PAMLocalEntriesApi.CreatePamProvidersLocalProviderIdEntries``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ## DeletePamProvidersLocalProviderIdEntries
 
-> BuildDeletePamProvidersLocalProviderIdEntriesRequest(ctx, providerId).SecretName(secretName).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeletePamProvidersLocalProviderIdEntriesRequest(ctx, providerId).SecretName(secretName).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes a local PAM entry
 
@@ -111,7 +111,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PAMLocalEntriesApi.BuildDeletePamProvidersLocalProviderIdEntriesRequest(context.Background(), providerId).SecretName(secretName).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.PAMLocalEntriesApi.NewDeletePamProvidersLocalProviderIdEntriesRequest(context.Background(), providerId).SecretName(secretName).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PAMLocalEntriesApi.DeletePamProvidersLocalProviderIdEntries``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ## GetPamProvidersLocalProviderIdEntries
 
-> []PAMLocalLocalPAMEntryResponse BuildGetPamProvidersLocalProviderIdEntriesRequest(ctx, providerId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []PAMLocalLocalPAMEntryResponse NewGetPamProvidersLocalProviderIdEntriesRequest(ctx, providerId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns local PAM entries for the given PAM provider according to the provided filter and output parameters
 
@@ -187,7 +187,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PAMLocalEntriesApi.BuildGetPamProvidersLocalProviderIdEntriesRequest(context.Background(), providerId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.PAMLocalEntriesApi.NewGetPamProvidersLocalProviderIdEntriesRequest(context.Background(), providerId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PAMLocalEntriesApi.GetPamProvidersLocalProviderIdEntries``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 ## UpdatePamProvidersLocalProviderIdEntries
 
-> PAMLocalLocalPAMEntryResponse BuildUpdatePamProvidersLocalProviderIdEntriesRequest(ctx, providerId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PAMLocalLocalPAMEntryUpdateRequest(pAMLocalLocalPAMEntryUpdateRequest).Execute()
+> PAMLocalLocalPAMEntryResponse NewUpdatePamProvidersLocalProviderIdEntriesRequest(ctx, providerId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PAMLocalLocalPAMEntryUpdateRequest(pAMLocalLocalPAMEntryUpdateRequest).Execute()
 
 Updates local PAM entry with the associated properties
 
@@ -265,7 +265,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PAMLocalEntriesApi.BuildUpdatePamProvidersLocalProviderIdEntriesRequest(context.Background(), providerId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PAMLocalLocalPAMEntryUpdateRequest(pAMLocalLocalPAMEntryUpdateRequest).Execute()
+    resp, r, err := apiClient.PAMLocalEntriesApi.NewUpdatePamProvidersLocalProviderIdEntriesRequest(context.Background(), providerId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).PAMLocalLocalPAMEntryUpdateRequest(pAMLocalLocalPAMEntryUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PAMLocalEntriesApi.UpdatePamProvidersLocalProviderIdEntries``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

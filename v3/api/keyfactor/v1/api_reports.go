@@ -71,7 +71,7 @@ CreateReportsByIdSchedules Create a built-in report's schedule that matches the 
 	@param id Report identifier
 	@return ApiCreateReportsByIdSchedulesRequest
 */
-func (a *ReportsApiService) BuildCreateReportsByIdSchedulesRequest(ctx context.Context, id int32) ApiCreateReportsByIdSchedulesRequest {
+func (a *ReportsApiService) NewCreateReportsByIdSchedulesRequest(ctx context.Context, id int32) ApiCreateReportsByIdSchedulesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -219,7 +219,7 @@ CreateReportsCustom Creates a custom report
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateReportsCustomRequest
 */
-func (a *ReportsApiService) BuildCreateReportsCustomRequest(ctx context.Context) ApiCreateReportsCustomRequest {
+func (a *ReportsApiService) NewCreateReportsCustomRequest(ctx context.Context) ApiCreateReportsCustomRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -359,7 +359,7 @@ DeleteReportsCustomById Delete custom report that matches the id
 	@param id Report identifier
 	@return ApiDeleteReportsCustomByIdRequest
 */
-func (a *ReportsApiService) BuildDeleteReportsCustomByIdRequest(ctx context.Context, id int32) ApiDeleteReportsCustomByIdRequest {
+func (a *ReportsApiService) NewDeleteReportsCustomByIdRequest(ctx context.Context, id int32) ApiDeleteReportsCustomByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -494,7 +494,7 @@ DeleteReportsSchedulesById Delete a built-in report's schedule that matches the 
 	@param id Report Schedule identifier
 	@return ApiDeleteReportsSchedulesByIdRequest
 */
-func (a *ReportsApiService) BuildDeleteReportsSchedulesByIdRequest(ctx context.Context, id int32) ApiDeleteReportsSchedulesByIdRequest {
+func (a *ReportsApiService) NewDeleteReportsSchedulesByIdRequest(ctx context.Context, id int32) ApiDeleteReportsSchedulesByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -651,7 +651,7 @@ GetReports Returns all built-in reports according to the provided filter and out
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetReportsRequest
 */
-func (a *ReportsApiService) BuildGetReportsRequest(ctx context.Context) ApiGetReportsRequest {
+func (a *ReportsApiService) NewGetReportsRequest(ctx context.Context) ApiGetReportsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -804,7 +804,7 @@ GetReportsById Returns a single built-in report that matches the id
 	@param id Report identifier
 	@return ApiGetReportsByIdRequest
 */
-func (a *ReportsApiService) BuildGetReportsByIdRequest(ctx context.Context, id int32) ApiGetReportsByIdRequest {
+func (a *ReportsApiService) NewGetReportsByIdRequest(ctx context.Context, id int32) ApiGetReportsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -951,7 +951,7 @@ GetReportsByIdParameters Get a built-in report's parameters that matches the id 
 	@param id Report identifier
 	@return ApiGetReportsByIdParametersRequest
 */
-func (a *ReportsApiService) BuildGetReportsByIdParametersRequest(ctx context.Context, id int32) ApiGetReportsByIdParametersRequest {
+func (a *ReportsApiService) NewGetReportsByIdParametersRequest(ctx context.Context, id int32) ApiGetReportsByIdParametersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1127,7 +1127,7 @@ GetReportsByIdSchedules Get a built-in report's schedules that matches the id of
 	@param id Report identifier
 	@return ApiGetReportsByIdSchedulesRequest
 */
-func (a *ReportsApiService) BuildGetReportsByIdSchedulesRequest(ctx context.Context, id int32) ApiGetReportsByIdSchedulesRequest {
+func (a *ReportsApiService) NewGetReportsByIdSchedulesRequest(ctx context.Context, id int32) ApiGetReportsByIdSchedulesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1311,7 +1311,7 @@ GetReportsCustom Returns all custom reports according to the provided filter and
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetReportsCustomRequest
 */
-func (a *ReportsApiService) BuildGetReportsCustomRequest(ctx context.Context) ApiGetReportsCustomRequest {
+func (a *ReportsApiService) NewGetReportsCustomRequest(ctx context.Context) ApiGetReportsCustomRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1464,7 +1464,7 @@ GetReportsCustomById Returns a single custom report that matches the id
 	@param id Report identifier
 	@return ApiGetReportsCustomByIdRequest
 */
-func (a *ReportsApiService) BuildGetReportsCustomByIdRequest(ctx context.Context, id int32) ApiGetReportsCustomByIdRequest {
+func (a *ReportsApiService) NewGetReportsCustomByIdRequest(ctx context.Context, id int32) ApiGetReportsCustomByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1611,7 +1611,7 @@ GetReportsSchedulesById Get a built-in report's schedule that matches the id of 
 	@param id Report Schedule identifier
 	@return ApiGetReportsSchedulesByIdRequest
 */
-func (a *ReportsApiService) BuildGetReportsSchedulesByIdRequest(ctx context.Context, id int32) ApiGetReportsSchedulesByIdRequest {
+func (a *ReportsApiService) NewGetReportsSchedulesByIdRequest(ctx context.Context, id int32) ApiGetReportsSchedulesByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1757,7 +1757,7 @@ UpdateReports Updates a single built-in report that matches the id. Only some fi
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateReportsRequest
 */
-func (a *ReportsApiService) BuildUpdateReportsRequest(ctx context.Context) ApiUpdateReportsRequest {
+func (a *ReportsApiService) NewUpdateReportsRequest(ctx context.Context) ApiUpdateReportsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1904,7 +1904,7 @@ UpdateReportsByIdParameters Update a built-in report's parameters that matches t
 	@param id Report identifier
 	@return ApiUpdateReportsByIdParametersRequest
 */
-func (a *ReportsApiService) BuildUpdateReportsByIdParametersRequest(ctx context.Context, id int32) ApiUpdateReportsByIdParametersRequest {
+func (a *ReportsApiService) NewUpdateReportsByIdParametersRequest(ctx context.Context, id int32) ApiUpdateReportsByIdParametersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2054,7 +2054,7 @@ UpdateReportsByIdSchedules Update a built-in report's schedule that matches the 
 	@param id Report identifier
 	@return ApiUpdateReportsByIdSchedulesRequest
 */
-func (a *ReportsApiService) BuildUpdateReportsByIdSchedulesRequest(ctx context.Context, id int32) ApiUpdateReportsByIdSchedulesRequest {
+func (a *ReportsApiService) NewUpdateReportsByIdSchedulesRequest(ctx context.Context, id int32) ApiUpdateReportsByIdSchedulesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -2202,7 +2202,7 @@ UpdateReportsCustom Updates a custom report that matches the id
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateReportsCustomRequest
 */
-func (a *ReportsApiService) BuildUpdateReportsCustomRequest(ctx context.Context) ApiUpdateReportsCustomRequest {
+func (a *ReportsApiService) NewUpdateReportsCustomRequest(ctx context.Context) ApiUpdateReportsCustomRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

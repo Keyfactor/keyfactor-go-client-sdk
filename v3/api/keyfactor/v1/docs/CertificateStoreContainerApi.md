@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## CreateCertificateStoreContainers
 
-> CertificateStoreContainersCertificateStoreContainerResponse BuildCreateCertificateStoreContainersRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertStoreContainerRequest(cSSCMSDataModelModelsCertStoreContainerRequest).Execute()
+> CertificateStoreContainersCertificateStoreContainerResponse NewCreateCertificateStoreContainersRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertStoreContainerRequest(cSSCMSDataModelModelsCertStoreContainerRequest).Execute()
 
 Add a certificate store container
 
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreContainerApi.BuildCreateCertificateStoreContainersRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertStoreContainerRequest(cSSCMSDataModelModelsCertStoreContainerRequest).Execute()
+    resp, r, err := apiClient.CertificateStoreContainerApi.NewCreateCertificateStoreContainersRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertStoreContainerRequest(cSSCMSDataModelModelsCertStoreContainerRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreContainerApi.CreateCertificateStoreContainers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## DeleteCertificateStoreContainersById
 
-> BuildDeleteCertificateStoreContainersByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteCertificateStoreContainersByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Delete a certificate store container
 
@@ -105,7 +105,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreContainerApi.BuildDeleteCertificateStoreContainersByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateStoreContainerApi.NewDeleteCertificateStoreContainersByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreContainerApi.DeleteCertificateStoreContainersById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificateStoreContainers
 
-> []CSSCMSDataModelModelsCertificateStoreContainerListResponse BuildGetCertificateStoreContainersRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CSSCMSDataModelModelsCertificateStoreContainerListResponse NewGetCertificateStoreContainersRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all certificate store container according to the provided filter and output parameters
 
@@ -179,7 +179,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreContainerApi.BuildGetCertificateStoreContainersRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateStoreContainerApi.NewGetCertificateStoreContainersRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreContainerApi.GetCertificateStoreContainers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ## GetCertificateStoreContainersById
 
-> CertificateStoreContainersCertificateStoreContainerResponse BuildGetCertificateStoreContainersByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CertificateStoreContainersCertificateStoreContainerResponse NewGetCertificateStoreContainersByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a single certificate store container that matches id
 
@@ -251,7 +251,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreContainerApi.BuildGetCertificateStoreContainersByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateStoreContainerApi.NewGetCertificateStoreContainersByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreContainerApi.GetCertificateStoreContainersById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCertificateStoreContainers
 
-> CertificateStoreContainersCertificateStoreContainerResponse BuildUpdateCertificateStoreContainersRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertStoreContainerRequest(cSSCMSDataModelModelsCertStoreContainerRequest).Execute()
+> CertificateStoreContainersCertificateStoreContainerResponse NewUpdateCertificateStoreContainersRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertStoreContainerRequest(cSSCMSDataModelModelsCertStoreContainerRequest).Execute()
 
 Edit a certificate store container
 
@@ -323,7 +323,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreContainerApi.BuildUpdateCertificateStoreContainersRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertStoreContainerRequest(cSSCMSDataModelModelsCertStoreContainerRequest).Execute()
+    resp, r, err := apiClient.CertificateStoreContainerApi.NewUpdateCertificateStoreContainersRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertStoreContainerRequest(cSSCMSDataModelModelsCertStoreContainerRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreContainerApi.UpdateCertificateStoreContainers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

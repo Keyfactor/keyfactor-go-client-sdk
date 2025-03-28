@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## CreateAgentPools
 
-> OrchestratorPoolsAgentPoolGetResponse BuildCreateAgentPoolsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).OrchestratorPoolsAgentPoolCreationRequest(orchestratorPoolsAgentPoolCreationRequest).Execute()
+> OrchestratorPoolsAgentPoolGetResponse NewCreateAgentPoolsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).OrchestratorPoolsAgentPoolCreationRequest(orchestratorPoolsAgentPoolCreationRequest).Execute()
 
 Creates an agent pool with the provided properties
 
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentPoolApi.BuildCreateAgentPoolsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).OrchestratorPoolsAgentPoolCreationRequest(orchestratorPoolsAgentPoolCreationRequest).Execute()
+    resp, r, err := apiClient.AgentPoolApi.NewCreateAgentPoolsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).OrchestratorPoolsAgentPoolCreationRequest(orchestratorPoolsAgentPoolCreationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AgentPoolApi.CreateAgentPools``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## DeleteAgentPoolsById
 
-> BuildDeleteAgentPoolsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteAgentPoolsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes the agent pool associated with the provided id
 
@@ -106,7 +106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentPoolApi.BuildDeleteAgentPoolsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.AgentPoolApi.NewDeleteAgentPoolsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AgentPoolApi.DeleteAgentPoolsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ## GetAgentPools
 
-> []OrchestratorPoolsAgentPoolGetResponse BuildGetAgentPoolsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []OrchestratorPoolsAgentPoolGetResponse NewGetAgentPoolsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all agent pools according to the provided filter and output parameters
 
@@ -180,7 +180,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentPoolApi.BuildGetAgentPoolsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.AgentPoolApi.NewGetAgentPoolsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AgentPoolApi.GetAgentPools``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ## GetAgentPoolsAgents
 
-> []OrchestratorPoolsAgentPoolAgentGetResponse BuildGetAgentPoolsAgentsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []OrchestratorPoolsAgentPoolAgentGetResponse NewGetAgentPoolsAgentsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all agents for the default agent pool
 
@@ -256,7 +256,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentPoolApi.BuildGetAgentPoolsAgentsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.AgentPoolApi.NewGetAgentPoolsAgentsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AgentPoolApi.GetAgentPoolsAgents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ## GetAgentPoolsById
 
-> OrchestratorPoolsAgentPoolGetResponse BuildGetAgentPoolsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> OrchestratorPoolsAgentPoolGetResponse NewGetAgentPoolsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a single agent pool associated with the provided id
 
@@ -328,7 +328,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentPoolApi.BuildGetAgentPoolsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.AgentPoolApi.NewGetAgentPoolsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AgentPoolApi.GetAgentPoolsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAgentPools
 
-> OrchestratorPoolsAgentPoolGetResponse BuildUpdateAgentPoolsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).OrchestratorPoolsAgentPoolUpdateRequest(orchestratorPoolsAgentPoolUpdateRequest).Execute()
+> OrchestratorPoolsAgentPoolGetResponse NewUpdateAgentPoolsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).OrchestratorPoolsAgentPoolUpdateRequest(orchestratorPoolsAgentPoolUpdateRequest).Execute()
 
 Updates an existing agent pool with the provided properties
 
@@ -400,7 +400,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AgentPoolApi.BuildUpdateAgentPoolsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).OrchestratorPoolsAgentPoolUpdateRequest(orchestratorPoolsAgentPoolUpdateRequest).Execute()
+    resp, r, err := apiClient.AgentPoolApi.NewUpdateAgentPoolsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).OrchestratorPoolsAgentPoolUpdateRequest(orchestratorPoolsAgentPoolUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AgentPoolApi.UpdateAgentPools``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

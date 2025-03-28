@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## CreateAlertsKeyRotation
 
-> AlertsKeyRotationKeyRotationAlertDefinitionResponse BuildCreateAlertsKeyRotationRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsKeyRotationKeyRotationAlertCreationRequest(alertsKeyRotationKeyRotationAlertCreationRequest).Execute()
+> AlertsKeyRotationKeyRotationAlertDefinitionResponse NewCreateAlertsKeyRotationRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsKeyRotationKeyRotationAlertCreationRequest(alertsKeyRotationKeyRotationAlertCreationRequest).Execute()
 
 Add a key rotation alert
 
@@ -41,7 +41,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyRotationAlertApi.BuildCreateAlertsKeyRotationRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsKeyRotationKeyRotationAlertCreationRequest(alertsKeyRotationKeyRotationAlertCreationRequest).Execute()
+    resp, r, err := apiClient.KeyRotationAlertApi.NewCreateAlertsKeyRotationRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsKeyRotationKeyRotationAlertCreationRequest(alertsKeyRotationKeyRotationAlertCreationRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KeyRotationAlertApi.CreateAlertsKeyRotation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ## CreateAlertsKeyRotationTest
 
-> AlertsKeyRotationKeyRotationAlertTestResponse BuildCreateAlertsKeyRotationTestRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsKeyRotationKeyRotationAlertTestRequest(alertsKeyRotationKeyRotationAlertTestRequest).Execute()
+> AlertsKeyRotationKeyRotationAlertTestResponse NewCreateAlertsKeyRotationTestRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsKeyRotationKeyRotationAlertTestRequest(alertsKeyRotationKeyRotationAlertTestRequest).Execute()
 
 Test An Alert
 
@@ -109,7 +109,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyRotationAlertApi.BuildCreateAlertsKeyRotationTestRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsKeyRotationKeyRotationAlertTestRequest(alertsKeyRotationKeyRotationAlertTestRequest).Execute()
+    resp, r, err := apiClient.KeyRotationAlertApi.NewCreateAlertsKeyRotationTestRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsKeyRotationKeyRotationAlertTestRequest(alertsKeyRotationKeyRotationAlertTestRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KeyRotationAlertApi.CreateAlertsKeyRotationTest``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ## CreateAlertsKeyRotationTestAll
 
-> AlertsKeyRotationKeyRotationAlertTestResponse BuildCreateAlertsKeyRotationTestAllRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsKeyRotationKeyRotationAlertTestAllRequest(alertsKeyRotationKeyRotationAlertTestAllRequest).Execute()
+> AlertsKeyRotationKeyRotationAlertTestResponse NewCreateAlertsKeyRotationTestAllRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsKeyRotationKeyRotationAlertTestAllRequest(alertsKeyRotationKeyRotationAlertTestAllRequest).Execute()
 
 Test All Alerts
 
@@ -177,7 +177,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyRotationAlertApi.BuildCreateAlertsKeyRotationTestAllRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsKeyRotationKeyRotationAlertTestAllRequest(alertsKeyRotationKeyRotationAlertTestAllRequest).Execute()
+    resp, r, err := apiClient.KeyRotationAlertApi.NewCreateAlertsKeyRotationTestAllRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsKeyRotationKeyRotationAlertTestAllRequest(alertsKeyRotationKeyRotationAlertTestAllRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KeyRotationAlertApi.CreateAlertsKeyRotationTestAll``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ## DeleteAlertsKeyRotationById
 
-> BuildDeleteAlertsKeyRotationByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteAlertsKeyRotationByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Delete a key rotation alert
 
@@ -245,7 +245,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyRotationAlertApi.BuildDeleteAlertsKeyRotationByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.KeyRotationAlertApi.NewDeleteAlertsKeyRotationByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KeyRotationAlertApi.DeleteAlertsKeyRotationById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 
 ## GetAlertsKeyRotation
 
-> []AlertsKeyRotationKeyRotationAlertDefinitionResponse BuildGetAlertsKeyRotationRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []AlertsKeyRotationKeyRotationAlertDefinitionResponse NewGetAlertsKeyRotationRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets all key rotation alerts according to the provided filter and output parameters
 
@@ -319,7 +319,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyRotationAlertApi.BuildGetAlertsKeyRotationRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.KeyRotationAlertApi.NewGetAlertsKeyRotationRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KeyRotationAlertApi.GetAlertsKeyRotation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
 
 ## GetAlertsKeyRotationById
 
-> AlertsKeyRotationKeyRotationAlertDefinitionResponse BuildGetAlertsKeyRotationByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> AlertsKeyRotationKeyRotationAlertDefinitionResponse NewGetAlertsKeyRotationByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get a key rotation alert
 
@@ -391,7 +391,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyRotationAlertApi.BuildGetAlertsKeyRotationByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.KeyRotationAlertApi.NewGetAlertsKeyRotationByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KeyRotationAlertApi.GetAlertsKeyRotationById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -440,7 +440,7 @@ Name | Type | Description  | Notes
 
 ## GetAlertsKeyRotationSchedule
 
-> AlertsAlertScheduleAlertScheduleResponse BuildGetAlertsKeyRotationScheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> AlertsAlertScheduleAlertScheduleResponse NewGetAlertsKeyRotationScheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get the schedule for key rotation alerts
 
@@ -462,7 +462,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyRotationAlertApi.BuildGetAlertsKeyRotationScheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.KeyRotationAlertApi.NewGetAlertsKeyRotationScheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KeyRotationAlertApi.GetAlertsKeyRotationSchedule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -506,7 +506,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAlertsKeyRotation
 
-> AlertsKeyRotationKeyRotationAlertDefinitionResponse BuildUpdateAlertsKeyRotationRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsKeyRotationKeyRotationAlertUpdateRequest(alertsKeyRotationKeyRotationAlertUpdateRequest).Execute()
+> AlertsKeyRotationKeyRotationAlertDefinitionResponse NewUpdateAlertsKeyRotationRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsKeyRotationKeyRotationAlertUpdateRequest(alertsKeyRotationKeyRotationAlertUpdateRequest).Execute()
 
 Edit a key rotation alert
 
@@ -529,7 +529,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyRotationAlertApi.BuildUpdateAlertsKeyRotationRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsKeyRotationKeyRotationAlertUpdateRequest(alertsKeyRotationKeyRotationAlertUpdateRequest).Execute()
+    resp, r, err := apiClient.KeyRotationAlertApi.NewUpdateAlertsKeyRotationRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsKeyRotationKeyRotationAlertUpdateRequest(alertsKeyRotationKeyRotationAlertUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KeyRotationAlertApi.UpdateAlertsKeyRotation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -574,7 +574,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAlertsKeyRotationSchedule
 
-> AlertsAlertScheduleAlertScheduleResponse BuildUpdateAlertsKeyRotationScheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsAlertScheduleAlertScheduleRequest(alertsAlertScheduleAlertScheduleRequest).Execute()
+> AlertsAlertScheduleAlertScheduleResponse NewUpdateAlertsKeyRotationScheduleRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsAlertScheduleAlertScheduleRequest(alertsAlertScheduleAlertScheduleRequest).Execute()
 
 Edit schedule
 
@@ -597,7 +597,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KeyRotationAlertApi.BuildUpdateAlertsKeyRotationScheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsAlertScheduleAlertScheduleRequest(alertsAlertScheduleAlertScheduleRequest).Execute()
+    resp, r, err := apiClient.KeyRotationAlertApi.NewUpdateAlertsKeyRotationScheduleRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).AlertsAlertScheduleAlertScheduleRequest(alertsAlertScheduleAlertScheduleRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KeyRotationAlertApi.UpdateAlertsKeyRotationSchedule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

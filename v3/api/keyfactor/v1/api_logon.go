@@ -69,7 +69,7 @@ CreateSSHLogons Creates a logon with the provided properties
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSSHLogonsRequest
 */
-func (a *LogonApiService) BuildCreateSSHLogonsRequest(ctx context.Context) ApiCreateSSHLogonsRequest {
+func (a *LogonApiService) NewCreateSSHLogonsRequest(ctx context.Context) ApiCreateSSHLogonsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -214,7 +214,7 @@ CreateSSHLogonsAccess Updates the users with access to an existing logon
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSSHLogonsAccessRequest
 */
-func (a *LogonApiService) BuildCreateSSHLogonsAccessRequest(ctx context.Context) ApiCreateSSHLogonsAccessRequest {
+func (a *LogonApiService) NewCreateSSHLogonsAccessRequest(ctx context.Context) ApiCreateSSHLogonsAccessRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -354,7 +354,7 @@ DeleteSSHLogonsById Deletes a Logon associated with the provided identifier
 	@param id Keyfactor identifer of the Logon to be deleted
 	@return ApiDeleteSSHLogonsByIdRequest
 */
-func (a *LogonApiService) BuildDeleteSSHLogonsByIdRequest(ctx context.Context, id int32) ApiDeleteSSHLogonsByIdRequest {
+func (a *LogonApiService) NewDeleteSSHLogonsByIdRequest(ctx context.Context, id int32) ApiDeleteSSHLogonsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -511,7 +511,7 @@ GetSSHLogons Returns all Logons according to the provided filter parameters
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSSHLogonsRequest
 */
-func (a *LogonApiService) BuildGetSSHLogonsRequest(ctx context.Context) ApiGetSSHLogonsRequest {
+func (a *LogonApiService) NewGetSSHLogonsRequest(ctx context.Context) ApiGetSSHLogonsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -664,7 +664,7 @@ GetSSHLogonsById Fetches a Logon associated with the provided identifier
 	@param id Keyfactor identifer of the Logon to be Fetched
 	@return ApiGetSSHLogonsByIdRequest
 */
-func (a *LogonApiService) BuildGetSSHLogonsByIdRequest(ctx context.Context, id int32) ApiGetSSHLogonsByIdRequest {
+func (a *LogonApiService) NewGetSSHLogonsByIdRequest(ctx context.Context, id int32) ApiGetSSHLogonsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

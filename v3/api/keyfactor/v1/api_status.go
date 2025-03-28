@@ -61,7 +61,7 @@ GetStatusEndpoints Returns all endpoints to which the requesting identity has ac
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetStatusEndpointsRequest
 */
-func (a *StatusApiService) BuildGetStatusEndpointsRequest(ctx context.Context) ApiGetStatusEndpointsRequest {
+func (a *StatusApiService) NewGetStatusEndpointsRequest(ctx context.Context) ApiGetStatusEndpointsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -197,7 +197,7 @@ GetStatusHealthCheck Returns the current status of the API's ability to connect 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetStatusHealthCheckRequest
 */
-func (a *StatusApiService) BuildGetStatusHealthCheckRequest(ctx context.Context) ApiGetStatusHealthCheckRequest {
+func (a *StatusApiService) NewGetStatusHealthCheckRequest(ctx context.Context) ApiGetStatusHealthCheckRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

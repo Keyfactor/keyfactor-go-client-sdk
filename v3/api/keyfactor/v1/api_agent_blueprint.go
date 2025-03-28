@@ -76,7 +76,7 @@ CreateAgentBluePrintApplyBlueprint Applies the selected agent blueprint to the p
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateAgentBluePrintApplyBlueprintRequest
 */
-func (a *AgentBlueprintApiService) BuildCreateAgentBluePrintApplyBlueprintRequest(ctx context.Context) ApiCreateAgentBluePrintApplyBlueprintRequest {
+func (a *AgentBlueprintApiService) NewCreateAgentBluePrintApplyBlueprintRequest(ctx context.Context) ApiCreateAgentBluePrintApplyBlueprintRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -219,7 +219,7 @@ CreateAgentBluePrintGenerateBluePrint Generates an agent blueprint from the prov
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateAgentBluePrintGenerateBluePrintRequest
 */
-func (a *AgentBlueprintApiService) BuildCreateAgentBluePrintGenerateBluePrintRequest(ctx context.Context) ApiCreateAgentBluePrintGenerateBluePrintRequest {
+func (a *AgentBlueprintApiService) NewCreateAgentBluePrintGenerateBluePrintRequest(ctx context.Context) ApiCreateAgentBluePrintGenerateBluePrintRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -363,7 +363,7 @@ DeleteAgentBluePrintById Deletes an agent blueprint by its Keyfactor identifier
 	@param id Keyfactor agent blueprint identifier (GUID)
 	@return ApiDeleteAgentBluePrintByIdRequest
 */
-func (a *AgentBlueprintApiService) BuildDeleteAgentBluePrintByIdRequest(ctx context.Context, id string) ApiDeleteAgentBluePrintByIdRequest {
+func (a *AgentBlueprintApiService) NewDeleteAgentBluePrintByIdRequest(ctx context.Context, id string) ApiDeleteAgentBluePrintByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -514,7 +514,7 @@ GetAgentBluePrint Returns all agent blueprints according to the provided filter 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetAgentBluePrintRequest
 */
-func (a *AgentBlueprintApiService) BuildGetAgentBluePrintRequest(ctx context.Context) ApiGetAgentBluePrintRequest {
+func (a *AgentBlueprintApiService) NewGetAgentBluePrintRequest(ctx context.Context) ApiGetAgentBluePrintRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -671,7 +671,7 @@ GetAgentBluePrintById Returns an agent blueprint according to the provided filte
 	@param id2
 	@return ApiGetAgentBluePrintByIdRequest
 */
-func (a *AgentBlueprintApiService) BuildGetAgentBluePrintByIdRequest(ctx context.Context, id2 string) ApiGetAgentBluePrintByIdRequest {
+func (a *AgentBlueprintApiService) NewGetAgentBluePrintByIdRequest(ctx context.Context, id2 string) ApiGetAgentBluePrintByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -839,7 +839,7 @@ GetAgentBluePrintByIdJobs Gets the agent blueprint scheduled jobs
 	@param id
 	@return ApiGetAgentBluePrintByIdJobsRequest
 */
-func (a *AgentBlueprintApiService) BuildGetAgentBluePrintByIdJobsRequest(ctx context.Context, id string) ApiGetAgentBluePrintByIdJobsRequest {
+func (a *AgentBlueprintApiService) NewGetAgentBluePrintByIdJobsRequest(ctx context.Context, id string) ApiGetAgentBluePrintByIdJobsRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1016,7 +1016,7 @@ GetAgentBluePrintByIdStores Gets the agent blueprint certificate stores
 	@param id
 	@return ApiGetAgentBluePrintByIdStoresRequest
 */
-func (a *AgentBlueprintApiService) BuildGetAgentBluePrintByIdStoresRequest(ctx context.Context, id string) ApiGetAgentBluePrintByIdStoresRequest {
+func (a *AgentBlueprintApiService) NewGetAgentBluePrintByIdStoresRequest(ctx context.Context, id string) ApiGetAgentBluePrintByIdStoresRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

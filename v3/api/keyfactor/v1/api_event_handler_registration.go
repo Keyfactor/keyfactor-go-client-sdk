@@ -69,7 +69,7 @@ CreateEventHandlerRegistration Registers an event handler
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateEventHandlerRegistrationRequest
 */
-func (a *EventHandlerRegistrationApiService) BuildCreateEventHandlerRegistrationRequest(ctx context.Context) ApiCreateEventHandlerRegistrationRequest {
+func (a *EventHandlerRegistrationApiService) NewCreateEventHandlerRegistrationRequest(ctx context.Context) ApiCreateEventHandlerRegistrationRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -209,7 +209,7 @@ DeleteEventHandlerRegistrationById Deletes an event handler
 	@param id Id of the event handler
 	@return ApiDeleteEventHandlerRegistrationByIdRequest
 */
-func (a *EventHandlerRegistrationApiService) BuildDeleteEventHandlerRegistrationByIdRequest(ctx context.Context, id int32) ApiDeleteEventHandlerRegistrationByIdRequest {
+func (a *EventHandlerRegistrationApiService) NewDeleteEventHandlerRegistrationByIdRequest(ctx context.Context, id int32) ApiDeleteEventHandlerRegistrationByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -366,7 +366,7 @@ GetEventHandlerRegistration Returns all registered event handlers according to t
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetEventHandlerRegistrationRequest
 */
-func (a *EventHandlerRegistrationApiService) BuildGetEventHandlerRegistrationRequest(ctx context.Context) ApiGetEventHandlerRegistrationRequest {
+func (a *EventHandlerRegistrationApiService) NewGetEventHandlerRegistrationRequest(ctx context.Context) ApiGetEventHandlerRegistrationRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -519,7 +519,7 @@ GetEventHandlerRegistrationById Returns a registered event handler that matches 
 	@param id Id of the event handler
 	@return ApiGetEventHandlerRegistrationByIdRequest
 */
-func (a *EventHandlerRegistrationApiService) BuildGetEventHandlerRegistrationByIdRequest(ctx context.Context, id int32) ApiGetEventHandlerRegistrationByIdRequest {
+func (a *EventHandlerRegistrationApiService) NewGetEventHandlerRegistrationByIdRequest(ctx context.Context, id int32) ApiGetEventHandlerRegistrationByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -667,7 +667,7 @@ UpdateEventHandlerRegistrationById Updates a registered event handler's informat
 	@param id Id of the event handler
 	@return ApiUpdateEventHandlerRegistrationByIdRequest
 */
-func (a *EventHandlerRegistrationApiService) BuildUpdateEventHandlerRegistrationByIdRequest(ctx context.Context, id int32) ApiUpdateEventHandlerRegistrationByIdRequest {
+func (a *EventHandlerRegistrationApiService) NewUpdateEventHandlerRegistrationByIdRequest(ctx context.Context, id int32) ApiUpdateEventHandlerRegistrationByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

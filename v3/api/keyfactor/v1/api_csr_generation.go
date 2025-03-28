@@ -69,7 +69,7 @@ CreateCSRGenerationGenerate Generates a CSR according the properties provided
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCSRGenerationGenerateRequest
 */
-func (a *CSRGenerationApiService) BuildCreateCSRGenerationGenerateRequest(ctx context.Context) ApiCreateCSRGenerationGenerateRequest {
+func (a *CSRGenerationApiService) NewCreateCSRGenerationGenerateRequest(ctx context.Context) ApiCreateCSRGenerationGenerateRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -214,7 +214,7 @@ DeleteCSRGenerationPending Deletes the CSRs associated with the provided identif
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiDeleteCSRGenerationPendingRequest
 */
-func (a *CSRGenerationApiService) BuildDeleteCSRGenerationPendingRequest(ctx context.Context) ApiDeleteCSRGenerationPendingRequest {
+func (a *CSRGenerationApiService) NewDeleteCSRGenerationPendingRequest(ctx context.Context) ApiDeleteCSRGenerationPendingRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -342,7 +342,7 @@ DeleteCSRGenerationPendingById Deletes a CSR associated with the provided identi
 	@param id Keyfactor identifer of the CSR to be deleted
 	@return ApiDeleteCSRGenerationPendingByIdRequest
 */
-func (a *CSRGenerationApiService) BuildDeleteCSRGenerationPendingByIdRequest(ctx context.Context, id int32) ApiDeleteCSRGenerationPendingByIdRequest {
+func (a *CSRGenerationApiService) NewDeleteCSRGenerationPendingByIdRequest(ctx context.Context, id int32) ApiDeleteCSRGenerationPendingByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -505,7 +505,7 @@ GetCSRGenerationPending Returns a list of the currently pending CSRs according t
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCSRGenerationPendingRequest
 */
-func (a *CSRGenerationApiService) BuildGetCSRGenerationPendingRequest(ctx context.Context) ApiGetCSRGenerationPendingRequest {
+func (a *CSRGenerationApiService) NewGetCSRGenerationPendingRequest(ctx context.Context) ApiGetCSRGenerationPendingRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -658,7 +658,7 @@ GetCSRGenerationPendingById Returns a previously generated CSR associated with t
 	@param id Keyfactor identifier of the CSR
 	@return ApiGetCSRGenerationPendingByIdRequest
 */
-func (a *CSRGenerationApiService) BuildGetCSRGenerationPendingByIdRequest(ctx context.Context, id int32) ApiGetCSRGenerationPendingByIdRequest {
+func (a *CSRGenerationApiService) NewGetCSRGenerationPendingByIdRequest(ctx context.Context, id int32) ApiGetCSRGenerationPendingByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

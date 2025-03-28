@@ -71,7 +71,7 @@ CreateSecurityContainersByIdRoles Edit a certificate store container's permissio
 	@param id Information for the securitycontainer
 	@return ApiCreateSecurityContainersByIdRolesRequest
 */
-func (a *SecurityApiService) BuildCreateSecurityContainersByIdRolesRequest(ctx context.Context, id int32) ApiCreateSecurityContainersByIdRolesRequest {
+func (a *SecurityApiService) NewCreateSecurityContainersByIdRolesRequest(ctx context.Context, id int32) ApiCreateSecurityContainersByIdRolesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -219,7 +219,7 @@ CreateSecurityIdentities Adds a new security identity to the system.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSecurityIdentitiesRequest
 */
-func (a *SecurityApiService) BuildCreateSecurityIdentitiesRequest(ctx context.Context) ApiCreateSecurityIdentitiesRequest {
+func (a *SecurityApiService) NewCreateSecurityIdentitiesRequest(ctx context.Context) ApiCreateSecurityIdentitiesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -359,7 +359,7 @@ DeleteSecurityIdentitiesById Deletes the security identity whose ID is provided.
 	@param id The ID of the security identity to be deleted.
 	@return ApiDeleteSecurityIdentitiesByIdRequest
 */
-func (a *SecurityApiService) BuildDeleteSecurityIdentitiesByIdRequest(ctx context.Context, id int32) ApiDeleteSecurityIdentitiesByIdRequest {
+func (a *SecurityApiService) NewDeleteSecurityIdentitiesByIdRequest(ctx context.Context, id int32) ApiDeleteSecurityIdentitiesByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -488,7 +488,7 @@ GetSecurityAuditCollectionsById Gets a list of applicable security permissions f
 	@param id The certificate collection
 	@return ApiGetSecurityAuditCollectionsByIdRequest
 */
-func (a *SecurityApiService) BuildGetSecurityAuditCollectionsByIdRequest(ctx context.Context, id int32) ApiGetSecurityAuditCollectionsByIdRequest {
+func (a *SecurityApiService) NewGetSecurityAuditCollectionsByIdRequest(ctx context.Context, id int32) ApiGetSecurityAuditCollectionsByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -635,7 +635,7 @@ GetSecurityContainersByIdRoles Returns all the permissions of a certificate stor
 	@param id Information for the updated container
 	@return ApiGetSecurityContainersByIdRolesRequest
 */
-func (a *SecurityApiService) BuildGetSecurityContainersByIdRolesRequest(ctx context.Context, id int32) ApiGetSecurityContainersByIdRolesRequest {
+func (a *SecurityApiService) NewGetSecurityContainersByIdRolesRequest(ctx context.Context, id int32) ApiGetSecurityContainersByIdRolesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -804,7 +804,7 @@ GetSecurityIdentities Returns all security identities according to the provided 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSecurityIdentitiesRequest
 */
-func (a *SecurityApiService) BuildGetSecurityIdentitiesRequest(ctx context.Context) ApiGetSecurityIdentitiesRequest {
+func (a *SecurityApiService) NewGetSecurityIdentitiesRequest(ctx context.Context) ApiGetSecurityIdentitiesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -957,7 +957,7 @@ GetSecurityIdentitiesById Gets an object representing the permissions of the ide
 	@param id The identifier of the security identity
 	@return ApiGetSecurityIdentitiesByIdRequest
 */
-func (a *SecurityApiService) BuildGetSecurityIdentitiesByIdRequest(ctx context.Context, id int32) ApiGetSecurityIdentitiesByIdRequest {
+func (a *SecurityApiService) NewGetSecurityIdentitiesByIdRequest(ctx context.Context, id int32) ApiGetSecurityIdentitiesByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1103,7 +1103,7 @@ GetSecurityIdentitiesLookup Validates that the identity with the name given exis
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSecurityIdentitiesLookupRequest
 */
-func (a *SecurityApiService) BuildGetSecurityIdentitiesLookupRequest(ctx context.Context) ApiGetSecurityIdentitiesLookupRequest {
+func (a *SecurityApiService) NewGetSecurityIdentitiesLookupRequest(ctx context.Context) ApiGetSecurityIdentitiesLookupRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"
@@ -1242,7 +1242,7 @@ GetSecurityMy Looks at all the roles and global permissions for the user and ret
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSecurityMyRequest
 */
-func (a *SecurityApiService) BuildGetSecurityMyRequest(ctx context.Context) ApiGetSecurityMyRequest {
+func (a *SecurityApiService) NewGetSecurityMyRequest(ctx context.Context) ApiGetSecurityMyRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "1"

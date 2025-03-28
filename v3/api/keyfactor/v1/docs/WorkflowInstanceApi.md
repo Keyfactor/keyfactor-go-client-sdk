@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## CreateWorkflowInstancesInstanceIdRestart
 
-> BuildCreateWorkflowInstancesInstanceIdRestartRequest(ctx, instanceId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Version(version).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewCreateWorkflowInstancesInstanceIdRestartRequest(ctx, instanceId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Version(version).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Restarts a failed instance against the specified definition version or the published version if no version is specified.
 
@@ -41,7 +41,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowInstanceApi.BuildCreateWorkflowInstancesInstanceIdRestartRequest(context.Background(), instanceId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Version(version).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.WorkflowInstanceApi.NewCreateWorkflowInstancesInstanceIdRestartRequest(context.Background(), instanceId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Version(version).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowInstanceApi.CreateWorkflowInstancesInstanceIdRestart``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ## CreateWorkflowInstancesInstanceIdSignals
 
-> BuildCreateWorkflowInstancesInstanceIdSignalsRequest(ctx, instanceId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsSignalRequest(workflowsSignalRequest).Execute()
+> NewCreateWorkflowInstancesInstanceIdSignalsRequest(ctx, instanceId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsSignalRequest(workflowsSignalRequest).Execute()
 
 Receives the given signal for the given instance.
 
@@ -113,7 +113,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowInstanceApi.BuildCreateWorkflowInstancesInstanceIdSignalsRequest(context.Background(), instanceId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsSignalRequest(workflowsSignalRequest).Execute()
+    resp, r, err := apiClient.WorkflowInstanceApi.NewCreateWorkflowInstancesInstanceIdSignalsRequest(context.Background(), instanceId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsSignalRequest(workflowsSignalRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowInstanceApi.CreateWorkflowInstancesInstanceIdSignals``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ## CreateWorkflowInstancesInstanceIdStop
 
-> BuildCreateWorkflowInstancesInstanceIdStopRequest(ctx, instanceId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewCreateWorkflowInstancesInstanceIdStopRequest(ctx, instanceId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Rejects an instance, preventing it from continuing.
 
@@ -184,7 +184,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowInstanceApi.BuildCreateWorkflowInstancesInstanceIdStopRequest(context.Background(), instanceId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.WorkflowInstanceApi.NewCreateWorkflowInstancesInstanceIdStopRequest(context.Background(), instanceId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowInstanceApi.CreateWorkflowInstancesInstanceIdStop``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ## DeleteWorkflowInstancesInstanceId
 
-> BuildDeleteWorkflowInstancesInstanceIdRequest(ctx, instanceId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteWorkflowInstancesInstanceIdRequest(ctx, instanceId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes the specified instance.
 
@@ -254,7 +254,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowInstanceApi.BuildDeleteWorkflowInstancesInstanceIdRequest(context.Background(), instanceId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.WorkflowInstanceApi.NewDeleteWorkflowInstancesInstanceIdRequest(context.Background(), instanceId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowInstanceApi.DeleteWorkflowInstancesInstanceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ## GetWorkflowInstances
 
-> []WorkflowsInstanceQueryResponse BuildGetWorkflowInstancesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []WorkflowsInstanceQueryResponse NewGetWorkflowInstancesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets the workflow instances matching the query specifications.
 
@@ -328,7 +328,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowInstanceApi.BuildGetWorkflowInstancesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.WorkflowInstanceApi.NewGetWorkflowInstancesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowInstanceApi.GetWorkflowInstances``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
 
 ## GetWorkflowInstancesAssignedToMe
 
-> []WorkflowsInstanceQueryResponse BuildGetWorkflowInstancesAssignedToMeRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []WorkflowsInstanceQueryResponse NewGetWorkflowInstancesAssignedToMeRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets the workflow instances waiting on the user.
 
@@ -404,7 +404,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowInstanceApi.BuildGetWorkflowInstancesAssignedToMeRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.WorkflowInstanceApi.NewGetWorkflowInstancesAssignedToMeRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowInstanceApi.GetWorkflowInstancesAssignedToMe``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 ## GetWorkflowInstancesInstanceId
 
-> WorkflowsInstanceResponse BuildGetWorkflowInstancesInstanceIdRequest(ctx, instanceId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> WorkflowsInstanceResponse NewGetWorkflowInstancesInstanceIdRequest(ctx, instanceId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Get information relevant for knowing where an instance is in its workflow.
 
@@ -476,7 +476,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowInstanceApi.BuildGetWorkflowInstancesInstanceIdRequest(context.Background(), instanceId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.WorkflowInstanceApi.NewGetWorkflowInstancesInstanceIdRequest(context.Background(), instanceId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowInstanceApi.GetWorkflowInstancesInstanceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -525,7 +525,7 @@ Name | Type | Description  | Notes
 
 ## GetWorkflowInstancesMy
 
-> []WorkflowsInstanceQueryResponse BuildGetWorkflowInstancesMyRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []WorkflowsInstanceQueryResponse NewGetWorkflowInstancesMyRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets the workflow instances started by the user.
 
@@ -552,7 +552,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowInstanceApi.BuildGetWorkflowInstancesMyRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.WorkflowInstanceApi.NewGetWorkflowInstancesMyRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowInstanceApi.GetWorkflowInstancesMy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 ## CreateSSLNetworkRanges
 
-> BuildCreateSSLNetworkRangesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLNetworkRangesRequest(cSSCMSDataModelModelsSSLNetworkRangesRequest).Execute()
+> NewCreateSSLNetworkRangesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLNetworkRangesRequest(cSSCMSDataModelModelsSSLNetworkRangesRequest).Execute()
 
 Adds the provided network range definitions to the associated network definition
 
@@ -53,7 +53,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.BuildCreateSSLNetworkRangesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLNetworkRangesRequest(cSSCMSDataModelModelsSSLNetworkRangesRequest).Execute()
+    resp, r, err := apiClient.SslApi.NewCreateSSLNetworkRangesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLNetworkRangesRequest(cSSCMSDataModelModelsSSLNetworkRangesRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.CreateSSLNetworkRanges``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ## CreateSSLNetworkRangesValidate
 
-> BuildCreateSSLNetworkRangesValidateRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
+> NewCreateSSLNetworkRangesValidateRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
 
 Validates the format (using regular expressions) of the provided network range definitions
 
@@ -119,7 +119,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.BuildCreateSSLNetworkRangesValidateRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
+    resp, r, err := apiClient.SslApi.NewCreateSSLNetworkRangesValidateRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.CreateSSLNetworkRangesValidate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ## CreateSSLNetworks
 
-> SslNetworkResponse BuildCreateSSLNetworksRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SslCreateNetworkRequest(sslCreateNetworkRequest).Execute()
+> SslNetworkResponse NewCreateSSLNetworksRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SslCreateNetworkRequest(sslCreateNetworkRequest).Execute()
 
 Creates a network definition according to the provided properties
 
@@ -185,7 +185,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.BuildCreateSSLNetworksRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SslCreateNetworkRequest(sslCreateNetworkRequest).Execute()
+    resp, r, err := apiClient.SslApi.NewCreateSSLNetworksRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SslCreateNetworkRequest(sslCreateNetworkRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.CreateSSLNetworks``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ## CreateSSLNetworksByIdReset
 
-> BuildCreateSSLNetworksByIdResetRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewCreateSSLNetworksByIdResetRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Resets all SSL scans associated with a network
 
@@ -253,7 +253,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.BuildCreateSSLNetworksByIdResetRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SslApi.NewCreateSSLNetworksByIdResetRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.CreateSSLNetworksByIdReset``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ## CreateSSLNetworksByIdScan
 
-> BuildCreateSSLNetworksByIdScanRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLImmediateSslScanRequest(cSSCMSDataModelModelsSSLImmediateSslScanRequest).Execute()
+> NewCreateSSLNetworksByIdScanRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLImmediateSslScanRequest(cSSCMSDataModelModelsSSLImmediateSslScanRequest).Execute()
 
 Starts an SSL Scan for the network according to the associated network definition
 
@@ -324,7 +324,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.BuildCreateSSLNetworksByIdScanRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLImmediateSslScanRequest(cSSCMSDataModelModelsSSLImmediateSslScanRequest).Execute()
+    resp, r, err := apiClient.SslApi.NewCreateSSLNetworksByIdScanRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLImmediateSslScanRequest(cSSCMSDataModelModelsSSLImmediateSslScanRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.CreateSSLNetworksByIdScan``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -372,7 +372,7 @@ Name | Type | Description  | Notes
 
 ## DeleteSSLNetworkRangesById
 
-> BuildDeleteSSLNetworkRangesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteSSLNetworkRangesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Removes all network range definitions from the associated network definition
 
@@ -395,7 +395,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.BuildDeleteSSLNetworkRangesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SslApi.NewDeleteSSLNetworkRangesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.DeleteSSLNetworkRangesById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -442,7 +442,7 @@ Name | Type | Description  | Notes
 
 ## DeleteSSLNetworksById
 
-> BuildDeleteSSLNetworksByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteSSLNetworksByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Removes a network definition according to the provided identifier
 
@@ -465,7 +465,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.BuildDeleteSSLNetworksByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SslApi.NewDeleteSSLNetworksByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.DeleteSSLNetworksById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -512,7 +512,7 @@ Name | Type | Description  | Notes
 
 ## GetSSL
 
-> []CSSCMSDataModelModelsSSLSslScanResult BuildGetSSLRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CSSCMSDataModelModelsSSLSslScanResult NewGetSSLRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a list of the endpoint scan results according to the provided filter and output parameters
 
@@ -539,7 +539,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.BuildGetSSLRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SslApi.NewGetSSLRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.GetSSL``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -588,7 +588,7 @@ Name | Type | Description  | Notes
 
 ## GetSSLEndpointsById
 
-> CSSCMSDataModelModelsSSLEndpoint BuildGetSSLEndpointsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsSSLEndpoint NewGetSSLEndpointsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns the details of the associated scanning endpoint
 
@@ -611,7 +611,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.BuildGetSSLEndpointsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SslApi.NewGetSSLEndpointsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.GetSSLEndpointsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -660,7 +660,7 @@ Name | Type | Description  | Notes
 
 ## GetSSLEndpointsByIdHistory
 
-> []CSSCMSDataModelModelsSSLEndpointHistoryResponse BuildGetSSLEndpointsByIdHistoryRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CSSCMSDataModelModelsSSLEndpointHistoryResponse NewGetSSLEndpointsByIdHistoryRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a list of the scan results for the provided endpoint according to the provided filter and output parameters
 
@@ -688,7 +688,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.BuildGetSSLEndpointsByIdHistoryRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SslApi.NewGetSSLEndpointsByIdHistoryRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.GetSSLEndpointsByIdHistory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -742,7 +742,7 @@ Name | Type | Description  | Notes
 
 ## GetSSLNetworkRangesById
 
-> []CSSCMSDataModelModelsSSLNetworkDefinition BuildGetSSLNetworkRangesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CSSCMSDataModelModelsSSLNetworkDefinition NewGetSSLNetworkRangesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns the network range definitions for the provided network definition
 
@@ -765,7 +765,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.BuildGetSSLNetworkRangesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SslApi.NewGetSSLNetworkRangesByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.GetSSLNetworkRangesById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -814,7 +814,7 @@ Name | Type | Description  | Notes
 
 ## GetSSLNetworks
 
-> []SslNetworkQueryResponse BuildGetSSLNetworksRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []SslNetworkQueryResponse NewGetSSLNetworksRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all defined SSL networks according to the provided filter and output parameters
 
@@ -841,7 +841,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.BuildGetSSLNetworksRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SslApi.NewGetSSLNetworksRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.GetSSLNetworks``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -890,7 +890,7 @@ Name | Type | Description  | Notes
 
 ## GetSSLNetworksByIdParts
 
-> []CSSCMSDataModelModelsSSLDisplayScanJobPart BuildGetSSLNetworksByIdPartsRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).JobType(jobType).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []CSSCMSDataModelModelsSSLDisplayScanJobPart NewGetSSLNetworksByIdPartsRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).JobType(jobType).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns the scan job components comprising the entire scan job to be executed
 
@@ -919,7 +919,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.BuildGetSSLNetworksByIdPartsRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).JobType(jobType).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SslApi.NewGetSSLNetworksByIdPartsRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).JobType(jobType).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.GetSSLNetworksByIdParts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -974,7 +974,7 @@ Name | Type | Description  | Notes
 
 ## GetSSLNetworksIdentifier
 
-> SslNetworkResponse BuildGetSSLNetworksIdentifierRequest(ctx, identifier).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> SslNetworkResponse NewGetSSLNetworksIdentifierRequest(ctx, identifier).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a defined SSL network according to the provided name
 
@@ -997,7 +997,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.BuildGetSSLNetworksIdentifierRequest(context.Background(), identifier).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SslApi.NewGetSSLNetworksIdentifierRequest(context.Background(), identifier).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.GetSSLNetworksIdentifier``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1046,7 +1046,7 @@ Name | Type | Description  | Notes
 
 ## GetSSLPartsById
 
-> CSSCMSDataModelModelsSSLScanJobPart BuildGetSSLPartsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsSSLScanJobPart NewGetSSLPartsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns the execution details of the associated network scan job part
 
@@ -1069,7 +1069,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.BuildGetSSLPartsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SslApi.NewGetSSLPartsByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.GetSSLPartsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1118,7 +1118,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSSLEndpointsMonitorAll
 
-> BuildUpdateSSLEndpointsMonitorAllRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Query(query).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewUpdateSSLEndpointsMonitorAllRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Query(query).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Sets all endpoints matching the provided query as 'monitored'
 
@@ -1141,7 +1141,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.BuildUpdateSSLEndpointsMonitorAllRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Query(query).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SslApi.NewUpdateSSLEndpointsMonitorAllRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Query(query).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.UpdateSSLEndpointsMonitorAll``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1184,7 +1184,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSSLEndpointsMonitorStatus
 
-> BuildUpdateSSLEndpointsMonitorStatusRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLEndpointStatusRequest(cSSCMSDataModelModelsSSLEndpointStatusRequest).Execute()
+> NewUpdateSSLEndpointsMonitorStatusRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLEndpointStatusRequest(cSSCMSDataModelModelsSSLEndpointStatusRequest).Execute()
 
 Sets the monitored status according to the provided endpoint and boolean status
 
@@ -1207,7 +1207,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.BuildUpdateSSLEndpointsMonitorStatusRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLEndpointStatusRequest(cSSCMSDataModelModelsSSLEndpointStatusRequest).Execute()
+    resp, r, err := apiClient.SslApi.NewUpdateSSLEndpointsMonitorStatusRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLEndpointStatusRequest(cSSCMSDataModelModelsSSLEndpointStatusRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.UpdateSSLEndpointsMonitorStatus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1250,7 +1250,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSSLEndpointsReviewAll
 
-> BuildUpdateSSLEndpointsReviewAllRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Query(query).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewUpdateSSLEndpointsReviewAllRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Query(query).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Sets all endpoints matching the provided query as 'reviewed'
 
@@ -1273,7 +1273,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.BuildUpdateSSLEndpointsReviewAllRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Query(query).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.SslApi.NewUpdateSSLEndpointsReviewAllRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Query(query).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.UpdateSSLEndpointsReviewAll``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1316,7 +1316,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSSLEndpointsReviewStatus
 
-> BuildUpdateSSLEndpointsReviewStatusRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLEndpointStatusRequest(cSSCMSDataModelModelsSSLEndpointStatusRequest).Execute()
+> NewUpdateSSLEndpointsReviewStatusRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLEndpointStatusRequest(cSSCMSDataModelModelsSSLEndpointStatusRequest).Execute()
 
 Sets the reviewed status according to the provided endpoint and boolean status
 
@@ -1339,7 +1339,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.BuildUpdateSSLEndpointsReviewStatusRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLEndpointStatusRequest(cSSCMSDataModelModelsSSLEndpointStatusRequest).Execute()
+    resp, r, err := apiClient.SslApi.NewUpdateSSLEndpointsReviewStatusRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLEndpointStatusRequest(cSSCMSDataModelModelsSSLEndpointStatusRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.UpdateSSLEndpointsReviewStatus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1382,7 +1382,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSSLNetworkRanges
 
-> BuildUpdateSSLNetworkRangesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLNetworkRangesRequest(cSSCMSDataModelModelsSSLNetworkRangesRequest).Execute()
+> NewUpdateSSLNetworkRangesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLNetworkRangesRequest(cSSCMSDataModelModelsSSLNetworkRangesRequest).Execute()
 
 Configures network range definitions for the provided network
 
@@ -1405,7 +1405,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.BuildUpdateSSLNetworkRangesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLNetworkRangesRequest(cSSCMSDataModelModelsSSLNetworkRangesRequest).Execute()
+    resp, r, err := apiClient.SslApi.NewUpdateSSLNetworkRangesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsSSLNetworkRangesRequest(cSSCMSDataModelModelsSSLNetworkRangesRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.UpdateSSLNetworkRanges``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1448,7 +1448,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSSLNetworks
 
-> SslNetworkResponse BuildUpdateSSLNetworksRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SslUpdateNetworkRequest(sslUpdateNetworkRequest).Execute()
+> SslNetworkResponse NewUpdateSSLNetworksRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SslUpdateNetworkRequest(sslUpdateNetworkRequest).Execute()
 
 Updates an existing network definition according to the provided properties
 
@@ -1471,7 +1471,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SslApi.BuildUpdateSSLNetworksRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SslUpdateNetworkRequest(sslUpdateNetworkRequest).Execute()
+    resp, r, err := apiClient.SslApi.NewUpdateSSLNetworksRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SslUpdateNetworkRequest(sslUpdateNetworkRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SslApi.UpdateSSLNetworks``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

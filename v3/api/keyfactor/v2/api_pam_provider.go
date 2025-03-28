@@ -75,7 +75,7 @@ CreatePamProviders Creates a new PAM provider with the associated properties
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreatePamProvidersRequest
 */
-func (a *PAMProviderApiService) BuildCreatePamProvidersRequest(ctx context.Context) ApiCreatePamProvidersRequest {
+func (a *PAMProviderApiService) NewCreatePamProvidersRequest(ctx context.Context) ApiCreatePamProvidersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "2"
@@ -226,7 +226,7 @@ CreatePamProvidersTypes Creates a new PAM provider type with the associated prop
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreatePamProvidersTypesRequest
 */
-func (a *PAMProviderApiService) BuildCreatePamProvidersTypesRequest(ctx context.Context) ApiCreatePamProvidersTypesRequest {
+func (a *PAMProviderApiService) NewCreatePamProvidersTypesRequest(ctx context.Context) ApiCreatePamProvidersTypesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "2"
@@ -366,7 +366,7 @@ DeletePamProvidersById Deletes a PAM Provider
 	@param id Keyfactor identifier of the PAM provider to be deleted
 	@return ApiDeletePamProvidersByIdRequest
 */
-func (a *PAMProviderApiService) BuildDeletePamProvidersByIdRequest(ctx context.Context, id int32) ApiDeletePamProvidersByIdRequest {
+func (a *PAMProviderApiService) NewDeletePamProvidersByIdRequest(ctx context.Context, id int32) ApiDeletePamProvidersByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "2"
@@ -534,7 +534,7 @@ GetPamProviders Returns all PAM providers according to the provided filter and o
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetPamProvidersRequest
 */
-func (a *PAMProviderApiService) BuildGetPamProvidersRequest(ctx context.Context) ApiGetPamProvidersRequest {
+func (a *PAMProviderApiService) NewGetPamProvidersRequest(ctx context.Context) ApiGetPamProvidersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "2"
@@ -693,7 +693,7 @@ GetPamProvidersById Returns a single PAM Provider that matches the associated id
 	@param id Keyfactor identifier of the PAM provider
 	@return ApiGetPamProvidersByIdRequest
 */
-func (a *PAMProviderApiService) BuildGetPamProvidersByIdRequest(ctx context.Context, id int32) ApiGetPamProvidersByIdRequest {
+func (a *PAMProviderApiService) NewGetPamProvidersByIdRequest(ctx context.Context, id int32) ApiGetPamProvidersByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "2"
@@ -844,7 +844,7 @@ GetPamProvidersTypes Returns all PAM provider types in the Keyfactor instance
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetPamProvidersTypesRequest
 */
-func (a *PAMProviderApiService) BuildGetPamProvidersTypesRequest(ctx context.Context) ApiGetPamProvidersTypesRequest {
+func (a *PAMProviderApiService) NewGetPamProvidersTypesRequest(ctx context.Context) ApiGetPamProvidersTypesRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "2"
@@ -988,7 +988,7 @@ GetPamProvidersTypesById Returns PAM provider Type for a specific PAM provider
 	@param id Keyfactor identifier of the PAM provider
 	@return ApiGetPamProvidersTypesByIdRequest
 */
-func (a *PAMProviderApiService) BuildGetPamProvidersTypesByIdRequest(ctx context.Context, id int32) ApiGetPamProvidersTypesByIdRequest {
+func (a *PAMProviderApiService) NewGetPamProvidersTypesByIdRequest(ctx context.Context, id int32) ApiGetPamProvidersTypesByIdRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "2"
@@ -1146,7 +1146,7 @@ UpdatePamProviders Updates an existing PAM provider according to the provided pr
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdatePamProvidersRequest
 */
-func (a *PAMProviderApiService) BuildUpdatePamProvidersRequest(ctx context.Context) ApiUpdatePamProvidersRequest {
+func (a *PAMProviderApiService) NewUpdatePamProvidersRequest(ctx context.Context) ApiUpdatePamProvidersRequest {
 
 	requestedWith := "APIClient"
 	apiVersion := "2"

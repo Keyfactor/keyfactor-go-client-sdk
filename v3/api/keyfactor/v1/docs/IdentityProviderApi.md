@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## CreateIdentityProviders
 
-> IdentityProviderIdentityProviderCreateResponse BuildCreateIdentityProvidersRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).IdentityProviderIdentityProviderCreateRequest(identityProviderIdentityProviderCreateRequest).Execute()
+> IdentityProviderIdentityProviderCreateResponse NewCreateIdentityProvidersRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).IdentityProviderIdentityProviderCreateRequest(identityProviderIdentityProviderCreateRequest).Execute()
 
 Creates an OAuth identity provider and any provided parameters.  The identity provider will be assigned to the Global Permission Set if no PermissionSet is specified in the request and the user is in a security role that belongs to the Global Permission Set.
 
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityProviderApi.BuildCreateIdentityProvidersRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).IdentityProviderIdentityProviderCreateRequest(identityProviderIdentityProviderCreateRequest).Execute()
+    resp, r, err := apiClient.IdentityProviderApi.NewCreateIdentityProvidersRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).IdentityProviderIdentityProviderCreateRequest(identityProviderIdentityProviderCreateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IdentityProviderApi.CreateIdentityProviders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GetIdentityProviders
 
-> []IdentityProviderIdentityProviderGetResponse BuildGetIdentityProvidersRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []IdentityProviderIdentityProviderGetResponse NewGetIdentityProvidersRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns all OAuth identity providers according to the provided filter and output parameters and user's security role assigned permission sets.
 
@@ -109,7 +109,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityProviderApi.BuildGetIdentityProvidersRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.IdentityProviderApi.NewGetIdentityProvidersRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IdentityProviderApi.GetIdentityProviders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ## GetIdentityProvidersById
 
-> IdentityProviderIdentityProviderGetResponse BuildGetIdentityProvidersByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> IdentityProviderIdentityProviderGetResponse NewGetIdentityProvidersByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets an OAuth identity provider and its parameters.
 
@@ -181,7 +181,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityProviderApi.BuildGetIdentityProvidersByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.IdentityProviderApi.NewGetIdentityProvidersByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IdentityProviderApi.GetIdentityProvidersById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ## GetIdentityProvidersTypes
 
-> []IdentityProviderProviderTypeResponse BuildGetIdentityProvidersTypesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []IdentityProviderProviderTypeResponse NewGetIdentityProvidersTypesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Returns a list of all available identity provider types and corresponding type parameters.
 
@@ -252,7 +252,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityProviderApi.BuildGetIdentityProvidersTypesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.IdentityProviderApi.NewGetIdentityProvidersTypesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IdentityProviderApi.GetIdentityProvidersTypes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 ## UpdateIdentityProvidersById
 
-> IdentityProviderIdentityProviderUpdateResponse BuildUpdateIdentityProvidersByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).IdentityProviderIdentityProviderUpdateRequest(identityProviderIdentityProviderUpdateRequest).Execute()
+> IdentityProviderIdentityProviderUpdateResponse NewUpdateIdentityProvidersByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).IdentityProviderIdentityProviderUpdateRequest(identityProviderIdentityProviderUpdateRequest).Execute()
 
 Updates an OAuth identity provider and any provided parameters. The identity provider will be assigned to the Global Permission Set if no PermissionSet is specified in the request and the user is in a security role that belongs to the Global Permission Set.
 
@@ -320,7 +320,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityProviderApi.BuildUpdateIdentityProvidersByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).IdentityProviderIdentityProviderUpdateRequest(identityProviderIdentityProviderUpdateRequest).Execute()
+    resp, r, err := apiClient.IdentityProviderApi.NewUpdateIdentityProvidersByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).IdentityProviderIdentityProviderUpdateRequest(identityProviderIdentityProviderUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IdentityProviderApi.UpdateIdentityProvidersById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
