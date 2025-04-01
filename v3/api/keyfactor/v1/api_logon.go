@@ -32,7 +32,7 @@ import (
 // LogonApiService LogonApi service
 type LogonApiService service
 
-// Request for POST /SSH/Logons
+// Request for V1 POST /SSH/Logons
 type ApiCreateSSHLogonsRequest struct {
 	ctx                                                context.Context
 	ApiService                                         *LogonApiService
@@ -59,11 +59,14 @@ func (r ApiCreateSSHLogonsRequest) CSSCMSDataModelModelsSSHLogonsLogonCreationRe
 	return r
 }
 
+// Executes the V1 POST /SSH/Logons request context
 func (r ApiCreateSSHLogonsRequest) Execute() (*CSSCMSDataModelModelsSSHLogonsLogonResponse, *http.Response, error) {
 	return r.ApiService.CreateSSHLogonsExecute(r)
 }
 
 /*
+Creates a new V1 POST /SSH/Logons request.
+
 CreateSSHLogons Creates a logon with the provided properties
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *LogonApiService) NewCreateSSHLogonsRequest(ctx context.Context) ApiCrea
 	}
 }
 
-// Executes the API request POST /SSH/Logons
+// Executes the API request V1 POST /SSH/Logons
 //
 //	@return CSSCMSDataModelModelsSSHLogonsLogonResponse
 func (a *LogonApiService) CreateSSHLogonsExecute(r ApiCreateSSHLogonsRequest) (*CSSCMSDataModelModelsSSHLogonsLogonResponse, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *LogonApiService) CreateSSHLogonsExecute(r ApiCreateSSHLogonsRequest) (*
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /SSH/Logons/Access
+// Request for V1 POST /SSH/Logons/Access
 type ApiCreateSSHLogonsAccessRequest struct {
 	ctx                                              context.Context
 	ApiService                                       *LogonApiService
@@ -204,11 +207,14 @@ func (r ApiCreateSSHLogonsAccessRequest) CSSCMSDataModelModelsSSHLogonsLogonAcce
 	return r
 }
 
+// Executes the V1 POST /SSH/Logons/Access request context
 func (r ApiCreateSSHLogonsAccessRequest) Execute() (*CSSCMSDataModelModelsSSHAccessLogonUserAccessResponse, *http.Response, error) {
 	return r.ApiService.CreateSSHLogonsAccessExecute(r)
 }
 
 /*
+Creates a new V1 POST /SSH/Logons/Access request.
+
 CreateSSHLogonsAccess Updates the users with access to an existing logon
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -227,7 +233,7 @@ func (a *LogonApiService) NewCreateSSHLogonsAccessRequest(ctx context.Context) A
 	}
 }
 
-// Executes the API request POST /SSH/Logons/Access
+// Executes the API request V1 POST /SSH/Logons/Access
 //
 //	@return CSSCMSDataModelModelsSSHAccessLogonUserAccessResponse
 func (a *LogonApiService) CreateSSHLogonsAccessExecute(r ApiCreateSSHLogonsAccessRequest) (*CSSCMSDataModelModelsSSHAccessLogonUserAccessResponse, *http.Response, error) {
@@ -322,7 +328,7 @@ func (a *LogonApiService) CreateSSHLogonsAccessExecute(r ApiCreateSSHLogonsAcces
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /SSH/Logons/{id}
+// Request for V1 DELETE /SSH/Logons/{id}
 type ApiDeleteSSHLogonsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *LogonApiService
@@ -343,11 +349,14 @@ func (r ApiDeleteSSHLogonsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersion
 	return r
 }
 
+// Executes the V1 DELETE /SSH/Logons/{id} request context
 func (r ApiDeleteSSHLogonsByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSSHLogonsByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /SSH/Logons/{id} request.
+
 DeleteSSHLogonsById Deletes a Logon associated with the provided identifier
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -451,7 +460,7 @@ func (a *LogonApiService) DeleteSSHLogonsByIdExecute(r ApiDeleteSSHLogonsByIdReq
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /SSH/Logons
+// Request for V1 GET /SSH/Logons
 type ApiGetSSHLogonsRequest struct {
 	ctx                     context.Context
 	ApiService              *LogonApiService
@@ -501,11 +510,14 @@ func (r ApiGetSSHLogonsRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string
 	return r
 }
 
+// Executes the V1 GET /SSH/Logons request context
 func (r ApiGetSSHLogonsRequest) Execute() ([]CSSCMSDataModelModelsSSHLogonsLogonQueryResponse, *http.Response, error) {
 	return r.ApiService.GetSSHLogonsExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSH/Logons request.
+
 GetSSHLogons Returns all Logons according to the provided filter parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -524,7 +536,7 @@ func (a *LogonApiService) NewGetSSHLogonsRequest(ctx context.Context) ApiGetSSHL
 	}
 }
 
-// Executes the API request GET /SSH/Logons
+// Executes the API request V1 GET /SSH/Logons
 //
 //	@return []CSSCMSDataModelModelsSSHLogonsLogonQueryResponse
 func (a *LogonApiService) GetSSHLogonsExecute(r ApiGetSSHLogonsRequest) ([]CSSCMSDataModelModelsSSHLogonsLogonQueryResponse, *http.Response, error) {
@@ -632,7 +644,7 @@ func (a *LogonApiService) GetSSHLogonsExecute(r ApiGetSSHLogonsRequest) ([]CSSCM
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /SSH/Logons/{id}
+// Request for V1 GET /SSH/Logons/{id}
 type ApiGetSSHLogonsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *LogonApiService
@@ -653,11 +665,14 @@ func (r ApiGetSSHLogonsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersion st
 	return r
 }
 
+// Executes the V1 GET /SSH/Logons/{id} request context
 func (r ApiGetSSHLogonsByIdRequest) Execute() (*CSSCMSDataModelModelsSSHLogonsLogonResponse, *http.Response, error) {
 	return r.ApiService.GetSSHLogonsByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSH/Logons/{id} request.
+
 GetSSHLogonsById Fetches a Logon associated with the provided identifier
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -679,7 +694,7 @@ func (a *LogonApiService) NewGetSSHLogonsByIdRequest(ctx context.Context, id int
 	}
 }
 
-// Executes the API request GET /SSH/Logons/{id}
+// Executes the API request V1 GET /SSH/Logons/{id}
 //
 //	@return CSSCMSDataModelModelsSSHLogonsLogonResponse
 func (a *LogonApiService) GetSSHLogonsByIdExecute(r ApiGetSSHLogonsByIdRequest) (*CSSCMSDataModelModelsSSHLogonsLogonResponse, *http.Response, error) {

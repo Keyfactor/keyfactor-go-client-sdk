@@ -32,7 +32,7 @@ import (
 // ComponentInstallationApiService ComponentInstallationApi service
 type ComponentInstallationApiService service
 
-// Request for DELETE /ComponentInstallation/{id}
+// Request for V1 DELETE /ComponentInstallation/{id}
 type ApiDeleteComponentInstallationByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *ComponentInstallationApiService
@@ -53,11 +53,14 @@ func (r ApiDeleteComponentInstallationByIdRequest) XKeyfactorApiVersion(xKeyfact
 	return r
 }
 
+// Executes the V1 DELETE /ComponentInstallation/{id} request context
 func (r ApiDeleteComponentInstallationByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteComponentInstallationByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /ComponentInstallation/{id} request.
+
 DeleteComponentInstallationById Deletes the Keyfactor component installation whose ID is provided.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -167,7 +170,7 @@ func (a *ComponentInstallationApiService) DeleteComponentInstallationByIdExecute
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /ComponentInstallation
+// Request for V1 GET /ComponentInstallation
 type ApiGetComponentInstallationRequest struct {
 	ctx                     context.Context
 	ApiService              *ComponentInstallationApiService
@@ -217,11 +220,14 @@ func (r ApiGetComponentInstallationRequest) XKeyfactorApiVersion(xKeyfactorApiVe
 	return r
 }
 
+// Executes the V1 GET /ComponentInstallation request context
 func (r ApiGetComponentInstallationRequest) Execute() ([]ComponentInstallationComponentInstallationResponse, *http.Response, error) {
 	return r.ApiService.GetComponentInstallationExecute(r)
 }
 
 /*
+Creates a new V1 GET /ComponentInstallation request.
+
 GetComponentInstallation Returns all Keyfactor component installations.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -240,7 +246,7 @@ func (a *ComponentInstallationApiService) NewGetComponentInstallationRequest(ctx
 	}
 }
 
-// Executes the API request GET /ComponentInstallation
+// Executes the API request V1 GET /ComponentInstallation
 //
 //	@return []ComponentInstallationComponentInstallationResponse
 func (a *ComponentInstallationApiService) GetComponentInstallationExecute(r ApiGetComponentInstallationRequest) ([]ComponentInstallationComponentInstallationResponse, *http.Response, error) {

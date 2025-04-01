@@ -32,7 +32,7 @@ import (
 // CertificateStoreTypeApiService CertificateStoreTypeApi service
 type CertificateStoreTypeApiService service
 
-// Request for POST /CertificateStoreTypes
+// Request for V1 POST /CertificateStoreTypes
 type ApiCreateCertificateStoreTypesRequest struct {
 	ctx                                                       context.Context
 	ApiService                                                *CertificateStoreTypeApiService
@@ -59,11 +59,14 @@ func (r ApiCreateCertificateStoreTypesRequest) CertificateStoresTypesCertificate
 	return r
 }
 
+// Executes the V1 POST /CertificateStoreTypes request context
 func (r ApiCreateCertificateStoreTypesRequest) Execute() (*CertificateStoresTypesCertificateStoreTypeResponse, *http.Response, error) {
 	return r.ApiService.CreateCertificateStoreTypesExecute(r)
 }
 
 /*
+Creates a new V1 POST /CertificateStoreTypes request.
+
 CreateCertificateStoreTypes Creates a new certificate store type with the provided properties
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *CertificateStoreTypeApiService) NewCreateCertificateStoreTypesRequest(c
 	}
 }
 
-// Executes the API request POST /CertificateStoreTypes
+// Executes the API request V1 POST /CertificateStoreTypes
 //
 //	@return CertificateStoresTypesCertificateStoreTypeResponse
 func (a *CertificateStoreTypeApiService) CreateCertificateStoreTypesExecute(r ApiCreateCertificateStoreTypesRequest) (*CertificateStoresTypesCertificateStoreTypeResponse, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *CertificateStoreTypeApiService) CreateCertificateStoreTypesExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /CertificateStoreTypes
+// Request for V1 DELETE /CertificateStoreTypes
 type ApiDeleteCertificateStoreTypesRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateStoreTypeApiService
@@ -204,12 +207,15 @@ func (r ApiDeleteCertificateStoreTypesRequest) RequestBody(requestBody []int32) 
 	return r
 }
 
+// Executes the V1 DELETE /CertificateStoreTypes request context
 func (r ApiDeleteCertificateStoreTypesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteCertificateStoreTypesExecute(r)
 }
 
 /*
-DeleteCertificateStoreTypes Deletes certificate store types according to the provided identifiers
+Creates a new V1 DELETE /CertificateStoreTypes request.
+
+# DeleteCertificateStoreTypes Deletes certificate store types according to the provided identifiers
 
 This will ignore individual delete failures, and continue processing the array.
 
@@ -312,7 +318,7 @@ func (a *CertificateStoreTypeApiService) DeleteCertificateStoreTypesExecute(r Ap
 	return localVarHTTPResponse, nil
 }
 
-// Request for DELETE /CertificateStoreTypes/{id}
+// Request for V1 DELETE /CertificateStoreTypes/{id}
 type ApiDeleteCertificateStoreTypesByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateStoreTypeApiService
@@ -333,12 +339,15 @@ func (r ApiDeleteCertificateStoreTypesByIdRequest) XKeyfactorApiVersion(xKeyfact
 	return r
 }
 
+// Executes the V1 DELETE /CertificateStoreTypes/{id} request context
 func (r ApiDeleteCertificateStoreTypesByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteCertificateStoreTypesByIdExecute(r)
 }
 
 /*
-DeleteCertificateStoreTypesById Deletes a certificate store type according to the provided identifier
+Creates a new V1 DELETE /CertificateStoreTypes/{id} request.
+
+# DeleteCertificateStoreTypesById Deletes a certificate store type according to the provided identifier
 
 This will ignore individual delete failures, and continue processing certificate stores.
 
@@ -449,7 +458,7 @@ func (a *CertificateStoreTypeApiService) DeleteCertificateStoreTypesByIdExecute(
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateStoreTypes
+// Request for V1 GET /CertificateStoreTypes
 type ApiGetCertificateStoreTypesRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateStoreTypeApiService
@@ -499,11 +508,14 @@ func (r ApiGetCertificateStoreTypesRequest) XKeyfactorApiVersion(xKeyfactorApiVe
 	return r
 }
 
+// Executes the V1 GET /CertificateStoreTypes request context
 func (r ApiGetCertificateStoreTypesRequest) Execute() ([]CertificateStoresTypesCertificateStoreTypeResponse, *http.Response, error) {
 	return r.ApiService.GetCertificateStoreTypesExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateStoreTypes request.
+
 GetCertificateStoreTypes Returns all certificate store types according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -522,7 +534,7 @@ func (a *CertificateStoreTypeApiService) NewGetCertificateStoreTypesRequest(ctx 
 	}
 }
 
-// Executes the API request GET /CertificateStoreTypes
+// Executes the API request V1 GET /CertificateStoreTypes
 //
 //	@return []CertificateStoresTypesCertificateStoreTypeResponse
 func (a *CertificateStoreTypeApiService) GetCertificateStoreTypesExecute(r ApiGetCertificateStoreTypesRequest) ([]CertificateStoresTypesCertificateStoreTypeResponse, *http.Response, error) {
@@ -630,7 +642,7 @@ func (a *CertificateStoreTypeApiService) GetCertificateStoreTypesExecute(r ApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateStoreTypes/{id}
+// Request for V1 GET /CertificateStoreTypes/{id}
 type ApiGetCertificateStoreTypesByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateStoreTypeApiService
@@ -651,11 +663,14 @@ func (r ApiGetCertificateStoreTypesByIdRequest) XKeyfactorApiVersion(xKeyfactorA
 	return r
 }
 
+// Executes the V1 GET /CertificateStoreTypes/{id} request context
 func (r ApiGetCertificateStoreTypesByIdRequest) Execute() (*CertificateStoresTypesCertificateStoreTypeResponse, *http.Response, error) {
 	return r.ApiService.GetCertificateStoreTypesByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateStoreTypes/{id} request.
+
 GetCertificateStoreTypesById Returns a single certificate store type that matches id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -677,7 +692,7 @@ func (a *CertificateStoreTypeApiService) NewGetCertificateStoreTypesByIdRequest(
 	}
 }
 
-// Executes the API request GET /CertificateStoreTypes/{id}
+// Executes the API request V1 GET /CertificateStoreTypes/{id}
 //
 //	@return CertificateStoresTypesCertificateStoreTypeResponse
 func (a *CertificateStoreTypeApiService) GetCertificateStoreTypesByIdExecute(r ApiGetCertificateStoreTypesByIdRequest) (*CertificateStoresTypesCertificateStoreTypeResponse, *http.Response, error) {
@@ -777,7 +792,7 @@ func (a *CertificateStoreTypeApiService) GetCertificateStoreTypesByIdExecute(r A
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateStoreTypes/Name/{name}
+// Request for V1 GET /CertificateStoreTypes/Name/{name}
 type ApiGetCertificateStoreTypesNameNameRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateStoreTypeApiService
@@ -798,11 +813,14 @@ func (r ApiGetCertificateStoreTypesNameNameRequest) XKeyfactorApiVersion(xKeyfac
 	return r
 }
 
+// Executes the V1 GET /CertificateStoreTypes/Name/{name} request context
 func (r ApiGetCertificateStoreTypesNameNameRequest) Execute() ([]CertificateStoresTypesCertificateStoreTypeResponse, *http.Response, error) {
 	return r.ApiService.GetCertificateStoreTypesNameNameExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateStoreTypes/Name/{name} request.
+
 GetCertificateStoreTypesNameName Returns a single certificate store type that matches the provided short name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -824,7 +842,7 @@ func (a *CertificateStoreTypeApiService) NewGetCertificateStoreTypesNameNameRequ
 	}
 }
 
-// Executes the API request GET /CertificateStoreTypes/Name/{name}
+// Executes the API request V1 GET /CertificateStoreTypes/Name/{name}
 //
 //	@return []CertificateStoresTypesCertificateStoreTypeResponse
 func (a *CertificateStoreTypeApiService) GetCertificateStoreTypesNameNameExecute(r ApiGetCertificateStoreTypesNameNameRequest) ([]CertificateStoresTypesCertificateStoreTypeResponse, *http.Response, error) {
@@ -918,7 +936,7 @@ func (a *CertificateStoreTypeApiService) GetCertificateStoreTypesNameNameExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /CertificateStoreTypes
+// Request for V1 PUT /CertificateStoreTypes
 type ApiUpdateCertificateStoreTypesRequest struct {
 	ctx                                                     context.Context
 	ApiService                                              *CertificateStoreTypeApiService
@@ -945,11 +963,14 @@ func (r ApiUpdateCertificateStoreTypesRequest) CertificateStoresTypesCertificate
 	return r
 }
 
+// Executes the V1 PUT /CertificateStoreTypes request context
 func (r ApiUpdateCertificateStoreTypesRequest) Execute() (*CertificateStoresTypesCertificateStoreTypeResponse, *http.Response, error) {
 	return r.ApiService.UpdateCertificateStoreTypesExecute(r)
 }
 
 /*
+Creates a new V1 PUT /CertificateStoreTypes request.
+
 UpdateCertificateStoreTypes Updates an existing certificate store type with the provided properties
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -968,7 +989,7 @@ func (a *CertificateStoreTypeApiService) NewUpdateCertificateStoreTypesRequest(c
 	}
 }
 
-// Executes the API request PUT /CertificateStoreTypes
+// Executes the API request V1 PUT /CertificateStoreTypes
 //
 //	@return CertificateStoresTypesCertificateStoreTypeResponse
 func (a *CertificateStoreTypeApiService) UpdateCertificateStoreTypesExecute(r ApiUpdateCertificateStoreTypesRequest) (*CertificateStoresTypesCertificateStoreTypeResponse, *http.Response, error) {

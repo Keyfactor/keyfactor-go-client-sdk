@@ -32,7 +32,7 @@ import (
 // AgentApiService AgentApi service
 type AgentApiService service
 
-// Request for POST /Agents/Approve
+// Request for V1 POST /Agents/Approve
 type ApiCreateAgentsApproveRequest struct {
 	ctx                     context.Context
 	ApiService              *AgentApiService
@@ -59,11 +59,14 @@ func (r ApiCreateAgentsApproveRequest) RequestBody(requestBody []string) ApiCrea
 	return r
 }
 
+// Executes the V1 POST /Agents/Approve request context
 func (r ApiCreateAgentsApproveRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateAgentsApproveExecute(r)
 }
 
 /*
+Creates a new V1 POST /Agents/Approve request.
+
 CreateAgentsApprove Approve a list of agents
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -165,7 +168,7 @@ func (a *AgentApiService) CreateAgentsApproveExecute(r ApiCreateAgentsApproveReq
 	return localVarHTTPResponse, nil
 }
 
-// Request for POST /Agents/{id}/FetchLogs
+// Request for V1 POST /Agents/{id}/FetchLogs
 type ApiCreateAgentsByIdFetchLogsRequest struct {
 	ctx                     context.Context
 	ApiService              *AgentApiService
@@ -186,11 +189,14 @@ func (r ApiCreateAgentsByIdFetchLogsRequest) XKeyfactorApiVersion(xKeyfactorApiV
 	return r
 }
 
+// Executes the V1 POST /Agents/{id}/FetchLogs request context
 func (r ApiCreateAgentsByIdFetchLogsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateAgentsByIdFetchLogsExecute(r)
 }
 
 /*
+Creates a new V1 POST /Agents/{id}/FetchLogs request.
+
 CreateAgentsByIdFetchLogs Schedules a job on the agent to retrieve log files
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -294,7 +300,7 @@ func (a *AgentApiService) CreateAgentsByIdFetchLogsExecute(r ApiCreateAgentsById
 	return localVarHTTPResponse, nil
 }
 
-// Request for POST /Agents/{id}/Reset
+// Request for V1 POST /Agents/{id}/Reset
 type ApiCreateAgentsByIdResetRequest struct {
 	ctx                     context.Context
 	ApiService              *AgentApiService
@@ -315,11 +321,14 @@ func (r ApiCreateAgentsByIdResetRequest) XKeyfactorApiVersion(xKeyfactorApiVersi
 	return r
 }
 
+// Executes the V1 POST /Agents/{id}/Reset request context
 func (r ApiCreateAgentsByIdResetRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateAgentsByIdResetExecute(r)
 }
 
 /*
+Creates a new V1 POST /Agents/{id}/Reset request.
+
 CreateAgentsByIdReset Reset an agent to a new state
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -423,7 +432,7 @@ func (a *AgentApiService) CreateAgentsByIdResetExecute(r ApiCreateAgentsByIdRese
 	return localVarHTTPResponse, nil
 }
 
-// Request for POST /Agents/Disapprove
+// Request for V1 POST /Agents/Disapprove
 type ApiCreateAgentsDisapproveRequest struct {
 	ctx                     context.Context
 	ApiService              *AgentApiService
@@ -450,11 +459,14 @@ func (r ApiCreateAgentsDisapproveRequest) RequestBody(requestBody []string) ApiC
 	return r
 }
 
+// Executes the V1 POST /Agents/Disapprove request context
 func (r ApiCreateAgentsDisapproveRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateAgentsDisapproveExecute(r)
 }
 
 /*
+Creates a new V1 POST /Agents/Disapprove request.
+
 CreateAgentsDisapprove Disapprove a list of agents
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -556,7 +568,7 @@ func (a *AgentApiService) CreateAgentsDisapproveExecute(r ApiCreateAgentsDisappr
 	return localVarHTTPResponse, nil
 }
 
-// Request for POST /Agents/Reset
+// Request for V1 POST /Agents/Reset
 type ApiCreateAgentsResetRequest struct {
 	ctx                     context.Context
 	ApiService              *AgentApiService
@@ -583,11 +595,14 @@ func (r ApiCreateAgentsResetRequest) RequestBody(requestBody []string) ApiCreate
 	return r
 }
 
+// Executes the V1 POST /Agents/Reset request context
 func (r ApiCreateAgentsResetRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateAgentsResetExecute(r)
 }
 
 /*
+Creates a new V1 POST /Agents/Reset request.
+
 CreateAgentsReset Reset a list of agents
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -689,7 +704,7 @@ func (a *AgentApiService) CreateAgentsResetExecute(r ApiCreateAgentsResetRequest
 	return localVarHTTPResponse, nil
 }
 
-// Request for POST /Agents/SetAuthCertificateReenrollment
+// Request for V1 POST /Agents/SetAuthCertificateReenrollment
 type ApiCreateAgentsSetAuthCertificateReenrollmentRequest struct {
 	ctx                                                               context.Context
 	ApiService                                                        *AgentApiService
@@ -716,11 +731,14 @@ func (r ApiCreateAgentsSetAuthCertificateReenrollmentRequest) OrchestratorsUpdat
 	return r
 }
 
+// Executes the V1 POST /Agents/SetAuthCertificateReenrollment request context
 func (r ApiCreateAgentsSetAuthCertificateReenrollmentRequest) Execute() (*OrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse, *http.Response, error) {
 	return r.ApiService.CreateAgentsSetAuthCertificateReenrollmentExecute(r)
 }
 
 /*
+Creates a new V1 POST /Agents/SetAuthCertificateReenrollment request.
+
 CreateAgentsSetAuthCertificateReenrollment Update the AuthCertificateReenrollment value for an agent to request or require (or unset the request) the agent   to enroll for a new client authentication certificate on its next registration.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -739,7 +757,7 @@ func (a *AgentApiService) NewCreateAgentsSetAuthCertificateReenrollmentRequest(c
 	}
 }
 
-// Executes the API request POST /Agents/SetAuthCertificateReenrollment
+// Executes the API request V1 POST /Agents/SetAuthCertificateReenrollment
 //
 //	@return OrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse
 func (a *AgentApiService) CreateAgentsSetAuthCertificateReenrollmentExecute(r ApiCreateAgentsSetAuthCertificateReenrollmentRequest) (*OrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse, *http.Response, error) {
@@ -834,7 +852,7 @@ func (a *AgentApiService) CreateAgentsSetAuthCertificateReenrollmentExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /Agents/{id}
+// Request for V1 DELETE /Agents/{id}
 type ApiDeleteAgentsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *AgentApiService
@@ -862,11 +880,14 @@ func (r ApiDeleteAgentsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersion st
 	return r
 }
 
+// Executes the V1 DELETE /Agents/{id} request context
 func (r ApiDeleteAgentsByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAgentsByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /Agents/{id} request.
+
 DeleteAgentsById Delete a single agent, specified by ID
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -973,7 +994,7 @@ func (a *AgentApiService) DeleteAgentsByIdExecute(r ApiDeleteAgentsByIdRequest) 
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /Agents
+// Request for V1 GET /Agents
 type ApiGetAgentsRequest struct {
 	ctx                     context.Context
 	ApiService              *AgentApiService
@@ -1023,11 +1044,14 @@ func (r ApiGetAgentsRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) A
 	return r
 }
 
+// Executes the V1 GET /Agents request context
 func (r ApiGetAgentsRequest) Execute() ([]OrchestratorsAgentResponse, *http.Response, error) {
 	return r.ApiService.GetAgentsExecute(r)
 }
 
 /*
+Creates a new V1 GET /Agents request.
+
 GetAgents Returns all agents according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1046,7 +1070,7 @@ func (a *AgentApiService) NewGetAgentsRequest(ctx context.Context) ApiGetAgentsR
 	}
 }
 
-// Executes the API request GET /Agents
+// Executes the API request V1 GET /Agents
 //
 //	@return []OrchestratorsAgentResponse
 func (a *AgentApiService) GetAgentsExecute(r ApiGetAgentsRequest) ([]OrchestratorsAgentResponse, *http.Response, error) {
@@ -1154,7 +1178,7 @@ func (a *AgentApiService) GetAgentsExecute(r ApiGetAgentsRequest) ([]Orchestrato
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Agents/{id}
+// Request for V1 GET /Agents/{id}
 type ApiGetAgentsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *AgentApiService
@@ -1175,11 +1199,14 @@ func (r ApiGetAgentsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersion strin
 	return r
 }
 
+// Executes the V1 GET /Agents/{id} request context
 func (r ApiGetAgentsByIdRequest) Execute() (*OrchestratorsAgentResponse, *http.Response, error) {
 	return r.ApiService.GetAgentsByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Agents/{id} request.
+
 GetAgentsById Returns details for a single agent, specified by ID
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1201,7 +1228,7 @@ func (a *AgentApiService) NewGetAgentsByIdRequest(ctx context.Context, id string
 	}
 }
 
-// Executes the API request GET /Agents/{id}
+// Executes the API request V1 GET /Agents/{id}
 //
 //	@return OrchestratorsAgentResponse
 func (a *AgentApiService) GetAgentsByIdExecute(r ApiGetAgentsByIdRequest) (*OrchestratorsAgentResponse, *http.Response, error) {

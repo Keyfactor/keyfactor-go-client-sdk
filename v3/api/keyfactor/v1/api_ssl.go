@@ -32,7 +32,7 @@ import (
 // SslApiService SslApi service
 type SslApiService service
 
-// Request for POST /SSL/NetworkRanges
+// Request for V1 POST /SSL/NetworkRanges
 type ApiCreateSSLNetworkRangesRequest struct {
 	ctx                                          context.Context
 	ApiService                                   *SslApiService
@@ -59,11 +59,14 @@ func (r ApiCreateSSLNetworkRangesRequest) CSSCMSDataModelModelsSSLNetworkRangesR
 	return r
 }
 
+// Executes the V1 POST /SSL/NetworkRanges request context
 func (r ApiCreateSSLNetworkRangesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateSSLNetworkRangesExecute(r)
 }
 
 /*
+Creates a new V1 POST /SSL/NetworkRanges request.
+
 CreateSSLNetworkRanges Adds the provided network range definitions to the associated network definition
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -165,7 +168,7 @@ func (a *SslApiService) CreateSSLNetworkRangesExecute(r ApiCreateSSLNetworkRange
 	return localVarHTTPResponse, nil
 }
 
-// Request for POST /SSL/NetworkRanges/Validate
+// Request for V1 POST /SSL/NetworkRanges/Validate
 type ApiCreateSSLNetworkRangesValidateRequest struct {
 	ctx                     context.Context
 	ApiService              *SslApiService
@@ -192,11 +195,14 @@ func (r ApiCreateSSLNetworkRangesValidateRequest) RequestBody(requestBody []stri
 	return r
 }
 
+// Executes the V1 POST /SSL/NetworkRanges/Validate request context
 func (r ApiCreateSSLNetworkRangesValidateRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateSSLNetworkRangesValidateExecute(r)
 }
 
 /*
+Creates a new V1 POST /SSL/NetworkRanges/Validate request.
+
 CreateSSLNetworkRangesValidate Validates the format (using regular expressions) of the provided network range definitions
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -298,7 +304,7 @@ func (a *SslApiService) CreateSSLNetworkRangesValidateExecute(r ApiCreateSSLNetw
 	return localVarHTTPResponse, nil
 }
 
-// Request for POST /SSL/Networks
+// Request for V1 POST /SSL/Networks
 type ApiCreateSSLNetworksRequest struct {
 	ctx                     context.Context
 	ApiService              *SslApiService
@@ -325,11 +331,14 @@ func (r ApiCreateSSLNetworksRequest) SslCreateNetworkRequest(sslCreateNetworkReq
 	return r
 }
 
+// Executes the V1 POST /SSL/Networks request context
 func (r ApiCreateSSLNetworksRequest) Execute() (*SslNetworkResponse, *http.Response, error) {
 	return r.ApiService.CreateSSLNetworksExecute(r)
 }
 
 /*
+Creates a new V1 POST /SSL/Networks request.
+
 CreateSSLNetworks Creates a network definition according to the provided properties
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -348,7 +357,7 @@ func (a *SslApiService) NewCreateSSLNetworksRequest(ctx context.Context) ApiCrea
 	}
 }
 
-// Executes the API request POST /SSL/Networks
+// Executes the API request V1 POST /SSL/Networks
 //
 //	@return SslNetworkResponse
 func (a *SslApiService) CreateSSLNetworksExecute(r ApiCreateSSLNetworksRequest) (*SslNetworkResponse, *http.Response, error) {
@@ -443,7 +452,7 @@ func (a *SslApiService) CreateSSLNetworksExecute(r ApiCreateSSLNetworksRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /SSL/Networks/{id}/Reset
+// Request for V1 POST /SSL/Networks/{id}/Reset
 type ApiCreateSSLNetworksByIdResetRequest struct {
 	ctx                     context.Context
 	ApiService              *SslApiService
@@ -464,11 +473,14 @@ func (r ApiCreateSSLNetworksByIdResetRequest) XKeyfactorApiVersion(xKeyfactorApi
 	return r
 }
 
+// Executes the V1 POST /SSL/Networks/{id}/Reset request context
 func (r ApiCreateSSLNetworksByIdResetRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateSSLNetworksByIdResetExecute(r)
 }
 
 /*
+Creates a new V1 POST /SSL/Networks/{id}/Reset request.
+
 CreateSSLNetworksByIdReset Resets all SSL scans associated with a network
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -572,7 +584,7 @@ func (a *SslApiService) CreateSSLNetworksByIdResetExecute(r ApiCreateSSLNetworks
 	return localVarHTTPResponse, nil
 }
 
-// Request for POST /SSL/Networks/{id}/Scan
+// Request for V1 POST /SSL/Networks/{id}/Scan
 type ApiCreateSSLNetworksByIdScanRequest struct {
 	ctx                                             context.Context
 	ApiService                                      *SslApiService
@@ -600,11 +612,14 @@ func (r ApiCreateSSLNetworksByIdScanRequest) CSSCMSDataModelModelsSSLImmediateSs
 	return r
 }
 
+// Executes the V1 POST /SSL/Networks/{id}/Scan request context
 func (r ApiCreateSSLNetworksByIdScanRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateSSLNetworksByIdScanExecute(r)
 }
 
 /*
+Creates a new V1 POST /SSL/Networks/{id}/Scan request.
+
 CreateSSLNetworksByIdScan Starts an SSL Scan for the network according to the associated network definition
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -710,7 +725,7 @@ func (a *SslApiService) CreateSSLNetworksByIdScanExecute(r ApiCreateSSLNetworksB
 	return localVarHTTPResponse, nil
 }
 
-// Request for DELETE /SSL/NetworkRanges/{id}
+// Request for V1 DELETE /SSL/NetworkRanges/{id}
 type ApiDeleteSSLNetworkRangesByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *SslApiService
@@ -731,11 +746,14 @@ func (r ApiDeleteSSLNetworkRangesByIdRequest) XKeyfactorApiVersion(xKeyfactorApi
 	return r
 }
 
+// Executes the V1 DELETE /SSL/NetworkRanges/{id} request context
 func (r ApiDeleteSSLNetworkRangesByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSSLNetworkRangesByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /SSL/NetworkRanges/{id} request.
+
 DeleteSSLNetworkRangesById Removes all network range definitions from the associated network definition
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -839,7 +857,7 @@ func (a *SslApiService) DeleteSSLNetworkRangesByIdExecute(r ApiDeleteSSLNetworkR
 	return localVarHTTPResponse, nil
 }
 
-// Request for DELETE /SSL/Networks/{id}
+// Request for V1 DELETE /SSL/Networks/{id}
 type ApiDeleteSSLNetworksByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *SslApiService
@@ -860,11 +878,14 @@ func (r ApiDeleteSSLNetworksByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersi
 	return r
 }
 
+// Executes the V1 DELETE /SSL/Networks/{id} request context
 func (r ApiDeleteSSLNetworksByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSSLNetworksByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /SSL/Networks/{id} request.
+
 DeleteSSLNetworksById Removes a network definition according to the provided identifier
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -968,7 +989,7 @@ func (a *SslApiService) DeleteSSLNetworksByIdExecute(r ApiDeleteSSLNetworksByIdR
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /SSL
+// Request for V1 GET /SSL
 type ApiGetSSLRequest struct {
 	ctx                     context.Context
 	ApiService              *SslApiService
@@ -1018,11 +1039,14 @@ func (r ApiGetSSLRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) ApiG
 	return r
 }
 
+// Executes the V1 GET /SSL request context
 func (r ApiGetSSLRequest) Execute() ([]CSSCMSDataModelModelsSSLSslScanResult, *http.Response, error) {
 	return r.ApiService.GetSSLExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSL request.
+
 GetSSL Returns a list of the endpoint scan results according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1041,7 +1065,7 @@ func (a *SslApiService) NewGetSSLRequest(ctx context.Context) ApiGetSSLRequest {
 	}
 }
 
-// Executes the API request GET /SSL
+// Executes the API request V1 GET /SSL
 //
 //	@return []CSSCMSDataModelModelsSSLSslScanResult
 func (a *SslApiService) GetSSLExecute(r ApiGetSSLRequest) ([]CSSCMSDataModelModelsSSLSslScanResult, *http.Response, error) {
@@ -1149,7 +1173,7 @@ func (a *SslApiService) GetSSLExecute(r ApiGetSSLRequest) ([]CSSCMSDataModelMode
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /SSL/Endpoints/{id}
+// Request for V1 GET /SSL/Endpoints/{id}
 type ApiGetSSLEndpointsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *SslApiService
@@ -1170,11 +1194,14 @@ func (r ApiGetSSLEndpointsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersion
 	return r
 }
 
+// Executes the V1 GET /SSL/Endpoints/{id} request context
 func (r ApiGetSSLEndpointsByIdRequest) Execute() (*CSSCMSDataModelModelsSSLEndpoint, *http.Response, error) {
 	return r.ApiService.GetSSLEndpointsByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSL/Endpoints/{id} request.
+
 GetSSLEndpointsById Returns the details of the associated scanning endpoint
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1196,7 +1223,7 @@ func (a *SslApiService) NewGetSSLEndpointsByIdRequest(ctx context.Context, id st
 	}
 }
 
-// Executes the API request GET /SSL/Endpoints/{id}
+// Executes the API request V1 GET /SSL/Endpoints/{id}
 //
 //	@return CSSCMSDataModelModelsSSLEndpoint
 func (a *SslApiService) GetSSLEndpointsByIdExecute(r ApiGetSSLEndpointsByIdRequest) (*CSSCMSDataModelModelsSSLEndpoint, *http.Response, error) {
@@ -1290,7 +1317,7 @@ func (a *SslApiService) GetSSLEndpointsByIdExecute(r ApiGetSSLEndpointsByIdReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /SSL/Endpoints/{id}/History
+// Request for V1 GET /SSL/Endpoints/{id}/History
 type ApiGetSSLEndpointsByIdHistoryRequest struct {
 	ctx                     context.Context
 	ApiService              *SslApiService
@@ -1341,11 +1368,14 @@ func (r ApiGetSSLEndpointsByIdHistoryRequest) XKeyfactorApiVersion(xKeyfactorApi
 	return r
 }
 
+// Executes the V1 GET /SSL/Endpoints/{id}/History request context
 func (r ApiGetSSLEndpointsByIdHistoryRequest) Execute() ([]CSSCMSDataModelModelsSSLEndpointHistoryResponse, *http.Response, error) {
 	return r.ApiService.GetSSLEndpointsByIdHistoryExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSL/Endpoints/{id}/History request.
+
 GetSSLEndpointsByIdHistory Returns a list of the scan results for the provided endpoint according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1367,7 +1397,7 @@ func (a *SslApiService) NewGetSSLEndpointsByIdHistoryRequest(ctx context.Context
 	}
 }
 
-// Executes the API request GET /SSL/Endpoints/{id}/History
+// Executes the API request V1 GET /SSL/Endpoints/{id}/History
 //
 //	@return []CSSCMSDataModelModelsSSLEndpointHistoryResponse
 func (a *SslApiService) GetSSLEndpointsByIdHistoryExecute(r ApiGetSSLEndpointsByIdHistoryRequest) ([]CSSCMSDataModelModelsSSLEndpointHistoryResponse, *http.Response, error) {
@@ -1476,7 +1506,7 @@ func (a *SslApiService) GetSSLEndpointsByIdHistoryExecute(r ApiGetSSLEndpointsBy
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /SSL/NetworkRanges/{id}
+// Request for V1 GET /SSL/NetworkRanges/{id}
 type ApiGetSSLNetworkRangesByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *SslApiService
@@ -1497,11 +1527,14 @@ func (r ApiGetSSLNetworkRangesByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVer
 	return r
 }
 
+// Executes the V1 GET /SSL/NetworkRanges/{id} request context
 func (r ApiGetSSLNetworkRangesByIdRequest) Execute() ([]CSSCMSDataModelModelsSSLNetworkDefinition, *http.Response, error) {
 	return r.ApiService.GetSSLNetworkRangesByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSL/NetworkRanges/{id} request.
+
 GetSSLNetworkRangesById Returns the network range definitions for the provided network definition
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1523,7 +1556,7 @@ func (a *SslApiService) NewGetSSLNetworkRangesByIdRequest(ctx context.Context, i
 	}
 }
 
-// Executes the API request GET /SSL/NetworkRanges/{id}
+// Executes the API request V1 GET /SSL/NetworkRanges/{id}
 //
 //	@return []CSSCMSDataModelModelsSSLNetworkDefinition
 func (a *SslApiService) GetSSLNetworkRangesByIdExecute(r ApiGetSSLNetworkRangesByIdRequest) ([]CSSCMSDataModelModelsSSLNetworkDefinition, *http.Response, error) {
@@ -1617,7 +1650,7 @@ func (a *SslApiService) GetSSLNetworkRangesByIdExecute(r ApiGetSSLNetworkRangesB
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /SSL/Networks
+// Request for V1 GET /SSL/Networks
 type ApiGetSSLNetworksRequest struct {
 	ctx                     context.Context
 	ApiService              *SslApiService
@@ -1672,11 +1705,14 @@ func (r ApiGetSSLNetworksRequest) XKeyfactorApiVersion(xKeyfactorApiVersion stri
 	return r
 }
 
+// Executes the V1 GET /SSL/Networks request context
 func (r ApiGetSSLNetworksRequest) Execute() ([]SslNetworkQueryResponse, *http.Response, error) {
 	return r.ApiService.GetSSLNetworksExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSL/Networks request.
+
 GetSSLNetworks Returns all defined SSL networks according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1695,7 +1731,7 @@ func (a *SslApiService) NewGetSSLNetworksRequest(ctx context.Context) ApiGetSSLN
 	}
 }
 
-// Executes the API request GET /SSL/Networks
+// Executes the API request V1 GET /SSL/Networks
 //
 //	@return []SslNetworkQueryResponse
 func (a *SslApiService) GetSSLNetworksExecute(r ApiGetSSLNetworksRequest) ([]SslNetworkQueryResponse, *http.Response, error) {
@@ -1803,7 +1839,7 @@ func (a *SslApiService) GetSSLNetworksExecute(r ApiGetSSLNetworksRequest) ([]Ssl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /SSL/Networks/{id}/Parts
+// Request for V1 GET /SSL/Networks/{id}/Parts
 type ApiGetSSLNetworksByIdPartsRequest struct {
 	ctx                     context.Context
 	ApiService              *SslApiService
@@ -1860,11 +1896,14 @@ func (r ApiGetSSLNetworksByIdPartsRequest) XKeyfactorApiVersion(xKeyfactorApiVer
 	return r
 }
 
+// Executes the V1 GET /SSL/Networks/{id}/Parts request context
 func (r ApiGetSSLNetworksByIdPartsRequest) Execute() ([]CSSCMSDataModelModelsSSLDisplayScanJobPart, *http.Response, error) {
 	return r.ApiService.GetSSLNetworksByIdPartsExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSL/Networks/{id}/Parts request.
+
 GetSSLNetworksByIdParts Returns the scan job components comprising the entire scan job to be executed
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1886,7 +1925,7 @@ func (a *SslApiService) NewGetSSLNetworksByIdPartsRequest(ctx context.Context, i
 	}
 }
 
-// Executes the API request GET /SSL/Networks/{id}/Parts
+// Executes the API request V1 GET /SSL/Networks/{id}/Parts
 //
 //	@return []CSSCMSDataModelModelsSSLDisplayScanJobPart
 func (a *SslApiService) GetSSLNetworksByIdPartsExecute(r ApiGetSSLNetworksByIdPartsRequest) ([]CSSCMSDataModelModelsSSLDisplayScanJobPart, *http.Response, error) {
@@ -1998,7 +2037,7 @@ func (a *SslApiService) GetSSLNetworksByIdPartsExecute(r ApiGetSSLNetworksByIdPa
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /SSL/Networks/{identifier}
+// Request for V1 GET /SSL/Networks/{identifier}
 type ApiGetSSLNetworksIdentifierRequest struct {
 	ctx                     context.Context
 	ApiService              *SslApiService
@@ -2019,11 +2058,14 @@ func (r ApiGetSSLNetworksIdentifierRequest) XKeyfactorApiVersion(xKeyfactorApiVe
 	return r
 }
 
+// Executes the V1 GET /SSL/Networks/{identifier} request context
 func (r ApiGetSSLNetworksIdentifierRequest) Execute() (*SslNetworkResponse, *http.Response, error) {
 	return r.ApiService.GetSSLNetworksIdentifierExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSL/Networks/{identifier} request.
+
 GetSSLNetworksIdentifier Returns a defined SSL network according to the provided name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2045,7 +2087,7 @@ func (a *SslApiService) NewGetSSLNetworksIdentifierRequest(ctx context.Context, 
 	}
 }
 
-// Executes the API request GET /SSL/Networks/{identifier}
+// Executes the API request V1 GET /SSL/Networks/{identifier}
 //
 //	@return SslNetworkResponse
 func (a *SslApiService) GetSSLNetworksIdentifierExecute(r ApiGetSSLNetworksIdentifierRequest) (*SslNetworkResponse, *http.Response, error) {
@@ -2139,7 +2181,7 @@ func (a *SslApiService) GetSSLNetworksIdentifierExecute(r ApiGetSSLNetworksIdent
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /SSL/Parts/{id}
+// Request for V1 GET /SSL/Parts/{id}
 type ApiGetSSLPartsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *SslApiService
@@ -2160,11 +2202,14 @@ func (r ApiGetSSLPartsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersion str
 	return r
 }
 
+// Executes the V1 GET /SSL/Parts/{id} request context
 func (r ApiGetSSLPartsByIdRequest) Execute() (*CSSCMSDataModelModelsSSLScanJobPart, *http.Response, error) {
 	return r.ApiService.GetSSLPartsByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSL/Parts/{id} request.
+
 GetSSLPartsById Returns the execution details of the associated network scan job part
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2186,7 +2231,7 @@ func (a *SslApiService) NewGetSSLPartsByIdRequest(ctx context.Context, id string
 	}
 }
 
-// Executes the API request GET /SSL/Parts/{id}
+// Executes the API request V1 GET /SSL/Parts/{id}
 //
 //	@return CSSCMSDataModelModelsSSLScanJobPart
 func (a *SslApiService) GetSSLPartsByIdExecute(r ApiGetSSLPartsByIdRequest) (*CSSCMSDataModelModelsSSLScanJobPart, *http.Response, error) {
@@ -2280,7 +2325,7 @@ func (a *SslApiService) GetSSLPartsByIdExecute(r ApiGetSSLPartsByIdRequest) (*CS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /SSL/Endpoints/MonitorAll
+// Request for V1 PUT /SSL/Endpoints/MonitorAll
 type ApiUpdateSSLEndpointsMonitorAllRequest struct {
 	ctx                     context.Context
 	ApiService              *SslApiService
@@ -2307,11 +2352,14 @@ func (r ApiUpdateSSLEndpointsMonitorAllRequest) XKeyfactorApiVersion(xKeyfactorA
 	return r
 }
 
+// Executes the V1 PUT /SSL/Endpoints/MonitorAll request context
 func (r ApiUpdateSSLEndpointsMonitorAllRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateSSLEndpointsMonitorAllExecute(r)
 }
 
 /*
+Creates a new V1 PUT /SSL/Endpoints/MonitorAll request.
+
 UpdateSSLEndpointsMonitorAll Sets all endpoints matching the provided query as 'monitored'
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2414,7 +2462,7 @@ func (a *SslApiService) UpdateSSLEndpointsMonitorAllExecute(r ApiUpdateSSLEndpoi
 	return localVarHTTPResponse, nil
 }
 
-// Request for PUT /SSL/Endpoints/MonitorStatus
+// Request for V1 PUT /SSL/Endpoints/MonitorStatus
 type ApiUpdateSSLEndpointsMonitorStatusRequest struct {
 	ctx                                           context.Context
 	ApiService                                    *SslApiService
@@ -2441,11 +2489,14 @@ func (r ApiUpdateSSLEndpointsMonitorStatusRequest) CSSCMSDataModelModelsSSLEndpo
 	return r
 }
 
+// Executes the V1 PUT /SSL/Endpoints/MonitorStatus request context
 func (r ApiUpdateSSLEndpointsMonitorStatusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateSSLEndpointsMonitorStatusExecute(r)
 }
 
 /*
+Creates a new V1 PUT /SSL/Endpoints/MonitorStatus request.
+
 UpdateSSLEndpointsMonitorStatus Sets the monitored status according to the provided endpoint and boolean status
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2547,7 +2598,7 @@ func (a *SslApiService) UpdateSSLEndpointsMonitorStatusExecute(r ApiUpdateSSLEnd
 	return localVarHTTPResponse, nil
 }
 
-// Request for PUT /SSL/Endpoints/ReviewAll
+// Request for V1 PUT /SSL/Endpoints/ReviewAll
 type ApiUpdateSSLEndpointsReviewAllRequest struct {
 	ctx                     context.Context
 	ApiService              *SslApiService
@@ -2574,11 +2625,14 @@ func (r ApiUpdateSSLEndpointsReviewAllRequest) XKeyfactorApiVersion(xKeyfactorAp
 	return r
 }
 
+// Executes the V1 PUT /SSL/Endpoints/ReviewAll request context
 func (r ApiUpdateSSLEndpointsReviewAllRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateSSLEndpointsReviewAllExecute(r)
 }
 
 /*
+Creates a new V1 PUT /SSL/Endpoints/ReviewAll request.
+
 UpdateSSLEndpointsReviewAll Sets all endpoints matching the provided query as 'reviewed'
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2681,7 +2735,7 @@ func (a *SslApiService) UpdateSSLEndpointsReviewAllExecute(r ApiUpdateSSLEndpoin
 	return localVarHTTPResponse, nil
 }
 
-// Request for PUT /SSL/Endpoints/ReviewStatus
+// Request for V1 PUT /SSL/Endpoints/ReviewStatus
 type ApiUpdateSSLEndpointsReviewStatusRequest struct {
 	ctx                                           context.Context
 	ApiService                                    *SslApiService
@@ -2708,11 +2762,14 @@ func (r ApiUpdateSSLEndpointsReviewStatusRequest) CSSCMSDataModelModelsSSLEndpoi
 	return r
 }
 
+// Executes the V1 PUT /SSL/Endpoints/ReviewStatus request context
 func (r ApiUpdateSSLEndpointsReviewStatusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateSSLEndpointsReviewStatusExecute(r)
 }
 
 /*
+Creates a new V1 PUT /SSL/Endpoints/ReviewStatus request.
+
 UpdateSSLEndpointsReviewStatus Sets the reviewed status according to the provided endpoint and boolean status
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2814,7 +2871,7 @@ func (a *SslApiService) UpdateSSLEndpointsReviewStatusExecute(r ApiUpdateSSLEndp
 	return localVarHTTPResponse, nil
 }
 
-// Request for PUT /SSL/NetworkRanges
+// Request for V1 PUT /SSL/NetworkRanges
 type ApiUpdateSSLNetworkRangesRequest struct {
 	ctx                                          context.Context
 	ApiService                                   *SslApiService
@@ -2841,11 +2898,14 @@ func (r ApiUpdateSSLNetworkRangesRequest) CSSCMSDataModelModelsSSLNetworkRangesR
 	return r
 }
 
+// Executes the V1 PUT /SSL/NetworkRanges request context
 func (r ApiUpdateSSLNetworkRangesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateSSLNetworkRangesExecute(r)
 }
 
 /*
+Creates a new V1 PUT /SSL/NetworkRanges request.
+
 UpdateSSLNetworkRanges Configures network range definitions for the provided network
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2947,7 +3007,7 @@ func (a *SslApiService) UpdateSSLNetworkRangesExecute(r ApiUpdateSSLNetworkRange
 	return localVarHTTPResponse, nil
 }
 
-// Request for PUT /SSL/Networks
+// Request for V1 PUT /SSL/Networks
 type ApiUpdateSSLNetworksRequest struct {
 	ctx                     context.Context
 	ApiService              *SslApiService
@@ -2974,11 +3034,14 @@ func (r ApiUpdateSSLNetworksRequest) SslUpdateNetworkRequest(sslUpdateNetworkReq
 	return r
 }
 
+// Executes the V1 PUT /SSL/Networks request context
 func (r ApiUpdateSSLNetworksRequest) Execute() (*SslNetworkResponse, *http.Response, error) {
 	return r.ApiService.UpdateSSLNetworksExecute(r)
 }
 
 /*
+Creates a new V1 PUT /SSL/Networks request.
+
 UpdateSSLNetworks Updates an existing network definition according to the provided properties
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2997,7 +3060,7 @@ func (a *SslApiService) NewUpdateSSLNetworksRequest(ctx context.Context) ApiUpda
 	}
 }
 
-// Executes the API request PUT /SSL/Networks
+// Executes the API request V1 PUT /SSL/Networks
 //
 //	@return SslNetworkResponse
 func (a *SslApiService) UpdateSSLNetworksExecute(r ApiUpdateSSLNetworksRequest) (*SslNetworkResponse, *http.Response, error) {

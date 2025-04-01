@@ -31,7 +31,7 @@ import (
 // MacEnrollmentApiService MacEnrollmentApi service
 type MacEnrollmentApiService service
 
-// Request for GET /MacEnrollment
+// Request for V1 GET /MacEnrollment
 type ApiGetMacEnrollmentRequest struct {
 	ctx                     context.Context
 	ApiService              *MacEnrollmentApiService
@@ -51,12 +51,15 @@ func (r ApiGetMacEnrollmentRequest) XKeyfactorApiVersion(xKeyfactorApiVersion st
 	return r
 }
 
+// Executes the V1 GET /MacEnrollment request context
 func (r ApiGetMacEnrollmentRequest) Execute() (*MacEnrollmentMacEnrollmentAPIModel, *http.Response, error) {
 	return r.ApiService.GetMacEnrollmentExecute(r)
 }
 
 /*
-GetMacEnrollment Gets mac enrollment settings data
+Creates a new V1 GET /MacEnrollment request.
+
+# GetMacEnrollment Gets mac enrollment settings data
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetMacEnrollmentRequest
@@ -74,7 +77,7 @@ func (a *MacEnrollmentApiService) NewGetMacEnrollmentRequest(ctx context.Context
 	}
 }
 
-// Executes the API request GET /MacEnrollment
+// Executes the API request V1 GET /MacEnrollment
 //
 //	@return MacEnrollmentMacEnrollmentAPIModel
 func (a *MacEnrollmentApiService) GetMacEnrollmentExecute(r ApiGetMacEnrollmentRequest) (*MacEnrollmentMacEnrollmentAPIModel, *http.Response, error) {
@@ -167,7 +170,7 @@ func (a *MacEnrollmentApiService) GetMacEnrollmentExecute(r ApiGetMacEnrollmentR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /MacEnrollment
+// Request for V1 PUT /MacEnrollment
 type ApiUpdateMacEnrollmentRequest struct {
 	ctx                                context.Context
 	ApiService                         *MacEnrollmentApiService
@@ -193,12 +196,15 @@ func (r ApiUpdateMacEnrollmentRequest) MacEnrollmentMacEnrollmentAPIModel(macEnr
 	return r
 }
 
+// Executes the V1 PUT /MacEnrollment request context
 func (r ApiUpdateMacEnrollmentRequest) Execute() (*MacEnrollmentMacEnrollmentAPIModel, *http.Response, error) {
 	return r.ApiService.UpdateMacEnrollmentExecute(r)
 }
 
 /*
-UpdateMacEnrollment Updates mac enrollment settings data
+Creates a new V1 PUT /MacEnrollment request.
+
+# UpdateMacEnrollment Updates mac enrollment settings data
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateMacEnrollmentRequest
@@ -216,7 +222,7 @@ func (a *MacEnrollmentApiService) NewUpdateMacEnrollmentRequest(ctx context.Cont
 	}
 }
 
-// Executes the API request PUT /MacEnrollment
+// Executes the API request V1 PUT /MacEnrollment
 //
 //	@return MacEnrollmentMacEnrollmentAPIModel
 func (a *MacEnrollmentApiService) UpdateMacEnrollmentExecute(r ApiUpdateMacEnrollmentRequest) (*MacEnrollmentMacEnrollmentAPIModel, *http.Response, error) {

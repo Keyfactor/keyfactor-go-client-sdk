@@ -32,7 +32,7 @@ import (
 // UserApiService UserApi service
 type UserApiService service
 
-// Request for GET /SSH/Users
+// Request for V2 GET /SSH/Users
 type ApiGetSSHUsersRequest struct {
 	ctx                     context.Context
 	ApiService              *UserApiService
@@ -89,11 +89,14 @@ func (r ApiGetSSHUsersRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string)
 	return r
 }
 
+// Executes the V2 GET /SSH/Users request context
 func (r ApiGetSSHUsersRequest) Execute() ([]CSSCMSDataModelModelsSSHUsersSshUserAccessResponse, *http.Response, error) {
 	return r.ApiService.GetSSHUsersExecute(r)
 }
 
 /*
+Creates a new V2 GET /SSH/Users request.
+
 GetSSHUsers Returns users matching the criteria from the provided query parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -112,7 +115,7 @@ func (a *UserApiService) NewGetSSHUsersRequest(ctx context.Context) ApiGetSSHUse
 	}
 }
 
-// Executes the API request GET /SSH/Users
+// Executes the API request V2 GET /SSH/Users
 //
 //	@return []CSSCMSDataModelModelsSSHUsersSshUserAccessResponse
 func (a *UserApiService) GetSSHUsersExecute(r ApiGetSSHUsersRequest) ([]CSSCMSDataModelModelsSSHUsersSshUserAccessResponse, *http.Response, error) {
@@ -223,7 +226,7 @@ func (a *UserApiService) GetSSHUsersExecute(r ApiGetSSHUsersRequest) ([]CSSCMSDa
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /SSH/Users/{id}
+// Request for V2 GET /SSH/Users/{id}
 type ApiGetSSHUsersByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *UserApiService
@@ -244,11 +247,14 @@ func (r ApiGetSSHUsersByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersion str
 	return r
 }
 
+// Executes the V2 GET /SSH/Users/{id} request context
 func (r ApiGetSSHUsersByIdRequest) Execute() (*CSSCMSDataModelModelsSSHUsersSshUserAccessResponse, *http.Response, error) {
 	return r.ApiService.GetSSHUsersByIdExecute(r)
 }
 
 /*
+Creates a new V2 GET /SSH/Users/{id} request.
+
 GetSSHUsersById Looks up information about an existing SSH user.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -270,7 +276,7 @@ func (a *UserApiService) NewGetSSHUsersByIdRequest(ctx context.Context, id int32
 	}
 }
 
-// Executes the API request GET /SSH/Users/{id}
+// Executes the API request V2 GET /SSH/Users/{id}
 //
 //	@return CSSCMSDataModelModelsSSHUsersSshUserAccessResponse
 func (a *UserApiService) GetSSHUsersByIdExecute(r ApiGetSSHUsersByIdRequest) (*CSSCMSDataModelModelsSSHUsersSshUserAccessResponse, *http.Response, error) {

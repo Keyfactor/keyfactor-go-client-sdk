@@ -32,7 +32,7 @@ import (
 // WorkflowDefinitionApiService WorkflowDefinitionApi service
 type WorkflowDefinitionApiService service
 
-// Request for POST /Workflow/Definitions
+// Request for V1 POST /Workflow/Definitions
 type ApiCreateWorkflowDefinitionsRequest struct {
 	ctx                              context.Context
 	ApiService                       *WorkflowDefinitionApiService
@@ -66,11 +66,14 @@ func (r ApiCreateWorkflowDefinitionsRequest) WorkflowsDefinitionCreateRequest(wo
 	return r
 }
 
+// Executes the V1 POST /Workflow/Definitions request context
 func (r ApiCreateWorkflowDefinitionsRequest) Execute() (*WorkflowsDefinitionResponse, *http.Response, error) {
 	return r.ApiService.CreateWorkflowDefinitionsExecute(r)
 }
 
 /*
+Creates a new V1 POST /Workflow/Definitions request.
+
 CreateWorkflowDefinitions Creates a new base definition without any steps.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -89,7 +92,7 @@ func (a *WorkflowDefinitionApiService) NewCreateWorkflowDefinitionsRequest(ctx c
 	}
 }
 
-// Executes the API request POST /Workflow/Definitions
+// Executes the API request V1 POST /Workflow/Definitions
 //
 //	@return WorkflowsDefinitionResponse
 func (a *WorkflowDefinitionApiService) CreateWorkflowDefinitionsExecute(r ApiCreateWorkflowDefinitionsRequest) (*WorkflowsDefinitionResponse, *http.Response, error) {
@@ -187,7 +190,7 @@ func (a *WorkflowDefinitionApiService) CreateWorkflowDefinitionsExecute(r ApiCre
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Workflow/Definitions/{definitionId}/Publish
+// Request for V1 POST /Workflow/Definitions/{definitionId}/Publish
 type ApiCreateWorkflowDefinitionsDefinitionIdPublishRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowDefinitionApiService
@@ -208,11 +211,14 @@ func (r ApiCreateWorkflowDefinitionsDefinitionIdPublishRequest) XKeyfactorApiVer
 	return r
 }
 
+// Executes the V1 POST /Workflow/Definitions/{definitionId}/Publish request context
 func (r ApiCreateWorkflowDefinitionsDefinitionIdPublishRequest) Execute() (*WorkflowsDefinitionResponse, *http.Response, error) {
 	return r.ApiService.CreateWorkflowDefinitionsDefinitionIdPublishExecute(r)
 }
 
 /*
+Creates a new V1 POST /Workflow/Definitions/{definitionId}/Publish request.
+
 CreateWorkflowDefinitionsDefinitionIdPublish Makes the most recent version of a Workflow Definition the published version.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -234,7 +240,7 @@ func (a *WorkflowDefinitionApiService) NewCreateWorkflowDefinitionsDefinitionIdP
 	}
 }
 
-// Executes the API request POST /Workflow/Definitions/{definitionId}/Publish
+// Executes the API request V1 POST /Workflow/Definitions/{definitionId}/Publish
 //
 //	@return WorkflowsDefinitionResponse
 func (a *WorkflowDefinitionApiService) CreateWorkflowDefinitionsDefinitionIdPublishExecute(r ApiCreateWorkflowDefinitionsDefinitionIdPublishRequest) (*WorkflowsDefinitionResponse, *http.Response, error) {
@@ -328,7 +334,7 @@ func (a *WorkflowDefinitionApiService) CreateWorkflowDefinitionsDefinitionIdPubl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Workflow/Definitions/{definitionId}/Publish/{version}
+// Request for V1 POST /Workflow/Definitions/{definitionId}/Publish/{version}
 type ApiCreateWorkflowDefinitionsDefinitionIdPublishVersionRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowDefinitionApiService
@@ -350,11 +356,14 @@ func (r ApiCreateWorkflowDefinitionsDefinitionIdPublishVersionRequest) XKeyfacto
 	return r
 }
 
+// Executes the V1 POST /Workflow/Definitions/{definitionId}/Publish/{version} request context
 func (r ApiCreateWorkflowDefinitionsDefinitionIdPublishVersionRequest) Execute() (*WorkflowsDefinitionResponse, *http.Response, error) {
 	return r.ApiService.CreateWorkflowDefinitionsDefinitionIdPublishVersionExecute(r)
 }
 
 /*
+Creates a new V1 POST /Workflow/Definitions/{definitionId}/Publish/{version} request.
+
 CreateWorkflowDefinitionsDefinitionIdPublishVersion Makes the specified version of a Workflow Definition the published version.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -378,7 +387,7 @@ func (a *WorkflowDefinitionApiService) NewCreateWorkflowDefinitionsDefinitionIdP
 	}
 }
 
-// Executes the API request POST /Workflow/Definitions/{definitionId}/Publish/{version}
+// Executes the API request V1 POST /Workflow/Definitions/{definitionId}/Publish/{version}
 //
 //	@return WorkflowsDefinitionResponse
 func (a *WorkflowDefinitionApiService) CreateWorkflowDefinitionsDefinitionIdPublishVersionExecute(r ApiCreateWorkflowDefinitionsDefinitionIdPublishVersionRequest) (*WorkflowsDefinitionResponse, *http.Response, error) {
@@ -473,7 +482,7 @@ func (a *WorkflowDefinitionApiService) CreateWorkflowDefinitionsDefinitionIdPubl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /Workflow/Definitions/{definitionId}
+// Request for V1 DELETE /Workflow/Definitions/{definitionId}
 type ApiDeleteWorkflowDefinitionsDefinitionIdRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowDefinitionApiService
@@ -494,11 +503,14 @@ func (r ApiDeleteWorkflowDefinitionsDefinitionIdRequest) XKeyfactorApiVersion(xK
 	return r
 }
 
+// Executes the V1 DELETE /Workflow/Definitions/{definitionId} request context
 func (r ApiDeleteWorkflowDefinitionsDefinitionIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteWorkflowDefinitionsDefinitionIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /Workflow/Definitions/{definitionId} request.
+
 DeleteWorkflowDefinitionsDefinitionId Deletes the definition matching the given Id.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -602,7 +614,7 @@ func (a *WorkflowDefinitionApiService) DeleteWorkflowDefinitionsDefinitionIdExec
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /Workflow/Definitions
+// Request for V1 GET /Workflow/Definitions
 type ApiGetWorkflowDefinitionsRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowDefinitionApiService
@@ -652,11 +664,14 @@ func (r ApiGetWorkflowDefinitionsRequest) XKeyfactorApiVersion(xKeyfactorApiVers
 	return r
 }
 
+// Executes the V1 GET /Workflow/Definitions request context
 func (r ApiGetWorkflowDefinitionsRequest) Execute() ([]WorkflowsDefinitionQueryResponse, *http.Response, error) {
 	return r.ApiService.GetWorkflowDefinitionsExecute(r)
 }
 
 /*
+Creates a new V1 GET /Workflow/Definitions request.
+
 GetWorkflowDefinitions Gets the Definitions matching the query specifications.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -675,7 +690,7 @@ func (a *WorkflowDefinitionApiService) NewGetWorkflowDefinitionsRequest(ctx cont
 	}
 }
 
-// Executes the API request GET /Workflow/Definitions
+// Executes the API request V1 GET /Workflow/Definitions
 //
 //	@return []WorkflowsDefinitionQueryResponse
 func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsExecute(r ApiGetWorkflowDefinitionsRequest) ([]WorkflowsDefinitionQueryResponse, *http.Response, error) {
@@ -783,7 +798,7 @@ func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsExecute(r ApiGetWor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Workflow/Definitions/{definitionId}
+// Request for V1 GET /Workflow/Definitions/{definitionId}
 type ApiGetWorkflowDefinitionsDefinitionIdRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowDefinitionApiService
@@ -818,11 +833,14 @@ func (r ApiGetWorkflowDefinitionsDefinitionIdRequest) XKeyfactorApiVersion(xKeyf
 	return r
 }
 
+// Executes the V1 GET /Workflow/Definitions/{definitionId} request context
 func (r ApiGetWorkflowDefinitionsDefinitionIdRequest) Execute() (*WorkflowsDefinitionResponse, *http.Response, error) {
 	return r.ApiService.GetWorkflowDefinitionsDefinitionIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Workflow/Definitions/{definitionId} request.
+
 GetWorkflowDefinitionsDefinitionId Gets a workflow definition.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -844,7 +862,7 @@ func (a *WorkflowDefinitionApiService) NewGetWorkflowDefinitionsDefinitionIdRequ
 	}
 }
 
-// Executes the API request GET /Workflow/Definitions/{definitionId}
+// Executes the API request V1 GET /Workflow/Definitions/{definitionId}
 //
 //	@return WorkflowsDefinitionResponse
 func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsDefinitionIdExecute(r ApiGetWorkflowDefinitionsDefinitionIdRequest) (*WorkflowsDefinitionResponse, *http.Response, error) {
@@ -944,7 +962,7 @@ func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsDefinitionIdExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Workflow/Definitions/Steps
+// Request for V1 GET /Workflow/Definitions/Steps
 type ApiGetWorkflowDefinitionsStepsRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowDefinitionApiService
@@ -994,11 +1012,14 @@ func (r ApiGetWorkflowDefinitionsStepsRequest) XKeyfactorApiVersion(xKeyfactorAp
 	return r
 }
 
+// Executes the V1 GET /Workflow/Definitions/Steps request context
 func (r ApiGetWorkflowDefinitionsStepsRequest) Execute() ([]WorkflowsAvailableStepQueryResponse, *http.Response, error) {
 	return r.ApiService.GetWorkflowDefinitionsStepsExecute(r)
 }
 
 /*
+Creates a new V1 GET /Workflow/Definitions/Steps request.
+
 GetWorkflowDefinitionsSteps Gets the result set of available steps for a given query.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1017,7 +1038,7 @@ func (a *WorkflowDefinitionApiService) NewGetWorkflowDefinitionsStepsRequest(ctx
 	}
 }
 
-// Executes the API request GET /Workflow/Definitions/Steps
+// Executes the API request V1 GET /Workflow/Definitions/Steps
 //
 //	@return []WorkflowsAvailableStepQueryResponse
 func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsStepsExecute(r ApiGetWorkflowDefinitionsStepsRequest) ([]WorkflowsAvailableStepQueryResponse, *http.Response, error) {
@@ -1125,7 +1146,7 @@ func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsStepsExecute(r ApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Workflow/Definitions/Steps/{extensionName}
+// Request for V1 GET /Workflow/Definitions/Steps/{extensionName}
 type ApiGetWorkflowDefinitionsStepsExtensionNameRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowDefinitionApiService
@@ -1146,11 +1167,14 @@ func (r ApiGetWorkflowDefinitionsStepsExtensionNameRequest) XKeyfactorApiVersion
 	return r
 }
 
+// Executes the V1 GET /Workflow/Definitions/Steps/{extensionName} request context
 func (r ApiGetWorkflowDefinitionsStepsExtensionNameRequest) Execute() (*WorkflowsAvailableStepResponse, *http.Response, error) {
 	return r.ApiService.GetWorkflowDefinitionsStepsExtensionNameExecute(r)
 }
 
 /*
+Creates a new V1 GET /Workflow/Definitions/Steps/{extensionName} request.
+
 GetWorkflowDefinitionsStepsExtensionName Gets the schema of a given step with the specified extension name.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1172,7 +1196,7 @@ func (a *WorkflowDefinitionApiService) NewGetWorkflowDefinitionsStepsExtensionNa
 	}
 }
 
-// Executes the API request GET /Workflow/Definitions/Steps/{extensionName}
+// Executes the API request V1 GET /Workflow/Definitions/Steps/{extensionName}
 //
 //	@return WorkflowsAvailableStepResponse
 func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsStepsExtensionNameExecute(r ApiGetWorkflowDefinitionsStepsExtensionNameRequest) (*WorkflowsAvailableStepResponse, *http.Response, error) {
@@ -1266,7 +1290,7 @@ func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsStepsExtensionNameE
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Workflow/Definitions/Types
+// Request for V1 GET /Workflow/Definitions/Types
 type ApiGetWorkflowDefinitionsTypesRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowDefinitionApiService
@@ -1316,11 +1340,14 @@ func (r ApiGetWorkflowDefinitionsTypesRequest) XKeyfactorApiVersion(xKeyfactorAp
 	return r
 }
 
+// Executes the V1 GET /Workflow/Definitions/Types request context
 func (r ApiGetWorkflowDefinitionsTypesRequest) Execute() ([]WorkflowsWorkflowTypeQueryResponse, *http.Response, error) {
 	return r.ApiService.GetWorkflowDefinitionsTypesExecute(r)
 }
 
 /*
+Creates a new V1 GET /Workflow/Definitions/Types request.
+
 GetWorkflowDefinitionsTypes Performs a query against the workflow types in the system.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1339,7 +1366,7 @@ func (a *WorkflowDefinitionApiService) NewGetWorkflowDefinitionsTypesRequest(ctx
 	}
 }
 
-// Executes the API request GET /Workflow/Definitions/Types
+// Executes the API request V1 GET /Workflow/Definitions/Types
 //
 //	@return []WorkflowsWorkflowTypeQueryResponse
 func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsTypesExecute(r ApiGetWorkflowDefinitionsTypesRequest) ([]WorkflowsWorkflowTypeQueryResponse, *http.Response, error) {
@@ -1447,7 +1474,7 @@ func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsTypesExecute(r ApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Workflow/Definitions/{definitionId}
+// Request for V1 PUT /Workflow/Definitions/{definitionId}
 type ApiUpdateWorkflowDefinitionsDefinitionIdRequest struct {
 	ctx                              context.Context
 	ApiService                       *WorkflowDefinitionApiService
@@ -1482,11 +1509,14 @@ func (r ApiUpdateWorkflowDefinitionsDefinitionIdRequest) WorkflowsDefinitionUpda
 	return r
 }
 
+// Executes the V1 PUT /Workflow/Definitions/{definitionId} request context
 func (r ApiUpdateWorkflowDefinitionsDefinitionIdRequest) Execute() (*WorkflowsDefinitionResponse, *http.Response, error) {
 	return r.ApiService.UpdateWorkflowDefinitionsDefinitionIdExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Workflow/Definitions/{definitionId} request.
+
 UpdateWorkflowDefinitionsDefinitionId Updates the existing definition's DisplayName and Description.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1508,7 +1538,7 @@ func (a *WorkflowDefinitionApiService) NewUpdateWorkflowDefinitionsDefinitionIdR
 	}
 }
 
-// Executes the API request PUT /Workflow/Definitions/{definitionId}
+// Executes the API request V1 PUT /Workflow/Definitions/{definitionId}
 //
 //	@return WorkflowsDefinitionResponse
 func (a *WorkflowDefinitionApiService) UpdateWorkflowDefinitionsDefinitionIdExecute(r ApiUpdateWorkflowDefinitionsDefinitionIdRequest) (*WorkflowsDefinitionResponse, *http.Response, error) {
@@ -1607,7 +1637,7 @@ func (a *WorkflowDefinitionApiService) UpdateWorkflowDefinitionsDefinitionIdExec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Workflow/Definitions/{definitionId}/Status
+// Request for V1 PUT /Workflow/Definitions/{definitionId}/Status
 type ApiUpdateWorkflowDefinitionsDefinitionIdStatusRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowDefinitionApiService
@@ -1642,11 +1672,14 @@ func (r ApiUpdateWorkflowDefinitionsDefinitionIdStatusRequest) Body(body bool) A
 	return r
 }
 
+// Executes the V1 PUT /Workflow/Definitions/{definitionId}/Status request context
 func (r ApiUpdateWorkflowDefinitionsDefinitionIdStatusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateWorkflowDefinitionsDefinitionIdStatusExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Workflow/Definitions/{definitionId}/Status request.
+
 UpdateWorkflowDefinitionsDefinitionIdStatus Updates the definition status matching the given Id.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1755,7 +1788,7 @@ func (a *WorkflowDefinitionApiService) UpdateWorkflowDefinitionsDefinitionIdStat
 	return localVarHTTPResponse, nil
 }
 
-// Request for PUT /Workflow/Definitions/{definitionId}/Steps
+// Request for V1 PUT /Workflow/Definitions/{definitionId}/Steps
 type ApiUpdateWorkflowDefinitionsDefinitionIdStepsRequest struct {
 	ctx                            context.Context
 	ApiService                     *WorkflowDefinitionApiService
@@ -1783,11 +1816,14 @@ func (r ApiUpdateWorkflowDefinitionsDefinitionIdStepsRequest) WorkflowsDefinitio
 	return r
 }
 
+// Executes the V1 PUT /Workflow/Definitions/{definitionId}/Steps request context
 func (r ApiUpdateWorkflowDefinitionsDefinitionIdStepsRequest) Execute() (*WorkflowsDefinitionResponse, *http.Response, error) {
 	return r.ApiService.UpdateWorkflowDefinitionsDefinitionIdStepsExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Workflow/Definitions/{definitionId}/Steps request.
+
 UpdateWorkflowDefinitionsDefinitionIdSteps Sets the provided steps on the latest version of the definition.
 
 If the latest version is also the published version, a new version will be created and the steps will be set on that new version.
@@ -1811,7 +1847,7 @@ func (a *WorkflowDefinitionApiService) NewUpdateWorkflowDefinitionsDefinitionIdS
 	}
 }
 
-// Executes the API request PUT /Workflow/Definitions/{definitionId}/Steps
+// Executes the API request V1 PUT /Workflow/Definitions/{definitionId}/Steps
 //
 //	@return WorkflowsDefinitionResponse
 func (a *WorkflowDefinitionApiService) UpdateWorkflowDefinitionsDefinitionIdStepsExecute(r ApiUpdateWorkflowDefinitionsDefinitionIdStepsRequest) (*WorkflowsDefinitionResponse, *http.Response, error) {

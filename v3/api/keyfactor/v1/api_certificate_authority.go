@@ -32,7 +32,7 @@ import (
 // CertificateAuthorityApiService CertificateAuthorityApi service
 type CertificateAuthorityApiService service
 
-// Request for POST /CertificateAuthority
+// Request for V1 POST /CertificateAuthority
 type ApiCreateCertificateAuthorityRequest struct {
 	ctx                                               context.Context
 	ApiService                                        *CertificateAuthorityApiService
@@ -64,11 +64,14 @@ func (r ApiCreateCertificateAuthorityRequest) CertificateAuthoritiesCertificateA
 	return r
 }
 
+// Executes the V1 POST /CertificateAuthority request context
 func (r ApiCreateCertificateAuthorityRequest) Execute() (*CertificateAuthoritiesCertificateAuthorityResponse, *http.Response, error) {
 	return r.ApiService.CreateCertificateAuthorityExecute(r)
 }
 
 /*
+Creates a new V1 POST /CertificateAuthority request.
+
 CreateCertificateAuthority Creates a new CertificateAuthority object
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -87,7 +90,7 @@ func (a *CertificateAuthorityApiService) NewCreateCertificateAuthorityRequest(ct
 	}
 }
 
-// Executes the API request POST /CertificateAuthority
+// Executes the API request V1 POST /CertificateAuthority
 //
 //	@return CertificateAuthoritiesCertificateAuthorityResponse
 func (a *CertificateAuthorityApiService) CreateCertificateAuthorityExecute(r ApiCreateCertificateAuthorityRequest) (*CertificateAuthoritiesCertificateAuthorityResponse, *http.Response, error) {
@@ -185,7 +188,7 @@ func (a *CertificateAuthorityApiService) CreateCertificateAuthorityExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /CertificateAuthority/AlertRecipients/CAHealthRecipients
+// Request for V1 POST /CertificateAuthority/AlertRecipients/CAHealthRecipients
 type ApiCreateCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest struct {
 	ctx                                                 context.Context
 	ApiService                                          *CertificateAuthorityApiService
@@ -212,11 +215,14 @@ func (r ApiCreateCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest) C
 	return r
 }
 
+// Executes the V1 POST /CertificateAuthority/AlertRecipients/CAHealthRecipients request context
 func (r ApiCreateCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest) Execute() ([]CertificateAuthoritiesCAAlertRecipientResponse, *http.Response, error) {
 	return r.ApiService.CreateCertificateAuthorityAlertRecipientsCAHealthRecipientsExecute(r)
 }
 
 /*
+Creates a new V1 POST /CertificateAuthority/AlertRecipients/CAHealthRecipients request.
+
 CreateCertificateAuthorityAlertRecipientsCAHealthRecipients Creates CA health monitoring recipients for the provided list of email addresses\"
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -235,7 +241,7 @@ func (a *CertificateAuthorityApiService) NewCreateCertificateAuthorityAlertRecip
 	}
 }
 
-// Executes the API request POST /CertificateAuthority/AlertRecipients/CAHealthRecipients
+// Executes the API request V1 POST /CertificateAuthority/AlertRecipients/CAHealthRecipients
 //
 //	@return []CertificateAuthoritiesCAAlertRecipientResponse
 func (a *CertificateAuthorityApiService) CreateCertificateAuthorityAlertRecipientsCAHealthRecipientsExecute(r ApiCreateCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest) ([]CertificateAuthoritiesCAAlertRecipientResponse, *http.Response, error) {
@@ -330,7 +336,7 @@ func (a *CertificateAuthorityApiService) CreateCertificateAuthorityAlertRecipien
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /CertificateAuthority/AlertRecipients/CAThresholdRecipients
+// Request for V1 POST /CertificateAuthority/AlertRecipients/CAThresholdRecipients
 type ApiCreateCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest struct {
 	ctx                                                 context.Context
 	ApiService                                          *CertificateAuthorityApiService
@@ -357,11 +363,14 @@ func (r ApiCreateCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest
 	return r
 }
 
+// Executes the V1 POST /CertificateAuthority/AlertRecipients/CAThresholdRecipients request context
 func (r ApiCreateCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest) Execute() ([]CertificateAuthoritiesCAAlertRecipientResponse, *http.Response, error) {
 	return r.ApiService.CreateCertificateAuthorityAlertRecipientsCAThresholdRecipientsExecute(r)
 }
 
 /*
+Creates a new V1 POST /CertificateAuthority/AlertRecipients/CAThresholdRecipients request.
+
 CreateCertificateAuthorityAlertRecipientsCAThresholdRecipients Creates CA threshold alert recipients for the provided list of emails
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -380,7 +389,7 @@ func (a *CertificateAuthorityApiService) NewCreateCertificateAuthorityAlertRecip
 	}
 }
 
-// Executes the API request POST /CertificateAuthority/AlertRecipients/CAThresholdRecipients
+// Executes the API request V1 POST /CertificateAuthority/AlertRecipients/CAThresholdRecipients
 //
 //	@return []CertificateAuthoritiesCAAlertRecipientResponse
 func (a *CertificateAuthorityApiService) CreateCertificateAuthorityAlertRecipientsCAThresholdRecipientsExecute(r ApiCreateCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest) ([]CertificateAuthoritiesCAAlertRecipientResponse, *http.Response, error) {
@@ -475,7 +484,7 @@ func (a *CertificateAuthorityApiService) CreateCertificateAuthorityAlertRecipien
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /CertificateAuthority/Import
+// Request for V1 POST /CertificateAuthority/Import
 type ApiCreateCertificateAuthorityImportRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateAuthorityApiService
@@ -502,11 +511,14 @@ func (r ApiCreateCertificateAuthorityImportRequest) XKeyfactorApiVersion(xKeyfac
 	return r
 }
 
+// Executes the V1 POST /CertificateAuthority/Import request context
 func (r ApiCreateCertificateAuthorityImportRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateCertificateAuthorityImportExecute(r)
 }
 
 /*
+Creates a new V1 POST /CertificateAuthority/Import request.
+
 CreateCertificateAuthorityImport Imports any certificate authorities from the provided configuration tenant DNS
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -609,7 +621,7 @@ func (a *CertificateAuthorityApiService) CreateCertificateAuthorityImportExecute
 	return localVarHTTPResponse, nil
 }
 
-// Request for POST /CertificateAuthority/PublishCRL
+// Request for V1 POST /CertificateAuthority/PublishCRL
 type ApiCreateCertificateAuthorityPublishCRLRequest struct {
 	ctx                                  context.Context
 	ApiService                           *CertificateAuthorityApiService
@@ -636,11 +648,14 @@ func (r ApiCreateCertificateAuthorityPublishCRLRequest) CSSCMSDataModelModelsCRL
 	return r
 }
 
+// Executes the V1 POST /CertificateAuthority/PublishCRL request context
 func (r ApiCreateCertificateAuthorityPublishCRLRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateCertificateAuthorityPublishCRLExecute(r)
 }
 
 /*
+Creates a new V1 POST /CertificateAuthority/PublishCRL request.
+
 CreateCertificateAuthorityPublishCRL Publishes a CRL according to the provided request
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -742,7 +757,7 @@ func (a *CertificateAuthorityApiService) CreateCertificateAuthorityPublishCRLExe
 	return localVarHTTPResponse, nil
 }
 
-// Request for POST /CertificateAuthority/TaskQueue/Test
+// Request for V1 POST /CertificateAuthority/TaskQueue/Test
 type ApiCreateCertificateAuthorityTaskQueueTestRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateAuthorityApiService
@@ -769,11 +784,14 @@ func (r ApiCreateCertificateAuthorityTaskQueueTestRequest) RabbitMQJobQueueReque
 	return r
 }
 
+// Executes the V1 POST /CertificateAuthority/TaskQueue/Test request context
 func (r ApiCreateCertificateAuthorityTaskQueueTestRequest) Execute() (*CertificateAuthoritiesCAJobQueueTestResponse, *http.Response, error) {
 	return r.ApiService.CreateCertificateAuthorityTaskQueueTestExecute(r)
 }
 
 /*
+Creates a new V1 POST /CertificateAuthority/TaskQueue/Test request.
+
 CreateCertificateAuthorityTaskQueueTest Tests the connection info for the TaskQueue Credentials.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -792,7 +810,7 @@ func (a *CertificateAuthorityApiService) NewCreateCertificateAuthorityTaskQueueT
 	}
 }
 
-// Executes the API request POST /CertificateAuthority/TaskQueue/Test
+// Executes the API request V1 POST /CertificateAuthority/TaskQueue/Test
 //
 //	@return CertificateAuthoritiesCAJobQueueTestResponse
 func (a *CertificateAuthorityApiService) CreateCertificateAuthorityTaskQueueTestExecute(r ApiCreateCertificateAuthorityTaskQueueTestRequest) (*CertificateAuthoritiesCAJobQueueTestResponse, *http.Response, error) {
@@ -887,7 +905,7 @@ func (a *CertificateAuthorityApiService) CreateCertificateAuthorityTaskQueueTest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /CertificateAuthority/Test
+// Request for V1 POST /CertificateAuthority/Test
 type ApiCreateCertificateAuthorityTestRequest struct {
 	ctx                                                                        context.Context
 	ApiService                                                                 *CertificateAuthorityApiService
@@ -914,11 +932,14 @@ func (r ApiCreateCertificateAuthorityTestRequest) CSSCMSDataModelModelsCertifica
 	return r
 }
 
+// Executes the V1 POST /CertificateAuthority/Test request context
 func (r ApiCreateCertificateAuthorityTestRequest) Execute() (*CertificateAuthoritiesCertificateAuthorityTestResponse, *http.Response, error) {
 	return r.ApiService.CreateCertificateAuthorityTestExecute(r)
 }
 
 /*
+Creates a new V1 POST /CertificateAuthority/Test request.
+
 CreateCertificateAuthorityTest Validates the connection info for the CA provided by the model.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -937,7 +958,7 @@ func (a *CertificateAuthorityApiService) NewCreateCertificateAuthorityTestReques
 	}
 }
 
-// Executes the API request POST /CertificateAuthority/Test
+// Executes the API request V1 POST /CertificateAuthority/Test
 //
 //	@return CertificateAuthoritiesCertificateAuthorityTestResponse
 func (a *CertificateAuthorityApiService) CreateCertificateAuthorityTestExecute(r ApiCreateCertificateAuthorityTestRequest) (*CertificateAuthoritiesCertificateAuthorityTestResponse, *http.Response, error) {
@@ -1032,7 +1053,7 @@ func (a *CertificateAuthorityApiService) CreateCertificateAuthorityTestExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /CertificateAuthority/AlertRecipients/CAHealthRecipients/{id}
+// Request for V1 DELETE /CertificateAuthority/AlertRecipients/CAHealthRecipients/{id}
 type ApiDeleteCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateAuthorityApiService
@@ -1053,11 +1074,14 @@ func (r ApiDeleteCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdReques
 	return r
 }
 
+// Executes the V1 DELETE /CertificateAuthority/AlertRecipients/CAHealthRecipients/{id} request context
 func (r ApiDeleteCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /CertificateAuthority/AlertRecipients/CAHealthRecipients/{id} request.
+
 DeleteCertificateAuthorityAlertRecipientsCAHealthRecipientsById Deletes a CA health recipient for the provided ID
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1167,7 +1191,7 @@ func (a *CertificateAuthorityApiService) DeleteCertificateAuthorityAlertRecipien
 	return localVarHTTPResponse, nil
 }
 
-// Request for DELETE /CertificateAuthority/AlertRecipients/CAThresholdRecipients/{id}
+// Request for V1 DELETE /CertificateAuthority/AlertRecipients/CAThresholdRecipients/{id}
 type ApiDeleteCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateAuthorityApiService
@@ -1188,11 +1212,14 @@ func (r ApiDeleteCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdReq
 	return r
 }
 
+// Executes the V1 DELETE /CertificateAuthority/AlertRecipients/CAThresholdRecipients/{id} request context
 func (r ApiDeleteCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /CertificateAuthority/AlertRecipients/CAThresholdRecipients/{id} request.
+
 DeleteCertificateAuthorityAlertRecipientsCAThresholdRecipientsById Deletes a CA threshold recipient for the provided ID
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1302,7 +1329,7 @@ func (a *CertificateAuthorityApiService) DeleteCertificateAuthorityAlertRecipien
 	return localVarHTTPResponse, nil
 }
 
-// Request for DELETE /CertificateAuthority/{id}
+// Request for V1 DELETE /CertificateAuthority/{id}
 type ApiDeleteCertificateAuthorityByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateAuthorityApiService
@@ -1323,11 +1350,14 @@ func (r ApiDeleteCertificateAuthorityByIdRequest) XKeyfactorApiVersion(xKeyfacto
 	return r
 }
 
+// Executes the V1 DELETE /CertificateAuthority/{id} request context
 func (r ApiDeleteCertificateAuthorityByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteCertificateAuthorityByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /CertificateAuthority/{id} request.
+
 DeleteCertificateAuthorityById Deletes a CertificateAuthority from the system, specified by ID
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1431,7 +1461,7 @@ func (a *CertificateAuthorityApiService) DeleteCertificateAuthorityByIdExecute(r
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateAuthority
+// Request for V1 GET /CertificateAuthority
 type ApiGetCertificateAuthorityRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateAuthorityApiService
@@ -1481,11 +1511,14 @@ func (r ApiGetCertificateAuthorityRequest) XKeyfactorApiVersion(xKeyfactorApiVer
 	return r
 }
 
+// Executes the V1 GET /CertificateAuthority request context
 func (r ApiGetCertificateAuthorityRequest) Execute() ([]CertificateAuthoritiesCertificateAuthorityResponse, *http.Response, error) {
 	return r.ApiService.GetCertificateAuthorityExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateAuthority request.
+
 GetCertificateAuthority Returns all certificate authorities according to the provided filter
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1504,7 +1537,7 @@ func (a *CertificateAuthorityApiService) NewGetCertificateAuthorityRequest(ctx c
 	}
 }
 
-// Executes the API request GET /CertificateAuthority
+// Executes the API request V1 GET /CertificateAuthority
 //
 //	@return []CertificateAuthoritiesCertificateAuthorityResponse
 func (a *CertificateAuthorityApiService) GetCertificateAuthorityExecute(r ApiGetCertificateAuthorityRequest) ([]CertificateAuthoritiesCertificateAuthorityResponse, *http.Response, error) {
@@ -1612,7 +1645,7 @@ func (a *CertificateAuthorityApiService) GetCertificateAuthorityExecute(r ApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateAuthority/AlertRecipients/CAHealthRecipients
+// Request for V1 GET /CertificateAuthority/AlertRecipients/CAHealthRecipients
 type ApiGetCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateAuthorityApiService
@@ -1632,11 +1665,14 @@ func (r ApiGetCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest) XKey
 	return r
 }
 
+// Executes the V1 GET /CertificateAuthority/AlertRecipients/CAHealthRecipients request context
 func (r ApiGetCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest) Execute() ([]CertificateAuthoritiesCAAlertRecipientResponse, *http.Response, error) {
 	return r.ApiService.GetCertificateAuthorityAlertRecipientsCAHealthRecipientsExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateAuthority/AlertRecipients/CAHealthRecipients request.
+
 GetCertificateAuthorityAlertRecipientsCAHealthRecipients Returns a list of all CA health recipients
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1655,7 +1691,7 @@ func (a *CertificateAuthorityApiService) NewGetCertificateAuthorityAlertRecipien
 	}
 }
 
-// Executes the API request GET /CertificateAuthority/AlertRecipients/CAHealthRecipients
+// Executes the API request V1 GET /CertificateAuthority/AlertRecipients/CAHealthRecipients
 //
 //	@return []CertificateAuthoritiesCAAlertRecipientResponse
 func (a *CertificateAuthorityApiService) GetCertificateAuthorityAlertRecipientsCAHealthRecipientsExecute(r ApiGetCertificateAuthorityAlertRecipientsCAHealthRecipientsRequest) ([]CertificateAuthoritiesCAAlertRecipientResponse, *http.Response, error) {
@@ -1748,7 +1784,7 @@ func (a *CertificateAuthorityApiService) GetCertificateAuthorityAlertRecipientsC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateAuthority/AlertRecipients/CAHealthRecipients/{id}
+// Request for V1 GET /CertificateAuthority/AlertRecipients/CAHealthRecipients/{id}
 type ApiGetCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateAuthorityApiService
@@ -1769,11 +1805,14 @@ func (r ApiGetCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest) 
 	return r
 }
 
+// Executes the V1 GET /CertificateAuthority/AlertRecipients/CAHealthRecipients/{id} request context
 func (r ApiGetCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest) Execute() (*CertificateAuthoritiesCAAlertRecipientResponse, *http.Response, error) {
 	return r.ApiService.GetCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateAuthority/AlertRecipients/CAHealthRecipients/{id} request.
+
 GetCertificateAuthorityAlertRecipientsCAHealthRecipientsById Returns a CA health recipient for the specified health recipient ID
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1795,7 +1834,7 @@ func (a *CertificateAuthorityApiService) NewGetCertificateAuthorityAlertRecipien
 	}
 }
 
-// Executes the API request GET /CertificateAuthority/AlertRecipients/CAHealthRecipients/{id}
+// Executes the API request V1 GET /CertificateAuthority/AlertRecipients/CAHealthRecipients/{id}
 //
 //	@return CertificateAuthoritiesCAAlertRecipientResponse
 func (a *CertificateAuthorityApiService) GetCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdExecute(r ApiGetCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest) (*CertificateAuthoritiesCAAlertRecipientResponse, *http.Response, error) {
@@ -1895,7 +1934,7 @@ func (a *CertificateAuthorityApiService) GetCertificateAuthorityAlertRecipientsC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateAuthority/AlertRecipients/CAThresholdRecipients
+// Request for V1 GET /CertificateAuthority/AlertRecipients/CAThresholdRecipients
 type ApiGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateAuthorityApiService
@@ -1915,11 +1954,14 @@ func (r ApiGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest) X
 	return r
 }
 
+// Executes the V1 GET /CertificateAuthority/AlertRecipients/CAThresholdRecipients request context
 func (r ApiGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest) Execute() ([]CertificateAuthoritiesCAAlertRecipientResponse, *http.Response, error) {
 	return r.ApiService.GetCertificateAuthorityAlertRecipientsCAThresholdRecipientsExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateAuthority/AlertRecipients/CAThresholdRecipients request.
+
 GetCertificateAuthorityAlertRecipientsCAThresholdRecipients Returns a list of all CA threshold recipients
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1938,7 +1980,7 @@ func (a *CertificateAuthorityApiService) NewGetCertificateAuthorityAlertRecipien
 	}
 }
 
-// Executes the API request GET /CertificateAuthority/AlertRecipients/CAThresholdRecipients
+// Executes the API request V1 GET /CertificateAuthority/AlertRecipients/CAThresholdRecipients
 //
 //	@return []CertificateAuthoritiesCAAlertRecipientResponse
 func (a *CertificateAuthorityApiService) GetCertificateAuthorityAlertRecipientsCAThresholdRecipientsExecute(r ApiGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsRequest) ([]CertificateAuthoritiesCAAlertRecipientResponse, *http.Response, error) {
@@ -2031,7 +2073,7 @@ func (a *CertificateAuthorityApiService) GetCertificateAuthorityAlertRecipientsC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateAuthority/AlertRecipients/CAThresholdRecipients/{id}
+// Request for V1 GET /CertificateAuthority/AlertRecipients/CAThresholdRecipients/{id}
 type ApiGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateAuthorityApiService
@@ -2052,11 +2094,14 @@ func (r ApiGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdReques
 	return r
 }
 
+// Executes the V1 GET /CertificateAuthority/AlertRecipients/CAThresholdRecipients/{id} request context
 func (r ApiGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest) Execute() (*CertificateAuthoritiesCAAlertRecipientResponse, *http.Response, error) {
 	return r.ApiService.GetCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateAuthority/AlertRecipients/CAThresholdRecipients/{id} request.
+
 GetCertificateAuthorityAlertRecipientsCAThresholdRecipientsById Returns a CA threshold recipient for the specified threshold alert recipient ID
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2078,7 +2123,7 @@ func (a *CertificateAuthorityApiService) NewGetCertificateAuthorityAlertRecipien
 	}
 }
 
-// Executes the API request GET /CertificateAuthority/AlertRecipients/CAThresholdRecipients/{id}
+// Executes the API request V1 GET /CertificateAuthority/AlertRecipients/CAThresholdRecipients/{id}
 //
 //	@return CertificateAuthoritiesCAAlertRecipientResponse
 func (a *CertificateAuthorityApiService) GetCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdExecute(r ApiGetCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest) (*CertificateAuthoritiesCAAlertRecipientResponse, *http.Response, error) {
@@ -2178,7 +2223,7 @@ func (a *CertificateAuthorityApiService) GetCertificateAuthorityAlertRecipientsC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateAuthority/AvailableForests
+// Request for V1 GET /CertificateAuthority/AvailableForests
 type ApiGetCertificateAuthorityAvailableForestsRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateAuthorityApiService
@@ -2198,11 +2243,14 @@ func (r ApiGetCertificateAuthorityAvailableForestsRequest) XKeyfactorApiVersion(
 	return r
 }
 
+// Executes the V1 GET /CertificateAuthority/AvailableForests request context
 func (r ApiGetCertificateAuthorityAvailableForestsRequest) Execute() ([]string, *http.Response, error) {
 	return r.ApiService.GetCertificateAuthorityAvailableForestsExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateAuthority/AvailableForests request.
+
 GetCertificateAuthorityAvailableForests Returns a list of available forests that are in active directory
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2221,7 +2269,7 @@ func (a *CertificateAuthorityApiService) NewGetCertificateAuthorityAvailableFore
 	}
 }
 
-// Executes the API request GET /CertificateAuthority/AvailableForests
+// Executes the API request V1 GET /CertificateAuthority/AvailableForests
 //
 //	@return []string
 func (a *CertificateAuthorityApiService) GetCertificateAuthorityAvailableForestsExecute(r ApiGetCertificateAuthorityAvailableForestsRequest) ([]string, *http.Response, error) {
@@ -2314,7 +2362,7 @@ func (a *CertificateAuthorityApiService) GetCertificateAuthorityAvailableForests
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateAuthority/{id}
+// Request for V1 GET /CertificateAuthority/{id}
 type ApiGetCertificateAuthorityByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateAuthorityApiService
@@ -2335,11 +2383,14 @@ func (r ApiGetCertificateAuthorityByIdRequest) XKeyfactorApiVersion(xKeyfactorAp
 	return r
 }
 
+// Executes the V1 GET /CertificateAuthority/{id} request context
 func (r ApiGetCertificateAuthorityByIdRequest) Execute() (*CertificateAuthoritiesCertificateAuthorityResponse, *http.Response, error) {
 	return r.ApiService.GetCertificateAuthorityByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateAuthority/{id} request.
+
 GetCertificateAuthorityById Returns details for a single CA, specified by ID
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2361,7 +2412,7 @@ func (a *CertificateAuthorityApiService) NewGetCertificateAuthorityByIdRequest(c
 	}
 }
 
-// Executes the API request GET /CertificateAuthority/{id}
+// Executes the API request V1 GET /CertificateAuthority/{id}
 //
 //	@return CertificateAuthoritiesCertificateAuthorityResponse
 func (a *CertificateAuthorityApiService) GetCertificateAuthorityByIdExecute(r ApiGetCertificateAuthorityByIdRequest) (*CertificateAuthoritiesCertificateAuthorityResponse, *http.Response, error) {
@@ -2455,7 +2506,7 @@ func (a *CertificateAuthorityApiService) GetCertificateAuthorityByIdExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateAuthority/HealthMonitoring/Schedule
+// Request for V1 GET /CertificateAuthority/HealthMonitoring/Schedule
 type ApiGetCertificateAuthorityHealthMonitoringScheduleRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateAuthorityApiService
@@ -2475,11 +2526,14 @@ func (r ApiGetCertificateAuthorityHealthMonitoringScheduleRequest) XKeyfactorApi
 	return r
 }
 
+// Executes the V1 GET /CertificateAuthority/HealthMonitoring/Schedule request context
 func (r ApiGetCertificateAuthorityHealthMonitoringScheduleRequest) Execute() (*SchedulingScheduledTaskResponse, *http.Response, error) {
 	return r.ApiService.GetCertificateAuthorityHealthMonitoringScheduleExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateAuthority/HealthMonitoring/Schedule request.
+
 GetCertificateAuthorityHealthMonitoringSchedule Retrieves the execution schedule for the CA health monitoring job
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2498,7 +2552,7 @@ func (a *CertificateAuthorityApiService) NewGetCertificateAuthorityHealthMonitor
 	}
 }
 
-// Executes the API request GET /CertificateAuthority/HealthMonitoring/Schedule
+// Executes the API request V1 GET /CertificateAuthority/HealthMonitoring/Schedule
 //
 //	@return SchedulingScheduledTaskResponse
 func (a *CertificateAuthorityApiService) GetCertificateAuthorityHealthMonitoringScheduleExecute(r ApiGetCertificateAuthorityHealthMonitoringScheduleRequest) (*SchedulingScheduledTaskResponse, *http.Response, error) {
@@ -2591,7 +2645,7 @@ func (a *CertificateAuthorityApiService) GetCertificateAuthorityHealthMonitoring
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateAuthority/SourceCount
+// Request for V1 GET /CertificateAuthority/SourceCount
 type ApiGetCertificateAuthoritySourceCountRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateAuthorityApiService
@@ -2611,11 +2665,14 @@ func (r ApiGetCertificateAuthoritySourceCountRequest) XKeyfactorApiVersion(xKeyf
 	return r
 }
 
+// Executes the V1 GET /CertificateAuthority/SourceCount request context
 func (r ApiGetCertificateAuthoritySourceCountRequest) Execute() (int32, *http.Response, error) {
 	return r.ApiService.GetCertificateAuthoritySourceCountExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateAuthority/SourceCount request.
+
 GetCertificateAuthoritySourceCount Returns a count of certificate authorities with sync enabled
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2634,7 +2691,7 @@ func (a *CertificateAuthorityApiService) NewGetCertificateAuthoritySourceCountRe
 	}
 }
 
-// Executes the API request GET /CertificateAuthority/SourceCount
+// Executes the API request V1 GET /CertificateAuthority/SourceCount
 //
 //	@return int32
 func (a *CertificateAuthorityApiService) GetCertificateAuthoritySourceCountExecute(r ApiGetCertificateAuthoritySourceCountRequest) (int32, *http.Response, error) {
@@ -2727,7 +2784,7 @@ func (a *CertificateAuthorityApiService) GetCertificateAuthoritySourceCountExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateAuthority/TaskQueue
+// Request for V1 GET /CertificateAuthority/TaskQueue
 type ApiGetCertificateAuthorityTaskQueueRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateAuthorityApiService
@@ -2747,11 +2804,14 @@ func (r ApiGetCertificateAuthorityTaskQueueRequest) XKeyfactorApiVersion(xKeyfac
 	return r
 }
 
+// Executes the V1 GET /CertificateAuthority/TaskQueue request context
 func (r ApiGetCertificateAuthorityTaskQueueRequest) Execute() (*RabbitMQJobQueueResponse, *http.Response, error) {
 	return r.ApiService.GetCertificateAuthorityTaskQueueExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateAuthority/TaskQueue request.
+
 GetCertificateAuthorityTaskQueue Retrieves credentials and connection information
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2770,7 +2830,7 @@ func (a *CertificateAuthorityApiService) NewGetCertificateAuthorityTaskQueueRequ
 	}
 }
 
-// Executes the API request GET /CertificateAuthority/TaskQueue
+// Executes the API request V1 GET /CertificateAuthority/TaskQueue
 //
 //	@return RabbitMQJobQueueResponse
 func (a *CertificateAuthorityApiService) GetCertificateAuthorityTaskQueueExecute(r ApiGetCertificateAuthorityTaskQueueRequest) (*RabbitMQJobQueueResponse, *http.Response, error) {
@@ -2863,7 +2923,7 @@ func (a *CertificateAuthorityApiService) GetCertificateAuthorityTaskQueueExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /CertificateAuthority
+// Request for V1 PUT /CertificateAuthority
 type ApiUpdateCertificateAuthorityRequest struct {
 	ctx                                               context.Context
 	ApiService                                        *CertificateAuthorityApiService
@@ -2895,11 +2955,14 @@ func (r ApiUpdateCertificateAuthorityRequest) CertificateAuthoritiesCertificateA
 	return r
 }
 
+// Executes the V1 PUT /CertificateAuthority request context
 func (r ApiUpdateCertificateAuthorityRequest) Execute() (*CertificateAuthoritiesCertificateAuthorityResponse, *http.Response, error) {
 	return r.ApiService.UpdateCertificateAuthorityExecute(r)
 }
 
 /*
+Creates a new V1 PUT /CertificateAuthority request.
+
 UpdateCertificateAuthority Updates a CertificateAuthority object
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2918,7 +2981,7 @@ func (a *CertificateAuthorityApiService) NewUpdateCertificateAuthorityRequest(ct
 	}
 }
 
-// Executes the API request PUT /CertificateAuthority
+// Executes the API request V1 PUT /CertificateAuthority
 //
 //	@return CertificateAuthoritiesCertificateAuthorityResponse
 func (a *CertificateAuthorityApiService) UpdateCertificateAuthorityExecute(r ApiUpdateCertificateAuthorityRequest) (*CertificateAuthoritiesCertificateAuthorityResponse, *http.Response, error) {
@@ -3016,7 +3079,7 @@ func (a *CertificateAuthorityApiService) UpdateCertificateAuthorityExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /CertificateAuthority/AlertRecipients/CAHealthRecipients/{id}
+// Request for V1 PUT /CertificateAuthority/AlertRecipients/CAHealthRecipients/{id}
 type ApiUpdateCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest struct {
 	ctx                                                 context.Context
 	ApiService                                          *CertificateAuthorityApiService
@@ -3044,11 +3107,14 @@ func (r ApiUpdateCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdReques
 	return r
 }
 
+// Executes the V1 PUT /CertificateAuthority/AlertRecipients/CAHealthRecipients/{id} request context
 func (r ApiUpdateCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest) Execute() (*CertificateAuthoritiesCAAlertRecipientResponse, *http.Response, error) {
 	return r.ApiService.UpdateCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdExecute(r)
 }
 
 /*
+Creates a new V1 PUT /CertificateAuthority/AlertRecipients/CAHealthRecipients/{id} request.
+
 UpdateCertificateAuthorityAlertRecipientsCAHealthRecipientsById Updates a CA health alert recipient for the provided request object
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -3070,7 +3136,7 @@ func (a *CertificateAuthorityApiService) NewUpdateCertificateAuthorityAlertRecip
 	}
 }
 
-// Executes the API request PUT /CertificateAuthority/AlertRecipients/CAHealthRecipients/{id}
+// Executes the API request V1 PUT /CertificateAuthority/AlertRecipients/CAHealthRecipients/{id}
 //
 //	@return CertificateAuthoritiesCAAlertRecipientResponse
 func (a *CertificateAuthorityApiService) UpdateCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdExecute(r ApiUpdateCertificateAuthorityAlertRecipientsCAHealthRecipientsByIdRequest) (*CertificateAuthoritiesCAAlertRecipientResponse, *http.Response, error) {
@@ -3172,7 +3238,7 @@ func (a *CertificateAuthorityApiService) UpdateCertificateAuthorityAlertRecipien
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /CertificateAuthority/AlertRecipients/CAThresholdRecipients/{id}
+// Request for V1 PUT /CertificateAuthority/AlertRecipients/CAThresholdRecipients/{id}
 type ApiUpdateCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest struct {
 	ctx                                                 context.Context
 	ApiService                                          *CertificateAuthorityApiService
@@ -3200,11 +3266,14 @@ func (r ApiUpdateCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdReq
 	return r
 }
 
+// Executes the V1 PUT /CertificateAuthority/AlertRecipients/CAThresholdRecipients/{id} request context
 func (r ApiUpdateCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest) Execute() (*CertificateAuthoritiesCAAlertRecipientResponse, *http.Response, error) {
 	return r.ApiService.UpdateCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdExecute(r)
 }
 
 /*
+Creates a new V1 PUT /CertificateAuthority/AlertRecipients/CAThresholdRecipients/{id} request.
+
 UpdateCertificateAuthorityAlertRecipientsCAThresholdRecipientsById Updates a CA threshold alert recipient for the provided request object
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -3226,7 +3295,7 @@ func (a *CertificateAuthorityApiService) NewUpdateCertificateAuthorityAlertRecip
 	}
 }
 
-// Executes the API request PUT /CertificateAuthority/AlertRecipients/CAThresholdRecipients/{id}
+// Executes the API request V1 PUT /CertificateAuthority/AlertRecipients/CAThresholdRecipients/{id}
 //
 //	@return CertificateAuthoritiesCAAlertRecipientResponse
 func (a *CertificateAuthorityApiService) UpdateCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdExecute(r ApiUpdateCertificateAuthorityAlertRecipientsCAThresholdRecipientsByIdRequest) (*CertificateAuthoritiesCAAlertRecipientResponse, *http.Response, error) {
@@ -3328,7 +3397,7 @@ func (a *CertificateAuthorityApiService) UpdateCertificateAuthorityAlertRecipien
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /CertificateAuthority/TaskQueue
+// Request for V1 PUT /CertificateAuthority/TaskQueue
 type ApiUpdateCertificateAuthorityTaskQueueRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateAuthorityApiService
@@ -3355,11 +3424,14 @@ func (r ApiUpdateCertificateAuthorityTaskQueueRequest) RabbitMQJobQueueRequest(r
 	return r
 }
 
+// Executes the V1 PUT /CertificateAuthority/TaskQueue request context
 func (r ApiUpdateCertificateAuthorityTaskQueueRequest) Execute() (*RabbitMQJobQueueResponse, *http.Response, error) {
 	return r.ApiService.UpdateCertificateAuthorityTaskQueueExecute(r)
 }
 
 /*
+Creates a new V1 PUT /CertificateAuthority/TaskQueue request.
+
 UpdateCertificateAuthorityTaskQueue Updates credentials and connection information
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -3378,7 +3450,7 @@ func (a *CertificateAuthorityApiService) NewUpdateCertificateAuthorityTaskQueueR
 	}
 }
 
-// Executes the API request PUT /CertificateAuthority/TaskQueue
+// Executes the API request V1 PUT /CertificateAuthority/TaskQueue
 //
 //	@return RabbitMQJobQueueResponse
 func (a *CertificateAuthorityApiService) UpdateCertificateAuthorityTaskQueueExecute(r ApiUpdateCertificateAuthorityTaskQueueRequest) (*RabbitMQJobQueueResponse, *http.Response, error) {

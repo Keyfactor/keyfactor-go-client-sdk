@@ -32,7 +32,7 @@ import (
 // AgentPoolApiService AgentPoolApi service
 type AgentPoolApiService service
 
-// Request for POST /AgentPools
+// Request for V1 POST /AgentPools
 type ApiCreateAgentPoolsRequest struct {
 	ctx                                       context.Context
 	ApiService                                *AgentPoolApiService
@@ -59,11 +59,14 @@ func (r ApiCreateAgentPoolsRequest) OrchestratorPoolsAgentPoolCreationRequest(or
 	return r
 }
 
+// Executes the V1 POST /AgentPools request context
 func (r ApiCreateAgentPoolsRequest) Execute() (*OrchestratorPoolsAgentPoolGetResponse, *http.Response, error) {
 	return r.ApiService.CreateAgentPoolsExecute(r)
 }
 
 /*
+Creates a new V1 POST /AgentPools request.
+
 CreateAgentPools Creates an agent pool with the provided properties
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *AgentPoolApiService) NewCreateAgentPoolsRequest(ctx context.Context) Ap
 	}
 }
 
-// Executes the API request POST /AgentPools
+// Executes the API request V1 POST /AgentPools
 //
 //	@return OrchestratorPoolsAgentPoolGetResponse
 func (a *AgentPoolApiService) CreateAgentPoolsExecute(r ApiCreateAgentPoolsRequest) (*OrchestratorPoolsAgentPoolGetResponse, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *AgentPoolApiService) CreateAgentPoolsExecute(r ApiCreateAgentPoolsReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /AgentPools/{id}
+// Request for V1 DELETE /AgentPools/{id}
 type ApiDeleteAgentPoolsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *AgentPoolApiService
@@ -198,11 +201,14 @@ func (r ApiDeleteAgentPoolsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersio
 	return r
 }
 
+// Executes the V1 DELETE /AgentPools/{id} request context
 func (r ApiDeleteAgentPoolsByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAgentPoolsByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /AgentPools/{id} request.
+
 DeleteAgentPoolsById Deletes the agent pool associated with the provided id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -306,7 +312,7 @@ func (a *AgentPoolApiService) DeleteAgentPoolsByIdExecute(r ApiDeleteAgentPoolsB
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /AgentPools
+// Request for V1 GET /AgentPools
 type ApiGetAgentPoolsRequest struct {
 	ctx                     context.Context
 	ApiService              *AgentPoolApiService
@@ -361,11 +367,14 @@ func (r ApiGetAgentPoolsRequest) XKeyfactorApiVersion(xKeyfactorApiVersion strin
 	return r
 }
 
+// Executes the V1 GET /AgentPools request context
 func (r ApiGetAgentPoolsRequest) Execute() ([]OrchestratorPoolsAgentPoolGetResponse, *http.Response, error) {
 	return r.ApiService.GetAgentPoolsExecute(r)
 }
 
 /*
+Creates a new V1 GET /AgentPools request.
+
 GetAgentPools Returns all agent pools according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -384,7 +393,7 @@ func (a *AgentPoolApiService) NewGetAgentPoolsRequest(ctx context.Context) ApiGe
 	}
 }
 
-// Executes the API request GET /AgentPools
+// Executes the API request V1 GET /AgentPools
 //
 //	@return []OrchestratorPoolsAgentPoolGetResponse
 func (a *AgentPoolApiService) GetAgentPoolsExecute(r ApiGetAgentPoolsRequest) ([]OrchestratorPoolsAgentPoolGetResponse, *http.Response, error) {
@@ -492,7 +501,7 @@ func (a *AgentPoolApiService) GetAgentPoolsExecute(r ApiGetAgentPoolsRequest) ([
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /AgentPools/Agents
+// Request for V1 GET /AgentPools/Agents
 type ApiGetAgentPoolsAgentsRequest struct {
 	ctx                     context.Context
 	ApiService              *AgentPoolApiService
@@ -547,11 +556,14 @@ func (r ApiGetAgentPoolsAgentsRequest) XKeyfactorApiVersion(xKeyfactorApiVersion
 	return r
 }
 
+// Executes the V1 GET /AgentPools/Agents request context
 func (r ApiGetAgentPoolsAgentsRequest) Execute() ([]OrchestratorPoolsAgentPoolAgentGetResponse, *http.Response, error) {
 	return r.ApiService.GetAgentPoolsAgentsExecute(r)
 }
 
 /*
+Creates a new V1 GET /AgentPools/Agents request.
+
 GetAgentPoolsAgents Returns all agents for the default agent pool
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -570,7 +582,7 @@ func (a *AgentPoolApiService) NewGetAgentPoolsAgentsRequest(ctx context.Context)
 	}
 }
 
-// Executes the API request GET /AgentPools/Agents
+// Executes the API request V1 GET /AgentPools/Agents
 //
 //	@return []OrchestratorPoolsAgentPoolAgentGetResponse
 func (a *AgentPoolApiService) GetAgentPoolsAgentsExecute(r ApiGetAgentPoolsAgentsRequest) ([]OrchestratorPoolsAgentPoolAgentGetResponse, *http.Response, error) {
@@ -678,7 +690,7 @@ func (a *AgentPoolApiService) GetAgentPoolsAgentsExecute(r ApiGetAgentPoolsAgent
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /AgentPools/{id}
+// Request for V1 GET /AgentPools/{id}
 type ApiGetAgentPoolsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *AgentPoolApiService
@@ -699,11 +711,14 @@ func (r ApiGetAgentPoolsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersion s
 	return r
 }
 
+// Executes the V1 GET /AgentPools/{id} request context
 func (r ApiGetAgentPoolsByIdRequest) Execute() (*OrchestratorPoolsAgentPoolGetResponse, *http.Response, error) {
 	return r.ApiService.GetAgentPoolsByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /AgentPools/{id} request.
+
 GetAgentPoolsById Returns a single agent pool associated with the provided id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -725,7 +740,7 @@ func (a *AgentPoolApiService) NewGetAgentPoolsByIdRequest(ctx context.Context, i
 	}
 }
 
-// Executes the API request GET /AgentPools/{id}
+// Executes the API request V1 GET /AgentPools/{id}
 //
 //	@return OrchestratorPoolsAgentPoolGetResponse
 func (a *AgentPoolApiService) GetAgentPoolsByIdExecute(r ApiGetAgentPoolsByIdRequest) (*OrchestratorPoolsAgentPoolGetResponse, *http.Response, error) {
@@ -819,7 +834,7 @@ func (a *AgentPoolApiService) GetAgentPoolsByIdExecute(r ApiGetAgentPoolsByIdReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /AgentPools
+// Request for V1 PUT /AgentPools
 type ApiUpdateAgentPoolsRequest struct {
 	ctx                                     context.Context
 	ApiService                              *AgentPoolApiService
@@ -846,11 +861,14 @@ func (r ApiUpdateAgentPoolsRequest) OrchestratorPoolsAgentPoolUpdateRequest(orch
 	return r
 }
 
+// Executes the V1 PUT /AgentPools request context
 func (r ApiUpdateAgentPoolsRequest) Execute() (*OrchestratorPoolsAgentPoolGetResponse, *http.Response, error) {
 	return r.ApiService.UpdateAgentPoolsExecute(r)
 }
 
 /*
+Creates a new V1 PUT /AgentPools request.
+
 UpdateAgentPools Updates an existing agent pool with the provided properties
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -869,7 +887,7 @@ func (a *AgentPoolApiService) NewUpdateAgentPoolsRequest(ctx context.Context) Ap
 	}
 }
 
-// Executes the API request PUT /AgentPools
+// Executes the API request V1 PUT /AgentPools
 //
 //	@return OrchestratorPoolsAgentPoolGetResponse
 func (a *AgentPoolApiService) UpdateAgentPoolsExecute(r ApiUpdateAgentPoolsRequest) (*OrchestratorPoolsAgentPoolGetResponse, *http.Response, error) {

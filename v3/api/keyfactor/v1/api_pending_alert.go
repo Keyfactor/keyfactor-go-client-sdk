@@ -32,7 +32,7 @@ import (
 // PendingAlertApiService PendingAlertApi service
 type PendingAlertApiService service
 
-// Request for POST /Alerts/Pending
+// Request for V1 POST /Alerts/Pending
 type ApiCreateAlertsPendingRequest struct {
 	ctx                                      context.Context
 	ApiService                               *PendingAlertApiService
@@ -59,11 +59,14 @@ func (r ApiCreateAlertsPendingRequest) AlertsPendingPendingAlertCreationRequest(
 	return r
 }
 
+// Executes the V1 POST /Alerts/Pending request context
 func (r ApiCreateAlertsPendingRequest) Execute() (*AlertsPendingPendingAlertDefinitionResponse, *http.Response, error) {
 	return r.ApiService.CreateAlertsPendingExecute(r)
 }
 
 /*
+Creates a new V1 POST /Alerts/Pending request.
+
 CreateAlertsPending Add a pending alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *PendingAlertApiService) NewCreateAlertsPendingRequest(ctx context.Conte
 	}
 }
 
-// Executes the API request POST /Alerts/Pending
+// Executes the API request V1 POST /Alerts/Pending
 //
 //	@return AlertsPendingPendingAlertDefinitionResponse
 func (a *PendingAlertApiService) CreateAlertsPendingExecute(r ApiCreateAlertsPendingRequest) (*AlertsPendingPendingAlertDefinitionResponse, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *PendingAlertApiService) CreateAlertsPendingExecute(r ApiCreateAlertsPen
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Alerts/Pending/Test
+// Request for V1 POST /Alerts/Pending/Test
 type ApiCreateAlertsPendingTestRequest struct {
 	ctx                                  context.Context
 	ApiService                           *PendingAlertApiService
@@ -204,11 +207,14 @@ func (r ApiCreateAlertsPendingTestRequest) AlertsPendingPendingAlertTestRequest(
 	return r
 }
 
+// Executes the V1 POST /Alerts/Pending/Test request context
 func (r ApiCreateAlertsPendingTestRequest) Execute() (*AlertsPendingPendingAlertTestResponse, *http.Response, error) {
 	return r.ApiService.CreateAlertsPendingTestExecute(r)
 }
 
 /*
+Creates a new V1 POST /Alerts/Pending/Test request.
+
 CreateAlertsPendingTest Test pending alert. Will send alert emails if SendAlerts is true
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -229,7 +235,7 @@ func (a *PendingAlertApiService) NewCreateAlertsPendingTestRequest(ctx context.C
 	}
 }
 
-// Executes the API request POST /Alerts/Pending/Test
+// Executes the API request V1 POST /Alerts/Pending/Test
 //
 //	@return AlertsPendingPendingAlertTestResponse
 //
@@ -326,7 +332,7 @@ func (a *PendingAlertApiService) CreateAlertsPendingTestExecute(r ApiCreateAlert
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Alerts/Pending/TestAll
+// Request for V1 POST /Alerts/Pending/TestAll
 type ApiCreateAlertsPendingTestAllRequest struct {
 	ctx                                     context.Context
 	ApiService                              *PendingAlertApiService
@@ -353,11 +359,14 @@ func (r ApiCreateAlertsPendingTestAllRequest) AlertsPendingPendingAlertTestAllRe
 	return r
 }
 
+// Executes the V1 POST /Alerts/Pending/TestAll request context
 func (r ApiCreateAlertsPendingTestAllRequest) Execute() (*AlertsPendingPendingAlertTestResponse, *http.Response, error) {
 	return r.ApiService.CreateAlertsPendingTestAllExecute(r)
 }
 
 /*
+Creates a new V1 POST /Alerts/Pending/TestAll request.
+
 CreateAlertsPendingTestAll Test all pending alerts. Will send alert emails if SendAlerts is true
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -378,7 +387,7 @@ func (a *PendingAlertApiService) NewCreateAlertsPendingTestAllRequest(ctx contex
 	}
 }
 
-// Executes the API request POST /Alerts/Pending/TestAll
+// Executes the API request V1 POST /Alerts/Pending/TestAll
 //
 //	@return AlertsPendingPendingAlertTestResponse
 //
@@ -475,7 +484,7 @@ func (a *PendingAlertApiService) CreateAlertsPendingTestAllExecute(r ApiCreateAl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /Alerts/Pending/{id}
+// Request for V1 DELETE /Alerts/Pending/{id}
 type ApiDeleteAlertsPendingByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *PendingAlertApiService
@@ -496,11 +505,14 @@ func (r ApiDeleteAlertsPendingByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVer
 	return r
 }
 
+// Executes the V1 DELETE /Alerts/Pending/{id} request context
 func (r ApiDeleteAlertsPendingByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAlertsPendingByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /Alerts/Pending/{id} request.
+
 DeleteAlertsPendingById Delete a pending alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -604,7 +616,7 @@ func (a *PendingAlertApiService) DeleteAlertsPendingByIdExecute(r ApiDeleteAlert
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /Alerts/Pending
+// Request for V1 GET /Alerts/Pending
 type ApiGetAlertsPendingRequest struct {
 	ctx                     context.Context
 	ApiService              *PendingAlertApiService
@@ -654,11 +666,14 @@ func (r ApiGetAlertsPendingRequest) XKeyfactorApiVersion(xKeyfactorApiVersion st
 	return r
 }
 
+// Executes the V1 GET /Alerts/Pending request context
 func (r ApiGetAlertsPendingRequest) Execute() ([]AlertsPendingPendingAlertDefinitionResponse, *http.Response, error) {
 	return r.ApiService.GetAlertsPendingExecute(r)
 }
 
 /*
+Creates a new V1 GET /Alerts/Pending request.
+
 GetAlertsPending Gets all pending alerts according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -677,7 +692,7 @@ func (a *PendingAlertApiService) NewGetAlertsPendingRequest(ctx context.Context)
 	}
 }
 
-// Executes the API request GET /Alerts/Pending
+// Executes the API request V1 GET /Alerts/Pending
 //
 //	@return []AlertsPendingPendingAlertDefinitionResponse
 func (a *PendingAlertApiService) GetAlertsPendingExecute(r ApiGetAlertsPendingRequest) ([]AlertsPendingPendingAlertDefinitionResponse, *http.Response, error) {
@@ -785,7 +800,7 @@ func (a *PendingAlertApiService) GetAlertsPendingExecute(r ApiGetAlertsPendingRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Alerts/Pending/{id}
+// Request for V1 GET /Alerts/Pending/{id}
 type ApiGetAlertsPendingByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *PendingAlertApiService
@@ -806,11 +821,14 @@ func (r ApiGetAlertsPendingByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersio
 	return r
 }
 
+// Executes the V1 GET /Alerts/Pending/{id} request context
 func (r ApiGetAlertsPendingByIdRequest) Execute() (*AlertsPendingPendingAlertDefinitionResponse, *http.Response, error) {
 	return r.ApiService.GetAlertsPendingByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Alerts/Pending/{id} request.
+
 GetAlertsPendingById Get a pending alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -832,7 +850,7 @@ func (a *PendingAlertApiService) NewGetAlertsPendingByIdRequest(ctx context.Cont
 	}
 }
 
-// Executes the API request GET /Alerts/Pending/{id}
+// Executes the API request V1 GET /Alerts/Pending/{id}
 //
 //	@return AlertsPendingPendingAlertDefinitionResponse
 func (a *PendingAlertApiService) GetAlertsPendingByIdExecute(r ApiGetAlertsPendingByIdRequest) (*AlertsPendingPendingAlertDefinitionResponse, *http.Response, error) {
@@ -926,7 +944,7 @@ func (a *PendingAlertApiService) GetAlertsPendingByIdExecute(r ApiGetAlertsPendi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Alerts/Pending/Schedule
+// Request for V1 GET /Alerts/Pending/Schedule
 type ApiGetAlertsPendingScheduleRequest struct {
 	ctx                     context.Context
 	ApiService              *PendingAlertApiService
@@ -946,11 +964,14 @@ func (r ApiGetAlertsPendingScheduleRequest) XKeyfactorApiVersion(xKeyfactorApiVe
 	return r
 }
 
+// Executes the V1 GET /Alerts/Pending/Schedule request context
 func (r ApiGetAlertsPendingScheduleRequest) Execute() (*AlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {
 	return r.ApiService.GetAlertsPendingScheduleExecute(r)
 }
 
 /*
+Creates a new V1 GET /Alerts/Pending/Schedule request.
+
 GetAlertsPendingSchedule Get the schedule for pending alerts
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -969,7 +990,7 @@ func (a *PendingAlertApiService) NewGetAlertsPendingScheduleRequest(ctx context.
 	}
 }
 
-// Executes the API request GET /Alerts/Pending/Schedule
+// Executes the API request V1 GET /Alerts/Pending/Schedule
 //
 //	@return AlertsAlertScheduleAlertScheduleResponse
 func (a *PendingAlertApiService) GetAlertsPendingScheduleExecute(r ApiGetAlertsPendingScheduleRequest) (*AlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {
@@ -1062,7 +1083,7 @@ func (a *PendingAlertApiService) GetAlertsPendingScheduleExecute(r ApiGetAlertsP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Alerts/Pending
+// Request for V1 PUT /Alerts/Pending
 type ApiUpdateAlertsPendingRequest struct {
 	ctx                                    context.Context
 	ApiService                             *PendingAlertApiService
@@ -1089,11 +1110,14 @@ func (r ApiUpdateAlertsPendingRequest) AlertsPendingPendingAlertUpdateRequest(al
 	return r
 }
 
+// Executes the V1 PUT /Alerts/Pending request context
 func (r ApiUpdateAlertsPendingRequest) Execute() (*AlertsPendingPendingAlertDefinitionResponse, *http.Response, error) {
 	return r.ApiService.UpdateAlertsPendingExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Alerts/Pending request.
+
 UpdateAlertsPending Edit a pending alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1112,7 +1136,7 @@ func (a *PendingAlertApiService) NewUpdateAlertsPendingRequest(ctx context.Conte
 	}
 }
 
-// Executes the API request PUT /Alerts/Pending
+// Executes the API request V1 PUT /Alerts/Pending
 //
 //	@return AlertsPendingPendingAlertDefinitionResponse
 func (a *PendingAlertApiService) UpdateAlertsPendingExecute(r ApiUpdateAlertsPendingRequest) (*AlertsPendingPendingAlertDefinitionResponse, *http.Response, error) {
@@ -1207,7 +1231,7 @@ func (a *PendingAlertApiService) UpdateAlertsPendingExecute(r ApiUpdateAlertsPen
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Alerts/Pending/Schedule
+// Request for V1 PUT /Alerts/Pending/Schedule
 type ApiUpdateAlertsPendingScheduleRequest struct {
 	ctx                                     context.Context
 	ApiService                              *PendingAlertApiService
@@ -1233,11 +1257,14 @@ func (r ApiUpdateAlertsPendingScheduleRequest) AlertsAlertScheduleAlertScheduleR
 	return r
 }
 
+// Executes the V1 PUT /Alerts/Pending/Schedule request context
 func (r ApiUpdateAlertsPendingScheduleRequest) Execute() (*AlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {
 	return r.ApiService.UpdateAlertsPendingScheduleExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Alerts/Pending/Schedule request.
+
 UpdateAlertsPendingSchedule Edit schedule
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1256,7 +1283,7 @@ func (a *PendingAlertApiService) NewUpdateAlertsPendingScheduleRequest(ctx conte
 	}
 }
 
-// Executes the API request PUT /Alerts/Pending/Schedule
+// Executes the API request V1 PUT /Alerts/Pending/Schedule
 //
 //	@return AlertsAlertScheduleAlertScheduleResponse
 func (a *PendingAlertApiService) UpdateAlertsPendingScheduleExecute(r ApiUpdateAlertsPendingScheduleRequest) (*AlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {

@@ -31,7 +31,7 @@ import (
 // SchedulingApiService SchedulingApi service
 type SchedulingApiService service
 
-// Request for POST /Scheduling
+// Request for V1 POST /Scheduling
 type ApiCreateSchedulingRequest struct {
 	ctx                            context.Context
 	ApiService                     *SchedulingApiService
@@ -57,11 +57,14 @@ func (r ApiCreateSchedulingRequest) SchedulingScheduledTaskRequest(schedulingSch
 	return r
 }
 
+// Executes the V1 POST /Scheduling request context
 func (r ApiCreateSchedulingRequest) Execute() (*SchedulingScheduledTaskResponse, *http.Response, error) {
 	return r.ApiService.CreateSchedulingExecute(r)
 }
 
 /*
+Creates a new V1 POST /Scheduling request.
+
 CreateScheduling Method for CreateScheduling
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -80,7 +83,7 @@ func (a *SchedulingApiService) NewCreateSchedulingRequest(ctx context.Context) A
 	}
 }
 
-// Executes the API request POST /Scheduling
+// Executes the API request V1 POST /Scheduling
 //
 //	@return SchedulingScheduledTaskResponse
 func (a *SchedulingApiService) CreateSchedulingExecute(r ApiCreateSchedulingRequest) (*SchedulingScheduledTaskResponse, *http.Response, error) {

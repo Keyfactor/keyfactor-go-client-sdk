@@ -32,7 +32,7 @@ import (
 // EnrollmentApiService EnrollmentApi service
 type EnrollmentApiService service
 
-// Request for POST /Enrollment/CSR
+// Request for V1 POST /Enrollment/CSR
 type ApiCreateEnrollmentCSRRequest struct {
 	ctx                            context.Context
 	ApiService                     *EnrollmentApiService
@@ -72,12 +72,15 @@ func (r ApiCreateEnrollmentCSRRequest) EnrollmentCSREnrollmentRequest(enrollment
 	return r
 }
 
+// Executes the V1 POST /Enrollment/CSR request context
 func (r ApiCreateEnrollmentCSRRequest) Execute() (*CSSCMSDataModelModelsEnrollmentCSREnrollmentResponse, *http.Response, error) {
 	return r.ApiService.CreateEnrollmentCSRExecute(r)
 }
 
 /*
-CreateEnrollmentCSR Performs a CSR Enrollment based upon the provided request
+Creates a new V1 POST /Enrollment/CSR request.
+
+# CreateEnrollmentCSR Performs a CSR Enrollment based upon the provided request
 
 ### Subject Alternative Name Flags ###
 | Value              | Description               |
@@ -112,7 +115,7 @@ func (a *EnrollmentApiService) NewCreateEnrollmentCSRRequest(ctx context.Context
 	}
 }
 
-// Executes the API request POST /Enrollment/CSR
+// Executes the API request V1 POST /Enrollment/CSR
 //
 //	@return CSSCMSDataModelModelsEnrollmentCSREnrollmentResponse
 func (a *EnrollmentApiService) CreateEnrollmentCSRExecute(r ApiCreateEnrollmentCSRRequest) (*CSSCMSDataModelModelsEnrollmentCSREnrollmentResponse, *http.Response, error) {
@@ -214,7 +217,7 @@ func (a *EnrollmentApiService) CreateEnrollmentCSRExecute(r ApiCreateEnrollmentC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Enrollment/CSR/Parse
+// Request for V1 POST /Enrollment/CSR/Parse
 type ApiCreateEnrollmentCSRParseRequest struct {
 	ctx                              context.Context
 	ApiService                       *EnrollmentApiService
@@ -241,12 +244,15 @@ func (r ApiCreateEnrollmentCSRParseRequest) CSSCMSDataModelModelsCSRContents(cSS
 	return r
 }
 
+// Executes the V1 POST /Enrollment/CSR/Parse request context
 func (r ApiCreateEnrollmentCSRParseRequest) Execute() ([]string, *http.Response, error) {
 	return r.ApiService.CreateEnrollmentCSRParseExecute(r)
 }
 
 /*
-CreateEnrollmentCSRParse Parses the provided CSR and returns the properties
+Creates a new V1 POST /Enrollment/CSR/Parse request.
+
+# CreateEnrollmentCSRParse Parses the provided CSR and returns the properties
 
 This functionality is equivalent to the result of pasting a CSR into the field within the Management Portal CSR Enrollment page.
 
@@ -266,7 +272,7 @@ func (a *EnrollmentApiService) NewCreateEnrollmentCSRParseRequest(ctx context.Co
 	}
 }
 
-// Executes the API request POST /Enrollment/CSR/Parse
+// Executes the API request V1 POST /Enrollment/CSR/Parse
 //
 //	@return []string
 func (a *EnrollmentApiService) CreateEnrollmentCSRParseExecute(r ApiCreateEnrollmentCSRParseRequest) ([]string, *http.Response, error) {
@@ -361,7 +367,7 @@ func (a *EnrollmentApiService) CreateEnrollmentCSRParseExecute(r ApiCreateEnroll
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Enrollment/PFX
+// Request for V1 POST /Enrollment/PFX
 type ApiCreateEnrollmentPFXRequest struct {
 	ctx                            context.Context
 	ApiService                     *EnrollmentApiService
@@ -395,12 +401,15 @@ func (r ApiCreateEnrollmentPFXRequest) EnrollmentPFXEnrollmentRequest(enrollment
 	return r
 }
 
+// Executes the V1 POST /Enrollment/PFX request context
 func (r ApiCreateEnrollmentPFXRequest) Execute() (*CSSCMSDataModelModelsEnrollmentPFXEnrollmentResponse, *http.Response, error) {
 	return r.ApiService.CreateEnrollmentPFXExecute(r)
 }
 
 /*
-CreateEnrollmentPFX Performs a PFX Enrollment based upon the provided request
+Creates a new V1 POST /Enrollment/PFX request.
+
+# CreateEnrollmentPFX Performs a PFX Enrollment based upon the provided request
 
 ### IMPORTANT:
 - The <b>'RenewalCertificateId'</b> field in the request should be set to <b>null</b> if the certificate is not being renewed as part of the enrollment. A value of <b>0</b> will produce an error.
@@ -438,7 +447,7 @@ func (a *EnrollmentApiService) NewCreateEnrollmentPFXRequest(ctx context.Context
 	}
 }
 
-// Executes the API request POST /Enrollment/PFX
+// Executes the API request V1 POST /Enrollment/PFX
 //
 //	@return CSSCMSDataModelModelsEnrollmentPFXEnrollmentResponse
 func (a *EnrollmentApiService) CreateEnrollmentPFXExecute(r ApiCreateEnrollmentPFXRequest) (*CSSCMSDataModelModelsEnrollmentPFXEnrollmentResponse, *http.Response, error) {
@@ -537,7 +546,7 @@ func (a *EnrollmentApiService) CreateEnrollmentPFXExecute(r ApiCreateEnrollmentP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Enrollment/PFX/Deploy
+// Request for V1 POST /Enrollment/PFX/Deploy
 type ApiCreateEnrollmentPFXDeployRequest struct {
 	ctx                                   context.Context
 	ApiService                            *EnrollmentApiService
@@ -564,11 +573,14 @@ func (r ApiCreateEnrollmentPFXDeployRequest) EnrollmentEnrollmentManagementReque
 	return r
 }
 
+// Executes the V1 POST /Enrollment/PFX/Deploy request context
 func (r ApiCreateEnrollmentPFXDeployRequest) Execute() (*EnrollmentEnrollmentManagementResponse, *http.Response, error) {
 	return r.ApiService.CreateEnrollmentPFXDeployExecute(r)
 }
 
 /*
+Creates a new V1 POST /Enrollment/PFX/Deploy request.
+
 CreateEnrollmentPFXDeploy Creates management jobs to install a newly enrolled pfx in to one or more certificate stores
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -587,7 +599,7 @@ func (a *EnrollmentApiService) NewCreateEnrollmentPFXDeployRequest(ctx context.C
 	}
 }
 
-// Executes the API request POST /Enrollment/PFX/Deploy
+// Executes the API request V1 POST /Enrollment/PFX/Deploy
 //
 //	@return EnrollmentEnrollmentManagementResponse
 func (a *EnrollmentApiService) CreateEnrollmentPFXDeployExecute(r ApiCreateEnrollmentPFXDeployRequest) (*EnrollmentEnrollmentManagementResponse, *http.Response, error) {
@@ -682,7 +694,7 @@ func (a *EnrollmentApiService) CreateEnrollmentPFXDeployExecute(r ApiCreateEnrol
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Enrollment/PFX/Replace
+// Request for V1 POST /Enrollment/PFX/Replace
 type ApiCreateEnrollmentPFXReplaceRequest struct {
 	ctx                                                                context.Context
 	ApiService                                                         *EnrollmentApiService
@@ -709,11 +721,14 @@ func (r ApiCreateEnrollmentPFXReplaceRequest) CSSCMSDataModelModelsEnrollmentExi
 	return r
 }
 
+// Executes the V1 POST /Enrollment/PFX/Replace request context
 func (r ApiCreateEnrollmentPFXReplaceRequest) Execute() (*EnrollmentEnrollmentManagementResponse, *http.Response, error) {
 	return r.ApiService.CreateEnrollmentPFXReplaceExecute(r)
 }
 
 /*
+Creates a new V1 POST /Enrollment/PFX/Replace request.
+
 CreateEnrollmentPFXReplace Creates management jobs to install a newly enrolled pfx into the same certificate stores as the previous certificate
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -732,7 +747,7 @@ func (a *EnrollmentApiService) NewCreateEnrollmentPFXReplaceRequest(ctx context.
 	}
 }
 
-// Executes the API request POST /Enrollment/PFX/Replace
+// Executes the API request V1 POST /Enrollment/PFX/Replace
 //
 //	@return EnrollmentEnrollmentManagementResponse
 func (a *EnrollmentApiService) CreateEnrollmentPFXReplaceExecute(r ApiCreateEnrollmentPFXReplaceRequest) (*EnrollmentEnrollmentManagementResponse, *http.Response, error) {
@@ -827,7 +842,7 @@ func (a *EnrollmentApiService) CreateEnrollmentPFXReplaceExecute(r ApiCreateEnro
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Enrollment/Renew
+// Request for V1 POST /Enrollment/Renew
 type ApiCreateEnrollmentRenewRequest struct {
 	ctx                                           context.Context
 	ApiService                                    *EnrollmentApiService
@@ -861,11 +876,14 @@ func (r ApiCreateEnrollmentRenewRequest) CSSCMSDataModelModelsEnrollmentRenewalR
 	return r
 }
 
+// Executes the V1 POST /Enrollment/Renew request context
 func (r ApiCreateEnrollmentRenewRequest) Execute() (*EnrollmentRenewalApiResponse, *http.Response, error) {
 	return r.ApiService.CreateEnrollmentRenewExecute(r)
 }
 
 /*
+Creates a new V1 POST /Enrollment/Renew request.
+
 CreateEnrollmentRenew Performs a renewal based upon the passed in request
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -884,7 +902,7 @@ func (a *EnrollmentApiService) NewCreateEnrollmentRenewRequest(ctx context.Conte
 	}
 }
 
-// Executes the API request POST /Enrollment/Renew
+// Executes the API request V1 POST /Enrollment/Renew
 //
 //	@return EnrollmentRenewalApiResponse
 func (a *EnrollmentApiService) CreateEnrollmentRenewExecute(r ApiCreateEnrollmentRenewRequest) (*EnrollmentRenewalApiResponse, *http.Response, error) {
@@ -982,7 +1000,7 @@ func (a *EnrollmentApiService) CreateEnrollmentRenewExecute(r ApiCreateEnrollmen
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Enrollment/AvailableRenewal/Id/{id}
+// Request for V1 GET /Enrollment/AvailableRenewal/Id/{id}
 type ApiGetEnrollmentAvailableRenewalIdByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *EnrollmentApiService
@@ -1010,11 +1028,14 @@ func (r ApiGetEnrollmentAvailableRenewalIdByIdRequest) XKeyfactorApiVersion(xKey
 	return r
 }
 
+// Executes the V1 GET /Enrollment/AvailableRenewal/Id/{id} request context
 func (r ApiGetEnrollmentAvailableRenewalIdByIdRequest) Execute() (*CSSCMSDataModelModelsEnrollmentAvailableRenewal, *http.Response, error) {
 	return r.ApiService.GetEnrollmentAvailableRenewalIdByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Enrollment/AvailableRenewal/Id/{id} request.
+
 GetEnrollmentAvailableRenewalIdById Returns the type of renewal available for a given certificate.
 
 ### Available Renewal Types ###
@@ -1043,7 +1064,7 @@ func (a *EnrollmentApiService) NewGetEnrollmentAvailableRenewalIdByIdRequest(ctx
 	}
 }
 
-// Executes the API request GET /Enrollment/AvailableRenewal/Id/{id}
+// Executes the API request V1 GET /Enrollment/AvailableRenewal/Id/{id}
 //
 //	@return CSSCMSDataModelModelsEnrollmentAvailableRenewal
 func (a *EnrollmentApiService) GetEnrollmentAvailableRenewalIdByIdExecute(r ApiGetEnrollmentAvailableRenewalIdByIdRequest) (*CSSCMSDataModelModelsEnrollmentAvailableRenewal, *http.Response, error) {
@@ -1146,7 +1167,7 @@ func (a *EnrollmentApiService) GetEnrollmentAvailableRenewalIdByIdExecute(r ApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Enrollment/AvailableRenewal/Thumbprint/{thumbprint}
+// Request for V1 GET /Enrollment/AvailableRenewal/Thumbprint/{thumbprint}
 type ApiGetEnrollmentAvailableRenewalThumbprintThumbprintRequest struct {
 	ctx                     context.Context
 	ApiService              *EnrollmentApiService
@@ -1174,11 +1195,14 @@ func (r ApiGetEnrollmentAvailableRenewalThumbprintThumbprintRequest) XKeyfactorA
 	return r
 }
 
+// Executes the V1 GET /Enrollment/AvailableRenewal/Thumbprint/{thumbprint} request context
 func (r ApiGetEnrollmentAvailableRenewalThumbprintThumbprintRequest) Execute() (*CSSCMSDataModelModelsEnrollmentAvailableRenewal, *http.Response, error) {
 	return r.ApiService.GetEnrollmentAvailableRenewalThumbprintThumbprintExecute(r)
 }
 
 /*
+Creates a new V1 GET /Enrollment/AvailableRenewal/Thumbprint/{thumbprint} request.
+
 GetEnrollmentAvailableRenewalThumbprintThumbprint Returns the type of renewal available for a given certificate.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1200,7 +1224,7 @@ func (a *EnrollmentApiService) NewGetEnrollmentAvailableRenewalThumbprintThumbpr
 	}
 }
 
-// Executes the API request GET /Enrollment/AvailableRenewal/Thumbprint/{thumbprint}
+// Executes the API request V1 GET /Enrollment/AvailableRenewal/Thumbprint/{thumbprint}
 //
 //	@return CSSCMSDataModelModelsEnrollmentAvailableRenewal
 func (a *EnrollmentApiService) GetEnrollmentAvailableRenewalThumbprintThumbprintExecute(r ApiGetEnrollmentAvailableRenewalThumbprintThumbprintRequest) (*CSSCMSDataModelModelsEnrollmentAvailableRenewal, *http.Response, error) {
@@ -1297,7 +1321,7 @@ func (a *EnrollmentApiService) GetEnrollmentAvailableRenewalThumbprintThumbprint
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Enrollment/CSR/Context/My
+// Request for V1 GET /Enrollment/CSR/Context/My
 type ApiGetEnrollmentCSRContextMyRequest struct {
 	ctx                     context.Context
 	ApiService              *EnrollmentApiService
@@ -1317,11 +1341,14 @@ func (r ApiGetEnrollmentCSRContextMyRequest) XKeyfactorApiVersion(xKeyfactorApiV
 	return r
 }
 
+// Executes the V1 GET /Enrollment/CSR/Context/My request context
 func (r ApiGetEnrollmentCSRContextMyRequest) Execute() (*KeyfactorWebCoreModelsEnrollmentEnrollmentTemplateCAResponse, *http.Response, error) {
 	return r.ApiService.GetEnrollmentCSRContextMyExecute(r)
 }
 
 /*
+Creates a new V1 GET /Enrollment/CSR/Context/My request.
+
 GetEnrollmentCSRContextMy Returns the list of available CSR enrollment templates and their associated CA mappings that the calling user has permissions on
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1340,7 +1367,7 @@ func (a *EnrollmentApiService) NewGetEnrollmentCSRContextMyRequest(ctx context.C
 	}
 }
 
-// Executes the API request GET /Enrollment/CSR/Context/My
+// Executes the API request V1 GET /Enrollment/CSR/Context/My
 //
 //	@return KeyfactorWebCoreModelsEnrollmentEnrollmentTemplateCAResponse
 func (a *EnrollmentApiService) GetEnrollmentCSRContextMyExecute(r ApiGetEnrollmentCSRContextMyRequest) (*KeyfactorWebCoreModelsEnrollmentEnrollmentTemplateCAResponse, *http.Response, error) {
@@ -1433,7 +1460,7 @@ func (a *EnrollmentApiService) GetEnrollmentCSRContextMyExecute(r ApiGetEnrollme
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Enrollment/PFX/Context/My
+// Request for V1 GET /Enrollment/PFX/Context/My
 type ApiGetEnrollmentPFXContextMyRequest struct {
 	ctx                     context.Context
 	ApiService              *EnrollmentApiService
@@ -1453,11 +1480,14 @@ func (r ApiGetEnrollmentPFXContextMyRequest) XKeyfactorApiVersion(xKeyfactorApiV
 	return r
 }
 
+// Executes the V1 GET /Enrollment/PFX/Context/My request context
 func (r ApiGetEnrollmentPFXContextMyRequest) Execute() (*KeyfactorWebCoreModelsEnrollmentEnrollmentTemplateCAResponse, *http.Response, error) {
 	return r.ApiService.GetEnrollmentPFXContextMyExecute(r)
 }
 
 /*
+Creates a new V1 GET /Enrollment/PFX/Context/My request.
+
 GetEnrollmentPFXContextMy Returns the list of available PFX enrollment templates and their associated CA mappings that the calling user has permissions on
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1476,7 +1506,7 @@ func (a *EnrollmentApiService) NewGetEnrollmentPFXContextMyRequest(ctx context.C
 	}
 }
 
-// Executes the API request GET /Enrollment/PFX/Context/My
+// Executes the API request V1 GET /Enrollment/PFX/Context/My
 //
 //	@return KeyfactorWebCoreModelsEnrollmentEnrollmentTemplateCAResponse
 func (a *EnrollmentApiService) GetEnrollmentPFXContextMyExecute(r ApiGetEnrollmentPFXContextMyRequest) (*KeyfactorWebCoreModelsEnrollmentEnrollmentTemplateCAResponse, *http.Response, error) {
@@ -1569,7 +1599,7 @@ func (a *EnrollmentApiService) GetEnrollmentPFXContextMyExecute(r ApiGetEnrollme
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Enrollment/Settings/{id}
+// Request for V1 GET /Enrollment/Settings/{id}
 type ApiGetEnrollmentSettingsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *EnrollmentApiService
@@ -1590,11 +1620,14 @@ func (r ApiGetEnrollmentSettingsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiV
 	return r
 }
 
+// Executes the V1 GET /Enrollment/Settings/{id} request context
 func (r ApiGetEnrollmentSettingsByIdRequest) Execute() (*TemplatesEnrollmentTemplateEnrollmentSettingsResponse, *http.Response, error) {
 	return r.ApiService.GetEnrollmentSettingsByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Enrollment/Settings/{id} request.
+
 GetEnrollmentSettingsById Gets the template settings to use during enrollment. The response will be the resolved values for the settings.  If there is a template specific setting, the template specific setting will be used in the response.  If there is not a template specific setting, the global setting will be used in the response.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1616,7 +1649,7 @@ func (a *EnrollmentApiService) NewGetEnrollmentSettingsByIdRequest(ctx context.C
 	}
 }
 
-// Executes the API request GET /Enrollment/Settings/{id}
+// Executes the API request V1 GET /Enrollment/Settings/{id}
 //
 //	@return TemplatesEnrollmentTemplateEnrollmentSettingsResponse
 func (a *EnrollmentApiService) GetEnrollmentSettingsByIdExecute(r ApiGetEnrollmentSettingsByIdRequest) (*TemplatesEnrollmentTemplateEnrollmentSettingsResponse, *http.Response, error) {

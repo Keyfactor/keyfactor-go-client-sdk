@@ -32,7 +32,7 @@ import (
 // PAMLocalEntriesApiService PAMLocalEntriesApi service
 type PAMLocalEntriesApiService service
 
-// Request for POST /PamProviders/Local/{providerId}/Entries
+// Request for V1 POST /PamProviders/Local/{providerId}/Entries
 type ApiCreatePamProvidersLocalProviderIdEntriesRequest struct {
 	ctx                                context.Context
 	ApiService                         *PAMLocalEntriesApiService
@@ -60,11 +60,14 @@ func (r ApiCreatePamProvidersLocalProviderIdEntriesRequest) PAMLocalLocalPAMEntr
 	return r
 }
 
+// Executes the V1 POST /PamProviders/Local/{providerId}/Entries request context
 func (r ApiCreatePamProvidersLocalProviderIdEntriesRequest) Execute() (*PAMLocalLocalPAMEntryResponse, *http.Response, error) {
 	return r.ApiService.CreatePamProvidersLocalProviderIdEntriesExecute(r)
 }
 
 /*
+Creates a new V1 POST /PamProviders/Local/{providerId}/Entries request.
+
 CreatePamProvidersLocalProviderIdEntries Creates a new local PAM entry with the associated properties
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -86,7 +89,7 @@ func (a *PAMLocalEntriesApiService) NewCreatePamProvidersLocalProviderIdEntriesR
 	}
 }
 
-// Executes the API request POST /PamProviders/Local/{providerId}/Entries
+// Executes the API request V1 POST /PamProviders/Local/{providerId}/Entries
 //
 //	@return PAMLocalLocalPAMEntryResponse
 func (a *PAMLocalEntriesApiService) CreatePamProvidersLocalProviderIdEntriesExecute(r ApiCreatePamProvidersLocalProviderIdEntriesRequest) (*PAMLocalLocalPAMEntryResponse, *http.Response, error) {
@@ -188,7 +191,7 @@ func (a *PAMLocalEntriesApiService) CreatePamProvidersLocalProviderIdEntriesExec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /PamProviders/Local/{providerId}/Entries
+// Request for V1 DELETE /PamProviders/Local/{providerId}/Entries
 type ApiDeletePamProvidersLocalProviderIdEntriesRequest struct {
 	ctx                     context.Context
 	ApiService              *PAMLocalEntriesApiService
@@ -216,11 +219,14 @@ func (r ApiDeletePamProvidersLocalProviderIdEntriesRequest) XKeyfactorApiVersion
 	return r
 }
 
+// Executes the V1 DELETE /PamProviders/Local/{providerId}/Entries request context
 func (r ApiDeletePamProvidersLocalProviderIdEntriesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeletePamProvidersLocalProviderIdEntriesExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /PamProviders/Local/{providerId}/Entries request.
+
 DeletePamProvidersLocalProviderIdEntries Deletes a local PAM entry
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -334,7 +340,7 @@ func (a *PAMLocalEntriesApiService) DeletePamProvidersLocalProviderIdEntriesExec
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /PamProviders/Local/{providerId}/Entries
+// Request for V1 GET /PamProviders/Local/{providerId}/Entries
 type ApiGetPamProvidersLocalProviderIdEntriesRequest struct {
 	ctx                     context.Context
 	ApiService              *PAMLocalEntriesApiService
@@ -390,11 +396,14 @@ func (r ApiGetPamProvidersLocalProviderIdEntriesRequest) XKeyfactorApiVersion(xK
 	return r
 }
 
+// Executes the V1 GET /PamProviders/Local/{providerId}/Entries request context
 func (r ApiGetPamProvidersLocalProviderIdEntriesRequest) Execute() ([]PAMLocalLocalPAMEntryResponse, *http.Response, error) {
 	return r.ApiService.GetPamProvidersLocalProviderIdEntriesExecute(r)
 }
 
 /*
+Creates a new V1 GET /PamProviders/Local/{providerId}/Entries request.
+
 GetPamProvidersLocalProviderIdEntries Returns local PAM entries for the given PAM provider according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -416,7 +425,7 @@ func (a *PAMLocalEntriesApiService) NewGetPamProvidersLocalProviderIdEntriesRequ
 	}
 }
 
-// Executes the API request GET /PamProviders/Local/{providerId}/Entries
+// Executes the API request V1 GET /PamProviders/Local/{providerId}/Entries
 //
 //	@return []PAMLocalLocalPAMEntryResponse
 func (a *PAMLocalEntriesApiService) GetPamProvidersLocalProviderIdEntriesExecute(r ApiGetPamProvidersLocalProviderIdEntriesRequest) ([]PAMLocalLocalPAMEntryResponse, *http.Response, error) {
@@ -531,7 +540,7 @@ func (a *PAMLocalEntriesApiService) GetPamProvidersLocalProviderIdEntriesExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /PamProviders/Local/{providerId}/Entries
+// Request for V1 PUT /PamProviders/Local/{providerId}/Entries
 type ApiUpdatePamProvidersLocalProviderIdEntriesRequest struct {
 	ctx                                context.Context
 	ApiService                         *PAMLocalEntriesApiService
@@ -559,11 +568,14 @@ func (r ApiUpdatePamProvidersLocalProviderIdEntriesRequest) PAMLocalLocalPAMEntr
 	return r
 }
 
+// Executes the V1 PUT /PamProviders/Local/{providerId}/Entries request context
 func (r ApiUpdatePamProvidersLocalProviderIdEntriesRequest) Execute() (*PAMLocalLocalPAMEntryResponse, *http.Response, error) {
 	return r.ApiService.UpdatePamProvidersLocalProviderIdEntriesExecute(r)
 }
 
 /*
+Creates a new V1 PUT /PamProviders/Local/{providerId}/Entries request.
+
 UpdatePamProvidersLocalProviderIdEntries Updates local PAM entry with the associated properties
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -585,7 +597,7 @@ func (a *PAMLocalEntriesApiService) NewUpdatePamProvidersLocalProviderIdEntriesR
 	}
 }
 
-// Executes the API request PUT /PamProviders/Local/{providerId}/Entries
+// Executes the API request V1 PUT /PamProviders/Local/{providerId}/Entries
 //
 //	@return PAMLocalLocalPAMEntryResponse
 func (a *PAMLocalEntriesApiService) UpdatePamProvidersLocalProviderIdEntriesExecute(r ApiUpdatePamProvidersLocalProviderIdEntriesRequest) (*PAMLocalLocalPAMEntryResponse, *http.Response, error) {

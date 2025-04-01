@@ -32,7 +32,7 @@ import (
 // ExtensionsApiService ExtensionsApi service
 type ExtensionsApiService service
 
-// Request for POST /Extensions/Scripts
+// Request for V1 POST /Extensions/Scripts
 type ApiCreateExtensionsScriptsRequest struct {
 	ctx                        context.Context
 	ApiService                 *ExtensionsApiService
@@ -59,11 +59,14 @@ func (r ApiCreateExtensionsScriptsRequest) XKeyfactorApiVersion(xKeyfactorApiVer
 	return r
 }
 
+// Executes the V1 POST /Extensions/Scripts request context
 func (r ApiCreateExtensionsScriptsRequest) Execute() (*ScriptsScriptResponse, *http.Response, error) {
 	return r.ApiService.CreateExtensionsScriptsExecute(r)
 }
 
 /*
+Creates a new V1 POST /Extensions/Scripts request.
+
 CreateExtensionsScripts Adds a new script
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *ExtensionsApiService) NewCreateExtensionsScriptsRequest(ctx context.Con
 	}
 }
 
-// Executes the API request POST /Extensions/Scripts
+// Executes the API request V1 POST /Extensions/Scripts
 //
 //	@return ScriptsScriptResponse
 func (a *ExtensionsApiService) CreateExtensionsScriptsExecute(r ApiCreateExtensionsScriptsRequest) (*ScriptsScriptResponse, *http.Response, error) {
@@ -180,7 +183,7 @@ func (a *ExtensionsApiService) CreateExtensionsScriptsExecute(r ApiCreateExtensi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /Extensions/Scripts/{id}
+// Request for V1 DELETE /Extensions/Scripts/{id}
 type ApiDeleteExtensionsScriptsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *ExtensionsApiService
@@ -201,11 +204,14 @@ func (r ApiDeleteExtensionsScriptsByIdRequest) XKeyfactorApiVersion(xKeyfactorAp
 	return r
 }
 
+// Executes the V1 DELETE /Extensions/Scripts/{id} request context
 func (r ApiDeleteExtensionsScriptsByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteExtensionsScriptsByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /Extensions/Scripts/{id} request.
+
 DeleteExtensionsScriptsById Deletes a script. Script cannot be configured to an alert or workflow.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -309,7 +315,7 @@ func (a *ExtensionsApiService) DeleteExtensionsScriptsByIdExecute(r ApiDeleteExt
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /Extensions/Scripts
+// Request for V1 GET /Extensions/Scripts
 type ApiGetExtensionsScriptsRequest struct {
 	ctx                     context.Context
 	ApiService              *ExtensionsApiService
@@ -359,11 +365,14 @@ func (r ApiGetExtensionsScriptsRequest) XKeyfactorApiVersion(xKeyfactorApiVersio
 	return r
 }
 
+// Executes the V1 GET /Extensions/Scripts request context
 func (r ApiGetExtensionsScriptsRequest) Execute() ([]ScriptsScriptQueryResponse, *http.Response, error) {
 	return r.ApiService.GetExtensionsScriptsExecute(r)
 }
 
 /*
+Creates a new V1 GET /Extensions/Scripts request.
+
 GetExtensionsScripts Returns all scripts according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -382,7 +391,7 @@ func (a *ExtensionsApiService) NewGetExtensionsScriptsRequest(ctx context.Contex
 	}
 }
 
-// Executes the API request GET /Extensions/Scripts
+// Executes the API request V1 GET /Extensions/Scripts
 //
 //	@return []ScriptsScriptQueryResponse
 func (a *ExtensionsApiService) GetExtensionsScriptsExecute(r ApiGetExtensionsScriptsRequest) ([]ScriptsScriptQueryResponse, *http.Response, error) {
@@ -490,7 +499,7 @@ func (a *ExtensionsApiService) GetExtensionsScriptsExecute(r ApiGetExtensionsScr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Extensions/Scripts/{id}
+// Request for V1 GET /Extensions/Scripts/{id}
 type ApiGetExtensionsScriptsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *ExtensionsApiService
@@ -511,11 +520,14 @@ func (r ApiGetExtensionsScriptsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVe
 	return r
 }
 
+// Executes the V1 GET /Extensions/Scripts/{id} request context
 func (r ApiGetExtensionsScriptsByIdRequest) Execute() (*ScriptsScriptResponse, *http.Response, error) {
 	return r.ApiService.GetExtensionsScriptsByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Extensions/Scripts/{id} request.
+
 GetExtensionsScriptsById Returns a single script that matches the provided Id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -537,7 +549,7 @@ func (a *ExtensionsApiService) NewGetExtensionsScriptsByIdRequest(ctx context.Co
 	}
 }
 
-// Executes the API request GET /Extensions/Scripts/{id}
+// Executes the API request V1 GET /Extensions/Scripts/{id}
 //
 //	@return ScriptsScriptResponse
 func (a *ExtensionsApiService) GetExtensionsScriptsByIdExecute(r ApiGetExtensionsScriptsByIdRequest) (*ScriptsScriptResponse, *http.Response, error) {
@@ -637,7 +649,7 @@ func (a *ExtensionsApiService) GetExtensionsScriptsByIdExecute(r ApiGetExtension
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Extensions/Scripts
+// Request for V1 PUT /Extensions/Scripts
 type ApiUpdateExtensionsScriptsRequest struct {
 	ctx                         context.Context
 	ApiService                  *ExtensionsApiService
@@ -664,11 +676,14 @@ func (r ApiUpdateExtensionsScriptsRequest) XKeyfactorApiVersion(xKeyfactorApiVer
 	return r
 }
 
+// Executes the V1 PUT /Extensions/Scripts request context
 func (r ApiUpdateExtensionsScriptsRequest) Execute() (*ScriptsScriptResponse, *http.Response, error) {
 	return r.ApiService.UpdateExtensionsScriptsExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Extensions/Scripts request.
+
 UpdateExtensionsScripts Updates a script
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -687,7 +702,7 @@ func (a *ExtensionsApiService) NewUpdateExtensionsScriptsRequest(ctx context.Con
 	}
 }
 
-// Executes the API request PUT /Extensions/Scripts
+// Executes the API request V1 PUT /Extensions/Scripts
 //
 //	@return ScriptsScriptResponse
 func (a *ExtensionsApiService) UpdateExtensionsScriptsExecute(r ApiUpdateExtensionsScriptsRequest) (*ScriptsScriptResponse, *http.Response, error) {

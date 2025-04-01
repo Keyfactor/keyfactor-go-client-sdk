@@ -32,7 +32,7 @@ import (
 // CertificateApiService CertificateApi service
 type CertificateApiService service
 
-// Request for POST /Certificates/Analyze
+// Request for V1 POST /Certificates/Analyze
 type ApiCreateCertificatesAnalyzeRequest struct {
 	ctx                                   context.Context
 	ApiService                            *CertificateApiService
@@ -59,11 +59,14 @@ func (r ApiCreateCertificatesAnalyzeRequest) CertificatesAnalyzeCertificateReque
 	return r
 }
 
+// Executes the V1 POST /Certificates/Analyze request context
 func (r ApiCreateCertificatesAnalyzeRequest) Execute() ([]CSSCMSDataModelModelsCertificateDetails, *http.Response, error) {
 	return r.ApiService.CreateCertificatesAnalyzeExecute(r)
 }
 
 /*
+Creates a new V1 POST /Certificates/Analyze request.
+
 CreateCertificatesAnalyze Returns the public information of the certificate
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *CertificateApiService) NewCreateCertificatesAnalyzeRequest(ctx context.
 	}
 }
 
-// Executes the API request POST /Certificates/Analyze
+// Executes the API request V1 POST /Certificates/Analyze
 //
 //	@return []CSSCMSDataModelModelsCertificateDetails
 func (a *CertificateApiService) CreateCertificatesAnalyzeExecute(r ApiCreateCertificatesAnalyzeRequest) ([]CSSCMSDataModelModelsCertificateDetails, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *CertificateApiService) CreateCertificatesAnalyzeExecute(r ApiCreateCert
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Certificates/Download
+// Request for V1 POST /Certificates/Download
 type ApiCreateCertificatesDownloadRequest struct {
 	ctx                                    context.Context
 	ApiService                             *CertificateApiService
@@ -218,12 +221,15 @@ func (r ApiCreateCertificatesDownloadRequest) CertificatesCertificateDownloadReq
 	return r
 }
 
+// Executes the V1 POST /Certificates/Download request context
 func (r ApiCreateCertificatesDownloadRequest) Execute() (*CSSCMSDataModelModelsCertificateDownloadResponse, *http.Response, error) {
 	return r.ApiService.CreateCertificatesDownloadExecute(r)
 }
 
 /*
-CreateCertificatesDownload Downloads the persisted certificate associated with the provided query
+Creates a new V1 POST /Certificates/Download request.
+
+# CreateCertificatesDownload Downloads the persisted certificate associated with the provided query
 
 *NOTE: At least one of the following criteria must be provided:
 1. Certificate ID
@@ -246,7 +252,7 @@ func (a *CertificateApiService) NewCreateCertificatesDownloadRequest(ctx context
 	}
 }
 
-// Executes the API request POST /Certificates/Download
+// Executes the API request V1 POST /Certificates/Download
 //
 //	@return CSSCMSDataModelModelsCertificateDownloadResponse
 func (a *CertificateApiService) CreateCertificatesDownloadExecute(r ApiCreateCertificatesDownloadRequest) (*CSSCMSDataModelModelsCertificateDownloadResponse, *http.Response, error) {
@@ -348,7 +354,7 @@ func (a *CertificateApiService) CreateCertificatesDownloadExecute(r ApiCreateCer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Certificates/Import
+// Request for V1 POST /Certificates/Import
 type ApiCreateCertificatesImportRequest struct {
 	ctx                                                context.Context
 	ApiService                                         *CertificateApiService
@@ -375,11 +381,14 @@ func (r ApiCreateCertificatesImportRequest) CSSCMSDataModelModelsCertificateImpo
 	return r
 }
 
+// Executes the V1 POST /Certificates/Import request context
 func (r ApiCreateCertificatesImportRequest) Execute() (*CSSCMSDataModelModelsCertificateImportResponseModel, *http.Response, error) {
 	return r.ApiService.CreateCertificatesImportExecute(r)
 }
 
 /*
+Creates a new V1 POST /Certificates/Import request.
+
 CreateCertificatesImport Imports the provided certificate into the Keyfactor instance, including any provided associated data
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -398,7 +407,7 @@ func (a *CertificateApiService) NewCreateCertificatesImportRequest(ctx context.C
 	}
 }
 
-// Executes the API request POST /Certificates/Import
+// Executes the API request V1 POST /Certificates/Import
 //
 //	@return CSSCMSDataModelModelsCertificateImportResponseModel
 func (a *CertificateApiService) CreateCertificatesImportExecute(r ApiCreateCertificatesImportRequest) (*CSSCMSDataModelModelsCertificateImportResponseModel, *http.Response, error) {
@@ -493,7 +502,7 @@ func (a *CertificateApiService) CreateCertificatesImportExecute(r ApiCreateCerti
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Certificates/Recover
+// Request for V1 POST /Certificates/Recover
 type ApiCreateCertificatesRecoverRequest struct {
 	ctx                                    context.Context
 	ApiService                             *CertificateApiService
@@ -534,12 +543,15 @@ func (r ApiCreateCertificatesRecoverRequest) CertificatesCertificateRecoveryRequ
 	return r
 }
 
+// Executes the V1 POST /Certificates/Recover request context
 func (r ApiCreateCertificatesRecoverRequest) Execute() (*CSSCMSDataModelModelsRecoveryResponse, *http.Response, error) {
 	return r.ApiService.CreateCertificatesRecoverExecute(r)
 }
 
 /*
-CreateCertificatesRecover Recovers the persisted certificate associated with the provided query
+Creates a new V1 POST /Certificates/Recover request.
+
+# CreateCertificatesRecover Recovers the persisted certificate associated with the provided query
 
 *NOTE: At least one of the following criteria must be provided:
 1. Certificate ID
@@ -562,7 +574,7 @@ func (a *CertificateApiService) NewCreateCertificatesRecoverRequest(ctx context.
 	}
 }
 
-// Executes the API request POST /Certificates/Recover
+// Executes the API request V1 POST /Certificates/Recover
 //
 //	@return CSSCMSDataModelModelsRecoveryResponse
 func (a *CertificateApiService) CreateCertificatesRecoverExecute(r ApiCreateCertificatesRecoverRequest) (*CSSCMSDataModelModelsRecoveryResponse, *http.Response, error) {
@@ -664,7 +676,7 @@ func (a *CertificateApiService) CreateCertificatesRecoverExecute(r ApiCreateCert
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Certificates/Revoke
+// Request for V1 POST /Certificates/Revoke
 type ApiCreateCertificatesRevokeRequest struct {
 	ctx                                  context.Context
 	ApiService                           *CertificateApiService
@@ -691,12 +703,15 @@ func (r ApiCreateCertificatesRevokeRequest) CertificatesRevokeCertificateRequest
 	return r
 }
 
+// Executes the V1 POST /Certificates/Revoke request context
 func (r ApiCreateCertificatesRevokeRequest) Execute() (*CertificatesRevocationResponse, *http.Response, error) {
 	return r.ApiService.CreateCertificatesRevokeExecute(r)
 }
 
 /*
-CreateCertificatesRevoke Revokes the certificates associated with the provided identifiers and associates the provided data with the revocation
+Creates a new V1 POST /Certificates/Revoke request.
+
+# CreateCertificatesRevoke Revokes the certificates associated with the provided identifiers and associates the provided data with the revocation
 
 ### Revocation Reason Codes for Microsoft CA ###
 | Value             | Description               |
@@ -728,7 +743,7 @@ func (a *CertificateApiService) NewCreateCertificatesRevokeRequest(ctx context.C
 	}
 }
 
-// Executes the API request POST /Certificates/Revoke
+// Executes the API request V1 POST /Certificates/Revoke
 //
 //	@return CertificatesRevocationResponse
 func (a *CertificateApiService) CreateCertificatesRevokeExecute(r ApiCreateCertificatesRevokeRequest) (*CertificatesRevocationResponse, *http.Response, error) {
@@ -823,7 +838,7 @@ func (a *CertificateApiService) CreateCertificatesRevokeExecute(r ApiCreateCerti
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /Certificates
+// Request for V1 DELETE /Certificates
 type ApiDeleteCertificatesRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
@@ -857,12 +872,15 @@ func (r ApiDeleteCertificatesRequest) RequestBody(requestBody []int32) ApiDelete
 	return r
 }
 
+// Executes the V1 DELETE /Certificates request context
 func (r ApiDeleteCertificatesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteCertificatesExecute(r)
 }
 
 /*
-DeleteCertificates Deletes multiple persisted certificates by their unique ids
+Creates a new V1 DELETE /Certificates request.
+
+# DeleteCertificates Deletes multiple persisted certificates by their unique ids
 
 This will ignore individual delete failures, and continue processing the array
 
@@ -968,7 +986,7 @@ func (a *CertificateApiService) DeleteCertificatesExecute(r ApiDeleteCertificate
 	return localVarHTTPResponse, nil
 }
 
-// Request for DELETE /Certificates/{id}
+// Request for V1 DELETE /Certificates/{id}
 type ApiDeleteCertificatesByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
@@ -996,11 +1014,14 @@ func (r ApiDeleteCertificatesByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVers
 	return r
 }
 
+// Executes the V1 DELETE /Certificates/{id} request context
 func (r ApiDeleteCertificatesByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteCertificatesByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /Certificates/{id} request.
+
 DeleteCertificatesById Deletes a persisted certificate by its unique id as well as the stored private key (if present) associated with it
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1113,7 +1134,7 @@ func (a *CertificateApiService) DeleteCertificatesByIdExecute(r ApiDeleteCertifi
 	return localVarHTTPResponse, nil
 }
 
-// Request for DELETE /Certificates/PrivateKey
+// Request for V1 DELETE /Certificates/PrivateKey
 type ApiDeleteCertificatesPrivateKeyRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
@@ -1147,11 +1168,14 @@ func (r ApiDeleteCertificatesPrivateKeyRequest) RequestBody(requestBody []int32)
 	return r
 }
 
+// Executes the V1 DELETE /Certificates/PrivateKey request context
 func (r ApiDeleteCertificatesPrivateKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteCertificatesPrivateKeyExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /Certificates/PrivateKey request.
+
 DeleteCertificatesPrivateKey Deletes the persisted private keys of multiple certificates by the unique ids of the Certificates
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1256,7 +1280,7 @@ func (a *CertificateApiService) DeleteCertificatesPrivateKeyExecute(r ApiDeleteC
 	return localVarHTTPResponse, nil
 }
 
-// Request for DELETE /Certificates/PrivateKey/{id}
+// Request for V1 DELETE /Certificates/PrivateKey/{id}
 type ApiDeleteCertificatesPrivateKeyByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
@@ -1284,11 +1308,14 @@ func (r ApiDeleteCertificatesPrivateKeyByIdRequest) XKeyfactorApiVersion(xKeyfac
 	return r
 }
 
+// Executes the V1 DELETE /Certificates/PrivateKey/{id} request context
 func (r ApiDeleteCertificatesPrivateKeyByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteCertificatesPrivateKeyByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /Certificates/PrivateKey/{id} request.
+
 DeleteCertificatesPrivateKeyById Deletes the persisted private keys of the certificate associated with the provided identifier
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1401,7 +1428,7 @@ func (a *CertificateApiService) DeleteCertificatesPrivateKeyByIdExecute(r ApiDel
 	return localVarHTTPResponse, nil
 }
 
-// Request for DELETE /Certificates/Query
+// Request for V1 DELETE /Certificates/Query
 type ApiDeleteCertificatesQueryRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
@@ -1435,12 +1462,15 @@ func (r ApiDeleteCertificatesQueryRequest) Body(body string) ApiDeleteCertificat
 	return r
 }
 
+// Executes the V1 DELETE /Certificates/Query request context
 func (r ApiDeleteCertificatesQueryRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteCertificatesQueryExecute(r)
 }
 
 /*
-DeleteCertificatesQuery Deletes multiple persisted certificate entities selected by a given query
+Creates a new V1 DELETE /Certificates/Query request.
+
+# DeleteCertificatesQuery Deletes multiple persisted certificate entities selected by a given query
 
 This will ignore individual delete failures, and continue processing the array.
 
@@ -1546,7 +1576,7 @@ func (a *CertificateApiService) DeleteCertificatesQueryExecute(r ApiDeleteCertif
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /Certificates
+// Request for V1 GET /Certificates
 type ApiGetCertificatesRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
@@ -1643,11 +1673,14 @@ func (r ApiGetCertificatesRequest) XKeyfactorApiVersion(xKeyfactorApiVersion str
 	return r
 }
 
+// Executes the V1 GET /Certificates request context
 func (r ApiGetCertificatesRequest) Execute() ([]CertificatesCertificateRetrievalResponse, *http.Response, error) {
 	return r.ApiService.GetCertificatesExecute(r)
 }
 
 /*
+Creates a new V1 GET /Certificates request.
+
 GetCertificates Returns all certificates according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1666,7 +1699,7 @@ func (a *CertificateApiService) NewGetCertificatesRequest(ctx context.Context) A
 	}
 }
 
-// Executes the API request GET /Certificates
+// Executes the API request V1 GET /Certificates
 //
 //	@return []CertificatesCertificateRetrievalResponse
 func (a *CertificateApiService) GetCertificatesExecute(r ApiGetCertificatesRequest) ([]CertificatesCertificateRetrievalResponse, *http.Response, error) {
@@ -1792,7 +1825,7 @@ func (a *CertificateApiService) GetCertificatesExecute(r ApiGetCertificatesReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Certificates/{id}
+// Request for V1 GET /Certificates/{id}
 type ApiGetCertificatesByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
@@ -1834,11 +1867,14 @@ func (r ApiGetCertificatesByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersion
 	return r
 }
 
+// Executes the V1 GET /Certificates/{id} request context
 func (r ApiGetCertificatesByIdRequest) Execute() (*CertificatesCertificateRetrievalResponse, *http.Response, error) {
 	return r.ApiService.GetCertificatesByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Certificates/{id} request.
+
 GetCertificatesById Returns a single certificate that matches the id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1860,7 +1896,7 @@ func (a *CertificateApiService) NewGetCertificatesByIdRequest(ctx context.Contex
 	}
 }
 
-// Executes the API request GET /Certificates/{id}
+// Executes the API request V1 GET /Certificates/{id}
 //
 //	@return CertificatesCertificateRetrievalResponse
 func (a *CertificateApiService) GetCertificatesByIdExecute(r ApiGetCertificatesByIdRequest) (*CertificatesCertificateRetrievalResponse, *http.Response, error) {
@@ -1969,7 +2005,7 @@ func (a *CertificateApiService) GetCertificatesByIdExecute(r ApiGetCertificatesB
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Certificates/{id}/History
+// Request for V1 GET /Certificates/{id}/History
 type ApiGetCertificatesByIdHistoryRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
@@ -2021,11 +2057,14 @@ func (r ApiGetCertificatesByIdHistoryRequest) XKeyfactorApiVersion(xKeyfactorApi
 	return r
 }
 
+// Executes the V1 GET /Certificates/{id}/History request context
 func (r ApiGetCertificatesByIdHistoryRequest) Execute() ([]CSSCMSDataModelModelsPKICertificateOperation, *http.Response, error) {
 	return r.ApiService.GetCertificatesByIdHistoryExecute(r)
 }
 
 /*
+Creates a new V1 GET /Certificates/{id}/History request.
+
 GetCertificatesByIdHistory Gets the history of operations on a certificate
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2047,7 +2086,7 @@ func (a *CertificateApiService) NewGetCertificatesByIdHistoryRequest(ctx context
 	}
 }
 
-// Executes the API request GET /Certificates/{id}/History
+// Executes the API request V1 GET /Certificates/{id}/History
 //
 //	@return []CSSCMSDataModelModelsPKICertificateOperation
 func (a *CertificateApiService) GetCertificatesByIdHistoryExecute(r ApiGetCertificatesByIdHistoryRequest) ([]CSSCMSDataModelModelsPKICertificateOperation, *http.Response, error) {
@@ -2162,7 +2201,7 @@ func (a *CertificateApiService) GetCertificatesByIdHistoryExecute(r ApiGetCertif
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Certificates/{id}/Security
+// Request for V1 GET /Certificates/{id}/Security
 type ApiGetCertificatesByIdSecurityRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
@@ -2190,11 +2229,14 @@ func (r ApiGetCertificatesByIdSecurityRequest) XKeyfactorApiVersion(xKeyfactorAp
 	return r
 }
 
+// Executes the V1 GET /Certificates/{id}/Security request context
 func (r ApiGetCertificatesByIdSecurityRequest) Execute() (*CSSCMSDataModelModelsSecurityCertificatePermissions, *http.Response, error) {
 	return r.ApiService.GetCertificatesByIdSecurityExecute(r)
 }
 
 /*
+Creates a new V1 GET /Certificates/{id}/Security request.
+
 GetCertificatesByIdSecurity Gets the list of Security Identities and which permissions they have on the given certificate.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2216,7 +2258,7 @@ func (a *CertificateApiService) NewGetCertificatesByIdSecurityRequest(ctx contex
 	}
 }
 
-// Executes the API request GET /Certificates/{id}/Security
+// Executes the API request V1 GET /Certificates/{id}/Security
 //
 //	@return CSSCMSDataModelModelsSecurityCertificatePermissions
 func (a *CertificateApiService) GetCertificatesByIdSecurityExecute(r ApiGetCertificatesByIdSecurityRequest) (*CSSCMSDataModelModelsSecurityCertificatePermissions, *http.Response, error) {
@@ -2313,7 +2355,7 @@ func (a *CertificateApiService) GetCertificatesByIdSecurityExecute(r ApiGetCerti
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Certificates/{id}/Validate
+// Request for V1 GET /Certificates/{id}/Validate
 type ApiGetCertificatesByIdValidateRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
@@ -2341,11 +2383,14 @@ func (r ApiGetCertificatesByIdValidateRequest) XKeyfactorApiVersion(xKeyfactorAp
 	return r
 }
 
+// Executes the V1 GET /Certificates/{id}/Validate request context
 func (r ApiGetCertificatesByIdValidateRequest) Execute() (*CSSCMSDataModelModelsCertificateValidationResponse, *http.Response, error) {
 	return r.ApiService.GetCertificatesByIdValidateExecute(r)
 }
 
 /*
+Creates a new V1 GET /Certificates/{id}/Validate request.
+
 GetCertificatesByIdValidate Validates the certificate chain can be built.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2367,7 +2412,7 @@ func (a *CertificateApiService) NewGetCertificatesByIdValidateRequest(ctx contex
 	}
 }
 
-// Executes the API request GET /Certificates/{id}/Validate
+// Executes the API request V1 GET /Certificates/{id}/Validate
 //
 //	@return CSSCMSDataModelModelsCertificateValidationResponse
 func (a *CertificateApiService) GetCertificatesByIdValidateExecute(r ApiGetCertificatesByIdValidateRequest) (*CSSCMSDataModelModelsCertificateValidationResponse, *http.Response, error) {
@@ -2470,7 +2515,7 @@ func (a *CertificateApiService) GetCertificatesByIdValidateExecute(r ApiGetCerti
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Certificates/CSV
+// Request for V1 GET /Certificates/CSV
 type ApiGetCertificatesCSVRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
@@ -2518,11 +2563,14 @@ func (r ApiGetCertificatesCSVRequest) XKeyfactorApiVersion(xKeyfactorApiVersion 
 	return r
 }
 
+// Executes the V1 GET /Certificates/CSV request context
 func (r ApiGetCertificatesCSVRequest) Execute() (string, *http.Response, error) {
 	return r.ApiService.GetCertificatesCSVExecute(r)
 }
 
 /*
+Creates a new V1 GET /Certificates/CSV request.
+
 GetCertificatesCSV Returns a comma-delimited CSV file containing all certificates in the database
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2541,7 +2589,7 @@ func (a *CertificateApiService) NewGetCertificatesCSVRequest(ctx context.Context
 	}
 }
 
-// Executes the API request GET /Certificates/CSV
+// Executes the API request V1 GET /Certificates/CSV
 //
 //	@return string
 func (a *CertificateApiService) GetCertificatesCSVExecute(r ApiGetCertificatesCSVRequest) (string, *http.Response, error) {
@@ -2646,7 +2694,7 @@ func (a *CertificateApiService) GetCertificatesCSVExecute(r ApiGetCertificatesCS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Certificates/IdentityAudit/{id}
+// Request for V1 GET /Certificates/IdentityAudit/{id}
 type ApiGetCertificatesIdentityAuditByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
@@ -2674,11 +2722,14 @@ func (r ApiGetCertificatesIdentityAuditByIdRequest) XKeyfactorApiVersion(xKeyfac
 	return r
 }
 
+// Executes the V1 GET /Certificates/IdentityAudit/{id} request context
 func (r ApiGetCertificatesIdentityAuditByIdRequest) Execute() ([]CertificatesCertificateIdentityAuditResponse, *http.Response, error) {
 	return r.ApiService.GetCertificatesIdentityAuditByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Certificates/IdentityAudit/{id} request.
+
 GetCertificatesIdentityAuditById Audit identity permissions for certificate
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2700,7 +2751,7 @@ func (a *CertificateApiService) NewGetCertificatesIdentityAuditByIdRequest(ctx c
 	}
 }
 
-// Executes the API request GET /Certificates/IdentityAudit/{id}
+// Executes the API request V1 GET /Certificates/IdentityAudit/{id}
 //
 //	@return []CertificatesCertificateIdentityAuditResponse
 func (a *CertificateApiService) GetCertificatesIdentityAuditByIdExecute(r ApiGetCertificatesIdentityAuditByIdRequest) ([]CertificatesCertificateIdentityAuditResponse, *http.Response, error) {
@@ -2797,7 +2848,7 @@ func (a *CertificateApiService) GetCertificatesIdentityAuditByIdExecute(r ApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Certificates/Locations/{id}
+// Request for V1 GET /Certificates/Locations/{id}
 type ApiGetCertificatesLocationsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
@@ -2825,11 +2876,14 @@ func (r ApiGetCertificatesLocationsByIdRequest) XKeyfactorApiVersion(xKeyfactorA
 	return r
 }
 
+// Executes the V1 GET /Certificates/Locations/{id} request context
 func (r ApiGetCertificatesLocationsByIdRequest) Execute() (*CertificatesCertificateLocationsResponse, *http.Response, error) {
 	return r.ApiService.GetCertificatesLocationsByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Certificates/Locations/{id} request.
+
 GetCertificatesLocationsById Returns a list of locations the certificate is in
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2851,7 +2905,7 @@ func (a *CertificateApiService) NewGetCertificatesLocationsByIdRequest(ctx conte
 	}
 }
 
-// Executes the API request GET /Certificates/Locations/{id}
+// Executes the API request V1 GET /Certificates/Locations/{id}
 //
 //	@return CertificatesCertificateLocationsResponse
 func (a *CertificateApiService) GetCertificatesLocationsByIdExecute(r ApiGetCertificatesLocationsByIdRequest) (*CertificatesCertificateLocationsResponse, *http.Response, error) {
@@ -2948,7 +3002,7 @@ func (a *CertificateApiService) GetCertificatesLocationsByIdExecute(r ApiGetCert
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Certificates/Metadata/Compare
+// Request for V1 GET /Certificates/Metadata/Compare
 type ApiGetCertificatesMetadataCompareRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
@@ -2996,11 +3050,14 @@ func (r ApiGetCertificatesMetadataCompareRequest) XKeyfactorApiVersion(xKeyfacto
 	return r
 }
 
+// Executes the V1 GET /Certificates/Metadata/Compare request context
 func (r ApiGetCertificatesMetadataCompareRequest) Execute() (bool, *http.Response, error) {
 	return r.ApiService.GetCertificatesMetadataCompareExecute(r)
 }
 
 /*
+Creates a new V1 GET /Certificates/Metadata/Compare request.
+
 GetCertificatesMetadataCompare Compares the metadata value provided with the metadata value associated with the specified certificate
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -3019,7 +3076,7 @@ func (a *CertificateApiService) NewGetCertificatesMetadataCompareRequest(ctx con
 	}
 }
 
-// Executes the API request GET /Certificates/Metadata/Compare
+// Executes the API request V1 GET /Certificates/Metadata/Compare
 //
 //	@return bool
 func (a *CertificateApiService) GetCertificatesMetadataCompareExecute(r ApiGetCertificatesMetadataCompareRequest) (bool, *http.Response, error) {
@@ -3126,7 +3183,7 @@ func (a *CertificateApiService) GetCertificatesMetadataCompareExecute(r ApiGetCe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Certificates/{id}/Owner
+// Request for V1 PUT /Certificates/{id}/Owner
 type ApiUpdateCertificatesByIdOwnerRequest struct {
 	ctx                      context.Context
 	ApiService               *CertificateApiService
@@ -3161,11 +3218,14 @@ func (r ApiUpdateCertificatesByIdOwnerRequest) CertificatesOwnerRequest(certific
 	return r
 }
 
+// Executes the V1 PUT /Certificates/{id}/Owner request context
 func (r ApiUpdateCertificatesByIdOwnerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateCertificatesByIdOwnerExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Certificates/{id}/Owner request.
+
 UpdateCertificatesByIdOwner Changes the certificate's owner. Users must be in the current owner's role and the new owner's role
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -3280,7 +3340,7 @@ func (a *CertificateApiService) UpdateCertificatesByIdOwnerExecute(r ApiUpdateCe
 	return localVarHTTPResponse, nil
 }
 
-// Request for PUT /Certificates/Metadata
+// Request for V1 PUT /Certificates/Metadata
 type ApiUpdateCertificatesMetadataRequest struct {
 	ctx                                        context.Context
 	ApiService                                 *CertificateApiService
@@ -3314,11 +3374,14 @@ func (r ApiUpdateCertificatesMetadataRequest) CSSCMSDataModelModelsMetadataUpdat
 	return r
 }
 
+// Executes the V1 PUT /Certificates/Metadata request context
 func (r ApiUpdateCertificatesMetadataRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateCertificatesMetadataExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Certificates/Metadata request.
+
 UpdateCertificatesMetadata Updates the metadata for the certificate associated with the identifier provided
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -3423,7 +3486,7 @@ func (a *CertificateApiService) UpdateCertificatesMetadataExecute(r ApiUpdateCer
 	return localVarHTTPResponse, nil
 }
 
-// Request for PUT /Certificates/Metadata/All
+// Request for V1 PUT /Certificates/Metadata/All
 type ApiUpdateCertificatesMetadataAllRequest struct {
 	ctx                                           context.Context
 	ApiService                                    *CertificateApiService
@@ -3457,11 +3520,14 @@ func (r ApiUpdateCertificatesMetadataAllRequest) CSSCMSDataModelModelsMetadataAl
 	return r
 }
 
+// Executes the V1 PUT /Certificates/Metadata/All request context
 func (r ApiUpdateCertificatesMetadataAllRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateCertificatesMetadataAllExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Certificates/Metadata/All request.
+
 UpdateCertificatesMetadataAll Updates the metadata for certificates associated with the certificate identifiers or query provided
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().

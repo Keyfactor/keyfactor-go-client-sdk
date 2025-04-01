@@ -32,7 +32,7 @@ import (
 // DeniedAlertApiService DeniedAlertApi service
 type DeniedAlertApiService service
 
-// Request for POST /Alerts/Denied
+// Request for V1 POST /Alerts/Denied
 type ApiCreateAlertsDeniedRequest struct {
 	ctx                                    context.Context
 	ApiService                             *DeniedAlertApiService
@@ -59,11 +59,14 @@ func (r ApiCreateAlertsDeniedRequest) AlertsDeniedDeniedAlertCreationRequest(ale
 	return r
 }
 
+// Executes the V1 POST /Alerts/Denied request context
 func (r ApiCreateAlertsDeniedRequest) Execute() (*AlertsDeniedDeniedAlertDefinitionResponse, *http.Response, error) {
 	return r.ApiService.CreateAlertsDeniedExecute(r)
 }
 
 /*
+Creates a new V1 POST /Alerts/Denied request.
+
 CreateAlertsDenied Add a denied alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *DeniedAlertApiService) NewCreateAlertsDeniedRequest(ctx context.Context
 	}
 }
 
-// Executes the API request POST /Alerts/Denied
+// Executes the API request V1 POST /Alerts/Denied
 //
 //	@return AlertsDeniedDeniedAlertDefinitionResponse
 func (a *DeniedAlertApiService) CreateAlertsDeniedExecute(r ApiCreateAlertsDeniedRequest) (*AlertsDeniedDeniedAlertDefinitionResponse, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *DeniedAlertApiService) CreateAlertsDeniedExecute(r ApiCreateAlertsDenie
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /Alerts/Denied/{id}
+// Request for V1 DELETE /Alerts/Denied/{id}
 type ApiDeleteAlertsDeniedByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *DeniedAlertApiService
@@ -198,11 +201,14 @@ func (r ApiDeleteAlertsDeniedByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVers
 	return r
 }
 
+// Executes the V1 DELETE /Alerts/Denied/{id} request context
 func (r ApiDeleteAlertsDeniedByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAlertsDeniedByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /Alerts/Denied/{id} request.
+
 DeleteAlertsDeniedById Delete a denied alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -306,7 +312,7 @@ func (a *DeniedAlertApiService) DeleteAlertsDeniedByIdExecute(r ApiDeleteAlertsD
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /Alerts/Denied
+// Request for V1 GET /Alerts/Denied
 type ApiGetAlertsDeniedRequest struct {
 	ctx                     context.Context
 	ApiService              *DeniedAlertApiService
@@ -356,11 +362,14 @@ func (r ApiGetAlertsDeniedRequest) XKeyfactorApiVersion(xKeyfactorApiVersion str
 	return r
 }
 
+// Executes the V1 GET /Alerts/Denied request context
 func (r ApiGetAlertsDeniedRequest) Execute() ([]AlertsDeniedDeniedAlertDefinitionResponse, *http.Response, error) {
 	return r.ApiService.GetAlertsDeniedExecute(r)
 }
 
 /*
+Creates a new V1 GET /Alerts/Denied request.
+
 GetAlertsDenied Gets all denied alerts according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -379,7 +388,7 @@ func (a *DeniedAlertApiService) NewGetAlertsDeniedRequest(ctx context.Context) A
 	}
 }
 
-// Executes the API request GET /Alerts/Denied
+// Executes the API request V1 GET /Alerts/Denied
 //
 //	@return []AlertsDeniedDeniedAlertDefinitionResponse
 func (a *DeniedAlertApiService) GetAlertsDeniedExecute(r ApiGetAlertsDeniedRequest) ([]AlertsDeniedDeniedAlertDefinitionResponse, *http.Response, error) {
@@ -487,7 +496,7 @@ func (a *DeniedAlertApiService) GetAlertsDeniedExecute(r ApiGetAlertsDeniedReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Alerts/Denied/{id}
+// Request for V1 GET /Alerts/Denied/{id}
 type ApiGetAlertsDeniedByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *DeniedAlertApiService
@@ -508,11 +517,14 @@ func (r ApiGetAlertsDeniedByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersion
 	return r
 }
 
+// Executes the V1 GET /Alerts/Denied/{id} request context
 func (r ApiGetAlertsDeniedByIdRequest) Execute() (*AlertsDeniedDeniedAlertDefinitionResponse, *http.Response, error) {
 	return r.ApiService.GetAlertsDeniedByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Alerts/Denied/{id} request.
+
 GetAlertsDeniedById Get a denied alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -534,7 +546,7 @@ func (a *DeniedAlertApiService) NewGetAlertsDeniedByIdRequest(ctx context.Contex
 	}
 }
 
-// Executes the API request GET /Alerts/Denied/{id}
+// Executes the API request V1 GET /Alerts/Denied/{id}
 //
 //	@return AlertsDeniedDeniedAlertDefinitionResponse
 func (a *DeniedAlertApiService) GetAlertsDeniedByIdExecute(r ApiGetAlertsDeniedByIdRequest) (*AlertsDeniedDeniedAlertDefinitionResponse, *http.Response, error) {
@@ -628,7 +640,7 @@ func (a *DeniedAlertApiService) GetAlertsDeniedByIdExecute(r ApiGetAlertsDeniedB
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Alerts/Denied
+// Request for V1 PUT /Alerts/Denied
 type ApiUpdateAlertsDeniedRequest struct {
 	ctx                                  context.Context
 	ApiService                           *DeniedAlertApiService
@@ -655,11 +667,14 @@ func (r ApiUpdateAlertsDeniedRequest) AlertsDeniedDeniedAlertUpdateRequest(alert
 	return r
 }
 
+// Executes the V1 PUT /Alerts/Denied request context
 func (r ApiUpdateAlertsDeniedRequest) Execute() (*AlertsDeniedDeniedAlertDefinitionResponse, *http.Response, error) {
 	return r.ApiService.UpdateAlertsDeniedExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Alerts/Denied request.
+
 UpdateAlertsDenied Edit a denied alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -678,7 +693,7 @@ func (a *DeniedAlertApiService) NewUpdateAlertsDeniedRequest(ctx context.Context
 	}
 }
 
-// Executes the API request PUT /Alerts/Denied
+// Executes the API request V1 PUT /Alerts/Denied
 //
 //	@return AlertsDeniedDeniedAlertDefinitionResponse
 func (a *DeniedAlertApiService) UpdateAlertsDeniedExecute(r ApiUpdateAlertsDeniedRequest) (*AlertsDeniedDeniedAlertDefinitionResponse, *http.Response, error) {

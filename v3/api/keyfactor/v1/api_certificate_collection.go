@@ -32,7 +32,7 @@ import (
 // CertificateCollectionApiService CertificateCollectionApi service
 type CertificateCollectionApiService service
 
-// Request for POST /CertificateCollections
+// Request for V1 POST /CertificateCollections
 type ApiCreateCertificateCollectionsRequest struct {
 	ctx                                                      context.Context
 	ApiService                                               *CertificateCollectionApiService
@@ -59,12 +59,15 @@ func (r ApiCreateCertificateCollectionsRequest) CertificateCollectionsCertificat
 	return r
 }
 
+// Executes the V1 POST /CertificateCollections request context
 func (r ApiCreateCertificateCollectionsRequest) Execute() (*CertificateCollectionsCertificateCollectionResponse, *http.Response, error) {
 	return r.ApiService.CreateCertificateCollectionsExecute(r)
 }
 
 /*
-CreateCertificateCollections Creates a new certificate collection with the provided properties
+Creates a new V1 POST /CertificateCollections request.
+
+# CreateCertificateCollections Creates a new certificate collection with the provided properties
 
 ### Duplication Field Values ###
 The field used to determine if a certificate is a duplicate of another.
@@ -90,7 +93,7 @@ func (a *CertificateCollectionApiService) NewCreateCertificateCollectionsRequest
 	}
 }
 
-// Executes the API request POST /CertificateCollections
+// Executes the API request V1 POST /CertificateCollections
 //
 //	@return CertificateCollectionsCertificateCollectionResponse
 func (a *CertificateCollectionApiService) CreateCertificateCollectionsExecute(r ApiCreateCertificateCollectionsRequest) (*CertificateCollectionsCertificateCollectionResponse, *http.Response, error) {
@@ -185,7 +188,7 @@ func (a *CertificateCollectionApiService) CreateCertificateCollectionsExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /CertificateCollections/Copy
+// Request for V1 POST /CertificateCollections/Copy
 type ApiCreateCertificateCollectionsCopyRequest struct {
 	ctx                                                    context.Context
 	ApiService                                             *CertificateCollectionApiService
@@ -212,11 +215,14 @@ func (r ApiCreateCertificateCollectionsCopyRequest) CertificateCollectionsCertif
 	return r
 }
 
+// Executes the V1 POST /CertificateCollections/Copy request context
 func (r ApiCreateCertificateCollectionsCopyRequest) Execute() (*CertificateCollectionsCertificateCollectionResponse, *http.Response, error) {
 	return r.ApiService.CreateCertificateCollectionsCopyExecute(r)
 }
 
 /*
+Creates a new V1 POST /CertificateCollections/Copy request.
+
 CreateCertificateCollectionsCopy Creates a new certificate collection from an existing collection. The permissions, query and description of the   existing collection are copied when creating the new record, with the option to overwrite the query or description.
 
 ### Duplication Field Values ###
@@ -243,7 +249,7 @@ func (a *CertificateCollectionApiService) NewCreateCertificateCollectionsCopyReq
 	}
 }
 
-// Executes the API request POST /CertificateCollections/Copy
+// Executes the API request V1 POST /CertificateCollections/Copy
 //
 //	@return CertificateCollectionsCertificateCollectionResponse
 func (a *CertificateCollectionApiService) CreateCertificateCollectionsCopyExecute(r ApiCreateCertificateCollectionsCopyRequest) (*CertificateCollectionsCertificateCollectionResponse, *http.Response, error) {
@@ -338,7 +344,7 @@ func (a *CertificateCollectionApiService) CreateCertificateCollectionsCopyExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /CertificateCollections/{id}
+// Request for V1 DELETE /CertificateCollections/{id}
 type ApiDeleteCertificateCollectionsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateCollectionApiService
@@ -359,11 +365,14 @@ func (r ApiDeleteCertificateCollectionsByIdRequest) XKeyfactorApiVersion(xKeyfac
 	return r
 }
 
+// Executes the V1 DELETE /CertificateCollections/{id} request context
 func (r ApiDeleteCertificateCollectionsByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteCertificateCollectionsByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /CertificateCollections/{id} request.
+
 DeleteCertificateCollectionsById Delete one certificate collection
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -473,7 +482,7 @@ func (a *CertificateCollectionApiService) DeleteCertificateCollectionsByIdExecut
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateCollections
+// Request for V1 GET /CertificateCollections
 type ApiGetCertificateCollectionsRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateCollectionApiService
@@ -523,11 +532,14 @@ func (r ApiGetCertificateCollectionsRequest) XKeyfactorApiVersion(xKeyfactorApiV
 	return r
 }
 
+// Executes the V1 GET /CertificateCollections request context
 func (r ApiGetCertificateCollectionsRequest) Execute() ([]CSSCMSDataModelModelsCertificateQuery, *http.Response, error) {
 	return r.ApiService.GetCertificateCollectionsExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateCollections request.
+
 GetCertificateCollections Returns all certificate collections
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -546,7 +558,7 @@ func (a *CertificateCollectionApiService) NewGetCertificateCollectionsRequest(ct
 	}
 }
 
-// Executes the API request GET /CertificateCollections
+// Executes the API request V1 GET /CertificateCollections
 //
 //	@return []CSSCMSDataModelModelsCertificateQuery
 func (a *CertificateCollectionApiService) GetCertificateCollectionsExecute(r ApiGetCertificateCollectionsRequest) ([]CSSCMSDataModelModelsCertificateQuery, *http.Response, error) {
@@ -654,7 +666,7 @@ func (a *CertificateCollectionApiService) GetCertificateCollectionsExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateCollections/{id}
+// Request for V1 GET /CertificateCollections/{id}
 type ApiGetCertificateCollectionsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateCollectionApiService
@@ -675,11 +687,14 @@ func (r ApiGetCertificateCollectionsByIdRequest) XKeyfactorApiVersion(xKeyfactor
 	return r
 }
 
+// Executes the V1 GET /CertificateCollections/{id} request context
 func (r ApiGetCertificateCollectionsByIdRequest) Execute() (*CSSCMSDataModelModelsCertificateQuery, *http.Response, error) {
 	return r.ApiService.GetCertificateCollectionsByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateCollections/{id} request.
+
 GetCertificateCollectionsById Returns the certificate collection definition associated with the provided Keyfactor identifier
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -701,7 +716,7 @@ func (a *CertificateCollectionApiService) NewGetCertificateCollectionsByIdReques
 	}
 }
 
-// Executes the API request GET /CertificateCollections/{id}
+// Executes the API request V1 GET /CertificateCollections/{id}
 //
 //	@return CSSCMSDataModelModelsCertificateQuery
 func (a *CertificateCollectionApiService) GetCertificateCollectionsByIdExecute(r ApiGetCertificateCollectionsByIdRequest) (*CSSCMSDataModelModelsCertificateQuery, *http.Response, error) {
@@ -795,7 +810,7 @@ func (a *CertificateCollectionApiService) GetCertificateCollectionsByIdExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateCollections/CollectionList
+// Request for V1 GET /CertificateCollections/CollectionList
 type ApiGetCertificateCollectionsCollectionListRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateCollectionApiService
@@ -845,11 +860,14 @@ func (r ApiGetCertificateCollectionsCollectionListRequest) XKeyfactorApiVersion(
 	return r
 }
 
+// Executes the V1 GET /CertificateCollections/CollectionList request context
 func (r ApiGetCertificateCollectionsCollectionListRequest) Execute() ([]CertificateCollectionsCertificateCollectionListResponse, *http.Response, error) {
 	return r.ApiService.GetCertificateCollectionsCollectionListExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateCollections/CollectionList request.
+
 GetCertificateCollectionsCollectionList Get certificate collection list with duplication field name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -868,7 +886,7 @@ func (a *CertificateCollectionApiService) NewGetCertificateCollectionsCollection
 	}
 }
 
-// Executes the API request GET /CertificateCollections/CollectionList
+// Executes the API request V1 GET /CertificateCollections/CollectionList
 //
 //	@return []CertificateCollectionsCertificateCollectionListResponse
 func (a *CertificateCollectionApiService) GetCertificateCollectionsCollectionListExecute(r ApiGetCertificateCollectionsCollectionListRequest) ([]CertificateCollectionsCertificateCollectionListResponse, *http.Response, error) {
@@ -976,7 +994,7 @@ func (a *CertificateCollectionApiService) GetCertificateCollectionsCollectionLis
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateCollections/CollectionOrdering
+// Request for V1 GET /CertificateCollections/CollectionOrdering
 type ApiGetCertificateCollectionsCollectionOrderingRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateCollectionApiService
@@ -996,11 +1014,14 @@ func (r ApiGetCertificateCollectionsCollectionOrderingRequest) XKeyfactorApiVers
 	return r
 }
 
+// Executes the V1 GET /CertificateCollections/CollectionOrdering request context
 func (r ApiGetCertificateCollectionsCollectionOrderingRequest) Execute() ([]int32, *http.Response, error) {
 	return r.ApiService.GetCertificateCollectionsCollectionOrderingExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateCollections/CollectionOrdering request.
+
 GetCertificateCollectionsCollectionOrdering Returns an array of collection Id's where the index in the array represents the collection ordering
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1019,7 +1040,7 @@ func (a *CertificateCollectionApiService) NewGetCertificateCollectionsCollection
 	}
 }
 
-// Executes the API request GET /CertificateCollections/CollectionOrdering
+// Executes the API request V1 GET /CertificateCollections/CollectionOrdering
 //
 //	@return []int32
 func (a *CertificateCollectionApiService) GetCertificateCollectionsCollectionOrderingExecute(r ApiGetCertificateCollectionsCollectionOrderingRequest) ([]int32, *http.Response, error) {
@@ -1112,7 +1133,7 @@ func (a *CertificateCollectionApiService) GetCertificateCollectionsCollectionOrd
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateCollections/LastEstimated
+// Request for V1 GET /CertificateCollections/LastEstimated
 type ApiGetCertificateCollectionsLastEstimatedRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateCollectionApiService
@@ -1132,11 +1153,14 @@ func (r ApiGetCertificateCollectionsLastEstimatedRequest) XKeyfactorApiVersion(x
 	return r
 }
 
+// Executes the V1 GET /CertificateCollections/LastEstimated request context
 func (r ApiGetCertificateCollectionsLastEstimatedRequest) Execute() (*SchedulingScheduledTaskScheduleResponse, *http.Response, error) {
 	return r.ApiService.GetCertificateCollectionsLastEstimatedExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateCollections/LastEstimated request.
+
 GetCertificateCollectionsLastEstimated Get the last time the timer service ran the job to process certificates in collections
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1155,7 +1179,7 @@ func (a *CertificateCollectionApiService) NewGetCertificateCollectionsLastEstima
 	}
 }
 
-// Executes the API request GET /CertificateCollections/LastEstimated
+// Executes the API request V1 GET /CertificateCollections/LastEstimated
 //
 //	@return SchedulingScheduledTaskScheduleResponse
 func (a *CertificateCollectionApiService) GetCertificateCollectionsLastEstimatedExecute(r ApiGetCertificateCollectionsLastEstimatedRequest) (*SchedulingScheduledTaskScheduleResponse, *http.Response, error) {
@@ -1248,7 +1272,7 @@ func (a *CertificateCollectionApiService) GetCertificateCollectionsLastEstimated
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateCollections/{name}
+// Request for V1 GET /CertificateCollections/{name}
 type ApiGetCertificateCollectionsNameRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateCollectionApiService
@@ -1269,11 +1293,14 @@ func (r ApiGetCertificateCollectionsNameRequest) XKeyfactorApiVersion(xKeyfactor
 	return r
 }
 
+// Executes the V1 GET /CertificateCollections/{name} request context
 func (r ApiGetCertificateCollectionsNameRequest) Execute() (*CSSCMSDataModelModelsCertificateQuery, *http.Response, error) {
 	return r.ApiService.GetCertificateCollectionsNameExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateCollections/{name} request.
+
 GetCertificateCollectionsName Returns the certificate collection associated with the provided collection name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1295,7 +1322,7 @@ func (a *CertificateCollectionApiService) NewGetCertificateCollectionsNameReques
 	}
 }
 
-// Executes the API request GET /CertificateCollections/{name}
+// Executes the API request V1 GET /CertificateCollections/{name}
 //
 //	@return CSSCMSDataModelModelsCertificateQuery
 func (a *CertificateCollectionApiService) GetCertificateCollectionsNameExecute(r ApiGetCertificateCollectionsNameRequest) (*CSSCMSDataModelModelsCertificateQuery, *http.Response, error) {
@@ -1389,7 +1416,7 @@ func (a *CertificateCollectionApiService) GetCertificateCollectionsNameExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateCollections/NavItems
+// Request for V1 GET /CertificateCollections/NavItems
 type ApiGetCertificateCollectionsNavItemsRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateCollectionApiService
@@ -1409,11 +1436,14 @@ func (r ApiGetCertificateCollectionsNavItemsRequest) XKeyfactorApiVersion(xKeyfa
 	return r
 }
 
+// Executes the V1 GET /CertificateCollections/NavItems request context
 func (r ApiGetCertificateCollectionsNavItemsRequest) Execute() ([]CSSCMSDataModelModelsCertificateCollectionNavItem, *http.Response, error) {
 	return r.ApiService.GetCertificateCollectionsNavItemsExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateCollections/NavItems request.
+
 GetCertificateCollectionsNavItems Get the list of navigation items for certificate collection
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1432,7 +1462,7 @@ func (a *CertificateCollectionApiService) NewGetCertificateCollectionsNavItemsRe
 	}
 }
 
-// Executes the API request GET /CertificateCollections/NavItems
+// Executes the API request V1 GET /CertificateCollections/NavItems
 //
 //	@return []CSSCMSDataModelModelsCertificateCollectionNavItem
 func (a *CertificateCollectionApiService) GetCertificateCollectionsNavItemsExecute(r ApiGetCertificateCollectionsNavItemsRequest) ([]CSSCMSDataModelModelsCertificateCollectionNavItem, *http.Response, error) {
@@ -1525,7 +1555,7 @@ func (a *CertificateCollectionApiService) GetCertificateCollectionsNavItemsExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /CertificateCollections
+// Request for V1 PUT /CertificateCollections
 type ApiUpdateCertificateCollectionsRequest struct {
 	ctx                                                      context.Context
 	ApiService                                               *CertificateCollectionApiService
@@ -1552,12 +1582,15 @@ func (r ApiUpdateCertificateCollectionsRequest) CertificateCollectionsCertificat
 	return r
 }
 
+// Executes the V1 PUT /CertificateCollections request context
 func (r ApiUpdateCertificateCollectionsRequest) Execute() (*CertificateCollectionsCertificateCollectionResponse, *http.Response, error) {
 	return r.ApiService.UpdateCertificateCollectionsExecute(r)
 }
 
 /*
-UpdateCertificateCollections Updates an existing certificate collection with the provided properties
+Creates a new V1 PUT /CertificateCollections request.
+
+# UpdateCertificateCollections Updates an existing certificate collection with the provided properties
 
 ### Duplication Field Values ###
 The field used to determine if a certificate is a duplicate of another.
@@ -1583,7 +1616,7 @@ func (a *CertificateCollectionApiService) NewUpdateCertificateCollectionsRequest
 	}
 }
 
-// Executes the API request PUT /CertificateCollections
+// Executes the API request V1 PUT /CertificateCollections
 //
 //	@return CertificateCollectionsCertificateCollectionResponse
 func (a *CertificateCollectionApiService) UpdateCertificateCollectionsExecute(r ApiUpdateCertificateCollectionsRequest) (*CertificateCollectionsCertificateCollectionResponse, *http.Response, error) {
@@ -1678,7 +1711,7 @@ func (a *CertificateCollectionApiService) UpdateCertificateCollectionsExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /CertificateCollections/{id}/Favorite
+// Request for V1 PUT /CertificateCollections/{id}/Favorite
 type ApiUpdateCertificateCollectionsByIdFavoriteRequest struct {
 	ctx                                                        context.Context
 	ApiService                                                 *CertificateCollectionApiService
@@ -1706,11 +1739,14 @@ func (r ApiUpdateCertificateCollectionsByIdFavoriteRequest) CertificateCollectio
 	return r
 }
 
+// Executes the V1 PUT /CertificateCollections/{id}/Favorite request context
 func (r ApiUpdateCertificateCollectionsByIdFavoriteRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateCertificateCollectionsByIdFavoriteExecute(r)
 }
 
 /*
+Creates a new V1 PUT /CertificateCollections/{id}/Favorite request.
+
 UpdateCertificateCollectionsByIdFavorite Update favorite for one collection
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().

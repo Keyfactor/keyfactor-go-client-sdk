@@ -32,7 +32,7 @@ import (
 // ExpirationAlertApiService ExpirationAlertApi service
 type ExpirationAlertApiService service
 
-// Request for POST /Alerts/Expiration
+// Request for V1 POST /Alerts/Expiration
 type ApiCreateAlertsExpirationRequest struct {
 	ctx                                            context.Context
 	ApiService                                     *ExpirationAlertApiService
@@ -59,11 +59,14 @@ func (r ApiCreateAlertsExpirationRequest) AlertsExpirationExpirationAlertCreatio
 	return r
 }
 
+// Executes the V1 POST /Alerts/Expiration request context
 func (r ApiCreateAlertsExpirationRequest) Execute() (*AlertsExpirationExpirationAlertDefinitionResponse, *http.Response, error) {
 	return r.ApiService.CreateAlertsExpirationExecute(r)
 }
 
 /*
+Creates a new V1 POST /Alerts/Expiration request.
+
 CreateAlertsExpiration Add an expiration alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *ExpirationAlertApiService) NewCreateAlertsExpirationRequest(ctx context
 	}
 }
 
-// Executes the API request POST /Alerts/Expiration
+// Executes the API request V1 POST /Alerts/Expiration
 //
 //	@return AlertsExpirationExpirationAlertDefinitionResponse
 func (a *ExpirationAlertApiService) CreateAlertsExpirationExecute(r ApiCreateAlertsExpirationRequest) (*AlertsExpirationExpirationAlertDefinitionResponse, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *ExpirationAlertApiService) CreateAlertsExpirationExecute(r ApiCreateAle
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Alerts/Expiration/Test
+// Request for V1 POST /Alerts/Expiration/Test
 type ApiCreateAlertsExpirationTestRequest struct {
 	ctx                                        context.Context
 	ApiService                                 *ExpirationAlertApiService
@@ -204,11 +207,14 @@ func (r ApiCreateAlertsExpirationTestRequest) AlertsExpirationExpirationAlertTes
 	return r
 }
 
+// Executes the V1 POST /Alerts/Expiration/Test request context
 func (r ApiCreateAlertsExpirationTestRequest) Execute() (*AlertsExpirationExpirationAlertTestResponse, *http.Response, error) {
 	return r.ApiService.CreateAlertsExpirationTestExecute(r)
 }
 
 /*
+Creates a new V1 POST /Alerts/Expiration/Test request.
+
 CreateAlertsExpirationTest Test an Expiration Alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -229,7 +235,7 @@ func (a *ExpirationAlertApiService) NewCreateAlertsExpirationTestRequest(ctx con
 	}
 }
 
-// Executes the API request POST /Alerts/Expiration/Test
+// Executes the API request V1 POST /Alerts/Expiration/Test
 //
 //	@return AlertsExpirationExpirationAlertTestResponse
 //
@@ -326,7 +332,7 @@ func (a *ExpirationAlertApiService) CreateAlertsExpirationTestExecute(r ApiCreat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Alerts/Expiration/TestAll
+// Request for V1 POST /Alerts/Expiration/TestAll
 type ApiCreateAlertsExpirationTestAllRequest struct {
 	ctx                                           context.Context
 	ApiService                                    *ExpirationAlertApiService
@@ -353,11 +359,14 @@ func (r ApiCreateAlertsExpirationTestAllRequest) AlertsExpirationExpirationAlert
 	return r
 }
 
+// Executes the V1 POST /Alerts/Expiration/TestAll request context
 func (r ApiCreateAlertsExpirationTestAllRequest) Execute() (*AlertsExpirationExpirationAlertTestResponse, *http.Response, error) {
 	return r.ApiService.CreateAlertsExpirationTestAllExecute(r)
 }
 
 /*
+Creates a new V1 POST /Alerts/Expiration/TestAll request.
+
 CreateAlertsExpirationTestAll Test All Expiration Alerts
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -378,7 +387,7 @@ func (a *ExpirationAlertApiService) NewCreateAlertsExpirationTestAllRequest(ctx 
 	}
 }
 
-// Executes the API request POST /Alerts/Expiration/TestAll
+// Executes the API request V1 POST /Alerts/Expiration/TestAll
 //
 //	@return AlertsExpirationExpirationAlertTestResponse
 //
@@ -475,7 +484,7 @@ func (a *ExpirationAlertApiService) CreateAlertsExpirationTestAllExecute(r ApiCr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /Alerts/Expiration/{id}
+// Request for V1 DELETE /Alerts/Expiration/{id}
 type ApiDeleteAlertsExpirationByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *ExpirationAlertApiService
@@ -496,11 +505,14 @@ func (r ApiDeleteAlertsExpirationByIdRequest) XKeyfactorApiVersion(xKeyfactorApi
 	return r
 }
 
+// Executes the V1 DELETE /Alerts/Expiration/{id} request context
 func (r ApiDeleteAlertsExpirationByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAlertsExpirationByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /Alerts/Expiration/{id} request.
+
 DeleteAlertsExpirationById Delete an expiration alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -604,7 +616,7 @@ func (a *ExpirationAlertApiService) DeleteAlertsExpirationByIdExecute(r ApiDelet
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /Alerts/Expiration
+// Request for V1 GET /Alerts/Expiration
 type ApiGetAlertsExpirationRequest struct {
 	ctx                     context.Context
 	ApiService              *ExpirationAlertApiService
@@ -654,11 +666,14 @@ func (r ApiGetAlertsExpirationRequest) XKeyfactorApiVersion(xKeyfactorApiVersion
 	return r
 }
 
+// Executes the V1 GET /Alerts/Expiration request context
 func (r ApiGetAlertsExpirationRequest) Execute() ([]AlertsExpirationExpirationAlertDefinitionResponse, *http.Response, error) {
 	return r.ApiService.GetAlertsExpirationExecute(r)
 }
 
 /*
+Creates a new V1 GET /Alerts/Expiration request.
+
 GetAlertsExpiration Gets all expiration alerts according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -677,7 +692,7 @@ func (a *ExpirationAlertApiService) NewGetAlertsExpirationRequest(ctx context.Co
 	}
 }
 
-// Executes the API request GET /Alerts/Expiration
+// Executes the API request V1 GET /Alerts/Expiration
 //
 //	@return []AlertsExpirationExpirationAlertDefinitionResponse
 func (a *ExpirationAlertApiService) GetAlertsExpirationExecute(r ApiGetAlertsExpirationRequest) ([]AlertsExpirationExpirationAlertDefinitionResponse, *http.Response, error) {
@@ -785,7 +800,7 @@ func (a *ExpirationAlertApiService) GetAlertsExpirationExecute(r ApiGetAlertsExp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Alerts/Expiration/{id}
+// Request for V1 GET /Alerts/Expiration/{id}
 type ApiGetAlertsExpirationByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *ExpirationAlertApiService
@@ -806,11 +821,14 @@ func (r ApiGetAlertsExpirationByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVer
 	return r
 }
 
+// Executes the V1 GET /Alerts/Expiration/{id} request context
 func (r ApiGetAlertsExpirationByIdRequest) Execute() (*AlertsExpirationExpirationAlertDefinitionResponse, *http.Response, error) {
 	return r.ApiService.GetAlertsExpirationByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Alerts/Expiration/{id} request.
+
 GetAlertsExpirationById Get an expiration alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -832,7 +850,7 @@ func (a *ExpirationAlertApiService) NewGetAlertsExpirationByIdRequest(ctx contex
 	}
 }
 
-// Executes the API request GET /Alerts/Expiration/{id}
+// Executes the API request V1 GET /Alerts/Expiration/{id}
 //
 //	@return AlertsExpirationExpirationAlertDefinitionResponse
 func (a *ExpirationAlertApiService) GetAlertsExpirationByIdExecute(r ApiGetAlertsExpirationByIdRequest) (*AlertsExpirationExpirationAlertDefinitionResponse, *http.Response, error) {
@@ -926,7 +944,7 @@ func (a *ExpirationAlertApiService) GetAlertsExpirationByIdExecute(r ApiGetAlert
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Alerts/Expiration/Schedule
+// Request for V1 GET /Alerts/Expiration/Schedule
 type ApiGetAlertsExpirationScheduleRequest struct {
 	ctx                     context.Context
 	ApiService              *ExpirationAlertApiService
@@ -946,11 +964,14 @@ func (r ApiGetAlertsExpirationScheduleRequest) XKeyfactorApiVersion(xKeyfactorAp
 	return r
 }
 
+// Executes the V1 GET /Alerts/Expiration/Schedule request context
 func (r ApiGetAlertsExpirationScheduleRequest) Execute() (*AlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {
 	return r.ApiService.GetAlertsExpirationScheduleExecute(r)
 }
 
 /*
+Creates a new V1 GET /Alerts/Expiration/Schedule request.
+
 GetAlertsExpirationSchedule Get the schedule for expiration alerts
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -969,7 +990,7 @@ func (a *ExpirationAlertApiService) NewGetAlertsExpirationScheduleRequest(ctx co
 	}
 }
 
-// Executes the API request GET /Alerts/Expiration/Schedule
+// Executes the API request V1 GET /Alerts/Expiration/Schedule
 //
 //	@return AlertsAlertScheduleAlertScheduleResponse
 func (a *ExpirationAlertApiService) GetAlertsExpirationScheduleExecute(r ApiGetAlertsExpirationScheduleRequest) (*AlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {
@@ -1062,7 +1083,7 @@ func (a *ExpirationAlertApiService) GetAlertsExpirationScheduleExecute(r ApiGetA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Alerts/Expiration
+// Request for V1 PUT /Alerts/Expiration
 type ApiUpdateAlertsExpirationRequest struct {
 	ctx                                          context.Context
 	ApiService                                   *ExpirationAlertApiService
@@ -1089,11 +1110,14 @@ func (r ApiUpdateAlertsExpirationRequest) AlertsExpirationExpirationAlertUpdateR
 	return r
 }
 
+// Executes the V1 PUT /Alerts/Expiration request context
 func (r ApiUpdateAlertsExpirationRequest) Execute() (*AlertsExpirationExpirationAlertDefinitionResponse, *http.Response, error) {
 	return r.ApiService.UpdateAlertsExpirationExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Alerts/Expiration request.
+
 UpdateAlertsExpiration Edit an expiration alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1112,7 +1136,7 @@ func (a *ExpirationAlertApiService) NewUpdateAlertsExpirationRequest(ctx context
 	}
 }
 
-// Executes the API request PUT /Alerts/Expiration
+// Executes the API request V1 PUT /Alerts/Expiration
 //
 //	@return AlertsExpirationExpirationAlertDefinitionResponse
 func (a *ExpirationAlertApiService) UpdateAlertsExpirationExecute(r ApiUpdateAlertsExpirationRequest) (*AlertsExpirationExpirationAlertDefinitionResponse, *http.Response, error) {
@@ -1207,7 +1231,7 @@ func (a *ExpirationAlertApiService) UpdateAlertsExpirationExecute(r ApiUpdateAle
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Alerts/Expiration/Schedule
+// Request for V1 PUT /Alerts/Expiration/Schedule
 type ApiUpdateAlertsExpirationScheduleRequest struct {
 	ctx                                     context.Context
 	ApiService                              *ExpirationAlertApiService
@@ -1233,11 +1257,14 @@ func (r ApiUpdateAlertsExpirationScheduleRequest) AlertsAlertScheduleAlertSchedu
 	return r
 }
 
+// Executes the V1 PUT /Alerts/Expiration/Schedule request context
 func (r ApiUpdateAlertsExpirationScheduleRequest) Execute() (*AlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {
 	return r.ApiService.UpdateAlertsExpirationScheduleExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Alerts/Expiration/Schedule request.
+
 UpdateAlertsExpirationSchedule Edit schedule
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1256,7 +1283,7 @@ func (a *ExpirationAlertApiService) NewUpdateAlertsExpirationScheduleRequest(ctx
 	}
 }
 
-// Executes the API request PUT /Alerts/Expiration/Schedule
+// Executes the API request V1 PUT /Alerts/Expiration/Schedule
 //
 //	@return AlertsAlertScheduleAlertScheduleResponse
 func (a *ExpirationAlertApiService) UpdateAlertsExpirationScheduleExecute(r ApiUpdateAlertsExpirationScheduleRequest) (*AlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {

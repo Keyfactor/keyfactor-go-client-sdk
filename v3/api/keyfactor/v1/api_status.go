@@ -31,7 +31,7 @@ import (
 // StatusApiService StatusApi service
 type StatusApiService service
 
-// Request for GET /Status/Endpoints
+// Request for V1 GET /Status/Endpoints
 type ApiGetStatusEndpointsRequest struct {
 	ctx                     context.Context
 	ApiService              *StatusApiService
@@ -51,11 +51,14 @@ func (r ApiGetStatusEndpointsRequest) XKeyfactorApiVersion(xKeyfactorApiVersion 
 	return r
 }
 
+// Executes the V1 GET /Status/Endpoints request context
 func (r ApiGetStatusEndpointsRequest) Execute() ([]string, *http.Response, error) {
 	return r.ApiService.GetStatusEndpointsExecute(r)
 }
 
 /*
+Creates a new V1 GET /Status/Endpoints request.
+
 GetStatusEndpoints Returns all endpoints to which the requesting identity has access
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -74,7 +77,7 @@ func (a *StatusApiService) NewGetStatusEndpointsRequest(ctx context.Context) Api
 	}
 }
 
-// Executes the API request GET /Status/Endpoints
+// Executes the API request V1 GET /Status/Endpoints
 //
 //	@return []string
 func (a *StatusApiService) GetStatusEndpointsExecute(r ApiGetStatusEndpointsRequest) ([]string, *http.Response, error) {
@@ -167,7 +170,7 @@ func (a *StatusApiService) GetStatusEndpointsExecute(r ApiGetStatusEndpointsRequ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Status/HealthCheck
+// Request for V1 GET /Status/HealthCheck
 type ApiGetStatusHealthCheckRequest struct {
 	ctx                     context.Context
 	ApiService              *StatusApiService
@@ -187,11 +190,14 @@ func (r ApiGetStatusHealthCheckRequest) XKeyfactorApiVersion(xKeyfactorApiVersio
 	return r
 }
 
+// Executes the V1 GET /Status/HealthCheck request context
 func (r ApiGetStatusHealthCheckRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetStatusHealthCheckExecute(r)
 }
 
 /*
+Creates a new V1 GET /Status/HealthCheck request.
+
 GetStatusHealthCheck Returns the current status of the API's ability to connect to the database.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().

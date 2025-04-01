@@ -31,7 +31,7 @@ import (
 // LicenseApiService LicenseApi service
 type LicenseApiService service
 
-// Request for GET /License
+// Request for V1 GET /License
 type ApiGetLicenseRequest struct {
 	ctx                     context.Context
 	ApiService              *LicenseApiService
@@ -51,11 +51,14 @@ func (r ApiGetLicenseRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) 
 	return r
 }
 
+// Executes the V1 GET /License request context
 func (r ApiGetLicenseRequest) Execute() (*LicenseLicenseResponse, *http.Response, error) {
 	return r.ApiService.GetLicenseExecute(r)
 }
 
 /*
+Creates a new V1 GET /License request.
+
 GetLicense Gets the current license
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -74,7 +77,7 @@ func (a *LicenseApiService) NewGetLicenseRequest(ctx context.Context) ApiGetLice
 	}
 }
 
-// Executes the API request GET /License
+// Executes the API request V1 GET /License
 //
 //	@return LicenseLicenseResponse
 func (a *LicenseApiService) GetLicenseExecute(r ApiGetLicenseRequest) (*LicenseLicenseResponse, *http.Response, error) {

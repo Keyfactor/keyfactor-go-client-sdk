@@ -33,7 +33,7 @@ import (
 // CertificateStoreApiService CertificateStoreApi service
 type CertificateStoreApiService service
 
-// Request for POST /CertificateStores
+// Request for V1 POST /CertificateStores
 type ApiCreateCertificateStoresRequest struct {
 	ctx                                                                 context.Context
 	ApiService                                                          *CertificateStoreApiService
@@ -60,11 +60,14 @@ func (r ApiCreateCertificateStoresRequest) CSSCMSDataModelModelsCertificateStore
 	return r
 }
 
+// Executes the V1 POST /CertificateStores request context
 func (r ApiCreateCertificateStoresRequest) Execute() (*CertificateStoresCertificateStoreResponse, *http.Response, error) {
 	return r.ApiService.CreateCertificateStoresExecute(r)
 }
 
 /*
+Creates a new V1 POST /CertificateStores request.
+
 CreateCertificateStores Creates a new certificate store with the provided properties
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -83,7 +86,7 @@ func (a *CertificateStoreApiService) NewCreateCertificateStoresRequest(ctx conte
 	}
 }
 
-// Executes the API request POST /CertificateStores
+// Executes the API request V1 POST /CertificateStores
 //
 //	@return CertificateStoresCertificateStoreResponse
 func (a *CertificateStoreApiService) CreateCertificateStoresExecute(r ApiCreateCertificateStoresRequest) (*CertificateStoresCertificateStoreResponse, *http.Response, error) {
@@ -178,7 +181,7 @@ func (a *CertificateStoreApiService) CreateCertificateStoresExecute(r ApiCreateC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /CertificateStores/Approve
+// Request for V1 POST /CertificateStores/Approve
 type ApiCreateCertificateStoresApproveRequest struct {
 	ctx                                             context.Context
 	ApiService                                      *CertificateStoreApiService
@@ -205,11 +208,14 @@ func (r ApiCreateCertificateStoresApproveRequest) CertificateStoresCertificateSt
 	return r
 }
 
+// Executes the V1 POST /CertificateStores/Approve request context
 func (r ApiCreateCertificateStoresApproveRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateCertificateStoresApproveExecute(r)
 }
 
 /*
+Creates a new V1 POST /CertificateStores/Approve request.
+
 CreateCertificateStoresApprove Approves the provided certificate stores to make them available for management
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -311,7 +317,7 @@ func (a *CertificateStoreApiService) CreateCertificateStoresApproveExecute(r Api
 	return localVarHTTPResponse, nil
 }
 
-// Request for POST /CertificateStores/Certificates/Add
+// Request for V1 POST /CertificateStores/Certificates/Add
 type ApiCreateCertificateStoresCertificatesAddRequest struct {
 	ctx                                    context.Context
 	ApiService                             *CertificateStoreApiService
@@ -338,11 +344,14 @@ func (r ApiCreateCertificateStoresCertificatesAddRequest) CertificateStoresAddCe
 	return r
 }
 
+// Executes the V1 POST /CertificateStores/Certificates/Add request context
 func (r ApiCreateCertificateStoresCertificatesAddRequest) Execute() ([]string, *http.Response, error) {
 	return r.ApiService.CreateCertificateStoresCertificatesAddExecute(r)
 }
 
 /*
+Creates a new V1 POST /CertificateStores/Certificates/Add request.
+
 CreateCertificateStoresCertificatesAdd Configures a management job to add a certificate to one or more stores with the provided schedule
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -361,7 +370,7 @@ func (a *CertificateStoreApiService) NewCreateCertificateStoresCertificatesAddRe
 	}
 }
 
-// Executes the API request POST /CertificateStores/Certificates/Add
+// Executes the API request V1 POST /CertificateStores/Certificates/Add
 //
 //	@return []string
 func (a *CertificateStoreApiService) CreateCertificateStoresCertificatesAddExecute(r ApiCreateCertificateStoresCertificatesAddRequest) ([]string, *http.Response, error) {
@@ -456,7 +465,7 @@ func (a *CertificateStoreApiService) CreateCertificateStoresCertificatesAddExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /CertificateStores/Certificates/Remove
+// Request for V1 POST /CertificateStores/Certificates/Remove
 type ApiCreateCertificateStoresCertificatesRemoveRequest struct {
 	ctx                                       context.Context
 	ApiService                                *CertificateStoreApiService
@@ -483,11 +492,14 @@ func (r ApiCreateCertificateStoresCertificatesRemoveRequest) CertificateStoresRe
 	return r
 }
 
+// Executes the V1 POST /CertificateStores/Certificates/Remove request context
 func (r ApiCreateCertificateStoresCertificatesRemoveRequest) Execute() ([]string, *http.Response, error) {
 	return r.ApiService.CreateCertificateStoresCertificatesRemoveExecute(r)
 }
 
 /*
+Creates a new V1 POST /CertificateStores/Certificates/Remove request.
+
 CreateCertificateStoresCertificatesRemove Configures a management job to remove a certificate from one or more stores with the provided schedule
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -506,7 +518,7 @@ func (a *CertificateStoreApiService) NewCreateCertificateStoresCertificatesRemov
 	}
 }
 
-// Executes the API request POST /CertificateStores/Certificates/Remove
+// Executes the API request V1 POST /CertificateStores/Certificates/Remove
 //
 //	@return []string
 func (a *CertificateStoreApiService) CreateCertificateStoresCertificatesRemoveExecute(r ApiCreateCertificateStoresCertificatesRemoveRequest) ([]string, *http.Response, error) {
@@ -601,7 +613,7 @@ func (a *CertificateStoreApiService) CreateCertificateStoresCertificatesRemoveEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /CertificateStores/Reenrollment
+// Request for V1 POST /CertificateStores/Reenrollment
 type ApiCreateCertificateStoresReenrollmentRequest struct {
 	ctx                                  context.Context
 	ApiService                           *CertificateStoreApiService
@@ -628,11 +640,14 @@ func (r ApiCreateCertificateStoresReenrollmentRequest) CertificateStoresReenroll
 	return r
 }
 
+// Executes the V1 POST /CertificateStores/Reenrollment request context
 func (r ApiCreateCertificateStoresReenrollmentRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateCertificateStoresReenrollmentExecute(r)
 }
 
 /*
+Creates a new V1 POST /CertificateStores/Reenrollment request.
+
 CreateCertificateStoresReenrollment Schedules a certificate store for reenrollment
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -734,7 +749,7 @@ func (a *CertificateStoreApiService) CreateCertificateStoresReenrollmentExecute(
 	return localVarHTTPResponse, nil
 }
 
-// Request for POST /CertificateStores/Schedule
+// Request for V1 POST /CertificateStores/Schedule
 type ApiCreateCertificateStoresScheduleRequest struct {
 	ctx                                     context.Context
 	ApiService                              *CertificateStoreApiService
@@ -761,11 +776,14 @@ func (r ApiCreateCertificateStoresScheduleRequest) CSSCMSDataModelModelsCertStor
 	return r
 }
 
+// Executes the V1 POST /CertificateStores/Schedule request context
 func (r ApiCreateCertificateStoresScheduleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateCertificateStoresScheduleExecute(r)
 }
 
 /*
+Creates a new V1 POST /CertificateStores/Schedule request.
+
 CreateCertificateStoresSchedule Creates an inventory schedule for the provided certificate stores
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -867,7 +885,7 @@ func (a *CertificateStoreApiService) CreateCertificateStoresScheduleExecute(r Ap
 	return localVarHTTPResponse, nil
 }
 
-// Request for DELETE /CertificateStores
+// Request for V1 DELETE /CertificateStores
 type ApiDeleteCertificateStoresRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateStoreApiService
@@ -894,12 +912,15 @@ func (r ApiDeleteCertificateStoresRequest) RequestBody(requestBody []string) Api
 	return r
 }
 
+// Executes the V1 DELETE /CertificateStores request context
 func (r ApiDeleteCertificateStoresRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteCertificateStoresExecute(r)
 }
 
 /*
-DeleteCertificateStores Deletes multiple persisted certificate store entities by their identifiers
+Creates a new V1 DELETE /CertificateStores request.
+
+# DeleteCertificateStores Deletes multiple persisted certificate store entities by their identifiers
 
 This will ignore individual delete failures, and continue processing the array.
 
@@ -1002,7 +1023,7 @@ func (a *CertificateStoreApiService) DeleteCertificateStoresExecute(r ApiDeleteC
 	return localVarHTTPResponse, nil
 }
 
-// Request for DELETE /CertificateStores/{id}
+// Request for V1 DELETE /CertificateStores/{id}
 type ApiDeleteCertificateStoresByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateStoreApiService
@@ -1023,11 +1044,14 @@ func (r ApiDeleteCertificateStoresByIdRequest) XKeyfactorApiVersion(xKeyfactorAp
 	return r
 }
 
+// Executes the V1 DELETE /CertificateStores/{id} request context
 func (r ApiDeleteCertificateStoresByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteCertificateStoresByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /CertificateStores/{id} request.
+
 DeleteCertificateStoresById Deletes a persisted certificate store by its Keyfactor identifier
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1131,7 +1155,7 @@ func (a *CertificateStoreApiService) DeleteCertificateStoresByIdExecute(r ApiDel
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateStores
+// Request for V1 GET /CertificateStores
 type ApiGetCertificateStoresRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateStoreApiService
@@ -1200,11 +1224,14 @@ func (r ApiGetCertificateStoresRequest) XKeyfactorApiVersion(xKeyfactorApiVersio
 	return r
 }
 
+// Executes the V1 GET /CertificateStores request context
 func (r ApiGetCertificateStoresRequest) Execute() ([]CertificateStoresCertificateStoreResponse, *http.Response, error) {
 	return r.ApiService.GetCertificateStoresExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateStores request.
+
 GetCertificateStores Returns all certificate stores according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1223,7 +1250,7 @@ func (a *CertificateStoreApiService) NewGetCertificateStoresRequest(ctx context.
 	}
 }
 
-// Executes the API request GET /CertificateStores
+// Executes the API request V1 GET /CertificateStores
 //
 //	@return []CertificateStoresCertificateStoreResponse
 func (a *CertificateStoreApiService) GetCertificateStoresExecute(r ApiGetCertificateStoresRequest) ([]CertificateStoresCertificateStoreResponse, *http.Response, error) {
@@ -1345,7 +1372,7 @@ func (a *CertificateStoreApiService) GetCertificateStoresExecute(r ApiGetCertifi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateStores/{id}
+// Request for V1 GET /CertificateStores/{id}
 type ApiGetCertificateStoresByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateStoreApiService
@@ -1366,11 +1393,14 @@ func (r ApiGetCertificateStoresByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVe
 	return r
 }
 
+// Executes the V1 GET /CertificateStores/{id} request context
 func (r ApiGetCertificateStoresByIdRequest) Execute() (*CertificateStoresCertificateStoreResponse, *http.Response, error) {
 	return r.ApiService.GetCertificateStoresByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateStores/{id} request.
+
 GetCertificateStoresById Returns a single certificate store associated with the provided id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1392,7 +1422,7 @@ func (a *CertificateStoreApiService) NewGetCertificateStoresByIdRequest(ctx cont
 	}
 }
 
-// Executes the API request GET /CertificateStores/{id}
+// Executes the API request V1 GET /CertificateStores/{id}
 //
 //	@return CertificateStoresCertificateStoreResponse
 func (a *CertificateStoreApiService) GetCertificateStoresByIdExecute(r ApiGetCertificateStoresByIdRequest) (*CertificateStoresCertificateStoreResponse, *http.Response, error) {
@@ -1486,7 +1516,7 @@ func (a *CertificateStoreApiService) GetCertificateStoresByIdExecute(r ApiGetCer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateStores/{id}/Inventory
+// Request for V1 GET /CertificateStores/{id}/Inventory
 type ApiGetCertificateStoresByIdInventoryRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateStoreApiService
@@ -1531,11 +1561,14 @@ func (r ApiGetCertificateStoresByIdInventoryRequest) XKeyfactorApiVersion(xKeyfa
 	return r
 }
 
+// Executes the V1 GET /CertificateStores/{id}/Inventory request context
 func (r ApiGetCertificateStoresByIdInventoryRequest) Execute() ([]CertificateStoresCertificateStoreInventoryResponse, *http.Response, error) {
 	return r.ApiService.GetCertificateStoresByIdInventoryExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateStores/{id}/Inventory request.
+
 GetCertificateStoresByIdInventory Returns a single certificate store's inventory associated with the provided id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1557,7 +1590,7 @@ func (a *CertificateStoreApiService) NewGetCertificateStoresByIdInventoryRequest
 	}
 }
 
-// Executes the API request GET /CertificateStores/{id}/Inventory
+// Executes the API request V1 GET /CertificateStores/{id}/Inventory
 //
 //	@return []CertificateStoresCertificateStoreInventoryResponse
 func (a *CertificateStoreApiService) GetCertificateStoresByIdInventoryExecute(r ApiGetCertificateStoresByIdInventoryRequest) ([]CertificateStoresCertificateStoreInventoryResponse, *http.Response, error) {
@@ -1663,7 +1696,7 @@ func (a *CertificateStoreApiService) GetCertificateStoresByIdInventoryExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /CertificateStores
+// Request for V1 PUT /CertificateStores
 type ApiUpdateCertificateStoresRequest struct {
 	ctx                                                                 context.Context
 	ApiService                                                          *CertificateStoreApiService
@@ -1690,11 +1723,14 @@ func (r ApiUpdateCertificateStoresRequest) CSSCMSDataModelModelsCertificateStore
 	return r
 }
 
+// Executes the V1 PUT /CertificateStores request context
 func (r ApiUpdateCertificateStoresRequest) Execute() (*CertificateStoresCertificateStoreResponse, *http.Response, error) {
 	return r.ApiService.UpdateCertificateStoresExecute(r)
 }
 
 /*
+Creates a new V1 PUT /CertificateStores request.
+
 UpdateCertificateStores Updates a given certificate store with the properties of the provided instance
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1713,7 +1749,7 @@ func (a *CertificateStoreApiService) NewUpdateCertificateStoresRequest(ctx conte
 	}
 }
 
-// Executes the API request PUT /CertificateStores
+// Executes the API request V1 PUT /CertificateStores
 //
 //	@return CertificateStoresCertificateStoreResponse
 func (a *CertificateStoreApiService) UpdateCertificateStoresExecute(r ApiUpdateCertificateStoresRequest) (*CertificateStoresCertificateStoreResponse, *http.Response, error) {
@@ -1808,7 +1844,7 @@ func (a *CertificateStoreApiService) UpdateCertificateStoresExecute(r ApiUpdateC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /CertificateStores/AssignContainer
+// Request for V1 PUT /CertificateStores/AssignContainer
 type ApiUpdateCertificateStoresAssignContainerRequest struct {
 	ctx                                      context.Context
 	ApiService                               *CertificateStoreApiService
@@ -1835,11 +1871,14 @@ func (r ApiUpdateCertificateStoresAssignContainerRequest) CSSCMSDataModelModelsC
 	return r
 }
 
+// Executes the V1 PUT /CertificateStores/AssignContainer request context
 func (r ApiUpdateCertificateStoresAssignContainerRequest) Execute() ([]CertificateStoresCertificateStoreResponse, *http.Response, error) {
 	return r.ApiService.UpdateCertificateStoresAssignContainerExecute(r)
 }
 
 /*
+Creates a new V1 PUT /CertificateStores/AssignContainer request.
+
 UpdateCertificateStoresAssignContainer Assigns the provided certificate stores to the provided container
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1858,7 +1897,7 @@ func (a *CertificateStoreApiService) NewUpdateCertificateStoresAssignContainerRe
 	}
 }
 
-// Executes the API request PUT /CertificateStores/AssignContainer
+// Executes the API request V1 PUT /CertificateStores/AssignContainer
 //
 //	@return []CertificateStoresCertificateStoreResponse
 func (a *CertificateStoreApiService) UpdateCertificateStoresAssignContainerExecute(r ApiUpdateCertificateStoresAssignContainerRequest) ([]CertificateStoresCertificateStoreResponse, *http.Response, error) {
@@ -1953,7 +1992,7 @@ func (a *CertificateStoreApiService) UpdateCertificateStoresAssignContainerExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /CertificateStores/DiscoveryJob
+// Request for V1 PUT /CertificateStores/DiscoveryJob
 type ApiUpdateCertificateStoresDiscoveryJobRequest struct {
 	ctx                                      context.Context
 	ApiService                               *CertificateStoreApiService
@@ -1980,11 +2019,14 @@ func (r ApiUpdateCertificateStoresDiscoveryJobRequest) CSSCMSDataModelModelsDisc
 	return r
 }
 
+// Executes the V1 PUT /CertificateStores/DiscoveryJob request context
 func (r ApiUpdateCertificateStoresDiscoveryJobRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateCertificateStoresDiscoveryJobExecute(r)
 }
 
 /*
+Creates a new V1 PUT /CertificateStores/DiscoveryJob request.
+
 UpdateCertificateStoresDiscoveryJob Configures a discovery job to locate currently unmanaged certificate stores
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2086,7 +2128,7 @@ func (a *CertificateStoreApiService) UpdateCertificateStoresDiscoveryJobExecute(
 	return localVarHTTPResponse, nil
 }
 
-// Request for PUT /CertificateStores/Password
+// Request for V1 PUT /CertificateStores/Password
 type ApiUpdateCertificateStoresPasswordRequest struct {
 	ctx                                              context.Context
 	ApiService                                       *CertificateStoreApiService
@@ -2113,11 +2155,14 @@ func (r ApiUpdateCertificateStoresPasswordRequest) CSSCMSDataModelModelsCertStor
 	return r
 }
 
+// Executes the V1 PUT /CertificateStores/Password request context
 func (r ApiUpdateCertificateStoresPasswordRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateCertificateStoresPasswordExecute(r)
 }
 
 /*
+Creates a new V1 PUT /CertificateStores/Password request.
+
 UpdateCertificateStoresPassword Sets a password for the requested certificate store
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().

@@ -32,7 +32,7 @@ import (
 // SecurityRolePermissionsApiService SecurityRolePermissionsApi service
 type SecurityRolePermissionsApiService service
 
-// Request for POST /Security/Roles/{id}/Permissions/Collections
+// Request for V1 POST /Security/Roles/{id}/Permissions/Collections
 type ApiCreateSecurityRolesByIdPermissionsCollectionsRequest struct {
 	ctx                                                        context.Context
 	ApiService                                                 *SecurityRolePermissionsApiService
@@ -60,11 +60,14 @@ func (r ApiCreateSecurityRolesByIdPermissionsCollectionsRequest) SecuritySecurit
 	return r
 }
 
+// Executes the V1 POST /Security/Roles/{id}/Permissions/Collections request context
 func (r ApiCreateSecurityRolesByIdPermissionsCollectionsRequest) Execute() ([]SecuritySecurityRolePermissionsCollectionPermissionResponse, *http.Response, error) {
 	return r.ApiService.CreateSecurityRolesByIdPermissionsCollectionsExecute(r)
 }
 
 /*
+Creates a new V1 POST /Security/Roles/{id}/Permissions/Collections request.
+
 CreateSecurityRolesByIdPermissionsCollections Adds collection permissions to the security role that matches the id.
 
 ### Valid Permissions ###
@@ -95,7 +98,7 @@ func (a *SecurityRolePermissionsApiService) NewCreateSecurityRolesByIdPermission
 	}
 }
 
-// Executes the API request POST /Security/Roles/{id}/Permissions/Collections
+// Executes the API request V1 POST /Security/Roles/{id}/Permissions/Collections
 //
 //	@return []SecuritySecurityRolePermissionsCollectionPermissionResponse
 func (a *SecurityRolePermissionsApiService) CreateSecurityRolesByIdPermissionsCollectionsExecute(r ApiCreateSecurityRolesByIdPermissionsCollectionsRequest) ([]SecuritySecurityRolePermissionsCollectionPermissionResponse, *http.Response, error) {
@@ -191,7 +194,7 @@ func (a *SecurityRolePermissionsApiService) CreateSecurityRolesByIdPermissionsCo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Security/Roles/{id}/Permissions/Containers
+// Request for V1 POST /Security/Roles/{id}/Permissions/Containers
 type ApiCreateSecurityRolesByIdPermissionsContainersRequest struct {
 	ctx                                                       context.Context
 	ApiService                                                *SecurityRolePermissionsApiService
@@ -219,11 +222,14 @@ func (r ApiCreateSecurityRolesByIdPermissionsContainersRequest) SecuritySecurity
 	return r
 }
 
+// Executes the V1 POST /Security/Roles/{id}/Permissions/Containers request context
 func (r ApiCreateSecurityRolesByIdPermissionsContainersRequest) Execute() ([]SecuritySecurityRolePermissionsContainerPermissionResponse, *http.Response, error) {
 	return r.ApiService.CreateSecurityRolesByIdPermissionsContainersExecute(r)
 }
 
 /*
+Creates a new V1 POST /Security/Roles/{id}/Permissions/Containers request.
+
 CreateSecurityRolesByIdPermissionsContainers Adds container permissions to the security role that matches the id.
 
 ### Valid Permissions ###
@@ -252,7 +258,7 @@ func (a *SecurityRolePermissionsApiService) NewCreateSecurityRolesByIdPermission
 	}
 }
 
-// Executes the API request POST /Security/Roles/{id}/Permissions/Containers
+// Executes the API request V1 POST /Security/Roles/{id}/Permissions/Containers
 //
 //	@return []SecuritySecurityRolePermissionsContainerPermissionResponse
 func (a *SecurityRolePermissionsApiService) CreateSecurityRolesByIdPermissionsContainersExecute(r ApiCreateSecurityRolesByIdPermissionsContainersRequest) ([]SecuritySecurityRolePermissionsContainerPermissionResponse, *http.Response, error) {
@@ -348,7 +354,7 @@ func (a *SecurityRolePermissionsApiService) CreateSecurityRolesByIdPermissionsCo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Security/Roles/{id}/Permissions/Global
+// Request for V1 POST /Security/Roles/{id}/Permissions/Global
 type ApiCreateSecurityRolesByIdPermissionsGlobalRequest struct {
 	ctx                                                    context.Context
 	ApiService                                             *SecurityRolePermissionsApiService
@@ -376,11 +382,14 @@ func (r ApiCreateSecurityRolesByIdPermissionsGlobalRequest) SecuritySecurityRole
 	return r
 }
 
+// Executes the V1 POST /Security/Roles/{id}/Permissions/Global request context
 func (r ApiCreateSecurityRolesByIdPermissionsGlobalRequest) Execute() ([]SecuritySecurityRolePermissionsGlobalPermissionResponse, *http.Response, error) {
 	return r.ApiService.CreateSecurityRolesByIdPermissionsGlobalExecute(r)
 }
 
 /*
+Creates a new V1 POST /Security/Roles/{id}/Permissions/Global request.
+
 CreateSecurityRolesByIdPermissionsGlobal Adds global permissions to the security role that matches the id.
 
 ### Valid Global Permissions ###
@@ -464,7 +473,7 @@ func (a *SecurityRolePermissionsApiService) NewCreateSecurityRolesByIdPermission
 	}
 }
 
-// Executes the API request POST /Security/Roles/{id}/Permissions/Global
+// Executes the API request V1 POST /Security/Roles/{id}/Permissions/Global
 //
 //	@return []SecuritySecurityRolePermissionsGlobalPermissionResponse
 func (a *SecurityRolePermissionsApiService) CreateSecurityRolesByIdPermissionsGlobalExecute(r ApiCreateSecurityRolesByIdPermissionsGlobalRequest) ([]SecuritySecurityRolePermissionsGlobalPermissionResponse, *http.Response, error) {
@@ -560,7 +569,7 @@ func (a *SecurityRolePermissionsApiService) CreateSecurityRolesByIdPermissionsGl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Security/Roles/{id}/Permissions
+// Request for V1 GET /Security/Roles/{id}/Permissions
 type ApiGetSecurityRolesByIdPermissionsRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolePermissionsApiService
@@ -581,11 +590,14 @@ func (r ApiGetSecurityRolesByIdPermissionsRequest) XKeyfactorApiVersion(xKeyfact
 	return r
 }
 
+// Executes the V1 GET /Security/Roles/{id}/Permissions request context
 func (r ApiGetSecurityRolesByIdPermissionsRequest) Execute() ([]SecuritySecurityRolePermissionsAreaPermissionResponse, *http.Response, error) {
 	return r.ApiService.GetSecurityRolesByIdPermissionsExecute(r)
 }
 
 /*
+Creates a new V1 GET /Security/Roles/{id}/Permissions request.
+
 GetSecurityRolesByIdPermissions Returns all permissions associated with the security role that matches the id.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -607,7 +619,7 @@ func (a *SecurityRolePermissionsApiService) NewGetSecurityRolesByIdPermissionsRe
 	}
 }
 
-// Executes the API request GET /Security/Roles/{id}/Permissions
+// Executes the API request V1 GET /Security/Roles/{id}/Permissions
 //
 //	@return []SecuritySecurityRolePermissionsAreaPermissionResponse
 func (a *SecurityRolePermissionsApiService) GetSecurityRolesByIdPermissionsExecute(r ApiGetSecurityRolesByIdPermissionsRequest) ([]SecuritySecurityRolePermissionsAreaPermissionResponse, *http.Response, error) {
@@ -701,7 +713,7 @@ func (a *SecurityRolePermissionsApiService) GetSecurityRolesByIdPermissionsExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Security/Roles/{id}/Permissions/Collections
+// Request for V1 GET /Security/Roles/{id}/Permissions/Collections
 type ApiGetSecurityRolesByIdPermissionsCollectionsRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolePermissionsApiService
@@ -722,11 +734,14 @@ func (r ApiGetSecurityRolesByIdPermissionsCollectionsRequest) XKeyfactorApiVersi
 	return r
 }
 
+// Executes the V1 GET /Security/Roles/{id}/Permissions/Collections request context
 func (r ApiGetSecurityRolesByIdPermissionsCollectionsRequest) Execute() ([]SecuritySecurityRolePermissionsCollectionPermissionResponse, *http.Response, error) {
 	return r.ApiService.GetSecurityRolesByIdPermissionsCollectionsExecute(r)
 }
 
 /*
+Creates a new V1 GET /Security/Roles/{id}/Permissions/Collections request.
+
 GetSecurityRolesByIdPermissionsCollections Returns all collection permissions associated with the security role that matches the id.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -748,7 +763,7 @@ func (a *SecurityRolePermissionsApiService) NewGetSecurityRolesByIdPermissionsCo
 	}
 }
 
-// Executes the API request GET /Security/Roles/{id}/Permissions/Collections
+// Executes the API request V1 GET /Security/Roles/{id}/Permissions/Collections
 //
 //	@return []SecuritySecurityRolePermissionsCollectionPermissionResponse
 func (a *SecurityRolePermissionsApiService) GetSecurityRolesByIdPermissionsCollectionsExecute(r ApiGetSecurityRolesByIdPermissionsCollectionsRequest) ([]SecuritySecurityRolePermissionsCollectionPermissionResponse, *http.Response, error) {
@@ -842,7 +857,7 @@ func (a *SecurityRolePermissionsApiService) GetSecurityRolesByIdPermissionsColle
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Security/Roles/{id}/Permissions/Containers
+// Request for V1 GET /Security/Roles/{id}/Permissions/Containers
 type ApiGetSecurityRolesByIdPermissionsContainersRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolePermissionsApiService
@@ -863,11 +878,14 @@ func (r ApiGetSecurityRolesByIdPermissionsContainersRequest) XKeyfactorApiVersio
 	return r
 }
 
+// Executes the V1 GET /Security/Roles/{id}/Permissions/Containers request context
 func (r ApiGetSecurityRolesByIdPermissionsContainersRequest) Execute() ([]SecuritySecurityRolePermissionsContainerPermissionResponse, *http.Response, error) {
 	return r.ApiService.GetSecurityRolesByIdPermissionsContainersExecute(r)
 }
 
 /*
+Creates a new V1 GET /Security/Roles/{id}/Permissions/Containers request.
+
 GetSecurityRolesByIdPermissionsContainers Returns all container permissions associated with the security role that matches the id.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -889,7 +907,7 @@ func (a *SecurityRolePermissionsApiService) NewGetSecurityRolesByIdPermissionsCo
 	}
 }
 
-// Executes the API request GET /Security/Roles/{id}/Permissions/Containers
+// Executes the API request V1 GET /Security/Roles/{id}/Permissions/Containers
 //
 //	@return []SecuritySecurityRolePermissionsContainerPermissionResponse
 func (a *SecurityRolePermissionsApiService) GetSecurityRolesByIdPermissionsContainersExecute(r ApiGetSecurityRolesByIdPermissionsContainersRequest) ([]SecuritySecurityRolePermissionsContainerPermissionResponse, *http.Response, error) {
@@ -983,7 +1001,7 @@ func (a *SecurityRolePermissionsApiService) GetSecurityRolesByIdPermissionsConta
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Security/Roles/{id}/Permissions/Global
+// Request for V1 GET /Security/Roles/{id}/Permissions/Global
 type ApiGetSecurityRolesByIdPermissionsGlobalRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolePermissionsApiService
@@ -1004,11 +1022,14 @@ func (r ApiGetSecurityRolesByIdPermissionsGlobalRequest) XKeyfactorApiVersion(xK
 	return r
 }
 
+// Executes the V1 GET /Security/Roles/{id}/Permissions/Global request context
 func (r ApiGetSecurityRolesByIdPermissionsGlobalRequest) Execute() ([]SecuritySecurityRolePermissionsGlobalPermissionResponse, *http.Response, error) {
 	return r.ApiService.GetSecurityRolesByIdPermissionsGlobalExecute(r)
 }
 
 /*
+Creates a new V1 GET /Security/Roles/{id}/Permissions/Global request.
+
 GetSecurityRolesByIdPermissionsGlobal Returns all global permissions associated with the security role that matches the id.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1030,7 +1051,7 @@ func (a *SecurityRolePermissionsApiService) NewGetSecurityRolesByIdPermissionsGl
 	}
 }
 
-// Executes the API request GET /Security/Roles/{id}/Permissions/Global
+// Executes the API request V1 GET /Security/Roles/{id}/Permissions/Global
 //
 //	@return []SecuritySecurityRolePermissionsGlobalPermissionResponse
 func (a *SecurityRolePermissionsApiService) GetSecurityRolesByIdPermissionsGlobalExecute(r ApiGetSecurityRolesByIdPermissionsGlobalRequest) ([]SecuritySecurityRolePermissionsGlobalPermissionResponse, *http.Response, error) {
@@ -1124,7 +1145,7 @@ func (a *SecurityRolePermissionsApiService) GetSecurityRolesByIdPermissionsGloba
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Security/Roles/{id}/Permissions/PamProviders
+// Request for V1 GET /Security/Roles/{id}/Permissions/PamProviders
 type ApiGetSecurityRolesByIdPermissionsPamProvidersRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolePermissionsApiService
@@ -1145,11 +1166,14 @@ func (r ApiGetSecurityRolesByIdPermissionsPamProvidersRequest) XKeyfactorApiVers
 	return r
 }
 
+// Executes the V1 GET /Security/Roles/{id}/Permissions/PamProviders request context
 func (r ApiGetSecurityRolesByIdPermissionsPamProvidersRequest) Execute() ([]SecuritySecurityRolePermissionsPamProviderPermissionResponse, *http.Response, error) {
 	return r.ApiService.GetSecurityRolesByIdPermissionsPamProvidersExecute(r)
 }
 
 /*
+Creates a new V1 GET /Security/Roles/{id}/Permissions/PamProviders request.
+
 GetSecurityRolesByIdPermissionsPamProviders Returns all PAM provider permissions associated with the security role that matches the id.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1171,7 +1195,7 @@ func (a *SecurityRolePermissionsApiService) NewGetSecurityRolesByIdPermissionsPa
 	}
 }
 
-// Executes the API request GET /Security/Roles/{id}/Permissions/PamProviders
+// Executes the API request V1 GET /Security/Roles/{id}/Permissions/PamProviders
 //
 //	@return []SecuritySecurityRolePermissionsPamProviderPermissionResponse
 func (a *SecurityRolePermissionsApiService) GetSecurityRolesByIdPermissionsPamProvidersExecute(r ApiGetSecurityRolesByIdPermissionsPamProvidersRequest) ([]SecuritySecurityRolePermissionsPamProviderPermissionResponse, *http.Response, error) {
@@ -1265,7 +1289,7 @@ func (a *SecurityRolePermissionsApiService) GetSecurityRolesByIdPermissionsPamPr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Security/Roles/{id}/Permissions/Collections
+// Request for V1 PUT /Security/Roles/{id}/Permissions/Collections
 type ApiUpdateSecurityRolesByIdPermissionsCollectionsRequest struct {
 	ctx                                                        context.Context
 	ApiService                                                 *SecurityRolePermissionsApiService
@@ -1293,11 +1317,14 @@ func (r ApiUpdateSecurityRolesByIdPermissionsCollectionsRequest) SecuritySecurit
 	return r
 }
 
+// Executes the V1 PUT /Security/Roles/{id}/Permissions/Collections request context
 func (r ApiUpdateSecurityRolesByIdPermissionsCollectionsRequest) Execute() ([]SecuritySecurityRolePermissionsCollectionPermissionResponse, *http.Response, error) {
 	return r.ApiService.UpdateSecurityRolesByIdPermissionsCollectionsExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Security/Roles/{id}/Permissions/Collections request.
+
 UpdateSecurityRolesByIdPermissionsCollections Sets collection permissions to the security role that matches the id.
 
 ### Valid Permissions ###
@@ -1328,7 +1355,7 @@ func (a *SecurityRolePermissionsApiService) NewUpdateSecurityRolesByIdPermission
 	}
 }
 
-// Executes the API request PUT /Security/Roles/{id}/Permissions/Collections
+// Executes the API request V1 PUT /Security/Roles/{id}/Permissions/Collections
 //
 //	@return []SecuritySecurityRolePermissionsCollectionPermissionResponse
 func (a *SecurityRolePermissionsApiService) UpdateSecurityRolesByIdPermissionsCollectionsExecute(r ApiUpdateSecurityRolesByIdPermissionsCollectionsRequest) ([]SecuritySecurityRolePermissionsCollectionPermissionResponse, *http.Response, error) {
@@ -1424,7 +1451,7 @@ func (a *SecurityRolePermissionsApiService) UpdateSecurityRolesByIdPermissionsCo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Security/Roles/{id}/Permissions/Containers
+// Request for V1 PUT /Security/Roles/{id}/Permissions/Containers
 type ApiUpdateSecurityRolesByIdPermissionsContainersRequest struct {
 	ctx                                                       context.Context
 	ApiService                                                *SecurityRolePermissionsApiService
@@ -1452,11 +1479,14 @@ func (r ApiUpdateSecurityRolesByIdPermissionsContainersRequest) SecuritySecurity
 	return r
 }
 
+// Executes the V1 PUT /Security/Roles/{id}/Permissions/Containers request context
 func (r ApiUpdateSecurityRolesByIdPermissionsContainersRequest) Execute() ([]SecuritySecurityRolePermissionsContainerPermissionResponse, *http.Response, error) {
 	return r.ApiService.UpdateSecurityRolesByIdPermissionsContainersExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Security/Roles/{id}/Permissions/Containers request.
+
 UpdateSecurityRolesByIdPermissionsContainers Sets container permissions to the security role that matches the id.
 
 ### Valid Permissions ###
@@ -1485,7 +1515,7 @@ func (a *SecurityRolePermissionsApiService) NewUpdateSecurityRolesByIdPermission
 	}
 }
 
-// Executes the API request PUT /Security/Roles/{id}/Permissions/Containers
+// Executes the API request V1 PUT /Security/Roles/{id}/Permissions/Containers
 //
 //	@return []SecuritySecurityRolePermissionsContainerPermissionResponse
 func (a *SecurityRolePermissionsApiService) UpdateSecurityRolesByIdPermissionsContainersExecute(r ApiUpdateSecurityRolesByIdPermissionsContainersRequest) ([]SecuritySecurityRolePermissionsContainerPermissionResponse, *http.Response, error) {
@@ -1581,7 +1611,7 @@ func (a *SecurityRolePermissionsApiService) UpdateSecurityRolesByIdPermissionsCo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Security/Roles/{id}/Permissions/Global
+// Request for V1 PUT /Security/Roles/{id}/Permissions/Global
 type ApiUpdateSecurityRolesByIdPermissionsGlobalRequest struct {
 	ctx                                                    context.Context
 	ApiService                                             *SecurityRolePermissionsApiService
@@ -1609,11 +1639,14 @@ func (r ApiUpdateSecurityRolesByIdPermissionsGlobalRequest) SecuritySecurityRole
 	return r
 }
 
+// Executes the V1 PUT /Security/Roles/{id}/Permissions/Global request context
 func (r ApiUpdateSecurityRolesByIdPermissionsGlobalRequest) Execute() ([]SecuritySecurityRolePermissionsGlobalPermissionResponse, *http.Response, error) {
 	return r.ApiService.UpdateSecurityRolesByIdPermissionsGlobalExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Security/Roles/{id}/Permissions/Global request.
+
 UpdateSecurityRolesByIdPermissionsGlobal Adds global permissions to the security role that matches the id.
 
 ### Valid Global Permissions ###
@@ -1697,7 +1730,7 @@ func (a *SecurityRolePermissionsApiService) NewUpdateSecurityRolesByIdPermission
 	}
 }
 
-// Executes the API request PUT /Security/Roles/{id}/Permissions/Global
+// Executes the API request V1 PUT /Security/Roles/{id}/Permissions/Global
 //
 //	@return []SecuritySecurityRolePermissionsGlobalPermissionResponse
 func (a *SecurityRolePermissionsApiService) UpdateSecurityRolesByIdPermissionsGlobalExecute(r ApiUpdateSecurityRolesByIdPermissionsGlobalRequest) ([]SecuritySecurityRolePermissionsGlobalPermissionResponse, *http.Response, error) {
@@ -1793,7 +1826,7 @@ func (a *SecurityRolePermissionsApiService) UpdateSecurityRolesByIdPermissionsGl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Security/Roles/{id}/Permissions/PamProviders
+// Request for V1 PUT /Security/Roles/{id}/Permissions/PamProviders
 type ApiUpdateSecurityRolesByIdPermissionsPamProvidersRequest struct {
 	ctx                                                         context.Context
 	ApiService                                                  *SecurityRolePermissionsApiService
@@ -1821,11 +1854,14 @@ func (r ApiUpdateSecurityRolesByIdPermissionsPamProvidersRequest) SecuritySecuri
 	return r
 }
 
+// Executes the V1 PUT /Security/Roles/{id}/Permissions/PamProviders request context
 func (r ApiUpdateSecurityRolesByIdPermissionsPamProvidersRequest) Execute() ([]SecuritySecurityRolePermissionsPamProviderPermissionResponse, *http.Response, error) {
 	return r.ApiService.UpdateSecurityRolesByIdPermissionsPamProvidersExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Security/Roles/{id}/Permissions/PamProviders request.
+
 UpdateSecurityRolesByIdPermissionsPamProviders Sets PAM provider permissions to the security role that matches the id.
 
 ### Valid Permissions ###
@@ -1853,7 +1889,7 @@ func (a *SecurityRolePermissionsApiService) NewUpdateSecurityRolesByIdPermission
 	}
 }
 
-// Executes the API request PUT /Security/Roles/{id}/Permissions/PamProviders
+// Executes the API request V1 PUT /Security/Roles/{id}/Permissions/PamProviders
 //
 //	@return []SecuritySecurityRolePermissionsPamProviderPermissionResponse
 func (a *SecurityRolePermissionsApiService) UpdateSecurityRolesByIdPermissionsPamProvidersExecute(r ApiUpdateSecurityRolesByIdPermissionsPamProvidersRequest) ([]SecuritySecurityRolePermissionsPamProviderPermissionResponse, *http.Response, error) {

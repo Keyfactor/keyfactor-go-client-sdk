@@ -32,7 +32,7 @@ import (
 // TemplateApiService TemplateApi service
 type TemplateApiService service
 
-// Request for POST /Templates/Import
+// Request for V1 POST /Templates/Import
 type ApiCreateTemplatesImportRequest struct {
 	ctx                                           context.Context
 	ApiService                                    *TemplateApiService
@@ -59,11 +59,14 @@ func (r ApiCreateTemplatesImportRequest) ConfigurationTenantConfigurationTenantR
 	return r
 }
 
+// Executes the V1 POST /Templates/Import request context
 func (r ApiCreateTemplatesImportRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateTemplatesImportExecute(r)
 }
 
 /*
+Creates a new V1 POST /Templates/Import request.
+
 CreateTemplatesImport Imports templates from the provided configuration tenant
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -165,7 +168,7 @@ func (a *TemplateApiService) CreateTemplatesImportExecute(r ApiCreateTemplatesIm
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /Templates
+// Request for V1 GET /Templates
 type ApiGetTemplatesRequest struct {
 	ctx                     context.Context
 	ApiService              *TemplateApiService
@@ -215,11 +218,14 @@ func (r ApiGetTemplatesRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string
 	return r
 }
 
+// Executes the V1 GET /Templates request context
 func (r ApiGetTemplatesRequest) Execute() ([]TemplatesTemplateCollectionRetrievalResponse, *http.Response, error) {
 	return r.ApiService.GetTemplatesExecute(r)
 }
 
 /*
+Creates a new V1 GET /Templates request.
+
 GetTemplates Returns all certificate templates according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -238,7 +244,7 @@ func (a *TemplateApiService) NewGetTemplatesRequest(ctx context.Context) ApiGetT
 	}
 }
 
-// Executes the API request GET /Templates
+// Executes the API request V1 GET /Templates
 //
 //	@return []TemplatesTemplateCollectionRetrievalResponse
 func (a *TemplateApiService) GetTemplatesExecute(r ApiGetTemplatesRequest) ([]TemplatesTemplateCollectionRetrievalResponse, *http.Response, error) {
@@ -346,7 +352,7 @@ func (a *TemplateApiService) GetTemplatesExecute(r ApiGetTemplatesRequest) ([]Te
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Templates/{id}
+// Request for V1 GET /Templates/{id}
 type ApiGetTemplatesByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *TemplateApiService
@@ -367,11 +373,14 @@ func (r ApiGetTemplatesByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersion st
 	return r
 }
 
+// Executes the V1 GET /Templates/{id} request context
 func (r ApiGetTemplatesByIdRequest) Execute() (*TemplatesTemplateRetrievalResponse, *http.Response, error) {
 	return r.ApiService.GetTemplatesByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Templates/{id} request.
+
 GetTemplatesById Returns the certificate template associated with the provided id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -393,7 +402,7 @@ func (a *TemplateApiService) NewGetTemplatesByIdRequest(ctx context.Context, id 
 	}
 }
 
-// Executes the API request GET /Templates/{id}
+// Executes the API request V1 GET /Templates/{id}
 //
 //	@return TemplatesTemplateRetrievalResponse
 func (a *TemplateApiService) GetTemplatesByIdExecute(r ApiGetTemplatesByIdRequest) (*TemplatesTemplateRetrievalResponse, *http.Response, error) {
@@ -487,7 +496,7 @@ func (a *TemplateApiService) GetTemplatesByIdExecute(r ApiGetTemplatesByIdReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Templates/Settings
+// Request for V1 GET /Templates/Settings
 type ApiGetTemplatesSettingsRequest struct {
 	ctx                     context.Context
 	ApiService              *TemplateApiService
@@ -507,11 +516,14 @@ func (r ApiGetTemplatesSettingsRequest) XKeyfactorApiVersion(xKeyfactorApiVersio
 	return r
 }
 
+// Executes the V1 GET /Templates/Settings request context
 func (r ApiGetTemplatesSettingsRequest) Execute() (*TemplatesGlobalGlobalTemplateSettingsResponse, *http.Response, error) {
 	return r.ApiService.GetTemplatesSettingsExecute(r)
 }
 
 /*
+Creates a new V1 GET /Templates/Settings request.
+
 GetTemplatesSettings Gets the global template settings.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -530,7 +542,7 @@ func (a *TemplateApiService) NewGetTemplatesSettingsRequest(ctx context.Context)
 	}
 }
 
-// Executes the API request GET /Templates/Settings
+// Executes the API request V1 GET /Templates/Settings
 //
 //	@return TemplatesGlobalGlobalTemplateSettingsResponse
 func (a *TemplateApiService) GetTemplatesSettingsExecute(r ApiGetTemplatesSettingsRequest) (*TemplatesGlobalGlobalTemplateSettingsResponse, *http.Response, error) {
@@ -623,7 +635,7 @@ func (a *TemplateApiService) GetTemplatesSettingsExecute(r ApiGetTemplatesSettin
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Templates/SubjectParts
+// Request for V1 GET /Templates/SubjectParts
 type ApiGetTemplatesSubjectPartsRequest struct {
 	ctx                     context.Context
 	ApiService              *TemplateApiService
@@ -643,11 +655,14 @@ func (r ApiGetTemplatesSubjectPartsRequest) XKeyfactorApiVersion(xKeyfactorApiVe
 	return r
 }
 
+// Executes the V1 GET /Templates/SubjectParts request context
 func (r ApiGetTemplatesSubjectPartsRequest) Execute() ([]EnrollmentPatternsValidSubjectPartResponse, *http.Response, error) {
 	return r.ApiService.GetTemplatesSubjectPartsExecute(r)
 }
 
 /*
+Creates a new V1 GET /Templates/SubjectParts request.
+
 GetTemplatesSubjectParts Returns the valid subject parts possible for regular expressions.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -666,7 +681,7 @@ func (a *TemplateApiService) NewGetTemplatesSubjectPartsRequest(ctx context.Cont
 	}
 }
 
-// Executes the API request GET /Templates/SubjectParts
+// Executes the API request V1 GET /Templates/SubjectParts
 //
 //	@return []EnrollmentPatternsValidSubjectPartResponse
 func (a *TemplateApiService) GetTemplatesSubjectPartsExecute(r ApiGetTemplatesSubjectPartsRequest) ([]EnrollmentPatternsValidSubjectPartResponse, *http.Response, error) {
@@ -759,7 +774,7 @@ func (a *TemplateApiService) GetTemplatesSubjectPartsExecute(r ApiGetTemplatesSu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Templates
+// Request for V1 PUT /Templates
 type ApiUpdateTemplatesRequest struct {
 	ctx                            context.Context
 	ApiService                     *TemplateApiService
@@ -786,11 +801,14 @@ func (r ApiUpdateTemplatesRequest) TemplatesTemplateUpdateRequest(templatesTempl
 	return r
 }
 
+// Executes the V1 PUT /Templates request context
 func (r ApiUpdateTemplatesRequest) Execute() (*TemplatesTemplateRetrievalResponse, *http.Response, error) {
 	return r.ApiService.UpdateTemplatesExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Templates request.
+
 UpdateTemplates Updates a certificate template according to the provided properties
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -809,7 +827,7 @@ func (a *TemplateApiService) NewUpdateTemplatesRequest(ctx context.Context) ApiU
 	}
 }
 
-// Executes the API request PUT /Templates
+// Executes the API request V1 PUT /Templates
 //
 //	@return TemplatesTemplateRetrievalResponse
 func (a *TemplateApiService) UpdateTemplatesExecute(r ApiUpdateTemplatesRequest) (*TemplatesTemplateRetrievalResponse, *http.Response, error) {
@@ -904,7 +922,7 @@ func (a *TemplateApiService) UpdateTemplatesExecute(r ApiUpdateTemplatesRequest)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Templates/Settings
+// Request for V1 PUT /Templates/Settings
 type ApiUpdateTemplatesSettingsRequest struct {
 	ctx                                          context.Context
 	ApiService                                   *TemplateApiService
@@ -931,11 +949,14 @@ func (r ApiUpdateTemplatesSettingsRequest) TemplatesGlobalGlobalTemplateSettings
 	return r
 }
 
+// Executes the V1 PUT /Templates/Settings request context
 func (r ApiUpdateTemplatesSettingsRequest) Execute() (*TemplatesGlobalGlobalTemplateSettingsResponse, *http.Response, error) {
 	return r.ApiService.UpdateTemplatesSettingsExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Templates/Settings request.
+
 UpdateTemplatesSettings Replaces the existing global template settings.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -954,7 +975,7 @@ func (a *TemplateApiService) NewUpdateTemplatesSettingsRequest(ctx context.Conte
 	}
 }
 
-// Executes the API request PUT /Templates/Settings
+// Executes the API request V1 PUT /Templates/Settings
 //
 //	@return TemplatesGlobalGlobalTemplateSettingsResponse
 func (a *TemplateApiService) UpdateTemplatesSettingsExecute(r ApiUpdateTemplatesSettingsRequest) (*TemplatesGlobalGlobalTemplateSettingsResponse, *http.Response, error) {

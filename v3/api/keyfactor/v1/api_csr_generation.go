@@ -32,7 +32,7 @@ import (
 // CSRGenerationApiService CSRGenerationApi service
 type CSRGenerationApiService service
 
-// Request for POST /CSRGeneration/Generate
+// Request for V1 POST /CSRGeneration/Generate
 type ApiCreateCSRGenerationGenerateRequest struct {
 	ctx                            context.Context
 	ApiService                     *CSRGenerationApiService
@@ -59,11 +59,14 @@ func (r ApiCreateCSRGenerationGenerateRequest) EnrollmentCSRGenerationRequest(en
 	return r
 }
 
+// Executes the V1 POST /CSRGeneration/Generate request context
 func (r ApiCreateCSRGenerationGenerateRequest) Execute() (*CSSCMSDataModelModelsCSRContents, *http.Response, error) {
 	return r.ApiService.CreateCSRGenerationGenerateExecute(r)
 }
 
 /*
+Creates a new V1 POST /CSRGeneration/Generate request.
+
 CreateCSRGenerationGenerate Generates a CSR according the properties provided
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *CSRGenerationApiService) NewCreateCSRGenerationGenerateRequest(ctx cont
 	}
 }
 
-// Executes the API request POST /CSRGeneration/Generate
+// Executes the API request V1 POST /CSRGeneration/Generate
 //
 //	@return CSSCMSDataModelModelsCSRContents
 func (a *CSRGenerationApiService) CreateCSRGenerationGenerateExecute(r ApiCreateCSRGenerationGenerateRequest) (*CSSCMSDataModelModelsCSRContents, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *CSRGenerationApiService) CreateCSRGenerationGenerateExecute(r ApiCreate
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /CSRGeneration/Pending
+// Request for V1 DELETE /CSRGeneration/Pending
 type ApiDeleteCSRGenerationPendingRequest struct {
 	ctx                     context.Context
 	ApiService              *CSRGenerationApiService
@@ -204,11 +207,14 @@ func (r ApiDeleteCSRGenerationPendingRequest) RequestBody(requestBody []int32) A
 	return r
 }
 
+// Executes the V1 DELETE /CSRGeneration/Pending request context
 func (r ApiDeleteCSRGenerationPendingRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteCSRGenerationPendingExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /CSRGeneration/Pending request.
+
 DeleteCSRGenerationPending Deletes the CSRs associated with the provided identifiers
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -310,7 +316,7 @@ func (a *CSRGenerationApiService) DeleteCSRGenerationPendingExecute(r ApiDeleteC
 	return localVarHTTPResponse, nil
 }
 
-// Request for DELETE /CSRGeneration/Pending/{id}
+// Request for V1 DELETE /CSRGeneration/Pending/{id}
 type ApiDeleteCSRGenerationPendingByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CSRGenerationApiService
@@ -331,11 +337,14 @@ func (r ApiDeleteCSRGenerationPendingByIdRequest) XKeyfactorApiVersion(xKeyfacto
 	return r
 }
 
+// Executes the V1 DELETE /CSRGeneration/Pending/{id} request context
 func (r ApiDeleteCSRGenerationPendingByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteCSRGenerationPendingByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /CSRGeneration/Pending/{id} request.
+
 DeleteCSRGenerationPendingById Deletes a CSR associated with the provided identifier
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -445,7 +454,7 @@ func (a *CSRGenerationApiService) DeleteCSRGenerationPendingByIdExecute(r ApiDel
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /CSRGeneration/Pending
+// Request for V1 GET /CSRGeneration/Pending
 type ApiGetCSRGenerationPendingRequest struct {
 	ctx                     context.Context
 	ApiService              *CSRGenerationApiService
@@ -495,11 +504,14 @@ func (r ApiGetCSRGenerationPendingRequest) XKeyfactorApiVersion(xKeyfactorApiVer
 	return r
 }
 
+// Executes the V1 GET /CSRGeneration/Pending request context
 func (r ApiGetCSRGenerationPendingRequest) Execute() ([]CSSCMSDataModelModelsPendingCSRResponse, *http.Response, error) {
 	return r.ApiService.GetCSRGenerationPendingExecute(r)
 }
 
 /*
+Creates a new V1 GET /CSRGeneration/Pending request.
+
 GetCSRGenerationPending Returns a list of the currently pending CSRs according to the provided query
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -518,7 +530,7 @@ func (a *CSRGenerationApiService) NewGetCSRGenerationPendingRequest(ctx context.
 	}
 }
 
-// Executes the API request GET /CSRGeneration/Pending
+// Executes the API request V1 GET /CSRGeneration/Pending
 //
 //	@return []CSSCMSDataModelModelsPendingCSRResponse
 func (a *CSRGenerationApiService) GetCSRGenerationPendingExecute(r ApiGetCSRGenerationPendingRequest) ([]CSSCMSDataModelModelsPendingCSRResponse, *http.Response, error) {
@@ -626,7 +638,7 @@ func (a *CSRGenerationApiService) GetCSRGenerationPendingExecute(r ApiGetCSRGene
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CSRGeneration/Pending/{id}
+// Request for V1 GET /CSRGeneration/Pending/{id}
 type ApiGetCSRGenerationPendingByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CSRGenerationApiService
@@ -647,11 +659,14 @@ func (r ApiGetCSRGenerationPendingByIdRequest) XKeyfactorApiVersion(xKeyfactorAp
 	return r
 }
 
+// Executes the V1 GET /CSRGeneration/Pending/{id} request context
 func (r ApiGetCSRGenerationPendingByIdRequest) Execute() (*CSSCMSDataModelModelsCSRGenerationResponseModel, *http.Response, error) {
 	return r.ApiService.GetCSRGenerationPendingByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /CSRGeneration/Pending/{id} request.
+
 GetCSRGenerationPendingById Returns a previously generated CSR associated with the provided identifier
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -673,7 +688,7 @@ func (a *CSRGenerationApiService) NewGetCSRGenerationPendingByIdRequest(ctx cont
 	}
 }
 
-// Executes the API request GET /CSRGeneration/Pending/{id}
+// Executes the API request V1 GET /CSRGeneration/Pending/{id}
 //
 //	@return CSSCMSDataModelModelsCSRGenerationResponseModel
 func (a *CSRGenerationApiService) GetCSRGenerationPendingByIdExecute(r ApiGetCSRGenerationPendingByIdRequest) (*CSSCMSDataModelModelsCSRGenerationResponseModel, *http.Response, error) {

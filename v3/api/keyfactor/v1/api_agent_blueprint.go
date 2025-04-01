@@ -32,7 +32,7 @@ import (
 // AgentBlueprintApiService AgentBlueprintApi service
 type AgentBlueprintApiService service
 
-// Request for POST /AgentBluePrint/ApplyBlueprint
+// Request for V1 POST /AgentBluePrint/ApplyBlueprint
 type ApiCreateAgentBluePrintApplyBlueprintRequest struct {
 	ctx                     context.Context
 	ApiService              *AgentBlueprintApiService
@@ -66,11 +66,14 @@ func (r ApiCreateAgentBluePrintApplyBlueprintRequest) RequestBody(requestBody []
 	return r
 }
 
+// Executes the V1 POST /AgentBluePrint/ApplyBlueprint request context
 func (r ApiCreateAgentBluePrintApplyBlueprintRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateAgentBluePrintApplyBlueprintExecute(r)
 }
 
 /*
+Creates a new V1 POST /AgentBluePrint/ApplyBlueprint request.
+
 CreateAgentBluePrintApplyBlueprint Applies the selected agent blueprint to the provided agents
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -175,7 +178,7 @@ func (a *AgentBlueprintApiService) CreateAgentBluePrintApplyBlueprintExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-// Request for POST /AgentBluePrint/GenerateBluePrint
+// Request for V1 POST /AgentBluePrint/GenerateBluePrint
 type ApiCreateAgentBluePrintGenerateBluePrintRequest struct {
 	ctx                     context.Context
 	ApiService              *AgentBlueprintApiService
@@ -209,11 +212,14 @@ func (r ApiCreateAgentBluePrintGenerateBluePrintRequest) XKeyfactorApiVersion(xK
 	return r
 }
 
+// Executes the V1 POST /AgentBluePrint/GenerateBluePrint request context
 func (r ApiCreateAgentBluePrintGenerateBluePrintRequest) Execute() (*OrchestratorsAgentBlueprintResponse, *http.Response, error) {
 	return r.ApiService.CreateAgentBluePrintGenerateBluePrintExecute(r)
 }
 
 /*
+Creates a new V1 POST /AgentBluePrint/GenerateBluePrint request.
+
 CreateAgentBluePrintGenerateBluePrint Generates an agent blueprint from the provided agents
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -232,7 +238,7 @@ func (a *AgentBlueprintApiService) NewCreateAgentBluePrintGenerateBluePrintReque
 	}
 }
 
-// Executes the API request POST /AgentBluePrint/GenerateBluePrint
+// Executes the API request V1 POST /AgentBluePrint/GenerateBluePrint
 //
 //	@return OrchestratorsAgentBlueprintResponse
 func (a *AgentBlueprintApiService) CreateAgentBluePrintGenerateBluePrintExecute(r ApiCreateAgentBluePrintGenerateBluePrintRequest) (*OrchestratorsAgentBlueprintResponse, *http.Response, error) {
@@ -331,7 +337,7 @@ func (a *AgentBlueprintApiService) CreateAgentBluePrintGenerateBluePrintExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /AgentBluePrint/{id}
+// Request for V1 DELETE /AgentBluePrint/{id}
 type ApiDeleteAgentBluePrintByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *AgentBlueprintApiService
@@ -352,11 +358,14 @@ func (r ApiDeleteAgentBluePrintByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVe
 	return r
 }
 
+// Executes the V1 DELETE /AgentBluePrint/{id} request context
 func (r ApiDeleteAgentBluePrintByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAgentBluePrintByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /AgentBluePrint/{id} request.
+
 DeleteAgentBluePrintById Deletes an agent blueprint by its Keyfactor identifier
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -460,7 +469,7 @@ func (a *AgentBlueprintApiService) DeleteAgentBluePrintByIdExecute(r ApiDeleteAg
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /AgentBluePrint
+// Request for V1 GET /AgentBluePrint
 type ApiGetAgentBluePrintRequest struct {
 	ctx                     context.Context
 	ApiService              *AgentBlueprintApiService
@@ -504,11 +513,14 @@ func (r ApiGetAgentBluePrintRequest) XKeyfactorApiVersion(xKeyfactorApiVersion s
 	return r
 }
 
+// Executes the V1 GET /AgentBluePrint request context
 func (r ApiGetAgentBluePrintRequest) Execute() ([]OrchestratorsAgentBlueprintResponse, *http.Response, error) {
 	return r.ApiService.GetAgentBluePrintExecute(r)
 }
 
 /*
+Creates a new V1 GET /AgentBluePrint request.
+
 GetAgentBluePrint Returns all agent blueprints according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -527,7 +539,7 @@ func (a *AgentBlueprintApiService) NewGetAgentBluePrintRequest(ctx context.Conte
 	}
 }
 
-// Executes the API request GET /AgentBluePrint
+// Executes the API request V1 GET /AgentBluePrint
 //
 //	@return []OrchestratorsAgentBlueprintResponse
 func (a *AgentBlueprintApiService) GetAgentBluePrintExecute(r ApiGetAgentBluePrintRequest) ([]OrchestratorsAgentBlueprintResponse, *http.Response, error) {
@@ -632,7 +644,7 @@ func (a *AgentBlueprintApiService) GetAgentBluePrintExecute(r ApiGetAgentBluePri
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /AgentBluePrint/{id}
+// Request for V1 GET /AgentBluePrint/{id}
 type ApiGetAgentBluePrintByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *AgentBlueprintApiService
@@ -660,11 +672,14 @@ func (r ApiGetAgentBluePrintByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersi
 	return r
 }
 
+// Executes the V1 GET /AgentBluePrint/{id} request context
 func (r ApiGetAgentBluePrintByIdRequest) Execute() (*OrchestratorsAgentBlueprintResponse, *http.Response, error) {
 	return r.ApiService.GetAgentBluePrintByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /AgentBluePrint/{id} request.
+
 GetAgentBluePrintById Returns an agent blueprint according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -686,7 +701,7 @@ func (a *AgentBlueprintApiService) NewGetAgentBluePrintByIdRequest(ctx context.C
 	}
 }
 
-// Executes the API request GET /AgentBluePrint/{id}
+// Executes the API request V1 GET /AgentBluePrint/{id}
 //
 //	@return OrchestratorsAgentBlueprintResponse
 func (a *AgentBlueprintApiService) GetAgentBluePrintByIdExecute(r ApiGetAgentBluePrintByIdRequest) (*OrchestratorsAgentBlueprintResponse, *http.Response, error) {
@@ -783,7 +798,7 @@ func (a *AgentBlueprintApiService) GetAgentBluePrintByIdExecute(r ApiGetAgentBlu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /AgentBluePrint/{id}/Jobs
+// Request for V1 GET /AgentBluePrint/{id}/Jobs
 type ApiGetAgentBluePrintByIdJobsRequest struct {
 	ctx                     context.Context
 	ApiService              *AgentBlueprintApiService
@@ -828,11 +843,14 @@ func (r ApiGetAgentBluePrintByIdJobsRequest) XKeyfactorApiVersion(xKeyfactorApiV
 	return r
 }
 
+// Executes the V1 GET /AgentBluePrint/{id}/Jobs request context
 func (r ApiGetAgentBluePrintByIdJobsRequest) Execute() ([]OrchestratorsAgentBlueprintJobsResponse, *http.Response, error) {
 	return r.ApiService.GetAgentBluePrintByIdJobsExecute(r)
 }
 
 /*
+Creates a new V1 GET /AgentBluePrint/{id}/Jobs request.
+
 GetAgentBluePrintByIdJobs Gets the agent blueprint scheduled jobs
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -854,7 +872,7 @@ func (a *AgentBlueprintApiService) NewGetAgentBluePrintByIdJobsRequest(ctx conte
 	}
 }
 
-// Executes the API request GET /AgentBluePrint/{id}/Jobs
+// Executes the API request V1 GET /AgentBluePrint/{id}/Jobs
 //
 //	@return []OrchestratorsAgentBlueprintJobsResponse
 func (a *AgentBlueprintApiService) GetAgentBluePrintByIdJobsExecute(r ApiGetAgentBluePrintByIdJobsRequest) ([]OrchestratorsAgentBlueprintJobsResponse, *http.Response, error) {
@@ -960,7 +978,7 @@ func (a *AgentBlueprintApiService) GetAgentBluePrintByIdJobsExecute(r ApiGetAgen
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /AgentBluePrint/{id}/Stores
+// Request for V1 GET /AgentBluePrint/{id}/Stores
 type ApiGetAgentBluePrintByIdStoresRequest struct {
 	ctx                     context.Context
 	ApiService              *AgentBlueprintApiService
@@ -1005,11 +1023,14 @@ func (r ApiGetAgentBluePrintByIdStoresRequest) XKeyfactorApiVersion(xKeyfactorAp
 	return r
 }
 
+// Executes the V1 GET /AgentBluePrint/{id}/Stores request context
 func (r ApiGetAgentBluePrintByIdStoresRequest) Execute() ([]OrchestratorsAgentBlueprintStoresResponse, *http.Response, error) {
 	return r.ApiService.GetAgentBluePrintByIdStoresExecute(r)
 }
 
 /*
+Creates a new V1 GET /AgentBluePrint/{id}/Stores request.
+
 GetAgentBluePrintByIdStores Gets the agent blueprint certificate stores
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1031,7 +1052,7 @@ func (a *AgentBlueprintApiService) NewGetAgentBluePrintByIdStoresRequest(ctx con
 	}
 }
 
-// Executes the API request GET /AgentBluePrint/{id}/Stores
+// Executes the API request V1 GET /AgentBluePrint/{id}/Stores
 //
 //	@return []OrchestratorsAgentBlueprintStoresResponse
 func (a *AgentBlueprintApiService) GetAgentBluePrintByIdStoresExecute(r ApiGetAgentBluePrintByIdStoresRequest) ([]OrchestratorsAgentBlueprintStoresResponse, *http.Response, error) {

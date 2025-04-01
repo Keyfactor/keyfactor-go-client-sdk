@@ -32,7 +32,7 @@ import (
 // AppSettingApiService AppSettingApi service
 type AppSettingApiService service
 
-// Request for GET /AppSetting
+// Request for V1 GET /AppSetting
 type ApiGetAppSettingRequest struct {
 	ctx                     context.Context
 	ApiService              *AppSettingApiService
@@ -52,11 +52,14 @@ func (r ApiGetAppSettingRequest) XKeyfactorApiVersion(xKeyfactorApiVersion strin
 	return r
 }
 
+// Executes the V1 GET /AppSetting request context
 func (r ApiGetAppSettingRequest) Execute() ([]AppSettingsAppSettingResponse, *http.Response, error) {
 	return r.ApiService.GetAppSettingExecute(r)
 }
 
 /*
+Creates a new V1 GET /AppSetting request.
+
 GetAppSetting Get available application settings
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -75,7 +78,7 @@ func (a *AppSettingApiService) NewGetAppSettingRequest(ctx context.Context) ApiG
 	}
 }
 
-// Executes the API request GET /AppSetting
+// Executes the API request V1 GET /AppSetting
 //
 //	@return []AppSettingsAppSettingResponse
 func (a *AppSettingApiService) GetAppSettingExecute(r ApiGetAppSettingRequest) ([]AppSettingsAppSettingResponse, *http.Response, error) {
@@ -168,7 +171,7 @@ func (a *AppSettingApiService) GetAppSettingExecute(r ApiGetAppSettingRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /AppSetting/{id}
+// Request for V1 GET /AppSetting/{id}
 type ApiGetAppSettingByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *AppSettingApiService
@@ -189,11 +192,14 @@ func (r ApiGetAppSettingByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersion s
 	return r
 }
 
+// Executes the V1 GET /AppSetting/{id} request context
 func (r ApiGetAppSettingByIdRequest) Execute() (*AppSettingsAppSettingResponse, *http.Response, error) {
 	return r.ApiService.GetAppSettingByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /AppSetting/{id} request.
+
 GetAppSettingById Get application setting by id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -215,7 +221,7 @@ func (a *AppSettingApiService) NewGetAppSettingByIdRequest(ctx context.Context, 
 	}
 }
 
-// Executes the API request GET /AppSetting/{id}
+// Executes the API request V1 GET /AppSetting/{id}
 //
 //	@return AppSettingsAppSettingResponse
 func (a *AppSettingApiService) GetAppSettingByIdExecute(r ApiGetAppSettingByIdRequest) (*AppSettingsAppSettingResponse, *http.Response, error) {
@@ -315,7 +321,7 @@ func (a *AppSettingApiService) GetAppSettingByIdExecute(r ApiGetAppSettingByIdRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /AppSetting
+// Request for V1 PUT /AppSetting
 type ApiUpdateAppSettingRequest struct {
 	ctx                                    context.Context
 	ApiService                             *AppSettingApiService
@@ -342,11 +348,14 @@ func (r ApiUpdateAppSettingRequest) AppSettingsAppSettingUpdateBulkRequest(appSe
 	return r
 }
 
+// Executes the V1 PUT /AppSetting request context
 func (r ApiUpdateAppSettingRequest) Execute() ([]AppSettingsAppSettingResponse, *http.Response, error) {
 	return r.ApiService.UpdateAppSettingExecute(r)
 }
 
 /*
+Creates a new V1 PUT /AppSetting request.
+
 UpdateAppSetting Bulk update available application settings
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -365,7 +374,7 @@ func (a *AppSettingApiService) NewUpdateAppSettingRequest(ctx context.Context) A
 	}
 }
 
-// Executes the API request PUT /AppSetting
+// Executes the API request V1 PUT /AppSetting
 //
 //	@return []AppSettingsAppSettingResponse
 func (a *AppSettingApiService) UpdateAppSettingExecute(r ApiUpdateAppSettingRequest) ([]AppSettingsAppSettingResponse, *http.Response, error) {
@@ -460,7 +469,7 @@ func (a *AppSettingApiService) UpdateAppSettingExecute(r ApiUpdateAppSettingRequ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /AppSetting/{id}/Set
+// Request for V1 PUT /AppSetting/{id}/Set
 type ApiUpdateAppSettingByIdSetRequest struct {
 	ctx                                context.Context
 	ApiService                         *AppSettingApiService
@@ -488,11 +497,14 @@ func (r ApiUpdateAppSettingByIdSetRequest) AppSettingsAppSettingUpdateRequest(ap
 	return r
 }
 
+// Executes the V1 PUT /AppSetting/{id}/Set request context
 func (r ApiUpdateAppSettingByIdSetRequest) Execute() (*AppSettingsAppSettingResponse, *http.Response, error) {
 	return r.ApiService.UpdateAppSettingByIdSetExecute(r)
 }
 
 /*
+Creates a new V1 PUT /AppSetting/{id}/Set request.
+
 UpdateAppSettingByIdSet Update one application setting by id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -514,7 +526,7 @@ func (a *AppSettingApiService) NewUpdateAppSettingByIdSetRequest(ctx context.Con
 	}
 }
 
-// Executes the API request PUT /AppSetting/{id}/Set
+// Executes the API request V1 PUT /AppSetting/{id}/Set
 //
 //	@return AppSettingsAppSettingResponse
 func (a *AppSettingApiService) UpdateAppSettingByIdSetExecute(r ApiUpdateAppSettingByIdSetRequest) (*AppSettingsAppSettingResponse, *http.Response, error) {
@@ -616,7 +628,7 @@ func (a *AppSettingApiService) UpdateAppSettingByIdSetExecute(r ApiUpdateAppSett
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /AppSetting/{name}/Set
+// Request for V1 PUT /AppSetting/{name}/Set
 type ApiUpdateAppSettingNameSetRequest struct {
 	ctx                                context.Context
 	ApiService                         *AppSettingApiService
@@ -644,11 +656,14 @@ func (r ApiUpdateAppSettingNameSetRequest) AppSettingsAppSettingUpdateRequest(ap
 	return r
 }
 
+// Executes the V1 PUT /AppSetting/{name}/Set request context
 func (r ApiUpdateAppSettingNameSetRequest) Execute() (*AppSettingsAppSettingResponse, *http.Response, error) {
 	return r.ApiService.UpdateAppSettingNameSetExecute(r)
 }
 
 /*
+Creates a new V1 PUT /AppSetting/{name}/Set request.
+
 UpdateAppSettingNameSet Update one application setting by short name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -670,7 +685,7 @@ func (a *AppSettingApiService) NewUpdateAppSettingNameSetRequest(ctx context.Con
 	}
 }
 
-// Executes the API request PUT /AppSetting/{name}/Set
+// Executes the API request V1 PUT /AppSetting/{name}/Set
 //
 //	@return AppSettingsAppSettingResponse
 func (a *AppSettingApiService) UpdateAppSettingNameSetExecute(r ApiUpdateAppSettingNameSetRequest) (*AppSettingsAppSettingResponse, *http.Response, error) {

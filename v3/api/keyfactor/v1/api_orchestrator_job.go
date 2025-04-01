@@ -31,7 +31,7 @@ import (
 // OrchestratorJobApiService OrchestratorJobApi service
 type OrchestratorJobApiService service
 
-// Request for POST /OrchestratorJobs/Acknowledge
+// Request for V1 POST /OrchestratorJobs/Acknowledge
 type ApiCreateOrchestratorJobsAcknowledgeRequest struct {
 	ctx                                   context.Context
 	ApiService                            *OrchestratorJobApiService
@@ -58,11 +58,14 @@ func (r ApiCreateOrchestratorJobsAcknowledgeRequest) OrchestratorJobsAcknowledge
 	return r
 }
 
+// Executes the V1 POST /OrchestratorJobs/Acknowledge request context
 func (r ApiCreateOrchestratorJobsAcknowledgeRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateOrchestratorJobsAcknowledgeExecute(r)
 }
 
 /*
+Creates a new V1 POST /OrchestratorJobs/Acknowledge request.
+
 CreateOrchestratorJobsAcknowledge Acknowledges orchestrator jobs based on the provided information
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -164,7 +167,7 @@ func (a *OrchestratorJobApiService) CreateOrchestratorJobsAcknowledgeExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-// Request for POST /OrchestratorJobs/Custom
+// Request for V1 POST /OrchestratorJobs/Custom
 type ApiCreateOrchestratorJobsCustomRequest struct {
 	ctx                                                     context.Context
 	ApiService                                              *OrchestratorJobApiService
@@ -191,11 +194,14 @@ func (r ApiCreateOrchestratorJobsCustomRequest) CSSCMSDataModelModelsOrchestrato
 	return r
 }
 
+// Executes the V1 POST /OrchestratorJobs/Custom request context
 func (r ApiCreateOrchestratorJobsCustomRequest) Execute() (*OrchestratorJobsJobResponse, *http.Response, error) {
 	return r.ApiService.CreateOrchestratorJobsCustomExecute(r)
 }
 
 /*
+Creates a new V1 POST /OrchestratorJobs/Custom request.
+
 CreateOrchestratorJobsCustom Schedules a job for a custom JobType on the agent using the provided information
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -214,7 +220,7 @@ func (a *OrchestratorJobApiService) NewCreateOrchestratorJobsCustomRequest(ctx c
 	}
 }
 
-// Executes the API request POST /OrchestratorJobs/Custom
+// Executes the API request V1 POST /OrchestratorJobs/Custom
 //
 //	@return OrchestratorJobsJobResponse
 func (a *OrchestratorJobApiService) CreateOrchestratorJobsCustomExecute(r ApiCreateOrchestratorJobsCustomRequest) (*OrchestratorJobsJobResponse, *http.Response, error) {
@@ -309,7 +315,7 @@ func (a *OrchestratorJobApiService) CreateOrchestratorJobsCustomExecute(r ApiCre
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /OrchestratorJobs/Custom/Bulk
+// Request for V1 POST /OrchestratorJobs/Custom/Bulk
 type ApiCreateOrchestratorJobsCustomBulkRequest struct {
 	ctx                                                         context.Context
 	ApiService                                                  *OrchestratorJobApiService
@@ -336,11 +342,14 @@ func (r ApiCreateOrchestratorJobsCustomBulkRequest) CSSCMSDataModelModelsOrchest
 	return r
 }
 
+// Executes the V1 POST /OrchestratorJobs/Custom/Bulk request context
 func (r ApiCreateOrchestratorJobsCustomBulkRequest) Execute() (*OrchestratorJobsBulkJobResponse, *http.Response, error) {
 	return r.ApiService.CreateOrchestratorJobsCustomBulkExecute(r)
 }
 
 /*
+Creates a new V1 POST /OrchestratorJobs/Custom/Bulk request.
+
 CreateOrchestratorJobsCustomBulk Schedules the same job for a custom JobType on the specified agents using the provided information
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -359,7 +368,7 @@ func (a *OrchestratorJobApiService) NewCreateOrchestratorJobsCustomBulkRequest(c
 	}
 }
 
-// Executes the API request POST /OrchestratorJobs/Custom/Bulk
+// Executes the API request V1 POST /OrchestratorJobs/Custom/Bulk
 //
 //	@return OrchestratorJobsBulkJobResponse
 func (a *OrchestratorJobApiService) CreateOrchestratorJobsCustomBulkExecute(r ApiCreateOrchestratorJobsCustomBulkRequest) (*OrchestratorJobsBulkJobResponse, *http.Response, error) {
@@ -454,7 +463,7 @@ func (a *OrchestratorJobApiService) CreateOrchestratorJobsCustomBulkExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /OrchestratorJobs/Reschedule
+// Request for V1 POST /OrchestratorJobs/Reschedule
 type ApiCreateOrchestratorJobsRescheduleRequest struct {
 	ctx                                  context.Context
 	ApiService                           *OrchestratorJobApiService
@@ -481,11 +490,14 @@ func (r ApiCreateOrchestratorJobsRescheduleRequest) OrchestratorJobsRescheduleJo
 	return r
 }
 
+// Executes the V1 POST /OrchestratorJobs/Reschedule request context
 func (r ApiCreateOrchestratorJobsRescheduleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateOrchestratorJobsRescheduleExecute(r)
 }
 
 /*
+Creates a new V1 POST /OrchestratorJobs/Reschedule request.
+
 CreateOrchestratorJobsReschedule Reschedules orchestrator jobs based on the provided information
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -587,7 +599,7 @@ func (a *OrchestratorJobApiService) CreateOrchestratorJobsRescheduleExecute(r Ap
 	return localVarHTTPResponse, nil
 }
 
-// Request for POST /OrchestratorJobs/Unschedule
+// Request for V1 POST /OrchestratorJobs/Unschedule
 type ApiCreateOrchestratorJobsUnscheduleRequest struct {
 	ctx                                  context.Context
 	ApiService                           *OrchestratorJobApiService
@@ -614,11 +626,14 @@ func (r ApiCreateOrchestratorJobsUnscheduleRequest) OrchestratorJobsUnscheduleJo
 	return r
 }
 
+// Executes the V1 POST /OrchestratorJobs/Unschedule request context
 func (r ApiCreateOrchestratorJobsUnscheduleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateOrchestratorJobsUnscheduleExecute(r)
 }
 
 /*
+Creates a new V1 POST /OrchestratorJobs/Unschedule request.
+
 CreateOrchestratorJobsUnschedule Unschedules orchestrator jobs based on the provided information
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -720,7 +735,7 @@ func (a *OrchestratorJobApiService) CreateOrchestratorJobsUnscheduleExecute(r Ap
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /OrchestratorJobs/JobHistory
+// Request for V1 GET /OrchestratorJobs/JobHistory
 type ApiGetOrchestratorJobsJobHistoryRequest struct {
 	ctx                     context.Context
 	ApiService              *OrchestratorJobApiService
@@ -770,11 +785,14 @@ func (r ApiGetOrchestratorJobsJobHistoryRequest) XKeyfactorApiVersion(xKeyfactor
 	return r
 }
 
+// Executes the V1 GET /OrchestratorJobs/JobHistory request context
 func (r ApiGetOrchestratorJobsJobHistoryRequest) Execute() ([]CertificateStoresJobHistoryResponse, *http.Response, error) {
 	return r.ApiService.GetOrchestratorJobsJobHistoryExecute(r)
 }
 
 /*
+Creates a new V1 GET /OrchestratorJobs/JobHistory request.
+
 GetOrchestratorJobsJobHistory Returns all histories of an orchestrator job according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -793,7 +811,7 @@ func (a *OrchestratorJobApiService) NewGetOrchestratorJobsJobHistoryRequest(ctx 
 	}
 }
 
-// Executes the API request GET /OrchestratorJobs/JobHistory
+// Executes the API request V1 GET /OrchestratorJobs/JobHistory
 //
 //	@return []CertificateStoresJobHistoryResponse
 func (a *OrchestratorJobApiService) GetOrchestratorJobsJobHistoryExecute(r ApiGetOrchestratorJobsJobHistoryRequest) ([]CertificateStoresJobHistoryResponse, *http.Response, error) {
@@ -901,7 +919,7 @@ func (a *OrchestratorJobApiService) GetOrchestratorJobsJobHistoryExecute(r ApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /OrchestratorJobs/JobStatus/Data
+// Request for V1 GET /OrchestratorJobs/JobStatus/Data
 type ApiGetOrchestratorJobsJobStatusDataRequest struct {
 	ctx                     context.Context
 	ApiService              *OrchestratorJobApiService
@@ -928,11 +946,14 @@ func (r ApiGetOrchestratorJobsJobStatusDataRequest) XKeyfactorApiVersion(xKeyfac
 	return r
 }
 
+// Executes the V1 GET /OrchestratorJobs/JobStatus/Data request context
 func (r ApiGetOrchestratorJobsJobStatusDataRequest) Execute() (*OrchestratorJobsCustomJobResultDataResponse, *http.Response, error) {
 	return r.ApiService.GetOrchestratorJobsJobStatusDataExecute(r)
 }
 
 /*
+Creates a new V1 GET /OrchestratorJobs/JobStatus/Data request.
+
 GetOrchestratorJobsJobStatusData Retrieves the results of a custom job using the provided information
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -951,7 +972,7 @@ func (a *OrchestratorJobApiService) NewGetOrchestratorJobsJobStatusDataRequest(c
 	}
 }
 
-// Executes the API request GET /OrchestratorJobs/JobStatus/Data
+// Executes the API request V1 GET /OrchestratorJobs/JobStatus/Data
 //
 //	@return OrchestratorJobsCustomJobResultDataResponse
 func (a *OrchestratorJobApiService) GetOrchestratorJobsJobStatusDataExecute(r ApiGetOrchestratorJobsJobStatusDataRequest) (*OrchestratorJobsCustomJobResultDataResponse, *http.Response, error) {
@@ -1048,7 +1069,7 @@ func (a *OrchestratorJobApiService) GetOrchestratorJobsJobStatusDataExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /OrchestratorJobs/ScheduledJobs
+// Request for V1 GET /OrchestratorJobs/ScheduledJobs
 type ApiGetOrchestratorJobsScheduledJobsRequest struct {
 	ctx                     context.Context
 	ApiService              *OrchestratorJobApiService
@@ -1098,11 +1119,14 @@ func (r ApiGetOrchestratorJobsScheduledJobsRequest) XKeyfactorApiVersion(xKeyfac
 	return r
 }
 
+// Executes the V1 GET /OrchestratorJobs/ScheduledJobs request context
 func (r ApiGetOrchestratorJobsScheduledJobsRequest) Execute() ([]CSSCMSDataModelModelsOrchestratorJobsJob, *http.Response, error) {
 	return r.ApiService.GetOrchestratorJobsScheduledJobsExecute(r)
 }
 
 /*
+Creates a new V1 GET /OrchestratorJobs/ScheduledJobs request.
+
 GetOrchestratorJobsScheduledJobs Returns all scheduled orchestrator jobs according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1121,7 +1145,7 @@ func (a *OrchestratorJobApiService) NewGetOrchestratorJobsScheduledJobsRequest(c
 	}
 }
 
-// Executes the API request GET /OrchestratorJobs/ScheduledJobs
+// Executes the API request V1 GET /OrchestratorJobs/ScheduledJobs
 //
 //	@return []CSSCMSDataModelModelsOrchestratorJobsJob
 func (a *OrchestratorJobApiService) GetOrchestratorJobsScheduledJobsExecute(r ApiGetOrchestratorJobsScheduledJobsRequest) ([]CSSCMSDataModelModelsOrchestratorJobsJob, *http.Response, error) {

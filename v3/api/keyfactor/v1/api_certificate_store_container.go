@@ -32,7 +32,7 @@ import (
 // CertificateStoreContainerApiService CertificateStoreContainerApi service
 type CertificateStoreContainerApiService service
 
-// Request for POST /CertificateStoreContainers
+// Request for V1 POST /CertificateStoreContainers
 type ApiCreateCertificateStoreContainersRequest struct {
 	ctx                                            context.Context
 	ApiService                                     *CertificateStoreContainerApiService
@@ -59,11 +59,14 @@ func (r ApiCreateCertificateStoreContainersRequest) CSSCMSDataModelModelsCertSto
 	return r
 }
 
+// Executes the V1 POST /CertificateStoreContainers request context
 func (r ApiCreateCertificateStoreContainersRequest) Execute() (*CertificateStoreContainersCertificateStoreContainerResponse, *http.Response, error) {
 	return r.ApiService.CreateCertificateStoreContainersExecute(r)
 }
 
 /*
+Creates a new V1 POST /CertificateStoreContainers request.
+
 CreateCertificateStoreContainers Add a certificate store container
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *CertificateStoreContainerApiService) NewCreateCertificateStoreContainer
 	}
 }
 
-// Executes the API request POST /CertificateStoreContainers
+// Executes the API request V1 POST /CertificateStoreContainers
 //
 //	@return CertificateStoreContainersCertificateStoreContainerResponse
 func (a *CertificateStoreContainerApiService) CreateCertificateStoreContainersExecute(r ApiCreateCertificateStoreContainersRequest) (*CertificateStoreContainersCertificateStoreContainerResponse, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *CertificateStoreContainerApiService) CreateCertificateStoreContainersEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /CertificateStoreContainers/{id}
+// Request for V1 DELETE /CertificateStoreContainers/{id}
 type ApiDeleteCertificateStoreContainersByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateStoreContainerApiService
@@ -198,11 +201,14 @@ func (r ApiDeleteCertificateStoreContainersByIdRequest) XKeyfactorApiVersion(xKe
 	return r
 }
 
+// Executes the V1 DELETE /CertificateStoreContainers/{id} request context
 func (r ApiDeleteCertificateStoreContainersByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteCertificateStoreContainersByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /CertificateStoreContainers/{id} request.
+
 DeleteCertificateStoreContainersById Delete a certificate store container
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -306,7 +312,7 @@ func (a *CertificateStoreContainerApiService) DeleteCertificateStoreContainersBy
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateStoreContainers
+// Request for V1 GET /CertificateStoreContainers
 type ApiGetCertificateStoreContainersRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateStoreContainerApiService
@@ -356,11 +362,14 @@ func (r ApiGetCertificateStoreContainersRequest) XKeyfactorApiVersion(xKeyfactor
 	return r
 }
 
+// Executes the V1 GET /CertificateStoreContainers request context
 func (r ApiGetCertificateStoreContainersRequest) Execute() ([]CSSCMSDataModelModelsCertificateStoreContainerListResponse, *http.Response, error) {
 	return r.ApiService.GetCertificateStoreContainersExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateStoreContainers request.
+
 GetCertificateStoreContainers Returns all certificate store container according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -379,7 +388,7 @@ func (a *CertificateStoreContainerApiService) NewGetCertificateStoreContainersRe
 	}
 }
 
-// Executes the API request GET /CertificateStoreContainers
+// Executes the API request V1 GET /CertificateStoreContainers
 //
 //	@return []CSSCMSDataModelModelsCertificateStoreContainerListResponse
 func (a *CertificateStoreContainerApiService) GetCertificateStoreContainersExecute(r ApiGetCertificateStoreContainersRequest) ([]CSSCMSDataModelModelsCertificateStoreContainerListResponse, *http.Response, error) {
@@ -487,7 +496,7 @@ func (a *CertificateStoreContainerApiService) GetCertificateStoreContainersExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateStoreContainers/{id}
+// Request for V1 GET /CertificateStoreContainers/{id}
 type ApiGetCertificateStoreContainersByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateStoreContainerApiService
@@ -508,11 +517,14 @@ func (r ApiGetCertificateStoreContainersByIdRequest) XKeyfactorApiVersion(xKeyfa
 	return r
 }
 
+// Executes the V1 GET /CertificateStoreContainers/{id} request context
 func (r ApiGetCertificateStoreContainersByIdRequest) Execute() (*CertificateStoreContainersCertificateStoreContainerResponse, *http.Response, error) {
 	return r.ApiService.GetCertificateStoreContainersByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateStoreContainers/{id} request.
+
 GetCertificateStoreContainersById Returns a single certificate store container that matches id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -534,7 +546,7 @@ func (a *CertificateStoreContainerApiService) NewGetCertificateStoreContainersBy
 	}
 }
 
-// Executes the API request GET /CertificateStoreContainers/{id}
+// Executes the API request V1 GET /CertificateStoreContainers/{id}
 //
 //	@return CertificateStoreContainersCertificateStoreContainerResponse
 func (a *CertificateStoreContainerApiService) GetCertificateStoreContainersByIdExecute(r ApiGetCertificateStoreContainersByIdRequest) (*CertificateStoreContainersCertificateStoreContainerResponse, *http.Response, error) {
@@ -634,7 +646,7 @@ func (a *CertificateStoreContainerApiService) GetCertificateStoreContainersByIdE
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /CertificateStoreContainers
+// Request for V1 PUT /CertificateStoreContainers
 type ApiUpdateCertificateStoreContainersRequest struct {
 	ctx                                            context.Context
 	ApiService                                     *CertificateStoreContainerApiService
@@ -661,11 +673,14 @@ func (r ApiUpdateCertificateStoreContainersRequest) CSSCMSDataModelModelsCertSto
 	return r
 }
 
+// Executes the V1 PUT /CertificateStoreContainers request context
 func (r ApiUpdateCertificateStoreContainersRequest) Execute() (*CertificateStoreContainersCertificateStoreContainerResponse, *http.Response, error) {
 	return r.ApiService.UpdateCertificateStoreContainersExecute(r)
 }
 
 /*
+Creates a new V1 PUT /CertificateStoreContainers request.
+
 UpdateCertificateStoreContainers Edit a certificate store container
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -684,7 +699,7 @@ func (a *CertificateStoreContainerApiService) NewUpdateCertificateStoreContainer
 	}
 }
 
-// Executes the API request PUT /CertificateStoreContainers
+// Executes the API request V1 PUT /CertificateStoreContainers
 //
 //	@return CertificateStoreContainersCertificateStoreContainerResponse
 func (a *CertificateStoreContainerApiService) UpdateCertificateStoreContainersExecute(r ApiUpdateCertificateStoreContainersRequest) (*CertificateStoreContainersCertificateStoreContainerResponse, *http.Response, error) {

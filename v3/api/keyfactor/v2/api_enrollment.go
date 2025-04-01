@@ -31,7 +31,7 @@ import (
 // EnrollmentApiService EnrollmentApi service
 type EnrollmentApiService service
 
-// Request for POST /Enrollment/PFX
+// Request for V2 POST /Enrollment/PFX
 type ApiCreateEnrollmentPFXRequest struct {
 	ctx                                      context.Context
 	ApiService                               *EnrollmentApiService
@@ -65,12 +65,15 @@ func (r ApiCreateEnrollmentPFXRequest) EnrollmentPFXEnrollmentWithStoresRequest(
 	return r
 }
 
+// Executes the V2 POST /Enrollment/PFX request context
 func (r ApiCreateEnrollmentPFXRequest) Execute() (*EnrollmentPFXEnrollmentManagementResponse, *http.Response, error) {
 	return r.ApiService.CreateEnrollmentPFXExecute(r)
 }
 
 /*
-CreateEnrollmentPFX Performs a PFX Enrollment based upon the provided request
+Creates a new V2 POST /Enrollment/PFX request.
+
+# CreateEnrollmentPFX Performs a PFX Enrollment based upon the provided request
 
 ### IMPORTANT:
 - The <b>'RenewalCertificateId'</b> field in the request should be set to <b>null</b> if the certificate is not being renewed as part of the enrollment. A value of <b>0</b> will produce an error.
@@ -108,7 +111,7 @@ func (a *EnrollmentApiService) NewCreateEnrollmentPFXRequest(ctx context.Context
 	}
 }
 
-// Executes the API request POST /Enrollment/PFX
+// Executes the API request V2 POST /Enrollment/PFX
 //
 //	@return EnrollmentPFXEnrollmentManagementResponse
 func (a *EnrollmentApiService) CreateEnrollmentPFXExecute(r ApiCreateEnrollmentPFXRequest) (*EnrollmentPFXEnrollmentManagementResponse, *http.Response, error) {

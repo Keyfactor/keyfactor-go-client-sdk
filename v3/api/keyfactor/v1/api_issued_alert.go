@@ -32,7 +32,7 @@ import (
 // IssuedAlertApiService IssuedAlertApi service
 type IssuedAlertApiService service
 
-// Request for POST /Alerts/Issued
+// Request for V1 POST /Alerts/Issued
 type ApiCreateAlertsIssuedRequest struct {
 	ctx                                    context.Context
 	ApiService                             *IssuedAlertApiService
@@ -59,11 +59,14 @@ func (r ApiCreateAlertsIssuedRequest) AlertsIssuedIssuedAlertCreationRequest(ale
 	return r
 }
 
+// Executes the V1 POST /Alerts/Issued request context
 func (r ApiCreateAlertsIssuedRequest) Execute() (*AlertsIssuedIssuedAlertDefinitionResponse, *http.Response, error) {
 	return r.ApiService.CreateAlertsIssuedExecute(r)
 }
 
 /*
+Creates a new V1 POST /Alerts/Issued request.
+
 CreateAlertsIssued Add a issued alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *IssuedAlertApiService) NewCreateAlertsIssuedRequest(ctx context.Context
 	}
 }
 
-// Executes the API request POST /Alerts/Issued
+// Executes the API request V1 POST /Alerts/Issued
 //
 //	@return AlertsIssuedIssuedAlertDefinitionResponse
 func (a *IssuedAlertApiService) CreateAlertsIssuedExecute(r ApiCreateAlertsIssuedRequest) (*AlertsIssuedIssuedAlertDefinitionResponse, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *IssuedAlertApiService) CreateAlertsIssuedExecute(r ApiCreateAlertsIssue
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /Alerts/Issued/{id}
+// Request for V1 DELETE /Alerts/Issued/{id}
 type ApiDeleteAlertsIssuedByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *IssuedAlertApiService
@@ -198,11 +201,14 @@ func (r ApiDeleteAlertsIssuedByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVers
 	return r
 }
 
+// Executes the V1 DELETE /Alerts/Issued/{id} request context
 func (r ApiDeleteAlertsIssuedByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAlertsIssuedByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /Alerts/Issued/{id} request.
+
 DeleteAlertsIssuedById Delete a issued alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -306,7 +312,7 @@ func (a *IssuedAlertApiService) DeleteAlertsIssuedByIdExecute(r ApiDeleteAlertsI
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /Alerts/Issued
+// Request for V1 GET /Alerts/Issued
 type ApiGetAlertsIssuedRequest struct {
 	ctx                     context.Context
 	ApiService              *IssuedAlertApiService
@@ -356,11 +362,14 @@ func (r ApiGetAlertsIssuedRequest) XKeyfactorApiVersion(xKeyfactorApiVersion str
 	return r
 }
 
+// Executes the V1 GET /Alerts/Issued request context
 func (r ApiGetAlertsIssuedRequest) Execute() ([]AlertsIssuedIssuedAlertDefinitionResponse, *http.Response, error) {
 	return r.ApiService.GetAlertsIssuedExecute(r)
 }
 
 /*
+Creates a new V1 GET /Alerts/Issued request.
+
 GetAlertsIssued Gets all issued alerts according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -379,7 +388,7 @@ func (a *IssuedAlertApiService) NewGetAlertsIssuedRequest(ctx context.Context) A
 	}
 }
 
-// Executes the API request GET /Alerts/Issued
+// Executes the API request V1 GET /Alerts/Issued
 //
 //	@return []AlertsIssuedIssuedAlertDefinitionResponse
 func (a *IssuedAlertApiService) GetAlertsIssuedExecute(r ApiGetAlertsIssuedRequest) ([]AlertsIssuedIssuedAlertDefinitionResponse, *http.Response, error) {
@@ -487,7 +496,7 @@ func (a *IssuedAlertApiService) GetAlertsIssuedExecute(r ApiGetAlertsIssuedReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Alerts/Issued/{id}
+// Request for V1 GET /Alerts/Issued/{id}
 type ApiGetAlertsIssuedByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *IssuedAlertApiService
@@ -508,11 +517,14 @@ func (r ApiGetAlertsIssuedByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersion
 	return r
 }
 
+// Executes the V1 GET /Alerts/Issued/{id} request context
 func (r ApiGetAlertsIssuedByIdRequest) Execute() (*AlertsIssuedIssuedAlertDefinitionResponse, *http.Response, error) {
 	return r.ApiService.GetAlertsIssuedByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Alerts/Issued/{id} request.
+
 GetAlertsIssuedById Get a issued alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -534,7 +546,7 @@ func (a *IssuedAlertApiService) NewGetAlertsIssuedByIdRequest(ctx context.Contex
 	}
 }
 
-// Executes the API request GET /Alerts/Issued/{id}
+// Executes the API request V1 GET /Alerts/Issued/{id}
 //
 //	@return AlertsIssuedIssuedAlertDefinitionResponse
 func (a *IssuedAlertApiService) GetAlertsIssuedByIdExecute(r ApiGetAlertsIssuedByIdRequest) (*AlertsIssuedIssuedAlertDefinitionResponse, *http.Response, error) {
@@ -628,7 +640,7 @@ func (a *IssuedAlertApiService) GetAlertsIssuedByIdExecute(r ApiGetAlertsIssuedB
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Alerts/Issued/Schedule
+// Request for V1 GET /Alerts/Issued/Schedule
 type ApiGetAlertsIssuedScheduleRequest struct {
 	ctx                     context.Context
 	ApiService              *IssuedAlertApiService
@@ -648,11 +660,14 @@ func (r ApiGetAlertsIssuedScheduleRequest) XKeyfactorApiVersion(xKeyfactorApiVer
 	return r
 }
 
+// Executes the V1 GET /Alerts/Issued/Schedule request context
 func (r ApiGetAlertsIssuedScheduleRequest) Execute() (*AlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {
 	return r.ApiService.GetAlertsIssuedScheduleExecute(r)
 }
 
 /*
+Creates a new V1 GET /Alerts/Issued/Schedule request.
+
 GetAlertsIssuedSchedule Get the schedule for issued alerts
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -671,7 +686,7 @@ func (a *IssuedAlertApiService) NewGetAlertsIssuedScheduleRequest(ctx context.Co
 	}
 }
 
-// Executes the API request GET /Alerts/Issued/Schedule
+// Executes the API request V1 GET /Alerts/Issued/Schedule
 //
 //	@return AlertsAlertScheduleAlertScheduleResponse
 func (a *IssuedAlertApiService) GetAlertsIssuedScheduleExecute(r ApiGetAlertsIssuedScheduleRequest) (*AlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {
@@ -764,7 +779,7 @@ func (a *IssuedAlertApiService) GetAlertsIssuedScheduleExecute(r ApiGetAlertsIss
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Alerts/Issued
+// Request for V1 PUT /Alerts/Issued
 type ApiUpdateAlertsIssuedRequest struct {
 	ctx                                  context.Context
 	ApiService                           *IssuedAlertApiService
@@ -791,11 +806,14 @@ func (r ApiUpdateAlertsIssuedRequest) AlertsIssuedIssuedAlertUpdateRequest(alert
 	return r
 }
 
+// Executes the V1 PUT /Alerts/Issued request context
 func (r ApiUpdateAlertsIssuedRequest) Execute() (*AlertsIssuedIssuedAlertDefinitionResponse, *http.Response, error) {
 	return r.ApiService.UpdateAlertsIssuedExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Alerts/Issued request.
+
 UpdateAlertsIssued Edit a issued alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -814,7 +832,7 @@ func (a *IssuedAlertApiService) NewUpdateAlertsIssuedRequest(ctx context.Context
 	}
 }
 
-// Executes the API request PUT /Alerts/Issued
+// Executes the API request V1 PUT /Alerts/Issued
 //
 //	@return AlertsIssuedIssuedAlertDefinitionResponse
 func (a *IssuedAlertApiService) UpdateAlertsIssuedExecute(r ApiUpdateAlertsIssuedRequest) (*AlertsIssuedIssuedAlertDefinitionResponse, *http.Response, error) {
@@ -909,7 +927,7 @@ func (a *IssuedAlertApiService) UpdateAlertsIssuedExecute(r ApiUpdateAlertsIssue
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Alerts/Issued/Schedule
+// Request for V1 PUT /Alerts/Issued/Schedule
 type ApiUpdateAlertsIssuedScheduleRequest struct {
 	ctx                                     context.Context
 	ApiService                              *IssuedAlertApiService
@@ -935,11 +953,14 @@ func (r ApiUpdateAlertsIssuedScheduleRequest) AlertsAlertScheduleAlertScheduleRe
 	return r
 }
 
+// Executes the V1 PUT /Alerts/Issued/Schedule request context
 func (r ApiUpdateAlertsIssuedScheduleRequest) Execute() (*AlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {
 	return r.ApiService.UpdateAlertsIssuedScheduleExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Alerts/Issued/Schedule request.
+
 UpdateAlertsIssuedSchedule Edit schedule
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -958,7 +979,7 @@ func (a *IssuedAlertApiService) NewUpdateAlertsIssuedScheduleRequest(ctx context
 	}
 }
 
-// Executes the API request PUT /Alerts/Issued/Schedule
+// Executes the API request V1 PUT /Alerts/Issued/Schedule
 //
 //	@return AlertsAlertScheduleAlertScheduleResponse
 func (a *IssuedAlertApiService) UpdateAlertsIssuedScheduleExecute(r ApiUpdateAlertsIssuedScheduleRequest) (*AlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {

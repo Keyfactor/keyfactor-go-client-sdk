@@ -32,7 +32,7 @@ import (
 // ReportsApiService ReportsApi service
 type ReportsApiService service
 
-// Request for POST /Reports/{id}/Schedules
+// Request for V1 POST /Reports/{id}/Schedules
 type ApiCreateReportsByIdSchedulesRequest struct {
 	ctx                                                 context.Context
 	ApiService                                          *ReportsApiService
@@ -60,11 +60,14 @@ func (r ApiCreateReportsByIdSchedulesRequest) ReportsReportSchedulesReportSchedu
 	return r
 }
 
+// Executes the V1 POST /Reports/{id}/Schedules request context
 func (r ApiCreateReportsByIdSchedulesRequest) Execute() (*ReportsReportSchedulesReportScheduleResponse, *http.Response, error) {
 	return r.ApiService.CreateReportsByIdSchedulesExecute(r)
 }
 
 /*
+Creates a new V1 POST /Reports/{id}/Schedules request.
+
 CreateReportsByIdSchedules Create a built-in report's schedule that matches the id of the report.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -86,7 +89,7 @@ func (a *ReportsApiService) NewCreateReportsByIdSchedulesRequest(ctx context.Con
 	}
 }
 
-// Executes the API request POST /Reports/{id}/Schedules
+// Executes the API request V1 POST /Reports/{id}/Schedules
 //
 //	@return ReportsReportSchedulesReportScheduleResponse
 func (a *ReportsApiService) CreateReportsByIdSchedulesExecute(r ApiCreateReportsByIdSchedulesRequest) (*ReportsReportSchedulesReportScheduleResponse, *http.Response, error) {
@@ -182,7 +185,7 @@ func (a *ReportsApiService) CreateReportsByIdSchedulesExecute(r ApiCreateReports
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Reports/Custom
+// Request for V1 POST /Reports/Custom
 type ApiCreateReportsCustomRequest struct {
 	ctx                                             context.Context
 	ApiService                                      *ReportsApiService
@@ -209,11 +212,14 @@ func (r ApiCreateReportsCustomRequest) ReportsCustomReportsCustomReportCreationR
 	return r
 }
 
+// Executes the V1 POST /Reports/Custom request context
 func (r ApiCreateReportsCustomRequest) Execute() (*ReportsCustomReportsCustomReportResponse, *http.Response, error) {
 	return r.ApiService.CreateReportsCustomExecute(r)
 }
 
 /*
+Creates a new V1 POST /Reports/Custom request.
+
 CreateReportsCustom Creates a custom report
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -232,7 +238,7 @@ func (a *ReportsApiService) NewCreateReportsCustomRequest(ctx context.Context) A
 	}
 }
 
-// Executes the API request POST /Reports/Custom
+// Executes the API request V1 POST /Reports/Custom
 //
 //	@return ReportsCustomReportsCustomReportResponse
 func (a *ReportsApiService) CreateReportsCustomExecute(r ApiCreateReportsCustomRequest) (*ReportsCustomReportsCustomReportResponse, *http.Response, error) {
@@ -327,7 +333,7 @@ func (a *ReportsApiService) CreateReportsCustomExecute(r ApiCreateReportsCustomR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /Reports/Custom/{id}
+// Request for V1 DELETE /Reports/Custom/{id}
 type ApiDeleteReportsCustomByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *ReportsApiService
@@ -348,11 +354,14 @@ func (r ApiDeleteReportsCustomByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVer
 	return r
 }
 
+// Executes the V1 DELETE /Reports/Custom/{id} request context
 func (r ApiDeleteReportsCustomByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteReportsCustomByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /Reports/Custom/{id} request.
+
 DeleteReportsCustomById Delete custom report that matches the id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -462,7 +471,7 @@ func (a *ReportsApiService) DeleteReportsCustomByIdExecute(r ApiDeleteReportsCus
 	return localVarHTTPResponse, nil
 }
 
-// Request for DELETE /Reports/Schedules/{id}
+// Request for V1 DELETE /Reports/Schedules/{id}
 type ApiDeleteReportsSchedulesByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *ReportsApiService
@@ -483,11 +492,14 @@ func (r ApiDeleteReportsSchedulesByIdRequest) XKeyfactorApiVersion(xKeyfactorApi
 	return r
 }
 
+// Executes the V1 DELETE /Reports/Schedules/{id} request context
 func (r ApiDeleteReportsSchedulesByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteReportsSchedulesByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /Reports/Schedules/{id} request.
+
 DeleteReportsSchedulesById Delete a built-in report's schedule that matches the id of the schedule.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -591,7 +603,7 @@ func (a *ReportsApiService) DeleteReportsSchedulesByIdExecute(r ApiDeleteReports
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /Reports
+// Request for V1 GET /Reports
 type ApiGetReportsRequest struct {
 	ctx                     context.Context
 	ApiService              *ReportsApiService
@@ -641,11 +653,14 @@ func (r ApiGetReportsRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) 
 	return r
 }
 
+// Executes the V1 GET /Reports request context
 func (r ApiGetReportsRequest) Execute() ([]CSSCMSDataModelModelsReport, *http.Response, error) {
 	return r.ApiService.GetReportsExecute(r)
 }
 
 /*
+Creates a new V1 GET /Reports request.
+
 GetReports Returns all built-in reports according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -664,7 +679,7 @@ func (a *ReportsApiService) NewGetReportsRequest(ctx context.Context) ApiGetRepo
 	}
 }
 
-// Executes the API request GET /Reports
+// Executes the API request V1 GET /Reports
 //
 //	@return []CSSCMSDataModelModelsReport
 func (a *ReportsApiService) GetReportsExecute(r ApiGetReportsRequest) ([]CSSCMSDataModelModelsReport, *http.Response, error) {
@@ -772,7 +787,7 @@ func (a *ReportsApiService) GetReportsExecute(r ApiGetReportsRequest) ([]CSSCMSD
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Reports/{id}
+// Request for V1 GET /Reports/{id}
 type ApiGetReportsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *ReportsApiService
@@ -793,11 +808,14 @@ func (r ApiGetReportsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersion stri
 	return r
 }
 
+// Executes the V1 GET /Reports/{id} request context
 func (r ApiGetReportsByIdRequest) Execute() (*CSSCMSDataModelModelsReport, *http.Response, error) {
 	return r.ApiService.GetReportsByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Reports/{id} request.
+
 GetReportsById Returns a single built-in report that matches the id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -819,7 +837,7 @@ func (a *ReportsApiService) NewGetReportsByIdRequest(ctx context.Context, id int
 	}
 }
 
-// Executes the API request GET /Reports/{id}
+// Executes the API request V1 GET /Reports/{id}
 //
 //	@return CSSCMSDataModelModelsReport
 func (a *ReportsApiService) GetReportsByIdExecute(r ApiGetReportsByIdRequest) (*CSSCMSDataModelModelsReport, *http.Response, error) {
@@ -919,7 +937,7 @@ func (a *ReportsApiService) GetReportsByIdExecute(r ApiGetReportsByIdRequest) (*
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Reports/{id}/Parameters
+// Request for V1 GET /Reports/{id}/Parameters
 type ApiGetReportsByIdParametersRequest struct {
 	ctx                     context.Context
 	ApiService              *ReportsApiService
@@ -940,11 +958,14 @@ func (r ApiGetReportsByIdParametersRequest) XKeyfactorApiVersion(xKeyfactorApiVe
 	return r
 }
 
+// Executes the V1 GET /Reports/{id}/Parameters request context
 func (r ApiGetReportsByIdParametersRequest) Execute() ([]CSSCMSDataModelModelsReportParameters, *http.Response, error) {
 	return r.ApiService.GetReportsByIdParametersExecute(r)
 }
 
 /*
+Creates a new V1 GET /Reports/{id}/Parameters request.
+
 GetReportsByIdParameters Get a built-in report's parameters that matches the id of the report.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -966,7 +987,7 @@ func (a *ReportsApiService) NewGetReportsByIdParametersRequest(ctx context.Conte
 	}
 }
 
-// Executes the API request GET /Reports/{id}/Parameters
+// Executes the API request V1 GET /Reports/{id}/Parameters
 //
 //	@return []CSSCMSDataModelModelsReportParameters
 func (a *ReportsApiService) GetReportsByIdParametersExecute(r ApiGetReportsByIdParametersRequest) ([]CSSCMSDataModelModelsReportParameters, *http.Response, error) {
@@ -1060,7 +1081,7 @@ func (a *ReportsApiService) GetReportsByIdParametersExecute(r ApiGetReportsByIdP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Reports/{id}/Schedules
+// Request for V1 GET /Reports/{id}/Schedules
 type ApiGetReportsByIdSchedulesRequest struct {
 	ctx                     context.Context
 	ApiService              *ReportsApiService
@@ -1116,11 +1137,14 @@ func (r ApiGetReportsByIdSchedulesRequest) XKeyfactorApiVersion(xKeyfactorApiVer
 	return r
 }
 
+// Executes the V1 GET /Reports/{id}/Schedules request context
 func (r ApiGetReportsByIdSchedulesRequest) Execute() ([]ReportsReportSchedulesReportScheduleResponse, *http.Response, error) {
 	return r.ApiService.GetReportsByIdSchedulesExecute(r)
 }
 
 /*
+Creates a new V1 GET /Reports/{id}/Schedules request.
+
 GetReportsByIdSchedules Get a built-in report's schedules that matches the id of the report.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1142,7 +1166,7 @@ func (a *ReportsApiService) NewGetReportsByIdSchedulesRequest(ctx context.Contex
 	}
 }
 
-// Executes the API request GET /Reports/{id}/Schedules
+// Executes the API request V1 GET /Reports/{id}/Schedules
 //
 //	@return []ReportsReportSchedulesReportScheduleResponse
 func (a *ReportsApiService) GetReportsByIdSchedulesExecute(r ApiGetReportsByIdSchedulesRequest) ([]ReportsReportSchedulesReportScheduleResponse, *http.Response, error) {
@@ -1251,7 +1275,7 @@ func (a *ReportsApiService) GetReportsByIdSchedulesExecute(r ApiGetReportsByIdSc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Reports/Custom
+// Request for V1 GET /Reports/Custom
 type ApiGetReportsCustomRequest struct {
 	ctx                     context.Context
 	ApiService              *ReportsApiService
@@ -1301,11 +1325,14 @@ func (r ApiGetReportsCustomRequest) XKeyfactorApiVersion(xKeyfactorApiVersion st
 	return r
 }
 
+// Executes the V1 GET /Reports/Custom request context
 func (r ApiGetReportsCustomRequest) Execute() ([]ReportsCustomReportsCustomReportResponse, *http.Response, error) {
 	return r.ApiService.GetReportsCustomExecute(r)
 }
 
 /*
+Creates a new V1 GET /Reports/Custom request.
+
 GetReportsCustom Returns all custom reports according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1324,7 +1351,7 @@ func (a *ReportsApiService) NewGetReportsCustomRequest(ctx context.Context) ApiG
 	}
 }
 
-// Executes the API request GET /Reports/Custom
+// Executes the API request V1 GET /Reports/Custom
 //
 //	@return []ReportsCustomReportsCustomReportResponse
 func (a *ReportsApiService) GetReportsCustomExecute(r ApiGetReportsCustomRequest) ([]ReportsCustomReportsCustomReportResponse, *http.Response, error) {
@@ -1432,7 +1459,7 @@ func (a *ReportsApiService) GetReportsCustomExecute(r ApiGetReportsCustomRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Reports/Custom/{id}
+// Request for V1 GET /Reports/Custom/{id}
 type ApiGetReportsCustomByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *ReportsApiService
@@ -1453,11 +1480,14 @@ func (r ApiGetReportsCustomByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersio
 	return r
 }
 
+// Executes the V1 GET /Reports/Custom/{id} request context
 func (r ApiGetReportsCustomByIdRequest) Execute() (*ReportsCustomReportsCustomReportResponse, *http.Response, error) {
 	return r.ApiService.GetReportsCustomByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Reports/Custom/{id} request.
+
 GetReportsCustomById Returns a single custom report that matches the id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1479,7 +1509,7 @@ func (a *ReportsApiService) NewGetReportsCustomByIdRequest(ctx context.Context, 
 	}
 }
 
-// Executes the API request GET /Reports/Custom/{id}
+// Executes the API request V1 GET /Reports/Custom/{id}
 //
 //	@return ReportsCustomReportsCustomReportResponse
 func (a *ReportsApiService) GetReportsCustomByIdExecute(r ApiGetReportsCustomByIdRequest) (*ReportsCustomReportsCustomReportResponse, *http.Response, error) {
@@ -1579,7 +1609,7 @@ func (a *ReportsApiService) GetReportsCustomByIdExecute(r ApiGetReportsCustomByI
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Reports/Schedules/{id}
+// Request for V1 GET /Reports/Schedules/{id}
 type ApiGetReportsSchedulesByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *ReportsApiService
@@ -1600,11 +1630,14 @@ func (r ApiGetReportsSchedulesByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVer
 	return r
 }
 
+// Executes the V1 GET /Reports/Schedules/{id} request context
 func (r ApiGetReportsSchedulesByIdRequest) Execute() (*ReportsReportSchedulesReportScheduleResponse, *http.Response, error) {
 	return r.ApiService.GetReportsSchedulesByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Reports/Schedules/{id} request.
+
 GetReportsSchedulesById Get a built-in report's schedule that matches the id of the schedule.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1626,7 +1659,7 @@ func (a *ReportsApiService) NewGetReportsSchedulesByIdRequest(ctx context.Contex
 	}
 }
 
-// Executes the API request GET /Reports/Schedules/{id}
+// Executes the API request V1 GET /Reports/Schedules/{id}
 //
 //	@return ReportsReportSchedulesReportScheduleResponse
 func (a *ReportsApiService) GetReportsSchedulesByIdExecute(r ApiGetReportsSchedulesByIdRequest) (*ReportsReportSchedulesReportScheduleResponse, *http.Response, error) {
@@ -1720,7 +1753,7 @@ func (a *ReportsApiService) GetReportsSchedulesByIdExecute(r ApiGetReportsSchedu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Reports
+// Request for V1 PUT /Reports
 type ApiUpdateReportsRequest struct {
 	ctx                                     context.Context
 	ApiService                              *ReportsApiService
@@ -1747,11 +1780,14 @@ func (r ApiUpdateReportsRequest) CSSCMSDataModelModelsReportRequestModel(cSSCMSD
 	return r
 }
 
+// Executes the V1 PUT /Reports request context
 func (r ApiUpdateReportsRequest) Execute() (*CSSCMSDataModelModelsReport, *http.Response, error) {
 	return r.ApiService.UpdateReportsExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Reports request.
+
 UpdateReports Updates a single built-in report that matches the id. Only some fields can be updated.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1770,7 +1806,7 @@ func (a *ReportsApiService) NewUpdateReportsRequest(ctx context.Context) ApiUpda
 	}
 }
 
-// Executes the API request PUT /Reports
+// Executes the API request V1 PUT /Reports
 //
 //	@return CSSCMSDataModelModelsReport
 func (a *ReportsApiService) UpdateReportsExecute(r ApiUpdateReportsRequest) (*CSSCMSDataModelModelsReport, *http.Response, error) {
@@ -1865,7 +1901,7 @@ func (a *ReportsApiService) UpdateReportsExecute(r ApiUpdateReportsRequest) (*CS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Reports/{id}/Parameters
+// Request for V1 PUT /Reports/{id}/Parameters
 type ApiUpdateReportsByIdParametersRequest struct {
 	ctx                                          context.Context
 	ApiService                                   *ReportsApiService
@@ -1893,11 +1929,14 @@ func (r ApiUpdateReportsByIdParametersRequest) CSSCMSDataModelModelsReportParame
 	return r
 }
 
+// Executes the V1 PUT /Reports/{id}/Parameters request context
 func (r ApiUpdateReportsByIdParametersRequest) Execute() ([]CSSCMSDataModelModelsReportParameters, *http.Response, error) {
 	return r.ApiService.UpdateReportsByIdParametersExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Reports/{id}/Parameters request.
+
 UpdateReportsByIdParameters Update a built-in report's parameters that matches the id of the report.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1919,7 +1958,7 @@ func (a *ReportsApiService) NewUpdateReportsByIdParametersRequest(ctx context.Co
 	}
 }
 
-// Executes the API request PUT /Reports/{id}/Parameters
+// Executes the API request V1 PUT /Reports/{id}/Parameters
 //
 //	@return []CSSCMSDataModelModelsReportParameters
 func (a *ReportsApiService) UpdateReportsByIdParametersExecute(r ApiUpdateReportsByIdParametersRequest) ([]CSSCMSDataModelModelsReportParameters, *http.Response, error) {
@@ -2015,7 +2054,7 @@ func (a *ReportsApiService) UpdateReportsByIdParametersExecute(r ApiUpdateReport
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Reports/{id}/Schedules
+// Request for V1 PUT /Reports/{id}/Schedules
 type ApiUpdateReportsByIdSchedulesRequest struct {
 	ctx                                               context.Context
 	ApiService                                        *ReportsApiService
@@ -2043,11 +2082,14 @@ func (r ApiUpdateReportsByIdSchedulesRequest) ReportsReportSchedulesReportSchedu
 	return r
 }
 
+// Executes the V1 PUT /Reports/{id}/Schedules request context
 func (r ApiUpdateReportsByIdSchedulesRequest) Execute() (*ReportsReportSchedulesReportScheduleResponse, *http.Response, error) {
 	return r.ApiService.UpdateReportsByIdSchedulesExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Reports/{id}/Schedules request.
+
 UpdateReportsByIdSchedules Update a built-in report's schedule that matches the id of the report.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2069,7 +2111,7 @@ func (a *ReportsApiService) NewUpdateReportsByIdSchedulesRequest(ctx context.Con
 	}
 }
 
-// Executes the API request PUT /Reports/{id}/Schedules
+// Executes the API request V1 PUT /Reports/{id}/Schedules
 //
 //	@return ReportsReportSchedulesReportScheduleResponse
 func (a *ReportsApiService) UpdateReportsByIdSchedulesExecute(r ApiUpdateReportsByIdSchedulesRequest) (*ReportsReportSchedulesReportScheduleResponse, *http.Response, error) {
@@ -2165,7 +2207,7 @@ func (a *ReportsApiService) UpdateReportsByIdSchedulesExecute(r ApiUpdateReports
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Reports/Custom
+// Request for V1 PUT /Reports/Custom
 type ApiUpdateReportsCustomRequest struct {
 	ctx                                           context.Context
 	ApiService                                    *ReportsApiService
@@ -2192,11 +2234,14 @@ func (r ApiUpdateReportsCustomRequest) ReportsCustomReportsCustomReportUpdateReq
 	return r
 }
 
+// Executes the V1 PUT /Reports/Custom request context
 func (r ApiUpdateReportsCustomRequest) Execute() (*ReportsCustomReportsCustomReportResponse, *http.Response, error) {
 	return r.ApiService.UpdateReportsCustomExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Reports/Custom request.
+
 UpdateReportsCustom Updates a custom report that matches the id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -2215,7 +2260,7 @@ func (a *ReportsApiService) NewUpdateReportsCustomRequest(ctx context.Context) A
 	}
 }
 
-// Executes the API request PUT /Reports/Custom
+// Executes the API request V1 PUT /Reports/Custom
 //
 //	@return ReportsCustomReportsCustomReportResponse
 func (a *ReportsApiService) UpdateReportsCustomExecute(r ApiUpdateReportsCustomRequest) (*ReportsCustomReportsCustomReportResponse, *http.Response, error) {

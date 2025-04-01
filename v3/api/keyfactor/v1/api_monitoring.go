@@ -32,7 +32,7 @@ import (
 // MonitoringApiService MonitoringApi service
 type MonitoringApiService service
 
-// Request for POST /Monitoring/ResolveOCSP
+// Request for V1 POST /Monitoring/ResolveOCSP
 type ApiCreateMonitoringResolveOCSPRequest struct {
 	ctx                             context.Context
 	ApiService                      *MonitoringApiService
@@ -59,11 +59,14 @@ func (r ApiCreateMonitoringResolveOCSPRequest) MonitoringOCSPParametersRequest(m
 	return r
 }
 
+// Executes the V1 POST /Monitoring/ResolveOCSP request context
 func (r ApiCreateMonitoringResolveOCSPRequest) Execute() (*MonitoringOCSPParametersResponse, *http.Response, error) {
 	return r.ApiService.CreateMonitoringResolveOCSPExecute(r)
 }
 
 /*
+Creates a new V1 POST /Monitoring/ResolveOCSP request.
+
 CreateMonitoringResolveOCSP Resolve the Certificate authority given
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *MonitoringApiService) NewCreateMonitoringResolveOCSPRequest(ctx context
 	}
 }
 
-// Executes the API request POST /Monitoring/ResolveOCSP
+// Executes the API request V1 POST /Monitoring/ResolveOCSP
 //
 //	@return MonitoringOCSPParametersResponse
 func (a *MonitoringApiService) CreateMonitoringResolveOCSPExecute(r ApiCreateMonitoringResolveOCSPRequest) (*MonitoringOCSPParametersResponse, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *MonitoringApiService) CreateMonitoringResolveOCSPExecute(r ApiCreateMon
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Monitoring/Revocation
+// Request for V1 POST /Monitoring/Revocation
 type ApiCreateMonitoringRevocationRequest struct {
 	ctx                                           context.Context
 	ApiService                                    *MonitoringApiService
@@ -211,11 +214,14 @@ func (r ApiCreateMonitoringRevocationRequest) MonitoringRevocationMonitoringCrea
 	return r
 }
 
+// Executes the V1 POST /Monitoring/Revocation request context
 func (r ApiCreateMonitoringRevocationRequest) Execute() (*MonitoringRevocationMonitoringDefinitionResponse, *http.Response, error) {
 	return r.ApiService.CreateMonitoringRevocationExecute(r)
 }
 
 /*
+Creates a new V1 POST /Monitoring/Revocation request.
+
 CreateMonitoringRevocation Add a revocation monitoring endpoint
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -234,7 +240,7 @@ func (a *MonitoringApiService) NewCreateMonitoringRevocationRequest(ctx context.
 	}
 }
 
-// Executes the API request POST /Monitoring/Revocation
+// Executes the API request V1 POST /Monitoring/Revocation
 //
 //	@return MonitoringRevocationMonitoringDefinitionResponse
 func (a *MonitoringApiService) CreateMonitoringRevocationExecute(r ApiCreateMonitoringRevocationRequest) (*MonitoringRevocationMonitoringDefinitionResponse, *http.Response, error) {
@@ -332,7 +338,7 @@ func (a *MonitoringApiService) CreateMonitoringRevocationExecute(r ApiCreateMoni
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Monitoring/Revocation/CRL/Test
+// Request for V1 POST /Monitoring/Revocation/CRL/Test
 type ApiCreateMonitoringRevocationCRLTestRequest struct {
 	ctx                                           context.Context
 	ApiService                                    *MonitoringApiService
@@ -359,11 +365,14 @@ func (r ApiCreateMonitoringRevocationCRLTestRequest) CSSCMSDataModelModelsMonito
 	return r
 }
 
+// Executes the V1 POST /Monitoring/Revocation/CRL/Test request context
 func (r ApiCreateMonitoringRevocationCRLTestRequest) Execute() (*CSSCMSDataModelModelsMonitoringCRLTestResponse, *http.Response, error) {
 	return r.ApiService.CreateMonitoringRevocationCRLTestExecute(r)
 }
 
 /*
+Creates a new V1 POST /Monitoring/Revocation/CRL/Test request.
+
 CreateMonitoringRevocationCRLTest Validates the connection info for the CRL provided by the model.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -382,7 +391,7 @@ func (a *MonitoringApiService) NewCreateMonitoringRevocationCRLTestRequest(ctx c
 	}
 }
 
-// Executes the API request POST /Monitoring/Revocation/CRL/Test
+// Executes the API request V1 POST /Monitoring/Revocation/CRL/Test
 //
 //	@return CSSCMSDataModelModelsMonitoringCRLTestResponse
 func (a *MonitoringApiService) CreateMonitoringRevocationCRLTestExecute(r ApiCreateMonitoringRevocationCRLTestRequest) (*CSSCMSDataModelModelsMonitoringCRLTestResponse, *http.Response, error) {
@@ -477,7 +486,7 @@ func (a *MonitoringApiService) CreateMonitoringRevocationCRLTestExecute(r ApiCre
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Monitoring/Revocation/OCSP/Test
+// Request for V1 POST /Monitoring/Revocation/OCSP/Test
 type ApiCreateMonitoringRevocationOCSPTestRequest struct {
 	ctx                                            context.Context
 	ApiService                                     *MonitoringApiService
@@ -504,11 +513,14 @@ func (r ApiCreateMonitoringRevocationOCSPTestRequest) CSSCMSDataModelModelsMonit
 	return r
 }
 
+// Executes the V1 POST /Monitoring/Revocation/OCSP/Test request context
 func (r ApiCreateMonitoringRevocationOCSPTestRequest) Execute() (*CSSCMSDataModelModelsMonitoringOCSPTestResponse, *http.Response, error) {
 	return r.ApiService.CreateMonitoringRevocationOCSPTestExecute(r)
 }
 
 /*
+Creates a new V1 POST /Monitoring/Revocation/OCSP/Test request.
+
 CreateMonitoringRevocationOCSPTest Validates the connection info for the OCSP endpoint provided by the model.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -527,7 +539,7 @@ func (a *MonitoringApiService) NewCreateMonitoringRevocationOCSPTestRequest(ctx 
 	}
 }
 
-// Executes the API request POST /Monitoring/Revocation/OCSP/Test
+// Executes the API request V1 POST /Monitoring/Revocation/OCSP/Test
 //
 //	@return CSSCMSDataModelModelsMonitoringOCSPTestResponse
 func (a *MonitoringApiService) CreateMonitoringRevocationOCSPTestExecute(r ApiCreateMonitoringRevocationOCSPTestRequest) (*CSSCMSDataModelModelsMonitoringOCSPTestResponse, *http.Response, error) {
@@ -622,7 +634,7 @@ func (a *MonitoringApiService) CreateMonitoringRevocationOCSPTestExecute(r ApiCr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Monitoring/Revocation/Test
+// Request for V1 POST /Monitoring/Revocation/Test
 type ApiCreateMonitoringRevocationTestRequest struct {
 	ctx                                            context.Context
 	ApiService                                     *MonitoringApiService
@@ -649,11 +661,14 @@ func (r ApiCreateMonitoringRevocationTestRequest) MonitoringRevocationMonitoring
 	return r
 }
 
+// Executes the V1 POST /Monitoring/Revocation/Test request context
 func (r ApiCreateMonitoringRevocationTestRequest) Execute() (*MonitoringRevocationMonitoringAlertTestResponse, *http.Response, error) {
 	return r.ApiService.CreateMonitoringRevocationTestExecute(r)
 }
 
 /*
+Creates a new V1 POST /Monitoring/Revocation/Test request.
+
 CreateMonitoringRevocationTest Test Alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -674,7 +689,7 @@ func (a *MonitoringApiService) NewCreateMonitoringRevocationTestRequest(ctx cont
 	}
 }
 
-// Executes the API request POST /Monitoring/Revocation/Test
+// Executes the API request V1 POST /Monitoring/Revocation/Test
 //
 //	@return MonitoringRevocationMonitoringAlertTestResponse
 //
@@ -771,7 +786,7 @@ func (a *MonitoringApiService) CreateMonitoringRevocationTestExecute(r ApiCreate
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Monitoring/Revocation/TestAll
+// Request for V1 POST /Monitoring/Revocation/TestAll
 type ApiCreateMonitoringRevocationTestAllRequest struct {
 	ctx                                               context.Context
 	ApiService                                        *MonitoringApiService
@@ -798,11 +813,14 @@ func (r ApiCreateMonitoringRevocationTestAllRequest) MonitoringRevocationMonitor
 	return r
 }
 
+// Executes the V1 POST /Monitoring/Revocation/TestAll request context
 func (r ApiCreateMonitoringRevocationTestAllRequest) Execute() (*MonitoringRevocationMonitoringAlertTestResponse, *http.Response, error) {
 	return r.ApiService.CreateMonitoringRevocationTestAllExecute(r)
 }
 
 /*
+Creates a new V1 POST /Monitoring/Revocation/TestAll request.
+
 CreateMonitoringRevocationTestAll Test All Alerts
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -823,7 +841,7 @@ func (a *MonitoringApiService) NewCreateMonitoringRevocationTestAllRequest(ctx c
 	}
 }
 
-// Executes the API request POST /Monitoring/Revocation/TestAll
+// Executes the API request V1 POST /Monitoring/Revocation/TestAll
 //
 //	@return MonitoringRevocationMonitoringAlertTestResponse
 //
@@ -920,7 +938,7 @@ func (a *MonitoringApiService) CreateMonitoringRevocationTestAllExecute(r ApiCre
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /Monitoring/Revocation/{id}
+// Request for V1 DELETE /Monitoring/Revocation/{id}
 type ApiDeleteMonitoringRevocationByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *MonitoringApiService
@@ -941,11 +959,14 @@ func (r ApiDeleteMonitoringRevocationByIdRequest) XKeyfactorApiVersion(xKeyfacto
 	return r
 }
 
+// Executes the V1 DELETE /Monitoring/Revocation/{id} request context
 func (r ApiDeleteMonitoringRevocationByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteMonitoringRevocationByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /Monitoring/Revocation/{id} request.
+
 DeleteMonitoringRevocationById Delete a revocation monitoring endpoint
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1049,7 +1070,7 @@ func (a *MonitoringApiService) DeleteMonitoringRevocationByIdExecute(r ApiDelete
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /Monitoring/Revocation
+// Request for V1 GET /Monitoring/Revocation
 type ApiGetMonitoringRevocationRequest struct {
 	ctx                     context.Context
 	ApiService              *MonitoringApiService
@@ -1099,11 +1120,14 @@ func (r ApiGetMonitoringRevocationRequest) XKeyfactorApiVersion(xKeyfactorApiVer
 	return r
 }
 
+// Executes the V1 GET /Monitoring/Revocation request context
 func (r ApiGetMonitoringRevocationRequest) Execute() ([]MonitoringRevocationMonitoringDefinitionResponse, *http.Response, error) {
 	return r.ApiService.GetMonitoringRevocationExecute(r)
 }
 
 /*
+Creates a new V1 GET /Monitoring/Revocation request.
+
 GetMonitoringRevocation Gets all revocation monitoring endpoints according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1122,7 +1146,7 @@ func (a *MonitoringApiService) NewGetMonitoringRevocationRequest(ctx context.Con
 	}
 }
 
-// Executes the API request GET /Monitoring/Revocation
+// Executes the API request V1 GET /Monitoring/Revocation
 //
 //	@return []MonitoringRevocationMonitoringDefinitionResponse
 func (a *MonitoringApiService) GetMonitoringRevocationExecute(r ApiGetMonitoringRevocationRequest) ([]MonitoringRevocationMonitoringDefinitionResponse, *http.Response, error) {
@@ -1230,7 +1254,7 @@ func (a *MonitoringApiService) GetMonitoringRevocationExecute(r ApiGetMonitoring
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Monitoring/Revocation/{id}
+// Request for V1 GET /Monitoring/Revocation/{id}
 type ApiGetMonitoringRevocationByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *MonitoringApiService
@@ -1251,11 +1275,14 @@ func (r ApiGetMonitoringRevocationByIdRequest) XKeyfactorApiVersion(xKeyfactorAp
 	return r
 }
 
+// Executes the V1 GET /Monitoring/Revocation/{id} request context
 func (r ApiGetMonitoringRevocationByIdRequest) Execute() (*MonitoringRevocationMonitoringDefinitionResponse, *http.Response, error) {
 	return r.ApiService.GetMonitoringRevocationByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Monitoring/Revocation/{id} request.
+
 GetMonitoringRevocationById Get a revocation monitoring endpoint
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1277,7 +1304,7 @@ func (a *MonitoringApiService) NewGetMonitoringRevocationByIdRequest(ctx context
 	}
 }
 
-// Executes the API request GET /Monitoring/Revocation/{id}
+// Executes the API request V1 GET /Monitoring/Revocation/{id}
 //
 //	@return MonitoringRevocationMonitoringDefinitionResponse
 func (a *MonitoringApiService) GetMonitoringRevocationByIdExecute(r ApiGetMonitoringRevocationByIdRequest) (*MonitoringRevocationMonitoringDefinitionResponse, *http.Response, error) {
@@ -1371,7 +1398,7 @@ func (a *MonitoringApiService) GetMonitoringRevocationByIdExecute(r ApiGetMonito
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Monitoring/Revocation
+// Request for V1 PUT /Monitoring/Revocation
 type ApiUpdateMonitoringRevocationRequest struct {
 	ctx                                         context.Context
 	ApiService                                  *MonitoringApiService
@@ -1405,11 +1432,14 @@ func (r ApiUpdateMonitoringRevocationRequest) MonitoringRevocationMonitoringUpda
 	return r
 }
 
+// Executes the V1 PUT /Monitoring/Revocation request context
 func (r ApiUpdateMonitoringRevocationRequest) Execute() (*MonitoringRevocationMonitoringDefinitionResponse, *http.Response, error) {
 	return r.ApiService.UpdateMonitoringRevocationExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Monitoring/Revocation request.
+
 UpdateMonitoringRevocation Edit a revocation monitoring endpoint
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1428,7 +1458,7 @@ func (a *MonitoringApiService) NewUpdateMonitoringRevocationRequest(ctx context.
 	}
 }
 
-// Executes the API request PUT /Monitoring/Revocation
+// Executes the API request V1 PUT /Monitoring/Revocation
 //
 //	@return MonitoringRevocationMonitoringDefinitionResponse
 func (a *MonitoringApiService) UpdateMonitoringRevocationExecute(r ApiUpdateMonitoringRevocationRequest) (*MonitoringRevocationMonitoringDefinitionResponse, *http.Response, error) {
@@ -1526,7 +1556,7 @@ func (a *MonitoringApiService) UpdateMonitoringRevocationExecute(r ApiUpdateMoni
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Monitoring/Revocation/Schedule
+// Request for V1 PUT /Monitoring/Revocation/Schedule
 type ApiUpdateMonitoringRevocationScheduleRequest struct {
 	ctx                                                 context.Context
 	ApiService                                          *MonitoringApiService
@@ -1553,11 +1583,14 @@ func (r ApiUpdateMonitoringRevocationScheduleRequest) MonitoringRevocationMonito
 	return r
 }
 
+// Executes the V1 PUT /Monitoring/Revocation/Schedule request context
 func (r ApiUpdateMonitoringRevocationScheduleRequest) Execute() (*MonitoringRevocationMonitoringDefinitionResponse, *http.Response, error) {
 	return r.ApiService.UpdateMonitoringRevocationScheduleExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Monitoring/Revocation/Schedule request.
+
 UpdateMonitoringRevocationSchedule Edit a revocation monitoring's schedule.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1576,7 +1609,7 @@ func (a *MonitoringApiService) NewUpdateMonitoringRevocationScheduleRequest(ctx 
 	}
 }
 
-// Executes the API request PUT /Monitoring/Revocation/Schedule
+// Executes the API request V1 PUT /Monitoring/Revocation/Schedule
 //
 //	@return MonitoringRevocationMonitoringDefinitionResponse
 func (a *MonitoringApiService) UpdateMonitoringRevocationScheduleExecute(r ApiUpdateMonitoringRevocationScheduleRequest) (*MonitoringRevocationMonitoringDefinitionResponse, *http.Response, error) {

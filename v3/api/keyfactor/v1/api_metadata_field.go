@@ -32,7 +32,7 @@ import (
 // MetadataFieldApiService MetadataFieldApi service
 type MetadataFieldApiService service
 
-// Request for POST /MetadataFields
+// Request for V1 POST /MetadataFields
 type ApiCreateMetadataFieldsRequest struct {
 	ctx                                     context.Context
 	ApiService                              *MetadataFieldApiService
@@ -59,12 +59,15 @@ func (r ApiCreateMetadataFieldsRequest) MetadataFieldMetadataFieldCreateRequest(
 	return r
 }
 
+// Executes the V1 POST /MetadataFields request context
 func (r ApiCreateMetadataFieldsRequest) Execute() (*MetadataFieldMetadataFieldResponse, *http.Response, error) {
 	return r.ApiService.CreateMetadataFieldsExecute(r)
 }
 
 /*
-CreateMetadataFields Creates a new metadata field type with the given metadata field type properties
+Creates a new V1 POST /MetadataFields request.
+
+# CreateMetadataFields Creates a new metadata field type with the given metadata field type properties
 
 *NOTE: Metadata Field in this context refers to MetadataFieldType, as opposed to the value of a metadata field associated with a certificate.
 
@@ -84,7 +87,7 @@ func (a *MetadataFieldApiService) NewCreateMetadataFieldsRequest(ctx context.Con
 	}
 }
 
-// Executes the API request POST /MetadataFields
+// Executes the API request V1 POST /MetadataFields
 //
 //	@return MetadataFieldMetadataFieldResponse
 func (a *MetadataFieldApiService) CreateMetadataFieldsExecute(r ApiCreateMetadataFieldsRequest) (*MetadataFieldMetadataFieldResponse, *http.Response, error) {
@@ -179,7 +182,7 @@ func (a *MetadataFieldApiService) CreateMetadataFieldsExecute(r ApiCreateMetadat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /MetadataFields
+// Request for V1 DELETE /MetadataFields
 type ApiDeleteMetadataFieldsRequest struct {
 	ctx                     context.Context
 	ApiService              *MetadataFieldApiService
@@ -213,12 +216,15 @@ func (r ApiDeleteMetadataFieldsRequest) RequestBody(requestBody []int32) ApiDele
 	return r
 }
 
+// Executes the V1 DELETE /MetadataFields request context
 func (r ApiDeleteMetadataFieldsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteMetadataFieldsExecute(r)
 }
 
 /*
-DeleteMetadataFields Deletes multiple persisted metadata field types by their unique ids
+Creates a new V1 DELETE /MetadataFields request.
+
+# DeleteMetadataFields Deletes multiple persisted metadata field types by their unique ids
 
 This will ignore individual delete failures, and continue processing the array.
 
@@ -324,7 +330,7 @@ func (a *MetadataFieldApiService) DeleteMetadataFieldsExecute(r ApiDeleteMetadat
 	return localVarHTTPResponse, nil
 }
 
-// Request for DELETE /MetadataFields/{id}
+// Request for V1 DELETE /MetadataFields/{id}
 type ApiDeleteMetadataFieldsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *MetadataFieldApiService
@@ -352,11 +358,14 @@ func (r ApiDeleteMetadataFieldsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVe
 	return r
 }
 
+// Executes the V1 DELETE /MetadataFields/{id} request context
 func (r ApiDeleteMetadataFieldsByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteMetadataFieldsByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /MetadataFields/{id} request.
+
 DeleteMetadataFieldsById Deletes a persisted metadata field type by its unique id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -469,7 +478,7 @@ func (a *MetadataFieldApiService) DeleteMetadataFieldsByIdExecute(r ApiDeleteMet
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /MetadataFields
+// Request for V1 GET /MetadataFields
 type ApiGetMetadataFieldsRequest struct {
 	ctx                     context.Context
 	ApiService              *MetadataFieldApiService
@@ -519,12 +528,15 @@ func (r ApiGetMetadataFieldsRequest) XKeyfactorApiVersion(xKeyfactorApiVersion s
 	return r
 }
 
+// Executes the V1 GET /MetadataFields request context
 func (r ApiGetMetadataFieldsRequest) Execute() ([]CSSCMSDataModelModelsMetadataType, *http.Response, error) {
 	return r.ApiService.GetMetadataFieldsExecute(r)
 }
 
 /*
-GetMetadataFields Returns all metadata field types according to the provided filter and output parameters
+Creates a new V1 GET /MetadataFields request.
+
+# GetMetadataFields Returns all metadata field types according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetMetadataFieldsRequest
@@ -542,7 +554,7 @@ func (a *MetadataFieldApiService) NewGetMetadataFieldsRequest(ctx context.Contex
 	}
 }
 
-// Executes the API request GET /MetadataFields
+// Executes the API request V1 GET /MetadataFields
 //
 //	@return []CSSCMSDataModelModelsMetadataType
 func (a *MetadataFieldApiService) GetMetadataFieldsExecute(r ApiGetMetadataFieldsRequest) ([]CSSCMSDataModelModelsMetadataType, *http.Response, error) {
@@ -650,7 +662,7 @@ func (a *MetadataFieldApiService) GetMetadataFieldsExecute(r ApiGetMetadataField
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /MetadataFields/{id}
+// Request for V1 GET /MetadataFields/{id}
 type ApiGetMetadataFieldsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *MetadataFieldApiService
@@ -671,12 +683,15 @@ func (r ApiGetMetadataFieldsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersi
 	return r
 }
 
+// Executes the V1 GET /MetadataFields/{id} request context
 func (r ApiGetMetadataFieldsByIdRequest) Execute() (*CSSCMSDataModelModelsMetadataType, *http.Response, error) {
 	return r.ApiService.GetMetadataFieldsByIdExecute(r)
 }
 
 /*
-GetMetadataFieldsById Gets a persisted metadata field type by its unique id
+Creates a new V1 GET /MetadataFields/{id} request.
+
+# GetMetadataFieldsById Gets a persisted metadata field type by its unique id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id The unique id of the metadata field type
@@ -697,7 +712,7 @@ func (a *MetadataFieldApiService) NewGetMetadataFieldsByIdRequest(ctx context.Co
 	}
 }
 
-// Executes the API request GET /MetadataFields/{id}
+// Executes the API request V1 GET /MetadataFields/{id}
 //
 //	@return CSSCMSDataModelModelsMetadataType
 func (a *MetadataFieldApiService) GetMetadataFieldsByIdExecute(r ApiGetMetadataFieldsByIdRequest) (*CSSCMSDataModelModelsMetadataType, *http.Response, error) {
@@ -797,7 +812,7 @@ func (a *MetadataFieldApiService) GetMetadataFieldsByIdExecute(r ApiGetMetadataF
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /MetadataFields/{id}/InUse
+// Request for V1 GET /MetadataFields/{id}/InUse
 type ApiGetMetadataFieldsByIdInUseRequest struct {
 	ctx                     context.Context
 	ApiService              *MetadataFieldApiService
@@ -818,11 +833,14 @@ func (r ApiGetMetadataFieldsByIdInUseRequest) XKeyfactorApiVersion(xKeyfactorApi
 	return r
 }
 
+// Executes the V1 GET /MetadataFields/{id}/InUse request context
 func (r ApiGetMetadataFieldsByIdInUseRequest) Execute() (bool, *http.Response, error) {
 	return r.ApiService.GetMetadataFieldsByIdInUseExecute(r)
 }
 
 /*
+Creates a new V1 GET /MetadataFields/{id}/InUse request.
+
 GetMetadataFieldsByIdInUse Determines if a metadata field type associated with the provided identifier is currently in use
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -844,7 +862,7 @@ func (a *MetadataFieldApiService) NewGetMetadataFieldsByIdInUseRequest(ctx conte
 	}
 }
 
-// Executes the API request GET /MetadataFields/{id}/InUse
+// Executes the API request V1 GET /MetadataFields/{id}/InUse
 //
 //	@return bool
 func (a *MetadataFieldApiService) GetMetadataFieldsByIdInUseExecute(r ApiGetMetadataFieldsByIdInUseRequest) (bool, *http.Response, error) {
@@ -938,7 +956,7 @@ func (a *MetadataFieldApiService) GetMetadataFieldsByIdInUseExecute(r ApiGetMeta
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /MetadataFields/{name}
+// Request for V1 GET /MetadataFields/{name}
 type ApiGetMetadataFieldsNameRequest struct {
 	ctx                     context.Context
 	ApiService              *MetadataFieldApiService
@@ -959,12 +977,15 @@ func (r ApiGetMetadataFieldsNameRequest) XKeyfactorApiVersion(xKeyfactorApiVersi
 	return r
 }
 
+// Executes the V1 GET /MetadataFields/{name} request context
 func (r ApiGetMetadataFieldsNameRequest) Execute() (*CSSCMSDataModelModelsMetadataType, *http.Response, error) {
 	return r.ApiService.GetMetadataFieldsNameExecute(r)
 }
 
 /*
-GetMetadataFieldsName Gets a persisted metadata field type by its unique name
+Creates a new V1 GET /MetadataFields/{name} request.
+
+# GetMetadataFieldsName Gets a persisted metadata field type by its unique name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param name The unique name of the metadata field.
@@ -985,7 +1006,7 @@ func (a *MetadataFieldApiService) NewGetMetadataFieldsNameRequest(ctx context.Co
 	}
 }
 
-// Executes the API request GET /MetadataFields/{name}
+// Executes the API request V1 GET /MetadataFields/{name}
 //
 //	@return CSSCMSDataModelModelsMetadataType
 func (a *MetadataFieldApiService) GetMetadataFieldsNameExecute(r ApiGetMetadataFieldsNameRequest) (*CSSCMSDataModelModelsMetadataType, *http.Response, error) {
@@ -1079,7 +1100,7 @@ func (a *MetadataFieldApiService) GetMetadataFieldsNameExecute(r ApiGetMetadataF
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /MetadataFields
+// Request for V1 PUT /MetadataFields
 type ApiUpdateMetadataFieldsRequest struct {
 	ctx                                     context.Context
 	ApiService                              *MetadataFieldApiService
@@ -1106,12 +1127,15 @@ func (r ApiUpdateMetadataFieldsRequest) MetadataFieldMetadataFieldUpdateRequest(
 	return r
 }
 
+// Executes the V1 PUT /MetadataFields request context
 func (r ApiUpdateMetadataFieldsRequest) Execute() (*MetadataFieldMetadataFieldResponse, *http.Response, error) {
 	return r.ApiService.UpdateMetadataFieldsExecute(r)
 }
 
 /*
-UpdateMetadataFields Updates a persisted metadata field with the given metadata field type
+Creates a new V1 PUT /MetadataFields request.
+
+# UpdateMetadataFields Updates a persisted metadata field with the given metadata field type
 
 *NOTE: Metadata Field in this context refers to MetadataFieldType, as opposed to the value of a metadata field associated with a certificate.
 
@@ -1131,7 +1155,7 @@ func (a *MetadataFieldApiService) NewUpdateMetadataFieldsRequest(ctx context.Con
 	}
 }
 
-// Executes the API request PUT /MetadataFields
+// Executes the API request V1 PUT /MetadataFields
 //
 //	@return MetadataFieldMetadataFieldResponse
 func (a *MetadataFieldApiService) UpdateMetadataFieldsExecute(r ApiUpdateMetadataFieldsRequest) (*MetadataFieldMetadataFieldResponse, *http.Response, error) {

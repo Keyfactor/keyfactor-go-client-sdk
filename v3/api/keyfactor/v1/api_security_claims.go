@@ -32,7 +32,7 @@ import (
 // SecurityClaimsApiService SecurityClaimsApi service
 type SecurityClaimsApiService service
 
-// Request for POST /Security/Claims
+// Request for V1 POST /Security/Claims
 type ApiCreateSecurityClaimsRequest struct {
 	ctx                                                            context.Context
 	ApiService                                                     *SecurityClaimsApiService
@@ -59,11 +59,14 @@ func (r ApiCreateSecurityClaimsRequest) SecurityRoleClaimDefinitionsRoleClaimDef
 	return r
 }
 
+// Executes the V1 POST /Security/Claims request context
 func (r ApiCreateSecurityClaimsRequest) Execute() (*SecurityRoleClaimDefinitionsRoleClaimDefinitionResponse, *http.Response, error) {
 	return r.ApiService.CreateSecurityClaimsExecute(r)
 }
 
 /*
+Creates a new V1 POST /Security/Claims request.
+
 CreateSecurityClaims Adds a new claim definition to the system.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *SecurityClaimsApiService) NewCreateSecurityClaimsRequest(ctx context.Co
 	}
 }
 
-// Executes the API request POST /Security/Claims
+// Executes the API request V1 POST /Security/Claims
 //
 //	@return SecurityRoleClaimDefinitionsRoleClaimDefinitionResponse
 func (a *SecurityClaimsApiService) CreateSecurityClaimsExecute(r ApiCreateSecurityClaimsRequest) (*SecurityRoleClaimDefinitionsRoleClaimDefinitionResponse, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *SecurityClaimsApiService) CreateSecurityClaimsExecute(r ApiCreateSecuri
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /Security/Claims/{id}
+// Request for V1 DELETE /Security/Claims/{id}
 type ApiDeleteSecurityClaimsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityClaimsApiService
@@ -198,11 +201,14 @@ func (r ApiDeleteSecurityClaimsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVe
 	return r
 }
 
+// Executes the V1 DELETE /Security/Claims/{id} request context
 func (r ApiDeleteSecurityClaimsByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSecurityClaimsByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /Security/Claims/{id} request.
+
 DeleteSecurityClaimsById Removes a claim definition from the system.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -306,7 +312,7 @@ func (a *SecurityClaimsApiService) DeleteSecurityClaimsByIdExecute(r ApiDeleteSe
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /Security/Claims
+// Request for V1 GET /Security/Claims
 type ApiGetSecurityClaimsRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityClaimsApiService
@@ -356,11 +362,14 @@ func (r ApiGetSecurityClaimsRequest) XKeyfactorApiVersion(xKeyfactorApiVersion s
 	return r
 }
 
+// Executes the V1 GET /Security/Claims request context
 func (r ApiGetSecurityClaimsRequest) Execute() ([]SecurityRoleClaimDefinitionsRoleClaimDefinitionQueryResponse, *http.Response, error) {
 	return r.ApiService.GetSecurityClaimsExecute(r)
 }
 
 /*
+Creates a new V1 GET /Security/Claims request.
+
 GetSecurityClaims Returns all claim definitions according to the provided filter and output parameters.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -379,7 +388,7 @@ func (a *SecurityClaimsApiService) NewGetSecurityClaimsRequest(ctx context.Conte
 	}
 }
 
-// Executes the API request GET /Security/Claims
+// Executes the API request V1 GET /Security/Claims
 //
 //	@return []SecurityRoleClaimDefinitionsRoleClaimDefinitionQueryResponse
 func (a *SecurityClaimsApiService) GetSecurityClaimsExecute(r ApiGetSecurityClaimsRequest) ([]SecurityRoleClaimDefinitionsRoleClaimDefinitionQueryResponse, *http.Response, error) {
@@ -487,7 +496,7 @@ func (a *SecurityClaimsApiService) GetSecurityClaimsExecute(r ApiGetSecurityClai
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Security/Claims/{id}
+// Request for V1 GET /Security/Claims/{id}
 type ApiGetSecurityClaimsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityClaimsApiService
@@ -508,11 +517,14 @@ func (r ApiGetSecurityClaimsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersi
 	return r
 }
 
+// Executes the V1 GET /Security/Claims/{id} request context
 func (r ApiGetSecurityClaimsByIdRequest) Execute() (*SecurityRoleClaimDefinitionsRoleClaimDefinitionResponse, *http.Response, error) {
 	return r.ApiService.GetSecurityClaimsByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Security/Claims/{id} request.
+
 GetSecurityClaimsById Returns a single claim definition that matches the id.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -534,7 +546,7 @@ func (a *SecurityClaimsApiService) NewGetSecurityClaimsByIdRequest(ctx context.C
 	}
 }
 
-// Executes the API request GET /Security/Claims/{id}
+// Executes the API request V1 GET /Security/Claims/{id}
 //
 //	@return SecurityRoleClaimDefinitionsRoleClaimDefinitionResponse
 func (a *SecurityClaimsApiService) GetSecurityClaimsByIdExecute(r ApiGetSecurityClaimsByIdRequest) (*SecurityRoleClaimDefinitionsRoleClaimDefinitionResponse, *http.Response, error) {
@@ -628,7 +640,7 @@ func (a *SecurityClaimsApiService) GetSecurityClaimsByIdExecute(r ApiGetSecurity
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Security/Claims/Roles
+// Request for V1 GET /Security/Claims/Roles
 type ApiGetSecurityClaimsRolesRequest struct {
 	ctx                          context.Context
 	ApiService                   *SecurityClaimsApiService
@@ -666,11 +678,14 @@ func (r ApiGetSecurityClaimsRolesRequest) XKeyfactorApiVersion(xKeyfactorApiVers
 	return r
 }
 
+// Executes the V1 GET /Security/Claims/Roles request context
 func (r ApiGetSecurityClaimsRolesRequest) Execute() ([]SecurityRoleClaimDefinitionsSecurityRoleForClaimResponse, *http.Response, error) {
 	return r.ApiService.GetSecurityClaimsRolesExecute(r)
 }
 
 /*
+Creates a new V1 GET /Security/Claims/Roles request.
+
 GetSecurityClaimsRoles Returns a list of roles granted by the claim with the provided id.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -689,7 +704,7 @@ func (a *SecurityClaimsApiService) NewGetSecurityClaimsRolesRequest(ctx context.
 	}
 }
 
-// Executes the API request GET /Security/Claims/Roles
+// Executes the API request V1 GET /Security/Claims/Roles
 //
 //	@return []SecurityRoleClaimDefinitionsSecurityRoleForClaimResponse
 func (a *SecurityClaimsApiService) GetSecurityClaimsRolesExecute(r ApiGetSecurityClaimsRolesRequest) ([]SecurityRoleClaimDefinitionsSecurityRoleForClaimResponse, *http.Response, error) {
@@ -806,7 +821,7 @@ func (a *SecurityClaimsApiService) GetSecurityClaimsRolesExecute(r ApiGetSecurit
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Security/Claims
+// Request for V1 PUT /Security/Claims
 type ApiUpdateSecurityClaimsRequest struct {
 	ctx                                                          context.Context
 	ApiService                                                   *SecurityClaimsApiService
@@ -833,11 +848,14 @@ func (r ApiUpdateSecurityClaimsRequest) SecurityRoleClaimDefinitionsRoleClaimDef
 	return r
 }
 
+// Executes the V1 PUT /Security/Claims request context
 func (r ApiUpdateSecurityClaimsRequest) Execute() (*SecurityRoleClaimDefinitionsRoleClaimDefinitionResponse, *http.Response, error) {
 	return r.ApiService.UpdateSecurityClaimsExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Security/Claims request.
+
 UpdateSecurityClaims Updates an existing claim definition.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -856,7 +874,7 @@ func (a *SecurityClaimsApiService) NewUpdateSecurityClaimsRequest(ctx context.Co
 	}
 }
 
-// Executes the API request PUT /Security/Claims
+// Executes the API request V1 PUT /Security/Claims
 //
 //	@return SecurityRoleClaimDefinitionsRoleClaimDefinitionResponse
 func (a *SecurityClaimsApiService) UpdateSecurityClaimsExecute(r ApiUpdateSecurityClaimsRequest) (*SecurityRoleClaimDefinitionsRoleClaimDefinitionResponse, *http.Response, error) {

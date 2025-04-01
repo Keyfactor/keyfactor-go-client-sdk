@@ -32,7 +32,7 @@ import (
 // PermissionSetApiService PermissionSetApi service
 type PermissionSetApiService service
 
-// Request for POST /PermissionSets
+// Request for V1 POST /PermissionSets
 type ApiCreatePermissionSetsRequest struct {
 	ctx                                      context.Context
 	ApiService                               *PermissionSetApiService
@@ -59,11 +59,14 @@ func (r ApiCreatePermissionSetsRequest) PermissionSetsPermissionSetCreateRequest
 	return r
 }
 
+// Executes the V1 POST /PermissionSets request context
 func (r ApiCreatePermissionSetsRequest) Execute() (*PermissionSetsPermissionSetResponse, *http.Response, error) {
 	return r.ApiService.CreatePermissionSetsExecute(r)
 }
 
 /*
+Creates a new V1 POST /PermissionSets request.
+
 CreatePermissionSets Creates a new permission set.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *PermissionSetApiService) NewCreatePermissionSetsRequest(ctx context.Con
 	}
 }
 
-// Executes the API request POST /PermissionSets
+// Executes the API request V1 POST /PermissionSets
 //
 //	@return PermissionSetsPermissionSetResponse
 func (a *PermissionSetApiService) CreatePermissionSetsExecute(r ApiCreatePermissionSetsRequest) (*PermissionSetsPermissionSetResponse, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *PermissionSetApiService) CreatePermissionSetsExecute(r ApiCreatePermiss
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /PermissionSets/{id}
+// Request for V1 DELETE /PermissionSets/{id}
 type ApiDeletePermissionSetsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *PermissionSetApiService
@@ -198,11 +201,14 @@ func (r ApiDeletePermissionSetsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVe
 	return r
 }
 
+// Executes the V1 DELETE /PermissionSets/{id} request context
 func (r ApiDeletePermissionSetsByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeletePermissionSetsByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /PermissionSets/{id} request.
+
 DeletePermissionSetsById Deletes a permission set.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -306,7 +312,7 @@ func (a *PermissionSetApiService) DeletePermissionSetsByIdExecute(r ApiDeletePer
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /PermissionSets
+// Request for V1 GET /PermissionSets
 type ApiGetPermissionSetsRequest struct {
 	ctx                     context.Context
 	ApiService              *PermissionSetApiService
@@ -356,11 +362,14 @@ func (r ApiGetPermissionSetsRequest) XKeyfactorApiVersion(xKeyfactorApiVersion s
 	return r
 }
 
+// Executes the V1 GET /PermissionSets request context
 func (r ApiGetPermissionSetsRequest) Execute() ([]PermissionSetsPermissionSetResponse, *http.Response, error) {
 	return r.ApiService.GetPermissionSetsExecute(r)
 }
 
 /*
+Creates a new V1 GET /PermissionSets request.
+
 GetPermissionSets Gets all Permission Set(s) in the system if the user has a security role that is assigned to the Global Permission Set and the security role has the Global Security Read permission.   Otherwise, returns only the Permission Sets with the Security Modify permission that are assigned to the user's security role(s).
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -379,7 +388,7 @@ func (a *PermissionSetApiService) NewGetPermissionSetsRequest(ctx context.Contex
 	}
 }
 
-// Executes the API request GET /PermissionSets
+// Executes the API request V1 GET /PermissionSets
 //
 //	@return []PermissionSetsPermissionSetResponse
 func (a *PermissionSetApiService) GetPermissionSetsExecute(r ApiGetPermissionSetsRequest) ([]PermissionSetsPermissionSetResponse, *http.Response, error) {
@@ -487,7 +496,7 @@ func (a *PermissionSetApiService) GetPermissionSetsExecute(r ApiGetPermissionSet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /PermissionSets/{id}
+// Request for V1 GET /PermissionSets/{id}
 type ApiGetPermissionSetsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *PermissionSetApiService
@@ -508,11 +517,14 @@ func (r ApiGetPermissionSetsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersi
 	return r
 }
 
+// Executes the V1 GET /PermissionSets/{id} request context
 func (r ApiGetPermissionSetsByIdRequest) Execute() (*PermissionSetsPermissionSetResponse, *http.Response, error) {
 	return r.ApiService.GetPermissionSetsByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /PermissionSets/{id} request.
+
 GetPermissionSetsById Gets permission set data.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -534,7 +546,7 @@ func (a *PermissionSetApiService) NewGetPermissionSetsByIdRequest(ctx context.Co
 	}
 }
 
-// Executes the API request GET /PermissionSets/{id}
+// Executes the API request V1 GET /PermissionSets/{id}
 //
 //	@return PermissionSetsPermissionSetResponse
 func (a *PermissionSetApiService) GetPermissionSetsByIdExecute(r ApiGetPermissionSetsByIdRequest) (*PermissionSetsPermissionSetResponse, *http.Response, error) {
@@ -628,7 +640,7 @@ func (a *PermissionSetApiService) GetPermissionSetsByIdExecute(r ApiGetPermissio
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /PermissionSets/My
+// Request for V1 GET /PermissionSets/My
 type ApiGetPermissionSetsMyRequest struct {
 	ctx                     context.Context
 	ApiService              *PermissionSetApiService
@@ -655,11 +667,14 @@ func (r ApiGetPermissionSetsMyRequest) XKeyfactorApiVersion(xKeyfactorApiVersion
 	return r
 }
 
+// Executes the V1 GET /PermissionSets/My request context
 func (r ApiGetPermissionSetsMyRequest) Execute() ([]CSSCMSDataModelModelsSecurityPermissionSet, *http.Response, error) {
 	return r.ApiService.GetPermissionSetsMyExecute(r)
 }
 
 /*
+Creates a new V1 GET /PermissionSets/My request.
+
 GetPermissionSetsMy Method for GetPermissionSetsMy
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -678,7 +693,7 @@ func (a *PermissionSetApiService) NewGetPermissionSetsMyRequest(ctx context.Cont
 	}
 }
 
-// Executes the API request GET /PermissionSets/My
+// Executes the API request V1 GET /PermissionSets/My
 //
 //	@return []CSSCMSDataModelModelsSecurityPermissionSet
 func (a *PermissionSetApiService) GetPermissionSetsMyExecute(r ApiGetPermissionSetsMyRequest) ([]CSSCMSDataModelModelsSecurityPermissionSet, *http.Response, error) {
@@ -775,7 +790,7 @@ func (a *PermissionSetApiService) GetPermissionSetsMyExecute(r ApiGetPermissionS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /PermissionSets
+// Request for V1 PUT /PermissionSets
 type ApiUpdatePermissionSetsRequest struct {
 	ctx                                      context.Context
 	ApiService                               *PermissionSetApiService
@@ -801,11 +816,14 @@ func (r ApiUpdatePermissionSetsRequest) XKeyfactorApiVersion(xKeyfactorApiVersio
 	return r
 }
 
+// Executes the V1 PUT /PermissionSets request context
 func (r ApiUpdatePermissionSetsRequest) Execute() (*PermissionSetsPermissionSetResponse, *http.Response, error) {
 	return r.ApiService.UpdatePermissionSetsExecute(r)
 }
 
 /*
+Creates a new V1 PUT /PermissionSets request.
+
 UpdatePermissionSets Method for UpdatePermissionSets
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -824,7 +842,7 @@ func (a *PermissionSetApiService) NewUpdatePermissionSetsRequest(ctx context.Con
 	}
 }
 
-// Executes the API request PUT /PermissionSets
+// Executes the API request V1 PUT /PermissionSets
 //
 //	@return PermissionSetsPermissionSetResponse
 func (a *PermissionSetApiService) UpdatePermissionSetsExecute(r ApiUpdatePermissionSetsRequest) (*PermissionSetsPermissionSetResponse, *http.Response, error) {

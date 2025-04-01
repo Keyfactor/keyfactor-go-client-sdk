@@ -32,7 +32,7 @@ import (
 // CustomJobTypeApiService CustomJobTypeApi service
 type CustomJobTypeApiService service
 
-// Request for POST /JobTypes/Custom
+// Request for V1 POST /JobTypes/Custom
 type ApiCreateJobTypesCustomRequest struct {
 	ctx                                                       context.Context
 	ApiService                                                *CustomJobTypeApiService
@@ -59,11 +59,14 @@ func (r ApiCreateJobTypesCustomRequest) CSSCMSDataModelModelsOrchestratorJobsJob
 	return r
 }
 
+// Executes the V1 POST /JobTypes/Custom request context
 func (r ApiCreateJobTypesCustomRequest) Execute() (*OrchestratorJobsJobTypeResponse, *http.Response, error) {
 	return r.ApiService.CreateJobTypesCustomExecute(r)
 }
 
 /*
+Creates a new V1 POST /JobTypes/Custom request.
+
 CreateJobTypesCustom Creates a custom job type with the provided properties
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *CustomJobTypeApiService) NewCreateJobTypesCustomRequest(ctx context.Con
 	}
 }
 
-// Executes the API request POST /JobTypes/Custom
+// Executes the API request V1 POST /JobTypes/Custom
 //
 //	@return OrchestratorJobsJobTypeResponse
 func (a *CustomJobTypeApiService) CreateJobTypesCustomExecute(r ApiCreateJobTypesCustomRequest) (*OrchestratorJobsJobTypeResponse, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *CustomJobTypeApiService) CreateJobTypesCustomExecute(r ApiCreateJobType
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /JobTypes/Custom/{id}
+// Request for V1 DELETE /JobTypes/Custom/{id}
 type ApiDeleteJobTypesCustomByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CustomJobTypeApiService
@@ -198,11 +201,14 @@ func (r ApiDeleteJobTypesCustomByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVe
 	return r
 }
 
+// Executes the V1 DELETE /JobTypes/Custom/{id} request context
 func (r ApiDeleteJobTypesCustomByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteJobTypesCustomByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /JobTypes/Custom/{id} request.
+
 DeleteJobTypesCustomById Deletes the custom job type associated with the provided id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -306,7 +312,7 @@ func (a *CustomJobTypeApiService) DeleteJobTypesCustomByIdExecute(r ApiDeleteJob
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /JobTypes/Custom
+// Request for V1 GET /JobTypes/Custom
 type ApiGetJobTypesCustomRequest struct {
 	ctx                     context.Context
 	ApiService              *CustomJobTypeApiService
@@ -356,11 +362,14 @@ func (r ApiGetJobTypesCustomRequest) XKeyfactorApiVersion(xKeyfactorApiVersion s
 	return r
 }
 
+// Executes the V1 GET /JobTypes/Custom request context
 func (r ApiGetJobTypesCustomRequest) Execute() ([]OrchestratorJobsJobTypeResponse, *http.Response, error) {
 	return r.ApiService.GetJobTypesCustomExecute(r)
 }
 
 /*
+Creates a new V1 GET /JobTypes/Custom request.
+
 GetJobTypesCustom Returns all custom job types according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -379,7 +388,7 @@ func (a *CustomJobTypeApiService) NewGetJobTypesCustomRequest(ctx context.Contex
 	}
 }
 
-// Executes the API request GET /JobTypes/Custom
+// Executes the API request V1 GET /JobTypes/Custom
 //
 //	@return []OrchestratorJobsJobTypeResponse
 func (a *CustomJobTypeApiService) GetJobTypesCustomExecute(r ApiGetJobTypesCustomRequest) ([]OrchestratorJobsJobTypeResponse, *http.Response, error) {
@@ -487,7 +496,7 @@ func (a *CustomJobTypeApiService) GetJobTypesCustomExecute(r ApiGetJobTypesCusto
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /JobTypes/Custom/{id}
+// Request for V1 GET /JobTypes/Custom/{id}
 type ApiGetJobTypesCustomByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CustomJobTypeApiService
@@ -508,11 +517,14 @@ func (r ApiGetJobTypesCustomByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersi
 	return r
 }
 
+// Executes the V1 GET /JobTypes/Custom/{id} request context
 func (r ApiGetJobTypesCustomByIdRequest) Execute() (*OrchestratorJobsJobTypeResponse, *http.Response, error) {
 	return r.ApiService.GetJobTypesCustomByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /JobTypes/Custom/{id} request.
+
 GetJobTypesCustomById Returns a single custom job type associated with the provided id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -534,7 +546,7 @@ func (a *CustomJobTypeApiService) NewGetJobTypesCustomByIdRequest(ctx context.Co
 	}
 }
 
-// Executes the API request GET /JobTypes/Custom/{id}
+// Executes the API request V1 GET /JobTypes/Custom/{id}
 //
 //	@return OrchestratorJobsJobTypeResponse
 func (a *CustomJobTypeApiService) GetJobTypesCustomByIdExecute(r ApiGetJobTypesCustomByIdRequest) (*OrchestratorJobsJobTypeResponse, *http.Response, error) {
@@ -628,7 +640,7 @@ func (a *CustomJobTypeApiService) GetJobTypesCustomByIdExecute(r ApiGetJobTypesC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /JobTypes/Custom
+// Request for V1 PUT /JobTypes/Custom
 type ApiUpdateJobTypesCustomRequest struct {
 	ctx                                                       context.Context
 	ApiService                                                *CustomJobTypeApiService
@@ -655,11 +667,14 @@ func (r ApiUpdateJobTypesCustomRequest) CSSCMSDataModelModelsOrchestratorJobsJob
 	return r
 }
 
+// Executes the V1 PUT /JobTypes/Custom request context
 func (r ApiUpdateJobTypesCustomRequest) Execute() (*OrchestratorJobsJobTypeResponse, *http.Response, error) {
 	return r.ApiService.UpdateJobTypesCustomExecute(r)
 }
 
 /*
+Creates a new V1 PUT /JobTypes/Custom request.
+
 UpdateJobTypesCustom Updates an existing custom job type with the provided properties
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -678,7 +693,7 @@ func (a *CustomJobTypeApiService) NewUpdateJobTypesCustomRequest(ctx context.Con
 	}
 }
 
-// Executes the API request PUT /JobTypes/Custom
+// Executes the API request V1 PUT /JobTypes/Custom
 //
 //	@return OrchestratorJobsJobTypeResponse
 func (a *CustomJobTypeApiService) UpdateJobTypesCustomExecute(r ApiUpdateJobTypesCustomRequest) (*OrchestratorJobsJobTypeResponse, *http.Response, error) {

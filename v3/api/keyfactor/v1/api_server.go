@@ -32,7 +32,7 @@ import (
 // ServerApiService ServerApi service
 type ServerApiService service
 
-// Request for POST /SSH/Servers
+// Request for V1 POST /SSH/Servers
 type ApiCreateSSHServersRequest struct {
 	ctx                                                  context.Context
 	ApiService                                           *ServerApiService
@@ -59,11 +59,14 @@ func (r ApiCreateSSHServersRequest) CSSCMSDataModelModelsSSHServersServerCreatio
 	return r
 }
 
+// Executes the V1 POST /SSH/Servers request context
 func (r ApiCreateSSHServersRequest) Execute() (*CSSCMSDataModelModelsSSHServersServerResponse, *http.Response, error) {
 	return r.ApiService.CreateSSHServersExecute(r)
 }
 
 /*
+Creates a new V1 POST /SSH/Servers request.
+
 CreateSSHServers Creates a server with the provided properties
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *ServerApiService) NewCreateSSHServersRequest(ctx context.Context) ApiCr
 	}
 }
 
-// Executes the API request POST /SSH/Servers
+// Executes the API request V1 POST /SSH/Servers
 //
 //	@return CSSCMSDataModelModelsSSHServersServerResponse
 func (a *ServerApiService) CreateSSHServersExecute(r ApiCreateSSHServersRequest) (*CSSCMSDataModelModelsSSHServersServerResponse, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *ServerApiService) CreateSSHServersExecute(r ApiCreateSSHServersRequest)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /SSH/Servers/Access
+// Request for V1 POST /SSH/Servers/Access
 type ApiCreateSSHServersAccessRequest struct {
 	ctx                                               context.Context
 	ApiService                                        *ServerApiService
@@ -204,11 +207,14 @@ func (r ApiCreateSSHServersAccessRequest) CSSCMSDataModelModelsSSHAccessServerAc
 	return r
 }
 
+// Executes the V1 POST /SSH/Servers/Access request context
 func (r ApiCreateSSHServersAccessRequest) Execute() (*CSSCMSDataModelModelsSSHAccessServerAccessResponse, *http.Response, error) {
 	return r.ApiService.CreateSSHServersAccessExecute(r)
 }
 
 /*
+Creates a new V1 POST /SSH/Servers/Access request.
+
 CreateSSHServersAccess Updates logons and users with access to those logons for an existing server
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -227,7 +233,7 @@ func (a *ServerApiService) NewCreateSSHServersAccessRequest(ctx context.Context)
 	}
 }
 
-// Executes the API request POST /SSH/Servers/Access
+// Executes the API request V1 POST /SSH/Servers/Access
 //
 //	@return CSSCMSDataModelModelsSSHAccessServerAccessResponse
 func (a *ServerApiService) CreateSSHServersAccessExecute(r ApiCreateSSHServersAccessRequest) (*CSSCMSDataModelModelsSSHAccessServerAccessResponse, *http.Response, error) {
@@ -322,7 +328,7 @@ func (a *ServerApiService) CreateSSHServersAccessExecute(r ApiCreateSSHServersAc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /SSH/Servers/Access
+// Request for V1 DELETE /SSH/Servers/Access
 type ApiDeleteSSHServersAccessRequest struct {
 	ctx                                               context.Context
 	ApiService                                        *ServerApiService
@@ -349,11 +355,14 @@ func (r ApiDeleteSSHServersAccessRequest) CSSCMSDataModelModelsSSHAccessServerAc
 	return r
 }
 
+// Executes the V1 DELETE /SSH/Servers/Access request context
 func (r ApiDeleteSSHServersAccessRequest) Execute() (*CSSCMSDataModelModelsSSHAccessServerAccessResponse, *http.Response, error) {
 	return r.ApiService.DeleteSSHServersAccessExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /SSH/Servers/Access request.
+
 DeleteSSHServersAccess Updates logons and users with access to those logons for an existing server
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -372,7 +381,7 @@ func (a *ServerApiService) NewDeleteSSHServersAccessRequest(ctx context.Context)
 	}
 }
 
-// Executes the API request DELETE /SSH/Servers/Access
+// Executes the API request V1 DELETE /SSH/Servers/Access
 //
 //	@return CSSCMSDataModelModelsSSHAccessServerAccessResponse
 func (a *ServerApiService) DeleteSSHServersAccessExecute(r ApiDeleteSSHServersAccessRequest) (*CSSCMSDataModelModelsSSHAccessServerAccessResponse, *http.Response, error) {
@@ -467,7 +476,7 @@ func (a *ServerApiService) DeleteSSHServersAccessExecute(r ApiDeleteSSHServersAc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /SSH/Servers/{id}
+// Request for V1 DELETE /SSH/Servers/{id}
 type ApiDeleteSSHServersByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *ServerApiService
@@ -488,11 +497,14 @@ func (r ApiDeleteSSHServersByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersio
 	return r
 }
 
+// Executes the V1 DELETE /SSH/Servers/{id} request context
 func (r ApiDeleteSSHServersByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSSHServersByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /SSH/Servers/{id} request.
+
 DeleteSSHServersById Deletes a Server associated with the provided identifier
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -602,7 +614,7 @@ func (a *ServerApiService) DeleteSSHServersByIdExecute(r ApiDeleteSSHServersById
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /SSH/Servers
+// Request for V1 GET /SSH/Servers
 type ApiGetSSHServersRequest struct {
 	ctx                     context.Context
 	ApiService              *ServerApiService
@@ -652,11 +664,14 @@ func (r ApiGetSSHServersRequest) XKeyfactorApiVersion(xKeyfactorApiVersion strin
 	return r
 }
 
+// Executes the V1 GET /SSH/Servers request context
 func (r ApiGetSSHServersRequest) Execute() ([]CSSCMSDataModelModelsSSHServersServerResponse, *http.Response, error) {
 	return r.ApiService.GetSSHServersExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSH/Servers request.
+
 GetSSHServers Returns all servers according to the provided filter parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -675,7 +690,7 @@ func (a *ServerApiService) NewGetSSHServersRequest(ctx context.Context) ApiGetSS
 	}
 }
 
-// Executes the API request GET /SSH/Servers
+// Executes the API request V1 GET /SSH/Servers
 //
 //	@return []CSSCMSDataModelModelsSSHServersServerResponse
 func (a *ServerApiService) GetSSHServersExecute(r ApiGetSSHServersRequest) ([]CSSCMSDataModelModelsSSHServersServerResponse, *http.Response, error) {
@@ -783,7 +798,7 @@ func (a *ServerApiService) GetSSHServersExecute(r ApiGetSSHServersRequest) ([]CS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /SSH/Servers/Access/{id}
+// Request for V1 GET /SSH/Servers/Access/{id}
 type ApiGetSSHServersAccessByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *ServerApiService
@@ -804,11 +819,14 @@ func (r ApiGetSSHServersAccessByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVer
 	return r
 }
 
+// Executes the V1 GET /SSH/Servers/Access/{id} request context
 func (r ApiGetSSHServersAccessByIdRequest) Execute() (*CSSCMSDataModelModelsSSHAccessServerAccessResponse, *http.Response, error) {
 	return r.ApiService.GetSSHServersAccessByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSH/Servers/Access/{id} request.
+
 GetSSHServersAccessById Retrieves logons and users with access to those logons for an existing server
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -830,7 +848,7 @@ func (a *ServerApiService) NewGetSSHServersAccessByIdRequest(ctx context.Context
 	}
 }
 
-// Executes the API request GET /SSH/Servers/Access/{id}
+// Executes the API request V1 GET /SSH/Servers/Access/{id}
 //
 //	@return CSSCMSDataModelModelsSSHAccessServerAccessResponse
 func (a *ServerApiService) GetSSHServersAccessByIdExecute(r ApiGetSSHServersAccessByIdRequest) (*CSSCMSDataModelModelsSSHAccessServerAccessResponse, *http.Response, error) {
@@ -930,7 +948,7 @@ func (a *ServerApiService) GetSSHServersAccessByIdExecute(r ApiGetSSHServersAcce
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /SSH/Servers/{id}
+// Request for V1 GET /SSH/Servers/{id}
 type ApiGetSSHServersByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *ServerApiService
@@ -951,11 +969,14 @@ func (r ApiGetSSHServersByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersion s
 	return r
 }
 
+// Executes the V1 GET /SSH/Servers/{id} request context
 func (r ApiGetSSHServersByIdRequest) Execute() (*CSSCMSDataModelModelsSSHServersServerResponse, *http.Response, error) {
 	return r.ApiService.GetSSHServersByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSH/Servers/{id} request.
+
 GetSSHServersById Returns a Server associated with the provided identifier
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -977,7 +998,7 @@ func (a *ServerApiService) NewGetSSHServersByIdRequest(ctx context.Context, id i
 	}
 }
 
-// Executes the API request GET /SSH/Servers/{id}
+// Executes the API request V1 GET /SSH/Servers/{id}
 //
 //	@return CSSCMSDataModelModelsSSHServersServerResponse
 func (a *ServerApiService) GetSSHServersByIdExecute(r ApiGetSSHServersByIdRequest) (*CSSCMSDataModelModelsSSHServersServerResponse, *http.Response, error) {
@@ -1077,7 +1098,7 @@ func (a *ServerApiService) GetSSHServersByIdExecute(r ApiGetSSHServersByIdReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /SSH/Servers
+// Request for V1 PUT /SSH/Servers
 type ApiUpdateSSHServersRequest struct {
 	ctx                                                context.Context
 	ApiService                                         *ServerApiService
@@ -1104,11 +1125,14 @@ func (r ApiUpdateSSHServersRequest) CSSCMSDataModelModelsSSHServersServerUpdateR
 	return r
 }
 
+// Executes the V1 PUT /SSH/Servers request context
 func (r ApiUpdateSSHServersRequest) Execute() (*CSSCMSDataModelModelsSSHServersServerResponse, *http.Response, error) {
 	return r.ApiService.UpdateSSHServersExecute(r)
 }
 
 /*
+Creates a new V1 PUT /SSH/Servers request.
+
 UpdateSSHServers Updates an existing server with the provided properties
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1127,7 +1151,7 @@ func (a *ServerApiService) NewUpdateSSHServersRequest(ctx context.Context) ApiUp
 	}
 }
 
-// Executes the API request PUT /SSH/Servers
+// Executes the API request V1 PUT /SSH/Servers
 //
 //	@return CSSCMSDataModelModelsSSHServersServerResponse
 func (a *ServerApiService) UpdateSSHServersExecute(r ApiUpdateSSHServersRequest) (*CSSCMSDataModelModelsSSHServersServerResponse, *http.Response, error) {

@@ -32,7 +32,7 @@ import (
 // AuditLogApiService AuditLogApi service
 type AuditLogApiService service
 
-// Request for GET /Audit
+// Request for V1 GET /Audit
 type ApiGetAuditRequest struct {
 	ctx                     context.Context
 	ApiService              *AuditLogApiService
@@ -82,11 +82,14 @@ func (r ApiGetAuditRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) Ap
 	return r
 }
 
+// Executes the V1 GET /Audit request context
 func (r ApiGetAuditRequest) Execute() ([]KeyfactorAuditingQueryingAuditLogEntry, *http.Response, error) {
 	return r.ApiService.GetAuditExecute(r)
 }
 
 /*
+Creates a new V1 GET /Audit request.
+
 GetAudit Returns all audit log entries according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -105,7 +108,7 @@ func (a *AuditLogApiService) NewGetAuditRequest(ctx context.Context) ApiGetAudit
 	}
 }
 
-// Executes the API request GET /Audit
+// Executes the API request V1 GET /Audit
 //
 //	@return []KeyfactorAuditingQueryingAuditLogEntry
 func (a *AuditLogApiService) GetAuditExecute(r ApiGetAuditRequest) ([]KeyfactorAuditingQueryingAuditLogEntry, *http.Response, error) {
@@ -213,7 +216,7 @@ func (a *AuditLogApiService) GetAuditExecute(r ApiGetAuditRequest) ([]KeyfactorA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Audit/{id}
+// Request for V1 GET /Audit/{id}
 type ApiGetAuditByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *AuditLogApiService
@@ -234,11 +237,14 @@ func (r ApiGetAuditByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string
 	return r
 }
 
+// Executes the V1 GET /Audit/{id} request context
 func (r ApiGetAuditByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuditByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Audit/{id} request.
+
 GetAuditById Returns the audit log entry associated with the provided identifier
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -348,7 +354,7 @@ func (a *AuditLogApiService) GetAuditByIdExecute(r ApiGetAuditByIdRequest) (*htt
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /Audit/{id}/Validate
+// Request for V1 GET /Audit/{id}/Validate
 type ApiGetAuditByIdValidateRequest struct {
 	ctx                     context.Context
 	ApiService              *AuditLogApiService
@@ -369,12 +375,15 @@ func (r ApiGetAuditByIdValidateRequest) XKeyfactorApiVersion(xKeyfactorApiVersio
 	return r
 }
 
+// Executes the V1 GET /Audit/{id}/Validate request context
 func (r ApiGetAuditByIdValidateRequest) Execute() (bool, *http.Response, error) {
 	return r.ApiService.GetAuditByIdValidateExecute(r)
 }
 
 /*
-GetAuditByIdValidate Validates the audit log entry associated with the provided keyfactor id
+Creates a new V1 GET /Audit/{id}/Validate request.
+
+# GetAuditByIdValidate Validates the audit log entry associated with the provided keyfactor id
 
 The validation performs a signing operation and checks the signature against the stored signature.
 
@@ -397,7 +406,7 @@ func (a *AuditLogApiService) NewGetAuditByIdValidateRequest(ctx context.Context,
 	}
 }
 
-// Executes the API request GET /Audit/{id}/Validate
+// Executes the API request V1 GET /Audit/{id}/Validate
 //
 //	@return bool
 func (a *AuditLogApiService) GetAuditByIdValidateExecute(r ApiGetAuditByIdValidateRequest) (bool, *http.Response, error) {
@@ -491,7 +500,7 @@ func (a *AuditLogApiService) GetAuditByIdValidateExecute(r ApiGetAuditByIdValida
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Audit/Download
+// Request for V1 GET /Audit/Download
 type ApiGetAuditDownloadRequest struct {
 	ctx                     context.Context
 	ApiService              *AuditLogApiService
@@ -541,11 +550,14 @@ func (r ApiGetAuditDownloadRequest) XKeyfactorApiVersion(xKeyfactorApiVersion st
 	return r
 }
 
+// Executes the V1 GET /Audit/Download request context
 func (r ApiGetAuditDownloadRequest) Execute() (string, *http.Response, error) {
 	return r.ApiService.GetAuditDownloadExecute(r)
 }
 
 /*
+Creates a new V1 GET /Audit/Download request.
+
 GetAuditDownload Returns a Comma Separated file containing the audit log entries according to the provided filter
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -564,7 +576,7 @@ func (a *AuditLogApiService) NewGetAuditDownloadRequest(ctx context.Context) Api
 	}
 }
 
-// Executes the API request GET /Audit/Download
+// Executes the API request V1 GET /Audit/Download
 //
 //	@return string
 func (a *AuditLogApiService) GetAuditDownloadExecute(r ApiGetAuditDownloadRequest) (string, *http.Response, error) {
@@ -672,7 +684,7 @@ func (a *AuditLogApiService) GetAuditDownloadExecute(r ApiGetAuditDownloadReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Audit/RelatedEntities
+// Request for V1 GET /Audit/RelatedEntities
 type ApiGetAuditRelatedEntitiesRequest struct {
 	ctx                     context.Context
 	ApiService              *AuditLogApiService
@@ -722,11 +734,14 @@ func (r ApiGetAuditRelatedEntitiesRequest) XKeyfactorApiVersion(xKeyfactorApiVer
 	return r
 }
 
+// Executes the V1 GET /Audit/RelatedEntities request context
 func (r ApiGetAuditRelatedEntitiesRequest) Execute() ([]KeyfactorAuditingQueryingAuditLogEntry, *http.Response, error) {
 	return r.ApiService.GetAuditRelatedEntitiesExecute(r)
 }
 
 /*
+Creates a new V1 GET /Audit/RelatedEntities request.
+
 GetAuditRelatedEntities Returns the audit log entry associated with the provided keyfactor id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -745,7 +760,7 @@ func (a *AuditLogApiService) NewGetAuditRelatedEntitiesRequest(ctx context.Conte
 	}
 }
 
-// Executes the API request GET /Audit/RelatedEntities
+// Executes the API request V1 GET /Audit/RelatedEntities
 //
 //	@return []KeyfactorAuditingQueryingAuditLogEntry
 func (a *AuditLogApiService) GetAuditRelatedEntitiesExecute(r ApiGetAuditRelatedEntitiesRequest) ([]KeyfactorAuditingQueryingAuditLogEntry, *http.Response, error) {

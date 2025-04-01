@@ -32,7 +32,7 @@ import (
 // CAConnectorApiService CAConnectorApi service
 type CAConnectorApiService service
 
-// Request for POST /CertificateAuthority/CAConnectors
+// Request for V1 POST /CertificateAuthority/CAConnectors
 type ApiCreateCertificateAuthorityCAConnectorsRequest struct {
 	ctx                                      context.Context
 	ApiService                               *CAConnectorApiService
@@ -59,11 +59,14 @@ func (r ApiCreateCertificateAuthorityCAConnectorsRequest) CertificateAuthorities
 	return r
 }
 
+// Executes the V1 POST /CertificateAuthority/CAConnectors request context
 func (r ApiCreateCertificateAuthorityCAConnectorsRequest) Execute() (*CertificateAuthoritiesCAConnectorResponse, *http.Response, error) {
 	return r.ApiService.CreateCertificateAuthorityCAConnectorsExecute(r)
 }
 
 /*
+Creates a new V1 POST /CertificateAuthority/CAConnectors request.
+
 CreateCertificateAuthorityCAConnectors Creates a new CA Connector object
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *CAConnectorApiService) NewCreateCertificateAuthorityCAConnectorsRequest
 	}
 }
 
-// Executes the API request POST /CertificateAuthority/CAConnectors
+// Executes the API request V1 POST /CertificateAuthority/CAConnectors
 //
 //	@return CertificateAuthoritiesCAConnectorResponse
 func (a *CAConnectorApiService) CreateCertificateAuthorityCAConnectorsExecute(r ApiCreateCertificateAuthorityCAConnectorsRequest) (*CertificateAuthoritiesCAConnectorResponse, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *CAConnectorApiService) CreateCertificateAuthorityCAConnectorsExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /CertificateAuthority/CAConnectors/{id}
+// Request for V1 DELETE /CertificateAuthority/CAConnectors/{id}
 type ApiDeleteCertificateAuthorityCAConnectorsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CAConnectorApiService
@@ -198,11 +201,14 @@ func (r ApiDeleteCertificateAuthorityCAConnectorsByIdRequest) XKeyfactorApiVersi
 	return r
 }
 
+// Executes the V1 DELETE /CertificateAuthority/CAConnectors/{id} request context
 func (r ApiDeleteCertificateAuthorityCAConnectorsByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteCertificateAuthorityCAConnectorsByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /CertificateAuthority/CAConnectors/{id} request.
+
 DeleteCertificateAuthorityCAConnectorsById Deletes a CA Connector with the specific ID
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -306,7 +312,7 @@ func (a *CAConnectorApiService) DeleteCertificateAuthorityCAConnectorsByIdExecut
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateAuthority/CAConnectors
+// Request for V1 GET /CertificateAuthority/CAConnectors
 type ApiGetCertificateAuthorityCAConnectorsRequest struct {
 	ctx                     context.Context
 	ApiService              *CAConnectorApiService
@@ -326,11 +332,14 @@ func (r ApiGetCertificateAuthorityCAConnectorsRequest) XKeyfactorApiVersion(xKey
 	return r
 }
 
+// Executes the V1 GET /CertificateAuthority/CAConnectors request context
 func (r ApiGetCertificateAuthorityCAConnectorsRequest) Execute() ([]CertificateAuthoritiesCAConnectorResponse, *http.Response, error) {
 	return r.ApiService.GetCertificateAuthorityCAConnectorsExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateAuthority/CAConnectors request.
+
 GetCertificateAuthorityCAConnectors Returns all CA Connectors
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -349,7 +358,7 @@ func (a *CAConnectorApiService) NewGetCertificateAuthorityCAConnectorsRequest(ct
 	}
 }
 
-// Executes the API request GET /CertificateAuthority/CAConnectors
+// Executes the API request V1 GET /CertificateAuthority/CAConnectors
 //
 //	@return []CertificateAuthoritiesCAConnectorResponse
 func (a *CAConnectorApiService) GetCertificateAuthorityCAConnectorsExecute(r ApiGetCertificateAuthorityCAConnectorsRequest) ([]CertificateAuthoritiesCAConnectorResponse, *http.Response, error) {
@@ -442,7 +451,7 @@ func (a *CAConnectorApiService) GetCertificateAuthorityCAConnectorsExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /CertificateAuthority/CAConnectors/{id}
+// Request for V1 GET /CertificateAuthority/CAConnectors/{id}
 type ApiGetCertificateAuthorityCAConnectorsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CAConnectorApiService
@@ -463,11 +472,14 @@ func (r ApiGetCertificateAuthorityCAConnectorsByIdRequest) XKeyfactorApiVersion(
 	return r
 }
 
+// Executes the V1 GET /CertificateAuthority/CAConnectors/{id} request context
 func (r ApiGetCertificateAuthorityCAConnectorsByIdRequest) Execute() (*CertificateAuthoritiesCAConnectorResponse, *http.Response, error) {
 	return r.ApiService.GetCertificateAuthorityCAConnectorsByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /CertificateAuthority/CAConnectors/{id} request.
+
 GetCertificateAuthorityCAConnectorsById Returns a CA Connector with the specific ID
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -489,7 +501,7 @@ func (a *CAConnectorApiService) NewGetCertificateAuthorityCAConnectorsByIdReques
 	}
 }
 
-// Executes the API request GET /CertificateAuthority/CAConnectors/{id}
+// Executes the API request V1 GET /CertificateAuthority/CAConnectors/{id}
 //
 //	@return CertificateAuthoritiesCAConnectorResponse
 func (a *CAConnectorApiService) GetCertificateAuthorityCAConnectorsByIdExecute(r ApiGetCertificateAuthorityCAConnectorsByIdRequest) (*CertificateAuthoritiesCAConnectorResponse, *http.Response, error) {
@@ -583,7 +595,7 @@ func (a *CAConnectorApiService) GetCertificateAuthorityCAConnectorsByIdExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /CertificateAuthority/CAConnectors/{id}
+// Request for V1 PUT /CertificateAuthority/CAConnectors/{id}
 type ApiUpdateCertificateAuthorityCAConnectorsByIdRequest struct {
 	ctx                                      context.Context
 	ApiService                               *CAConnectorApiService
@@ -611,11 +623,14 @@ func (r ApiUpdateCertificateAuthorityCAConnectorsByIdRequest) CertificateAuthori
 	return r
 }
 
+// Executes the V1 PUT /CertificateAuthority/CAConnectors/{id} request context
 func (r ApiUpdateCertificateAuthorityCAConnectorsByIdRequest) Execute() (*CertificateAuthoritiesCAConnectorResponse, *http.Response, error) {
 	return r.ApiService.UpdateCertificateAuthorityCAConnectorsByIdExecute(r)
 }
 
 /*
+Creates a new V1 PUT /CertificateAuthority/CAConnectors/{id} request.
+
 UpdateCertificateAuthorityCAConnectorsById Updates an existing CA Connector
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -637,7 +652,7 @@ func (a *CAConnectorApiService) NewUpdateCertificateAuthorityCAConnectorsByIdReq
 	}
 }
 
-// Executes the API request PUT /CertificateAuthority/CAConnectors/{id}
+// Executes the API request V1 PUT /CertificateAuthority/CAConnectors/{id}
 //
 //	@return CertificateAuthoritiesCAConnectorResponse
 func (a *CAConnectorApiService) UpdateCertificateAuthorityCAConnectorsByIdExecute(r ApiUpdateCertificateAuthorityCAConnectorsByIdRequest) (*CertificateAuthoritiesCAConnectorResponse, *http.Response, error) {

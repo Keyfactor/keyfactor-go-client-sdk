@@ -32,7 +32,7 @@ import (
 // EventHandlerRegistrationApiService EventHandlerRegistrationApi service
 type EventHandlerRegistrationApiService service
 
-// Request for POST /EventHandlerRegistration
+// Request for V1 POST /EventHandlerRegistration
 type ApiCreateEventHandlerRegistrationRequest struct {
 	ctx                                                           context.Context
 	ApiService                                                    *EventHandlerRegistrationApiService
@@ -59,11 +59,14 @@ func (r ApiCreateEventHandlerRegistrationRequest) EventHandlerRegistrationEventH
 	return r
 }
 
+// Executes the V1 POST /EventHandlerRegistration request context
 func (r ApiCreateEventHandlerRegistrationRequest) Execute() ([]EventHandlerRegistrationEventHandlerRegistrationResponse, *http.Response, error) {
 	return r.ApiService.CreateEventHandlerRegistrationExecute(r)
 }
 
 /*
+Creates a new V1 POST /EventHandlerRegistration request.
+
 CreateEventHandlerRegistration Registers an event handler
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *EventHandlerRegistrationApiService) NewCreateEventHandlerRegistrationRe
 	}
 }
 
-// Executes the API request POST /EventHandlerRegistration
+// Executes the API request V1 POST /EventHandlerRegistration
 //
 //	@return []EventHandlerRegistrationEventHandlerRegistrationResponse
 func (a *EventHandlerRegistrationApiService) CreateEventHandlerRegistrationExecute(r ApiCreateEventHandlerRegistrationRequest) ([]EventHandlerRegistrationEventHandlerRegistrationResponse, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *EventHandlerRegistrationApiService) CreateEventHandlerRegistrationExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /EventHandlerRegistration/{id}
+// Request for V1 DELETE /EventHandlerRegistration/{id}
 type ApiDeleteEventHandlerRegistrationByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *EventHandlerRegistrationApiService
@@ -198,11 +201,14 @@ func (r ApiDeleteEventHandlerRegistrationByIdRequest) XKeyfactorApiVersion(xKeyf
 	return r
 }
 
+// Executes the V1 DELETE /EventHandlerRegistration/{id} request context
 func (r ApiDeleteEventHandlerRegistrationByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteEventHandlerRegistrationByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /EventHandlerRegistration/{id} request.
+
 DeleteEventHandlerRegistrationById Deletes an event handler
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -306,7 +312,7 @@ func (a *EventHandlerRegistrationApiService) DeleteEventHandlerRegistrationByIdE
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /EventHandlerRegistration
+// Request for V1 GET /EventHandlerRegistration
 type ApiGetEventHandlerRegistrationRequest struct {
 	ctx                     context.Context
 	ApiService              *EventHandlerRegistrationApiService
@@ -356,11 +362,14 @@ func (r ApiGetEventHandlerRegistrationRequest) XKeyfactorApiVersion(xKeyfactorAp
 	return r
 }
 
+// Executes the V1 GET /EventHandlerRegistration request context
 func (r ApiGetEventHandlerRegistrationRequest) Execute() ([]EventHandlerRegistrationEventHandlerRegistrationResponse, *http.Response, error) {
 	return r.ApiService.GetEventHandlerRegistrationExecute(r)
 }
 
 /*
+Creates a new V1 GET /EventHandlerRegistration request.
+
 GetEventHandlerRegistration Returns all registered event handlers according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -379,7 +388,7 @@ func (a *EventHandlerRegistrationApiService) NewGetEventHandlerRegistrationReque
 	}
 }
 
-// Executes the API request GET /EventHandlerRegistration
+// Executes the API request V1 GET /EventHandlerRegistration
 //
 //	@return []EventHandlerRegistrationEventHandlerRegistrationResponse
 func (a *EventHandlerRegistrationApiService) GetEventHandlerRegistrationExecute(r ApiGetEventHandlerRegistrationRequest) ([]EventHandlerRegistrationEventHandlerRegistrationResponse, *http.Response, error) {
@@ -487,7 +496,7 @@ func (a *EventHandlerRegistrationApiService) GetEventHandlerRegistrationExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /EventHandlerRegistration/{id}
+// Request for V1 GET /EventHandlerRegistration/{id}
 type ApiGetEventHandlerRegistrationByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *EventHandlerRegistrationApiService
@@ -508,11 +517,14 @@ func (r ApiGetEventHandlerRegistrationByIdRequest) XKeyfactorApiVersion(xKeyfact
 	return r
 }
 
+// Executes the V1 GET /EventHandlerRegistration/{id} request context
 func (r ApiGetEventHandlerRegistrationByIdRequest) Execute() (*EventHandlerRegistrationEventHandlerRegistrationResponse, *http.Response, error) {
 	return r.ApiService.GetEventHandlerRegistrationByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /EventHandlerRegistration/{id} request.
+
 GetEventHandlerRegistrationById Returns a registered event handler that matches the provided ID
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -534,7 +546,7 @@ func (a *EventHandlerRegistrationApiService) NewGetEventHandlerRegistrationByIdR
 	}
 }
 
-// Executes the API request GET /EventHandlerRegistration/{id}
+// Executes the API request V1 GET /EventHandlerRegistration/{id}
 //
 //	@return EventHandlerRegistrationEventHandlerRegistrationResponse
 func (a *EventHandlerRegistrationApiService) GetEventHandlerRegistrationByIdExecute(r ApiGetEventHandlerRegistrationByIdRequest) (*EventHandlerRegistrationEventHandlerRegistrationResponse, *http.Response, error) {
@@ -628,7 +640,7 @@ func (a *EventHandlerRegistrationApiService) GetEventHandlerRegistrationByIdExec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /EventHandlerRegistration/{id}
+// Request for V1 PUT /EventHandlerRegistration/{id}
 type ApiUpdateEventHandlerRegistrationByIdRequest struct {
 	ctx                                                           context.Context
 	ApiService                                                    *EventHandlerRegistrationApiService
@@ -656,11 +668,14 @@ func (r ApiUpdateEventHandlerRegistrationByIdRequest) EventHandlerRegistrationEv
 	return r
 }
 
+// Executes the V1 PUT /EventHandlerRegistration/{id} request context
 func (r ApiUpdateEventHandlerRegistrationByIdRequest) Execute() (*EventHandlerRegistrationEventHandlerRegistrationResponse, *http.Response, error) {
 	return r.ApiService.UpdateEventHandlerRegistrationByIdExecute(r)
 }
 
 /*
+Creates a new V1 PUT /EventHandlerRegistration/{id} request.
+
 UpdateEventHandlerRegistrationById Updates a registered event handler's information
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -682,7 +697,7 @@ func (a *EventHandlerRegistrationApiService) NewUpdateEventHandlerRegistrationBy
 	}
 }
 
-// Executes the API request PUT /EventHandlerRegistration/{id}
+// Executes the API request V1 PUT /EventHandlerRegistration/{id}
 //
 //	@return EventHandlerRegistrationEventHandlerRegistrationResponse
 func (a *EventHandlerRegistrationApiService) UpdateEventHandlerRegistrationByIdExecute(r ApiUpdateEventHandlerRegistrationByIdRequest) (*EventHandlerRegistrationEventHandlerRegistrationResponse, *http.Response, error) {

@@ -32,7 +32,7 @@ import (
 // SecurityRolesApiService SecurityRolesApi service
 type SecurityRolesApiService service
 
-// Request for POST /Security/Roles
+// Request for V2 POST /Security/Roles
 type ApiCreateSecurityRolesRequest struct {
 	ctx                                              context.Context
 	ApiService                                       *SecurityRolesApiService
@@ -59,11 +59,14 @@ func (r ApiCreateSecurityRolesRequest) SecuritySecurityRolesSecurityRoleCreation
 	return r
 }
 
+// Executes the V2 POST /Security/Roles request context
 func (r ApiCreateSecurityRolesRequest) Execute() (*SecuritySecurityRolesSecurityRoleResponse, *http.Response, error) {
 	return r.ApiService.CreateSecurityRolesExecute(r)
 }
 
 /*
+Creates a new V2 POST /Security/Roles request.
+
 CreateSecurityRoles Adds a new security role to the system.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *SecurityRolesApiService) NewCreateSecurityRolesRequest(ctx context.Cont
 	}
 }
 
-// Executes the API request POST /Security/Roles
+// Executes the API request V2 POST /Security/Roles
 //
 //	@return SecuritySecurityRolesSecurityRoleResponse
 func (a *SecurityRolesApiService) CreateSecurityRolesExecute(r ApiCreateSecurityRolesRequest) (*SecuritySecurityRolesSecurityRoleResponse, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *SecurityRolesApiService) CreateSecurityRolesExecute(r ApiCreateSecurity
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Security/Roles
+// Request for V2 GET /Security/Roles
 type ApiGetSecurityRolesRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolesApiService
@@ -227,11 +230,14 @@ func (r ApiGetSecurityRolesRequest) XKeyfactorApiVersion(xKeyfactorApiVersion st
 	return r
 }
 
+// Executes the V2 GET /Security/Roles request context
 func (r ApiGetSecurityRolesRequest) Execute() ([]SecuritySecurityRolesSecurityRoleQueryResponse, *http.Response, error) {
 	return r.ApiService.GetSecurityRolesExecute(r)
 }
 
 /*
+Creates a new V2 GET /Security/Roles request.
+
 GetSecurityRoles Returns all security roles according to the provided filter and output parameters.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -250,7 +256,7 @@ func (a *SecurityRolesApiService) NewGetSecurityRolesRequest(ctx context.Context
 	}
 }
 
-// Executes the API request GET /Security/Roles
+// Executes the API request V2 GET /Security/Roles
 //
 //	@return []SecuritySecurityRolesSecurityRoleQueryResponse
 func (a *SecurityRolesApiService) GetSecurityRolesExecute(r ApiGetSecurityRolesRequest) ([]SecuritySecurityRolesSecurityRoleQueryResponse, *http.Response, error) {
@@ -358,7 +364,7 @@ func (a *SecurityRolesApiService) GetSecurityRolesExecute(r ApiGetSecurityRolesR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Security/Roles/{id}
+// Request for V2 GET /Security/Roles/{id}
 type ApiGetSecurityRolesByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolesApiService
@@ -379,11 +385,14 @@ func (r ApiGetSecurityRolesByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersio
 	return r
 }
 
+// Executes the V2 GET /Security/Roles/{id} request context
 func (r ApiGetSecurityRolesByIdRequest) Execute() (*SecuritySecurityRolesSecurityRoleResponse, *http.Response, error) {
 	return r.ApiService.GetSecurityRolesByIdExecute(r)
 }
 
 /*
+Creates a new V2 GET /Security/Roles/{id} request.
+
 GetSecurityRolesById Returns a single security role that matches the id.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -405,7 +414,7 @@ func (a *SecurityRolesApiService) NewGetSecurityRolesByIdRequest(ctx context.Con
 	}
 }
 
-// Executes the API request GET /Security/Roles/{id}
+// Executes the API request V2 GET /Security/Roles/{id}
 //
 //	@return SecuritySecurityRolesSecurityRoleResponse
 func (a *SecurityRolesApiService) GetSecurityRolesByIdExecute(r ApiGetSecurityRolesByIdRequest) (*SecuritySecurityRolesSecurityRoleResponse, *http.Response, error) {
@@ -499,7 +508,7 @@ func (a *SecurityRolesApiService) GetSecurityRolesByIdExecute(r ApiGetSecurityRo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Security/Roles
+// Request for V2 PUT /Security/Roles
 type ApiUpdateSecurityRolesRequest struct {
 	ctx                                            context.Context
 	ApiService                                     *SecurityRolesApiService
@@ -526,11 +535,14 @@ func (r ApiUpdateSecurityRolesRequest) SecuritySecurityRolesSecurityRoleUpdateRe
 	return r
 }
 
+// Executes the V2 PUT /Security/Roles request context
 func (r ApiUpdateSecurityRolesRequest) Execute() (*SecuritySecurityRolesSecurityRoleResponse, *http.Response, error) {
 	return r.ApiService.UpdateSecurityRolesExecute(r)
 }
 
 /*
+Creates a new V2 PUT /Security/Roles request.
+
 UpdateSecurityRoles Updates an existing security role.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -549,7 +561,7 @@ func (a *SecurityRolesApiService) NewUpdateSecurityRolesRequest(ctx context.Cont
 	}
 }
 
-// Executes the API request PUT /Security/Roles
+// Executes the API request V2 PUT /Security/Roles
 //
 //	@return SecuritySecurityRolesSecurityRoleResponse
 func (a *SecurityRolesApiService) UpdateSecurityRolesExecute(r ApiUpdateSecurityRolesRequest) (*SecuritySecurityRolesSecurityRoleResponse, *http.Response, error) {

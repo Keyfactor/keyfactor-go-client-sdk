@@ -32,7 +32,7 @@ import (
 // SecurityRolesApiService SecurityRolesApi service
 type SecurityRolesApiService service
 
-// Request for POST /Security/Roles
+// Request for V1 POST /Security/Roles
 type ApiCreateSecurityRolesRequest struct {
 	ctx                                                    context.Context
 	ApiService                                             *SecurityRolesApiService
@@ -59,11 +59,14 @@ func (r ApiCreateSecurityRolesRequest) SecurityLegacySecurityRolesSecurityRoleCr
 	return r
 }
 
+// Executes the V1 POST /Security/Roles request context
 func (r ApiCreateSecurityRolesRequest) Execute() (*SecurityLegacySecurityRolesSecurityRoleResponse, *http.Response, error) {
 	return r.ApiService.CreateSecurityRolesExecute(r)
 }
 
 /*
+Creates a new V1 POST /Security/Roles request.
+
 CreateSecurityRoles Adds a new security role to the system.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -84,7 +87,7 @@ func (a *SecurityRolesApiService) NewCreateSecurityRolesRequest(ctx context.Cont
 	}
 }
 
-// Executes the API request POST /Security/Roles
+// Executes the API request V1 POST /Security/Roles
 //
 //	@return SecurityLegacySecurityRolesSecurityRoleResponse
 //
@@ -181,7 +184,7 @@ func (a *SecurityRolesApiService) CreateSecurityRolesExecute(r ApiCreateSecurity
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Security/Roles/{id}/Copy
+// Request for V1 POST /Security/Roles/{id}/Copy
 type ApiCreateSecurityRolesByIdCopyRequest struct {
 	ctx                                                context.Context
 	ApiService                                         *SecurityRolesApiService
@@ -209,11 +212,14 @@ func (r ApiCreateSecurityRolesByIdCopyRequest) SecurityLegacySecurityRolesSecuri
 	return r
 }
 
+// Executes the V1 POST /Security/Roles/{id}/Copy request context
 func (r ApiCreateSecurityRolesByIdCopyRequest) Execute() (*SecurityLegacySecurityRolesSecurityRoleResponse, *http.Response, error) {
 	return r.ApiService.CreateSecurityRolesByIdCopyExecute(r)
 }
 
 /*
+Creates a new V1 POST /Security/Roles/{id}/Copy request.
+
 CreateSecurityRolesByIdCopy Makes a copy of an existing security role.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -237,7 +243,7 @@ func (a *SecurityRolesApiService) NewCreateSecurityRolesByIdCopyRequest(ctx cont
 	}
 }
 
-// Executes the API request POST /Security/Roles/{id}/Copy
+// Executes the API request V1 POST /Security/Roles/{id}/Copy
 //
 //	@return SecurityLegacySecurityRolesSecurityRoleResponse
 //
@@ -335,7 +341,7 @@ func (a *SecurityRolesApiService) CreateSecurityRolesByIdCopyExecute(r ApiCreate
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /Security/Roles/{id}
+// Request for V1 DELETE /Security/Roles/{id}
 type ApiDeleteSecurityRolesByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolesApiService
@@ -356,11 +362,14 @@ func (r ApiDeleteSecurityRolesByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVer
 	return r
 }
 
+// Executes the V1 DELETE /Security/Roles/{id} request context
 func (r ApiDeleteSecurityRolesByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSecurityRolesByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /Security/Roles/{id} request.
+
 DeleteSecurityRolesById Deletes the security role whose ID is provided.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -464,7 +473,7 @@ func (a *SecurityRolesApiService) DeleteSecurityRolesByIdExecute(r ApiDeleteSecu
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /Security/Roles
+// Request for V1 GET /Security/Roles
 type ApiGetSecurityRolesRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolesApiService
@@ -520,11 +529,14 @@ func (r ApiGetSecurityRolesRequest) XKeyfactorApiVersion(xKeyfactorApiVersion st
 	return r
 }
 
+// Executes the V1 GET /Security/Roles request context
 func (r ApiGetSecurityRolesRequest) Execute() ([]SecurityLegacySecurityRolesSecurityRoleResponse, *http.Response, error) {
 	return r.ApiService.GetSecurityRolesExecute(r)
 }
 
 /*
+Creates a new V1 GET /Security/Roles request.
+
 GetSecurityRoles Returns all security roles according to the provided filter and output parameters.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -545,7 +557,7 @@ func (a *SecurityRolesApiService) NewGetSecurityRolesRequest(ctx context.Context
 	}
 }
 
-// Executes the API request GET /Security/Roles
+// Executes the API request V1 GET /Security/Roles
 //
 //	@return []SecurityLegacySecurityRolesSecurityRoleResponse
 //
@@ -658,7 +670,7 @@ func (a *SecurityRolesApiService) GetSecurityRolesExecute(r ApiGetSecurityRolesR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Security/Roles/{id}
+// Request for V1 GET /Security/Roles/{id}
 type ApiGetSecurityRolesByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolesApiService
@@ -679,11 +691,14 @@ func (r ApiGetSecurityRolesByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersio
 	return r
 }
 
+// Executes the V1 GET /Security/Roles/{id} request context
 func (r ApiGetSecurityRolesByIdRequest) Execute() (*SecurityLegacySecurityRolesSecurityRoleResponse, *http.Response, error) {
 	return r.ApiService.GetSecurityRolesByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Security/Roles/{id} request.
+
 GetSecurityRolesById Returns a single security role that matches the id.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -707,7 +722,7 @@ func (a *SecurityRolesApiService) NewGetSecurityRolesByIdRequest(ctx context.Con
 	}
 }
 
-// Executes the API request GET /Security/Roles/{id}
+// Executes the API request V1 GET /Security/Roles/{id}
 //
 //	@return SecurityLegacySecurityRolesSecurityRoleResponse
 //
@@ -803,7 +818,7 @@ func (a *SecurityRolesApiService) GetSecurityRolesByIdExecute(r ApiGetSecurityRo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Security/Roles/{id}/Identities
+// Request for V1 GET /Security/Roles/{id}/Identities
 type ApiGetSecurityRolesByIdIdentitiesRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityRolesApiService
@@ -824,11 +839,14 @@ func (r ApiGetSecurityRolesByIdIdentitiesRequest) XKeyfactorApiVersion(xKeyfacto
 	return r
 }
 
+// Executes the V1 GET /Security/Roles/{id}/Identities request context
 func (r ApiGetSecurityRolesByIdIdentitiesRequest) Execute() ([]SecurityLegacySecurityRolesRoleIdentitiesResponse, *http.Response, error) {
 	return r.ApiService.GetSecurityRolesByIdIdentitiesExecute(r)
 }
 
 /*
+Creates a new V1 GET /Security/Roles/{id}/Identities request.
+
 GetSecurityRolesByIdIdentities Returns all identities which have the security role that matches the id.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -852,7 +870,7 @@ func (a *SecurityRolesApiService) NewGetSecurityRolesByIdIdentitiesRequest(ctx c
 	}
 }
 
-// Executes the API request GET /Security/Roles/{id}/Identities
+// Executes the API request V1 GET /Security/Roles/{id}/Identities
 //
 //	@return []SecurityLegacySecurityRolesRoleIdentitiesResponse
 //
@@ -948,7 +966,7 @@ func (a *SecurityRolesApiService) GetSecurityRolesByIdIdentitiesExecute(r ApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Security/Roles
+// Request for V1 PUT /Security/Roles
 type ApiUpdateSecurityRolesRequest struct {
 	ctx                                                  context.Context
 	ApiService                                           *SecurityRolesApiService
@@ -975,11 +993,14 @@ func (r ApiUpdateSecurityRolesRequest) SecurityLegacySecurityRolesSecurityRoleUp
 	return r
 }
 
+// Executes the V1 PUT /Security/Roles request context
 func (r ApiUpdateSecurityRolesRequest) Execute() (*SecurityLegacySecurityRolesSecurityRoleResponse, *http.Response, error) {
 	return r.ApiService.UpdateSecurityRolesExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Security/Roles request.
+
 UpdateSecurityRoles Updates a security role that matches the id.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1000,7 +1021,7 @@ func (a *SecurityRolesApiService) NewUpdateSecurityRolesRequest(ctx context.Cont
 	}
 }
 
-// Executes the API request PUT /Security/Roles
+// Executes the API request V1 PUT /Security/Roles
 //
 //	@return SecurityLegacySecurityRolesSecurityRoleResponse
 //
@@ -1097,7 +1118,7 @@ func (a *SecurityRolesApiService) UpdateSecurityRolesExecute(r ApiUpdateSecurity
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Security/Roles/{id}/Identities
+// Request for V1 PUT /Security/Roles/{id}/Identities
 type ApiUpdateSecurityRolesByIdIdentitiesRequest struct {
 	ctx                                              context.Context
 	ApiService                                       *SecurityRolesApiService
@@ -1125,11 +1146,14 @@ func (r ApiUpdateSecurityRolesByIdIdentitiesRequest) SecurityLegacySecurityRoles
 	return r
 }
 
+// Executes the V1 PUT /Security/Roles/{id}/Identities request context
 func (r ApiUpdateSecurityRolesByIdIdentitiesRequest) Execute() ([]SecurityLegacySecurityRolesRoleIdentitiesResponse, *http.Response, error) {
 	return r.ApiService.UpdateSecurityRolesByIdIdentitiesExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Security/Roles/{id}/Identities request.
+
 UpdateSecurityRolesByIdIdentities Updates the identities which have the security role that matches the id.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1153,7 +1177,7 @@ func (a *SecurityRolesApiService) NewUpdateSecurityRolesByIdIdentitiesRequest(ct
 	}
 }
 
-// Executes the API request PUT /Security/Roles/{id}/Identities
+// Executes the API request V1 PUT /Security/Roles/{id}/Identities
 //
 //	@return []SecurityLegacySecurityRolesRoleIdentitiesResponse
 //

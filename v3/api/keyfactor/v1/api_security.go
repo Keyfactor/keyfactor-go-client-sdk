@@ -32,7 +32,7 @@ import (
 // SecurityApiService SecurityApi service
 type SecurityApiService service
 
-// Request for POST /Security/Containers/{id}/Roles
+// Request for V1 POST /Security/Containers/{id}/Roles
 type ApiCreateSecurityContainersByIdRolesRequest struct {
 	ctx                                                       context.Context
 	ApiService                                                *SecurityApiService
@@ -60,11 +60,14 @@ func (r ApiCreateSecurityContainersByIdRolesRequest) CSSCMSDataModelModelsCertif
 	return r
 }
 
+// Executes the V1 POST /Security/Containers/{id}/Roles request context
 func (r ApiCreateSecurityContainersByIdRolesRequest) Execute() ([]CSSCMSDataModelModelsCertificateStoreContainerPermissions, *http.Response, error) {
 	return r.ApiService.CreateSecurityContainersByIdRolesExecute(r)
 }
 
 /*
+Creates a new V1 POST /Security/Containers/{id}/Roles request.
+
 CreateSecurityContainersByIdRoles Edit a certificate store container's permissions. Reminder: Name field should be left blank.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -86,7 +89,7 @@ func (a *SecurityApiService) NewCreateSecurityContainersByIdRolesRequest(ctx con
 	}
 }
 
-// Executes the API request POST /Security/Containers/{id}/Roles
+// Executes the API request V1 POST /Security/Containers/{id}/Roles
 //
 //	@return []CSSCMSDataModelModelsCertificateStoreContainerPermissions
 func (a *SecurityApiService) CreateSecurityContainersByIdRolesExecute(r ApiCreateSecurityContainersByIdRolesRequest) ([]CSSCMSDataModelModelsCertificateStoreContainerPermissions, *http.Response, error) {
@@ -182,7 +185,7 @@ func (a *SecurityApiService) CreateSecurityContainersByIdRolesExecute(r ApiCreat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Security/Identities
+// Request for V1 POST /Security/Identities
 type ApiCreateSecurityIdentitiesRequest struct {
 	ctx                                               context.Context
 	ApiService                                        *SecurityApiService
@@ -209,11 +212,14 @@ func (r ApiCreateSecurityIdentitiesRequest) SecuritySecurityIdentitiesSecurityId
 	return r
 }
 
+// Executes the V1 POST /Security/Identities request context
 func (r ApiCreateSecurityIdentitiesRequest) Execute() (*SecuritySecurityIdentitiesSecurityIdentityResponse, *http.Response, error) {
 	return r.ApiService.CreateSecurityIdentitiesExecute(r)
 }
 
 /*
+Creates a new V1 POST /Security/Identities request.
+
 CreateSecurityIdentities Adds a new security identity to the system.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -232,7 +238,7 @@ func (a *SecurityApiService) NewCreateSecurityIdentitiesRequest(ctx context.Cont
 	}
 }
 
-// Executes the API request POST /Security/Identities
+// Executes the API request V1 POST /Security/Identities
 //
 //	@return SecuritySecurityIdentitiesSecurityIdentityResponse
 func (a *SecurityApiService) CreateSecurityIdentitiesExecute(r ApiCreateSecurityIdentitiesRequest) (*SecuritySecurityIdentitiesSecurityIdentityResponse, *http.Response, error) {
@@ -327,7 +333,7 @@ func (a *SecurityApiService) CreateSecurityIdentitiesExecute(r ApiCreateSecurity
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /Security/Identities/{id}
+// Request for V1 DELETE /Security/Identities/{id}
 type ApiDeleteSecurityIdentitiesByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityApiService
@@ -348,11 +354,14 @@ func (r ApiDeleteSecurityIdentitiesByIdRequest) XKeyfactorApiVersion(xKeyfactorA
 	return r
 }
 
+// Executes the V1 DELETE /Security/Identities/{id} request context
 func (r ApiDeleteSecurityIdentitiesByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSecurityIdentitiesByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /Security/Identities/{id} request.
+
 DeleteSecurityIdentitiesById Deletes the security identity whose ID is provided.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -456,7 +465,7 @@ func (a *SecurityApiService) DeleteSecurityIdentitiesByIdExecute(r ApiDeleteSecu
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /Security/Audit/Collections/{id}
+// Request for V1 GET /Security/Audit/Collections/{id}
 type ApiGetSecurityAuditCollectionsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityApiService
@@ -477,11 +486,14 @@ func (r ApiGetSecurityAuditCollectionsByIdRequest) XKeyfactorApiVersion(xKeyfact
 	return r
 }
 
+// Executes the V1 GET /Security/Audit/Collections/{id} request context
 func (r ApiGetSecurityAuditCollectionsByIdRequest) Execute() (*CertificateCollectionsCertificateCollectionPermissionsResponse, *http.Response, error) {
 	return r.ApiService.GetSecurityAuditCollectionsByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Security/Audit/Collections/{id} request.
+
 GetSecurityAuditCollectionsById Gets a list of applicable security permissions for certificate collection
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -503,7 +515,7 @@ func (a *SecurityApiService) NewGetSecurityAuditCollectionsByIdRequest(ctx conte
 	}
 }
 
-// Executes the API request GET /Security/Audit/Collections/{id}
+// Executes the API request V1 GET /Security/Audit/Collections/{id}
 //
 //	@return CertificateCollectionsCertificateCollectionPermissionsResponse
 func (a *SecurityApiService) GetSecurityAuditCollectionsByIdExecute(r ApiGetSecurityAuditCollectionsByIdRequest) (*CertificateCollectionsCertificateCollectionPermissionsResponse, *http.Response, error) {
@@ -603,7 +615,7 @@ func (a *SecurityApiService) GetSecurityAuditCollectionsByIdExecute(r ApiGetSecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Security/Containers/{id}/Roles
+// Request for V1 GET /Security/Containers/{id}/Roles
 type ApiGetSecurityContainersByIdRolesRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityApiService
@@ -624,11 +636,14 @@ func (r ApiGetSecurityContainersByIdRolesRequest) XKeyfactorApiVersion(xKeyfacto
 	return r
 }
 
+// Executes the V1 GET /Security/Containers/{id}/Roles request context
 func (r ApiGetSecurityContainersByIdRolesRequest) Execute() ([]CSSCMSDataModelModelsCertificateStoreContainerPermissions, *http.Response, error) {
 	return r.ApiService.GetSecurityContainersByIdRolesExecute(r)
 }
 
 /*
+Creates a new V1 GET /Security/Containers/{id}/Roles request.
+
 GetSecurityContainersByIdRoles Returns all the permissions of a certificate store container through the id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -650,7 +665,7 @@ func (a *SecurityApiService) NewGetSecurityContainersByIdRolesRequest(ctx contex
 	}
 }
 
-// Executes the API request GET /Security/Containers/{id}/Roles
+// Executes the API request V1 GET /Security/Containers/{id}/Roles
 //
 //	@return []CSSCMSDataModelModelsCertificateStoreContainerPermissions
 func (a *SecurityApiService) GetSecurityContainersByIdRolesExecute(r ApiGetSecurityContainersByIdRolesRequest) ([]CSSCMSDataModelModelsCertificateStoreContainerPermissions, *http.Response, error) {
@@ -744,7 +759,7 @@ func (a *SecurityApiService) GetSecurityContainersByIdRolesExecute(r ApiGetSecur
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Security/Identities
+// Request for V1 GET /Security/Identities
 type ApiGetSecurityIdentitiesRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityApiService
@@ -794,11 +809,14 @@ func (r ApiGetSecurityIdentitiesRequest) XKeyfactorApiVersion(xKeyfactorApiVersi
 	return r
 }
 
+// Executes the V1 GET /Security/Identities request context
 func (r ApiGetSecurityIdentitiesRequest) Execute() ([]SecuritySecurityIdentitiesSecurityIdentityResponse, *http.Response, error) {
 	return r.ApiService.GetSecurityIdentitiesExecute(r)
 }
 
 /*
+Creates a new V1 GET /Security/Identities request.
+
 GetSecurityIdentities Returns all security identities according to the provided filter and output parameters.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -817,7 +835,7 @@ func (a *SecurityApiService) NewGetSecurityIdentitiesRequest(ctx context.Context
 	}
 }
 
-// Executes the API request GET /Security/Identities
+// Executes the API request V1 GET /Security/Identities
 //
 //	@return []SecuritySecurityIdentitiesSecurityIdentityResponse
 func (a *SecurityApiService) GetSecurityIdentitiesExecute(r ApiGetSecurityIdentitiesRequest) ([]SecuritySecurityIdentitiesSecurityIdentityResponse, *http.Response, error) {
@@ -925,7 +943,7 @@ func (a *SecurityApiService) GetSecurityIdentitiesExecute(r ApiGetSecurityIdenti
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Security/Identities/{id}
+// Request for V1 GET /Security/Identities/{id}
 type ApiGetSecurityIdentitiesByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityApiService
@@ -946,11 +964,14 @@ func (r ApiGetSecurityIdentitiesByIdRequest) XKeyfactorApiVersion(xKeyfactorApiV
 	return r
 }
 
+// Executes the V1 GET /Security/Identities/{id} request context
 func (r ApiGetSecurityIdentitiesByIdRequest) Execute() (*SecuritySecurityIdentityPermissionsSecurityIdentityPermissionsResponse, *http.Response, error) {
 	return r.ApiService.GetSecurityIdentitiesByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Security/Identities/{id} request.
+
 GetSecurityIdentitiesById Gets an object representing the permissions of the identity associated with the provided identifier.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -972,7 +993,7 @@ func (a *SecurityApiService) NewGetSecurityIdentitiesByIdRequest(ctx context.Con
 	}
 }
 
-// Executes the API request GET /Security/Identities/{id}
+// Executes the API request V1 GET /Security/Identities/{id}
 //
 //	@return SecuritySecurityIdentityPermissionsSecurityIdentityPermissionsResponse
 func (a *SecurityApiService) GetSecurityIdentitiesByIdExecute(r ApiGetSecurityIdentitiesByIdRequest) (*SecuritySecurityIdentityPermissionsSecurityIdentityPermissionsResponse, *http.Response, error) {
@@ -1066,7 +1087,7 @@ func (a *SecurityApiService) GetSecurityIdentitiesByIdExecute(r ApiGetSecurityId
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Security/Identities/Lookup
+// Request for V1 GET /Security/Identities/Lookup
 type ApiGetSecurityIdentitiesLookupRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityApiService
@@ -1093,11 +1114,14 @@ func (r ApiGetSecurityIdentitiesLookupRequest) XKeyfactorApiVersion(xKeyfactorAp
 	return r
 }
 
+// Executes the V1 GET /Security/Identities/Lookup request context
 func (r ApiGetSecurityIdentitiesLookupRequest) Execute() (*SecuritySecurityIdentitiesSecurityIdentityLookupResponse, *http.Response, error) {
 	return r.ApiService.GetSecurityIdentitiesLookupExecute(r)
 }
 
 /*
+Creates a new V1 GET /Security/Identities/Lookup request.
+
 GetSecurityIdentitiesLookup Validates that the identity with the name given exists.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1116,7 +1140,7 @@ func (a *SecurityApiService) NewGetSecurityIdentitiesLookupRequest(ctx context.C
 	}
 }
 
-// Executes the API request GET /Security/Identities/Lookup
+// Executes the API request V1 GET /Security/Identities/Lookup
 //
 //	@return SecuritySecurityIdentitiesSecurityIdentityLookupResponse
 func (a *SecurityApiService) GetSecurityIdentitiesLookupExecute(r ApiGetSecurityIdentitiesLookupRequest) (*SecuritySecurityIdentitiesSecurityIdentityLookupResponse, *http.Response, error) {
@@ -1212,7 +1236,7 @@ func (a *SecurityApiService) GetSecurityIdentitiesLookupExecute(r ApiGetSecurity
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Security/My
+// Request for V1 GET /Security/My
 type ApiGetSecurityMyRequest struct {
 	ctx                     context.Context
 	ApiService              *SecurityApiService
@@ -1232,11 +1256,14 @@ func (r ApiGetSecurityMyRequest) XKeyfactorApiVersion(xKeyfactorApiVersion strin
 	return r
 }
 
+// Executes the V1 GET /Security/My request context
 func (r ApiGetSecurityMyRequest) Execute() (*SecurityLegacySecurityRolesSecurityMyResponse, *http.Response, error) {
 	return r.ApiService.GetSecurityMyExecute(r)
 }
 
 /*
+Creates a new V1 GET /Security/My request.
+
 GetSecurityMy Looks at all the roles and global permissions for the user and returns them.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1255,7 +1282,7 @@ func (a *SecurityApiService) NewGetSecurityMyRequest(ctx context.Context) ApiGet
 	}
 }
 
-// Executes the API request GET /Security/My
+// Executes the API request V1 GET /Security/My
 //
 //	@return SecurityLegacySecurityRolesSecurityMyResponse
 func (a *SecurityApiService) GetSecurityMyExecute(r ApiGetSecurityMyRequest) (*SecurityLegacySecurityRolesSecurityMyResponse, *http.Response, error) {

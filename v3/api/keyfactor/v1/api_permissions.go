@@ -31,7 +31,7 @@ import (
 // PermissionsApiService PermissionsApi service
 type PermissionsApiService service
 
-// Request for GET /Permissions
+// Request for V1 GET /Permissions
 type ApiGetPermissionsRequest struct {
 	ctx                     context.Context
 	ApiService              *PermissionsApiService
@@ -51,11 +51,14 @@ func (r ApiGetPermissionsRequest) XKeyfactorApiVersion(xKeyfactorApiVersion stri
 	return r
 }
 
+// Executes the V1 GET /Permissions request context
 func (r ApiGetPermissionsRequest) Execute() ([]string, *http.Response, error) {
 	return r.ApiService.GetPermissionsExecute(r)
 }
 
 /*
+Creates a new V1 GET /Permissions request.
+
 GetPermissions Gets all permissions in the system.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -74,7 +77,7 @@ func (a *PermissionsApiService) NewGetPermissionsRequest(ctx context.Context) Ap
 	}
 }
 
-// Executes the API request GET /Permissions
+// Executes the API request V1 GET /Permissions
 //
 //	@return []string
 func (a *PermissionsApiService) GetPermissionsExecute(r ApiGetPermissionsRequest) ([]string, *http.Response, error) {

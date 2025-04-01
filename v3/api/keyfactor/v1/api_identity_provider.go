@@ -32,7 +32,7 @@ import (
 // IdentityProviderApiService IdentityProviderApi service
 type IdentityProviderApiService service
 
-// Request for POST /IdentityProviders
+// Request for V1 POST /IdentityProviders
 type ApiCreateIdentityProvidersRequest struct {
 	ctx                                           context.Context
 	ApiService                                    *IdentityProviderApiService
@@ -59,11 +59,14 @@ func (r ApiCreateIdentityProvidersRequest) IdentityProviderIdentityProviderCreat
 	return r
 }
 
+// Executes the V1 POST /IdentityProviders request context
 func (r ApiCreateIdentityProvidersRequest) Execute() (*IdentityProviderIdentityProviderCreateResponse, *http.Response, error) {
 	return r.ApiService.CreateIdentityProvidersExecute(r)
 }
 
 /*
+Creates a new V1 POST /IdentityProviders request.
+
 CreateIdentityProviders Creates an OAuth identity provider and any provided parameters.  The identity provider will be assigned to the Global Permission Set if no PermissionSet is specified in the request and the user is in a security role that belongs to the Global Permission Set.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *IdentityProviderApiService) NewCreateIdentityProvidersRequest(ctx conte
 	}
 }
 
-// Executes the API request POST /IdentityProviders
+// Executes the API request V1 POST /IdentityProviders
 //
 //	@return IdentityProviderIdentityProviderCreateResponse
 func (a *IdentityProviderApiService) CreateIdentityProvidersExecute(r ApiCreateIdentityProvidersRequest) (*IdentityProviderIdentityProviderCreateResponse, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *IdentityProviderApiService) CreateIdentityProvidersExecute(r ApiCreateI
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /IdentityProviders
+// Request for V1 GET /IdentityProviders
 type ApiGetIdentityProvidersRequest struct {
 	ctx                     context.Context
 	ApiService              *IdentityProviderApiService
@@ -232,11 +235,14 @@ func (r ApiGetIdentityProvidersRequest) XKeyfactorApiVersion(xKeyfactorApiVersio
 	return r
 }
 
+// Executes the V1 GET /IdentityProviders request context
 func (r ApiGetIdentityProvidersRequest) Execute() ([]IdentityProviderIdentityProviderGetResponse, *http.Response, error) {
 	return r.ApiService.GetIdentityProvidersExecute(r)
 }
 
 /*
+Creates a new V1 GET /IdentityProviders request.
+
 GetIdentityProviders Returns all OAuth identity providers according to the provided filter and output parameters and user's security role assigned permission sets.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -255,7 +261,7 @@ func (a *IdentityProviderApiService) NewGetIdentityProvidersRequest(ctx context.
 	}
 }
 
-// Executes the API request GET /IdentityProviders
+// Executes the API request V1 GET /IdentityProviders
 //
 //	@return []IdentityProviderIdentityProviderGetResponse
 func (a *IdentityProviderApiService) GetIdentityProvidersExecute(r ApiGetIdentityProvidersRequest) ([]IdentityProviderIdentityProviderGetResponse, *http.Response, error) {
@@ -363,7 +369,7 @@ func (a *IdentityProviderApiService) GetIdentityProvidersExecute(r ApiGetIdentit
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /IdentityProviders/{id}
+// Request for V1 GET /IdentityProviders/{id}
 type ApiGetIdentityProvidersByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *IdentityProviderApiService
@@ -384,11 +390,14 @@ func (r ApiGetIdentityProvidersByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVe
 	return r
 }
 
+// Executes the V1 GET /IdentityProviders/{id} request context
 func (r ApiGetIdentityProvidersByIdRequest) Execute() (*IdentityProviderIdentityProviderGetResponse, *http.Response, error) {
 	return r.ApiService.GetIdentityProvidersByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /IdentityProviders/{id} request.
+
 GetIdentityProvidersById Gets an OAuth identity provider and its parameters.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -410,7 +419,7 @@ func (a *IdentityProviderApiService) NewGetIdentityProvidersByIdRequest(ctx cont
 	}
 }
 
-// Executes the API request GET /IdentityProviders/{id}
+// Executes the API request V1 GET /IdentityProviders/{id}
 //
 //	@return IdentityProviderIdentityProviderGetResponse
 func (a *IdentityProviderApiService) GetIdentityProvidersByIdExecute(r ApiGetIdentityProvidersByIdRequest) (*IdentityProviderIdentityProviderGetResponse, *http.Response, error) {
@@ -504,7 +513,7 @@ func (a *IdentityProviderApiService) GetIdentityProvidersByIdExecute(r ApiGetIde
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /IdentityProviders/Types
+// Request for V1 GET /IdentityProviders/Types
 type ApiGetIdentityProvidersTypesRequest struct {
 	ctx                     context.Context
 	ApiService              *IdentityProviderApiService
@@ -524,11 +533,14 @@ func (r ApiGetIdentityProvidersTypesRequest) XKeyfactorApiVersion(xKeyfactorApiV
 	return r
 }
 
+// Executes the V1 GET /IdentityProviders/Types request context
 func (r ApiGetIdentityProvidersTypesRequest) Execute() ([]IdentityProviderProviderTypeResponse, *http.Response, error) {
 	return r.ApiService.GetIdentityProvidersTypesExecute(r)
 }
 
 /*
+Creates a new V1 GET /IdentityProviders/Types request.
+
 GetIdentityProvidersTypes Returns a list of all available identity provider types and corresponding type parameters.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -547,7 +559,7 @@ func (a *IdentityProviderApiService) NewGetIdentityProvidersTypesRequest(ctx con
 	}
 }
 
-// Executes the API request GET /IdentityProviders/Types
+// Executes the API request V1 GET /IdentityProviders/Types
 //
 //	@return []IdentityProviderProviderTypeResponse
 func (a *IdentityProviderApiService) GetIdentityProvidersTypesExecute(r ApiGetIdentityProvidersTypesRequest) ([]IdentityProviderProviderTypeResponse, *http.Response, error) {
@@ -640,7 +652,7 @@ func (a *IdentityProviderApiService) GetIdentityProvidersTypesExecute(r ApiGetId
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /IdentityProviders/{id}
+// Request for V1 PUT /IdentityProviders/{id}
 type ApiUpdateIdentityProvidersByIdRequest struct {
 	ctx                                           context.Context
 	ApiService                                    *IdentityProviderApiService
@@ -668,11 +680,14 @@ func (r ApiUpdateIdentityProvidersByIdRequest) IdentityProviderIdentityProviderU
 	return r
 }
 
+// Executes the V1 PUT /IdentityProviders/{id} request context
 func (r ApiUpdateIdentityProvidersByIdRequest) Execute() (*IdentityProviderIdentityProviderUpdateResponse, *http.Response, error) {
 	return r.ApiService.UpdateIdentityProvidersByIdExecute(r)
 }
 
 /*
+Creates a new V1 PUT /IdentityProviders/{id} request.
+
 UpdateIdentityProvidersById Updates an OAuth identity provider and any provided parameters. The identity provider will be assigned to the Global Permission Set if no PermissionSet is specified in the request and the user is in a security role that belongs to the Global Permission Set.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -694,7 +709,7 @@ func (a *IdentityProviderApiService) NewUpdateIdentityProvidersByIdRequest(ctx c
 	}
 }
 
-// Executes the API request PUT /IdentityProviders/{id}
+// Executes the API request V1 PUT /IdentityProviders/{id}
 //
 //	@return IdentityProviderIdentityProviderUpdateResponse
 func (a *IdentityProviderApiService) UpdateIdentityProvidersByIdExecute(r ApiUpdateIdentityProvidersByIdRequest) (*IdentityProviderIdentityProviderUpdateResponse, *http.Response, error) {

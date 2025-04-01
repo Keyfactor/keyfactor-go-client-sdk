@@ -32,7 +32,7 @@ import (
 // ServerGroupApiService ServerGroupApi service
 type ServerGroupApiService service
 
-// Request for POST /SSH/ServerGroups
+// Request for V1 POST /SSH/ServerGroups
 type ApiCreateSSHServerGroupsRequest struct {
 	ctx                                                            context.Context
 	ApiService                                                     *ServerGroupApiService
@@ -59,11 +59,14 @@ func (r ApiCreateSSHServerGroupsRequest) CSSCMSDataModelModelsSSHServerGroupsSer
 	return r
 }
 
+// Executes the V1 POST /SSH/ServerGroups request context
 func (r ApiCreateSSHServerGroupsRequest) Execute() (*CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
 	return r.ApiService.CreateSSHServerGroupsExecute(r)
 }
 
 /*
+Creates a new V1 POST /SSH/ServerGroups request.
+
 CreateSSHServerGroups Creates a server group with the provided properties
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *ServerGroupApiService) NewCreateSSHServerGroupsRequest(ctx context.Cont
 	}
 }
 
-// Executes the API request POST /SSH/ServerGroups
+// Executes the API request V1 POST /SSH/ServerGroups
 //
 //	@return CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse
 func (a *ServerGroupApiService) CreateSSHServerGroupsExecute(r ApiCreateSSHServerGroupsRequest) (*CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *ServerGroupApiService) CreateSSHServerGroupsExecute(r ApiCreateSSHServe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /SSH/ServerGroups/Access
+// Request for V1 POST /SSH/ServerGroups/Access
 type ApiCreateSSHServerGroupsAccessRequest struct {
 	ctx                                                    context.Context
 	ApiService                                             *ServerGroupApiService
@@ -203,11 +206,14 @@ func (r ApiCreateSSHServerGroupsAccessRequest) CSSCMSDataModelModelsSSHAccessSer
 	return r
 }
 
+// Executes the V1 POST /SSH/ServerGroups/Access request context
 func (r ApiCreateSSHServerGroupsAccessRequest) Execute() (*CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse, *http.Response, error) {
 	return r.ApiService.CreateSSHServerGroupsAccessExecute(r)
 }
 
 /*
+Creates a new V1 POST /SSH/ServerGroups/Access request.
+
 CreateSSHServerGroupsAccess Add access rules to the server group
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -226,7 +232,7 @@ func (a *ServerGroupApiService) NewCreateSSHServerGroupsAccessRequest(ctx contex
 	}
 }
 
-// Executes the API request POST /SSH/ServerGroups/Access
+// Executes the API request V1 POST /SSH/ServerGroups/Access
 //
 //	@return CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse
 func (a *ServerGroupApiService) CreateSSHServerGroupsAccessExecute(r ApiCreateSSHServerGroupsAccessRequest) (*CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse, *http.Response, error) {
@@ -321,7 +327,7 @@ func (a *ServerGroupApiService) CreateSSHServerGroupsAccessExecute(r ApiCreateSS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /SSH/ServerGroups/Access
+// Request for V1 DELETE /SSH/ServerGroups/Access
 type ApiDeleteSSHServerGroupsAccessRequest struct {
 	ctx                                                    context.Context
 	ApiService                                             *ServerGroupApiService
@@ -347,11 +353,14 @@ func (r ApiDeleteSSHServerGroupsAccessRequest) CSSCMSDataModelModelsSSHAccessSer
 	return r
 }
 
+// Executes the V1 DELETE /SSH/ServerGroups/Access request context
 func (r ApiDeleteSSHServerGroupsAccessRequest) Execute() (*CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse, *http.Response, error) {
 	return r.ApiService.DeleteSSHServerGroupsAccessExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /SSH/ServerGroups/Access request.
+
 DeleteSSHServerGroupsAccess Removes access mappings for the specified server group
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -370,7 +379,7 @@ func (a *ServerGroupApiService) NewDeleteSSHServerGroupsAccessRequest(ctx contex
 	}
 }
 
-// Executes the API request DELETE /SSH/ServerGroups/Access
+// Executes the API request V1 DELETE /SSH/ServerGroups/Access
 //
 //	@return CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse
 func (a *ServerGroupApiService) DeleteSSHServerGroupsAccessExecute(r ApiDeleteSSHServerGroupsAccessRequest) (*CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse, *http.Response, error) {
@@ -465,7 +474,7 @@ func (a *ServerGroupApiService) DeleteSSHServerGroupsAccessExecute(r ApiDeleteSS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /SSH/ServerGroups/{id}
+// Request for V1 DELETE /SSH/ServerGroups/{id}
 type ApiDeleteSSHServerGroupsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *ServerGroupApiService
@@ -486,11 +495,14 @@ func (r ApiDeleteSSHServerGroupsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiV
 	return r
 }
 
+// Executes the V1 DELETE /SSH/ServerGroups/{id} request context
 func (r ApiDeleteSSHServerGroupsByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSSHServerGroupsByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /SSH/ServerGroups/{id} request.
+
 DeleteSSHServerGroupsById Deletes a ServerGroup associated with the provided identifier
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -594,7 +606,7 @@ func (a *ServerGroupApiService) DeleteSSHServerGroupsByIdExecute(r ApiDeleteSSHS
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /SSH/ServerGroups
+// Request for V1 GET /SSH/ServerGroups
 type ApiGetSSHServerGroupsRequest struct {
 	ctx                     context.Context
 	ApiService              *ServerGroupApiService
@@ -644,11 +656,14 @@ func (r ApiGetSSHServerGroupsRequest) XKeyfactorApiVersion(xKeyfactorApiVersion 
 	return r
 }
 
+// Executes the V1 GET /SSH/ServerGroups request context
 func (r ApiGetSSHServerGroupsRequest) Execute() ([]CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
 	return r.ApiService.GetSSHServerGroupsExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSH/ServerGroups request.
+
 GetSSHServerGroups Returns all server groups according to the provided filter parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -667,7 +682,7 @@ func (a *ServerGroupApiService) NewGetSSHServerGroupsRequest(ctx context.Context
 	}
 }
 
-// Executes the API request GET /SSH/ServerGroups
+// Executes the API request V1 GET /SSH/ServerGroups
 //
 //	@return []CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse
 func (a *ServerGroupApiService) GetSSHServerGroupsExecute(r ApiGetSSHServerGroupsRequest) ([]CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
@@ -775,7 +790,7 @@ func (a *ServerGroupApiService) GetSSHServerGroupsExecute(r ApiGetSSHServerGroup
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /SSH/ServerGroups/Access/{id}
+// Request for V1 GET /SSH/ServerGroups/Access/{id}
 type ApiGetSSHServerGroupsAccessByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *ServerGroupApiService
@@ -796,11 +811,14 @@ func (r ApiGetSSHServerGroupsAccessByIdRequest) XKeyfactorApiVersion(xKeyfactorA
 	return r
 }
 
+// Executes the V1 GET /SSH/ServerGroups/Access/{id} request context
 func (r ApiGetSSHServerGroupsAccessByIdRequest) Execute() (*CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse, *http.Response, error) {
 	return r.ApiService.GetSSHServerGroupsAccessByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSH/ServerGroups/Access/{id} request.
+
 GetSSHServerGroupsAccessById Retrieves logons and users with access to those logons for an existing server group
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -822,7 +840,7 @@ func (a *ServerGroupApiService) NewGetSSHServerGroupsAccessByIdRequest(ctx conte
 	}
 }
 
-// Executes the API request GET /SSH/ServerGroups/Access/{id}
+// Executes the API request V1 GET /SSH/ServerGroups/Access/{id}
 //
 //	@return CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse
 func (a *ServerGroupApiService) GetSSHServerGroupsAccessByIdExecute(r ApiGetSSHServerGroupsAccessByIdRequest) (*CSSCMSDataModelModelsSSHAccessServerGroupAccessResponse, *http.Response, error) {
@@ -916,7 +934,7 @@ func (a *ServerGroupApiService) GetSSHServerGroupsAccessByIdExecute(r ApiGetSSHS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /SSH/ServerGroups/{id}
+// Request for V1 GET /SSH/ServerGroups/{id}
 type ApiGetSSHServerGroupsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *ServerGroupApiService
@@ -937,11 +955,14 @@ func (r ApiGetSSHServerGroupsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVers
 	return r
 }
 
+// Executes the V1 GET /SSH/ServerGroups/{id} request context
 func (r ApiGetSSHServerGroupsByIdRequest) Execute() (*CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
 	return r.ApiService.GetSSHServerGroupsByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSH/ServerGroups/{id} request.
+
 GetSSHServerGroupsById Returns a ServerGroup associated with the provided identifier
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -963,7 +984,7 @@ func (a *ServerGroupApiService) NewGetSSHServerGroupsByIdRequest(ctx context.Con
 	}
 }
 
-// Executes the API request GET /SSH/ServerGroups/{id}
+// Executes the API request V1 GET /SSH/ServerGroups/{id}
 //
 //	@return CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse
 func (a *ServerGroupApiService) GetSSHServerGroupsByIdExecute(r ApiGetSSHServerGroupsByIdRequest) (*CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
@@ -1057,7 +1078,7 @@ func (a *ServerGroupApiService) GetSSHServerGroupsByIdExecute(r ApiGetSSHServerG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /SSH/ServerGroups/{name}
+// Request for V1 GET /SSH/ServerGroups/{name}
 type ApiGetSSHServerGroupsNameRequest struct {
 	ctx                     context.Context
 	ApiService              *ServerGroupApiService
@@ -1078,11 +1099,14 @@ func (r ApiGetSSHServerGroupsNameRequest) XKeyfactorApiVersion(xKeyfactorApiVers
 	return r
 }
 
+// Executes the V1 GET /SSH/ServerGroups/{name} request context
 func (r ApiGetSSHServerGroupsNameRequest) Execute() (*CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
 	return r.ApiService.GetSSHServerGroupsNameExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSH/ServerGroups/{name} request.
+
 GetSSHServerGroupsName Returns a ServerGroup associated with the provided identifier
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1104,7 +1128,7 @@ func (a *ServerGroupApiService) NewGetSSHServerGroupsNameRequest(ctx context.Con
 	}
 }
 
-// Executes the API request GET /SSH/ServerGroups/{name}
+// Executes the API request V1 GET /SSH/ServerGroups/{name}
 //
 //	@return CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse
 func (a *ServerGroupApiService) GetSSHServerGroupsNameExecute(r ApiGetSSHServerGroupsNameRequest) (*CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
@@ -1198,7 +1222,7 @@ func (a *ServerGroupApiService) GetSSHServerGroupsNameExecute(r ApiGetSSHServerG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /SSH/ServerGroups
+// Request for V1 PUT /SSH/ServerGroups
 type ApiUpdateSSHServerGroupsRequest struct {
 	ctx                                                          context.Context
 	ApiService                                                   *ServerGroupApiService
@@ -1225,11 +1249,14 @@ func (r ApiUpdateSSHServerGroupsRequest) CSSCMSDataModelModelsSSHServerGroupsSer
 	return r
 }
 
+// Executes the V1 PUT /SSH/ServerGroups request context
 func (r ApiUpdateSSHServerGroupsRequest) Execute() (*CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {
 	return r.ApiService.UpdateSSHServerGroupsExecute(r)
 }
 
 /*
+Creates a new V1 PUT /SSH/ServerGroups request.
+
 UpdateSSHServerGroups Updates an existing server group with the provided properties
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1248,7 +1275,7 @@ func (a *ServerGroupApiService) NewUpdateSSHServerGroupsRequest(ctx context.Cont
 	}
 }
 
-// Executes the API request PUT /SSH/ServerGroups
+// Executes the API request V1 PUT /SSH/ServerGroups
 //
 //	@return CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse
 func (a *ServerGroupApiService) UpdateSSHServerGroupsExecute(r ApiUpdateSSHServerGroupsRequest) (*CSSCMSDataModelModelsSSHServerGroupsServerGroupResponse, *http.Response, error) {

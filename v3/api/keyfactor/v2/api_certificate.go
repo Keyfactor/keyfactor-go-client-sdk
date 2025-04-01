@@ -32,7 +32,7 @@ import (
 // CertificateApiService CertificateApi service
 type CertificateApiService service
 
-// Request for GET /Certificates/IdentityAudit/{id}
+// Request for V2 GET /Certificates/IdentityAudit/{id}
 type ApiGetCertificatesIdentityAuditByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CertificateApiService
@@ -60,11 +60,14 @@ func (r ApiGetCertificatesIdentityAuditByIdRequest) XKeyfactorApiVersion(xKeyfac
 	return r
 }
 
+// Executes the V2 GET /Certificates/IdentityAudit/{id} request context
 func (r ApiGetCertificatesIdentityAuditByIdRequest) Execute() ([]CertificatesCertificateIdentityAuditResponse2, *http.Response, error) {
 	return r.ApiService.GetCertificatesIdentityAuditByIdExecute(r)
 }
 
 /*
+Creates a new V2 GET /Certificates/IdentityAudit/{id} request.
+
 GetCertificatesIdentityAuditById Audit identity permissions for certificate
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -86,7 +89,7 @@ func (a *CertificateApiService) NewGetCertificatesIdentityAuditByIdRequest(ctx c
 	}
 }
 
-// Executes the API request GET /Certificates/IdentityAudit/{id}
+// Executes the API request V2 GET /Certificates/IdentityAudit/{id}
 //
 //	@return []CertificatesCertificateIdentityAuditResponse2
 func (a *CertificateApiService) GetCertificatesIdentityAuditByIdExecute(r ApiGetCertificatesIdentityAuditByIdRequest) ([]CertificatesCertificateIdentityAuditResponse2, *http.Response, error) {

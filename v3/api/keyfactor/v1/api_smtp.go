@@ -31,7 +31,7 @@ import (
 // SMTPApiService SMTPApi service
 type SMTPApiService service
 
-// Request for POST /SMTP/Test
+// Request for V1 POST /SMTP/Test
 type ApiCreateSMTPTestRequest struct {
 	ctx                     context.Context
 	ApiService              *SMTPApiService
@@ -57,12 +57,15 @@ func (r ApiCreateSMTPTestRequest) SMTPSMTPTestRequest(sMTPSMTPTestRequest SMTPSM
 	return r
 }
 
+// Executes the V1 POST /SMTP/Test request context
 func (r ApiCreateSMTPTestRequest) Execute() (*SMTPSMTPTestResponse, *http.Response, error) {
 	return r.ApiService.CreateSMTPTestExecute(r)
 }
 
 /*
-CreateSMTPTest Tests SMTP profile data
+Creates a new V1 POST /SMTP/Test request.
+
+# CreateSMTPTest Tests SMTP profile data
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSMTPTestRequest
@@ -80,7 +83,7 @@ func (a *SMTPApiService) NewCreateSMTPTestRequest(ctx context.Context) ApiCreate
 	}
 }
 
-// Executes the API request POST /SMTP/Test
+// Executes the API request V1 POST /SMTP/Test
 //
 //	@return SMTPSMTPTestResponse
 func (a *SMTPApiService) CreateSMTPTestExecute(r ApiCreateSMTPTestRequest) (*SMTPSMTPTestResponse, *http.Response, error) {
@@ -175,7 +178,7 @@ func (a *SMTPApiService) CreateSMTPTestExecute(r ApiCreateSMTPTestRequest) (*SMT
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /SMTP
+// Request for V1 GET /SMTP
 type ApiGetSMTPRequest struct {
 	ctx                     context.Context
 	ApiService              *SMTPApiService
@@ -195,12 +198,15 @@ func (r ApiGetSMTPRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) Api
 	return r
 }
 
+// Executes the V1 GET /SMTP request context
 func (r ApiGetSMTPRequest) Execute() (*SMTPSMTPResponse, *http.Response, error) {
 	return r.ApiService.GetSMTPExecute(r)
 }
 
 /*
-GetSMTP Gets SMTP profile data
+Creates a new V1 GET /SMTP request.
+
+# GetSMTP Gets SMTP profile data
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSMTPRequest
@@ -218,7 +224,7 @@ func (a *SMTPApiService) NewGetSMTPRequest(ctx context.Context) ApiGetSMTPReques
 	}
 }
 
-// Executes the API request GET /SMTP
+// Executes the API request V1 GET /SMTP
 //
 //	@return SMTPSMTPResponse
 func (a *SMTPApiService) GetSMTPExecute(r ApiGetSMTPRequest) (*SMTPSMTPResponse, *http.Response, error) {
@@ -311,7 +317,7 @@ func (a *SMTPApiService) GetSMTPExecute(r ApiGetSMTPRequest) (*SMTPSMTPResponse,
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /SMTP
+// Request for V1 PUT /SMTP
 type ApiUpdateSMTPRequest struct {
 	ctx                     context.Context
 	ApiService              *SMTPApiService
@@ -337,12 +343,15 @@ func (r ApiUpdateSMTPRequest) SMTPSMTPRequest(sMTPSMTPRequest SMTPSMTPRequest) A
 	return r
 }
 
+// Executes the V1 PUT /SMTP request context
 func (r ApiUpdateSMTPRequest) Execute() (*SMTPSMTPResponse, *http.Response, error) {
 	return r.ApiService.UpdateSMTPExecute(r)
 }
 
 /*
-UpdateSMTP Updates SMTP profile data
+Creates a new V1 PUT /SMTP request.
+
+# UpdateSMTP Updates SMTP profile data
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSMTPRequest
@@ -360,7 +369,7 @@ func (a *SMTPApiService) NewUpdateSMTPRequest(ctx context.Context) ApiUpdateSMTP
 	}
 }
 
-// Executes the API request PUT /SMTP
+// Executes the API request V1 PUT /SMTP
 //
 //	@return SMTPSMTPResponse
 func (a *SMTPApiService) UpdateSMTPExecute(r ApiUpdateSMTPRequest) (*SMTPSMTPResponse, *http.Response, error) {

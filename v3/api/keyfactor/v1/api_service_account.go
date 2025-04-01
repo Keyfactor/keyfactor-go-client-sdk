@@ -32,7 +32,7 @@ import (
 // ServiceAccountApiService ServiceAccountApi service
 type ServiceAccountApiService service
 
-// Request for POST /SSH/ServiceAccounts
+// Request for V1 POST /SSH/ServiceAccounts
 type ApiCreateSSHServiceAccountsRequest struct {
 	ctx                                                                  context.Context
 	ApiService                                                           *ServiceAccountApiService
@@ -59,11 +59,14 @@ func (r ApiCreateSSHServiceAccountsRequest) CSSCMSDataModelModelsSSHServiceAccou
 	return r
 }
 
+// Executes the V1 POST /SSH/ServiceAccounts request context
 func (r ApiCreateSSHServiceAccountsRequest) Execute() (*CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
 	return r.ApiService.CreateSSHServiceAccountsExecute(r)
 }
 
 /*
+Creates a new V1 POST /SSH/ServiceAccounts request.
+
 CreateSSHServiceAccounts Creates a ServiceAccount with the provided properties
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *ServiceAccountApiService) NewCreateSSHServiceAccountsRequest(ctx contex
 	}
 }
 
-// Executes the API request POST /SSH/ServiceAccounts
+// Executes the API request V1 POST /SSH/ServiceAccounts
 //
 //	@return CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse
 func (a *ServiceAccountApiService) CreateSSHServiceAccountsExecute(r ApiCreateSSHServiceAccountsRequest) (*CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *ServiceAccountApiService) CreateSSHServiceAccountsExecute(r ApiCreateSS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /SSH/ServiceAccounts/Rotate/{id}
+// Request for V1 POST /SSH/ServiceAccounts/Rotate/{id}
 type ApiCreateSSHServiceAccountsRotateByIdRequest struct {
 	ctx                                              context.Context
 	ApiService                                       *ServiceAccountApiService
@@ -204,11 +207,14 @@ func (r ApiCreateSSHServiceAccountsRotateByIdRequest) CSSCMSDataModelModelsSSHKe
 	return r
 }
 
+// Executes the V1 POST /SSH/ServiceAccounts/Rotate/{id} request context
 func (r ApiCreateSSHServiceAccountsRotateByIdRequest) Execute() (*CSSCMSDataModelModelsSSHKeysKeyResponse, *http.Response, error) {
 	return r.ApiService.CreateSSHServiceAccountsRotateByIdExecute(r)
 }
 
 /*
+Creates a new V1 POST /SSH/ServiceAccounts/Rotate/{id} request.
+
 CreateSSHServiceAccountsRotateById Rotate an SSH key for a specified service account.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -230,7 +236,7 @@ func (a *ServiceAccountApiService) NewCreateSSHServiceAccountsRotateByIdRequest(
 	}
 }
 
-// Executes the API request POST /SSH/ServiceAccounts/Rotate/{id}
+// Executes the API request V1 POST /SSH/ServiceAccounts/Rotate/{id}
 //
 //	@return CSSCMSDataModelModelsSSHKeysKeyResponse
 func (a *ServiceAccountApiService) CreateSSHServiceAccountsRotateByIdExecute(r ApiCreateSSHServiceAccountsRotateByIdRequest) (*CSSCMSDataModelModelsSSHKeysKeyResponse, *http.Response, error) {
@@ -326,7 +332,7 @@ func (a *ServiceAccountApiService) CreateSSHServiceAccountsRotateByIdExecute(r A
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /SSH/ServiceAccounts
+// Request for V1 DELETE /SSH/ServiceAccounts
 type ApiDeleteSSHServiceAccountsRequest struct {
 	ctx                     context.Context
 	ApiService              *ServiceAccountApiService
@@ -353,11 +359,14 @@ func (r ApiDeleteSSHServiceAccountsRequest) RequestBody(requestBody []int32) Api
 	return r
 }
 
+// Executes the V1 DELETE /SSH/ServiceAccounts request context
 func (r ApiDeleteSSHServiceAccountsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSSHServiceAccountsExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /SSH/ServiceAccounts request.
+
 DeleteSSHServiceAccounts Deletes Service Accounts associated with the provided identifiers
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -459,7 +468,7 @@ func (a *ServiceAccountApiService) DeleteSSHServiceAccountsExecute(r ApiDeleteSS
 	return localVarHTTPResponse, nil
 }
 
-// Request for DELETE /SSH/ServiceAccounts/{id}
+// Request for V1 DELETE /SSH/ServiceAccounts/{id}
 type ApiDeleteSSHServiceAccountsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *ServiceAccountApiService
@@ -480,11 +489,14 @@ func (r ApiDeleteSSHServiceAccountsByIdRequest) XKeyfactorApiVersion(xKeyfactorA
 	return r
 }
 
+// Executes the V1 DELETE /SSH/ServiceAccounts/{id} request context
 func (r ApiDeleteSSHServiceAccountsByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSSHServiceAccountsByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /SSH/ServiceAccounts/{id} request.
+
 DeleteSSHServiceAccountsById Deletes a ServiceAccount associated with the provided identifier
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -594,7 +606,7 @@ func (a *ServiceAccountApiService) DeleteSSHServiceAccountsByIdExecute(r ApiDele
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /SSH/ServiceAccounts
+// Request for V1 GET /SSH/ServiceAccounts
 type ApiGetSSHServiceAccountsRequest struct {
 	ctx                     context.Context
 	ApiService              *ServiceAccountApiService
@@ -644,11 +656,14 @@ func (r ApiGetSSHServiceAccountsRequest) XKeyfactorApiVersion(xKeyfactorApiVersi
 	return r
 }
 
+// Executes the V1 GET /SSH/ServiceAccounts request context
 func (r ApiGetSSHServiceAccountsRequest) Execute() ([]CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
 	return r.ApiService.GetSSHServiceAccountsExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSH/ServiceAccounts request.
+
 GetSSHServiceAccounts Returns all ServiceAccounts according to the provided filter parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -667,7 +682,7 @@ func (a *ServiceAccountApiService) NewGetSSHServiceAccountsRequest(ctx context.C
 	}
 }
 
-// Executes the API request GET /SSH/ServiceAccounts
+// Executes the API request V1 GET /SSH/ServiceAccounts
 //
 //	@return []CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse
 func (a *ServiceAccountApiService) GetSSHServiceAccountsExecute(r ApiGetSSHServiceAccountsRequest) ([]CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
@@ -775,7 +790,7 @@ func (a *ServiceAccountApiService) GetSSHServiceAccountsExecute(r ApiGetSSHServi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /SSH/ServiceAccounts/{id}
+// Request for V1 GET /SSH/ServiceAccounts/{id}
 type ApiGetSSHServiceAccountsByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *ServiceAccountApiService
@@ -796,11 +811,14 @@ func (r ApiGetSSHServiceAccountsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiV
 	return r
 }
 
+// Executes the V1 GET /SSH/ServiceAccounts/{id} request context
 func (r ApiGetSSHServiceAccountsByIdRequest) Execute() (*CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
 	return r.ApiService.GetSSHServiceAccountsByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSH/ServiceAccounts/{id} request.
+
 GetSSHServiceAccountsById Returns a ServiceAccount associated with the provided identifier
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -822,7 +840,7 @@ func (a *ServiceAccountApiService) NewGetSSHServiceAccountsByIdRequest(ctx conte
 	}
 }
 
-// Executes the API request GET /SSH/ServiceAccounts/{id}
+// Executes the API request V1 GET /SSH/ServiceAccounts/{id}
 //
 //	@return CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse
 func (a *ServiceAccountApiService) GetSSHServiceAccountsByIdExecute(r ApiGetSSHServiceAccountsByIdRequest) (*CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
@@ -922,7 +940,7 @@ func (a *ServiceAccountApiService) GetSSHServiceAccountsByIdExecute(r ApiGetSSHS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /SSH/ServiceAccounts/Key/{id}
+// Request for V1 GET /SSH/ServiceAccounts/Key/{id}
 type ApiGetSSHServiceAccountsKeyByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *ServiceAccountApiService
@@ -950,11 +968,14 @@ func (r ApiGetSSHServiceAccountsKeyByIdRequest) XKeyfactorApiVersion(xKeyfactorA
 	return r
 }
 
+// Executes the V1 GET /SSH/ServiceAccounts/Key/{id} request context
 func (r ApiGetSSHServiceAccountsKeyByIdRequest) Execute() (*CSSCMSDataModelModelsSSHKeysKeyResponse, *http.Response, error) {
 	return r.ApiService.GetSSHServiceAccountsKeyByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSH/ServiceAccounts/Key/{id} request.
+
 GetSSHServiceAccountsKeyById Returns an SSH key with or without private key based on the provided parameters.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -976,7 +997,7 @@ func (a *ServiceAccountApiService) NewGetSSHServiceAccountsKeyByIdRequest(ctx co
 	}
 }
 
-// Executes the API request GET /SSH/ServiceAccounts/Key/{id}
+// Executes the API request V1 GET /SSH/ServiceAccounts/Key/{id}
 //
 //	@return CSSCMSDataModelModelsSSHKeysKeyResponse
 func (a *ServiceAccountApiService) GetSSHServiceAccountsKeyByIdExecute(r ApiGetSSHServiceAccountsKeyByIdRequest) (*CSSCMSDataModelModelsSSHKeysKeyResponse, *http.Response, error) {
@@ -1073,7 +1094,7 @@ func (a *ServiceAccountApiService) GetSSHServiceAccountsKeyByIdExecute(r ApiGetS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /SSH/ServiceAccounts
+// Request for V1 PUT /SSH/ServiceAccounts
 type ApiUpdateSSHServiceAccountsRequest struct {
 	ctx                                                                context.Context
 	ApiService                                                         *ServiceAccountApiService
@@ -1100,11 +1121,14 @@ func (r ApiUpdateSSHServiceAccountsRequest) CSSCMSDataModelModelsSSHServiceAccou
 	return r
 }
 
+// Executes the V1 PUT /SSH/ServiceAccounts request context
 func (r ApiUpdateSSHServiceAccountsRequest) Execute() (*CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {
 	return r.ApiService.UpdateSSHServiceAccountsExecute(r)
 }
 
 /*
+Creates a new V1 PUT /SSH/ServiceAccounts request.
+
 UpdateSSHServiceAccounts Updates an SSH key for a specified service account.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1123,7 +1147,7 @@ func (a *ServiceAccountApiService) NewUpdateSSHServiceAccountsRequest(ctx contex
 	}
 }
 
-// Executes the API request PUT /SSH/ServiceAccounts
+// Executes the API request V1 PUT /SSH/ServiceAccounts
 //
 //	@return CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse
 func (a *ServiceAccountApiService) UpdateSSHServiceAccountsExecute(r ApiUpdateSSHServiceAccountsRequest) (*CSSCMSDataModelModelsSSHServiceAccountsServiceAccountResponse, *http.Response, error) {

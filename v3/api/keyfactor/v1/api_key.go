@@ -32,7 +32,7 @@ import (
 // KeyApiService KeyApi service
 type KeyApiService service
 
-// Request for POST /SSH/Keys/MyKey
+// Request for V1 POST /SSH/Keys/MyKey
 type ApiCreateSSHKeysMyKeyRequest struct {
 	ctx                                              context.Context
 	ApiService                                       *KeyApiService
@@ -59,11 +59,14 @@ func (r ApiCreateSSHKeysMyKeyRequest) CSSCMSDataModelModelsSSHKeysKeyGenerationR
 	return r
 }
 
+// Executes the V1 POST /SSH/Keys/MyKey request context
 func (r ApiCreateSSHKeysMyKeyRequest) Execute() (*CSSCMSDataModelModelsSSHKeysKeyResponse, *http.Response, error) {
 	return r.ApiService.CreateSSHKeysMyKeyExecute(r)
 }
 
 /*
+Creates a new V1 POST /SSH/Keys/MyKey request.
+
 CreateSSHKeysMyKey Generates an SSH Key Pair for the requesting user.
 
 ### SSH Key Algorithms ###
@@ -97,7 +100,7 @@ func (a *KeyApiService) NewCreateSSHKeysMyKeyRequest(ctx context.Context) ApiCre
 	}
 }
 
-// Executes the API request POST /SSH/Keys/MyKey
+// Executes the API request V1 POST /SSH/Keys/MyKey
 //
 //	@return CSSCMSDataModelModelsSSHKeysKeyResponse
 func (a *KeyApiService) CreateSSHKeysMyKeyExecute(r ApiCreateSSHKeysMyKeyRequest) (*CSSCMSDataModelModelsSSHKeysKeyResponse, *http.Response, error) {
@@ -192,7 +195,7 @@ func (a *KeyApiService) CreateSSHKeysMyKeyExecute(r ApiCreateSSHKeysMyKeyRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /SSH/Keys/Unmanaged
+// Request for V1 DELETE /SSH/Keys/Unmanaged
 type ApiDeleteSSHKeysUnmanagedRequest struct {
 	ctx                     context.Context
 	ApiService              *KeyApiService
@@ -219,11 +222,14 @@ func (r ApiDeleteSSHKeysUnmanagedRequest) RequestBody(requestBody []int32) ApiDe
 	return r
 }
 
+// Executes the V1 DELETE /SSH/Keys/Unmanaged request context
 func (r ApiDeleteSSHKeysUnmanagedRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSSHKeysUnmanagedExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /SSH/Keys/Unmanaged request.
+
 DeleteSSHKeysUnmanaged Deletes Unmanaged Keys associated with the provided identifiers
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -325,7 +331,7 @@ func (a *KeyApiService) DeleteSSHKeysUnmanagedExecute(r ApiDeleteSSHKeysUnmanage
 	return localVarHTTPResponse, nil
 }
 
-// Request for DELETE /SSH/Keys/Unmanaged/{id}
+// Request for V1 DELETE /SSH/Keys/Unmanaged/{id}
 type ApiDeleteSSHKeysUnmanagedByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *KeyApiService
@@ -346,11 +352,14 @@ func (r ApiDeleteSSHKeysUnmanagedByIdRequest) XKeyfactorApiVersion(xKeyfactorApi
 	return r
 }
 
+// Executes the V1 DELETE /SSH/Keys/Unmanaged/{id} request context
 func (r ApiDeleteSSHKeysUnmanagedByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSSHKeysUnmanagedByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /SSH/Keys/Unmanaged/{id} request.
+
 DeleteSSHKeysUnmanagedById Deletes Unmanaged Key associated with the provided identifier
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -460,7 +469,7 @@ func (a *KeyApiService) DeleteSSHKeysUnmanagedByIdExecute(r ApiDeleteSSHKeysUnma
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /SSH/Keys/MyKey
+// Request for V1 GET /SSH/Keys/MyKey
 type ApiGetSSHKeysMyKeyRequest struct {
 	ctx                     context.Context
 	ApiService              *KeyApiService
@@ -487,11 +496,14 @@ func (r ApiGetSSHKeysMyKeyRequest) XKeyfactorApiVersion(xKeyfactorApiVersion str
 	return r
 }
 
+// Executes the V1 GET /SSH/Keys/MyKey request context
 func (r ApiGetSSHKeysMyKeyRequest) Execute() (*CSSCMSDataModelModelsSSHKeysKeyResponse, *http.Response, error) {
 	return r.ApiService.GetSSHKeysMyKeyExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSH/Keys/MyKey request.
+
 GetSSHKeysMyKey Returns the current key of the requesting user
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -510,7 +522,7 @@ func (a *KeyApiService) NewGetSSHKeysMyKeyRequest(ctx context.Context) ApiGetSSH
 	}
 }
 
-// Executes the API request GET /SSH/Keys/MyKey
+// Executes the API request V1 GET /SSH/Keys/MyKey
 //
 //	@return CSSCMSDataModelModelsSSHKeysKeyResponse
 func (a *KeyApiService) GetSSHKeysMyKeyExecute(r ApiGetSSHKeysMyKeyRequest) (*CSSCMSDataModelModelsSSHKeysKeyResponse, *http.Response, error) {
@@ -606,7 +618,7 @@ func (a *KeyApiService) GetSSHKeysMyKeyExecute(r ApiGetSSHKeysMyKeyRequest) (*CS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /SSH/Keys/Unmanaged
+// Request for V1 GET /SSH/Keys/Unmanaged
 type ApiGetSSHKeysUnmanagedRequest struct {
 	ctx                     context.Context
 	ApiService              *KeyApiService
@@ -656,11 +668,14 @@ func (r ApiGetSSHKeysUnmanagedRequest) XKeyfactorApiVersion(xKeyfactorApiVersion
 	return r
 }
 
+// Executes the V1 GET /SSH/Keys/Unmanaged request context
 func (r ApiGetSSHKeysUnmanagedRequest) Execute() ([]CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse, *http.Response, error) {
 	return r.ApiService.GetSSHKeysUnmanagedExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSH/Keys/Unmanaged request.
+
 GetSSHKeysUnmanaged Returns Unmanaged SSH keys
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -679,7 +694,7 @@ func (a *KeyApiService) NewGetSSHKeysUnmanagedRequest(ctx context.Context) ApiGe
 	}
 }
 
-// Executes the API request GET /SSH/Keys/Unmanaged
+// Executes the API request V1 GET /SSH/Keys/Unmanaged
 //
 //	@return []CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse
 func (a *KeyApiService) GetSSHKeysUnmanagedExecute(r ApiGetSSHKeysUnmanagedRequest) ([]CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse, *http.Response, error) {
@@ -787,7 +802,7 @@ func (a *KeyApiService) GetSSHKeysUnmanagedExecute(r ApiGetSSHKeysUnmanagedReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /SSH/Keys/Unmanaged/{id}
+// Request for V1 GET /SSH/Keys/Unmanaged/{id}
 type ApiGetSSHKeysUnmanagedByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *KeyApiService
@@ -808,11 +823,14 @@ func (r ApiGetSSHKeysUnmanagedByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVer
 	return r
 }
 
+// Executes the V1 GET /SSH/Keys/Unmanaged/{id} request context
 func (r ApiGetSSHKeysUnmanagedByIdRequest) Execute() (*CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse, *http.Response, error) {
 	return r.ApiService.GetSSHKeysUnmanagedByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /SSH/Keys/Unmanaged/{id} request.
+
 GetSSHKeysUnmanagedById Returns an unmanaged SSH key with provided id.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -834,7 +852,7 @@ func (a *KeyApiService) NewGetSSHKeysUnmanagedByIdRequest(ctx context.Context, i
 	}
 }
 
-// Executes the API request GET /SSH/Keys/Unmanaged/{id}
+// Executes the API request V1 GET /SSH/Keys/Unmanaged/{id}
 //
 //	@return CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse
 func (a *KeyApiService) GetSSHKeysUnmanagedByIdExecute(r ApiGetSSHKeysUnmanagedByIdRequest) (*CSSCMSDataModelModelsSSHKeysUnmanagedKeyResponse, *http.Response, error) {
@@ -934,7 +952,7 @@ func (a *KeyApiService) GetSSHKeysUnmanagedByIdExecute(r ApiGetSSHKeysUnmanagedB
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /SSH/Keys/MyKey
+// Request for V1 PUT /SSH/Keys/MyKey
 type ApiUpdateSSHKeysMyKeyRequest struct {
 	ctx                                          context.Context
 	ApiService                                   *KeyApiService
@@ -961,11 +979,14 @@ func (r ApiUpdateSSHKeysMyKeyRequest) CSSCMSDataModelModelsSSHKeysKeyUpdateReque
 	return r
 }
 
+// Executes the V1 PUT /SSH/Keys/MyKey request context
 func (r ApiUpdateSSHKeysMyKeyRequest) Execute() (*CSSCMSDataModelModelsSSHKeysKeyResponse, *http.Response, error) {
 	return r.ApiService.UpdateSSHKeysMyKeyExecute(r)
 }
 
 /*
+Creates a new V1 PUT /SSH/Keys/MyKey request.
+
 UpdateSSHKeysMyKey Updates the requesting user's SSH key
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -984,7 +1005,7 @@ func (a *KeyApiService) NewUpdateSSHKeysMyKeyRequest(ctx context.Context) ApiUpd
 	}
 }
 
-// Executes the API request PUT /SSH/Keys/MyKey
+// Executes the API request V1 PUT /SSH/Keys/MyKey
 //
 //	@return CSSCMSDataModelModelsSSHKeysKeyResponse
 func (a *KeyApiService) UpdateSSHKeysMyKeyExecute(r ApiUpdateSSHKeysMyKeyRequest) (*CSSCMSDataModelModelsSSHKeysKeyResponse, *http.Response, error) {

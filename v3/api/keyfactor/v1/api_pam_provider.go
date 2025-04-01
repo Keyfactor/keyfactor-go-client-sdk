@@ -32,7 +32,7 @@ import (
 // PAMProviderApiService PAMProviderApi service
 type PAMProviderApiService service
 
-// Request for POST /PamProviders
+// Request for V1 POST /PamProviders
 type ApiCreatePamProvidersRequest struct {
 	ctx                      context.Context
 	ApiService               *PAMProviderApiService
@@ -59,12 +59,15 @@ func (r ApiCreatePamProvidersRequest) PAMProviderCreateRequest(pAMProviderCreate
 	return r
 }
 
+// Executes the V1 POST /PamProviders request context
 func (r ApiCreatePamProvidersRequest) Execute() (*PAMProviderResponseLegacy, *http.Response, error) {
 	return r.ApiService.CreatePamProvidersExecute(r)
 }
 
 /*
-CreatePamProviders Creates a new PAM provider with the associated properties
+Creates a new V1 POST /PamProviders request.
+
+# CreatePamProviders Creates a new PAM provider with the associated properties
 
 ### PAM Provider Data Types ###
 | Value              | Description               |
@@ -88,7 +91,7 @@ func (a *PAMProviderApiService) NewCreatePamProvidersRequest(ctx context.Context
 	}
 }
 
-// Executes the API request POST /PamProviders
+// Executes the API request V1 POST /PamProviders
 //
 //	@return PAMProviderResponseLegacy
 func (a *PAMProviderApiService) CreatePamProvidersExecute(r ApiCreatePamProvidersRequest) (*PAMProviderResponseLegacy, *http.Response, error) {
@@ -183,7 +186,7 @@ func (a *PAMProviderApiService) CreatePamProvidersExecute(r ApiCreatePamProvider
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /PamProviders/Types
+// Request for V1 POST /PamProviders/Types
 type ApiCreatePamProvidersTypesRequest struct {
 	ctx                          context.Context
 	ApiService                   *PAMProviderApiService
@@ -210,12 +213,15 @@ func (r ApiCreatePamProvidersTypesRequest) PAMProviderTypeCreateRequest(pAMProvi
 	return r
 }
 
+// Executes the V1 POST /PamProviders/Types request context
 func (r ApiCreatePamProvidersTypesRequest) Execute() (*PAMProviderTypeResponse, *http.Response, error) {
 	return r.ApiService.CreatePamProvidersTypesExecute(r)
 }
 
 /*
-CreatePamProvidersTypes Creates a new PAM provider type with the associated properties
+Creates a new V1 POST /PamProviders/Types request.
+
+# CreatePamProvidersTypes Creates a new PAM provider type with the associated properties
 
 ### PAM Provider Data Types ###
 | Value              | Description               |
@@ -239,7 +245,7 @@ func (a *PAMProviderApiService) NewCreatePamProvidersTypesRequest(ctx context.Co
 	}
 }
 
-// Executes the API request POST /PamProviders/Types
+// Executes the API request V1 POST /PamProviders/Types
 //
 //	@return PAMProviderTypeResponse
 func (a *PAMProviderApiService) CreatePamProvidersTypesExecute(r ApiCreatePamProvidersTypesRequest) (*PAMProviderTypeResponse, *http.Response, error) {
@@ -334,7 +340,7 @@ func (a *PAMProviderApiService) CreatePamProvidersTypesExecute(r ApiCreatePamPro
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /PamProviders/{id}
+// Request for V1 DELETE /PamProviders/{id}
 type ApiDeletePamProvidersByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *PAMProviderApiService
@@ -355,11 +361,14 @@ func (r ApiDeletePamProvidersByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVers
 	return r
 }
 
+// Executes the V1 DELETE /PamProviders/{id} request context
 func (r ApiDeletePamProvidersByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeletePamProvidersByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /PamProviders/{id} request.
+
 DeletePamProvidersById Deletes a PAM Provider
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -463,7 +472,7 @@ func (a *PAMProviderApiService) DeletePamProvidersByIdExecute(r ApiDeletePamProv
 	return localVarHTTPResponse, nil
 }
 
-// Request for DELETE /PamProviders/Types/{id}
+// Request for V1 DELETE /PamProviders/Types/{id}
 type ApiDeletePamProvidersTypesByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *PAMProviderApiService
@@ -484,11 +493,14 @@ func (r ApiDeletePamProvidersTypesByIdRequest) XKeyfactorApiVersion(xKeyfactorAp
 	return r
 }
 
+// Executes the V1 DELETE /PamProviders/Types/{id} request context
 func (r ApiDeletePamProvidersTypesByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeletePamProvidersTypesByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /PamProviders/Types/{id} request.
+
 DeletePamProvidersTypesById Deletes a PAM provider Type, as long as the PAM type is not currently in use.
 
 ### PAM Provider Data Types ###
@@ -597,7 +609,7 @@ func (a *PAMProviderApiService) DeletePamProvidersTypesByIdExecute(r ApiDeletePa
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /PamProviders
+// Request for V1 GET /PamProviders
 type ApiGetPamProvidersRequest struct {
 	ctx                     context.Context
 	ApiService              *PAMProviderApiService
@@ -652,12 +664,15 @@ func (r ApiGetPamProvidersRequest) XKeyfactorApiVersion(xKeyfactorApiVersion str
 	return r
 }
 
+// Executes the V1 GET /PamProviders request context
 func (r ApiGetPamProvidersRequest) Execute() ([]PAMProviderResponseLegacy, *http.Response, error) {
 	return r.ApiService.GetPamProvidersExecute(r)
 }
 
 /*
-GetPamProviders Returns all PAM providers according to the provided filter and output parameters
+Creates a new V1 GET /PamProviders request.
+
+# GetPamProviders Returns all PAM providers according to the provided filter and output parameters
 
 ### PAM Provider Data Types ###
 | Value              | Description               |
@@ -681,7 +696,7 @@ func (a *PAMProviderApiService) NewGetPamProvidersRequest(ctx context.Context) A
 	}
 }
 
-// Executes the API request GET /PamProviders
+// Executes the API request V1 GET /PamProviders
 //
 //	@return []PAMProviderResponseLegacy
 func (a *PAMProviderApiService) GetPamProvidersExecute(r ApiGetPamProvidersRequest) ([]PAMProviderResponseLegacy, *http.Response, error) {
@@ -789,7 +804,7 @@ func (a *PAMProviderApiService) GetPamProvidersExecute(r ApiGetPamProvidersReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /PamProviders/{id}
+// Request for V1 GET /PamProviders/{id}
 type ApiGetPamProvidersByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *PAMProviderApiService
@@ -810,12 +825,15 @@ func (r ApiGetPamProvidersByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersion
 	return r
 }
 
+// Executes the V1 GET /PamProviders/{id} request context
 func (r ApiGetPamProvidersByIdRequest) Execute() (*PAMProviderResponseLegacy, *http.Response, error) {
 	return r.ApiService.GetPamProvidersByIdExecute(r)
 }
 
 /*
-GetPamProvidersById Returns a single PAM Provider that matches the associated id
+Creates a new V1 GET /PamProviders/{id} request.
+
+# GetPamProvidersById Returns a single PAM Provider that matches the associated id
 
 ### PAM Provider Data Types ###
 | Value              | Description               |
@@ -842,7 +860,7 @@ func (a *PAMProviderApiService) NewGetPamProvidersByIdRequest(ctx context.Contex
 	}
 }
 
-// Executes the API request GET /PamProviders/{id}
+// Executes the API request V1 GET /PamProviders/{id}
 //
 //	@return PAMProviderResponseLegacy
 func (a *PAMProviderApiService) GetPamProvidersByIdExecute(r ApiGetPamProvidersByIdRequest) (*PAMProviderResponseLegacy, *http.Response, error) {
@@ -942,7 +960,7 @@ func (a *PAMProviderApiService) GetPamProvidersByIdExecute(r ApiGetPamProvidersB
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /PamProviders/Types
+// Request for V1 GET /PamProviders/Types
 type ApiGetPamProvidersTypesRequest struct {
 	ctx                     context.Context
 	ApiService              *PAMProviderApiService
@@ -962,12 +980,15 @@ func (r ApiGetPamProvidersTypesRequest) XKeyfactorApiVersion(xKeyfactorApiVersio
 	return r
 }
 
+// Executes the V1 GET /PamProviders/Types request context
 func (r ApiGetPamProvidersTypesRequest) Execute() ([]PAMProviderTypeResponse, *http.Response, error) {
 	return r.ApiService.GetPamProvidersTypesExecute(r)
 }
 
 /*
-GetPamProvidersTypes Returns all PAM provider types in the Keyfactor instance
+Creates a new V1 GET /PamProviders/Types request.
+
+# GetPamProvidersTypes Returns all PAM provider types in the Keyfactor instance
 
 ### PAM Provider Data Types ###
 | Value              | Description               |
@@ -991,7 +1012,7 @@ func (a *PAMProviderApiService) NewGetPamProvidersTypesRequest(ctx context.Conte
 	}
 }
 
-// Executes the API request GET /PamProviders/Types
+// Executes the API request V1 GET /PamProviders/Types
 //
 //	@return []PAMProviderTypeResponse
 func (a *PAMProviderApiService) GetPamProvidersTypesExecute(r ApiGetPamProvidersTypesRequest) ([]PAMProviderTypeResponse, *http.Response, error) {
@@ -1084,7 +1105,7 @@ func (a *PAMProviderApiService) GetPamProvidersTypesExecute(r ApiGetPamProviders
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /PamProviders
+// Request for V1 PUT /PamProviders
 type ApiUpdatePamProvidersRequest struct {
 	ctx                            context.Context
 	ApiService                     *PAMProviderApiService
@@ -1111,12 +1132,15 @@ func (r ApiUpdatePamProvidersRequest) PAMProviderUpdateRequestLegacy(pAMProvider
 	return r
 }
 
+// Executes the V1 PUT /PamProviders request context
 func (r ApiUpdatePamProvidersRequest) Execute() (*PAMProviderResponseLegacy, *http.Response, error) {
 	return r.ApiService.UpdatePamProvidersExecute(r)
 }
 
 /*
-UpdatePamProviders Updates an existing PAM provider according to the provided properties
+Creates a new V1 PUT /PamProviders request.
+
+# UpdatePamProviders Updates an existing PAM provider according to the provided properties
 
 ### PAM Provider Data Types ###
 | Value              | Description               |
@@ -1140,7 +1164,7 @@ func (a *PAMProviderApiService) NewUpdatePamProvidersRequest(ctx context.Context
 	}
 }
 
-// Executes the API request PUT /PamProviders
+// Executes the API request V1 PUT /PamProviders
 //
 //	@return PAMProviderResponseLegacy
 func (a *PAMProviderApiService) UpdatePamProvidersExecute(r ApiUpdatePamProvidersRequest) (*PAMProviderResponseLegacy, *http.Response, error) {

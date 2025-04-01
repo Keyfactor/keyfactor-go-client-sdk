@@ -32,7 +32,7 @@ import (
 // WorkflowInstanceApiService WorkflowInstanceApi service
 type WorkflowInstanceApiService service
 
-// Request for POST /Workflow/Instances/{instanceId}/Restart
+// Request for V1 POST /Workflow/Instances/{instanceId}/Restart
 type ApiCreateWorkflowInstancesInstanceIdRestartRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowInstanceApiService
@@ -60,11 +60,14 @@ func (r ApiCreateWorkflowInstancesInstanceIdRestartRequest) XKeyfactorApiVersion
 	return r
 }
 
+// Executes the V1 POST /Workflow/Instances/{instanceId}/Restart request context
 func (r ApiCreateWorkflowInstancesInstanceIdRestartRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateWorkflowInstancesInstanceIdRestartExecute(r)
 }
 
 /*
+Creates a new V1 POST /Workflow/Instances/{instanceId}/Restart request.
+
 CreateWorkflowInstancesInstanceIdRestart Restarts a failed instance against the specified definition version or the published version if no version is specified.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -171,7 +174,7 @@ func (a *WorkflowInstanceApiService) CreateWorkflowInstancesInstanceIdRestartExe
 	return localVarHTTPResponse, nil
 }
 
-// Request for POST /Workflow/Instances/{instanceId}/Signals
+// Request for V1 POST /Workflow/Instances/{instanceId}/Signals
 type ApiCreateWorkflowInstancesInstanceIdSignalsRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowInstanceApiService
@@ -199,11 +202,14 @@ func (r ApiCreateWorkflowInstancesInstanceIdSignalsRequest) WorkflowsSignalReque
 	return r
 }
 
+// Executes the V1 POST /Workflow/Instances/{instanceId}/Signals request context
 func (r ApiCreateWorkflowInstancesInstanceIdSignalsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateWorkflowInstancesInstanceIdSignalsExecute(r)
 }
 
 /*
+Creates a new V1 POST /Workflow/Instances/{instanceId}/Signals request.
+
 CreateWorkflowInstancesInstanceIdSignals Receives the given signal for the given instance.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -309,7 +315,7 @@ func (a *WorkflowInstanceApiService) CreateWorkflowInstancesInstanceIdSignalsExe
 	return localVarHTTPResponse, nil
 }
 
-// Request for POST /Workflow/Instances/{instanceId}/Stop
+// Request for V1 POST /Workflow/Instances/{instanceId}/Stop
 type ApiCreateWorkflowInstancesInstanceIdStopRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowInstanceApiService
@@ -330,11 +336,14 @@ func (r ApiCreateWorkflowInstancesInstanceIdStopRequest) XKeyfactorApiVersion(xK
 	return r
 }
 
+// Executes the V1 POST /Workflow/Instances/{instanceId}/Stop request context
 func (r ApiCreateWorkflowInstancesInstanceIdStopRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateWorkflowInstancesInstanceIdStopExecute(r)
 }
 
 /*
+Creates a new V1 POST /Workflow/Instances/{instanceId}/Stop request.
+
 CreateWorkflowInstancesInstanceIdStop Rejects an instance, preventing it from continuing.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -438,7 +447,7 @@ func (a *WorkflowInstanceApiService) CreateWorkflowInstancesInstanceIdStopExecut
 	return localVarHTTPResponse, nil
 }
 
-// Request for DELETE /Workflow/Instances/{instanceId}
+// Request for V1 DELETE /Workflow/Instances/{instanceId}
 type ApiDeleteWorkflowInstancesInstanceIdRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowInstanceApiService
@@ -459,11 +468,14 @@ func (r ApiDeleteWorkflowInstancesInstanceIdRequest) XKeyfactorApiVersion(xKeyfa
 	return r
 }
 
+// Executes the V1 DELETE /Workflow/Instances/{instanceId} request context
 func (r ApiDeleteWorkflowInstancesInstanceIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteWorkflowInstancesInstanceIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /Workflow/Instances/{instanceId} request.
+
 DeleteWorkflowInstancesInstanceId Deletes the specified instance.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -567,7 +579,7 @@ func (a *WorkflowInstanceApiService) DeleteWorkflowInstancesInstanceIdExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /Workflow/Instances
+// Request for V1 GET /Workflow/Instances
 type ApiGetWorkflowInstancesRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowInstanceApiService
@@ -617,11 +629,14 @@ func (r ApiGetWorkflowInstancesRequest) XKeyfactorApiVersion(xKeyfactorApiVersio
 	return r
 }
 
+// Executes the V1 GET /Workflow/Instances request context
 func (r ApiGetWorkflowInstancesRequest) Execute() ([]WorkflowsInstanceQueryResponse, *http.Response, error) {
 	return r.ApiService.GetWorkflowInstancesExecute(r)
 }
 
 /*
+Creates a new V1 GET /Workflow/Instances request.
+
 GetWorkflowInstances Gets the workflow instances matching the query specifications.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -640,7 +655,7 @@ func (a *WorkflowInstanceApiService) NewGetWorkflowInstancesRequest(ctx context.
 	}
 }
 
-// Executes the API request GET /Workflow/Instances
+// Executes the API request V1 GET /Workflow/Instances
 //
 //	@return []WorkflowsInstanceQueryResponse
 func (a *WorkflowInstanceApiService) GetWorkflowInstancesExecute(r ApiGetWorkflowInstancesRequest) ([]WorkflowsInstanceQueryResponse, *http.Response, error) {
@@ -748,7 +763,7 @@ func (a *WorkflowInstanceApiService) GetWorkflowInstancesExecute(r ApiGetWorkflo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Workflow/Instances/AssignedToMe
+// Request for V1 GET /Workflow/Instances/AssignedToMe
 type ApiGetWorkflowInstancesAssignedToMeRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowInstanceApiService
@@ -798,11 +813,14 @@ func (r ApiGetWorkflowInstancesAssignedToMeRequest) XKeyfactorApiVersion(xKeyfac
 	return r
 }
 
+// Executes the V1 GET /Workflow/Instances/AssignedToMe request context
 func (r ApiGetWorkflowInstancesAssignedToMeRequest) Execute() ([]WorkflowsInstanceQueryResponse, *http.Response, error) {
 	return r.ApiService.GetWorkflowInstancesAssignedToMeExecute(r)
 }
 
 /*
+Creates a new V1 GET /Workflow/Instances/AssignedToMe request.
+
 GetWorkflowInstancesAssignedToMe Gets the workflow instances waiting on the user.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -821,7 +839,7 @@ func (a *WorkflowInstanceApiService) NewGetWorkflowInstancesAssignedToMeRequest(
 	}
 }
 
-// Executes the API request GET /Workflow/Instances/AssignedToMe
+// Executes the API request V1 GET /Workflow/Instances/AssignedToMe
 //
 //	@return []WorkflowsInstanceQueryResponse
 func (a *WorkflowInstanceApiService) GetWorkflowInstancesAssignedToMeExecute(r ApiGetWorkflowInstancesAssignedToMeRequest) ([]WorkflowsInstanceQueryResponse, *http.Response, error) {
@@ -929,7 +947,7 @@ func (a *WorkflowInstanceApiService) GetWorkflowInstancesAssignedToMeExecute(r A
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Workflow/Instances/{instanceId}
+// Request for V1 GET /Workflow/Instances/{instanceId}
 type ApiGetWorkflowInstancesInstanceIdRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowInstanceApiService
@@ -950,11 +968,14 @@ func (r ApiGetWorkflowInstancesInstanceIdRequest) XKeyfactorApiVersion(xKeyfacto
 	return r
 }
 
+// Executes the V1 GET /Workflow/Instances/{instanceId} request context
 func (r ApiGetWorkflowInstancesInstanceIdRequest) Execute() (*WorkflowsInstanceResponse, *http.Response, error) {
 	return r.ApiService.GetWorkflowInstancesInstanceIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Workflow/Instances/{instanceId} request.
+
 GetWorkflowInstancesInstanceId Get information relevant for knowing where an instance is in its workflow.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -976,7 +997,7 @@ func (a *WorkflowInstanceApiService) NewGetWorkflowInstancesInstanceIdRequest(ct
 	}
 }
 
-// Executes the API request GET /Workflow/Instances/{instanceId}
+// Executes the API request V1 GET /Workflow/Instances/{instanceId}
 //
 //	@return WorkflowsInstanceResponse
 func (a *WorkflowInstanceApiService) GetWorkflowInstancesInstanceIdExecute(r ApiGetWorkflowInstancesInstanceIdRequest) (*WorkflowsInstanceResponse, *http.Response, error) {
@@ -1070,7 +1091,7 @@ func (a *WorkflowInstanceApiService) GetWorkflowInstancesInstanceIdExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Workflow/Instances/My
+// Request for V1 GET /Workflow/Instances/My
 type ApiGetWorkflowInstancesMyRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowInstanceApiService
@@ -1120,11 +1141,14 @@ func (r ApiGetWorkflowInstancesMyRequest) XKeyfactorApiVersion(xKeyfactorApiVers
 	return r
 }
 
+// Executes the V1 GET /Workflow/Instances/My request context
 func (r ApiGetWorkflowInstancesMyRequest) Execute() ([]WorkflowsInstanceQueryResponse, *http.Response, error) {
 	return r.ApiService.GetWorkflowInstancesMyExecute(r)
 }
 
 /*
+Creates a new V1 GET /Workflow/Instances/My request.
+
 GetWorkflowInstancesMy Gets the workflow instances started by the user.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1143,7 +1167,7 @@ func (a *WorkflowInstanceApiService) NewGetWorkflowInstancesMyRequest(ctx contex
 	}
 }
 
-// Executes the API request GET /Workflow/Instances/My
+// Executes the API request V1 GET /Workflow/Instances/My
 //
 //	@return []WorkflowsInstanceQueryResponse
 func (a *WorkflowInstanceApiService) GetWorkflowInstancesMyExecute(r ApiGetWorkflowInstancesMyRequest) ([]WorkflowsInstanceQueryResponse, *http.Response, error) {

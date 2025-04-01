@@ -32,7 +32,7 @@ import (
 // KeyRotationAlertApiService KeyRotationAlertApi service
 type KeyRotationAlertApiService service
 
-// Request for POST /Alerts/KeyRotation
+// Request for V1 POST /Alerts/KeyRotation
 type ApiCreateAlertsKeyRotationRequest struct {
 	ctx                                              context.Context
 	ApiService                                       *KeyRotationAlertApiService
@@ -59,11 +59,14 @@ func (r ApiCreateAlertsKeyRotationRequest) AlertsKeyRotationKeyRotationAlertCrea
 	return r
 }
 
+// Executes the V1 POST /Alerts/KeyRotation request context
 func (r ApiCreateAlertsKeyRotationRequest) Execute() (*AlertsKeyRotationKeyRotationAlertDefinitionResponse, *http.Response, error) {
 	return r.ApiService.CreateAlertsKeyRotationExecute(r)
 }
 
 /*
+Creates a new V1 POST /Alerts/KeyRotation request.
+
 CreateAlertsKeyRotation Add a key rotation alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *KeyRotationAlertApiService) NewCreateAlertsKeyRotationRequest(ctx conte
 	}
 }
 
-// Executes the API request POST /Alerts/KeyRotation
+// Executes the API request V1 POST /Alerts/KeyRotation
 //
 //	@return AlertsKeyRotationKeyRotationAlertDefinitionResponse
 func (a *KeyRotationAlertApiService) CreateAlertsKeyRotationExecute(r ApiCreateAlertsKeyRotationRequest) (*AlertsKeyRotationKeyRotationAlertDefinitionResponse, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *KeyRotationAlertApiService) CreateAlertsKeyRotationExecute(r ApiCreateA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Alerts/KeyRotation/Test
+// Request for V1 POST /Alerts/KeyRotation/Test
 type ApiCreateAlertsKeyRotationTestRequest struct {
 	ctx                                          context.Context
 	ApiService                                   *KeyRotationAlertApiService
@@ -204,11 +207,14 @@ func (r ApiCreateAlertsKeyRotationTestRequest) AlertsKeyRotationKeyRotationAlert
 	return r
 }
 
+// Executes the V1 POST /Alerts/KeyRotation/Test request context
 func (r ApiCreateAlertsKeyRotationTestRequest) Execute() (*AlertsKeyRotationKeyRotationAlertTestResponse, *http.Response, error) {
 	return r.ApiService.CreateAlertsKeyRotationTestExecute(r)
 }
 
 /*
+Creates a new V1 POST /Alerts/KeyRotation/Test request.
+
 CreateAlertsKeyRotationTest Test An Alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -229,7 +235,7 @@ func (a *KeyRotationAlertApiService) NewCreateAlertsKeyRotationTestRequest(ctx c
 	}
 }
 
-// Executes the API request POST /Alerts/KeyRotation/Test
+// Executes the API request V1 POST /Alerts/KeyRotation/Test
 //
 //	@return AlertsKeyRotationKeyRotationAlertTestResponse
 //
@@ -326,7 +332,7 @@ func (a *KeyRotationAlertApiService) CreateAlertsKeyRotationTestExecute(r ApiCre
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Alerts/KeyRotation/TestAll
+// Request for V1 POST /Alerts/KeyRotation/TestAll
 type ApiCreateAlertsKeyRotationTestAllRequest struct {
 	ctx                                             context.Context
 	ApiService                                      *KeyRotationAlertApiService
@@ -353,11 +359,14 @@ func (r ApiCreateAlertsKeyRotationTestAllRequest) AlertsKeyRotationKeyRotationAl
 	return r
 }
 
+// Executes the V1 POST /Alerts/KeyRotation/TestAll request context
 func (r ApiCreateAlertsKeyRotationTestAllRequest) Execute() (*AlertsKeyRotationKeyRotationAlertTestResponse, *http.Response, error) {
 	return r.ApiService.CreateAlertsKeyRotationTestAllExecute(r)
 }
 
 /*
+Creates a new V1 POST /Alerts/KeyRotation/TestAll request.
+
 CreateAlertsKeyRotationTestAll Test All Alerts
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -378,7 +387,7 @@ func (a *KeyRotationAlertApiService) NewCreateAlertsKeyRotationTestAllRequest(ct
 	}
 }
 
-// Executes the API request POST /Alerts/KeyRotation/TestAll
+// Executes the API request V1 POST /Alerts/KeyRotation/TestAll
 //
 //	@return AlertsKeyRotationKeyRotationAlertTestResponse
 //
@@ -475,7 +484,7 @@ func (a *KeyRotationAlertApiService) CreateAlertsKeyRotationTestAllExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for DELETE /Alerts/KeyRotation/{id}
+// Request for V1 DELETE /Alerts/KeyRotation/{id}
 type ApiDeleteAlertsKeyRotationByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *KeyRotationAlertApiService
@@ -496,11 +505,14 @@ func (r ApiDeleteAlertsKeyRotationByIdRequest) XKeyfactorApiVersion(xKeyfactorAp
 	return r
 }
 
+// Executes the V1 DELETE /Alerts/KeyRotation/{id} request context
 func (r ApiDeleteAlertsKeyRotationByIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAlertsKeyRotationByIdExecute(r)
 }
 
 /*
+Creates a new V1 DELETE /Alerts/KeyRotation/{id} request.
+
 DeleteAlertsKeyRotationById Delete a key rotation alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -604,7 +616,7 @@ func (a *KeyRotationAlertApiService) DeleteAlertsKeyRotationByIdExecute(r ApiDel
 	return localVarHTTPResponse, nil
 }
 
-// Request for GET /Alerts/KeyRotation
+// Request for V1 GET /Alerts/KeyRotation
 type ApiGetAlertsKeyRotationRequest struct {
 	ctx                     context.Context
 	ApiService              *KeyRotationAlertApiService
@@ -654,11 +666,14 @@ func (r ApiGetAlertsKeyRotationRequest) XKeyfactorApiVersion(xKeyfactorApiVersio
 	return r
 }
 
+// Executes the V1 GET /Alerts/KeyRotation request context
 func (r ApiGetAlertsKeyRotationRequest) Execute() ([]AlertsKeyRotationKeyRotationAlertDefinitionResponse, *http.Response, error) {
 	return r.ApiService.GetAlertsKeyRotationExecute(r)
 }
 
 /*
+Creates a new V1 GET /Alerts/KeyRotation request.
+
 GetAlertsKeyRotation Gets all key rotation alerts according to the provided filter and output parameters
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -677,7 +692,7 @@ func (a *KeyRotationAlertApiService) NewGetAlertsKeyRotationRequest(ctx context.
 	}
 }
 
-// Executes the API request GET /Alerts/KeyRotation
+// Executes the API request V1 GET /Alerts/KeyRotation
 //
 //	@return []AlertsKeyRotationKeyRotationAlertDefinitionResponse
 func (a *KeyRotationAlertApiService) GetAlertsKeyRotationExecute(r ApiGetAlertsKeyRotationRequest) ([]AlertsKeyRotationKeyRotationAlertDefinitionResponse, *http.Response, error) {
@@ -785,7 +800,7 @@ func (a *KeyRotationAlertApiService) GetAlertsKeyRotationExecute(r ApiGetAlertsK
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Alerts/KeyRotation/{id}
+// Request for V1 GET /Alerts/KeyRotation/{id}
 type ApiGetAlertsKeyRotationByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *KeyRotationAlertApiService
@@ -806,11 +821,14 @@ func (r ApiGetAlertsKeyRotationByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVe
 	return r
 }
 
+// Executes the V1 GET /Alerts/KeyRotation/{id} request context
 func (r ApiGetAlertsKeyRotationByIdRequest) Execute() (*AlertsKeyRotationKeyRotationAlertDefinitionResponse, *http.Response, error) {
 	return r.ApiService.GetAlertsKeyRotationByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Alerts/KeyRotation/{id} request.
+
 GetAlertsKeyRotationById Get a key rotation alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -832,7 +850,7 @@ func (a *KeyRotationAlertApiService) NewGetAlertsKeyRotationByIdRequest(ctx cont
 	}
 }
 
-// Executes the API request GET /Alerts/KeyRotation/{id}
+// Executes the API request V1 GET /Alerts/KeyRotation/{id}
 //
 //	@return AlertsKeyRotationKeyRotationAlertDefinitionResponse
 func (a *KeyRotationAlertApiService) GetAlertsKeyRotationByIdExecute(r ApiGetAlertsKeyRotationByIdRequest) (*AlertsKeyRotationKeyRotationAlertDefinitionResponse, *http.Response, error) {
@@ -926,7 +944,7 @@ func (a *KeyRotationAlertApiService) GetAlertsKeyRotationByIdExecute(r ApiGetAle
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Alerts/KeyRotation/Schedule
+// Request for V1 GET /Alerts/KeyRotation/Schedule
 type ApiGetAlertsKeyRotationScheduleRequest struct {
 	ctx                     context.Context
 	ApiService              *KeyRotationAlertApiService
@@ -946,11 +964,14 @@ func (r ApiGetAlertsKeyRotationScheduleRequest) XKeyfactorApiVersion(xKeyfactorA
 	return r
 }
 
+// Executes the V1 GET /Alerts/KeyRotation/Schedule request context
 func (r ApiGetAlertsKeyRotationScheduleRequest) Execute() (*AlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {
 	return r.ApiService.GetAlertsKeyRotationScheduleExecute(r)
 }
 
 /*
+Creates a new V1 GET /Alerts/KeyRotation/Schedule request.
+
 GetAlertsKeyRotationSchedule Get the schedule for key rotation alerts
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -969,7 +990,7 @@ func (a *KeyRotationAlertApiService) NewGetAlertsKeyRotationScheduleRequest(ctx 
 	}
 }
 
-// Executes the API request GET /Alerts/KeyRotation/Schedule
+// Executes the API request V1 GET /Alerts/KeyRotation/Schedule
 //
 //	@return AlertsAlertScheduleAlertScheduleResponse
 func (a *KeyRotationAlertApiService) GetAlertsKeyRotationScheduleExecute(r ApiGetAlertsKeyRotationScheduleRequest) (*AlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {
@@ -1062,7 +1083,7 @@ func (a *KeyRotationAlertApiService) GetAlertsKeyRotationScheduleExecute(r ApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Alerts/KeyRotation
+// Request for V1 PUT /Alerts/KeyRotation
 type ApiUpdateAlertsKeyRotationRequest struct {
 	ctx                                            context.Context
 	ApiService                                     *KeyRotationAlertApiService
@@ -1089,11 +1110,14 @@ func (r ApiUpdateAlertsKeyRotationRequest) AlertsKeyRotationKeyRotationAlertUpda
 	return r
 }
 
+// Executes the V1 PUT /Alerts/KeyRotation request context
 func (r ApiUpdateAlertsKeyRotationRequest) Execute() (*AlertsKeyRotationKeyRotationAlertDefinitionResponse, *http.Response, error) {
 	return r.ApiService.UpdateAlertsKeyRotationExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Alerts/KeyRotation request.
+
 UpdateAlertsKeyRotation Edit a key rotation alert
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1112,7 +1136,7 @@ func (a *KeyRotationAlertApiService) NewUpdateAlertsKeyRotationRequest(ctx conte
 	}
 }
 
-// Executes the API request PUT /Alerts/KeyRotation
+// Executes the API request V1 PUT /Alerts/KeyRotation
 //
 //	@return AlertsKeyRotationKeyRotationAlertDefinitionResponse
 func (a *KeyRotationAlertApiService) UpdateAlertsKeyRotationExecute(r ApiUpdateAlertsKeyRotationRequest) (*AlertsKeyRotationKeyRotationAlertDefinitionResponse, *http.Response, error) {
@@ -1207,7 +1231,7 @@ func (a *KeyRotationAlertApiService) UpdateAlertsKeyRotationExecute(r ApiUpdateA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for PUT /Alerts/KeyRotation/Schedule
+// Request for V1 PUT /Alerts/KeyRotation/Schedule
 type ApiUpdateAlertsKeyRotationScheduleRequest struct {
 	ctx                                     context.Context
 	ApiService                              *KeyRotationAlertApiService
@@ -1233,11 +1257,14 @@ func (r ApiUpdateAlertsKeyRotationScheduleRequest) AlertsAlertScheduleAlertSched
 	return r
 }
 
+// Executes the V1 PUT /Alerts/KeyRotation/Schedule request context
 func (r ApiUpdateAlertsKeyRotationScheduleRequest) Execute() (*AlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {
 	return r.ApiService.UpdateAlertsKeyRotationScheduleExecute(r)
 }
 
 /*
+Creates a new V1 PUT /Alerts/KeyRotation/Schedule request.
+
 UpdateAlertsKeyRotationSchedule Edit schedule
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1256,7 +1283,7 @@ func (a *KeyRotationAlertApiService) NewUpdateAlertsKeyRotationScheduleRequest(c
 	}
 }
 
-// Executes the API request PUT /Alerts/KeyRotation/Schedule
+// Executes the API request V1 PUT /Alerts/KeyRotation/Schedule
 //
 //	@return AlertsAlertScheduleAlertScheduleResponse
 func (a *KeyRotationAlertApiService) UpdateAlertsKeyRotationScheduleExecute(r ApiUpdateAlertsKeyRotationScheduleRequest) (*AlertsAlertScheduleAlertScheduleResponse, *http.Response, error) {

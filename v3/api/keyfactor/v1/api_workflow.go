@@ -32,7 +32,7 @@ import (
 // WorkflowApiService WorkflowApi service
 type WorkflowApiService service
 
-// Request for POST /Workflow/Certificates/Approve
+// Request for V1 POST /Workflow/Certificates/Approve
 type ApiCreateWorkflowCertificatesApproveRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowApiService
@@ -59,11 +59,14 @@ func (r ApiCreateWorkflowCertificatesApproveRequest) RequestBody(requestBody []i
 	return r
 }
 
+// Executes the V1 POST /Workflow/Certificates/Approve request context
 func (r ApiCreateWorkflowCertificatesApproveRequest) Execute() (*CSSCMSDataModelModelsWorkflowApproveDenyResult, *http.Response, error) {
 	return r.ApiService.CreateWorkflowCertificatesApproveExecute(r)
 }
 
 /*
+Creates a new V1 POST /Workflow/Certificates/Approve request.
+
 CreateWorkflowCertificatesApprove Approves pending certificate requests associated with the provided ids
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -82,7 +85,7 @@ func (a *WorkflowApiService) NewCreateWorkflowCertificatesApproveRequest(ctx con
 	}
 }
 
-// Executes the API request POST /Workflow/Certificates/Approve
+// Executes the API request V1 POST /Workflow/Certificates/Approve
 //
 //	@return CSSCMSDataModelModelsWorkflowApproveDenyResult
 func (a *WorkflowApiService) CreateWorkflowCertificatesApproveExecute(r ApiCreateWorkflowCertificatesApproveRequest) (*CSSCMSDataModelModelsWorkflowApproveDenyResult, *http.Response, error) {
@@ -177,7 +180,7 @@ func (a *WorkflowApiService) CreateWorkflowCertificatesApproveExecute(r ApiCreat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for POST /Workflow/Certificates/Deny
+// Request for V1 POST /Workflow/Certificates/Deny
 type ApiCreateWorkflowCertificatesDenyRequest struct {
 	ctx                                        context.Context
 	ApiService                                 *WorkflowApiService
@@ -204,11 +207,14 @@ func (r ApiCreateWorkflowCertificatesDenyRequest) CSSCMSDataModelModelsWorkflowD
 	return r
 }
 
+// Executes the V1 POST /Workflow/Certificates/Deny request context
 func (r ApiCreateWorkflowCertificatesDenyRequest) Execute() (*CSSCMSDataModelModelsWorkflowApproveDenyResult, *http.Response, error) {
 	return r.ApiService.CreateWorkflowCertificatesDenyExecute(r)
 }
 
 /*
+Creates a new V1 POST /Workflow/Certificates/Deny request.
+
 CreateWorkflowCertificatesDeny Denies pending certificate requests associated with the provided ids
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -227,7 +233,7 @@ func (a *WorkflowApiService) NewCreateWorkflowCertificatesDenyRequest(ctx contex
 	}
 }
 
-// Executes the API request POST /Workflow/Certificates/Deny
+// Executes the API request V1 POST /Workflow/Certificates/Deny
 //
 //	@return CSSCMSDataModelModelsWorkflowApproveDenyResult
 func (a *WorkflowApiService) CreateWorkflowCertificatesDenyExecute(r ApiCreateWorkflowCertificatesDenyRequest) (*CSSCMSDataModelModelsWorkflowApproveDenyResult, *http.Response, error) {
@@ -322,7 +328,7 @@ func (a *WorkflowApiService) CreateWorkflowCertificatesDenyExecute(r ApiCreateWo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Workflow/Certificates/{id}
+// Request for V1 GET /Workflow/Certificates/{id}
 type ApiGetWorkflowCertificatesByIdRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowApiService
@@ -343,11 +349,14 @@ func (r ApiGetWorkflowCertificatesByIdRequest) XKeyfactorApiVersion(xKeyfactorAp
 	return r
 }
 
+// Executes the V1 GET /Workflow/Certificates/{id} request context
 func (r ApiGetWorkflowCertificatesByIdRequest) Execute() (*CertificatesCertRequestResponseModel, *http.Response, error) {
 	return r.ApiService.GetWorkflowCertificatesByIdExecute(r)
 }
 
 /*
+Creates a new V1 GET /Workflow/Certificates/{id} request.
+
 GetWorkflowCertificatesById Returns certificate request details based on the provided ID.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -369,7 +378,7 @@ func (a *WorkflowApiService) NewGetWorkflowCertificatesByIdRequest(ctx context.C
 	}
 }
 
-// Executes the API request GET /Workflow/Certificates/{id}
+// Executes the API request V1 GET /Workflow/Certificates/{id}
 //
 //	@return CertificatesCertRequestResponseModel
 func (a *WorkflowApiService) GetWorkflowCertificatesByIdExecute(r ApiGetWorkflowCertificatesByIdRequest) (*CertificatesCertRequestResponseModel, *http.Response, error) {
@@ -463,7 +472,7 @@ func (a *WorkflowApiService) GetWorkflowCertificatesByIdExecute(r ApiGetWorkflow
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Workflow/Certificates/Denied
+// Request for V1 GET /Workflow/Certificates/Denied
 type ApiGetWorkflowCertificatesDeniedRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowApiService
@@ -513,11 +522,14 @@ func (r ApiGetWorkflowCertificatesDeniedRequest) XKeyfactorApiVersion(xKeyfactor
 	return r
 }
 
+// Executes the V1 GET /Workflow/Certificates/Denied request context
 func (r ApiGetWorkflowCertificatesDeniedRequest) Execute() ([]CSSCMSDataModelModelsWorkflowCertificateRequestModel, *http.Response, error) {
 	return r.ApiService.GetWorkflowCertificatesDeniedExecute(r)
 }
 
 /*
+Creates a new V1 GET /Workflow/Certificates/Denied request.
+
 GetWorkflowCertificatesDenied Gets a collection of denied certificate requests based on the provided query.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -536,7 +548,7 @@ func (a *WorkflowApiService) NewGetWorkflowCertificatesDeniedRequest(ctx context
 	}
 }
 
-// Executes the API request GET /Workflow/Certificates/Denied
+// Executes the API request V1 GET /Workflow/Certificates/Denied
 //
 //	@return []CSSCMSDataModelModelsWorkflowCertificateRequestModel
 func (a *WorkflowApiService) GetWorkflowCertificatesDeniedExecute(r ApiGetWorkflowCertificatesDeniedRequest) ([]CSSCMSDataModelModelsWorkflowCertificateRequestModel, *http.Response, error) {
@@ -644,7 +656,7 @@ func (a *WorkflowApiService) GetWorkflowCertificatesDeniedExecute(r ApiGetWorkfl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Workflow/Certificates/ExternalValidation
+// Request for V1 GET /Workflow/Certificates/ExternalValidation
 type ApiGetWorkflowCertificatesExternalValidationRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowApiService
@@ -694,11 +706,14 @@ func (r ApiGetWorkflowCertificatesExternalValidationRequest) XKeyfactorApiVersio
 	return r
 }
 
+// Executes the V1 GET /Workflow/Certificates/ExternalValidation request context
 func (r ApiGetWorkflowCertificatesExternalValidationRequest) Execute() ([]CSSCMSDataModelModelsWorkflowCertificateRequestModel, *http.Response, error) {
 	return r.ApiService.GetWorkflowCertificatesExternalValidationExecute(r)
 }
 
 /*
+Creates a new V1 GET /Workflow/Certificates/ExternalValidation request.
+
 GetWorkflowCertificatesExternalValidation Gets a collection of external validation certificate requests based on the provided query.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -717,7 +732,7 @@ func (a *WorkflowApiService) NewGetWorkflowCertificatesExternalValidationRequest
 	}
 }
 
-// Executes the API request GET /Workflow/Certificates/ExternalValidation
+// Executes the API request V1 GET /Workflow/Certificates/ExternalValidation
 //
 //	@return []CSSCMSDataModelModelsWorkflowCertificateRequestModel
 func (a *WorkflowApiService) GetWorkflowCertificatesExternalValidationExecute(r ApiGetWorkflowCertificatesExternalValidationRequest) ([]CSSCMSDataModelModelsWorkflowCertificateRequestModel, *http.Response, error) {
@@ -825,7 +840,7 @@ func (a *WorkflowApiService) GetWorkflowCertificatesExternalValidationExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// Request for GET /Workflow/Certificates/Pending
+// Request for V1 GET /Workflow/Certificates/Pending
 type ApiGetWorkflowCertificatesPendingRequest struct {
 	ctx                     context.Context
 	ApiService              *WorkflowApiService
@@ -875,11 +890,14 @@ func (r ApiGetWorkflowCertificatesPendingRequest) XKeyfactorApiVersion(xKeyfacto
 	return r
 }
 
+// Executes the V1 GET /Workflow/Certificates/Pending request context
 func (r ApiGetWorkflowCertificatesPendingRequest) Execute() ([]CSSCMSDataModelModelsWorkflowCertificateRequestModel, *http.Response, error) {
 	return r.ApiService.GetWorkflowCertificatesPendingExecute(r)
 }
 
 /*
+Creates a new V1 GET /Workflow/Certificates/Pending request.
+
 GetWorkflowCertificatesPending Gets a collection of pending certificate requests based on the provided query.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -898,7 +916,7 @@ func (a *WorkflowApiService) NewGetWorkflowCertificatesPendingRequest(ctx contex
 	}
 }
 
-// Executes the API request GET /Workflow/Certificates/Pending
+// Executes the API request V1 GET /Workflow/Certificates/Pending
 //
 //	@return []CSSCMSDataModelModelsWorkflowCertificateRequestModel
 func (a *WorkflowApiService) GetWorkflowCertificatesPendingExecute(r ApiGetWorkflowCertificatesPendingRequest) ([]CSSCMSDataModelModelsWorkflowCertificateRequestModel, *http.Response, error) {
