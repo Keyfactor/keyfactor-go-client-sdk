@@ -1,3 +1,11 @@
+# New SDK Version Available!
+
+**This README corresponds to v1 of the Go Client SDK!**
+
+All instructions in this document are relevant to v1 of the SDK. For information on the latest available SDK (and how to install it), please review the README for that SDK version.
+
+As of writing, the latest available SDK is [version 24](./v24).
+
 # Go API client for keyfactor
 
 This reference serves to document REST-based methods to manage and integrate with Keyfactor. In addition, an embedded
