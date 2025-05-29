@@ -1,0 +1,38 @@
+additionalProperties:
+  licenseHeader: |-
+    Copyright 2023 Keyfactor
+    Licensed under the Apache License, Version 2.0 (the License); you may
+    not use this file except in compliance with the License.  You may obtain a
+    copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
+    required by applicable law or agreed to in writing, software distributed
+    under the License is distributed on an AS IS BASIS, WITHOUT WARRANTIES
+    OR CONDITIONS OF ANY KIND, either express or implied. See the License for
+    the specific language governing permissions and limitations under the
+    License.
+  environmentVariables:
+    - name: KEYFACTOR_HOSTNAME
+      goVarName: envCommandHostname
+      description: "Hostname of the Keyfactor Command instance. Does not include the protocol (http/https) or API suffix (/KeyfactorAPI)"
+      required: true
+    - name: KEYFACTOR_USERNAME
+      goVarName: envCommandUsername
+      description: "Username of the Keyfactor Command user using the API"
+      required: true
+    - name: KEYFACTOR_PASSWORD
+      goVarName: envCommandPassword
+      description: "Password of the Keyfactor Command user using the API"
+      required: true
+    - name: KEYFACTOR_DOMAIN
+      goVarName: envCommandDomain
+      description: "Domain of the Keyfactor Command user using the API, if using Active Directory authentication"
+      required: false
+    - name: KEYFACTOR_API_PATH
+      goVarName: envCommandApiPath
+      description: "Path to the Keyfactor Command API. Defaults to /KeyfactorAPI"
+      required: false
+      defaultValue: "/KeyfactorAPI"
+    - name: KEYFACTOR_LOG_LEVEL
+      goVarName: envCommandLogLevel
+      description: "Log level for the Keyfactor Command API client. Defaults to info"
+      required: false
+      defaultValue: "error"
