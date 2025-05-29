@@ -1,3 +1,8 @@
+# v25.0.0
+
+## Features
+- Support for Keyfactor Command REST API endpoints up to 25.1.1. [API Change Log](https://software.keyfactor.com/Core-OnPrem/Current/Content/WebAPI/ChangeLogs/25_1_1-APIChangeLog.htm)
+
 # v24.0.0
 
 ## Features
