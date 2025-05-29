@@ -1,3 +1,9 @@
+# v25.0.0
+
+## Features
+- Support for Keyfactor Command REST API endpoints up to 25.1.1. [API Change Log](https://software.keyfactor.com/Core-OnPrem/Current/Content/WebAPI/ChangeLogs/25_1_1-APIChangeLog.htm)
+- Add [helper methods](https://github.com/Keyfactor/keyfactor-go-client-sdk/blob/feat/AB%2372090/sdk-version-25/v25/helpers.go) to support some common lookup patterns.
+
 # v24.0.0
 
 ## Features
