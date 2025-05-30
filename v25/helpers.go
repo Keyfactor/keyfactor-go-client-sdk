@@ -1,0 +1,104 @@
+package keyfactor
+
+import (
+	"context"
+	"fmt"
+
+	v1 "github.com/Keyfactor/keyfactor-go-client-sdk/v25/api/keyfactor/v1"
+	v2 "github.com/Keyfactor/keyfactor-go-client-sdk/v25/api/keyfactor/v2"
+)
+
+// The v1 APIClient exposes a method to query security claims by type and value. To retrieve a unique security claim from Command
+// it is required to also find a claim with the matching authentication scheme, which is not queryable via the QueryString parameter. That must be done as a separate
+// operation from the API call. This function will query the security claims by type and value, then filter the results by the authentication scheme to return a unique claim if it exists.
+func GetSecurityClaimByTypeAndValueAndScheme(ctx context.Context, client *APIClient, claimType string, claimValue string, authenticationScheme string) (*v1.SecurityRoleClaimDefinitionsRoleClaimDefinitionQueryResponse, error) {
+	claimTypeEnum, err := v1.ParseCSSCMSCoreEnumsClaimType(claimType)
+	if err != nil {
+		return nil, err
+	}
+
+	api := client.V1.SecurityClaimsApi
+	req := api.
+		NewGetSecurityClaimsRequest(ctx).
+		QueryString(fmt.Sprintf("((ClaimValue -eq \"%s\" and ClaimType -eq %d))", claimValue, *claimTypeEnum))
+
+	response, _, err := api.GetSecurityClaimsExecute(req)
+
+	if err != nil {
+		return nil, err
+	}
+
+	if len(response) == 0 {
+		return nil, fmt.Errorf("No security claim found with claimType %s and claimValue %s", claimType, claimValue)
+	}
+
+	var result *v1.SecurityRoleClaimDefinitionsRoleClaimDefinitionQueryResponse
+
+	for _, claim := range response {
+		if claim.Provider != nil && claim.Provider.AuthenticationScheme.Get() != nil && *claim.Provider.AuthenticationScheme.Get() == authenticationScheme {
+			result = &claim
+			break
+		}
+	}
+
+	if result == nil {
+		return nil, fmt.Errorf("No security claim found with claimType %s and claimValue %s and authenticationScheme %s", claimType, claimValue, authenticationScheme)
+	}
+
+	return result, nil
+}
+
+// The v2 APIClient exposes a method to query a role by name.  This function will query the security roles and filter security roles by name.
+func GetSecurityRoleByName(ctx context.Context, client *APIClient, roleName string) (*v2.SecuritySecurityRolesSecurityRoleQueryResponse, error) {
+	api := client.V2.SecurityRolesApi
+	req := api.
+		NewGetSecurityRolesRequest(ctx).
+		QueryString(fmt.Sprintf("((Name -eq \"%s\"))", roleName))
+
+	response, _, err := req.Execute()
+
+	if err != nil {
+		return nil, err
+	}
+
+	if len(response) == 0 {
+		return nil, fmt.Errorf("No security role found with name %s", roleName)
+	}
+
+	// Command should not allow multiple security roles with the same name. Not going to code logic around multiple results.
+
+	return &response[0], nil
+}
+
+// Queries security permissions by name and returns the first matching permission set.
+func GetSecurityPermissionSetByName(ctx context.Context, client *APIClient, permissionSetName string) (*v1.PermissionSetsPermissionSetResponse, error) {
+	api := client.V1.PermissionSetApi
+	var model *v1.PermissionSetsPermissionSetResponse
+	pageNumber := 1
+	for model == nil {
+		permissionSets, _, err := api.NewGetPermissionSetsRequest(ctx).
+			ReturnLimit(50).
+			PageReturned(int32(pageNumber)).
+			Execute()
+
+		if err != nil {
+			return nil, fmt.Errorf("failed to query permission sets: %w", err)
+		}
+
+		if len(permissionSets) == 0 {
+			return nil, fmt.Errorf("no permissions were found with name %s", permissionSetName)
+		}
+
+		pageNumber++
+
+		for _, permission := range permissionSets {
+			// Check if the permission set name matches the requested name
+			if permission.Name.Get() != nil && *permission.Name.Get() == permissionSetName {
+				model = &permission
+				break
+			}
+		}
+	}
+
+	return model, nil
+}
