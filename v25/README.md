@@ -80,12 +80,12 @@ ctx := context.Background()
 
 // api := client.V1.ExampleApi // Access V1 API Service
 // req := api.NewUpdateExampleRequest(ctx) // Build new API request
-// req.ExampleUpdateRequest(V1.ExampleUpdateRequest{ Name: "Hello" }) // Add a body to the API request (if applicable)
+// req = req.ExampleUpdateRequest(V1.ExampleUpdateRequest{ Name: "Hello" }) // Add a body to the API request (if applicable)
 // resp, httpResp, err := req.Execute() // Execute request
 
 // api := client.V2.ExampleApi // Access V2 API Service
 // req := api.NewUpdateExampleRequest(ctx) // Build new API request
-// req.ExampleUpdateRequest(V2.ExampleUpdateRequest{ Name: "Hello" }) // Add a body to the API request (if applicable)
+// req = req.ExampleUpdateRequest(V2.ExampleUpdateRequest{ Name: "Hello" }) // Add a body to the API request (if applicable)
 // resp, httpResp, err := req.Execute() // Execute request
 
 

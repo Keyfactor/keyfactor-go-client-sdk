@@ -46,7 +46,7 @@ import (
 	"os"
 
 	"github.com/Keyfactor/keyfactor-auth-client-go/auth_providers"
-	"github.com/Keyfactor/keyfactor-go-client-sdk/v25/api/keyfactor/v2"
+	v2 "github.com/Keyfactor/keyfactor-go-client-sdk/v25/api/keyfactor/v2"
 )
 
 hostname := os.Getenv(auth_providers.EnvKeyfactorHostName)
@@ -74,11 +74,11 @@ oAuthNoParamsConfig.
 client, err := keyfactor.NewAPIClient(oAuthNoParamsConfig.GetServerConfig())
 
 // Mock example API request. Please refer to documentation for a complete list of valid API requests.
-api := client.SecurityRolesApi
+api := client.ExampleApi
 req := api.NewCreateExampleRequest(ctx)
 
 // If applicable, you can add the body to an API request through the request builder's Fluent API.
-req.SecurityExampleCreateRequest(SecurityExampleCreateRequest{
+req = req.ExampleCreateRequest(v2.ExampleExampleCreateRequest{
 	Name: "Foo",
 	Description: "Example API request."
 })
