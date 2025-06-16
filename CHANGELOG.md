@@ -1,3 +1,7 @@
+# v24.0.1
+## Chores
+- Bump github.com/Keyfactor/keyfactor-auth-client-go dependency from v1.1.0-rc.8 to 1.3.0.
+
 # v24.0.0
 
 ## Features
