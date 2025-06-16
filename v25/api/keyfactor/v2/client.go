@@ -145,6 +145,9 @@ func buildHttpClientV2(cfg *auth_providers.Server) (AuthConfig, error) {
 			ClientID:          cfg.ClientID,
 			ClientSecret:      cfg.ClientSecret,
 			TokenURL:          cfg.OAuthTokenUrl,
+			Audience: 		   cfg.Audience,
+			Scopes: 	       cfg.Scopes,
+			AccessToken: 	   cfg.AccessToken,
 		}
 		aErr := oauthCfg.Authenticate()
 		if aErr != nil {
