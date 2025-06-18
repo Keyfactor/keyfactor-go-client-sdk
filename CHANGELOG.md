@@ -1,3 +1,10 @@
+# v24.0.1
+## Chores
+- Bump github.com/Keyfactor/keyfactor-auth-client-go dependency from v1.1.0-rc.8 to 1.3.0.
+
+## Fixes
+- fix: Fix issue with the OAuth token flow with explicit access token provided to config runs into an error
+
 # v24.0.0
 
 ## Features
