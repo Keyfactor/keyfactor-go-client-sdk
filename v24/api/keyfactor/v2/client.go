@@ -577,7 +577,7 @@ func (c *APIClient) prepareRequest(
 	// Override request host, if applicable
 	serverConfig := c.GetConfig()
 	if serverConfig.Host != "" {
-		if serverConfig.Port > 0 && serverConfig.Port <= 65535 {
+		if serverConfig.Port > 0 && serverConfig.Port <= 65535 && serverConfig.Port != 443 {
 			url.Host = fmt.Sprintf("%s:%d", serverConfig.Host, serverConfig.Port)
 		} else {
 			url.Host = serverConfig.Host
