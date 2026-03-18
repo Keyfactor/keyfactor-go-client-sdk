@@ -34,6 +34,7 @@ const (
 	CSSCMSCOREENUMSENROLLMENTTYPE__0 CSSCMSCoreEnumsEnrollmentType = 0
 	CSSCMSCOREENUMSENROLLMENTTYPE__1 CSSCMSCoreEnumsEnrollmentType = 1
 	CSSCMSCOREENUMSENROLLMENTTYPE__2 CSSCMSCoreEnumsEnrollmentType = 2
+	CSSCMSCOREENUMSENROLLMENTTYPE__3 CSSCMSCoreEnumsEnrollmentType = 3
 	CSSCMSCOREENUMSENROLLMENTTYPE__4 CSSCMSCoreEnumsEnrollmentType = 4
 )
 
@@ -59,11 +60,16 @@ func (c *CSSCMSCoreEnumsEnrollmentType) Parse(s string) error {
 }
 
 // All allowed values of CSSCMSCoreEnumsEnrollmentType enum
+// This is a bitmask field: 1=PFX, 2=CSR, 4=... so combined values (3=PFX+CSR, 5, 6, 7) are valid.
 var AllowedCSSCMSCoreEnumsEnrollmentTypeEnumValues = []CSSCMSCoreEnumsEnrollmentType{
 	0,
 	1,
 	2,
+	3,
 	4,
+	5,
+	6,
+	7,
 }
 
 func (v *CSSCMSCoreEnumsEnrollmentType) UnmarshalJSON(src []byte) error {
