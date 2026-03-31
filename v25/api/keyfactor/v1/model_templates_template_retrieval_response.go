@@ -62,6 +62,7 @@ type TemplatesTemplateRetrievalResponse struct {
 	TimeAfterExpiration       NullableInt32                                          `json:"TimeAfterExpiration,omitempty"`
 	TimeAfterExpirationUnits  *CSSCMSDataModelEnumsCertificateCleanupTimeUnits       `json:"TimeAfterExpirationUnits,omitempty"`
 	DeleteWithArchivedKey     NullableBool                                           `json:"DeleteWithArchivedKey,omitempty"`
+	Manageability             NullableInt32                                          `json:"Manageability,omitempty"`
 }
 
 // NewTemplatesTemplateRetrievalResponse instantiates a new TemplatesTemplateRetrievalResponse object
@@ -1417,7 +1418,23 @@ func (o TemplatesTemplateRetrievalResponse) ToMap() (map[string]interface{}, err
 	if o.DeleteWithArchivedKey.IsSet() {
 		toSerialize["DeleteWithArchivedKey"] = o.DeleteWithArchivedKey.Get()
 	}
+	if o.Manageability.IsSet() {
+		toSerialize["Manageability"] = o.Manageability.Get()
+	}
 	return toSerialize, nil
+}
+
+
+func (o *TemplatesTemplateRetrievalResponse) GetManageability() int32 {
+	if o == nil || !o.Manageability.IsSet() || o.Manageability.Get() == nil {
+		var ret int32
+		return ret
+	}
+	return *o.Manageability.Get()
+}
+
+func (o *TemplatesTemplateRetrievalResponse) SetManageability(v int32) {
+	o.Manageability.Set(&v)
 }
 
 type NullableTemplatesTemplateRetrievalResponse struct {

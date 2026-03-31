@@ -80,6 +80,22 @@ type service struct {
 
 // NewAPIClient creates a new API client. Requires a userAgent string describing your application.
 // optionally a custom http.Client to allow for advanced features such as caching.
+// NewAPIClientWithAuth creates an APIClient with a pre-built AuthConfig, bypassing
+// the Authenticate() network call. Used in unit tests with VCR cassettes.
+func NewAPIClientWithAuth(auth AuthConfig) *APIClient {
+	c := &APIClient{}
+	c.AuthClient = auth
+	c.common.client = c
+
+	// API Services
+	c.CertificateApi = (*CertificateApiService)(&c.common)
+	c.EnrollmentApi = (*EnrollmentApiService)(&c.common)
+	c.PAMProviderApi = (*PAMProviderApiService)(&c.common)
+	c.SecurityRolesApi = (*SecurityRolesApiService)(&c.common)
+	c.UserApi = (*UserApiService)(&c.common)
+	return c
+}
+
 func NewAPIClient(cfg *auth_providers.Server) (*APIClient, error) {
 	var err error
 

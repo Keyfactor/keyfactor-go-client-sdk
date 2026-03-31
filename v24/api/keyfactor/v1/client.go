@@ -174,6 +174,69 @@ type service struct {
 
 // NewAPIClient creates a new API client. Requires a userAgent string describing your application.
 // optionally a custom http.Client to allow for advanced features such as caching.
+// NewAPIClientWithAuth creates an APIClient with a pre-built AuthConfig, bypassing
+// the Authenticate() network call. Used in unit tests with VCR cassettes.
+func NewAPIClientWithAuth(auth AuthConfig) *APIClient {
+	c := &APIClient{}
+	c.AuthClient = auth
+	c.common.client = c
+
+	// API Services
+	c.AgentApi = (*AgentApiService)(&c.common)
+	c.AgentBlueprintApi = (*AgentBlueprintApiService)(&c.common)
+	c.AgentPoolApi = (*AgentPoolApiService)(&c.common)
+	c.AppSettingApi = (*AppSettingApiService)(&c.common)
+	c.AuditLogApi = (*AuditLogApiService)(&c.common)
+	c.CAConnectorApi = (*CAConnectorApiService)(&c.common)
+	c.CSRGenerationApi = (*CSRGenerationApiService)(&c.common)
+	c.CertificateApi = (*CertificateApiService)(&c.common)
+	c.CertificateAuthorityApi = (*CertificateAuthorityApiService)(&c.common)
+	c.CertificateCollectionApi = (*CertificateCollectionApiService)(&c.common)
+	c.CertificateStoreApi = (*CertificateStoreApiService)(&c.common)
+	c.CertificateStoreContainerApi = (*CertificateStoreContainerApiService)(&c.common)
+	c.CertificateStoreTypeApi = (*CertificateStoreTypeApiService)(&c.common)
+	c.ComponentInstallationApi = (*ComponentInstallationApiService)(&c.common)
+	c.CustomJobTypeApi = (*CustomJobTypeApiService)(&c.common)
+	c.DeniedAlertApi = (*DeniedAlertApiService)(&c.common)
+	c.EnrollmentApi = (*EnrollmentApiService)(&c.common)
+	c.EventHandlerRegistrationApi = (*EventHandlerRegistrationApiService)(&c.common)
+	c.ExpirationAlertApi = (*ExpirationAlertApiService)(&c.common)
+	c.ExtensionsApi = (*ExtensionsApiService)(&c.common)
+	c.IdentityProviderApi = (*IdentityProviderApiService)(&c.common)
+	c.IssuedAlertApi = (*IssuedAlertApiService)(&c.common)
+	c.KeyApi = (*KeyApiService)(&c.common)
+	c.KeyRotationAlertApi = (*KeyRotationAlertApiService)(&c.common)
+	c.LicenseApi = (*LicenseApiService)(&c.common)
+	c.LogonApi = (*LogonApiService)(&c.common)
+	c.MacEnrollmentApi = (*MacEnrollmentApiService)(&c.common)
+	c.MetadataFieldApi = (*MetadataFieldApiService)(&c.common)
+	c.MonitoringApi = (*MonitoringApiService)(&c.common)
+	c.OrchestratorJobApi = (*OrchestratorJobApiService)(&c.common)
+	c.PAMLocalEntriesApi = (*PAMLocalEntriesApiService)(&c.common)
+	c.PAMProviderApi = (*PAMProviderApiService)(&c.common)
+	c.PendingAlertApi = (*PendingAlertApiService)(&c.common)
+	c.PermissionSetApi = (*PermissionSetApiService)(&c.common)
+	c.PermissionsApi = (*PermissionsApiService)(&c.common)
+	c.ReportsApi = (*ReportsApiService)(&c.common)
+	c.SMTPApi = (*SMTPApiService)(&c.common)
+	c.SchedulingApi = (*SchedulingApiService)(&c.common)
+	c.SecurityApi = (*SecurityApiService)(&c.common)
+	c.SecurityClaimsApi = (*SecurityClaimsApiService)(&c.common)
+	c.SecurityRolePermissionsApi = (*SecurityRolePermissionsApiService)(&c.common)
+	c.SecurityRolesApi = (*SecurityRolesApiService)(&c.common)
+	c.ServerApi = (*ServerApiService)(&c.common)
+	c.ServerGroupApi = (*ServerGroupApiService)(&c.common)
+	c.ServiceAccountApi = (*ServiceAccountApiService)(&c.common)
+	c.SslApi = (*SslApiService)(&c.common)
+	c.StatusApi = (*StatusApiService)(&c.common)
+	c.TemplateApi = (*TemplateApiService)(&c.common)
+	c.UserApi = (*UserApiService)(&c.common)
+	c.WorkflowApi = (*WorkflowApiService)(&c.common)
+	c.WorkflowDefinitionApi = (*WorkflowDefinitionApiService)(&c.common)
+	c.WorkflowInstanceApi = (*WorkflowInstanceApiService)(&c.common)
+	return c
+}
+
 func NewAPIClient(cfg *auth_providers.Server) (*APIClient, error) {
 	var err error
 

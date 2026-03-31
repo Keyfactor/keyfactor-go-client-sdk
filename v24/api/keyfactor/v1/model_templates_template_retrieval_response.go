@@ -56,8 +56,13 @@ type TemplatesTemplateRetrievalResponse struct {
 	KeyUsage               *int32                                                 `json:"KeyUsage,omitempty"`
 	ExtendedKeyUsages      []TemplatesExtendedKeyUsageResponseModel               `json:"ExtendedKeyUsages,omitempty"`
 	Curve                  NullableString                                         `json:"Curve,omitempty"`
-	AllowOneClickRenewals  *bool                                                  `json:"AllowOneClickRenewals,omitempty"`
-	KeyTypes               NullableString                                         `json:"KeyTypes,omitempty"`
+	AllowOneClickRenewals     *bool                                                  `json:"AllowOneClickRenewals,omitempty"`
+	KeyTypes                  NullableString                                         `json:"KeyTypes,omitempty"`
+	CertificateCleanupEnabled NullableBool                                           `json:"CertificateCleanupEnabled,omitempty"`
+	TimeAfterExpiration       NullableInt32                                          `json:"TimeAfterExpiration,omitempty"`
+	TimeAfterExpirationUnits  *CSSCMSDataModelEnumsCertificateCleanupTimeUnits       `json:"TimeAfterExpirationUnits,omitempty"`
+	DeleteWithArchivedKey     NullableBool                                           `json:"DeleteWithArchivedKey,omitempty"`
+	Manageability             NullableInt32                                          `json:"Manageability,omitempty"`
 }
 
 // NewTemplatesTemplateRetrievalResponse instantiates a new TemplatesTemplateRetrievalResponse object
@@ -1240,7 +1245,83 @@ func (o TemplatesTemplateRetrievalResponse) ToMap() (map[string]interface{}, err
 	if o.KeyTypes.IsSet() {
 		toSerialize["KeyTypes"] = o.KeyTypes.Get()
 	}
+	if o.CertificateCleanupEnabled.IsSet() {
+		toSerialize["CertificateCleanupEnabled"] = o.CertificateCleanupEnabled.Get()
+	}
+	if o.TimeAfterExpiration.IsSet() {
+		toSerialize["TimeAfterExpiration"] = o.TimeAfterExpiration.Get()
+	}
+	if !isNil(o.TimeAfterExpirationUnits) {
+		toSerialize["TimeAfterExpirationUnits"] = o.TimeAfterExpirationUnits
+	}
+	if o.DeleteWithArchivedKey.IsSet() {
+		toSerialize["DeleteWithArchivedKey"] = o.DeleteWithArchivedKey.Get()
+	}
+	if o.Manageability.IsSet() {
+		toSerialize["Manageability"] = o.Manageability.Get()
+	}
 	return toSerialize, nil
+}
+
+func (o *TemplatesTemplateRetrievalResponse) GetCertificateCleanupEnabled() bool {
+	if o == nil || !o.CertificateCleanupEnabled.IsSet() || o.CertificateCleanupEnabled.Get() == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CertificateCleanupEnabled.Get()
+}
+
+func (o *TemplatesTemplateRetrievalResponse) SetCertificateCleanupEnabled(v bool) {
+	o.CertificateCleanupEnabled.Set(&v)
+}
+
+func (o *TemplatesTemplateRetrievalResponse) GetTimeAfterExpiration() int32 {
+	if o == nil || !o.TimeAfterExpiration.IsSet() || o.TimeAfterExpiration.Get() == nil {
+		var ret int32
+		return ret
+	}
+	return *o.TimeAfterExpiration.Get()
+}
+
+func (o *TemplatesTemplateRetrievalResponse) SetTimeAfterExpiration(v int32) {
+	o.TimeAfterExpiration.Set(&v)
+}
+
+func (o *TemplatesTemplateRetrievalResponse) GetTimeAfterExpirationUnits() CSSCMSDataModelEnumsCertificateCleanupTimeUnits {
+	if o == nil || isNil(o.TimeAfterExpirationUnits) {
+		var ret CSSCMSDataModelEnumsCertificateCleanupTimeUnits
+		return ret
+	}
+	return *o.TimeAfterExpirationUnits
+}
+
+func (o *TemplatesTemplateRetrievalResponse) SetTimeAfterExpirationUnits(v CSSCMSDataModelEnumsCertificateCleanupTimeUnits) {
+	o.TimeAfterExpirationUnits = &v
+}
+
+func (o *TemplatesTemplateRetrievalResponse) GetDeleteWithArchivedKey() bool {
+	if o == nil || !o.DeleteWithArchivedKey.IsSet() || o.DeleteWithArchivedKey.Get() == nil {
+		var ret bool
+		return ret
+	}
+	return *o.DeleteWithArchivedKey.Get()
+}
+
+func (o *TemplatesTemplateRetrievalResponse) SetDeleteWithArchivedKey(v bool) {
+	o.DeleteWithArchivedKey.Set(&v)
+}
+
+
+func (o *TemplatesTemplateRetrievalResponse) GetManageability() int32 {
+	if o == nil || !o.Manageability.IsSet() || o.Manageability.Get() == nil {
+		var ret int32
+		return ret
+	}
+	return *o.Manageability.Get()
+}
+
+func (o *TemplatesTemplateRetrievalResponse) SetManageability(v int32) {
+	o.Manageability.Set(&v)
 }
 
 type NullableTemplatesTemplateRetrievalResponse struct {

@@ -44,7 +44,11 @@ type TemplatesTemplateUpdateRequest struct {
 	AllowedRequesters      []string                                               `json:"AllowedRequesters,omitempty"`
 	RequiresApproval       *bool                                                  `json:"RequiresApproval,omitempty"`
 	KeyUsage               *int32                                                 `json:"KeyUsage,omitempty"`
-	AllowOneClickRenewals  *bool                                                  `json:"AllowOneClickRenewals,omitempty"`
+	AllowOneClickRenewals     *bool                                                  `json:"AllowOneClickRenewals,omitempty"`
+	CertificateCleanupEnabled NullableBool                                           `json:"CertificateCleanupEnabled,omitempty"`
+	TimeAfterExpiration       NullableInt32                                          `json:"TimeAfterExpiration,omitempty"`
+	TimeAfterExpirationUnits  *CSSCMSDataModelEnumsCertificateCleanupTimeUnits       `json:"TimeAfterExpirationUnits,omitempty"`
+	DeleteWithArchivedKey     NullableBool                                           `json:"DeleteWithArchivedKey,omitempty"`
 }
 
 // NewTemplatesTemplateUpdateRequest instantiates a new TemplatesTemplateUpdateRequest object
@@ -661,7 +665,67 @@ func (o TemplatesTemplateUpdateRequest) ToMap() (map[string]interface{}, error) 
 	if !isNil(o.AllowOneClickRenewals) {
 		toSerialize["AllowOneClickRenewals"] = o.AllowOneClickRenewals
 	}
+	if o.CertificateCleanupEnabled.IsSet() {
+		toSerialize["CertificateCleanupEnabled"] = o.CertificateCleanupEnabled.Get()
+	}
+	if o.TimeAfterExpiration.IsSet() {
+		toSerialize["TimeAfterExpiration"] = o.TimeAfterExpiration.Get()
+	}
+	if !isNil(o.TimeAfterExpirationUnits) {
+		toSerialize["TimeAfterExpirationUnits"] = o.TimeAfterExpirationUnits
+	}
+	if o.DeleteWithArchivedKey.IsSet() {
+		toSerialize["DeleteWithArchivedKey"] = o.DeleteWithArchivedKey.Get()
+	}
 	return toSerialize, nil
+}
+
+func (o *TemplatesTemplateUpdateRequest) GetCertificateCleanupEnabled() bool {
+	if o == nil || !o.CertificateCleanupEnabled.IsSet() || o.CertificateCleanupEnabled.Get() == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CertificateCleanupEnabled.Get()
+}
+
+func (o *TemplatesTemplateUpdateRequest) SetCertificateCleanupEnabled(v bool) {
+	o.CertificateCleanupEnabled.Set(&v)
+}
+
+func (o *TemplatesTemplateUpdateRequest) GetTimeAfterExpiration() int32 {
+	if o == nil || !o.TimeAfterExpiration.IsSet() || o.TimeAfterExpiration.Get() == nil {
+		var ret int32
+		return ret
+	}
+	return *o.TimeAfterExpiration.Get()
+}
+
+func (o *TemplatesTemplateUpdateRequest) SetTimeAfterExpiration(v int32) {
+	o.TimeAfterExpiration.Set(&v)
+}
+
+func (o *TemplatesTemplateUpdateRequest) GetTimeAfterExpirationUnits() CSSCMSDataModelEnumsCertificateCleanupTimeUnits {
+	if o == nil || isNil(o.TimeAfterExpirationUnits) {
+		var ret CSSCMSDataModelEnumsCertificateCleanupTimeUnits
+		return ret
+	}
+	return *o.TimeAfterExpirationUnits
+}
+
+func (o *TemplatesTemplateUpdateRequest) SetTimeAfterExpirationUnits(v CSSCMSDataModelEnumsCertificateCleanupTimeUnits) {
+	o.TimeAfterExpirationUnits = &v
+}
+
+func (o *TemplatesTemplateUpdateRequest) GetDeleteWithArchivedKey() bool {
+	if o == nil || !o.DeleteWithArchivedKey.IsSet() || o.DeleteWithArchivedKey.Get() == nil {
+		var ret bool
+		return ret
+	}
+	return *o.DeleteWithArchivedKey.Get()
+}
+
+func (o *TemplatesTemplateUpdateRequest) SetDeleteWithArchivedKey(v bool) {
+	o.DeleteWithArchivedKey.Set(&v)
 }
 
 type NullableTemplatesTemplateUpdateRequest struct {
