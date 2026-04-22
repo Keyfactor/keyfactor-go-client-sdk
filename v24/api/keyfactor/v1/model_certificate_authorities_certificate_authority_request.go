@@ -70,6 +70,11 @@ type CertificateAuthoritiesCertificateAuthorityRequest struct {
 	ClientSecret                  *CSSCMSDataModelModelsKeyfactorAPISecret    `json:"ClientSecret,omitempty"`
 	Scope                         NullableString                              `json:"Scope,omitempty"`
 	Audience                      NullableString                              `json:"Audience,omitempty"`
+	UseForEnrollment              *bool                                       `json:"UseForEnrollment,omitempty"`
+	CertificateCleanupEnabled     NullableBool                                `json:"CertificateCleanupEnabled,omitempty"`
+	DeleteWithArchivedKey         NullableBool                                `json:"DeleteWithArchivedKey,omitempty"`
+	TimeAfterExpiration           NullableInt32                               `json:"TimeAfterExpiration,omitempty"`
+	TimeAfterExpirationUnits      *CSSCMSDataModelEnumsCertificateCleanupTimeUnits `json:"TimeAfterExpirationUnits,omitempty"`
 }
 
 // NewCertificateAuthoritiesCertificateAuthorityRequest instantiates a new CertificateAuthoritiesCertificateAuthorityRequest object
@@ -1578,6 +1583,124 @@ func (o *CertificateAuthoritiesCertificateAuthorityRequest) UnsetAudience() {
 	o.Audience.Unset()
 }
 
+// GetUseForEnrollment returns the UseForEnrollment field value if set, zero value otherwise.
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetUseForEnrollment() bool {
+	if o == nil || isNil(o.UseForEnrollment) {
+		var ret bool
+		return ret
+	}
+	return *o.UseForEnrollment
+}
+
+// GetUseForEnrollmentOk returns a tuple with the UseForEnrollment field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetUseForEnrollmentOk() (*bool, bool) {
+	if o == nil || isNil(o.UseForEnrollment) {
+		return nil, false
+	}
+	return o.UseForEnrollment, true
+}
+
+// HasUseForEnrollment returns a boolean if a field has been set.
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) HasUseForEnrollment() bool {
+	if o != nil && !isNil(o.UseForEnrollment) {
+		return true
+	}
+
+	return false
+}
+
+// SetUseForEnrollment gets a reference to the given bool and assigns it to the UseForEnrollment field.
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) SetUseForEnrollment(v bool) {
+	o.UseForEnrollment = &v
+}
+
+// GetCertificateCleanupEnabled returns the CertificateCleanupEnabled field value if set, zero value otherwise.
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetCertificateCleanupEnabled() bool {
+	if o == nil || !o.CertificateCleanupEnabled.IsSet() || o.CertificateCleanupEnabled.Get() == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CertificateCleanupEnabled.Get()
+}
+
+// SetCertificateCleanupEnabled gets a reference to the given NullableBool and assigns it to the CertificateCleanupEnabled field.
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) SetCertificateCleanupEnabled(v bool) {
+	o.CertificateCleanupEnabled.Set(&v)
+}
+
+// SetCertificateCleanupEnabledNil sets the value for CertificateCleanupEnabled to be an explicit nil
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) SetCertificateCleanupEnabledNil() {
+	o.CertificateCleanupEnabled.Set(nil)
+}
+
+// UnsetCertificateCleanupEnabled ensures that no value is present for CertificateCleanupEnabled, not even an explicit nil
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) UnsetCertificateCleanupEnabled() {
+	o.CertificateCleanupEnabled.Unset()
+}
+
+// GetDeleteWithArchivedKey returns the DeleteWithArchivedKey field value if set, zero value otherwise.
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetDeleteWithArchivedKey() bool {
+	if o == nil || !o.DeleteWithArchivedKey.IsSet() || o.DeleteWithArchivedKey.Get() == nil {
+		var ret bool
+		return ret
+	}
+	return *o.DeleteWithArchivedKey.Get()
+}
+
+// SetDeleteWithArchivedKey gets a reference to the given NullableBool and assigns it to the DeleteWithArchivedKey field.
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) SetDeleteWithArchivedKey(v bool) {
+	o.DeleteWithArchivedKey.Set(&v)
+}
+
+// SetDeleteWithArchivedKeyNil sets the value for DeleteWithArchivedKey to be an explicit nil
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) SetDeleteWithArchivedKeyNil() {
+	o.DeleteWithArchivedKey.Set(nil)
+}
+
+// UnsetDeleteWithArchivedKey ensures that no value is present for DeleteWithArchivedKey, not even an explicit nil
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) UnsetDeleteWithArchivedKey() {
+	o.DeleteWithArchivedKey.Unset()
+}
+
+// GetTimeAfterExpiration returns the TimeAfterExpiration field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetTimeAfterExpiration() int32 {
+	if o == nil || isNil(o.TimeAfterExpiration.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.TimeAfterExpiration.Get()
+}
+
+// SetTimeAfterExpiration gets a reference to the given NullableInt32 and assigns it to the TimeAfterExpiration field.
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) SetTimeAfterExpiration(v int32) {
+	o.TimeAfterExpiration.Set(&v)
+}
+
+// SetTimeAfterExpirationNil sets the value for TimeAfterExpiration to be an explicit nil
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) SetTimeAfterExpirationNil() {
+	o.TimeAfterExpiration.Set(nil)
+}
+
+// UnsetTimeAfterExpiration ensures that no value is present for TimeAfterExpiration, not even an explicit nil
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) UnsetTimeAfterExpiration() {
+	o.TimeAfterExpiration.Unset()
+}
+
+// GetTimeAfterExpirationUnits returns the TimeAfterExpirationUnits field value if set, zero value otherwise.
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetTimeAfterExpirationUnits() CSSCMSDataModelEnumsCertificateCleanupTimeUnits {
+	if o == nil || isNil(o.TimeAfterExpirationUnits) {
+		var ret CSSCMSDataModelEnumsCertificateCleanupTimeUnits
+		return ret
+	}
+	return *o.TimeAfterExpirationUnits
+}
+
+// SetTimeAfterExpirationUnits gets a reference to the given CSSCMSDataModelEnumsCertificateCleanupTimeUnits and assigns it to the TimeAfterExpirationUnits field.
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) SetTimeAfterExpirationUnits(v CSSCMSDataModelEnumsCertificateCleanupTimeUnits) {
+	o.TimeAfterExpirationUnits = &v
+}
+
 func (o CertificateAuthoritiesCertificateAuthorityRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1710,6 +1833,21 @@ func (o CertificateAuthoritiesCertificateAuthorityRequest) ToMap() (map[string]i
 	}
 	if o.Audience.IsSet() {
 		toSerialize["Audience"] = o.Audience.Get()
+	}
+	if !isNil(o.UseForEnrollment) {
+		toSerialize["UseForEnrollment"] = o.UseForEnrollment
+	}
+	if o.CertificateCleanupEnabled.IsSet() {
+		toSerialize["CertificateCleanupEnabled"] = o.CertificateCleanupEnabled.Get()
+	}
+	if o.DeleteWithArchivedKey.IsSet() {
+		toSerialize["DeleteWithArchivedKey"] = o.DeleteWithArchivedKey.Get()
+	}
+	if o.TimeAfterExpiration.IsSet() {
+		toSerialize["TimeAfterExpiration"] = o.TimeAfterExpiration.Get()
+	}
+	if !isNil(o.TimeAfterExpirationUnits) {
+		toSerialize["TimeAfterExpirationUnits"] = o.TimeAfterExpirationUnits
 	}
 	return toSerialize, nil
 }
