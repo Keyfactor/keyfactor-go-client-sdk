@@ -158,6 +158,9 @@ func buildHttpClientV2(cfg *auth_providers.Server) (AuthConfig, error) {
 			ClientID:          cfg.ClientID,
 			ClientSecret:      cfg.ClientSecret,
 			TokenURL:          cfg.OAuthTokenUrl,
+			AccessToken:       cfg.AccessToken,
+			Audience:          cfg.Audience,
+			Scopes:            cfg.Scopes,
 		}
 		aErr := oauthCfg.Authenticate()
 		if aErr != nil {
@@ -590,7 +593,7 @@ func (c *APIClient) prepareRequest(
 	// Override request host, if applicable
 	serverConfig := c.GetConfig()
 	if serverConfig.Host != "" {
-		if serverConfig.Port > 0 && serverConfig.Port <= 65535 {
+		if serverConfig.Port > 0 && serverConfig.Port <= 65535 && serverConfig.Port != 443 {
 			url.Host = fmt.Sprintf("%s:%d", serverConfig.Host, serverConfig.Port)
 		} else {
 			url.Host = serverConfig.Host

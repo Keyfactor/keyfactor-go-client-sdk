@@ -1,3 +1,29 @@
+# v25.1.1
+
+## Features
+- Add `UseForEnrollment`, `ForceSave`, and certificate cleanup fields (`AllowedEnrollmentTypes`, `StandaloneCA`, `MonitorThresholds`, `FullScanIntervalMinutes`, `IncrementalScanIntervalMinutes`) to CA request/response models in `v25/api/keyfactor/v1`
+
+## Fixes
+- Restore `AccessToken`, `Audience`, `Scopes` fields to `buildHttpClientV2` OAuth config (fields were silently dropped in prior refactor)
+- Skip appending port 443 to request URL to avoid duplicate port in HTTPS connections
+
+## Tests
+- Add OAuth `access_token`/`audience`/`scopes` field propagation regression tests for v1 and v2 clients
+- Add CA model regression tests covering cleanup and enrollment fields
+
+# v24.1.1
+
+## Features
+- Add `UseForEnrollment`, `ForceSave`, and certificate cleanup fields (`AllowedEnrollmentTypes`, `StandaloneCA`, `MonitorThresholds`, `FullScanIntervalMinutes`, `IncrementalScanIntervalMinutes`) to CA request/response models in `v24/api/keyfactor/v1`
+
+## Fixes
+- Restore `AccessToken`, `Audience`, `Scopes` fields to `buildHttpClientV2` OAuth config (fields were silently dropped in prior refactor)
+- Skip appending port 443 to request URL to avoid duplicate port in HTTPS connections
+
+## Tests
+- Add OAuth `access_token`/`audience`/`scopes` field propagation regression tests for v1 and v2 clients
+- Add CA model regression tests covering cleanup and enrollment fields
+
 # v25.0.1
 
 ## Chores
@@ -11,6 +37,14 @@
 ## Features
 - Support for Keyfactor Command REST API endpoints up to 25.1.1. [API Change Log](https://software.keyfactor.com/Core-OnPrem/Current/Content/WebAPI/ChangeLogs/25_1_1-APIChangeLog.htm)
 - Add [helper methods](https://github.com/Keyfactor/keyfactor-go-client-sdk/blob/feat/AB%2372090/sdk-version-25/v25/helpers.go) to support some common lookup patterns.
+
+# v24.0.1
+## Chores
+- Bump github.com/Keyfactor/keyfactor-auth-client-go dependency from v1.1.0-rc.8 to 1.3.0.
+
+## Fixes
+- fix: Fix issue with the OAuth token flow with explicit access token provided to config runs into an error
+- fix: Skip appending port 443 to request URL to avoid duplicate port in HTTPS connections
 
 # v24.0.0
 
