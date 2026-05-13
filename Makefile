@@ -19,9 +19,6 @@ COMMAND_VERSION           ?= v25
 SWAGGER_V1                ?= swagger/Keyfactor-Command-$(COMMAND_VERSION)-v1.swagger.json
 SWAGGER_V2                ?= swagger/Keyfactor-Command-$(COMMAND_VERSION)-v2.swagger.json
 OPENAPI_GENERATOR_VERSION ?= 6.3.0
-OPENAPI_TEMPLATE_DIR       = .openapi-generator/templates/go
-GIT_USER_ID                = Keyfactor
-GIT_REPO_NAME              = keyfactor-go-client-sdk
 
 # === Derived paths ===
 V1_LIVE     = $(COMMAND_VERSION)/api/keyfactor/v1
@@ -31,15 +28,10 @@ V2_STAGE    = .regen-staging/$(V2_LIVE)
 V1_BASELINE = .regen-baseline/$(V1_LIVE)
 V2_BASELINE = .regen-baseline/$(V2_LIVE)
 
-# Preprocessed swaggers (namespace prefix stripped); live in .regen-staging/ so they
-# don't dirty version control. See scripts/strip-schema-namespace.py.
-PREPROCESSED_V1 = .regen-staging/.preprocessed-v1.swagger.json
-PREPROCESSED_V2 = .regen-staging/.preprocessed-v2.swagger.json
-
 GENERATOR_JAR = openapi-generator-cli.jar
 
 .PHONY: help regen-prepare regen-stage regen-diff regen-apply regen-clean \
-        generate template fmt deps-check
+        generate fmt deps-check
 
 help:
 	@echo "Targets:"
@@ -71,12 +63,12 @@ regen-stage: regen-prepare $(GENERATOR_JAR)
 	@test -f $(SWAGGER_V1) || (echo "ERROR: $(SWAGGER_V1) not found"; exit 1)
 	@test -f $(SWAGGER_V2) || (echo "ERROR: $(SWAGGER_V2) not found"; exit 1)
 	@rm -rf .regen-staging
-	@mkdir -p .regen-staging
-	@echo ">>> Preprocessing swaggers (strip Keyfactor.Web.KeyfactorApi.Models. namespace)"
-	@python3 scripts/strip-schema-namespace.py $(SWAGGER_V1) $(PREPROCESSED_V1)
-	@python3 scripts/strip-schema-namespace.py $(SWAGGER_V2) $(PREPROCESSED_V2)
-	$(call run-generator,$(PREPROCESSED_V1),v1,$(V1_STAGE))
-	$(call run-generator,$(PREPROCESSED_V2),v2,$(V2_STAGE))
+	@COMMAND_VERSION=$(COMMAND_VERSION) \
+	 SWAGGER_V1=$(SWAGGER_V1) \
+	 SWAGGER_V2=$(SWAGGER_V2) \
+	 OUTPUT_DIR=.regen-staging \
+	 GENERATOR_JAR=$(GENERATOR_JAR) \
+	 scripts/regen.sh
 	@echo ">>> Copying preserved files (regression tests etc.) from baseline into staging"
 	@if [ -x scripts/check-hand-edits.sh ]; then \
 		scripts/check-hand-edits.sh preserve $(V1_BASELINE) $(V2_BASELINE) $(V1_STAGE) $(V2_STAGE); \
@@ -136,34 +128,17 @@ $(GENERATOR_JAR):
 	@echo ">>> Downloading openapi-generator-cli $(OPENAPI_GENERATOR_VERSION)"
 	@wget -q https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/$(OPENAPI_GENERATOR_VERSION)/openapi-generator-cli-$(OPENAPI_GENERATOR_VERSION).jar -O $(GENERATOR_JAR)
 
-template: $(GENERATOR_JAR)
-	@mkdir -p $(OPENAPI_TEMPLATE_DIR)
-	@echo ">>> Generating Go templates -> $(OPENAPI_TEMPLATE_DIR)"
-	@java -jar $(GENERATOR_JAR) author template -g go -o $(OPENAPI_TEMPLATE_DIR)
-
 deps-check:
 	@command -v java >/dev/null 2>&1 || (echo "ERROR: 'java' not on PATH"; exit 1)
 	@command -v wget >/dev/null 2>&1 || (echo "ERROR: 'wget' not on PATH"; exit 1)
 	@command -v go >/dev/null 2>&1 || (echo "ERROR: 'go' not on PATH"; exit 1)
-	@command -v python3 >/dev/null 2>&1 || (echo "ERROR: 'python3' not on PATH (needed by scripts/strip-schema-namespace.py)"; exit 1)
+	@command -v python3 >/dev/null 2>&1 || (echo "ERROR: 'python3' not on PATH (needed by scripts/regen.sh)"; exit 1)
+	@command -v jq >/dev/null 2>&1 || (echo "ERROR: 'jq' not on PATH (needed by scripts/regen.sh for swagger patches)"; exit 1)
 
 fmt:
 	@gofmt -w $(COMMAND_VERSION)/
 
-# ---------- generator invocation ----------
-# $(1) = swagger file, $(2) = package name (v1|v2), $(3) = output dir
-define run-generator
-	@echo ">>> Generating $(2) from $(1) -> $(3)"
-	@mkdir -p $(3)
-	@java -jar $(GENERATOR_JAR) generate \
-		-i $(1) \
-		-g go \
-		-o $(3) \
-		-p packageName=$(2) \
-		-p isGoSubmodule=false \
-		-p disallowAdditionalPropertiesIfNotPresent=false \
-		--git-user-id $(GIT_USER_ID) \
-		--git-repo-id $(GIT_REPO_NAME) \
-		$(if $(wildcard $(OPENAPI_TEMPLATE_DIR)),-t $(OPENAPI_TEMPLATE_DIR),)
-	@rm -f $(3)/.travis.yml $(3)/git_push.sh
-endef
+# NOTE: generator invocation, swagger patches, namespace strip, and postprocess
+# template substitution all live in scripts/regen.sh (adapted from
+# Keyfactor/API-definitions @ 04b7b2c:go/command/openapi-generate.sh).
+# The Makefile orchestrates the safety harness around it.
