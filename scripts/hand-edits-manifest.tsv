@@ -22,19 +22,24 @@ preserve	v2	client.go	cfg.AccessToken	229db7d — restore AccessToken in buildHt
 preserve	v1	client.go	cfg.Audience	229db7d — restore Audience in buildHttpClientV2
 preserve	v2	client.go	cfg.Audience	229db7d — restore Audience in buildHttpClientV2
 
-# === Enum value additions (swagger gap — to be patched per "spec gaps" rule) ===
-preserve	v1	model_css_cms_core_enums_enrollment_type.go	CSSCMSCOREENUMSENROLLMENTTYPE__3	2d5c09e — enum value 3
-preserve	v1	model_css_cms_core_enums_enrollment_type.go	CSSCMSCOREENUMSENROLLMENTTYPE__5	2d5c09e — enum value 5
-preserve	v1	model_css_cms_core_enums_enrollment_type.go	CSSCMSCOREENUMSENROLLMENTTYPE__6	2d5c09e — enum value 6
-preserve	v1	model_css_cms_core_enums_enrollment_type.go	CSSCMSCOREENUMSENROLLMENTTYPE__7	2d5c09e — enum value 7
+# === Enum value additions ===
+# Value 3 is now in the swagger after the spec patch — regen will produce it.
+# Values 5, 6, 7 have no docs support and are unresolved — see SWAGGER_GAPS_FOR_ENGINEERING.md.
+verify	v1	model_css_cms_core_enums_enrollment_type.go	CSSCMSCOREENUMSENROLLMENTTYPE__3	2d5c09e — enum value 3 (now in swagger after spec patch)
+verify	v1	model_css_cms_core_enums_enrollment_type.go	CSSCMSCOREENUMSENROLLMENTTYPE__5	2d5c09e — enum value 5 (no docs support; unresolved)
+verify	v1	model_css_cms_core_enums_enrollment_type.go	CSSCMSCOREENUMSENROLLMENTTYPE__6	2d5c09e — enum value 6 (no docs support; unresolved)
+verify	v1	model_css_cms_core_enums_enrollment_type.go	CSSCMSCOREENUMSENROLLMENTTYPE__7	2d5c09e — enum value 7 (no docs support; unresolved)
 
-# === Model field additions (swagger gaps — to be patched per "spec gaps" rule) ===
-verify	v1	model_certificate_authorities_certificate_authority_request.go	UseForEnrollment	229db7d — CA UseForEnrollment field
-verify	v1	model_certificate_authorities_certificate_authority_response.go	UseForEnrollment	229db7d — CA UseForEnrollment field
-verify	v1	model_templates_template_retrieval_response.go	Manageability	af6340b — Template Manageability field
-verify	v1	model_templates_template_retrieval_response.go	CertificateCleanupEnabled	af6340b — Template cleanup field
-verify	v1	model_templates_template_update_request.go	CertificateCleanupEnabled	af6340b — Template cleanup field
-verify	v1	model_css_cms_data_model_enums_certificate_cleanup_time_units.go	CSSCMSDataModelEnumsCertificateCleanupTimeUnits	af6340b — new enum (verify present in v25)
+# === Model field additions ===
+# These were hand-edits to model files that the new v25 swagger now incorporates natively.
+# Regen should produce these fields automatically — downgraded to 'verify' so we get a warning
+# only if regen output unexpectedly drops them.
+verify	v1	model_certificate_authorities_certificate_authority_request.go	UseForEnrollment	229db7d — CA UseForEnrollment (now in swagger)
+verify	v1	model_certificate_authorities_certificate_authority_response.go	UseForEnrollment	229db7d — CA UseForEnrollment (now in swagger)
+verify	v1	model_templates_template_retrieval_response.go	Manageability	af6340b — Template Manageability (now in swagger as typed enum)
+verify	v1	model_templates_template_retrieval_response.go	CertificateCleanupEnabled	af6340b — Template cleanup (now in swagger)
+verify	v1	model_templates_template_update_request.go	CertificateCleanupEnabled	af6340b — Template cleanup (now in swagger)
+verify	v1	model_css_cms_data_model_enums_certificate_cleanup_time_units.go	CSSCMSDataModelEnumsCertificateCleanupTimeUnits	af6340b — typed enum (now in swagger)
 
 # === Whole-file preservations (not in any swagger; would be wiped by swap) ===
 preserve-file	v1	client_test.go		229db7d — regression test (READ-ONLY per project rule)

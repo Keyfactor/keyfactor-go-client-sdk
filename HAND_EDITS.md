@@ -160,8 +160,29 @@ All four must be resolved before `regen-apply` runs.
 
 ## Spec patches applied
 
-*(populated as patches are made to the swagger files during this work)*
-
 | Date | Spec file | Patch | Source doc | Hand-edit obsoleted |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| 2026-05-13 | `swagger/Keyfactor-Command-v25-v1.swagger.json` | `CSS.CMS.Core.Enums.EnrollmentType` enum: `[0,1,2,4]` → `[0,1,2,3]` | `CertificateAuthorityPOST.htm` "AllowedEnrollmentTypes Values" table | `2d5c09e` value `3` (the `5,6,7` additions from the same commit remain unresolved — see SWAGGER_GAPS_FOR_ENGINEERING.md) |
+
+## Status after swagger refresh
+
+The new v25 swagger files already contain the schema additions that several hand-edits were trying to patch in. The following hand-edit entries are **now obsolete** because regenerated code from the patched swagger will produce them naturally:
+
+| Hand-edit family | Status |
+|---|---|
+| `af6340b` Template `Manageability` + cleanup fields | Obsolete — `TemplateRetrievalResponse.Manageability` and the cleanup fields are in the new swagger |
+| `af6340b` `CSSCMSDataModelEnumsCertificateCleanupTimeUnits` enum | Obsolete — typed enum is in the new swagger |
+| `229db7d` CA `UseForEnrollment` + cleanup fields | Obsolete — fields are in `CertificateAuthorityRequest`/`Response` in the new swagger |
+| `2d5c09e` EnrollmentType value `3` | Obsolete — applied as spec patch above |
+| `2d5c09e` EnrollmentType values `5, 6, 7` | **Unresolved** — no docs confirm these values exist. See SWAGGER_GAPS_FOR_ENGINEERING.md "Hand-edits we found but DID NOT patch" |
+
+**Hand-edits that still must be preserved through regen** (no swagger fix possible — pure code-level fixes):
+
+| Commit | File | What |
+|---|---|---|
+| `b374f3d` | `v25/api/keyfactor/v{1,2}/client.go` | Port-443 special case in `prepareRequest()` |
+| `0c1df4d` | `v25/api/keyfactor/v{1,2}/client.go` | OAuth access token in validate flow |
+| `229db7d` | `v25/api/keyfactor/v{1,2}/client.go` | Restored `AccessToken`/`Audience`/`Scopes` in `buildHttpClientV2` OAuth struct literal |
+| `229db7d` | `v25/api/keyfactor/v{1,2}/client_test.go`, `v25/api/keyfactor/v1/model_certificate_authorities_test.go` | Regression tests (preserved verbatim) |
+
+The hand-edit manifest (`scripts/hand-edits-manifest.tsv`) will be updated to reflect this — the obsoleted entries change from `preserve` to `verify` (so we get a warning, not an error, if the regen output happens to differ).
