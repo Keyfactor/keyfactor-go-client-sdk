@@ -31,6 +31,11 @@ V2_STAGE    = .regen-staging/$(V2_LIVE)
 V1_BASELINE = .regen-baseline/$(V1_LIVE)
 V2_BASELINE = .regen-baseline/$(V2_LIVE)
 
+# Preprocessed swaggers (namespace prefix stripped); live in .regen-staging/ so they
+# don't dirty version control. See scripts/strip-schema-namespace.py.
+PREPROCESSED_V1 = .regen-staging/.preprocessed-v1.swagger.json
+PREPROCESSED_V2 = .regen-staging/.preprocessed-v2.swagger.json
+
 GENERATOR_JAR = openapi-generator-cli.jar
 
 .PHONY: help regen-prepare regen-stage regen-diff regen-apply regen-clean \
@@ -66,8 +71,12 @@ regen-stage: regen-prepare $(GENERATOR_JAR)
 	@test -f $(SWAGGER_V1) || (echo "ERROR: $(SWAGGER_V1) not found"; exit 1)
 	@test -f $(SWAGGER_V2) || (echo "ERROR: $(SWAGGER_V2) not found"; exit 1)
 	@rm -rf .regen-staging
-	$(call run-generator,$(SWAGGER_V1),v1,$(V1_STAGE))
-	$(call run-generator,$(SWAGGER_V2),v2,$(V2_STAGE))
+	@mkdir -p .regen-staging
+	@echo ">>> Preprocessing swaggers (strip Keyfactor.Web.KeyfactorApi.Models. namespace)"
+	@python3 scripts/strip-schema-namespace.py $(SWAGGER_V1) $(PREPROCESSED_V1)
+	@python3 scripts/strip-schema-namespace.py $(SWAGGER_V2) $(PREPROCESSED_V2)
+	$(call run-generator,$(PREPROCESSED_V1),v1,$(V1_STAGE))
+	$(call run-generator,$(PREPROCESSED_V2),v2,$(V2_STAGE))
 	@echo ">>> Copying preserved files (regression tests etc.) from baseline into staging"
 	@if [ -x scripts/check-hand-edits.sh ]; then \
 		scripts/check-hand-edits.sh preserve $(V1_BASELINE) $(V2_BASELINE) $(V1_STAGE) $(V2_STAGE); \
@@ -136,6 +145,7 @@ deps-check:
 	@command -v java >/dev/null 2>&1 || (echo "ERROR: 'java' not on PATH"; exit 1)
 	@command -v wget >/dev/null 2>&1 || (echo "ERROR: 'wget' not on PATH"; exit 1)
 	@command -v go >/dev/null 2>&1 || (echo "ERROR: 'go' not on PATH"; exit 1)
+	@command -v python3 >/dev/null 2>&1 || (echo "ERROR: 'python3' not on PATH (needed by scripts/strip-schema-namespace.py)"; exit 1)
 
 fmt:
 	@gofmt -w $(COMMAND_VERSION)/
