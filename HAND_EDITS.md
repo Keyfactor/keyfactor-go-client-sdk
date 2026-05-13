@@ -162,7 +162,7 @@ All four must be resolved before `regen-apply` runs.
 
 | Date | Spec file | Patch | Source doc | Hand-edit obsoleted |
 |---|---|---|---|---|
-| 2026-05-13 | `swagger/Keyfactor-Command-v25-v1.swagger.json` | `CSS.CMS.Core.Enums.EnrollmentType` enum: `[0,1,2,4]` → `[0,1,2,3]` | `CertificateAuthorityPOST.htm` "AllowedEnrollmentTypes Values" table | `2d5c09e` value `3` (the `5,6,7` additions from the same commit remain unresolved — see SWAGGER_GAPS_FOR_ENGINEERING.md) |
+| 2026-05-13 | `swagger/Keyfactor-Command-v25-v1.swagger.json` | `CSS.CMS.Core.Enums.EnrollmentType` enum: `[0,1,2,4]` → `[0,1,2,3,4,5,6,7]` | Keyfactor canonical script (`API-definitions/go/command/openapi-generate.sh` per Zendesk tix 139784) | `2d5c09e` values `3, 5, 6, 7` (all four values are now in the swagger; hand-edit is obsolete after regen) |
 
 ## Status after swagger refresh
 
@@ -173,8 +173,7 @@ The new v25 swagger files already contain the schema additions that several hand
 | `af6340b` Template `Manageability` + cleanup fields | Obsolete — `TemplateRetrievalResponse.Manageability` and the cleanup fields are in the new swagger |
 | `af6340b` `CSSCMSDataModelEnumsCertificateCleanupTimeUnits` enum | Obsolete — typed enum is in the new swagger |
 | `229db7d` CA `UseForEnrollment` + cleanup fields | Obsolete — fields are in `CertificateAuthorityRequest`/`Response` in the new swagger |
-| `2d5c09e` EnrollmentType value `3` | Obsolete — applied as spec patch above |
-| `2d5c09e` EnrollmentType values `5, 6, 7` | **Unresolved** — no docs confirm these values exist. See SWAGGER_GAPS_FOR_ENGINEERING.md "Hand-edits we found but DID NOT patch" |
+| `2d5c09e` EnrollmentType values `3, 5, 6, 7` | Obsolete — full `[0..7]` set is now in the swagger per Zendesk tix 139784 |
 
 **Hand-edits that still must be preserved through regen** (no swagger fix possible — pure code-level fixes):
 

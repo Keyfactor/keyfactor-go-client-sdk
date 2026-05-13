@@ -75,27 +75,23 @@ Other non-`Keyfactor.Web.KeyfactorApi.Models.` Keyfactor namespaces (e.g., `Keyf
 
 **Recommended action for engineering**: fix the upstream swagger generation so these two header parameters emit a `schema` field at the source. The fix is mechanical and presumably driven by the OpenAPI/JSON schema spec annotation system.
 
-### 3. `CSS.CMS.Core.Enums.EnrollmentType` enum: value `4` → `3`
+### 3. `CSS.CMS.Core.Enums.EnrollmentType` enum: `[0, 1, 2, 4]` → `[0, 1, 2, 3, 4, 5, 6, 7]`
 
 - **File**: `swagger/Keyfactor-Command-v25-v1.swagger.json`
 - **Schema**: `components.schemas["CSS.CMS.Core.Enums.EnrollmentType"]`
 - **Before**: `enum: [0, 1, 2, 4]`
-- **After**: `enum: [0, 1, 2, 3]`
+- **After**: `enum: [0, 1, 2, 3, 4, 5, 6, 7]`
 
-**Rationale**: The Keyfactor docs (`CertificateAuthorityPOST.htm`, "AllowedEnrollmentTypes Values" table) define this enum as a bitmask:
+**Rationale**: Originally this was patched to `[0, 1, 2, 3]` based on the docs (`CertificateAuthorityPOST.htm`, "AllowedEnrollmentTypes Values" table showing 0=None, 1=PFX, 2=CSR, 3=PFX+CSR). However, the canonical generation script at `Keyfactor/API-definitions` (`go/command/openapi-generate.sh`) applies the broader patch `[0, 1, 2, 3, 4, 5, 6, 7]` with this comment:
 
-| Value | Description |
-|---|---|
-| 0 | No enrollment enabled |
-| 1 | PFX Enrollment |
-| 2 | CSR Enrollment |
-| 3 | PFX and CSR Enrollment (= 1 \| 2) |
+> `# Hotfix -- update the enums array of enrollment types. Zendesk tix 139784`
 
-The swagger's `4` is incorrect — it has no documented meaning. The maximum legal value given only PFX (1) and CSR (2) bits is `3`.
+Engineering has Zendesk ticket evidence that the API returns enrollment-type values beyond `3` in some contexts. The full 0–7 range covers these observed values. The public docs are incomplete — they cover the basic PFX/CSR bitmask but omit the additional values.
 
-Downstream effect: regenerated SDK code will declare `CSSCMSCOREENUMSENROLLMENTTYPE__3` instead of `CSSCMSCOREENUMSENROLLMENTTYPE__4`. Any consumer code still referencing the (incorrect) `4` constant will need to update — but no real Keyfactor Command instance returns `4` for this field, so behavior in practice should be unchanged.
-
-**Recommended action for engineering**: confirm the swagger source-of-truth has `[0, 1, 2, 3]` going forward and that no internal tooling depends on `4`.
+**Recommended action for engineering**:
+1. Document what enrollment-type values `4, 5, 6, 7` actually mean (the public CertificateAuthorityPOST.htm only documents 0–3).
+2. Decide whether the canonical Command swagger should emit the full `[0..7]` range or whether some values are deprecated/internal.
+3. Cross-reference with Zendesk 139784 for the original incident report.
 
 ---
 
