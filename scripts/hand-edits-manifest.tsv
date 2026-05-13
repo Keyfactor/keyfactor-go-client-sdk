@@ -13,39 +13,51 @@
 #
 # Lines starting with '#' are comments. Empty lines ignored. Tabs only — no spaces.
 # Authoritative cross-reference: HAND_EDITS.md
+#
+# STATUS: as of commit 825f900 the SDK uses the canonical generation pipeline
+# (scripts/regen.sh + custom-templates/go/). Most hand-edits are now baked into
+# the templates or applied to the swagger by regen.sh's jq patches, so most
+# rows are 'verify' (warn-only) rather than 'preserve' (error). preserve-file
+# rows still apply because regression tests live outside the generator's reach.
 
-# === Code-level hand-edits in client.go (pure behavioral; not in any swagger) ===
-preserve	v1	client.go	serverConfig.Port != 443	b374f3d — skip :443 in URL host
-preserve	v2	client.go	serverConfig.Port != 443	b374f3d — skip :443 in URL host
-preserve	v1	client.go	cfg.AccessToken	229db7d — restore AccessToken in buildHttpClientV2
-preserve	v2	client.go	cfg.AccessToken	229db7d — restore AccessToken in buildHttpClientV2
-preserve	v1	client.go	cfg.Audience	229db7d — restore Audience in buildHttpClientV2
-preserve	v2	client.go	cfg.Audience	229db7d — restore Audience in buildHttpClientV2
+# === Code-level hand-edits, baked into custom-templates/go/client.mustache ===
+# These now come from the template naturally. Kept as 'verify' so we get a
+# warning if a future template change accidentally drops them.
+verify	v1	client.go	serverConfig.Port != 443	b374f3d — skip :443 (in client.mustache line 567)
+verify	v2	client.go	serverConfig.Port != 443	b374f3d — skip :443 (in client.mustache line 567)
+verify	v1	client.go	cfg.AccessToken	229db7d — AccessToken in buildHttpClientV2 (in client.mustache line 134)
+verify	v2	client.go	cfg.AccessToken	229db7d — AccessToken in buildHttpClientV2 (in client.mustache line 134)
+verify	v1	client.go	cfg.Audience	229db7d — Audience in buildHttpClientV2 (in client.mustache line 132)
+verify	v2	client.go	cfg.Audience	229db7d — Audience in buildHttpClientV2 (in client.mustache line 132)
 
-# === Enum value additions ===
-# Value 3 is now in the swagger after the spec patch — regen will produce it.
-# Values 5, 6, 7 have no docs support and are unresolved — see SWAGGER_GAPS_FOR_ENGINEERING.md.
-verify	v1	model_css_cms_core_enums_enrollment_type.go	CSSCMSCOREENUMSENROLLMENTTYPE__3	2d5c09e — enum value 3 (now in swagger after spec patch)
-verify	v1	model_css_cms_core_enums_enrollment_type.go	CSSCMSCOREENUMSENROLLMENTTYPE__5	2d5c09e — enum value 5 (no docs support; unresolved)
-verify	v1	model_css_cms_core_enums_enrollment_type.go	CSSCMSCOREENUMSENROLLMENTTYPE__6	2d5c09e — enum value 6 (no docs support; unresolved)
-verify	v1	model_css_cms_core_enums_enrollment_type.go	CSSCMSCOREENUMSENROLLMENTTYPE__7	2d5c09e — enum value 7 (no docs support; unresolved)
+# === Enum value additions applied to swagger by regen.sh jq patches ===
+# EnrollmentType values 3..7 are now set by scripts/regen.sh (Zendesk 139784).
+# Regen will produce all eight enum constants naturally.
+verify	v1	model_css_cms_core_enums_enrollment_type.go	CSSCMSCOREENUMSENROLLMENTTYPE__3	2d5c09e — enum value 3 (regen.sh patches swagger)
+verify	v1	model_css_cms_core_enums_enrollment_type.go	CSSCMSCOREENUMSENROLLMENTTYPE__5	2d5c09e — enum value 5 (regen.sh patches swagger)
+verify	v1	model_css_cms_core_enums_enrollment_type.go	CSSCMSCOREENUMSENROLLMENTTYPE__6	2d5c09e — enum value 6 (regen.sh patches swagger)
+verify	v1	model_css_cms_core_enums_enrollment_type.go	CSSCMSCOREENUMSENROLLMENTTYPE__7	2d5c09e — enum value 7 (regen.sh patches swagger)
 
-# === Model field additions ===
-# These were hand-edits to model files that the new v25 swagger now incorporates natively.
-# Regen should produce these fields automatically — downgraded to 'verify' so we get a warning
-# only if regen output unexpectedly drops them.
-verify	v1	model_certificate_authorities_certificate_authority_request.go	UseForEnrollment	229db7d — CA UseForEnrollment (now in swagger)
-verify	v1	model_certificate_authorities_certificate_authority_response.go	UseForEnrollment	229db7d — CA UseForEnrollment (now in swagger)
-verify	v1	model_templates_template_retrieval_response.go	Manageability	af6340b — Template Manageability (now in swagger as typed enum)
-verify	v1	model_templates_template_retrieval_response.go	CertificateCleanupEnabled	af6340b — Template cleanup (now in swagger)
-verify	v1	model_templates_template_update_request.go	CertificateCleanupEnabled	af6340b — Template cleanup (now in swagger)
-verify	v1	model_css_cms_data_model_enums_certificate_cleanup_time_units.go	CSSCMSDataModelEnumsCertificateCleanupTimeUnits	af6340b — typed enum (now in swagger)
+# === Model field additions: already in committed v25 swagger ===
+verify	v1	model_certificate_authorities_certificate_authority_request.go	UseForEnrollment	229db7d — CA UseForEnrollment (in swagger)
+verify	v1	model_certificate_authorities_certificate_authority_response.go	UseForEnrollment	229db7d — CA UseForEnrollment (in swagger)
+verify	v1	model_templates_template_retrieval_response.go	Manageability	af6340b — Template Manageability (in swagger as typed enum)
+verify	v1	model_templates_template_retrieval_response.go	CertificateCleanupEnabled	af6340b — Template cleanup (in swagger)
+verify	v1	model_templates_template_update_request.go	CertificateCleanupEnabled	af6340b — Template cleanup (in swagger)
+verify	v1	model_css_cms_data_model_enums_certificate_cleanup_time_units.go	CSSCMSDataModelEnumsCertificateCleanupTimeUnits	af6340b — typed enum (in swagger)
 
-# === Whole-file preservations (not in any swagger; would be wiped by swap) ===
+# === Whole-file preservations: regression tests outside the generator's reach ===
+# These are NOT generator output — they're added by hand and must survive
+# the staging-to-live swap. scripts/check-hand-edits.sh `preserve` mode copies
+# them from baseline into staging before the swap.
 preserve-file	v1	client_test.go		229db7d — regression test (READ-ONLY per project rule)
 preserve-file	v2	client_test.go		229db7d — regression test (READ-ONLY per project rule)
 preserve-file	v1	model_certificate_authorities_test.go		229db7d — regression test (READ-ONLY per project rule)
 
-# === Open: NewAPIClientWithAuth (v24 has it, verify v25 status before flagging) ===
-verify	v1	client.go	NewAPIClientWithAuth	af6340b — VCR test helper (confirm v25 needs it)
-verify	v2	client.go	NewAPIClientWithAuth	af6340b — VCR test helper (confirm v25 needs it)
+# === Open: NewAPIClientWithAuth (v24 has it, v25 does not) ===
+# v24 has this VCR-test helper added by commit af6340b. v25 lacks it and the
+# canonical client.mustache also lacks it. If v25 ever needs VCR-style
+# regression tests, this helper would need to be added either to the
+# canonical template (preferable) or as a post-regen patch in this repo.
+verify	v1	client.go	NewAPIClientWithAuth	af6340b — VCR test helper (v25 currently lacks; see HAND_EDITS.md open questions)
+verify	v2	client.go	NewAPIClientWithAuth	af6340b — VCR test helper (v25 currently lacks; see HAND_EDITS.md open questions)

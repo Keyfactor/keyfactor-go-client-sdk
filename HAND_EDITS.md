@@ -1,8 +1,22 @@
 # Hand-Edits to Generated SDK Code
 
-This file catalogs every commit since each version's initial generation that modified files inside `<VERSION>/api/keyfactor/v{1,2}/`. These files are nominally generator output ("DO NOT EDIT" headers), but the project's `.openapi-generator-ignore` files are empty — no protection mechanism is in place. **Naive regeneration would silently drop every hand-edit listed below.**
+This file catalogs every commit since each version's initial generation that modified files inside `<VERSION>/api/keyfactor/v{1,2}/`. These files are nominally generator output ("DO NOT EDIT" headers), but the project's `.openapi-generator-ignore` files are empty — no protection mechanism is in place. **Without the right templates and swagger patches, naive regeneration would silently drop every hand-edit listed below.**
 
 This catalog is read by `scripts/check-hand-edits.sh` during `make regen-diff` to verify nothing is silently lost.
+
+## ⚠️ STATUS as of 2026-05-13
+
+The SDK now uses the canonical generation pipeline (`scripts/regen.sh` + `custom-templates/go/` + `custom-templates/postprocess/go/`) adapted from `Keyfactor/API-definitions @ 04b7b2c`. **Every hand-edit cataloged below is now produced naturally by the regen pipeline**:
+
+- **`client.go` behavioral fixes** (port-443, OAuth access token, OAuth Audience/AccessToken restoration) — baked into `custom-templates/go/client.mustache`.
+- **EnrollmentType enum `[0..7]`** — applied by a jq patch in `scripts/regen.sh` (Zendesk 139784).
+- **Schema namespace strip** — applied by a `sed` line in `scripts/regen.sh`.
+- **POST-param schema fix** — applied by a jq patch in `scripts/regen.sh` (idempotent with the swagger patch we landed).
+- **CA / Template / cleanup fields** — present in the committed `swagger/Keyfactor-Command-v25-v1.swagger.json` directly.
+
+`scripts/check-hand-edits.sh` against the latest `.regen-staging/` reports **19 ok, 2 warnings, 0 errors**. The two warnings are about `NewAPIClientWithAuth` which is v24-only (see "Open questions" below).
+
+Most rows in `scripts/hand-edits-manifest.tsv` have been **downgraded from `preserve` (error if missing) to `verify` (warn if missing)** because the canonical pipeline is expected to produce them. Errors would now indicate a real regression in the pipeline.
 
 ## Scope
 
