@@ -1,0 +1,46 @@
+# Hand-edits manifest — consumed by scripts/check-hand-edits.sh
+#
+# Columns (tab-separated):
+#   1. category     — "preserve" | "verify" | "preserve-file" | "verify-file"
+#                       preserve:      a pattern that MUST be present in the staged file (errors if missing)
+#                       verify:        a pattern we expect; warns (not errors) if missing — human review
+#                       preserve-file: a whole file that must survive regen (copied baseline→staging by 'preserve' mode)
+#                       verify-file:   a whole file that ought to survive — warn if absent
+#   2. version_api  — "v1" or "v2" (matches V1/V2 stage dir suffix)
+#   3. file         — path relative to the v1/v2 dir
+#   4. pattern      — a fixed string to grep -F for in the file (ignored for *-file rows)
+#   5. ref          — commit SHA(s) and short description
+#
+# Lines starting with '#' are comments. Empty lines ignored. Tabs only — no spaces.
+# Authoritative cross-reference: HAND_EDITS.md
+
+# === Code-level hand-edits in client.go (pure behavioral; not in any swagger) ===
+preserve	v1	client.go	serverConfig.Port != 443	b374f3d — skip :443 in URL host
+preserve	v2	client.go	serverConfig.Port != 443	b374f3d — skip :443 in URL host
+preserve	v1	client.go	cfg.AccessToken	229db7d — restore AccessToken in buildHttpClientV2
+preserve	v2	client.go	cfg.AccessToken	229db7d — restore AccessToken in buildHttpClientV2
+preserve	v1	client.go	cfg.Audience	229db7d — restore Audience in buildHttpClientV2
+preserve	v2	client.go	cfg.Audience	229db7d — restore Audience in buildHttpClientV2
+
+# === Enum value additions (swagger gap — to be patched per "spec gaps" rule) ===
+preserve	v1	model_css_cms_core_enums_enrollment_type.go	CSSCMSCOREENUMSENROLLMENTTYPE__3	2d5c09e — enum value 3
+preserve	v1	model_css_cms_core_enums_enrollment_type.go	CSSCMSCOREENUMSENROLLMENTTYPE__5	2d5c09e — enum value 5
+preserve	v1	model_css_cms_core_enums_enrollment_type.go	CSSCMSCOREENUMSENROLLMENTTYPE__6	2d5c09e — enum value 6
+preserve	v1	model_css_cms_core_enums_enrollment_type.go	CSSCMSCOREENUMSENROLLMENTTYPE__7	2d5c09e — enum value 7
+
+# === Model field additions (swagger gaps — to be patched per "spec gaps" rule) ===
+verify	v1	model_certificate_authorities_certificate_authority_request.go	UseForEnrollment	229db7d — CA UseForEnrollment field
+verify	v1	model_certificate_authorities_certificate_authority_response.go	UseForEnrollment	229db7d — CA UseForEnrollment field
+verify	v1	model_templates_template_retrieval_response.go	Manageability	af6340b — Template Manageability field
+verify	v1	model_templates_template_retrieval_response.go	CertificateCleanupEnabled	af6340b — Template cleanup field
+verify	v1	model_templates_template_update_request.go	CertificateCleanupEnabled	af6340b — Template cleanup field
+verify	v1	model_css_cms_data_model_enums_certificate_cleanup_time_units.go	CSSCMSDataModelEnumsCertificateCleanupTimeUnits	af6340b — new enum (verify present in v25)
+
+# === Whole-file preservations (not in any swagger; would be wiped by swap) ===
+preserve-file	v1	client_test.go		229db7d — regression test (READ-ONLY per project rule)
+preserve-file	v2	client_test.go		229db7d — regression test (READ-ONLY per project rule)
+preserve-file	v1	model_certificate_authorities_test.go		229db7d — regression test (READ-ONLY per project rule)
+
+# === Open: NewAPIClientWithAuth (v24 has it, verify v25 status before flagging) ===
+verify	v1	client.go	NewAPIClientWithAuth	af6340b — VCR test helper (confirm v25 needs it)
+verify	v2	client.go	NewAPIClientWithAuth	af6340b — VCR test helper (confirm v25 needs it)
