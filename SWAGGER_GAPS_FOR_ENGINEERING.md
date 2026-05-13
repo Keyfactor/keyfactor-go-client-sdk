@@ -4,9 +4,43 @@ This document captures discrepancies found between the `swagger/Keyfactor-Comman
 
 Most findings are **already resolved** in the swagger files vs. their prior single-file ancestor (`Keyfactor-Command-v10.swagger.yaml`). One actual gap was found and patched in place. Two cross-source disagreements were noticed and are flagged below for next-release consideration.
 
-## Patches applied (2)
+## Patches applied (3)
 
-### 1. Add `schema: {type: string}` to 475 malformed header parameters
+### 1. Strip `Keyfactor.Web.KeyfactorApi.Models.` namespace prefix from schema names
+
+This patch is **applied at regen-time only** (via `scripts/strip-schema-namespace.py`) — the source swagger files in `swagger/` are not modified.
+
+**Issue**: every schema in the upstream v25 swagger now carries a fully-qualified namespace prefix `Keyfactor.Web.KeyfactorApi.Models.` — for example:
+
+- `Keyfactor.Web.KeyfactorApi.Models.Templates.TemplateRetrievalResponse`
+- `Keyfactor.Web.KeyfactorApi.Models.CertificateAuthorities.CertificateAuthorityRequest`
+- `Keyfactor.Web.KeyfactorApi.Models.PAMProviderResponse`
+
+The swagger that produced the originally-released v25 SDK (`536f3e2`) used trailing names only:
+
+- `Templates.TemplateRetrievalResponse`
+- `CertificateAuthorities.CertificateAuthorityRequest`
+- `PAMProviderResponse`
+
+Since `openapi-generator` translates schema names directly into Go file and type names, every model file and every type identifier in the regenerated v25 code would change. This breaks:
+- `v25/client.go` (hand-written wrapper that references hundreds of model types)
+- Any downstream consumer (`kfutil`, `terraform-provider-keyfactor`) that imports v25 types
+- Every published SDK consumer's compilation
+
+Counts on the v25 swagger:
+- v1: 345 schemas + 1491 `$ref` pointers carry the prefix
+- v2: 39 schemas + 122 `$ref` pointers
+
+**Workaround in this repo**: `scripts/strip-schema-namespace.py` rewrites every schema name and `$ref` pointer containing the prefix to drop it, before the generator runs. Output naming then matches the historical v25 SDK convention. Source swagger files in `swagger/` are untouched so version-controlled history stays stable.
+
+**Recommended action for engineering**: decide canonically which convention v25+ should use, then make the source swagger generation emit consistently. Options:
+
+1. **Restore the short names** (matches existing v25 SDK and downstream consumers) — engineering can patch the upstream swagger generation to drop the `Keyfactor.Web.KeyfactorApi.Models.` namespace from schema names. This keeps the SDK API stable for consumers.
+2. **Keep the long names as canonical** (matches the new swagger output as-is) — engineering documents this as a breaking SDK change; we remove the preprocessor and propagate the rename through `v25/client.go` and downstream consumers.
+
+Other non-`Keyfactor.Web.KeyfactorApi.Models.` Keyfactor namespaces (e.g., `Keyfactor.Common.Scheduling.*`, `Keyfactor.Platform.Extensions.Enums.*`) are already short and need no change.
+
+### 2. Add `schema: {type: string}` to 475 malformed header parameters
 
 - **Files**:
   - `swagger/Keyfactor-Command-v25-v1.swagger.json` — 451 patches (447 × `x-keyfactor-api-version`, 4 × `x-certificateformat`)
@@ -41,7 +75,7 @@ Most findings are **already resolved** in the swagger files vs. their prior sing
 
 **Recommended action for engineering**: fix the upstream swagger generation so these two header parameters emit a `schema` field at the source. The fix is mechanical and presumably driven by the OpenAPI/JSON schema spec annotation system.
 
-### 2. `CSS.CMS.Core.Enums.EnrollmentType` enum: value `4` → `3`
+### 3. `CSS.CMS.Core.Enums.EnrollmentType` enum: value `4` → `3`
 
 - **File**: `swagger/Keyfactor-Command-v25-v1.swagger.json`
 - **Schema**: `components.schemas["CSS.CMS.Core.Enums.EnrollmentType"]`

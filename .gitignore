@@ -28,6 +28,13 @@ _testmain.go
 .DS_Store
 *.yaml
 
+# Regen workflow artifacts (see Makefile + scripts/check-hand-edits.sh)
+.regen-baseline/
+.regen-staging/
+.regen-diff.txt
+.regen-approved
+openapi-generator-cli.jar
+
 ### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
