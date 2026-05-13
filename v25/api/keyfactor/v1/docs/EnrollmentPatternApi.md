@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**GetEnrollmentPatterns**](EnrollmentPatternApi.md#GetEnrollmentPatterns) | **GET** /EnrollmentPatterns | Returns all enrollment patterns according to the provided filter and output parameters
 [**GetEnrollmentPatternsById**](EnrollmentPatternApi.md#GetEnrollmentPatternsById) | **GET** /EnrollmentPatterns/{id} | Returns the enrollment pattern associated with the provided id
 [**GetEnrollmentPatternsByIdMetadata**](EnrollmentPatternApi.md#GetEnrollmentPatternsByIdMetadata) | **GET** /EnrollmentPatterns/{id}/Metadata | Resolves metadata fields for an enrollment pattern and pattern&#39;s template
-[**GetEnrollmentPatternsByIdSettings**](EnrollmentPatternApi.md#GetEnrollmentPatternsByIdSettings) | **GET** /EnrollmentPatterns/{id}/Settings | Gets the settings for the enrollment pattern with the provided id to use during enrollment. The response will be the resolved values for the settings.  If there is an enrollment pattern specific setting, the enrollment pattern specific setting will be used in the response.  If there is not an enrollment pattern specific setting, the global setting will be used in the response.
+[**GetEnrollmentPatternsByIdSettings**](EnrollmentPatternApi.md#GetEnrollmentPatternsByIdSettings) | **GET** /EnrollmentPatterns/{id}/Settings | Gets the settings for the enrollment pattern with the provided id to use during enrollment. The response will be the resolved values for the settings. If there is an enrollment pattern specific setting, the enrollment pattern specific setting will be used in the response. If there is not an enrollment pattern specific setting, the global setting will be used in the response.
 [**GetEnrollmentPatternsSettings**](EnrollmentPatternApi.md#GetEnrollmentPatternsSettings) | **GET** /EnrollmentPatterns/Settings | Gets the global pattern settings.
 [**GetEnrollmentPatternsSubjectParts**](EnrollmentPatternApi.md#GetEnrollmentPatternsSubjectParts) | **GET** /EnrollmentPatterns/SubjectParts | Returns the valid subject parts possible for regular expressions.
 [**UpdateEnrollmentPatternsById**](EnrollmentPatternApi.md#UpdateEnrollmentPatternsById) | **PUT** /EnrollmentPatterns/{id} | Updates an enrollment pattern according to the provided properties and Keyfactor identifier
@@ -39,7 +39,7 @@ func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient]
     forceTemplateDefault := true // bool | Flag to forcibly update current enrollment pattern as template default pattern (optional) (default to false)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    enrollmentPatternsEnrollmentPatternCreateRequest := *openapiclient.NewEnrollmentPatternsEnrollmentPatternCreateRequest(int32(123), "Name_example") // EnrollmentPatternsEnrollmentPatternCreateRequest | Properties of the enrollment pattern to be created (optional)
+    enrollmentPatternsEnrollmentPatternCreateRequest := *openapiclient.NewEnrollmentPatternsEnrollmentPatternCreateRequest(int32(123), "Name_example", *openapiclient.NewEnrollmentPatternsEnrollmentPatternPolicyRequest()) // EnrollmentPatternsEnrollmentPatternCreateRequest | Properties of the enrollment pattern to be created (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 > EnrollmentPatternsEnrollmentPatternSettingsResponse NewGetEnrollmentPatternsByIdSettingsRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
-Gets the settings for the enrollment pattern with the provided id to use during enrollment. The response will be the resolved values for the settings.  If there is an enrollment pattern specific setting, the enrollment pattern specific setting will be used in the response.  If there is not an enrollment pattern specific setting, the global setting will be used in the response.
+Gets the settings for the enrollment pattern with the provided id to use during enrollment. The response will be the resolved values for the settings. If there is an enrollment pattern specific setting, the enrollment pattern specific setting will be used in the response. If there is not an enrollment pattern specific setting, the global setting will be used in the response.
 
 ### Example
 
@@ -606,7 +606,7 @@ func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient]
     forceTemplateDefault := true // bool | Flag to forcibly update current enrollment pattern as template default pattern (optional) (default to false)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    enrollmentPatternsEnrollmentPatternRequest := *openapiclient.NewEnrollmentPatternsEnrollmentPatternRequest("Name_example") // EnrollmentPatternsEnrollmentPatternRequest | Properties of the enrollment pattern to be updated (optional)
+    enrollmentPatternsEnrollmentPatternRequest := *openapiclient.NewEnrollmentPatternsEnrollmentPatternRequest("Name_example", *openapiclient.NewEnrollmentPatternsEnrollmentPatternPolicyRequest()) // EnrollmentPatternsEnrollmentPatternRequest | Properties of the enrollment pattern to be updated (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -680,7 +680,7 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient]
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    enrollmentPatternsGlobalGlobalEnrollmentPatternSettingsRequest := *openapiclient.NewEnrollmentPatternsGlobalGlobalEnrollmentPatternSettingsRequest([]openapiclient.EnrollmentPatternsEnrollmentPatternRegexesRequest{*openapiclient.NewEnrollmentPatternsEnrollmentPatternRegexesRequest("SubjectPart_example")}, []openapiclient.EnrollmentPatternsEnrollmentPatternDefaultRequest{*openapiclient.NewEnrollmentPatternsEnrollmentPatternDefaultRequest("SubjectPart_example")}, *openapiclient.NewEnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest(false, false, false, openapiclient.CSS.CMS.Core.Enums.TemplateCertificateOwnerRole(0), *openapiclient.NewEnrollmentPatternsAlgorithmsKeyInfoRequest())) // EnrollmentPatternsGlobalGlobalEnrollmentPatternSettingsRequest | The new global enrollment pattern settings. (optional)
+    enrollmentPatternsGlobalGlobalEnrollmentPatternSettingsRequest := *openapiclient.NewEnrollmentPatternsGlobalGlobalEnrollmentPatternSettingsRequest([]openapiclient.EnrollmentPatternsEnrollmentPatternRegexesRequest{*openapiclient.NewEnrollmentPatternsEnrollmentPatternRegexesRequest("SubjectPart_example")}, []openapiclient.EnrollmentPatternsEnrollmentPatternDefaultRequest{*openapiclient.NewEnrollmentPatternsEnrollmentPatternDefaultRequest("SubjectPart_example")}, *openapiclient.NewEnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest(false, false, false, openapiclient.CSS.CMS.Core.Enums.TemplateCertificateOwnerRole(0))) // EnrollmentPatternsGlobalGlobalEnrollmentPatternSettingsRequest | The new global enrollment pattern settings. (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)

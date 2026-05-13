@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -29,29 +29,31 @@ var _ MappedNullable = &IdentityProviderProviderTypeParameterRequest{}
 
 // IdentityProviderProviderTypeParameterRequest struct for IdentityProviderProviderTypeParameterRequest
 type IdentityProviderProviderTypeParameterRequest struct {
-	Timeout                 NullableInt32                           `json:"Timeout,omitempty"`
-	OIDCAudience            NullableString                          `json:"OIDCAudience,omitempty"`
-	OIDCScope               NullableString                          `json:"OIDCScope,omitempty"`
-	NameClaimType           string                                  `json:"NameClaimType"`
-	RoleClaimType           string                                  `json:"RoleClaimType"`
-	UniqueClaimType         string                                  `json:"UniqueClaimType"`
-	FallbackUniqueClaimType string                                  `json:"FallbackUniqueClaimType"`
-	ClientId                string                                  `json:"ClientId"`
-	ClientSecret            CSSCMSDataModelModelsKeyfactorAPISecret `json:"ClientSecret"`
-	AuthorizationEndpoint   string                                  `json:"AuthorizationEndpoint"`
-	TokenEndpoint           string                                  `json:"TokenEndpoint"`
-	JSONWebKeySetUri        string                                  `json:"JSONWebKeySetUri"`
-	Authority               string                                  `json:"Authority"`
-	UserInfoEndpoint        string                                  `json:"UserInfoEndpoint"`
-	Auth0ApiUrl             NullableString                          `json:"Auth0ApiUrl,omitempty"`
-	SignOutUrl              NullableString                          `json:"SignOutUrl,omitempty"`
+	Timeout                 NullableInt32                                `json:"Timeout,omitempty"`
+	OIDCAudience            NullableString                               `json:"OIDCAudience,omitempty"`
+	OIDCScope               NullableString                               `json:"OIDCScope,omitempty"`
+	RequestHeaders          []SharedRequestHeaderRequest                 `json:"RequestHeaders,omitempty"`
+	RequestURLParameters    []IdentityProviderRequestURLParameterRequest `json:"RequestURLParameters,omitempty"`
+	NameClaimType           string                                       `json:"NameClaimType"`
+	RoleClaimType           string                                       `json:"RoleClaimType"`
+	UniqueClaimType         string                                       `json:"UniqueClaimType"`
+	FallbackUniqueClaimType string                                       `json:"FallbackUniqueClaimType"`
+	ClientId                string                                       `json:"ClientId"`
+	ClientSecret            CSSCMSDataModelModelsKeyfactorAPISecret      `json:"ClientSecret"`
+	AuthorizationEndpoint   string                                       `json:"AuthorizationEndpoint"`
+	TokenEndpoint           string                                       `json:"TokenEndpoint"`
+	JSONWebKeySetUri        string                                       `json:"JSONWebKeySetUri"`
+	Authority               string                                       `json:"Authority"`
+	UserInfoEndpoint        NullableString                               `json:"UserInfoEndpoint,omitempty"`
+	Auth0ApiUrl             NullableString                               `json:"Auth0ApiUrl,omitempty"`
+	SignOutUrl              NullableString                               `json:"SignOutUrl,omitempty"`
 }
 
 // NewIdentityProviderProviderTypeParameterRequest instantiates a new IdentityProviderProviderTypeParameterRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIdentityProviderProviderTypeParameterRequest(nameClaimType string, roleClaimType string, uniqueClaimType string, fallbackUniqueClaimType string, clientId string, clientSecret CSSCMSDataModelModelsKeyfactorAPISecret, authorizationEndpoint string, tokenEndpoint string, jSONWebKeySetUri string, authority string, userInfoEndpoint string) *IdentityProviderProviderTypeParameterRequest {
+func NewIdentityProviderProviderTypeParameterRequest(nameClaimType string, roleClaimType string, uniqueClaimType string, fallbackUniqueClaimType string, clientId string, clientSecret CSSCMSDataModelModelsKeyfactorAPISecret, authorizationEndpoint string, tokenEndpoint string, jSONWebKeySetUri string, authority string) *IdentityProviderProviderTypeParameterRequest {
 	this := IdentityProviderProviderTypeParameterRequest{}
 	this.NameClaimType = nameClaimType
 	this.RoleClaimType = roleClaimType
@@ -63,7 +65,6 @@ func NewIdentityProviderProviderTypeParameterRequest(nameClaimType string, roleC
 	this.TokenEndpoint = tokenEndpoint
 	this.JSONWebKeySetUri = jSONWebKeySetUri
 	this.Authority = authority
-	this.UserInfoEndpoint = userInfoEndpoint
 	return &this
 }
 
@@ -202,6 +203,72 @@ func (o *IdentityProviderProviderTypeParameterRequest) SetOIDCScopeNil() {
 // UnsetOIDCScope ensures that no value is present for OIDCScope, not even an explicit nil
 func (o *IdentityProviderProviderTypeParameterRequest) UnsetOIDCScope() {
 	o.OIDCScope.Unset()
+}
+
+// GetRequestHeaders returns the RequestHeaders field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *IdentityProviderProviderTypeParameterRequest) GetRequestHeaders() []SharedRequestHeaderRequest {
+	if o == nil {
+		var ret []SharedRequestHeaderRequest
+		return ret
+	}
+	return o.RequestHeaders
+}
+
+// GetRequestHeadersOk returns a tuple with the RequestHeaders field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *IdentityProviderProviderTypeParameterRequest) GetRequestHeadersOk() ([]SharedRequestHeaderRequest, bool) {
+	if o == nil || isNil(o.RequestHeaders) {
+		return nil, false
+	}
+	return o.RequestHeaders, true
+}
+
+// HasRequestHeaders returns a boolean if a field has been set.
+func (o *IdentityProviderProviderTypeParameterRequest) HasRequestHeaders() bool {
+	if o != nil && isNil(o.RequestHeaders) {
+		return true
+	}
+
+	return false
+}
+
+// SetRequestHeaders gets a reference to the given []SharedRequestHeaderRequest and assigns it to the RequestHeaders field.
+func (o *IdentityProviderProviderTypeParameterRequest) SetRequestHeaders(v []SharedRequestHeaderRequest) {
+	o.RequestHeaders = v
+}
+
+// GetRequestURLParameters returns the RequestURLParameters field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *IdentityProviderProviderTypeParameterRequest) GetRequestURLParameters() []IdentityProviderRequestURLParameterRequest {
+	if o == nil {
+		var ret []IdentityProviderRequestURLParameterRequest
+		return ret
+	}
+	return o.RequestURLParameters
+}
+
+// GetRequestURLParametersOk returns a tuple with the RequestURLParameters field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *IdentityProviderProviderTypeParameterRequest) GetRequestURLParametersOk() ([]IdentityProviderRequestURLParameterRequest, bool) {
+	if o == nil || isNil(o.RequestURLParameters) {
+		return nil, false
+	}
+	return o.RequestURLParameters, true
+}
+
+// HasRequestURLParameters returns a boolean if a field has been set.
+func (o *IdentityProviderProviderTypeParameterRequest) HasRequestURLParameters() bool {
+	if o != nil && isNil(o.RequestURLParameters) {
+		return true
+	}
+
+	return false
+}
+
+// SetRequestURLParameters gets a reference to the given []IdentityProviderRequestURLParameterRequest and assigns it to the RequestURLParameters field.
+func (o *IdentityProviderProviderTypeParameterRequest) SetRequestURLParameters(v []IdentityProviderRequestURLParameterRequest) {
+	o.RequestURLParameters = v
 }
 
 // GetNameClaimType returns the NameClaimType field value
@@ -444,28 +511,47 @@ func (o *IdentityProviderProviderTypeParameterRequest) SetAuthority(v string) {
 	o.Authority = v
 }
 
-// GetUserInfoEndpoint returns the UserInfoEndpoint field value
+// GetUserInfoEndpoint returns the UserInfoEndpoint field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IdentityProviderProviderTypeParameterRequest) GetUserInfoEndpoint() string {
-	if o == nil {
+	if o == nil || isNil(o.UserInfoEndpoint.Get()) {
 		var ret string
 		return ret
 	}
-
-	return o.UserInfoEndpoint
+	return *o.UserInfoEndpoint.Get()
 }
 
-// GetUserInfoEndpointOk returns a tuple with the UserInfoEndpoint field value
+// GetUserInfoEndpointOk returns a tuple with the UserInfoEndpoint field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IdentityProviderProviderTypeParameterRequest) GetUserInfoEndpointOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.UserInfoEndpoint, true
+	return o.UserInfoEndpoint.Get(), o.UserInfoEndpoint.IsSet()
 }
 
-// SetUserInfoEndpoint sets field value
+// HasUserInfoEndpoint returns a boolean if a field has been set.
+func (o *IdentityProviderProviderTypeParameterRequest) HasUserInfoEndpoint() bool {
+	if o != nil && o.UserInfoEndpoint.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetUserInfoEndpoint gets a reference to the given NullableString and assigns it to the UserInfoEndpoint field.
 func (o *IdentityProviderProviderTypeParameterRequest) SetUserInfoEndpoint(v string) {
-	o.UserInfoEndpoint = v
+	o.UserInfoEndpoint.Set(&v)
+}
+
+// SetUserInfoEndpointNil sets the value for UserInfoEndpoint to be an explicit nil
+func (o *IdentityProviderProviderTypeParameterRequest) SetUserInfoEndpointNil() {
+	o.UserInfoEndpoint.Set(nil)
+}
+
+// UnsetUserInfoEndpoint ensures that no value is present for UserInfoEndpoint, not even an explicit nil
+func (o *IdentityProviderProviderTypeParameterRequest) UnsetUserInfoEndpoint() {
+	o.UserInfoEndpoint.Unset()
 }
 
 // GetAuth0ApiUrl returns the Auth0ApiUrl field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -573,6 +659,12 @@ func (o IdentityProviderProviderTypeParameterRequest) ToMap() (map[string]interf
 	if o.OIDCScope.IsSet() {
 		toSerialize["OIDCScope"] = o.OIDCScope.Get()
 	}
+	if o.RequestHeaders != nil {
+		toSerialize["RequestHeaders"] = o.RequestHeaders
+	}
+	if o.RequestURLParameters != nil {
+		toSerialize["RequestURLParameters"] = o.RequestURLParameters
+	}
 	toSerialize["NameClaimType"] = o.NameClaimType
 	toSerialize["RoleClaimType"] = o.RoleClaimType
 	toSerialize["UniqueClaimType"] = o.UniqueClaimType
@@ -583,7 +675,9 @@ func (o IdentityProviderProviderTypeParameterRequest) ToMap() (map[string]interf
 	toSerialize["TokenEndpoint"] = o.TokenEndpoint
 	toSerialize["JSONWebKeySetUri"] = o.JSONWebKeySetUri
 	toSerialize["Authority"] = o.Authority
-	toSerialize["UserInfoEndpoint"] = o.UserInfoEndpoint
+	if o.UserInfoEndpoint.IsSet() {
+		toSerialize["UserInfoEndpoint"] = o.UserInfoEndpoint.Get()
+	}
 	if o.Auth0ApiUrl.IsSet() {
 		toSerialize["Auth0ApiUrl"] = o.Auth0ApiUrl.Get()
 	}

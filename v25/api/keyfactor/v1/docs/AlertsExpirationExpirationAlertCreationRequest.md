@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Recipients** | Pointer to **[]string** |  | [optional] 
 **EventHandlerParameters** | Pointer to [**[]EventHandlerEventHandlerParameterRequest**](EventHandlerEventHandlerParameterRequest.md) |  | [optional] 
 **UseWorkflows** | Pointer to **bool** |  | [optional] [default to false]
+**Schedule** | Pointer to [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | [optional] 
 
 ## Methods
 
@@ -287,6 +288,31 @@ SetUseWorkflows sets UseWorkflows field to given value.
 `func (o *AlertsExpirationExpirationAlertCreationRequest) HasUseWorkflows() bool`
 
 HasUseWorkflows returns a boolean if a field has been set.
+
+### GetSchedule
+
+`func (o *AlertsExpirationExpirationAlertCreationRequest) GetSchedule() KeyfactorCommonSchedulingKeyfactorSchedule`
+
+GetSchedule returns the Schedule field if non-nil, zero value otherwise.
+
+### GetScheduleOk
+
+`func (o *AlertsExpirationExpirationAlertCreationRequest) GetScheduleOk() (*KeyfactorCommonSchedulingKeyfactorSchedule, bool)`
+
+GetScheduleOk returns a tuple with the Schedule field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchedule
+
+`func (o *AlertsExpirationExpirationAlertCreationRequest) SetSchedule(v KeyfactorCommonSchedulingKeyfactorSchedule)`
+
+SetSchedule sets Schedule field to given value.
+
+### HasSchedule
+
+`func (o *AlertsExpirationExpirationAlertCreationRequest) HasSchedule() bool`
+
+HasSchedule returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -33,6 +33,8 @@ type WorkflowsSignalConfigurationRequest struct {
 	SignalName NullableString `json:"SignalName,omitempty"`
 	// The roles that are allowed to send the signal.
 	RoleIds []int32 `json:"RoleIds,omitempty"`
+	// The role tokens that are allowed to send the signal (resolved on run-time of the specific step).
+	RoleTokens []string `json:"RoleTokens,omitempty"`
 }
 
 // NewWorkflowsSignalConfigurationRequest instantiates a new WorkflowsSignalConfigurationRequest object
@@ -128,6 +130,39 @@ func (o *WorkflowsSignalConfigurationRequest) SetRoleIds(v []int32) {
 	o.RoleIds = v
 }
 
+// GetRoleTokens returns the RoleTokens field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *WorkflowsSignalConfigurationRequest) GetRoleTokens() []string {
+	if o == nil {
+		var ret []string
+		return ret
+	}
+	return o.RoleTokens
+}
+
+// GetRoleTokensOk returns a tuple with the RoleTokens field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *WorkflowsSignalConfigurationRequest) GetRoleTokensOk() ([]string, bool) {
+	if o == nil || isNil(o.RoleTokens) {
+		return nil, false
+	}
+	return o.RoleTokens, true
+}
+
+// HasRoleTokens returns a boolean if a field has been set.
+func (o *WorkflowsSignalConfigurationRequest) HasRoleTokens() bool {
+	if o != nil && isNil(o.RoleTokens) {
+		return true
+	}
+
+	return false
+}
+
+// SetRoleTokens gets a reference to the given []string and assigns it to the RoleTokens field.
+func (o *WorkflowsSignalConfigurationRequest) SetRoleTokens(v []string) {
+	o.RoleTokens = v
+}
+
 func (o WorkflowsSignalConfigurationRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -143,6 +178,9 @@ func (o WorkflowsSignalConfigurationRequest) ToMap() (map[string]interface{}, er
 	}
 	if o.RoleIds != nil {
 		toSerialize["RoleIds"] = o.RoleIds
+	}
+	if o.RoleTokens != nil {
+		toSerialize["RoleTokens"] = o.RoleTokens
 	}
 	return toSerialize, nil
 }

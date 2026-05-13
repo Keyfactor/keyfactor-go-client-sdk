@@ -11,13 +11,13 @@ Name | Type | Description | Notes
 **CertificateOwnerRole** | [**CSSCMSCoreEnumsTemplateCertificateOwnerRole**](CSSCMSCoreEnumsTemplateCertificateOwnerRole.md) |  | 
 **DefaultCertificateOwnerRoleId** | Pointer to **NullableInt32** | The id of the security role that should be set as the owner of the cert during import of new certificates | [optional] 
 **DefaultCertificateOwnerRoleName** | Pointer to **NullableString** |  | [optional] 
-**KeyInfo** | [**CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo**](CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo.md) |  | 
+**KeyInfo** | [**EnrollmentPatternsAlgorithmsKeyInfoRequest**](EnrollmentPatternsAlgorithmsKeyInfoRequest.md) |  | 
 
 ## Methods
 
 ### NewTemplatesGlobalGlobalTemplatePolicyRequest
 
-`func NewTemplatesGlobalGlobalTemplatePolicyRequest(allowKeyReuse bool, allowWildcards bool, rFCEnforcement bool, certificateOwnerRole CSSCMSCoreEnumsTemplateCertificateOwnerRole, keyInfo CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo, ) *TemplatesGlobalGlobalTemplatePolicyRequest`
+`func NewTemplatesGlobalGlobalTemplatePolicyRequest(allowKeyReuse bool, allowWildcards bool, rFCEnforcement bool, certificateOwnerRole CSSCMSCoreEnumsTemplateCertificateOwnerRole, keyInfo EnrollmentPatternsAlgorithmsKeyInfoRequest, ) *TemplatesGlobalGlobalTemplatePolicyRequest`
 
 NewTemplatesGlobalGlobalTemplatePolicyRequest instantiates a new TemplatesGlobalGlobalTemplatePolicyRequest object
 This constructor will assign default values to properties that have it defined,
@@ -209,20 +209,20 @@ HasDefaultCertificateOwnerRoleName returns a boolean if a field has been set.
 UnsetDefaultCertificateOwnerRoleName ensures that no value is present for DefaultCertificateOwnerRoleName, not even an explicit nil
 ### GetKeyInfo
 
-`func (o *TemplatesGlobalGlobalTemplatePolicyRequest) GetKeyInfo() CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo`
+`func (o *TemplatesGlobalGlobalTemplatePolicyRequest) GetKeyInfo() EnrollmentPatternsAlgorithmsKeyInfoRequest`
 
 GetKeyInfo returns the KeyInfo field if non-nil, zero value otherwise.
 
 ### GetKeyInfoOk
 
-`func (o *TemplatesGlobalGlobalTemplatePolicyRequest) GetKeyInfoOk() (*CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo, bool)`
+`func (o *TemplatesGlobalGlobalTemplatePolicyRequest) GetKeyInfoOk() (*EnrollmentPatternsAlgorithmsKeyInfoRequest, bool)`
 
 GetKeyInfoOk returns a tuple with the KeyInfo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyInfo
 
-`func (o *TemplatesGlobalGlobalTemplatePolicyRequest) SetKeyInfo(v CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo)`
+`func (o *TemplatesGlobalGlobalTemplatePolicyRequest) SetKeyInfo(v EnrollmentPatternsAlgorithmsKeyInfoRequest)`
 
 SetKeyInfo sets KeyInfo field to given value.
 

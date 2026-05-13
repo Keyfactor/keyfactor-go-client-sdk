@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **EndpointId** | Pointer to **string** |  | [optional] 
 **NetworkId** | Pointer to **string** |  | [optional] 
-**LastHistoryId** | Pointer to **NullableString** |  | [optional] 
 **IpAddressBytes** | Pointer to **NullableString** |  | [optional] 
 **Port** | Pointer to **int32** |  | [optional] 
 **SNIName** | Pointer to **NullableString** |  | [optional] 
@@ -82,41 +81,6 @@ SetNetworkId sets NetworkId field to given value.
 
 HasNetworkId returns a boolean if a field has been set.
 
-### GetLastHistoryId
-
-`func (o *CSSCMSDataModelModelsSSLEndpoint) GetLastHistoryId() string`
-
-GetLastHistoryId returns the LastHistoryId field if non-nil, zero value otherwise.
-
-### GetLastHistoryIdOk
-
-`func (o *CSSCMSDataModelModelsSSLEndpoint) GetLastHistoryIdOk() (*string, bool)`
-
-GetLastHistoryIdOk returns a tuple with the LastHistoryId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastHistoryId
-
-`func (o *CSSCMSDataModelModelsSSLEndpoint) SetLastHistoryId(v string)`
-
-SetLastHistoryId sets LastHistoryId field to given value.
-
-### HasLastHistoryId
-
-`func (o *CSSCMSDataModelModelsSSLEndpoint) HasLastHistoryId() bool`
-
-HasLastHistoryId returns a boolean if a field has been set.
-
-### SetLastHistoryIdNil
-
-`func (o *CSSCMSDataModelModelsSSLEndpoint) SetLastHistoryIdNil(b bool)`
-
- SetLastHistoryIdNil sets the value for LastHistoryId to be an explicit nil
-
-### UnsetLastHistoryId
-`func (o *CSSCMSDataModelModelsSSLEndpoint) UnsetLastHistoryId()`
-
-UnsetLastHistoryId ensures that no value is present for LastHistoryId, not even an explicit nil
 ### GetIpAddressBytes
 
 `func (o *CSSCMSDataModelModelsSSLEndpoint) GetIpAddressBytes() string`

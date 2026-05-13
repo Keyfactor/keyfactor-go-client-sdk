@@ -13,6 +13,12 @@ Name | Type | Description | Notes
 **SenderAccount** | Pointer to **NullableString** |  | [optional] 
 **SenderName** | Pointer to **NullableString** |  | [optional] 
 **UseSSL** | Pointer to **bool** |  | [optional] 
+**ClientId** | Pointer to [**CSSCMSDataModelModelsKeyfactorAPISecret**](CSSCMSDataModelModelsKeyfactorAPISecret.md) |  | [optional] 
+**ClientSecret** | Pointer to [**CSSCMSDataModelModelsKeyfactorAPISecret**](CSSCMSDataModelModelsKeyfactorAPISecret.md) |  | [optional] 
+**TokenEndpoint** | Pointer to **NullableString** |  | [optional] 
+**Scope** | Pointer to **NullableString** |  | [optional] 
+**Audience** | Pointer to **NullableString** |  | [optional] 
+**RequestHeaders** | Pointer to [**[]SharedRequestHeaderResponse**](SharedRequestHeaderResponse.md) |  | [optional] 
 
 ## Methods
 
@@ -288,6 +294,196 @@ SetUseSSL sets UseSSL field to given value.
 
 HasUseSSL returns a boolean if a field has been set.
 
+### GetClientId
+
+`func (o *SMTPSMTPResponse) GetClientId() CSSCMSDataModelModelsKeyfactorAPISecret`
+
+GetClientId returns the ClientId field if non-nil, zero value otherwise.
+
+### GetClientIdOk
+
+`func (o *SMTPSMTPResponse) GetClientIdOk() (*CSSCMSDataModelModelsKeyfactorAPISecret, bool)`
+
+GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientId
+
+`func (o *SMTPSMTPResponse) SetClientId(v CSSCMSDataModelModelsKeyfactorAPISecret)`
+
+SetClientId sets ClientId field to given value.
+
+### HasClientId
+
+`func (o *SMTPSMTPResponse) HasClientId() bool`
+
+HasClientId returns a boolean if a field has been set.
+
+### GetClientSecret
+
+`func (o *SMTPSMTPResponse) GetClientSecret() CSSCMSDataModelModelsKeyfactorAPISecret`
+
+GetClientSecret returns the ClientSecret field if non-nil, zero value otherwise.
+
+### GetClientSecretOk
+
+`func (o *SMTPSMTPResponse) GetClientSecretOk() (*CSSCMSDataModelModelsKeyfactorAPISecret, bool)`
+
+GetClientSecretOk returns a tuple with the ClientSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientSecret
+
+`func (o *SMTPSMTPResponse) SetClientSecret(v CSSCMSDataModelModelsKeyfactorAPISecret)`
+
+SetClientSecret sets ClientSecret field to given value.
+
+### HasClientSecret
+
+`func (o *SMTPSMTPResponse) HasClientSecret() bool`
+
+HasClientSecret returns a boolean if a field has been set.
+
+### GetTokenEndpoint
+
+`func (o *SMTPSMTPResponse) GetTokenEndpoint() string`
+
+GetTokenEndpoint returns the TokenEndpoint field if non-nil, zero value otherwise.
+
+### GetTokenEndpointOk
+
+`func (o *SMTPSMTPResponse) GetTokenEndpointOk() (*string, bool)`
+
+GetTokenEndpointOk returns a tuple with the TokenEndpoint field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTokenEndpoint
+
+`func (o *SMTPSMTPResponse) SetTokenEndpoint(v string)`
+
+SetTokenEndpoint sets TokenEndpoint field to given value.
+
+### HasTokenEndpoint
+
+`func (o *SMTPSMTPResponse) HasTokenEndpoint() bool`
+
+HasTokenEndpoint returns a boolean if a field has been set.
+
+### SetTokenEndpointNil
+
+`func (o *SMTPSMTPResponse) SetTokenEndpointNil(b bool)`
+
+ SetTokenEndpointNil sets the value for TokenEndpoint to be an explicit nil
+
+### UnsetTokenEndpoint
+`func (o *SMTPSMTPResponse) UnsetTokenEndpoint()`
+
+UnsetTokenEndpoint ensures that no value is present for TokenEndpoint, not even an explicit nil
+### GetScope
+
+`func (o *SMTPSMTPResponse) GetScope() string`
+
+GetScope returns the Scope field if non-nil, zero value otherwise.
+
+### GetScopeOk
+
+`func (o *SMTPSMTPResponse) GetScopeOk() (*string, bool)`
+
+GetScopeOk returns a tuple with the Scope field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetScope
+
+`func (o *SMTPSMTPResponse) SetScope(v string)`
+
+SetScope sets Scope field to given value.
+
+### HasScope
+
+`func (o *SMTPSMTPResponse) HasScope() bool`
+
+HasScope returns a boolean if a field has been set.
+
+### SetScopeNil
+
+`func (o *SMTPSMTPResponse) SetScopeNil(b bool)`
+
+ SetScopeNil sets the value for Scope to be an explicit nil
+
+### UnsetScope
+`func (o *SMTPSMTPResponse) UnsetScope()`
+
+UnsetScope ensures that no value is present for Scope, not even an explicit nil
+### GetAudience
+
+`func (o *SMTPSMTPResponse) GetAudience() string`
+
+GetAudience returns the Audience field if non-nil, zero value otherwise.
+
+### GetAudienceOk
+
+`func (o *SMTPSMTPResponse) GetAudienceOk() (*string, bool)`
+
+GetAudienceOk returns a tuple with the Audience field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAudience
+
+`func (o *SMTPSMTPResponse) SetAudience(v string)`
+
+SetAudience sets Audience field to given value.
+
+### HasAudience
+
+`func (o *SMTPSMTPResponse) HasAudience() bool`
+
+HasAudience returns a boolean if a field has been set.
+
+### SetAudienceNil
+
+`func (o *SMTPSMTPResponse) SetAudienceNil(b bool)`
+
+ SetAudienceNil sets the value for Audience to be an explicit nil
+
+### UnsetAudience
+`func (o *SMTPSMTPResponse) UnsetAudience()`
+
+UnsetAudience ensures that no value is present for Audience, not even an explicit nil
+### GetRequestHeaders
+
+`func (o *SMTPSMTPResponse) GetRequestHeaders() []SharedRequestHeaderResponse`
+
+GetRequestHeaders returns the RequestHeaders field if non-nil, zero value otherwise.
+
+### GetRequestHeadersOk
+
+`func (o *SMTPSMTPResponse) GetRequestHeadersOk() (*[]SharedRequestHeaderResponse, bool)`
+
+GetRequestHeadersOk returns a tuple with the RequestHeaders field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequestHeaders
+
+`func (o *SMTPSMTPResponse) SetRequestHeaders(v []SharedRequestHeaderResponse)`
+
+SetRequestHeaders sets RequestHeaders field to given value.
+
+### HasRequestHeaders
+
+`func (o *SMTPSMTPResponse) HasRequestHeaders() bool`
+
+HasRequestHeaders returns a boolean if a field has been set.
+
+### SetRequestHeadersNil
+
+`func (o *SMTPSMTPResponse) SetRequestHeadersNil(b bool)`
+
+ SetRequestHeadersNil sets the value for RequestHeaders to be an explicit nil
+
+### UnsetRequestHeaders
+`func (o *SMTPSMTPResponse) UnsetRequestHeaders()`
+
+UnsetRequestHeaders ensures that no value is present for RequestHeaders, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

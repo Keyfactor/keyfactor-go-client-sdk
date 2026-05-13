@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SubjectPart** | Pointer to **NullableString** |  | [optional] 
-**Value** | Pointer to **NullableString** |  | [optional] 
+**SubjectPart** | Pointer to **NullableString** | The subject part to apply the default to. | [optional] 
+**Value** | Pointer to **NullableString** | The value to apply by default. | [optional] 
 
 ## Methods
 

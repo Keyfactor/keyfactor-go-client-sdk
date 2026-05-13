@@ -13,8 +13,6 @@ Name | Type | Description | Notes
 **Message** | Pointer to **NullableString** |  | [optional] 
 **Options** | Pointer to **NullableString** |  | [optional] 
 **DefaultValue** | Pointer to **NullableString** |  | [optional] 
-**AllowAPI** | Pointer to **bool** |  | [optional] 
-**ExplicitUpdate** | Pointer to **bool** |  | [optional] 
 **DisplayOrder** | Pointer to **NullableInt32** |  | [optional] 
 **CaseSensitive** | Pointer to **bool** |  | [optional] 
 **ExemptFromActionedCount** | Pointer to **bool** |  | [optional] 
@@ -298,56 +296,6 @@ HasDefaultValue returns a boolean if a field has been set.
 `func (o *MetadataFieldMetadataFieldCreateRequest) UnsetDefaultValue()`
 
 UnsetDefaultValue ensures that no value is present for DefaultValue, not even an explicit nil
-### GetAllowAPI
-
-`func (o *MetadataFieldMetadataFieldCreateRequest) GetAllowAPI() bool`
-
-GetAllowAPI returns the AllowAPI field if non-nil, zero value otherwise.
-
-### GetAllowAPIOk
-
-`func (o *MetadataFieldMetadataFieldCreateRequest) GetAllowAPIOk() (*bool, bool)`
-
-GetAllowAPIOk returns a tuple with the AllowAPI field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAllowAPI
-
-`func (o *MetadataFieldMetadataFieldCreateRequest) SetAllowAPI(v bool)`
-
-SetAllowAPI sets AllowAPI field to given value.
-
-### HasAllowAPI
-
-`func (o *MetadataFieldMetadataFieldCreateRequest) HasAllowAPI() bool`
-
-HasAllowAPI returns a boolean if a field has been set.
-
-### GetExplicitUpdate
-
-`func (o *MetadataFieldMetadataFieldCreateRequest) GetExplicitUpdate() bool`
-
-GetExplicitUpdate returns the ExplicitUpdate field if non-nil, zero value otherwise.
-
-### GetExplicitUpdateOk
-
-`func (o *MetadataFieldMetadataFieldCreateRequest) GetExplicitUpdateOk() (*bool, bool)`
-
-GetExplicitUpdateOk returns a tuple with the ExplicitUpdate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExplicitUpdate
-
-`func (o *MetadataFieldMetadataFieldCreateRequest) SetExplicitUpdate(v bool)`
-
-SetExplicitUpdate sets ExplicitUpdate field to given value.
-
-### HasExplicitUpdate
-
-`func (o *MetadataFieldMetadataFieldCreateRequest) HasExplicitUpdate() bool`
-
-HasExplicitUpdate returns a boolean if a field has been set.
-
 ### GetDisplayOrder
 
 `func (o *MetadataFieldMetadataFieldCreateRequest) GetDisplayOrder() int32`

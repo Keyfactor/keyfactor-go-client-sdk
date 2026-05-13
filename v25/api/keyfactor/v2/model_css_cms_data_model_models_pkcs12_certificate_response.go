@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -38,6 +38,7 @@ type CSSCMSDataModelModelsPkcs12CertificateResponse struct {
 	WorkflowInstanceId        *string           `json:"WorkflowInstanceId,omitempty"`
 	WorkflowReferenceId       *int64            `json:"WorkflowReferenceId,omitempty"`
 	StoreIdsInvalidForRenewal []string          `json:"StoreIdsInvalidForRenewal,omitempty"`
+	ChainFailedToBuild        *bool             `json:"ChainFailedToBuild,omitempty"`
 	KeyfactorRequestId        *int32            `json:"KeyfactorRequestId,omitempty"`
 	RequestDisposition        NullableString    `json:"RequestDisposition,omitempty"`
 	DispositionMessage        NullableString    `json:"DispositionMessage,omitempty"`
@@ -405,6 +406,38 @@ func (o *CSSCMSDataModelModelsPkcs12CertificateResponse) SetStoreIdsInvalidForRe
 	o.StoreIdsInvalidForRenewal = v
 }
 
+// GetChainFailedToBuild returns the ChainFailedToBuild field value if set, zero value otherwise.
+func (o *CSSCMSDataModelModelsPkcs12CertificateResponse) GetChainFailedToBuild() bool {
+	if o == nil || isNil(o.ChainFailedToBuild) {
+		var ret bool
+		return ret
+	}
+	return *o.ChainFailedToBuild
+}
+
+// GetChainFailedToBuildOk returns a tuple with the ChainFailedToBuild field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CSSCMSDataModelModelsPkcs12CertificateResponse) GetChainFailedToBuildOk() (*bool, bool) {
+	if o == nil || isNil(o.ChainFailedToBuild) {
+		return nil, false
+	}
+	return o.ChainFailedToBuild, true
+}
+
+// HasChainFailedToBuild returns a boolean if a field has been set.
+func (o *CSSCMSDataModelModelsPkcs12CertificateResponse) HasChainFailedToBuild() bool {
+	if o != nil && !isNil(o.ChainFailedToBuild) {
+		return true
+	}
+
+	return false
+}
+
+// SetChainFailedToBuild gets a reference to the given bool and assigns it to the ChainFailedToBuild field.
+func (o *CSSCMSDataModelModelsPkcs12CertificateResponse) SetChainFailedToBuild(v bool) {
+	o.ChainFailedToBuild = &v
+}
+
 // GetKeyfactorRequestId returns the KeyfactorRequestId field value if set, zero value otherwise.
 func (o *CSSCMSDataModelModelsPkcs12CertificateResponse) GetKeyfactorRequestId() int32 {
 	if o == nil || isNil(o.KeyfactorRequestId) {
@@ -592,6 +625,9 @@ func (o CSSCMSDataModelModelsPkcs12CertificateResponse) ToMap() (map[string]inte
 	}
 	if o.StoreIdsInvalidForRenewal != nil {
 		toSerialize["StoreIdsInvalidForRenewal"] = o.StoreIdsInvalidForRenewal
+	}
+	if !isNil(o.ChainFailedToBuild) {
+		toSerialize["ChainFailedToBuild"] = o.ChainFailedToBuild
 	}
 	if !isNil(o.KeyfactorRequestId) {
 		toSerialize["KeyfactorRequestId"] = o.KeyfactorRequestId

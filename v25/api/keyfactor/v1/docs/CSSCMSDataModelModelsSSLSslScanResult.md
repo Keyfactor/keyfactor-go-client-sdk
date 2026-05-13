@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **MonitorStatus** | Pointer to **bool** |  | [optional] 
 **CertificateCN** | Pointer to **NullableString** |  | [optional] 
 **Reviewed** | Pointer to **bool** |  | [optional] 
+**ExpirationDate** | Pointer to **NullableTime** |  | [optional] 
 
 ## Methods
 
@@ -370,6 +371,41 @@ SetReviewed sets Reviewed field to given value.
 
 HasReviewed returns a boolean if a field has been set.
 
+### GetExpirationDate
+
+`func (o *CSSCMSDataModelModelsSSLSslScanResult) GetExpirationDate() time.Time`
+
+GetExpirationDate returns the ExpirationDate field if non-nil, zero value otherwise.
+
+### GetExpirationDateOk
+
+`func (o *CSSCMSDataModelModelsSSLSslScanResult) GetExpirationDateOk() (*time.Time, bool)`
+
+GetExpirationDateOk returns a tuple with the ExpirationDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpirationDate
+
+`func (o *CSSCMSDataModelModelsSSLSslScanResult) SetExpirationDate(v time.Time)`
+
+SetExpirationDate sets ExpirationDate field to given value.
+
+### HasExpirationDate
+
+`func (o *CSSCMSDataModelModelsSSLSslScanResult) HasExpirationDate() bool`
+
+HasExpirationDate returns a boolean if a field has been set.
+
+### SetExpirationDateNil
+
+`func (o *CSSCMSDataModelModelsSSLSslScanResult) SetExpirationDateNil(b bool)`
+
+ SetExpirationDateNil sets the value for ExpirationDate to be an explicit nil
+
+### UnsetExpirationDate
+`func (o *CSSCMSDataModelModelsSSLSslScanResult) UnsetExpirationDate()`
+
+UnsetExpirationDate ensures that no value is present for ExpirationDate, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

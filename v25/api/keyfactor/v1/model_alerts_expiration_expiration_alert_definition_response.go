@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -43,6 +43,7 @@ type AlertsExpirationExpirationAlertDefinitionResponse struct {
 	WorkflowName             NullableString                                            `json:"WorkflowName,omitempty"`
 	WorkflowPublishedVersion NullableInt32                                             `json:"WorkflowPublishedVersion,omitempty"`
 	WorkflowEnabled          NullableBool                                              `json:"WorkflowEnabled,omitempty"`
+	Schedule                 *KeyfactorCommonSchedulingKeyfactorSchedule               `json:"Schedule,omitempty"`
 }
 
 // NewAlertsExpirationExpirationAlertDefinitionResponse instantiates a new AlertsExpirationExpirationAlertDefinitionResponse object
@@ -589,6 +590,38 @@ func (o *AlertsExpirationExpirationAlertDefinitionResponse) UnsetWorkflowEnabled
 	o.WorkflowEnabled.Unset()
 }
 
+// GetSchedule returns the Schedule field value if set, zero value otherwise.
+func (o *AlertsExpirationExpirationAlertDefinitionResponse) GetSchedule() KeyfactorCommonSchedulingKeyfactorSchedule {
+	if o == nil || isNil(o.Schedule) {
+		var ret KeyfactorCommonSchedulingKeyfactorSchedule
+		return ret
+	}
+	return *o.Schedule
+}
+
+// GetScheduleOk returns a tuple with the Schedule field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AlertsExpirationExpirationAlertDefinitionResponse) GetScheduleOk() (*KeyfactorCommonSchedulingKeyfactorSchedule, bool) {
+	if o == nil || isNil(o.Schedule) {
+		return nil, false
+	}
+	return o.Schedule, true
+}
+
+// HasSchedule returns a boolean if a field has been set.
+func (o *AlertsExpirationExpirationAlertDefinitionResponse) HasSchedule() bool {
+	if o != nil && !isNil(o.Schedule) {
+		return true
+	}
+
+	return false
+}
+
+// SetSchedule gets a reference to the given KeyfactorCommonSchedulingKeyfactorSchedule and assigns it to the Schedule field.
+func (o *AlertsExpirationExpirationAlertDefinitionResponse) SetSchedule(v KeyfactorCommonSchedulingKeyfactorSchedule) {
+	o.Schedule = &v
+}
+
 func (o AlertsExpirationExpirationAlertDefinitionResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -640,6 +673,9 @@ func (o AlertsExpirationExpirationAlertDefinitionResponse) ToMap() (map[string]i
 	}
 	if o.WorkflowEnabled.IsSet() {
 		toSerialize["WorkflowEnabled"] = o.WorkflowEnabled.Get()
+	}
+	if !isNil(o.Schedule) {
+		toSerialize["Schedule"] = o.Schedule
 	}
 	return toSerialize, nil
 }

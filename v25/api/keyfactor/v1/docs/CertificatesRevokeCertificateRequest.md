@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **EffectiveDate** | Pointer to **time.Time** |  | [optional] 
 **CollectionId** | Pointer to **NullableInt32** |  | [optional] 
 **PublishCRL** | Pointer to **bool** |  | [optional] 
+**ContainerId** | Pointer to **NullableInt32** |  | [optional] 
 
 ## Methods
 
@@ -210,6 +211,41 @@ SetPublishCRL sets PublishCRL field to given value.
 
 HasPublishCRL returns a boolean if a field has been set.
 
+### GetContainerId
+
+`func (o *CertificatesRevokeCertificateRequest) GetContainerId() int32`
+
+GetContainerId returns the ContainerId field if non-nil, zero value otherwise.
+
+### GetContainerIdOk
+
+`func (o *CertificatesRevokeCertificateRequest) GetContainerIdOk() (*int32, bool)`
+
+GetContainerIdOk returns a tuple with the ContainerId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContainerId
+
+`func (o *CertificatesRevokeCertificateRequest) SetContainerId(v int32)`
+
+SetContainerId sets ContainerId field to given value.
+
+### HasContainerId
+
+`func (o *CertificatesRevokeCertificateRequest) HasContainerId() bool`
+
+HasContainerId returns a boolean if a field has been set.
+
+### SetContainerIdNil
+
+`func (o *CertificatesRevokeCertificateRequest) SetContainerIdNil(b bool)`
+
+ SetContainerIdNil sets the value for ContainerId to be an explicit nil
+
+### UnsetContainerId
+`func (o *CertificatesRevokeCertificateRequest) UnsetContainerId()`
+
+UnsetContainerId ensures that no value is present for ContainerId, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

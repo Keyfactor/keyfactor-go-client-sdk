@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -38,6 +38,7 @@ type MonitoringRevocationMonitoringUpdateRequest struct {
 	Schedule       *KeyfactorCommonSchedulingKeyfactorSchedule `json:"Schedule,omitempty"`
 	OCSPParameters *MonitoringOCSPParametersRequest            `json:"OCSPParameters,omitempty"`
 	UseWorkflows   *bool                                       `json:"UseWorkflows,omitempty"`
+	WorkflowId     NullableString                              `json:"WorkflowId,omitempty"`
 }
 
 // NewMonitoringRevocationMonitoringUpdateRequest instantiates a new MonitoringRevocationMonitoringUpdateRequest object
@@ -317,6 +318,49 @@ func (o *MonitoringRevocationMonitoringUpdateRequest) SetUseWorkflows(v bool) {
 	o.UseWorkflows = &v
 }
 
+// GetWorkflowId returns the WorkflowId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *MonitoringRevocationMonitoringUpdateRequest) GetWorkflowId() string {
+	if o == nil || isNil(o.WorkflowId.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.WorkflowId.Get()
+}
+
+// GetWorkflowIdOk returns a tuple with the WorkflowId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *MonitoringRevocationMonitoringUpdateRequest) GetWorkflowIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.WorkflowId.Get(), o.WorkflowId.IsSet()
+}
+
+// HasWorkflowId returns a boolean if a field has been set.
+func (o *MonitoringRevocationMonitoringUpdateRequest) HasWorkflowId() bool {
+	if o != nil && o.WorkflowId.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetWorkflowId gets a reference to the given NullableString and assigns it to the WorkflowId field.
+func (o *MonitoringRevocationMonitoringUpdateRequest) SetWorkflowId(v string) {
+	o.WorkflowId.Set(&v)
+}
+
+// SetWorkflowIdNil sets the value for WorkflowId to be an explicit nil
+func (o *MonitoringRevocationMonitoringUpdateRequest) SetWorkflowIdNil() {
+	o.WorkflowId.Set(nil)
+}
+
+// UnsetWorkflowId ensures that no value is present for WorkflowId, not even an explicit nil
+func (o *MonitoringRevocationMonitoringUpdateRequest) UnsetWorkflowId() {
+	o.WorkflowId.Unset()
+}
+
 func (o MonitoringRevocationMonitoringUpdateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -345,6 +389,9 @@ func (o MonitoringRevocationMonitoringUpdateRequest) ToMap() (map[string]interfa
 	}
 	if !isNil(o.UseWorkflows) {
 		toSerialize["UseWorkflows"] = o.UseWorkflows
+	}
+	if o.WorkflowId.IsSet() {
+		toSerialize["WorkflowId"] = o.WorkflowId.Get()
 	}
 	return toSerialize, nil
 }

@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -29,23 +29,19 @@ var _ MappedNullable = &MetadataFieldMetadataFieldUpdateRequest{}
 
 // MetadataFieldMetadataFieldUpdateRequest struct for MetadataFieldMetadataFieldUpdateRequest
 type MetadataFieldMetadataFieldUpdateRequest struct {
-	Id           int32                                  `json:"Id"`
-	Name         string                                 `json:"Name"`
-	Description  string                                 `json:"Description"`
-	DataType     CSSCMSCoreEnumsMetadataDataType        `json:"DataType"`
-	Hint         NullableString                         `json:"Hint,omitempty"`
-	Validation   NullableString                         `json:"Validation,omitempty"`
-	Enrollment   *CSSCMSCoreEnumsMetadataTypeEnrollment `json:"Enrollment,omitempty"`
-	Message      NullableString                         `json:"Message,omitempty"`
-	Options      NullableString                         `json:"Options,omitempty"`
-	DefaultValue NullableString                         `json:"DefaultValue,omitempty"`
-	// Deprecated
-	AllowAPI *bool `json:"AllowAPI,omitempty"`
-	// Deprecated
-	ExplicitUpdate          *bool `json:"ExplicitUpdate,omitempty"`
-	DisplayOrder            int32 `json:"DisplayOrder"`
-	CaseSensitive           *bool `json:"CaseSensitive,omitempty"`
-	ExemptFromActionedCount *bool `json:"ExemptFromActionedCount,omitempty"`
+	Id                      int32                                  `json:"Id"`
+	Name                    string                                 `json:"Name"`
+	Description             string                                 `json:"Description"`
+	DataType                CSSCMSCoreEnumsMetadataDataType        `json:"DataType"`
+	Hint                    NullableString                         `json:"Hint,omitempty"`
+	Validation              NullableString                         `json:"Validation,omitempty"`
+	Enrollment              *CSSCMSCoreEnumsMetadataTypeEnrollment `json:"Enrollment,omitempty"`
+	Message                 NullableString                         `json:"Message,omitempty"`
+	Options                 NullableString                         `json:"Options,omitempty"`
+	DefaultValue            NullableString                         `json:"DefaultValue,omitempty"`
+	DisplayOrder            int32                                  `json:"DisplayOrder"`
+	CaseSensitive           *bool                                  `json:"CaseSensitive,omitempty"`
+	ExemptFromActionedCount *bool                                  `json:"ExemptFromActionedCount,omitempty"`
 }
 
 // NewMetadataFieldMetadataFieldUpdateRequest instantiates a new MetadataFieldMetadataFieldUpdateRequest object
@@ -413,76 +409,6 @@ func (o *MetadataFieldMetadataFieldUpdateRequest) UnsetDefaultValue() {
 	o.DefaultValue.Unset()
 }
 
-// GetAllowAPI returns the AllowAPI field value if set, zero value otherwise.
-// Deprecated
-func (o *MetadataFieldMetadataFieldUpdateRequest) GetAllowAPI() bool {
-	if o == nil || isNil(o.AllowAPI) {
-		var ret bool
-		return ret
-	}
-	return *o.AllowAPI
-}
-
-// GetAllowAPIOk returns a tuple with the AllowAPI field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *MetadataFieldMetadataFieldUpdateRequest) GetAllowAPIOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowAPI) {
-		return nil, false
-	}
-	return o.AllowAPI, true
-}
-
-// HasAllowAPI returns a boolean if a field has been set.
-func (o *MetadataFieldMetadataFieldUpdateRequest) HasAllowAPI() bool {
-	if o != nil && !isNil(o.AllowAPI) {
-		return true
-	}
-
-	return false
-}
-
-// SetAllowAPI gets a reference to the given bool and assigns it to the AllowAPI field.
-// Deprecated
-func (o *MetadataFieldMetadataFieldUpdateRequest) SetAllowAPI(v bool) {
-	o.AllowAPI = &v
-}
-
-// GetExplicitUpdate returns the ExplicitUpdate field value if set, zero value otherwise.
-// Deprecated
-func (o *MetadataFieldMetadataFieldUpdateRequest) GetExplicitUpdate() bool {
-	if o == nil || isNil(o.ExplicitUpdate) {
-		var ret bool
-		return ret
-	}
-	return *o.ExplicitUpdate
-}
-
-// GetExplicitUpdateOk returns a tuple with the ExplicitUpdate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *MetadataFieldMetadataFieldUpdateRequest) GetExplicitUpdateOk() (*bool, bool) {
-	if o == nil || isNil(o.ExplicitUpdate) {
-		return nil, false
-	}
-	return o.ExplicitUpdate, true
-}
-
-// HasExplicitUpdate returns a boolean if a field has been set.
-func (o *MetadataFieldMetadataFieldUpdateRequest) HasExplicitUpdate() bool {
-	if o != nil && !isNil(o.ExplicitUpdate) {
-		return true
-	}
-
-	return false
-}
-
-// SetExplicitUpdate gets a reference to the given bool and assigns it to the ExplicitUpdate field.
-// Deprecated
-func (o *MetadataFieldMetadataFieldUpdateRequest) SetExplicitUpdate(v bool) {
-	o.ExplicitUpdate = &v
-}
-
 // GetDisplayOrder returns the DisplayOrder field value
 func (o *MetadataFieldMetadataFieldUpdateRequest) GetDisplayOrder() int32 {
 	if o == nil {
@@ -602,12 +528,6 @@ func (o MetadataFieldMetadataFieldUpdateRequest) ToMap() (map[string]interface{}
 	}
 	if o.DefaultValue.IsSet() {
 		toSerialize["DefaultValue"] = o.DefaultValue.Get()
-	}
-	if !isNil(o.AllowAPI) {
-		toSerialize["AllowAPI"] = o.AllowAPI
-	}
-	if !isNil(o.ExplicitUpdate) {
-		toSerialize["ExplicitUpdate"] = o.ExplicitUpdate
 	}
 	toSerialize["DisplayOrder"] = o.DisplayOrder
 	if !isNil(o.CaseSensitive) {

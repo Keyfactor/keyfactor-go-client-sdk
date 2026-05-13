@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -22,6 +22,7 @@ package v1
 
 import (
 	"encoding/json"
+	"time"
 )
 
 // checks if the CSSCMSDataModelModelsSSLSslScanResult type satisfies the MappedNullable interface at compile time
@@ -40,6 +41,7 @@ type CSSCMSDataModelModelsSSLSslScanResult struct {
 	MonitorStatus    *bool          `json:"MonitorStatus,omitempty"`
 	CertificateCN    NullableString `json:"CertificateCN,omitempty"`
 	Reviewed         *bool          `json:"Reviewed,omitempty"`
+	ExpirationDate   NullableTime   `json:"ExpirationDate,omitempty"`
 }
 
 // NewCSSCMSDataModelModelsSSLSslScanResult instantiates a new CSSCMSDataModelModelsSSLSslScanResult object
@@ -477,6 +479,49 @@ func (o *CSSCMSDataModelModelsSSLSslScanResult) SetReviewed(v bool) {
 	o.Reviewed = &v
 }
 
+// GetExpirationDate returns the ExpirationDate field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CSSCMSDataModelModelsSSLSslScanResult) GetExpirationDate() time.Time {
+	if o == nil || isNil(o.ExpirationDate.Get()) {
+		var ret time.Time
+		return ret
+	}
+	return *o.ExpirationDate.Get()
+}
+
+// GetExpirationDateOk returns a tuple with the ExpirationDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CSSCMSDataModelModelsSSLSslScanResult) GetExpirationDateOk() (*time.Time, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.ExpirationDate.Get(), o.ExpirationDate.IsSet()
+}
+
+// HasExpirationDate returns a boolean if a field has been set.
+func (o *CSSCMSDataModelModelsSSLSslScanResult) HasExpirationDate() bool {
+	if o != nil && o.ExpirationDate.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetExpirationDate gets a reference to the given NullableTime and assigns it to the ExpirationDate field.
+func (o *CSSCMSDataModelModelsSSLSslScanResult) SetExpirationDate(v time.Time) {
+	o.ExpirationDate.Set(&v)
+}
+
+// SetExpirationDateNil sets the value for ExpirationDate to be an explicit nil
+func (o *CSSCMSDataModelModelsSSLSslScanResult) SetExpirationDateNil() {
+	o.ExpirationDate.Set(nil)
+}
+
+// UnsetExpirationDate ensures that no value is present for ExpirationDate, not even an explicit nil
+func (o *CSSCMSDataModelModelsSSLSslScanResult) UnsetExpirationDate() {
+	o.ExpirationDate.Unset()
+}
+
 func (o CSSCMSDataModelModelsSSLSslScanResult) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -519,6 +564,9 @@ func (o CSSCMSDataModelModelsSSLSslScanResult) ToMap() (map[string]interface{}, 
 	}
 	if !isNil(o.Reviewed) {
 		toSerialize["Reviewed"] = o.Reviewed
+	}
+	if o.ExpirationDate.IsSet() {
+		toSerialize["ExpirationDate"] = o.ExpirationDate.Get()
 	}
 	return toSerialize, nil
 }

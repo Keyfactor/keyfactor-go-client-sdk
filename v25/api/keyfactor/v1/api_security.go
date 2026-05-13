@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -31,6 +31,159 @@ import (
 
 // SecurityApiService SecurityApi service
 type SecurityApiService service
+
+// Request for V1 POST /Security/Applications/{id}/Roles
+type ApiCreateSecurityApplicationsByIdRolesRequest struct {
+	ctx                                                       context.Context
+	ApiService                                                *SecurityApiService
+	id                                                        int32
+	xKeyfactorRequestedWith                                   *string
+	xKeyfactorApiVersion                                      *string
+	cSSCMSDataModelModelsCertificateStoreContainerPermissions *[]CSSCMSDataModelModelsCertificateStoreContainerPermissions
+}
+
+// Type of the request [XMLHttpRequest, APIClient]
+func (r ApiCreateSecurityApplicationsByIdRolesRequest) XKeyfactorRequestedWith(xKeyfactorRequestedWith string) ApiCreateSecurityApplicationsByIdRolesRequest {
+	r.xKeyfactorRequestedWith = &xKeyfactorRequestedWith
+	return r
+}
+
+// Desired version of the api, if not provided defaults to v1
+func (r ApiCreateSecurityApplicationsByIdRolesRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) ApiCreateSecurityApplicationsByIdRolesRequest {
+	r.xKeyfactorApiVersion = &xKeyfactorApiVersion
+	return r
+}
+
+// Information for the updated security role
+func (r ApiCreateSecurityApplicationsByIdRolesRequest) CSSCMSDataModelModelsCertificateStoreContainerPermissions(cSSCMSDataModelModelsCertificateStoreContainerPermissions []CSSCMSDataModelModelsCertificateStoreContainerPermissions) ApiCreateSecurityApplicationsByIdRolesRequest {
+	r.cSSCMSDataModelModelsCertificateStoreContainerPermissions = &cSSCMSDataModelModelsCertificateStoreContainerPermissions
+	return r
+}
+
+// Executes the V1 POST /Security/Applications/{id}/Roles request context
+func (r ApiCreateSecurityApplicationsByIdRolesRequest) Execute() ([]CSSCMSDataModelModelsCertificateStoreContainerPermissions, *http.Response, error) {
+	return r.ApiService.CreateSecurityApplicationsByIdRolesExecute(r)
+}
+
+/*
+Creates a new V1 POST /Security/Applications/{id}/Roles request.
+
+CreateSecurityApplicationsByIdRoles Edit an application's permissions. Reminder: Name field should be left blank.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Information for the security application
+	@return ApiCreateSecurityApplicationsByIdRolesRequest
+*/
+func (a *SecurityApiService) NewCreateSecurityApplicationsByIdRolesRequest(ctx context.Context, id int32) ApiCreateSecurityApplicationsByIdRolesRequest {
+
+	requestedWith := "APIClient"
+	apiVersion := "1"
+
+	return ApiCreateSecurityApplicationsByIdRolesRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		xKeyfactorRequestedWith: &requestedWith,
+		xKeyfactorApiVersion:    &apiVersion,
+
+		id: id,
+	}
+}
+
+// Executes the API request V1 POST /Security/Applications/{id}/Roles
+//
+//	@return []CSSCMSDataModelModelsCertificateStoreContainerPermissions
+func (a *SecurityApiService) CreateSecurityApplicationsByIdRolesExecute(r ApiCreateSecurityApplicationsByIdRolesRequest) ([]CSSCMSDataModelModelsCertificateStoreContainerPermissions, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CSSCMSDataModelModelsCertificateStoreContainerPermissions
+	)
+
+	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
+
+	if r.xKeyfactorRequestedWith == nil {
+		requestedWith := "APIClient"
+		r.xKeyfactorRequestedWith = &requestedWith
+	}
+
+	if r.xKeyfactorApiVersion == nil {
+		apiVersion := "1"
+		r.xKeyfactorApiVersion = &apiVersion
+	}
+
+	localVarPath := apiBasePath + "/Security/Applications/{id}/Roles"
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json-patch+json", "application/json", "text/json", "application/*+json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
+	if r.xKeyfactorApiVersion != nil {
+		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
+	}
+	// body params
+	localVarPostBody = r.cSSCMSDataModelModelsCertificateStoreContainerPermissions
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
 
 // Request for V1 POST /Security/Containers/{id}/Roles
 type ApiCreateSecurityContainersByIdRolesRequest struct {
@@ -73,6 +226,8 @@ CreateSecurityContainersByIdRoles Edit a certificate store container's permissio
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Information for the securitycontainer
 	@return ApiCreateSecurityContainersByIdRolesRequest
+
+Deprecated
 */
 func (a *SecurityApiService) NewCreateSecurityContainersByIdRolesRequest(ctx context.Context, id int32) ApiCreateSecurityContainersByIdRolesRequest {
 
@@ -92,6 +247,8 @@ func (a *SecurityApiService) NewCreateSecurityContainersByIdRolesRequest(ctx con
 // Executes the API request V1 POST /Security/Containers/{id}/Roles
 //
 //	@return []CSSCMSDataModelModelsCertificateStoreContainerPermissions
+//
+// Deprecated
 func (a *SecurityApiService) CreateSecurityContainersByIdRolesExecute(r ApiCreateSecurityContainersByIdRolesRequest) ([]CSSCMSDataModelModelsCertificateStoreContainerPermissions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -142,10 +299,10 @@ func (a *SecurityApiService) CreateSecurityContainersByIdRolesExecute(r ApiCreat
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.cSSCMSDataModelModelsCertificateStoreContainerPermissions
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -290,10 +447,10 @@ func (a *SecurityApiService) CreateSecurityIdentitiesExecute(r ApiCreateSecurity
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.securitySecurityIdentitiesSecurityIdentityRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -433,10 +590,10 @@ func (a *SecurityApiService) DeleteSecurityIdentitiesByIdExecute(r ApiDeleteSecu
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -463,6 +620,150 @@ func (a *SecurityApiService) DeleteSecurityIdentitiesByIdExecute(r ApiDeleteSecu
 	}
 
 	return localVarHTTPResponse, nil
+}
+
+// Request for V1 GET /Security/Applications/{id}/Roles
+type ApiGetSecurityApplicationsByIdRolesRequest struct {
+	ctx                     context.Context
+	ApiService              *SecurityApiService
+	id                      int32
+	xKeyfactorRequestedWith *string
+	xKeyfactorApiVersion    *string
+}
+
+// Type of the request [XMLHttpRequest, APIClient]
+func (r ApiGetSecurityApplicationsByIdRolesRequest) XKeyfactorRequestedWith(xKeyfactorRequestedWith string) ApiGetSecurityApplicationsByIdRolesRequest {
+	r.xKeyfactorRequestedWith = &xKeyfactorRequestedWith
+	return r
+}
+
+// Desired version of the api, if not provided defaults to v1
+func (r ApiGetSecurityApplicationsByIdRolesRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) ApiGetSecurityApplicationsByIdRolesRequest {
+	r.xKeyfactorApiVersion = &xKeyfactorApiVersion
+	return r
+}
+
+// Executes the V1 GET /Security/Applications/{id}/Roles request context
+func (r ApiGetSecurityApplicationsByIdRolesRequest) Execute() ([]CSSCMSDataModelModelsCertificateStoreContainerPermissions, *http.Response, error) {
+	return r.ApiService.GetSecurityApplicationsByIdRolesExecute(r)
+}
+
+/*
+Creates a new V1 GET /Security/Applications/{id}/Roles request.
+
+GetSecurityApplicationsByIdRoles Returns all the permissions of an application through the id
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Information for the updated application
+	@return ApiGetSecurityApplicationsByIdRolesRequest
+*/
+func (a *SecurityApiService) NewGetSecurityApplicationsByIdRolesRequest(ctx context.Context, id int32) ApiGetSecurityApplicationsByIdRolesRequest {
+
+	requestedWith := "APIClient"
+	apiVersion := "1"
+
+	return ApiGetSecurityApplicationsByIdRolesRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		xKeyfactorRequestedWith: &requestedWith,
+		xKeyfactorApiVersion:    &apiVersion,
+
+		id: id,
+	}
+}
+
+// Executes the API request V1 GET /Security/Applications/{id}/Roles
+//
+//	@return []CSSCMSDataModelModelsCertificateStoreContainerPermissions
+func (a *SecurityApiService) GetSecurityApplicationsByIdRolesExecute(r ApiGetSecurityApplicationsByIdRolesRequest) ([]CSSCMSDataModelModelsCertificateStoreContainerPermissions, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CSSCMSDataModelModelsCertificateStoreContainerPermissions
+	)
+
+	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
+
+	if r.xKeyfactorRequestedWith == nil {
+		requestedWith := "APIClient"
+		r.xKeyfactorRequestedWith = &requestedWith
+	}
+
+	if r.xKeyfactorApiVersion == nil {
+		apiVersion := "1"
+		r.xKeyfactorApiVersion = &apiVersion
+	}
+
+	localVarPath := apiBasePath + "/Security/Applications/{id}/Roles"
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
+	if r.xKeyfactorApiVersion != nil {
+		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
 // Request for V1 GET /Security/Audit/Collections/{id}
@@ -574,10 +875,10 @@ func (a *SecurityApiService) GetSecurityAuditCollectionsByIdExecute(r ApiGetSecu
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -649,6 +950,8 @@ GetSecurityContainersByIdRoles Returns all the permissions of a certificate stor
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Information for the updated container
 	@return ApiGetSecurityContainersByIdRolesRequest
+
+Deprecated
 */
 func (a *SecurityApiService) NewGetSecurityContainersByIdRolesRequest(ctx context.Context, id int32) ApiGetSecurityContainersByIdRolesRequest {
 
@@ -668,6 +971,8 @@ func (a *SecurityApiService) NewGetSecurityContainersByIdRolesRequest(ctx contex
 // Executes the API request V1 GET /Security/Containers/{id}/Roles
 //
 //	@return []CSSCMSDataModelModelsCertificateStoreContainerPermissions
+//
+// Deprecated
 func (a *SecurityApiService) GetSecurityContainersByIdRolesExecute(r ApiGetSecurityContainersByIdRolesRequest) ([]CSSCMSDataModelModelsCertificateStoreContainerPermissions, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -718,10 +1023,10 @@ func (a *SecurityApiService) GetSecurityContainersByIdRolesExecute(r ApiGetSecur
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -902,10 +1207,10 @@ func (a *SecurityApiService) GetSecurityIdentitiesExecute(r ApiGetSecurityIdenti
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1046,10 +1351,10 @@ func (a *SecurityApiService) GetSecurityIdentitiesByIdExecute(r ApiGetSecurityId
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1195,10 +1500,10 @@ func (a *SecurityApiService) GetSecurityIdentitiesLookupExecute(r ApiGetSecurity
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1268,6 +1573,8 @@ GetSecurityMy Looks at all the roles and global permissions for the user and ret
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSecurityMyRequest
+
+Deprecated
 */
 func (a *SecurityApiService) NewGetSecurityMyRequest(ctx context.Context) ApiGetSecurityMyRequest {
 
@@ -1285,6 +1592,8 @@ func (a *SecurityApiService) NewGetSecurityMyRequest(ctx context.Context) ApiGet
 // Executes the API request V1 GET /Security/My
 //
 //	@return SecurityLegacySecurityRolesSecurityMyResponse
+//
+// Deprecated
 func (a *SecurityApiService) GetSecurityMyExecute(r ApiGetSecurityMyRequest) (*SecurityLegacySecurityRolesSecurityMyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1334,10 +1643,149 @@ func (a *SecurityApiService) GetSecurityMyExecute(r ApiGetSecurityMyRequest) (*S
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// Request for V1 GET /Security/My/Permissions
+type ApiGetSecurityMyPermissionsRequest struct {
+	ctx                     context.Context
+	ApiService              *SecurityApiService
+	xKeyfactorRequestedWith *string
+	xKeyfactorApiVersion    *string
+}
+
+// Type of the request [XMLHttpRequest, APIClient]
+func (r ApiGetSecurityMyPermissionsRequest) XKeyfactorRequestedWith(xKeyfactorRequestedWith string) ApiGetSecurityMyPermissionsRequest {
+	r.xKeyfactorRequestedWith = &xKeyfactorRequestedWith
+	return r
+}
+
+// Desired version of the api, if not provided defaults to v1
+func (r ApiGetSecurityMyPermissionsRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) ApiGetSecurityMyPermissionsRequest {
+	r.xKeyfactorApiVersion = &xKeyfactorApiVersion
+	return r
+}
+
+// Executes the V1 GET /Security/My/Permissions request context
+func (r ApiGetSecurityMyPermissionsRequest) Execute() (*SecuritySecurityMyPermissionsResponse, *http.Response, error) {
+	return r.ApiService.GetSecurityMyPermissionsExecute(r)
+}
+
+/*
+Creates a new V1 GET /Security/My/Permissions request.
+
+GetSecurityMyPermissions Retrieves all permissions for the requesting user.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetSecurityMyPermissionsRequest
+*/
+func (a *SecurityApiService) NewGetSecurityMyPermissionsRequest(ctx context.Context) ApiGetSecurityMyPermissionsRequest {
+
+	requestedWith := "APIClient"
+	apiVersion := "1"
+
+	return ApiGetSecurityMyPermissionsRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		xKeyfactorRequestedWith: &requestedWith,
+		xKeyfactorApiVersion:    &apiVersion,
+	}
+}
+
+// Executes the API request V1 GET /Security/My/Permissions
+//
+//	@return SecuritySecurityMyPermissionsResponse
+func (a *SecurityApiService) GetSecurityMyPermissionsExecute(r ApiGetSecurityMyPermissionsRequest) (*SecuritySecurityMyPermissionsResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SecuritySecurityMyPermissionsResponse
+	)
+
+	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
+
+	if r.xKeyfactorRequestedWith == nil {
+		requestedWith := "APIClient"
+		r.xKeyfactorRequestedWith = &requestedWith
+	}
+
+	if r.xKeyfactorApiVersion == nil {
+		apiVersion := "1"
+		r.xKeyfactorApiVersion = &apiVersion
+	}
+
+	localVarPath := apiBasePath + "/Security/My/Permissions"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
+	if r.xKeyfactorApiVersion != nil {
+		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

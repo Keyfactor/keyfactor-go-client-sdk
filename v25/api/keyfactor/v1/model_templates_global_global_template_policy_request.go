@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -39,16 +39,16 @@ type TemplatesGlobalGlobalTemplatePolicyRequest struct {
 	RFCEnforcement       bool                                        `json:"RFCEnforcement"`
 	CertificateOwnerRole CSSCMSCoreEnumsTemplateCertificateOwnerRole `json:"CertificateOwnerRole"`
 	// The id of the security role that should be set as the owner of the cert during import of new certificates
-	DefaultCertificateOwnerRoleId   NullableInt32                                   `json:"DefaultCertificateOwnerRoleId,omitempty"`
-	DefaultCertificateOwnerRoleName NullableString                                  `json:"DefaultCertificateOwnerRoleName,omitempty"`
-	KeyInfo                         CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo `json:"KeyInfo"`
+	DefaultCertificateOwnerRoleId   NullableInt32                              `json:"DefaultCertificateOwnerRoleId,omitempty"`
+	DefaultCertificateOwnerRoleName NullableString                             `json:"DefaultCertificateOwnerRoleName,omitempty"`
+	KeyInfo                         EnrollmentPatternsAlgorithmsKeyInfoRequest `json:"KeyInfo"`
 }
 
 // NewTemplatesGlobalGlobalTemplatePolicyRequest instantiates a new TemplatesGlobalGlobalTemplatePolicyRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTemplatesGlobalGlobalTemplatePolicyRequest(allowKeyReuse bool, allowWildcards bool, rFCEnforcement bool, certificateOwnerRole CSSCMSCoreEnumsTemplateCertificateOwnerRole, keyInfo CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo) *TemplatesGlobalGlobalTemplatePolicyRequest {
+func NewTemplatesGlobalGlobalTemplatePolicyRequest(allowKeyReuse bool, allowWildcards bool, rFCEnforcement bool, certificateOwnerRole CSSCMSCoreEnumsTemplateCertificateOwnerRole, keyInfo EnrollmentPatternsAlgorithmsKeyInfoRequest) *TemplatesGlobalGlobalTemplatePolicyRequest {
 	this := TemplatesGlobalGlobalTemplatePolicyRequest{}
 	this.AllowKeyReuse = allowKeyReuse
 	this.AllowWildcards = allowWildcards
@@ -281,9 +281,9 @@ func (o *TemplatesGlobalGlobalTemplatePolicyRequest) UnsetDefaultCertificateOwne
 }
 
 // GetKeyInfo returns the KeyInfo field value
-func (o *TemplatesGlobalGlobalTemplatePolicyRequest) GetKeyInfo() CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo {
+func (o *TemplatesGlobalGlobalTemplatePolicyRequest) GetKeyInfo() EnrollmentPatternsAlgorithmsKeyInfoRequest {
 	if o == nil {
-		var ret CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo
+		var ret EnrollmentPatternsAlgorithmsKeyInfoRequest
 		return ret
 	}
 
@@ -292,7 +292,7 @@ func (o *TemplatesGlobalGlobalTemplatePolicyRequest) GetKeyInfo() CSSCMSDataMode
 
 // GetKeyInfoOk returns a tuple with the KeyInfo field value
 // and a boolean to check if the value has been set.
-func (o *TemplatesGlobalGlobalTemplatePolicyRequest) GetKeyInfoOk() (*CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo, bool) {
+func (o *TemplatesGlobalGlobalTemplatePolicyRequest) GetKeyInfoOk() (*EnrollmentPatternsAlgorithmsKeyInfoRequest, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -300,7 +300,7 @@ func (o *TemplatesGlobalGlobalTemplatePolicyRequest) GetKeyInfoOk() (*CSSCMSData
 }
 
 // SetKeyInfo sets field value
-func (o *TemplatesGlobalGlobalTemplatePolicyRequest) SetKeyInfo(v CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo) {
+func (o *TemplatesGlobalGlobalTemplatePolicyRequest) SetKeyInfo(v EnrollmentPatternsAlgorithmsKeyInfoRequest) {
 	o.KeyInfo = v
 }
 

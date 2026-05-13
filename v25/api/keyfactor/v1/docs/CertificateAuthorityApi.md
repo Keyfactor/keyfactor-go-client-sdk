@@ -647,7 +647,7 @@ Name | Type | Description  | Notes
 
 ## DeleteCertificateAuthorityById
 
-> NewDeleteCertificateAuthorityByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> NewDeleteCertificateAuthorityByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Deletes a CertificateAuthority from the system, specified by ID
 
@@ -664,13 +664,14 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | 
+    id := int32(56) // int32 | The CA Id being deleted.
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient]
+    force := true // bool | The boolean that will force the deletion of the CA. (optional) (default to false)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateAuthorityApi.NewDeleteCertificateAuthorityByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.CertificateAuthorityApi.NewDeleteCertificateAuthorityByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CertificateAuthorityApi.DeleteCertificateAuthorityById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -684,7 +685,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** |  | 
+**id** | **int32** | The CA Id being deleted. | 
 
 ### Other Parameters
 
@@ -695,6 +696,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | 
+ **force** | **bool** | The boolean that will force the deletion of the CA. | [default to false]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type

@@ -18,8 +18,6 @@ Name | Type | Description | Notes
 **MonitorTimeoutMs** | Pointer to **float64** |  | [optional] 
 **ExpirationAlertDays** | Pointer to **float64** |  | [optional] 
 **QuietHours** | Pointer to [**[]SslQuietHourRequest**](SslQuietHourRequest.md) |  | [optional] 
-**BlackoutStart** | Pointer to [**KeyfactorCommonSchedulingModelsWeeklyModel**](KeyfactorCommonSchedulingModelsWeeklyModel.md) |  | [optional] 
-**BlackoutEnd** | Pointer to [**KeyfactorCommonSchedulingModelsWeeklyModel**](KeyfactorCommonSchedulingModelsWeeklyModel.md) |  | [optional] 
 
 ## Methods
 
@@ -390,56 +388,6 @@ HasQuietHours returns a boolean if a field has been set.
 `func (o *SslUpdateNetworkRequest) UnsetQuietHours()`
 
 UnsetQuietHours ensures that no value is present for QuietHours, not even an explicit nil
-### GetBlackoutStart
-
-`func (o *SslUpdateNetworkRequest) GetBlackoutStart() KeyfactorCommonSchedulingModelsWeeklyModel`
-
-GetBlackoutStart returns the BlackoutStart field if non-nil, zero value otherwise.
-
-### GetBlackoutStartOk
-
-`func (o *SslUpdateNetworkRequest) GetBlackoutStartOk() (*KeyfactorCommonSchedulingModelsWeeklyModel, bool)`
-
-GetBlackoutStartOk returns a tuple with the BlackoutStart field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBlackoutStart
-
-`func (o *SslUpdateNetworkRequest) SetBlackoutStart(v KeyfactorCommonSchedulingModelsWeeklyModel)`
-
-SetBlackoutStart sets BlackoutStart field to given value.
-
-### HasBlackoutStart
-
-`func (o *SslUpdateNetworkRequest) HasBlackoutStart() bool`
-
-HasBlackoutStart returns a boolean if a field has been set.
-
-### GetBlackoutEnd
-
-`func (o *SslUpdateNetworkRequest) GetBlackoutEnd() KeyfactorCommonSchedulingModelsWeeklyModel`
-
-GetBlackoutEnd returns the BlackoutEnd field if non-nil, zero value otherwise.
-
-### GetBlackoutEndOk
-
-`func (o *SslUpdateNetworkRequest) GetBlackoutEndOk() (*KeyfactorCommonSchedulingModelsWeeklyModel, bool)`
-
-GetBlackoutEndOk returns a tuple with the BlackoutEnd field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBlackoutEnd
-
-`func (o *SslUpdateNetworkRequest) SetBlackoutEnd(v KeyfactorCommonSchedulingModelsWeeklyModel)`
-
-SetBlackoutEnd sets BlackoutEnd field to given value.
-
-### HasBlackoutEnd
-
-`func (o *SslUpdateNetworkRequest) HasBlackoutEnd() bool`
-
-HasBlackoutEnd returns a boolean if a field has been set.
-
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

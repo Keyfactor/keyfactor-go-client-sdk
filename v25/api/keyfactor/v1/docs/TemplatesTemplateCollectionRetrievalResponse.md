@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **ExtendedKeyUsages** | Pointer to [**[]TemplatesExtendedKeyUsageResponseModel**](TemplatesExtendedKeyUsageResponseModel.md) |  | [optional] 
 **AllowOneClickRenewals** | Pointer to **bool** |  | [optional] 
 **KeyTypes** | Pointer to **NullableString** |  | [optional] 
+**Manageability** | Pointer to [**KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability**](KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability.md) |  | [optional] 
 
 ## Methods
 
@@ -772,6 +773,31 @@ HasKeyTypes returns a boolean if a field has been set.
 `func (o *TemplatesTemplateCollectionRetrievalResponse) UnsetKeyTypes()`
 
 UnsetKeyTypes ensures that no value is present for KeyTypes, not even an explicit nil
+### GetManageability
+
+`func (o *TemplatesTemplateCollectionRetrievalResponse) GetManageability() KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability`
+
+GetManageability returns the Manageability field if non-nil, zero value otherwise.
+
+### GetManageabilityOk
+
+`func (o *TemplatesTemplateCollectionRetrievalResponse) GetManageabilityOk() (*KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability, bool)`
+
+GetManageabilityOk returns a tuple with the Manageability field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManageability
+
+`func (o *TemplatesTemplateCollectionRetrievalResponse) SetManageability(v KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability)`
+
+SetManageability sets Manageability field to given value.
+
+### HasManageability
+
+`func (o *TemplatesTemplateCollectionRetrievalResponse) HasManageability() bool`
+
+HasManageability returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -30,6 +30,141 @@ import (
 
 // SMTPApiService SMTPApi service
 type SMTPApiService service
+
+// Request for V2 POST /SMTP/Test
+type ApiCreateSMTPTestRequest struct {
+	ctx                     context.Context
+	ApiService              *SMTPApiService
+	xKeyfactorRequestedWith *string
+	xKeyfactorApiVersion    *string
+	sMTPSMTPTestRequest     *SMTPSMTPTestRequest
+}
+
+// Type of the request [XMLHttpRequest, APIClient]
+func (r ApiCreateSMTPTestRequest) XKeyfactorRequestedWith(xKeyfactorRequestedWith string) ApiCreateSMTPTestRequest {
+	r.xKeyfactorRequestedWith = &xKeyfactorRequestedWith
+	return r
+}
+
+// Desired version of the api, if not provided defaults to v1
+func (r ApiCreateSMTPTestRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) ApiCreateSMTPTestRequest {
+	r.xKeyfactorApiVersion = &xKeyfactorApiVersion
+	return r
+}
+
+func (r ApiCreateSMTPTestRequest) SMTPSMTPTestRequest(sMTPSMTPTestRequest SMTPSMTPTestRequest) ApiCreateSMTPTestRequest {
+	r.sMTPSMTPTestRequest = &sMTPSMTPTestRequest
+	return r
+}
+
+// Executes the V2 POST /SMTP/Test request context
+func (r ApiCreateSMTPTestRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateSMTPTestExecute(r)
+}
+
+/*
+Creates a new V2 POST /SMTP/Test request.
+
+# CreateSMTPTest Tests SMTP profile data
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateSMTPTestRequest
+*/
+func (a *SMTPApiService) NewCreateSMTPTestRequest(ctx context.Context) ApiCreateSMTPTestRequest {
+
+	requestedWith := "APIClient"
+	apiVersion := "2"
+
+	return ApiCreateSMTPTestRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		xKeyfactorRequestedWith: &requestedWith,
+		xKeyfactorApiVersion:    &apiVersion,
+	}
+}
+
+// Executes the API request
+func (a *SMTPApiService) CreateSMTPTestExecute(r ApiCreateSMTPTestRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
+
+	if r.xKeyfactorRequestedWith == nil {
+		requestedWith := "APIClient"
+		r.xKeyfactorRequestedWith = &requestedWith
+	}
+
+	if r.xKeyfactorApiVersion == nil {
+		apiVersion := "2"
+		r.xKeyfactorApiVersion = &apiVersion
+	}
+
+	localVarPath := apiBasePath + "/SMTP/Test"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json-patch+json", "application/json", "text/json", "application/*+json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
+	if r.xKeyfactorApiVersion != nil {
+		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
+	}
+	// body params
+	localVarPostBody = r.sMTPSMTPTestRequest
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
 
 // Request for V2 GET /SMTP
 type ApiGetSMTPRequest struct {
@@ -129,10 +264,10 @@ func (a *SMTPApiService) GetSMTPExecute(r ApiGetSMTPRequest) (*SMTPSMTPResponse,
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -274,10 +409,10 @@ func (a *SMTPApiService) UpdateSMTPExecute(r ApiUpdateSMTPRequest) (*SMTPSMTPRes
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.sMTPSMTPRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

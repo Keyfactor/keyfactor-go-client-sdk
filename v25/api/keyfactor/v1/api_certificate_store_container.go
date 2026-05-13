@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -71,6 +71,8 @@ CreateCertificateStoreContainers Add a certificate store container
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateCertificateStoreContainersRequest
+
+Deprecated
 */
 func (a *CertificateStoreContainerApiService) NewCreateCertificateStoreContainersRequest(ctx context.Context) ApiCreateCertificateStoreContainersRequest {
 
@@ -88,6 +90,8 @@ func (a *CertificateStoreContainerApiService) NewCreateCertificateStoreContainer
 // Executes the API request V1 POST /CertificateStoreContainers
 //
 //	@return CertificateStoreContainersCertificateStoreContainerResponse
+//
+// Deprecated
 func (a *CertificateStoreContainerApiService) CreateCertificateStoreContainersExecute(r ApiCreateCertificateStoreContainersRequest) (*CertificateStoreContainersCertificateStoreContainerResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -137,10 +141,10 @@ func (a *CertificateStoreContainerApiService) CreateCertificateStoreContainersEx
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.cSSCMSDataModelModelsCertStoreContainerRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -214,6 +218,8 @@ DeleteCertificateStoreContainersById Delete a certificate store container
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Id for the certificate store container
 	@return ApiDeleteCertificateStoreContainersByIdRequest
+
+Deprecated
 */
 func (a *CertificateStoreContainerApiService) NewDeleteCertificateStoreContainersByIdRequest(ctx context.Context, id int32) ApiDeleteCertificateStoreContainersByIdRequest {
 
@@ -231,6 +237,7 @@ func (a *CertificateStoreContainerApiService) NewDeleteCertificateStoreContainer
 }
 
 // Executes the API request
+// Deprecated
 func (a *CertificateStoreContainerApiService) DeleteCertificateStoreContainersByIdExecute(r ApiDeleteCertificateStoreContainersByIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -280,10 +287,10 @@ func (a *CertificateStoreContainerApiService) DeleteCertificateStoreContainersBy
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -363,7 +370,7 @@ func (r ApiGetCertificateStoreContainersRequest) XKeyfactorApiVersion(xKeyfactor
 }
 
 // Executes the V1 GET /CertificateStoreContainers request context
-func (r ApiGetCertificateStoreContainersRequest) Execute() ([]CSSCMSDataModelModelsCertificateStoreContainerListResponse, *http.Response, error) {
+func (r ApiGetCertificateStoreContainersRequest) Execute() ([]CertificateStoreContainersCertificateStoreContainerListResponse, *http.Response, error) {
 	return r.ApiService.GetCertificateStoreContainersExecute(r)
 }
 
@@ -374,6 +381,8 @@ GetCertificateStoreContainers Returns all certificate store container according 
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetCertificateStoreContainersRequest
+
+Deprecated
 */
 func (a *CertificateStoreContainerApiService) NewGetCertificateStoreContainersRequest(ctx context.Context) ApiGetCertificateStoreContainersRequest {
 
@@ -390,13 +399,15 @@ func (a *CertificateStoreContainerApiService) NewGetCertificateStoreContainersRe
 
 // Executes the API request V1 GET /CertificateStoreContainers
 //
-//	@return []CSSCMSDataModelModelsCertificateStoreContainerListResponse
-func (a *CertificateStoreContainerApiService) GetCertificateStoreContainersExecute(r ApiGetCertificateStoreContainersRequest) ([]CSSCMSDataModelModelsCertificateStoreContainerListResponse, *http.Response, error) {
+//	@return []CertificateStoreContainersCertificateStoreContainerListResponse
+//
+// Deprecated
+func (a *CertificateStoreContainerApiService) GetCertificateStoreContainersExecute(r ApiGetCertificateStoreContainersRequest) ([]CertificateStoreContainersCertificateStoreContainerListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []CSSCMSDataModelModelsCertificateStoreContainerListResponse
+		localVarReturnValue []CertificateStoreContainersCertificateStoreContainerListResponse
 	)
 
 	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
@@ -455,10 +466,10 @@ func (a *CertificateStoreContainerApiService) GetCertificateStoreContainersExecu
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -530,6 +541,8 @@ GetCertificateStoreContainersById Returns a single certificate store container t
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id
 	@return ApiGetCertificateStoreContainersByIdRequest
+
+Deprecated
 */
 func (a *CertificateStoreContainerApiService) NewGetCertificateStoreContainersByIdRequest(ctx context.Context, id int32) ApiGetCertificateStoreContainersByIdRequest {
 
@@ -549,6 +562,8 @@ func (a *CertificateStoreContainerApiService) NewGetCertificateStoreContainersBy
 // Executes the API request V1 GET /CertificateStoreContainers/{id}
 //
 //	@return CertificateStoreContainersCertificateStoreContainerResponse
+//
+// Deprecated
 func (a *CertificateStoreContainerApiService) GetCertificateStoreContainersByIdExecute(r ApiGetCertificateStoreContainersByIdRequest) (*CertificateStoreContainersCertificateStoreContainerResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -605,10 +620,10 @@ func (a *CertificateStoreContainerApiService) GetCertificateStoreContainersByIdE
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -685,6 +700,8 @@ UpdateCertificateStoreContainers Edit a certificate store container
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateCertificateStoreContainersRequest
+
+Deprecated
 */
 func (a *CertificateStoreContainerApiService) NewUpdateCertificateStoreContainersRequest(ctx context.Context) ApiUpdateCertificateStoreContainersRequest {
 
@@ -702,6 +719,8 @@ func (a *CertificateStoreContainerApiService) NewUpdateCertificateStoreContainer
 // Executes the API request V1 PUT /CertificateStoreContainers
 //
 //	@return CertificateStoreContainersCertificateStoreContainerResponse
+//
+// Deprecated
 func (a *CertificateStoreContainerApiService) UpdateCertificateStoreContainersExecute(r ApiUpdateCertificateStoreContainersRequest) (*CertificateStoreContainersCertificateStoreContainerResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -751,10 +770,10 @@ func (a *CertificateStoreContainerApiService) UpdateCertificateStoreContainersEx
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.cSSCMSDataModelModelsCertStoreContainerRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

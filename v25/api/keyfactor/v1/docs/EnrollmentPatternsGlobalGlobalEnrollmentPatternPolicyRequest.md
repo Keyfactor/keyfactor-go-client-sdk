@@ -11,13 +11,14 @@ Name | Type | Description | Notes
 **CertificateOwnerRole** | [**CSSCMSCoreEnumsTemplateCertificateOwnerRole**](CSSCMSCoreEnumsTemplateCertificateOwnerRole.md) |  | 
 **DefaultCertificateOwnerRoleId** | Pointer to **NullableInt32** | The id of the security role that should be set as the owner of the cert during import of new certificates | [optional] 
 **DefaultCertificateOwnerRoleName** | Pointer to **NullableString** |  | [optional] 
-**KeyInfo** | [**EnrollmentPatternsAlgorithmsKeyInfoRequest**](EnrollmentPatternsAlgorithmsKeyInfoRequest.md) |  | 
+**PrimaryKeyAlgorithms** | Pointer to [**[]EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2**](EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2.md) | Information on the primary key algorithms. | [optional] 
+**AlternativeKeyAlgorithms** | Pointer to [**[]EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2**](EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2.md) | Information on the alternative key algorithms. | [optional] 
 
 ## Methods
 
 ### NewEnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest
 
-`func NewEnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest(allowKeyReuse bool, allowWildcards bool, rFCEnforcement bool, certificateOwnerRole CSSCMSCoreEnumsTemplateCertificateOwnerRole, keyInfo EnrollmentPatternsAlgorithmsKeyInfoRequest, ) *EnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest`
+`func NewEnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest(allowKeyReuse bool, allowWildcards bool, rFCEnforcement bool, certificateOwnerRole CSSCMSCoreEnumsTemplateCertificateOwnerRole, ) *EnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest`
 
 NewEnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest instantiates a new EnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest object
 This constructor will assign default values to properties that have it defined,
@@ -207,26 +208,76 @@ HasDefaultCertificateOwnerRoleName returns a boolean if a field has been set.
 `func (o *EnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest) UnsetDefaultCertificateOwnerRoleName()`
 
 UnsetDefaultCertificateOwnerRoleName ensures that no value is present for DefaultCertificateOwnerRoleName, not even an explicit nil
-### GetKeyInfo
+### GetPrimaryKeyAlgorithms
 
-`func (o *EnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest) GetKeyInfo() EnrollmentPatternsAlgorithmsKeyInfoRequest`
+`func (o *EnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest) GetPrimaryKeyAlgorithms() []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2`
 
-GetKeyInfo returns the KeyInfo field if non-nil, zero value otherwise.
+GetPrimaryKeyAlgorithms returns the PrimaryKeyAlgorithms field if non-nil, zero value otherwise.
 
-### GetKeyInfoOk
+### GetPrimaryKeyAlgorithmsOk
 
-`func (o *EnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest) GetKeyInfoOk() (*EnrollmentPatternsAlgorithmsKeyInfoRequest, bool)`
+`func (o *EnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest) GetPrimaryKeyAlgorithmsOk() (*[]EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2, bool)`
 
-GetKeyInfoOk returns a tuple with the KeyInfo field if it's non-nil, zero value otherwise
+GetPrimaryKeyAlgorithmsOk returns a tuple with the PrimaryKeyAlgorithms field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKeyInfo
+### SetPrimaryKeyAlgorithms
 
-`func (o *EnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest) SetKeyInfo(v EnrollmentPatternsAlgorithmsKeyInfoRequest)`
+`func (o *EnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest) SetPrimaryKeyAlgorithms(v []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2)`
 
-SetKeyInfo sets KeyInfo field to given value.
+SetPrimaryKeyAlgorithms sets PrimaryKeyAlgorithms field to given value.
 
+### HasPrimaryKeyAlgorithms
 
+`func (o *EnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest) HasPrimaryKeyAlgorithms() bool`
+
+HasPrimaryKeyAlgorithms returns a boolean if a field has been set.
+
+### SetPrimaryKeyAlgorithmsNil
+
+`func (o *EnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest) SetPrimaryKeyAlgorithmsNil(b bool)`
+
+ SetPrimaryKeyAlgorithmsNil sets the value for PrimaryKeyAlgorithms to be an explicit nil
+
+### UnsetPrimaryKeyAlgorithms
+`func (o *EnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest) UnsetPrimaryKeyAlgorithms()`
+
+UnsetPrimaryKeyAlgorithms ensures that no value is present for PrimaryKeyAlgorithms, not even an explicit nil
+### GetAlternativeKeyAlgorithms
+
+`func (o *EnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest) GetAlternativeKeyAlgorithms() []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2`
+
+GetAlternativeKeyAlgorithms returns the AlternativeKeyAlgorithms field if non-nil, zero value otherwise.
+
+### GetAlternativeKeyAlgorithmsOk
+
+`func (o *EnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest) GetAlternativeKeyAlgorithmsOk() (*[]EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2, bool)`
+
+GetAlternativeKeyAlgorithmsOk returns a tuple with the AlternativeKeyAlgorithms field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlternativeKeyAlgorithms
+
+`func (o *EnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest) SetAlternativeKeyAlgorithms(v []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2)`
+
+SetAlternativeKeyAlgorithms sets AlternativeKeyAlgorithms field to given value.
+
+### HasAlternativeKeyAlgorithms
+
+`func (o *EnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest) HasAlternativeKeyAlgorithms() bool`
+
+HasAlternativeKeyAlgorithms returns a boolean if a field has been set.
+
+### SetAlternativeKeyAlgorithmsNil
+
+`func (o *EnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest) SetAlternativeKeyAlgorithmsNil(b bool)`
+
+ SetAlternativeKeyAlgorithmsNil sets the value for AlternativeKeyAlgorithms to be an explicit nil
+
+### UnsetAlternativeKeyAlgorithms
+`func (o *EnrollmentPatternsGlobalGlobalEnrollmentPatternPolicyRequest) UnsetAlternativeKeyAlgorithms()`
+
+UnsetAlternativeKeyAlgorithms ensures that no value is present for AlternativeKeyAlgorithms, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

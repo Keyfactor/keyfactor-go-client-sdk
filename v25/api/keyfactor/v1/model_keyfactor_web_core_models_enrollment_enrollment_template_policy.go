@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -29,11 +29,12 @@ var _ MappedNullable = &KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy
 
 // KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy struct for KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy
 type KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy struct {
-	KeyInfo              *CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo `json:"KeyInfo,omitempty"`
-	AllowKeyReuse        *bool                                            `json:"AllowKeyReuse,omitempty"`
-	AllowWildcards       *bool                                            `json:"AllowWildcards,omitempty"`
-	RFCEnforcement       *bool                                            `json:"RFCEnforcement,omitempty"`
-	CertificateOwnerRole *CSSCMSCoreEnumsTemplateCertificateOwnerRole     `json:"CertificateOwnerRole,omitempty"`
+	PrimaryKeyAlgorithms     []CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData `json:"PrimaryKeyAlgorithms,omitempty"`
+	AlternativeKeyAlgorithms []CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData `json:"AlternativeKeyAlgorithms,omitempty"`
+	AllowKeyReuse            *bool                                                   `json:"AllowKeyReuse,omitempty"`
+	AllowWildcards           *bool                                                   `json:"AllowWildcards,omitempty"`
+	RFCEnforcement           *bool                                                   `json:"RFCEnforcement,omitempty"`
+	CertificateOwnerRole     *CSSCMSCoreEnumsTemplateCertificateOwnerRole            `json:"CertificateOwnerRole,omitempty"`
 }
 
 // NewKeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy instantiates a new KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy object
@@ -53,36 +54,70 @@ func NewKeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicyWithDefaults() *
 	return &this
 }
 
-// GetKeyInfo returns the KeyInfo field value if set, zero value otherwise.
-func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetKeyInfo() CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo {
-	if o == nil || isNil(o.KeyInfo) {
-		var ret CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo
+// GetPrimaryKeyAlgorithms returns the PrimaryKeyAlgorithms field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetPrimaryKeyAlgorithms() []CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData {
+	if o == nil {
+		var ret []CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData
 		return ret
 	}
-	return *o.KeyInfo
+	return o.PrimaryKeyAlgorithms
 }
 
-// GetKeyInfoOk returns a tuple with the KeyInfo field value if set, nil otherwise
+// GetPrimaryKeyAlgorithmsOk returns a tuple with the PrimaryKeyAlgorithms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetKeyInfoOk() (*CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo, bool) {
-	if o == nil || isNil(o.KeyInfo) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetPrimaryKeyAlgorithmsOk() ([]CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData, bool) {
+	if o == nil || isNil(o.PrimaryKeyAlgorithms) {
 		return nil, false
 	}
-	return o.KeyInfo, true
+	return o.PrimaryKeyAlgorithms, true
 }
 
-// HasKeyInfo returns a boolean if a field has been set.
-func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) HasKeyInfo() bool {
-	if o != nil && !isNil(o.KeyInfo) {
+// HasPrimaryKeyAlgorithms returns a boolean if a field has been set.
+func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) HasPrimaryKeyAlgorithms() bool {
+	if o != nil && isNil(o.PrimaryKeyAlgorithms) {
 		return true
 	}
 
 	return false
 }
 
-// SetKeyInfo gets a reference to the given CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo and assigns it to the KeyInfo field.
-func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) SetKeyInfo(v CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo) {
-	o.KeyInfo = &v
+// SetPrimaryKeyAlgorithms gets a reference to the given []CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData and assigns it to the PrimaryKeyAlgorithms field.
+func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) SetPrimaryKeyAlgorithms(v []CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData) {
+	o.PrimaryKeyAlgorithms = v
+}
+
+// GetAlternativeKeyAlgorithms returns the AlternativeKeyAlgorithms field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetAlternativeKeyAlgorithms() []CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData {
+	if o == nil {
+		var ret []CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData
+		return ret
+	}
+	return o.AlternativeKeyAlgorithms
+}
+
+// GetAlternativeKeyAlgorithmsOk returns a tuple with the AlternativeKeyAlgorithms field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetAlternativeKeyAlgorithmsOk() ([]CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData, bool) {
+	if o == nil || isNil(o.AlternativeKeyAlgorithms) {
+		return nil, false
+	}
+	return o.AlternativeKeyAlgorithms, true
+}
+
+// HasAlternativeKeyAlgorithms returns a boolean if a field has been set.
+func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) HasAlternativeKeyAlgorithms() bool {
+	if o != nil && isNil(o.AlternativeKeyAlgorithms) {
+		return true
+	}
+
+	return false
+}
+
+// SetAlternativeKeyAlgorithms gets a reference to the given []CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData and assigns it to the AlternativeKeyAlgorithms field.
+func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) SetAlternativeKeyAlgorithms(v []CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData) {
+	o.AlternativeKeyAlgorithms = v
 }
 
 // GetAllowKeyReuse returns the AllowKeyReuse field value if set, zero value otherwise.
@@ -223,8 +258,11 @@ func (o KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) MarshalJSON() 
 
 func (o KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.KeyInfo) {
-		toSerialize["KeyInfo"] = o.KeyInfo
+	if o.PrimaryKeyAlgorithms != nil {
+		toSerialize["PrimaryKeyAlgorithms"] = o.PrimaryKeyAlgorithms
+	}
+	if o.AlternativeKeyAlgorithms != nil {
+		toSerialize["AlternativeKeyAlgorithms"] = o.AlternativeKeyAlgorithms
 	}
 	if !isNil(o.AllowKeyReuse) {
 		toSerialize["AllowKeyReuse"] = o.AllowKeyReuse

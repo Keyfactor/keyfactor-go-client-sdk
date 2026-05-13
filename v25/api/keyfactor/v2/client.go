@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -74,6 +74,8 @@ type APIClient struct {
 	SecurityRolesApi *SecurityRolesApiService
 
 	UserApi *UserApiService
+
+	WorkflowDefinitionApi *WorkflowDefinitionApiService
 }
 
 type service struct {
@@ -101,8 +103,32 @@ func NewAPIClient(cfg *auth_providers.Server) (*APIClient, error) {
 	c.SMTPApi = (*SMTPApiService)(&c.common)
 	c.SecurityRolesApi = (*SecurityRolesApiService)(&c.common)
 	c.UserApi = (*UserApiService)(&c.common)
+	c.WorkflowDefinitionApi = (*WorkflowDefinitionApiService)(&c.common)
 
 	return c, nil
+}
+
+// NewAPIClientWithAuth creates an APIClient with a pre-built AuthConfig, bypassing
+// the Authenticate() network call. Used in unit tests with VCR cassettes and any
+// scenario where authentication has already been established out of band.
+//
+// Originally added in commit af6340b for v24 VCR test injection; needed in v25 for
+// the same purpose by downstream consumers (terraform-provider-keyfactor, kfutil).
+func NewAPIClientWithAuth(auth AuthConfig) *APIClient {
+	c := &APIClient{}
+	c.AuthClient = auth
+	c.common.client = c
+
+	// API Services
+	c.CertificateApi = (*CertificateApiService)(&c.common)
+	c.EnrollmentApi = (*EnrollmentApiService)(&c.common)
+	c.PAMProviderApi = (*PAMProviderApiService)(&c.common)
+	c.SMTPApi = (*SMTPApiService)(&c.common)
+	c.SecurityRolesApi = (*SecurityRolesApiService)(&c.common)
+	c.UserApi = (*UserApiService)(&c.common)
+	c.WorkflowDefinitionApi = (*WorkflowDefinitionApiService)(&c.common)
+
+	return c
 }
 
 // Define an interface that both CommandConfigOauth and CommandAuthConfigBasic implement
@@ -145,9 +171,9 @@ func buildHttpClientV2(cfg *auth_providers.Server) (AuthConfig, error) {
 			ClientID:          cfg.ClientID,
 			ClientSecret:      cfg.ClientSecret,
 			TokenURL:          cfg.OAuthTokenUrl,
-			Audience: 		   cfg.Audience,
-			Scopes: 	       cfg.Scopes,
-			AccessToken: 	   cfg.AccessToken,
+			Audience:          cfg.Audience,
+			Scopes:            cfg.Scopes,
+			AccessToken:       cfg.AccessToken,
 		}
 		aErr := oauthCfg.Authenticate()
 		if aErr != nil {

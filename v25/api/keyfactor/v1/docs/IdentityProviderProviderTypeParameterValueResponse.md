@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **Required** | Pointer to **bool** |  | [optional] 
 **DataType** | Pointer to [**CSSCMSDataModelEnumsIdentityProviderDataType**](CSSCMSDataModelEnumsIdentityProviderDataType.md) |  | [optional] 
 **Value** | Pointer to **NullableString** |  | [optional] 
+**RequestHeaders** | Pointer to [**[]SharedRequestHeaderResponse**](SharedRequestHeaderResponse.md) |  | [optional] 
+**RequestURLParameters** | Pointer to [**[]IdentityProviderRequestURLParameterResponse**](IdentityProviderRequestURLParameterResponse.md) |  | [optional] 
 **SecretValue** | Pointer to [**CSSCMSDataModelModelsKeyfactorAPISecret**](CSSCMSDataModelModelsKeyfactorAPISecret.md) |  | [optional] 
 
 ## Methods
@@ -211,6 +213,76 @@ HasValue returns a boolean if a field has been set.
 `func (o *IdentityProviderProviderTypeParameterValueResponse) UnsetValue()`
 
 UnsetValue ensures that no value is present for Value, not even an explicit nil
+### GetRequestHeaders
+
+`func (o *IdentityProviderProviderTypeParameterValueResponse) GetRequestHeaders() []SharedRequestHeaderResponse`
+
+GetRequestHeaders returns the RequestHeaders field if non-nil, zero value otherwise.
+
+### GetRequestHeadersOk
+
+`func (o *IdentityProviderProviderTypeParameterValueResponse) GetRequestHeadersOk() (*[]SharedRequestHeaderResponse, bool)`
+
+GetRequestHeadersOk returns a tuple with the RequestHeaders field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequestHeaders
+
+`func (o *IdentityProviderProviderTypeParameterValueResponse) SetRequestHeaders(v []SharedRequestHeaderResponse)`
+
+SetRequestHeaders sets RequestHeaders field to given value.
+
+### HasRequestHeaders
+
+`func (o *IdentityProviderProviderTypeParameterValueResponse) HasRequestHeaders() bool`
+
+HasRequestHeaders returns a boolean if a field has been set.
+
+### SetRequestHeadersNil
+
+`func (o *IdentityProviderProviderTypeParameterValueResponse) SetRequestHeadersNil(b bool)`
+
+ SetRequestHeadersNil sets the value for RequestHeaders to be an explicit nil
+
+### UnsetRequestHeaders
+`func (o *IdentityProviderProviderTypeParameterValueResponse) UnsetRequestHeaders()`
+
+UnsetRequestHeaders ensures that no value is present for RequestHeaders, not even an explicit nil
+### GetRequestURLParameters
+
+`func (o *IdentityProviderProviderTypeParameterValueResponse) GetRequestURLParameters() []IdentityProviderRequestURLParameterResponse`
+
+GetRequestURLParameters returns the RequestURLParameters field if non-nil, zero value otherwise.
+
+### GetRequestURLParametersOk
+
+`func (o *IdentityProviderProviderTypeParameterValueResponse) GetRequestURLParametersOk() (*[]IdentityProviderRequestURLParameterResponse, bool)`
+
+GetRequestURLParametersOk returns a tuple with the RequestURLParameters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequestURLParameters
+
+`func (o *IdentityProviderProviderTypeParameterValueResponse) SetRequestURLParameters(v []IdentityProviderRequestURLParameterResponse)`
+
+SetRequestURLParameters sets RequestURLParameters field to given value.
+
+### HasRequestURLParameters
+
+`func (o *IdentityProviderProviderTypeParameterValueResponse) HasRequestURLParameters() bool`
+
+HasRequestURLParameters returns a boolean if a field has been set.
+
+### SetRequestURLParametersNil
+
+`func (o *IdentityProviderProviderTypeParameterValueResponse) SetRequestURLParametersNil(b bool)`
+
+ SetRequestURLParametersNil sets the value for RequestURLParameters to be an explicit nil
+
+### UnsetRequestURLParameters
+`func (o *IdentityProviderProviderTypeParameterValueResponse) UnsetRequestURLParameters()`
+
+UnsetRequestURLParameters ensures that no value is present for RequestURLParameters, not even an explicit nil
 ### GetSecretValue
 
 `func (o *IdentityProviderProviderTypeParameterValueResponse) GetSecretValue() CSSCMSDataModelModelsKeyfactorAPISecret`

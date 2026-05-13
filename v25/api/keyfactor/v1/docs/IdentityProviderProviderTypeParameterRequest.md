@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **Timeout** | Pointer to **NullableInt32** |  | [optional] 
 **OIDCAudience** | Pointer to **NullableString** |  | [optional] 
 **OIDCScope** | Pointer to **NullableString** |  | [optional] 
+**RequestHeaders** | Pointer to [**[]SharedRequestHeaderRequest**](SharedRequestHeaderRequest.md) |  | [optional] 
+**RequestURLParameters** | Pointer to [**[]IdentityProviderRequestURLParameterRequest**](IdentityProviderRequestURLParameterRequest.md) |  | [optional] 
 **NameClaimType** | **string** |  | 
 **RoleClaimType** | **string** |  | 
 **UniqueClaimType** | **string** |  | 
@@ -17,7 +19,7 @@ Name | Type | Description | Notes
 **TokenEndpoint** | **string** |  | 
 **JSONWebKeySetUri** | **string** |  | 
 **Authority** | **string** |  | 
-**UserInfoEndpoint** | **string** |  | 
+**UserInfoEndpoint** | Pointer to **NullableString** |  | [optional] 
 **Auth0ApiUrl** | Pointer to **NullableString** |  | [optional] 
 **SignOutUrl** | Pointer to **NullableString** |  | [optional] 
 
@@ -25,7 +27,7 @@ Name | Type | Description | Notes
 
 ### NewIdentityProviderProviderTypeParameterRequest
 
-`func NewIdentityProviderProviderTypeParameterRequest(nameClaimType string, roleClaimType string, uniqueClaimType string, fallbackUniqueClaimType string, clientId string, clientSecret CSSCMSDataModelModelsKeyfactorAPISecret, authorizationEndpoint string, tokenEndpoint string, jSONWebKeySetUri string, authority string, userInfoEndpoint string, ) *IdentityProviderProviderTypeParameterRequest`
+`func NewIdentityProviderProviderTypeParameterRequest(nameClaimType string, roleClaimType string, uniqueClaimType string, fallbackUniqueClaimType string, clientId string, clientSecret CSSCMSDataModelModelsKeyfactorAPISecret, authorizationEndpoint string, tokenEndpoint string, jSONWebKeySetUri string, authority string, ) *IdentityProviderProviderTypeParameterRequest`
 
 NewIdentityProviderProviderTypeParameterRequest instantiates a new IdentityProviderProviderTypeParameterRequest object
 This constructor will assign default values to properties that have it defined,
@@ -145,6 +147,76 @@ HasOIDCScope returns a boolean if a field has been set.
 `func (o *IdentityProviderProviderTypeParameterRequest) UnsetOIDCScope()`
 
 UnsetOIDCScope ensures that no value is present for OIDCScope, not even an explicit nil
+### GetRequestHeaders
+
+`func (o *IdentityProviderProviderTypeParameterRequest) GetRequestHeaders() []SharedRequestHeaderRequest`
+
+GetRequestHeaders returns the RequestHeaders field if non-nil, zero value otherwise.
+
+### GetRequestHeadersOk
+
+`func (o *IdentityProviderProviderTypeParameterRequest) GetRequestHeadersOk() (*[]SharedRequestHeaderRequest, bool)`
+
+GetRequestHeadersOk returns a tuple with the RequestHeaders field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequestHeaders
+
+`func (o *IdentityProviderProviderTypeParameterRequest) SetRequestHeaders(v []SharedRequestHeaderRequest)`
+
+SetRequestHeaders sets RequestHeaders field to given value.
+
+### HasRequestHeaders
+
+`func (o *IdentityProviderProviderTypeParameterRequest) HasRequestHeaders() bool`
+
+HasRequestHeaders returns a boolean if a field has been set.
+
+### SetRequestHeadersNil
+
+`func (o *IdentityProviderProviderTypeParameterRequest) SetRequestHeadersNil(b bool)`
+
+ SetRequestHeadersNil sets the value for RequestHeaders to be an explicit nil
+
+### UnsetRequestHeaders
+`func (o *IdentityProviderProviderTypeParameterRequest) UnsetRequestHeaders()`
+
+UnsetRequestHeaders ensures that no value is present for RequestHeaders, not even an explicit nil
+### GetRequestURLParameters
+
+`func (o *IdentityProviderProviderTypeParameterRequest) GetRequestURLParameters() []IdentityProviderRequestURLParameterRequest`
+
+GetRequestURLParameters returns the RequestURLParameters field if non-nil, zero value otherwise.
+
+### GetRequestURLParametersOk
+
+`func (o *IdentityProviderProviderTypeParameterRequest) GetRequestURLParametersOk() (*[]IdentityProviderRequestURLParameterRequest, bool)`
+
+GetRequestURLParametersOk returns a tuple with the RequestURLParameters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequestURLParameters
+
+`func (o *IdentityProviderProviderTypeParameterRequest) SetRequestURLParameters(v []IdentityProviderRequestURLParameterRequest)`
+
+SetRequestURLParameters sets RequestURLParameters field to given value.
+
+### HasRequestURLParameters
+
+`func (o *IdentityProviderProviderTypeParameterRequest) HasRequestURLParameters() bool`
+
+HasRequestURLParameters returns a boolean if a field has been set.
+
+### SetRequestURLParametersNil
+
+`func (o *IdentityProviderProviderTypeParameterRequest) SetRequestURLParametersNil(b bool)`
+
+ SetRequestURLParametersNil sets the value for RequestURLParameters to be an explicit nil
+
+### UnsetRequestURLParameters
+`func (o *IdentityProviderProviderTypeParameterRequest) UnsetRequestURLParameters()`
+
+UnsetRequestURLParameters ensures that no value is present for RequestURLParameters, not even an explicit nil
 ### GetNameClaimType
 
 `func (o *IdentityProviderProviderTypeParameterRequest) GetNameClaimType() string`
@@ -364,7 +436,22 @@ and a boolean to check if the value has been set.
 
 SetUserInfoEndpoint sets UserInfoEndpoint field to given value.
 
+### HasUserInfoEndpoint
 
+`func (o *IdentityProviderProviderTypeParameterRequest) HasUserInfoEndpoint() bool`
+
+HasUserInfoEndpoint returns a boolean if a field has been set.
+
+### SetUserInfoEndpointNil
+
+`func (o *IdentityProviderProviderTypeParameterRequest) SetUserInfoEndpointNil(b bool)`
+
+ SetUserInfoEndpointNil sets the value for UserInfoEndpoint to be an explicit nil
+
+### UnsetUserInfoEndpoint
+`func (o *IdentityProviderProviderTypeParameterRequest) UnsetUserInfoEndpoint()`
+
+UnsetUserInfoEndpoint ensures that no value is present for UserInfoEndpoint, not even an explicit nil
 ### GetAuth0ApiUrl
 
 `func (o *IdentityProviderProviderTypeParameterRequest) GetAuth0ApiUrl() string`

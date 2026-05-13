@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**CreateAgentsByIdReset**](AgentApi.md#CreateAgentsByIdReset) | **POST** /Agents/{id}/Reset | Reset an agent to a new state
 [**CreateAgentsDisapprove**](AgentApi.md#CreateAgentsDisapprove) | **POST** /Agents/Disapprove | Disapprove a list of agents
 [**CreateAgentsReset**](AgentApi.md#CreateAgentsReset) | **POST** /Agents/Reset | Reset a list of agents
-[**CreateAgentsSetAuthCertificateReenrollment**](AgentApi.md#CreateAgentsSetAuthCertificateReenrollment) | **POST** /Agents/SetAuthCertificateReenrollment | Update the AuthCertificateReenrollment value for an agent to request or require (or unset the request) the agent   to enroll for a new client authentication certificate on its next registration.
+[**CreateAgentsSetAuthCertificateReenrollment**](AgentApi.md#CreateAgentsSetAuthCertificateReenrollment) | **POST** /Agents/SetAuthCertificateReenrollment | Update the AuthCertificateReenrollment value for an agent to request or require (or unset the request) the agent  to enroll for a new client authentication certificate on its next registration.
 [**DeleteAgentsById**](AgentApi.md#DeleteAgentsById) | **DELETE** /Agents/{id} | Delete a single agent, specified by ID
 [**GetAgents**](AgentApi.md#GetAgents) | **GET** /Agents | Returns all agents according to the provided filter and output parameters
 [**GetAgentsById**](AgentApi.md#GetAgentsById) | **GET** /Agents/{id} | Returns details for a single agent, specified by ID
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 
 > OrchestratorsUpdateOrchestratorAuthCertificateReenrollmentResponse NewCreateAgentsSetAuthCertificateReenrollmentRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).OrchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest(orchestratorsUpdateOrchestratorAuthCertificateReenrollmentRequest).Execute()
 
-Update the AuthCertificateReenrollment value for an agent to request or require (or unset the request) the agent   to enroll for a new client authentication certificate on its next registration.
+Update the AuthCertificateReenrollment value for an agent to request or require (or unset the request) the agent  to enroll for a new client authentication certificate on its next registration.
 
 ### Example
 

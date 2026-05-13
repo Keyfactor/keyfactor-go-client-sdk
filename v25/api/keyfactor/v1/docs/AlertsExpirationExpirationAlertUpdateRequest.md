@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **Recipients** | Pointer to **[]string** |  | [optional] 
 **EventHandlerParameters** | Pointer to [**[]EventHandlerEventHandlerParameterRequest**](EventHandlerEventHandlerParameterRequest.md) |  | [optional] 
 **UseWorkflows** | Pointer to **bool** |  | [optional] [default to false]
+**WorkflowId** | Pointer to **NullableString** |  | [optional] 
+**Schedule** | Pointer to [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | [optional] 
 
 ## Methods
 
@@ -313,6 +315,66 @@ SetUseWorkflows sets UseWorkflows field to given value.
 `func (o *AlertsExpirationExpirationAlertUpdateRequest) HasUseWorkflows() bool`
 
 HasUseWorkflows returns a boolean if a field has been set.
+
+### GetWorkflowId
+
+`func (o *AlertsExpirationExpirationAlertUpdateRequest) GetWorkflowId() string`
+
+GetWorkflowId returns the WorkflowId field if non-nil, zero value otherwise.
+
+### GetWorkflowIdOk
+
+`func (o *AlertsExpirationExpirationAlertUpdateRequest) GetWorkflowIdOk() (*string, bool)`
+
+GetWorkflowIdOk returns a tuple with the WorkflowId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWorkflowId
+
+`func (o *AlertsExpirationExpirationAlertUpdateRequest) SetWorkflowId(v string)`
+
+SetWorkflowId sets WorkflowId field to given value.
+
+### HasWorkflowId
+
+`func (o *AlertsExpirationExpirationAlertUpdateRequest) HasWorkflowId() bool`
+
+HasWorkflowId returns a boolean if a field has been set.
+
+### SetWorkflowIdNil
+
+`func (o *AlertsExpirationExpirationAlertUpdateRequest) SetWorkflowIdNil(b bool)`
+
+ SetWorkflowIdNil sets the value for WorkflowId to be an explicit nil
+
+### UnsetWorkflowId
+`func (o *AlertsExpirationExpirationAlertUpdateRequest) UnsetWorkflowId()`
+
+UnsetWorkflowId ensures that no value is present for WorkflowId, not even an explicit nil
+### GetSchedule
+
+`func (o *AlertsExpirationExpirationAlertUpdateRequest) GetSchedule() KeyfactorCommonSchedulingKeyfactorSchedule`
+
+GetSchedule returns the Schedule field if non-nil, zero value otherwise.
+
+### GetScheduleOk
+
+`func (o *AlertsExpirationExpirationAlertUpdateRequest) GetScheduleOk() (*KeyfactorCommonSchedulingKeyfactorSchedule, bool)`
+
+GetScheduleOk returns a tuple with the Schedule field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchedule
+
+`func (o *AlertsExpirationExpirationAlertUpdateRequest) SetSchedule(v KeyfactorCommonSchedulingKeyfactorSchedule)`
+
+SetSchedule sets Schedule field to given value.
+
+### HasSchedule
+
+`func (o *AlertsExpirationExpirationAlertUpdateRequest) HasSchedule() bool`
+
+HasSchedule returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

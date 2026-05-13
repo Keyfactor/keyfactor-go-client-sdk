@@ -4,14 +4,14 @@ All URIs are relative to *http://keyfactor.example.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateSecurityRoles**](SecurityRolesApi.md#CreateSecurityRoles) | **POST** /Security/Roles | Adds a new security role to the system.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
-[**CreateSecurityRolesByIdCopy**](SecurityRolesApi.md#CreateSecurityRolesByIdCopy) | **POST** /Security/Roles/{id}/Copy | Makes a copy of an existing security role.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
+[**CreateSecurityRoles**](SecurityRolesApi.md#CreateSecurityRoles) | **POST** /Security/Roles | Adds a new security role to the system. The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
+[**CreateSecurityRolesByIdCopy**](SecurityRolesApi.md#CreateSecurityRolesByIdCopy) | **POST** /Security/Roles/{id}/Copy | Makes a copy of an existing security role. The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 [**DeleteSecurityRolesById**](SecurityRolesApi.md#DeleteSecurityRolesById) | **DELETE** /Security/Roles/{id} | Deletes the security role whose ID is provided.
-[**GetSecurityRoles**](SecurityRolesApi.md#GetSecurityRoles) | **GET** /Security/Roles | Returns all security roles according to the provided filter and output parameters.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
-[**GetSecurityRolesById**](SecurityRolesApi.md#GetSecurityRolesById) | **GET** /Security/Roles/{id} | Returns a single security role that matches the id.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
-[**GetSecurityRolesByIdIdentities**](SecurityRolesApi.md#GetSecurityRolesByIdIdentities) | **GET** /Security/Roles/{id}/Identities | Returns all identities which have the security role that matches the id.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
-[**UpdateSecurityRoles**](SecurityRolesApi.md#UpdateSecurityRoles) | **PUT** /Security/Roles | Updates a security role that matches the id.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
-[**UpdateSecurityRolesByIdIdentities**](SecurityRolesApi.md#UpdateSecurityRolesByIdIdentities) | **PUT** /Security/Roles/{id}/Identities | Updates the identities which have the security role that matches the id.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
+[**GetSecurityRoles**](SecurityRolesApi.md#GetSecurityRoles) | **GET** /Security/Roles | Returns all security roles according to the provided filter and output parameters. The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
+[**GetSecurityRolesById**](SecurityRolesApi.md#GetSecurityRolesById) | **GET** /Security/Roles/{id} | Returns a single security role that matches the id. The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
+[**GetSecurityRolesByIdIdentities**](SecurityRolesApi.md#GetSecurityRolesByIdIdentities) | **GET** /Security/Roles/{id}/Identities | Returns all identities which have the security role that matches the id. The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
+[**UpdateSecurityRoles**](SecurityRolesApi.md#UpdateSecurityRoles) | **PUT** /Security/Roles | Updates a security role that matches the id. The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
+[**UpdateSecurityRolesByIdIdentities**](SecurityRolesApi.md#UpdateSecurityRolesByIdIdentities) | **PUT** /Security/Roles/{id}/Identities | Updates the identities which have the security role that matches the id. The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 
 
@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 > SecurityLegacySecurityRolesSecurityRoleResponse NewCreateSecurityRolesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityLegacySecurityRolesSecurityRoleCreationRequest(securityLegacySecurityRolesSecurityRoleCreationRequest).Execute()
 
-Adds a new security role to the system.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
+Adds a new security role to the system. The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 ### Example
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 > SecurityLegacySecurityRolesSecurityRoleResponse NewCreateSecurityRolesByIdCopyRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityLegacySecurityRolesSecurityRoleCopyRequest(securityLegacySecurityRolesSecurityRoleCopyRequest).Execute()
 
-Makes a copy of an existing security role.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
+Makes a copy of an existing security role. The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 ### Example
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 > []SecurityLegacySecurityRolesSecurityRoleResponse NewGetSecurityRolesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Validate(validate).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
-Returns all security roles according to the provided filter and output parameters.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
+Returns all security roles according to the provided filter and output parameters. The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 ### Example
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 > SecurityLegacySecurityRolesSecurityRoleResponse NewGetSecurityRolesByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
-Returns a single security role that matches the id.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
+Returns a single security role that matches the id. The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 ### Example
 
@@ -381,7 +381,7 @@ Name | Type | Description  | Notes
 
 > []SecurityLegacySecurityRolesRoleIdentitiesResponse NewGetSecurityRolesByIdIdentitiesRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
-Returns all identities which have the security role that matches the id.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
+Returns all identities which have the security role that matches the id. The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 ### Example
 
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 > SecurityLegacySecurityRolesSecurityRoleResponse NewUpdateSecurityRolesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityLegacySecurityRolesSecurityRoleUpdateRequest(securityLegacySecurityRolesSecurityRoleUpdateRequest).Execute()
 
-Updates a security role that matches the id.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
+Updates a security role that matches the id. The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 ### Example
 
@@ -521,7 +521,7 @@ Name | Type | Description  | Notes
 
 > []SecurityLegacySecurityRolesRoleIdentitiesResponse NewUpdateSecurityRolesByIdIdentitiesRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SecurityLegacySecurityRolesRoleIdentitiesRequest(securityLegacySecurityRolesRoleIdentitiesRequest).Execute()
 
-Updates the identities which have the security role that matches the id.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
+Updates the identities which have the security role that matches the id. The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 ### Example
 

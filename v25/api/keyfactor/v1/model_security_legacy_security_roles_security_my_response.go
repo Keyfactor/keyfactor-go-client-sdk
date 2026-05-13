@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -29,8 +29,9 @@ var _ MappedNullable = &SecurityLegacySecurityRolesSecurityMyResponse{}
 
 // SecurityLegacySecurityRolesSecurityMyResponse struct for SecurityLegacySecurityRolesSecurityMyResponse
 type SecurityLegacySecurityRolesSecurityMyResponse struct {
-	Roles             []string                                    `json:"Roles,omitempty"`
-	GlobalPermissions []GlobalPermissionsGlobalPermissionResponse `json:"GlobalPermissions,omitempty"`
+	Roles               []string                                        `json:"Roles,omitempty"`
+	GlobalPermissions   []GlobalPermissionsGlobalPermissionResponse     `json:"GlobalPermissions,omitempty"`
+	GranularPermissions []GranularPermissionsGranularPermissionResponse `json:"GranularPermissions,omitempty"`
 }
 
 // NewSecurityLegacySecurityRolesSecurityMyResponse instantiates a new SecurityLegacySecurityRolesSecurityMyResponse object
@@ -116,6 +117,39 @@ func (o *SecurityLegacySecurityRolesSecurityMyResponse) SetGlobalPermissions(v [
 	o.GlobalPermissions = v
 }
 
+// GetGranularPermissions returns the GranularPermissions field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SecurityLegacySecurityRolesSecurityMyResponse) GetGranularPermissions() []GranularPermissionsGranularPermissionResponse {
+	if o == nil {
+		var ret []GranularPermissionsGranularPermissionResponse
+		return ret
+	}
+	return o.GranularPermissions
+}
+
+// GetGranularPermissionsOk returns a tuple with the GranularPermissions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SecurityLegacySecurityRolesSecurityMyResponse) GetGranularPermissionsOk() ([]GranularPermissionsGranularPermissionResponse, bool) {
+	if o == nil || isNil(o.GranularPermissions) {
+		return nil, false
+	}
+	return o.GranularPermissions, true
+}
+
+// HasGranularPermissions returns a boolean if a field has been set.
+func (o *SecurityLegacySecurityRolesSecurityMyResponse) HasGranularPermissions() bool {
+	if o != nil && isNil(o.GranularPermissions) {
+		return true
+	}
+
+	return false
+}
+
+// SetGranularPermissions gets a reference to the given []GranularPermissionsGranularPermissionResponse and assigns it to the GranularPermissions field.
+func (o *SecurityLegacySecurityRolesSecurityMyResponse) SetGranularPermissions(v []GranularPermissionsGranularPermissionResponse) {
+	o.GranularPermissions = v
+}
+
 func (o SecurityLegacySecurityRolesSecurityMyResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -131,6 +165,9 @@ func (o SecurityLegacySecurityRolesSecurityMyResponse) ToMap() (map[string]inter
 	}
 	if o.GlobalPermissions != nil {
 		toSerialize["GlobalPermissions"] = o.GlobalPermissions
+	}
+	if o.GranularPermissions != nil {
+		toSerialize["GranularPermissions"] = o.GranularPermissions
 	}
 	return toSerialize, nil
 }

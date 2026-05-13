@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **CertificateTemplate** | Pointer to **NullableString** |  | [optional] 
 **EnrollmentPatternId** | Pointer to **NullableInt32** |  | [optional] 
 **SANs** | Pointer to **map[string][]string** |  | [optional] 
+**Overwrite** | Pointer to **bool** |  | [optional] 
 **Metadata** | Pointer to **map[string]string** |  | [optional] 
 **AdditionalEnrollmentFields** | Pointer to **map[string]string** |  | [optional] 
 **OwnerRoleId** | Pointer to **NullableInt32** |  | [optional] 
@@ -332,6 +333,31 @@ HasSANs returns a boolean if a field has been set.
 `func (o *CertificateStoresReenrollmentRequest) UnsetSANs()`
 
 UnsetSANs ensures that no value is present for SANs, not even an explicit nil
+### GetOverwrite
+
+`func (o *CertificateStoresReenrollmentRequest) GetOverwrite() bool`
+
+GetOverwrite returns the Overwrite field if non-nil, zero value otherwise.
+
+### GetOverwriteOk
+
+`func (o *CertificateStoresReenrollmentRequest) GetOverwriteOk() (*bool, bool)`
+
+GetOverwriteOk returns a tuple with the Overwrite field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOverwrite
+
+`func (o *CertificateStoresReenrollmentRequest) SetOverwrite(v bool)`
+
+SetOverwrite sets Overwrite field to given value.
+
+### HasOverwrite
+
+`func (o *CertificateStoresReenrollmentRequest) HasOverwrite() bool`
+
+HasOverwrite returns a boolean if a field has been set.
+
 ### GetMetadata
 
 `func (o *CertificateStoresReenrollmentRequest) GetMetadata() map[string]string`

@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 ## CreateWorkflowDefinitions
 
-> WorkflowsDefinitionResponse NewCreateWorkflowDefinitionsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsDefinitionCreateRequest(workflowsDefinitionCreateRequest).Execute()
+> WorkflowsV1DefinitionV1Response NewCreateWorkflowDefinitionsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsV1DefinitionCreateV1Request(workflowsV1DefinitionCreateV1Request).Execute()
 
 Creates a new base definition without any steps.
 
@@ -41,16 +41,16 @@ func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient]
     force := true // bool | Whether to force the creation of this definition in the case that it would run workflows immediately. (optional) (default to false)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    workflowsDefinitionCreateRequest := *openapiclient.NewWorkflowsDefinitionCreateRequest() // WorkflowsDefinitionCreateRequest | A Workflows.DefinitionCreateRequest with the display name, description, key and type of the definition. (optional)
+    workflowsV1DefinitionCreateV1Request := *openapiclient.NewWorkflowsV1DefinitionCreateV1Request() // WorkflowsV1DefinitionCreateV1Request | A Workflows.DefinitionCreateRequest with the display name, description, key and type of the definition. (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowDefinitionApi.NewCreateWorkflowDefinitionsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsDefinitionCreateRequest(workflowsDefinitionCreateRequest).Execute()
+    resp, r, err := apiClient.WorkflowDefinitionApi.NewCreateWorkflowDefinitionsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsV1DefinitionCreateV1Request(workflowsV1DefinitionCreateV1Request).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowDefinitionApi.CreateWorkflowDefinitions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateWorkflowDefinitions`: WorkflowsDefinitionResponse
+    // response from `CreateWorkflowDefinitions`: WorkflowsV1DefinitionV1Response
     fmt.Fprintf(os.Stdout, "Response from `WorkflowDefinitionApi.CreateWorkflowDefinitions`: %v\n", resp)
 }
 ```
@@ -69,11 +69,11 @@ Name | Type | Description  | Notes
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | 
  **force** | **bool** | Whether to force the creation of this definition in the case that it would run workflows immediately. | [default to false]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **workflowsDefinitionCreateRequest** | [**WorkflowsDefinitionCreateRequest**](WorkflowsDefinitionCreateRequest.md) | A Workflows.DefinitionCreateRequest with the display name, description, key and type of the definition. | 
+ **workflowsV1DefinitionCreateV1Request** | [**WorkflowsV1DefinitionCreateV1Request**](WorkflowsV1DefinitionCreateV1Request.md) | A Workflows.DefinitionCreateRequest with the display name, description, key and type of the definition. | 
 
 ### Return type
 
-[**WorkflowsDefinitionResponse**](WorkflowsDefinitionResponse.md)
+[**WorkflowsV1DefinitionV1Response**](WorkflowsV1DefinitionV1Response.md)
 
 ### Authorization
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ## CreateWorkflowDefinitionsDefinitionIdPublish
 
-> WorkflowsDefinitionResponse NewCreateWorkflowDefinitionsDefinitionIdPublishRequest(ctx, definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> WorkflowsV1DefinitionV1Response NewCreateWorkflowDefinitionsDefinitionIdPublishRequest(ctx, definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Makes the most recent version of a Workflow Definition the published version.
 
@@ -119,7 +119,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowDefinitionApi.CreateWorkflowDefinitionsDefinitionIdPublish``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateWorkflowDefinitionsDefinitionIdPublish`: WorkflowsDefinitionResponse
+    // response from `CreateWorkflowDefinitionsDefinitionIdPublish`: WorkflowsV1DefinitionV1Response
     fmt.Fprintf(os.Stdout, "Response from `WorkflowDefinitionApi.CreateWorkflowDefinitionsDefinitionIdPublish`: %v\n", resp)
 }
 ```
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WorkflowsDefinitionResponse**](WorkflowsDefinitionResponse.md)
+[**WorkflowsV1DefinitionV1Response**](WorkflowsV1DefinitionV1Response.md)
 
 ### Authorization
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ## CreateWorkflowDefinitionsDefinitionIdPublishVersion
 
-> WorkflowsDefinitionResponse NewCreateWorkflowDefinitionsDefinitionIdPublishVersionRequest(ctx, definitionId, version).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> WorkflowsV1DefinitionV1Response NewCreateWorkflowDefinitionsDefinitionIdPublishVersionRequest(ctx, definitionId, version).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Makes the specified version of a Workflow Definition the published version.
 
@@ -192,7 +192,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowDefinitionApi.CreateWorkflowDefinitionsDefinitionIdPublishVersion``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateWorkflowDefinitionsDefinitionIdPublishVersion`: WorkflowsDefinitionResponse
+    // response from `CreateWorkflowDefinitionsDefinitionIdPublishVersion`: WorkflowsV1DefinitionV1Response
     fmt.Fprintf(os.Stdout, "Response from `WorkflowDefinitionApi.CreateWorkflowDefinitionsDefinitionIdPublishVersion`: %v\n", resp)
 }
 ```
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WorkflowsDefinitionResponse**](WorkflowsDefinitionResponse.md)
+[**WorkflowsV1DefinitionV1Response**](WorkflowsV1DefinitionV1Response.md)
 
 ### Authorization
 
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 ## GetWorkflowDefinitions
 
-> []WorkflowsDefinitionQueryResponse NewGetWorkflowDefinitionsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> []WorkflowsV1DefinitionQueryV1Response NewGetWorkflowDefinitionsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets the Definitions matching the query specifications.
 
@@ -340,7 +340,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowDefinitionApi.GetWorkflowDefinitions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetWorkflowDefinitions`: []WorkflowsDefinitionQueryResponse
+    // response from `GetWorkflowDefinitions`: []WorkflowsV1DefinitionQueryV1Response
     fmt.Fprintf(os.Stdout, "Response from `WorkflowDefinitionApi.GetWorkflowDefinitions`: %v\n", resp)
 }
 ```
@@ -366,7 +366,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]WorkflowsDefinitionQueryResponse**](WorkflowsDefinitionQueryResponse.md)
+[**[]WorkflowsV1DefinitionQueryV1Response**](WorkflowsV1DefinitionQueryV1Response.md)
 
 ### Authorization
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ## GetWorkflowDefinitionsDefinitionId
 
-> WorkflowsDefinitionResponse NewGetWorkflowDefinitionsDefinitionIdRequest(ctx, definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).DefinitionVersion(definitionVersion).Exportable(exportable).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> WorkflowsV1DefinitionV1Response NewGetWorkflowDefinitionsDefinitionIdRequest(ctx, definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).DefinitionVersion(definitionVersion).Exportable(exportable).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
 Gets a workflow definition.
 
@@ -414,7 +414,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowDefinitionApi.GetWorkflowDefinitionsDefinitionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetWorkflowDefinitionsDefinitionId`: WorkflowsDefinitionResponse
+    // response from `GetWorkflowDefinitionsDefinitionId`: WorkflowsV1DefinitionV1Response
     fmt.Fprintf(os.Stdout, "Response from `WorkflowDefinitionApi.GetWorkflowDefinitionsDefinitionId`: %v\n", resp)
 }
 ```
@@ -442,7 +442,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WorkflowsDefinitionResponse**](WorkflowsDefinitionResponse.md)
+[**WorkflowsV1DefinitionV1Response**](WorkflowsV1DefinitionV1Response.md)
 
 ### Authorization
 
@@ -684,7 +684,7 @@ Name | Type | Description  | Notes
 
 ## UpdateWorkflowDefinitionsDefinitionId
 
-> WorkflowsDefinitionResponse NewUpdateWorkflowDefinitionsDefinitionIdRequest(ctx, definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsDefinitionUpdateRequest(workflowsDefinitionUpdateRequest).Execute()
+> WorkflowsV1DefinitionV1Response NewUpdateWorkflowDefinitionsDefinitionIdRequest(ctx, definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsV1DefinitionUpdateV1Request(workflowsV1DefinitionUpdateV1Request).Execute()
 
 Updates the existing definition's DisplayName and Description.
 
@@ -705,16 +705,16 @@ func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient]
     force := true // bool | Whether to force the update of this definition in the case that it would run workflows immediately. (optional) (default to false)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    workflowsDefinitionUpdateRequest := *openapiclient.NewWorkflowsDefinitionUpdateRequest() // WorkflowsDefinitionUpdateRequest | The Workflows.DefinitionUpdateRequest holding the updated DisplayName and Description. (optional)
+    workflowsV1DefinitionUpdateV1Request := *openapiclient.NewWorkflowsV1DefinitionUpdateV1Request("DisplayName_example", "Description_example") // WorkflowsV1DefinitionUpdateV1Request | The Workflows.DefinitionUpdateRequest holding the updated DisplayName and Description. (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WorkflowDefinitionApi.NewUpdateWorkflowDefinitionsDefinitionIdRequest(context.Background(), definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsDefinitionUpdateRequest(workflowsDefinitionUpdateRequest).Execute()
+    resp, r, err := apiClient.WorkflowDefinitionApi.NewUpdateWorkflowDefinitionsDefinitionIdRequest(context.Background(), definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Force(force).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsV1DefinitionUpdateV1Request(workflowsV1DefinitionUpdateV1Request).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowDefinitionApi.UpdateWorkflowDefinitionsDefinitionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateWorkflowDefinitionsDefinitionId`: WorkflowsDefinitionResponse
+    // response from `UpdateWorkflowDefinitionsDefinitionId`: WorkflowsV1DefinitionV1Response
     fmt.Fprintf(os.Stdout, "Response from `WorkflowDefinitionApi.UpdateWorkflowDefinitionsDefinitionId`: %v\n", resp)
 }
 ```
@@ -738,11 +738,11 @@ Name | Type | Description  | Notes
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | 
  **force** | **bool** | Whether to force the update of this definition in the case that it would run workflows immediately. | [default to false]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **workflowsDefinitionUpdateRequest** | [**WorkflowsDefinitionUpdateRequest**](WorkflowsDefinitionUpdateRequest.md) | The Workflows.DefinitionUpdateRequest holding the updated DisplayName and Description. | 
+ **workflowsV1DefinitionUpdateV1Request** | [**WorkflowsV1DefinitionUpdateV1Request**](WorkflowsV1DefinitionUpdateV1Request.md) | The Workflows.DefinitionUpdateRequest holding the updated DisplayName and Description. | 
 
 ### Return type
 
-[**WorkflowsDefinitionResponse**](WorkflowsDefinitionResponse.md)
+[**WorkflowsV1DefinitionV1Response**](WorkflowsV1DefinitionV1Response.md)
 
 ### Authorization
 
@@ -834,7 +834,7 @@ Name | Type | Description  | Notes
 
 ## UpdateWorkflowDefinitionsDefinitionIdSteps
 
-> WorkflowsDefinitionResponse NewUpdateWorkflowDefinitionsDefinitionIdStepsRequest(ctx, definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsDefinitionStepRequest(workflowsDefinitionStepRequest).Execute()
+> WorkflowsV1DefinitionV1Response NewUpdateWorkflowDefinitionsDefinitionIdStepsRequest(ctx, definitionId).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).WorkflowsDefinitionStepRequest(workflowsDefinitionStepRequest).Execute()
 
 Sets the provided steps on the latest version of the definition.
 
@@ -865,7 +865,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowDefinitionApi.UpdateWorkflowDefinitionsDefinitionIdSteps``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateWorkflowDefinitionsDefinitionIdSteps`: WorkflowsDefinitionResponse
+    // response from `UpdateWorkflowDefinitionsDefinitionIdSteps`: WorkflowsV1DefinitionV1Response
     fmt.Fprintf(os.Stdout, "Response from `WorkflowDefinitionApi.UpdateWorkflowDefinitionsDefinitionIdSteps`: %v\n", resp)
 }
 ```
@@ -892,7 +892,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WorkflowsDefinitionResponse**](WorkflowsDefinitionResponse.md)
+[**WorkflowsV1DefinitionV1Response**](WorkflowsV1DefinitionV1Response.md)
 
 ### Authorization
 

@@ -5,7 +5,7 @@ All URIs are relative to *http://keyfactor.example.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateCertificateCollections**](CertificateCollectionApi.md#CreateCertificateCollections) | **POST** /CertificateCollections | Creates a new certificate collection with the provided properties
-[**CreateCertificateCollectionsCopy**](CertificateCollectionApi.md#CreateCertificateCollectionsCopy) | **POST** /CertificateCollections/Copy | Creates a new certificate collection from an existing collection. The permissions, query and description of the   existing collection are copied when creating the new record, with the option to overwrite the query or description.
+[**CreateCertificateCollectionsCopy**](CertificateCollectionApi.md#CreateCertificateCollectionsCopy) | **POST** /CertificateCollections/Copy | Creates a new certificate collection from an existing collection. The permissions, query and description of the  existing collection are copied when creating the new record, with the option to overwrite the query or description.
 [**DeleteCertificateCollectionsById**](CertificateCollectionApi.md#DeleteCertificateCollectionsById) | **DELETE** /CertificateCollections/{id} | Delete one certificate collection
 [**GetCertificateCollections**](CertificateCollectionApi.md#GetCertificateCollections) | **GET** /CertificateCollections | Returns all certificate collections
 [**GetCertificateCollectionsById**](CertificateCollectionApi.md#GetCertificateCollectionsById) | **GET** /CertificateCollections/{id} | Returns the certificate collection definition associated with the provided Keyfactor identifier
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 > CertificateCollectionsCertificateCollectionResponse NewCreateCertificateCollectionsCopyRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateCollectionsCertificateCollectionCopyRequest(certificateCollectionsCertificateCollectionCopyRequest).Execute()
 
-Creates a new certificate collection from an existing collection. The permissions, query and description of the   existing collection are copied when creating the new record, with the option to overwrite the query or description.
+Creates a new certificate collection from an existing collection. The permissions, query and description of the  existing collection are copied when creating the new record, with the option to overwrite the query or description.
 
 
 

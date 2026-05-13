@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -39,7 +39,7 @@ type EnrollmentPatternsEnrollmentPatternRequest struct {
 	Regexes                []EnrollmentPatternsEnrollmentPatternRegexesRequest       `json:"Regexes,omitempty"`
 	MetadataFields         []EnrollmentPatternsEnrollmentPatternMetadataFieldRequest `json:"MetadataFields,omitempty"`
 	RestrictCAs            *bool                                                     `json:"RestrictCAs,omitempty"`
-	Policies               *EnrollmentPatternsEnrollmentPatternPolicyRequest         `json:"Policies,omitempty"`
+	Policies               EnrollmentPatternsEnrollmentPatternPolicyRequest          `json:"Policies"`
 	Defaults               []EnrollmentPatternsEnrollmentPatternDefaultRequest       `json:"Defaults,omitempty"`
 	EnrollmentFields       []EnrollmentPatternsEnrollmentPatternFieldRequest         `json:"EnrollmentFields,omitempty"`
 }
@@ -48,9 +48,10 @@ type EnrollmentPatternsEnrollmentPatternRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEnrollmentPatternsEnrollmentPatternRequest(name string) *EnrollmentPatternsEnrollmentPatternRequest {
+func NewEnrollmentPatternsEnrollmentPatternRequest(name string, policies EnrollmentPatternsEnrollmentPatternPolicyRequest) *EnrollmentPatternsEnrollmentPatternRequest {
 	this := EnrollmentPatternsEnrollmentPatternRequest{}
 	this.Name = name
+	this.Policies = policies
 	return &this
 }
 
@@ -389,36 +390,28 @@ func (o *EnrollmentPatternsEnrollmentPatternRequest) SetRestrictCAs(v bool) {
 	o.RestrictCAs = &v
 }
 
-// GetPolicies returns the Policies field value if set, zero value otherwise.
+// GetPolicies returns the Policies field value
 func (o *EnrollmentPatternsEnrollmentPatternRequest) GetPolicies() EnrollmentPatternsEnrollmentPatternPolicyRequest {
-	if o == nil || isNil(o.Policies) {
+	if o == nil {
 		var ret EnrollmentPatternsEnrollmentPatternPolicyRequest
 		return ret
 	}
-	return *o.Policies
+
+	return o.Policies
 }
 
-// GetPoliciesOk returns a tuple with the Policies field value if set, nil otherwise
+// GetPoliciesOk returns a tuple with the Policies field value
 // and a boolean to check if the value has been set.
 func (o *EnrollmentPatternsEnrollmentPatternRequest) GetPoliciesOk() (*EnrollmentPatternsEnrollmentPatternPolicyRequest, bool) {
-	if o == nil || isNil(o.Policies) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Policies, true
+	return &o.Policies, true
 }
 
-// HasPolicies returns a boolean if a field has been set.
-func (o *EnrollmentPatternsEnrollmentPatternRequest) HasPolicies() bool {
-	if o != nil && !isNil(o.Policies) {
-		return true
-	}
-
-	return false
-}
-
-// SetPolicies gets a reference to the given EnrollmentPatternsEnrollmentPatternPolicyRequest and assigns it to the Policies field.
+// SetPolicies sets field value
 func (o *EnrollmentPatternsEnrollmentPatternRequest) SetPolicies(v EnrollmentPatternsEnrollmentPatternPolicyRequest) {
-	o.Policies = &v
+	o.Policies = v
 }
 
 // GetDefaults returns the Defaults field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -525,9 +518,7 @@ func (o EnrollmentPatternsEnrollmentPatternRequest) ToMap() (map[string]interfac
 	if !isNil(o.RestrictCAs) {
 		toSerialize["RestrictCAs"] = o.RestrictCAs
 	}
-	if !isNil(o.Policies) {
-		toSerialize["Policies"] = o.Policies
-	}
+	toSerialize["Policies"] = o.Policies
 	if o.Defaults != nil {
 		toSerialize["Defaults"] = o.Defaults
 	}

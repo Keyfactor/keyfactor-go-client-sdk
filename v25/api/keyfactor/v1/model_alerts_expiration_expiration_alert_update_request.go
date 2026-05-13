@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -29,16 +29,18 @@ var _ MappedNullable = &AlertsExpirationExpirationAlertUpdateRequest{}
 
 // AlertsExpirationExpirationAlertUpdateRequest struct for AlertsExpirationExpirationAlertUpdateRequest
 type AlertsExpirationExpirationAlertUpdateRequest struct {
-	Id                     *int32                                     `json:"Id,omitempty"`
-	DisplayName            string                                     `json:"DisplayName"`
-	Subject                NullableString                             `json:"Subject,omitempty"`
-	Message                NullableString                             `json:"Message,omitempty"`
-	ExpirationWarningDays  int32                                      `json:"ExpirationWarningDays"`
-	CertificateQueryId     *int32                                     `json:"CertificateQueryId,omitempty"`
-	RegisteredEventHandler *EventHandlerRegisteredEventHandlerRequest `json:"RegisteredEventHandler,omitempty"`
-	Recipients             []string                                   `json:"Recipients,omitempty"`
-	EventHandlerParameters []EventHandlerEventHandlerParameterRequest `json:"EventHandlerParameters,omitempty"`
-	UseWorkflows           *bool                                      `json:"UseWorkflows,omitempty"`
+	Id                     *int32                                      `json:"Id,omitempty"`
+	DisplayName            string                                      `json:"DisplayName"`
+	Subject                NullableString                              `json:"Subject,omitempty"`
+	Message                NullableString                              `json:"Message,omitempty"`
+	ExpirationWarningDays  int32                                       `json:"ExpirationWarningDays"`
+	CertificateQueryId     *int32                                      `json:"CertificateQueryId,omitempty"`
+	RegisteredEventHandler *EventHandlerRegisteredEventHandlerRequest  `json:"RegisteredEventHandler,omitempty"`
+	Recipients             []string                                    `json:"Recipients,omitempty"`
+	EventHandlerParameters []EventHandlerEventHandlerParameterRequest  `json:"EventHandlerParameters,omitempty"`
+	UseWorkflows           *bool                                       `json:"UseWorkflows,omitempty"`
+	WorkflowId             NullableString                              `json:"WorkflowId,omitempty"`
+	Schedule               *KeyfactorCommonSchedulingKeyfactorSchedule `json:"Schedule,omitempty"`
 }
 
 // NewAlertsExpirationExpirationAlertUpdateRequest instantiates a new AlertsExpirationExpirationAlertUpdateRequest object
@@ -392,6 +394,81 @@ func (o *AlertsExpirationExpirationAlertUpdateRequest) SetUseWorkflows(v bool) {
 	o.UseWorkflows = &v
 }
 
+// GetWorkflowId returns the WorkflowId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AlertsExpirationExpirationAlertUpdateRequest) GetWorkflowId() string {
+	if o == nil || isNil(o.WorkflowId.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.WorkflowId.Get()
+}
+
+// GetWorkflowIdOk returns a tuple with the WorkflowId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AlertsExpirationExpirationAlertUpdateRequest) GetWorkflowIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.WorkflowId.Get(), o.WorkflowId.IsSet()
+}
+
+// HasWorkflowId returns a boolean if a field has been set.
+func (o *AlertsExpirationExpirationAlertUpdateRequest) HasWorkflowId() bool {
+	if o != nil && o.WorkflowId.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetWorkflowId gets a reference to the given NullableString and assigns it to the WorkflowId field.
+func (o *AlertsExpirationExpirationAlertUpdateRequest) SetWorkflowId(v string) {
+	o.WorkflowId.Set(&v)
+}
+
+// SetWorkflowIdNil sets the value for WorkflowId to be an explicit nil
+func (o *AlertsExpirationExpirationAlertUpdateRequest) SetWorkflowIdNil() {
+	o.WorkflowId.Set(nil)
+}
+
+// UnsetWorkflowId ensures that no value is present for WorkflowId, not even an explicit nil
+func (o *AlertsExpirationExpirationAlertUpdateRequest) UnsetWorkflowId() {
+	o.WorkflowId.Unset()
+}
+
+// GetSchedule returns the Schedule field value if set, zero value otherwise.
+func (o *AlertsExpirationExpirationAlertUpdateRequest) GetSchedule() KeyfactorCommonSchedulingKeyfactorSchedule {
+	if o == nil || isNil(o.Schedule) {
+		var ret KeyfactorCommonSchedulingKeyfactorSchedule
+		return ret
+	}
+	return *o.Schedule
+}
+
+// GetScheduleOk returns a tuple with the Schedule field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AlertsExpirationExpirationAlertUpdateRequest) GetScheduleOk() (*KeyfactorCommonSchedulingKeyfactorSchedule, bool) {
+	if o == nil || isNil(o.Schedule) {
+		return nil, false
+	}
+	return o.Schedule, true
+}
+
+// HasSchedule returns a boolean if a field has been set.
+func (o *AlertsExpirationExpirationAlertUpdateRequest) HasSchedule() bool {
+	if o != nil && !isNil(o.Schedule) {
+		return true
+	}
+
+	return false
+}
+
+// SetSchedule gets a reference to the given KeyfactorCommonSchedulingKeyfactorSchedule and assigns it to the Schedule field.
+func (o *AlertsExpirationExpirationAlertUpdateRequest) SetSchedule(v KeyfactorCommonSchedulingKeyfactorSchedule) {
+	o.Schedule = &v
+}
+
 func (o AlertsExpirationExpirationAlertUpdateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -427,6 +504,12 @@ func (o AlertsExpirationExpirationAlertUpdateRequest) ToMap() (map[string]interf
 	}
 	if !isNil(o.UseWorkflows) {
 		toSerialize["UseWorkflows"] = o.UseWorkflows
+	}
+	if o.WorkflowId.IsSet() {
+		toSerialize["WorkflowId"] = o.WorkflowId.Get()
+	}
+	if !isNil(o.Schedule) {
+		toSerialize["Schedule"] = o.Schedule
 	}
 	return toSerialize, nil
 }

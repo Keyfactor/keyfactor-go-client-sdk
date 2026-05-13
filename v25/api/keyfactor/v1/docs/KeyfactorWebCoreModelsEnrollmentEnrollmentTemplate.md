@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **RequiresApproval** | Pointer to **bool** |  | [optional] 
 **RFCEnforcement** | Pointer to **bool** |  | [optional] 
 **CAs** | Pointer to [**[]KeyfactorWebCoreModelsEnrollmentEnrollmentCA**](KeyfactorWebCoreModelsEnrollmentEnrollmentCA.md) |  | [optional] 
-**EnrollmentFields** | Pointer to [**[]CSSCMSDataModelModelsTemplatesTemplateEnrollmentField**](CSSCMSDataModelModelsTemplatesTemplateEnrollmentField.md) |  | [optional] 
+**EnrollmentFields** | Pointer to [**[]KeyfactorWebCoreModelsEnrollmentTemplateEnrollmentField**](KeyfactorWebCoreModelsEnrollmentTemplateEnrollmentField.md) |  | [optional] 
 **MetadataFields** | Pointer to [**[]CSSCMSDataModelModelsTemplatesTemplateMetadataField**](CSSCMSDataModelModelsTemplatesTemplateMetadataField.md) |  | [optional] 
 **Regexes** | Pointer to [**[]KeyfactorWebCoreModelsEnrollmentEnrollmentTemplateRegex**](KeyfactorWebCoreModelsEnrollmentEnrollmentTemplateRegex.md) |  | [optional] 
 **ExtendedKeyUsages** | Pointer to [**[]CSSCMSDataModelModelsExtendedKeyUsage**](CSSCMSDataModelModelsExtendedKeyUsage.md) |  | [optional] 
@@ -256,20 +256,20 @@ HasCAs returns a boolean if a field has been set.
 UnsetCAs ensures that no value is present for CAs, not even an explicit nil
 ### GetEnrollmentFields
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetEnrollmentFields() []CSSCMSDataModelModelsTemplatesTemplateEnrollmentField`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetEnrollmentFields() []KeyfactorWebCoreModelsEnrollmentTemplateEnrollmentField`
 
 GetEnrollmentFields returns the EnrollmentFields field if non-nil, zero value otherwise.
 
 ### GetEnrollmentFieldsOk
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetEnrollmentFieldsOk() (*[]CSSCMSDataModelModelsTemplatesTemplateEnrollmentField, bool)`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetEnrollmentFieldsOk() (*[]KeyfactorWebCoreModelsEnrollmentTemplateEnrollmentField, bool)`
 
 GetEnrollmentFieldsOk returns a tuple with the EnrollmentFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnrollmentFields
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) SetEnrollmentFields(v []CSSCMSDataModelModelsTemplatesTemplateEnrollmentField)`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) SetEnrollmentFields(v []KeyfactorWebCoreModelsEnrollmentTemplateEnrollmentField)`
 
 SetEnrollmentFields sets EnrollmentFields field to given value.
 

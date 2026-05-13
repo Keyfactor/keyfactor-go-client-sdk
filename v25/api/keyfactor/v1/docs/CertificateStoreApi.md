@@ -13,10 +13,11 @@ Method | HTTP request | Description
 [**DeleteCertificateStores**](CertificateStoreApi.md#DeleteCertificateStores) | **DELETE** /CertificateStores | Deletes multiple persisted certificate store entities by their identifiers
 [**DeleteCertificateStoresById**](CertificateStoreApi.md#DeleteCertificateStoresById) | **DELETE** /CertificateStores/{id} | Deletes a persisted certificate store by its Keyfactor identifier
 [**GetCertificateStores**](CertificateStoreApi.md#GetCertificateStores) | **GET** /CertificateStores | Returns all certificate stores according to the provided filter and output parameters
+[**GetCertificateStoresAliases**](CertificateStoreApi.md#GetCertificateStoresAliases) | **GET** /CertificateStores/Aliases | Retrieves lists of aliases contained in the certificate stores associated with the provided ids.
 [**GetCertificateStoresById**](CertificateStoreApi.md#GetCertificateStoresById) | **GET** /CertificateStores/{id} | Returns a single certificate store associated with the provided id
 [**GetCertificateStoresByIdInventory**](CertificateStoreApi.md#GetCertificateStoresByIdInventory) | **GET** /CertificateStores/{id}/Inventory | Returns a single certificate store&#39;s inventory associated with the provided id
-[**GetCertificateStoresInventory**](CertificateStoreApi.md#GetCertificateStoresInventory) | **GET** /CertificateStores/Inventory | Returns certificate store inventories associated with the provided query
 [**UpdateCertificateStores**](CertificateStoreApi.md#UpdateCertificateStores) | **PUT** /CertificateStores | Updates a given certificate store with the properties of the provided instance
+[**UpdateCertificateStoresAssignApplication**](CertificateStoreApi.md#UpdateCertificateStoresAssignApplication) | **PUT** /CertificateStores/AssignApplication | Assigns the provided certificate stores to the provided application
 [**UpdateCertificateStoresAssignContainer**](CertificateStoreApi.md#UpdateCertificateStoresAssignContainer) | **PUT** /CertificateStores/AssignContainer | Assigns the provided certificate stores to the provided container
 [**UpdateCertificateStoresDiscoveryJob**](CertificateStoreApi.md#UpdateCertificateStoresDiscoveryJob) | **PUT** /CertificateStores/DiscoveryJob | Configures a discovery job to locate currently unmanaged certificate stores
 [**UpdateCertificateStoresPassword**](CertificateStoreApi.md#UpdateCertificateStoresPassword) | **PUT** /CertificateStores/Password | Sets a password for the requested certificate store
@@ -643,6 +644,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetCertificateStoresAliases
+
+> CertificateStoresCertificateStoreAliasesResponse NewGetCertificateStoresAliasesRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Ids(ids).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Retrieves lists of aliases contained in the certificate stores associated with the provided ids.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient]
+    ids := []string{"Inner_example"} // []string | certificate store ids. (optional)
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CertificateStoreApi.NewGetCertificateStoresAliasesRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).Ids(ids).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.GetCertificateStoresAliases``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetCertificateStoresAliases`: CertificateStoresCertificateStoreAliasesResponse
+    fmt.Fprintf(os.Stdout, "Response from `CertificateStoreApi.GetCertificateStoresAliases`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCertificateStoresAliasesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | 
+ **ids** | **[]string** | certificate store ids. | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+
+### Return type
+
+[**CertificateStoresCertificateStoreAliasesResponse**](CertificateStoresCertificateStoreAliasesResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetCertificateStoresById
 
 > CertificateStoresCertificateStoreResponse NewGetCertificateStoresByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
@@ -795,86 +864,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetCertificateStoresInventory
-
-> []CertificateStoresCertificateStoreInventoryResponse NewGetCertificateStoresInventoryRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PerformRoleCheck(performRoleCheck).RoleIdList(roleIdList).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-
-Returns certificate store inventories associated with the provided query
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient]
-    performRoleCheck := true // bool | Set to 'true' if role permissions for the current user should be validated (optional)
-    roleIdList := []int32{int32(123)} // []int32 | List of Keyfactor role identifiers (integer) used to determine permissions if provided (optional)
-    queryString := "queryString_example" // string | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) (optional)
-    pageReturned := int32(56) // int32 | The current page within the result set to be returned (optional)
-    returnLimit := int32(56) // int32 | Maximum number of records to be returned in a single call (optional)
-    sortField := "sortField_example" // string | Field by which the results should be sorted (view results via Management Portal for sortable columns) (optional)
-    sortAscending := openapiclient.Keyfactor.Common.QueryableExtensions.SortOrder(0) // KeyfactorCommonQueryableExtensionsSortOrder | Field sort direction [0=ascending, 1=descending] (optional)
-    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-
-    configuration := openapiclient.NewConfiguration(make(map[string]string))
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CertificateStoreApi.NewGetCertificateStoresInventoryRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).PerformRoleCheck(performRoleCheck).RoleIdList(roleIdList).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.GetCertificateStoresInventory``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCertificateStoresInventory`: []CertificateStoresCertificateStoreInventoryResponse
-    fmt.Fprintf(os.Stdout, "Response from `CertificateStoreApi.GetCertificateStoresInventory`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetCertificateStoresInventoryRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | 
- **performRoleCheck** | **bool** | Set to &#39;true&#39; if role permissions for the current user should be validated | 
- **roleIdList** | **[]int32** | List of Keyfactor role identifiers (integer) used to determine permissions if provided | 
- **queryString** | **string** | Contents of the query (ex: field1 -eq value1 AND field2 -gt value2) | 
- **pageReturned** | **int32** | The current page within the result set to be returned | 
- **returnLimit** | **int32** | Maximum number of records to be returned in a single call | 
- **sortField** | **string** | Field by which the results should be sorted (view results via Management Portal for sortable columns) | 
- **sortAscending** | [**KeyfactorCommonQueryableExtensionsSortOrder**](KeyfactorCommonQueryableExtensionsSortOrder.md) | Field sort direction [0&#x3D;ascending, 1&#x3D;descending] | 
- **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
-
-### Return type
-
-[**[]CertificateStoresCertificateStoreInventoryResponse**](CertificateStoresCertificateStoreInventoryResponse.md)
-
-### Authorization
-
-[basicAuth](../README.md#Configuration)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## UpdateCertificateStores
 
 > CertificateStoresCertificateStoreResponse NewUpdateCertificateStoresRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest(cSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest).Execute()
@@ -928,6 +917,74 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CertificateStoresCertificateStoreResponse**](CertificateStoresCertificateStoreResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+- **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateCertificateStoresAssignApplication
+
+> []CertificateStoresCertificateStoreApplicationResponse NewUpdateCertificateStoresAssignApplicationRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresApplicationAssignment(certificateStoresApplicationAssignment).Execute()
+
+Assigns the provided certificate stores to the provided application
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient]
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    certificateStoresApplicationAssignment := *openapiclient.NewCertificateStoresApplicationAssignment([]string{"KeystoreIds_example"}) // CertificateStoresApplicationAssignment | Keyfactor certificate store identifiers and the application properties (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CertificateStoreApi.NewUpdateCertificateStoresAssignApplicationRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CertificateStoresApplicationAssignment(certificateStoresApplicationAssignment).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateStoreApi.UpdateCertificateStoresAssignApplication``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateCertificateStoresAssignApplication`: []CertificateStoresCertificateStoreApplicationResponse
+    fmt.Fprintf(os.Stdout, "Response from `CertificateStoreApi.UpdateCertificateStoresAssignApplication`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateCertificateStoresAssignApplicationRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **certificateStoresApplicationAssignment** | [**CertificateStoresApplicationAssignment**](CertificateStoresApplicationAssignment.md) | Keyfactor certificate store identifiers and the application properties | 
+
+### Return type
+
+[**[]CertificateStoresCertificateStoreApplicationResponse**](CertificateStoresCertificateStoreApplicationResponse.md)
 
 ### Authorization
 

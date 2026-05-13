@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -31,6 +31,7 @@ var _ MappedNullable = &KeyfactorWebCoreModelsEnrollmentEnrollmentCA{}
 type KeyfactorWebCoreModelsEnrollmentEnrollmentCA struct {
 	Id              *int32         `json:"Id,omitempty"`
 	Name            NullableString `json:"Name,omitempty"`
+	DisplayName     NullableString `json:"DisplayName,omitempty"`
 	RFCEnforcement  *bool          `json:"RFCEnforcement,omitempty"`
 	SubscriberTerms *bool          `json:"SubscriberTerms,omitempty"`
 }
@@ -127,6 +128,49 @@ func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentCA) UnsetName() {
 	o.Name.Unset()
 }
 
+// GetDisplayName returns the DisplayName field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentCA) GetDisplayName() string {
+	if o == nil || isNil(o.DisplayName.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.DisplayName.Get()
+}
+
+// GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentCA) GetDisplayNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.DisplayName.Get(), o.DisplayName.IsSet()
+}
+
+// HasDisplayName returns a boolean if a field has been set.
+func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentCA) HasDisplayName() bool {
+	if o != nil && o.DisplayName.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplayName gets a reference to the given NullableString and assigns it to the DisplayName field.
+func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentCA) SetDisplayName(v string) {
+	o.DisplayName.Set(&v)
+}
+
+// SetDisplayNameNil sets the value for DisplayName to be an explicit nil
+func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentCA) SetDisplayNameNil() {
+	o.DisplayName.Set(nil)
+}
+
+// UnsetDisplayName ensures that no value is present for DisplayName, not even an explicit nil
+func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentCA) UnsetDisplayName() {
+	o.DisplayName.Unset()
+}
+
 // GetRFCEnforcement returns the RFCEnforcement field value if set, zero value otherwise.
 func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentCA) GetRFCEnforcement() bool {
 	if o == nil || isNil(o.RFCEnforcement) {
@@ -206,6 +250,9 @@ func (o KeyfactorWebCoreModelsEnrollmentEnrollmentCA) ToMap() (map[string]interf
 	}
 	if o.Name.IsSet() {
 		toSerialize["Name"] = o.Name.Get()
+	}
+	if o.DisplayName.IsSet() {
+		toSerialize["DisplayName"] = o.DisplayName.Get()
 	}
 	if !isNil(o.RFCEnforcement) {
 		toSerialize["RFCEnforcement"] = o.RFCEnforcement

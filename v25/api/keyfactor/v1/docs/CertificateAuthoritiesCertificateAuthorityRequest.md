@@ -34,8 +34,8 @@ Name | Type | Description | Notes
 **FullScan** | Pointer to [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | [optional] 
 **IncrementalScan** | Pointer to [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | [optional] 
 **ThresholdCheck** | Pointer to [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | [optional] 
-**AuthCertificatePassword** | Pointer to [**CSSCMSDataModelModelsKeyfactorAPISecret**](CSSCMSDataModelModelsKeyfactorAPISecret.md) |  | [optional] 
-**AuthCertificate** | Pointer to [**CSSCMSDataModelModelsKeyfactorAPISecret**](CSSCMSDataModelModelsKeyfactorAPISecret.md) |  | [optional] 
+**AuthCertificatePassword** | Pointer to **map[string]interface{}** | Overrides default KeyfactorAPISecret with inline SecretValue | [optional] 
+**AuthCertificate** | Pointer to **map[string]interface{}** | Overrides default KeyfactorAPISecret with inline SecretValue | [optional] 
 **CAType** | Pointer to [**CSSCMSCoreEnumsCertificateAuthorityType**](CSSCMSCoreEnumsCertificateAuthorityType.md) |  | [optional] 
 **EnforceUniqueDN** | Pointer to **bool** |  | [optional] 
 **AllowOneClickRenewals** | Pointer to **bool** |  | [optional] 
@@ -952,20 +952,20 @@ HasThresholdCheck returns a boolean if a field has been set.
 
 ### GetAuthCertificatePassword
 
-`func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificatePassword() CSSCMSDataModelModelsKeyfactorAPISecret`
+`func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificatePassword() map[string]interface{}`
 
 GetAuthCertificatePassword returns the AuthCertificatePassword field if non-nil, zero value otherwise.
 
 ### GetAuthCertificatePasswordOk
 
-`func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificatePasswordOk() (*CSSCMSDataModelModelsKeyfactorAPISecret, bool)`
+`func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificatePasswordOk() (*map[string]interface{}, bool)`
 
 GetAuthCertificatePasswordOk returns a tuple with the AuthCertificatePassword field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthCertificatePassword
 
-`func (o *CertificateAuthoritiesCertificateAuthorityRequest) SetAuthCertificatePassword(v CSSCMSDataModelModelsKeyfactorAPISecret)`
+`func (o *CertificateAuthoritiesCertificateAuthorityRequest) SetAuthCertificatePassword(v map[string]interface{})`
 
 SetAuthCertificatePassword sets AuthCertificatePassword field to given value.
 
@@ -977,20 +977,20 @@ HasAuthCertificatePassword returns a boolean if a field has been set.
 
 ### GetAuthCertificate
 
-`func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificate() CSSCMSDataModelModelsKeyfactorAPISecret`
+`func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificate() map[string]interface{}`
 
 GetAuthCertificate returns the AuthCertificate field if non-nil, zero value otherwise.
 
 ### GetAuthCertificateOk
 
-`func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificateOk() (*CSSCMSDataModelModelsKeyfactorAPISecret, bool)`
+`func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificateOk() (*map[string]interface{}, bool)`
 
 GetAuthCertificateOk returns a tuple with the AuthCertificate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthCertificate
 
-`func (o *CertificateAuthoritiesCertificateAuthorityRequest) SetAuthCertificate(v CSSCMSDataModelModelsKeyfactorAPISecret)`
+`func (o *CertificateAuthoritiesCertificateAuthorityRequest) SetAuthCertificate(v map[string]interface{})`
 
 SetAuthCertificate sets AuthCertificate field to given value.
 

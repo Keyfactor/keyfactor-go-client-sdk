@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **ShortName** | **string** |  | 
 **Capability** | Pointer to **NullableString** |  | [optional] 
 **LocalStore** | Pointer to **bool** |  | [optional] 
-**SupportedOperations** | Pointer to [**CSSCMSDataModelModelsCertStoreTypeSupportedOperations**](CSSCMSDataModelModelsCertStoreTypeSupportedOperations.md) |  | [optional] 
-**Properties** | Pointer to [**[]CSSCMSDataModelModelsCertificateStoreTypeProperty**](CSSCMSDataModelModelsCertificateStoreTypeProperty.md) |  | [optional] 
-**PasswordOptions** | Pointer to [**CSSCMSDataModelModelsCertStoreTypePasswordOptions**](CSSCMSDataModelModelsCertStoreTypePasswordOptions.md) |  | [optional] 
+**SupportedOperations** | Pointer to [**CertificateStoresTypesSupportedOperations**](CertificateStoresTypesSupportedOperations.md) |  | [optional] 
+**Properties** | Pointer to [**[]CertificateStoresTypesStoreTypeProperty**](CertificateStoresTypesStoreTypeProperty.md) |  | [optional] 
+**PasswordOptions** | Pointer to [**CertificateStoresTypesPasswordOptions**](CertificateStoresTypesPasswordOptions.md) |  | [optional] 
 **StorePathType** | Pointer to **NullableString** |  | [optional] 
 **StorePathValue** | Pointer to **NullableString** |  | [optional] 
 **PrivateKeyAllowed** | Pointer to [**CSSCMSCoreEnumsCertStorePrivateKey**](CSSCMSCoreEnumsCertStorePrivateKey.md) |  | [optional] 
@@ -20,8 +20,7 @@ Name | Type | Description | Notes
 **PowerShell** | Pointer to **bool** |  | [optional] 
 **BlueprintAllowed** | Pointer to **bool** |  | [optional] 
 **CustomAliasAllowed** | Pointer to [**KeyfactorOrchestratorsCommonEnumsCertStoreCustomAlias**](KeyfactorOrchestratorsCommonEnumsCertStoreCustomAlias.md) |  | [optional] 
-**JobProperties** | Pointer to **[]string** |  | [optional] 
-**EntryParameters** | Pointer to [**[]CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter**](CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter.md) |  | [optional] 
+**EntryParameters** | Pointer to [**[]CertificateStoresTypesEntryParameters**](CertificateStoresTypesEntryParameters.md) |  | [optional] 
 
 ## Methods
 
@@ -164,20 +163,20 @@ HasLocalStore returns a boolean if a field has been set.
 
 ### GetSupportedOperations
 
-`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetSupportedOperations() CSSCMSDataModelModelsCertStoreTypeSupportedOperations`
+`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetSupportedOperations() CertificateStoresTypesSupportedOperations`
 
 GetSupportedOperations returns the SupportedOperations field if non-nil, zero value otherwise.
 
 ### GetSupportedOperationsOk
 
-`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetSupportedOperationsOk() (*CSSCMSDataModelModelsCertStoreTypeSupportedOperations, bool)`
+`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetSupportedOperationsOk() (*CertificateStoresTypesSupportedOperations, bool)`
 
 GetSupportedOperationsOk returns a tuple with the SupportedOperations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSupportedOperations
 
-`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) SetSupportedOperations(v CSSCMSDataModelModelsCertStoreTypeSupportedOperations)`
+`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) SetSupportedOperations(v CertificateStoresTypesSupportedOperations)`
 
 SetSupportedOperations sets SupportedOperations field to given value.
 
@@ -189,20 +188,20 @@ HasSupportedOperations returns a boolean if a field has been set.
 
 ### GetProperties
 
-`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetProperties() []CSSCMSDataModelModelsCertificateStoreTypeProperty`
+`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetProperties() []CertificateStoresTypesStoreTypeProperty`
 
 GetProperties returns the Properties field if non-nil, zero value otherwise.
 
 ### GetPropertiesOk
 
-`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetPropertiesOk() (*[]CSSCMSDataModelModelsCertificateStoreTypeProperty, bool)`
+`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetPropertiesOk() (*[]CertificateStoresTypesStoreTypeProperty, bool)`
 
 GetPropertiesOk returns a tuple with the Properties field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProperties
 
-`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) SetProperties(v []CSSCMSDataModelModelsCertificateStoreTypeProperty)`
+`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) SetProperties(v []CertificateStoresTypesStoreTypeProperty)`
 
 SetProperties sets Properties field to given value.
 
@@ -224,20 +223,20 @@ HasProperties returns a boolean if a field has been set.
 UnsetProperties ensures that no value is present for Properties, not even an explicit nil
 ### GetPasswordOptions
 
-`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetPasswordOptions() CSSCMSDataModelModelsCertStoreTypePasswordOptions`
+`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetPasswordOptions() CertificateStoresTypesPasswordOptions`
 
 GetPasswordOptions returns the PasswordOptions field if non-nil, zero value otherwise.
 
 ### GetPasswordOptionsOk
 
-`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetPasswordOptionsOk() (*CSSCMSDataModelModelsCertStoreTypePasswordOptions, bool)`
+`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetPasswordOptionsOk() (*CertificateStoresTypesPasswordOptions, bool)`
 
 GetPasswordOptionsOk returns a tuple with the PasswordOptions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPasswordOptions
 
-`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) SetPasswordOptions(v CSSCMSDataModelModelsCertStoreTypePasswordOptions)`
+`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) SetPasswordOptions(v CertificateStoresTypesPasswordOptions)`
 
 SetPasswordOptions sets PasswordOptions field to given value.
 
@@ -467,57 +466,22 @@ SetCustomAliasAllowed sets CustomAliasAllowed field to given value.
 
 HasCustomAliasAllowed returns a boolean if a field has been set.
 
-### GetJobProperties
-
-`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetJobProperties() []string`
-
-GetJobProperties returns the JobProperties field if non-nil, zero value otherwise.
-
-### GetJobPropertiesOk
-
-`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetJobPropertiesOk() (*[]string, bool)`
-
-GetJobPropertiesOk returns a tuple with the JobProperties field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetJobProperties
-
-`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) SetJobProperties(v []string)`
-
-SetJobProperties sets JobProperties field to given value.
-
-### HasJobProperties
-
-`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) HasJobProperties() bool`
-
-HasJobProperties returns a boolean if a field has been set.
-
-### SetJobPropertiesNil
-
-`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) SetJobPropertiesNil(b bool)`
-
- SetJobPropertiesNil sets the value for JobProperties to be an explicit nil
-
-### UnsetJobProperties
-`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) UnsetJobProperties()`
-
-UnsetJobProperties ensures that no value is present for JobProperties, not even an explicit nil
 ### GetEntryParameters
 
-`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetEntryParameters() []CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter`
+`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetEntryParameters() []CertificateStoresTypesEntryParameters`
 
 GetEntryParameters returns the EntryParameters field if non-nil, zero value otherwise.
 
 ### GetEntryParametersOk
 
-`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetEntryParametersOk() (*[]CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter, bool)`
+`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetEntryParametersOk() (*[]CertificateStoresTypesEntryParameters, bool)`
 
 GetEntryParametersOk returns a tuple with the EntryParameters field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEntryParameters
 
-`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) SetEntryParameters(v []CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter)`
+`func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) SetEntryParameters(v []CertificateStoresTypesEntryParameters)`
 
 SetEntryParameters sets EntryParameters field to given value.
 

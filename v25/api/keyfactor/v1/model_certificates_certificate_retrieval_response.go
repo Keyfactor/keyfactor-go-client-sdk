@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -30,6 +30,10 @@ var _ MappedNullable = &CertificatesCertificateRetrievalResponse{}
 
 // CertificatesCertificateRetrievalResponse struct for CertificatesCertificateRetrievalResponse
 type CertificatesCertificateRetrievalResponse struct {
+	// Whether the certificate is a CA certificate. Determined by the 'CA' Basic Constraint.
+	IsCACertificate *bool `json:"IsCACertificate,omitempty"`
+	// Maximum number of intermediate CA certificates that may follow this certificate in a valid certification path. Determined by the 'PathLenConstraint' Basic Constraint.
+	PathLengthConstraint     NullableInt32                       `json:"PathLengthConstraint,omitempty"`
 	Id                       *int32                              `json:"Id,omitempty"`
 	Thumbprint               NullableString                      `json:"Thumbprint,omitempty"`
 	SerialNumber             NullableString                      `json:"SerialNumber,omitempty"`
@@ -65,27 +69,28 @@ type CertificatesCertificateRetrievalResponse struct {
 	CertificateAuthorityId   NullableInt32                       `json:"CertificateAuthorityId,omitempty"`
 	CertificateAuthorityName NullableString                      `json:"CertificateAuthorityName,omitempty"`
 	// Full template display name.
-	TemplateName           NullableString                                                                `json:"TemplateName,omitempty"`
-	ArchivedKey            *bool                                                                         `json:"ArchivedKey,omitempty"`
-	HasPrivateKey          *bool                                                                         `json:"HasPrivateKey,omitempty"`
-	HasAltPrivateKey       *bool                                                                         `json:"HasAltPrivateKey,omitempty"`
-	PrincipalName          NullableString                                                                `json:"PrincipalName,omitempty"`
-	CertRequestId          NullableInt32                                                                 `json:"CertRequestId,omitempty"`
-	RequesterName          NullableString                                                                `json:"RequesterName,omitempty"`
-	ContentBytes           NullableString                                                                `json:"ContentBytes,omitempty"`
-	ExtendedKeyUsages      []CertificatesCertificateRetrievalResponseExtendedKeyUsageModel               `json:"ExtendedKeyUsages,omitempty"`
-	SubjectAltNameElements []CertificatesCertificateRetrievalResponseSubjectAlternativeNameModel         `json:"SubjectAltNameElements,omitempty"`
-	CRLDistributionPoints  []CertificatesCertificateRetrievalResponseCRLDistributionPointModel           `json:"CRLDistributionPoints,omitempty"`
-	LocationsCount         []CertificatesCertificateRetrievalResponseLocationCountModel                  `json:"LocationsCount,omitempty"`
-	SSLLocations           []CertificatesCertificateRetrievalResponseCertificateStoreLocationDetailModel `json:"SSLLocations,omitempty"`
-	Locations              []CertificatesCertificateRetrievalResponseCertificateStoreInventoryItemModel  `json:"Locations,omitempty"`
-	Metadata               map[string]string                                                             `json:"Metadata,omitempty"`
-	CARowIndex             NullableInt64                                                                 `json:"CARowIndex,omitempty"`
-	CARecordId             NullableString                                                                `json:"CARecordId,omitempty"`
-	DetailedKeyUsage       *CertificatesCertificateRetrievalResponseDetailedKeyUsageModel                `json:"DetailedKeyUsage,omitempty"`
-	KeyRecoverable         *bool                                                                         `json:"KeyRecoverable,omitempty"`
-	Curve                  NullableString                                                                `json:"Curve,omitempty"`
-	EnrollmentPatternId    NullableInt32                                                                 `json:"EnrollmentPatternId,omitempty"`
+	TemplateName           NullableString                                                                    `json:"TemplateName,omitempty"`
+	ArchivedKey            *bool                                                                             `json:"ArchivedKey,omitempty"`
+	HasPrivateKey          *bool                                                                             `json:"HasPrivateKey,omitempty"`
+	HasAltPrivateKey       *bool                                                                             `json:"HasAltPrivateKey,omitempty"`
+	PrincipalName          NullableString                                                                    `json:"PrincipalName,omitempty"`
+	CertRequestId          NullableInt32                                                                     `json:"CertRequestId,omitempty"`
+	RequesterName          NullableString                                                                    `json:"RequesterName,omitempty"`
+	ContentBytes           NullableString                                                                    `json:"ContentBytes,omitempty"`
+	ExtendedKeyUsages      []CertificatesCertificateRetrievalBulkResponseExtendedKeyUsageModel               `json:"ExtendedKeyUsages,omitempty"`
+	SubjectAltNameElements []CertificatesCertificateRetrievalBulkResponseSubjectAlternativeNameModel         `json:"SubjectAltNameElements,omitempty"`
+	CRLDistributionPoints  []CertificatesCertificateRetrievalBulkResponseCRLDistributionPointModel           `json:"CRLDistributionPoints,omitempty"`
+	LocationsCount         []CertificatesCertificateRetrievalBulkResponseLocationCountModel                  `json:"LocationsCount,omitempty"`
+	SSLLocations           []CertificatesCertificateRetrievalBulkResponseCertificateStoreLocationDetailModel `json:"SSLLocations,omitempty"`
+	Locations              []CertificatesCertificateRetrievalBulkResponseCertificateStoreInventoryItemModel  `json:"Locations,omitempty"`
+	Metadata               map[string]string                                                                 `json:"Metadata,omitempty"`
+	CARowIndex             NullableInt64                                                                     `json:"CARowIndex,omitempty"`
+	CARecordId             NullableString                                                                    `json:"CARecordId,omitempty"`
+	DetailedKeyUsage       *CertificatesCertificateRetrievalBulkResponseDetailedKeyUsageModel                `json:"DetailedKeyUsage,omitempty"`
+	KeyRecoverable         *bool                                                                             `json:"KeyRecoverable,omitempty"`
+	Curve                  NullableString                                                                    `json:"Curve,omitempty"`
+	EnrollmentPatternId    NullableInt32                                                                     `json:"EnrollmentPatternId,omitempty"`
+	Lifespan               *int32                                                                            `json:"Lifespan,omitempty"`
 }
 
 // NewCertificatesCertificateRetrievalResponse instantiates a new CertificatesCertificateRetrievalResponse object
@@ -103,6 +108,81 @@ func NewCertificatesCertificateRetrievalResponse() *CertificatesCertificateRetri
 func NewCertificatesCertificateRetrievalResponseWithDefaults() *CertificatesCertificateRetrievalResponse {
 	this := CertificatesCertificateRetrievalResponse{}
 	return &this
+}
+
+// GetIsCACertificate returns the IsCACertificate field value if set, zero value otherwise.
+func (o *CertificatesCertificateRetrievalResponse) GetIsCACertificate() bool {
+	if o == nil || isNil(o.IsCACertificate) {
+		var ret bool
+		return ret
+	}
+	return *o.IsCACertificate
+}
+
+// GetIsCACertificateOk returns a tuple with the IsCACertificate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CertificatesCertificateRetrievalResponse) GetIsCACertificateOk() (*bool, bool) {
+	if o == nil || isNil(o.IsCACertificate) {
+		return nil, false
+	}
+	return o.IsCACertificate, true
+}
+
+// HasIsCACertificate returns a boolean if a field has been set.
+func (o *CertificatesCertificateRetrievalResponse) HasIsCACertificate() bool {
+	if o != nil && !isNil(o.IsCACertificate) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsCACertificate gets a reference to the given bool and assigns it to the IsCACertificate field.
+func (o *CertificatesCertificateRetrievalResponse) SetIsCACertificate(v bool) {
+	o.IsCACertificate = &v
+}
+
+// GetPathLengthConstraint returns the PathLengthConstraint field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CertificatesCertificateRetrievalResponse) GetPathLengthConstraint() int32 {
+	if o == nil || isNil(o.PathLengthConstraint.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.PathLengthConstraint.Get()
+}
+
+// GetPathLengthConstraintOk returns a tuple with the PathLengthConstraint field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CertificatesCertificateRetrievalResponse) GetPathLengthConstraintOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.PathLengthConstraint.Get(), o.PathLengthConstraint.IsSet()
+}
+
+// HasPathLengthConstraint returns a boolean if a field has been set.
+func (o *CertificatesCertificateRetrievalResponse) HasPathLengthConstraint() bool {
+	if o != nil && o.PathLengthConstraint.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPathLengthConstraint gets a reference to the given NullableInt32 and assigns it to the PathLengthConstraint field.
+func (o *CertificatesCertificateRetrievalResponse) SetPathLengthConstraint(v int32) {
+	o.PathLengthConstraint.Set(&v)
+}
+
+// SetPathLengthConstraintNil sets the value for PathLengthConstraint to be an explicit nil
+func (o *CertificatesCertificateRetrievalResponse) SetPathLengthConstraintNil() {
+	o.PathLengthConstraint.Set(nil)
+}
+
+// UnsetPathLengthConstraint ensures that no value is present for PathLengthConstraint, not even an explicit nil
+func (o *CertificatesCertificateRetrievalResponse) UnsetPathLengthConstraint() {
+	o.PathLengthConstraint.Unset()
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -1769,9 +1849,9 @@ func (o *CertificatesCertificateRetrievalResponse) UnsetContentBytes() {
 }
 
 // GetExtendedKeyUsages returns the ExtendedKeyUsages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CertificatesCertificateRetrievalResponse) GetExtendedKeyUsages() []CertificatesCertificateRetrievalResponseExtendedKeyUsageModel {
+func (o *CertificatesCertificateRetrievalResponse) GetExtendedKeyUsages() []CertificatesCertificateRetrievalBulkResponseExtendedKeyUsageModel {
 	if o == nil {
-		var ret []CertificatesCertificateRetrievalResponseExtendedKeyUsageModel
+		var ret []CertificatesCertificateRetrievalBulkResponseExtendedKeyUsageModel
 		return ret
 	}
 	return o.ExtendedKeyUsages
@@ -1780,7 +1860,7 @@ func (o *CertificatesCertificateRetrievalResponse) GetExtendedKeyUsages() []Cert
 // GetExtendedKeyUsagesOk returns a tuple with the ExtendedKeyUsages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CertificatesCertificateRetrievalResponse) GetExtendedKeyUsagesOk() ([]CertificatesCertificateRetrievalResponseExtendedKeyUsageModel, bool) {
+func (o *CertificatesCertificateRetrievalResponse) GetExtendedKeyUsagesOk() ([]CertificatesCertificateRetrievalBulkResponseExtendedKeyUsageModel, bool) {
 	if o == nil || isNil(o.ExtendedKeyUsages) {
 		return nil, false
 	}
@@ -1796,15 +1876,15 @@ func (o *CertificatesCertificateRetrievalResponse) HasExtendedKeyUsages() bool {
 	return false
 }
 
-// SetExtendedKeyUsages gets a reference to the given []CertificatesCertificateRetrievalResponseExtendedKeyUsageModel and assigns it to the ExtendedKeyUsages field.
-func (o *CertificatesCertificateRetrievalResponse) SetExtendedKeyUsages(v []CertificatesCertificateRetrievalResponseExtendedKeyUsageModel) {
+// SetExtendedKeyUsages gets a reference to the given []CertificatesCertificateRetrievalBulkResponseExtendedKeyUsageModel and assigns it to the ExtendedKeyUsages field.
+func (o *CertificatesCertificateRetrievalResponse) SetExtendedKeyUsages(v []CertificatesCertificateRetrievalBulkResponseExtendedKeyUsageModel) {
 	o.ExtendedKeyUsages = v
 }
 
 // GetSubjectAltNameElements returns the SubjectAltNameElements field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CertificatesCertificateRetrievalResponse) GetSubjectAltNameElements() []CertificatesCertificateRetrievalResponseSubjectAlternativeNameModel {
+func (o *CertificatesCertificateRetrievalResponse) GetSubjectAltNameElements() []CertificatesCertificateRetrievalBulkResponseSubjectAlternativeNameModel {
 	if o == nil {
-		var ret []CertificatesCertificateRetrievalResponseSubjectAlternativeNameModel
+		var ret []CertificatesCertificateRetrievalBulkResponseSubjectAlternativeNameModel
 		return ret
 	}
 	return o.SubjectAltNameElements
@@ -1813,7 +1893,7 @@ func (o *CertificatesCertificateRetrievalResponse) GetSubjectAltNameElements() [
 // GetSubjectAltNameElementsOk returns a tuple with the SubjectAltNameElements field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CertificatesCertificateRetrievalResponse) GetSubjectAltNameElementsOk() ([]CertificatesCertificateRetrievalResponseSubjectAlternativeNameModel, bool) {
+func (o *CertificatesCertificateRetrievalResponse) GetSubjectAltNameElementsOk() ([]CertificatesCertificateRetrievalBulkResponseSubjectAlternativeNameModel, bool) {
 	if o == nil || isNil(o.SubjectAltNameElements) {
 		return nil, false
 	}
@@ -1829,15 +1909,15 @@ func (o *CertificatesCertificateRetrievalResponse) HasSubjectAltNameElements() b
 	return false
 }
 
-// SetSubjectAltNameElements gets a reference to the given []CertificatesCertificateRetrievalResponseSubjectAlternativeNameModel and assigns it to the SubjectAltNameElements field.
-func (o *CertificatesCertificateRetrievalResponse) SetSubjectAltNameElements(v []CertificatesCertificateRetrievalResponseSubjectAlternativeNameModel) {
+// SetSubjectAltNameElements gets a reference to the given []CertificatesCertificateRetrievalBulkResponseSubjectAlternativeNameModel and assigns it to the SubjectAltNameElements field.
+func (o *CertificatesCertificateRetrievalResponse) SetSubjectAltNameElements(v []CertificatesCertificateRetrievalBulkResponseSubjectAlternativeNameModel) {
 	o.SubjectAltNameElements = v
 }
 
 // GetCRLDistributionPoints returns the CRLDistributionPoints field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CertificatesCertificateRetrievalResponse) GetCRLDistributionPoints() []CertificatesCertificateRetrievalResponseCRLDistributionPointModel {
+func (o *CertificatesCertificateRetrievalResponse) GetCRLDistributionPoints() []CertificatesCertificateRetrievalBulkResponseCRLDistributionPointModel {
 	if o == nil {
-		var ret []CertificatesCertificateRetrievalResponseCRLDistributionPointModel
+		var ret []CertificatesCertificateRetrievalBulkResponseCRLDistributionPointModel
 		return ret
 	}
 	return o.CRLDistributionPoints
@@ -1846,7 +1926,7 @@ func (o *CertificatesCertificateRetrievalResponse) GetCRLDistributionPoints() []
 // GetCRLDistributionPointsOk returns a tuple with the CRLDistributionPoints field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CertificatesCertificateRetrievalResponse) GetCRLDistributionPointsOk() ([]CertificatesCertificateRetrievalResponseCRLDistributionPointModel, bool) {
+func (o *CertificatesCertificateRetrievalResponse) GetCRLDistributionPointsOk() ([]CertificatesCertificateRetrievalBulkResponseCRLDistributionPointModel, bool) {
 	if o == nil || isNil(o.CRLDistributionPoints) {
 		return nil, false
 	}
@@ -1862,15 +1942,15 @@ func (o *CertificatesCertificateRetrievalResponse) HasCRLDistributionPoints() bo
 	return false
 }
 
-// SetCRLDistributionPoints gets a reference to the given []CertificatesCertificateRetrievalResponseCRLDistributionPointModel and assigns it to the CRLDistributionPoints field.
-func (o *CertificatesCertificateRetrievalResponse) SetCRLDistributionPoints(v []CertificatesCertificateRetrievalResponseCRLDistributionPointModel) {
+// SetCRLDistributionPoints gets a reference to the given []CertificatesCertificateRetrievalBulkResponseCRLDistributionPointModel and assigns it to the CRLDistributionPoints field.
+func (o *CertificatesCertificateRetrievalResponse) SetCRLDistributionPoints(v []CertificatesCertificateRetrievalBulkResponseCRLDistributionPointModel) {
 	o.CRLDistributionPoints = v
 }
 
 // GetLocationsCount returns the LocationsCount field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CertificatesCertificateRetrievalResponse) GetLocationsCount() []CertificatesCertificateRetrievalResponseLocationCountModel {
+func (o *CertificatesCertificateRetrievalResponse) GetLocationsCount() []CertificatesCertificateRetrievalBulkResponseLocationCountModel {
 	if o == nil {
-		var ret []CertificatesCertificateRetrievalResponseLocationCountModel
+		var ret []CertificatesCertificateRetrievalBulkResponseLocationCountModel
 		return ret
 	}
 	return o.LocationsCount
@@ -1879,7 +1959,7 @@ func (o *CertificatesCertificateRetrievalResponse) GetLocationsCount() []Certifi
 // GetLocationsCountOk returns a tuple with the LocationsCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CertificatesCertificateRetrievalResponse) GetLocationsCountOk() ([]CertificatesCertificateRetrievalResponseLocationCountModel, bool) {
+func (o *CertificatesCertificateRetrievalResponse) GetLocationsCountOk() ([]CertificatesCertificateRetrievalBulkResponseLocationCountModel, bool) {
 	if o == nil || isNil(o.LocationsCount) {
 		return nil, false
 	}
@@ -1895,15 +1975,15 @@ func (o *CertificatesCertificateRetrievalResponse) HasLocationsCount() bool {
 	return false
 }
 
-// SetLocationsCount gets a reference to the given []CertificatesCertificateRetrievalResponseLocationCountModel and assigns it to the LocationsCount field.
-func (o *CertificatesCertificateRetrievalResponse) SetLocationsCount(v []CertificatesCertificateRetrievalResponseLocationCountModel) {
+// SetLocationsCount gets a reference to the given []CertificatesCertificateRetrievalBulkResponseLocationCountModel and assigns it to the LocationsCount field.
+func (o *CertificatesCertificateRetrievalResponse) SetLocationsCount(v []CertificatesCertificateRetrievalBulkResponseLocationCountModel) {
 	o.LocationsCount = v
 }
 
 // GetSSLLocations returns the SSLLocations field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CertificatesCertificateRetrievalResponse) GetSSLLocations() []CertificatesCertificateRetrievalResponseCertificateStoreLocationDetailModel {
+func (o *CertificatesCertificateRetrievalResponse) GetSSLLocations() []CertificatesCertificateRetrievalBulkResponseCertificateStoreLocationDetailModel {
 	if o == nil {
-		var ret []CertificatesCertificateRetrievalResponseCertificateStoreLocationDetailModel
+		var ret []CertificatesCertificateRetrievalBulkResponseCertificateStoreLocationDetailModel
 		return ret
 	}
 	return o.SSLLocations
@@ -1912,7 +1992,7 @@ func (o *CertificatesCertificateRetrievalResponse) GetSSLLocations() []Certifica
 // GetSSLLocationsOk returns a tuple with the SSLLocations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CertificatesCertificateRetrievalResponse) GetSSLLocationsOk() ([]CertificatesCertificateRetrievalResponseCertificateStoreLocationDetailModel, bool) {
+func (o *CertificatesCertificateRetrievalResponse) GetSSLLocationsOk() ([]CertificatesCertificateRetrievalBulkResponseCertificateStoreLocationDetailModel, bool) {
 	if o == nil || isNil(o.SSLLocations) {
 		return nil, false
 	}
@@ -1928,15 +2008,15 @@ func (o *CertificatesCertificateRetrievalResponse) HasSSLLocations() bool {
 	return false
 }
 
-// SetSSLLocations gets a reference to the given []CertificatesCertificateRetrievalResponseCertificateStoreLocationDetailModel and assigns it to the SSLLocations field.
-func (o *CertificatesCertificateRetrievalResponse) SetSSLLocations(v []CertificatesCertificateRetrievalResponseCertificateStoreLocationDetailModel) {
+// SetSSLLocations gets a reference to the given []CertificatesCertificateRetrievalBulkResponseCertificateStoreLocationDetailModel and assigns it to the SSLLocations field.
+func (o *CertificatesCertificateRetrievalResponse) SetSSLLocations(v []CertificatesCertificateRetrievalBulkResponseCertificateStoreLocationDetailModel) {
 	o.SSLLocations = v
 }
 
 // GetLocations returns the Locations field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CertificatesCertificateRetrievalResponse) GetLocations() []CertificatesCertificateRetrievalResponseCertificateStoreInventoryItemModel {
+func (o *CertificatesCertificateRetrievalResponse) GetLocations() []CertificatesCertificateRetrievalBulkResponseCertificateStoreInventoryItemModel {
 	if o == nil {
-		var ret []CertificatesCertificateRetrievalResponseCertificateStoreInventoryItemModel
+		var ret []CertificatesCertificateRetrievalBulkResponseCertificateStoreInventoryItemModel
 		return ret
 	}
 	return o.Locations
@@ -1945,7 +2025,7 @@ func (o *CertificatesCertificateRetrievalResponse) GetLocations() []Certificates
 // GetLocationsOk returns a tuple with the Locations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CertificatesCertificateRetrievalResponse) GetLocationsOk() ([]CertificatesCertificateRetrievalResponseCertificateStoreInventoryItemModel, bool) {
+func (o *CertificatesCertificateRetrievalResponse) GetLocationsOk() ([]CertificatesCertificateRetrievalBulkResponseCertificateStoreInventoryItemModel, bool) {
 	if o == nil || isNil(o.Locations) {
 		return nil, false
 	}
@@ -1961,8 +2041,8 @@ func (o *CertificatesCertificateRetrievalResponse) HasLocations() bool {
 	return false
 }
 
-// SetLocations gets a reference to the given []CertificatesCertificateRetrievalResponseCertificateStoreInventoryItemModel and assigns it to the Locations field.
-func (o *CertificatesCertificateRetrievalResponse) SetLocations(v []CertificatesCertificateRetrievalResponseCertificateStoreInventoryItemModel) {
+// SetLocations gets a reference to the given []CertificatesCertificateRetrievalBulkResponseCertificateStoreInventoryItemModel and assigns it to the Locations field.
+func (o *CertificatesCertificateRetrievalResponse) SetLocations(v []CertificatesCertificateRetrievalBulkResponseCertificateStoreInventoryItemModel) {
 	o.Locations = v
 }
 
@@ -2086,9 +2166,9 @@ func (o *CertificatesCertificateRetrievalResponse) UnsetCARecordId() {
 }
 
 // GetDetailedKeyUsage returns the DetailedKeyUsage field value if set, zero value otherwise.
-func (o *CertificatesCertificateRetrievalResponse) GetDetailedKeyUsage() CertificatesCertificateRetrievalResponseDetailedKeyUsageModel {
+func (o *CertificatesCertificateRetrievalResponse) GetDetailedKeyUsage() CertificatesCertificateRetrievalBulkResponseDetailedKeyUsageModel {
 	if o == nil || isNil(o.DetailedKeyUsage) {
-		var ret CertificatesCertificateRetrievalResponseDetailedKeyUsageModel
+		var ret CertificatesCertificateRetrievalBulkResponseDetailedKeyUsageModel
 		return ret
 	}
 	return *o.DetailedKeyUsage
@@ -2096,7 +2176,7 @@ func (o *CertificatesCertificateRetrievalResponse) GetDetailedKeyUsage() Certifi
 
 // GetDetailedKeyUsageOk returns a tuple with the DetailedKeyUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CertificatesCertificateRetrievalResponse) GetDetailedKeyUsageOk() (*CertificatesCertificateRetrievalResponseDetailedKeyUsageModel, bool) {
+func (o *CertificatesCertificateRetrievalResponse) GetDetailedKeyUsageOk() (*CertificatesCertificateRetrievalBulkResponseDetailedKeyUsageModel, bool) {
 	if o == nil || isNil(o.DetailedKeyUsage) {
 		return nil, false
 	}
@@ -2112,8 +2192,8 @@ func (o *CertificatesCertificateRetrievalResponse) HasDetailedKeyUsage() bool {
 	return false
 }
 
-// SetDetailedKeyUsage gets a reference to the given CertificatesCertificateRetrievalResponseDetailedKeyUsageModel and assigns it to the DetailedKeyUsage field.
-func (o *CertificatesCertificateRetrievalResponse) SetDetailedKeyUsage(v CertificatesCertificateRetrievalResponseDetailedKeyUsageModel) {
+// SetDetailedKeyUsage gets a reference to the given CertificatesCertificateRetrievalBulkResponseDetailedKeyUsageModel and assigns it to the DetailedKeyUsage field.
+func (o *CertificatesCertificateRetrievalResponse) SetDetailedKeyUsage(v CertificatesCertificateRetrievalBulkResponseDetailedKeyUsageModel) {
 	o.DetailedKeyUsage = &v
 }
 
@@ -2235,6 +2315,38 @@ func (o *CertificatesCertificateRetrievalResponse) UnsetEnrollmentPatternId() {
 	o.EnrollmentPatternId.Unset()
 }
 
+// GetLifespan returns the Lifespan field value if set, zero value otherwise.
+func (o *CertificatesCertificateRetrievalResponse) GetLifespan() int32 {
+	if o == nil || isNil(o.Lifespan) {
+		var ret int32
+		return ret
+	}
+	return *o.Lifespan
+}
+
+// GetLifespanOk returns a tuple with the Lifespan field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CertificatesCertificateRetrievalResponse) GetLifespanOk() (*int32, bool) {
+	if o == nil || isNil(o.Lifespan) {
+		return nil, false
+	}
+	return o.Lifespan, true
+}
+
+// HasLifespan returns a boolean if a field has been set.
+func (o *CertificatesCertificateRetrievalResponse) HasLifespan() bool {
+	if o != nil && !isNil(o.Lifespan) {
+		return true
+	}
+
+	return false
+}
+
+// SetLifespan gets a reference to the given int32 and assigns it to the Lifespan field.
+func (o *CertificatesCertificateRetrievalResponse) SetLifespan(v int32) {
+	o.Lifespan = &v
+}
+
 func (o CertificatesCertificateRetrievalResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -2245,6 +2357,12 @@ func (o CertificatesCertificateRetrievalResponse) MarshalJSON() ([]byte, error) 
 
 func (o CertificatesCertificateRetrievalResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !isNil(o.IsCACertificate) {
+		toSerialize["IsCACertificate"] = o.IsCACertificate
+	}
+	if o.PathLengthConstraint.IsSet() {
+		toSerialize["PathLengthConstraint"] = o.PathLengthConstraint.Get()
+	}
 	if !isNil(o.Id) {
 		toSerialize["Id"] = o.Id
 	}
@@ -2409,6 +2527,9 @@ func (o CertificatesCertificateRetrievalResponse) ToMap() (map[string]interface{
 	}
 	if o.EnrollmentPatternId.IsSet() {
 		toSerialize["EnrollmentPatternId"] = o.EnrollmentPatternId.Get()
+	}
+	if !isNil(o.Lifespan) {
+		toSerialize["Lifespan"] = o.Lifespan
 	}
 	return toSerialize, nil
 }

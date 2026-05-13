@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -31,6 +31,278 @@ import (
 
 // TemplateApiService TemplateApi service
 type TemplateApiService service
+
+// Request for V1 POST /Templates/CADetails
+type ApiCreateTemplatesCADetailsRequest struct {
+	ctx                                   context.Context
+	ApiService                            *TemplateApiService
+	xKeyfactorRequestedWith               *string
+	xKeyfactorApiVersion                  *string
+	templatesTemplateDetailsCreateRequest *TemplatesTemplateDetailsCreateRequest
+}
+
+// Type of the request [XMLHttpRequest, APIClient]
+func (r ApiCreateTemplatesCADetailsRequest) XKeyfactorRequestedWith(xKeyfactorRequestedWith string) ApiCreateTemplatesCADetailsRequest {
+	r.xKeyfactorRequestedWith = &xKeyfactorRequestedWith
+	return r
+}
+
+// Desired version of the api, if not provided defaults to v1
+func (r ApiCreateTemplatesCADetailsRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) ApiCreateTemplatesCADetailsRequest {
+	r.xKeyfactorApiVersion = &xKeyfactorApiVersion
+	return r
+}
+
+// Request object containing CA Details about the certificate template
+func (r ApiCreateTemplatesCADetailsRequest) TemplatesTemplateDetailsCreateRequest(templatesTemplateDetailsCreateRequest TemplatesTemplateDetailsCreateRequest) ApiCreateTemplatesCADetailsRequest {
+	r.templatesTemplateDetailsCreateRequest = &templatesTemplateDetailsCreateRequest
+	return r
+}
+
+// Executes the V1 POST /Templates/CADetails request context
+func (r ApiCreateTemplatesCADetailsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateTemplatesCADetailsExecute(r)
+}
+
+/*
+Creates a new V1 POST /Templates/CADetails request.
+
+CreateTemplatesCADetails Creates a Template with provided CA details
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateTemplatesCADetailsRequest
+*/
+func (a *TemplateApiService) NewCreateTemplatesCADetailsRequest(ctx context.Context) ApiCreateTemplatesCADetailsRequest {
+
+	requestedWith := "APIClient"
+	apiVersion := "1"
+
+	return ApiCreateTemplatesCADetailsRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		xKeyfactorRequestedWith: &requestedWith,
+		xKeyfactorApiVersion:    &apiVersion,
+	}
+}
+
+// Executes the API request
+func (a *TemplateApiService) CreateTemplatesCADetailsExecute(r ApiCreateTemplatesCADetailsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
+
+	if r.xKeyfactorRequestedWith == nil {
+		requestedWith := "APIClient"
+		r.xKeyfactorRequestedWith = &requestedWith
+	}
+
+	if r.xKeyfactorApiVersion == nil {
+		apiVersion := "1"
+		r.xKeyfactorApiVersion = &apiVersion
+	}
+
+	localVarPath := apiBasePath + "/Templates/CADetails"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json-patch+json", "application/json", "text/json", "application/*+json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
+	if r.xKeyfactorApiVersion != nil {
+		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
+	}
+	// body params
+	localVarPostBody = r.templatesTemplateDetailsCreateRequest
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+// Request for V1 POST /Templates/CustomExtensions
+type ApiCreateTemplatesCustomExtensionsRequest struct {
+	ctx                                           context.Context
+	ApiService                                    *TemplateApiService
+	xKeyfactorRequestedWith                       *string
+	xKeyfactorApiVersion                          *string
+	templatesTemplateCertificateExtensionsRequest *TemplatesTemplateCertificateExtensionsRequest
+}
+
+// Type of the request [XMLHttpRequest, APIClient]
+func (r ApiCreateTemplatesCustomExtensionsRequest) XKeyfactorRequestedWith(xKeyfactorRequestedWith string) ApiCreateTemplatesCustomExtensionsRequest {
+	r.xKeyfactorRequestedWith = &xKeyfactorRequestedWith
+	return r
+}
+
+// Desired version of the api, if not provided defaults to v1
+func (r ApiCreateTemplatesCustomExtensionsRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) ApiCreateTemplatesCustomExtensionsRequest {
+	r.xKeyfactorApiVersion = &xKeyfactorApiVersion
+	return r
+}
+
+// Certificate extension object to create and the configuration tenant to add the extension to
+func (r ApiCreateTemplatesCustomExtensionsRequest) TemplatesTemplateCertificateExtensionsRequest(templatesTemplateCertificateExtensionsRequest TemplatesTemplateCertificateExtensionsRequest) ApiCreateTemplatesCustomExtensionsRequest {
+	r.templatesTemplateCertificateExtensionsRequest = &templatesTemplateCertificateExtensionsRequest
+	return r
+}
+
+// Executes the V1 POST /Templates/CustomExtensions request context
+func (r ApiCreateTemplatesCustomExtensionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateTemplatesCustomExtensionsExecute(r)
+}
+
+/*
+Creates a new V1 POST /Templates/CustomExtensions request.
+
+CreateTemplatesCustomExtensions Creates a new custom certificate extension on the EJBCA server instance
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateTemplatesCustomExtensionsRequest
+*/
+func (a *TemplateApiService) NewCreateTemplatesCustomExtensionsRequest(ctx context.Context) ApiCreateTemplatesCustomExtensionsRequest {
+
+	requestedWith := "APIClient"
+	apiVersion := "1"
+
+	return ApiCreateTemplatesCustomExtensionsRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		xKeyfactorRequestedWith: &requestedWith,
+		xKeyfactorApiVersion:    &apiVersion,
+	}
+}
+
+// Executes the API request
+func (a *TemplateApiService) CreateTemplatesCustomExtensionsExecute(r ApiCreateTemplatesCustomExtensionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
+
+	if r.xKeyfactorRequestedWith == nil {
+		requestedWith := "APIClient"
+		r.xKeyfactorRequestedWith = &requestedWith
+	}
+
+	if r.xKeyfactorApiVersion == nil {
+		apiVersion := "1"
+		r.xKeyfactorApiVersion = &apiVersion
+	}
+
+	localVarPath := apiBasePath + "/Templates/CustomExtensions"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json-patch+json", "application/json", "text/json", "application/*+json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
+	if r.xKeyfactorApiVersion != nil {
+		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
+	}
+	// body params
+	localVarPostBody = r.templatesTemplateCertificateExtensionsRequest
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
 
 // Request for V1 POST /Templates/Import
 type ApiCreateTemplatesImportRequest struct {
@@ -134,10 +406,10 @@ func (a *TemplateApiService) CreateTemplatesImportExecute(r ApiCreateTemplatesIm
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.configurationTenantConfigurationTenantRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -311,10 +583,10 @@ func (a *TemplateApiService) GetTemplatesExecute(r ApiGetTemplatesRequest) ([]Te
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -455,10 +727,442 @@ func (a *TemplateApiService) GetTemplatesByIdExecute(r ApiGetTemplatesByIdReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// Request for V1 GET /Templates/CADetails/{id}
+type ApiGetTemplatesCADetailsByIdRequest struct {
+	ctx                     context.Context
+	ApiService              *TemplateApiService
+	id                      int32
+	xKeyfactorRequestedWith *string
+	xKeyfactorApiVersion    *string
+}
+
+// Type of the request [XMLHttpRequest, APIClient]
+func (r ApiGetTemplatesCADetailsByIdRequest) XKeyfactorRequestedWith(xKeyfactorRequestedWith string) ApiGetTemplatesCADetailsByIdRequest {
+	r.xKeyfactorRequestedWith = &xKeyfactorRequestedWith
+	return r
+}
+
+// Desired version of the api, if not provided defaults to v1
+func (r ApiGetTemplatesCADetailsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) ApiGetTemplatesCADetailsByIdRequest {
+	r.xKeyfactorApiVersion = &xKeyfactorApiVersion
+	return r
+}
+
+// Executes the V1 GET /Templates/CADetails/{id} request context
+func (r ApiGetTemplatesCADetailsByIdRequest) Execute() (*TemplatesTemplateDetailsResponse, *http.Response, error) {
+	return r.ApiService.GetTemplatesCADetailsByIdExecute(r)
+}
+
+/*
+Creates a new V1 GET /Templates/CADetails/{id} request.
+
+GetTemplatesCADetailsById Returns additional CA details of the certificate template associated with the provided id
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifier of the certificate template
+	@return ApiGetTemplatesCADetailsByIdRequest
+*/
+func (a *TemplateApiService) NewGetTemplatesCADetailsByIdRequest(ctx context.Context, id int32) ApiGetTemplatesCADetailsByIdRequest {
+
+	requestedWith := "APIClient"
+	apiVersion := "1"
+
+	return ApiGetTemplatesCADetailsByIdRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		xKeyfactorRequestedWith: &requestedWith,
+		xKeyfactorApiVersion:    &apiVersion,
+
+		id: id,
+	}
+}
+
+// Executes the API request V1 GET /Templates/CADetails/{id}
+//
+//	@return TemplatesTemplateDetailsResponse
+func (a *TemplateApiService) GetTemplatesCADetailsByIdExecute(r ApiGetTemplatesCADetailsByIdRequest) (*TemplatesTemplateDetailsResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TemplatesTemplateDetailsResponse
+	)
+
+	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
+
+	if r.xKeyfactorRequestedWith == nil {
+		requestedWith := "APIClient"
+		r.xKeyfactorRequestedWith = &requestedWith
+	}
+
+	if r.xKeyfactorApiVersion == nil {
+		apiVersion := "1"
+		r.xKeyfactorApiVersion = &apiVersion
+	}
+
+	localVarPath := apiBasePath + "/Templates/CADetails/{id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
+	if r.xKeyfactorApiVersion != nil {
+		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// Request for V1 GET /Templates/CustomExtensions
+type ApiGetTemplatesCustomExtensionsRequest struct {
+	ctx                     context.Context
+	ApiService              *TemplateApiService
+	xKeyfactorRequestedWith *string
+	configTenant            *string
+	xKeyfactorApiVersion    *string
+}
+
+// Type of the request [XMLHttpRequest, APIClient]
+func (r ApiGetTemplatesCustomExtensionsRequest) XKeyfactorRequestedWith(xKeyfactorRequestedWith string) ApiGetTemplatesCustomExtensionsRequest {
+	r.xKeyfactorRequestedWith = &xKeyfactorRequestedWith
+	return r
+}
+
+// Name of the configuration tenant
+func (r ApiGetTemplatesCustomExtensionsRequest) ConfigTenant(configTenant string) ApiGetTemplatesCustomExtensionsRequest {
+	r.configTenant = &configTenant
+	return r
+}
+
+// Desired version of the api, if not provided defaults to v1
+func (r ApiGetTemplatesCustomExtensionsRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) ApiGetTemplatesCustomExtensionsRequest {
+	r.xKeyfactorApiVersion = &xKeyfactorApiVersion
+	return r
+}
+
+// Executes the V1 GET /Templates/CustomExtensions request context
+func (r ApiGetTemplatesCustomExtensionsRequest) Execute() ([]TemplatesTemplateCertificateExtensionResponse, *http.Response, error) {
+	return r.ApiService.GetTemplatesCustomExtensionsExecute(r)
+}
+
+/*
+Creates a new V1 GET /Templates/CustomExtensions request.
+
+GetTemplatesCustomExtensions Returns custom certificate extensions on an EJBCA server instance corresponding to the given configuration tenant
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetTemplatesCustomExtensionsRequest
+*/
+func (a *TemplateApiService) NewGetTemplatesCustomExtensionsRequest(ctx context.Context) ApiGetTemplatesCustomExtensionsRequest {
+
+	requestedWith := "APIClient"
+	apiVersion := "1"
+
+	return ApiGetTemplatesCustomExtensionsRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		xKeyfactorRequestedWith: &requestedWith,
+		xKeyfactorApiVersion:    &apiVersion,
+	}
+}
+
+// Executes the API request V1 GET /Templates/CustomExtensions
+//
+//	@return []TemplatesTemplateCertificateExtensionResponse
+func (a *TemplateApiService) GetTemplatesCustomExtensionsExecute(r ApiGetTemplatesCustomExtensionsRequest) ([]TemplatesTemplateCertificateExtensionResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []TemplatesTemplateCertificateExtensionResponse
+	)
+
+	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
+
+	if r.xKeyfactorRequestedWith == nil {
+		requestedWith := "APIClient"
+		r.xKeyfactorRequestedWith = &requestedWith
+	}
+
+	if r.xKeyfactorApiVersion == nil {
+		apiVersion := "1"
+		r.xKeyfactorApiVersion = &apiVersion
+	}
+
+	localVarPath := apiBasePath + "/Templates/CustomExtensions"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+
+	if r.configTenant != nil {
+		parameterAddToQuery(localVarQueryParams, "configTenant", r.configTenant, "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
+	if r.xKeyfactorApiVersion != nil {
+		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// Request for V1 GET /Templates/ExtendedKeyUsages
+type ApiGetTemplatesExtendedKeyUsagesRequest struct {
+	ctx                     context.Context
+	ApiService              *TemplateApiService
+	xKeyfactorRequestedWith *string
+	xKeyfactorApiVersion    *string
+}
+
+// Type of the request [XMLHttpRequest, APIClient]
+func (r ApiGetTemplatesExtendedKeyUsagesRequest) XKeyfactorRequestedWith(xKeyfactorRequestedWith string) ApiGetTemplatesExtendedKeyUsagesRequest {
+	r.xKeyfactorRequestedWith = &xKeyfactorRequestedWith
+	return r
+}
+
+// Desired version of the api, if not provided defaults to v1
+func (r ApiGetTemplatesExtendedKeyUsagesRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) ApiGetTemplatesExtendedKeyUsagesRequest {
+	r.xKeyfactorApiVersion = &xKeyfactorApiVersion
+	return r
+}
+
+// Executes the V1 GET /Templates/ExtendedKeyUsages request context
+func (r ApiGetTemplatesExtendedKeyUsagesRequest) Execute() ([]TemplatesTemplateExtendedKeyUsageResponse, *http.Response, error) {
+	return r.ApiService.GetTemplatesExtendedKeyUsagesExecute(r)
+}
+
+/*
+Creates a new V1 GET /Templates/ExtendedKeyUsages request.
+
+GetTemplatesExtendedKeyUsages Fetches all extended key usages known by Command.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetTemplatesExtendedKeyUsagesRequest
+*/
+func (a *TemplateApiService) NewGetTemplatesExtendedKeyUsagesRequest(ctx context.Context) ApiGetTemplatesExtendedKeyUsagesRequest {
+
+	requestedWith := "APIClient"
+	apiVersion := "1"
+
+	return ApiGetTemplatesExtendedKeyUsagesRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		xKeyfactorRequestedWith: &requestedWith,
+		xKeyfactorApiVersion:    &apiVersion,
+	}
+}
+
+// Executes the API request V1 GET /Templates/ExtendedKeyUsages
+//
+//	@return []TemplatesTemplateExtendedKeyUsageResponse
+func (a *TemplateApiService) GetTemplatesExtendedKeyUsagesExecute(r ApiGetTemplatesExtendedKeyUsagesRequest) ([]TemplatesTemplateExtendedKeyUsageResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []TemplatesTemplateExtendedKeyUsageResponse
+	)
+
+	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
+
+	if r.xKeyfactorRequestedWith == nil {
+		requestedWith := "APIClient"
+		r.xKeyfactorRequestedWith = &requestedWith
+	}
+
+	if r.xKeyfactorApiVersion == nil {
+		apiVersion := "1"
+		r.xKeyfactorApiVersion = &apiVersion
+	}
+
+	localVarPath := apiBasePath + "/Templates/ExtendedKeyUsages"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
+	if r.xKeyfactorApiVersion != nil {
+		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -598,10 +1302,10 @@ func (a *TemplateApiService) GetTemplatesSettingsExecute(r ApiGetTemplatesSettin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -741,10 +1445,10 @@ func (a *TemplateApiService) GetTemplatesSubjectPartsExecute(r ApiGetTemplatesSu
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -887,10 +1591,10 @@ func (a *TemplateApiService) UpdateTemplatesExecute(r ApiUpdateTemplatesRequest)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.templatesTemplateUpdateRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -928,6 +1632,283 @@ func (a *TemplateApiService) UpdateTemplatesExecute(r ApiUpdateTemplatesRequest)
 	}
 
 	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// Request for V1 PUT /Templates/CADetails/{id}
+type ApiUpdateTemplatesCADetailsByIdRequest struct {
+	ctx                                   context.Context
+	ApiService                            *TemplateApiService
+	id                                    int32
+	xKeyfactorRequestedWith               *string
+	xKeyfactorApiVersion                  *string
+	templatesTemplateDetailsUpdateRequest *TemplatesTemplateDetailsUpdateRequest
+}
+
+// Type of the request [XMLHttpRequest, APIClient]
+func (r ApiUpdateTemplatesCADetailsByIdRequest) XKeyfactorRequestedWith(xKeyfactorRequestedWith string) ApiUpdateTemplatesCADetailsByIdRequest {
+	r.xKeyfactorRequestedWith = &xKeyfactorRequestedWith
+	return r
+}
+
+// Desired version of the api, if not provided defaults to v1
+func (r ApiUpdateTemplatesCADetailsByIdRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) ApiUpdateTemplatesCADetailsByIdRequest {
+	r.xKeyfactorApiVersion = &xKeyfactorApiVersion
+	return r
+}
+
+// Request object containing CA Details about the certificate template
+func (r ApiUpdateTemplatesCADetailsByIdRequest) TemplatesTemplateDetailsUpdateRequest(templatesTemplateDetailsUpdateRequest TemplatesTemplateDetailsUpdateRequest) ApiUpdateTemplatesCADetailsByIdRequest {
+	r.templatesTemplateDetailsUpdateRequest = &templatesTemplateDetailsUpdateRequest
+	return r
+}
+
+// Executes the V1 PUT /Templates/CADetails/{id} request context
+func (r ApiUpdateTemplatesCADetailsByIdRequest) Execute() (*http.Response, error) {
+	return r.ApiService.UpdateTemplatesCADetailsByIdExecute(r)
+}
+
+/*
+Creates a new V1 PUT /Templates/CADetails/{id} request.
+
+UpdateTemplatesCADetailsById Sets CA details for a certificate template associated with the provided id
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Keyfactor identifier of the certificate template
+	@return ApiUpdateTemplatesCADetailsByIdRequest
+*/
+func (a *TemplateApiService) NewUpdateTemplatesCADetailsByIdRequest(ctx context.Context, id int32) ApiUpdateTemplatesCADetailsByIdRequest {
+
+	requestedWith := "APIClient"
+	apiVersion := "1"
+
+	return ApiUpdateTemplatesCADetailsByIdRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		xKeyfactorRequestedWith: &requestedWith,
+		xKeyfactorApiVersion:    &apiVersion,
+
+		id: id,
+	}
+}
+
+// Executes the API request
+func (a *TemplateApiService) UpdateTemplatesCADetailsByIdExecute(r ApiUpdateTemplatesCADetailsByIdRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
+
+	if r.xKeyfactorRequestedWith == nil {
+		requestedWith := "APIClient"
+		r.xKeyfactorRequestedWith = &requestedWith
+	}
+
+	if r.xKeyfactorApiVersion == nil {
+		apiVersion := "1"
+		r.xKeyfactorApiVersion = &apiVersion
+	}
+
+	localVarPath := apiBasePath + "/Templates/CADetails/{id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json-patch+json", "application/json", "text/json", "application/*+json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
+	if r.xKeyfactorApiVersion != nil {
+		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
+	}
+	// body params
+	localVarPostBody = r.templatesTemplateDetailsUpdateRequest
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+// Request for V1 PUT /Templates/CustomExtensions
+type ApiUpdateTemplatesCustomExtensionsRequest struct {
+	ctx                                           context.Context
+	ApiService                                    *TemplateApiService
+	xKeyfactorRequestedWith                       *string
+	xKeyfactorApiVersion                          *string
+	templatesTemplateCertificateExtensionsRequest *TemplatesTemplateCertificateExtensionsRequest
+}
+
+// Type of the request [XMLHttpRequest, APIClient]
+func (r ApiUpdateTemplatesCustomExtensionsRequest) XKeyfactorRequestedWith(xKeyfactorRequestedWith string) ApiUpdateTemplatesCustomExtensionsRequest {
+	r.xKeyfactorRequestedWith = &xKeyfactorRequestedWith
+	return r
+}
+
+// Desired version of the api, if not provided defaults to v1
+func (r ApiUpdateTemplatesCustomExtensionsRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) ApiUpdateTemplatesCustomExtensionsRequest {
+	r.xKeyfactorApiVersion = &xKeyfactorApiVersion
+	return r
+}
+
+// Certificate extension object to update and the configuration tenant to update the extension on
+func (r ApiUpdateTemplatesCustomExtensionsRequest) TemplatesTemplateCertificateExtensionsRequest(templatesTemplateCertificateExtensionsRequest TemplatesTemplateCertificateExtensionsRequest) ApiUpdateTemplatesCustomExtensionsRequest {
+	r.templatesTemplateCertificateExtensionsRequest = &templatesTemplateCertificateExtensionsRequest
+	return r
+}
+
+// Executes the V1 PUT /Templates/CustomExtensions request context
+func (r ApiUpdateTemplatesCustomExtensionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.UpdateTemplatesCustomExtensionsExecute(r)
+}
+
+/*
+Creates a new V1 PUT /Templates/CustomExtensions request.
+
+UpdateTemplatesCustomExtensions Edits an existing custom certificate extension on the EJBCA server instance
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateTemplatesCustomExtensionsRequest
+*/
+func (a *TemplateApiService) NewUpdateTemplatesCustomExtensionsRequest(ctx context.Context) ApiUpdateTemplatesCustomExtensionsRequest {
+
+	requestedWith := "APIClient"
+	apiVersion := "1"
+
+	return ApiUpdateTemplatesCustomExtensionsRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		xKeyfactorRequestedWith: &requestedWith,
+		xKeyfactorApiVersion:    &apiVersion,
+	}
+}
+
+// Executes the API request
+func (a *TemplateApiService) UpdateTemplatesCustomExtensionsExecute(r ApiUpdateTemplatesCustomExtensionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
+
+	if r.xKeyfactorRequestedWith == nil {
+		requestedWith := "APIClient"
+		r.xKeyfactorRequestedWith = &requestedWith
+	}
+
+	if r.xKeyfactorApiVersion == nil {
+		apiVersion := "1"
+		r.xKeyfactorApiVersion = &apiVersion
+	}
+
+	localVarPath := apiBasePath + "/Templates/CustomExtensions"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.xKeyfactorRequestedWith == nil {
+		return nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json-patch+json", "application/json", "text/json", "application/*+json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
+	if r.xKeyfactorApiVersion != nil {
+		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
+	}
+	// body params
+	localVarPostBody = r.templatesTemplateCertificateExtensionsRequest
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
 }
 
 // Request for V1 PUT /Templates/Settings
@@ -1039,10 +2020,10 @@ func (a *TemplateApiService) UpdateTemplatesSettingsExecute(r ApiUpdateTemplates
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.templatesGlobalGlobalTemplateSettingsRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

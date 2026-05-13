@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -29,14 +29,15 @@ var _ MappedNullable = &TemplatesTemplatePolicyResponseModel{}
 
 // TemplatesTemplatePolicyResponseModel struct for TemplatesTemplatePolicyResponseModel
 type TemplatesTemplatePolicyResponseModel struct {
-	TemplateId                      *int32                                           `json:"TemplateId,omitempty"`
-	AllowKeyReuse                   NullableBool                                     `json:"AllowKeyReuse,omitempty"`
-	AllowWildcards                  NullableBool                                     `json:"AllowWildcards,omitempty"`
-	RFCEnforcement                  NullableBool                                     `json:"RFCEnforcement,omitempty"`
-	CertificateOwnerRole            *CSSCMSCoreEnumsTemplateCertificateOwnerRole     `json:"CertificateOwnerRole,omitempty"`
-	DefaultCertificateOwnerRoleId   NullableInt32                                    `json:"DefaultCertificateOwnerRoleId,omitempty"`
-	DefaultCertificateOwnerRoleName NullableString                                   `json:"DefaultCertificateOwnerRoleName,omitempty"`
-	KeyInfo                         *CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo `json:"KeyInfo,omitempty"`
+	TemplateId                      *int32                                              `json:"TemplateId,omitempty"`
+	AllowKeyReuse                   NullableBool                                        `json:"AllowKeyReuse,omitempty"`
+	AllowWildcards                  NullableBool                                        `json:"AllowWildcards,omitempty"`
+	RFCEnforcement                  NullableBool                                        `json:"RFCEnforcement,omitempty"`
+	CertificateOwnerRole            *CSSCMSCoreEnumsTemplateCertificateOwnerRole        `json:"CertificateOwnerRole,omitempty"`
+	DefaultCertificateOwnerRoleId   NullableInt32                                       `json:"DefaultCertificateOwnerRoleId,omitempty"`
+	DefaultCertificateOwnerRoleName NullableString                                      `json:"DefaultCertificateOwnerRoleName,omitempty"`
+	PrimaryKeyAlgorithms            []EnrollmentPatternsAlgorithmsAlgorithmDataResponse `json:"PrimaryKeyAlgorithms,omitempty"`
+	AlternativeKeyAlgorithms        []EnrollmentPatternsAlgorithmsAlgorithmDataResponse `json:"AlternativeKeyAlgorithms,omitempty"`
 }
 
 // NewTemplatesTemplatePolicyResponseModel instantiates a new TemplatesTemplatePolicyResponseModel object
@@ -335,36 +336,70 @@ func (o *TemplatesTemplatePolicyResponseModel) UnsetDefaultCertificateOwnerRoleN
 	o.DefaultCertificateOwnerRoleName.Unset()
 }
 
-// GetKeyInfo returns the KeyInfo field value if set, zero value otherwise.
-func (o *TemplatesTemplatePolicyResponseModel) GetKeyInfo() CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo {
-	if o == nil || isNil(o.KeyInfo) {
-		var ret CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo
+// GetPrimaryKeyAlgorithms returns the PrimaryKeyAlgorithms field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TemplatesTemplatePolicyResponseModel) GetPrimaryKeyAlgorithms() []EnrollmentPatternsAlgorithmsAlgorithmDataResponse {
+	if o == nil {
+		var ret []EnrollmentPatternsAlgorithmsAlgorithmDataResponse
 		return ret
 	}
-	return *o.KeyInfo
+	return o.PrimaryKeyAlgorithms
 }
 
-// GetKeyInfoOk returns a tuple with the KeyInfo field value if set, nil otherwise
+// GetPrimaryKeyAlgorithmsOk returns a tuple with the PrimaryKeyAlgorithms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TemplatesTemplatePolicyResponseModel) GetKeyInfoOk() (*CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo, bool) {
-	if o == nil || isNil(o.KeyInfo) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TemplatesTemplatePolicyResponseModel) GetPrimaryKeyAlgorithmsOk() ([]EnrollmentPatternsAlgorithmsAlgorithmDataResponse, bool) {
+	if o == nil || isNil(o.PrimaryKeyAlgorithms) {
 		return nil, false
 	}
-	return o.KeyInfo, true
+	return o.PrimaryKeyAlgorithms, true
 }
 
-// HasKeyInfo returns a boolean if a field has been set.
-func (o *TemplatesTemplatePolicyResponseModel) HasKeyInfo() bool {
-	if o != nil && !isNil(o.KeyInfo) {
+// HasPrimaryKeyAlgorithms returns a boolean if a field has been set.
+func (o *TemplatesTemplatePolicyResponseModel) HasPrimaryKeyAlgorithms() bool {
+	if o != nil && isNil(o.PrimaryKeyAlgorithms) {
 		return true
 	}
 
 	return false
 }
 
-// SetKeyInfo gets a reference to the given CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo and assigns it to the KeyInfo field.
-func (o *TemplatesTemplatePolicyResponseModel) SetKeyInfo(v CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo) {
-	o.KeyInfo = &v
+// SetPrimaryKeyAlgorithms gets a reference to the given []EnrollmentPatternsAlgorithmsAlgorithmDataResponse and assigns it to the PrimaryKeyAlgorithms field.
+func (o *TemplatesTemplatePolicyResponseModel) SetPrimaryKeyAlgorithms(v []EnrollmentPatternsAlgorithmsAlgorithmDataResponse) {
+	o.PrimaryKeyAlgorithms = v
+}
+
+// GetAlternativeKeyAlgorithms returns the AlternativeKeyAlgorithms field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TemplatesTemplatePolicyResponseModel) GetAlternativeKeyAlgorithms() []EnrollmentPatternsAlgorithmsAlgorithmDataResponse {
+	if o == nil {
+		var ret []EnrollmentPatternsAlgorithmsAlgorithmDataResponse
+		return ret
+	}
+	return o.AlternativeKeyAlgorithms
+}
+
+// GetAlternativeKeyAlgorithmsOk returns a tuple with the AlternativeKeyAlgorithms field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TemplatesTemplatePolicyResponseModel) GetAlternativeKeyAlgorithmsOk() ([]EnrollmentPatternsAlgorithmsAlgorithmDataResponse, bool) {
+	if o == nil || isNil(o.AlternativeKeyAlgorithms) {
+		return nil, false
+	}
+	return o.AlternativeKeyAlgorithms, true
+}
+
+// HasAlternativeKeyAlgorithms returns a boolean if a field has been set.
+func (o *TemplatesTemplatePolicyResponseModel) HasAlternativeKeyAlgorithms() bool {
+	if o != nil && isNil(o.AlternativeKeyAlgorithms) {
+		return true
+	}
+
+	return false
+}
+
+// SetAlternativeKeyAlgorithms gets a reference to the given []EnrollmentPatternsAlgorithmsAlgorithmDataResponse and assigns it to the AlternativeKeyAlgorithms field.
+func (o *TemplatesTemplatePolicyResponseModel) SetAlternativeKeyAlgorithms(v []EnrollmentPatternsAlgorithmsAlgorithmDataResponse) {
+	o.AlternativeKeyAlgorithms = v
 }
 
 func (o TemplatesTemplatePolicyResponseModel) MarshalJSON() ([]byte, error) {
@@ -398,8 +433,11 @@ func (o TemplatesTemplatePolicyResponseModel) ToMap() (map[string]interface{}, e
 	if o.DefaultCertificateOwnerRoleName.IsSet() {
 		toSerialize["DefaultCertificateOwnerRoleName"] = o.DefaultCertificateOwnerRoleName.Get()
 	}
-	if !isNil(o.KeyInfo) {
-		toSerialize["KeyInfo"] = o.KeyInfo
+	if o.PrimaryKeyAlgorithms != nil {
+		toSerialize["PrimaryKeyAlgorithms"] = o.PrimaryKeyAlgorithms
+	}
+	if o.AlternativeKeyAlgorithms != nil {
+		toSerialize["AlternativeKeyAlgorithms"] = o.AlternativeKeyAlgorithms
 	}
 	return toSerialize, nil
 }

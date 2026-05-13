@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **NullableString** |  | [optional] 
 **DisplayName** | Pointer to **NullableString** |  | [optional] 
 **Type** | Pointer to [**CSSCMSCoreEnumsCertStoreEntryParameterType**](CSSCMSCoreEnumsCertStoreEntryParameterType.md) |  | [optional] 
-**RequiredWhen** | Pointer to [**CSSCMSCoreEnumsEntryParameterUsageFlags**](CSSCMSCoreEnumsEntryParameterUsageFlags.md) |  | [optional] 
+**ValidationOptions** | Pointer to [**CSSCMSDataModelModelsCertificateStoreTypesEntryParametersValidationOptionsModel**](CSSCMSDataModelModelsCertificateStoreTypesEntryParametersValidationOptionsModel.md) |  | [optional] 
 **DependsOn** | Pointer to **NullableString** |  | [optional] 
 **DefaultValue** | Pointer to **NullableString** |  | [optional] 
 **Options** | Pointer to **NullableString** |  | [optional] 
@@ -153,30 +153,30 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
-### GetRequiredWhen
+### GetValidationOptions
 
-`func (o *CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) GetRequiredWhen() CSSCMSCoreEnumsEntryParameterUsageFlags`
+`func (o *CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) GetValidationOptions() CSSCMSDataModelModelsCertificateStoreTypesEntryParametersValidationOptionsModel`
 
-GetRequiredWhen returns the RequiredWhen field if non-nil, zero value otherwise.
+GetValidationOptions returns the ValidationOptions field if non-nil, zero value otherwise.
 
-### GetRequiredWhenOk
+### GetValidationOptionsOk
 
-`func (o *CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) GetRequiredWhenOk() (*CSSCMSCoreEnumsEntryParameterUsageFlags, bool)`
+`func (o *CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) GetValidationOptionsOk() (*CSSCMSDataModelModelsCertificateStoreTypesEntryParametersValidationOptionsModel, bool)`
 
-GetRequiredWhenOk returns a tuple with the RequiredWhen field if it's non-nil, zero value otherwise
+GetValidationOptionsOk returns a tuple with the ValidationOptions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRequiredWhen
+### SetValidationOptions
 
-`func (o *CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) SetRequiredWhen(v CSSCMSCoreEnumsEntryParameterUsageFlags)`
+`func (o *CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) SetValidationOptions(v CSSCMSDataModelModelsCertificateStoreTypesEntryParametersValidationOptionsModel)`
 
-SetRequiredWhen sets RequiredWhen field to given value.
+SetValidationOptions sets ValidationOptions field to given value.
 
-### HasRequiredWhen
+### HasValidationOptions
 
-`func (o *CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) HasRequiredWhen() bool`
+`func (o *CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) HasValidationOptions() bool`
 
-HasRequiredWhen returns a boolean if a field has been set.
+HasValidationOptions returns a boolean if a field has been set.
 
 ### GetDependsOn
 

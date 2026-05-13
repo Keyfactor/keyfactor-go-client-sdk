@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -36,6 +36,7 @@ type CertificatesRevokeCertificateRequest struct {
 	EffectiveDate  *time.Time                   `json:"EffectiveDate,omitempty"`
 	CollectionId   NullableInt32                `json:"CollectionId,omitempty"`
 	PublishCRL     *bool                        `json:"PublishCRL,omitempty"`
+	ContainerId    NullableInt32                `json:"ContainerId,omitempty"`
 }
 
 // NewCertificatesRevokeCertificateRequest instantiates a new CertificatesRevokeCertificateRequest object
@@ -270,6 +271,49 @@ func (o *CertificatesRevokeCertificateRequest) SetPublishCRL(v bool) {
 	o.PublishCRL = &v
 }
 
+// GetContainerId returns the ContainerId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CertificatesRevokeCertificateRequest) GetContainerId() int32 {
+	if o == nil || isNil(o.ContainerId.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.ContainerId.Get()
+}
+
+// GetContainerIdOk returns a tuple with the ContainerId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CertificatesRevokeCertificateRequest) GetContainerIdOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.ContainerId.Get(), o.ContainerId.IsSet()
+}
+
+// HasContainerId returns a boolean if a field has been set.
+func (o *CertificatesRevokeCertificateRequest) HasContainerId() bool {
+	if o != nil && o.ContainerId.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetContainerId gets a reference to the given NullableInt32 and assigns it to the ContainerId field.
+func (o *CertificatesRevokeCertificateRequest) SetContainerId(v int32) {
+	o.ContainerId.Set(&v)
+}
+
+// SetContainerIdNil sets the value for ContainerId to be an explicit nil
+func (o *CertificatesRevokeCertificateRequest) SetContainerIdNil() {
+	o.ContainerId.Set(nil)
+}
+
+// UnsetContainerId ensures that no value is present for ContainerId, not even an explicit nil
+func (o *CertificatesRevokeCertificateRequest) UnsetContainerId() {
+	o.ContainerId.Unset()
+}
+
 func (o CertificatesRevokeCertificateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -297,6 +341,9 @@ func (o CertificatesRevokeCertificateRequest) ToMap() (map[string]interface{}, e
 	}
 	if !isNil(o.PublishCRL) {
 		toSerialize["PublishCRL"] = o.PublishCRL
+	}
+	if o.ContainerId.IsSet() {
+		toSerialize["ContainerId"] = o.ContainerId.Get()
 	}
 	return toSerialize, nil
 }

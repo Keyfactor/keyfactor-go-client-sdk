@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -34,6 +34,7 @@ const (
 	CSSCMSDATAMODELENUMSIDENTITYPROVIDERDATATYPE__1 CSSCMSDataModelEnumsIdentityProviderDataType = 1
 	CSSCMSDATAMODELENUMSIDENTITYPROVIDERDATATYPE__2 CSSCMSDataModelEnumsIdentityProviderDataType = 2
 	CSSCMSDATAMODELENUMSIDENTITYPROVIDERDATATYPE__3 CSSCMSDataModelEnumsIdentityProviderDataType = 3
+	CSSCMSDATAMODELENUMSIDENTITYPROVIDERDATATYPE__4 CSSCMSDataModelEnumsIdentityProviderDataType = 4
 )
 
 func ParseCSSCMSDataModelEnumsIdentityProviderDataType(s string) (*CSSCMSDataModelEnumsIdentityProviderDataType, error) {
@@ -62,6 +63,7 @@ var AllowedCSSCMSDataModelEnumsIdentityProviderDataTypeEnumValues = []CSSCMSData
 	1,
 	2,
 	3,
+	4,
 }
 
 func (v *CSSCMSDataModelEnumsIdentityProviderDataType) UnmarshalJSON(src []byte) error {

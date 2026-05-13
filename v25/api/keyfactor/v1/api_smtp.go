@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -37,7 +37,7 @@ type ApiCreateSMTPTestRequest struct {
 	ApiService              *SMTPApiService
 	xKeyfactorRequestedWith *string
 	xKeyfactorApiVersion    *string
-	sMTPSMTPTestRequest     *SMTPSMTPTestRequest
+	sMTPSMTPV1TestRequest   *SMTPSMTPV1TestRequest
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -52,13 +52,13 @@ func (r ApiCreateSMTPTestRequest) XKeyfactorApiVersion(xKeyfactorApiVersion stri
 	return r
 }
 
-func (r ApiCreateSMTPTestRequest) SMTPSMTPTestRequest(sMTPSMTPTestRequest SMTPSMTPTestRequest) ApiCreateSMTPTestRequest {
-	r.sMTPSMTPTestRequest = &sMTPSMTPTestRequest
+func (r ApiCreateSMTPTestRequest) SMTPSMTPV1TestRequest(sMTPSMTPV1TestRequest SMTPSMTPV1TestRequest) ApiCreateSMTPTestRequest {
+	r.sMTPSMTPV1TestRequest = &sMTPSMTPV1TestRequest
 	return r
 }
 
 // Executes the V1 POST /SMTP/Test request context
-func (r ApiCreateSMTPTestRequest) Execute() (*SMTPSMTPTestResponse, *http.Response, error) {
+func (r ApiCreateSMTPTestRequest) Execute() (*SMTPSMTPV1TestResponse, *http.Response, error) {
 	return r.ApiService.CreateSMTPTestExecute(r)
 }
 
@@ -69,6 +69,8 @@ Creates a new V1 POST /SMTP/Test request.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSMTPTestRequest
+
+Deprecated
 */
 func (a *SMTPApiService) NewCreateSMTPTestRequest(ctx context.Context) ApiCreateSMTPTestRequest {
 
@@ -85,13 +87,15 @@ func (a *SMTPApiService) NewCreateSMTPTestRequest(ctx context.Context) ApiCreate
 
 // Executes the API request V1 POST /SMTP/Test
 //
-//	@return SMTPSMTPTestResponse
-func (a *SMTPApiService) CreateSMTPTestExecute(r ApiCreateSMTPTestRequest) (*SMTPSMTPTestResponse, *http.Response, error) {
+//	@return SMTPSMTPV1TestResponse
+//
+// Deprecated
+func (a *SMTPApiService) CreateSMTPTestExecute(r ApiCreateSMTPTestRequest) (*SMTPSMTPV1TestResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *SMTPSMTPTestResponse
+		localVarReturnValue *SMTPSMTPV1TestResponse
 	)
 
 	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
@@ -135,12 +139,12 @@ func (a *SMTPApiService) CreateSMTPTestExecute(r ApiCreateSMTPTestRequest) (*SMT
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.sMTPSMTPTestRequest
+	localVarPostBody = r.sMTPSMTPV1TestRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -280,10 +284,10 @@ func (a *SMTPApiService) GetSMTPExecute(r ApiGetSMTPRequest) (*SMTPSMTPV1Respons
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -429,10 +433,10 @@ func (a *SMTPApiService) UpdateSMTPExecute(r ApiUpdateSMTPRequest) (*SMTPSMTPV1R
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.sMTPSMTPV1Request
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

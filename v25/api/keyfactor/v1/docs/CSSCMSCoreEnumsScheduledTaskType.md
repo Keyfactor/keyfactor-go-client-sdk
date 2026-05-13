@@ -65,6 +65,10 @@
 
 * `_34` (value: `34`)
 
+* `_35` (value: `35`)
+
+* `_41` (value: `41`)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

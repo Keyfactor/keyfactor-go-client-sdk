@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -32,6 +32,7 @@ var _ MappedNullable = &EnrollmentCSREnrollmentRequest{}
 type EnrollmentCSREnrollmentRequest struct {
 	CSR                        string                 `json:"CSR"`
 	PrivateKey                 NullableString         `json:"PrivateKey,omitempty"`
+	RenewalCertificateId       NullableInt32          `json:"RenewalCertificateId,omitempty"`
 	CertificateAuthority       NullableString         `json:"CertificateAuthority,omitempty"`
 	IncludeChain               *bool                  `json:"IncludeChain,omitempty"`
 	IncludeSubjectHeader       *bool                  `json:"IncludeSubjectHeader,omitempty"`
@@ -40,10 +41,9 @@ type EnrollmentCSREnrollmentRequest struct {
 	Timestamp                  *time.Time             `json:"Timestamp,omitempty"`
 	OwnerRoleId                NullableInt32          `json:"OwnerRoleId,omitempty"`
 	OwnerRoleName              NullableString         `json:"OwnerRoleName,omitempty"`
-	// Deprecated
-	Template            NullableString      `json:"Template,omitempty"`
-	SANs                map[string][]string `json:"SANs,omitempty"`
-	EnrollmentPatternId NullableInt32       `json:"EnrollmentPatternId,omitempty"`
+	FileExtension              NullableString         `json:"FileExtension,omitempty"`
+	SANs                       map[string][]string    `json:"SANs,omitempty"`
+	EnrollmentPatternId        NullableInt32          `json:"EnrollmentPatternId,omitempty"`
 }
 
 // NewEnrollmentCSREnrollmentRequest instantiates a new EnrollmentCSREnrollmentRequest object
@@ -129,6 +129,49 @@ func (o *EnrollmentCSREnrollmentRequest) SetPrivateKeyNil() {
 // UnsetPrivateKey ensures that no value is present for PrivateKey, not even an explicit nil
 func (o *EnrollmentCSREnrollmentRequest) UnsetPrivateKey() {
 	o.PrivateKey.Unset()
+}
+
+// GetRenewalCertificateId returns the RenewalCertificateId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *EnrollmentCSREnrollmentRequest) GetRenewalCertificateId() int32 {
+	if o == nil || isNil(o.RenewalCertificateId.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.RenewalCertificateId.Get()
+}
+
+// GetRenewalCertificateIdOk returns a tuple with the RenewalCertificateId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *EnrollmentCSREnrollmentRequest) GetRenewalCertificateIdOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.RenewalCertificateId.Get(), o.RenewalCertificateId.IsSet()
+}
+
+// HasRenewalCertificateId returns a boolean if a field has been set.
+func (o *EnrollmentCSREnrollmentRequest) HasRenewalCertificateId() bool {
+	if o != nil && o.RenewalCertificateId.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetRenewalCertificateId gets a reference to the given NullableInt32 and assigns it to the RenewalCertificateId field.
+func (o *EnrollmentCSREnrollmentRequest) SetRenewalCertificateId(v int32) {
+	o.RenewalCertificateId.Set(&v)
+}
+
+// SetRenewalCertificateIdNil sets the value for RenewalCertificateId to be an explicit nil
+func (o *EnrollmentCSREnrollmentRequest) SetRenewalCertificateIdNil() {
+	o.RenewalCertificateId.Set(nil)
+}
+
+// UnsetRenewalCertificateId ensures that no value is present for RenewalCertificateId, not even an explicit nil
+func (o *EnrollmentCSREnrollmentRequest) UnsetRenewalCertificateId() {
+	o.RenewalCertificateId.Unset()
 }
 
 // GetCertificateAuthority returns the CertificateAuthority field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -422,50 +465,47 @@ func (o *EnrollmentCSREnrollmentRequest) UnsetOwnerRoleName() {
 	o.OwnerRoleName.Unset()
 }
 
-// GetTemplate returns the Template field value if set, zero value otherwise (both if not set or set to explicit null).
-// Deprecated
-func (o *EnrollmentCSREnrollmentRequest) GetTemplate() string {
-	if o == nil || isNil(o.Template.Get()) {
+// GetFileExtension returns the FileExtension field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *EnrollmentCSREnrollmentRequest) GetFileExtension() string {
+	if o == nil || isNil(o.FileExtension.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Template.Get()
+	return *o.FileExtension.Get()
 }
 
-// GetTemplateOk returns a tuple with the Template field value if set, nil otherwise
+// GetFileExtensionOk returns a tuple with the FileExtension field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-// Deprecated
-func (o *EnrollmentCSREnrollmentRequest) GetTemplateOk() (*string, bool) {
+func (o *EnrollmentCSREnrollmentRequest) GetFileExtensionOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.Template.Get(), o.Template.IsSet()
+	return o.FileExtension.Get(), o.FileExtension.IsSet()
 }
 
-// HasTemplate returns a boolean if a field has been set.
-func (o *EnrollmentCSREnrollmentRequest) HasTemplate() bool {
-	if o != nil && o.Template.IsSet() {
+// HasFileExtension returns a boolean if a field has been set.
+func (o *EnrollmentCSREnrollmentRequest) HasFileExtension() bool {
+	if o != nil && o.FileExtension.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTemplate gets a reference to the given NullableString and assigns it to the Template field.
-// Deprecated
-func (o *EnrollmentCSREnrollmentRequest) SetTemplate(v string) {
-	o.Template.Set(&v)
+// SetFileExtension gets a reference to the given NullableString and assigns it to the FileExtension field.
+func (o *EnrollmentCSREnrollmentRequest) SetFileExtension(v string) {
+	o.FileExtension.Set(&v)
 }
 
-// SetTemplateNil sets the value for Template to be an explicit nil
-func (o *EnrollmentCSREnrollmentRequest) SetTemplateNil() {
-	o.Template.Set(nil)
+// SetFileExtensionNil sets the value for FileExtension to be an explicit nil
+func (o *EnrollmentCSREnrollmentRequest) SetFileExtensionNil() {
+	o.FileExtension.Set(nil)
 }
 
-// UnsetTemplate ensures that no value is present for Template, not even an explicit nil
-func (o *EnrollmentCSREnrollmentRequest) UnsetTemplate() {
-	o.Template.Unset()
+// UnsetFileExtension ensures that no value is present for FileExtension, not even an explicit nil
+func (o *EnrollmentCSREnrollmentRequest) UnsetFileExtension() {
+	o.FileExtension.Unset()
 }
 
 // GetSANs returns the SANs field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -558,6 +598,9 @@ func (o EnrollmentCSREnrollmentRequest) ToMap() (map[string]interface{}, error) 
 	if o.PrivateKey.IsSet() {
 		toSerialize["PrivateKey"] = o.PrivateKey.Get()
 	}
+	if o.RenewalCertificateId.IsSet() {
+		toSerialize["RenewalCertificateId"] = o.RenewalCertificateId.Get()
+	}
 	if o.CertificateAuthority.IsSet() {
 		toSerialize["CertificateAuthority"] = o.CertificateAuthority.Get()
 	}
@@ -582,8 +625,8 @@ func (o EnrollmentCSREnrollmentRequest) ToMap() (map[string]interface{}, error) 
 	if o.OwnerRoleName.IsSet() {
 		toSerialize["OwnerRoleName"] = o.OwnerRoleName.Get()
 	}
-	if o.Template.IsSet() {
-		toSerialize["Template"] = o.Template.Get()
+	if o.FileExtension.IsSet() {
+		toSerialize["FileExtension"] = o.FileExtension.Get()
 	}
 	if o.SANs != nil {
 		toSerialize["SANs"] = o.SANs

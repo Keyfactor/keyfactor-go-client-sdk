@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **NullableString** |  | [optional] 
+**DisplayName** | Pointer to **NullableString** |  | [optional] 
 **RFCEnforcement** | Pointer to **bool** |  | [optional] 
 **SubscriberTerms** | Pointer to **bool** |  | [optional] 
 
@@ -88,6 +89,41 @@ HasName returns a boolean if a field has been set.
 `func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentCA) UnsetName()`
 
 UnsetName ensures that no value is present for Name, not even an explicit nil
+### GetDisplayName
+
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentCA) GetDisplayName() string`
+
+GetDisplayName returns the DisplayName field if non-nil, zero value otherwise.
+
+### GetDisplayNameOk
+
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentCA) GetDisplayNameOk() (*string, bool)`
+
+GetDisplayNameOk returns a tuple with the DisplayName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayName
+
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentCA) SetDisplayName(v string)`
+
+SetDisplayName sets DisplayName field to given value.
+
+### HasDisplayName
+
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentCA) HasDisplayName() bool`
+
+HasDisplayName returns a boolean if a field has been set.
+
+### SetDisplayNameNil
+
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentCA) SetDisplayNameNil(b bool)`
+
+ SetDisplayNameNil sets the value for DisplayName to be an explicit nil
+
+### UnsetDisplayName
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentCA) UnsetDisplayName()`
+
+UnsetDisplayName ensures that no value is present for DisplayName, not even an explicit nil
 ### GetRFCEnforcement
 
 `func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentCA) GetRFCEnforcement() bool`

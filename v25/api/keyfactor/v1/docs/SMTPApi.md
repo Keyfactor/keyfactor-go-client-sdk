@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## CreateSMTPTest
 
-> SMTPSMTPTestResponse NewCreateSMTPTestRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SMTPSMTPTestRequest(sMTPSMTPTestRequest).Execute()
+> SMTPSMTPV1TestResponse NewCreateSMTPTestRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SMTPSMTPV1TestRequest(sMTPSMTPV1TestRequest).Execute()
 
 Tests SMTP profile data
 
@@ -33,16 +33,16 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient]
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
-    sMTPSMTPTestRequest := *openapiclient.NewSMTPSMTPTestRequest() // SMTPSMTPTestRequest |  (optional)
+    sMTPSMTPV1TestRequest := *openapiclient.NewSMTPSMTPV1TestRequest("Host_example", int32(123), openapiclient.CSS.CMS.Core.Enums.SMTPRelayAuthenticationType(0), "SenderAccount_example", "SenderName_example", "TestRecipient_example") // SMTPSMTPV1TestRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SMTPApi.NewCreateSMTPTestRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SMTPSMTPTestRequest(sMTPSMTPTestRequest).Execute()
+    resp, r, err := apiClient.SMTPApi.NewCreateSMTPTestRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SMTPSMTPV1TestRequest(sMTPSMTPV1TestRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SMTPApi.CreateSMTPTest``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateSMTPTest`: SMTPSMTPTestResponse
+    // response from `CreateSMTPTest`: SMTPSMTPV1TestResponse
     fmt.Fprintf(os.Stdout, "Response from `SMTPApi.CreateSMTPTest`: %v\n", resp)
 }
 ```
@@ -60,11 +60,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | 
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
- **sMTPSMTPTestRequest** | [**SMTPSMTPTestRequest**](SMTPSMTPTestRequest.md) |  | 
+ **sMTPSMTPV1TestRequest** | [**SMTPSMTPV1TestRequest**](SMTPSMTPV1TestRequest.md) |  | 
 
 ### Return type
 
-[**SMTPSMTPTestResponse**](SMTPSMTPTestResponse.md)
+[**SMTPSMTPV1TestResponse**](SMTPSMTPV1TestResponse.md)
 
 ### Authorization
 

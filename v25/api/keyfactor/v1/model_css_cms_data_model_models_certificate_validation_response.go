@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -29,8 +29,8 @@ var _ MappedNullable = &CSSCMSDataModelModelsCertificateValidationResponse{}
 
 // CSSCMSDataModelModelsCertificateValidationResponse struct for CSSCMSDataModelModelsCertificateValidationResponse
 type CSSCMSDataModelModelsCertificateValidationResponse struct {
-	Valid   *bool             `json:"Valid,omitempty"`
-	Results map[string]string `json:"Results,omitempty"`
+	RevocationServerOnline *bool `json:"RevocationServerOnline,omitempty"`
+	ChainBuilt             *bool `json:"ChainBuilt,omitempty"`
 }
 
 // NewCSSCMSDataModelModelsCertificateValidationResponse instantiates a new CSSCMSDataModelModelsCertificateValidationResponse object
@@ -50,69 +50,68 @@ func NewCSSCMSDataModelModelsCertificateValidationResponseWithDefaults() *CSSCMS
 	return &this
 }
 
-// GetValid returns the Valid field value if set, zero value otherwise.
-func (o *CSSCMSDataModelModelsCertificateValidationResponse) GetValid() bool {
-	if o == nil || isNil(o.Valid) {
+// GetRevocationServerOnline returns the RevocationServerOnline field value if set, zero value otherwise.
+func (o *CSSCMSDataModelModelsCertificateValidationResponse) GetRevocationServerOnline() bool {
+	if o == nil || isNil(o.RevocationServerOnline) {
 		var ret bool
 		return ret
 	}
-	return *o.Valid
+	return *o.RevocationServerOnline
 }
 
-// GetValidOk returns a tuple with the Valid field value if set, nil otherwise
+// GetRevocationServerOnlineOk returns a tuple with the RevocationServerOnline field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CSSCMSDataModelModelsCertificateValidationResponse) GetValidOk() (*bool, bool) {
-	if o == nil || isNil(o.Valid) {
+func (o *CSSCMSDataModelModelsCertificateValidationResponse) GetRevocationServerOnlineOk() (*bool, bool) {
+	if o == nil || isNil(o.RevocationServerOnline) {
 		return nil, false
 	}
-	return o.Valid, true
+	return o.RevocationServerOnline, true
 }
 
-// HasValid returns a boolean if a field has been set.
-func (o *CSSCMSDataModelModelsCertificateValidationResponse) HasValid() bool {
-	if o != nil && !isNil(o.Valid) {
+// HasRevocationServerOnline returns a boolean if a field has been set.
+func (o *CSSCMSDataModelModelsCertificateValidationResponse) HasRevocationServerOnline() bool {
+	if o != nil && !isNil(o.RevocationServerOnline) {
 		return true
 	}
 
 	return false
 }
 
-// SetValid gets a reference to the given bool and assigns it to the Valid field.
-func (o *CSSCMSDataModelModelsCertificateValidationResponse) SetValid(v bool) {
-	o.Valid = &v
+// SetRevocationServerOnline gets a reference to the given bool and assigns it to the RevocationServerOnline field.
+func (o *CSSCMSDataModelModelsCertificateValidationResponse) SetRevocationServerOnline(v bool) {
+	o.RevocationServerOnline = &v
 }
 
-// GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CSSCMSDataModelModelsCertificateValidationResponse) GetResults() map[string]string {
-	if o == nil {
-		var ret map[string]string
+// GetChainBuilt returns the ChainBuilt field value if set, zero value otherwise.
+func (o *CSSCMSDataModelModelsCertificateValidationResponse) GetChainBuilt() bool {
+	if o == nil || isNil(o.ChainBuilt) {
+		var ret bool
 		return ret
 	}
-	return o.Results
+	return *o.ChainBuilt
 }
 
-// GetResultsOk returns a tuple with the Results field value if set, nil otherwise
+// GetChainBuiltOk returns a tuple with the ChainBuilt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CSSCMSDataModelModelsCertificateValidationResponse) GetResultsOk() (*map[string]string, bool) {
-	if o == nil || isNil(o.Results) {
+func (o *CSSCMSDataModelModelsCertificateValidationResponse) GetChainBuiltOk() (*bool, bool) {
+	if o == nil || isNil(o.ChainBuilt) {
 		return nil, false
 	}
-	return &o.Results, true
+	return o.ChainBuilt, true
 }
 
-// HasResults returns a boolean if a field has been set.
-func (o *CSSCMSDataModelModelsCertificateValidationResponse) HasResults() bool {
-	if o != nil && isNil(o.Results) {
+// HasChainBuilt returns a boolean if a field has been set.
+func (o *CSSCMSDataModelModelsCertificateValidationResponse) HasChainBuilt() bool {
+	if o != nil && !isNil(o.ChainBuilt) {
 		return true
 	}
 
 	return false
 }
 
-// SetResults gets a reference to the given map[string]string and assigns it to the Results field.
-func (o *CSSCMSDataModelModelsCertificateValidationResponse) SetResults(v map[string]string) {
-	o.Results = v
+// SetChainBuilt gets a reference to the given bool and assigns it to the ChainBuilt field.
+func (o *CSSCMSDataModelModelsCertificateValidationResponse) SetChainBuilt(v bool) {
+	o.ChainBuilt = &v
 }
 
 func (o CSSCMSDataModelModelsCertificateValidationResponse) MarshalJSON() ([]byte, error) {
@@ -125,11 +124,11 @@ func (o CSSCMSDataModelModelsCertificateValidationResponse) MarshalJSON() ([]byt
 
 func (o CSSCMSDataModelModelsCertificateValidationResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Valid) {
-		toSerialize["Valid"] = o.Valid
+	if !isNil(o.RevocationServerOnline) {
+		toSerialize["RevocationServerOnline"] = o.RevocationServerOnline
 	}
-	if o.Results != nil {
-		toSerialize["Results"] = o.Results
+	if !isNil(o.ChainBuilt) {
+		toSerialize["ChainBuilt"] = o.ChainBuilt
 	}
 	return toSerialize, nil
 }

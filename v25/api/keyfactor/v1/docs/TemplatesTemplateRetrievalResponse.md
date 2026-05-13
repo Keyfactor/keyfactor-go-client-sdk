@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **TemplateRegexes** | Pointer to [**[]TemplatesTemplateRegexRequestResponseModel**](TemplatesTemplateRegexRequestResponseModel.md) |  | [optional] 
 **TemplateDefaults** | Pointer to [**[]TemplatesTemplateDefaultRequestResponseModel**](TemplatesTemplateDefaultRequestResponseModel.md) |  | [optional] 
 **TemplatePolicy** | Pointer to [**TemplatesTemplatePolicyResponseModel**](TemplatesTemplatePolicyResponseModel.md) |  | [optional] 
-**KeyAlgorithms** | Pointer to [**TemplatesKeyAlgorithmsResponseModel**](TemplatesKeyAlgorithmsResponseModel.md) |  | [optional] 
+**KeyAlgorithms** | Pointer to [**TemplatesKeyAlgorithmsResponse**](TemplatesKeyAlgorithmsResponse.md) |  | [optional] 
 **UseAllowedRequesters** | Pointer to **bool** |  | [optional] 
 **AllowedRequesters** | Pointer to **[]string** |  | [optional] 
 **DisplayName** | Pointer to **NullableString** |  | [optional] 
@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 **TimeAfterExpiration** | Pointer to **NullableInt32** |  | [optional] 
 **TimeAfterExpirationUnits** | Pointer to [**CSSCMSDataModelEnumsCertificateCleanupTimeUnits**](CSSCMSDataModelEnumsCertificateCleanupTimeUnits.md) |  | [optional] 
 **DeleteWithArchivedKey** | Pointer to **NullableBool** |  | [optional] 
+**Manageability** | Pointer to [**KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability**](KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability.md) |  | [optional] 
 
 ## Methods
 
@@ -639,20 +640,20 @@ HasTemplatePolicy returns a boolean if a field has been set.
 
 ### GetKeyAlgorithms
 
-`func (o *TemplatesTemplateRetrievalResponse) GetKeyAlgorithms() TemplatesKeyAlgorithmsResponseModel`
+`func (o *TemplatesTemplateRetrievalResponse) GetKeyAlgorithms() TemplatesKeyAlgorithmsResponse`
 
 GetKeyAlgorithms returns the KeyAlgorithms field if non-nil, zero value otherwise.
 
 ### GetKeyAlgorithmsOk
 
-`func (o *TemplatesTemplateRetrievalResponse) GetKeyAlgorithmsOk() (*TemplatesKeyAlgorithmsResponseModel, bool)`
+`func (o *TemplatesTemplateRetrievalResponse) GetKeyAlgorithmsOk() (*TemplatesKeyAlgorithmsResponse, bool)`
 
 GetKeyAlgorithmsOk returns a tuple with the KeyAlgorithms field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyAlgorithms
 
-`func (o *TemplatesTemplateRetrievalResponse) SetKeyAlgorithms(v TemplatesKeyAlgorithmsResponseModel)`
+`func (o *TemplatesTemplateRetrievalResponse) SetKeyAlgorithms(v TemplatesKeyAlgorithmsResponse)`
 
 SetKeyAlgorithms sets KeyAlgorithms field to given value.
 
@@ -1092,6 +1093,31 @@ HasDeleteWithArchivedKey returns a boolean if a field has been set.
 `func (o *TemplatesTemplateRetrievalResponse) UnsetDeleteWithArchivedKey()`
 
 UnsetDeleteWithArchivedKey ensures that no value is present for DeleteWithArchivedKey, not even an explicit nil
+### GetManageability
+
+`func (o *TemplatesTemplateRetrievalResponse) GetManageability() KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability`
+
+GetManageability returns the Manageability field if non-nil, zero value otherwise.
+
+### GetManageabilityOk
+
+`func (o *TemplatesTemplateRetrievalResponse) GetManageabilityOk() (*KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability, bool)`
+
+GetManageabilityOk returns a tuple with the Manageability field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManageability
+
+`func (o *TemplatesTemplateRetrievalResponse) SetManageability(v KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability)`
+
+SetManageability sets Manageability field to given value.
+
+### HasManageability
+
+`func (o *TemplatesTemplateRetrievalResponse) HasManageability() bool`
+
+HasManageability returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -10,17 +10,17 @@ Method | HTTP request | Description
 [**CreateEnrollmentPFXDeploy**](EnrollmentApi.md#CreateEnrollmentPFXDeploy) | **POST** /Enrollment/PFX/Deploy | Creates management jobs to install a newly enrolled pfx in to one or more certificate stores
 [**CreateEnrollmentPFXReplace**](EnrollmentApi.md#CreateEnrollmentPFXReplace) | **POST** /Enrollment/PFX/Replace | Creates management jobs to install a newly enrolled pfx into the same certificate stores as the previous certificate
 [**CreateEnrollmentRenew**](EnrollmentApi.md#CreateEnrollmentRenew) | **POST** /Enrollment/Renew | Performs a renewal based upon the passed in request
-[**GetEnrollmentAvailableRenewalIdById**](EnrollmentApi.md#GetEnrollmentAvailableRenewalIdById) | **GET** /Enrollment/AvailableRenewal/Id/{id} | Returns the type of renewal available for a given certificate.
-[**GetEnrollmentAvailableRenewalThumbprintThumbprint**](EnrollmentApi.md#GetEnrollmentAvailableRenewalThumbprintThumbprint) | **GET** /Enrollment/AvailableRenewal/Thumbprint/{thumbprint} | Returns the type of renewal available for a given certificate.
+[**GetEnrollmentAvailableRenewalIdById**](EnrollmentApi.md#GetEnrollmentAvailableRenewalIdById) | **GET** /Enrollment/AvailableRenewal/Id/{id} | Returns the collection of enum flags for the type of renewal available for a given certificate.
+[**GetEnrollmentAvailableRenewalThumbprintThumbprint**](EnrollmentApi.md#GetEnrollmentAvailableRenewalThumbprintThumbprint) | **GET** /Enrollment/AvailableRenewal/Thumbprint/{thumbprint} | Returns the collection of enum flags for the type of renewal available for a given certificate.
 [**GetEnrollmentCSRContextMy**](EnrollmentApi.md#GetEnrollmentCSRContextMy) | **GET** /Enrollment/CSR/Context/My | Returns the list of available CSR enrollment templates and their associated CA mappings that the calling user has permissions on
 [**GetEnrollmentPFXContextMy**](EnrollmentApi.md#GetEnrollmentPFXContextMy) | **GET** /Enrollment/PFX/Context/My | Returns the list of available PFX enrollment templates and their associated CA mappings that the calling user has permissions on
-[**GetEnrollmentSettingsById**](EnrollmentApi.md#GetEnrollmentSettingsById) | **GET** /Enrollment/Settings/{id} | Gets the template settings to use during enrollment. The response will be the resolved values for the settings.  If there is a template specific setting, the template specific setting will be used in the response.  If there is not a template specific setting, the global setting will be used in the response.
+[**GetEnrollmentSettingsById**](EnrollmentApi.md#GetEnrollmentSettingsById) | **GET** /Enrollment/Settings/{id} | Gets the template settings to use during enrollment. The response will be the resolved values for the settings. If there is a template specific setting, the template specific setting will be used in the response. If there is not a template specific setting, the global setting will be used in the response.
 
 
 
 ## CreateEnrollmentCSR
 
-> CSSCMSDataModelModelsEnrollmentCSREnrollmentResponse NewCreateEnrollmentCSRRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).ForceEnroll(forceEnroll).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentCSREnrollmentRequest(enrollmentCSREnrollmentRequest).Execute()
+> CSSCMSDataModelModelsEnrollmentCSREnrollmentResponse NewCreateEnrollmentCSRRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).ForceEnroll(forceEnroll).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentCSREnrollmentRequest(enrollmentCSREnrollmentRequest).Execute()
 
 Performs a CSR Enrollment based upon the provided request
 
@@ -42,12 +42,13 @@ func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient]
     xCertificateformat := "PEM" // string | Desired format [PEM, DER]
     forceEnroll := true // bool |  (optional) (default to false)
+    collectionId := int32(56) // int32 |  (optional) (default to 0)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
     enrollmentCSREnrollmentRequest := *openapiclient.NewEnrollmentCSREnrollmentRequest("CSR_example") // EnrollmentCSREnrollmentRequest | Information needed to perform the CSR Enrollment (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.NewCreateEnrollmentCSRRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).ForceEnroll(forceEnroll).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentCSREnrollmentRequest(enrollmentCSREnrollmentRequest).Execute()
+    resp, r, err := apiClient.EnrollmentApi.NewCreateEnrollmentCSRRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XCertificateformat(xCertificateformat).ForceEnroll(forceEnroll).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentCSREnrollmentRequest(enrollmentCSREnrollmentRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.CreateEnrollmentCSR``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -71,6 +72,7 @@ Name | Type | Description  | Notes
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | 
  **xCertificateformat** | **string** | Desired format [PEM, DER] | 
  **forceEnroll** | **bool** |  | [default to false]
+ **collectionId** | **int32** |  | [default to 0]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
  **enrollmentCSREnrollmentRequest** | [**EnrollmentCSREnrollmentRequest**](EnrollmentCSREnrollmentRequest.md) | Information needed to perform the CSR Enrollment | 
 
@@ -372,7 +374,7 @@ Name | Type | Description  | Notes
 
 ## CreateEnrollmentRenew
 
-> EnrollmentRenewalApiResponse NewCreateEnrollmentRenewRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentRenewAPIRequest(enrollmentRenewAPIRequest).Execute()
+> EnrollmentRenewalApiResponse NewCreateEnrollmentRenewRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).ContainerId(containerId).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentRenewAPIRequest(enrollmentRenewAPIRequest).Execute()
 
 Performs a renewal based upon the passed in request
 
@@ -391,12 +393,13 @@ import (
 func main() {
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient]
     collectionId := int32(56) // int32 | The collection id for the given certificate (optional) (default to 0)
+    containerId := int32(56) // int32 | The container id for the given certificate (optional) (default to 0)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
     enrollmentRenewAPIRequest := *openapiclient.NewEnrollmentRenewAPIRequest() // EnrollmentRenewAPIRequest | The information needed to perform the renewal (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.NewCreateEnrollmentRenewRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentRenewAPIRequest(enrollmentRenewAPIRequest).Execute()
+    resp, r, err := apiClient.EnrollmentApi.NewCreateEnrollmentRenewRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).ContainerId(containerId).XKeyfactorApiVersion(xKeyfactorApiVersion).EnrollmentRenewAPIRequest(enrollmentRenewAPIRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.CreateEnrollmentRenew``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -419,6 +422,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | 
  **collectionId** | **int32** | The collection id for the given certificate | [default to 0]
+ **containerId** | **int32** | The container id for the given certificate | [default to 0]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
  **enrollmentRenewAPIRequest** | [**EnrollmentRenewAPIRequest**](EnrollmentRenewAPIRequest.md) | The information needed to perform the renewal | 
 
@@ -442,9 +446,9 @@ Name | Type | Description  | Notes
 
 ## GetEnrollmentAvailableRenewalIdById
 
-> CSSCMSDataModelModelsEnrollmentAvailableRenewal NewGetEnrollmentAvailableRenewalIdByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+> CSSCMSDataModelModelsEnrollmentAvailableRenewal NewGetEnrollmentAvailableRenewalIdByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).ContainerId(containerId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
-Returns the type of renewal available for a given certificate.
+Returns the collection of enum flags for the type of renewal available for a given certificate.
 
 
 
@@ -464,11 +468,12 @@ func main() {
     id := int32(56) // int32 | The Keyfactor certificate Id
     xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient]
     collectionId := int32(56) // int32 | The collection id for the given certificate (optional) (default to 0)
+    containerId := int32(56) // int32 | The container id for the given certificate (optional) (default to 0)
     xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
 
     configuration := openapiclient.NewConfiguration(make(map[string]string))
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EnrollmentApi.NewGetEnrollmentAvailableRenewalIdByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    resp, r, err := apiClient.EnrollmentApi.NewGetEnrollmentAvailableRenewalIdByIdRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).ContainerId(containerId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EnrollmentApi.GetEnrollmentAvailableRenewalIdById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -496,6 +501,7 @@ Name | Type | Description  | Notes
 
  **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | 
  **collectionId** | **int32** | The collection id for the given certificate | [default to 0]
+ **containerId** | **int32** | The container id for the given certificate | [default to 0]
  **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
 
 ### Return type
@@ -520,7 +526,7 @@ Name | Type | Description  | Notes
 
 > CSSCMSDataModelModelsEnrollmentAvailableRenewal NewGetEnrollmentAvailableRenewalThumbprintThumbprintRequest(ctx, thumbprint).XKeyfactorRequestedWith(xKeyfactorRequestedWith).CollectionId(collectionId).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
-Returns the type of renewal available for a given certificate.
+Returns the collection of enum flags for the type of renewal available for a given certificate.
 
 ### Example
 
@@ -726,7 +732,7 @@ Name | Type | Description  | Notes
 
 > TemplatesEnrollmentTemplateEnrollmentSettingsResponse NewGetEnrollmentSettingsByIdRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
-Gets the template settings to use during enrollment. The response will be the resolved values for the settings.  If there is a template specific setting, the template specific setting will be used in the response.  If there is not a template specific setting, the global setting will be used in the response.
+Gets the template settings to use during enrollment. The response will be the resolved values for the settings. If there is a template specific setting, the template specific setting will be used in the response. If there is not a template specific setting, the global setting will be used in the response.
 
 ### Example
 

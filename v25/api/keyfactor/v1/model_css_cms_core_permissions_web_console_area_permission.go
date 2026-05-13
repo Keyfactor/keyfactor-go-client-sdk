@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -102,6 +102,15 @@ const (
 	CSSCMSCOREPERMISSIONSWEBCONSOLEAREAPERMISSION__73 CSSCMSCorePermissionsWebConsoleAreaPermission = 73
 	CSSCMSCOREPERMISSIONSWEBCONSOLEAREAPERMISSION__74 CSSCMSCorePermissionsWebConsoleAreaPermission = 74
 	CSSCMSCOREPERMISSIONSWEBCONSOLEAREAPERMISSION__75 CSSCMSCorePermissionsWebConsoleAreaPermission = 75
+	CSSCMSCOREPERMISSIONSWEBCONSOLEAREAPERMISSION__76 CSSCMSCorePermissionsWebConsoleAreaPermission = 76
+	CSSCMSCOREPERMISSIONSWEBCONSOLEAREAPERMISSION__77 CSSCMSCorePermissionsWebConsoleAreaPermission = 77
+	CSSCMSCOREPERMISSIONSWEBCONSOLEAREAPERMISSION__78 CSSCMSCorePermissionsWebConsoleAreaPermission = 78
+	CSSCMSCOREPERMISSIONSWEBCONSOLEAREAPERMISSION__79 CSSCMSCorePermissionsWebConsoleAreaPermission = 79
+	CSSCMSCOREPERMISSIONSWEBCONSOLEAREAPERMISSION__80 CSSCMSCorePermissionsWebConsoleAreaPermission = 80
+	CSSCMSCOREPERMISSIONSWEBCONSOLEAREAPERMISSION__81 CSSCMSCorePermissionsWebConsoleAreaPermission = 81
+	CSSCMSCOREPERMISSIONSWEBCONSOLEAREAPERMISSION__82 CSSCMSCorePermissionsWebConsoleAreaPermission = 82
+	CSSCMSCOREPERMISSIONSWEBCONSOLEAREAPERMISSION__83 CSSCMSCorePermissionsWebConsoleAreaPermission = 83
+	CSSCMSCOREPERMISSIONSWEBCONSOLEAREAPERMISSION__84 CSSCMSCorePermissionsWebConsoleAreaPermission = 84
 )
 
 func ParseCSSCMSCorePermissionsWebConsoleAreaPermission(s string) (*CSSCMSCorePermissionsWebConsoleAreaPermission, error) {
@@ -198,6 +207,15 @@ var AllowedCSSCMSCorePermissionsWebConsoleAreaPermissionEnumValues = []CSSCMSCor
 	73,
 	74,
 	75,
+	76,
+	77,
+	78,
+	79,
+	80,
+	81,
+	82,
+	83,
+	84,
 }
 
 func (v *CSSCMSCorePermissionsWebConsoleAreaPermission) UnmarshalJSON(src []byte) error {

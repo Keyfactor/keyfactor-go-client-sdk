@@ -10,7 +10,9 @@ Name | Type | Description | Notes
 **CertificateOwnerRole** | Pointer to [**CSSCMSCoreEnumsTemplateCertificateOwnerRole**](CSSCMSCoreEnumsTemplateCertificateOwnerRole.md) |  | [optional] 
 **DefaultCertificateOwnerRoleId** | Pointer to **NullableInt32** |  | [optional] 
 **DefaultCertificateOwnerRoleName** | Pointer to **NullableString** |  | [optional] 
-**KeyInfo** | Pointer to [**EnrollmentPatternsAlgorithmsKeyInfoRequest**](EnrollmentPatternsAlgorithmsKeyInfoRequest.md) |  | [optional] 
+**DefaultCertificateOwnerOverride** | Pointer to **bool** |  | [optional] 
+**PrimaryKeyAlgorithms** | Pointer to [**[]EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2**](EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2.md) |  | [optional] 
+**AlternativeKeyAlgorithms** | Pointer to [**[]EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2**](EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2.md) |  | [optional] 
 
 ## Methods
 
@@ -231,31 +233,101 @@ HasDefaultCertificateOwnerRoleName returns a boolean if a field has been set.
 `func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) UnsetDefaultCertificateOwnerRoleName()`
 
 UnsetDefaultCertificateOwnerRoleName ensures that no value is present for DefaultCertificateOwnerRoleName, not even an explicit nil
-### GetKeyInfo
+### GetDefaultCertificateOwnerOverride
 
-`func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) GetKeyInfo() EnrollmentPatternsAlgorithmsKeyInfoRequest`
+`func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) GetDefaultCertificateOwnerOverride() bool`
 
-GetKeyInfo returns the KeyInfo field if non-nil, zero value otherwise.
+GetDefaultCertificateOwnerOverride returns the DefaultCertificateOwnerOverride field if non-nil, zero value otherwise.
 
-### GetKeyInfoOk
+### GetDefaultCertificateOwnerOverrideOk
 
-`func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) GetKeyInfoOk() (*EnrollmentPatternsAlgorithmsKeyInfoRequest, bool)`
+`func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) GetDefaultCertificateOwnerOverrideOk() (*bool, bool)`
 
-GetKeyInfoOk returns a tuple with the KeyInfo field if it's non-nil, zero value otherwise
+GetDefaultCertificateOwnerOverrideOk returns a tuple with the DefaultCertificateOwnerOverride field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKeyInfo
+### SetDefaultCertificateOwnerOverride
 
-`func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) SetKeyInfo(v EnrollmentPatternsAlgorithmsKeyInfoRequest)`
+`func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) SetDefaultCertificateOwnerOverride(v bool)`
 
-SetKeyInfo sets KeyInfo field to given value.
+SetDefaultCertificateOwnerOverride sets DefaultCertificateOwnerOverride field to given value.
 
-### HasKeyInfo
+### HasDefaultCertificateOwnerOverride
 
-`func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) HasKeyInfo() bool`
+`func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) HasDefaultCertificateOwnerOverride() bool`
 
-HasKeyInfo returns a boolean if a field has been set.
+HasDefaultCertificateOwnerOverride returns a boolean if a field has been set.
 
+### GetPrimaryKeyAlgorithms
+
+`func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) GetPrimaryKeyAlgorithms() []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2`
+
+GetPrimaryKeyAlgorithms returns the PrimaryKeyAlgorithms field if non-nil, zero value otherwise.
+
+### GetPrimaryKeyAlgorithmsOk
+
+`func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) GetPrimaryKeyAlgorithmsOk() (*[]EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2, bool)`
+
+GetPrimaryKeyAlgorithmsOk returns a tuple with the PrimaryKeyAlgorithms field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrimaryKeyAlgorithms
+
+`func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) SetPrimaryKeyAlgorithms(v []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2)`
+
+SetPrimaryKeyAlgorithms sets PrimaryKeyAlgorithms field to given value.
+
+### HasPrimaryKeyAlgorithms
+
+`func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) HasPrimaryKeyAlgorithms() bool`
+
+HasPrimaryKeyAlgorithms returns a boolean if a field has been set.
+
+### SetPrimaryKeyAlgorithmsNil
+
+`func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) SetPrimaryKeyAlgorithmsNil(b bool)`
+
+ SetPrimaryKeyAlgorithmsNil sets the value for PrimaryKeyAlgorithms to be an explicit nil
+
+### UnsetPrimaryKeyAlgorithms
+`func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) UnsetPrimaryKeyAlgorithms()`
+
+UnsetPrimaryKeyAlgorithms ensures that no value is present for PrimaryKeyAlgorithms, not even an explicit nil
+### GetAlternativeKeyAlgorithms
+
+`func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) GetAlternativeKeyAlgorithms() []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2`
+
+GetAlternativeKeyAlgorithms returns the AlternativeKeyAlgorithms field if non-nil, zero value otherwise.
+
+### GetAlternativeKeyAlgorithmsOk
+
+`func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) GetAlternativeKeyAlgorithmsOk() (*[]EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2, bool)`
+
+GetAlternativeKeyAlgorithmsOk returns a tuple with the AlternativeKeyAlgorithms field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlternativeKeyAlgorithms
+
+`func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) SetAlternativeKeyAlgorithms(v []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2)`
+
+SetAlternativeKeyAlgorithms sets AlternativeKeyAlgorithms field to given value.
+
+### HasAlternativeKeyAlgorithms
+
+`func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) HasAlternativeKeyAlgorithms() bool`
+
+HasAlternativeKeyAlgorithms returns a boolean if a field has been set.
+
+### SetAlternativeKeyAlgorithmsNil
+
+`func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) SetAlternativeKeyAlgorithmsNil(b bool)`
+
+ SetAlternativeKeyAlgorithmsNil sets the value for AlternativeKeyAlgorithms to be an explicit nil
+
+### UnsetAlternativeKeyAlgorithms
+`func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) UnsetAlternativeKeyAlgorithms()`
+
+UnsetAlternativeKeyAlgorithms ensures that no value is present for AlternativeKeyAlgorithms, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

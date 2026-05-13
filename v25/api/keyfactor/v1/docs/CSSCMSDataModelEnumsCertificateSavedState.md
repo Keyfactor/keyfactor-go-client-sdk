@@ -33,6 +33,10 @@
 
 * `_8192` (value: `8192`)
 
+* `_16384` (value: `16384`)
+
+* `_32768` (value: `32768`)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

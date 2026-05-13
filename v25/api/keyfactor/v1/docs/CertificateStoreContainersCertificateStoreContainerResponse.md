@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **NullableString** |  | [optional] 
 **Schedule** | Pointer to [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | [optional] 
-**CertStoreType** | Pointer to **int32** |  | [optional] 
 **CertificateStores** | Pointer to [**[]CertificateStoresCertificateStoreResponse**](CertificateStoresCertificateStoreResponse.md) |  | [optional] 
 
 ## Methods
@@ -113,31 +112,6 @@ SetSchedule sets Schedule field to given value.
 `func (o *CertificateStoreContainersCertificateStoreContainerResponse) HasSchedule() bool`
 
 HasSchedule returns a boolean if a field has been set.
-
-### GetCertStoreType
-
-`func (o *CertificateStoreContainersCertificateStoreContainerResponse) GetCertStoreType() int32`
-
-GetCertStoreType returns the CertStoreType field if non-nil, zero value otherwise.
-
-### GetCertStoreTypeOk
-
-`func (o *CertificateStoreContainersCertificateStoreContainerResponse) GetCertStoreTypeOk() (*int32, bool)`
-
-GetCertStoreTypeOk returns a tuple with the CertStoreType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCertStoreType
-
-`func (o *CertificateStoreContainersCertificateStoreContainerResponse) SetCertStoreType(v int32)`
-
-SetCertStoreType sets CertStoreType field to given value.
-
-### HasCertStoreType
-
-`func (o *CertificateStoreContainersCertificateStoreContainerResponse) HasCertStoreType() bool`
-
-HasCertStoreType returns a boolean if a field has been set.
 
 ### GetCertificateStores
 

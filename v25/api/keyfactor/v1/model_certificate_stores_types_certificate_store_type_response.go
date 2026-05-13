@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -29,31 +29,31 @@ var _ MappedNullable = &CertificateStoresTypesCertificateStoreTypeResponse{}
 
 // CertificateStoresTypesCertificateStoreTypeResponse struct for CertificateStoresTypesCertificateStoreTypeResponse
 type CertificateStoresTypesCertificateStoreTypeResponse struct {
-	Name                NullableString                                                                 `json:"Name,omitempty"`
-	ShortName           NullableString                                                                 `json:"ShortName,omitempty"`
-	Capability          NullableString                                                                 `json:"Capability,omitempty"`
-	StoreType           NullableInt32                                                                  `json:"StoreType,omitempty"`
-	ImportType          NullableInt32                                                                  `json:"ImportType,omitempty"`
-	LocalStore          *bool                                                                          `json:"LocalStore,omitempty"`
-	SupportedOperations *CSSCMSDataModelModelsCertStoreTypeSupportedOperations                         `json:"SupportedOperations,omitempty"`
-	Properties          []CSSCMSDataModelModelsCertificateStoreTypeProperty                            `json:"Properties,omitempty"`
-	EntryParameters     []CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter `json:"EntryParameters,omitempty"`
-	PasswordOptions     *CSSCMSDataModelModelsCertStoreTypePasswordOptions                             `json:"PasswordOptions,omitempty"`
-	StorePathType       NullableString                                                                 `json:"StorePathType,omitempty"`
-	StorePathValue      NullableString                                                                 `json:"StorePathValue,omitempty"`
-	PrivateKeyAllowed   *CSSCMSCoreEnumsCertStorePrivateKey                                            `json:"PrivateKeyAllowed,omitempty"`
-	CertificateFormat   *CSSCMSCoreEnumsCertificateFormat                                              `json:"CertificateFormat,omitempty"`
-	JobProperties       []string                                                                       `json:"JobProperties,omitempty"`
-	ServerRequired      *bool                                                                          `json:"ServerRequired,omitempty"`
-	PowerShell          *bool                                                                          `json:"PowerShell,omitempty"`
-	BlueprintAllowed    *bool                                                                          `json:"BlueprintAllowed,omitempty"`
-	CustomAliasAllowed  *KeyfactorOrchestratorsCommonEnumsCertStoreCustomAlias                         `json:"CustomAliasAllowed,omitempty"`
-	ServerRegistration  NullableInt32                                                                  `json:"ServerRegistration,omitempty"`
-	InventoryEndpoint   NullableString                                                                 `json:"InventoryEndpoint,omitempty"`
-	InventoryJobType    *string                                                                        `json:"InventoryJobType,omitempty"`
-	ManagementJobType   NullableString                                                                 `json:"ManagementJobType,omitempty"`
-	DiscoveryJobType    NullableString                                                                 `json:"DiscoveryJobType,omitempty"`
-	EnrollmentJobType   NullableString                                                                 `json:"EnrollmentJobType,omitempty"`
+	Name                NullableString                                         `json:"Name,omitempty"`
+	ShortName           NullableString                                         `json:"ShortName,omitempty"`
+	Capability          NullableString                                         `json:"Capability,omitempty"`
+	StoreType           NullableInt32                                          `json:"StoreType,omitempty"`
+	ImportType          NullableInt32                                          `json:"ImportType,omitempty"`
+	LocalStore          *bool                                                  `json:"LocalStore,omitempty"`
+	SupportedOperations *CertificateStoresTypesSupportedOperations             `json:"SupportedOperations,omitempty"`
+	Properties          []CertificateStoresTypesStoreTypeProperty              `json:"Properties,omitempty"`
+	EntryParameters     []CertificateStoresTypesEntryParameters                `json:"EntryParameters,omitempty"`
+	PasswordOptions     *CertificateStoresTypesPasswordOptions                 `json:"PasswordOptions,omitempty"`
+	StorePathType       NullableString                                         `json:"StorePathType,omitempty"`
+	StorePathValue      NullableString                                         `json:"StorePathValue,omitempty"`
+	PrivateKeyAllowed   *CSSCMSCoreEnumsCertStorePrivateKey                    `json:"PrivateKeyAllowed,omitempty"`
+	CertificateFormat   *CSSCMSCoreEnumsCertificateFormat                      `json:"CertificateFormat,omitempty"`
+	JobProperties       []string                                               `json:"JobProperties,omitempty"`
+	ServerRequired      *bool                                                  `json:"ServerRequired,omitempty"`
+	PowerShell          *bool                                                  `json:"PowerShell,omitempty"`
+	BlueprintAllowed    *bool                                                  `json:"BlueprintAllowed,omitempty"`
+	CustomAliasAllowed  *KeyfactorOrchestratorsCommonEnumsCertStoreCustomAlias `json:"CustomAliasAllowed,omitempty"`
+	ServerRegistration  NullableInt32                                          `json:"ServerRegistration,omitempty"`
+	InventoryEndpoint   NullableString                                         `json:"InventoryEndpoint,omitempty"`
+	InventoryJobType    *string                                                `json:"InventoryJobType,omitempty"`
+	ManagementJobType   NullableString                                         `json:"ManagementJobType,omitempty"`
+	DiscoveryJobType    NullableString                                         `json:"DiscoveryJobType,omitempty"`
+	EnrollmentJobType   NullableString                                         `json:"EnrollmentJobType,omitempty"`
 }
 
 // NewCertificateStoresTypesCertificateStoreTypeResponse instantiates a new CertificateStoresTypesCertificateStoreTypeResponse object
@@ -321,9 +321,9 @@ func (o *CertificateStoresTypesCertificateStoreTypeResponse) SetLocalStore(v boo
 }
 
 // GetSupportedOperations returns the SupportedOperations field value if set, zero value otherwise.
-func (o *CertificateStoresTypesCertificateStoreTypeResponse) GetSupportedOperations() CSSCMSDataModelModelsCertStoreTypeSupportedOperations {
+func (o *CertificateStoresTypesCertificateStoreTypeResponse) GetSupportedOperations() CertificateStoresTypesSupportedOperations {
 	if o == nil || isNil(o.SupportedOperations) {
-		var ret CSSCMSDataModelModelsCertStoreTypeSupportedOperations
+		var ret CertificateStoresTypesSupportedOperations
 		return ret
 	}
 	return *o.SupportedOperations
@@ -331,7 +331,7 @@ func (o *CertificateStoresTypesCertificateStoreTypeResponse) GetSupportedOperati
 
 // GetSupportedOperationsOk returns a tuple with the SupportedOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CertificateStoresTypesCertificateStoreTypeResponse) GetSupportedOperationsOk() (*CSSCMSDataModelModelsCertStoreTypeSupportedOperations, bool) {
+func (o *CertificateStoresTypesCertificateStoreTypeResponse) GetSupportedOperationsOk() (*CertificateStoresTypesSupportedOperations, bool) {
 	if o == nil || isNil(o.SupportedOperations) {
 		return nil, false
 	}
@@ -347,15 +347,15 @@ func (o *CertificateStoresTypesCertificateStoreTypeResponse) HasSupportedOperati
 	return false
 }
 
-// SetSupportedOperations gets a reference to the given CSSCMSDataModelModelsCertStoreTypeSupportedOperations and assigns it to the SupportedOperations field.
-func (o *CertificateStoresTypesCertificateStoreTypeResponse) SetSupportedOperations(v CSSCMSDataModelModelsCertStoreTypeSupportedOperations) {
+// SetSupportedOperations gets a reference to the given CertificateStoresTypesSupportedOperations and assigns it to the SupportedOperations field.
+func (o *CertificateStoresTypesCertificateStoreTypeResponse) SetSupportedOperations(v CertificateStoresTypesSupportedOperations) {
 	o.SupportedOperations = &v
 }
 
 // GetProperties returns the Properties field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CertificateStoresTypesCertificateStoreTypeResponse) GetProperties() []CSSCMSDataModelModelsCertificateStoreTypeProperty {
+func (o *CertificateStoresTypesCertificateStoreTypeResponse) GetProperties() []CertificateStoresTypesStoreTypeProperty {
 	if o == nil {
-		var ret []CSSCMSDataModelModelsCertificateStoreTypeProperty
+		var ret []CertificateStoresTypesStoreTypeProperty
 		return ret
 	}
 	return o.Properties
@@ -364,7 +364,7 @@ func (o *CertificateStoresTypesCertificateStoreTypeResponse) GetProperties() []C
 // GetPropertiesOk returns a tuple with the Properties field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CertificateStoresTypesCertificateStoreTypeResponse) GetPropertiesOk() ([]CSSCMSDataModelModelsCertificateStoreTypeProperty, bool) {
+func (o *CertificateStoresTypesCertificateStoreTypeResponse) GetPropertiesOk() ([]CertificateStoresTypesStoreTypeProperty, bool) {
 	if o == nil || isNil(o.Properties) {
 		return nil, false
 	}
@@ -380,15 +380,15 @@ func (o *CertificateStoresTypesCertificateStoreTypeResponse) HasProperties() boo
 	return false
 }
 
-// SetProperties gets a reference to the given []CSSCMSDataModelModelsCertificateStoreTypeProperty and assigns it to the Properties field.
-func (o *CertificateStoresTypesCertificateStoreTypeResponse) SetProperties(v []CSSCMSDataModelModelsCertificateStoreTypeProperty) {
+// SetProperties gets a reference to the given []CertificateStoresTypesStoreTypeProperty and assigns it to the Properties field.
+func (o *CertificateStoresTypesCertificateStoreTypeResponse) SetProperties(v []CertificateStoresTypesStoreTypeProperty) {
 	o.Properties = v
 }
 
 // GetEntryParameters returns the EntryParameters field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CertificateStoresTypesCertificateStoreTypeResponse) GetEntryParameters() []CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter {
+func (o *CertificateStoresTypesCertificateStoreTypeResponse) GetEntryParameters() []CertificateStoresTypesEntryParameters {
 	if o == nil {
-		var ret []CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter
+		var ret []CertificateStoresTypesEntryParameters
 		return ret
 	}
 	return o.EntryParameters
@@ -397,7 +397,7 @@ func (o *CertificateStoresTypesCertificateStoreTypeResponse) GetEntryParameters(
 // GetEntryParametersOk returns a tuple with the EntryParameters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CertificateStoresTypesCertificateStoreTypeResponse) GetEntryParametersOk() ([]CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter, bool) {
+func (o *CertificateStoresTypesCertificateStoreTypeResponse) GetEntryParametersOk() ([]CertificateStoresTypesEntryParameters, bool) {
 	if o == nil || isNil(o.EntryParameters) {
 		return nil, false
 	}
@@ -413,15 +413,15 @@ func (o *CertificateStoresTypesCertificateStoreTypeResponse) HasEntryParameters(
 	return false
 }
 
-// SetEntryParameters gets a reference to the given []CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter and assigns it to the EntryParameters field.
-func (o *CertificateStoresTypesCertificateStoreTypeResponse) SetEntryParameters(v []CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) {
+// SetEntryParameters gets a reference to the given []CertificateStoresTypesEntryParameters and assigns it to the EntryParameters field.
+func (o *CertificateStoresTypesCertificateStoreTypeResponse) SetEntryParameters(v []CertificateStoresTypesEntryParameters) {
 	o.EntryParameters = v
 }
 
 // GetPasswordOptions returns the PasswordOptions field value if set, zero value otherwise.
-func (o *CertificateStoresTypesCertificateStoreTypeResponse) GetPasswordOptions() CSSCMSDataModelModelsCertStoreTypePasswordOptions {
+func (o *CertificateStoresTypesCertificateStoreTypeResponse) GetPasswordOptions() CertificateStoresTypesPasswordOptions {
 	if o == nil || isNil(o.PasswordOptions) {
-		var ret CSSCMSDataModelModelsCertStoreTypePasswordOptions
+		var ret CertificateStoresTypesPasswordOptions
 		return ret
 	}
 	return *o.PasswordOptions
@@ -429,7 +429,7 @@ func (o *CertificateStoresTypesCertificateStoreTypeResponse) GetPasswordOptions(
 
 // GetPasswordOptionsOk returns a tuple with the PasswordOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CertificateStoresTypesCertificateStoreTypeResponse) GetPasswordOptionsOk() (*CSSCMSDataModelModelsCertStoreTypePasswordOptions, bool) {
+func (o *CertificateStoresTypesCertificateStoreTypeResponse) GetPasswordOptionsOk() (*CertificateStoresTypesPasswordOptions, bool) {
 	if o == nil || isNil(o.PasswordOptions) {
 		return nil, false
 	}
@@ -445,8 +445,8 @@ func (o *CertificateStoresTypesCertificateStoreTypeResponse) HasPasswordOptions(
 	return false
 }
 
-// SetPasswordOptions gets a reference to the given CSSCMSDataModelModelsCertStoreTypePasswordOptions and assigns it to the PasswordOptions field.
-func (o *CertificateStoresTypesCertificateStoreTypeResponse) SetPasswordOptions(v CSSCMSDataModelModelsCertStoreTypePasswordOptions) {
+// SetPasswordOptions gets a reference to the given CertificateStoresTypesPasswordOptions and assigns it to the PasswordOptions field.
+func (o *CertificateStoresTypesCertificateStoreTypeResponse) SetPasswordOptions(v CertificateStoresTypesPasswordOptions) {
 	o.PasswordOptions = &v
 }
 

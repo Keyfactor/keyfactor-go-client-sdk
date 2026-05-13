@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **WorkflowName** | Pointer to **NullableString** |  | [optional] 
 **WorkflowPublishedVersion** | Pointer to **NullableInt32** |  | [optional] 
 **WorkflowEnabled** | Pointer to **NullableBool** |  | [optional] 
+**Schedule** | Pointer to [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | [optional] 
 
 ## Methods
 
@@ -478,6 +479,31 @@ HasWorkflowEnabled returns a boolean if a field has been set.
 `func (o *AlertsExpirationExpirationAlertDefinitionResponse) UnsetWorkflowEnabled()`
 
 UnsetWorkflowEnabled ensures that no value is present for WorkflowEnabled, not even an explicit nil
+### GetSchedule
+
+`func (o *AlertsExpirationExpirationAlertDefinitionResponse) GetSchedule() KeyfactorCommonSchedulingKeyfactorSchedule`
+
+GetSchedule returns the Schedule field if non-nil, zero value otherwise.
+
+### GetScheduleOk
+
+`func (o *AlertsExpirationExpirationAlertDefinitionResponse) GetScheduleOk() (*KeyfactorCommonSchedulingKeyfactorSchedule, bool)`
+
+GetScheduleOk returns a tuple with the Schedule field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchedule
+
+`func (o *AlertsExpirationExpirationAlertDefinitionResponse) SetSchedule(v KeyfactorCommonSchedulingKeyfactorSchedule)`
+
+SetSchedule sets Schedule field to given value.
+
+### HasSchedule
+
+`func (o *AlertsExpirationExpirationAlertDefinitionResponse) HasSchedule() bool`
+
+HasSchedule returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -37,6 +37,12 @@ type SMTPSMTPRequest struct {
 	SenderAccount           NullableString                           `json:"SenderAccount,omitempty"`
 	SenderName              NullableString                           `json:"SenderName,omitempty"`
 	UseSSL                  *bool                                    `json:"UseSSL,omitempty"`
+	ClientId                *CSSCMSDataModelModelsKeyfactorAPISecret `json:"ClientId,omitempty"`
+	ClientSecret            *CSSCMSDataModelModelsKeyfactorAPISecret `json:"ClientSecret,omitempty"`
+	TokenEndpoint           NullableString                           `json:"TokenEndpoint,omitempty"`
+	Scope                   NullableString                           `json:"Scope,omitempty"`
+	Audience                NullableString                           `json:"Audience,omitempty"`
+	RequestHeaders          []SharedRequestHeaderRequest             `json:"RequestHeaders,omitempty"`
 }
 
 // NewSMTPSMTPRequest instantiates a new SMTPSMTPRequest object
@@ -345,6 +351,232 @@ func (o *SMTPSMTPRequest) SetUseSSL(v bool) {
 	o.UseSSL = &v
 }
 
+// GetClientId returns the ClientId field value if set, zero value otherwise.
+func (o *SMTPSMTPRequest) GetClientId() CSSCMSDataModelModelsKeyfactorAPISecret {
+	if o == nil || isNil(o.ClientId) {
+		var ret CSSCMSDataModelModelsKeyfactorAPISecret
+		return ret
+	}
+	return *o.ClientId
+}
+
+// GetClientIdOk returns a tuple with the ClientId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SMTPSMTPRequest) GetClientIdOk() (*CSSCMSDataModelModelsKeyfactorAPISecret, bool) {
+	if o == nil || isNil(o.ClientId) {
+		return nil, false
+	}
+	return o.ClientId, true
+}
+
+// HasClientId returns a boolean if a field has been set.
+func (o *SMTPSMTPRequest) HasClientId() bool {
+	if o != nil && !isNil(o.ClientId) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientId gets a reference to the given CSSCMSDataModelModelsKeyfactorAPISecret and assigns it to the ClientId field.
+func (o *SMTPSMTPRequest) SetClientId(v CSSCMSDataModelModelsKeyfactorAPISecret) {
+	o.ClientId = &v
+}
+
+// GetClientSecret returns the ClientSecret field value if set, zero value otherwise.
+func (o *SMTPSMTPRequest) GetClientSecret() CSSCMSDataModelModelsKeyfactorAPISecret {
+	if o == nil || isNil(o.ClientSecret) {
+		var ret CSSCMSDataModelModelsKeyfactorAPISecret
+		return ret
+	}
+	return *o.ClientSecret
+}
+
+// GetClientSecretOk returns a tuple with the ClientSecret field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SMTPSMTPRequest) GetClientSecretOk() (*CSSCMSDataModelModelsKeyfactorAPISecret, bool) {
+	if o == nil || isNil(o.ClientSecret) {
+		return nil, false
+	}
+	return o.ClientSecret, true
+}
+
+// HasClientSecret returns a boolean if a field has been set.
+func (o *SMTPSMTPRequest) HasClientSecret() bool {
+	if o != nil && !isNil(o.ClientSecret) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientSecret gets a reference to the given CSSCMSDataModelModelsKeyfactorAPISecret and assigns it to the ClientSecret field.
+func (o *SMTPSMTPRequest) SetClientSecret(v CSSCMSDataModelModelsKeyfactorAPISecret) {
+	o.ClientSecret = &v
+}
+
+// GetTokenEndpoint returns the TokenEndpoint field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SMTPSMTPRequest) GetTokenEndpoint() string {
+	if o == nil || isNil(o.TokenEndpoint.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.TokenEndpoint.Get()
+}
+
+// GetTokenEndpointOk returns a tuple with the TokenEndpoint field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SMTPSMTPRequest) GetTokenEndpointOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.TokenEndpoint.Get(), o.TokenEndpoint.IsSet()
+}
+
+// HasTokenEndpoint returns a boolean if a field has been set.
+func (o *SMTPSMTPRequest) HasTokenEndpoint() bool {
+	if o != nil && o.TokenEndpoint.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetTokenEndpoint gets a reference to the given NullableString and assigns it to the TokenEndpoint field.
+func (o *SMTPSMTPRequest) SetTokenEndpoint(v string) {
+	o.TokenEndpoint.Set(&v)
+}
+
+// SetTokenEndpointNil sets the value for TokenEndpoint to be an explicit nil
+func (o *SMTPSMTPRequest) SetTokenEndpointNil() {
+	o.TokenEndpoint.Set(nil)
+}
+
+// UnsetTokenEndpoint ensures that no value is present for TokenEndpoint, not even an explicit nil
+func (o *SMTPSMTPRequest) UnsetTokenEndpoint() {
+	o.TokenEndpoint.Unset()
+}
+
+// GetScope returns the Scope field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SMTPSMTPRequest) GetScope() string {
+	if o == nil || isNil(o.Scope.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Scope.Get()
+}
+
+// GetScopeOk returns a tuple with the Scope field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SMTPSMTPRequest) GetScopeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Scope.Get(), o.Scope.IsSet()
+}
+
+// HasScope returns a boolean if a field has been set.
+func (o *SMTPSMTPRequest) HasScope() bool {
+	if o != nil && o.Scope.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetScope gets a reference to the given NullableString and assigns it to the Scope field.
+func (o *SMTPSMTPRequest) SetScope(v string) {
+	o.Scope.Set(&v)
+}
+
+// SetScopeNil sets the value for Scope to be an explicit nil
+func (o *SMTPSMTPRequest) SetScopeNil() {
+	o.Scope.Set(nil)
+}
+
+// UnsetScope ensures that no value is present for Scope, not even an explicit nil
+func (o *SMTPSMTPRequest) UnsetScope() {
+	o.Scope.Unset()
+}
+
+// GetAudience returns the Audience field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SMTPSMTPRequest) GetAudience() string {
+	if o == nil || isNil(o.Audience.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Audience.Get()
+}
+
+// GetAudienceOk returns a tuple with the Audience field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SMTPSMTPRequest) GetAudienceOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Audience.Get(), o.Audience.IsSet()
+}
+
+// HasAudience returns a boolean if a field has been set.
+func (o *SMTPSMTPRequest) HasAudience() bool {
+	if o != nil && o.Audience.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetAudience gets a reference to the given NullableString and assigns it to the Audience field.
+func (o *SMTPSMTPRequest) SetAudience(v string) {
+	o.Audience.Set(&v)
+}
+
+// SetAudienceNil sets the value for Audience to be an explicit nil
+func (o *SMTPSMTPRequest) SetAudienceNil() {
+	o.Audience.Set(nil)
+}
+
+// UnsetAudience ensures that no value is present for Audience, not even an explicit nil
+func (o *SMTPSMTPRequest) UnsetAudience() {
+	o.Audience.Unset()
+}
+
+// GetRequestHeaders returns the RequestHeaders field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SMTPSMTPRequest) GetRequestHeaders() []SharedRequestHeaderRequest {
+	if o == nil {
+		var ret []SharedRequestHeaderRequest
+		return ret
+	}
+	return o.RequestHeaders
+}
+
+// GetRequestHeadersOk returns a tuple with the RequestHeaders field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SMTPSMTPRequest) GetRequestHeadersOk() ([]SharedRequestHeaderRequest, bool) {
+	if o == nil || isNil(o.RequestHeaders) {
+		return nil, false
+	}
+	return o.RequestHeaders, true
+}
+
+// HasRequestHeaders returns a boolean if a field has been set.
+func (o *SMTPSMTPRequest) HasRequestHeaders() bool {
+	if o != nil && isNil(o.RequestHeaders) {
+		return true
+	}
+
+	return false
+}
+
+// SetRequestHeaders gets a reference to the given []SharedRequestHeaderRequest and assigns it to the RequestHeaders field.
+func (o *SMTPSMTPRequest) SetRequestHeaders(v []SharedRequestHeaderRequest) {
+	o.RequestHeaders = v
+}
+
 func (o SMTPSMTPRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -378,6 +610,24 @@ func (o SMTPSMTPRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !isNil(o.UseSSL) {
 		toSerialize["UseSSL"] = o.UseSSL
+	}
+	if !isNil(o.ClientId) {
+		toSerialize["ClientId"] = o.ClientId
+	}
+	if !isNil(o.ClientSecret) {
+		toSerialize["ClientSecret"] = o.ClientSecret
+	}
+	if o.TokenEndpoint.IsSet() {
+		toSerialize["TokenEndpoint"] = o.TokenEndpoint.Get()
+	}
+	if o.Scope.IsSet() {
+		toSerialize["Scope"] = o.Scope.Get()
+	}
+	if o.Audience.IsSet() {
+		toSerialize["Audience"] = o.Audience.Get()
+	}
+	if o.RequestHeaders != nil {
+		toSerialize["RequestHeaders"] = o.RequestHeaders
 	}
 	return toSerialize, nil
 }

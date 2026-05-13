@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **CertificateId** | Pointer to **NullableInt32** |  | [optional] 
 **Thumbprint** | Pointer to **NullableString** |  | [optional] 
 **CertificateAuthority** | Pointer to **NullableString** |  | [optional] 
-**Template** | Pointer to **NullableString** |  | [optional] 
 **Timestamp** | Pointer to **time.Time** |  | [optional] 
 **EnrollmentPatternId** | Pointer to **NullableInt32** |  | [optional] 
 
@@ -135,41 +134,6 @@ HasCertificateAuthority returns a boolean if a field has been set.
 `func (o *EnrollmentRenewAPIRequest) UnsetCertificateAuthority()`
 
 UnsetCertificateAuthority ensures that no value is present for CertificateAuthority, not even an explicit nil
-### GetTemplate
-
-`func (o *EnrollmentRenewAPIRequest) GetTemplate() string`
-
-GetTemplate returns the Template field if non-nil, zero value otherwise.
-
-### GetTemplateOk
-
-`func (o *EnrollmentRenewAPIRequest) GetTemplateOk() (*string, bool)`
-
-GetTemplateOk returns a tuple with the Template field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTemplate
-
-`func (o *EnrollmentRenewAPIRequest) SetTemplate(v string)`
-
-SetTemplate sets Template field to given value.
-
-### HasTemplate
-
-`func (o *EnrollmentRenewAPIRequest) HasTemplate() bool`
-
-HasTemplate returns a boolean if a field has been set.
-
-### SetTemplateNil
-
-`func (o *EnrollmentRenewAPIRequest) SetTemplateNil(b bool)`
-
- SetTemplateNil sets the value for Template to be an explicit nil
-
-### UnsetTemplate
-`func (o *EnrollmentRenewAPIRequest) UnsetTemplate()`
-
-UnsetTemplate ensures that no value is present for Template, not even an explicit nil
 ### GetTimestamp
 
 `func (o *EnrollmentRenewAPIRequest) GetTimestamp() time.Time`

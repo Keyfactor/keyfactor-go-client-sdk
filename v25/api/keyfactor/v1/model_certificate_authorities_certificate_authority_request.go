@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -29,38 +29,40 @@ var _ MappedNullable = &CertificateAuthoritiesCertificateAuthorityRequest{}
 
 // CertificateAuthoritiesCertificateAuthorityRequest struct for CertificateAuthoritiesCertificateAuthorityRequest
 type CertificateAuthoritiesCertificateAuthorityRequest struct {
-	Id                            *int32                                           `json:"Id,omitempty"`
-	LogicalName                   NullableString                                   `json:"LogicalName,omitempty"`
-	HostName                      NullableString                                   `json:"HostName,omitempty"`
-	Delegate                      *bool                                            `json:"Delegate,omitempty"`
-	DelegateEnrollment            *bool                                            `json:"DelegateEnrollment,omitempty"`
-	ForestRoot                    NullableString                                   `json:"ForestRoot,omitempty"`
-	ConfigurationTenant           NullableString                                   `json:"ConfigurationTenant,omitempty"`
-	UseCAConnector                *bool                                            `json:"UseCAConnector,omitempty"`
-	ConnectorPool                 NullableString                                   `json:"ConnectorPool,omitempty"`
-	Remote                        *bool                                            `json:"Remote,omitempty"`
-	Agent                         NullableString                                   `json:"Agent,omitempty"`
-	Standalone                    *bool                                            `json:"Standalone,omitempty"`
-	MonitorThresholds             *bool                                            `json:"MonitorThresholds,omitempty"`
-	IssuanceMax                   NullableInt32                                    `json:"IssuanceMax,omitempty"`
-	IssuanceMin                   NullableInt32                                    `json:"IssuanceMin,omitempty"`
-	FailureMax                    NullableInt32                                    `json:"FailureMax,omitempty"`
-	RFCEnforcement                *bool                                            `json:"RFCEnforcement,omitempty"`
-	Properties                    NullableString                                   `json:"Properties,omitempty"`
-	AllowedEnrollmentTypes        *CSSCMSCoreEnumsEnrollmentType                   `json:"AllowedEnrollmentTypes,omitempty"`
-	KeyRetention                  *CSSCMSCoreEnumsKeyRetentionPolicy               `json:"KeyRetention,omitempty"`
-	KeyRetentionDays              NullableInt32                                    `json:"KeyRetentionDays,omitempty"`
-	ExplicitCredentials           *bool                                            `json:"ExplicitCredentials,omitempty"`
-	SubscriberTerms               *bool                                            `json:"SubscriberTerms,omitempty"`
-	ExplicitUser                  NullableString                                   `json:"ExplicitUser,omitempty"`
-	ExplicitPassword              *CSSCMSDataModelModelsKeyfactorAPISecret         `json:"ExplicitPassword,omitempty"`
-	UseAllowedRequesters          *bool                                            `json:"UseAllowedRequesters,omitempty"`
-	AllowedRequesters             []string                                         `json:"AllowedRequesters,omitempty"`
-	FullScan                      *KeyfactorCommonSchedulingKeyfactorSchedule      `json:"FullScan,omitempty"`
-	IncrementalScan               *KeyfactorCommonSchedulingKeyfactorSchedule      `json:"IncrementalScan,omitempty"`
-	ThresholdCheck                *KeyfactorCommonSchedulingKeyfactorSchedule      `json:"ThresholdCheck,omitempty"`
-	AuthCertificatePassword       *CSSCMSDataModelModelsKeyfactorAPISecret         `json:"AuthCertificatePassword,omitempty"`
-	AuthCertificate               *CSSCMSDataModelModelsKeyfactorAPISecret         `json:"AuthCertificate,omitempty"`
+	Id                     *int32                                      `json:"Id,omitempty"`
+	LogicalName            NullableString                              `json:"LogicalName,omitempty"`
+	HostName               NullableString                              `json:"HostName,omitempty"`
+	Delegate               *bool                                       `json:"Delegate,omitempty"`
+	DelegateEnrollment     *bool                                       `json:"DelegateEnrollment,omitempty"`
+	ForestRoot             NullableString                              `json:"ForestRoot,omitempty"`
+	ConfigurationTenant    NullableString                              `json:"ConfigurationTenant,omitempty"`
+	UseCAConnector         *bool                                       `json:"UseCAConnector,omitempty"`
+	ConnectorPool          NullableString                              `json:"ConnectorPool,omitempty"`
+	Remote                 *bool                                       `json:"Remote,omitempty"`
+	Agent                  NullableString                              `json:"Agent,omitempty"`
+	Standalone             *bool                                       `json:"Standalone,omitempty"`
+	MonitorThresholds      *bool                                       `json:"MonitorThresholds,omitempty"`
+	IssuanceMax            NullableInt32                               `json:"IssuanceMax,omitempty"`
+	IssuanceMin            NullableInt32                               `json:"IssuanceMin,omitempty"`
+	FailureMax             NullableInt32                               `json:"FailureMax,omitempty"`
+	RFCEnforcement         *bool                                       `json:"RFCEnforcement,omitempty"`
+	Properties             NullableString                              `json:"Properties,omitempty"`
+	AllowedEnrollmentTypes *CSSCMSCoreEnumsEnrollmentType              `json:"AllowedEnrollmentTypes,omitempty"`
+	KeyRetention           *CSSCMSCoreEnumsKeyRetentionPolicy          `json:"KeyRetention,omitempty"`
+	KeyRetentionDays       NullableInt32                               `json:"KeyRetentionDays,omitempty"`
+	ExplicitCredentials    *bool                                       `json:"ExplicitCredentials,omitempty"`
+	SubscriberTerms        *bool                                       `json:"SubscriberTerms,omitempty"`
+	ExplicitUser           NullableString                              `json:"ExplicitUser,omitempty"`
+	ExplicitPassword       *CSSCMSDataModelModelsKeyfactorAPISecret    `json:"ExplicitPassword,omitempty"`
+	UseAllowedRequesters   *bool                                       `json:"UseAllowedRequesters,omitempty"`
+	AllowedRequesters      []string                                    `json:"AllowedRequesters,omitempty"`
+	FullScan               *KeyfactorCommonSchedulingKeyfactorSchedule `json:"FullScan,omitempty"`
+	IncrementalScan        *KeyfactorCommonSchedulingKeyfactorSchedule `json:"IncrementalScan,omitempty"`
+	ThresholdCheck         *KeyfactorCommonSchedulingKeyfactorSchedule `json:"ThresholdCheck,omitempty"`
+	// Overrides default KeyfactorAPISecret with inline SecretValue
+	AuthCertificatePassword map[string]interface{} `json:"AuthCertificatePassword,omitempty"`
+	// Overrides default KeyfactorAPISecret with inline SecretValue
+	AuthCertificate               map[string]interface{}                           `json:"AuthCertificate,omitempty"`
 	CAType                        *CSSCMSCoreEnumsCertificateAuthorityType         `json:"CAType,omitempty"`
 	EnforceUniqueDN               *bool                                            `json:"EnforceUniqueDN,omitempty"`
 	AllowOneClickRenewals         *bool                                            `json:"AllowOneClickRenewals,omitempty"`
@@ -1188,19 +1190,19 @@ func (o *CertificateAuthoritiesCertificateAuthorityRequest) SetThresholdCheck(v 
 }
 
 // GetAuthCertificatePassword returns the AuthCertificatePassword field value if set, zero value otherwise.
-func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificatePassword() CSSCMSDataModelModelsKeyfactorAPISecret {
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificatePassword() map[string]interface{} {
 	if o == nil || isNil(o.AuthCertificatePassword) {
-		var ret CSSCMSDataModelModelsKeyfactorAPISecret
+		var ret map[string]interface{}
 		return ret
 	}
-	return *o.AuthCertificatePassword
+	return o.AuthCertificatePassword
 }
 
 // GetAuthCertificatePasswordOk returns a tuple with the AuthCertificatePassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificatePasswordOk() (*CSSCMSDataModelModelsKeyfactorAPISecret, bool) {
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificatePasswordOk() (map[string]interface{}, bool) {
 	if o == nil || isNil(o.AuthCertificatePassword) {
-		return nil, false
+		return map[string]interface{}{}, false
 	}
 	return o.AuthCertificatePassword, true
 }
@@ -1214,25 +1216,25 @@ func (o *CertificateAuthoritiesCertificateAuthorityRequest) HasAuthCertificatePa
 	return false
 }
 
-// SetAuthCertificatePassword gets a reference to the given CSSCMSDataModelModelsKeyfactorAPISecret and assigns it to the AuthCertificatePassword field.
-func (o *CertificateAuthoritiesCertificateAuthorityRequest) SetAuthCertificatePassword(v CSSCMSDataModelModelsKeyfactorAPISecret) {
-	o.AuthCertificatePassword = &v
+// SetAuthCertificatePassword gets a reference to the given map[string]interface{} and assigns it to the AuthCertificatePassword field.
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) SetAuthCertificatePassword(v map[string]interface{}) {
+	o.AuthCertificatePassword = v
 }
 
 // GetAuthCertificate returns the AuthCertificate field value if set, zero value otherwise.
-func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificate() CSSCMSDataModelModelsKeyfactorAPISecret {
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificate() map[string]interface{} {
 	if o == nil || isNil(o.AuthCertificate) {
-		var ret CSSCMSDataModelModelsKeyfactorAPISecret
+		var ret map[string]interface{}
 		return ret
 	}
-	return *o.AuthCertificate
+	return o.AuthCertificate
 }
 
 // GetAuthCertificateOk returns a tuple with the AuthCertificate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificateOk() (*CSSCMSDataModelModelsKeyfactorAPISecret, bool) {
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) GetAuthCertificateOk() (map[string]interface{}, bool) {
 	if o == nil || isNil(o.AuthCertificate) {
-		return nil, false
+		return map[string]interface{}{}, false
 	}
 	return o.AuthCertificate, true
 }
@@ -1246,9 +1248,9 @@ func (o *CertificateAuthoritiesCertificateAuthorityRequest) HasAuthCertificate()
 	return false
 }
 
-// SetAuthCertificate gets a reference to the given CSSCMSDataModelModelsKeyfactorAPISecret and assigns it to the AuthCertificate field.
-func (o *CertificateAuthoritiesCertificateAuthorityRequest) SetAuthCertificate(v CSSCMSDataModelModelsKeyfactorAPISecret) {
-	o.AuthCertificate = &v
+// SetAuthCertificate gets a reference to the given map[string]interface{} and assigns it to the AuthCertificate field.
+func (o *CertificateAuthoritiesCertificateAuthorityRequest) SetAuthCertificate(v map[string]interface{}) {
+	o.AuthCertificate = v
 }
 
 // GetCAType returns the CAType field value if set, zero value otherwise.

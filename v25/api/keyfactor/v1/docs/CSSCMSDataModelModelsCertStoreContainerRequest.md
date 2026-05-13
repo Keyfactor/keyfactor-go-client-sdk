@@ -5,17 +5,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** |  | [optional] 
-**Name** | Pointer to **NullableString** |  | [optional] 
+**Name** | **string** |  | 
 **OverwriteSchedules** | Pointer to **bool** |  | [optional] 
 **Schedule** | Pointer to [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | [optional] 
-**CertStoreType** | Pointer to **int32** |  | [optional] 
 **CertificateStores** | Pointer to [**[]CSSCMSDataModelModelsCertificateStore**](CSSCMSDataModelModelsCertificateStore.md) |  | [optional] 
 
 ## Methods
 
 ### NewCSSCMSDataModelModelsCertStoreContainerRequest
 
-`func NewCSSCMSDataModelModelsCertStoreContainerRequest() *CSSCMSDataModelModelsCertStoreContainerRequest`
+`func NewCSSCMSDataModelModelsCertStoreContainerRequest(name string, ) *CSSCMSDataModelModelsCertStoreContainerRequest`
 
 NewCSSCMSDataModelModelsCertStoreContainerRequest instantiates a new CSSCMSDataModelModelsCertStoreContainerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -74,22 +73,7 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
 
-`func (o *CSSCMSDataModelModelsCertStoreContainerRequest) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### SetNameNil
-
-`func (o *CSSCMSDataModelModelsCertStoreContainerRequest) SetNameNil(b bool)`
-
- SetNameNil sets the value for Name to be an explicit nil
-
-### UnsetName
-`func (o *CSSCMSDataModelModelsCertStoreContainerRequest) UnsetName()`
-
-UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetOverwriteSchedules
 
 `func (o *CSSCMSDataModelModelsCertStoreContainerRequest) GetOverwriteSchedules() bool`
@@ -139,31 +123,6 @@ SetSchedule sets Schedule field to given value.
 `func (o *CSSCMSDataModelModelsCertStoreContainerRequest) HasSchedule() bool`
 
 HasSchedule returns a boolean if a field has been set.
-
-### GetCertStoreType
-
-`func (o *CSSCMSDataModelModelsCertStoreContainerRequest) GetCertStoreType() int32`
-
-GetCertStoreType returns the CertStoreType field if non-nil, zero value otherwise.
-
-### GetCertStoreTypeOk
-
-`func (o *CSSCMSDataModelModelsCertStoreContainerRequest) GetCertStoreTypeOk() (*int32, bool)`
-
-GetCertStoreTypeOk returns a tuple with the CertStoreType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCertStoreType
-
-`func (o *CSSCMSDataModelModelsCertStoreContainerRequest) SetCertStoreType(v int32)`
-
-SetCertStoreType sets CertStoreType field to given value.
-
-### HasCertStoreType
-
-`func (o *CSSCMSDataModelModelsCertStoreContainerRequest) HasCertStoreType() bool`
-
-HasCertStoreType returns a boolean if a field has been set.
 
 ### GetCertificateStores
 

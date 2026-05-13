@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -29,8 +29,9 @@ var _ MappedNullable = &CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData{}
 
 // CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData struct for CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData
 type CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData struct {
-	BitLengths []int32  `json:"bit_lengths,omitempty"`
-	Curves     []string `json:"curves,omitempty"`
+	Name       NullableString `json:"name,omitempty"`
+	BitLengths []int32        `json:"bit_lengths,omitempty"`
+	Curves     []string       `json:"curves,omitempty"`
 }
 
 // NewCSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData instantiates a new CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData object
@@ -48,6 +49,49 @@ func NewCSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData() *CSSCMSDataModel
 func NewCSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmDataWithDefaults() *CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData {
 	this := CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData{}
 	return &this
+}
+
+// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData) GetName() string {
+	if o == nil || isNil(o.Name.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Name.Get()
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData) GetNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Name.Get(), o.Name.IsSet()
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData) HasName() bool {
+	if o != nil && o.Name.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given NullableString and assigns it to the Name field.
+func (o *CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData) SetName(v string) {
+	o.Name.Set(&v)
+}
+
+// SetNameNil sets the value for Name to be an explicit nil
+func (o *CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData) SetNameNil() {
+	o.Name.Set(nil)
+}
+
+// UnsetName ensures that no value is present for Name, not even an explicit nil
+func (o *CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData) UnsetName() {
+	o.Name.Unset()
 }
 
 // GetBitLengths returns the BitLengths field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -126,6 +170,9 @@ func (o CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData) MarshalJSON() ([]
 
 func (o CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Name.IsSet() {
+		toSerialize["name"] = o.Name.Get()
+	}
 	if o.BitLengths != nil {
 		toSerialize["bit_lengths"] = o.BitLengths
 	}

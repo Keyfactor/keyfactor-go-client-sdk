@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Valid** | Pointer to **bool** |  | [optional] 
-**Results** | Pointer to **map[string]string** |  | [optional] 
+**RevocationServerOnline** | Pointer to **bool** |  | [optional] 
+**ChainBuilt** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -26,66 +26,56 @@ NewCSSCMSDataModelModelsCertificateValidationResponseWithDefaults instantiates a
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetValid
+### GetRevocationServerOnline
 
-`func (o *CSSCMSDataModelModelsCertificateValidationResponse) GetValid() bool`
+`func (o *CSSCMSDataModelModelsCertificateValidationResponse) GetRevocationServerOnline() bool`
 
-GetValid returns the Valid field if non-nil, zero value otherwise.
+GetRevocationServerOnline returns the RevocationServerOnline field if non-nil, zero value otherwise.
 
-### GetValidOk
+### GetRevocationServerOnlineOk
 
-`func (o *CSSCMSDataModelModelsCertificateValidationResponse) GetValidOk() (*bool, bool)`
+`func (o *CSSCMSDataModelModelsCertificateValidationResponse) GetRevocationServerOnlineOk() (*bool, bool)`
 
-GetValidOk returns a tuple with the Valid field if it's non-nil, zero value otherwise
+GetRevocationServerOnlineOk returns a tuple with the RevocationServerOnline field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetValid
+### SetRevocationServerOnline
 
-`func (o *CSSCMSDataModelModelsCertificateValidationResponse) SetValid(v bool)`
+`func (o *CSSCMSDataModelModelsCertificateValidationResponse) SetRevocationServerOnline(v bool)`
 
-SetValid sets Valid field to given value.
+SetRevocationServerOnline sets RevocationServerOnline field to given value.
 
-### HasValid
+### HasRevocationServerOnline
 
-`func (o *CSSCMSDataModelModelsCertificateValidationResponse) HasValid() bool`
+`func (o *CSSCMSDataModelModelsCertificateValidationResponse) HasRevocationServerOnline() bool`
 
-HasValid returns a boolean if a field has been set.
+HasRevocationServerOnline returns a boolean if a field has been set.
 
-### GetResults
+### GetChainBuilt
 
-`func (o *CSSCMSDataModelModelsCertificateValidationResponse) GetResults() map[string]string`
+`func (o *CSSCMSDataModelModelsCertificateValidationResponse) GetChainBuilt() bool`
 
-GetResults returns the Results field if non-nil, zero value otherwise.
+GetChainBuilt returns the ChainBuilt field if non-nil, zero value otherwise.
 
-### GetResultsOk
+### GetChainBuiltOk
 
-`func (o *CSSCMSDataModelModelsCertificateValidationResponse) GetResultsOk() (*map[string]string, bool)`
+`func (o *CSSCMSDataModelModelsCertificateValidationResponse) GetChainBuiltOk() (*bool, bool)`
 
-GetResultsOk returns a tuple with the Results field if it's non-nil, zero value otherwise
+GetChainBuiltOk returns a tuple with the ChainBuilt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetResults
+### SetChainBuilt
 
-`func (o *CSSCMSDataModelModelsCertificateValidationResponse) SetResults(v map[string]string)`
+`func (o *CSSCMSDataModelModelsCertificateValidationResponse) SetChainBuilt(v bool)`
 
-SetResults sets Results field to given value.
+SetChainBuilt sets ChainBuilt field to given value.
 
-### HasResults
+### HasChainBuilt
 
-`func (o *CSSCMSDataModelModelsCertificateValidationResponse) HasResults() bool`
+`func (o *CSSCMSDataModelModelsCertificateValidationResponse) HasChainBuilt() bool`
 
-HasResults returns a boolean if a field has been set.
+HasChainBuilt returns a boolean if a field has been set.
 
-### SetResultsNil
-
-`func (o *CSSCMSDataModelModelsCertificateValidationResponse) SetResultsNil(b bool)`
-
- SetResultsNil sets the value for Results to be an explicit nil
-
-### UnsetResults
-`func (o *CSSCMSDataModelModelsCertificateValidationResponse) UnsetResults()`
-
-UnsetResults ensures that no value is present for Results, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

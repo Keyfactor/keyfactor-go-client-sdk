@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -49,10 +49,9 @@ type EnrollmentPFXEnrollmentRequest struct {
 	Timestamp                   *time.Time             `json:"Timestamp,omitempty"`
 	OwnerRoleId                 NullableInt32          `json:"OwnerRoleId,omitempty"`
 	OwnerRoleName               NullableString         `json:"OwnerRoleName,omitempty"`
-	// Deprecated
-	Template            NullableString      `json:"Template,omitempty"`
-	SANs                map[string][]string `json:"SANs,omitempty"`
-	EnrollmentPatternId NullableInt32       `json:"EnrollmentPatternId,omitempty"`
+	FileExtension               NullableString         `json:"FileExtension,omitempty"`
+	SANs                        map[string][]string    `json:"SANs,omitempty"`
+	EnrollmentPatternId         NullableInt32          `json:"EnrollmentPatternId,omitempty"`
 }
 
 // NewEnrollmentPFXEnrollmentRequest instantiates a new EnrollmentPFXEnrollmentRequest object
@@ -814,50 +813,47 @@ func (o *EnrollmentPFXEnrollmentRequest) UnsetOwnerRoleName() {
 	o.OwnerRoleName.Unset()
 }
 
-// GetTemplate returns the Template field value if set, zero value otherwise (both if not set or set to explicit null).
-// Deprecated
-func (o *EnrollmentPFXEnrollmentRequest) GetTemplate() string {
-	if o == nil || isNil(o.Template.Get()) {
+// GetFileExtension returns the FileExtension field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *EnrollmentPFXEnrollmentRequest) GetFileExtension() string {
+	if o == nil || isNil(o.FileExtension.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Template.Get()
+	return *o.FileExtension.Get()
 }
 
-// GetTemplateOk returns a tuple with the Template field value if set, nil otherwise
+// GetFileExtensionOk returns a tuple with the FileExtension field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-// Deprecated
-func (o *EnrollmentPFXEnrollmentRequest) GetTemplateOk() (*string, bool) {
+func (o *EnrollmentPFXEnrollmentRequest) GetFileExtensionOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.Template.Get(), o.Template.IsSet()
+	return o.FileExtension.Get(), o.FileExtension.IsSet()
 }
 
-// HasTemplate returns a boolean if a field has been set.
-func (o *EnrollmentPFXEnrollmentRequest) HasTemplate() bool {
-	if o != nil && o.Template.IsSet() {
+// HasFileExtension returns a boolean if a field has been set.
+func (o *EnrollmentPFXEnrollmentRequest) HasFileExtension() bool {
+	if o != nil && o.FileExtension.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTemplate gets a reference to the given NullableString and assigns it to the Template field.
-// Deprecated
-func (o *EnrollmentPFXEnrollmentRequest) SetTemplate(v string) {
-	o.Template.Set(&v)
+// SetFileExtension gets a reference to the given NullableString and assigns it to the FileExtension field.
+func (o *EnrollmentPFXEnrollmentRequest) SetFileExtension(v string) {
+	o.FileExtension.Set(&v)
 }
 
-// SetTemplateNil sets the value for Template to be an explicit nil
-func (o *EnrollmentPFXEnrollmentRequest) SetTemplateNil() {
-	o.Template.Set(nil)
+// SetFileExtensionNil sets the value for FileExtension to be an explicit nil
+func (o *EnrollmentPFXEnrollmentRequest) SetFileExtensionNil() {
+	o.FileExtension.Set(nil)
 }
 
-// UnsetTemplate ensures that no value is present for Template, not even an explicit nil
-func (o *EnrollmentPFXEnrollmentRequest) UnsetTemplate() {
-	o.Template.Unset()
+// UnsetFileExtension ensures that no value is present for FileExtension, not even an explicit nil
+func (o *EnrollmentPFXEnrollmentRequest) UnsetFileExtension() {
+	o.FileExtension.Unset()
 }
 
 // GetSANs returns the SANs field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1003,8 +999,8 @@ func (o EnrollmentPFXEnrollmentRequest) ToMap() (map[string]interface{}, error) 
 	if o.OwnerRoleName.IsSet() {
 		toSerialize["OwnerRoleName"] = o.OwnerRoleName.Get()
 	}
-	if o.Template.IsSet() {
-		toSerialize["Template"] = o.Template.Get()
+	if o.FileExtension.IsSet() {
+		toSerialize["FileExtension"] = o.FileExtension.Get()
 	}
 	if o.SANs != nil {
 		toSerialize["SANs"] = o.SANs

@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **Timestamp** | Pointer to **time.Time** |  | [optional] 
 **OwnerRoleId** | Pointer to **NullableInt32** |  | [optional] 
 **OwnerRoleName** | Pointer to **NullableString** |  | [optional] 
-**Template** | Pointer to **NullableString** |  | [optional] 
+**FileExtension** | Pointer to **NullableString** |  | [optional] 
 **SANs** | Pointer to **map[string][]string** |  | [optional] 
 **EnrollmentPatternId** | Pointer to **NullableInt32** |  | [optional] 
 
@@ -661,41 +661,41 @@ HasOwnerRoleName returns a boolean if a field has been set.
 `func (o *EnrollmentPFXEnrollmentRequest) UnsetOwnerRoleName()`
 
 UnsetOwnerRoleName ensures that no value is present for OwnerRoleName, not even an explicit nil
-### GetTemplate
+### GetFileExtension
 
-`func (o *EnrollmentPFXEnrollmentRequest) GetTemplate() string`
+`func (o *EnrollmentPFXEnrollmentRequest) GetFileExtension() string`
 
-GetTemplate returns the Template field if non-nil, zero value otherwise.
+GetFileExtension returns the FileExtension field if non-nil, zero value otherwise.
 
-### GetTemplateOk
+### GetFileExtensionOk
 
-`func (o *EnrollmentPFXEnrollmentRequest) GetTemplateOk() (*string, bool)`
+`func (o *EnrollmentPFXEnrollmentRequest) GetFileExtensionOk() (*string, bool)`
 
-GetTemplateOk returns a tuple with the Template field if it's non-nil, zero value otherwise
+GetFileExtensionOk returns a tuple with the FileExtension field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTemplate
+### SetFileExtension
 
-`func (o *EnrollmentPFXEnrollmentRequest) SetTemplate(v string)`
+`func (o *EnrollmentPFXEnrollmentRequest) SetFileExtension(v string)`
 
-SetTemplate sets Template field to given value.
+SetFileExtension sets FileExtension field to given value.
 
-### HasTemplate
+### HasFileExtension
 
-`func (o *EnrollmentPFXEnrollmentRequest) HasTemplate() bool`
+`func (o *EnrollmentPFXEnrollmentRequest) HasFileExtension() bool`
 
-HasTemplate returns a boolean if a field has been set.
+HasFileExtension returns a boolean if a field has been set.
 
-### SetTemplateNil
+### SetFileExtensionNil
 
-`func (o *EnrollmentPFXEnrollmentRequest) SetTemplateNil(b bool)`
+`func (o *EnrollmentPFXEnrollmentRequest) SetFileExtensionNil(b bool)`
 
- SetTemplateNil sets the value for Template to be an explicit nil
+ SetFileExtensionNil sets the value for FileExtension to be an explicit nil
 
-### UnsetTemplate
-`func (o *EnrollmentPFXEnrollmentRequest) UnsetTemplate()`
+### UnsetFileExtension
+`func (o *EnrollmentPFXEnrollmentRequest) UnsetFileExtension()`
 
-UnsetTemplate ensures that no value is present for Template, not even an explicit nil
+UnsetFileExtension ensures that no value is present for FileExtension, not even an explicit nil
 ### GetSANs
 
 `func (o *EnrollmentPFXEnrollmentRequest) GetSANs() map[string][]string`

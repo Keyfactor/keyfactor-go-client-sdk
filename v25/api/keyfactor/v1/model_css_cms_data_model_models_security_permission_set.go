@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -29,9 +29,10 @@ var _ MappedNullable = &CSSCMSDataModelModelsSecurityPermissionSet{}
 
 // CSSCMSDataModelModelsSecurityPermissionSet struct for CSSCMSDataModelModelsSecurityPermissionSet
 type CSSCMSDataModelModelsSecurityPermissionSet struct {
-	Id          *string        `json:"Id,omitempty"`
-	Name        NullableString `json:"Name,omitempty"`
-	Permissions []string       `json:"Permissions,omitempty"`
+	Id            *string                                                      `json:"Id,omitempty"`
+	Name          NullableString                                               `json:"Name,omitempty"`
+	Permissions   []string                                                     `json:"Permissions,omitempty"`
+	SecurityRoles []CSSCMSDataModelModelsSecurityPermissionSetSecurityRoleInfo `json:"SecurityRoles,omitempty"`
 }
 
 // NewCSSCMSDataModelModelsSecurityPermissionSet instantiates a new CSSCMSDataModelModelsSecurityPermissionSet object
@@ -159,6 +160,39 @@ func (o *CSSCMSDataModelModelsSecurityPermissionSet) SetPermissions(v []string) 
 	o.Permissions = v
 }
 
+// GetSecurityRoles returns the SecurityRoles field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CSSCMSDataModelModelsSecurityPermissionSet) GetSecurityRoles() []CSSCMSDataModelModelsSecurityPermissionSetSecurityRoleInfo {
+	if o == nil {
+		var ret []CSSCMSDataModelModelsSecurityPermissionSetSecurityRoleInfo
+		return ret
+	}
+	return o.SecurityRoles
+}
+
+// GetSecurityRolesOk returns a tuple with the SecurityRoles field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CSSCMSDataModelModelsSecurityPermissionSet) GetSecurityRolesOk() ([]CSSCMSDataModelModelsSecurityPermissionSetSecurityRoleInfo, bool) {
+	if o == nil || isNil(o.SecurityRoles) {
+		return nil, false
+	}
+	return o.SecurityRoles, true
+}
+
+// HasSecurityRoles returns a boolean if a field has been set.
+func (o *CSSCMSDataModelModelsSecurityPermissionSet) HasSecurityRoles() bool {
+	if o != nil && isNil(o.SecurityRoles) {
+		return true
+	}
+
+	return false
+}
+
+// SetSecurityRoles gets a reference to the given []CSSCMSDataModelModelsSecurityPermissionSetSecurityRoleInfo and assigns it to the SecurityRoles field.
+func (o *CSSCMSDataModelModelsSecurityPermissionSet) SetSecurityRoles(v []CSSCMSDataModelModelsSecurityPermissionSetSecurityRoleInfo) {
+	o.SecurityRoles = v
+}
+
 func (o CSSCMSDataModelModelsSecurityPermissionSet) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -177,6 +211,9 @@ func (o CSSCMSDataModelModelsSecurityPermissionSet) ToMap() (map[string]interfac
 	}
 	if o.Permissions != nil {
 		toSerialize["Permissions"] = o.Permissions
+	}
+	if o.SecurityRoles != nil {
+		toSerialize["SecurityRoles"] = o.SecurityRoles
 	}
 	return toSerialize, nil
 }

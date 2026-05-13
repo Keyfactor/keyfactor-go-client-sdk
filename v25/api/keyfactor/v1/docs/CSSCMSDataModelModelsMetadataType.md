@@ -14,8 +14,6 @@ Name | Type | Description | Notes
 **Message** | Pointer to **NullableString** |  | [optional] 
 **Options** | Pointer to **NullableString** |  | [optional] 
 **DefaultValue** | Pointer to **NullableString** |  | [optional] 
-**AllowAPI** | Pointer to **bool** |  | [optional] 
-**ExplicitUpdate** | Pointer to **bool** |  | [optional] 
 **DisplayOrder** | Pointer to **NullableInt32** |  | [optional] 
 **CaseSensitive** | Pointer to **bool** |  | [optional] 
 **ExemptFromActionedCount** | Pointer to **bool** |  | [optional] 
@@ -359,56 +357,6 @@ HasDefaultValue returns a boolean if a field has been set.
 `func (o *CSSCMSDataModelModelsMetadataType) UnsetDefaultValue()`
 
 UnsetDefaultValue ensures that no value is present for DefaultValue, not even an explicit nil
-### GetAllowAPI
-
-`func (o *CSSCMSDataModelModelsMetadataType) GetAllowAPI() bool`
-
-GetAllowAPI returns the AllowAPI field if non-nil, zero value otherwise.
-
-### GetAllowAPIOk
-
-`func (o *CSSCMSDataModelModelsMetadataType) GetAllowAPIOk() (*bool, bool)`
-
-GetAllowAPIOk returns a tuple with the AllowAPI field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAllowAPI
-
-`func (o *CSSCMSDataModelModelsMetadataType) SetAllowAPI(v bool)`
-
-SetAllowAPI sets AllowAPI field to given value.
-
-### HasAllowAPI
-
-`func (o *CSSCMSDataModelModelsMetadataType) HasAllowAPI() bool`
-
-HasAllowAPI returns a boolean if a field has been set.
-
-### GetExplicitUpdate
-
-`func (o *CSSCMSDataModelModelsMetadataType) GetExplicitUpdate() bool`
-
-GetExplicitUpdate returns the ExplicitUpdate field if non-nil, zero value otherwise.
-
-### GetExplicitUpdateOk
-
-`func (o *CSSCMSDataModelModelsMetadataType) GetExplicitUpdateOk() (*bool, bool)`
-
-GetExplicitUpdateOk returns a tuple with the ExplicitUpdate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExplicitUpdate
-
-`func (o *CSSCMSDataModelModelsMetadataType) SetExplicitUpdate(v bool)`
-
-SetExplicitUpdate sets ExplicitUpdate field to given value.
-
-### HasExplicitUpdate
-
-`func (o *CSSCMSDataModelModelsMetadataType) HasExplicitUpdate() bool`
-
-HasExplicitUpdate returns a boolean if a field has been set.
-
 ### GetDisplayOrder
 
 `func (o *CSSCMSDataModelModelsMetadataType) GetDisplayOrder() int32`

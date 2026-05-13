@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -67,7 +67,7 @@ func (r ApiCreateSecurityRolesRequest) Execute() (*SecurityLegacySecurityRolesSe
 /*
 Creates a new V1 POST /Security/Roles request.
 
-CreateSecurityRoles Adds a new security role to the system.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
+CreateSecurityRoles Adds a new security role to the system. The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateSecurityRolesRequest
@@ -141,10 +141,10 @@ func (a *SecurityRolesApiService) CreateSecurityRolesExecute(r ApiCreateSecurity
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.securityLegacySecurityRolesSecurityRoleCreationRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -220,7 +220,7 @@ func (r ApiCreateSecurityRolesByIdCopyRequest) Execute() (*SecurityLegacySecurit
 /*
 Creates a new V1 POST /Security/Roles/{id}/Copy request.
 
-CreateSecurityRolesByIdCopy Makes a copy of an existing security role.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
+CreateSecurityRolesByIdCopy Makes a copy of an existing security role. The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Security role identifier for target role to copy
@@ -298,10 +298,10 @@ func (a *SecurityRolesApiService) CreateSecurityRolesByIdCopyExecute(r ApiCreate
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.securityLegacySecurityRolesSecurityRoleCopyRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -441,10 +441,10 @@ func (a *SecurityRolesApiService) DeleteSecurityRolesByIdExecute(r ApiDeleteSecu
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -537,7 +537,7 @@ func (r ApiGetSecurityRolesRequest) Execute() ([]SecurityLegacySecurityRolesSecu
 /*
 Creates a new V1 GET /Security/Roles request.
 
-GetSecurityRoles Returns all security roles according to the provided filter and output parameters.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
+GetSecurityRoles Returns all security roles according to the provided filter and output parameters. The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetSecurityRolesRequest
@@ -629,10 +629,10 @@ func (a *SecurityRolesApiService) GetSecurityRolesExecute(r ApiGetSecurityRolesR
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -699,7 +699,7 @@ func (r ApiGetSecurityRolesByIdRequest) Execute() (*SecurityLegacySecurityRolesS
 /*
 Creates a new V1 GET /Security/Roles/{id} request.
 
-GetSecurityRolesById Returns a single security role that matches the id.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
+GetSecurityRolesById Returns a single security role that matches the id. The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Security role identifier
@@ -777,10 +777,10 @@ func (a *SecurityRolesApiService) GetSecurityRolesByIdExecute(r ApiGetSecurityRo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -847,7 +847,7 @@ func (r ApiGetSecurityRolesByIdIdentitiesRequest) Execute() ([]SecurityLegacySec
 /*
 Creates a new V1 GET /Security/Roles/{id}/Identities request.
 
-GetSecurityRolesByIdIdentities Returns all identities which have the security role that matches the id.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
+GetSecurityRolesByIdIdentities Returns all identities which have the security role that matches the id. The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Security role identifier
@@ -925,10 +925,10 @@ func (a *SecurityRolesApiService) GetSecurityRolesByIdIdentitiesExecute(r ApiGet
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1001,7 +1001,7 @@ func (r ApiUpdateSecurityRolesRequest) Execute() (*SecurityLegacySecurityRolesSe
 /*
 Creates a new V1 PUT /Security/Roles request.
 
-UpdateSecurityRoles Updates a security role that matches the id.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
+UpdateSecurityRoles Updates a security role that matches the id. The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateSecurityRolesRequest
@@ -1075,10 +1075,10 @@ func (a *SecurityRolesApiService) UpdateSecurityRolesExecute(r ApiUpdateSecurity
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.securityLegacySecurityRolesSecurityRoleUpdateRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -1154,7 +1154,7 @@ func (r ApiUpdateSecurityRolesByIdIdentitiesRequest) Execute() ([]SecurityLegacy
 /*
 Creates a new V1 PUT /Security/Roles/{id}/Identities request.
 
-UpdateSecurityRolesByIdIdentities Updates the identities which have the security role that matches the id.  The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
+UpdateSecurityRolesByIdIdentities Updates the identities which have the security role that matches the id. The v1 endpoints for Security Roles will only work against AD Identities.  Please use the v2 endpoints instead.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Security role identifier
@@ -1232,10 +1232,10 @@ func (a *SecurityRolesApiService) UpdateSecurityRolesByIdIdentitiesExecute(r Api
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.securityLegacySecurityRolesRoleIdentitiesRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

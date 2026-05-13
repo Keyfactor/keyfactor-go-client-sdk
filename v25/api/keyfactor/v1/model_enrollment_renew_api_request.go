@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -33,10 +33,8 @@ type EnrollmentRenewAPIRequest struct {
 	CertificateId        NullableInt32  `json:"CertificateId,omitempty"`
 	Thumbprint           NullableString `json:"Thumbprint,omitempty"`
 	CertificateAuthority NullableString `json:"CertificateAuthority,omitempty"`
-	// Deprecated
-	Template            NullableString `json:"Template,omitempty"`
-	Timestamp           *time.Time     `json:"Timestamp,omitempty"`
-	EnrollmentPatternId NullableInt32  `json:"EnrollmentPatternId,omitempty"`
+	Timestamp            *time.Time     `json:"Timestamp,omitempty"`
+	EnrollmentPatternId  NullableInt32  `json:"EnrollmentPatternId,omitempty"`
 }
 
 // NewEnrollmentRenewAPIRequest instantiates a new EnrollmentRenewAPIRequest object
@@ -185,52 +183,6 @@ func (o *EnrollmentRenewAPIRequest) UnsetCertificateAuthority() {
 	o.CertificateAuthority.Unset()
 }
 
-// GetTemplate returns the Template field value if set, zero value otherwise (both if not set or set to explicit null).
-// Deprecated
-func (o *EnrollmentRenewAPIRequest) GetTemplate() string {
-	if o == nil || isNil(o.Template.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Template.Get()
-}
-
-// GetTemplateOk returns a tuple with the Template field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-// Deprecated
-func (o *EnrollmentRenewAPIRequest) GetTemplateOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Template.Get(), o.Template.IsSet()
-}
-
-// HasTemplate returns a boolean if a field has been set.
-func (o *EnrollmentRenewAPIRequest) HasTemplate() bool {
-	if o != nil && o.Template.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetTemplate gets a reference to the given NullableString and assigns it to the Template field.
-// Deprecated
-func (o *EnrollmentRenewAPIRequest) SetTemplate(v string) {
-	o.Template.Set(&v)
-}
-
-// SetTemplateNil sets the value for Template to be an explicit nil
-func (o *EnrollmentRenewAPIRequest) SetTemplateNil() {
-	o.Template.Set(nil)
-}
-
-// UnsetTemplate ensures that no value is present for Template, not even an explicit nil
-func (o *EnrollmentRenewAPIRequest) UnsetTemplate() {
-	o.Template.Unset()
-}
-
 // GetTimestamp returns the Timestamp field value if set, zero value otherwise.
 func (o *EnrollmentRenewAPIRequest) GetTimestamp() time.Time {
 	if o == nil || isNil(o.Timestamp) {
@@ -324,9 +276,6 @@ func (o EnrollmentRenewAPIRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if o.CertificateAuthority.IsSet() {
 		toSerialize["CertificateAuthority"] = o.CertificateAuthority.Get()
-	}
-	if o.Template.IsSet() {
-		toSerialize["Template"] = o.Template.Get()
 	}
 	if !isNil(o.Timestamp) {
 		toSerialize["Timestamp"] = o.Timestamp

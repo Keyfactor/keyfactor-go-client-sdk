@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -52,8 +52,6 @@ type SslNetworkQueryResponse struct {
 	DiscoverJobParts        *int32                                      `json:"DiscoverJobParts,omitempty"`
 	MonitorJobParts         *int32                                      `json:"MonitorJobParts,omitempty"`
 	QuietHours              []SslQuietHourResponse                      `json:"QuietHours,omitempty"`
-	BlackoutStart           *KeyfactorCommonSchedulingModelsWeeklyModel `json:"BlackoutStart,omitempty"`
-	BlackoutEnd             *KeyfactorCommonSchedulingModelsWeeklyModel `json:"BlackoutEnd,omitempty"`
 }
 
 // NewSslNetworkQueryResponse instantiates a new SslNetworkQueryResponse object
@@ -845,70 +843,6 @@ func (o *SslNetworkQueryResponse) SetQuietHours(v []SslQuietHourResponse) {
 	o.QuietHours = v
 }
 
-// GetBlackoutStart returns the BlackoutStart field value if set, zero value otherwise.
-func (o *SslNetworkQueryResponse) GetBlackoutStart() KeyfactorCommonSchedulingModelsWeeklyModel {
-	if o == nil || isNil(o.BlackoutStart) {
-		var ret KeyfactorCommonSchedulingModelsWeeklyModel
-		return ret
-	}
-	return *o.BlackoutStart
-}
-
-// GetBlackoutStartOk returns a tuple with the BlackoutStart field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SslNetworkQueryResponse) GetBlackoutStartOk() (*KeyfactorCommonSchedulingModelsWeeklyModel, bool) {
-	if o == nil || isNil(o.BlackoutStart) {
-		return nil, false
-	}
-	return o.BlackoutStart, true
-}
-
-// HasBlackoutStart returns a boolean if a field has been set.
-func (o *SslNetworkQueryResponse) HasBlackoutStart() bool {
-	if o != nil && !isNil(o.BlackoutStart) {
-		return true
-	}
-
-	return false
-}
-
-// SetBlackoutStart gets a reference to the given KeyfactorCommonSchedulingModelsWeeklyModel and assigns it to the BlackoutStart field.
-func (o *SslNetworkQueryResponse) SetBlackoutStart(v KeyfactorCommonSchedulingModelsWeeklyModel) {
-	o.BlackoutStart = &v
-}
-
-// GetBlackoutEnd returns the BlackoutEnd field value if set, zero value otherwise.
-func (o *SslNetworkQueryResponse) GetBlackoutEnd() KeyfactorCommonSchedulingModelsWeeklyModel {
-	if o == nil || isNil(o.BlackoutEnd) {
-		var ret KeyfactorCommonSchedulingModelsWeeklyModel
-		return ret
-	}
-	return *o.BlackoutEnd
-}
-
-// GetBlackoutEndOk returns a tuple with the BlackoutEnd field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SslNetworkQueryResponse) GetBlackoutEndOk() (*KeyfactorCommonSchedulingModelsWeeklyModel, bool) {
-	if o == nil || isNil(o.BlackoutEnd) {
-		return nil, false
-	}
-	return o.BlackoutEnd, true
-}
-
-// HasBlackoutEnd returns a boolean if a field has been set.
-func (o *SslNetworkQueryResponse) HasBlackoutEnd() bool {
-	if o != nil && !isNil(o.BlackoutEnd) {
-		return true
-	}
-
-	return false
-}
-
-// SetBlackoutEnd gets a reference to the given KeyfactorCommonSchedulingModelsWeeklyModel and assigns it to the BlackoutEnd field.
-func (o *SslNetworkQueryResponse) SetBlackoutEnd(v KeyfactorCommonSchedulingModelsWeeklyModel) {
-	o.BlackoutEnd = &v
-}
-
 func (o SslNetworkQueryResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -984,12 +918,6 @@ func (o SslNetworkQueryResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if o.QuietHours != nil {
 		toSerialize["QuietHours"] = o.QuietHours
-	}
-	if !isNil(o.BlackoutStart) {
-		toSerialize["BlackoutStart"] = o.BlackoutStart
-	}
-	if !isNil(o.BlackoutEnd) {
-		toSerialize["BlackoutEnd"] = o.BlackoutEnd
 	}
 	return toSerialize, nil
 }

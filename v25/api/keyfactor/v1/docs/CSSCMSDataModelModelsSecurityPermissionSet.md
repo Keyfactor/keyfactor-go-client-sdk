@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **NullableString** |  | [optional] 
 **Permissions** | Pointer to **[]string** |  | [optional] 
+**SecurityRoles** | Pointer to [**[]CSSCMSDataModelModelsSecurityPermissionSetSecurityRoleInfo**](CSSCMSDataModelModelsSecurityPermissionSetSecurityRoleInfo.md) |  | [optional] 
 
 ## Methods
 
@@ -122,6 +123,41 @@ HasPermissions returns a boolean if a field has been set.
 `func (o *CSSCMSDataModelModelsSecurityPermissionSet) UnsetPermissions()`
 
 UnsetPermissions ensures that no value is present for Permissions, not even an explicit nil
+### GetSecurityRoles
+
+`func (o *CSSCMSDataModelModelsSecurityPermissionSet) GetSecurityRoles() []CSSCMSDataModelModelsSecurityPermissionSetSecurityRoleInfo`
+
+GetSecurityRoles returns the SecurityRoles field if non-nil, zero value otherwise.
+
+### GetSecurityRolesOk
+
+`func (o *CSSCMSDataModelModelsSecurityPermissionSet) GetSecurityRolesOk() (*[]CSSCMSDataModelModelsSecurityPermissionSetSecurityRoleInfo, bool)`
+
+GetSecurityRolesOk returns a tuple with the SecurityRoles field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSecurityRoles
+
+`func (o *CSSCMSDataModelModelsSecurityPermissionSet) SetSecurityRoles(v []CSSCMSDataModelModelsSecurityPermissionSetSecurityRoleInfo)`
+
+SetSecurityRoles sets SecurityRoles field to given value.
+
+### HasSecurityRoles
+
+`func (o *CSSCMSDataModelModelsSecurityPermissionSet) HasSecurityRoles() bool`
+
+HasSecurityRoles returns a boolean if a field has been set.
+
+### SetSecurityRolesNil
+
+`func (o *CSSCMSDataModelModelsSecurityPermissionSet) SetSecurityRolesNil(b bool)`
+
+ SetSecurityRolesNil sets the value for SecurityRoles to be an explicit nil
+
+### UnsetSecurityRoles
+`func (o *CSSCMSDataModelModelsSecurityPermissionSet) UnsetSecurityRoles()`
+
+UnsetSecurityRoles ensures that no value is present for SecurityRoles, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

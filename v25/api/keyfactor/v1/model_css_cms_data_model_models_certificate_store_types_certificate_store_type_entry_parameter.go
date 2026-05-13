@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -29,15 +29,15 @@ var _ MappedNullable = &CSSCMSDataModelModelsCertificateStoreTypesCertificateSto
 
 // CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter struct for CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter
 type CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter struct {
-	StoreTypeId  *int32                                      `json:"StoreTypeId,omitempty"`
-	Name         NullableString                              `json:"Name,omitempty"`
-	DisplayName  NullableString                              `json:"DisplayName,omitempty"`
-	Type         *CSSCMSCoreEnumsCertStoreEntryParameterType `json:"Type,omitempty"`
-	RequiredWhen *CSSCMSCoreEnumsEntryParameterUsageFlags    `json:"RequiredWhen,omitempty"`
-	DependsOn    NullableString                              `json:"DependsOn,omitempty"`
-	DefaultValue NullableString                              `json:"DefaultValue,omitempty"`
-	Options      NullableString                              `json:"Options,omitempty"`
-	Id           *int32                                      `json:"Id,omitempty"`
+	StoreTypeId       *int32                                                                           `json:"StoreTypeId,omitempty"`
+	Name              NullableString                                                                   `json:"Name,omitempty"`
+	DisplayName       NullableString                                                                   `json:"DisplayName,omitempty"`
+	Type              *CSSCMSCoreEnumsCertStoreEntryParameterType                                      `json:"Type,omitempty"`
+	ValidationOptions *CSSCMSDataModelModelsCertificateStoreTypesEntryParametersValidationOptionsModel `json:"ValidationOptions,omitempty"`
+	DependsOn         NullableString                                                                   `json:"DependsOn,omitempty"`
+	DefaultValue      NullableString                                                                   `json:"DefaultValue,omitempty"`
+	Options           NullableString                                                                   `json:"Options,omitempty"`
+	Id                *int32                                                                           `json:"Id,omitempty"`
 }
 
 // NewCSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter instantiates a new CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter object
@@ -207,36 +207,36 @@ func (o *CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryPara
 	o.Type = &v
 }
 
-// GetRequiredWhen returns the RequiredWhen field value if set, zero value otherwise.
-func (o *CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) GetRequiredWhen() CSSCMSCoreEnumsEntryParameterUsageFlags {
-	if o == nil || isNil(o.RequiredWhen) {
-		var ret CSSCMSCoreEnumsEntryParameterUsageFlags
+// GetValidationOptions returns the ValidationOptions field value if set, zero value otherwise.
+func (o *CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) GetValidationOptions() CSSCMSDataModelModelsCertificateStoreTypesEntryParametersValidationOptionsModel {
+	if o == nil || isNil(o.ValidationOptions) {
+		var ret CSSCMSDataModelModelsCertificateStoreTypesEntryParametersValidationOptionsModel
 		return ret
 	}
-	return *o.RequiredWhen
+	return *o.ValidationOptions
 }
 
-// GetRequiredWhenOk returns a tuple with the RequiredWhen field value if set, nil otherwise
+// GetValidationOptionsOk returns a tuple with the ValidationOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) GetRequiredWhenOk() (*CSSCMSCoreEnumsEntryParameterUsageFlags, bool) {
-	if o == nil || isNil(o.RequiredWhen) {
+func (o *CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) GetValidationOptionsOk() (*CSSCMSDataModelModelsCertificateStoreTypesEntryParametersValidationOptionsModel, bool) {
+	if o == nil || isNil(o.ValidationOptions) {
 		return nil, false
 	}
-	return o.RequiredWhen, true
+	return o.ValidationOptions, true
 }
 
-// HasRequiredWhen returns a boolean if a field has been set.
-func (o *CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) HasRequiredWhen() bool {
-	if o != nil && !isNil(o.RequiredWhen) {
+// HasValidationOptions returns a boolean if a field has been set.
+func (o *CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) HasValidationOptions() bool {
+	if o != nil && !isNil(o.ValidationOptions) {
 		return true
 	}
 
 	return false
 }
 
-// SetRequiredWhen gets a reference to the given CSSCMSCoreEnumsEntryParameterUsageFlags and assigns it to the RequiredWhen field.
-func (o *CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) SetRequiredWhen(v CSSCMSCoreEnumsEntryParameterUsageFlags) {
-	o.RequiredWhen = &v
+// SetValidationOptions gets a reference to the given CSSCMSDataModelModelsCertificateStoreTypesEntryParametersValidationOptionsModel and assigns it to the ValidationOptions field.
+func (o *CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) SetValidationOptions(v CSSCMSDataModelModelsCertificateStoreTypesEntryParametersValidationOptionsModel) {
+	o.ValidationOptions = &v
 }
 
 // GetDependsOn returns the DependsOn field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -422,8 +422,8 @@ func (o CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParam
 	if !isNil(o.Type) {
 		toSerialize["Type"] = o.Type
 	}
-	if !isNil(o.RequiredWhen) {
-		toSerialize["RequiredWhen"] = o.RequiredWhen
+	if !isNil(o.ValidationOptions) {
+		toSerialize["ValidationOptions"] = o.ValidationOptions
 	}
 	if o.DependsOn.IsSet() {
 		toSerialize["DependsOn"] = o.DependsOn.Get()

@@ -11,7 +11,8 @@ Name | Type | Description | Notes
 **CertificateOwnerRole** | Pointer to [**CSSCMSCoreEnumsTemplateCertificateOwnerRole**](CSSCMSCoreEnumsTemplateCertificateOwnerRole.md) |  | [optional] 
 **DefaultCertificateOwnerRoleId** | Pointer to **NullableInt32** |  | [optional] 
 **DefaultCertificateOwnerRoleName** | Pointer to **NullableString** |  | [optional] 
-**KeyInfo** | Pointer to [**CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo**](CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo.md) |  | [optional] 
+**PrimaryKeyAlgorithms** | Pointer to [**[]EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2**](EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2.md) |  | [optional] 
+**AlternativeKeyAlgorithms** | Pointer to [**[]EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2**](EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2.md) |  | [optional] 
 
 ## Methods
 
@@ -257,31 +258,76 @@ HasDefaultCertificateOwnerRoleName returns a boolean if a field has been set.
 `func (o *TemplatesTemplatePolicyRequestModel) UnsetDefaultCertificateOwnerRoleName()`
 
 UnsetDefaultCertificateOwnerRoleName ensures that no value is present for DefaultCertificateOwnerRoleName, not even an explicit nil
-### GetKeyInfo
+### GetPrimaryKeyAlgorithms
 
-`func (o *TemplatesTemplatePolicyRequestModel) GetKeyInfo() CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo`
+`func (o *TemplatesTemplatePolicyRequestModel) GetPrimaryKeyAlgorithms() []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2`
 
-GetKeyInfo returns the KeyInfo field if non-nil, zero value otherwise.
+GetPrimaryKeyAlgorithms returns the PrimaryKeyAlgorithms field if non-nil, zero value otherwise.
 
-### GetKeyInfoOk
+### GetPrimaryKeyAlgorithmsOk
 
-`func (o *TemplatesTemplatePolicyRequestModel) GetKeyInfoOk() (*CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo, bool)`
+`func (o *TemplatesTemplatePolicyRequestModel) GetPrimaryKeyAlgorithmsOk() (*[]EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2, bool)`
 
-GetKeyInfoOk returns a tuple with the KeyInfo field if it's non-nil, zero value otherwise
+GetPrimaryKeyAlgorithmsOk returns a tuple with the PrimaryKeyAlgorithms field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKeyInfo
+### SetPrimaryKeyAlgorithms
 
-`func (o *TemplatesTemplatePolicyRequestModel) SetKeyInfo(v CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo)`
+`func (o *TemplatesTemplatePolicyRequestModel) SetPrimaryKeyAlgorithms(v []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2)`
 
-SetKeyInfo sets KeyInfo field to given value.
+SetPrimaryKeyAlgorithms sets PrimaryKeyAlgorithms field to given value.
 
-### HasKeyInfo
+### HasPrimaryKeyAlgorithms
 
-`func (o *TemplatesTemplatePolicyRequestModel) HasKeyInfo() bool`
+`func (o *TemplatesTemplatePolicyRequestModel) HasPrimaryKeyAlgorithms() bool`
 
-HasKeyInfo returns a boolean if a field has been set.
+HasPrimaryKeyAlgorithms returns a boolean if a field has been set.
 
+### SetPrimaryKeyAlgorithmsNil
+
+`func (o *TemplatesTemplatePolicyRequestModel) SetPrimaryKeyAlgorithmsNil(b bool)`
+
+ SetPrimaryKeyAlgorithmsNil sets the value for PrimaryKeyAlgorithms to be an explicit nil
+
+### UnsetPrimaryKeyAlgorithms
+`func (o *TemplatesTemplatePolicyRequestModel) UnsetPrimaryKeyAlgorithms()`
+
+UnsetPrimaryKeyAlgorithms ensures that no value is present for PrimaryKeyAlgorithms, not even an explicit nil
+### GetAlternativeKeyAlgorithms
+
+`func (o *TemplatesTemplatePolicyRequestModel) GetAlternativeKeyAlgorithms() []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2`
+
+GetAlternativeKeyAlgorithms returns the AlternativeKeyAlgorithms field if non-nil, zero value otherwise.
+
+### GetAlternativeKeyAlgorithmsOk
+
+`func (o *TemplatesTemplatePolicyRequestModel) GetAlternativeKeyAlgorithmsOk() (*[]EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2, bool)`
+
+GetAlternativeKeyAlgorithmsOk returns a tuple with the AlternativeKeyAlgorithms field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlternativeKeyAlgorithms
+
+`func (o *TemplatesTemplatePolicyRequestModel) SetAlternativeKeyAlgorithms(v []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2)`
+
+SetAlternativeKeyAlgorithms sets AlternativeKeyAlgorithms field to given value.
+
+### HasAlternativeKeyAlgorithms
+
+`func (o *TemplatesTemplatePolicyRequestModel) HasAlternativeKeyAlgorithms() bool`
+
+HasAlternativeKeyAlgorithms returns a boolean if a field has been set.
+
+### SetAlternativeKeyAlgorithmsNil
+
+`func (o *TemplatesTemplatePolicyRequestModel) SetAlternativeKeyAlgorithmsNil(b bool)`
+
+ SetAlternativeKeyAlgorithmsNil sets the value for AlternativeKeyAlgorithms to be an explicit nil
+
+### UnsetAlternativeKeyAlgorithms
+`func (o *TemplatesTemplatePolicyRequestModel) UnsetAlternativeKeyAlgorithms()`
+
+UnsetAlternativeKeyAlgorithms ensures that no value is present for AlternativeKeyAlgorithms, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

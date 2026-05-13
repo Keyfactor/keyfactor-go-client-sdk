@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **WorkflowInstanceId** | Pointer to **string** |  | [optional] 
 **WorkflowReferenceId** | Pointer to **int64** |  | [optional] 
 **StoreIdsInvalidForRenewal** | Pointer to **[]string** |  | [optional] 
+**ChainFailedToBuild** | Pointer to **bool** |  | [optional] 
 **KeyfactorRequestId** | Pointer to **int32** |  | [optional] 
 **RequestDisposition** | Pointer to **NullableString** |  | [optional] 
 **DispositionMessage** | Pointer to **NullableString** |  | [optional] 
@@ -322,6 +323,31 @@ HasStoreIdsInvalidForRenewal returns a boolean if a field has been set.
 `func (o *CSSCMSDataModelModelsPkcs12CertificateResponse) UnsetStoreIdsInvalidForRenewal()`
 
 UnsetStoreIdsInvalidForRenewal ensures that no value is present for StoreIdsInvalidForRenewal, not even an explicit nil
+### GetChainFailedToBuild
+
+`func (o *CSSCMSDataModelModelsPkcs12CertificateResponse) GetChainFailedToBuild() bool`
+
+GetChainFailedToBuild returns the ChainFailedToBuild field if non-nil, zero value otherwise.
+
+### GetChainFailedToBuildOk
+
+`func (o *CSSCMSDataModelModelsPkcs12CertificateResponse) GetChainFailedToBuildOk() (*bool, bool)`
+
+GetChainFailedToBuildOk returns a tuple with the ChainFailedToBuild field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChainFailedToBuild
+
+`func (o *CSSCMSDataModelModelsPkcs12CertificateResponse) SetChainFailedToBuild(v bool)`
+
+SetChainFailedToBuild sets ChainFailedToBuild field to given value.
+
+### HasChainFailedToBuild
+
+`func (o *CSSCMSDataModelModelsPkcs12CertificateResponse) HasChainFailedToBuild() bool`
+
+HasChainFailedToBuild returns a boolean if a field has been set.
+
 ### GetKeyfactorRequestId
 
 `func (o *CSSCMSDataModelModelsPkcs12CertificateResponse) GetKeyfactorRequestId() int32`

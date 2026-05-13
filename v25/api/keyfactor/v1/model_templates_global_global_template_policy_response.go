@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -37,9 +37,9 @@ type TemplatesGlobalGlobalTemplatePolicyResponse struct {
 	RFCEnforcement       *bool                                        `json:"RFCEnforcement,omitempty"`
 	CertificateOwnerRole *CSSCMSCoreEnumsTemplateCertificateOwnerRole `json:"CertificateOwnerRole,omitempty"`
 	// The id of the security role that should be set as the owner of the cert during import of new certificates
-	DefaultCertificateOwnerRoleId   NullableInt32                                    `json:"DefaultCertificateOwnerRoleId,omitempty"`
-	DefaultCertificateOwnerRoleName NullableString                                   `json:"DefaultCertificateOwnerRoleName,omitempty"`
-	KeyInfo                         *CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo `json:"KeyInfo,omitempty"`
+	DefaultCertificateOwnerRoleId   NullableInt32                                `json:"DefaultCertificateOwnerRoleId,omitempty"`
+	DefaultCertificateOwnerRoleName NullableString                               `json:"DefaultCertificateOwnerRoleName,omitempty"`
+	KeyInfo                         *EnrollmentPatternsAlgorithmsKeyInfoResponse `json:"KeyInfo,omitempty"`
 }
 
 // NewTemplatesGlobalGlobalTemplatePolicyResponse instantiates a new TemplatesGlobalGlobalTemplatePolicyResponse object
@@ -274,9 +274,9 @@ func (o *TemplatesGlobalGlobalTemplatePolicyResponse) UnsetDefaultCertificateOwn
 }
 
 // GetKeyInfo returns the KeyInfo field value if set, zero value otherwise.
-func (o *TemplatesGlobalGlobalTemplatePolicyResponse) GetKeyInfo() CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo {
+func (o *TemplatesGlobalGlobalTemplatePolicyResponse) GetKeyInfo() EnrollmentPatternsAlgorithmsKeyInfoResponse {
 	if o == nil || isNil(o.KeyInfo) {
-		var ret CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo
+		var ret EnrollmentPatternsAlgorithmsKeyInfoResponse
 		return ret
 	}
 	return *o.KeyInfo
@@ -284,7 +284,7 @@ func (o *TemplatesGlobalGlobalTemplatePolicyResponse) GetKeyInfo() CSSCMSDataMod
 
 // GetKeyInfoOk returns a tuple with the KeyInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TemplatesGlobalGlobalTemplatePolicyResponse) GetKeyInfoOk() (*CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo, bool) {
+func (o *TemplatesGlobalGlobalTemplatePolicyResponse) GetKeyInfoOk() (*EnrollmentPatternsAlgorithmsKeyInfoResponse, bool) {
 	if o == nil || isNil(o.KeyInfo) {
 		return nil, false
 	}
@@ -300,8 +300,8 @@ func (o *TemplatesGlobalGlobalTemplatePolicyResponse) HasKeyInfo() bool {
 	return false
 }
 
-// SetKeyInfo gets a reference to the given CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo and assigns it to the KeyInfo field.
-func (o *TemplatesGlobalGlobalTemplatePolicyResponse) SetKeyInfo(v CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo) {
+// SetKeyInfo gets a reference to the given EnrollmentPatternsAlgorithmsKeyInfoResponse and assigns it to the KeyInfo field.
+func (o *TemplatesGlobalGlobalTemplatePolicyResponse) SetKeyInfo(v EnrollmentPatternsAlgorithmsKeyInfoResponse) {
 	o.KeyInfo = &v
 }
 

@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -62,6 +62,8 @@ const (
 	CSSCMSCOREENUMSSCHEDULEDTASKTYPE__32 CSSCMSCoreEnumsScheduledTaskType = 32
 	CSSCMSCOREENUMSSCHEDULEDTASKTYPE__33 CSSCMSCoreEnumsScheduledTaskType = 33
 	CSSCMSCOREENUMSSCHEDULEDTASKTYPE__34 CSSCMSCoreEnumsScheduledTaskType = 34
+	CSSCMSCOREENUMSSCHEDULEDTASKTYPE__35 CSSCMSCoreEnumsScheduledTaskType = 35
+	CSSCMSCOREENUMSSCHEDULEDTASKTYPE__41 CSSCMSCoreEnumsScheduledTaskType = 41
 )
 
 func ParseCSSCMSCoreEnumsScheduledTaskType(s string) (*CSSCMSCoreEnumsScheduledTaskType, error) {
@@ -118,6 +120,8 @@ var AllowedCSSCMSCoreEnumsScheduledTaskTypeEnumValues = []CSSCMSCoreEnumsSchedul
 	32,
 	33,
 	34,
+	35,
+	41,
 }
 
 func (v *CSSCMSCoreEnumsScheduledTaskType) UnmarshalJSON(src []byte) error {

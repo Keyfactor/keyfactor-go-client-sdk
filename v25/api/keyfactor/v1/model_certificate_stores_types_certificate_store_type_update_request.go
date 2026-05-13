@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -34,9 +34,9 @@ type CertificateStoresTypesCertificateStoreTypeUpdateRequest struct {
 	ShortName           string                                                 `json:"ShortName"`
 	Capability          NullableString                                         `json:"Capability,omitempty"`
 	LocalStore          *bool                                                  `json:"LocalStore,omitempty"`
-	SupportedOperations *CSSCMSDataModelModelsCertStoreTypeSupportedOperations `json:"SupportedOperations,omitempty"`
-	Properties          []CSSCMSDataModelModelsCertificateStoreTypeProperty    `json:"Properties,omitempty"`
-	PasswordOptions     *CSSCMSDataModelModelsCertStoreTypePasswordOptions     `json:"PasswordOptions,omitempty"`
+	SupportedOperations *CertificateStoresTypesSupportedOperations             `json:"SupportedOperations,omitempty"`
+	Properties          []CertificateStoresTypesStoreTypeProperty              `json:"Properties,omitempty"`
+	PasswordOptions     *CertificateStoresTypesPasswordOptions                 `json:"PasswordOptions,omitempty"`
 	StorePathType       NullableString                                         `json:"StorePathType,omitempty"`
 	StorePathValue      NullableString                                         `json:"StorePathValue,omitempty"`
 	PrivateKeyAllowed   *CSSCMSCoreEnumsCertStorePrivateKey                    `json:"PrivateKeyAllowed,omitempty"`
@@ -45,9 +45,7 @@ type CertificateStoresTypesCertificateStoreTypeUpdateRequest struct {
 	PowerShell          *bool                                                  `json:"PowerShell,omitempty"`
 	BlueprintAllowed    *bool                                                  `json:"BlueprintAllowed,omitempty"`
 	CustomAliasAllowed  *KeyfactorOrchestratorsCommonEnumsCertStoreCustomAlias `json:"CustomAliasAllowed,omitempty"`
-	// Deprecated
-	JobProperties   []string                                                                       `json:"JobProperties,omitempty"`
-	EntryParameters []CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter `json:"EntryParameters,omitempty"`
+	EntryParameters     []CertificateStoresTypesEntryParameters                `json:"EntryParameters,omitempty"`
 }
 
 // NewCertificateStoresTypesCertificateStoreTypeUpdateRequest instantiates a new CertificateStoresTypesCertificateStoreTypeUpdateRequest object
@@ -218,9 +216,9 @@ func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) SetLocalStore(
 }
 
 // GetSupportedOperations returns the SupportedOperations field value if set, zero value otherwise.
-func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetSupportedOperations() CSSCMSDataModelModelsCertStoreTypeSupportedOperations {
+func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetSupportedOperations() CertificateStoresTypesSupportedOperations {
 	if o == nil || isNil(o.SupportedOperations) {
-		var ret CSSCMSDataModelModelsCertStoreTypeSupportedOperations
+		var ret CertificateStoresTypesSupportedOperations
 		return ret
 	}
 	return *o.SupportedOperations
@@ -228,7 +226,7 @@ func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetSupportedOp
 
 // GetSupportedOperationsOk returns a tuple with the SupportedOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetSupportedOperationsOk() (*CSSCMSDataModelModelsCertStoreTypeSupportedOperations, bool) {
+func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetSupportedOperationsOk() (*CertificateStoresTypesSupportedOperations, bool) {
 	if o == nil || isNil(o.SupportedOperations) {
 		return nil, false
 	}
@@ -244,15 +242,15 @@ func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) HasSupportedOp
 	return false
 }
 
-// SetSupportedOperations gets a reference to the given CSSCMSDataModelModelsCertStoreTypeSupportedOperations and assigns it to the SupportedOperations field.
-func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) SetSupportedOperations(v CSSCMSDataModelModelsCertStoreTypeSupportedOperations) {
+// SetSupportedOperations gets a reference to the given CertificateStoresTypesSupportedOperations and assigns it to the SupportedOperations field.
+func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) SetSupportedOperations(v CertificateStoresTypesSupportedOperations) {
 	o.SupportedOperations = &v
 }
 
 // GetProperties returns the Properties field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetProperties() []CSSCMSDataModelModelsCertificateStoreTypeProperty {
+func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetProperties() []CertificateStoresTypesStoreTypeProperty {
 	if o == nil {
-		var ret []CSSCMSDataModelModelsCertificateStoreTypeProperty
+		var ret []CertificateStoresTypesStoreTypeProperty
 		return ret
 	}
 	return o.Properties
@@ -261,7 +259,7 @@ func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetProperties(
 // GetPropertiesOk returns a tuple with the Properties field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetPropertiesOk() ([]CSSCMSDataModelModelsCertificateStoreTypeProperty, bool) {
+func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetPropertiesOk() ([]CertificateStoresTypesStoreTypeProperty, bool) {
 	if o == nil || isNil(o.Properties) {
 		return nil, false
 	}
@@ -277,15 +275,15 @@ func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) HasProperties(
 	return false
 }
 
-// SetProperties gets a reference to the given []CSSCMSDataModelModelsCertificateStoreTypeProperty and assigns it to the Properties field.
-func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) SetProperties(v []CSSCMSDataModelModelsCertificateStoreTypeProperty) {
+// SetProperties gets a reference to the given []CertificateStoresTypesStoreTypeProperty and assigns it to the Properties field.
+func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) SetProperties(v []CertificateStoresTypesStoreTypeProperty) {
 	o.Properties = v
 }
 
 // GetPasswordOptions returns the PasswordOptions field value if set, zero value otherwise.
-func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetPasswordOptions() CSSCMSDataModelModelsCertStoreTypePasswordOptions {
+func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetPasswordOptions() CertificateStoresTypesPasswordOptions {
 	if o == nil || isNil(o.PasswordOptions) {
-		var ret CSSCMSDataModelModelsCertStoreTypePasswordOptions
+		var ret CertificateStoresTypesPasswordOptions
 		return ret
 	}
 	return *o.PasswordOptions
@@ -293,7 +291,7 @@ func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetPasswordOpt
 
 // GetPasswordOptionsOk returns a tuple with the PasswordOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetPasswordOptionsOk() (*CSSCMSDataModelModelsCertStoreTypePasswordOptions, bool) {
+func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetPasswordOptionsOk() (*CertificateStoresTypesPasswordOptions, bool) {
 	if o == nil || isNil(o.PasswordOptions) {
 		return nil, false
 	}
@@ -309,8 +307,8 @@ func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) HasPasswordOpt
 	return false
 }
 
-// SetPasswordOptions gets a reference to the given CSSCMSDataModelModelsCertStoreTypePasswordOptions and assigns it to the PasswordOptions field.
-func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) SetPasswordOptions(v CSSCMSDataModelModelsCertStoreTypePasswordOptions) {
+// SetPasswordOptions gets a reference to the given CertificateStoresTypesPasswordOptions and assigns it to the PasswordOptions field.
+func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) SetPasswordOptions(v CertificateStoresTypesPasswordOptions) {
 	o.PasswordOptions = &v
 }
 
@@ -592,46 +590,10 @@ func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) SetCustomAlias
 	o.CustomAliasAllowed = &v
 }
 
-// GetJobProperties returns the JobProperties field value if set, zero value otherwise (both if not set or set to explicit null).
-// Deprecated
-func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetJobProperties() []string {
-	if o == nil {
-		var ret []string
-		return ret
-	}
-	return o.JobProperties
-}
-
-// GetJobPropertiesOk returns a tuple with the JobProperties field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-// Deprecated
-func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetJobPropertiesOk() ([]string, bool) {
-	if o == nil || isNil(o.JobProperties) {
-		return nil, false
-	}
-	return o.JobProperties, true
-}
-
-// HasJobProperties returns a boolean if a field has been set.
-func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) HasJobProperties() bool {
-	if o != nil && isNil(o.JobProperties) {
-		return true
-	}
-
-	return false
-}
-
-// SetJobProperties gets a reference to the given []string and assigns it to the JobProperties field.
-// Deprecated
-func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) SetJobProperties(v []string) {
-	o.JobProperties = v
-}
-
 // GetEntryParameters returns the EntryParameters field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetEntryParameters() []CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter {
+func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetEntryParameters() []CertificateStoresTypesEntryParameters {
 	if o == nil {
-		var ret []CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter
+		var ret []CertificateStoresTypesEntryParameters
 		return ret
 	}
 	return o.EntryParameters
@@ -640,7 +602,7 @@ func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetEntryParame
 // GetEntryParametersOk returns a tuple with the EntryParameters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetEntryParametersOk() ([]CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter, bool) {
+func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) GetEntryParametersOk() ([]CertificateStoresTypesEntryParameters, bool) {
 	if o == nil || isNil(o.EntryParameters) {
 		return nil, false
 	}
@@ -656,8 +618,8 @@ func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) HasEntryParame
 	return false
 }
 
-// SetEntryParameters gets a reference to the given []CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter and assigns it to the EntryParameters field.
-func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) SetEntryParameters(v []CSSCMSDataModelModelsCertificateStoreTypesCertificateStoreTypeEntryParameter) {
+// SetEntryParameters gets a reference to the given []CertificateStoresTypesEntryParameters and assigns it to the EntryParameters field.
+func (o *CertificateStoresTypesCertificateStoreTypeUpdateRequest) SetEntryParameters(v []CertificateStoresTypesEntryParameters) {
 	o.EntryParameters = v
 }
 
@@ -712,9 +674,6 @@ func (o CertificateStoresTypesCertificateStoreTypeUpdateRequest) ToMap() (map[st
 	}
 	if !isNil(o.CustomAliasAllowed) {
 		toSerialize["CustomAliasAllowed"] = o.CustomAliasAllowed
-	}
-	if o.JobProperties != nil {
-		toSerialize["JobProperties"] = o.JobProperties
 	}
 	if o.EntryParameters != nil {
 		toSerialize["EntryParameters"] = o.EntryParameters

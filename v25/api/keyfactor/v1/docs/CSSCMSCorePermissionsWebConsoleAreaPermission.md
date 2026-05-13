@@ -145,6 +145,24 @@
 
 * `_75` (value: `75`)
 
+* `_76` (value: `76`)
+
+* `_77` (value: `77`)
+
+* `_78` (value: `78`)
+
+* `_79` (value: `79`)
+
+* `_80` (value: `80`)
+
+* `_81` (value: `81`)
+
+* `_82` (value: `82`)
+
+* `_83` (value: `83`)
+
+* `_84` (value: `84`)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

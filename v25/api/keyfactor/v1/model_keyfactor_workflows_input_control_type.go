@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -39,6 +39,7 @@ const (
 	KEYFACTORWORKFLOWSINPUTCONTROLTYPE__5 KeyfactorWorkflowsInputControlType = 5
 	KEYFACTORWORKFLOWSINPUTCONTROLTYPE__6 KeyfactorWorkflowsInputControlType = 6
 	KEYFACTORWORKFLOWSINPUTCONTROLTYPE__7 KeyfactorWorkflowsInputControlType = 7
+	KEYFACTORWORKFLOWSINPUTCONTROLTYPE__8 KeyfactorWorkflowsInputControlType = 8
 )
 
 func ParseKeyfactorWorkflowsInputControlType(s string) (*KeyfactorWorkflowsInputControlType, error) {
@@ -72,6 +73,7 @@ var AllowedKeyfactorWorkflowsInputControlTypeEnumValues = []KeyfactorWorkflowsIn
 	5,
 	6,
 	7,
+	8,
 }
 
 func (v *KeyfactorWorkflowsInputControlType) UnmarshalJSON(src []byte) error {

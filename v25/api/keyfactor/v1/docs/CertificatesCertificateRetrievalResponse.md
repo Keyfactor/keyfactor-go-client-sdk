@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**IsCACertificate** | Pointer to **bool** | Whether the certificate is a CA certificate. Determined by the &#39;CA&#39; Basic Constraint. | [optional] 
+**PathLengthConstraint** | Pointer to **NullableInt32** | Maximum number of intermediate CA certificates that may follow this certificate in a valid certification path. Determined by the &#39;PathLenConstraint&#39; Basic Constraint. | [optional] 
 **Id** | Pointer to **int32** |  | [optional] 
 **Thumbprint** | Pointer to **NullableString** |  | [optional] 
 **SerialNumber** | Pointer to **NullableString** |  | [optional] 
@@ -46,19 +48,20 @@ Name | Type | Description | Notes
 **CertRequestId** | Pointer to **NullableInt32** |  | [optional] 
 **RequesterName** | Pointer to **NullableString** |  | [optional] 
 **ContentBytes** | Pointer to **NullableString** |  | [optional] 
-**ExtendedKeyUsages** | Pointer to [**[]CertificatesCertificateRetrievalResponseExtendedKeyUsageModel**](CertificatesCertificateRetrievalResponseExtendedKeyUsageModel.md) |  | [optional] 
-**SubjectAltNameElements** | Pointer to [**[]CertificatesCertificateRetrievalResponseSubjectAlternativeNameModel**](CertificatesCertificateRetrievalResponseSubjectAlternativeNameModel.md) |  | [optional] 
-**CRLDistributionPoints** | Pointer to [**[]CertificatesCertificateRetrievalResponseCRLDistributionPointModel**](CertificatesCertificateRetrievalResponseCRLDistributionPointModel.md) |  | [optional] 
-**LocationsCount** | Pointer to [**[]CertificatesCertificateRetrievalResponseLocationCountModel**](CertificatesCertificateRetrievalResponseLocationCountModel.md) |  | [optional] 
-**SSLLocations** | Pointer to [**[]CertificatesCertificateRetrievalResponseCertificateStoreLocationDetailModel**](CertificatesCertificateRetrievalResponseCertificateStoreLocationDetailModel.md) |  | [optional] 
-**Locations** | Pointer to [**[]CertificatesCertificateRetrievalResponseCertificateStoreInventoryItemModel**](CertificatesCertificateRetrievalResponseCertificateStoreInventoryItemModel.md) |  | [optional] 
+**ExtendedKeyUsages** | Pointer to [**[]CertificatesCertificateRetrievalBulkResponseExtendedKeyUsageModel**](CertificatesCertificateRetrievalBulkResponseExtendedKeyUsageModel.md) |  | [optional] 
+**SubjectAltNameElements** | Pointer to [**[]CertificatesCertificateRetrievalBulkResponseSubjectAlternativeNameModel**](CertificatesCertificateRetrievalBulkResponseSubjectAlternativeNameModel.md) |  | [optional] 
+**CRLDistributionPoints** | Pointer to [**[]CertificatesCertificateRetrievalBulkResponseCRLDistributionPointModel**](CertificatesCertificateRetrievalBulkResponseCRLDistributionPointModel.md) |  | [optional] 
+**LocationsCount** | Pointer to [**[]CertificatesCertificateRetrievalBulkResponseLocationCountModel**](CertificatesCertificateRetrievalBulkResponseLocationCountModel.md) |  | [optional] 
+**SSLLocations** | Pointer to [**[]CertificatesCertificateRetrievalBulkResponseCertificateStoreLocationDetailModel**](CertificatesCertificateRetrievalBulkResponseCertificateStoreLocationDetailModel.md) |  | [optional] 
+**Locations** | Pointer to [**[]CertificatesCertificateRetrievalBulkResponseCertificateStoreInventoryItemModel**](CertificatesCertificateRetrievalBulkResponseCertificateStoreInventoryItemModel.md) |  | [optional] 
 **Metadata** | Pointer to **map[string]string** |  | [optional] 
 **CARowIndex** | Pointer to **NullableInt64** |  | [optional] [readonly] 
 **CARecordId** | Pointer to **NullableString** |  | [optional] 
-**DetailedKeyUsage** | Pointer to [**CertificatesCertificateRetrievalResponseDetailedKeyUsageModel**](CertificatesCertificateRetrievalResponseDetailedKeyUsageModel.md) |  | [optional] 
+**DetailedKeyUsage** | Pointer to [**CertificatesCertificateRetrievalBulkResponseDetailedKeyUsageModel**](CertificatesCertificateRetrievalBulkResponseDetailedKeyUsageModel.md) |  | [optional] 
 **KeyRecoverable** | Pointer to **bool** |  | [optional] 
 **Curve** | Pointer to **NullableString** |  | [optional] 
 **EnrollmentPatternId** | Pointer to **NullableInt32** |  | [optional] 
+**Lifespan** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -79,6 +82,66 @@ NewCertificatesCertificateRetrievalResponseWithDefaults instantiates a new Certi
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetIsCACertificate
+
+`func (o *CertificatesCertificateRetrievalResponse) GetIsCACertificate() bool`
+
+GetIsCACertificate returns the IsCACertificate field if non-nil, zero value otherwise.
+
+### GetIsCACertificateOk
+
+`func (o *CertificatesCertificateRetrievalResponse) GetIsCACertificateOk() (*bool, bool)`
+
+GetIsCACertificateOk returns a tuple with the IsCACertificate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsCACertificate
+
+`func (o *CertificatesCertificateRetrievalResponse) SetIsCACertificate(v bool)`
+
+SetIsCACertificate sets IsCACertificate field to given value.
+
+### HasIsCACertificate
+
+`func (o *CertificatesCertificateRetrievalResponse) HasIsCACertificate() bool`
+
+HasIsCACertificate returns a boolean if a field has been set.
+
+### GetPathLengthConstraint
+
+`func (o *CertificatesCertificateRetrievalResponse) GetPathLengthConstraint() int32`
+
+GetPathLengthConstraint returns the PathLengthConstraint field if non-nil, zero value otherwise.
+
+### GetPathLengthConstraintOk
+
+`func (o *CertificatesCertificateRetrievalResponse) GetPathLengthConstraintOk() (*int32, bool)`
+
+GetPathLengthConstraintOk returns a tuple with the PathLengthConstraint field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPathLengthConstraint
+
+`func (o *CertificatesCertificateRetrievalResponse) SetPathLengthConstraint(v int32)`
+
+SetPathLengthConstraint sets PathLengthConstraint field to given value.
+
+### HasPathLengthConstraint
+
+`func (o *CertificatesCertificateRetrievalResponse) HasPathLengthConstraint() bool`
+
+HasPathLengthConstraint returns a boolean if a field has been set.
+
+### SetPathLengthConstraintNil
+
+`func (o *CertificatesCertificateRetrievalResponse) SetPathLengthConstraintNil(b bool)`
+
+ SetPathLengthConstraintNil sets the value for PathLengthConstraint to be an explicit nil
+
+### UnsetPathLengthConstraint
+`func (o *CertificatesCertificateRetrievalResponse) UnsetPathLengthConstraint()`
+
+UnsetPathLengthConstraint ensures that no value is present for PathLengthConstraint, not even an explicit nil
 ### GetId
 
 `func (o *CertificatesCertificateRetrievalResponse) GetId() int32`
@@ -1421,20 +1484,20 @@ HasContentBytes returns a boolean if a field has been set.
 UnsetContentBytes ensures that no value is present for ContentBytes, not even an explicit nil
 ### GetExtendedKeyUsages
 
-`func (o *CertificatesCertificateRetrievalResponse) GetExtendedKeyUsages() []CertificatesCertificateRetrievalResponseExtendedKeyUsageModel`
+`func (o *CertificatesCertificateRetrievalResponse) GetExtendedKeyUsages() []CertificatesCertificateRetrievalBulkResponseExtendedKeyUsageModel`
 
 GetExtendedKeyUsages returns the ExtendedKeyUsages field if non-nil, zero value otherwise.
 
 ### GetExtendedKeyUsagesOk
 
-`func (o *CertificatesCertificateRetrievalResponse) GetExtendedKeyUsagesOk() (*[]CertificatesCertificateRetrievalResponseExtendedKeyUsageModel, bool)`
+`func (o *CertificatesCertificateRetrievalResponse) GetExtendedKeyUsagesOk() (*[]CertificatesCertificateRetrievalBulkResponseExtendedKeyUsageModel, bool)`
 
 GetExtendedKeyUsagesOk returns a tuple with the ExtendedKeyUsages field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExtendedKeyUsages
 
-`func (o *CertificatesCertificateRetrievalResponse) SetExtendedKeyUsages(v []CertificatesCertificateRetrievalResponseExtendedKeyUsageModel)`
+`func (o *CertificatesCertificateRetrievalResponse) SetExtendedKeyUsages(v []CertificatesCertificateRetrievalBulkResponseExtendedKeyUsageModel)`
 
 SetExtendedKeyUsages sets ExtendedKeyUsages field to given value.
 
@@ -1456,20 +1519,20 @@ HasExtendedKeyUsages returns a boolean if a field has been set.
 UnsetExtendedKeyUsages ensures that no value is present for ExtendedKeyUsages, not even an explicit nil
 ### GetSubjectAltNameElements
 
-`func (o *CertificatesCertificateRetrievalResponse) GetSubjectAltNameElements() []CertificatesCertificateRetrievalResponseSubjectAlternativeNameModel`
+`func (o *CertificatesCertificateRetrievalResponse) GetSubjectAltNameElements() []CertificatesCertificateRetrievalBulkResponseSubjectAlternativeNameModel`
 
 GetSubjectAltNameElements returns the SubjectAltNameElements field if non-nil, zero value otherwise.
 
 ### GetSubjectAltNameElementsOk
 
-`func (o *CertificatesCertificateRetrievalResponse) GetSubjectAltNameElementsOk() (*[]CertificatesCertificateRetrievalResponseSubjectAlternativeNameModel, bool)`
+`func (o *CertificatesCertificateRetrievalResponse) GetSubjectAltNameElementsOk() (*[]CertificatesCertificateRetrievalBulkResponseSubjectAlternativeNameModel, bool)`
 
 GetSubjectAltNameElementsOk returns a tuple with the SubjectAltNameElements field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubjectAltNameElements
 
-`func (o *CertificatesCertificateRetrievalResponse) SetSubjectAltNameElements(v []CertificatesCertificateRetrievalResponseSubjectAlternativeNameModel)`
+`func (o *CertificatesCertificateRetrievalResponse) SetSubjectAltNameElements(v []CertificatesCertificateRetrievalBulkResponseSubjectAlternativeNameModel)`
 
 SetSubjectAltNameElements sets SubjectAltNameElements field to given value.
 
@@ -1491,20 +1554,20 @@ HasSubjectAltNameElements returns a boolean if a field has been set.
 UnsetSubjectAltNameElements ensures that no value is present for SubjectAltNameElements, not even an explicit nil
 ### GetCRLDistributionPoints
 
-`func (o *CertificatesCertificateRetrievalResponse) GetCRLDistributionPoints() []CertificatesCertificateRetrievalResponseCRLDistributionPointModel`
+`func (o *CertificatesCertificateRetrievalResponse) GetCRLDistributionPoints() []CertificatesCertificateRetrievalBulkResponseCRLDistributionPointModel`
 
 GetCRLDistributionPoints returns the CRLDistributionPoints field if non-nil, zero value otherwise.
 
 ### GetCRLDistributionPointsOk
 
-`func (o *CertificatesCertificateRetrievalResponse) GetCRLDistributionPointsOk() (*[]CertificatesCertificateRetrievalResponseCRLDistributionPointModel, bool)`
+`func (o *CertificatesCertificateRetrievalResponse) GetCRLDistributionPointsOk() (*[]CertificatesCertificateRetrievalBulkResponseCRLDistributionPointModel, bool)`
 
 GetCRLDistributionPointsOk returns a tuple with the CRLDistributionPoints field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCRLDistributionPoints
 
-`func (o *CertificatesCertificateRetrievalResponse) SetCRLDistributionPoints(v []CertificatesCertificateRetrievalResponseCRLDistributionPointModel)`
+`func (o *CertificatesCertificateRetrievalResponse) SetCRLDistributionPoints(v []CertificatesCertificateRetrievalBulkResponseCRLDistributionPointModel)`
 
 SetCRLDistributionPoints sets CRLDistributionPoints field to given value.
 
@@ -1526,20 +1589,20 @@ HasCRLDistributionPoints returns a boolean if a field has been set.
 UnsetCRLDistributionPoints ensures that no value is present for CRLDistributionPoints, not even an explicit nil
 ### GetLocationsCount
 
-`func (o *CertificatesCertificateRetrievalResponse) GetLocationsCount() []CertificatesCertificateRetrievalResponseLocationCountModel`
+`func (o *CertificatesCertificateRetrievalResponse) GetLocationsCount() []CertificatesCertificateRetrievalBulkResponseLocationCountModel`
 
 GetLocationsCount returns the LocationsCount field if non-nil, zero value otherwise.
 
 ### GetLocationsCountOk
 
-`func (o *CertificatesCertificateRetrievalResponse) GetLocationsCountOk() (*[]CertificatesCertificateRetrievalResponseLocationCountModel, bool)`
+`func (o *CertificatesCertificateRetrievalResponse) GetLocationsCountOk() (*[]CertificatesCertificateRetrievalBulkResponseLocationCountModel, bool)`
 
 GetLocationsCountOk returns a tuple with the LocationsCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocationsCount
 
-`func (o *CertificatesCertificateRetrievalResponse) SetLocationsCount(v []CertificatesCertificateRetrievalResponseLocationCountModel)`
+`func (o *CertificatesCertificateRetrievalResponse) SetLocationsCount(v []CertificatesCertificateRetrievalBulkResponseLocationCountModel)`
 
 SetLocationsCount sets LocationsCount field to given value.
 
@@ -1561,20 +1624,20 @@ HasLocationsCount returns a boolean if a field has been set.
 UnsetLocationsCount ensures that no value is present for LocationsCount, not even an explicit nil
 ### GetSSLLocations
 
-`func (o *CertificatesCertificateRetrievalResponse) GetSSLLocations() []CertificatesCertificateRetrievalResponseCertificateStoreLocationDetailModel`
+`func (o *CertificatesCertificateRetrievalResponse) GetSSLLocations() []CertificatesCertificateRetrievalBulkResponseCertificateStoreLocationDetailModel`
 
 GetSSLLocations returns the SSLLocations field if non-nil, zero value otherwise.
 
 ### GetSSLLocationsOk
 
-`func (o *CertificatesCertificateRetrievalResponse) GetSSLLocationsOk() (*[]CertificatesCertificateRetrievalResponseCertificateStoreLocationDetailModel, bool)`
+`func (o *CertificatesCertificateRetrievalResponse) GetSSLLocationsOk() (*[]CertificatesCertificateRetrievalBulkResponseCertificateStoreLocationDetailModel, bool)`
 
 GetSSLLocationsOk returns a tuple with the SSLLocations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSSLLocations
 
-`func (o *CertificatesCertificateRetrievalResponse) SetSSLLocations(v []CertificatesCertificateRetrievalResponseCertificateStoreLocationDetailModel)`
+`func (o *CertificatesCertificateRetrievalResponse) SetSSLLocations(v []CertificatesCertificateRetrievalBulkResponseCertificateStoreLocationDetailModel)`
 
 SetSSLLocations sets SSLLocations field to given value.
 
@@ -1596,20 +1659,20 @@ HasSSLLocations returns a boolean if a field has been set.
 UnsetSSLLocations ensures that no value is present for SSLLocations, not even an explicit nil
 ### GetLocations
 
-`func (o *CertificatesCertificateRetrievalResponse) GetLocations() []CertificatesCertificateRetrievalResponseCertificateStoreInventoryItemModel`
+`func (o *CertificatesCertificateRetrievalResponse) GetLocations() []CertificatesCertificateRetrievalBulkResponseCertificateStoreInventoryItemModel`
 
 GetLocations returns the Locations field if non-nil, zero value otherwise.
 
 ### GetLocationsOk
 
-`func (o *CertificatesCertificateRetrievalResponse) GetLocationsOk() (*[]CertificatesCertificateRetrievalResponseCertificateStoreInventoryItemModel, bool)`
+`func (o *CertificatesCertificateRetrievalResponse) GetLocationsOk() (*[]CertificatesCertificateRetrievalBulkResponseCertificateStoreInventoryItemModel, bool)`
 
 GetLocationsOk returns a tuple with the Locations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocations
 
-`func (o *CertificatesCertificateRetrievalResponse) SetLocations(v []CertificatesCertificateRetrievalResponseCertificateStoreInventoryItemModel)`
+`func (o *CertificatesCertificateRetrievalResponse) SetLocations(v []CertificatesCertificateRetrievalBulkResponseCertificateStoreInventoryItemModel)`
 
 SetLocations sets Locations field to given value.
 
@@ -1736,20 +1799,20 @@ HasCARecordId returns a boolean if a field has been set.
 UnsetCARecordId ensures that no value is present for CARecordId, not even an explicit nil
 ### GetDetailedKeyUsage
 
-`func (o *CertificatesCertificateRetrievalResponse) GetDetailedKeyUsage() CertificatesCertificateRetrievalResponseDetailedKeyUsageModel`
+`func (o *CertificatesCertificateRetrievalResponse) GetDetailedKeyUsage() CertificatesCertificateRetrievalBulkResponseDetailedKeyUsageModel`
 
 GetDetailedKeyUsage returns the DetailedKeyUsage field if non-nil, zero value otherwise.
 
 ### GetDetailedKeyUsageOk
 
-`func (o *CertificatesCertificateRetrievalResponse) GetDetailedKeyUsageOk() (*CertificatesCertificateRetrievalResponseDetailedKeyUsageModel, bool)`
+`func (o *CertificatesCertificateRetrievalResponse) GetDetailedKeyUsageOk() (*CertificatesCertificateRetrievalBulkResponseDetailedKeyUsageModel, bool)`
 
 GetDetailedKeyUsageOk returns a tuple with the DetailedKeyUsage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDetailedKeyUsage
 
-`func (o *CertificatesCertificateRetrievalResponse) SetDetailedKeyUsage(v CertificatesCertificateRetrievalResponseDetailedKeyUsageModel)`
+`func (o *CertificatesCertificateRetrievalResponse) SetDetailedKeyUsage(v CertificatesCertificateRetrievalBulkResponseDetailedKeyUsageModel)`
 
 SetDetailedKeyUsage sets DetailedKeyUsage field to given value.
 
@@ -1854,6 +1917,31 @@ HasEnrollmentPatternId returns a boolean if a field has been set.
 `func (o *CertificatesCertificateRetrievalResponse) UnsetEnrollmentPatternId()`
 
 UnsetEnrollmentPatternId ensures that no value is present for EnrollmentPatternId, not even an explicit nil
+### GetLifespan
+
+`func (o *CertificatesCertificateRetrievalResponse) GetLifespan() int32`
+
+GetLifespan returns the Lifespan field if non-nil, zero value otherwise.
+
+### GetLifespanOk
+
+`func (o *CertificatesCertificateRetrievalResponse) GetLifespanOk() (*int32, bool)`
+
+GetLifespanOk returns a tuple with the Lifespan field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLifespan
+
+`func (o *CertificatesCertificateRetrievalResponse) SetLifespan(v int32)`
+
+SetLifespan sets Lifespan field to given value.
+
+### HasLifespan
+
+`func (o *CertificatesCertificateRetrievalResponse) HasLifespan() bool`
+
+HasLifespan returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

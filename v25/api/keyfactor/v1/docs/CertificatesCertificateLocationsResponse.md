@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Details** | Pointer to [**[]CSSCMSDataModelModelsCertStoreLocationsCertificateLocationsGroup**](CSSCMSDataModelModelsCertStoreLocationsCertificateLocationsGroup.md) |  | [optional] 
+**Details** | Pointer to [**[]CertificatesCertificateLocationsGroupResponse**](CertificatesCertificateLocationsGroupResponse.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDetails
 
-`func (o *CertificatesCertificateLocationsResponse) GetDetails() []CSSCMSDataModelModelsCertStoreLocationsCertificateLocationsGroup`
+`func (o *CertificatesCertificateLocationsResponse) GetDetails() []CertificatesCertificateLocationsGroupResponse`
 
 GetDetails returns the Details field if non-nil, zero value otherwise.
 
 ### GetDetailsOk
 
-`func (o *CertificatesCertificateLocationsResponse) GetDetailsOk() (*[]CSSCMSDataModelModelsCertStoreLocationsCertificateLocationsGroup, bool)`
+`func (o *CertificatesCertificateLocationsResponse) GetDetailsOk() (*[]CertificatesCertificateLocationsGroupResponse, bool)`
 
 GetDetailsOk returns a tuple with the Details field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDetails
 
-`func (o *CertificatesCertificateLocationsResponse) SetDetails(v []CSSCMSDataModelModelsCertStoreLocationsCertificateLocationsGroup)`
+`func (o *CertificatesCertificateLocationsResponse) SetDetails(v []CertificatesCertificateLocationsGroupResponse)`
 
 SetDetails sets Details field to given value.
 

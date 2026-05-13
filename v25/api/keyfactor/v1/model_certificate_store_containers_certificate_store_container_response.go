@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -32,7 +32,6 @@ type CertificateStoreContainersCertificateStoreContainerResponse struct {
 	Id                *int32                                      `json:"Id,omitempty"`
 	Name              NullableString                              `json:"Name,omitempty"`
 	Schedule          *KeyfactorCommonSchedulingKeyfactorSchedule `json:"Schedule,omitempty"`
-	CertStoreType     *int32                                      `json:"CertStoreType,omitempty"`
 	CertificateStores []CertificateStoresCertificateStoreResponse `json:"CertificateStores,omitempty"`
 }
 
@@ -160,38 +159,6 @@ func (o *CertificateStoreContainersCertificateStoreContainerResponse) SetSchedul
 	o.Schedule = &v
 }
 
-// GetCertStoreType returns the CertStoreType field value if set, zero value otherwise.
-func (o *CertificateStoreContainersCertificateStoreContainerResponse) GetCertStoreType() int32 {
-	if o == nil || isNil(o.CertStoreType) {
-		var ret int32
-		return ret
-	}
-	return *o.CertStoreType
-}
-
-// GetCertStoreTypeOk returns a tuple with the CertStoreType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CertificateStoreContainersCertificateStoreContainerResponse) GetCertStoreTypeOk() (*int32, bool) {
-	if o == nil || isNil(o.CertStoreType) {
-		return nil, false
-	}
-	return o.CertStoreType, true
-}
-
-// HasCertStoreType returns a boolean if a field has been set.
-func (o *CertificateStoreContainersCertificateStoreContainerResponse) HasCertStoreType() bool {
-	if o != nil && !isNil(o.CertStoreType) {
-		return true
-	}
-
-	return false
-}
-
-// SetCertStoreType gets a reference to the given int32 and assigns it to the CertStoreType field.
-func (o *CertificateStoreContainersCertificateStoreContainerResponse) SetCertStoreType(v int32) {
-	o.CertStoreType = &v
-}
-
 // GetCertificateStores returns the CertificateStores field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CertificateStoreContainersCertificateStoreContainerResponse) GetCertificateStores() []CertificateStoresCertificateStoreResponse {
 	if o == nil {
@@ -243,9 +210,6 @@ func (o CertificateStoreContainersCertificateStoreContainerResponse) ToMap() (ma
 	}
 	if !isNil(o.Schedule) {
 		toSerialize["Schedule"] = o.Schedule
-	}
-	if !isNil(o.CertStoreType) {
-		toSerialize["CertStoreType"] = o.CertStoreType
 	}
 	if o.CertificateStores != nil {
 		toSerialize["CertificateStores"] = o.CertificateStores

@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -29,7 +29,7 @@ var _ MappedNullable = &CertificatesCertificateLocationsResponse{}
 
 // CertificatesCertificateLocationsResponse struct for CertificatesCertificateLocationsResponse
 type CertificatesCertificateLocationsResponse struct {
-	Details []CSSCMSDataModelModelsCertStoreLocationsCertificateLocationsGroup `json:"Details,omitempty"`
+	Details []CertificatesCertificateLocationsGroupResponse `json:"Details,omitempty"`
 }
 
 // NewCertificatesCertificateLocationsResponse instantiates a new CertificatesCertificateLocationsResponse object
@@ -50,9 +50,9 @@ func NewCertificatesCertificateLocationsResponseWithDefaults() *CertificatesCert
 }
 
 // GetDetails returns the Details field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CertificatesCertificateLocationsResponse) GetDetails() []CSSCMSDataModelModelsCertStoreLocationsCertificateLocationsGroup {
+func (o *CertificatesCertificateLocationsResponse) GetDetails() []CertificatesCertificateLocationsGroupResponse {
 	if o == nil {
-		var ret []CSSCMSDataModelModelsCertStoreLocationsCertificateLocationsGroup
+		var ret []CertificatesCertificateLocationsGroupResponse
 		return ret
 	}
 	return o.Details
@@ -61,7 +61,7 @@ func (o *CertificatesCertificateLocationsResponse) GetDetails() []CSSCMSDataMode
 // GetDetailsOk returns a tuple with the Details field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CertificatesCertificateLocationsResponse) GetDetailsOk() ([]CSSCMSDataModelModelsCertStoreLocationsCertificateLocationsGroup, bool) {
+func (o *CertificatesCertificateLocationsResponse) GetDetailsOk() ([]CertificatesCertificateLocationsGroupResponse, bool) {
 	if o == nil || isNil(o.Details) {
 		return nil, false
 	}
@@ -77,8 +77,8 @@ func (o *CertificatesCertificateLocationsResponse) HasDetails() bool {
 	return false
 }
 
-// SetDetails gets a reference to the given []CSSCMSDataModelModelsCertStoreLocationsCertificateLocationsGroup and assigns it to the Details field.
-func (o *CertificatesCertificateLocationsResponse) SetDetails(v []CSSCMSDataModelModelsCertStoreLocationsCertificateLocationsGroup) {
+// SetDetails gets a reference to the given []CertificatesCertificateLocationsGroupResponse and assigns it to the Details field.
+func (o *CertificatesCertificateLocationsResponse) SetDetails(v []CertificatesCertificateLocationsGroupResponse) {
 	o.Details = v
 }
 

@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -33,6 +33,9 @@ type EnrollmentPatternsAlgorithmsKeyInfoRequest struct {
 	RSA     *EnrollmentPatternsAlgorithmsAlgorithmDataRequest `json:"RSA,omitempty"`
 	Ed448   *EnrollmentPatternsAlgorithmsAlgorithmDataRequest `json:"Ed448,omitempty"`
 	Ed25519 *EnrollmentPatternsAlgorithmsAlgorithmDataRequest `json:"Ed25519,omitempty"`
+	MLDSA44 *EnrollmentPatternsAlgorithmsAlgorithmDataRequest `json:"MLDSA44,omitempty"`
+	MLDSA65 *EnrollmentPatternsAlgorithmsAlgorithmDataRequest `json:"MLDSA65,omitempty"`
+	MLDSA87 *EnrollmentPatternsAlgorithmsAlgorithmDataRequest `json:"MLDSA87,omitempty"`
 }
 
 // NewEnrollmentPatternsAlgorithmsKeyInfoRequest instantiates a new EnrollmentPatternsAlgorithmsKeyInfoRequest object
@@ -180,6 +183,102 @@ func (o *EnrollmentPatternsAlgorithmsKeyInfoRequest) SetEd25519(v EnrollmentPatt
 	o.Ed25519 = &v
 }
 
+// GetMLDSA44 returns the MLDSA44 field value if set, zero value otherwise.
+func (o *EnrollmentPatternsAlgorithmsKeyInfoRequest) GetMLDSA44() EnrollmentPatternsAlgorithmsAlgorithmDataRequest {
+	if o == nil || isNil(o.MLDSA44) {
+		var ret EnrollmentPatternsAlgorithmsAlgorithmDataRequest
+		return ret
+	}
+	return *o.MLDSA44
+}
+
+// GetMLDSA44Ok returns a tuple with the MLDSA44 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EnrollmentPatternsAlgorithmsKeyInfoRequest) GetMLDSA44Ok() (*EnrollmentPatternsAlgorithmsAlgorithmDataRequest, bool) {
+	if o == nil || isNil(o.MLDSA44) {
+		return nil, false
+	}
+	return o.MLDSA44, true
+}
+
+// HasMLDSA44 returns a boolean if a field has been set.
+func (o *EnrollmentPatternsAlgorithmsKeyInfoRequest) HasMLDSA44() bool {
+	if o != nil && !isNil(o.MLDSA44) {
+		return true
+	}
+
+	return false
+}
+
+// SetMLDSA44 gets a reference to the given EnrollmentPatternsAlgorithmsAlgorithmDataRequest and assigns it to the MLDSA44 field.
+func (o *EnrollmentPatternsAlgorithmsKeyInfoRequest) SetMLDSA44(v EnrollmentPatternsAlgorithmsAlgorithmDataRequest) {
+	o.MLDSA44 = &v
+}
+
+// GetMLDSA65 returns the MLDSA65 field value if set, zero value otherwise.
+func (o *EnrollmentPatternsAlgorithmsKeyInfoRequest) GetMLDSA65() EnrollmentPatternsAlgorithmsAlgorithmDataRequest {
+	if o == nil || isNil(o.MLDSA65) {
+		var ret EnrollmentPatternsAlgorithmsAlgorithmDataRequest
+		return ret
+	}
+	return *o.MLDSA65
+}
+
+// GetMLDSA65Ok returns a tuple with the MLDSA65 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EnrollmentPatternsAlgorithmsKeyInfoRequest) GetMLDSA65Ok() (*EnrollmentPatternsAlgorithmsAlgorithmDataRequest, bool) {
+	if o == nil || isNil(o.MLDSA65) {
+		return nil, false
+	}
+	return o.MLDSA65, true
+}
+
+// HasMLDSA65 returns a boolean if a field has been set.
+func (o *EnrollmentPatternsAlgorithmsKeyInfoRequest) HasMLDSA65() bool {
+	if o != nil && !isNil(o.MLDSA65) {
+		return true
+	}
+
+	return false
+}
+
+// SetMLDSA65 gets a reference to the given EnrollmentPatternsAlgorithmsAlgorithmDataRequest and assigns it to the MLDSA65 field.
+func (o *EnrollmentPatternsAlgorithmsKeyInfoRequest) SetMLDSA65(v EnrollmentPatternsAlgorithmsAlgorithmDataRequest) {
+	o.MLDSA65 = &v
+}
+
+// GetMLDSA87 returns the MLDSA87 field value if set, zero value otherwise.
+func (o *EnrollmentPatternsAlgorithmsKeyInfoRequest) GetMLDSA87() EnrollmentPatternsAlgorithmsAlgorithmDataRequest {
+	if o == nil || isNil(o.MLDSA87) {
+		var ret EnrollmentPatternsAlgorithmsAlgorithmDataRequest
+		return ret
+	}
+	return *o.MLDSA87
+}
+
+// GetMLDSA87Ok returns a tuple with the MLDSA87 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EnrollmentPatternsAlgorithmsKeyInfoRequest) GetMLDSA87Ok() (*EnrollmentPatternsAlgorithmsAlgorithmDataRequest, bool) {
+	if o == nil || isNil(o.MLDSA87) {
+		return nil, false
+	}
+	return o.MLDSA87, true
+}
+
+// HasMLDSA87 returns a boolean if a field has been set.
+func (o *EnrollmentPatternsAlgorithmsKeyInfoRequest) HasMLDSA87() bool {
+	if o != nil && !isNil(o.MLDSA87) {
+		return true
+	}
+
+	return false
+}
+
+// SetMLDSA87 gets a reference to the given EnrollmentPatternsAlgorithmsAlgorithmDataRequest and assigns it to the MLDSA87 field.
+func (o *EnrollmentPatternsAlgorithmsKeyInfoRequest) SetMLDSA87(v EnrollmentPatternsAlgorithmsAlgorithmDataRequest) {
+	o.MLDSA87 = &v
+}
+
 func (o EnrollmentPatternsAlgorithmsKeyInfoRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -201,6 +300,15 @@ func (o EnrollmentPatternsAlgorithmsKeyInfoRequest) ToMap() (map[string]interfac
 	}
 	if !isNil(o.Ed25519) {
 		toSerialize["Ed25519"] = o.Ed25519
+	}
+	if !isNil(o.MLDSA44) {
+		toSerialize["MLDSA44"] = o.MLDSA44
+	}
+	if !isNil(o.MLDSA65) {
+		toSerialize["MLDSA65"] = o.MLDSA65
+	}
+	if !isNil(o.MLDSA87) {
+		toSerialize["MLDSA87"] = o.MLDSA87
 	}
 	return toSerialize, nil
 }

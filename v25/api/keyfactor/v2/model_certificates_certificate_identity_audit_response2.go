@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -27,7 +27,7 @@ import (
 // checks if the CertificatesCertificateIdentityAuditResponse2 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CertificatesCertificateIdentityAuditResponse2{}
 
-// CertificatesCertificateIdentityAuditResponse2 Represents an account with a list of permission granted to it on a given certificate by either a role or collection.  Used for the V2 endpoint.
+// CertificatesCertificateIdentityAuditResponse2 Represents an account with a list of permission granted to it on a given certificate by either a role or collection. Used for the V2 endpoint.
 type CertificatesCertificateIdentityAuditResponse2 struct {
 	Identity *CertificatesCertificateIdentityAuditResponse2IdentityResponse `json:"Identity,omitempty"`
 	// Permissions granted to the account represented by the audit reponse on the specified certifcate.

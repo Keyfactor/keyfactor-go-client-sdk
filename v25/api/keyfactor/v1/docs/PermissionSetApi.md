@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreatePermissionSets**](PermissionSetApi.md#CreatePermissionSets) | **POST** /PermissionSets | Creates a new permission set.
 [**DeletePermissionSetsById**](PermissionSetApi.md#DeletePermissionSetsById) | **DELETE** /PermissionSets/{id} | Deletes a permission set.
-[**GetPermissionSets**](PermissionSetApi.md#GetPermissionSets) | **GET** /PermissionSets | Gets all Permission Set(s) in the system if the user has a security role that is assigned to the Global Permission Set and the security role has the Global Security Read permission.   Otherwise, returns only the Permission Sets with the Security Modify permission that are assigned to the user&#39;s security role(s).
+[**GetPermissionSets**](PermissionSetApi.md#GetPermissionSets) | **GET** /PermissionSets | Gets all Permission Set(s) in the system if the user has a security role that is assigned to the Global Permission Set and the security role has the Global Security Read permission.  Otherwise, returns only the Permission Sets with the Security Modify permission that are assigned to the user&#39;s security role(s).
 [**GetPermissionSetsById**](PermissionSetApi.md#GetPermissionSetsById) | **GET** /PermissionSets/{id} | Gets permission set data.
 [**GetPermissionSetsMy**](PermissionSetApi.md#GetPermissionSetsMy) | **GET** /PermissionSets/My | 
 [**UpdatePermissionSets**](PermissionSetApi.md#UpdatePermissionSets) | **PUT** /PermissionSets | 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 > []PermissionSetsPermissionSetResponse NewGetPermissionSetsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).QueryString(queryString).PageReturned(pageReturned).ReturnLimit(returnLimit).SortField(sortField).SortAscending(sortAscending).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
 
-Gets all Permission Set(s) in the system if the user has a security role that is assigned to the Global Permission Set and the security role has the Global Security Read permission.   Otherwise, returns only the Permission Sets with the Security Modify permission that are assigned to the user's security role(s).
+Gets all Permission Set(s) in the system if the user has a security role that is assigned to the Global Permission Set and the security role has the Global Security Read permission.  Otherwise, returns only the Permission Sets with the Security Modify permission that are assigned to the user's security role(s).
 
 ### Example
 

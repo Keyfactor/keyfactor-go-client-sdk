@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -29,8 +29,10 @@ var _ MappedNullable = &EnrollmentPatternsEnrollmentPatternDefaultResponse{}
 
 // EnrollmentPatternsEnrollmentPatternDefaultResponse struct for EnrollmentPatternsEnrollmentPatternDefaultResponse
 type EnrollmentPatternsEnrollmentPatternDefaultResponse struct {
+	// The subject part to apply the default to.
 	SubjectPart NullableString `json:"SubjectPart,omitempty"`
-	Value       NullableString `json:"Value,omitempty"`
+	// The value to apply by default.
+	Value NullableString `json:"Value,omitempty"`
 }
 
 // NewEnrollmentPatternsEnrollmentPatternDefaultResponse instantiates a new EnrollmentPatternsEnrollmentPatternDefaultResponse object

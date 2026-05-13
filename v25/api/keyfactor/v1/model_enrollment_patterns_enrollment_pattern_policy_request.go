@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -29,13 +29,15 @@ var _ MappedNullable = &EnrollmentPatternsEnrollmentPatternPolicyRequest{}
 
 // EnrollmentPatternsEnrollmentPatternPolicyRequest struct for EnrollmentPatternsEnrollmentPatternPolicyRequest
 type EnrollmentPatternsEnrollmentPatternPolicyRequest struct {
-	AllowKeyReuse                   NullableBool                                 `json:"AllowKeyReuse,omitempty"`
-	AllowWildcards                  NullableBool                                 `json:"AllowWildcards,omitempty"`
-	RFCEnforcement                  NullableBool                                 `json:"RFCEnforcement,omitempty"`
-	CertificateOwnerRole            *CSSCMSCoreEnumsTemplateCertificateOwnerRole `json:"CertificateOwnerRole,omitempty"`
-	DefaultCertificateOwnerRoleId   NullableInt32                                `json:"DefaultCertificateOwnerRoleId,omitempty"`
-	DefaultCertificateOwnerRoleName NullableString                               `json:"DefaultCertificateOwnerRoleName,omitempty"`
-	KeyInfo                         *EnrollmentPatternsAlgorithmsKeyInfoRequest  `json:"KeyInfo,omitempty"`
+	AllowKeyReuse                   NullableBool                                         `json:"AllowKeyReuse,omitempty"`
+	AllowWildcards                  NullableBool                                         `json:"AllowWildcards,omitempty"`
+	RFCEnforcement                  NullableBool                                         `json:"RFCEnforcement,omitempty"`
+	CertificateOwnerRole            *CSSCMSCoreEnumsTemplateCertificateOwnerRole         `json:"CertificateOwnerRole,omitempty"`
+	DefaultCertificateOwnerRoleId   NullableInt32                                        `json:"DefaultCertificateOwnerRoleId,omitempty"`
+	DefaultCertificateOwnerRoleName NullableString                                       `json:"DefaultCertificateOwnerRoleName,omitempty"`
+	DefaultCertificateOwnerOverride *bool                                                `json:"DefaultCertificateOwnerOverride,omitempty"`
+	PrimaryKeyAlgorithms            []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2 `json:"PrimaryKeyAlgorithms,omitempty"`
+	AlternativeKeyAlgorithms        []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2 `json:"AlternativeKeyAlgorithms,omitempty"`
 }
 
 // NewEnrollmentPatternsEnrollmentPatternPolicyRequest instantiates a new EnrollmentPatternsEnrollmentPatternPolicyRequest object
@@ -302,36 +304,102 @@ func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) UnsetDefaultCertifica
 	o.DefaultCertificateOwnerRoleName.Unset()
 }
 
-// GetKeyInfo returns the KeyInfo field value if set, zero value otherwise.
-func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) GetKeyInfo() EnrollmentPatternsAlgorithmsKeyInfoRequest {
-	if o == nil || isNil(o.KeyInfo) {
-		var ret EnrollmentPatternsAlgorithmsKeyInfoRequest
+// GetDefaultCertificateOwnerOverride returns the DefaultCertificateOwnerOverride field value if set, zero value otherwise.
+func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) GetDefaultCertificateOwnerOverride() bool {
+	if o == nil || isNil(o.DefaultCertificateOwnerOverride) {
+		var ret bool
 		return ret
 	}
-	return *o.KeyInfo
+	return *o.DefaultCertificateOwnerOverride
 }
 
-// GetKeyInfoOk returns a tuple with the KeyInfo field value if set, nil otherwise
+// GetDefaultCertificateOwnerOverrideOk returns a tuple with the DefaultCertificateOwnerOverride field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) GetKeyInfoOk() (*EnrollmentPatternsAlgorithmsKeyInfoRequest, bool) {
-	if o == nil || isNil(o.KeyInfo) {
+func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) GetDefaultCertificateOwnerOverrideOk() (*bool, bool) {
+	if o == nil || isNil(o.DefaultCertificateOwnerOverride) {
 		return nil, false
 	}
-	return o.KeyInfo, true
+	return o.DefaultCertificateOwnerOverride, true
 }
 
-// HasKeyInfo returns a boolean if a field has been set.
-func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) HasKeyInfo() bool {
-	if o != nil && !isNil(o.KeyInfo) {
+// HasDefaultCertificateOwnerOverride returns a boolean if a field has been set.
+func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) HasDefaultCertificateOwnerOverride() bool {
+	if o != nil && !isNil(o.DefaultCertificateOwnerOverride) {
 		return true
 	}
 
 	return false
 }
 
-// SetKeyInfo gets a reference to the given EnrollmentPatternsAlgorithmsKeyInfoRequest and assigns it to the KeyInfo field.
-func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) SetKeyInfo(v EnrollmentPatternsAlgorithmsKeyInfoRequest) {
-	o.KeyInfo = &v
+// SetDefaultCertificateOwnerOverride gets a reference to the given bool and assigns it to the DefaultCertificateOwnerOverride field.
+func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) SetDefaultCertificateOwnerOverride(v bool) {
+	o.DefaultCertificateOwnerOverride = &v
+}
+
+// GetPrimaryKeyAlgorithms returns the PrimaryKeyAlgorithms field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) GetPrimaryKeyAlgorithms() []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2 {
+	if o == nil {
+		var ret []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2
+		return ret
+	}
+	return o.PrimaryKeyAlgorithms
+}
+
+// GetPrimaryKeyAlgorithmsOk returns a tuple with the PrimaryKeyAlgorithms field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) GetPrimaryKeyAlgorithmsOk() ([]EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2, bool) {
+	if o == nil || isNil(o.PrimaryKeyAlgorithms) {
+		return nil, false
+	}
+	return o.PrimaryKeyAlgorithms, true
+}
+
+// HasPrimaryKeyAlgorithms returns a boolean if a field has been set.
+func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) HasPrimaryKeyAlgorithms() bool {
+	if o != nil && isNil(o.PrimaryKeyAlgorithms) {
+		return true
+	}
+
+	return false
+}
+
+// SetPrimaryKeyAlgorithms gets a reference to the given []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2 and assigns it to the PrimaryKeyAlgorithms field.
+func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) SetPrimaryKeyAlgorithms(v []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2) {
+	o.PrimaryKeyAlgorithms = v
+}
+
+// GetAlternativeKeyAlgorithms returns the AlternativeKeyAlgorithms field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) GetAlternativeKeyAlgorithms() []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2 {
+	if o == nil {
+		var ret []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2
+		return ret
+	}
+	return o.AlternativeKeyAlgorithms
+}
+
+// GetAlternativeKeyAlgorithmsOk returns a tuple with the AlternativeKeyAlgorithms field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) GetAlternativeKeyAlgorithmsOk() ([]EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2, bool) {
+	if o == nil || isNil(o.AlternativeKeyAlgorithms) {
+		return nil, false
+	}
+	return o.AlternativeKeyAlgorithms, true
+}
+
+// HasAlternativeKeyAlgorithms returns a boolean if a field has been set.
+func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) HasAlternativeKeyAlgorithms() bool {
+	if o != nil && isNil(o.AlternativeKeyAlgorithms) {
+		return true
+	}
+
+	return false
+}
+
+// SetAlternativeKeyAlgorithms gets a reference to the given []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2 and assigns it to the AlternativeKeyAlgorithms field.
+func (o *EnrollmentPatternsEnrollmentPatternPolicyRequest) SetAlternativeKeyAlgorithms(v []EnrollmentPatternsAlgorithmsAlgorithmDataRequestV2) {
+	o.AlternativeKeyAlgorithms = v
 }
 
 func (o EnrollmentPatternsEnrollmentPatternPolicyRequest) MarshalJSON() ([]byte, error) {
@@ -362,8 +430,14 @@ func (o EnrollmentPatternsEnrollmentPatternPolicyRequest) ToMap() (map[string]in
 	if o.DefaultCertificateOwnerRoleName.IsSet() {
 		toSerialize["DefaultCertificateOwnerRoleName"] = o.DefaultCertificateOwnerRoleName.Get()
 	}
-	if !isNil(o.KeyInfo) {
-		toSerialize["KeyInfo"] = o.KeyInfo
+	if !isNil(o.DefaultCertificateOwnerOverride) {
+		toSerialize["DefaultCertificateOwnerOverride"] = o.DefaultCertificateOwnerOverride
+	}
+	if o.PrimaryKeyAlgorithms != nil {
+		toSerialize["PrimaryKeyAlgorithms"] = o.PrimaryKeyAlgorithms
+	}
+	if o.AlternativeKeyAlgorithms != nil {
+		toSerialize["AlternativeKeyAlgorithms"] = o.AlternativeKeyAlgorithms
 	}
 	return toSerialize, nil
 }

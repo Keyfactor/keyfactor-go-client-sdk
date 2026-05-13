@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -30,10 +30,9 @@ var _ MappedNullable = &CSSCMSDataModelModelsCertStoreContainerRequest{}
 // CSSCMSDataModelModelsCertStoreContainerRequest struct for CSSCMSDataModelModelsCertStoreContainerRequest
 type CSSCMSDataModelModelsCertStoreContainerRequest struct {
 	Id                 *int32                                      `json:"Id,omitempty"`
-	Name               NullableString                              `json:"Name,omitempty"`
+	Name               string                                      `json:"Name"`
 	OverwriteSchedules *bool                                       `json:"OverwriteSchedules,omitempty"`
 	Schedule           *KeyfactorCommonSchedulingKeyfactorSchedule `json:"Schedule,omitempty"`
-	CertStoreType      *int32                                      `json:"CertStoreType,omitempty"`
 	CertificateStores  []CSSCMSDataModelModelsCertificateStore     `json:"CertificateStores,omitempty"`
 }
 
@@ -41,8 +40,9 @@ type CSSCMSDataModelModelsCertStoreContainerRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCSSCMSDataModelModelsCertStoreContainerRequest() *CSSCMSDataModelModelsCertStoreContainerRequest {
+func NewCSSCMSDataModelModelsCertStoreContainerRequest(name string) *CSSCMSDataModelModelsCertStoreContainerRequest {
 	this := CSSCMSDataModelModelsCertStoreContainerRequest{}
+	this.Name = name
 	return &this
 }
 
@@ -86,47 +86,28 @@ func (o *CSSCMSDataModelModelsCertStoreContainerRequest) SetId(v int32) {
 	o.Id = &v
 }
 
-// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetName returns the Name field value
 func (o *CSSCMSDataModelModelsCertStoreContainerRequest) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Name.Get()
+
+	return o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CSSCMSDataModelModelsCertStoreContainerRequest) GetNameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.Name.Get(), o.Name.IsSet()
+	return &o.Name, true
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *CSSCMSDataModelModelsCertStoreContainerRequest) HasName() bool {
-	if o != nil && o.Name.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given NullableString and assigns it to the Name field.
+// SetName sets field value
 func (o *CSSCMSDataModelModelsCertStoreContainerRequest) SetName(v string) {
-	o.Name.Set(&v)
-}
-
-// SetNameNil sets the value for Name to be an explicit nil
-func (o *CSSCMSDataModelModelsCertStoreContainerRequest) SetNameNil() {
-	o.Name.Set(nil)
-}
-
-// UnsetName ensures that no value is present for Name, not even an explicit nil
-func (o *CSSCMSDataModelModelsCertStoreContainerRequest) UnsetName() {
-	o.Name.Unset()
+	o.Name = v
 }
 
 // GetOverwriteSchedules returns the OverwriteSchedules field value if set, zero value otherwise.
@@ -193,38 +174,6 @@ func (o *CSSCMSDataModelModelsCertStoreContainerRequest) SetSchedule(v Keyfactor
 	o.Schedule = &v
 }
 
-// GetCertStoreType returns the CertStoreType field value if set, zero value otherwise.
-func (o *CSSCMSDataModelModelsCertStoreContainerRequest) GetCertStoreType() int32 {
-	if o == nil || isNil(o.CertStoreType) {
-		var ret int32
-		return ret
-	}
-	return *o.CertStoreType
-}
-
-// GetCertStoreTypeOk returns a tuple with the CertStoreType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CSSCMSDataModelModelsCertStoreContainerRequest) GetCertStoreTypeOk() (*int32, bool) {
-	if o == nil || isNil(o.CertStoreType) {
-		return nil, false
-	}
-	return o.CertStoreType, true
-}
-
-// HasCertStoreType returns a boolean if a field has been set.
-func (o *CSSCMSDataModelModelsCertStoreContainerRequest) HasCertStoreType() bool {
-	if o != nil && !isNil(o.CertStoreType) {
-		return true
-	}
-
-	return false
-}
-
-// SetCertStoreType gets a reference to the given int32 and assigns it to the CertStoreType field.
-func (o *CSSCMSDataModelModelsCertStoreContainerRequest) SetCertStoreType(v int32) {
-	o.CertStoreType = &v
-}
-
 // GetCertificateStores returns the CertificateStores field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CSSCMSDataModelModelsCertStoreContainerRequest) GetCertificateStores() []CSSCMSDataModelModelsCertificateStore {
 	if o == nil {
@@ -271,17 +220,12 @@ func (o CSSCMSDataModelModelsCertStoreContainerRequest) ToMap() (map[string]inte
 	if !isNil(o.Id) {
 		toSerialize["Id"] = o.Id
 	}
-	if o.Name.IsSet() {
-		toSerialize["Name"] = o.Name.Get()
-	}
+	toSerialize["Name"] = o.Name
 	if !isNil(o.OverwriteSchedules) {
 		toSerialize["OverwriteSchedules"] = o.OverwriteSchedules
 	}
 	if !isNil(o.Schedule) {
 		toSerialize["Schedule"] = o.Schedule
-	}
-	if !isNil(o.CertStoreType) {
-		toSerialize["CertStoreType"] = o.CertStoreType
 	}
 	if o.CertificateStores != nil {
 		toSerialize["CertificateStores"] = o.CertificateStores

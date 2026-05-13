@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -29,15 +29,16 @@ var _ MappedNullable = &AlertsExpirationExpirationAlertCreationRequest{}
 
 // AlertsExpirationExpirationAlertCreationRequest struct for AlertsExpirationExpirationAlertCreationRequest
 type AlertsExpirationExpirationAlertCreationRequest struct {
-	DisplayName            string                                     `json:"DisplayName"`
-	Subject                NullableString                             `json:"Subject,omitempty"`
-	Message                NullableString                             `json:"Message,omitempty"`
-	ExpirationWarningDays  int32                                      `json:"ExpirationWarningDays"`
-	CertificateQueryId     *int32                                     `json:"CertificateQueryId,omitempty"`
-	RegisteredEventHandler *EventHandlerRegisteredEventHandlerRequest `json:"RegisteredEventHandler,omitempty"`
-	Recipients             []string                                   `json:"Recipients,omitempty"`
-	EventHandlerParameters []EventHandlerEventHandlerParameterRequest `json:"EventHandlerParameters,omitempty"`
-	UseWorkflows           *bool                                      `json:"UseWorkflows,omitempty"`
+	DisplayName            string                                      `json:"DisplayName"`
+	Subject                NullableString                              `json:"Subject,omitempty"`
+	Message                NullableString                              `json:"Message,omitempty"`
+	ExpirationWarningDays  int32                                       `json:"ExpirationWarningDays"`
+	CertificateQueryId     *int32                                      `json:"CertificateQueryId,omitempty"`
+	RegisteredEventHandler *EventHandlerRegisteredEventHandlerRequest  `json:"RegisteredEventHandler,omitempty"`
+	Recipients             []string                                    `json:"Recipients,omitempty"`
+	EventHandlerParameters []EventHandlerEventHandlerParameterRequest  `json:"EventHandlerParameters,omitempty"`
+	UseWorkflows           *bool                                       `json:"UseWorkflows,omitempty"`
+	Schedule               *KeyfactorCommonSchedulingKeyfactorSchedule `json:"Schedule,omitempty"`
 }
 
 // NewAlertsExpirationExpirationAlertCreationRequest instantiates a new AlertsExpirationExpirationAlertCreationRequest object
@@ -359,6 +360,38 @@ func (o *AlertsExpirationExpirationAlertCreationRequest) SetUseWorkflows(v bool)
 	o.UseWorkflows = &v
 }
 
+// GetSchedule returns the Schedule field value if set, zero value otherwise.
+func (o *AlertsExpirationExpirationAlertCreationRequest) GetSchedule() KeyfactorCommonSchedulingKeyfactorSchedule {
+	if o == nil || isNil(o.Schedule) {
+		var ret KeyfactorCommonSchedulingKeyfactorSchedule
+		return ret
+	}
+	return *o.Schedule
+}
+
+// GetScheduleOk returns a tuple with the Schedule field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AlertsExpirationExpirationAlertCreationRequest) GetScheduleOk() (*KeyfactorCommonSchedulingKeyfactorSchedule, bool) {
+	if o == nil || isNil(o.Schedule) {
+		return nil, false
+	}
+	return o.Schedule, true
+}
+
+// HasSchedule returns a boolean if a field has been set.
+func (o *AlertsExpirationExpirationAlertCreationRequest) HasSchedule() bool {
+	if o != nil && !isNil(o.Schedule) {
+		return true
+	}
+
+	return false
+}
+
+// SetSchedule gets a reference to the given KeyfactorCommonSchedulingKeyfactorSchedule and assigns it to the Schedule field.
+func (o *AlertsExpirationExpirationAlertCreationRequest) SetSchedule(v KeyfactorCommonSchedulingKeyfactorSchedule) {
+	o.Schedule = &v
+}
+
 func (o AlertsExpirationExpirationAlertCreationRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -391,6 +424,9 @@ func (o AlertsExpirationExpirationAlertCreationRequest) ToMap() (map[string]inte
 	}
 	if !isNil(o.UseWorkflows) {
 		toSerialize["UseWorkflows"] = o.UseWorkflows
+	}
+	if !isNil(o.Schedule) {
+		toSerialize["Schedule"] = o.Schedule
 	}
 	return toSerialize, nil
 }

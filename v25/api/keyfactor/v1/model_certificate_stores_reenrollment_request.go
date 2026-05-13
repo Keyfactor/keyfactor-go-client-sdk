@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -38,6 +38,7 @@ type CertificateStoresReenrollmentRequest struct {
 	CertificateTemplate        NullableString         `json:"CertificateTemplate,omitempty"`
 	EnrollmentPatternId        NullableInt32          `json:"EnrollmentPatternId,omitempty"`
 	SANs                       map[string][]string    `json:"SANs,omitempty"`
+	Overwrite                  *bool                  `json:"Overwrite,omitempty"`
 	Metadata                   map[string]string      `json:"Metadata,omitempty"`
 	AdditionalEnrollmentFields map[string]string      `json:"AdditionalEnrollmentFields,omitempty"`
 	OwnerRoleId                NullableInt32          `json:"OwnerRoleId,omitempty"`
@@ -406,6 +407,38 @@ func (o *CertificateStoresReenrollmentRequest) SetSANs(v map[string][]string) {
 	o.SANs = v
 }
 
+// GetOverwrite returns the Overwrite field value if set, zero value otherwise.
+func (o *CertificateStoresReenrollmentRequest) GetOverwrite() bool {
+	if o == nil || isNil(o.Overwrite) {
+		var ret bool
+		return ret
+	}
+	return *o.Overwrite
+}
+
+// GetOverwriteOk returns a tuple with the Overwrite field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CertificateStoresReenrollmentRequest) GetOverwriteOk() (*bool, bool) {
+	if o == nil || isNil(o.Overwrite) {
+		return nil, false
+	}
+	return o.Overwrite, true
+}
+
+// HasOverwrite returns a boolean if a field has been set.
+func (o *CertificateStoresReenrollmentRequest) HasOverwrite() bool {
+	if o != nil && !isNil(o.Overwrite) {
+		return true
+	}
+
+	return false
+}
+
+// SetOverwrite gets a reference to the given bool and assigns it to the Overwrite field.
+func (o *CertificateStoresReenrollmentRequest) SetOverwrite(v bool) {
+	o.Overwrite = &v
+}
+
 // GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CertificateStoresReenrollmentRequest) GetMetadata() map[string]string {
 	if o == nil {
@@ -594,6 +627,9 @@ func (o CertificateStoresReenrollmentRequest) ToMap() (map[string]interface{}, e
 	}
 	if o.SANs != nil {
 		toSerialize["SANs"] = o.SANs
+	}
+	if !isNil(o.Overwrite) {
+		toSerialize["Overwrite"] = o.Overwrite
 	}
 	if o.Metadata != nil {
 		toSerialize["Metadata"] = o.Metadata

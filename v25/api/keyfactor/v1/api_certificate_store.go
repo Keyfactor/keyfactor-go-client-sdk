@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -138,10 +138,10 @@ func (a *CertificateStoreApiService) CreateCertificateStoresExecute(r ApiCreateC
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.cSSCMSDataModelModelsCertificateStoresCertificateStoreCreateRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -283,10 +283,10 @@ func (a *CertificateStoreApiService) CreateCertificateStoresApproveExecute(r Api
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.certificateStoresCertificateStoreApproveRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -422,10 +422,10 @@ func (a *CertificateStoreApiService) CreateCertificateStoresCertificatesAddExecu
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.certificateStoresAddCertificateRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -570,10 +570,10 @@ func (a *CertificateStoreApiService) CreateCertificateStoresCertificatesRemoveEx
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.certificateStoresRemoveCertificateRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -715,10 +715,10 @@ func (a *CertificateStoreApiService) CreateCertificateStoresReenrollmentExecute(
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.certificateStoresReenrollmentRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -851,10 +851,10 @@ func (a *CertificateStoreApiService) CreateCertificateStoresScheduleExecute(r Ap
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.cSSCMSDataModelModelsCertStoresSchedule
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -989,10 +989,10 @@ func (a *CertificateStoreApiService) DeleteCertificateStoresExecute(r ApiDeleteC
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.requestBody
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -1123,10 +1123,10 @@ func (a *CertificateStoreApiService) DeleteCertificateStoresByIdExecute(r ApiDel
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1331,10 +1331,167 @@ func (a *CertificateStoreApiService) GetCertificateStoresExecute(r ApiGetCertifi
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// Request for V1 GET /CertificateStores/Aliases
+type ApiGetCertificateStoresAliasesRequest struct {
+	ctx                     context.Context
+	ApiService              *CertificateStoreApiService
+	xKeyfactorRequestedWith *string
+	ids                     *[]string
+	xKeyfactorApiVersion    *string
+}
+
+// Type of the request [XMLHttpRequest, APIClient]
+func (r ApiGetCertificateStoresAliasesRequest) XKeyfactorRequestedWith(xKeyfactorRequestedWith string) ApiGetCertificateStoresAliasesRequest {
+	r.xKeyfactorRequestedWith = &xKeyfactorRequestedWith
+	return r
+}
+
+// certificate store ids.
+func (r ApiGetCertificateStoresAliasesRequest) Ids(ids []string) ApiGetCertificateStoresAliasesRequest {
+	r.ids = &ids
+	return r
+}
+
+// Desired version of the api, if not provided defaults to v1
+func (r ApiGetCertificateStoresAliasesRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) ApiGetCertificateStoresAliasesRequest {
+	r.xKeyfactorApiVersion = &xKeyfactorApiVersion
+	return r
+}
+
+// Executes the V1 GET /CertificateStores/Aliases request context
+func (r ApiGetCertificateStoresAliasesRequest) Execute() (*CertificateStoresCertificateStoreAliasesResponse, *http.Response, error) {
+	return r.ApiService.GetCertificateStoresAliasesExecute(r)
+}
+
+/*
+Creates a new V1 GET /CertificateStores/Aliases request.
+
+GetCertificateStoresAliases Retrieves lists of aliases contained in the certificate stores associated with the provided ids.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetCertificateStoresAliasesRequest
+*/
+func (a *CertificateStoreApiService) NewGetCertificateStoresAliasesRequest(ctx context.Context) ApiGetCertificateStoresAliasesRequest {
+
+	requestedWith := "APIClient"
+	apiVersion := "1"
+
+	return ApiGetCertificateStoresAliasesRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		xKeyfactorRequestedWith: &requestedWith,
+		xKeyfactorApiVersion:    &apiVersion,
+	}
+}
+
+// Executes the API request V1 GET /CertificateStores/Aliases
+//
+//	@return CertificateStoresCertificateStoreAliasesResponse
+func (a *CertificateStoreApiService) GetCertificateStoresAliasesExecute(r ApiGetCertificateStoresAliasesRequest) (*CertificateStoresCertificateStoreAliasesResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CertificateStoresCertificateStoreAliasesResponse
+	)
+
+	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
+
+	if r.xKeyfactorRequestedWith == nil {
+		requestedWith := "APIClient"
+		r.xKeyfactorRequestedWith = &requestedWith
+	}
+
+	if r.xKeyfactorApiVersion == nil {
+		apiVersion := "1"
+		r.xKeyfactorApiVersion = &apiVersion
+	}
+
+	localVarPath := apiBasePath + "/CertificateStores/Aliases"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+
+	if r.ids != nil {
+		t := *r.ids
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToQuery(localVarQueryParams, "ids", s.Index(i), "multi")
+			}
+		} else {
+			parameterAddToQuery(localVarQueryParams, "ids", t, "multi")
+		}
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
 	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
+	if r.xKeyfactorApiVersion != nil {
+		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1475,10 +1632,10 @@ func (a *CertificateStoreApiService) GetCertificateStoresByIdExecute(r ApiGetCer
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1655,227 +1812,10 @@ func (a *CertificateStoreApiService) GetCertificateStoresByIdInventoryExecute(r 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-// Request for V1 GET /CertificateStores/Inventory
-type ApiGetCertificateStoresInventoryRequest struct {
-	ctx                     context.Context
-	ApiService              *CertificateStoreApiService
-	xKeyfactorRequestedWith *string
-	performRoleCheck        *bool
-	roleIdList              *[]int32
-	queryString             *string
-	pageReturned            *int32
-	returnLimit             *int32
-	sortField               *string
-	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
-	xKeyfactorApiVersion    *string
-}
-
-// Type of the request [XMLHttpRequest, APIClient]
-func (r ApiGetCertificateStoresInventoryRequest) XKeyfactorRequestedWith(xKeyfactorRequestedWith string) ApiGetCertificateStoresInventoryRequest {
-	r.xKeyfactorRequestedWith = &xKeyfactorRequestedWith
-	return r
-}
-
-// Set to &#39;true&#39; if role permissions for the current user should be validated
-func (r ApiGetCertificateStoresInventoryRequest) PerformRoleCheck(performRoleCheck bool) ApiGetCertificateStoresInventoryRequest {
-	r.performRoleCheck = &performRoleCheck
-	return r
-}
-
-// List of Keyfactor role identifiers (integer) used to determine permissions if provided
-func (r ApiGetCertificateStoresInventoryRequest) RoleIdList(roleIdList []int32) ApiGetCertificateStoresInventoryRequest {
-	r.roleIdList = &roleIdList
-	return r
-}
-
-// Contents of the query (ex: field1 -eq value1 AND field2 -gt value2)
-func (r ApiGetCertificateStoresInventoryRequest) QueryString(queryString string) ApiGetCertificateStoresInventoryRequest {
-	r.queryString = &queryString
-	return r
-}
-
-// The current page within the result set to be returned
-func (r ApiGetCertificateStoresInventoryRequest) PageReturned(pageReturned int32) ApiGetCertificateStoresInventoryRequest {
-	r.pageReturned = &pageReturned
-	return r
-}
-
-// Maximum number of records to be returned in a single call
-func (r ApiGetCertificateStoresInventoryRequest) ReturnLimit(returnLimit int32) ApiGetCertificateStoresInventoryRequest {
-	r.returnLimit = &returnLimit
-	return r
-}
-
-// Field by which the results should be sorted (view results via Management Portal for sortable columns)
-func (r ApiGetCertificateStoresInventoryRequest) SortField(sortField string) ApiGetCertificateStoresInventoryRequest {
-	r.sortField = &sortField
-	return r
-}
-
-// Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
-func (r ApiGetCertificateStoresInventoryRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiGetCertificateStoresInventoryRequest {
-	r.sortAscending = &sortAscending
-	return r
-}
-
-// Desired version of the api, if not provided defaults to v1
-func (r ApiGetCertificateStoresInventoryRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) ApiGetCertificateStoresInventoryRequest {
-	r.xKeyfactorApiVersion = &xKeyfactorApiVersion
-	return r
-}
-
-// Executes the V1 GET /CertificateStores/Inventory request context
-func (r ApiGetCertificateStoresInventoryRequest) Execute() ([]CertificateStoresCertificateStoreInventoryResponse, *http.Response, error) {
-	return r.ApiService.GetCertificateStoresInventoryExecute(r)
-}
-
-/*
-Creates a new V1 GET /CertificateStores/Inventory request.
-
-GetCertificateStoresInventory Returns certificate store inventories associated with the provided query
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetCertificateStoresInventoryRequest
-*/
-func (a *CertificateStoreApiService) NewGetCertificateStoresInventoryRequest(ctx context.Context) ApiGetCertificateStoresInventoryRequest {
-
-	requestedWith := "APIClient"
-	apiVersion := "1"
-
-	return ApiGetCertificateStoresInventoryRequest{
-		ApiService:              a,
-		ctx:                     ctx,
-		xKeyfactorRequestedWith: &requestedWith,
-		xKeyfactorApiVersion:    &apiVersion,
-	}
-}
-
-// Executes the API request V1 GET /CertificateStores/Inventory
-//
-//	@return []CertificateStoresCertificateStoreInventoryResponse
-func (a *CertificateStoreApiService) GetCertificateStoresInventoryExecute(r ApiGetCertificateStoresInventoryRequest) ([]CertificateStoresCertificateStoreInventoryResponse, *http.Response, error) {
-	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []CertificateStoresCertificateStoreInventoryResponse
-	)
-
-	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
-	if apiBasePath == "" {
-		apiBasePath = "/KeyfactorAPI"
-	}
-
-	if r.xKeyfactorRequestedWith == nil {
-		requestedWith := "APIClient"
-		r.xKeyfactorRequestedWith = &requestedWith
-	}
-
-	if r.xKeyfactorApiVersion == nil {
-		apiVersion := "1"
-		r.xKeyfactorApiVersion = &apiVersion
-	}
-
-	localVarPath := apiBasePath + "/CertificateStores/Inventory"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.xKeyfactorRequestedWith == nil {
-		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
-	}
-
-	if r.performRoleCheck != nil {
-		parameterAddToQuery(localVarQueryParams, "PerformRoleCheck", r.performRoleCheck, "")
-	}
-	if r.roleIdList != nil {
-		t := *r.roleIdList
-		if reflect.TypeOf(t).Kind() == reflect.Slice {
-			s := reflect.ValueOf(t)
-			for i := 0; i < s.Len(); i++ {
-				parameterAddToQuery(localVarQueryParams, "RoleIdList", s.Index(i), "multi")
-			}
-		} else {
-			parameterAddToQuery(localVarQueryParams, "RoleIdList", t, "multi")
-		}
-	}
-	if r.queryString != nil {
-		parameterAddToQuery(localVarQueryParams, "QueryString", r.queryString, "")
-	}
-	if r.pageReturned != nil {
-		parameterAddToQuery(localVarQueryParams, "PageReturned", r.pageReturned, "")
-	}
-	if r.returnLimit != nil {
-		parameterAddToQuery(localVarQueryParams, "ReturnLimit", r.returnLimit, "")
-	}
-	if r.sortField != nil {
-		parameterAddToQuery(localVarQueryParams, "SortField", r.sortField, "")
-	}
-	if r.sortAscending != nil {
-		parameterAddToQuery(localVarQueryParams, "SortAscending", r.sortAscending, "")
-	}
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.xKeyfactorApiVersion != nil {
-		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
-	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2018,12 +1958,160 @@ func (a *CertificateStoreApiService) UpdateCertificateStoresExecute(r ApiUpdateC
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.cSSCMSDataModelModelsCertificateStoresCertificateStoreUpdateRequest
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// Request for V1 PUT /CertificateStores/AssignApplication
+type ApiUpdateCertificateStoresAssignApplicationRequest struct {
+	ctx                                    context.Context
+	ApiService                             *CertificateStoreApiService
+	xKeyfactorRequestedWith                *string
+	xKeyfactorApiVersion                   *string
+	certificateStoresApplicationAssignment *CertificateStoresApplicationAssignment
+}
+
+// Type of the request [XMLHttpRequest, APIClient]
+func (r ApiUpdateCertificateStoresAssignApplicationRequest) XKeyfactorRequestedWith(xKeyfactorRequestedWith string) ApiUpdateCertificateStoresAssignApplicationRequest {
+	r.xKeyfactorRequestedWith = &xKeyfactorRequestedWith
+	return r
+}
+
+// Desired version of the api, if not provided defaults to v1
+func (r ApiUpdateCertificateStoresAssignApplicationRequest) XKeyfactorApiVersion(xKeyfactorApiVersion string) ApiUpdateCertificateStoresAssignApplicationRequest {
+	r.xKeyfactorApiVersion = &xKeyfactorApiVersion
+	return r
+}
+
+// Keyfactor certificate store identifiers and the application properties
+func (r ApiUpdateCertificateStoresAssignApplicationRequest) CertificateStoresApplicationAssignment(certificateStoresApplicationAssignment CertificateStoresApplicationAssignment) ApiUpdateCertificateStoresAssignApplicationRequest {
+	r.certificateStoresApplicationAssignment = &certificateStoresApplicationAssignment
+	return r
+}
+
+// Executes the V1 PUT /CertificateStores/AssignApplication request context
+func (r ApiUpdateCertificateStoresAssignApplicationRequest) Execute() ([]CertificateStoresCertificateStoreApplicationResponse, *http.Response, error) {
+	return r.ApiService.UpdateCertificateStoresAssignApplicationExecute(r)
+}
+
+/*
+Creates a new V1 PUT /CertificateStores/AssignApplication request.
+
+UpdateCertificateStoresAssignApplication Assigns the provided certificate stores to the provided application
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateCertificateStoresAssignApplicationRequest
+*/
+func (a *CertificateStoreApiService) NewUpdateCertificateStoresAssignApplicationRequest(ctx context.Context) ApiUpdateCertificateStoresAssignApplicationRequest {
+
+	requestedWith := "APIClient"
+	apiVersion := "1"
+
+	return ApiUpdateCertificateStoresAssignApplicationRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		xKeyfactorRequestedWith: &requestedWith,
+		xKeyfactorApiVersion:    &apiVersion,
+	}
+}
+
+// Executes the API request V1 PUT /CertificateStores/AssignApplication
+//
+//	@return []CertificateStoresCertificateStoreApplicationResponse
+func (a *CertificateStoreApiService) UpdateCertificateStoresAssignApplicationExecute(r ApiUpdateCertificateStoresAssignApplicationRequest) ([]CertificateStoresCertificateStoreApplicationResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CertificateStoresCertificateStoreApplicationResponse
+	)
+
+	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
+	if apiBasePath == "" {
+		apiBasePath = "/KeyfactorAPI"
+	}
+
+	if r.xKeyfactorRequestedWith == nil {
+		requestedWith := "APIClient"
+		r.xKeyfactorRequestedWith = &requestedWith
+	}
+
+	if r.xKeyfactorApiVersion == nil {
+		apiVersion := "1"
+		r.xKeyfactorApiVersion = &apiVersion
+	}
+
+	localVarPath := apiBasePath + "/CertificateStores/AssignApplication"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.xKeyfactorRequestedWith == nil {
+		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json-patch+json", "application/json", "text/json", "application/*+json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
+	if r.xKeyfactorApiVersion != nil {
+		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
+	}
+	// body params
+	localVarPostBody = r.certificateStoresApplicationAssignment
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2100,6 +2188,8 @@ UpdateCertificateStoresAssignContainer Assigns the provided certificate stores t
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateCertificateStoresAssignContainerRequest
+
+Deprecated
 */
 func (a *CertificateStoreApiService) NewUpdateCertificateStoresAssignContainerRequest(ctx context.Context) ApiUpdateCertificateStoresAssignContainerRequest {
 
@@ -2117,6 +2207,8 @@ func (a *CertificateStoreApiService) NewUpdateCertificateStoresAssignContainerRe
 // Executes the API request V1 PUT /CertificateStores/AssignContainer
 //
 //	@return []CertificateStoresCertificateStoreResponse
+//
+// Deprecated
 func (a *CertificateStoreApiService) UpdateCertificateStoresAssignContainerExecute(r ApiUpdateCertificateStoresAssignContainerRequest) ([]CertificateStoresCertificateStoreResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -2166,10 +2258,10 @@ func (a *CertificateStoreApiService) UpdateCertificateStoresAssignContainerExecu
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.cSSCMSDataModelModelsContainerAssignment
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -2311,10 +2403,10 @@ func (a *CertificateStoreApiService) UpdateCertificateStoresDiscoveryJobExecute(
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.cSSCMSDataModelModelsDiscoveryJobRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -2447,10 +2539,10 @@ func (a *CertificateStoreApiService) UpdateCertificateStoresPasswordExecute(r Ap
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.cSSCMSDataModelModelsCertStoreNewPasswordRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

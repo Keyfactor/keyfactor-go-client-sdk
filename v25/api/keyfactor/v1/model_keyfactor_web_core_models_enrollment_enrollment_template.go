@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -36,7 +36,7 @@ type KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate struct {
 	RequiresApproval         *bool                                                     `json:"RequiresApproval,omitempty"`
 	RFCEnforcement           *bool                                                     `json:"RFCEnforcement,omitempty"`
 	CAs                      []KeyfactorWebCoreModelsEnrollmentEnrollmentCA            `json:"CAs,omitempty"`
-	EnrollmentFields         []CSSCMSDataModelModelsTemplatesTemplateEnrollmentField   `json:"EnrollmentFields,omitempty"`
+	EnrollmentFields         []KeyfactorWebCoreModelsEnrollmentTemplateEnrollmentField `json:"EnrollmentFields,omitempty"`
 	MetadataFields           []CSSCMSDataModelModelsTemplatesTemplateMetadataField     `json:"MetadataFields,omitempty"`
 	Regexes                  []KeyfactorWebCoreModelsEnrollmentEnrollmentTemplateRegex `json:"Regexes,omitempty"`
 	ExtendedKeyUsages        []CSSCMSDataModelModelsExtendedKeyUsage                   `json:"ExtendedKeyUsages,omitempty"`
@@ -322,9 +322,9 @@ func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) SetCAs(v []Keyfacto
 }
 
 // GetEnrollmentFields returns the EnrollmentFields field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetEnrollmentFields() []CSSCMSDataModelModelsTemplatesTemplateEnrollmentField {
+func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetEnrollmentFields() []KeyfactorWebCoreModelsEnrollmentTemplateEnrollmentField {
 	if o == nil {
-		var ret []CSSCMSDataModelModelsTemplatesTemplateEnrollmentField
+		var ret []KeyfactorWebCoreModelsEnrollmentTemplateEnrollmentField
 		return ret
 	}
 	return o.EnrollmentFields
@@ -333,7 +333,7 @@ func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetEnrollmentFields
 // GetEnrollmentFieldsOk returns a tuple with the EnrollmentFields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetEnrollmentFieldsOk() ([]CSSCMSDataModelModelsTemplatesTemplateEnrollmentField, bool) {
+func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) GetEnrollmentFieldsOk() ([]KeyfactorWebCoreModelsEnrollmentTemplateEnrollmentField, bool) {
 	if o == nil || isNil(o.EnrollmentFields) {
 		return nil, false
 	}
@@ -349,8 +349,8 @@ func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) HasEnrollmentFields
 	return false
 }
 
-// SetEnrollmentFields gets a reference to the given []CSSCMSDataModelModelsTemplatesTemplateEnrollmentField and assigns it to the EnrollmentFields field.
-func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) SetEnrollmentFields(v []CSSCMSDataModelModelsTemplatesTemplateEnrollmentField) {
+// SetEnrollmentFields gets a reference to the given []KeyfactorWebCoreModelsEnrollmentTemplateEnrollmentField and assigns it to the EnrollmentFields field.
+func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplate) SetEnrollmentFields(v []KeyfactorWebCoreModelsEnrollmentTemplateEnrollmentField) {
 	o.EnrollmentFields = v
 }
 

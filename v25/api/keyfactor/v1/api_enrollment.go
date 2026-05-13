@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -39,6 +39,7 @@ type ApiCreateEnrollmentCSRRequest struct {
 	xKeyfactorRequestedWith        *string
 	xCertificateformat             *string
 	forceEnroll                    *bool
+	collectionId                   *int32
 	xKeyfactorApiVersion           *string
 	enrollmentCSREnrollmentRequest *EnrollmentCSREnrollmentRequest
 }
@@ -57,6 +58,11 @@ func (r ApiCreateEnrollmentCSRRequest) XCertificateformat(xCertificateformat str
 
 func (r ApiCreateEnrollmentCSRRequest) ForceEnroll(forceEnroll bool) ApiCreateEnrollmentCSRRequest {
 	r.forceEnroll = &forceEnroll
+	return r
+}
+
+func (r ApiCreateEnrollmentCSRRequest) CollectionId(collectionId int32) ApiCreateEnrollmentCSRRequest {
+	r.collectionId = &collectionId
 	return r
 }
 
@@ -156,6 +162,9 @@ func (a *EnrollmentApiService) CreateEnrollmentCSRExecute(r ApiCreateEnrollmentC
 	if r.forceEnroll != nil {
 		parameterAddToQuery(localVarQueryParams, "forceEnroll", r.forceEnroll, "")
 	}
+	if r.collectionId != nil {
+		parameterAddToQuery(localVarQueryParams, "collectionId", r.collectionId, "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json", "application/json", "text/json", "application/*+json"}
 
@@ -173,11 +182,11 @@ func (a *EnrollmentApiService) CreateEnrollmentCSRExecute(r ApiCreateEnrollmentC
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
+	parameterAddToQuery(localVarHeaderParams, "x-certificateformat", r.xCertificateformat, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
-	parameterAddToQuery(localVarHeaderParams, "x-certificateformat", r.xCertificateformat, "")
 	// body params
 	localVarPostBody = r.enrollmentCSREnrollmentRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -324,10 +333,10 @@ func (a *EnrollmentApiService) CreateEnrollmentCSRParseExecute(r ApiCreateEnroll
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.cSSCMSDataModelModelsCSRContents
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -502,11 +511,11 @@ func (a *EnrollmentApiService) CreateEnrollmentPFXExecute(r ApiCreateEnrollmentP
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
+	parameterAddToQuery(localVarHeaderParams, "x-certificateformat", r.xCertificateformat, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
-	parameterAddToQuery(localVarHeaderParams, "x-certificateformat", r.xCertificateformat, "")
 	// body params
 	localVarPostBody = r.enrollmentPFXEnrollmentRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -651,10 +660,10 @@ func (a *EnrollmentApiService) CreateEnrollmentPFXDeployExecute(r ApiCreateEnrol
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.enrollmentEnrollmentManagementRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -799,10 +808,10 @@ func (a *EnrollmentApiService) CreateEnrollmentPFXReplaceExecute(r ApiCreateEnro
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.cSSCMSDataModelModelsEnrollmentExistingEnrollmentManagementRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -848,6 +857,7 @@ type ApiCreateEnrollmentRenewRequest struct {
 	ApiService                *EnrollmentApiService
 	xKeyfactorRequestedWith   *string
 	collectionId              *int32
+	containerId               *int32
 	xKeyfactorApiVersion      *string
 	enrollmentRenewAPIRequest *EnrollmentRenewAPIRequest
 }
@@ -861,6 +871,12 @@ func (r ApiCreateEnrollmentRenewRequest) XKeyfactorRequestedWith(xKeyfactorReque
 // The collection id for the given certificate
 func (r ApiCreateEnrollmentRenewRequest) CollectionId(collectionId int32) ApiCreateEnrollmentRenewRequest {
 	r.collectionId = &collectionId
+	return r
+}
+
+// The container id for the given certificate
+func (r ApiCreateEnrollmentRenewRequest) ContainerId(containerId int32) ApiCreateEnrollmentRenewRequest {
+	r.containerId = &containerId
 	return r
 }
 
@@ -940,6 +956,9 @@ func (a *EnrollmentApiService) CreateEnrollmentRenewExecute(r ApiCreateEnrollmen
 	if r.collectionId != nil {
 		parameterAddToQuery(localVarQueryParams, "collectionId", r.collectionId, "")
 	}
+	if r.containerId != nil {
+		parameterAddToQuery(localVarQueryParams, "containerId", r.containerId, "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json", "application/json", "text/json", "application/*+json"}
 
@@ -957,10 +976,10 @@ func (a *EnrollmentApiService) CreateEnrollmentRenewExecute(r ApiCreateEnrollmen
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.enrollmentRenewAPIRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -1007,6 +1026,7 @@ type ApiGetEnrollmentAvailableRenewalIdByIdRequest struct {
 	id                      int32
 	xKeyfactorRequestedWith *string
 	collectionId            *int32
+	containerId             *int32
 	xKeyfactorApiVersion    *string
 }
 
@@ -1019,6 +1039,12 @@ func (r ApiGetEnrollmentAvailableRenewalIdByIdRequest) XKeyfactorRequestedWith(x
 // The collection id for the given certificate
 func (r ApiGetEnrollmentAvailableRenewalIdByIdRequest) CollectionId(collectionId int32) ApiGetEnrollmentAvailableRenewalIdByIdRequest {
 	r.collectionId = &collectionId
+	return r
+}
+
+// The container id for the given certificate
+func (r ApiGetEnrollmentAvailableRenewalIdByIdRequest) ContainerId(containerId int32) ApiGetEnrollmentAvailableRenewalIdByIdRequest {
+	r.containerId = &containerId
 	return r
 }
 
@@ -1036,14 +1062,15 @@ func (r ApiGetEnrollmentAvailableRenewalIdByIdRequest) Execute() (*CSSCMSDataMod
 /*
 Creates a new V1 GET /Enrollment/AvailableRenewal/Id/{id} request.
 
-GetEnrollmentAvailableRenewalIdById Returns the type of renewal available for a given certificate.
+GetEnrollmentAvailableRenewalIdById Returns the collection of enum flags for the type of renewal available for a given certificate.
 
 ### Available Renewal Types ###
 | Value              | Description               |
 |--------------------|---------------------------|
-| 0              | None                 |
-| 1             | Seeded PFX                |
+| 0                | None                        |
+| 1                | Seeded PFX                  |
 | 2                | One-click                   |
+| 4                | Seeded CSR                  |
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id The Keyfactor certificate Id
@@ -1109,6 +1136,9 @@ func (a *EnrollmentApiService) GetEnrollmentAvailableRenewalIdByIdExecute(r ApiG
 	if r.collectionId != nil {
 		parameterAddToQuery(localVarQueryParams, "collectionId", r.collectionId, "")
 	}
+	if r.containerId != nil {
+		parameterAddToQuery(localVarQueryParams, "containerId", r.containerId, "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1126,10 +1156,10 @@ func (a *EnrollmentApiService) GetEnrollmentAvailableRenewalIdByIdExecute(r ApiG
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1203,7 +1233,7 @@ func (r ApiGetEnrollmentAvailableRenewalThumbprintThumbprintRequest) Execute() (
 /*
 Creates a new V1 GET /Enrollment/AvailableRenewal/Thumbprint/{thumbprint} request.
 
-GetEnrollmentAvailableRenewalThumbprintThumbprint Returns the type of renewal available for a given certificate.
+GetEnrollmentAvailableRenewalThumbprintThumbprint Returns the collection of enum flags for the type of renewal available for a given certificate.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param thumbprint The certificate thumbprint
@@ -1280,10 +1310,10 @@ func (a *EnrollmentApiService) GetEnrollmentAvailableRenewalThumbprintThumbprint
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1419,10 +1449,10 @@ func (a *EnrollmentApiService) GetEnrollmentCSRContextMyExecute(r ApiGetEnrollme
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1558,10 +1588,10 @@ func (a *EnrollmentApiService) GetEnrollmentPFXContextMyExecute(r ApiGetEnrollme
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1628,7 +1658,7 @@ func (r ApiGetEnrollmentSettingsByIdRequest) Execute() (*TemplatesEnrollmentTemp
 /*
 Creates a new V1 GET /Enrollment/Settings/{id} request.
 
-GetEnrollmentSettingsById Gets the template settings to use during enrollment. The response will be the resolved values for the settings.  If there is a template specific setting, the template specific setting will be used in the response.  If there is not a template specific setting, the global setting will be used in the response.
+GetEnrollmentSettingsById Gets the template settings to use during enrollment. The response will be the resolved values for the settings. If there is a template specific setting, the template specific setting will be used in the response. If there is not a template specific setting, the global setting will be used in the response.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id
@@ -1708,10 +1738,10 @@ func (a *EnrollmentApiService) GetEnrollmentSettingsByIdExecute(r ApiGetEnrollme
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

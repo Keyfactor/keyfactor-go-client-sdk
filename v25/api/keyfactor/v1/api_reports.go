@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -73,6 +73,8 @@ CreateReportsByIdSchedules Create a built-in report's schedule that matches the 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Report identifier
 	@return ApiCreateReportsByIdSchedulesRequest
+
+Deprecated
 */
 func (a *ReportsApiService) NewCreateReportsByIdSchedulesRequest(ctx context.Context, id int32) ApiCreateReportsByIdSchedulesRequest {
 
@@ -92,6 +94,8 @@ func (a *ReportsApiService) NewCreateReportsByIdSchedulesRequest(ctx context.Con
 // Executes the API request V1 POST /Reports/{id}/Schedules
 //
 //	@return ReportsReportSchedulesReportScheduleResponse
+//
+// Deprecated
 func (a *ReportsApiService) CreateReportsByIdSchedulesExecute(r ApiCreateReportsByIdSchedulesRequest) (*ReportsReportSchedulesReportScheduleResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -142,10 +146,10 @@ func (a *ReportsApiService) CreateReportsByIdSchedulesExecute(r ApiCreateReports
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.reportsReportSchedulesReportScheduleCreationRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -224,6 +228,8 @@ CreateReportsCustom Creates a custom report
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateReportsCustomRequest
+
+Deprecated
 */
 func (a *ReportsApiService) NewCreateReportsCustomRequest(ctx context.Context) ApiCreateReportsCustomRequest {
 
@@ -241,6 +247,8 @@ func (a *ReportsApiService) NewCreateReportsCustomRequest(ctx context.Context) A
 // Executes the API request V1 POST /Reports/Custom
 //
 //	@return ReportsCustomReportsCustomReportResponse
+//
+// Deprecated
 func (a *ReportsApiService) CreateReportsCustomExecute(r ApiCreateReportsCustomRequest) (*ReportsCustomReportsCustomReportResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -290,10 +298,10 @@ func (a *ReportsApiService) CreateReportsCustomExecute(r ApiCreateReportsCustomR
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.reportsCustomReportsCustomReportCreationRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -367,6 +375,8 @@ DeleteReportsCustomById Delete custom report that matches the id
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Report identifier
 	@return ApiDeleteReportsCustomByIdRequest
+
+Deprecated
 */
 func (a *ReportsApiService) NewDeleteReportsCustomByIdRequest(ctx context.Context, id int32) ApiDeleteReportsCustomByIdRequest {
 
@@ -384,6 +394,7 @@ func (a *ReportsApiService) NewDeleteReportsCustomByIdRequest(ctx context.Contex
 }
 
 // Executes the API request
+// Deprecated
 func (a *ReportsApiService) DeleteReportsCustomByIdExecute(r ApiDeleteReportsCustomByIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -439,10 +450,10 @@ func (a *ReportsApiService) DeleteReportsCustomByIdExecute(r ApiDeleteReportsCus
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -505,6 +516,8 @@ DeleteReportsSchedulesById Delete a built-in report's schedule that matches the 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Report Schedule identifier
 	@return ApiDeleteReportsSchedulesByIdRequest
+
+Deprecated
 */
 func (a *ReportsApiService) NewDeleteReportsSchedulesByIdRequest(ctx context.Context, id int32) ApiDeleteReportsSchedulesByIdRequest {
 
@@ -522,6 +535,7 @@ func (a *ReportsApiService) NewDeleteReportsSchedulesByIdRequest(ctx context.Con
 }
 
 // Executes the API request
+// Deprecated
 func (a *ReportsApiService) DeleteReportsSchedulesByIdExecute(r ApiDeleteReportsSchedulesByIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -571,10 +585,10 @@ func (a *ReportsApiService) DeleteReportsSchedulesByIdExecute(r ApiDeleteReports
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -665,6 +679,8 @@ GetReports Returns all built-in reports according to the provided filter and out
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetReportsRequest
+
+Deprecated
 */
 func (a *ReportsApiService) NewGetReportsRequest(ctx context.Context) ApiGetReportsRequest {
 
@@ -682,6 +698,8 @@ func (a *ReportsApiService) NewGetReportsRequest(ctx context.Context) ApiGetRepo
 // Executes the API request V1 GET /Reports
 //
 //	@return []CSSCMSDataModelModelsReport
+//
+// Deprecated
 func (a *ReportsApiService) GetReportsExecute(r ApiGetReportsRequest) ([]CSSCMSDataModelModelsReport, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -746,10 +764,10 @@ func (a *ReportsApiService) GetReportsExecute(r ApiGetReportsRequest) ([]CSSCMSD
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -821,6 +839,8 @@ GetReportsById Returns a single built-in report that matches the id
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Report identifier
 	@return ApiGetReportsByIdRequest
+
+Deprecated
 */
 func (a *ReportsApiService) NewGetReportsByIdRequest(ctx context.Context, id int32) ApiGetReportsByIdRequest {
 
@@ -840,6 +860,8 @@ func (a *ReportsApiService) NewGetReportsByIdRequest(ctx context.Context, id int
 // Executes the API request V1 GET /Reports/{id}
 //
 //	@return CSSCMSDataModelModelsReport
+//
+// Deprecated
 func (a *ReportsApiService) GetReportsByIdExecute(r ApiGetReportsByIdRequest) (*CSSCMSDataModelModelsReport, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -896,10 +918,10 @@ func (a *ReportsApiService) GetReportsByIdExecute(r ApiGetReportsByIdRequest) (*
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -971,6 +993,8 @@ GetReportsByIdParameters Get a built-in report's parameters that matches the id 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Report identifier
 	@return ApiGetReportsByIdParametersRequest
+
+Deprecated
 */
 func (a *ReportsApiService) NewGetReportsByIdParametersRequest(ctx context.Context, id int32) ApiGetReportsByIdParametersRequest {
 
@@ -990,6 +1014,8 @@ func (a *ReportsApiService) NewGetReportsByIdParametersRequest(ctx context.Conte
 // Executes the API request V1 GET /Reports/{id}/Parameters
 //
 //	@return []CSSCMSDataModelModelsReportParameters
+//
+// Deprecated
 func (a *ReportsApiService) GetReportsByIdParametersExecute(r ApiGetReportsByIdParametersRequest) ([]CSSCMSDataModelModelsReportParameters, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1040,10 +1066,10 @@ func (a *ReportsApiService) GetReportsByIdParametersExecute(r ApiGetReportsByIdP
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1087,7 +1113,6 @@ type ApiGetReportsByIdSchedulesRequest struct {
 	ApiService              *ReportsApiService
 	id                      int32
 	xKeyfactorRequestedWith *string
-	queryString             *string
 	pageReturned            *int32
 	returnLimit             *int32
 	sortField               *string
@@ -1101,31 +1126,21 @@ func (r ApiGetReportsByIdSchedulesRequest) XKeyfactorRequestedWith(xKeyfactorReq
 	return r
 }
 
-// Contents of the query (ex: field1 -eq value1 AND field2 -gt value2)
-func (r ApiGetReportsByIdSchedulesRequest) QueryString(queryString string) ApiGetReportsByIdSchedulesRequest {
-	r.queryString = &queryString
-	return r
-}
-
-// The current page within the result set to be returned
 func (r ApiGetReportsByIdSchedulesRequest) PageReturned(pageReturned int32) ApiGetReportsByIdSchedulesRequest {
 	r.pageReturned = &pageReturned
 	return r
 }
 
-// Maximum number of records to be returned in a single call
 func (r ApiGetReportsByIdSchedulesRequest) ReturnLimit(returnLimit int32) ApiGetReportsByIdSchedulesRequest {
 	r.returnLimit = &returnLimit
 	return r
 }
 
-// Field by which the results should be sorted (view results via Management Portal for sortable columns)
 func (r ApiGetReportsByIdSchedulesRequest) SortField(sortField string) ApiGetReportsByIdSchedulesRequest {
 	r.sortField = &sortField
 	return r
 }
 
-// Field sort direction [0&#x3D;ascending, 1&#x3D;descending]
 func (r ApiGetReportsByIdSchedulesRequest) SortAscending(sortAscending KeyfactorCommonQueryableExtensionsSortOrder) ApiGetReportsByIdSchedulesRequest {
 	r.sortAscending = &sortAscending
 	return r
@@ -1150,6 +1165,8 @@ GetReportsByIdSchedules Get a built-in report's schedules that matches the id of
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Report identifier
 	@return ApiGetReportsByIdSchedulesRequest
+
+Deprecated
 */
 func (a *ReportsApiService) NewGetReportsByIdSchedulesRequest(ctx context.Context, id int32) ApiGetReportsByIdSchedulesRequest {
 
@@ -1169,6 +1186,8 @@ func (a *ReportsApiService) NewGetReportsByIdSchedulesRequest(ctx context.Contex
 // Executes the API request V1 GET /Reports/{id}/Schedules
 //
 //	@return []ReportsReportSchedulesReportScheduleResponse
+//
+// Deprecated
 func (a *ReportsApiService) GetReportsByIdSchedulesExecute(r ApiGetReportsByIdSchedulesRequest) ([]ReportsReportSchedulesReportScheduleResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1202,9 +1221,6 @@ func (a *ReportsApiService) GetReportsByIdSchedulesExecute(r ApiGetReportsByIdSc
 		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
 	}
 
-	if r.queryString != nil {
-		parameterAddToQuery(localVarQueryParams, "QueryString", r.queryString, "")
-	}
 	if r.pageReturned != nil {
 		parameterAddToQuery(localVarQueryParams, "PageReturned", r.pageReturned, "")
 	}
@@ -1234,10 +1250,10 @@ func (a *ReportsApiService) GetReportsByIdSchedulesExecute(r ApiGetReportsByIdSc
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1337,6 +1353,8 @@ GetReportsCustom Returns all custom reports according to the provided filter and
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetReportsCustomRequest
+
+Deprecated
 */
 func (a *ReportsApiService) NewGetReportsCustomRequest(ctx context.Context) ApiGetReportsCustomRequest {
 
@@ -1354,6 +1372,8 @@ func (a *ReportsApiService) NewGetReportsCustomRequest(ctx context.Context) ApiG
 // Executes the API request V1 GET /Reports/Custom
 //
 //	@return []ReportsCustomReportsCustomReportResponse
+//
+// Deprecated
 func (a *ReportsApiService) GetReportsCustomExecute(r ApiGetReportsCustomRequest) ([]ReportsCustomReportsCustomReportResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1418,10 +1438,10 @@ func (a *ReportsApiService) GetReportsCustomExecute(r ApiGetReportsCustomRequest
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1493,6 +1513,8 @@ GetReportsCustomById Returns a single custom report that matches the id
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Report identifier
 	@return ApiGetReportsCustomByIdRequest
+
+Deprecated
 */
 func (a *ReportsApiService) NewGetReportsCustomByIdRequest(ctx context.Context, id int32) ApiGetReportsCustomByIdRequest {
 
@@ -1512,6 +1534,8 @@ func (a *ReportsApiService) NewGetReportsCustomByIdRequest(ctx context.Context, 
 // Executes the API request V1 GET /Reports/Custom/{id}
 //
 //	@return ReportsCustomReportsCustomReportResponse
+//
+// Deprecated
 func (a *ReportsApiService) GetReportsCustomByIdExecute(r ApiGetReportsCustomByIdRequest) (*ReportsCustomReportsCustomReportResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1568,10 +1592,10 @@ func (a *ReportsApiService) GetReportsCustomByIdExecute(r ApiGetReportsCustomByI
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1643,6 +1667,8 @@ GetReportsSchedulesById Get a built-in report's schedule that matches the id of 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Report Schedule identifier
 	@return ApiGetReportsSchedulesByIdRequest
+
+Deprecated
 */
 func (a *ReportsApiService) NewGetReportsSchedulesByIdRequest(ctx context.Context, id int32) ApiGetReportsSchedulesByIdRequest {
 
@@ -1662,6 +1688,8 @@ func (a *ReportsApiService) NewGetReportsSchedulesByIdRequest(ctx context.Contex
 // Executes the API request V1 GET /Reports/Schedules/{id}
 //
 //	@return ReportsReportSchedulesReportScheduleResponse
+//
+// Deprecated
 func (a *ReportsApiService) GetReportsSchedulesByIdExecute(r ApiGetReportsSchedulesByIdRequest) (*ReportsReportSchedulesReportScheduleResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1712,10 +1740,10 @@ func (a *ReportsApiService) GetReportsSchedulesByIdExecute(r ApiGetReportsSchedu
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1792,6 +1820,8 @@ UpdateReports Updates a single built-in report that matches the id. Only some fi
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateReportsRequest
+
+Deprecated
 */
 func (a *ReportsApiService) NewUpdateReportsRequest(ctx context.Context) ApiUpdateReportsRequest {
 
@@ -1809,6 +1839,8 @@ func (a *ReportsApiService) NewUpdateReportsRequest(ctx context.Context) ApiUpda
 // Executes the API request V1 PUT /Reports
 //
 //	@return CSSCMSDataModelModelsReport
+//
+// Deprecated
 func (a *ReportsApiService) UpdateReportsExecute(r ApiUpdateReportsRequest) (*CSSCMSDataModelModelsReport, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1858,10 +1890,10 @@ func (a *ReportsApiService) UpdateReportsExecute(r ApiUpdateReportsRequest) (*CS
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.cSSCMSDataModelModelsReportRequestModel
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -1942,6 +1974,8 @@ UpdateReportsByIdParameters Update a built-in report's parameters that matches t
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Report identifier
 	@return ApiUpdateReportsByIdParametersRequest
+
+Deprecated
 */
 func (a *ReportsApiService) NewUpdateReportsByIdParametersRequest(ctx context.Context, id int32) ApiUpdateReportsByIdParametersRequest {
 
@@ -1961,6 +1995,8 @@ func (a *ReportsApiService) NewUpdateReportsByIdParametersRequest(ctx context.Co
 // Executes the API request V1 PUT /Reports/{id}/Parameters
 //
 //	@return []CSSCMSDataModelModelsReportParameters
+//
+// Deprecated
 func (a *ReportsApiService) UpdateReportsByIdParametersExecute(r ApiUpdateReportsByIdParametersRequest) ([]CSSCMSDataModelModelsReportParameters, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -2011,10 +2047,10 @@ func (a *ReportsApiService) UpdateReportsByIdParametersExecute(r ApiUpdateReport
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.cSSCMSDataModelModelsReportParametersRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -2095,6 +2131,8 @@ UpdateReportsByIdSchedules Update a built-in report's schedule that matches the 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Report identifier
 	@return ApiUpdateReportsByIdSchedulesRequest
+
+Deprecated
 */
 func (a *ReportsApiService) NewUpdateReportsByIdSchedulesRequest(ctx context.Context, id int32) ApiUpdateReportsByIdSchedulesRequest {
 
@@ -2114,6 +2152,8 @@ func (a *ReportsApiService) NewUpdateReportsByIdSchedulesRequest(ctx context.Con
 // Executes the API request V1 PUT /Reports/{id}/Schedules
 //
 //	@return ReportsReportSchedulesReportScheduleResponse
+//
+// Deprecated
 func (a *ReportsApiService) UpdateReportsByIdSchedulesExecute(r ApiUpdateReportsByIdSchedulesRequest) (*ReportsReportSchedulesReportScheduleResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -2164,10 +2204,10 @@ func (a *ReportsApiService) UpdateReportsByIdSchedulesExecute(r ApiUpdateReports
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.reportsReportSchedulesReportScheduleUpdateRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -2246,6 +2286,8 @@ UpdateReportsCustom Updates a custom report that matches the id
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateReportsCustomRequest
+
+Deprecated
 */
 func (a *ReportsApiService) NewUpdateReportsCustomRequest(ctx context.Context) ApiUpdateReportsCustomRequest {
 
@@ -2263,6 +2305,8 @@ func (a *ReportsApiService) NewUpdateReportsCustomRequest(ctx context.Context) A
 // Executes the API request V1 PUT /Reports/Custom
 //
 //	@return ReportsCustomReportsCustomReportResponse
+//
+// Deprecated
 func (a *ReportsApiService) UpdateReportsCustomExecute(r ApiUpdateReportsCustomRequest) (*ReportsCustomReportsCustomReportResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -2312,10 +2356,10 @@ func (a *ReportsApiService) UpdateReportsCustomExecute(r ApiUpdateReportsCustomR
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.reportsCustomReportsCustomReportUpdateRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

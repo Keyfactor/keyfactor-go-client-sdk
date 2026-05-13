@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -31,7 +31,6 @@ var _ MappedNullable = &CSSCMSDataModelModelsSSLEndpoint{}
 type CSSCMSDataModelModelsSSLEndpoint struct {
 	EndpointId     *string        `json:"EndpointId,omitempty"`
 	NetworkId      *string        `json:"NetworkId,omitempty"`
-	LastHistoryId  NullableString `json:"LastHistoryId,omitempty"`
 	IpAddressBytes NullableString `json:"IpAddressBytes,omitempty"`
 	Port           *int32         `json:"Port,omitempty"`
 	SNIName        NullableString `json:"SNIName,omitempty"`
@@ -118,49 +117,6 @@ func (o *CSSCMSDataModelModelsSSLEndpoint) HasNetworkId() bool {
 // SetNetworkId gets a reference to the given string and assigns it to the NetworkId field.
 func (o *CSSCMSDataModelModelsSSLEndpoint) SetNetworkId(v string) {
 	o.NetworkId = &v
-}
-
-// GetLastHistoryId returns the LastHistoryId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CSSCMSDataModelModelsSSLEndpoint) GetLastHistoryId() string {
-	if o == nil || isNil(o.LastHistoryId.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.LastHistoryId.Get()
-}
-
-// GetLastHistoryIdOk returns a tuple with the LastHistoryId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CSSCMSDataModelModelsSSLEndpoint) GetLastHistoryIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.LastHistoryId.Get(), o.LastHistoryId.IsSet()
-}
-
-// HasLastHistoryId returns a boolean if a field has been set.
-func (o *CSSCMSDataModelModelsSSLEndpoint) HasLastHistoryId() bool {
-	if o != nil && o.LastHistoryId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetLastHistoryId gets a reference to the given NullableString and assigns it to the LastHistoryId field.
-func (o *CSSCMSDataModelModelsSSLEndpoint) SetLastHistoryId(v string) {
-	o.LastHistoryId.Set(&v)
-}
-
-// SetLastHistoryIdNil sets the value for LastHistoryId to be an explicit nil
-func (o *CSSCMSDataModelModelsSSLEndpoint) SetLastHistoryIdNil() {
-	o.LastHistoryId.Set(nil)
-}
-
-// UnsetLastHistoryId ensures that no value is present for LastHistoryId, not even an explicit nil
-func (o *CSSCMSDataModelModelsSSLEndpoint) UnsetLastHistoryId() {
-	o.LastHistoryId.Unset()
 }
 
 // GetIpAddressBytes returns the IpAddressBytes field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -360,9 +316,6 @@ func (o CSSCMSDataModelModelsSSLEndpoint) ToMap() (map[string]interface{}, error
 	}
 	if !isNil(o.NetworkId) {
 		toSerialize["NetworkId"] = o.NetworkId
-	}
-	if o.LastHistoryId.IsSet() {
-		toSerialize["LastHistoryId"] = o.LastHistoryId.Get()
 	}
 	if o.IpAddressBytes.IsSet() {
 		toSerialize["IpAddressBytes"] = o.IpAddressBytes.Get()

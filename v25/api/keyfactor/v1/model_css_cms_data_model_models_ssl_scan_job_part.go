@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -30,6 +30,7 @@ var _ MappedNullable = &CSSCMSDataModelModelsSSLScanJobPart{}
 
 // CSSCMSDataModelModelsSSLScanJobPart struct for CSSCMSDataModelModelsSSLScanJobPart
 type CSSCMSDataModelModelsSSLScanJobPart struct {
+	Id                            *string                                         `json:"Id,omitempty"`
 	ScanJobPartId                 *string                                         `json:"ScanJobPartId,omitempty"`
 	LogicalScanJobId              *string                                         `json:"LogicalScanJobId,omitempty"`
 	AgentJobId                    *string                                         `json:"AgentJobId,omitempty"`
@@ -64,6 +65,38 @@ func NewCSSCMSDataModelModelsSSLScanJobPart() *CSSCMSDataModelModelsSSLScanJobPa
 func NewCSSCMSDataModelModelsSSLScanJobPartWithDefaults() *CSSCMSDataModelModelsSSLScanJobPart {
 	this := CSSCMSDataModelModelsSSLScanJobPart{}
 	return &this
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *CSSCMSDataModelModelsSSLScanJobPart) GetId() string {
+	if o == nil || isNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CSSCMSDataModelModelsSSLScanJobPart) GetIdOk() (*string, bool) {
+	if o == nil || isNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *CSSCMSDataModelModelsSSLScanJobPart) HasId() bool {
+	if o != nil && !isNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *CSSCMSDataModelModelsSSLScanJobPart) SetId(v string) {
+	o.Id = &v
 }
 
 // GetScanJobPartId returns the ScanJobPartId field value if set, zero value otherwise.
@@ -753,6 +786,7 @@ func (o CSSCMSDataModelModelsSSLScanJobPart) MarshalJSON() ([]byte, error) {
 
 func (o CSSCMSDataModelModelsSSLScanJobPart) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	// skip: Id is readOnly
 	if !isNil(o.ScanJobPartId) {
 		toSerialize["ScanJobPartId"] = o.ScanJobPartId
 	}

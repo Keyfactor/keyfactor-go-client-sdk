@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -34,12 +34,12 @@ type WorkflowDefinitionApiService service
 
 // Request for V1 POST /Workflow/Definitions
 type ApiCreateWorkflowDefinitionsRequest struct {
-	ctx                              context.Context
-	ApiService                       *WorkflowDefinitionApiService
-	xKeyfactorRequestedWith          *string
-	force                            *bool
-	xKeyfactorApiVersion             *string
-	workflowsDefinitionCreateRequest *WorkflowsDefinitionCreateRequest
+	ctx                                  context.Context
+	ApiService                           *WorkflowDefinitionApiService
+	xKeyfactorRequestedWith              *string
+	force                                *bool
+	xKeyfactorApiVersion                 *string
+	workflowsV1DefinitionCreateV1Request *WorkflowsV1DefinitionCreateV1Request
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -61,13 +61,13 @@ func (r ApiCreateWorkflowDefinitionsRequest) XKeyfactorApiVersion(xKeyfactorApiV
 }
 
 // A Workflows.DefinitionCreateRequest with the display name, description, key and type of the definition.
-func (r ApiCreateWorkflowDefinitionsRequest) WorkflowsDefinitionCreateRequest(workflowsDefinitionCreateRequest WorkflowsDefinitionCreateRequest) ApiCreateWorkflowDefinitionsRequest {
-	r.workflowsDefinitionCreateRequest = &workflowsDefinitionCreateRequest
+func (r ApiCreateWorkflowDefinitionsRequest) WorkflowsV1DefinitionCreateV1Request(workflowsV1DefinitionCreateV1Request WorkflowsV1DefinitionCreateV1Request) ApiCreateWorkflowDefinitionsRequest {
+	r.workflowsV1DefinitionCreateV1Request = &workflowsV1DefinitionCreateV1Request
 	return r
 }
 
 // Executes the V1 POST /Workflow/Definitions request context
-func (r ApiCreateWorkflowDefinitionsRequest) Execute() (*WorkflowsDefinitionResponse, *http.Response, error) {
+func (r ApiCreateWorkflowDefinitionsRequest) Execute() (*WorkflowsV1DefinitionV1Response, *http.Response, error) {
 	return r.ApiService.CreateWorkflowDefinitionsExecute(r)
 }
 
@@ -78,6 +78,8 @@ CreateWorkflowDefinitions Creates a new base definition without any steps.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiCreateWorkflowDefinitionsRequest
+
+Deprecated
 */
 func (a *WorkflowDefinitionApiService) NewCreateWorkflowDefinitionsRequest(ctx context.Context) ApiCreateWorkflowDefinitionsRequest {
 
@@ -94,13 +96,15 @@ func (a *WorkflowDefinitionApiService) NewCreateWorkflowDefinitionsRequest(ctx c
 
 // Executes the API request V1 POST /Workflow/Definitions
 //
-//	@return WorkflowsDefinitionResponse
-func (a *WorkflowDefinitionApiService) CreateWorkflowDefinitionsExecute(r ApiCreateWorkflowDefinitionsRequest) (*WorkflowsDefinitionResponse, *http.Response, error) {
+//	@return WorkflowsV1DefinitionV1Response
+//
+// Deprecated
+func (a *WorkflowDefinitionApiService) CreateWorkflowDefinitionsExecute(r ApiCreateWorkflowDefinitionsRequest) (*WorkflowsV1DefinitionV1Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *WorkflowsDefinitionResponse
+		localVarReturnValue *WorkflowsV1DefinitionV1Response
 	)
 
 	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
@@ -147,12 +151,12 @@ func (a *WorkflowDefinitionApiService) CreateWorkflowDefinitionsExecute(r ApiCre
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.workflowsDefinitionCreateRequest
+	localVarPostBody = r.workflowsV1DefinitionCreateV1Request
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -212,7 +216,7 @@ func (r ApiCreateWorkflowDefinitionsDefinitionIdPublishRequest) XKeyfactorApiVer
 }
 
 // Executes the V1 POST /Workflow/Definitions/{definitionId}/Publish request context
-func (r ApiCreateWorkflowDefinitionsDefinitionIdPublishRequest) Execute() (*WorkflowsDefinitionResponse, *http.Response, error) {
+func (r ApiCreateWorkflowDefinitionsDefinitionIdPublishRequest) Execute() (*WorkflowsV1DefinitionV1Response, *http.Response, error) {
 	return r.ApiService.CreateWorkflowDefinitionsDefinitionIdPublishExecute(r)
 }
 
@@ -242,13 +246,13 @@ func (a *WorkflowDefinitionApiService) NewCreateWorkflowDefinitionsDefinitionIdP
 
 // Executes the API request V1 POST /Workflow/Definitions/{definitionId}/Publish
 //
-//	@return WorkflowsDefinitionResponse
-func (a *WorkflowDefinitionApiService) CreateWorkflowDefinitionsDefinitionIdPublishExecute(r ApiCreateWorkflowDefinitionsDefinitionIdPublishRequest) (*WorkflowsDefinitionResponse, *http.Response, error) {
+//	@return WorkflowsV1DefinitionV1Response
+func (a *WorkflowDefinitionApiService) CreateWorkflowDefinitionsDefinitionIdPublishExecute(r ApiCreateWorkflowDefinitionsDefinitionIdPublishRequest) (*WorkflowsV1DefinitionV1Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *WorkflowsDefinitionResponse
+		localVarReturnValue *WorkflowsV1DefinitionV1Response
 	)
 
 	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
@@ -293,10 +297,10 @@ func (a *WorkflowDefinitionApiService) CreateWorkflowDefinitionsDefinitionIdPubl
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -357,7 +361,7 @@ func (r ApiCreateWorkflowDefinitionsDefinitionIdPublishVersionRequest) XKeyfacto
 }
 
 // Executes the V1 POST /Workflow/Definitions/{definitionId}/Publish/{version} request context
-func (r ApiCreateWorkflowDefinitionsDefinitionIdPublishVersionRequest) Execute() (*WorkflowsDefinitionResponse, *http.Response, error) {
+func (r ApiCreateWorkflowDefinitionsDefinitionIdPublishVersionRequest) Execute() (*WorkflowsV1DefinitionV1Response, *http.Response, error) {
 	return r.ApiService.CreateWorkflowDefinitionsDefinitionIdPublishVersionExecute(r)
 }
 
@@ -389,13 +393,13 @@ func (a *WorkflowDefinitionApiService) NewCreateWorkflowDefinitionsDefinitionIdP
 
 // Executes the API request V1 POST /Workflow/Definitions/{definitionId}/Publish/{version}
 //
-//	@return WorkflowsDefinitionResponse
-func (a *WorkflowDefinitionApiService) CreateWorkflowDefinitionsDefinitionIdPublishVersionExecute(r ApiCreateWorkflowDefinitionsDefinitionIdPublishVersionRequest) (*WorkflowsDefinitionResponse, *http.Response, error) {
+//	@return WorkflowsV1DefinitionV1Response
+func (a *WorkflowDefinitionApiService) CreateWorkflowDefinitionsDefinitionIdPublishVersionExecute(r ApiCreateWorkflowDefinitionsDefinitionIdPublishVersionRequest) (*WorkflowsV1DefinitionV1Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *WorkflowsDefinitionResponse
+		localVarReturnValue *WorkflowsV1DefinitionV1Response
 	)
 
 	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
@@ -441,10 +445,10 @@ func (a *WorkflowDefinitionApiService) CreateWorkflowDefinitionsDefinitionIdPubl
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -582,10 +586,10 @@ func (a *WorkflowDefinitionApiService) DeleteWorkflowDefinitionsDefinitionIdExec
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -665,7 +669,7 @@ func (r ApiGetWorkflowDefinitionsRequest) XKeyfactorApiVersion(xKeyfactorApiVers
 }
 
 // Executes the V1 GET /Workflow/Definitions request context
-func (r ApiGetWorkflowDefinitionsRequest) Execute() ([]WorkflowsDefinitionQueryResponse, *http.Response, error) {
+func (r ApiGetWorkflowDefinitionsRequest) Execute() ([]WorkflowsV1DefinitionQueryV1Response, *http.Response, error) {
 	return r.ApiService.GetWorkflowDefinitionsExecute(r)
 }
 
@@ -676,6 +680,8 @@ GetWorkflowDefinitions Gets the Definitions matching the query specifications.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetWorkflowDefinitionsRequest
+
+Deprecated
 */
 func (a *WorkflowDefinitionApiService) NewGetWorkflowDefinitionsRequest(ctx context.Context) ApiGetWorkflowDefinitionsRequest {
 
@@ -692,13 +698,15 @@ func (a *WorkflowDefinitionApiService) NewGetWorkflowDefinitionsRequest(ctx cont
 
 // Executes the API request V1 GET /Workflow/Definitions
 //
-//	@return []WorkflowsDefinitionQueryResponse
-func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsExecute(r ApiGetWorkflowDefinitionsRequest) ([]WorkflowsDefinitionQueryResponse, *http.Response, error) {
+//	@return []WorkflowsV1DefinitionQueryV1Response
+//
+// Deprecated
+func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsExecute(r ApiGetWorkflowDefinitionsRequest) ([]WorkflowsV1DefinitionQueryV1Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []WorkflowsDefinitionQueryResponse
+		localVarReturnValue []WorkflowsV1DefinitionQueryV1Response
 	)
 
 	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
@@ -757,10 +765,10 @@ func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsExecute(r ApiGetWor
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -834,7 +842,7 @@ func (r ApiGetWorkflowDefinitionsDefinitionIdRequest) XKeyfactorApiVersion(xKeyf
 }
 
 // Executes the V1 GET /Workflow/Definitions/{definitionId} request context
-func (r ApiGetWorkflowDefinitionsDefinitionIdRequest) Execute() (*WorkflowsDefinitionResponse, *http.Response, error) {
+func (r ApiGetWorkflowDefinitionsDefinitionIdRequest) Execute() (*WorkflowsV1DefinitionV1Response, *http.Response, error) {
 	return r.ApiService.GetWorkflowDefinitionsDefinitionIdExecute(r)
 }
 
@@ -846,6 +854,8 @@ GetWorkflowDefinitionsDefinitionId Gets a workflow definition.
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param definitionId The Id of the definition to retrieve.
 	@return ApiGetWorkflowDefinitionsDefinitionIdRequest
+
+Deprecated
 */
 func (a *WorkflowDefinitionApiService) NewGetWorkflowDefinitionsDefinitionIdRequest(ctx context.Context, definitionId string) ApiGetWorkflowDefinitionsDefinitionIdRequest {
 
@@ -864,13 +874,15 @@ func (a *WorkflowDefinitionApiService) NewGetWorkflowDefinitionsDefinitionIdRequ
 
 // Executes the API request V1 GET /Workflow/Definitions/{definitionId}
 //
-//	@return WorkflowsDefinitionResponse
-func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsDefinitionIdExecute(r ApiGetWorkflowDefinitionsDefinitionIdRequest) (*WorkflowsDefinitionResponse, *http.Response, error) {
+//	@return WorkflowsV1DefinitionV1Response
+//
+// Deprecated
+func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsDefinitionIdExecute(r ApiGetWorkflowDefinitionsDefinitionIdRequest) (*WorkflowsV1DefinitionV1Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *WorkflowsDefinitionResponse
+		localVarReturnValue *WorkflowsV1DefinitionV1Response
 	)
 
 	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
@@ -921,10 +933,10 @@ func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsDefinitionIdExecute
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1105,10 +1117,10 @@ func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsStepsExecute(r ApiG
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1249,10 +1261,10 @@ func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsStepsExtensionNameE
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1433,10 +1445,10 @@ func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsTypesExecute(r ApiG
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1476,13 +1488,13 @@ func (a *WorkflowDefinitionApiService) GetWorkflowDefinitionsTypesExecute(r ApiG
 
 // Request for V1 PUT /Workflow/Definitions/{definitionId}
 type ApiUpdateWorkflowDefinitionsDefinitionIdRequest struct {
-	ctx                              context.Context
-	ApiService                       *WorkflowDefinitionApiService
-	definitionId                     string
-	xKeyfactorRequestedWith          *string
-	force                            *bool
-	xKeyfactorApiVersion             *string
-	workflowsDefinitionUpdateRequest *WorkflowsDefinitionUpdateRequest
+	ctx                                  context.Context
+	ApiService                           *WorkflowDefinitionApiService
+	definitionId                         string
+	xKeyfactorRequestedWith              *string
+	force                                *bool
+	xKeyfactorApiVersion                 *string
+	workflowsV1DefinitionUpdateV1Request *WorkflowsV1DefinitionUpdateV1Request
 }
 
 // Type of the request [XMLHttpRequest, APIClient]
@@ -1504,13 +1516,13 @@ func (r ApiUpdateWorkflowDefinitionsDefinitionIdRequest) XKeyfactorApiVersion(xK
 }
 
 // The Workflows.DefinitionUpdateRequest holding the updated DisplayName and Description.
-func (r ApiUpdateWorkflowDefinitionsDefinitionIdRequest) WorkflowsDefinitionUpdateRequest(workflowsDefinitionUpdateRequest WorkflowsDefinitionUpdateRequest) ApiUpdateWorkflowDefinitionsDefinitionIdRequest {
-	r.workflowsDefinitionUpdateRequest = &workflowsDefinitionUpdateRequest
+func (r ApiUpdateWorkflowDefinitionsDefinitionIdRequest) WorkflowsV1DefinitionUpdateV1Request(workflowsV1DefinitionUpdateV1Request WorkflowsV1DefinitionUpdateV1Request) ApiUpdateWorkflowDefinitionsDefinitionIdRequest {
+	r.workflowsV1DefinitionUpdateV1Request = &workflowsV1DefinitionUpdateV1Request
 	return r
 }
 
 // Executes the V1 PUT /Workflow/Definitions/{definitionId} request context
-func (r ApiUpdateWorkflowDefinitionsDefinitionIdRequest) Execute() (*WorkflowsDefinitionResponse, *http.Response, error) {
+func (r ApiUpdateWorkflowDefinitionsDefinitionIdRequest) Execute() (*WorkflowsV1DefinitionV1Response, *http.Response, error) {
 	return r.ApiService.UpdateWorkflowDefinitionsDefinitionIdExecute(r)
 }
 
@@ -1522,6 +1534,8 @@ UpdateWorkflowDefinitionsDefinitionId Updates the existing definition's DisplayN
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param definitionId The Id of the definition to update.
 	@return ApiUpdateWorkflowDefinitionsDefinitionIdRequest
+
+Deprecated
 */
 func (a *WorkflowDefinitionApiService) NewUpdateWorkflowDefinitionsDefinitionIdRequest(ctx context.Context, definitionId string) ApiUpdateWorkflowDefinitionsDefinitionIdRequest {
 
@@ -1540,13 +1554,15 @@ func (a *WorkflowDefinitionApiService) NewUpdateWorkflowDefinitionsDefinitionIdR
 
 // Executes the API request V1 PUT /Workflow/Definitions/{definitionId}
 //
-//	@return WorkflowsDefinitionResponse
-func (a *WorkflowDefinitionApiService) UpdateWorkflowDefinitionsDefinitionIdExecute(r ApiUpdateWorkflowDefinitionsDefinitionIdRequest) (*WorkflowsDefinitionResponse, *http.Response, error) {
+//	@return WorkflowsV1DefinitionV1Response
+//
+// Deprecated
+func (a *WorkflowDefinitionApiService) UpdateWorkflowDefinitionsDefinitionIdExecute(r ApiUpdateWorkflowDefinitionsDefinitionIdRequest) (*WorkflowsV1DefinitionV1Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *WorkflowsDefinitionResponse
+		localVarReturnValue *WorkflowsV1DefinitionV1Response
 	)
 
 	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
@@ -1594,12 +1610,12 @@ func (a *WorkflowDefinitionApiService) UpdateWorkflowDefinitionsDefinitionIdExec
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
-	localVarPostBody = r.workflowsDefinitionUpdateRequest
+	localVarPostBody = r.workflowsV1DefinitionUpdateV1Request
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1754,10 +1770,10 @@ func (a *WorkflowDefinitionApiService) UpdateWorkflowDefinitionsDefinitionIdStat
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.body
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -1817,7 +1833,7 @@ func (r ApiUpdateWorkflowDefinitionsDefinitionIdStepsRequest) WorkflowsDefinitio
 }
 
 // Executes the V1 PUT /Workflow/Definitions/{definitionId}/Steps request context
-func (r ApiUpdateWorkflowDefinitionsDefinitionIdStepsRequest) Execute() (*WorkflowsDefinitionResponse, *http.Response, error) {
+func (r ApiUpdateWorkflowDefinitionsDefinitionIdStepsRequest) Execute() (*WorkflowsV1DefinitionV1Response, *http.Response, error) {
 	return r.ApiService.UpdateWorkflowDefinitionsDefinitionIdStepsExecute(r)
 }
 
@@ -1849,13 +1865,13 @@ func (a *WorkflowDefinitionApiService) NewUpdateWorkflowDefinitionsDefinitionIdS
 
 // Executes the API request V1 PUT /Workflow/Definitions/{definitionId}/Steps
 //
-//	@return WorkflowsDefinitionResponse
-func (a *WorkflowDefinitionApiService) UpdateWorkflowDefinitionsDefinitionIdStepsExecute(r ApiUpdateWorkflowDefinitionsDefinitionIdStepsRequest) (*WorkflowsDefinitionResponse, *http.Response, error) {
+//	@return WorkflowsV1DefinitionV1Response
+func (a *WorkflowDefinitionApiService) UpdateWorkflowDefinitionsDefinitionIdStepsExecute(r ApiUpdateWorkflowDefinitionsDefinitionIdStepsRequest) (*WorkflowsV1DefinitionV1Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *WorkflowsDefinitionResponse
+		localVarReturnValue *WorkflowsV1DefinitionV1Response
 	)
 
 	apiBasePath := a.client.AuthClient.GetServerConfig().APIPath
@@ -1900,10 +1916,10 @@ func (a *WorkflowDefinitionApiService) UpdateWorkflowDefinitionsDefinitionIdStep
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.workflowsDefinitionStepRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

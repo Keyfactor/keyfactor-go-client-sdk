@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -29,13 +29,15 @@ var _ MappedNullable = &IdentityProviderProviderTypeParameterValueResponse{}
 
 // IdentityProviderProviderTypeParameterValueResponse struct for IdentityProviderProviderTypeParameterValueResponse
 type IdentityProviderProviderTypeParameterValueResponse struct {
-	Id          *int32                                        `json:"Id,omitempty"`
-	Name        NullableString                                `json:"Name,omitempty"`
-	DisplayName NullableString                                `json:"DisplayName,omitempty"`
-	Required    *bool                                         `json:"Required,omitempty"`
-	DataType    *CSSCMSDataModelEnumsIdentityProviderDataType `json:"DataType,omitempty"`
-	Value       NullableString                                `json:"Value,omitempty"`
-	SecretValue *CSSCMSDataModelModelsKeyfactorAPISecret      `json:"SecretValue,omitempty"`
+	Id                   *int32                                        `json:"Id,omitempty"`
+	Name                 NullableString                                `json:"Name,omitempty"`
+	DisplayName          NullableString                                `json:"DisplayName,omitempty"`
+	Required             *bool                                         `json:"Required,omitempty"`
+	DataType             *CSSCMSDataModelEnumsIdentityProviderDataType `json:"DataType,omitempty"`
+	Value                NullableString                                `json:"Value,omitempty"`
+	RequestHeaders       []SharedRequestHeaderResponse                 `json:"RequestHeaders,omitempty"`
+	RequestURLParameters []IdentityProviderRequestURLParameterResponse `json:"RequestURLParameters,omitempty"`
+	SecretValue          *CSSCMSDataModelModelsKeyfactorAPISecret      `json:"SecretValue,omitempty"`
 }
 
 // NewIdentityProviderProviderTypeParameterValueResponse instantiates a new IdentityProviderProviderTypeParameterValueResponse object
@@ -280,6 +282,72 @@ func (o *IdentityProviderProviderTypeParameterValueResponse) UnsetValue() {
 	o.Value.Unset()
 }
 
+// GetRequestHeaders returns the RequestHeaders field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *IdentityProviderProviderTypeParameterValueResponse) GetRequestHeaders() []SharedRequestHeaderResponse {
+	if o == nil {
+		var ret []SharedRequestHeaderResponse
+		return ret
+	}
+	return o.RequestHeaders
+}
+
+// GetRequestHeadersOk returns a tuple with the RequestHeaders field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *IdentityProviderProviderTypeParameterValueResponse) GetRequestHeadersOk() ([]SharedRequestHeaderResponse, bool) {
+	if o == nil || isNil(o.RequestHeaders) {
+		return nil, false
+	}
+	return o.RequestHeaders, true
+}
+
+// HasRequestHeaders returns a boolean if a field has been set.
+func (o *IdentityProviderProviderTypeParameterValueResponse) HasRequestHeaders() bool {
+	if o != nil && isNil(o.RequestHeaders) {
+		return true
+	}
+
+	return false
+}
+
+// SetRequestHeaders gets a reference to the given []SharedRequestHeaderResponse and assigns it to the RequestHeaders field.
+func (o *IdentityProviderProviderTypeParameterValueResponse) SetRequestHeaders(v []SharedRequestHeaderResponse) {
+	o.RequestHeaders = v
+}
+
+// GetRequestURLParameters returns the RequestURLParameters field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *IdentityProviderProviderTypeParameterValueResponse) GetRequestURLParameters() []IdentityProviderRequestURLParameterResponse {
+	if o == nil {
+		var ret []IdentityProviderRequestURLParameterResponse
+		return ret
+	}
+	return o.RequestURLParameters
+}
+
+// GetRequestURLParametersOk returns a tuple with the RequestURLParameters field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *IdentityProviderProviderTypeParameterValueResponse) GetRequestURLParametersOk() ([]IdentityProviderRequestURLParameterResponse, bool) {
+	if o == nil || isNil(o.RequestURLParameters) {
+		return nil, false
+	}
+	return o.RequestURLParameters, true
+}
+
+// HasRequestURLParameters returns a boolean if a field has been set.
+func (o *IdentityProviderProviderTypeParameterValueResponse) HasRequestURLParameters() bool {
+	if o != nil && isNil(o.RequestURLParameters) {
+		return true
+	}
+
+	return false
+}
+
+// SetRequestURLParameters gets a reference to the given []IdentityProviderRequestURLParameterResponse and assigns it to the RequestURLParameters field.
+func (o *IdentityProviderProviderTypeParameterValueResponse) SetRequestURLParameters(v []IdentityProviderRequestURLParameterResponse) {
+	o.RequestURLParameters = v
+}
+
 // GetSecretValue returns the SecretValue field value if set, zero value otherwise.
 func (o *IdentityProviderProviderTypeParameterValueResponse) GetSecretValue() CSSCMSDataModelModelsKeyfactorAPISecret {
 	if o == nil || isNil(o.SecretValue) {
@@ -339,6 +407,12 @@ func (o IdentityProviderProviderTypeParameterValueResponse) ToMap() (map[string]
 	}
 	if o.Value.IsSet() {
 		toSerialize["Value"] = o.Value.Get()
+	}
+	if o.RequestHeaders != nil {
+		toSerialize["RequestHeaders"] = o.RequestHeaders
+	}
+	if o.RequestURLParameters != nil {
+		toSerialize["RequestURLParameters"] = o.RequestURLParameters
 	}
 	if !isNil(o.SecretValue) {
 		toSerialize["SecretValue"] = o.SecretValue

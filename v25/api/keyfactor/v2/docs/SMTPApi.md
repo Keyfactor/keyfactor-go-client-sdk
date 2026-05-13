@@ -4,9 +4,78 @@ All URIs are relative to *http://keyfactor.example.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**CreateSMTPTest**](SMTPApi.md#CreateSMTPTest) | **POST** /SMTP/Test | Tests SMTP profile data
 [**GetSMTP**](SMTPApi.md#GetSMTP) | **GET** /SMTP | Gets SMTP profile data
 [**UpdateSMTP**](SMTPApi.md#UpdateSMTP) | **PUT** /SMTP | Updates SMTP profile data
 
+
+
+## CreateSMTPTest
+
+> NewCreateSMTPTestRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SMTPSMTPTestRequest(sMTPSMTPTestRequest).Execute()
+
+Tests SMTP profile data
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient]
+    xKeyfactorApiVersion := "2" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    sMTPSMTPTestRequest := *openapiclient.NewSMTPSMTPTestRequest("Host_example", int32(123), openapiclient.CSS.CMS.Core.Enums.SMTPRelayAuthenticationType(0), "SenderAccount_example", "SenderName_example", "TestRecipient_example") // SMTPSMTPTestRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SMTPApi.NewCreateSMTPTestRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).SMTPSMTPTestRequest(sMTPSMTPTestRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SMTPApi.CreateSMTPTest``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateSMTPTestRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **sMTPSMTPTestRequest** | [**SMTPSMTPTestRequest**](SMTPSMTPTestRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## GetSMTP

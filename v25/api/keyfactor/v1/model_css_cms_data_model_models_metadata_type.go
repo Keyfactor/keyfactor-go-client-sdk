@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -29,23 +29,19 @@ var _ MappedNullable = &CSSCMSDataModelModelsMetadataType{}
 
 // CSSCMSDataModelModelsMetadataType struct for CSSCMSDataModelModelsMetadataType
 type CSSCMSDataModelModelsMetadataType struct {
-	Id           *int32                                 `json:"Id,omitempty"`
-	Name         NullableString                         `json:"Name,omitempty"`
-	Description  NullableString                         `json:"Description,omitempty"`
-	DataType     *CSSCMSCoreEnumsMetadataDataType       `json:"DataType,omitempty"`
-	Hint         NullableString                         `json:"Hint,omitempty"`
-	Validation   NullableString                         `json:"Validation,omitempty"`
-	Enrollment   *CSSCMSCoreEnumsMetadataTypeEnrollment `json:"Enrollment,omitempty"`
-	Message      NullableString                         `json:"Message,omitempty"`
-	Options      NullableString                         `json:"Options,omitempty"`
-	DefaultValue NullableString                         `json:"DefaultValue,omitempty"`
-	// Deprecated
-	AllowAPI *bool `json:"AllowAPI,omitempty"`
-	// Deprecated
-	ExplicitUpdate          *bool         `json:"ExplicitUpdate,omitempty"`
-	DisplayOrder            NullableInt32 `json:"DisplayOrder,omitempty"`
-	CaseSensitive           *bool         `json:"CaseSensitive,omitempty"`
-	ExemptFromActionedCount *bool         `json:"ExemptFromActionedCount,omitempty"`
+	Id                      *int32                                 `json:"Id,omitempty"`
+	Name                    NullableString                         `json:"Name,omitempty"`
+	Description             NullableString                         `json:"Description,omitempty"`
+	DataType                *CSSCMSCoreEnumsMetadataDataType       `json:"DataType,omitempty"`
+	Hint                    NullableString                         `json:"Hint,omitempty"`
+	Validation              NullableString                         `json:"Validation,omitempty"`
+	Enrollment              *CSSCMSCoreEnumsMetadataTypeEnrollment `json:"Enrollment,omitempty"`
+	Message                 NullableString                         `json:"Message,omitempty"`
+	Options                 NullableString                         `json:"Options,omitempty"`
+	DefaultValue            NullableString                         `json:"DefaultValue,omitempty"`
+	DisplayOrder            NullableInt32                          `json:"DisplayOrder,omitempty"`
+	CaseSensitive           *bool                                  `json:"CaseSensitive,omitempty"`
+	ExemptFromActionedCount *bool                                  `json:"ExemptFromActionedCount,omitempty"`
 }
 
 // NewCSSCMSDataModelModelsMetadataType instantiates a new CSSCMSDataModelModelsMetadataType object
@@ -462,76 +458,6 @@ func (o *CSSCMSDataModelModelsMetadataType) UnsetDefaultValue() {
 	o.DefaultValue.Unset()
 }
 
-// GetAllowAPI returns the AllowAPI field value if set, zero value otherwise.
-// Deprecated
-func (o *CSSCMSDataModelModelsMetadataType) GetAllowAPI() bool {
-	if o == nil || isNil(o.AllowAPI) {
-		var ret bool
-		return ret
-	}
-	return *o.AllowAPI
-}
-
-// GetAllowAPIOk returns a tuple with the AllowAPI field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *CSSCMSDataModelModelsMetadataType) GetAllowAPIOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowAPI) {
-		return nil, false
-	}
-	return o.AllowAPI, true
-}
-
-// HasAllowAPI returns a boolean if a field has been set.
-func (o *CSSCMSDataModelModelsMetadataType) HasAllowAPI() bool {
-	if o != nil && !isNil(o.AllowAPI) {
-		return true
-	}
-
-	return false
-}
-
-// SetAllowAPI gets a reference to the given bool and assigns it to the AllowAPI field.
-// Deprecated
-func (o *CSSCMSDataModelModelsMetadataType) SetAllowAPI(v bool) {
-	o.AllowAPI = &v
-}
-
-// GetExplicitUpdate returns the ExplicitUpdate field value if set, zero value otherwise.
-// Deprecated
-func (o *CSSCMSDataModelModelsMetadataType) GetExplicitUpdate() bool {
-	if o == nil || isNil(o.ExplicitUpdate) {
-		var ret bool
-		return ret
-	}
-	return *o.ExplicitUpdate
-}
-
-// GetExplicitUpdateOk returns a tuple with the ExplicitUpdate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *CSSCMSDataModelModelsMetadataType) GetExplicitUpdateOk() (*bool, bool) {
-	if o == nil || isNil(o.ExplicitUpdate) {
-		return nil, false
-	}
-	return o.ExplicitUpdate, true
-}
-
-// HasExplicitUpdate returns a boolean if a field has been set.
-func (o *CSSCMSDataModelModelsMetadataType) HasExplicitUpdate() bool {
-	if o != nil && !isNil(o.ExplicitUpdate) {
-		return true
-	}
-
-	return false
-}
-
-// SetExplicitUpdate gets a reference to the given bool and assigns it to the ExplicitUpdate field.
-// Deprecated
-func (o *CSSCMSDataModelModelsMetadataType) SetExplicitUpdate(v bool) {
-	o.ExplicitUpdate = &v
-}
-
 // GetDisplayOrder returns the DisplayOrder field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CSSCMSDataModelModelsMetadataType) GetDisplayOrder() int32 {
 	if o == nil || isNil(o.DisplayOrder.Get()) {
@@ -678,12 +604,6 @@ func (o CSSCMSDataModelModelsMetadataType) ToMap() (map[string]interface{}, erro
 	}
 	if o.DefaultValue.IsSet() {
 		toSerialize["DefaultValue"] = o.DefaultValue.Get()
-	}
-	if !isNil(o.AllowAPI) {
-		toSerialize["AllowAPI"] = o.AllowAPI
-	}
-	if !isNil(o.ExplicitUpdate) {
-		toSerialize["ExplicitUpdate"] = o.ExplicitUpdate
 	}
 	if o.DisplayOrder.IsSet() {
 		toSerialize["DisplayOrder"] = o.DisplayOrder.Get()

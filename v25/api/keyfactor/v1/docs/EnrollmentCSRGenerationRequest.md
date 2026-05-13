@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **AlternativeKeyType** | Pointer to **NullableString** | Alternative Certificate key type [ML-DSA-44, ML-DSA-65, ML-DSA-87] | [optional] 
 **AlternativeKeyLength** | Pointer to **NullableInt32** | Size of the alternative certificate key. | [optional] 
 **AlternativeCurve** | Pointer to **NullableString** | The alternative curve used to generate a CSR. | [optional] 
-**Template** | Pointer to **NullableString** |  | [optional] 
 **SANs** | Pointer to **map[string][]string** |  | [optional] 
 **EnrollmentPatternId** | Pointer to **NullableInt32** |  | [optional] 
 
@@ -239,41 +238,6 @@ HasAlternativeCurve returns a boolean if a field has been set.
 `func (o *EnrollmentCSRGenerationRequest) UnsetAlternativeCurve()`
 
 UnsetAlternativeCurve ensures that no value is present for AlternativeCurve, not even an explicit nil
-### GetTemplate
-
-`func (o *EnrollmentCSRGenerationRequest) GetTemplate() string`
-
-GetTemplate returns the Template field if non-nil, zero value otherwise.
-
-### GetTemplateOk
-
-`func (o *EnrollmentCSRGenerationRequest) GetTemplateOk() (*string, bool)`
-
-GetTemplateOk returns a tuple with the Template field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTemplate
-
-`func (o *EnrollmentCSRGenerationRequest) SetTemplate(v string)`
-
-SetTemplate sets Template field to given value.
-
-### HasTemplate
-
-`func (o *EnrollmentCSRGenerationRequest) HasTemplate() bool`
-
-HasTemplate returns a boolean if a field has been set.
-
-### SetTemplateNil
-
-`func (o *EnrollmentCSRGenerationRequest) SetTemplateNil(b bool)`
-
- SetTemplateNil sets the value for Template to be an explicit nil
-
-### UnsetTemplate
-`func (o *EnrollmentCSRGenerationRequest) UnsetTemplate()`
-
-UnsetTemplate ensures that no value is present for Template, not even an explicit nil
 ### GetSANs
 
 `func (o *EnrollmentCSRGenerationRequest) GetSANs() map[string][]string`

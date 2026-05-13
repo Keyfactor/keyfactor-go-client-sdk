@@ -4,16 +4,93 @@ All URIs are relative to *http://keyfactor.example.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**CreateSecurityApplicationsByIdRoles**](SecurityApi.md#CreateSecurityApplicationsByIdRoles) | **POST** /Security/Applications/{id}/Roles | Edit an application&#39;s permissions. Reminder: Name field should be left blank.
 [**CreateSecurityContainersByIdRoles**](SecurityApi.md#CreateSecurityContainersByIdRoles) | **POST** /Security/Containers/{id}/Roles | Edit a certificate store container&#39;s permissions. Reminder: Name field should be left blank.
 [**CreateSecurityIdentities**](SecurityApi.md#CreateSecurityIdentities) | **POST** /Security/Identities | Adds a new security identity to the system.
 [**DeleteSecurityIdentitiesById**](SecurityApi.md#DeleteSecurityIdentitiesById) | **DELETE** /Security/Identities/{id} | Deletes the security identity whose ID is provided.
+[**GetSecurityApplicationsByIdRoles**](SecurityApi.md#GetSecurityApplicationsByIdRoles) | **GET** /Security/Applications/{id}/Roles | Returns all the permissions of an application through the id
 [**GetSecurityAuditCollectionsById**](SecurityApi.md#GetSecurityAuditCollectionsById) | **GET** /Security/Audit/Collections/{id} | Gets a list of applicable security permissions for certificate collection
 [**GetSecurityContainersByIdRoles**](SecurityApi.md#GetSecurityContainersByIdRoles) | **GET** /Security/Containers/{id}/Roles | Returns all the permissions of a certificate store container through the id
 [**GetSecurityIdentities**](SecurityApi.md#GetSecurityIdentities) | **GET** /Security/Identities | Returns all security identities according to the provided filter and output parameters.
 [**GetSecurityIdentitiesById**](SecurityApi.md#GetSecurityIdentitiesById) | **GET** /Security/Identities/{id} | Gets an object representing the permissions of the identity associated with the provided identifier.
 [**GetSecurityIdentitiesLookup**](SecurityApi.md#GetSecurityIdentitiesLookup) | **GET** /Security/Identities/Lookup | Validates that the identity with the name given exists.
 [**GetSecurityMy**](SecurityApi.md#GetSecurityMy) | **GET** /Security/My | Looks at all the roles and global permissions for the user and returns them.
+[**GetSecurityMyPermissions**](SecurityApi.md#GetSecurityMyPermissions) | **GET** /Security/My/Permissions | Retrieves all permissions for the requesting user.
 
+
+
+## CreateSecurityApplicationsByIdRoles
+
+> []CSSCMSDataModelModelsCertificateStoreContainerPermissions NewCreateSecurityApplicationsByIdRolesRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoreContainerPermissions(cSSCMSDataModelModelsCertificateStoreContainerPermissions).Execute()
+
+Edit an application's permissions. Reminder: Name field should be left blank.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := int32(56) // int32 | Information for the security application
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient]
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+    cSSCMSDataModelModelsCertificateStoreContainerPermissions := []openapiclient.CSSCMSDataModelModelsCertificateStoreContainerPermissions{*openapiclient.NewCSSCMSDataModelModelsCertificateStoreContainerPermissions()} // []CSSCMSDataModelModelsCertificateStoreContainerPermissions | Information for the updated security role (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecurityApi.NewCreateSecurityApplicationsByIdRolesRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).CSSCMSDataModelModelsCertificateStoreContainerPermissions(cSSCMSDataModelModelsCertificateStoreContainerPermissions).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecurityApi.CreateSecurityApplicationsByIdRoles``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreateSecurityApplicationsByIdRoles`: []CSSCMSDataModelModelsCertificateStoreContainerPermissions
+    fmt.Fprintf(os.Stdout, "Response from `SecurityApi.CreateSecurityApplicationsByIdRoles`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | Information for the security application | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateSecurityApplicationsByIdRolesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+ **cSSCMSDataModelModelsCertificateStoreContainerPermissions** | [**[]CSSCMSDataModelModelsCertificateStoreContainerPermissions**](CSSCMSDataModelModelsCertificateStoreContainerPermissions.md) | Information for the updated security role | 
+
+### Return type
+
+[**[]CSSCMSDataModelModelsCertificateStoreContainerPermissions**](CSSCMSDataModelModelsCertificateStoreContainerPermissions.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+- **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## CreateSecurityContainersByIdRoles
@@ -222,6 +299,78 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetSecurityApplicationsByIdRoles
+
+> []CSSCMSDataModelModelsCertificateStoreContainerPermissions NewGetSecurityApplicationsByIdRolesRequest(ctx, id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Returns all the permissions of an application through the id
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := int32(56) // int32 | Information for the updated application
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient]
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecurityApi.NewGetSecurityApplicationsByIdRolesRequest(context.Background(), id).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecurityApi.GetSecurityApplicationsByIdRoles``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetSecurityApplicationsByIdRoles`: []CSSCMSDataModelModelsCertificateStoreContainerPermissions
+    fmt.Fprintf(os.Stdout, "Response from `SecurityApi.GetSecurityApplicationsByIdRoles`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | Information for the updated application | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetSecurityApplicationsByIdRolesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+
+### Return type
+
+[**[]CSSCMSDataModelModelsCertificateStoreContainerPermissions**](CSSCMSDataModelModelsCertificateStoreContainerPermissions.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -639,6 +788,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SecurityLegacySecurityRolesSecurityMyResponse**](SecurityLegacySecurityRolesSecurityMyResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#Configuration)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetSecurityMyPermissions
+
+> SecuritySecurityMyPermissionsResponse NewGetSecurityMyPermissionsRequest(ctx).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+
+Retrieves all permissions for the requesting user.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xKeyfactorRequestedWith := "APIClient" // string | Type of the request [XMLHttpRequest, APIClient]
+    xKeyfactorApiVersion := "1.0" // string | Desired version of the api, if not provided defaults to v1 (optional)
+
+    configuration := openapiclient.NewConfiguration(make(map[string]string))
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecurityApi.NewGetSecurityMyPermissionsRequest(context.Background()).XKeyfactorRequestedWith(xKeyfactorRequestedWith).XKeyfactorApiVersion(xKeyfactorApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecurityApi.GetSecurityMyPermissions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetSecurityMyPermissions`: SecuritySecurityMyPermissionsResponse
+    fmt.Fprintf(os.Stdout, "Response from `SecurityApi.GetSecurityMyPermissions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetSecurityMyPermissionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xKeyfactorRequestedWith** | **string** | Type of the request [XMLHttpRequest, APIClient] | 
+ **xKeyfactorApiVersion** | **string** | Desired version of the api, if not provided defaults to v1 | 
+
+### Return type
+
+[**SecuritySecurityMyPermissionsResponse**](SecuritySecurityMyPermissionsResponse.md)
 
 ### Authorization
 

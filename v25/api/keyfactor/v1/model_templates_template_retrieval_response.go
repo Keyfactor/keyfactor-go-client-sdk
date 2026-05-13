@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -29,40 +29,40 @@ var _ MappedNullable = &TemplatesTemplateRetrievalResponse{}
 
 // TemplatesTemplateRetrievalResponse struct for TemplatesTemplateRetrievalResponse
 type TemplatesTemplateRetrievalResponse struct {
-	Id                        *int32                                                 `json:"Id,omitempty"`
-	CommonName                NullableString                                         `json:"CommonName,omitempty"`
-	TemplateName              NullableString                                         `json:"TemplateName,omitempty"`
-	Oid                       NullableString                                         `json:"Oid,omitempty"`
-	KeySize                   NullableString                                         `json:"KeySize,omitempty"`
-	KeyType                   NullableString                                         `json:"KeyType,omitempty"`
-	ForestRoot                NullableString                                         `json:"ForestRoot,omitempty"`
-	ConfigurationTenant       NullableString                                         `json:"ConfigurationTenant,omitempty"`
-	FriendlyName              NullableString                                         `json:"FriendlyName,omitempty"`
-	KeyRetention              *CSSCMSCoreEnumsKeyRetentionPolicy                     `json:"KeyRetention,omitempty"`
-	KeyRetentionDays          NullableInt32                                          `json:"KeyRetentionDays,omitempty"`
-	KeyArchival               *bool                                                  `json:"KeyArchival,omitempty"`
-	EnrollmentFields          []TemplatesTemplateEnrollmentFieldRequestResponseModel `json:"EnrollmentFields,omitempty"`
-	MetadataFields            []TemplatesTemplateMetadataFieldRequestResponseModel   `json:"MetadataFields,omitempty"`
-	AllowedEnrollmentTypes    *CSSCMSCoreEnumsEnrollmentType                         `json:"AllowedEnrollmentTypes,omitempty"`
-	TemplateRegexes           []TemplatesTemplateRegexRequestResponseModel           `json:"TemplateRegexes,omitempty"`
-	TemplateDefaults          []TemplatesTemplateDefaultRequestResponseModel         `json:"TemplateDefaults,omitempty"`
-	TemplatePolicy            *TemplatesTemplatePolicyResponseModel                  `json:"TemplatePolicy,omitempty"`
-	KeyAlgorithms             *TemplatesKeyAlgorithmsResponseModel                   `json:"KeyAlgorithms,omitempty"`
-	UseAllowedRequesters      *bool                                                  `json:"UseAllowedRequesters,omitempty"`
-	AllowedRequesters         []string                                               `json:"AllowedRequesters,omitempty"`
-	DisplayName               NullableString                                         `json:"DisplayName,omitempty"`
-	RFCEnforcement            *bool                                                  `json:"RFCEnforcement,omitempty"`
-	RequiresApproval          *bool                                                  `json:"RequiresApproval,omitempty"`
-	KeyUsage                  *int32                                                 `json:"KeyUsage,omitempty"`
-	ExtendedKeyUsages         []TemplatesExtendedKeyUsageResponseModel               `json:"ExtendedKeyUsages,omitempty"`
-	Curve                     NullableString                                         `json:"Curve,omitempty"`
-	AllowOneClickRenewals     *bool                                                  `json:"AllowOneClickRenewals,omitempty"`
-	KeyTypes                  NullableString                                         `json:"KeyTypes,omitempty"`
-	CertificateCleanupEnabled NullableBool                                           `json:"CertificateCleanupEnabled,omitempty"`
-	TimeAfterExpiration       NullableInt32                                          `json:"TimeAfterExpiration,omitempty"`
-	TimeAfterExpirationUnits  *CSSCMSDataModelEnumsCertificateCleanupTimeUnits       `json:"TimeAfterExpirationUnits,omitempty"`
-	DeleteWithArchivedKey     NullableBool                                           `json:"DeleteWithArchivedKey,omitempty"`
-	Manageability             NullableInt32                                          `json:"Manageability,omitempty"`
+	Id                        *int32                                                        `json:"Id,omitempty"`
+	CommonName                NullableString                                                `json:"CommonName,omitempty"`
+	TemplateName              NullableString                                                `json:"TemplateName,omitempty"`
+	Oid                       NullableString                                                `json:"Oid,omitempty"`
+	KeySize                   NullableString                                                `json:"KeySize,omitempty"`
+	KeyType                   NullableString                                                `json:"KeyType,omitempty"`
+	ForestRoot                NullableString                                                `json:"ForestRoot,omitempty"`
+	ConfigurationTenant       NullableString                                                `json:"ConfigurationTenant,omitempty"`
+	FriendlyName              NullableString                                                `json:"FriendlyName,omitempty"`
+	KeyRetention              *CSSCMSCoreEnumsKeyRetentionPolicy                            `json:"KeyRetention,omitempty"`
+	KeyRetentionDays          NullableInt32                                                 `json:"KeyRetentionDays,omitempty"`
+	KeyArchival               *bool                                                         `json:"KeyArchival,omitempty"`
+	EnrollmentFields          []TemplatesTemplateEnrollmentFieldRequestResponseModel        `json:"EnrollmentFields,omitempty"`
+	MetadataFields            []TemplatesTemplateMetadataFieldRequestResponseModel          `json:"MetadataFields,omitempty"`
+	AllowedEnrollmentTypes    *CSSCMSCoreEnumsEnrollmentType                                `json:"AllowedEnrollmentTypes,omitempty"`
+	TemplateRegexes           []TemplatesTemplateRegexRequestResponseModel                  `json:"TemplateRegexes,omitempty"`
+	TemplateDefaults          []TemplatesTemplateDefaultRequestResponseModel                `json:"TemplateDefaults,omitempty"`
+	TemplatePolicy            *TemplatesTemplatePolicyResponseModel                         `json:"TemplatePolicy,omitempty"`
+	KeyAlgorithms             *TemplatesKeyAlgorithmsResponse                               `json:"KeyAlgorithms,omitempty"`
+	UseAllowedRequesters      *bool                                                         `json:"UseAllowedRequesters,omitempty"`
+	AllowedRequesters         []string                                                      `json:"AllowedRequesters,omitempty"`
+	DisplayName               NullableString                                                `json:"DisplayName,omitempty"`
+	RFCEnforcement            *bool                                                         `json:"RFCEnforcement,omitempty"`
+	RequiresApproval          *bool                                                         `json:"RequiresApproval,omitempty"`
+	KeyUsage                  *int32                                                        `json:"KeyUsage,omitempty"`
+	ExtendedKeyUsages         []TemplatesExtendedKeyUsageResponseModel                      `json:"ExtendedKeyUsages,omitempty"`
+	Curve                     NullableString                                                `json:"Curve,omitempty"`
+	AllowOneClickRenewals     *bool                                                         `json:"AllowOneClickRenewals,omitempty"`
+	KeyTypes                  NullableString                                                `json:"KeyTypes,omitempty"`
+	CertificateCleanupEnabled NullableBool                                                  `json:"CertificateCleanupEnabled,omitempty"`
+	TimeAfterExpiration       NullableInt32                                                 `json:"TimeAfterExpiration,omitempty"`
+	TimeAfterExpirationUnits  *CSSCMSDataModelEnumsCertificateCleanupTimeUnits              `json:"TimeAfterExpirationUnits,omitempty"`
+	DeleteWithArchivedKey     NullableBool                                                  `json:"DeleteWithArchivedKey,omitempty"`
+	Manageability             *KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability `json:"Manageability,omitempty"`
 }
 
 // NewTemplatesTemplateRetrievalResponse instantiates a new TemplatesTemplateRetrievalResponse object
@@ -762,9 +762,9 @@ func (o *TemplatesTemplateRetrievalResponse) SetTemplatePolicy(v TemplatesTempla
 }
 
 // GetKeyAlgorithms returns the KeyAlgorithms field value if set, zero value otherwise.
-func (o *TemplatesTemplateRetrievalResponse) GetKeyAlgorithms() TemplatesKeyAlgorithmsResponseModel {
+func (o *TemplatesTemplateRetrievalResponse) GetKeyAlgorithms() TemplatesKeyAlgorithmsResponse {
 	if o == nil || isNil(o.KeyAlgorithms) {
-		var ret TemplatesKeyAlgorithmsResponseModel
+		var ret TemplatesKeyAlgorithmsResponse
 		return ret
 	}
 	return *o.KeyAlgorithms
@@ -772,7 +772,7 @@ func (o *TemplatesTemplateRetrievalResponse) GetKeyAlgorithms() TemplatesKeyAlgo
 
 // GetKeyAlgorithmsOk returns a tuple with the KeyAlgorithms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TemplatesTemplateRetrievalResponse) GetKeyAlgorithmsOk() (*TemplatesKeyAlgorithmsResponseModel, bool) {
+func (o *TemplatesTemplateRetrievalResponse) GetKeyAlgorithmsOk() (*TemplatesKeyAlgorithmsResponse, bool) {
 	if o == nil || isNil(o.KeyAlgorithms) {
 		return nil, false
 	}
@@ -788,8 +788,8 @@ func (o *TemplatesTemplateRetrievalResponse) HasKeyAlgorithms() bool {
 	return false
 }
 
-// SetKeyAlgorithms gets a reference to the given TemplatesKeyAlgorithmsResponseModel and assigns it to the KeyAlgorithms field.
-func (o *TemplatesTemplateRetrievalResponse) SetKeyAlgorithms(v TemplatesKeyAlgorithmsResponseModel) {
+// SetKeyAlgorithms gets a reference to the given TemplatesKeyAlgorithmsResponse and assigns it to the KeyAlgorithms field.
+func (o *TemplatesTemplateRetrievalResponse) SetKeyAlgorithms(v TemplatesKeyAlgorithmsResponse) {
 	o.KeyAlgorithms = &v
 }
 
@@ -1309,6 +1309,38 @@ func (o *TemplatesTemplateRetrievalResponse) UnsetDeleteWithArchivedKey() {
 	o.DeleteWithArchivedKey.Unset()
 }
 
+// GetManageability returns the Manageability field value if set, zero value otherwise.
+func (o *TemplatesTemplateRetrievalResponse) GetManageability() KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability {
+	if o == nil || isNil(o.Manageability) {
+		var ret KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability
+		return ret
+	}
+	return *o.Manageability
+}
+
+// GetManageabilityOk returns a tuple with the Manageability field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TemplatesTemplateRetrievalResponse) GetManageabilityOk() (*KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability, bool) {
+	if o == nil || isNil(o.Manageability) {
+		return nil, false
+	}
+	return o.Manageability, true
+}
+
+// HasManageability returns a boolean if a field has been set.
+func (o *TemplatesTemplateRetrievalResponse) HasManageability() bool {
+	if o != nil && !isNil(o.Manageability) {
+		return true
+	}
+
+	return false
+}
+
+// SetManageability gets a reference to the given KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability and assigns it to the Manageability field.
+func (o *TemplatesTemplateRetrievalResponse) SetManageability(v KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability) {
+	o.Manageability = &v
+}
+
 func (o TemplatesTemplateRetrievalResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1418,23 +1450,10 @@ func (o TemplatesTemplateRetrievalResponse) ToMap() (map[string]interface{}, err
 	if o.DeleteWithArchivedKey.IsSet() {
 		toSerialize["DeleteWithArchivedKey"] = o.DeleteWithArchivedKey.Get()
 	}
-	if o.Manageability.IsSet() {
-		toSerialize["Manageability"] = o.Manageability.Get()
+	if !isNil(o.Manageability) {
+		toSerialize["Manageability"] = o.Manageability
 	}
 	return toSerialize, nil
-}
-
-
-func (o *TemplatesTemplateRetrievalResponse) GetManageability() int32 {
-	if o == nil || !o.Manageability.IsSet() || o.Manageability.Get() == nil {
-		var ret int32
-		return ret
-	}
-	return *o.Manageability.Get()
-}
-
-func (o *TemplatesTemplateRetrievalResponse) SetManageability(v int32) {
-	o.Manageability.Set(&v)
 }
 
 type NullableTemplatesTemplateRetrievalResponse struct {

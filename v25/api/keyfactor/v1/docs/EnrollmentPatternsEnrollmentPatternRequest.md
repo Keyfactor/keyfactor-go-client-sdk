@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Regexes** | Pointer to [**[]EnrollmentPatternsEnrollmentPatternRegexesRequest**](EnrollmentPatternsEnrollmentPatternRegexesRequest.md) |  | [optional] 
 **MetadataFields** | Pointer to [**[]EnrollmentPatternsEnrollmentPatternMetadataFieldRequest**](EnrollmentPatternsEnrollmentPatternMetadataFieldRequest.md) |  | [optional] 
 **RestrictCAs** | Pointer to **bool** |  | [optional] 
-**Policies** | Pointer to [**EnrollmentPatternsEnrollmentPatternPolicyRequest**](EnrollmentPatternsEnrollmentPatternPolicyRequest.md) |  | [optional] 
+**Policies** | [**EnrollmentPatternsEnrollmentPatternPolicyRequest**](EnrollmentPatternsEnrollmentPatternPolicyRequest.md) |  | 
 **Defaults** | Pointer to [**[]EnrollmentPatternsEnrollmentPatternDefaultRequest**](EnrollmentPatternsEnrollmentPatternDefaultRequest.md) |  | [optional] 
 **EnrollmentFields** | Pointer to [**[]EnrollmentPatternsEnrollmentPatternFieldRequest**](EnrollmentPatternsEnrollmentPatternFieldRequest.md) |  | [optional] 
 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewEnrollmentPatternsEnrollmentPatternRequest
 
-`func NewEnrollmentPatternsEnrollmentPatternRequest(name string, ) *EnrollmentPatternsEnrollmentPatternRequest`
+`func NewEnrollmentPatternsEnrollmentPatternRequest(name string, policies EnrollmentPatternsEnrollmentPatternPolicyRequest, ) *EnrollmentPatternsEnrollmentPatternRequest`
 
 NewEnrollmentPatternsEnrollmentPatternRequest instantiates a new EnrollmentPatternsEnrollmentPatternRequest object
 This constructor will assign default values to properties that have it defined,
@@ -351,11 +351,6 @@ and a boolean to check if the value has been set.
 
 SetPolicies sets Policies field to given value.
 
-### HasPolicies
-
-`func (o *EnrollmentPatternsEnrollmentPatternRequest) HasPolicies() bool`
-
-HasPolicies returns a boolean if a field has been set.
 
 ### GetDefaults
 

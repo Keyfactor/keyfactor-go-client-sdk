@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -34,6 +34,7 @@ const (
 	CSSCMSDATAMODELENUMSRENEWALTYPE__0 CSSCMSDataModelEnumsRenewalType = 0
 	CSSCMSDATAMODELENUMSRENEWALTYPE__1 CSSCMSDataModelEnumsRenewalType = 1
 	CSSCMSDATAMODELENUMSRENEWALTYPE__2 CSSCMSDataModelEnumsRenewalType = 2
+	CSSCMSDATAMODELENUMSRENEWALTYPE__4 CSSCMSDataModelEnumsRenewalType = 4
 )
 
 func ParseCSSCMSDataModelEnumsRenewalType(s string) (*CSSCMSDataModelEnumsRenewalType, error) {
@@ -62,6 +63,7 @@ var AllowedCSSCMSDataModelEnumsRenewalTypeEnumValues = []CSSCMSDataModelEnumsRen
 	0,
 	1,
 	2,
+	4,
 }
 
 func (v *CSSCMSDataModelEnumsRenewalType) UnmarshalJSON(src []byte) error {

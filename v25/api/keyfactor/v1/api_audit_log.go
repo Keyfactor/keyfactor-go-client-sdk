@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -175,10 +175,10 @@ func (a *AuditLogApiService) GetAuditExecute(r ApiGetAuditRequest) ([]KeyfactorA
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -322,10 +322,10 @@ func (a *AuditLogApiService) GetAuditByIdExecute(r ApiGetAuditByIdRequest) (*htt
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -459,10 +459,10 @@ func (a *AuditLogApiService) GetAuditByIdValidateExecute(r ApiGetAuditByIdValida
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -506,8 +506,6 @@ type ApiGetAuditDownloadRequest struct {
 	ApiService              *AuditLogApiService
 	xKeyfactorRequestedWith *string
 	queryString             *string
-	pageReturned            *int32
-	returnLimit             *int32
 	sortField               *string
 	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
 	xKeyfactorApiVersion    *string
@@ -521,16 +519,6 @@ func (r ApiGetAuditDownloadRequest) XKeyfactorRequestedWith(xKeyfactorRequestedW
 
 func (r ApiGetAuditDownloadRequest) QueryString(queryString string) ApiGetAuditDownloadRequest {
 	r.queryString = &queryString
-	return r
-}
-
-func (r ApiGetAuditDownloadRequest) PageReturned(pageReturned int32) ApiGetAuditDownloadRequest {
-	r.pageReturned = &pageReturned
-	return r
-}
-
-func (r ApiGetAuditDownloadRequest) ReturnLimit(returnLimit int32) ApiGetAuditDownloadRequest {
-	r.returnLimit = &returnLimit
 	return r
 }
 
@@ -614,12 +602,6 @@ func (a *AuditLogApiService) GetAuditDownloadExecute(r ApiGetAuditDownloadReques
 	if r.queryString != nil {
 		parameterAddToQuery(localVarQueryParams, "QueryString", r.queryString, "")
 	}
-	if r.pageReturned != nil {
-		parameterAddToQuery(localVarQueryParams, "PageReturned", r.pageReturned, "")
-	}
-	if r.returnLimit != nil {
-		parameterAddToQuery(localVarQueryParams, "ReturnLimit", r.returnLimit, "")
-	}
 	if r.sortField != nil {
 		parameterAddToQuery(localVarQueryParams, "SortField", r.sortField, "")
 	}
@@ -643,10 +625,10 @@ func (a *AuditLogApiService) GetAuditDownloadExecute(r ApiGetAuditDownloadReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -827,10 +809,10 @@ func (a *AuditLogApiService) GetAuditRelatedEntitiesExecute(r ApiGetAuditRelated
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

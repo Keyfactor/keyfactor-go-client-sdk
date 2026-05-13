@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Schedule** | Pointer to [**KeyfactorCommonSchedulingKeyfactorSchedule**](KeyfactorCommonSchedulingKeyfactorSchedule.md) |  | [optional] 
 **OCSPParameters** | Pointer to [**MonitoringOCSPParametersRequest**](MonitoringOCSPParametersRequest.md) |  | [optional] 
 **UseWorkflows** | Pointer to **bool** |  | [optional] 
+**WorkflowId** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -238,6 +239,41 @@ SetUseWorkflows sets UseWorkflows field to given value.
 
 HasUseWorkflows returns a boolean if a field has been set.
 
+### GetWorkflowId
+
+`func (o *MonitoringRevocationMonitoringUpdateRequest) GetWorkflowId() string`
+
+GetWorkflowId returns the WorkflowId field if non-nil, zero value otherwise.
+
+### GetWorkflowIdOk
+
+`func (o *MonitoringRevocationMonitoringUpdateRequest) GetWorkflowIdOk() (*string, bool)`
+
+GetWorkflowIdOk returns a tuple with the WorkflowId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWorkflowId
+
+`func (o *MonitoringRevocationMonitoringUpdateRequest) SetWorkflowId(v string)`
+
+SetWorkflowId sets WorkflowId field to given value.
+
+### HasWorkflowId
+
+`func (o *MonitoringRevocationMonitoringUpdateRequest) HasWorkflowId() bool`
+
+HasWorkflowId returns a boolean if a field has been set.
+
+### SetWorkflowIdNil
+
+`func (o *MonitoringRevocationMonitoringUpdateRequest) SetWorkflowIdNil(b bool)`
+
+ SetWorkflowIdNil sets the value for WorkflowId to be an explicit nil
+
+### UnsetWorkflowId
+`func (o *MonitoringRevocationMonitoringUpdateRequest) UnsetWorkflowId()`
+
+UnsetWorkflowId ensures that no value is present for WorkflowId, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

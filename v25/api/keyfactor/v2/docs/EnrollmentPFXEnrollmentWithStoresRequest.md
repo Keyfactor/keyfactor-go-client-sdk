@@ -24,10 +24,13 @@ Name | Type | Description | Notes
 **KeyType** | Pointer to **NullableString** | Certificate key type [RSA, ECC] | [optional] 
 **KeyLength** | Pointer to **int32** |  | [optional] 
 **Curve** | Pointer to **NullableString** | The curve being used that will be sent in when the Key Algorithm is of type ECC | [optional] 
+**AlternativeKeyType** | Pointer to **NullableString** | Alternative Certificate key type [ML-DSA-44, ML-DSA-65, ML-DSA-87] | [optional] 
+**AlternativeKeyLength** | Pointer to **NullableInt32** | Size of the alternative certificate key. | [optional] 
 **MicrosoftTargetCSP** | Pointer to **NullableString** | Optionally pass a microsoft cryptographic service provider to the generated certificate | [optional] 
 **OwnerRoleId** | Pointer to **NullableInt32** | Id or name of the security role that will have ownership of the generated certificate | [optional] 
 **OwnerRoleName** | Pointer to **NullableString** |  | [optional] 
 **EnrollmentPatternId** | Pointer to **NullableInt32** | Id of pattern for the enrollment | [optional] 
+**FileExtension** | Pointer to **NullableString** | The file extension that the downloaded certificate will have | [optional] 
 
 ## Methods
 
@@ -698,6 +701,76 @@ HasCurve returns a boolean if a field has been set.
 `func (o *EnrollmentPFXEnrollmentWithStoresRequest) UnsetCurve()`
 
 UnsetCurve ensures that no value is present for Curve, not even an explicit nil
+### GetAlternativeKeyType
+
+`func (o *EnrollmentPFXEnrollmentWithStoresRequest) GetAlternativeKeyType() string`
+
+GetAlternativeKeyType returns the AlternativeKeyType field if non-nil, zero value otherwise.
+
+### GetAlternativeKeyTypeOk
+
+`func (o *EnrollmentPFXEnrollmentWithStoresRequest) GetAlternativeKeyTypeOk() (*string, bool)`
+
+GetAlternativeKeyTypeOk returns a tuple with the AlternativeKeyType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlternativeKeyType
+
+`func (o *EnrollmentPFXEnrollmentWithStoresRequest) SetAlternativeKeyType(v string)`
+
+SetAlternativeKeyType sets AlternativeKeyType field to given value.
+
+### HasAlternativeKeyType
+
+`func (o *EnrollmentPFXEnrollmentWithStoresRequest) HasAlternativeKeyType() bool`
+
+HasAlternativeKeyType returns a boolean if a field has been set.
+
+### SetAlternativeKeyTypeNil
+
+`func (o *EnrollmentPFXEnrollmentWithStoresRequest) SetAlternativeKeyTypeNil(b bool)`
+
+ SetAlternativeKeyTypeNil sets the value for AlternativeKeyType to be an explicit nil
+
+### UnsetAlternativeKeyType
+`func (o *EnrollmentPFXEnrollmentWithStoresRequest) UnsetAlternativeKeyType()`
+
+UnsetAlternativeKeyType ensures that no value is present for AlternativeKeyType, not even an explicit nil
+### GetAlternativeKeyLength
+
+`func (o *EnrollmentPFXEnrollmentWithStoresRequest) GetAlternativeKeyLength() int32`
+
+GetAlternativeKeyLength returns the AlternativeKeyLength field if non-nil, zero value otherwise.
+
+### GetAlternativeKeyLengthOk
+
+`func (o *EnrollmentPFXEnrollmentWithStoresRequest) GetAlternativeKeyLengthOk() (*int32, bool)`
+
+GetAlternativeKeyLengthOk returns a tuple with the AlternativeKeyLength field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlternativeKeyLength
+
+`func (o *EnrollmentPFXEnrollmentWithStoresRequest) SetAlternativeKeyLength(v int32)`
+
+SetAlternativeKeyLength sets AlternativeKeyLength field to given value.
+
+### HasAlternativeKeyLength
+
+`func (o *EnrollmentPFXEnrollmentWithStoresRequest) HasAlternativeKeyLength() bool`
+
+HasAlternativeKeyLength returns a boolean if a field has been set.
+
+### SetAlternativeKeyLengthNil
+
+`func (o *EnrollmentPFXEnrollmentWithStoresRequest) SetAlternativeKeyLengthNil(b bool)`
+
+ SetAlternativeKeyLengthNil sets the value for AlternativeKeyLength to be an explicit nil
+
+### UnsetAlternativeKeyLength
+`func (o *EnrollmentPFXEnrollmentWithStoresRequest) UnsetAlternativeKeyLength()`
+
+UnsetAlternativeKeyLength ensures that no value is present for AlternativeKeyLength, not even an explicit nil
 ### GetMicrosoftTargetCSP
 
 `func (o *EnrollmentPFXEnrollmentWithStoresRequest) GetMicrosoftTargetCSP() string`
@@ -838,6 +911,41 @@ HasEnrollmentPatternId returns a boolean if a field has been set.
 `func (o *EnrollmentPFXEnrollmentWithStoresRequest) UnsetEnrollmentPatternId()`
 
 UnsetEnrollmentPatternId ensures that no value is present for EnrollmentPatternId, not even an explicit nil
+### GetFileExtension
+
+`func (o *EnrollmentPFXEnrollmentWithStoresRequest) GetFileExtension() string`
+
+GetFileExtension returns the FileExtension field if non-nil, zero value otherwise.
+
+### GetFileExtensionOk
+
+`func (o *EnrollmentPFXEnrollmentWithStoresRequest) GetFileExtensionOk() (*string, bool)`
+
+GetFileExtensionOk returns a tuple with the FileExtension field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFileExtension
+
+`func (o *EnrollmentPFXEnrollmentWithStoresRequest) SetFileExtension(v string)`
+
+SetFileExtension sets FileExtension field to given value.
+
+### HasFileExtension
+
+`func (o *EnrollmentPFXEnrollmentWithStoresRequest) HasFileExtension() bool`
+
+HasFileExtension returns a boolean if a field has been set.
+
+### SetFileExtensionNil
+
+`func (o *EnrollmentPFXEnrollmentWithStoresRequest) SetFileExtensionNil(b bool)`
+
+ SetFileExtensionNil sets the value for FileExtension to be an explicit nil
+
+### UnsetFileExtension
+`func (o *EnrollmentPFXEnrollmentWithStoresRequest) UnsetFileExtension()`
+
+UnsetFileExtension ensures that no value is present for FileExtension, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

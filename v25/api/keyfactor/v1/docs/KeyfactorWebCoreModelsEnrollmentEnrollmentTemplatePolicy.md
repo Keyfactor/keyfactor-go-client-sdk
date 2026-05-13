@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**KeyInfo** | Pointer to [**CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo**](CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo.md) |  | [optional] 
+**PrimaryKeyAlgorithms** | Pointer to [**[]CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData**](CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData.md) |  | [optional] 
+**AlternativeKeyAlgorithms** | Pointer to [**[]CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData**](CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData.md) |  | [optional] 
 **AllowKeyReuse** | Pointer to **bool** |  | [optional] 
 **AllowWildcards** | Pointer to **bool** |  | [optional] 
 **RFCEnforcement** | Pointer to **bool** |  | [optional] 
@@ -29,31 +30,76 @@ NewKeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicyWithDefaults instanti
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetKeyInfo
+### GetPrimaryKeyAlgorithms
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetKeyInfo() CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetPrimaryKeyAlgorithms() []CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData`
 
-GetKeyInfo returns the KeyInfo field if non-nil, zero value otherwise.
+GetPrimaryKeyAlgorithms returns the PrimaryKeyAlgorithms field if non-nil, zero value otherwise.
 
-### GetKeyInfoOk
+### GetPrimaryKeyAlgorithmsOk
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetKeyInfoOk() (*CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo, bool)`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetPrimaryKeyAlgorithmsOk() (*[]CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData, bool)`
 
-GetKeyInfoOk returns a tuple with the KeyInfo field if it's non-nil, zero value otherwise
+GetPrimaryKeyAlgorithmsOk returns a tuple with the PrimaryKeyAlgorithms field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKeyInfo
+### SetPrimaryKeyAlgorithms
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) SetKeyInfo(v CSSCMSDataModelModelsTemplatesAlgorithmsKeyInfo)`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) SetPrimaryKeyAlgorithms(v []CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData)`
 
-SetKeyInfo sets KeyInfo field to given value.
+SetPrimaryKeyAlgorithms sets PrimaryKeyAlgorithms field to given value.
 
-### HasKeyInfo
+### HasPrimaryKeyAlgorithms
 
-`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) HasKeyInfo() bool`
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) HasPrimaryKeyAlgorithms() bool`
 
-HasKeyInfo returns a boolean if a field has been set.
+HasPrimaryKeyAlgorithms returns a boolean if a field has been set.
 
+### SetPrimaryKeyAlgorithmsNil
+
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) SetPrimaryKeyAlgorithmsNil(b bool)`
+
+ SetPrimaryKeyAlgorithmsNil sets the value for PrimaryKeyAlgorithms to be an explicit nil
+
+### UnsetPrimaryKeyAlgorithms
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) UnsetPrimaryKeyAlgorithms()`
+
+UnsetPrimaryKeyAlgorithms ensures that no value is present for PrimaryKeyAlgorithms, not even an explicit nil
+### GetAlternativeKeyAlgorithms
+
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetAlternativeKeyAlgorithms() []CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData`
+
+GetAlternativeKeyAlgorithms returns the AlternativeKeyAlgorithms field if non-nil, zero value otherwise.
+
+### GetAlternativeKeyAlgorithmsOk
+
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetAlternativeKeyAlgorithmsOk() (*[]CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData, bool)`
+
+GetAlternativeKeyAlgorithmsOk returns a tuple with the AlternativeKeyAlgorithms field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlternativeKeyAlgorithms
+
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) SetAlternativeKeyAlgorithms(v []CSSCMSDataModelModelsTemplatesAlgorithmsAlgorithmData)`
+
+SetAlternativeKeyAlgorithms sets AlternativeKeyAlgorithms field to given value.
+
+### HasAlternativeKeyAlgorithms
+
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) HasAlternativeKeyAlgorithms() bool`
+
+HasAlternativeKeyAlgorithms returns a boolean if a field has been set.
+
+### SetAlternativeKeyAlgorithmsNil
+
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) SetAlternativeKeyAlgorithmsNil(b bool)`
+
+ SetAlternativeKeyAlgorithmsNil sets the value for AlternativeKeyAlgorithms to be an explicit nil
+
+### UnsetAlternativeKeyAlgorithms
+`func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) UnsetAlternativeKeyAlgorithms()`
+
+UnsetAlternativeKeyAlgorithms ensures that no value is present for AlternativeKeyAlgorithms, not even an explicit nil
 ### GetAllowKeyReuse
 
 `func (o *KeyfactorWebCoreModelsEnrollmentEnrollmentTemplatePolicy) GetAllowKeyReuse() bool`

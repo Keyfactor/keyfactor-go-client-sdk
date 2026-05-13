@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -69,7 +69,11 @@ type APIClient struct {
 
 	AgentPoolApi *AgentPoolApiService
 
+	AnalyticsApi *AnalyticsApiService
+
 	AppSettingApi *AppSettingApiService
+
+	ApplicationApi *ApplicationApiService
 
 	AuditLogApi *AuditLogApiService
 
@@ -192,7 +196,9 @@ func NewAPIClient(cfg *auth_providers.Server) (*APIClient, error) {
 	c.AgentApi = (*AgentApiService)(&c.common)
 	c.AgentBlueprintApi = (*AgentBlueprintApiService)(&c.common)
 	c.AgentPoolApi = (*AgentPoolApiService)(&c.common)
+	c.AnalyticsApi = (*AnalyticsApiService)(&c.common)
 	c.AppSettingApi = (*AppSettingApiService)(&c.common)
+	c.ApplicationApi = (*ApplicationApiService)(&c.common)
 	c.AuditLogApi = (*AuditLogApiService)(&c.common)
 	c.CAConnectorApi = (*CAConnectorApiService)(&c.common)
 	c.CSRGenerationApi = (*CSRGenerationApiService)(&c.common)
@@ -246,6 +252,77 @@ func NewAPIClient(cfg *auth_providers.Server) (*APIClient, error) {
 	return c, nil
 }
 
+// NewAPIClientWithAuth creates an APIClient with a pre-built AuthConfig, bypassing
+// the Authenticate() network call. Used in unit tests with VCR cassettes and any
+// scenario where authentication has already been established out of band.
+//
+// Originally added in commit af6340b for v24 VCR test injection; needed in v25 for
+// the same purpose by downstream consumers (terraform-provider-keyfactor, kfutil).
+func NewAPIClientWithAuth(auth AuthConfig) *APIClient {
+	c := &APIClient{}
+	c.AuthClient = auth
+	c.common.client = c
+
+	// API Services
+	c.AgentApi = (*AgentApiService)(&c.common)
+	c.AgentBlueprintApi = (*AgentBlueprintApiService)(&c.common)
+	c.AgentPoolApi = (*AgentPoolApiService)(&c.common)
+	c.AnalyticsApi = (*AnalyticsApiService)(&c.common)
+	c.AppSettingApi = (*AppSettingApiService)(&c.common)
+	c.ApplicationApi = (*ApplicationApiService)(&c.common)
+	c.AuditLogApi = (*AuditLogApiService)(&c.common)
+	c.CAConnectorApi = (*CAConnectorApiService)(&c.common)
+	c.CSRGenerationApi = (*CSRGenerationApiService)(&c.common)
+	c.CertificateApi = (*CertificateApiService)(&c.common)
+	c.CertificateAuthorityApi = (*CertificateAuthorityApiService)(&c.common)
+	c.CertificateCollectionApi = (*CertificateCollectionApiService)(&c.common)
+	c.CertificateStoreApi = (*CertificateStoreApiService)(&c.common)
+	c.CertificateStoreContainerApi = (*CertificateStoreContainerApiService)(&c.common)
+	c.CertificateStoreTypeApi = (*CertificateStoreTypeApiService)(&c.common)
+	c.ComponentInstallationApi = (*ComponentInstallationApiService)(&c.common)
+	c.CustomJobTypeApi = (*CustomJobTypeApiService)(&c.common)
+	c.DeniedAlertApi = (*DeniedAlertApiService)(&c.common)
+	c.EnrollmentApi = (*EnrollmentApiService)(&c.common)
+	c.EnrollmentPatternApi = (*EnrollmentPatternApiService)(&c.common)
+	c.EventHandlerRegistrationApi = (*EventHandlerRegistrationApiService)(&c.common)
+	c.ExpirationAlertApi = (*ExpirationAlertApiService)(&c.common)
+	c.ExtensionsApi = (*ExtensionsApiService)(&c.common)
+	c.IdentityProviderApi = (*IdentityProviderApiService)(&c.common)
+	c.IssuedAlertApi = (*IssuedAlertApiService)(&c.common)
+	c.KeyApi = (*KeyApiService)(&c.common)
+	c.KeyRotationAlertApi = (*KeyRotationAlertApiService)(&c.common)
+	c.LicenseApi = (*LicenseApiService)(&c.common)
+	c.LogonApi = (*LogonApiService)(&c.common)
+	c.MacEnrollmentApi = (*MacEnrollmentApiService)(&c.common)
+	c.MetadataFieldApi = (*MetadataFieldApiService)(&c.common)
+	c.MonitoringApi = (*MonitoringApiService)(&c.common)
+	c.OrchestratorJobApi = (*OrchestratorJobApiService)(&c.common)
+	c.PAMLocalEntriesApi = (*PAMLocalEntriesApiService)(&c.common)
+	c.PAMProviderApi = (*PAMProviderApiService)(&c.common)
+	c.PendingAlertApi = (*PendingAlertApiService)(&c.common)
+	c.PermissionSetApi = (*PermissionSetApiService)(&c.common)
+	c.PermissionsApi = (*PermissionsApiService)(&c.common)
+	c.ReportsApi = (*ReportsApiService)(&c.common)
+	c.SMTPApi = (*SMTPApiService)(&c.common)
+	c.SchedulingApi = (*SchedulingApiService)(&c.common)
+	c.SecurityApi = (*SecurityApiService)(&c.common)
+	c.SecurityClaimsApi = (*SecurityClaimsApiService)(&c.common)
+	c.SecurityRolePermissionsApi = (*SecurityRolePermissionsApiService)(&c.common)
+	c.SecurityRolesApi = (*SecurityRolesApiService)(&c.common)
+	c.ServerApi = (*ServerApiService)(&c.common)
+	c.ServerGroupApi = (*ServerGroupApiService)(&c.common)
+	c.ServiceAccountApi = (*ServiceAccountApiService)(&c.common)
+	c.SslApi = (*SslApiService)(&c.common)
+	c.StatusApi = (*StatusApiService)(&c.common)
+	c.TemplateApi = (*TemplateApiService)(&c.common)
+	c.UserApi = (*UserApiService)(&c.common)
+	c.WorkflowApi = (*WorkflowApiService)(&c.common)
+	c.WorkflowDefinitionApi = (*WorkflowDefinitionApiService)(&c.common)
+	c.WorkflowInstanceApi = (*WorkflowInstanceApiService)(&c.common)
+
+	return c
+}
+
 // Define an interface that both CommandConfigOauth and CommandAuthConfigBasic implement
 type AuthConfig interface {
 	Authenticate() error
@@ -286,9 +363,9 @@ func buildHttpClientV2(cfg *auth_providers.Server) (AuthConfig, error) {
 			ClientID:          cfg.ClientID,
 			ClientSecret:      cfg.ClientSecret,
 			TokenURL:          cfg.OAuthTokenUrl,
-			Audience: 		   cfg.Audience,
-			Scopes: 	       cfg.Scopes,
-			AccessToken: 	   cfg.AccessToken,
+			Audience:          cfg.Audience,
+			Scopes:            cfg.Scopes,
+			AccessToken:       cfg.AccessToken,
 		}
 		aErr := oauthCfg.Authenticate()
 		if aErr != nil {

@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **IncludeSubjectHeader** | Pointer to **bool** |  | [optional] 
 **FriendlyName** | Pointer to **NullableString** |  | [optional] 
 **ChainOrder** | Pointer to **NullableString** |  | [optional] 
+**FileExtension** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -385,6 +386,41 @@ HasChainOrder returns a boolean if a field has been set.
 `func (o *CertificatesCertificateRecoveryRequest) UnsetChainOrder()`
 
 UnsetChainOrder ensures that no value is present for ChainOrder, not even an explicit nil
+### GetFileExtension
+
+`func (o *CertificatesCertificateRecoveryRequest) GetFileExtension() string`
+
+GetFileExtension returns the FileExtension field if non-nil, zero value otherwise.
+
+### GetFileExtensionOk
+
+`func (o *CertificatesCertificateRecoveryRequest) GetFileExtensionOk() (*string, bool)`
+
+GetFileExtensionOk returns a tuple with the FileExtension field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFileExtension
+
+`func (o *CertificatesCertificateRecoveryRequest) SetFileExtension(v string)`
+
+SetFileExtension sets FileExtension field to given value.
+
+### HasFileExtension
+
+`func (o *CertificatesCertificateRecoveryRequest) HasFileExtension() bool`
+
+HasFileExtension returns a boolean if a field has been set.
+
+### SetFileExtensionNil
+
+`func (o *CertificatesCertificateRecoveryRequest) SetFileExtensionNil(b bool)`
+
+ SetFileExtensionNil sets the value for FileExtension to be an explicit nil
+
+### UnsetFileExtension
+`func (o *CertificatesCertificateRecoveryRequest) UnsetFileExtension()`
+
+UnsetFileExtension ensures that no value is present for FileExtension, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

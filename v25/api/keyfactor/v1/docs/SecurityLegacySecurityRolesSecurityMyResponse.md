@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Roles** | Pointer to **[]string** |  | [optional] 
 **GlobalPermissions** | Pointer to [**[]GlobalPermissionsGlobalPermissionResponse**](GlobalPermissionsGlobalPermissionResponse.md) |  | [optional] 
+**GranularPermissions** | Pointer to [**[]GranularPermissionsGranularPermissionResponse**](GranularPermissionsGranularPermissionResponse.md) |  | [optional] 
 
 ## Methods
 
@@ -96,6 +97,41 @@ HasGlobalPermissions returns a boolean if a field has been set.
 `func (o *SecurityLegacySecurityRolesSecurityMyResponse) UnsetGlobalPermissions()`
 
 UnsetGlobalPermissions ensures that no value is present for GlobalPermissions, not even an explicit nil
+### GetGranularPermissions
+
+`func (o *SecurityLegacySecurityRolesSecurityMyResponse) GetGranularPermissions() []GranularPermissionsGranularPermissionResponse`
+
+GetGranularPermissions returns the GranularPermissions field if non-nil, zero value otherwise.
+
+### GetGranularPermissionsOk
+
+`func (o *SecurityLegacySecurityRolesSecurityMyResponse) GetGranularPermissionsOk() (*[]GranularPermissionsGranularPermissionResponse, bool)`
+
+GetGranularPermissionsOk returns a tuple with the GranularPermissions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGranularPermissions
+
+`func (o *SecurityLegacySecurityRolesSecurityMyResponse) SetGranularPermissions(v []GranularPermissionsGranularPermissionResponse)`
+
+SetGranularPermissions sets GranularPermissions field to given value.
+
+### HasGranularPermissions
+
+`func (o *SecurityLegacySecurityRolesSecurityMyResponse) HasGranularPermissions() bool`
+
+HasGranularPermissions returns a boolean if a field has been set.
+
+### SetGranularPermissionsNil
+
+`func (o *SecurityLegacySecurityRolesSecurityMyResponse) SetGranularPermissionsNil(b bool)`
+
+ SetGranularPermissionsNil sets the value for GranularPermissions to be an explicit nil
+
+### UnsetGranularPermissions
+`func (o *SecurityLegacySecurityRolesSecurityMyResponse) UnsetGranularPermissions()`
+
+UnsetGranularPermissions ensures that no value is present for GranularPermissions, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

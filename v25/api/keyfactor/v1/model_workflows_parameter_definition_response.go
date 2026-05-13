@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -38,6 +38,9 @@ type WorkflowsParameterDefinitionResponse struct {
 	SupportTokenReplacement *bool                               `json:"SupportTokenReplacement,omitempty"`
 	DependsOn               map[string]string                   `json:"DependsOn,omitempty"`
 	ToolTipContents         NullableString                      `json:"ToolTipContents,omitempty"`
+	QueryEndpoint           NullableString                      `json:"QueryEndpoint,omitempty"`
+	QueryFieldName          NullableString                      `json:"QueryFieldName,omitempty"`
+	QueryGroupBy            NullableString                      `json:"QueryGroupBy,omitempty"`
 }
 
 // NewWorkflowsParameterDefinitionResponse instantiates a new WorkflowsParameterDefinitionResponse object
@@ -380,6 +383,135 @@ func (o *WorkflowsParameterDefinitionResponse) UnsetToolTipContents() {
 	o.ToolTipContents.Unset()
 }
 
+// GetQueryEndpoint returns the QueryEndpoint field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *WorkflowsParameterDefinitionResponse) GetQueryEndpoint() string {
+	if o == nil || isNil(o.QueryEndpoint.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.QueryEndpoint.Get()
+}
+
+// GetQueryEndpointOk returns a tuple with the QueryEndpoint field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *WorkflowsParameterDefinitionResponse) GetQueryEndpointOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.QueryEndpoint.Get(), o.QueryEndpoint.IsSet()
+}
+
+// HasQueryEndpoint returns a boolean if a field has been set.
+func (o *WorkflowsParameterDefinitionResponse) HasQueryEndpoint() bool {
+	if o != nil && o.QueryEndpoint.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetQueryEndpoint gets a reference to the given NullableString and assigns it to the QueryEndpoint field.
+func (o *WorkflowsParameterDefinitionResponse) SetQueryEndpoint(v string) {
+	o.QueryEndpoint.Set(&v)
+}
+
+// SetQueryEndpointNil sets the value for QueryEndpoint to be an explicit nil
+func (o *WorkflowsParameterDefinitionResponse) SetQueryEndpointNil() {
+	o.QueryEndpoint.Set(nil)
+}
+
+// UnsetQueryEndpoint ensures that no value is present for QueryEndpoint, not even an explicit nil
+func (o *WorkflowsParameterDefinitionResponse) UnsetQueryEndpoint() {
+	o.QueryEndpoint.Unset()
+}
+
+// GetQueryFieldName returns the QueryFieldName field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *WorkflowsParameterDefinitionResponse) GetQueryFieldName() string {
+	if o == nil || isNil(o.QueryFieldName.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.QueryFieldName.Get()
+}
+
+// GetQueryFieldNameOk returns a tuple with the QueryFieldName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *WorkflowsParameterDefinitionResponse) GetQueryFieldNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.QueryFieldName.Get(), o.QueryFieldName.IsSet()
+}
+
+// HasQueryFieldName returns a boolean if a field has been set.
+func (o *WorkflowsParameterDefinitionResponse) HasQueryFieldName() bool {
+	if o != nil && o.QueryFieldName.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetQueryFieldName gets a reference to the given NullableString and assigns it to the QueryFieldName field.
+func (o *WorkflowsParameterDefinitionResponse) SetQueryFieldName(v string) {
+	o.QueryFieldName.Set(&v)
+}
+
+// SetQueryFieldNameNil sets the value for QueryFieldName to be an explicit nil
+func (o *WorkflowsParameterDefinitionResponse) SetQueryFieldNameNil() {
+	o.QueryFieldName.Set(nil)
+}
+
+// UnsetQueryFieldName ensures that no value is present for QueryFieldName, not even an explicit nil
+func (o *WorkflowsParameterDefinitionResponse) UnsetQueryFieldName() {
+	o.QueryFieldName.Unset()
+}
+
+// GetQueryGroupBy returns the QueryGroupBy field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *WorkflowsParameterDefinitionResponse) GetQueryGroupBy() string {
+	if o == nil || isNil(o.QueryGroupBy.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.QueryGroupBy.Get()
+}
+
+// GetQueryGroupByOk returns a tuple with the QueryGroupBy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *WorkflowsParameterDefinitionResponse) GetQueryGroupByOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.QueryGroupBy.Get(), o.QueryGroupBy.IsSet()
+}
+
+// HasQueryGroupBy returns a boolean if a field has been set.
+func (o *WorkflowsParameterDefinitionResponse) HasQueryGroupBy() bool {
+	if o != nil && o.QueryGroupBy.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetQueryGroupBy gets a reference to the given NullableString and assigns it to the QueryGroupBy field.
+func (o *WorkflowsParameterDefinitionResponse) SetQueryGroupBy(v string) {
+	o.QueryGroupBy.Set(&v)
+}
+
+// SetQueryGroupByNil sets the value for QueryGroupBy to be an explicit nil
+func (o *WorkflowsParameterDefinitionResponse) SetQueryGroupByNil() {
+	o.QueryGroupBy.Set(nil)
+}
+
+// UnsetQueryGroupBy ensures that no value is present for QueryGroupBy, not even an explicit nil
+func (o *WorkflowsParameterDefinitionResponse) UnsetQueryGroupBy() {
+	o.QueryGroupBy.Unset()
+}
+
 func (o WorkflowsParameterDefinitionResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -416,6 +548,15 @@ func (o WorkflowsParameterDefinitionResponse) ToMap() (map[string]interface{}, e
 	}
 	if o.ToolTipContents.IsSet() {
 		toSerialize["ToolTipContents"] = o.ToolTipContents.Get()
+	}
+	if o.QueryEndpoint.IsSet() {
+		toSerialize["QueryEndpoint"] = o.QueryEndpoint.Get()
+	}
+	if o.QueryFieldName.IsSet() {
+		toSerialize["QueryFieldName"] = o.QueryFieldName.Get()
+	}
+	if o.QueryGroupBy.IsSet() {
+		toSerialize["QueryGroupBy"] = o.QueryGroupBy.Get()
 	}
 	return toSerialize, nil
 }

@@ -13,6 +13,9 @@ Name | Type | Description | Notes
 **SupportTokenReplacement** | Pointer to **bool** |  | [optional] 
 **DependsOn** | Pointer to **map[string]string** |  | [optional] 
 **ToolTipContents** | Pointer to **NullableString** |  | [optional] 
+**QueryEndpoint** | Pointer to **NullableString** |  | [optional] 
+**QueryFieldName** | Pointer to **NullableString** |  | [optional] 
+**QueryGroupBy** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -308,6 +311,111 @@ HasToolTipContents returns a boolean if a field has been set.
 `func (o *WorkflowsParameterDefinitionResponse) UnsetToolTipContents()`
 
 UnsetToolTipContents ensures that no value is present for ToolTipContents, not even an explicit nil
+### GetQueryEndpoint
+
+`func (o *WorkflowsParameterDefinitionResponse) GetQueryEndpoint() string`
+
+GetQueryEndpoint returns the QueryEndpoint field if non-nil, zero value otherwise.
+
+### GetQueryEndpointOk
+
+`func (o *WorkflowsParameterDefinitionResponse) GetQueryEndpointOk() (*string, bool)`
+
+GetQueryEndpointOk returns a tuple with the QueryEndpoint field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQueryEndpoint
+
+`func (o *WorkflowsParameterDefinitionResponse) SetQueryEndpoint(v string)`
+
+SetQueryEndpoint sets QueryEndpoint field to given value.
+
+### HasQueryEndpoint
+
+`func (o *WorkflowsParameterDefinitionResponse) HasQueryEndpoint() bool`
+
+HasQueryEndpoint returns a boolean if a field has been set.
+
+### SetQueryEndpointNil
+
+`func (o *WorkflowsParameterDefinitionResponse) SetQueryEndpointNil(b bool)`
+
+ SetQueryEndpointNil sets the value for QueryEndpoint to be an explicit nil
+
+### UnsetQueryEndpoint
+`func (o *WorkflowsParameterDefinitionResponse) UnsetQueryEndpoint()`
+
+UnsetQueryEndpoint ensures that no value is present for QueryEndpoint, not even an explicit nil
+### GetQueryFieldName
+
+`func (o *WorkflowsParameterDefinitionResponse) GetQueryFieldName() string`
+
+GetQueryFieldName returns the QueryFieldName field if non-nil, zero value otherwise.
+
+### GetQueryFieldNameOk
+
+`func (o *WorkflowsParameterDefinitionResponse) GetQueryFieldNameOk() (*string, bool)`
+
+GetQueryFieldNameOk returns a tuple with the QueryFieldName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQueryFieldName
+
+`func (o *WorkflowsParameterDefinitionResponse) SetQueryFieldName(v string)`
+
+SetQueryFieldName sets QueryFieldName field to given value.
+
+### HasQueryFieldName
+
+`func (o *WorkflowsParameterDefinitionResponse) HasQueryFieldName() bool`
+
+HasQueryFieldName returns a boolean if a field has been set.
+
+### SetQueryFieldNameNil
+
+`func (o *WorkflowsParameterDefinitionResponse) SetQueryFieldNameNil(b bool)`
+
+ SetQueryFieldNameNil sets the value for QueryFieldName to be an explicit nil
+
+### UnsetQueryFieldName
+`func (o *WorkflowsParameterDefinitionResponse) UnsetQueryFieldName()`
+
+UnsetQueryFieldName ensures that no value is present for QueryFieldName, not even an explicit nil
+### GetQueryGroupBy
+
+`func (o *WorkflowsParameterDefinitionResponse) GetQueryGroupBy() string`
+
+GetQueryGroupBy returns the QueryGroupBy field if non-nil, zero value otherwise.
+
+### GetQueryGroupByOk
+
+`func (o *WorkflowsParameterDefinitionResponse) GetQueryGroupByOk() (*string, bool)`
+
+GetQueryGroupByOk returns a tuple with the QueryGroupBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQueryGroupBy
+
+`func (o *WorkflowsParameterDefinitionResponse) SetQueryGroupBy(v string)`
+
+SetQueryGroupBy sets QueryGroupBy field to given value.
+
+### HasQueryGroupBy
+
+`func (o *WorkflowsParameterDefinitionResponse) HasQueryGroupBy() bool`
+
+HasQueryGroupBy returns a boolean if a field has been set.
+
+### SetQueryGroupByNil
+
+`func (o *WorkflowsParameterDefinitionResponse) SetQueryGroupByNil(b bool)`
+
+ SetQueryGroupByNil sets the value for QueryGroupBy to be an explicit nil
+
+### UnsetQueryGroupBy
+`func (o *WorkflowsParameterDefinitionResponse) UnsetQueryGroupBy()`
+
+UnsetQueryGroupBy ensures that no value is present for QueryGroupBy, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

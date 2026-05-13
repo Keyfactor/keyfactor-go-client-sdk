@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -137,10 +137,10 @@ func (a *CSRGenerationApiService) CreateCSRGenerationGenerateExecute(r ApiCreate
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.enrollmentCSRGenerationRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -282,10 +282,10 @@ func (a *CSRGenerationApiService) DeleteCSRGenerationPendingExecute(r ApiDeleteC
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.requestBody
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -422,10 +422,10 @@ func (a *CSRGenerationApiService) DeleteCSRGenerationPendingByIdExecute(r ApiDel
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -459,10 +459,8 @@ type ApiGetCSRGenerationPendingRequest struct {
 	ctx                     context.Context
 	ApiService              *CSRGenerationApiService
 	xKeyfactorRequestedWith *string
-	queryString             *string
 	pageReturned            *int32
 	returnLimit             *int32
-	sortField               *string
 	sortAscending           *KeyfactorCommonQueryableExtensionsSortOrder
 	xKeyfactorApiVersion    *string
 }
@@ -473,11 +471,6 @@ func (r ApiGetCSRGenerationPendingRequest) XKeyfactorRequestedWith(xKeyfactorReq
 	return r
 }
 
-func (r ApiGetCSRGenerationPendingRequest) QueryString(queryString string) ApiGetCSRGenerationPendingRequest {
-	r.queryString = &queryString
-	return r
-}
-
 func (r ApiGetCSRGenerationPendingRequest) PageReturned(pageReturned int32) ApiGetCSRGenerationPendingRequest {
 	r.pageReturned = &pageReturned
 	return r
@@ -485,11 +478,6 @@ func (r ApiGetCSRGenerationPendingRequest) PageReturned(pageReturned int32) ApiG
 
 func (r ApiGetCSRGenerationPendingRequest) ReturnLimit(returnLimit int32) ApiGetCSRGenerationPendingRequest {
 	r.returnLimit = &returnLimit
-	return r
-}
-
-func (r ApiGetCSRGenerationPendingRequest) SortField(sortField string) ApiGetCSRGenerationPendingRequest {
-	r.sortField = &sortField
 	return r
 }
 
@@ -565,17 +553,11 @@ func (a *CSRGenerationApiService) GetCSRGenerationPendingExecute(r ApiGetCSRGene
 		return localVarReturnValue, nil, reportError("xKeyfactorRequestedWith is required and must be specified")
 	}
 
-	if r.queryString != nil {
-		parameterAddToQuery(localVarQueryParams, "QueryString", r.queryString, "")
-	}
 	if r.pageReturned != nil {
 		parameterAddToQuery(localVarQueryParams, "PageReturned", r.pageReturned, "")
 	}
 	if r.returnLimit != nil {
 		parameterAddToQuery(localVarQueryParams, "ReturnLimit", r.returnLimit, "")
-	}
-	if r.sortField != nil {
-		parameterAddToQuery(localVarQueryParams, "SortField", r.sortField, "")
 	}
 	if r.sortAscending != nil {
 		parameterAddToQuery(localVarQueryParams, "SortAscending", r.sortAscending, "")
@@ -597,10 +579,10 @@ func (a *CSRGenerationApiService) GetCSRGenerationPendingExecute(r ApiGetCSRGene
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -747,10 +729,10 @@ func (a *CSRGenerationApiService) GetCSRGenerationPendingByIdExecute(r ApiGetCSR
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

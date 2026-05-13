@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -37,6 +37,7 @@ type CertificatesCertificateDownloadRequest struct {
 	IncludeSubjectHeader *bool          `json:"IncludeSubjectHeader,omitempty"`
 	FriendlyName         NullableString `json:"FriendlyName,omitempty"`
 	ChainOrder           NullableString `json:"ChainOrder,omitempty"`
+	FileExtension        NullableString `json:"FileExtension,omitempty"`
 }
 
 // NewCertificatesCertificateDownloadRequest instantiates a new CertificatesCertificateDownloadRequest object
@@ -378,6 +379,49 @@ func (o *CertificatesCertificateDownloadRequest) UnsetChainOrder() {
 	o.ChainOrder.Unset()
 }
 
+// GetFileExtension returns the FileExtension field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CertificatesCertificateDownloadRequest) GetFileExtension() string {
+	if o == nil || isNil(o.FileExtension.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.FileExtension.Get()
+}
+
+// GetFileExtensionOk returns a tuple with the FileExtension field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CertificatesCertificateDownloadRequest) GetFileExtensionOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.FileExtension.Get(), o.FileExtension.IsSet()
+}
+
+// HasFileExtension returns a boolean if a field has been set.
+func (o *CertificatesCertificateDownloadRequest) HasFileExtension() bool {
+	if o != nil && o.FileExtension.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetFileExtension gets a reference to the given NullableString and assigns it to the FileExtension field.
+func (o *CertificatesCertificateDownloadRequest) SetFileExtension(v string) {
+	o.FileExtension.Set(&v)
+}
+
+// SetFileExtensionNil sets the value for FileExtension to be an explicit nil
+func (o *CertificatesCertificateDownloadRequest) SetFileExtensionNil() {
+	o.FileExtension.Set(nil)
+}
+
+// UnsetFileExtension ensures that no value is present for FileExtension, not even an explicit nil
+func (o *CertificatesCertificateDownloadRequest) UnsetFileExtension() {
+	o.FileExtension.Unset()
+}
+
 func (o CertificatesCertificateDownloadRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -411,6 +455,9 @@ func (o CertificatesCertificateDownloadRequest) ToMap() (map[string]interface{},
 	}
 	if o.ChainOrder.IsSet() {
 		toSerialize["ChainOrder"] = o.ChainOrder.Get()
+	}
+	if o.FileExtension.IsSet() {
+		toSerialize["FileExtension"] = o.FileExtension.Get()
 	}
 	return toSerialize, nil
 }

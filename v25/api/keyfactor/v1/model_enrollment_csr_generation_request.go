@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -42,9 +42,7 @@ type EnrollmentCSRGenerationRequest struct {
 	// Size of the alternative certificate key.
 	AlternativeKeyLength NullableInt32 `json:"AlternativeKeyLength,omitempty"`
 	// The alternative curve used to generate a CSR.
-	AlternativeCurve NullableString `json:"AlternativeCurve,omitempty"`
-	// Deprecated
-	Template            NullableString      `json:"Template,omitempty"`
+	AlternativeCurve    NullableString      `json:"AlternativeCurve,omitempty"`
 	SANs                map[string][]string `json:"SANs,omitempty"`
 	EnrollmentPatternId NullableInt32       `json:"EnrollmentPatternId,omitempty"`
 }
@@ -320,52 +318,6 @@ func (o *EnrollmentCSRGenerationRequest) UnsetAlternativeCurve() {
 	o.AlternativeCurve.Unset()
 }
 
-// GetTemplate returns the Template field value if set, zero value otherwise (both if not set or set to explicit null).
-// Deprecated
-func (o *EnrollmentCSRGenerationRequest) GetTemplate() string {
-	if o == nil || isNil(o.Template.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Template.Get()
-}
-
-// GetTemplateOk returns a tuple with the Template field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-// Deprecated
-func (o *EnrollmentCSRGenerationRequest) GetTemplateOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Template.Get(), o.Template.IsSet()
-}
-
-// HasTemplate returns a boolean if a field has been set.
-func (o *EnrollmentCSRGenerationRequest) HasTemplate() bool {
-	if o != nil && o.Template.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetTemplate gets a reference to the given NullableString and assigns it to the Template field.
-// Deprecated
-func (o *EnrollmentCSRGenerationRequest) SetTemplate(v string) {
-	o.Template.Set(&v)
-}
-
-// SetTemplateNil sets the value for Template to be an explicit nil
-func (o *EnrollmentCSRGenerationRequest) SetTemplateNil() {
-	o.Template.Set(nil)
-}
-
-// UnsetTemplate ensures that no value is present for Template, not even an explicit nil
-func (o *EnrollmentCSRGenerationRequest) UnsetTemplate() {
-	o.Template.Unset()
-}
-
 // GetSANs returns the SANs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EnrollmentCSRGenerationRequest) GetSANs() map[string][]string {
 	if o == nil {
@@ -468,9 +420,6 @@ func (o EnrollmentCSRGenerationRequest) ToMap() (map[string]interface{}, error) 
 	}
 	if o.AlternativeCurve.IsSet() {
 		toSerialize["AlternativeCurve"] = o.AlternativeCurve.Get()
-	}
-	if o.Template.IsSet() {
-		toSerialize["Template"] = o.Template.Get()
 	}
 	if o.SANs != nil {
 		toSerialize["SANs"] = o.SANs

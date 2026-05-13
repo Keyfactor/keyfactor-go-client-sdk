@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -68,6 +68,10 @@ type EnrollmentPFXEnrollmentWithStoresRequest struct {
 	KeyLength *int32         `json:"KeyLength,omitempty"`
 	// The curve being used that will be sent in when the Key Algorithm is of type ECC
 	Curve NullableString `json:"Curve,omitempty"`
+	// Alternative Certificate key type [ML-DSA-44, ML-DSA-65, ML-DSA-87]
+	AlternativeKeyType NullableString `json:"AlternativeKeyType,omitempty"`
+	// Size of the alternative certificate key.
+	AlternativeKeyLength NullableInt32 `json:"AlternativeKeyLength,omitempty"`
 	// Optionally pass a microsoft cryptographic service provider to the generated certificate
 	MicrosoftTargetCSP NullableString `json:"MicrosoftTargetCSP,omitempty"`
 	// Id or name of the security role that will have ownership of the generated certificate
@@ -75,6 +79,8 @@ type EnrollmentPFXEnrollmentWithStoresRequest struct {
 	OwnerRoleName NullableString `json:"OwnerRoleName,omitempty"`
 	// Id of pattern for the enrollment
 	EnrollmentPatternId NullableInt32 `json:"EnrollmentPatternId,omitempty"`
+	// The file extension that the downloaded certificate will have
+	FileExtension NullableString `json:"FileExtension,omitempty"`
 }
 
 // NewEnrollmentPFXEnrollmentWithStoresRequest instantiates a new EnrollmentPFXEnrollmentWithStoresRequest object
@@ -859,6 +865,92 @@ func (o *EnrollmentPFXEnrollmentWithStoresRequest) UnsetCurve() {
 	o.Curve.Unset()
 }
 
+// GetAlternativeKeyType returns the AlternativeKeyType field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *EnrollmentPFXEnrollmentWithStoresRequest) GetAlternativeKeyType() string {
+	if o == nil || isNil(o.AlternativeKeyType.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.AlternativeKeyType.Get()
+}
+
+// GetAlternativeKeyTypeOk returns a tuple with the AlternativeKeyType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *EnrollmentPFXEnrollmentWithStoresRequest) GetAlternativeKeyTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.AlternativeKeyType.Get(), o.AlternativeKeyType.IsSet()
+}
+
+// HasAlternativeKeyType returns a boolean if a field has been set.
+func (o *EnrollmentPFXEnrollmentWithStoresRequest) HasAlternativeKeyType() bool {
+	if o != nil && o.AlternativeKeyType.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetAlternativeKeyType gets a reference to the given NullableString and assigns it to the AlternativeKeyType field.
+func (o *EnrollmentPFXEnrollmentWithStoresRequest) SetAlternativeKeyType(v string) {
+	o.AlternativeKeyType.Set(&v)
+}
+
+// SetAlternativeKeyTypeNil sets the value for AlternativeKeyType to be an explicit nil
+func (o *EnrollmentPFXEnrollmentWithStoresRequest) SetAlternativeKeyTypeNil() {
+	o.AlternativeKeyType.Set(nil)
+}
+
+// UnsetAlternativeKeyType ensures that no value is present for AlternativeKeyType, not even an explicit nil
+func (o *EnrollmentPFXEnrollmentWithStoresRequest) UnsetAlternativeKeyType() {
+	o.AlternativeKeyType.Unset()
+}
+
+// GetAlternativeKeyLength returns the AlternativeKeyLength field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *EnrollmentPFXEnrollmentWithStoresRequest) GetAlternativeKeyLength() int32 {
+	if o == nil || isNil(o.AlternativeKeyLength.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.AlternativeKeyLength.Get()
+}
+
+// GetAlternativeKeyLengthOk returns a tuple with the AlternativeKeyLength field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *EnrollmentPFXEnrollmentWithStoresRequest) GetAlternativeKeyLengthOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.AlternativeKeyLength.Get(), o.AlternativeKeyLength.IsSet()
+}
+
+// HasAlternativeKeyLength returns a boolean if a field has been set.
+func (o *EnrollmentPFXEnrollmentWithStoresRequest) HasAlternativeKeyLength() bool {
+	if o != nil && o.AlternativeKeyLength.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetAlternativeKeyLength gets a reference to the given NullableInt32 and assigns it to the AlternativeKeyLength field.
+func (o *EnrollmentPFXEnrollmentWithStoresRequest) SetAlternativeKeyLength(v int32) {
+	o.AlternativeKeyLength.Set(&v)
+}
+
+// SetAlternativeKeyLengthNil sets the value for AlternativeKeyLength to be an explicit nil
+func (o *EnrollmentPFXEnrollmentWithStoresRequest) SetAlternativeKeyLengthNil() {
+	o.AlternativeKeyLength.Set(nil)
+}
+
+// UnsetAlternativeKeyLength ensures that no value is present for AlternativeKeyLength, not even an explicit nil
+func (o *EnrollmentPFXEnrollmentWithStoresRequest) UnsetAlternativeKeyLength() {
+	o.AlternativeKeyLength.Unset()
+}
+
 // GetMicrosoftTargetCSP returns the MicrosoftTargetCSP field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EnrollmentPFXEnrollmentWithStoresRequest) GetMicrosoftTargetCSP() string {
 	if o == nil || isNil(o.MicrosoftTargetCSP.Get()) {
@@ -1031,6 +1123,49 @@ func (o *EnrollmentPFXEnrollmentWithStoresRequest) UnsetEnrollmentPatternId() {
 	o.EnrollmentPatternId.Unset()
 }
 
+// GetFileExtension returns the FileExtension field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *EnrollmentPFXEnrollmentWithStoresRequest) GetFileExtension() string {
+	if o == nil || isNil(o.FileExtension.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.FileExtension.Get()
+}
+
+// GetFileExtensionOk returns a tuple with the FileExtension field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *EnrollmentPFXEnrollmentWithStoresRequest) GetFileExtensionOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.FileExtension.Get(), o.FileExtension.IsSet()
+}
+
+// HasFileExtension returns a boolean if a field has been set.
+func (o *EnrollmentPFXEnrollmentWithStoresRequest) HasFileExtension() bool {
+	if o != nil && o.FileExtension.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetFileExtension gets a reference to the given NullableString and assigns it to the FileExtension field.
+func (o *EnrollmentPFXEnrollmentWithStoresRequest) SetFileExtension(v string) {
+	o.FileExtension.Set(&v)
+}
+
+// SetFileExtensionNil sets the value for FileExtension to be an explicit nil
+func (o *EnrollmentPFXEnrollmentWithStoresRequest) SetFileExtensionNil() {
+	o.FileExtension.Set(nil)
+}
+
+// UnsetFileExtension ensures that no value is present for FileExtension, not even an explicit nil
+func (o *EnrollmentPFXEnrollmentWithStoresRequest) UnsetFileExtension() {
+	o.FileExtension.Unset()
+}
+
 func (o EnrollmentPFXEnrollmentWithStoresRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1101,6 +1236,12 @@ func (o EnrollmentPFXEnrollmentWithStoresRequest) ToMap() (map[string]interface{
 	if o.Curve.IsSet() {
 		toSerialize["Curve"] = o.Curve.Get()
 	}
+	if o.AlternativeKeyType.IsSet() {
+		toSerialize["AlternativeKeyType"] = o.AlternativeKeyType.Get()
+	}
+	if o.AlternativeKeyLength.IsSet() {
+		toSerialize["AlternativeKeyLength"] = o.AlternativeKeyLength.Get()
+	}
 	if o.MicrosoftTargetCSP.IsSet() {
 		toSerialize["MicrosoftTargetCSP"] = o.MicrosoftTargetCSP.Get()
 	}
@@ -1112,6 +1253,9 @@ func (o EnrollmentPFXEnrollmentWithStoresRequest) ToMap() (map[string]interface{
 	}
 	if o.EnrollmentPatternId.IsSet() {
 		toSerialize["EnrollmentPatternId"] = o.EnrollmentPatternId.Get()
+	}
+	if o.FileExtension.IsSet() {
+		toSerialize["FileExtension"] = o.FileExtension.Get()
 	}
 	return toSerialize, nil
 }

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SignalName** | Pointer to **NullableString** | The name of the signal. | [optional] 
 **RoleIds** | Pointer to **[]int32** | The roles that are allowed to send the signal. | [optional] 
+**RoleTokens** | Pointer to **[]string** | The role tokens that are allowed to send the signal (resolved on run-time of the specific step). | [optional] 
 
 ## Methods
 
@@ -96,6 +97,41 @@ HasRoleIds returns a boolean if a field has been set.
 `func (o *WorkflowsSignalConfigurationRequest) UnsetRoleIds()`
 
 UnsetRoleIds ensures that no value is present for RoleIds, not even an explicit nil
+### GetRoleTokens
+
+`func (o *WorkflowsSignalConfigurationRequest) GetRoleTokens() []string`
+
+GetRoleTokens returns the RoleTokens field if non-nil, zero value otherwise.
+
+### GetRoleTokensOk
+
+`func (o *WorkflowsSignalConfigurationRequest) GetRoleTokensOk() (*[]string, bool)`
+
+GetRoleTokensOk returns a tuple with the RoleTokens field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoleTokens
+
+`func (o *WorkflowsSignalConfigurationRequest) SetRoleTokens(v []string)`
+
+SetRoleTokens sets RoleTokens field to given value.
+
+### HasRoleTokens
+
+`func (o *WorkflowsSignalConfigurationRequest) HasRoleTokens() bool`
+
+HasRoleTokens returns a boolean if a field has been set.
+
+### SetRoleTokensNil
+
+`func (o *WorkflowsSignalConfigurationRequest) SetRoleTokensNil(b bool)`
+
+ SetRoleTokensNil sets the value for RoleTokens to be an explicit nil
+
+### UnsetRoleTokens
+`func (o *WorkflowsSignalConfigurationRequest) UnsetRoleTokens()`
+
+UnsetRoleTokens ensures that no value is present for RoleTokens, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

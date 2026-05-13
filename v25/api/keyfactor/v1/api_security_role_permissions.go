@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -82,6 +82,8 @@ CreateSecurityRolesByIdPermissionsCollections Adds collection permissions to the
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Security role identifier
 	@return ApiCreateSecurityRolesByIdPermissionsCollectionsRequest
+
+Deprecated
 */
 func (a *SecurityRolePermissionsApiService) NewCreateSecurityRolesByIdPermissionsCollectionsRequest(ctx context.Context, id int32) ApiCreateSecurityRolesByIdPermissionsCollectionsRequest {
 
@@ -101,6 +103,8 @@ func (a *SecurityRolePermissionsApiService) NewCreateSecurityRolesByIdPermission
 // Executes the API request V1 POST /Security/Roles/{id}/Permissions/Collections
 //
 //	@return []SecuritySecurityRolePermissionsCollectionPermissionResponse
+//
+// Deprecated
 func (a *SecurityRolePermissionsApiService) CreateSecurityRolesByIdPermissionsCollectionsExecute(r ApiCreateSecurityRolesByIdPermissionsCollectionsRequest) ([]SecuritySecurityRolePermissionsCollectionPermissionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -151,10 +155,10 @@ func (a *SecurityRolePermissionsApiService) CreateSecurityRolesByIdPermissionsCo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.securitySecurityRolePermissionsCollectionPermissionRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -238,10 +242,16 @@ CreateSecurityRolesByIdPermissionsContainers Adds container permissions to the s
 | Read          |                       |
 | Schedule      | Read                  |
 | Modify        | Read, Schedule        |
+| EditMetadata  | Read                  |
+| Recover       | Read                  |
+| Revoke        | Read                  |
+| ChangeOwner   | Read                  |
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Security role identifier
 	@return ApiCreateSecurityRolesByIdPermissionsContainersRequest
+
+Deprecated
 */
 func (a *SecurityRolePermissionsApiService) NewCreateSecurityRolesByIdPermissionsContainersRequest(ctx context.Context, id int32) ApiCreateSecurityRolesByIdPermissionsContainersRequest {
 
@@ -261,6 +271,8 @@ func (a *SecurityRolePermissionsApiService) NewCreateSecurityRolesByIdPermission
 // Executes the API request V1 POST /Security/Roles/{id}/Permissions/Containers
 //
 //	@return []SecuritySecurityRolePermissionsContainerPermissionResponse
+//
+// Deprecated
 func (a *SecurityRolePermissionsApiService) CreateSecurityRolesByIdPermissionsContainersExecute(r ApiCreateSecurityRolesByIdPermissionsContainersRequest) ([]SecuritySecurityRolePermissionsContainerPermissionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -311,10 +323,10 @@ func (a *SecurityRolePermissionsApiService) CreateSecurityRolesByIdPermissionsCo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.securitySecurityRolePermissionsContainerPermissionRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -421,6 +433,10 @@ CreateSecurityRolesByIdPermissionsGlobal Adds global permissions to the security
 | CertificateStoreManagement    | Read              |
 | CertificateStoreManagement    | Schedule          |
 | CertificateStoreManagement    | Modify            |
+| CertificateStoreManagement    | EditMetadata      |
+| CertificateStoreManagement    | Recover           |
+| CertificateStoreManagement    | Revoke            |
+| CertificateStoreManagement    | ChangeOwner       |
 | Dashboard                     | Read              |
 | Dashboard                     | RiskHeader        |
 | EventHandlerRegistration      | Read              |
@@ -457,6 +473,8 @@ CreateSecurityRolesByIdPermissionsGlobal Adds global permissions to the security
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Security role identifier
 	@return ApiCreateSecurityRolesByIdPermissionsGlobalRequest
+
+Deprecated
 */
 func (a *SecurityRolePermissionsApiService) NewCreateSecurityRolesByIdPermissionsGlobalRequest(ctx context.Context, id int32) ApiCreateSecurityRolesByIdPermissionsGlobalRequest {
 
@@ -476,6 +494,8 @@ func (a *SecurityRolePermissionsApiService) NewCreateSecurityRolesByIdPermission
 // Executes the API request V1 POST /Security/Roles/{id}/Permissions/Global
 //
 //	@return []SecuritySecurityRolePermissionsGlobalPermissionResponse
+//
+// Deprecated
 func (a *SecurityRolePermissionsApiService) CreateSecurityRolesByIdPermissionsGlobalExecute(r ApiCreateSecurityRolesByIdPermissionsGlobalRequest) ([]SecuritySecurityRolePermissionsGlobalPermissionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -526,10 +546,10 @@ func (a *SecurityRolePermissionsApiService) CreateSecurityRolesByIdPermissionsGl
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.securitySecurityRolePermissionsGlobalPermissionRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -603,6 +623,8 @@ GetSecurityRolesByIdPermissions Returns all permissions associated with the secu
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Security role identifier
 	@return ApiGetSecurityRolesByIdPermissionsRequest
+
+Deprecated
 */
 func (a *SecurityRolePermissionsApiService) NewGetSecurityRolesByIdPermissionsRequest(ctx context.Context, id int32) ApiGetSecurityRolesByIdPermissionsRequest {
 
@@ -622,6 +644,8 @@ func (a *SecurityRolePermissionsApiService) NewGetSecurityRolesByIdPermissionsRe
 // Executes the API request V1 GET /Security/Roles/{id}/Permissions
 //
 //	@return []SecuritySecurityRolePermissionsAreaPermissionResponse
+//
+// Deprecated
 func (a *SecurityRolePermissionsApiService) GetSecurityRolesByIdPermissionsExecute(r ApiGetSecurityRolesByIdPermissionsRequest) ([]SecuritySecurityRolePermissionsAreaPermissionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -672,10 +696,10 @@ func (a *SecurityRolePermissionsApiService) GetSecurityRolesByIdPermissionsExecu
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -747,6 +771,8 @@ GetSecurityRolesByIdPermissionsCollections Returns all collection permissions as
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Security role identifier
 	@return ApiGetSecurityRolesByIdPermissionsCollectionsRequest
+
+Deprecated
 */
 func (a *SecurityRolePermissionsApiService) NewGetSecurityRolesByIdPermissionsCollectionsRequest(ctx context.Context, id int32) ApiGetSecurityRolesByIdPermissionsCollectionsRequest {
 
@@ -766,6 +792,8 @@ func (a *SecurityRolePermissionsApiService) NewGetSecurityRolesByIdPermissionsCo
 // Executes the API request V1 GET /Security/Roles/{id}/Permissions/Collections
 //
 //	@return []SecuritySecurityRolePermissionsCollectionPermissionResponse
+//
+// Deprecated
 func (a *SecurityRolePermissionsApiService) GetSecurityRolesByIdPermissionsCollectionsExecute(r ApiGetSecurityRolesByIdPermissionsCollectionsRequest) ([]SecuritySecurityRolePermissionsCollectionPermissionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -816,10 +844,10 @@ func (a *SecurityRolePermissionsApiService) GetSecurityRolesByIdPermissionsColle
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -891,6 +919,8 @@ GetSecurityRolesByIdPermissionsContainers Returns all container permissions asso
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Security role identifier
 	@return ApiGetSecurityRolesByIdPermissionsContainersRequest
+
+Deprecated
 */
 func (a *SecurityRolePermissionsApiService) NewGetSecurityRolesByIdPermissionsContainersRequest(ctx context.Context, id int32) ApiGetSecurityRolesByIdPermissionsContainersRequest {
 
@@ -910,6 +940,8 @@ func (a *SecurityRolePermissionsApiService) NewGetSecurityRolesByIdPermissionsCo
 // Executes the API request V1 GET /Security/Roles/{id}/Permissions/Containers
 //
 //	@return []SecuritySecurityRolePermissionsContainerPermissionResponse
+//
+// Deprecated
 func (a *SecurityRolePermissionsApiService) GetSecurityRolesByIdPermissionsContainersExecute(r ApiGetSecurityRolesByIdPermissionsContainersRequest) ([]SecuritySecurityRolePermissionsContainerPermissionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -960,10 +992,10 @@ func (a *SecurityRolePermissionsApiService) GetSecurityRolesByIdPermissionsConta
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1035,6 +1067,8 @@ GetSecurityRolesByIdPermissionsGlobal Returns all global permissions associated 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Security role identifier
 	@return ApiGetSecurityRolesByIdPermissionsGlobalRequest
+
+Deprecated
 */
 func (a *SecurityRolePermissionsApiService) NewGetSecurityRolesByIdPermissionsGlobalRequest(ctx context.Context, id int32) ApiGetSecurityRolesByIdPermissionsGlobalRequest {
 
@@ -1054,6 +1088,8 @@ func (a *SecurityRolePermissionsApiService) NewGetSecurityRolesByIdPermissionsGl
 // Executes the API request V1 GET /Security/Roles/{id}/Permissions/Global
 //
 //	@return []SecuritySecurityRolePermissionsGlobalPermissionResponse
+//
+// Deprecated
 func (a *SecurityRolePermissionsApiService) GetSecurityRolesByIdPermissionsGlobalExecute(r ApiGetSecurityRolesByIdPermissionsGlobalRequest) ([]SecuritySecurityRolePermissionsGlobalPermissionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1104,10 +1140,10 @@ func (a *SecurityRolePermissionsApiService) GetSecurityRolesByIdPermissionsGloba
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1179,6 +1215,8 @@ GetSecurityRolesByIdPermissionsPamProviders Returns all PAM provider permissions
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Security role identifier
 	@return ApiGetSecurityRolesByIdPermissionsPamProvidersRequest
+
+Deprecated
 */
 func (a *SecurityRolePermissionsApiService) NewGetSecurityRolesByIdPermissionsPamProvidersRequest(ctx context.Context, id int32) ApiGetSecurityRolesByIdPermissionsPamProvidersRequest {
 
@@ -1198,6 +1236,8 @@ func (a *SecurityRolePermissionsApiService) NewGetSecurityRolesByIdPermissionsPa
 // Executes the API request V1 GET /Security/Roles/{id}/Permissions/PamProviders
 //
 //	@return []SecuritySecurityRolePermissionsPamProviderPermissionResponse
+//
+// Deprecated
 func (a *SecurityRolePermissionsApiService) GetSecurityRolesByIdPermissionsPamProvidersExecute(r ApiGetSecurityRolesByIdPermissionsPamProvidersRequest) ([]SecuritySecurityRolePermissionsPamProviderPermissionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1248,10 +1288,10 @@ func (a *SecurityRolePermissionsApiService) GetSecurityRolesByIdPermissionsPamPr
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1339,6 +1379,8 @@ UpdateSecurityRolesByIdPermissionsCollections Sets collection permissions to the
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Security role identifier
 	@return ApiUpdateSecurityRolesByIdPermissionsCollectionsRequest
+
+Deprecated
 */
 func (a *SecurityRolePermissionsApiService) NewUpdateSecurityRolesByIdPermissionsCollectionsRequest(ctx context.Context, id int32) ApiUpdateSecurityRolesByIdPermissionsCollectionsRequest {
 
@@ -1358,6 +1400,8 @@ func (a *SecurityRolePermissionsApiService) NewUpdateSecurityRolesByIdPermission
 // Executes the API request V1 PUT /Security/Roles/{id}/Permissions/Collections
 //
 //	@return []SecuritySecurityRolePermissionsCollectionPermissionResponse
+//
+// Deprecated
 func (a *SecurityRolePermissionsApiService) UpdateSecurityRolesByIdPermissionsCollectionsExecute(r ApiUpdateSecurityRolesByIdPermissionsCollectionsRequest) ([]SecuritySecurityRolePermissionsCollectionPermissionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1408,10 +1452,10 @@ func (a *SecurityRolePermissionsApiService) UpdateSecurityRolesByIdPermissionsCo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.securitySecurityRolePermissionsCollectionPermissionRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -1495,10 +1539,16 @@ UpdateSecurityRolesByIdPermissionsContainers Sets container permissions to the s
 | Read          |                       |
 | Schedule      | Read                  |
 | Modify        | Read, Schedule        |
+| EditMetadata  | Read                  |
+| Recover       | Read                  |
+| Revoke        | Read                  |
+| ChangeOwner   | Read                  |
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Security role identifier
 	@return ApiUpdateSecurityRolesByIdPermissionsContainersRequest
+
+Deprecated
 */
 func (a *SecurityRolePermissionsApiService) NewUpdateSecurityRolesByIdPermissionsContainersRequest(ctx context.Context, id int32) ApiUpdateSecurityRolesByIdPermissionsContainersRequest {
 
@@ -1518,6 +1568,8 @@ func (a *SecurityRolePermissionsApiService) NewUpdateSecurityRolesByIdPermission
 // Executes the API request V1 PUT /Security/Roles/{id}/Permissions/Containers
 //
 //	@return []SecuritySecurityRolePermissionsContainerPermissionResponse
+//
+// Deprecated
 func (a *SecurityRolePermissionsApiService) UpdateSecurityRolesByIdPermissionsContainersExecute(r ApiUpdateSecurityRolesByIdPermissionsContainersRequest) ([]SecuritySecurityRolePermissionsContainerPermissionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1568,10 +1620,10 @@ func (a *SecurityRolePermissionsApiService) UpdateSecurityRolesByIdPermissionsCo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.securitySecurityRolePermissionsContainerPermissionRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -1678,6 +1730,10 @@ UpdateSecurityRolesByIdPermissionsGlobal Adds global permissions to the security
 | CertificateStoreManagement    | Read              |
 | CertificateStoreManagement    | Schedule          |
 | CertificateStoreManagement    | Modify            |
+| CertificateStoreManagement    | EditMetadata      |
+| CertificateStoreManagement    | Recover           |
+| CertificateStoreManagement    | Revoke            |
+| CertificateStoreManagement    | ChangeOwner       |
 | Dashboard                     | Read              |
 | Dashboard                     | RiskHeader        |
 | EventHandlerRegistration      | Read              |
@@ -1714,6 +1770,8 @@ UpdateSecurityRolesByIdPermissionsGlobal Adds global permissions to the security
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Security role identifier
 	@return ApiUpdateSecurityRolesByIdPermissionsGlobalRequest
+
+Deprecated
 */
 func (a *SecurityRolePermissionsApiService) NewUpdateSecurityRolesByIdPermissionsGlobalRequest(ctx context.Context, id int32) ApiUpdateSecurityRolesByIdPermissionsGlobalRequest {
 
@@ -1733,6 +1791,8 @@ func (a *SecurityRolePermissionsApiService) NewUpdateSecurityRolesByIdPermission
 // Executes the API request V1 PUT /Security/Roles/{id}/Permissions/Global
 //
 //	@return []SecuritySecurityRolePermissionsGlobalPermissionResponse
+//
+// Deprecated
 func (a *SecurityRolePermissionsApiService) UpdateSecurityRolesByIdPermissionsGlobalExecute(r ApiUpdateSecurityRolesByIdPermissionsGlobalRequest) ([]SecuritySecurityRolePermissionsGlobalPermissionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1783,10 +1843,10 @@ func (a *SecurityRolePermissionsApiService) UpdateSecurityRolesByIdPermissionsGl
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.securitySecurityRolePermissionsGlobalPermissionRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -1873,6 +1933,8 @@ UpdateSecurityRolesByIdPermissionsPamProviders Sets PAM provider permissions to 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Security role identifier
 	@return ApiUpdateSecurityRolesByIdPermissionsPamProvidersRequest
+
+Deprecated
 */
 func (a *SecurityRolePermissionsApiService) NewUpdateSecurityRolesByIdPermissionsPamProvidersRequest(ctx context.Context, id int32) ApiUpdateSecurityRolesByIdPermissionsPamProvidersRequest {
 
@@ -1892,6 +1954,8 @@ func (a *SecurityRolePermissionsApiService) NewUpdateSecurityRolesByIdPermission
 // Executes the API request V1 PUT /Security/Roles/{id}/Permissions/PamProviders
 //
 //	@return []SecuritySecurityRolePermissionsPamProviderPermissionResponse
+//
+// Deprecated
 func (a *SecurityRolePermissionsApiService) UpdateSecurityRolesByIdPermissionsPamProvidersExecute(r ApiUpdateSecurityRolesByIdPermissionsPamProvidersRequest) ([]SecuritySecurityRolePermissionsPamProviderPermissionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1942,10 +2006,10 @@ func (a *SecurityRolePermissionsApiService) UpdateSecurityRolesByIdPermissionsPa
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	if r.xKeyfactorApiVersion != nil {
 		parameterAddToQuery(localVarHeaderParams, "x-keyfactor-api-version", r.xKeyfactorApiVersion, "")
 	}
-	parameterAddToQuery(localVarHeaderParams, "x-keyfactor-requested-with", r.xKeyfactorRequestedWith, "")
 	// body params
 	localVarPostBody = r.securitySecurityRolePermissionsPamProviderPermissionRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

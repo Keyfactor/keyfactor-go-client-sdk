@@ -1,5 +1,5 @@
 /*
-Copyright 2025 Keyfactor
+Copyright 2026 Keyfactor
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License.  You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0.  Unless
@@ -66,39 +66,21 @@ var AllowedCSSCMSCoreEnumsKeyRetentionPolicyEnumValues = []CSSCMSCoreEnumsKeyRet
 	3,
 }
 
-// keyRetentionPolicyStringToInt maps string names returned by EJBCA to integer values.
-var keyRetentionPolicyStringToInt = map[string]CSSCMSCoreEnumsKeyRetentionPolicy{
-	"None":       CSSCMSCOREENUMSKEYRETENTIONPOLICY__0,
-	"ShortTerm":  CSSCMSCOREENUMSKEYRETENTIONPOLICY__1,
-	"LongTerm":   CSSCMSCOREENUMSKEYRETENTIONPOLICY__2,
-	"Indefinite": CSSCMSCOREENUMSKEYRETENTIONPOLICY__3,
-}
-
 func (v *CSSCMSCoreEnumsKeyRetentionPolicy) UnmarshalJSON(src []byte) error {
-	// Try integer first (MSCA/standard Keyfactor response)
-	var intValue int32
-	if err := json.Unmarshal(src, &intValue); err == nil {
-		enumTypeValue := CSSCMSCoreEnumsKeyRetentionPolicy(intValue)
-		for _, existing := range AllowedCSSCMSCoreEnumsKeyRetentionPolicyEnumValues {
-			if existing == enumTypeValue {
-				*v = enumTypeValue
-				return nil
-			}
-		}
-		return fmt.Errorf("%+v is not a valid CSSCMSCoreEnumsKeyRetentionPolicy", intValue)
+	var value int32
+	err := json.Unmarshal(src, &value)
+	if err != nil {
+		return err
 	}
-	// Try string (EJBCA response returns e.g. "None")
-	var strValue string
-	if err := json.Unmarshal(src, &strValue); err == nil {
-		if mapped, ok := keyRetentionPolicyStringToInt[strValue]; ok {
-			*v = mapped
+	enumTypeValue := CSSCMSCoreEnumsKeyRetentionPolicy(value)
+	for _, existing := range AllowedCSSCMSCoreEnumsKeyRetentionPolicyEnumValues {
+		if existing == enumTypeValue {
+			*v = enumTypeValue
 			return nil
 		}
-		// Unknown string — treat as 0 (None) to avoid breaking reads
-		*v = CSSCMSCOREENUMSKEYRETENTIONPOLICY__0
-		return nil
 	}
-	return fmt.Errorf("cannot unmarshal %s into CSSCMSCoreEnumsKeyRetentionPolicy", src)
+
+	return fmt.Errorf("%+v is not a valid CSSCMSCoreEnumsKeyRetentionPolicy", value)
 }
 
 // NewCSSCMSCoreEnumsKeyRetentionPolicyFromValue returns a pointer to a valid CSSCMSCoreEnumsKeyRetentionPolicy
