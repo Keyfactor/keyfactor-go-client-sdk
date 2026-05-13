@@ -162,6 +162,11 @@ for version_num in "${API_VERSIONS[@]}"; do
   openapi_generator_version="$(java -jar "${GENERATOR_JAR}" version 2>/dev/null | tail -1)"
 
   echo "    running openapi-generator into ${api_version_path}"
+  # NOTE: nameMappings (HasValue -> DoesHaveValue) is provided by
+  # openapi-config.yml; it is honored by openapi-generator 7.x but silently
+  # ignored by 6.x. The Makefile pin (OPENAPI_GENERATOR_VERSION) must be 7.x
+  # or later, otherwise the generated v1 fails to compile due to a
+  # HasValue field/method collision in KeyfactorSecret.
   java -jar "${GENERATOR_JAR}" generate \
     -g go \
     -i "${spec_file}" \

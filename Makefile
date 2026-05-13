@@ -18,7 +18,7 @@
 COMMAND_VERSION           ?= v25
 SWAGGER_V1                ?= swagger/Keyfactor-Command-$(COMMAND_VERSION)-v1.swagger.json
 SWAGGER_V2                ?= swagger/Keyfactor-Command-$(COMMAND_VERSION)-v2.swagger.json
-OPENAPI_GENERATOR_VERSION ?= 6.3.0
+OPENAPI_GENERATOR_VERSION ?= 7.10.0
 
 # === Derived paths ===
 V1_LIVE     = $(COMMAND_VERSION)/api/keyfactor/v1
@@ -106,7 +106,9 @@ regen-apply:
 	@mv $(V2_STAGE) $(V2_LIVE)
 	@rm -f .regen-approved
 	@echo ">>> Running go test ./$(COMMAND_VERSION)/..."
-	@cd $(COMMAND_VERSION) && go test ./... || (echo "ERROR: tests fail post-apply; restore from .regen-baseline/ if needed"; exit 1)
+	@# GOWORK=off because the parent ~/GolandProjects/go.work scopes the workspace
+	@# to v24 only; v25 must be tested as a standalone module.
+	@cd $(COMMAND_VERSION) && GOWORK=off go test ./... || (echo "ERROR: tests fail post-apply; restore from .regen-baseline/ if needed"; exit 1)
 	@echo ">>> Apply complete. .regen-baseline/ retained for inspection."
 
 regen-clean:

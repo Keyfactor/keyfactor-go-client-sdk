@@ -221,7 +221,7 @@ func NewConfiguration(config map[string]string) (*Configuration, error) {
         for _, err := range errs {
             outputString += fmt.Sprintf("  - %s\n", err)
         }
-        return nil, fmt.Errorf(outputString)
+        return nil, fmt.Errorf("%s", outputString)
     }
 
 	return cfg, nil
