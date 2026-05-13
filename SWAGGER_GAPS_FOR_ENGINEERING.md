@@ -4,9 +4,44 @@ This document captures discrepancies found between the `swagger/Keyfactor-Comman
 
 Most findings are **already resolved** in the swagger files vs. their prior single-file ancestor (`Keyfactor-Command-v10.swagger.yaml`). One actual gap was found and patched in place. Two cross-source disagreements were noticed and are flagged below for next-release consideration.
 
-## Patches applied (1)
+## Patches applied (2)
 
-### 1. `CSS.CMS.Core.Enums.EnrollmentType` enum: value `4` → `3`
+### 1. Add `schema: {type: string}` to 475 malformed header parameters
+
+- **Files**:
+  - `swagger/Keyfactor-Command-v25-v1.swagger.json` — 451 patches (447 × `x-keyfactor-api-version`, 4 × `x-certificateformat`)
+  - `swagger/Keyfactor-Command-v25-v2.swagger.json` — 24 patches (23 × `x-keyfactor-api-version`, 1 × `x-certificateformat`)
+
+**Issue**: every `x-keyfactor-api-version` and `x-certificateformat` header parameter in both swagger files is declared as `{name, in, description, [required], [example]}` with **no `schema` field and no `content` field**. OpenAPI 3.x requires non-body parameters to have one or the other. Comparison with a sibling well-formed parameter from the same swagger:
+
+```jsonc
+// CORRECTLY formed (sibling)
+{
+  "name": "x-keyfactor-requested-with",
+  "in": "header",
+  "description": "Type of the request [XMLHttpRequest, APIClient]",
+  "required": true,
+  "schema": { "type": "string" },          // <-- present
+  "example": "APIClient"
+}
+
+// MALFORMED (in upstream swagger)
+{
+  "name": "x-keyfactor-api-version",
+  "in": "header",
+  "description": "Desired version of the api, if not provided defaults to v1",
+                                            // <-- schema / content missing
+  "example": "1.0"
+}
+```
+
+**Effect**: openapi-generator-cli 6.3.0 fails with `SpecValidationException` listing 451 errors of the form `parameters.[x-keyfactor-api-version].content is missing` — and refuses to generate code. (The validator misreports it as "content missing"; both `schema` and `content` would satisfy the requirement.)
+
+**Patch**: add `"schema": { "type": "string" }` to every malformed header parameter, inserted before `"example"` to match the ordering of well-formed siblings. Diff is mechanical: ~13KB additions of identical `schema` blocks, plus minor empty-array whitespace normalization (`"Bearer": [ ]` → `"Bearer": []`) introduced by the JSON re-serialization.
+
+**Recommended action for engineering**: fix the upstream swagger generation so these two header parameters emit a `schema` field at the source. The fix is mechanical and presumably driven by the OpenAPI/JSON schema spec annotation system.
+
+### 2. `CSS.CMS.Core.Enums.EnrollmentType` enum: value `4` → `3`
 
 - **File**: `swagger/Keyfactor-Command-v25-v1.swagger.json`
 - **Schema**: `components.schemas["CSS.CMS.Core.Enums.EnrollmentType"]`

@@ -83,7 +83,7 @@ regen-diff: regen-stage
 	@echo ""
 	@echo ">>> Hand-edit cross-check (scripts/check-hand-edits.sh):"
 	@if [ -x scripts/check-hand-edits.sh ]; then \
-		scripts/check-hand-edits.sh $(V1_STAGE) $(V2_STAGE); \
+		scripts/check-hand-edits.sh check $(V1_STAGE) $(V2_STAGE); \
 	else \
 		echo "    WARN: scripts/check-hand-edits.sh not executable; skipping"; \
 	fi
