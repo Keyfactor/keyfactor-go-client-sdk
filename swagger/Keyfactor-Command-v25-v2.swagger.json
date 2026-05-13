@@ -1,0 +1,3753 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Keyfactor API Reference and Utility",
+    "description": "<p>This page provides a utility through which the Keyfactor API endpoints can be called and results returned. \n                                                        It is intended to be used primarily for validation, testing and workflow development. \n                                                        It also serves secondarily as documentation for the API.</p>\n                                                        <p>If you would like to view documentation containing details on the Keyfactor API and endpoints, \n                                                        please refer to the Web API section of the Keyfactor Command documentation.</p>",
+    "version": "2"
+  },
+  "servers": [
+    {
+      "url": "/KeyfactorAPI"
+    }
+  ],
+  "paths": {
+    "/Certificates/IdentityAudit/{id}": {
+      "get": {
+        "tags": [
+          "Certificate"
+        ],
+        "summary": "Audit identity permissions for certificate",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The Id of the certificate being checked",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "collectionId",
+            "in": "query",
+            "description": "An optional parameter for the collectin Id the certificate is in.  Defaults to no collection",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Certificates.CertificateIdentityAuditResponse2"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Certificates.CertificateIdentityAuditResponse2"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Certificates.CertificateIdentityAuditResponse2"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/Enrollment/PFX": {
+      "post": {
+        "tags": [
+          "Enrollment"
+        ],
+        "summary": "Performs a PFX Enrollment based upon the provided request",
+        "description": "### IMPORTANT: \n- The <b>'RenewalCertificateId'</b> field in the request should be set to <b>null</b> if the certificate is not being renewed as part of the enrollment. A value of <b>0</b> will produce an error.\n\n### Subject Alternative Name Flags ###\n| Value              | Description               |\n|--------------------|---------------------------|\n| other              | OtherName                 |\n| rfc822             | RFC822Name                |\n| dns                | DNSName                   |\n| x400               | X400Address               |\n| directory          | DirectoryName             |\n| ediparty           | EdipartyName              |\n| uri                | UniformResourceIdentifier |\n| ip                 | IPAddress                 |\n| ip4                | IPv4Address               |\n| ip6                | IPv6Address               |\n| registeredid       | RegisteredId              |\n| ms_ntprincipalname | MS_NTPrincipalName        |\n| ms_ntdsreplication | MS_NTDSReplication        |",
+        "parameters": [
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-certificateformat",
+            "in": "header",
+            "description": "Desired format [PFX, ZIP, PEM, JKS, STORE, REPLACE]",
+            "required": true,
+            "example": "PFX"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "requestBody": {
+          "description": "The information needed to perform the PFX Enrollment",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Enrollment.PFXEnrollmentWithStoresRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Enrollment.PFXEnrollmentWithStoresRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Enrollment.PFXEnrollmentWithStoresRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Enrollment.PFXEnrollmentWithStoresRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Enrollment.PFXEnrollmentManagementResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Enrollment.PFXEnrollmentManagementResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Enrollment.PFXEnrollmentManagementResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/PamProviders": {
+      "get": {
+        "tags": [
+          "PAMProvider"
+        ],
+        "summary": "Returns all PAM providers according to the provided filter and output parameters",
+        "description": "### PAM Provider Data Types ###\n| Value              | Description               |\n|--------------------|---------------------------|\n| 1                  | string                    |\n| 2                  | secret                    |",
+        "parameters": [
+          {
+            "name": "QueryString",
+            "in": "query",
+            "description": "Contents of the query (ex: field1 -eq value1 AND field2 -gt value2)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageReturned",
+            "in": "query",
+            "description": "The current page within the result set to be returned",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "ReturnLimit",
+            "in": "query",
+            "description": "Maximum number of records to be returned in a single call",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "SortField",
+            "in": "query",
+            "description": "Field by which the results should be sorted (view results via Management Portal for sortable columns)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "SortAscending",
+            "in": "query",
+            "description": "Field sort direction [0=ascending, 1=descending]",
+            "schema": {
+              "$ref": "#/components/schemas/Keyfactor.Common.QueryableExtensions.SortOrder"
+            }
+          },
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "PAMProvider"
+        ],
+        "summary": "Creates a new PAM provider with the associated properties",
+        "description": "### PAM Provider Data Types ###\n| Value              | Description               |\n|--------------------|---------------------------|\n| 1                  | string                    |\n| 2                  | secret                    |",
+        "parameters": [
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "requestBody": {
+          "description": "PAM provider properties to be used",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderCreateRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderCreateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderCreateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "PAMProvider"
+        ],
+        "summary": "Updates an existing PAM provider according to the provided properties",
+        "description": "### PAM Provider Data Types ###\n| Value              | Description               |\n|--------------------|---------------------------|\n| 1                  | string                    |\n| 2                  | secret                    |",
+        "parameters": [
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "requestBody": {
+          "description": "PAM provider properties to be used",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderUpdateRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderUpdateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderUpdateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/PamProviders/{id}": {
+      "get": {
+        "tags": [
+          "PAMProvider"
+        ],
+        "summary": "Returns a single PAM Provider that matches the associated id",
+        "description": "### PAM Provider Data Types ###\n| Value              | Description               |\n|--------------------|---------------------------|\n| 1                  | string                    |\n| 2                  | secret                    |",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Keyfactor identifier of the PAM provider",
+            "required": true,
+            "schema": {
+              "maximum": 2147483647,
+              "minimum": 0,
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "PAMProvider"
+        ],
+        "summary": "Deletes a PAM Provider",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Keyfactor identifier of the PAM provider to be deleted",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/PamProviders/Types": {
+      "get": {
+        "tags": [
+          "PAMProvider"
+        ],
+        "summary": "Returns all PAM provider types in the Keyfactor instance",
+        "description": "### PAM Provider Data Types ###\n| Value              | Description               |\n|--------------------|---------------------------|\n| 1                  | string                    |\n| 2                  | secret                    |",
+        "parameters": [
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderTypeResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderTypeResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderTypeResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "PAMProvider"
+        ],
+        "summary": "Creates a new PAM provider type with the associated properties",
+        "description": "### PAM Provider Data Types ###\n| Value              | Description               |\n|--------------------|---------------------------|\n| 1                  | string                    |\n| 2                  | secret                    |",
+        "parameters": [
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "requestBody": {
+          "description": "PAM provider type properties to be used",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderTypeCreateRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderTypeCreateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderTypeCreateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderTypeCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderTypeResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderTypeResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderTypeResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/PamProviders/Types/{id}": {
+      "get": {
+        "tags": [
+          "PAMProvider"
+        ],
+        "summary": "Returns PAM provider Type for a specific PAM provider",
+        "description": "### PAM Provider Data Types ###\n| Value              | Description               |\n|--------------------|---------------------------|\n| 1                  | string                    |\n| 2                  | secret                    |",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Keyfactor identifier of the PAM provider",
+            "required": true,
+            "schema": {
+              "maximum": 2147483647,
+              "minimum": 0,
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderTypeResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderTypeResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderTypeResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/Security/Roles": {
+      "get": {
+        "tags": [
+          "SecurityRoles"
+        ],
+        "summary": "Returns all security roles according to the provided filter and output parameters.",
+        "parameters": [
+          {
+            "name": "QueryString",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageReturned",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "ReturnLimit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "SortField",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "SortAscending",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/Keyfactor.Common.QueryableExtensions.SortOrder"
+            }
+          },
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleQueryResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleQueryResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleQueryResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "SecurityRoles"
+        ],
+        "summary": "Adds a new security role to the system.",
+        "parameters": [
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "requestBody": {
+          "description": "Security Role Creation Request",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleCreationRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleCreationRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleCreationRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleCreationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "SecurityRoles"
+        ],
+        "summary": "Updates an existing security role.",
+        "parameters": [
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "requestBody": {
+          "description": "Security Role Update Request",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleUpdateRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleUpdateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleUpdateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/Security/Roles/{id}": {
+      "get": {
+        "tags": [
+          "SecurityRoles"
+        ],
+        "summary": "Returns a single security role that matches the id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Security role identifier",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/SMTP": {
+      "get": {
+        "tags": [
+          "SMTP"
+        ],
+        "summary": "Gets SMTP profile data",
+        "description": "",
+        "parameters": [
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.SMTP.SMTPResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.SMTP.SMTPResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.SMTP.SMTPResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "SMTP"
+        ],
+        "summary": "Updates SMTP profile data",
+        "description": "",
+        "parameters": [
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.SMTP.SMTPRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.SMTP.SMTPRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.SMTP.SMTPRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.SMTP.SMTPRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.SMTP.SMTPResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.SMTP.SMTPResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.SMTP.SMTPResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/SMTP/Test": {
+      "post": {
+        "tags": [
+          "SMTP"
+        ],
+        "summary": "Tests SMTP profile data",
+        "description": "",
+        "parameters": [
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.SMTP.SMTPTestRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.SMTP.SMTPTestRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.SMTP.SMTPTestRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.SMTP.SMTPTestRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/SSH/Users/{id}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Looks up information about an existing SSH user.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The Id of the SSH user to retrieve.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.SSH.Users.SshUserAccessResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.SSH.Users.SshUserAccessResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.SSH.Users.SshUserAccessResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/SSH/Users": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Returns users matching the criteria from the provided query parameters",
+        "parameters": [
+          {
+            "name": "QueryString",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageReturned",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "ReturnLimit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "SortField",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "SortAscending",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/Keyfactor.Common.QueryableExtensions.SortOrder"
+            }
+          },
+          {
+            "name": "showOwnedAccess",
+            "in": "query",
+            "description": "Whether or not to return only logons that have access to servers the requesting user owns",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.SSH.Users.SshUserAccessResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.SSH.Users.SshUserAccessResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.SSH.Users.SshUserAccessResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/Workflow/Definitions": {
+      "get": {
+        "tags": [
+          "WorkflowDefinition"
+        ],
+        "summary": "Gets the Definitions matching the query specifications.",
+        "parameters": [
+          {
+            "name": "QueryString",
+            "in": "query",
+            "description": "Contents of the query (ex: field1 -eq value1 AND field2 -gt value2)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageReturned",
+            "in": "query",
+            "description": "The current page within the result set to be returned",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "ReturnLimit",
+            "in": "query",
+            "description": "Maximum number of records to be returned in a single call",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "SortField",
+            "in": "query",
+            "description": "Field by which the results should be sorted (view results via Management Portal for sortable columns)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "SortAscending",
+            "in": "query",
+            "description": "Field sort direction [0=ascending, 1=descending]",
+            "schema": {
+              "$ref": "#/components/schemas/Keyfactor.Common.QueryableExtensions.SortOrder"
+            }
+          },
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionQueryResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionQueryResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionQueryResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "WorkflowDefinition"
+        ],
+        "summary": "Creates a new base definition without any steps.",
+        "parameters": [
+          {
+            "name": "force",
+            "in": "query",
+            "description": "Whether to force the creation of this definition in the case that it would run workflows immediately.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "requestBody": {
+          "description": "A Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionCreateRequest with the display name, description, key and type of the definition.",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionCreateRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionCreateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionCreateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/Workflow/Definitions/{definitionId}": {
+      "get": {
+        "tags": [
+          "WorkflowDefinition"
+        ],
+        "summary": "Gets a workflow definition.",
+        "parameters": [
+          {
+            "name": "definitionId",
+            "in": "path",
+            "description": "The Id of the definition to retrieve.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "definitionVersion",
+            "in": "query",
+            "description": "The version to retrieve. If this value is not specified, the latest version will be returned.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "exportable",
+            "in": "query",
+            "description": "Indicates if the response should be cleansed of role ids for export.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "WorkflowDefinition"
+        ],
+        "summary": "Updates the existing definition's DisplayName and Description.",
+        "parameters": [
+          {
+            "name": "definitionId",
+            "in": "path",
+            "description": "The Id of the definition to update.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "Whether to force the update of this definition in the case that it would run workflows immediately.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "x-keyfactor-requested-with",
+            "in": "header",
+            "description": "Type of the request [XMLHttpRequest, APIClient]",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "APIClient"
+          },
+          {
+            "name": "x-keyfactor-api-version",
+            "in": "header",
+            "description": "Desired version of the api, if not provided defaults to v1",
+            "example": "2"
+          }
+        ],
+        "requestBody": {
+          "description": "The Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionUpdateRequest holding the updated DisplayName and Description.",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionUpdateRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionUpdateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionUpdateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CSS.CMS.Core.Enums.ClaimType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "CSS.CMS.Core.Enums.SMTPRelayAuthenticationType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "CSS.CMS.Data.Model.Enums.PamParameterDataType": {
+        "enum": [
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "CSS.CMS.Data.Model.Models.KeyfactorAPISecret": {
+        "type": "object",
+        "properties": {
+          "SecretValue": {
+            "type": "string",
+            "nullable": true
+          },
+          "Parameters": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          },
+          "Provider": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CSS.CMS.Data.Model.Models.Pkcs12CertificateResponse": {
+        "type": "object",
+        "properties": {
+          "SerialNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "IssuerDN": {
+            "type": "string",
+            "nullable": true
+          },
+          "Thumbprint": {
+            "type": "string",
+            "nullable": true
+          },
+          "KeyfactorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Pkcs12Blob": {
+            "type": "string",
+            "nullable": true
+          },
+          "Password": {
+            "type": "string",
+            "nullable": true
+          },
+          "WorkflowInstanceId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "WorkflowReferenceId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "StoreIdsInvalidForRenewal": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
+          },
+          "ChainFailedToBuild": {
+            "type": "boolean"
+          },
+          "KeyfactorRequestId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RequestDisposition": {
+            "type": "string",
+            "nullable": true
+          },
+          "DispositionMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "EnrollmentContext": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CSS.CMS.Data.Model.Models.ProviderType": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "ProviderTypeParams": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.ProviderTypeParam"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CSS.CMS.Data.Model.Models.ProviderTypeParam": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "DisplayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "DataType": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Enums.PamParameterDataType"
+          },
+          "InstanceLevel": {
+            "type": "boolean"
+          },
+          "ProviderType": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.ProviderType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CSS.CMS.Data.Model.Models.SSH.Keys.KeyResponse": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Fingerprint": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          },
+          "PublicKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "PrivateKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "KeyType": {
+            "type": "string",
+            "nullable": true
+          },
+          "KeyLength": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CreationDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "StaleDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "Email": {
+            "type": "string",
+            "nullable": true
+          },
+          "Comments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "LogonCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CSS.CMS.Data.Model.Models.SSH.Logons.LogonResponse": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Username": {
+            "type": "string",
+            "nullable": true
+          },
+          "LastLogon": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "Server": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.SSH.Servers.ServerResponse"
+          },
+          "KeyCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Access": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.SSH.Users.SshUserResponse"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CSS.CMS.Data.Model.Models.SSH.Servers.ServerResponse": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "AgentId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "Hostname": {
+            "type": "string",
+            "nullable": true
+          },
+          "ServerGroupId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "SyncSchedule": {
+            "$ref": "#/components/schemas/Keyfactor.Common.Scheduling.KeyfactorSchedule"
+          },
+          "UnderManagement": {
+            "type": "boolean"
+          },
+          "Owner": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.SSH.Users.SshUserResponse"
+          },
+          "GroupName": {
+            "type": "string",
+            "nullable": true
+          },
+          "Orchestrator": {
+            "type": "string",
+            "nullable": true
+          },
+          "Port": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CSS.CMS.Data.Model.Models.SSH.Users.SshUserAccessResponse": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Key": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.SSH.Keys.KeyResponse"
+          },
+          "Username": {
+            "type": "string",
+            "nullable": true
+          },
+          "Access": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.SSH.Logons.LogonResponse"
+            },
+            "nullable": true
+          },
+          "IsGroup": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CSS.CMS.Data.Model.Models.SSH.Users.SshUserResponse": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Key": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.SSH.Keys.KeyResponse"
+          },
+          "Username": {
+            "type": "string",
+            "nullable": true
+          },
+          "LogonIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Common.QueryableExtensions.SortOrder": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "Keyfactor.Common.Scheduling.KeyfactorSchedule": {
+        "type": "object",
+        "properties": {
+          "Immediate": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "Interval": {
+            "$ref": "#/components/schemas/Keyfactor.Common.Scheduling.Models.IntervalModel"
+          },
+          "Daily": {
+            "$ref": "#/components/schemas/Keyfactor.Common.Scheduling.Models.TimeModel"
+          },
+          "Weekly": {
+            "$ref": "#/components/schemas/Keyfactor.Common.Scheduling.Models.WeeklyModel"
+          },
+          "Monthly": {
+            "$ref": "#/components/schemas/Keyfactor.Common.Scheduling.Models.MonthlyModel"
+          },
+          "ExactlyOnce": {
+            "$ref": "#/components/schemas/Keyfactor.Common.Scheduling.Models.TimeModel"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Common.Scheduling.Models.IntervalModel": {
+        "type": "object",
+        "properties": {
+          "Minutes": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Common.Scheduling.Models.MonthlyModel": {
+        "type": "object",
+        "properties": {
+          "Day": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Time": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Common.Scheduling.Models.TimeModel": {
+        "type": "object",
+        "properties": {
+          "Time": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Common.Scheduling.Models.WeeklyModel": {
+        "type": "object",
+        "properties": {
+          "Days": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/System.DayOfWeek"
+            },
+            "nullable": true
+          },
+          "Time": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Certificates.CertificateIdentityAuditResponse2": {
+        "type": "object",
+        "properties": {
+          "Identity": {
+            "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Certificates.CertificateIdentityAuditResponse2.IdentityResponse"
+          },
+          "Permissions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Certificates.CertificateIdentityAuditResponse2.CertificatePermission"
+            },
+            "description": "Permissions granted to the account represented by the audit reponse on the specified certifcate.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents an account with a list of permission granted to it on a given certificate by either a role or collection.\nUsed for the V2 endpoint."
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Certificates.CertificateIdentityAuditResponse2.CertificatePermission": {
+        "type": "object",
+        "properties": {
+          "Name": {
+            "type": "string",
+            "description": "The name of the permission",
+            "nullable": true
+          },
+          "GrantedBy": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "A list of roles or collections that grant the given permission",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a permission granted to an account for a certificate"
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Certificates.CertificateIdentityAuditResponse2.IdentityProvider": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "description": "The Id of the provider.",
+            "format": "uuid"
+          },
+          "Name": {
+            "type": "string",
+            "description": "The name of the provider.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Certificates.CertificateIdentityAuditResponse2.IdentityResponse": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "description": "The Id of the identity.",
+            "format": "int32"
+          },
+          "Description": {
+            "type": "string",
+            "description": "The description of the identity.",
+            "nullable": true
+          },
+          "ClaimType": {
+            "type": "string",
+            "description": "The claim type of the identity.",
+            "nullable": true
+          },
+          "ClaimValue": {
+            "type": "string",
+            "description": "The claim value of the identity.",
+            "nullable": true
+          },
+          "Provider": {
+            "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Certificates.CertificateIdentityAuditResponse2.IdentityProvider"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Enrollment.ManagementStoreRequest": {
+        "type": "object",
+        "properties": {
+          "StoreId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "Alias": {
+            "type": "string",
+            "nullable": true
+          },
+          "Overwrite": {
+            "type": "boolean"
+          },
+          "Properties": {
+            "type": "object",
+            "additionalProperties": {
+              "nullable": true
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Enrollment.PFXEnrollmentManagementResponse": {
+        "type": "object",
+        "properties": {
+          "SuccessfulStores": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
+          },
+          "CertificateInformation": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.Pkcs12CertificateResponse"
+          },
+          "Metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Enrollment.PFXEnrollmentWithStoresRequest": {
+        "type": "object",
+        "properties": {
+          "Stores": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Enrollment.ManagementStoreRequest"
+            },
+            "description": "A list of certificate stores a successfully issued PKCS12 should be installed into.",
+            "nullable": true
+          },
+          "CustomFriendlyName": {
+            "type": "string",
+            "description": "The Friendly name of the issued certificate",
+            "nullable": true
+          },
+          "Password": {
+            "type": "string",
+            "description": "The custom password for the resulting Private key",
+            "nullable": true
+          },
+          "Subject": {
+            "type": "string",
+            "description": "The certificte's subject",
+            "nullable": true
+          },
+          "IncludeChain": {
+            "type": "boolean",
+            "description": "An option to include the certificate chain in the response"
+          },
+          "IncludeSubjectHeader": {
+            "type": "boolean",
+            "description": "An option to remove the subject header comment in pem file"
+          },
+          "RenewalCertificateId": {
+            "type": "integer",
+            "description": "An optional Id of a certificate being renewed",
+            "format": "int32",
+            "nullable": true
+          },
+          "CertificateAuthority": {
+            "type": "string",
+            "description": "The Certifcate Authority configuration in the format hostname\\logicalname",
+            "nullable": true
+          },
+          "Metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "nullable": true
+            },
+            "description": "The metadata to be assigned to the certificate after issuance",
+            "nullable": true
+          },
+          "AdditionalEnrollmentFields": {
+            "type": "object",
+            "additionalProperties": {
+              "nullable": true
+            },
+            "description": "Any Additional Enrollment Fields to be included in the request",
+            "nullable": true
+          },
+          "Timestamp": {
+            "type": "string",
+            "description": "A timestamp to help ensure a legitimate request",
+            "format": "date-time"
+          },
+          "Template": {
+            "type": "string",
+            "description": "The template for the certificate",
+            "nullable": true
+          },
+          "SANs": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            },
+            "description": "Any Subject Alternative Names to be included in the request",
+            "nullable": true
+          },
+          "InstallIntoExistingCertificateStores": {
+            "type": "boolean",
+            "description": "Allows the new certificate to be installed into all certificate stores the renewed certificate is currently installed into."
+          },
+          "JobTime": {
+            "type": "string",
+            "description": "The time any management jobs should be scheduled.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "ChainOrder": {
+            "type": "string",
+            "description": "The order of the certificates in the certificate chain",
+            "nullable": true
+          },
+          "UseLegacyEncryption": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "KeyType": {
+            "type": "string",
+            "description": "Certificate key type [RSA, ECC]",
+            "nullable": true
+          },
+          "KeyLength": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Curve": {
+            "type": "string",
+            "description": "The curve being used that will be sent in when the Key Algorithm is of type ECC",
+            "nullable": true
+          },
+          "AlternativeKeyType": {
+            "type": "string",
+            "description": "Alternative Certificate key type [ML-DSA-44, ML-DSA-65, ML-DSA-87]",
+            "nullable": true
+          },
+          "AlternativeKeyLength": {
+            "type": "integer",
+            "description": "Size of the alternative certificate key.",
+            "format": "int32",
+            "nullable": true
+          },
+          "MicrosoftTargetCSP": {
+            "type": "string",
+            "description": "Optionally pass a microsoft cryptographic service provider to the generated certificate",
+            "nullable": true
+          },
+          "OwnerRoleId": {
+            "type": "integer",
+            "description": "Id or name of the security role that will have ownership of the generated certificate",
+            "format": "int32",
+            "nullable": true
+          },
+          "OwnerRoleName": {
+            "type": "string",
+            "nullable": true
+          },
+          "EnrollmentPatternId": {
+            "type": "integer",
+            "description": "Id of pattern for the enrollment",
+            "format": "int32",
+            "nullable": true
+          },
+          "FileExtension": {
+            "type": "string",
+            "description": "The file extension that the downloaded certificate will have",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.PAM.PamProviderTypeParamValueResponse": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Value": {
+            "type": "string",
+            "nullable": true
+          },
+          "InstanceId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "InstanceGuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "ProviderTypeParam": {
+            "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderTypeParameterResponse"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderCreateRequest": {
+        "required": [
+          "Name",
+          "ProviderType"
+        ],
+        "type": "object",
+        "properties": {
+          "Name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "Remote": {
+            "type": "boolean"
+          },
+          "Area": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ProviderType": {
+            "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderCreateRequestProviderType"
+          },
+          "ProviderTypeParamValues": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderCreateRequestTypeParamValue"
+            },
+            "nullable": true
+          },
+          "SecuredAreaId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderCreateRequestProviderType": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderCreateRequestProviderTypeParam": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "DisplayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "InstanceLevel": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderCreateRequestTypeParamValue": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Value": {
+            "type": "string",
+            "nullable": true
+          },
+          "InstanceId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "InstanceGuid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "ProviderTypeParam": {
+            "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderCreateRequestProviderTypeParam"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderResponse": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "ProviderType": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.ProviderType"
+          },
+          "ProviderTypeParamValues": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.PamProviderTypeParamValueResponse"
+            },
+            "nullable": true
+          },
+          "Remote": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderTypeCreateRequest": {
+        "required": [
+          "Name"
+        ],
+        "type": "object",
+        "properties": {
+          "Name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "Parameters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderTypeParameterCreateRequest"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderTypeParameterCreateRequest": {
+        "required": [
+          "Name"
+        ],
+        "type": "object",
+        "properties": {
+          "Name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "DisplayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "DataType": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Enums.PamParameterDataType"
+          },
+          "InstanceLevel": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderTypeParameterResponse": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "DisplayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "DataType": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Enums.PamParameterDataType"
+          },
+          "InstanceLevel": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderTypeResponse": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Parameters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderTypeParameterResponse"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderUpdateRequest": {
+        "required": [
+          "Id",
+          "Name",
+          "Remote"
+        ],
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "Remote": {
+            "type": "boolean"
+          },
+          "ProviderTypeParamValues": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.PAM.ProviderCreateRequestTypeParamValue"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.SMTP.SMTPRequest": {
+        "type": "object",
+        "properties": {
+          "Host": {
+            "type": "string",
+            "nullable": true
+          },
+          "Port": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RelayAuthenticationType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RelayPassword": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.KeyfactorAPISecret"
+          },
+          "RelayUsername": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.KeyfactorAPISecret"
+          },
+          "SenderAccount": {
+            "type": "string",
+            "nullable": true
+          },
+          "SenderName": {
+            "type": "string",
+            "nullable": true
+          },
+          "UseSSL": {
+            "type": "boolean"
+          },
+          "ClientId": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.KeyfactorAPISecret"
+          },
+          "ClientSecret": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.KeyfactorAPISecret"
+          },
+          "TokenEndpoint": {
+            "type": "string",
+            "nullable": true
+          },
+          "Scope": {
+            "type": "string",
+            "nullable": true
+          },
+          "Audience": {
+            "type": "string",
+            "nullable": true
+          },
+          "RequestHeaders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Shared.RequestHeaderRequest"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.SMTP.SMTPResponse": {
+        "type": "object",
+        "properties": {
+          "Host": {
+            "type": "string",
+            "nullable": true
+          },
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Port": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RelayAuthenticationType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RelayUsername": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.KeyfactorAPISecret"
+          },
+          "RelayPassword": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.KeyfactorAPISecret"
+          },
+          "SenderAccount": {
+            "type": "string",
+            "nullable": true
+          },
+          "SenderName": {
+            "type": "string",
+            "nullable": true
+          },
+          "UseSSL": {
+            "type": "boolean"
+          },
+          "ClientId": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.KeyfactorAPISecret"
+          },
+          "ClientSecret": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.KeyfactorAPISecret"
+          },
+          "TokenEndpoint": {
+            "type": "string",
+            "nullable": true
+          },
+          "Scope": {
+            "type": "string",
+            "nullable": true
+          },
+          "Audience": {
+            "type": "string",
+            "nullable": true
+          },
+          "RequestHeaders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Shared.RequestHeaderResponse"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.SMTP.SMTPTestRequest": {
+        "required": [
+          "Host",
+          "Port",
+          "RelayAuthenticationType",
+          "SenderAccount",
+          "SenderName",
+          "TestRecipient"
+        ],
+        "type": "object",
+        "properties": {
+          "RelayPassword": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.KeyfactorAPISecret"
+          },
+          "RelayUsername": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.KeyfactorAPISecret"
+          },
+          "ClientId": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.KeyfactorAPISecret"
+          },
+          "ClientSecret": {
+            "$ref": "#/components/schemas/CSS.CMS.Data.Model.Models.KeyfactorAPISecret"
+          },
+          "TokenEndpoint": {
+            "type": "string",
+            "nullable": true
+          },
+          "Scope": {
+            "type": "string",
+            "nullable": true
+          },
+          "Audience": {
+            "type": "string",
+            "nullable": true
+          },
+          "RequestHeaders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Shared.RequestHeaderRequest"
+            },
+            "nullable": true
+          },
+          "Host": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "Port": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "RelayAuthenticationType": {
+            "$ref": "#/components/schemas/CSS.CMS.Core.Enums.SMTPRelayAuthenticationType"
+          },
+          "SenderAccount": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "SenderName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "TestRecipient": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "UseSSL": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Security.RoleClaimDefinitions.RoleClaimDefinitionProviderResponse": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "AuthenticationScheme": {
+            "type": "string",
+            "nullable": true
+          },
+          "DisplayName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Security.RoleClaimDefinitions.RoleClaimDefinitionRequest": {
+        "required": [
+          "ClaimType",
+          "ClaimValue",
+          "Description",
+          "ProviderAuthenticationScheme"
+        ],
+        "type": "object",
+        "properties": {
+          "ClaimType": {
+            "$ref": "#/components/schemas/CSS.CMS.Core.Enums.ClaimType"
+          },
+          "ClaimValue": {
+            "maxLength": 512,
+            "minLength": 0,
+            "type": "string"
+          },
+          "ProviderAuthenticationScheme": {
+            "maxLength": 512,
+            "minLength": 0,
+            "type": "string"
+          },
+          "Description": {
+            "maxLength": 512,
+            "minLength": 0,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Security.RoleClaimDefinitions.RoleClaimDefinitionResponse": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          },
+          "ClaimType": {
+            "type": "string",
+            "nullable": true
+          },
+          "ClaimValue": {
+            "type": "string",
+            "nullable": true
+          },
+          "Provider": {
+            "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.RoleClaimDefinitions.RoleClaimDefinitionProviderResponse"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleCreationRequest": {
+        "required": [
+          "Description",
+          "Name",
+          "PermissionSetId"
+        ],
+        "type": "object",
+        "properties": {
+          "Name": {
+            "maxLength": 128,
+            "minLength": 0,
+            "type": "string",
+            "description": "The name of the security role to create"
+          },
+          "Description": {
+            "maxLength": 512,
+            "minLength": 0,
+            "type": "string",
+            "description": "The description to be used on the created security role"
+          },
+          "EmailAddress": {
+            "maxLength": 256,
+            "minLength": 0,
+            "type": "string",
+            "description": "The email address to be used on the created security role",
+            "nullable": true
+          },
+          "PermissionSetId": {
+            "type": "string",
+            "description": "The Id of the permission set this role is in.",
+            "format": "uuid"
+          },
+          "Permissions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The permissions to include in the role. These must be supplied in the format of access control strings such as \"/security/modify/\".",
+            "nullable": true
+          },
+          "Claims": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.RoleClaimDefinitions.RoleClaimDefinitionRequest"
+            },
+            "description": "The claim definitions to assign to the created role",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleQueryResponse": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "EmailAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "Immutable": {
+            "type": "boolean"
+          },
+          "PermissionSetId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "ClaimsCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleResponse": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          },
+          "EmailAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "Immutable": {
+            "type": "boolean"
+          },
+          "PermissionSetId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "Permissions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "Claims": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.RoleClaimDefinitions.RoleClaimDefinitionResponse"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Security.SecurityRoles.SecurityRoleUpdateRequest": {
+        "required": [
+          "Description",
+          "Id",
+          "Name",
+          "PermissionSetId"
+        ],
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "description": "The Keyfactor identifier of the role to update",
+            "format": "int32"
+          },
+          "Name": {
+            "maxLength": 128,
+            "minLength": 0,
+            "type": "string",
+            "description": "The new name of the security role"
+          },
+          "Description": {
+            "maxLength": 512,
+            "minLength": 0,
+            "type": "string",
+            "description": "The new description to be used for the security role"
+          },
+          "EmailAddress": {
+            "maxLength": 256,
+            "minLength": 0,
+            "type": "string",
+            "description": "The new email address to be used for the security role",
+            "nullable": true
+          },
+          "PermissionSetId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "Permissions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The complete list of permissions to include in the role. These must be supplied in the format of access control strings such as \"/security/modify/\".",
+            "nullable": true
+          },
+          "Claims": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Security.RoleClaimDefinitions.RoleClaimDefinitionRequest"
+            },
+            "description": "The complete list of claim definitions to assign to the role",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Shared.RequestHeaderRequest": {
+        "type": "object",
+        "properties": {
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Value": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Shared.RequestHeaderResponse": {
+        "type": "object",
+        "properties": {
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Value": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Workflows.ConditionConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "description": "The Id of the condition.",
+            "format": "uuid"
+          },
+          "Value": {
+            "type": "string",
+            "description": "The value to compare to. This value will be compared to a true value.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Information about the configuration of a workflow condition."
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionCreateRequest": {
+        "required": [
+          "Description",
+          "DisplayName",
+          "Keys",
+          "WorkflowType"
+        ],
+        "type": "object",
+        "properties": {
+          "DisplayName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "Description": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "WorkflowType": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "Enabled": {
+            "type": "boolean"
+          },
+          "Keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionQueryResponse": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "DisplayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          },
+          "Keys": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.KeyResponse"
+            },
+            "nullable": true
+          },
+          "WorkflowType": {
+            "type": "string",
+            "nullable": true
+          },
+          "DraftVersion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "PublishedVersion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "Enabled": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionResponse": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "DisplayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          },
+          "WorkflowType": {
+            "type": "string",
+            "nullable": true
+          },
+          "Keys": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.KeyResponse"
+            },
+            "nullable": true
+          },
+          "Enabled": {
+            "type": "boolean"
+          },
+          "IsPublished": {
+            "type": "boolean"
+          },
+          "Steps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionStepResponse"
+            },
+            "nullable": true
+          },
+          "DraftVersion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "PublishedVersion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionStepResponse": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "DisplayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "UniqueName": {
+            "type": "string",
+            "nullable": true
+          },
+          "ExtensionName": {
+            "type": "string",
+            "nullable": true
+          },
+          "Enabled": {
+            "type": "boolean"
+          },
+          "ConfigurationParameters": {
+            "type": "object",
+            "additionalProperties": {
+              "nullable": true
+            },
+            "nullable": true
+          },
+          "Signals": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionStepSignalResponse"
+            },
+            "nullable": true
+          },
+          "Conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.ConditionConfigurationResponse"
+            },
+            "nullable": true
+          },
+          "Outputs": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionStepSignalResponse": {
+        "type": "object",
+        "properties": {
+          "SignalName": {
+            "type": "string",
+            "description": "The name of the signal.",
+            "nullable": true
+          },
+          "Roles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionStepSignalRoleResponse"
+            },
+            "description": "The information for the roles that are allowed to send this signal.",
+            "nullable": true
+          },
+          "RoleTokens": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The role tokens that are allowed to send the signal (resolved on run-time of the specific step).",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionStepSignalRoleResponse": {
+        "type": "object",
+        "properties": {
+          "RoleId": {
+            "type": "string",
+            "description": "The Id of the role.",
+            "nullable": true
+          },
+          "RoleName": {
+            "type": "string",
+            "description": "The name of the role.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Workflows.DefinitionUpdateRequest": {
+        "required": [
+          "Description",
+          "DisplayName"
+        ],
+        "type": "object",
+        "properties": {
+          "DisplayName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "Description": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "Enabled": {
+            "type": "boolean"
+          },
+          "Keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The Keys to set on the existing workflow definition.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Keyfactor.Web.KeyfactorApi.Models.Workflows.KeyResponse": {
+        "type": "object",
+        "properties": {
+          "DisplayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "Value": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "System.DayOfWeek": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "JWT Authorization Bearer Token (Prefixing with \"Bearer\" is not required).",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ],
+  "tags": [
+    {
+      "name": "Certificate"
+    },
+    {
+      "name": "Enrollment"
+    },
+    {
+      "name": "PAMProvider"
+    },
+    {
+      "name": "SecurityRoles"
+    },
+    {
+      "name": "SMTP"
+    },
+    {
+      "name": "User"
+    },
+    {
+      "name": "WorkflowDefinition"
+    }
+  ]
+}
