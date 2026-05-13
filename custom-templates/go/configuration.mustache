@@ -1,0 +1,239 @@
+{{>partial_header}}
+
+import (
+    "crypto/x509"
+	"fmt"
+	"net/http"
+	"os"
+	"strings"
+
+	kfauth "github.com/Keyfactor/keyfactor-auth-client-go/auth_providers"
+)
+
+// contextKeys are used to identify the type of value in the context.
+// Since these are string, it is possible to get a short description of the
+// context key for logging and debugging using key.String().
+
+type contextKey string
+
+func (c contextKey) String() string {
+	return "auth " + string(c)
+}
+
+var (
+	// ContextBasicAuth takes BasicAuth as authentication for the request.
+	ContextBasicAuth = contextKey("basic")
+
+	{{#hasHttpBearerMethods}}
+	// ContextAccessToken takes a string oauth2 access token as authentication for the request.
+	ContextAccessToken = contextKey("accesstoken")
+
+	{{/hasHttpBearerMethods}}
+	{{#hasApiKeyMethods}}
+	// ContextAPIKeys takes a string apikey as authentication for the request
+	ContextAPIKeys = contextKey("apiKeys")
+
+	{{/hasApiKeyMethods}}
+	{{#withAWSV4Signature}}
+	// ContextAWSv4 takes an Access Key and a Secret Key for signing AWS Signature v4
+	ContextAWSv4 = contextKey("awsv4")
+
+	{{/withAWSV4Signature}}
+	{{#hasHttpSignatureMethods}}
+	// ContextHttpSignatureAuth takes HttpSignatureAuth as authentication for the request.
+	ContextHttpSignatureAuth = contextKey("httpsignature")
+
+	{{/hasHttpSignatureMethods}}
+	// ContextServerIndex uses a server configuration from the index.
+	ContextServerIndex = contextKey("serverIndex")
+
+	// ContextOperationServerIndices uses a server configuration from the index mapping.
+	ContextOperationServerIndices = contextKey("serverOperationIndices")
+
+	// ContextServerVariables overrides a server configuration variables.
+	ContextServerVariables = contextKey("serverVariables")
+
+	// ContextOperationServerVariables overrides a server configuration variables using operation specific values.
+	ContextOperationServerVariables = contextKey("serverOperationVariables")
+
+    EnvCommandHostname = kfauth.EnvKeyfactorHostName
+	EnvCommandUsername = kfauth.EnvKeyfactorUsername
+	EnvCommandPassword = kfauth.EnvKeyfactorPassword
+	EnvCommandDomain   = kfauth.EnvKeyfactorDomain
+	EnvCommandApiPath  = kfauth.EnvKeyfactorAPIPath
+)
+
+// BasicAuth provides basic http authentication to a request passed via context using ContextBasicAuth
+type BasicAuth struct {
+	UserName string `json:"username,omitempty"`
+	Password string `json:"password,omitempty"`
+}
+
+// APIKey provides API key based authentication to a request passed via context using ContextAPIKey
+type APIKey struct {
+	Key    string
+	Prefix string
+}
+
+// ServerVariable stores the information about a server variable
+type ServerVariable struct {
+	Description  string
+	DefaultValue string
+	EnumValues   []string
+}
+
+{{#withCustomMiddlewareFunction}}
+// MiddlewareFunction provides way to implement custom middleware
+type MiddlewareFunction func(*http.Request)
+
+{{/withCustomMiddlewareFunction}}
+// Configuration stores the configuration of the API client
+type Configuration struct {
+	Host              string            `json:"host,omitempty"`
+	BasicAuth         BasicAuth		    `json:"basicAuth,omitempty"`
+	DefaultHeader     map[string]string `json:"defaultHeader,omitempty"`
+	UserAgent         string            `json:"userAgent,omitempty"`
+	Debug             bool              `json:"debug,omitempty"`
+	CaCertificatePath string            `json:"caCertificatePath,omitempty"`
+    APIPath           string            `json:"apiPath,omitempty"`
+    Domain            string            `json:"domain,omitempty"`
+	HTTPClient        *http.Client
+	{{#withCustomMiddlewareFunction}}
+	Middleware        MiddlewareFunction
+	{{/withCustomMiddlewareFunction}}
+	caCertificates    []*x509.Certificate
+}
+
+func ValidateConfiguration(configuration *Configuration) []error {
+    var errs []error
+    if configuration.Host == "" {
+        errs = append(errs, fmt.Errorf("hostname cannot be empty"))
+    }
+    if configuration.BasicAuth.UserName == "" {
+        errs = append(errs, fmt.Errorf("username cannot be empty"))
+    }
+    if configuration.BasicAuth.Password == "" {
+        errs = append(errs, fmt.Errorf("password cannot be empty"))
+    }
+
+    if configuration.CaCertificatePath != "" {
+        if _, err := os.Stat(configuration.CaCertificatePath); os.IsNotExist(err) {
+            errs = append(errs, fmt.Errorf("caCertificatePath does not exist: %s", configuration.CaCertificatePath))
+        }
+    }
+
+    if configuration.APIPath == "" {
+        configuration.APIPath = "/KeyfactorAPI"
+    }
+
+    if configuration.Domain == "" && configuration.BasicAuth.UserName != "" && (!strings.Contains(configuration.BasicAuth.UserName, "@") && !strings.Contains(configuration.BasicAuth.UserName, "\\")) {
+        errs = append(errs, fmt.Errorf("domain cannot be empty when username does not contain a domain or a slash (\\) or an at (@) symbol"))
+    }
+
+    return errs
+}
+
+// GetEnvConfig returns a map of environment variables
+func GetEnvConfiguration() map[string]string {
+    config := make(map[string]string)
+    {{#environmentVariables}}
+        {{configVarName}}, {{configVarName}}Ok := os.LookupEnv("{{name}}")
+        if {{configVarName}}Ok {
+            config["{{configVarName}}"] = {{configVarName}}
+        }
+    {{/environmentVariables}}
+    return config
+}
+
+// NewConfiguration returns a new Configuration object
+func NewConfiguration(config map[string]string) (*Configuration, error) {
+	cfg := &Configuration{
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "{{{httpUserAgent}}}{{^httpUserAgent}}OpenAPI-Generator/{{{packageVersion}}}/go{{/httpUserAgent}}",
+		Debug:         false,
+	}
+
+	var (
+		hostname string
+	)
+	confHost := config["host"]
+	confUser := config["username"]
+	confPass := config["password"]
+	confDomain := config["domain"]
+	confCaPath := config["caCertificatePath"]
+	confAPIPath := config["apiPath"]
+
+	// Get hostname from environment variable
+	if confHost == "" {
+		hostname = os.Getenv(EnvCommandHostname)
+	} else {
+		hostname = confHost
+	}
+
+	if hostname != "" {
+		if hostnameCleaned, err := cleanHostname(hostname); err == nil {
+			cfg.Host = hostnameCleaned
+		}
+	}
+
+	// Get username from environment variable
+	if confUser == "" {
+		cfg.BasicAuth.UserName = os.Getenv(EnvCommandUsername)
+	} else {
+		cfg.BasicAuth.UserName = confUser
+	}
+
+	if confDomain != "" {
+		if cfg.BasicAuth.UserName != "" && !strings.Contains(cfg.BasicAuth.UserName, confDomain) {
+			cfg.BasicAuth.UserName = cfg.BasicAuth.UserName + "@" + confDomain
+		}
+	} else {
+        cfg.Domain = os.Getenv(EnvCommandDomain)
+        if cfg.BasicAuth.UserName != "" && !strings.Contains(cfg.BasicAuth.UserName, cfg.Domain) && cfg.Domain != "" && !strings.Contains(cfg.BasicAuth.UserName, "@") {
+            cfg.BasicAuth.UserName = cfg.BasicAuth.UserName + "@" + cfg.Domain
+        }
+    }
+
+	// Get password from environment variable
+	if confPass == "" {
+		cfg.BasicAuth.Password = os.Getenv(EnvCommandPassword)
+	} else {
+		cfg.BasicAuth.Password = confPass
+	}
+
+	// Get caCertificatePath from environment variable
+	if confCaPath == "" {
+        cfg.CaCertificatePath = os.Getenv("KEYFACTOR_CA_CERTIFICATE_PATH")
+    } else {
+        cfg.CaCertificatePath = confCaPath
+    }
+
+    // Get apiPath from environment variable
+    if confAPIPath == "" {
+        cfg.APIPath = os.Getenv(EnvCommandApiPath)
+    } else {
+        cfg.APIPath = confAPIPath
+    }
+
+    errs := ValidateConfiguration(cfg)
+    if len(errs) > 0 {
+        outputString := "Configuration errors:\n"
+        for _, err := range errs {
+            outputString += fmt.Sprintf("  - %s\n", err)
+        }
+        return nil, fmt.Errorf(outputString)
+    }
+
+	return cfg, nil
+}
+
+// AddDefaultHeader adds a new HTTP header to the default header in the request
+func (c *Configuration) AddDefaultHeader(key string, value string) {
+	c.DefaultHeader[key] = value
+}
+
+func (c *Configuration) SetCaCertificates(caCertificates []*x509.Certificate) {
+	if caCertificates != nil {
+		c.caCertificates = caCertificates
+	}
+}

@@ -1,0 +1,9 @@
+additionalProperties:
+  enumClassPrefix: true
+gitHost: "github.com"
+gitUserId: "Keyfactor"
+gitRepoId: "keyfactor-go-client-sdk"
+infoUrl: https://software.keyfactor.com/Core-OnPrem/Current/Content/WebAPI/Overview.htm
+productName: "Keyfactor Command"
+nameMappings:
+  HasValue: DoesHaveValue # Prevents conflicts when API spec has `Value` and `HasValue` properties, the OpenAPI generated `Has[Property]` will conflict.

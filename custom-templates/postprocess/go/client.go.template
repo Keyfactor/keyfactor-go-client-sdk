@@ -1,0 +1,21 @@
+package keyfactor
+
+import (
+	"github.com/Keyfactor/keyfactor-auth-client-go/auth_providers"
+	{{imports}}
+)
+
+type APIClient struct {
+	V1 *v1.APIClient
+	V2 *v2.APIClient
+}
+
+func NewAPIClient(cfg *auth_providers.Server) (*APIClient, error) {
+	var err error
+
+	{{clientInstantiation}}
+
+	return &APIClient{
+		{{clientList}}
+	}, nil
+}
