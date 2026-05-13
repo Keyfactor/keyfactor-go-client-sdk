@@ -89,6 +89,29 @@ func NewAPIClient(cfg *auth_providers.Server) (*APIClient, error) {
 	return c, nil
 }
 
+// NewAPIClientWithAuth creates an APIClient with a pre-built AuthConfig, bypassing
+// the Authenticate() network call. Used in unit tests with VCR cassettes and any
+// scenario where authentication has already been established out of band.
+//
+// Originally added in commit af6340b for v24 VCR test injection; needed in v25 for
+// the same purpose by downstream consumers (terraform-provider-keyfactor, kfutil).
+func NewAPIClientWithAuth(auth AuthConfig) *APIClient {
+	c := &APIClient{}
+	c.AuthClient = auth
+	c.common.client = c
+
+{{#apiInfo}}
+	// API Services
+{{#apis}}
+{{#operations}}
+	c.{{classname}} = (*{{classname}}Service)(&c.common)
+{{/operations}}
+{{/apis}}
+{{/apiInfo}}
+
+	return c
+}
+
 // Define an interface that both CommandConfigOauth and CommandAuthConfigBasic implement
 type AuthConfig interface {
 	Authenticate() error
