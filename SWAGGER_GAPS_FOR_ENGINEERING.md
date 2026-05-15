@@ -125,6 +125,25 @@ These are inconsistent. The swagger appears to be canonical (matches actual Comm
 
 The swagger seems to be ahead of the docs here. Either the field is undocumented but real (Command returns it but customers wouldn't know to expect it), or the docs are missing it. **Recommended action**: add `Manageability` to the documented Templates GET-by-id response with the three enum values and their meanings.
 
+### CertificateStoreType `Property.Type` and `EntryParameter.Type` enums declared as bare ints
+
+- **Swagger** (`Keyfactor-Command-v25-v1.swagger.json`):
+  - `CSS.CMS.Core.Enums.CertificateStoreTypePropertyType` — `{"type":"integer","format":"int32","enum":[0,1,2,3]}`
+  - `CSS.CMS.Core.Enums.CertStoreEntryParameterType` — `{"type":"integer","format":"int32","enum":[0,1,2,3]}`
+  - No `x-enum-varnames` / `x-enum-descriptions` annotations. The generated v25 Go SDK therefore exposes `*int32` typed enums with constants named only `__0`, `__1`, `__2`, `__3` and a `Parse(string)` method whose `stringsToEnum` map is empty (so unmarshaling always errors).
+- **Actual wire format used by Keyfactor Command**: STRING NAMES, not integers. The deprecated `keyfactor-go-client/v3` package declares both fields as plain `string` (`v3/api/store_type_models.go`: `Type string \`json:"Type"\``), and `kfutil`'s `cmd/store_types.json` ships 70 store-type templates with values like `"String"`, `"Bool"`, `"Secret"`, `"MultipleChoice"`. These templates POST cleanly to the Keyfactor server today.
+
+The swagger and SDK are wrong for both directions:
+- **POST/PUT requests**: server accepts string names; the typed SDK body forces ints and would fail to serialize any existing user manifest.
+- **GET responses**: empirically the server returns string names on the wire (otherwise the v3 client would have broken long ago); the SDK's `UnmarshalJSON` for these enums rejects strings with `"%+v is not a valid …"`.
+
+**Recommended actions** (any one of these unblocks downstream consumers):
+1. Re-declare the schemas as `{"type":"string","enum":["String","MultipleChoice","Bool","Secret"]}` for the property type, and the equivalent set for the entry-parameter type. This matches the documented and observed wire shape and is what the Command server already accepts.
+2. If the integer form is genuinely the canonical wire shape (and the server only happens to accept strings as a legacy shim), add `x-enum-varnames` to lock in the int↔name mapping authoritatively so consumers don't have to guess. Then fix the SDK generator's broken `Parse()` method so it actually populates `stringsToEnum`.
+3. Either way, document the four enum values explicitly on the docs site (`AddCertificateStoreType.htm` / store-type POST/PUT pages) — they are not currently named anywhere consumer-facing.
+
+**Workaround in kfutil while this is unresolved**: kfutil's storeTypes migration uses the SDK for transport (auth + URL config + headers) but defines a local request/response struct that mirrors v3's `string`-typed `Type` field, preserving wire compatibility with all existing user manifests. This is documented in `kfutil/cmd/storeTypes.go` so it can be reverted once the SDK exposes a working enum.
+
 ---
 
 ## What was NOT a gap (sanity checks)
