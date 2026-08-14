@@ -1,8 +1,12 @@
 package v2
 
 import (
+	"net/http"
+	"net/http/httptest"
+	"net/url"
 	"reflect"
 	"testing"
+	"time"
 
 	"github.com/Keyfactor/keyfactor-auth-client-go/auth_providers"
 )
@@ -95,5 +99,71 @@ func TestCommandConfigOauth_AccessTokenOnlyNoClientCreds(t *testing.T) {
 	}
 	if oauthCfg.ClientSecret != "" {
 		t.Errorf("ClientSecret = %q, want empty", oauthCfg.ClientSecret)
+	}
+}
+
+// newFakeCommandServer stands in for a Keyfactor Command instance for
+// CommandAuthConfigBasic.Authenticate(), which performs a real GET against
+// {host}/{apiPath}/Status/Endpoints as part of authentication. It always
+// returns 200 with a valid JSON string array, regardless of credentials.
+func newFakeCommandServer(t *testing.T) *httptest.Server {
+	t.Helper()
+	server := httptest.NewTLSServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		w.WriteHeader(http.StatusOK)
+		_, _ = w.Write([]byte(`["endpoint1"]`))
+	}))
+	t.Cleanup(server.Close)
+	return server
+}
+
+// TestBuildHttpClientV2_ClientTimeoutPropagation is a regression test for the
+// bug where Server.ClientTimeout was silently dropped when buildHttpClientV2
+// rebuilt its own CommandAuthConfig, causing every caller (including the
+// Terraform provider's request_timeout setting) to fall back to
+// auth_providers.DefaultClientTimeout (60s) regardless of what was
+// configured -- surfacing as "net/http: timeout awaiting response headers" on
+// long-running calls such as PFX enrollment. Unlike
+// TestCommandConfigOauth_AccessTokenFieldPropagation above (which mirrors
+// buildHttpClientV2's lines to avoid the network call inside Authenticate()),
+// this test exercises buildHttpClientV2 itself against a fake Command server.
+func TestBuildHttpClientV2_ClientTimeoutPropagation(t *testing.T) {
+	server := newFakeCommandServer(t)
+	u, uErr := url.Parse(server.URL)
+	if uErr != nil {
+		t.Fatalf("failed to parse test server URL: %v", uErr)
+	}
+
+	srv := &auth_providers.Server{
+		Host:          u.Host,
+		Username:      "user",
+		Password:      "pass",
+		APIPath:       "api",
+		SkipTLSVerify: true,
+		ClientTimeout: 300,
+	}
+
+	authCfg, err := buildHttpClientV2(srv)
+	if err != nil {
+		t.Fatalf("buildHttpClientV2() returned unexpected error: %v", err)
+	}
+
+	basicCfg, ok := authCfg.(*auth_providers.CommandAuthConfigBasic)
+	if !ok {
+		t.Fatalf("expected AuthConfig to be *auth_providers.CommandAuthConfigBasic, got %T", authCfg)
+	}
+
+	if basicCfg.HttpClientTimeout != 300 {
+		t.Errorf("CommandAuthConfigBasic.HttpClientTimeout = %d, want %d", basicCfg.HttpClientTimeout, 300)
+	}
+
+	transport, tErr := basicCfg.CommandAuthConfig.BuildTransport()
+	if tErr != nil {
+		t.Fatalf("BuildTransport() returned unexpected error: %v", tErr)
+	}
+
+	expected := 300 * time.Second
+	if transport.ResponseHeaderTimeout != expected {
+		t.Errorf("ResponseHeaderTimeout = %v, want %v", transport.ResponseHeaderTimeout, expected)
 	}
 }
