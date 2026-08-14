@@ -1,6 +1,7 @@
 package v2
 
 import (
+	"context"
 	"net/http"
 	"net/http/httptest"
 	"net/url"
@@ -212,4 +213,62 @@ func TestBuildHttpClientV2_ClientTimeoutPropagation(t *testing.T) {
 	if transport.ResponseHeaderTimeout != expected {
 		t.Errorf("ResponseHeaderTimeout = %v, want %v", transport.ResponseHeaderTimeout, expected)
 	}
+}
+
+// TestPrepareRequest_Port443Guard is a regression test for the hand-edit in
+// commit 229db7d that added "&& serverConfig.Port != 443" to prepareRequest's
+// port guard. Without it, a Server configured with Port: 443 (the default
+// HTTPS port, and what many callers -- including the Terraform provider --
+// set explicitly) produces request URLs like "https://host:443/..." instead
+// of "https://host/...". Both are technically valid HTTPS URLs, but the
+// explicit ":443" broke servers/proxies that match on Host header exactly
+// (no port suffix) and was reported as a functional regression. This test
+// was previously unprotected: reverting the guard would fail nothing in CI.
+func TestPrepareRequest_Port443Guard(t *testing.T) {
+	// Constructed directly against the exported AuthClient field (rather
+	// than via NewAPIClientWithAuth) so this test exercises prepareRequest
+	// in isolation without depending on an unrelated hand-edit.
+	newClientWithPort := func(t *testing.T, port int) *APIClient {
+		t.Helper()
+		return &APIClient{
+			AuthClient: &auth_providers.CommandAuthConfigBasic{
+				CommandAuthConfig: auth_providers.CommandAuthConfig{
+					CommandHostName: "command.example.com",
+					CommandPort:     port,
+				},
+			},
+		}
+	}
+
+	prepare := func(t *testing.T, c *APIClient) *http.Request {
+		t.Helper()
+		req, err := c.prepareRequest(
+			context.Background(),
+			"https://placeholder.invalid/api/Status/Endpoints",
+			"GET",
+			nil,
+			map[string]string{},
+			nil,
+			nil,
+			nil,
+		)
+		if err != nil {
+			t.Fatalf("prepareRequest() returned unexpected error: %v", err)
+		}
+		return req
+	}
+
+	t.Run("port 443 is omitted from the request host", func(t *testing.T) {
+		req := prepare(t, newClientWithPort(t, 443))
+		if got, want := req.URL.Host, "command.example.com"; got != want {
+			t.Errorf("URL.Host = %q, want %q", got, want)
+		}
+	})
+
+	t.Run("non-443 port is still appended to the request host", func(t *testing.T) {
+		req := prepare(t, newClientWithPort(t, 8443))
+		if got, want := req.URL.Host, "command.example.com:8443"; got != want {
+			t.Errorf("URL.Host = %q, want %q", got, want)
+		}
+	})
 }
