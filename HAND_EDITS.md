@@ -62,9 +62,20 @@ For each file, hand-edits are listed in commit order (oldest first). Each entry 
    `access_token`-only authentication (callers supplying just hostname + access token, no
    `client_id`/`client_secret`/`token_url`).
    - Reproduced by upstream swagger: **No**.
-   - Regression test pins this: **Yes** —
-     `TestCommandConfigOauth_AccessTokenFieldPropagation` fails to compile if any of the three
-     fields are removed from either struct, and asserts they propagate correctly.
+   - Regression test pins this: **Yes** — `TestBuildHttpClientV2_OAuthAccessTokenPropagation`
+     drives `buildHttpClientV2` itself end-to-end against a fake Command server (the same
+     `newFakeCommandServer`-style harness `TestBuildHttpClientV2_ClientTimeoutPropagation` uses
+     for entry #4 below) with a `Server{AccessToken: ...}` and no `client_id`/`client_secret`/
+     `token_url`, then asserts the request that reaches the fake server carries the token as a
+     `Bearer` credential. Deleting `AccessToken`/`Audience`/`Scopes` from this file's literal
+     makes that test fail (verified by reproduction against the pre-fix code). Note:
+     `TestCommandConfigOauth_AccessTokenFieldPropagation`, despite its name and despite living
+     in this file, does **not** exercise `buildHttpClientV2` — it only builds its own local
+     `auth_providers.CommandConfigOauth{}` literal and would keep passing even if this file's
+     literal dropped the three fields. That test still has value (it compile-pins the upstream
+     `auth_providers` field names existing at all), but it is
+     `TestBuildHttpClientV2_OAuthAccessTokenPropagation`, not it, that protects this specific
+     hand-edit.
    - Action: **preserve**. (This is the second time these fields were silently dropped and
      restored — see the near-identical prior loss at `2b88eb2` — so it is a high-value
      preserve.)
@@ -207,6 +218,13 @@ The one v25 edit made as part of this change set:
 2. Also ported to v25 as part of this change set: `TestPrepareRequest_Port443Guard` (see v24
    entry #3), protecting v25's pre-existing `b374f3d` port-443 guard, which had the same
    "unprotected hand-edit" gap as v24's copy.
+
+3. Also ported to v25 as part of this change set: `TestBuildHttpClientV2_OAuthAccessTokenPropagation`
+   (see v24 entry #2), protecting v25's pre-existing `0c1df4d` OAuth-field-restoration, which had
+   the same "unprotected hand-edit" gap as v24's copy before this change set (the only test that
+   named the fields, `TestCommandConfigOauth_AccessTokenFieldPropagation`, never called
+   `buildHttpClientV2`). This does not constitute a full audit of `0c1df4d` against this
+   document's conventions — see "Scope" above — only this one test gap is closed.
 
 **Not fixed in this change set:** the repo-root `api/keyfactor/` module and the `v2/`
 (`github.com/Keyfactor/keyfactor-go-client-sdk/v2`) module contain the identical

@@ -215,6 +215,95 @@ func TestBuildHttpClientV2_ClientTimeoutPropagation(t *testing.T) {
 	}
 }
 
+// newFakeCommandServerCapturingAuth is like newFakeCommandServer but also
+// records the Authorization header of the last request it received, so a
+// test can assert which credential actually reached the wire (rather than
+// only asserting the shape of a struct literal that never leaves the test).
+func newFakeCommandServerCapturingAuth(t *testing.T) (*httptest.Server, *string) {
+	t.Helper()
+	var gotAuth string
+	server := httptest.NewTLSServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		gotAuth = r.Header.Get("Authorization")
+		w.Header().Set("Content-Type", "application/json")
+		w.WriteHeader(http.StatusOK)
+		_, _ = w.Write([]byte(`["endpoint1"]`))
+	}))
+	t.Cleanup(server.Close)
+	return server, &gotAuth
+}
+
+// TestBuildHttpClientV2_OAuthAccessTokenPropagation is a regression test for
+// the hand-edit cataloged in HAND_EDITS.md (v24 entry #2) that restores
+// AccessToken, Audience, and Scopes to the auth_providers.CommandConfigOauth{}
+// literal inside buildHttpClientV2's OAuth branch. Those three fields were
+// silently dropped once already (2b88eb2) and restored (229db7d); this test
+// -- unlike TestCommandConfigOauth_AccessTokenFieldPropagation above, which
+// only constructs its own local CommandConfigOauth literal and would keep
+// passing even if buildHttpClientV2's actual literal dropped these fields --
+// drives buildHttpClientV2 itself end-to-end against a fake Command server
+// and asserts the pre-fetched access token actually reaches the wire as a
+// Bearer credential.
+func TestBuildHttpClientV2_OAuthAccessTokenPropagation(t *testing.T) {
+	// See TestBuildHttpClientV2_ClientTimeoutPropagation for why each of
+	// these is pinned/unset: makes the test hermetic against the ambient
+	// shell environment.
+	t.Setenv(auth_providers.EnvKeyfactorSkipVerify, "true")
+	unsetEnvForTest(t, auth_providers.EnvKeyfactorCACert)
+	unsetEnvForTest(t, auth_providers.EnvKeyfactorClientTimeout)
+	unsetEnvForTest(t, auth_providers.EnvKeyfactorAccessToken)
+	unsetEnvForTest(t, auth_providers.EnvKeyfactorClientID)
+
+	server, gotAuth := newFakeCommandServerCapturingAuth(t)
+	u, uErr := url.Parse(server.URL)
+	if uErr != nil {
+		t.Fatalf("failed to parse test server URL: %v", uErr)
+	}
+
+	srv := &auth_providers.Server{
+		Host: u.Host,
+		// Deliberately no ClientID/ClientSecret/OAuthTokenUrl: this is the
+		// pre-fetched access_token-only auth path that 2b88eb2 broke.
+		AccessToken:   "mytoken-abc123",
+		Audience:      "https://my.audience.example.com",
+		Scopes:        []string{"read", "write"},
+		APIPath:       "api",
+		SkipTLSVerify: true,
+		ClientTimeout: 60,
+	}
+
+	authCfg, err := buildHttpClientV2(srv)
+	if err != nil {
+		t.Fatalf("buildHttpClientV2() returned unexpected error: %v", err)
+	}
+
+	oauthCfg, ok := authCfg.(*auth_providers.CommandConfigOauth)
+	if !ok {
+		t.Fatalf("expected AuthConfig to be *auth_providers.CommandConfigOauth, got %T", authCfg)
+	}
+
+	if oauthCfg.AccessToken != "mytoken-abc123" {
+		t.Errorf("CommandConfigOauth.AccessToken = %q, want %q", oauthCfg.AccessToken, "mytoken-abc123")
+	}
+	if oauthCfg.Audience != "https://my.audience.example.com" {
+		t.Errorf("CommandConfigOauth.Audience = %q, want %q", oauthCfg.Audience, "https://my.audience.example.com")
+	}
+	if !reflect.DeepEqual(oauthCfg.Scopes, []string{"read", "write"}) {
+		t.Errorf("CommandConfigOauth.Scopes = %v, want %v", oauthCfg.Scopes, []string{"read", "write"})
+	}
+
+	// The real assertion: buildHttpClientV2's internal Authenticate() call
+	// made an actual HTTP request to the fake Command server, and that
+	// request must carry the access token as a Bearer credential. If
+	// AccessToken were dropped from buildHttpClientV2's literal, the OAuth
+	// branch would fall through to the client-credentials grant with no
+	// ClientID/ClientSecret/TokenURL and buildHttpClientV2 would return an
+	// error above instead of ever reaching this assertion.
+	wantAuth := "Bearer mytoken-abc123"
+	if *gotAuth != wantAuth {
+		t.Errorf("request Authorization header = %q, want %q", *gotAuth, wantAuth)
+	}
+}
+
 // TestPrepareRequest_Port443Guard is a regression test for the hand-edit in
 // commit 229db7d that added "&& serverConfig.Port != 443" to prepareRequest's
 // port guard. Without it, a Server configured with Port: 443 (the default
