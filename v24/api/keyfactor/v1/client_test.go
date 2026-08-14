@@ -4,12 +4,32 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"net/url"
+	"os"
 	"reflect"
 	"testing"
 	"time"
 
 	"github.com/Keyfactor/keyfactor-auth-client-go/auth_providers"
 )
+
+// unsetEnvForTest removes an environment variable for the duration of the
+// test and restores its original value (or absence) on cleanup. Unlike
+// t.Setenv(key, ""), which leaves the variable "present" with an empty
+// value (still visible to os.LookupEnv), this genuinely unsets it so code
+// that branches on presence -- e.g. ValidateAuthConfig's
+// KEYFACTOR_CLIENT_TIMEOUT handling, which treats a present-but-unparseable
+// value as "leave HttpClientTimeout at its current value" rather than
+// falling through to the 60s default -- behaves as if the caller's shell
+// never exported it at all.
+func unsetEnvForTest(t *testing.T, key string) {
+	t.Helper()
+	if orig, ok := os.LookupEnv(key); ok {
+		t.Cleanup(func() {
+			_ = os.Setenv(key, orig)
+		})
+		_ = os.Unsetenv(key)
+	}
+}
 
 // TestCommandConfigOauth_AccessTokenFieldPropagation is a compilation + correctness
 // regression test for the v2.8.0 bug where AccessToken, Audience, and Scopes were
@@ -128,6 +148,32 @@ func newFakeCommandServer(t *testing.T) *httptest.Server {
 // buildHttpClientV2's lines to avoid the network call inside Authenticate()),
 // this test exercises buildHttpClientV2 itself against a fake Command server.
 func TestBuildHttpClientV2_ClientTimeoutPropagation(t *testing.T) {
+	// Hermetic against the ambient environment: ValidateAuthConfig (in
+	// keyfactor-auth-client-go's auth_core.go) unconditionally overwrites
+	// SkipVerify from KEYFACTOR_SKIP_VERIFY whenever the variable is merely
+	// *present*, regardless of its value -- so anything other than exactly
+	// "true"/"1" (e.g. "TRUE", "false", "0", or an empty string sourced from
+	// a lab env file) flips SkipTLSVerify back to false and this test fails
+	// against its own self-signed httptest server with "x509: certificate
+	// signed by unknown authority". Pin it explicitly rather than relying on
+	// it being unset in whatever shell runs `go test`. (The upstream
+	// unconditional-overwrite behavior itself is tracked and fixed
+	// separately in keyfactor-auth-client-go; this only needs to make our
+	// test hermetic against it.)
+	t.Setenv(auth_providers.EnvKeyfactorSkipVerify, "true")
+	// A stale/bad KEYFACTOR_CA_CERT path in the ambient environment would
+	// make BuildTransport() below treat the value as literal PEM bytes and
+	// fail with "failed to append custom CA cert to pool". Neutralize it.
+	unsetEnvForTest(t, auth_providers.EnvKeyfactorCACert)
+	// KEYFACTOR_CLIENT_TIMEOUT only matters when HttpClientTimeout is <= 0
+	// going in (it isn't here -- srv.ClientTimeout is 300 below), but pin it
+	// too for defense-in-depth. t.Setenv(..., "") would NOT achieve this: an
+	// empty value is still "present" to os.LookupEnv, so ValidateAuthConfig
+	// would see ok=true, fail to strconv.Atoi(""), and leave
+	// HttpClientTimeout at whatever it currently is instead of falling
+	// through to the 60s default -- the "zero-timeout case".
+	unsetEnvForTest(t, auth_providers.EnvKeyfactorClientTimeout)
+
 	server := newFakeCommandServer(t)
 	u, uErr := url.Parse(server.URL)
 	if uErr != nil {
