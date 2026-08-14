@@ -2,11 +2,7 @@ module github.com/Keyfactor/keyfactor-go-client-sdk/v24
 
 go 1.24.0
 
-// TODO(fix/server-client-timeout): bump to v1.6.0-rc.1 once that tag is cut
-// upstream (fixes Server.ClientTimeout plumbing, see
-// https://github.com/Keyfactor/keyfactor-auth-client-go/issues/51), then
-// remove the local `replace` below and re-run `go mod tidy`.
-require github.com/Keyfactor/keyfactor-auth-client-go v1.6.0-rc.1
+require github.com/Keyfactor/keyfactor-auth-client-go v1.6.0-rc.2
 
 require (
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.21.0 // indirect
@@ -33,5 +29,3 @@ require (
 	golang.org/x/text v0.33.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
-
-replace github.com/Keyfactor/keyfactor-auth-client-go => /tmp/kf-worktrees/kfc-auth
