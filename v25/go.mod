@@ -2,7 +2,7 @@ module github.com/Keyfactor/keyfactor-go-client-sdk/v25
 
 go 1.24.0
 
-require github.com/Keyfactor/keyfactor-auth-client-go v1.6.0-rc.5
+require github.com/Keyfactor/keyfactor-auth-client-go v1.6.0
 
 require (
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.21.0 // indirect
