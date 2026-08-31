@@ -79,20 +79,31 @@ var AllowedSystemDayOfWeekEnumValues = []SystemDayOfWeek{
 }
 
 func (v *SystemDayOfWeek) UnmarshalJSON(src []byte) error {
+	// Keyfactor Command has, across API versions, serialized this enum both
+	// as a JSON integer (e.g. 1) and as a day-name string (e.g. "Monday").
+	// Try the integer form first to preserve the original generated
+	// validation against AllowedSystemDayOfWeekEnumValues.
 	var value int32
-	err := json.Unmarshal(src, &value)
-	if err != nil {
-		return err
-	}
-	enumTypeValue := SystemDayOfWeek(value)
-	for _, existing := range AllowedSystemDayOfWeekEnumValues {
-		if existing == enumTypeValue {
-			*v = enumTypeValue
-			return nil
+	if err := json.Unmarshal(src, &value); err == nil {
+		enumTypeValue := SystemDayOfWeek(value)
+		for _, existing := range AllowedSystemDayOfWeekEnumValues {
+			if existing == enumTypeValue {
+				*v = enumTypeValue
+				return nil
+			}
 		}
+
+		return fmt.Errorf("%+v is not a valid SystemDayOfWeek", value)
 	}
 
-	return fmt.Errorf("%+v is not a valid SystemDayOfWeek", value)
+	// Fall back to the string form (e.g. "Monday") using the existing Parse
+	// helper, which maps day names to their enum values.
+	var strValue string
+	if err := json.Unmarshal(src, &strValue); err != nil {
+		return fmt.Errorf("SystemDayOfWeek must be a JSON integer or day-name string, got %s", string(src))
+	}
+
+	return v.Parse(strValue)
 }
 
 // NewSystemDayOfWeekFromValue returns a pointer to a valid SystemDayOfWeek
