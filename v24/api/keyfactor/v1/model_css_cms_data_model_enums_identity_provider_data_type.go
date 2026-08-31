@@ -34,6 +34,7 @@ const (
 	CSSCMSDATAMODELENUMSIDENTITYPROVIDERDATATYPE__1 CSSCMSDataModelEnumsIdentityProviderDataType = 1
 	CSSCMSDATAMODELENUMSIDENTITYPROVIDERDATATYPE__2 CSSCMSDataModelEnumsIdentityProviderDataType = 2
 	CSSCMSDATAMODELENUMSIDENTITYPROVIDERDATATYPE__3 CSSCMSDataModelEnumsIdentityProviderDataType = 3
+	CSSCMSDATAMODELENUMSIDENTITYPROVIDERDATATYPE__4 CSSCMSDataModelEnumsIdentityProviderDataType = 4
 )
 
 func ParseCSSCMSDataModelEnumsIdentityProviderDataType(s string) (*CSSCMSDataModelEnumsIdentityProviderDataType, error) {
@@ -62,6 +63,7 @@ var AllowedCSSCMSDataModelEnumsIdentityProviderDataTypeEnumValues = []CSSCMSData
 	1,
 	2,
 	3,
+	4,
 }
 
 func (v *CSSCMSDataModelEnumsIdentityProviderDataType) UnmarshalJSON(src []byte) error {
