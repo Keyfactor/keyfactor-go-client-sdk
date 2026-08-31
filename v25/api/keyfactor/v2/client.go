@@ -116,11 +116,12 @@ func buildHttpClientV2(cfg *auth_providers.Server) (AuthConfig, error) {
 	clientAuthType := cfg.GetAuthType()
 
 	baseConfig := auth_providers.CommandAuthConfig{
-		CommandHostName: cfg.Host,
-		CommandPort:     cfg.Port,
-		CommandAPIPath:  cfg.APIPath,
-		CommandCACert:   cfg.CACertPath,
-		SkipVerify:      cfg.SkipTLSVerify,
+		CommandHostName:   cfg.Host,
+		CommandPort:       cfg.Port,
+		CommandAPIPath:    cfg.APIPath,
+		CommandCACert:     cfg.CACertPath,
+		SkipVerify:        cfg.SkipTLSVerify,
+		HttpClientTimeout: cfg.ClientTimeout,
 	}
 
 	if clientAuthType == "basic" {
@@ -145,9 +146,9 @@ func buildHttpClientV2(cfg *auth_providers.Server) (AuthConfig, error) {
 			ClientID:          cfg.ClientID,
 			ClientSecret:      cfg.ClientSecret,
 			TokenURL:          cfg.OAuthTokenUrl,
-			Audience: 		   cfg.Audience,
-			Scopes: 	       cfg.Scopes,
-			AccessToken: 	   cfg.AccessToken,
+			Audience:          cfg.Audience,
+			Scopes:            cfg.Scopes,
+			AccessToken:       cfg.AccessToken,
 		}
 		aErr := oauthCfg.Authenticate()
 		if aErr != nil {
