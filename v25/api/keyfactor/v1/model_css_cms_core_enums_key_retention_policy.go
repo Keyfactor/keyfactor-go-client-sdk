@@ -47,9 +47,17 @@ func ParseCSSCMSCoreEnumsKeyRetentionPolicy(s string) (*CSSCMSCoreEnumsKeyRetent
 }
 
 func (c *CSSCMSCoreEnumsKeyRetentionPolicy) Parse(s string) error {
-	var stringsToEnum = map[string]CSSCMSCoreEnumsKeyRetentionPolicy{}
-
-	return errors.New(fmt.Sprintf("Parse could not be completed. The length of string maps is %d", len(stringsToEnum)))
+	// Command's own API surfaces do not agree on a single symbolic name for
+	// value 0 -- the Certificate Authorities endpoint uses "Disabled" while
+	// the Templates endpoint uses "None" -- so both are accepted here as
+	// aliases of the same underlying value.
+	var stringsToEnum = map[string]CSSCMSCoreEnumsKeyRetentionPolicy{
+		"None":            CSSCMSCOREENUMSKEYRETENTIONPOLICY__0,
+		"Disabled":        CSSCMSCOREENUMSKEYRETENTIONPOLICY__0,
+		"Indefinite":      CSSCMSCOREENUMSKEYRETENTIONPOLICY__1,
+		"AfterExpiration": CSSCMSCOREENUMSKEYRETENTIONPOLICY__2,
+		"FromIssuance":    CSSCMSCOREENUMSKEYRETENTIONPOLICY__3,
+	}
 
 	if val, ok := stringsToEnum[s]; ok {
 		*c = val
@@ -67,20 +75,29 @@ var AllowedCSSCMSCoreEnumsKeyRetentionPolicyEnumValues = []CSSCMSCoreEnumsKeyRet
 }
 
 func (v *CSSCMSCoreEnumsKeyRetentionPolicy) UnmarshalJSON(src []byte) error {
+	// Command's Templates GET responses (e.g. GET /Templates) return this
+	// enum by symbolic name ("None", "Indefinite", ...) rather than its
+	// numeric value, even though the schema types it as an integer enum.
+	// Try the numeric form first -- the documented/common case, and the
+	// shape this type's own MarshalJSON produces -- then fall back to the
+	// symbolic name via Parse so a real Command response isn't rejected.
 	var value int32
-	err := json.Unmarshal(src, &value)
-	if err != nil {
-		return err
-	}
-	enumTypeValue := CSSCMSCoreEnumsKeyRetentionPolicy(value)
-	for _, existing := range AllowedCSSCMSCoreEnumsKeyRetentionPolicyEnumValues {
-		if existing == enumTypeValue {
-			*v = enumTypeValue
-			return nil
+	if err := json.Unmarshal(src, &value); err == nil {
+		enumTypeValue := CSSCMSCoreEnumsKeyRetentionPolicy(value)
+		for _, existing := range AllowedCSSCMSCoreEnumsKeyRetentionPolicyEnumValues {
+			if existing == enumTypeValue {
+				*v = enumTypeValue
+				return nil
+			}
 		}
+		return fmt.Errorf("%+v is not a valid CSSCMSCoreEnumsKeyRetentionPolicy", value)
 	}
 
-	return fmt.Errorf("%+v is not a valid CSSCMSCoreEnumsKeyRetentionPolicy", value)
+	var name string
+	if err := json.Unmarshal(src, &name); err != nil {
+		return err
+	}
+	return v.Parse(name)
 }
 
 // NewCSSCMSCoreEnumsKeyRetentionPolicyFromValue returns a pointer to a valid CSSCMSCoreEnumsKeyRetentionPolicy
