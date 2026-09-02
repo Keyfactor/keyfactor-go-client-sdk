@@ -34,6 +34,7 @@ const (
 	KEYFACTORPLATFORMEXTENSIONSENUMSTEMPLATEDETAILSMANAGEABILITY__0 KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability = 0
 	KEYFACTORPLATFORMEXTENSIONSENUMSTEMPLATEDETAILSMANAGEABILITY__1 KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability = 1
 	KEYFACTORPLATFORMEXTENSIONSENUMSTEMPLATEDETAILSMANAGEABILITY__2 KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability = 2
+	KEYFACTORPLATFORMEXTENSIONSENUMSTEMPLATEDETAILSMANAGEABILITY__3 KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability = 3
 )
 
 func ParseKeyfactorPlatformExtensionsEnumsTemplateDetailsManageability(s string) (*KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability, error) {
@@ -62,6 +63,7 @@ var AllowedKeyfactorPlatformExtensionsEnumsTemplateDetailsManageabilityEnumValue
 	0,
 	1,
 	2,
+	3,
 }
 
 func (v *KeyfactorPlatformExtensionsEnumsTemplateDetailsManageability) UnmarshalJSON(src []byte) error {
