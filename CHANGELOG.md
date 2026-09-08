@@ -1,3 +1,8 @@
+# v25.0.3
+
+## Features
+- Add support for `ExternalTokenSource` in OAuth client configuration.
+
 # v25.0.1
 
 ## Chores
