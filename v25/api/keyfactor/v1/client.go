@@ -289,6 +289,7 @@ func buildHttpClientV2(cfg *auth_providers.Server) (AuthConfig, error) {
 			Audience: 		   cfg.Audience,
 			Scopes: 	       cfg.Scopes,
 			AccessToken: 	   cfg.AccessToken,
+			ExternalTokenSource: cfg.ExternalTokenSource,
 		}
 		aErr := oauthCfg.Authenticate()
 		if aErr != nil {
